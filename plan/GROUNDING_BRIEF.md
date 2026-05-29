@@ -88,7 +88,7 @@ Each experiment has:
 - **Six Birds prediction:** Use Ξ_cosmo(z) from E1 (trained on geometry) to predict η(z) shape without refitting amplitude; out-of-sample BIC improvement >5 → pass
 - **Gluing residual amplitude (CDDR/local-global verdict, per REGISTRY §11.9):** Measure the share of the apparent w_a signal absorbed by the η≠1 (LG) chart (M2-vs-M1 amplitude share / Δχ²). The **gluing-residual** reading is supported when the η≠1 (LG) chart absorbs the **majority (>50%)** of the apparent w_a signal; the **rewrite** reading when it absorbs a small fraction (<~20%); **mixture** otherwise.
 - **Reconcile literature:** Model-independent Crossing Statistics tests (arXiv:2604.19393) vs. Afroz–Mukherjee distance-duality-violation claim (arXiv:2504.16868)—Six Birds must be compatible with whichever is correct, or explicitly diagnose the difference
-- **Failure modes:** M₂ is always worse than M₁ (Ξ_cosmo provides no advantage) → E2 fails; gluing residual explains <30% of w_a signal → E2 fails; Six Birds prediction of η(z) structure uncorrelated with observed DESI BAO/SN residuals (p-value <0.05) → E2 fails
+- **Failure modes (gluing reading; per E2 §8.6 — failure of the *gluing* reading is NOT failure of the *program*):** M₂ is always worse than M₁ (Ξ_cosmo provides no advantage); the gluing chart explains <20% of the w_a signal (`F_collapse`<0.2 — note: a clean low-gluing result is instead the valid **rewrite** verdict, §8.4); Six Birds prediction of η(z) structure uncorrelated with observed DESI BAO/SN residuals (p-value >0.05). The *program* fails E2 only on reproduction, the coherence gate (G-E2-COHERE), or rank-ceiling violation.
 
 **Cross-experiment use:** Tests whether the same Ξ_cosmo from E1 can explain calibration and distance-gluing issues, not just geometry. Operationalizes "local-global obstruction" as a quantifiable phenomenon.
 
@@ -104,13 +104,13 @@ Each experiment has:
 - **Construct effective equation of state:** Using Ξ_cosmo from E1, compute induced w_eff(z) via the macro Friedmann law:
   - Fit homogeneous completion parameters (Ω_m, H₀) from DESI+CMB
   - Add Ξ_cosmo rewrite term to background density ρ_eff(z)
-  - Calculate w_eff = (1/3)×[−(1+z)/ρ_eff × d(ρ_eff)/dz] − 1
+  - Calculate w_eff = −1 + ((1+z)/3) × d/dz[ ln ρ_eff(z) ]  (the single canonical form — `plan/04` eq. 19, E3 eq. E3.1; equivalently w_eff = −1 − (1/3)·d ln ρ_eff/d ln a). Sanity: ρ_eff const ⇒ w=−1; ρ_eff∝(1+z)³ ⇒ w=0 (matter).
 - **Phantom crossing test:** Show w_eff(z) crosses w=-1 at some z_c (if DESI data prefer crossing); measure crossing redshift z_c and crossing width Δz_c
-- **Stability (no-growing-mode) criterion** — per REGISTRY §5, the deliverable is that the rewrite operator Ξ_cosmo is a **positive, stable** endomap on macro state space (a *stable effective readout*, NOT a Lagrangian-level proof of ghost-absence). Operationally:
-  - Compute eigenvalues of the Jacobian of the macro evolution with Ξ_cosmo included
-  - All eigenvalues must have Re λ ≤ 0 in cosmological forward-time (no growing mode)
-  - Native-currency positivity (ρ_eff > 0) on the grid
-  - The full **no-negative-kinetic-DOF (ghost-absence)** claim requires a Lagrangian/kinetic-metric framework that this program does not build; it is therefore statused **`out_of_scope`**. "Stable-readout certificate" elsewhere names *this* spectral-stability + positivity check, not a kinetic-sign proof.
+- **P4 certificates (three, distinct — `CONTRACT_HARDENING_ADDENDUM.md` §4; REGISTRY §5/§11.2)** — the deliverable is that the rewrite operator Ξ_cosmo is a **positive, stable** endomap (a *stable effective readout*, NOT a Lagrangian-level ghost-absence proof). Operationally, **all three**:
+  - **P-dens** — native-currency positivity: ρ_eff(z) > 0 on the grid
+  - **P-adeq** — rewrite-operator/adequacy positivity: sym_C(R[Ξ]) ⪰ 0 (↔ Schur Ξ_C ⪰ 0); a *positivity*, NOT a stability, certificate
+  - **S-stab** — no growing mode: eigenvalues of the **continuous-generator** Jacobian J satisfy Re λ ≤ 0 in cosmological forward-time (for a discrete one-step map, spectral radius ≤ 1)
+  - The full **no-negative-kinetic-DOF (ghost-absence)** claim requires a Lagrangian/kinetic-metric framework this program does not build; statused **`out_of_scope`**. The **stable-readout certificate** (the P4 pass) **is** the conjunction **P-dens ∧ P-adeq ∧ S-stab**; **"no-growing-mode"** names the **S-stab** component (`max Re λ(J)≤0`) specifically (REGISTRY §11.2).
 - **Stability under perturbation:** Perturb DESI data within 1σ; recompute Ξ_cosmo and w_eff; show that z_c and Δz_c vary by <0.1 in redshift (robust crossing)
 - **Alternative: effective scalar-field rewrite** If desired, show that an explicit scalar field with w < −1 is **not** necessary; the macro rewrite Ξ_cosmo achieves the same fit quality with a stable effective readout (no growing mode)
 - **Failure modes:** w_eff does not cross w=-1 when E1's Ξ_cosmo is applied (only ΛCDM behavior) → E3 fails if DESI prefers crossing; eigenvalue with positive real part → E3 fails (instability); crossing redshift z_c shifts by >0.5 under 1σ data perturbation → E3 fails (not robust)
@@ -153,7 +153,7 @@ Each experiment has:
 - Use the same Ξ_cosmo(z) from E1
 - Recompute {H₀^(r,ℓ)} using a corrected FLRW completion that includes Ξ_cosmo
 - Test: does the corrected completion reduce route mismatch? Operationally, measure std[H₀^(r,ℓ) | corrected] vs. std[H₀^(r,ℓ) | uncorrected]
-- Pass: std[corrected] < std[uncorrected] AND corrected H₀ values cluster with CMB value (Planck H₀ = 67.4±0.5)
+- Pass: the Ξ-corrected route posteriors become **mutually more consistent** — std[H₀^(r,ℓ) | corrected] < std[uncorrected] **and** the Hubble holonomy 𝔥_γ shrinks vs uncorrected. The shared completed value H_closed(0) is **reported**, not required to equal any single route's value (**no Planck-collapse** — lawful plurality, idea.md UPDATE). The test is decisive on *mismatch reduction* (std + 𝔥_γ), not on convergence to the Planck value.
 
 **Failure modes:**
 - Route structure is absent: ρ(r=r') ≈ ρ(r≠r') (no clustering by route) → E4 fails (supports null model)
@@ -202,8 +202,9 @@ Each experiment has:
 - **DESI report:** Pan et al. and Silva et al. find mild IDE preference (~1–1.5σ), reducing (H₀) tension to ~2.7σ
 - **Six Birds comparison:** Fit Ξ_cosmo (low-rank rewrite) to same data; compare χ² and parameter counts
 - **Continuity-equation ledger:** If ρ_DE and ρ_m evolve with interaction:
-  - dρ_DE/da + 3ρ_DE = −Q  (energy flows out)
-  - dρ_m/da + 3ρ_m = +Q   (energy flows in)
+  - ρ̇_DE + 3H(1+w_DE)ρ_DE = −Q   (energy flows out of the dark-energy sector)
+  - ρ̇_dm + 3H ρ_dm = +Q           (energy flows into CDM; w_dm = 0)
+  - (overdot = d/dt; the **(1+w_DE) factor is mandatory** — dropping it makes DE evolve like dust. In d/a form, divide the transport by aH and carry (1+w_DE). The full continuity+Friedmann solver lives in E6.)
 - **Show equivalence:** Construct Ξ_cosmo such that its macro-level rewrite operator induces the same energy-balance equations as the IDE model with Q
 - **Operationally:** Solve Friedmann laws with Ξ_cosmo, extract implied dρ_DE/da and dρ_m/da, compute effective Q from balance equations
 - **Pass criterion:** Effective Q(z) from Ξ_cosmo must match fitted IDE Q to within 20% RMS error (over z ∈ [0, 2])
@@ -329,7 +330,7 @@ All experiments must satisfy these gates. Pre-registered failure modes for rejec
 5. **Pre-register failure modes.**
    - E0: Ξ_cosmo parameter count >2, or RMSE gap >10%
    - E1: χ² worse by >5%, or out-of-sample SN worse by >15%
-   - E2: gluing residual explains <30% of w_a, or model-independent consistency violated
+   - E2: gluing residual explains <20% of w_a (the **rewrite** verdict per §8.4 — not itself a program fail), or model-independent consistency violated
    - E3: w_eff does not cross (if DESI prefers crossing), or unstable eigenvalue
    - E4: route structure absent, or holonomy <0.1 nats
    - E5: staging fingerprint absent, or BIC worse by >5

@@ -277,7 +277,7 @@ statused deviation.
 |---|---|---|
 | E0 | Recover `|Ω_Λ| > 0.5` from null-Λ generator; refit RMSE within 5% using ≤ 2 `Ξ` params; `δ ≈ 0` | `Ξ` needs > 2 params/bin, RMSE gap > 10%, or `δ` > 10% of data variance |
 | E1 | SBT χ²/dof ≤ 0.99 with ≤ 3 extra params; OOS SN RMSE ↓ > 10% (a within-MC-error match is a floor/tie, not a pass — the decisive OOS win is judged program-level at `G-E8-OOS-DECISIVE`) | χ² > 5% worse; > 4 extra params; OOS SN > 15% worse |
-| E2 | M₂ (`η≠1`, `Ξ≠0`) OOS ΔBIC > 5 vs {M₀,M₁}; gluing explains > 50% of apparent `w_a` | M₂ never beats M₁; gluing explains < 30%; η-shape uncorrelated with residuals (p < 0.05) |
+| E2 | M₂ (`η≠1`, `Ξ≠0`) OOS ΔBIC > 5 vs {M₀,M₁}; gluing explains > 50% of apparent `w_a` | M₂ never beats M₁; gluing explains < 20% (per REGISTRY §11.9 — itself the valid *rewrite* verdict, not a program fail); η-shape uncorrelated with residuals (p > 0.05) |
 | E3 | `w_eff` crosses −1 at DESI-preferred `z_c`; all Jacobian eigenvalues `Re λ ≤ 0`; `z_c` stable to < 0.1 under 1σ | positive-real eigenvalue (instability); no crossing when DESI prefers it; `z_c` shifts > 0.5 |
 | E4 | route clustering ρ(r=r′) > ρ(r≠r′) (Spearman p < 0.05); staging OOS R² > 0.7; holonomy `𝔥_γ` ≫ measurement error (> 0.1 nats); `Ξ`-corrected `std[H₀^{r,ℓ}]` shrinks | route structure absent; staging R² < 0.5; `𝔥_γ` < 0.1 nats on all loops; `Ξ` does not reduce route mismatch |
 | E5 | `(S₈)^{ℓ_cut}` shows smooth staging trajectory; ΔBIC(SBT−null) > 10 or > 40% variance explained; `K_S` amplitude within 10× of `K_L`, `K_M` | white-noise scatter; ΔBIC < 5; `K_S` amplitude > 10× off from `K_L`/`K_M` |
@@ -363,9 +363,9 @@ This overview (`plan/00-overview.md`) is the conceptual entry point and the defi
 The remaining plan artifacts are:
 
 - **`GROUNDING_BRIEF.md`** — the authoritative data + environment + audit brief: exact dataset
-  releases and access (DESI DR2 BAO `2503.14738`, Planck 2018 `1807.06209`, SPT-3G D1 `2601.16277`,
+  releases and access (DESI DR2 BAO `2503.14738`, Planck 2018 `1807.06209`, SPT-3G D1 `2506.20707`,
   ACT DR6 `2509.02945`, Pantheon+ `2202.04077`, Union3 `2401.06956`, DES-SN5YR Zenodo:13827844,
-  DES Y6 `2601.14559`, KiDS-Legacy `2503.19441`, HSC Y3 `2511.18134`, DESI full-shape `2411.12026`,
+  DES Y6 `2601.14559`, KiDS-Legacy `2503.19441`, HSC Y3 `2511.18134`, DESI DR1 full-shape `2411.12026`,
   SH0ES `2509.01667`, CCHP `2408.06153`, TDCOSMO `2110.00517`, GW170817 `1709.05895`), the software
   stack (cobaya ≥ 3.4, CLASS ≥ 3.2 / CAMB ≥ 1.5.7, pyccl/CCL, getdist, arviz, Lean 4 ≥ 4.0),
   determinism/seed/manifest standards, compute budgets, data-format specs, and the full AOR status

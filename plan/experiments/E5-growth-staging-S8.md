@@ -1,7 +1,7 @@
 # E5 — Growth / Staging Sweep for S₈ (the staging-fingerprint experiment)
 
 > **One-line charter.** Run **scale-cut and staging sweeps** across the modern growth probes
-> (DES Y6 3×2pt, KiDS-Legacy, HSC Y3, DESI DR2 full-shape RSD, ACT/SPT CMB lensing) using a **REAL
+> (DES Y6 3×2pt, KiDS-Legacy, HSC Y3, DESI DR2 RSD [compressed `fσ₈`], ACT/SPT CMB lensing) using a **REAL
 > physical 3×2pt / growth likelihood via CCL/`pyccl`** (NOT a surrogate template basis), and test the
 > **staging fingerprint** `∂Ξ_cosmo/∂ℓ ≠ 0`: a *fundamental* Λ must be (statistically) flat under
 > reasonable scale-cut / smoothing / redshift-binning changes beyond known systematics, whereas a
@@ -124,7 +124,7 @@ The precursor (`A_Six_Birds_Eye_View_of_Dark_Energy`) was explicit about this li
 | **DES Y6** 3×2pt | arXiv:2601.14559 | `S₈ = 0.789 ± 0.012` | ~**1.8σ** below Planck+ACT+SPT | the residual leg: lowest `S₈`; the staging sweep asks whether the offset *moves* with `ℓ_cut`. |
 | **KiDS-Legacy** shear | arXiv:2503.19441 | `S₈ = 0.815^{+0.016}_{−0.021}` | ~**0.73σ** from Planck | the recalibrated leg: near-consistent after redshift-calibration + sims update (a staging change). |
 | **HSC Y3** (+DESI recal) | arXiv:2511.18134 | `S₈ = 0.805 ± 0.018` | mild | the photo-z-recal staging axis: `original→DESI-recal` shifted `S₈` from ~0.769 up to 0.805. |
-| **DESI DR2 full-shape RSD** | arXiv:2411.12026 | `fσ₈(z)` 6–8 bins; `μ₀=0.04±0.22, Σ₀=0.044±0.047` | GR-consistent | the RSD growth-rate leg (independent of WL IA/baryon systematics); feeds `K_G`. |
+| **DESI DR1 full-shape RSD** (MG/method ref; DR2 growth leg = compressed `fσ₈`) | arXiv:2411.12026 (DR1) | `fσ₈(z)` 6–8 bins; `μ₀=0.04±0.22, Σ₀=0.044±0.047` | GR-consistent | the RSD growth-rate leg (independent of WL IA/baryon systematics); feeds `K_G`. |
 | **ACT/SPT CMB lensing** | arXiv:2509.02945 | `C_ℓ^{κκ}` ℓ~100–3000 | high-`z` growth | the high-redshift growth cross-check; least affected by low-`z` baryon/IA staging. |
 
 > **The packaging reading (`idea.md` §3 row 6, §5).** The *spread itself* — DES Y6 low, KiDS/HSC
@@ -182,7 +182,7 @@ background + growth parameters with E1's verified geometry fit:
 | **WL/3×2pt (PRIME)** | **DES Y6** | arXiv:2601.14559 | shear+clustering+GGL, n_z=4, ℓ_max~5000 (or ξ±(θ)); full analytic+sim cov; **scale cuts per bin pair**; `S₈=0.789±0.012` | **YES** — official `DESLikelihood`/cosmosis-style + CCL forward model | `load_des_y6(scale_cut=…)` | the prime growth probe; the `ℓ_cut` sweep target | Gaussian approx on published vector+cov w/ official cuts baked in → **`budgeted`**, *excluded from headline staging fingerprint* |
 | **WL shear** | **KiDS-Legacy** | arXiv:2503.19441 | cosmic shear only, n_z=5, ℓ~30–1500 (bandpowers/COSEBIs); sim+analytic cov; `S₈=0.815^{+0.016}_{−0.021}` | **YES** — CCL shear forward model on published bandpowers | `load_kids_legacy(statistic=…)` | the recalibrated cross-check leg | shear-only `P(κ)` Gaussian, no RSD coupling → **`budgeted`** |
 | **WL shear+clustering** | **HSC Y3** | arXiv:2511.18134 | shear+clustering, n_z=5–6, ℓ~200–10000; mock cov; **two photo-z calibrations** (original / DESI-recal); `S₈=0.805±0.018` | **YES** — CCL forward model; both photo-z calibrations exposed | `load_hsc_y3(photoz=…)` | the **photo-z-recal staging axis** (a literal staging swap) | original (pre-DESI-recal) prior as comparison leg → **`budgeted`**; recal-vs-original swap **is** a staging diagnostic |
-| **RSD (growth rate)** | **DESI DR2 full-shape** | arXiv:2411.12026 | `fσ₈(z)` 6–8 bins z∈[0.1,1.5]; mock cov; `(μ₀,Σ₀)` MG inputs | **YES** — `desilike` full-shape, or compressed `(fσ₈, D_M/r_d, D_H/r_d)` per bin via CCL | `load_desi_rsd_fs(compressed=…)` | the WL-systematics-independent growth leg; feeds `K_G` | compressed `fσ₈(z)`+geometry Gaussian (loses full-shape `P(k)`) → **`budgeted`** |
+| **RSD (growth rate)** | **DESI DR1 full-shape (method) → DR2 compressed `fσ₈` (primary leg)** | arXiv:2411.12026 (DR1) | `fσ₈(z)` 6–8 bins z∈[0.1,1.5]; mock cov; `(μ₀,Σ₀)` MG inputs | **YES** — DR2 compressed `(fσ₈, D_M/r_d, D_H/r_d)` per bin via CCL (default); DR1 `desilike` full-shape as method control | `load_desi_rsd_fs(compressed=True)` | the WL-systematics-independent growth leg; feeds `K_G` | compressed `fσ₈(z)`+geometry **is** the primary leg if no public DR2 FS likelihood (loses full-shape `P(k)`) → **`budgeted`** |
 | **CMB lensing** | **ACT/SPT** | arXiv:2509.02945 | `C_ℓ^{κκ}` ℓ~100–3000; analytic cov | **YES** — CCL `C_ℓ^{κκ}` forward model | `load_cmb_lensing(source=…)` | high-`z` growth cross-check; least low-`z` IA/baryon staging | Planck-only lensing (lower S/N) → **`budgeted`** |
 | **WL/3×2pt (FALLBACK)** | DES Y3 3×2pt | arXiv:2212.00091 | shear+clustering+GGL, n_z=4, ℓ_max~4000; public `DESLikelihood` | **YES** — fully public official likelihood | `load_des_y3_3x2pt()` | substitute prime probe if Y6 likelihood unavailable; also the `G_surr` surrogate-replica host | published compressed 3×2pt likelihood → **`budgeted`**; **`approved_other`** if substituting for Y6 |
 | **CMB anchor** | Planck 2018 | arXiv:1807.06209 | TT/TE/EE + lensing native | YES (`clik`) | `load_planck_2018(...)` | the `S₈`-from-CMB anchor the offset is measured against | compressed distance priors → `budgeted` |
@@ -529,7 +529,7 @@ E5 (as a growth-`Ξ` claim) **fails** if **all** of:
 
 - **Blocked by:**
   - `plan/03` data acquisition: DES Y6 (prime) + KiDS-Legacy + HSC Y3 (both photo-z calibrations) +
-    DES Y3 (fallback) + DESI DR2 full-shape RSD + ACT/SPT CMB lensing + Planck anchor (the growth-probe
+    DES Y3 (fallback) + DESI DR2 RSD (compressed `fσ₈`) + ACT/SPT CMB lensing + Planck anchor (the growth-probe
     table); each loader must expose a mutable `scale_cut` argument for the sweep.
   - `plan/02` environment: the **CCL/`pyccl` backend** (the dependency the precursor lacked) + official
     survey likelihoods (`DESLikelihood`/cosmosis adapters, `desilike`) + the **G-ENV-4 pyccl↔CLASS agreement
@@ -572,5 +572,5 @@ E5 (as a growth-`Ξ` claim) **fails** if **all** of:
   cannot explain).
 - **arXiv anchors:** DES Y6 3×2pt 2601.14559 (`S₈=0.789±0.012`); KiDS-Legacy 2503.19441
   (`S₈=0.815^{+0.016}_{−0.021}`); HSC Y3 + DESI recal 2511.18134 (`S₈=0.805±0.018`); DES Y3 3×2pt
-  fallback 2212.00091; DESI DR2 full-shape RSD / MG 2411.12026 / 2411.12022 (`μ₀=0.04±0.22,
+  fallback 2212.00091; DESI DR1 full-shape RSD / MG 2411.12026 / 2411.12022 (`μ₀=0.04±0.22,
   Σ₀=0.044±0.047`); ACT DR6 CMB lensing 2509.02945; Planck 2018 1807.06209.

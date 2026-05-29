@@ -319,12 +319,13 @@ Lagrangian d.o.f. (shadow row 5, the derivative chart). Discipline follows
 4. **Stability / stable-readout audit** (`xi/stability.py`, ties to `Emergence IS the Needle Killer`):
    - **(i) Energy-density positivity:** `ρ_eff(z) > 0` for all grid `z` (already imposed) — the
      effective component carries a *positive* native currency.
-   - **(ii) Background dynamical stability:** linearize the discrete macro evolution map
-     `(a, ρ_eff) ↦ (a', ρ_eff')` (one step of the deterministic forward map used to generate the
-     history) about the trajectory; compute the Jacobian `J(z)` at each grid point and its eigenvalue
-     spectrum `{λ_j(z)}`. **Stable-readout witness:** require `Re(λ_j) ≤ 0` for all `j`, all `z` (no growing
-     mode), equivalently the discrete map is non-expanding in the audited norm. This is the finite
-     analogue of "no wrong-sign kinetic term." Report `max_z max_j Re(λ_j(z))`.
+   - **(ii) Background dynamical stability (S-stab):** linearize the **continuous macro-evolution
+     generator** `dstate/d(ln a) = f(a, ρ_eff)` about the trajectory; compute the Jacobian
+     `J(z) = ∂f/∂(state)` at each grid point and its eigenvalue spectrum `{λ_j(z)}`. **No-growing-mode
+     witness:** require `Re(λ_j) ≤ 0` for all `j`, all `z` (equivalently, for the discretized one-step
+     integrator, spectral radius `≤ 1`). Report `max_z max_j Re(λ_j(z))`. This is a finite
+     **no-growing-mode** statement — **not** a kinetic-sign / "wrong-sign kinetic term" / ghost-absence
+     claim (that needs a Lagrangian; `out_of_scope`, REGISTRY §5).
    - **(iii) Optional sound-speed-style check:** confirm the effective fluid's perturbation proxy
      `c_eff² ≥ 0` where defined (a fixed finite-difference proxy on `ρ_eff`); record it but the
      binding witness is (i)+(ii).
@@ -338,12 +339,16 @@ Lagrangian d.o.f. (shadow row 5, the derivative chart). Discipline follows
   real parts (all `≤ 0`) and a `ρ_eff(z) > 0` panel.
 - Scalars into `summary.json`: `toy3.z_cross`, `toy3.weff_min`, `toy3.weff_max`,
   `toy3.crosses_minus_one` (bool), `toy3.max_Re_eig`, `toy3.min_rho_eff`, `toy3.stable_readout` (bool).
+- **P4 certificate scope (`CONTRACT_HARDENING_ADDENDUM.md` §4):** this toy witnesses **P-dens**
+  (`min_rho_eff>0`) and **S-stab** (`max_Re_eig≤0`, continuous generator). The third certificate **P-adeq**
+  (rewrite-operator/adequacy positivity `sym_C(R)⪰0 ↔ Ξ_C⪰0`) is exercised at **E1/E3**, where the rewrite
+  operator and the multi-probe Schur structure are explicit — not in this single-sector toy.
 
 ### Expected behavior
 - `w_eff(z)` is `> −1` on one side of `z_×` and `< −1` on the other ⇒ a genuine phantom crossing.
 - `min_rho_eff > 0` (positive native currency) and `max_Re_eig ≤ 0` (no growing mode) ⇒
   the crossing is achieved by a **stable, positive** rewrite (a stable effective readout / no growing mode); the Lagrangian-level ghost-absence claim is `out_of_scope`.
-- This is exactly the P4 witness consumed by E3 and the Lean `RouteMismatch`/stability anchor.
+- This is the **P-dens + S-stab** rehearsal of the P4 witness consumed by E3 (the third certificate **P-adeq** is added at E3, `CONTRACT_HARDENING_ADDENDUM.md` §4) and the Lean `RouteMismatch`/stability anchor.
 
 ---
 

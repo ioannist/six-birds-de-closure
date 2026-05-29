@@ -206,8 +206,8 @@ These are the program-level standards every experiment is measured against (`ide
 | `CompatibleNonGlobal` | flat `η`, no global FLRW | no single FLRW gives `χ²/dof ≤ 1.05` | E2 §8.3 |
 | `GloballyAmbiguous` | fiber cardinality | multiple completions within `Δχ²<1` (`|R⁻¹(a)|>1`) | E2 §8.3 |
 | Decision: gluing-residual | collapse fraction `F_collapse` (eq. E2.2) | `F_collapse > 0.5` **and** F4 ∈ {OverlapInconsistent, CompatibleNonGlobal} | E2 §8.4 |
-| Decision: rewrite-residual | `F_collapse` | `F_collapse < 0.3` **and** F4 ∈ {GloballyExact, CompatibleNonGlobal} | E2 §8.4 |
-| Decision: mixture | `F_collapse` / model comparison | `0.3 ≤ F_collapse ≤ 0.5`, **or** M₁₊₂ beats both M₁ and M₂ by `ΔBIC>5` | E2 §8.4 |
+| Decision: rewrite-residual | `F_collapse` | `F_collapse < 0.2` (per REGISTRY §11.9) **and** F4 ∈ {GloballyExact, CompatibleNonGlobal} | E2 §8.4 |
+| Decision: mixture | `F_collapse` / model comparison | `0.2 ≤ F_collapse ≤ 0.5`, **or** M₁₊₂ beats both M₁ and M₂ by `ΔBIC>5` | E2 §8.4 |
 
 ### 5.3 SBT-claim gates
 
@@ -376,7 +376,7 @@ These are the program-level standards every experiment is measured against (`ide
 |---|---|---|---|
 | `G-E8-RANK` | rank ceiling | single coherence-checked `Ξ_cosmo`, `≤ +3` (minimal) / `≤ +5–7` (full); no per-probe `Ξ_p`; kernels probe-shared and linear (`<1%`); disqualify if `>+4` params with no BIC gain | E8 §7.2 |
 | `G-E8-FROZEN` | no re-tuning | SBT-Ξ form/kernels read from coherence ledger, not re-tuned; no new physics/data | E8 §7.2 |
-| `G-E8-STABLEREADOUT` | imported P4 certificate | SBT-Ξ phantom-crossing column carries E3 stable-readout certificate (`max Re λ ≤ 0`) | E8 §7.2 |
+| `G-E8-STABLEREADOUT` | imported P4 certificate | SBT-Ξ phantom-crossing column carries E3's full stable-readout certificate (P-dens ∧ P-adeq ∧ S-stab); at E8 the **no-growing-mode (S-stab)** component `max Re λ ≤ 0` is re-verified for the winner (P-dens/P-adeq established at E3, REGISTRY §11.2) | E8 §7.2 |
 
 ### 11.3 The decisive verdict gates
 
@@ -462,7 +462,7 @@ These are the program-level standards every experiment is measured against (`ide
 |---|---|---|
 | **E0** | linear `RM` not zero (`G-E0-1.2` fail); no apparent `Ω_Λ>0.2` from null-Λ generator (`G-E0-2.4`) or spurious DE in homogeneous control (`G-E0-2.5`); rewrite loses OOS (`G-E0-2.7`); crossing needs negative `ρ_eff` or positive-Re-λ eigenvalue (`G-E0-3.3`/`G-E0-3.4`); injected `Ξ` unrecoverable (`G-E0-4.1`) or nuisance preferred by BIC (`G-E0-4.3`); any `unstatused` (`G-E0-0.3`) | E0 §8 |
 | **E1** | cannot recover DESI `w₀w_a`/significances (F-B); detection prior-driven (`>1σ` shift) or backend-driven (`>5%`); E1-B `Ξ` improves SN only by worsening BAO (per-probe fudge); `>3` extra params with no `χ²/dof` gain or SN OOS `>15%` worse; SBT symbol leaks into E1-A | E1 §4.3 |
-| **E2** | program-fail only if `G-E2-REPRO`, `G-E2-COHERE`, or `G-E2-RANK` fails. Gluing-reading failure (NOT program fail → valid rewrite verdict): M₂ never beats M₁ by `ΔBIC` **and** `F_collapse<0.3` **and** η-shape uncorrelated (`p>0.05`) | E2 §8.6 |
+| **E2** | program-fail only if `G-E2-REPRO`, `G-E2-COHERE`, or `G-E2-RANK` fails. Gluing-reading failure (NOT program fail → valid rewrite verdict): M₂ never beats M₁ by `ΔBIC` **and** `F_collapse<0.2` (per REGISTRY §11.9) **and** η-shape uncorrelated (`p>0.05`) | E2 §8.6 |
 | **E3** | program-fail: `G-E3-CONSTRUCT` fail (F-D), `G-E3-LEAN` fail, `G-E3-COHERE` fail, or `G-E3-RANK` violated. Data-gate fail with status `blocked` (ghost required by data) or `G-E3-FALSEPOS`/`G-E3-BAYES` fail (no robust crossing) are valid statused negatives, NOT program fails | E3 §9.6 |
 | **E4** | indistinguishable from scatter (`G-E4-2` fail → `RoutesInconsistent`); no residual reuse (`G-E4-T4` `>10×`/`>2σ`); holonomy a protocol-trap artifact (`G-E4-T3` collapses under internalization); no staging structure (`G-E4-T2` `ρ<0.5`); permutation not destroyed | E4 §6.F |
 | **E5** | growth-`Ξ` claim fails (valid `budgeted` outcome) iff `s_Ξ^resid≈0` across all CCL probes **and** no `>3%` PPD gain **and** no `ΔBIC>5`. PROGRAM fails only on `G-E5-BACKEND`/`G-E5-REPRO`, `G-E5-COHERE`, or `G-E5-RANK`/`G-E5-NOSURR` | E5 §7.5 |

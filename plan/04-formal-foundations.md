@@ -163,8 +163,10 @@ audit_cost_p‖` (gate §9.1).
 | **RSD** | GR `fσ₈^GR(z;θ)` | growth readout enriched by Meszaros-source staging | `Σ_RSD^{-1}` (growth block) | whiten by `C_RSD^{1/2}` on the RSD `z`-nodes | onto range of whitened GR `fσ₈` columns | `K_·` from `(C_RSD, L_RSD, D_RSD)` | `fσ₈` growth residual readout | `[C]` numerical |
 | **ladder** | distance-ladder `H₀` predictor (anchor→SN) | route/staging-resolved `H₀^{(r,ℓ)}` readout (§5) | `Σ_ladder^{-1}` (route-posterior covariance) | bridge transport `B_γ` (§5.2) into the ladder frame | onto range of whitened single-`H₀` predictor | `K_·` from `(C_ladder, L_ladder, D_ladder)` | route-matrix residual `(I−P_{L})𝓗_{r,ℓ}` | `[C]` numerical |
 
-> **Reconciliation discipline (per-sector).** For each sector the executor (i) forms `C_p`-whitened
-> `L_p, D_p`; (ii) builds the four covariance blocks and the Schur complement `Ξ_C^{(p)}(D_p∣L_p)`
+> **Reconciliation discipline (per-sector).** For each sector the executor (i) forms the **un-whitened**
+> `L_p, D_p` and the audit energy `C_p = Σ_p^{-1}`; (ii) builds the four covariance blocks
+> (`K_LL=L_p^*C_pL_p`, `K_DD=D_p^*C_pD_p`, `K_DL=D_p^*C_pL_p`, `K_LD=K_DL^*` — `C_p` enters **once**; never
+> pre-whiten `L_p,D_p` *and* multiply by `C_p`, per `CONTRACT_HARDENING_ADDENDUM.md` §2) and the Schur complement `Ξ_C^{(p)}(D_p∣L_p)`
 > (eq. 2); (iii) computes the per-sector audit cost from `RM_p`/`LG`/`PPD` on the residual readout;
 > (iv) reports `‖Ξ_C^{(p)} − audit_cost_p‖` and tags the sector `[C]` (numerical) unless an exact
 > per-sector proof is supplied. The whole-program identity is the per-sector aggregate, recorded at
@@ -304,9 +306,17 @@ observable; **the same `Ξ` feeds all four** (this is the coherence constraint, 
 
 ## 4. The four residuals: finite operational definitions (LOCKED)
 
-These are the audit functionals `𝒜` of the carrier. All four are **finite, computable from data**,
-and share one metric `d`. They are the quantities `Δ_SBT` minimizes (eq. 1) and, via §1, the energy
-form of the adequacy residual.
+These are the audit functionals `𝒜` of the carrier. All four are **finite** and share one metric `d`;
+they are the quantities `Δ_SBT` minimizes (eq. 1) and, via §1, the energy form of the adequacy residual.
+
+> **Computability caveat (LOCKED — `plan/CONTRACT_HARDENING_ADDENDUM.md` §3).** `δ_p` (macro form) and
+> the gluing/`PPD` residuals are computed *directly* from the `03` data products. `RM_p` (and the micro
+> form of `δ_p`) additionally require a **declared** micro/heterogeneous state and its evolution `T`,
+> which is **not observed** in DESI/SN/WL/CMB data: in **E0** these are the synthetic generator (so the
+> *true* `RM_p` is computed); on **real data** they are *estimated* through a declared forward model /
+> posterior-predictive proxy `\widehat{RM}_p`. The theoretical identities (`RM_p=0 ⇔ commutation`, etc.)
+> are `[T]`; numerical values on real data are `[E]`. "Computable from data" therefore means
+> *estimable via the declared model*, not *read off observations*.
 
 ### 4.0 The metric `d` (LOCKED)
 
@@ -348,10 +358,12 @@ form of the adequacy residual.
 > RM_p(x) = d( E_{θ,p}(T(x)),  T_θ(E_{θ,p}(x)) )                                                    (12)
 > ```
 > (`idea.md` §4; `Dark Energy` precursor eq:route_mismatch_def, eq. `RM(x)=d_X(Ê(Tx),T(Êx))`).
-> **Computed from data:** evolve the micro/heterogeneous state one step then package, versus package
-> then evolve the FLRW macro state; whitened distance of the two readouts. **Interpretation:** the
+> **Computed from data (via the declared forward/microstate model — §4 caveat / ADDENDUM §3; E0 has the
+> true microstate, real data uses the estimator `\widehat{RM}_p`, never an observed microstate):** evolve
+> the micro/heterogeneous state one step then package, versus package then evolve the FLRW macro state;
+> whitened distance of the two readouts. **Interpretation:** the
 > central diagnostic. `RM_p > 0` ⇔ a closed homogeneous macro theory does **not** descend ⇔ a rewrite
-> `R[Δ]` is forced (P1/F2). Precursor result to reproduce in E0: `RM ≈ 0` in the linear control regime,
+> `R[Δ]` is forced (P1's extension of F2). Precursor result to reproduce in E0: `RM ≈ 0` in the linear control regime,
 > `RM > 0` once nonlinearity is on (`heterogeneous patches ⇒ Q_peak ≈ 1.74`, `Ω_Λ ≈ 0.60` mis-fit).
 > **Grade:** commutation ⇒ `RM_p = 0` is `[T]` (Lean: `SBTCosmo.RouteMismatch`, reusing the precursor
 > exact-commutation lemma). Numerical `RM_p` is `[E]`.
@@ -521,15 +533,20 @@ residual obligation explicitly statused.** (`plan/00-overview` §5.)
 > these two; the operator rewrite is the cosmology extension below.)
 >
 > **Instantiation.** Set `q := U_θ` (FLRW completion as the quotient map onto homogeneous descriptors),
-> `F := f_p ∘ T` (lensed evolution), `r :=` the observable readout. Then `splitObs(q,F,r) ≠ ∅ ⇔
-> RM_p > 0`, and F2's two repairs are precisely {source refinement, minimal target coarsening `c_F`}.
+> `F := f_p ∘ T` (lensed evolution), `r :=` the observable readout. Then **unconditionally** `RM_p > 0 ⇒
+> splitObs(q,F,r) ≠ ∅` (positive whitened distance ⇒ the two readouts differ ⇒ the split-pair obstruction
+> is nonempty). The **converse** holds under the **faithfulness hypothesis (H-faithful)**: `r` is faithful
+> and the audit metric `d` is nondegenerate on the legal quotient (§4.0), so the obstruction cannot hide in
+> `ker d`. Under (H-faithful) the biconditional `splitObs(q,F,r) ≠ ∅ ⇔ RM_p > 0` holds, and F2's two repairs
+> are precisely {source refinement, minimal target coarsening `c_F`}.
 > The cosmology extension adds the **operator-rewrite chart** `R[Ξ]`: the `Ξ` rewrite is that branch,
 > and DESI's `w₀w_a`, IDE `Q`, and `(μ,Σ)` are *alternative* operator-rewrite charts of the same
 > nonempty obstruction (shadow rows 3, 8, 9).
 >
 > **Proof strategy.** The F2 part (two-repair normal form + minimality of the target repair) is direct
-> reuse of `thm:F2`: instantiate `(q,F,r)` as above; the split-pair obstruction nonemptiness ⇔
-> route-mismatch positivity is a definitional unfolding (eq. 12); the minimality clause is F2's
+> reuse of `thm:F2`: instantiate `(q,F,r)` as above; under (H-faithful) the split-pair obstruction
+> nonemptiness ⇔ route-mismatch positivity is a definitional unfolding (eq. 12) — without faithfulness
+> only the forward direction `RM_p > 0 ⇒ splitObs ≠ ∅` is unconditional; the minimality clause is F2's
 > verbatim. The operator-rewrite chart is the cosmology extension layered on top of F2.
 > **Lean target:** `SBTCosmo.DescentRepair` importing `Transport.DescentRepair` as an opacity-guarded
 > anchor. **Grade `[T]` — full proof feasible.**
@@ -601,7 +618,8 @@ residual obligation explicitly statused.** (`plan/00-overview` §5.)
 > can induce an effective equation of state `w_eff(z)` that **crosses −1** (the phantom divide) with
 > **no growing mode** — a *stable finite effective readout*. The deliverable is exactly this finite-witness
 > stability property: phantom crossing is a property of the *effective readout*, realized by an operator
-> that is positive and spectrally stable on the audit-energy inner product (`idea.md` §4 P4, §6 E3,
+> that is **native-currency-positive** (`ρ_eff>0`), **adequacy-positive** (`sym_C(R)⪰0`), **and**,
+> *separately*, **spectrally stable** (no growing mode) — three distinct certificates, not one (`ADDENDUM` §4) (`idea.md` §4 P4, §6 E3,
 > §7 phantom-crossing).
 >
 > **Scope boundary (LOCKED, REGISTRY §5).** The stronger claim — that there is **no negative-kinetic
@@ -621,15 +639,24 @@ residual obligation explicitly statused.** (`plan/00-overview` §5.)
 > **Foundations-IV grounding.** No single named F-law; uses the **operator-rewrite repair** (the
 > cosmology/P1 extension of F2, §6.1) plus an **eigenvalue/stability audit** in the membrane discipline
 > of `Emergence IS the Needle Killer` (positive native currency, layer-dissolving endpoint). The
-> stability criterion is operationalized as spectral positivity (no growing mode), **not** a Lagrangian
-> kinetic-sign analysis (which is out of scope, REGISTRY §5).
+> stability criterion is operationalized as spectral **stability** (no growing mode, `Re λ ≤ 0`), **not** a
+> Lagrangian kinetic-sign analysis (which is out of scope, REGISTRY §5).
 >
 > **Proof strategy (finite, theorem-grade).**
 > 1. Construct the finite macro-evolution map `M_Ξ` on the sampled macro state including `R[Ξ]`.
-> 2. **Stable-readout criterion:** all eigenvalues of the linearized Jacobian `J = ∂M_Ξ/∂(state)` have
->    `Re λ ≤ 0` (stable, **no growing mode**). Equivalently the rewrite is a *positive* operator on the
->    audit-energy inner product (`Adequacy_Residuals` positivity; the membrane positivity of
->    `Needle Killer`). This is a finite spectral fact, **not** a claim about kinetic-metric signs.
+> 2. **P4 requires THREE distinct certificates — pairwise NOT equivalent (`plan/CONTRACT_HARDENING_ADDENDUM.md` §4):**
+>    (a) **P-dens — native-currency positivity** — `ρ_eff(z) > 0` on the grid and the audit energy `C = Σ⁻¹ ≻ 0`
+>    (`Adequacy_Residuals` / `Needle Killer` membrane positivity);
+>    (a′) **P-adeq — rewrite-operator/adequacy positivity** — `sym_C(R[Ξ]) ⪰ 0` ↔ Schur `Ξ_C ⪰ 0` (§1,
+>    `G-FORMAL-1`); a *positivity*, NOT a stability, certificate; and
+>    (b) **S-stab — dynamical stability / no growing mode** — for the generator `J = ∂M_Ξ/∂(state)` of the
+>    *continuous* macro-evolution, `Re λ ≤ 0` ∀ `λ ∈ spec(J)` (for a discrete one-step map: spectral radius `≤ 1`).
+>    S-stab may be **certified** by a **Lyapunov** condition — a positive-definite audit-energy form
+>    `C` whose dissipation `J^*C + CJ ⪯ 0` (`J^*` = conjugate-transpose adjoint; audit energy non-increasing)
+>    ⇒ `Re λ ≤ 0`. **Positivity (P-dens, P-adeq) is NOT stability (S-stab):** a `C`-PSD operator has *growing*
+>    `C`-energy; it is `C`-*dissipativity* that yields no growing mode. P4 asserts the **conjunction**
+>    P-dens ∧ P-adeq ∧ S-stab (`CONTRACT_HARDENING_ADDENDUM.md` §4) — never their equivalence. This is a
+>    finite spectral/positivity fact, **not** a claim about kinetic-metric signs.
 > 3. **Crossing:** show `w_eff(z)` from (19) crosses −1 at the DESI-preferred `z_c` for the fitted `Ξ`.
 > 4. Conclude: a positive/stable operator yields `w_eff < −1` over an interval with no growing mode —
 >    *finite witness* of a stable effective readout, hence theorem-grade for the constructed instance.
@@ -782,7 +809,7 @@ and may not be relaxed after seeing results; a relaxation is a logged statused d
 |---|---|---|---|
 | `G-FORMAL-1` | Schur identity sanity | `Ξ_C(D∣L) ⪰ 0` (Loewner): min eigenvalue `≥ −10⁻⁸` | §1.1 |
 | `G-FORMAL-2` | Exact-adequacy ⇒ no rewrite | when synthetic data is FLRW-exact, `Ξ_C ≈ 0` (Frobenius `< 10⁻⁶`) and the fit selects `Δ_SBT = 0` (all `|a_i| < 10⁻³`) | §1.2(2) |
-| `G-FORMAL-3` | Per-sector reconciliation (`[C]`, numerical) | for each sector `p` (§1.2′), audit cost `J_p(Δ)` equals the Schur energy of the residual readout to `< 1%`; report `‖Ξ_C^{(p)} − audit_cost_p‖` | §1.2(1), §1.2′ |
+| `G-FORMAL-3` | Per-sector reconciliation (`[C]`, numerical) | for each sector `p` (§1.2′; bases/dimensions/nuisance vectors frozen in `CONTRACT_HARDENING_ADDENDUM.md` §2), audit cost `J_p(Δ)` and the Schur energy of the residual readout agree to a stated tolerance (**target `< 1%`**); report `‖Ξ_C^{(p)} − audit_cost_p‖` and the achieved tolerance. A sector that cannot reach the target is **not** a program fail — recorded at the achieved tolerance and statused `budgeted` (§8) | §1.2(1), §1.2′ |
 
 ### 9.2 Ansatz / kernel gates (§3)
 
@@ -815,10 +842,10 @@ and may not be relaxed after seeing results; a relaxation is a logged statused d
 
 | Gate ID | Gate | Threshold | Tie to |
 |---|---|---|---|
-| `G-FORMAL-11` | P1 (`[T]`) | `SBTCosmo.DescentRepair` compiles under `lean --check`; `splitObs ≠ ∅ ⇔ RM_p > 0` verified | §6.1 |
+| `G-FORMAL-11` | P1 (`[T]`) | `SBTCosmo.DescentRepair` compiles under `lean --check`; the unconditional `RM_p>0 ⇒ splitObs ≠ ∅` and, under **(H-faithful)** (faithful readout + nondegenerate legal-quotient metric), the biconditional `splitObs ≠ ∅ ⇔ RM_p > 0` verified | §6.1 |
 | `G-FORMAL-12` | P2 (`[C]`) | `SBTCosmo.NoOverread` scaffold compiles; numerical witness separates an `accessQ` fiber | §6.2 |
 | `G-FORMAL-13` | P3 (`[T]`/`[C]`) | `SBTCosmo.LocalGlobal` compiles; the fitted `η(z)` carries exactly one of the four F4 statuses | §6.3 |
-| `G-FORMAL-14` | P4 (`[T]`, stable readout) | `SBTCosmo.PhantomStableReadout` compiles; `max_λ Re λ ≤ 0` (no growing mode) AND `∃ z, w_eff(z) < −1`; `z_c` stable `< 0.1` under 1σ. (No-negative-kinetic-DOF / ghost-absence claim is `out_of_scope`, REGISTRY §5.) | §6.4, §7 |
+| `G-FORMAL-14` | P4 (`[T]`, stable readout) | `SBTCosmo.PhantomStableReadout` compiles; **all three** certificates (`ADDENDUM` §4, pairwise not equivalent): **P-dens** native-currency positivity `ρ_eff>0`; **P-adeq** rewrite-operator/adequacy positivity `sym_C(R)⪰0` ↔ `Ξ_C⪰0` (`G-FORMAL-1`); **S-stab** `max_λ Re λ(J) ≤ 0` (no growing mode, *continuous* generator `J`; Gershgorin/Lyapunov finite certificate); AND `∃ z, w_eff(z) < −1`; `z_c` stable `< 0.1` under 1σ. (No-negative-kinetic-DOF / ghost-absence claim is `out_of_scope`, REGISTRY §5.) | §6.4, §7 |
 | `G-FORMAL-15` | F9 / No-Unstatused | `SBTCosmo.AORStatus` compiles; **zero `unstatused` entries** in the committed AOR Status Table | §6.4, §8 |
 | `G-FORMAL-16` | Carrier status | reach **CascadeStableAOR** (finite cascade discharge, base statuses only) at phase end | §8.4 |
 

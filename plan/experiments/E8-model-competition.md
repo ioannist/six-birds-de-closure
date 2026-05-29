@@ -116,8 +116,8 @@ parameters beyond ΛCDM. The "owner" column names the upstream experiment that f
 | **`M_w`** | **w₀w_aCDM (CPL)** | `w(a)=w₀+w_a(1−a)`, PPF fluid | +2 | the **redshift chart** `w_a` (DESI's preferred dynamical-DE form) | E1 (CPL, arXiv:2503.14738) | — |
 | **`M_η`** | **CDDR-only** | `η(z)=D_L/[(1+z)²D_A] ≠ 1` (`η₀`[,`η₁`] deformation), `w≡−1` | +1…2 | the **gluing chart** `η_CDDR` (SN–BAO inconsistency, Afroz–Mukherjee) | E2 (`M₂`, arXiv:2504.16868) | F4 |
 | **`M_Q`** | **IDE** | dark-sector transfer `Q(z)` (e.g. `Q = ξ H ρ_DE`, sign-switching variant allowed) | +1…2 | the **accounting/continuity chart** `Q_IDE` | E6 (arXiv:2503.23225) | P6 |
-| **`M_μΣ`** | **MG** | scale-/time-dep `(μ₀, Σ₀)` modified growth + lensing | +2 | the **operator-rewrite chart** `μ/Σ` (modified gravity) | E7 (arXiv:2411.12026 / 2411.12022) | F2 (alt repair) |
-| **`M_Ξ`** | **SBT-Ξ** | the single low-rank `Ξ_cosmo(z,ℓ,p)` ansatz, `(a₀,a₁,a₂)` (+ optional `β`), shared kernels | +3 (≤ +5–7 full) | **all charts at once** — the unification claim | E1–E7 (`plan/04` §3.1; **reused, not re-tuned**) | F2 (rewrite) + F4 + F11 + P6 |
+| **`M_μΣ`** | **MG** | scale-/time-dep `(μ₀, Σ₀)` modified growth + lensing | +2 | the **operator-rewrite chart** `μ/Σ` (modified gravity) | E7 (arXiv:2411.12026 / 2411.12022) | P1 op-rewrite ext. of F2 (alt) |
+| **`M_Ξ`** | **SBT-Ξ** | the single low-rank `Ξ_cosmo(z,ℓ,p)` ansatz, `(a₀,a₁,a₂)` (+ optional `β`), shared kernels | +3 (≤ +5–7 full) | **all charts at once** — the unification claim | E1–E7 (`plan/04` §3.1; **reused, not re-tuned**) | P1 op-rewrite ext. of F2 + F4 + F11 + P6 |
 
 > **SBT-Ξ is the only contender that must serve all six rows simultaneously.** Each of `M_w, M_η, M_Q,
 > M_μΣ` is a *specialist* tuned to one anomaly. `M_Ξ` uses **one** residual with **probe-shared shapes**
@@ -281,11 +281,11 @@ keys, loaders, fallbacks, and integrity gates are locked in `plan/03`.
 
 | Block | Dataset key(s) | Release | Product | Enters legs | Owner |
 |---|---|---|---|---|---|
-| **CMB** | `PLANCK_2018` (+ optional `ACT_DR6`/`SPT_3G` cross-check) | 1807.06209 / 2509.02945 / 2601.16277 | TT/TE/EE + lensing | all; `L1`,`L4`,`L5` train | E1 |
+| **CMB** | `PLANCK_2018` (+ optional `ACT_DR6`/`SPT_3G` cross-check) | 1807.06209 / 2509.02945 / 2506.20707 | TT/TE/EE + lensing | all; `L1`,`L4`,`L5` train | E1 |
 | **BAO** | `DESI_DR2_BAO` | 2503.14738 | `D_M/r_d`, `D_H/r_d` | all; `L1`,`L3`,`L4`,`L5` | E1 |
 | **SN** | `PANTHEON_PLUS` (primary); `UNION3`, `DES_SN5YR` (variants) | 2202.04077 / 2401.06956 / Zenodo:13827844 | `μ(z)` + full cov | `L1` held-out; `L2`,`L3` train | E1/E2 |
 | **WL / 3×2pt** | `DES_Y6` (prime); `KIDS_LEGACY`, `HSC_Y3` | 2601.14559 / 2503.19441 / 2511.18134 | shear (+clustering) `S₈` | `L2` held-out; `L3` train | E5 |
-| **RSD** | `DESI_RSD_FS` | 2411.12026 | `fσ₈(z)` 6–8 bins | `L2` held-out; `L3` train | E5 |
+| **RSD** | `DESI_RSD_FS` | DR2 compressed `fσ₈` (DR1 FS method 2411.12026) | `fσ₈(z)` 6–8 bins | `L2` held-out; `L3` train | E5 |
 | **CMB lensing** | `CMB_LENSING` | 2509.02945 | `C_ℓ^{κκ}` | growth cross-check | E5 |
 | **Local ladder** | `SH0ES`, `CCHP_TRGB_JAGB` (TRGB/JAGB), `TDCOSMO`, `SIRENS_GW170817` | 2509.01667 / 2408.06153 / 2110.00517 / 1709.05895 | route-`H₀` posteriors | `L4`,`L5` | E4 |
 | **Inverse ladder** | derived in E1 (CMB+BAO→`H₀`) | — | `H₀^inv` posterior | `L4` held-out | E1/E4 |
@@ -514,7 +514,7 @@ the verdict is recorded as "SBT-Ξ in-sample only — out-of-sample FAIL (std 3)
 |---|---|---|
 | `G-E8-RANK` | SBT-Ξ uses the **single** coherence-checked `Ξ_cosmo`, `≤ +3` (minimal) / `≤ +5–7` (full) extra params; **no per-probe free `Ξ_p`**; kernels probe-shared and linear (`<1%`) | per-probe `Ξ_p`; `> +4` params with no BIC gain; kernel non-linearity `>1%` | `plan/04` §3.1, §9.2; `plan/00` §6.2 std 2 |
 | `G-E8-FROZEN` | SBT-Ξ form/kernels read from coherence ledger, **not re-tuned**; only amplitudes + cosmology/nuisances sampled | E8 introduces new `Ξ` freedom / new physics / new data | §0 hard constraint; `plan/00` §2 |
-| `G-E8-STABLEREADOUT` | the SBT-Ξ phantom-crossing stability column carries E3's stable-readout certificate (`max Re λ ≤ 0`) | SBT-Ξ's `w_eff` crossing requires a ghost (E3 cert absent/failed) | E3; `plan/04` §6.4 / §9.5 P4 |
+| `G-E8-STABLEREADOUT` | the SBT-Ξ phantom-crossing stability column carries E3's full stable-readout certificate (P-dens ∧ P-adeq ∧ S-stab); at E8 the **no-growing-mode (S-stab)** component `max Re λ ≤ 0` is re-verified (P-dens/P-adeq established at E3, REGISTRY §11.2) | SBT-Ξ's `w_eff` crossing requires a ghost (E3 cert absent/failed) | E3; `plan/04` §6.4 / §9.5 P4 |
 
 ### 7.3 The decisive verdict gate (std 3 — BINDING)
 
@@ -633,8 +633,8 @@ E8 (and thus the **program**) records a **FAIL verdict** (each a *valid, statuse
 ### 8.5 arXiv anchors
 
 DESI DR2 BAO 2503.14738; Planck 2018 1807.06209; Pantheon+ 2202.04077; Union3 2401.06956; DES-SN5YR
-Zenodo:13827844; DES Y6 2601.14559; KiDS-Legacy 2503.19441; HSC Y3 2511.18134; DESI full-shape RSD/MG
-2411.12026 / 2411.12022; ACT DR6 / CMB-lensing 2509.02945; SPT-3G D1 2601.16277; SH0ES 2509.01667; CCHP_TRGB_JAGB
+Zenodo:13827844; DES Y6 2601.14559; KiDS-Legacy 2503.19441; HSC Y3 2511.18134; DESI DR1 full-shape RSD/MG
+2411.12026 / 2411.12022; ACT DR6 / CMB-lensing 2509.02945; SPT-3G D1 2506.20707; SH0ES 2509.01667; CCHP_TRGB_JAGB
 2408.06153; TDCOSMO 2110.00517; GW170817 1709.05895; CDDR critique (Afroz–Mukherjee) 2504.16868; IDE
 2503.23225.
 

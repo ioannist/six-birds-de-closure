@@ -277,7 +277,7 @@ Every fallback below resolves to one AOR base status from `plan/00-overview.md` 
 **Mitigation (locked in `plan/experiments/E3`):**
 1. **Keeley false-positive control** (G-E3-FALSEPOS): the data crossing significance must exceed the non-crossing-mock false-positive band (~3.2% reference).
 2. **Dinda global-Bayesian control** (G-E3-BAYES): the crossing preference must persist under global model comparison, not in-sample Δχ² alone.
-3. **Stable-readout certificate** (density positivity, operator PSD, spectral `max Re λ ≤ 0`) is the *definition* of the pass, with a Lean finite witness (T5).
+3. **P4 pass = three certificates** (`CONTRACT_HARDENING_ADDENDUM.md` §4): P-dens (density positivity `ρ_eff>0`) ∧ P-adeq (operator/adequacy PSD, `sym(R)⪰0↔Ξ_C⪰0`) ∧ S-stab (no-growing-mode, `max Re λ(J)≤0`, *continuous* generator), with a Lean finite witness (T5).
 
 **Concrete fallback.** If the data-preferred crossing cannot be realized by any positive, stable rewrite operator (the stable-readout certificate fails on Leg B), status the result `blocked` ("data require a ghost / P4 fails on data") — an **honest negative** that is a valid scientific result (`plan/experiments/E3`, `plan/00` §8). Leg A's *constructed* finite stable-readout witness still stands as the P4 `[T]` existence proof; the program reports that a stable-readout crossing is *possible* even if this dataset does not select it.
 

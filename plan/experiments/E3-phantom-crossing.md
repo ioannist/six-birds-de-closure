@@ -114,9 +114,10 @@ is real:
 P4 has **no single named Foundations-IV law** (`plan/04` §6.4, proposition table). It is built from
 two corpus ingredients:
 
-- **Operator-rewrite repair (P1/F2).** The crossing is induced by the operator-rewrite branch of the
-  Descent–Repair Normal Form (`Foundations_IV` `thm:F2`; `plan/04` §6.1): `R[Δ_SBT]` is an *admissible*
-  macro-operator correction (`plan/04` eq. 5), not a new fundamental field. (The DESI `w₀wₐ`, IDE `Q`,
+- **Operator-rewrite repair (P1's cosmology extension of F2 — NOT a third F2 repair).** The crossing is
+  induced by the **operator-rewrite chart**, the P1/cosmology *extension* of the Descent–Repair Normal Form
+  (`Foundations_IV` `thm:F2` itself names only source refinement + minimal target coarsening; `plan/04`
+  §6.1): `R[Δ_SBT]` is an *admissible* macro-operator correction (`plan/04` eq. 5), not a new fundamental field. (The DESI `w₀wₐ`, IDE `Q`,
   and `(μ,Σ)` are alternative *charts* of the same repair — shadow rows 3, 8, 9.)
 - **Spectral/positivity (membrane) discipline of `Emergence IS the Needle Killer`.** The
   stable-readout criterion is operationalized as **spectral positivity / stability**, *not* a
@@ -263,19 +264,21 @@ framework (REGISTRY §5).
 > `R[Ξ]` is a **positive operator** on the audit-energy inner product `⟨·, C·⟩` with `C = Σ^{-1}`
 > (`plan/04` §4.0, §7): it adds **no negative-norm direction**. Two concrete, reported checks:
 > - **Density positivity:** `ρ_eff(z) > 0` for all grid `z` (report `min_z ρ_eff(z)`; require `> 0`).
-> - **Operator positivity:** the symmetrized rewrite `½(R + Rᵀ)` in `C`-coordinates is PSD — report its
->   **minimum eigenvalue** `λ_min^{sym}`; require `≥ 0` (to numerical tolerance `≥ −10⁻⁸`,
->   matching the Schur PSD sanity of `plan/04` §9.1).
+> - **Operator/adequacy positivity (P-adeq — a *positivity*, NOT a stability, certificate; ADDENDUM §4):**
+>   the symmetrized rewrite `sym_C(R[Ξ]) = ½(R + R^†)` in `C`-coordinates is PSD (↔ Schur `Ξ_C ⪰ 0`,
+>   `plan/04` §9.1 `G-FORMAL-1`) — report its **minimum eigenvalue** `λ_min^{sym}`; require `≥ 0`
+>   (tolerance `≥ −10⁻⁸`). This says the rewrite adds no negative audit-energy direction; it does **not**
+>   by itself imply dynamical stability (that is §4.2).
 
 ### 4.2 (ii) Spectral stability (no growing mode)
 
-> Linearize the finite discrete macro-evolution map `M_Ξ: (a, ρ_eff) ↦ (a', ρ_eff')` (one step of the
-> deterministic forward map) about the trajectory; compute the Jacobian `J(z) = ∂M_Ξ/∂(state)` at each
-> grid point and its eigenvalue spectrum `{λ_j(z)}`. **No-growing-mode witness:** require `Re(λ_j) ≤ 0`
-> for all `j`, all `z` (no exponentially growing mode); equivalently the discrete map is
-> non-expanding in the audited norm. **Report `max_z max_j Re(λ_j(z))`; require `≤ 0`** to numerical
-> tolerance. This is the finite stability statement; it does **not** by itself establish the sign of a
-> kinetic term (that would require a Lagrangian and is `out_of_scope`, REGISTRY §5).
+> Linearize the **continuous macro-evolution generator** `J(z) = ∂f/∂(state)` of `dstate/d(ln a)=f(a,ρ_eff)`
+> about the trajectory; compute its eigenvalue spectrum `{λ_j(z)}`. **No-growing-mode witness (S-stab):**
+> require `Re(λ_j) ≤ 0` for all `j`, all `z` (no exponentially growing mode); equivalently, for the
+> discretized one-step integrator, spectral radius `≤ 1`, or a Lyapunov `J^*C+CJ ⪯ 0`. **Report
+> `max_z max_j Re(λ_j(z))`; require `≤ 0`** to numerical tolerance. This is the finite **stability**
+> statement (distinct from the §4.1 positivity certificates); it does **not** establish the sign of a
+> kinetic term (that requires a Lagrangian; `out_of_scope`, REGISTRY §5).
 
 ### 4.3 Optional sound-speed-style proxy (recorded, not binding)
 
@@ -512,7 +515,7 @@ Zero `unstatused` entries at phase end (F9, `plan/04` §6.4, §9.5).
 
 | Gate | PASS (all required) | FAIL |
 |---|---|---|
-| **`G-E3-CONSTRUCT`** | The leg-A operator satisfies **all four**: (1) **crossing:** `w_eff(z) < −1` over an interval and `> −1` elsewhere (genuine crossing at `z_c ∈ [0,1.5]`); (2) **density positivity:** `min_z ρ_eff(z) > 0`; (3) **operator positivity:** `λ_min^{sym} ≥ −10⁻⁸`; (4) **spectral stability:** `max_z max_j Re(λ_j(z)) ≤ +10⁻⁸` (no growing mode). | any of the four fails ⇒ the existence claim of `idea.md` §6 Exp3 is **not** demonstrated |
+| **`G-E3-CONSTRUCT`** | The leg-A operator satisfies **all four** — two *positivity* (2,3) and one *stability* (4), which are **distinct** certificates (ADDENDUM §4): (1) **crossing:** `w_eff(z) < −1` over an interval and `> −1` elsewhere (genuine crossing at `z_c ∈ [0,1.5]`); (2) **density positivity (P-dens):** `min_z ρ_eff(z) > 0`; (3) **operator/adequacy positivity (P-adeq — NOT stability, ↔ `Ξ_C⪰0`):** `λ_min^{sym} ≥ −10⁻⁸`; (4) **dynamical stability (S-stab, continuous generator `J`):** `max_z max_j Re(λ_j(z)) ≤ +10⁻⁸` (no growing mode). | any of the four fails ⇒ the existence claim of `idea.md` §6 Exp3 is **not** demonstrated |
 | **`G-E3-LEAN`** | `SbtCosmo.PhantomStableReadout.phantom_stable_readout_witness` compiles green under `lean --check` (no `sorry`/`axiom`/`opaque`); the `#eval` witness `w_eff` profile matches the Python leg-A `z_c`/sign to the witness node | Lean target does not compile or the witness disagrees with Python |
 
 > **`G-E3-CONSTRUCT` is the gate that satisfies `idea.md` §6 Exp3.** Passing it (with `G-E3-LEAN`) is
@@ -597,7 +600,7 @@ E3 (as the P4 program leg) **fails the program phase** if any of:
   `w_eff` readout, "Λ not ruled out" nonclaim, route-mismatch precursor); `Emergence_IS_the_Needle_
   Killer` (the positive-native-currency / stable-operator membrane discipline = the stable-readout
   certificate basis); `Adequacy_Residuals` (positivity / PSD of the audit-energy form `C=Σ^{-1}`);
-  `Foundations_IV` `thm:F2` (Descent–Repair: the rewrite is the admissible operator-rewrite repair) +
+  `Foundations_IV` `thm:F2` (Descent–Repair: F2 names source refinement + minimal target coarsening; the operator rewrite is P1's cosmology extension, NOT an F2 repair) +
   `thm:F9` (No Unstatused Residual); `Audited_Operational_Realisability` (the status catalogue,
   `blocked` for a growing-mode rewrite, the `RefStableAOR` carrier grade); `Six_Birds_for_Neutrino_
   Mass` (the cross-lens audit template, here applied to SN-compilation swapping as a packaging signal).

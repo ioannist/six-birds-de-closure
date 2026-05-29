@@ -5,7 +5,7 @@
 > `f(R)` constraints all **consistent with GR** while the *background* `w₀w_a` preference persists)
 > to demonstrate the central E7 thesis: **the DESI dynamical-dark-energy anomaly lives in the
 > closure / completion layer, not in local gravitational law.** SBT explains the `w(z)`-like signal
-> as the operator-rewrite chart `R[Ξ_cosmo]` (P1/F2) **without requiring nonlocal modified gravity**,
+> as the operator-rewrite chart `R[Ξ_cosmo]` (P1's extension of F2) **without requiring nonlocal modified gravity**,
 > while still admitting modified gravity (`(μ,Σ)`, `f(R)`, scalar-tensor) as a **legitimate
 > alternative repair chart** of the *same* failed FLRW descent — accepted only when *its own* audits
 > (growth out-of-sample, no instability, coherence with the same `Ξ`) pass. The make-or-break logic:
@@ -17,7 +17,7 @@
 > **Read-order / consistency.** This file implements *one* experiment of the program defined in
 > `plan/00-overview.md` (§3 shadow map **row 9** — the MG / descent-repair-choice chart; §4 E7 row;
 > §6.3 E7 headline gate; §6.4 coherence gate; §7 AOR) and `../GROUNDING_BRIEF.md` (datasets §I.D/§I.E
-> — DESI DR2 full-shape RSD/MG; growth stack §II.A — CCL/`pyccl`; determinism §III; AOR §VI). Every
+> — DESI DR2 RSD/MG (compressed `fσ₈` primary; DR1 full-shape = method control); growth stack §II.A — CCL/`pyccl`; determinism §III; AOR §VI). Every
 > formal object used here is *locked* in `plan/04-formal-foundations.md`: the carrier and four residuals
 > (§4), **P1 ↔ F2 Descent-Repair Normal Form** — F2's **two** canonical repairs (source refinement,
 > minimal target coarsening) **plus** the cosmology-specific **operator-rewrite** chart that is P1's
@@ -101,7 +101,7 @@ F := f_p ∘ T    (lensed evolution)
 r := observable readout (distances, fσ₈, C_ℓ)
 ```
 
-Then `splitObs(q, F, r) ≠ ∅ ⇔ RM_p > 0` (the route-mismatch positivity that E0/E1 establish). **F2's
+Then `RM_p > 0 ⇒ splitObs(q, F, r) ≠ ∅` unconditionally, and the converse (hence `splitObs ≠ ∅ ⇔ RM_p > 0`) under **(H-faithful)** — faithful readout + nondegenerate legal-quotient metric (`plan/04` §6.1; the route-mismatch positivity that E0/E1 establish). **F2's
 normal form names exactly two canonical repairs**: (i) **source refinement** and (ii) the **minimal
 target coarsening** `c_F: R → R_F`. The **operator rewrite** `R[Ξ_cosmo]` is **not** part of F2's
 statement — it is the **cosmology-specific extension of F2** that P1 adds (the "operator-rewrite repair
@@ -199,7 +199,7 @@ that favors SBT *and* the scalar-tensor reconstructions that keep MG alive:
 
 ## 2. The models (LOCKED)
 
-E7 fits a model ladder to the **same** DESI full-shape (geometry + growth) data with a physical CCL
+E7 fits a model ladder to the **same** DESI RSD data (DR2 compressed `fσ₈` primary; DR1 full-shape method; geometry + growth) with a physical CCL
 forward model, sharing background + growth parameters with E1's verified geometry fit and E5's verified
 growth baseline:
 
@@ -207,7 +207,7 @@ growth baseline:
 |---|---|---|---|---|---|---|
 | **`M₀`** (null) | ΛCDM (`w=−1`) | GR (`μ=Σ=1`) | none | 0 | a fundamental Λ + GR | baseline |
 | **`M_w`** (DESI background) | `w₀w_a` (CPL) | GR (`μ=Σ=1`) | none | `+2` (`w₀,w_a`) | the DESI dynamical-DE background preference, GR growth | the signal to be explained |
-| **`M_Ξ`** (SBT operator-rewrite chart) | ΛCDM + `R[Ξ]` (background rewrite via `K_M`) | GR (`μ=Σ=1`), growth via `K_G`/`K_S` from the **same** `Ξ` | term-0/term-2 `Ξ` from E1 (**`a₀` pinned**, `a₂` allowed) | `+1…2` (inherited `a₀`; `a₂`) | SBT: anomaly is a completion rewrite; growth stays GR | operator rewrite (P1/F2) |
+| **`M_Ξ`** (SBT operator-rewrite chart) | ΛCDM + `R[Ξ]` (background rewrite via `K_M`) | GR (`μ=Σ=1`), growth via `K_G`/`K_S` from the **same** `Ξ` | term-0/term-2 `Ξ` from E1 (**`a₀` pinned**, `a₂` allowed) | `+1…2` (inherited `a₀`; `a₂`) | SBT: anomaly is a completion rewrite; growth stays GR | operator rewrite (P1 ext. of F2) |
 | **`M_μΣ`** (MG repair, EFT) | ΛCDM (or `w₀w_a`) | `(μ₀,Σ₀)` phenomenological MG (CCL `μΣ` parameterization) | none (MG *is* the repair) | `+2` (`μ₀,Σ₀`) [+2 if `w₀w_a` background] | the MG operator-rewrite-on-growth chart | operator rewrite (alt; P1 ext. of F2) |
 | **`M_fR`** (MG repair, `f(R)`) | ΛCDM | Hu–Sawicki `f(R)` scale-dependent `(μ(k,z),Σ(k,z))` | the `f_R0` rewrite | `+1` (`log₁₀\|f_R0\|`) | a specific MG model; strongly bounded by DESI | operator rewrite (alt; P1 ext. of F2) |
 | **`M_ST`** (MG repair, scalar-tensor) | reconstructed `w_eff(z)` | reconstructed `(μ,Σ)(z)` | scalar-tensor reconstruction | `+k` (reconstruction basis) | the "MG is alive" comparator (raises `H₀`, allows phantom crossing) | operator rewrite (alt; P1 ext. of F2) |
@@ -244,7 +244,7 @@ growth baseline:
 
 | Probe | Dataset | Release | Vector | Physical CCL `(μ,Σ)`-growth backend? | Loader (`plan/03`) | Role | Fallback (statused) |
 |---|---|---|---|---|---|---|---|
-| **Full-shape RSD + MG (PRIME)** | **DESI DR2 full-shape** | arXiv:**2411.12026** (DR1 FS methodology) + DR2 FS tables | `fσ₈(z)` 6–8 bins z∈[0.1,1.5] + `(D_M/r_d, D_H/r_d)` per bin; mock cov; **published `(μ₀,Σ₀)` MG constraints** (`μ₀=0.04±0.22, Σ₀=0.044±0.047`) | **YES** — `desilike` full-shape + CCL `μΣ` forward model | `load_desi_rsd_fs(compressed=…)` | **the central E7 probe**: growth gravity `(μ,Σ)` *and* the background `w(z)` signal | compressed `(fσ₈, D_M/r_d, D_H/r_d)` Gaussian (loses full-shape `P(k)`) → **`budgeted`** |
+| **RSD + MG (PRIME)** | **DR2 compressed `fσ₈` (default); DR1 full-shape (method)** | DR2 compressed `(fσ₈, D_M/r_d, D_H/r_d)` summary; arXiv:**2411.12026** (DESI **DR1** FS/MG **methodology** — source of the `(μ₀,Σ₀)` reproduction targets, **not** a DR2 data product); an optional public full-shape likelihood only if a `desilike` one exists | `fσ₈(z)` 6–8 bins z∈[0.1,1.5] + `(D_M/r_d, D_H/r_d)` per bin; mock cov; **published `(μ₀,Σ₀)` MG constraints** (`μ₀=0.04±0.22, Σ₀=0.044±0.047`) | **YES** — DR2 compressed `(fσ₈,D_M/r_d,D_H/r_d)` + CCL `μΣ` forward model (DR1 full-shape as control) | `load_desi_rsd_fs(compressed=True)` | **the central E7 probe**: growth gravity `(μ,Σ)` *and* the background `w(z)` signal | the compressed leg **is** primary when no public DR2 FS likelihood (loses full-shape `P(k)`) → **`budgeted`** |
 | **BAO geometry (background)** | DESI DR2 BAO | arXiv:2503.14738 | `D_M/r_d`, `D_H/r_d` 7 tracer bins | YES (background; CCL/CLASS) | `load_desi_dr2_bao()` | the background `w(z)`-like signal `M_Ξ` must reproduce via `K_M` | compressed BAO-only Gaussian → `budgeted` |
 | **CMB anchor** | Planck 2018 | arXiv:1807.06209 | TT/TE/EE + lensing native | YES (`clik`) | `load_planck_2018(...)` | the early-universe anchor; `(μ,Σ)` lensing-amplitude cross-check | compressed distance priors → `budgeted` |
 | **WL/3×2pt (growth, from E5)** | DES Y6 (+ DESY3 in DESI MG combo) | arXiv:2601.14559 (DES Y3 2212.00091) | shear+clustering+GGL, n_z=4 | YES — CCL `(μ,Σ)` 3×2pt forward model | `load_des_y6(...)` (E5 loader) | the lensing leg `Σ₀` modifies; supplies `K_S` cross-check | Gaussian on published vector+cov → `budgeted`; DES Y3 → `approved_other` |
@@ -383,7 +383,7 @@ makes it quantitative.
 
 ### Step 1 — Reproduce the DESI MG result (gate `G-E7-REPRO`, §7.1) — the central reproduction
 - Fit `M_μΣ` (phenomenological MG, GR background or `w₀w_a`) with the physical CCL `(μ,Σ)` forward
-  model to DESI DR2 full-shape + BAO + CMB (+ DESY3/DES Y6), and **recover the published GR-consistent
+  model to DESI DR2 RSD (compressed `fσ₈`) + BAO + CMB (+ DESY3/DES Y6), and **recover the published GR-consistent
   `(μ₀,Σ₀)`**: `μ₀ = 0.04 ± 0.22`, `Σ₀ = 0.044 ± 0.047` within the quoted uncertainty (arXiv:2411.12026).
 - Fit `M_fR` and recover the Hu–Sawicki bound `log₁₀|f_R0| < −4.59` (95%) (arXiv:2604.26915).
 - Fit `M_w` and recover the DESI **background** `w₀w_a` preference (the same contours E1 reproduces).
@@ -401,7 +401,7 @@ makes it quantitative.
 - Compute the route-mismatch obstruction `RM_p` and the split-pair set `splitObs` (`plan/04` §4.2, §6.1)
   on the fitted geometry/growth residual. Verify (E7.2) that `M_Ξ` and each MG model repair (largely)
   the **same** `splitObs` set (`|△|/|splitObs| < ε_share`, default `ε_share = 0.15`). Classify each MG
-  model as an F2 **operator-rewrite (alt) chart of the same obstruction**, or flag a distinct
+  model as a P1-extension **operator-rewrite (alt) chart of the same obstruction** (not an F2 repair), or flag a distinct
   obstruction (`D_sym`/`out_of_scope`).
 
 ### Step 4 — The MG no-instability (admissibility) audit
@@ -578,8 +578,9 @@ E7 (as an SBT claim about the MG chart) **fails** if **any** of:
 ## 8. Dependencies, blocking, and links
 
 - **Blocked by:**
-  - `plan/03` data acquisition: **DESI DR2 full-shape RSD/MG** (`DESI_RSD_FS`, arXiv:2411.12026 — the
-    prime probe, with `(μ₀,Σ₀)` MG inputs and `fσ₈(z)`) + DESI DR2 BAO + Planck 2018 anchor + DES Y6 /
+  - `plan/03` data acquisition: **DESI DR2 RSD/MG** (`DESI_RSD_FS` — prime probe; the **DR2 compressed
+    `fσ₈` + `(μ₀,Σ₀)` MG inputs** are the default leg, with the DR1 full-shape method arXiv:2411.12026 only
+    as a control — see `plan/03` §2) + DESI DR2 BAO + Planck 2018 anchor + DES Y6 /
     DES Y3 (WL leg, shared with E5) + the scalar-tensor reconstruction comparator inputs (arXiv:2511.04610).
   - `plan/02` environment: the **CCL/`pyccl` `(μ,Σ)`/`f(R)` growth backend** (+ MGCAMB/hi_class where
     needed) + `desilike` + the **G-ENV-4 pyccl↔CLASS agreement gate** (E7 is explicitly blocked if G-ENV-4 fails,

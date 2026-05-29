@@ -5,7 +5,10 @@ Where any file disagrees with this registry, **the registry wins**. A `tests/tes
 lint (specified in `01-repo-structure.md`) checks committed artifacts against these tables.
 
 Authored after an external NOT-READY review of the plan to remove scientific over-claims and
-24-author cross-file drift. Read alongside `GROUNDING_BRIEF.md`.
+24-author cross-file drift. Read alongside `GROUNDING_BRIEF.md` and **`CONTRACT_HARDENING_ADDENDUM.md`**
+— the LOCKED peer-contract that pins the observable dictionary, per-sector Schur realization, the two
+(non-equivalent) P4 certificates, the Hubble bridge maps, the canonical formulas/thresholds index, and
+the coherence-amplitude normalization, closing a second review's under-specification findings.
 
 ---
 
@@ -161,8 +164,18 @@ inventory missing any of E1–E7.
 
 **11.2 P4 / phantom terminology (completes §5).** Canonical names: Lean target/module
 `SbtCosmo.PhantomStableReadout` (theorem `phantom_stable_readout_witness`); the diagnostic is the
-**stable-readout (no-growing-mode) certificate** = `max Re λ ≤ 0` (spectral) + operator PSD +
-`ρ_eff > 0`; the boolean field is `stable_readout`. The full negative-kinetic-DOF (ghost) exclusion is
+**stable-readout certificate** (boolean `stable_readout`) **IS the full P4 pass** = the **conjunction of
+three components**: **P-dens** (native-currency density `ρ_eff > 0`); **P-adeq** (rewrite-operator/adequacy
+positivity `sym_C(R[Ξ]) ⪰ 0` ↔ Schur `Ξ_C ⪰ 0`, `G-FORMAL-1`); and **S-stab** — the **no-growing-mode**
+condition `max Re λ(J) ≤ 0` on the *continuous-generator* Jacobian `J` (finite; kernel-checkable via
+Gershgorin discs in the closed left half-plane, or a Lyapunov `J^*C+CJ ⪯ 0`; for a discretized one-step map,
+spectral radius `≤ 1`). **"No-growing-mode" names S-stab specifically; "stable-readout certificate" names the
+three-way conjunction.** **Positivity (P-dens, P-adeq) is NOT stability (S-stab)** (a `C`-PSD operator has
+*growing* `C`-energy — `CONTRACT_HARDENING_ADDENDUM.md` §4). The boolean `stable_readout` := (P-dens ∧
+P-adeq ∧ S-stab) where all three apply (E3/E1); **E0's toy `stable_readout` records its available subset
+P-dens ∧ S-stab** (P-adeq deferred to E3, ADDENDUM §4) and must be read with that scope. The Lean
+`PhantomStableReadout` witness establishes the **S-stab (no-growing-mode) component + crossing** for the
+finite construction; P-dens and P-adeq are the **E3 numerical** checks of the full certificate. The full negative-kinetic-DOF (ghost) exclusion is
 `out_of_scope`. No file uses "no-ghost"/"PhantomNoGhost"/"without ghost" as a claim or a name. (Genuine
 *literature/risk* mentions like "the data could require a ghost" are fine — they describe a failure mode,
 not an SBT claim.)

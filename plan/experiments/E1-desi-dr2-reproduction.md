@@ -248,9 +248,12 @@ the *verified* E1-A pipeline, with at most 3 amplitude parameters `(a₀,a₁,a�
    and the BAO block (the anti-fudge rule, `plan/04` §3.4).
 2. **In-sample gate.** SBT achieves `χ²/dof ≤ 0.99` of the E1-A `w₀w_a` baseline with `≤3` extra
    parameters (`plan/00` §6.3 E1 row).
-3. **Out-of-sample gate.** Train on `BAO+CMB`, predict the held-out SN block; SBT improves SN OOS
-   RMSE by `>10%` over the ΛCDM baseline, or matches the `w₀w_a` baseline within `3%`. A genuine
-   `Ξ_cosmo` lowers the cross-probe `PPD`; a per-probe fudge does not.
+3. **Out-of-sample gate (win/tie/fail — REGISTRY §8; "within 3%" is a *tie*, never a pass).** Train on
+   `BAO+CMB`, predict the held-out SN block; **pass** requires SBT to improve SN OOS RMSE by `>10%` over
+   the ΛCDM baseline **beyond the combined uncertainty band**. Merely matching the `w₀w_a` baseline within
+   `3%` is recorded as a **tie / non-decisive** (a floor), **not** a pass — the decisive program-level OOS
+   win is adjudicated only at E8 (`G-E8-OOS-DECISIVE`). A genuine `Ξ_cosmo` lowers the cross-probe `PPD`;
+   a per-probe fudge does not.
 4. **Coherence handoff.** Record the fitted `(a₀,a₁,a₂)` and the implied `K_L/K_M` amplitudes to
    `results/xi_cosmo_coherence.csv` so the §6.4 cross-experiment coherence gate (`plan/00`) can check
    that E5's `K_S` amplitude lands within `10×` of E1's `K_L/K_M` amplitude.
@@ -343,7 +346,7 @@ program** (`plan/00` §6.1). `G-E1-SBT-*` gate E1-B only and run after the repro
 | **G-E1-REPRO-CHI2** | Total `χ²` per combination within **5%** of the published reference where available; `χ²/dof` reported per block | block `χ²/dof` implausible (`>1.3` or `<0.7`) without explanation | Brief §VI.3 |
 | **G-E1-REPRO-CONV** | `R̂ − 1 < 0.01` all params; ESS `> 400` per chain; for headline runs PolyChord `ln Z` error `< 0.3` | non-convergence; `R̂ − 1 ≥ 0.02` | Brief §VI.2 |
 | **G-E1-REPRO-PD** | All probe covariances PD; `κ < 10⁸`; finite | non-PD or `κ ≥ 10⁸` | Brief §VI.1; `plan/03` G-DATA-1 |
-| **G-E1-REPRO-DET** | Re-run from `manifest.json` reproduces `(w₀,w_a)` MAP and `χ²_min` (summary scalars) to `< 1e-10` relative; chains by statistical equivalence (not bitwise) | non-reproducible | Brief §III.A; `plan/00` §6 determinism |
+| **G-E1-REPRO-DET** | Re-run from `manifest.json`, per REGISTRY §2.1: (a) **deterministic forward-likelihood evaluations** at a fixed parameter point reproduce to `< 1e-12` relative (bitwise-class; fixed data+config+seeds); (b) **MAP / `χ²_min`** reproduce within the **optimizer/sampler tolerance** (NOT `1e-10` — they derive from stochastic chains); (c) **chains** by **statistical equivalence** (R̂, ESS, means/cov within MC error), not bitwise | non-reproducible per (a)–(c) | Brief §III.A; `plan/00` §6 determinism; REGISTRY §2.1 |
 | **G-E1-REPRO-BACKEND** | CLASS vs CAMB MAP `(w₀,w_a)` agree within **±2%** and `Δχ²` within `0.5`; prior-widening shifts contour `< 1σ` | backend disagreement `>5%`; prior-driven shift `>1σ` | §2.7 controls |
 | **G-E1-REPRO-NO-SBT** | Lint confirms zero SBT symbols (§1.3) in the E1-A code path/config | any `Ξ_cosmo`/`a₀..a₂`/`K_*`/`Δ_SBT`/`H₀^{(r,ℓ)}` reference in E1-A | §1.3 anti-leakage |
 | **G-E1-REPRO-AOR** | `aor_ledger.json` present, every residual statused, stratum `RefStableAOR`, no `unstatused` | any unstatused residual; missing ledger | Brief §VI; `plan/04` AOR |
@@ -358,7 +361,7 @@ program** (`plan/00` §6.1). `G-E1-SBT-*` gate E1-B only and run after the repro
 | Gate | Quantitative threshold | Fail condition |
 |------|------------------------|----------------|
 | **G-E1-SBT-FIT** | SBT geometry fit (`C3`) reaches `χ²/dof ≤ 0.99 ×` the E1-A `w₀w_a` baseline with `≤3` extra params | SBT `χ²` `>5%` worse than baseline; `>3` extra params used (`plan/00` §6.3 E1) |
-| **G-E1-SBT-OOS** | Train `BAO+CMB`, predict SN: SBT SN OOS RMSE ↓ `>10%` vs ΛCDM, **or** matches w₀w_a within `3%` | SN OOS `>15%` worse than baseline (`plan/00` §6.3 E1) |
+| **G-E1-SBT-OOS** (win/tie/fail) | **PASS** = SBT SN OOS RMSE ↓ `>10%` vs ΛCDM beyond the combined uncertainty band. Matching w₀w_a within `3%` = **tie / floor, NOT a pass** (REGISTRY §8; the decisive OOS win is judged only at `G-E8-OOS-DECISIVE`) | SN OOS `>15%` worse than baseline (`plan/00` §6.3 E1) |
 | **G-E1-SBT-DUAL** | The *same* `(a₀,a₁,a₂)` improves **both** the SN block and the BAO block (each block `χ²` not worsened) | one block improves only by worsening the other (per-probe fudge) (`plan/04` §3.4 anti-fudge) |
 | **G-E1-SBT-COHERENCE** | Fitted `K_L/K_M` amplitudes written to `results/xi_cosmo_coherence.csv` for the §6.4 program coherence check | amplitudes not recorded / inconsistent sign with the rewrite definition |
 

@@ -153,10 +153,14 @@ Six Birds *identifies* this background departure with the closure rewrite (`plan
 Equivalently, **the IDE transfer is the time-derivative (continuity-equation) reading of the rewrite**:
 
 ```
-Q_Ξ(z) := − (1+z) H(z) · d/dz [ R[Ξ_cosmo](z) ]  −  3 H(z) (1 + w_eff) R[Ξ_cosmo](z),              (E6-5)
+Q_Ξ(z) := + (1+z) H(z) · d/dz [ R[Ξ_cosmo](z) ]  −  3 H(z) (1 + w_eff) R[Ξ_cosmo](z),              (E6-5)
 ```
 
 i.e. `Q_Ξ` is the source term that, inserted in (E6-1a)–(E6-1b), reproduces the same `ρ_de^eff(z)`.
+**Derivation (sign LOCKED, ADDENDUM §6).** From `ρ̇ + 3H(1+w)ρ = −Q` with `ρ ≡ R` and `ρ̇ = dR/dt =
+−(1+z)H·R′(z)` (since `ż = −(1+z)H`): `Q = −ρ̇ − 3H(1+w)R = +(1+z)H·R′(z) − 3H(1+w)R`. **Sign sanity:**
+`R(z)=R₀(1+z)`, `w=−1` ⇒ `Q = (1+z)H R₀ > 0` (DE *losing* energy as `ρ_de` decreases toward the future) —
+the leading **+** is mandatory; a `−` inverts the inferred energy-transfer direction.
 This is exactly the sense in which **`Q` is the continuity-equation chart of `Ξ`** (`idea.md` §9). The
 inverse map `Q ↦ Ξ` exists whenever `ΔρQ(z)` lies in the span of the low-rank ansatz shapes
 `{φ₀, φ₁ψ₁s_p, φ₂c_p}` (`plan/04` §3.1) — and its **defect** (the part of `ΔρQ` *outside* that span)
@@ -265,7 +269,7 @@ All dataset keys, loaders, fetch URLs, formats, licenses, and fallbacks are fixe
 | **Cosmic chronometers (CC)** | `CC_HZ` | compiled `H(z)` (Moresco-class differential-age `H(z)` set; per `plan/03`) | direct `H(z_i) ± σ_i` (model-independent expansion-rate anchor) | `load_cc_hz()` | drop CC leg → status `out_of_scope` for the CC-anchored sub-claim |
 | **SN (PRIMARY)** | `PANTHEON_PLUS` | arXiv:2202.04077 | `μ(z_hel, z_cmb)` for 1550 SN + full `C_μμ` | `load_pantheon_plus(z_min=0.01)` | binned `μ(z̄)` 10–20 bins + cov (`budgeted`; full = `zero`) |
 | **SN (variant)** | `UNION3` | arXiv:2401.06956 | Standardized `μ` for 1258 SN + systematic block cov | `load_union3()` | compressed 5-bin distance–redshift (`budgeted`) |
-| **RSD / growth (DECISION leg)** | `DESI_RSD_FS` | arXiv:2411.12026 (full-shape) | `fσ₈(z)` (6–8 bins) + `(μ₀, Σ₀)` modified-gravity constraints | `load_desi_rsd_fs(compressed=True)` | DESI DR1 full-shape `fσ₈` (older, noisier) (`budgeted`) |
+| **RSD / growth (DECISION leg)** | `DESI_RSD_FS` | **DR2 compressed `fσ₈` primary** (DR1 FS *method* arXiv:2411.12026) | compressed `(fσ₈, D_M/r_d, D_H/r_d)` (6–8 bins) + `(μ₀, Σ₀)` MG inputs | `load_desi_rsd_fs(compressed=True)` | DR1 FS retained only as a method control (`budgeted`); see `plan/03` §2 |
 | **WL / `S₈` (DECISION leg)** | `DES_Y6` / `KIDS_LEGACY` | arXiv:2601.14559 / 2503.19441 | published `S₈` + (where available) 3×2pt likelihood via `pyccl` (reuses E5 backend) | `load_des_y6()` / `load_kids_legacy()` | published Gaussian `S₈` summary (`budgeted`) |
 
 > **Why cosmic chronometers are mandatory here (LOCKED).** CC give a **model-independent `H(z)`**
@@ -370,7 +374,7 @@ agree on geometry by construction), compute and compare the **growth** observabl
   `fσ₈^IDE(z)` and `S₈^IDE`; for S-IDE include the `S₈`-lowering effect (2503.23225).
 - `Ξ` growth: `fσ₈^Ξ(z) = (fσ₈)^GR + K_G[Ξ]` (eq. 8) and `S₈^Ξ = S₈^GR + K_S[Ξ]` (eq. 9), with the
   **coherence-locked `a₁`** (§2.2) — `Ξ` is *not* allowed to refit `a₁` to chase the IDE growth.
-- Compare both against the DESI DR2 full-shape `fσ₈(z)` and the DES Y6 / KiDS-Legacy `S₈`.
+- Compare both against the DESI DR2 (compressed) `fσ₈(z)` and the DES Y6 / KiDS-Legacy `S₈`.
 
 **The reducibility test (LOCKED, §1.2):**
 
@@ -383,7 +387,7 @@ interaction indicated  ⟺  fσ₈^IDE fits the growth data significantly better
 ```
 
 **C2 — Modified-gravity cross-check `(μ₀, Σ₀)`.** A *real* dark-sector interaction generically
-imprints a nonzero effective `(μ₀, Σ₀)` deviation in the DESI full-shape analysis (the same
+imprints a nonzero effective `(μ₀, Σ₀)` deviation in the DESI (DR1) full-shape MG analysis (the same
 phenomenological window E7 uses). Compute `(μ₀, Σ₀)^IDE` and `(μ₀, Σ₀)^Ξ`. The E6 headline
 sub-gate (§6.3, `plan/00-overview` E6): `|μ_SBT − μ_GR| < |μ_IDE − μ_GR|` — i.e. the closure chart
 should *not* require a larger gravity-sector deviation than IDE does. (If both require the *same*

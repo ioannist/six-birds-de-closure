@@ -436,8 +436,8 @@ These operationalize the F4 status (§4) and the three-verdict decision (`idea.m
 | Verdict | Condition (LOCKED) | Maps to |
 |---|---|---|
 | **Gluing residual** (Afroz–Mukherjee direction) | `F_collapse > 0.5` (eq. E2.2: gluing chart absorbs **>50%** of `M₁`'s `w_a`) **and** F4 = `OverlapInconsistent` (or `CompatibleNonGlobal`) | `idea.md` §6 Exp2 "gluing residual"; `plan/00-overview` §6.3 E2 pass |
-| **Rewrite residual** (Crossing-Statistics direction) | `F_collapse < 0.3` (gluing chart absorbs **<30%**) **and** F4 = `GloballyExact`/`CompatibleNonGlobal`; `M₁`'s `w_a` survives the gluing chart | `idea.md` §6 Exp2 "genuine rewrite residual"; `plan/00-overview` §6.3 E2 fail-leg-for-gluing-but-not-for-program |
-| **Mixture** | `0.3 ≤ F_collapse ≤ 0.5`, or `M₁₊₂` beats both `M₁` and `M₂` by `ΔBIC > 5`, indicating both a rewrite and a gluing residual are needed | `idea.md` §6 Exp2 "or a mixture" |
+| **Rewrite residual** (Crossing-Statistics direction) | `F_collapse < 0.2` (gluing chart absorbs **<20%**, per REGISTRY §11.9) **and** F4 = `GloballyExact`/`CompatibleNonGlobal`; `M₁`'s `w_a` survives the gluing chart | `idea.md` §6 Exp2 "genuine rewrite residual"; `plan/00-overview` §6.3 E2 fail-leg-for-gluing-but-not-for-program |
+| **Mixture** | `0.2 ≤ F_collapse ≤ 0.5` (per REGISTRY §11.9), or `M₁₊₂` beats both `M₁` and `M₂` by `ΔBIC > 5`, indicating both a rewrite and a gluing residual are needed | `idea.md` §6 Exp2 "or a mixture" |
 
 > **Both extremes are scientifically valid E2 outcomes.** The experiment is **not** designed to make
 > the gluing verdict win. A clean `Rewrite residual` verdict (Crossing-Statistics direction) is a
@@ -458,7 +458,7 @@ These operationalize the F4 status (§4) and the three-verdict decision (`idea.m
 
 E2 (as a gluing claim) **fails** if any of:
 1. `M₂` never beats `M₁` by ΔBIC in any regime/SN compilation (`G-E2-BIC` fail), **and**
-2. the gluing chart explains `< 30%` of the apparent `w_a` (`F_collapse < 0.3`), **and**
+2. the gluing chart explains `< 20%` of the apparent `w_a` (`F_collapse < 0.2`, per REGISTRY §11.9), **and**
 3. the `η(z)` shape is uncorrelated with the SN–BAO residuals (`G-E2-SHAPE` fail, p>0.05).
 
 > **Crucial distinction.** Failure of the *gluing* reading is **not** failure of the *program*: it

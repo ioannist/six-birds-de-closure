@@ -22,6 +22,10 @@ ROOT_ARG="${2:-}"
 REPO="$(git rev-parse --show-toplevel)"
 BASELINE="$REPO/ops/lean-trust-baseline.txt"
 PAT='\b(sorry|admit|axiom|constant|opaque|unsafe|native_decide|implemented_by)\b'
+# NOTE: these are TRACKED (growth must be justified), NOT forbidden. `native_decide` is included
+# deliberately — it trusts the compiler (bypasses the kernel), a genuine trust extension. The Lean
+# plan (plan/05) therefore PREFERS `decide`, and treats each surviving `native_decide` as a justified
+# baseline entry. So scanner and plan agree: track-and-justify, don't prohibit.
 
 resolve_root() {
   if [[ -n "$ROOT_ARG" ]]; then printf '%s' "$ROOT_ARG"; return; fi

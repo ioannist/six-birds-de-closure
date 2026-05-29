@@ -110,9 +110,13 @@ six-birds-de-closure/
 └── ops/                           # tracked (exists) — dispatch harness (NOT used by this program)
 ```
 
-> **Note on `ops/`:** It exists in the repo but is explicitly **out of scope** for this program per
-> the hard constraints (no ops dispatch harness, no memory store, no external agents). Plans must not
-> add to or invoke `ops/`.
+> **Note on `ops/`:** It exists in the repo but is explicitly **out of scope as a build target** for this
+> program per the hard constraints: the *plan/experiment code* must be self-contained and config-driven —
+> it must not `import`/add to or call `ops/` at runtime, write a memory store, or invoke external agents.
+> This is a **clean-separation** rule, **not** a statement that `ops/` is unused. `ops/` **is** the
+> management / dispatch harness that sits *above* the plan (the live manager drives Cody/Ralph/Eddy through
+> it — see `ops/README.md`). The two layers are deliberately decoupled: experiments never depend on the
+> harness; the harness orchestrates the experiments.
 
 ---
 
@@ -148,7 +152,7 @@ sbt_cosmo/
 │   ├── bao.py                     # DESI DR2 / DES Y6 / KiDS-Legacy BAO; D_M/r_d, D_H/r_d
 │   ├── sn.py                      # Pantheon+ / Union3 / DES-SN5YR distance-modulus likelihood
 │   ├── weaklensing.py             # DES Y6 / KiDS-Legacy / HSC Y3 cosmic shear (3x2pt)
-│   ├── rsd.py                     # DESI DR2 full-shape / DES Y6 RSD; f*sigma8
+│   ├── rsd.py                     # DESI DR2 RSD (compressed fσ8; DR1 FS = method control) / DES Y6 RSD; f*sigma8
 │   └── ladder.py                  # local H0 routes: SH0ES, CCHP TRGB/JAGB, TDCOSMO, sirens
 │
 ├── xi/                            # THE closure residual Ξ_cosmo + rewrite operator (the "R")
@@ -156,7 +160,7 @@ sbt_cosmo/
 │   ├── residual.py                # Xi_cosmo(z, ell, p): low-rank ansatz, ≤5–7 free params (§3 brief)
 │   ├── kernels.py                 # observable-correction kernels K_L,K_M,K_G,K_S and K_{r,ℓ}
 │   ├── rewrite.py                 # ΔΞ_SBT least-audit-closed rewrite operator; w_eff(z) readout
-│   └── stability.py               # stable-readout (no-growing-mode) certificate: max Re λ ≤ 0 + operator PSD + ρ_eff > 0 (for E3 phantom crossing)
+│   └── stability.py               # P4 certs: P-dens (ρ_eff>0) ∧ P-adeq (operator/adequacy PSD, sym(R)⪰0↔Ξ_C⪰0) ∧ S-stab (no-growing-mode, max Re λ(J)≤0, continuous generator) — E3
 │
 ├── audits/                        # the four residual audits — ONE implementation, reused everywhere
 │   ├── __init__.py
