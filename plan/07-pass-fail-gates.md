@@ -277,7 +277,7 @@ These are the program-level standards every experiment is measured against (`ide
 | `G-E5-NOSURR` | no surrogate as headline | headline fingerprint from tier-1/tier-2 physical-CCL legs only; `G_surr` reproduces precursor degeneracy **and** physical CCL breaks it | E5 §7.1 |
 | `G-E5-COV` | covariances | each `Σ` PD, cond `<1e8`, finite | E5 §7.2 |
 | `G-E5-RANK` | anti-fudge rank | `G₂` adds `≤2` closure params (`a₁[,β]`); `a₀` inherited not re-fit; probe-shared shapes; no per-probe `Ξ_p` | E5 §7.2 |
-| `G-E5-KERNEL` | kernel linearity + stability | `K_G,K_S` linear in `(a₀,a₁)` to `<1%`; `R[Ξ]` positive + stable (stable-readout) | E5 §7.2 |
+| `G-E5-KERNEL` | kernel linearity + stability | `K_G,K_S` linear in `(a₀,a₁)` to `<1%`; `R[Ξ]` positive + stable (P-dens + S-stab no-growing-mode; cf. the full P4 stable-readout certificate, `04` §6.4 / REGISTRY §11.2) | E5 §7.2 |
 | `G-E5-SYS` | systematics handling | IA/baryon/photo-z/shear-cal nuisances marginalized in **every** model incl. `G₀`; not charged to `Ξ` | E5 §7.2 |
 | `D_scale` verdict (staging fingerprint) | residual staging slope `s_Ξ^resid` (eq. E5.2) | `≠ 0` at **>2σ**, reproducible across `≥2` physical-CCL probes, persisting under common-staging (`>1σ`), **and** `G₂`'s single `Ξ` lowers cross-lens `δχ` by `>5%` vs `G₀` | E5 §7.3 |
 | `budgeted` verdict | `s_Ξ^resid` | consistent with 0 (`<2σ`); `G_sys` absorbs the dependence as well as `G₂` | E5 §7.3 |
