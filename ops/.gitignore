@@ -1,0 +1,5 @@
+# raw transcripts, stderr, captured messages — local runtime state, large/noisy
+runs/
+# codex thread UUIDs are MACHINE-LOCAL runtime state (rollouts live under
+# ~/.codex/sessions on this machine), NOT portable project truth — do not commit.
+threads/.codex_thread_id_*

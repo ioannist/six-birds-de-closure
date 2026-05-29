@@ -1,0 +1,560 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Promotion Criteria and Surviving Packages on Fixed Support in Six Birds Theory}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{April 2026}
+\hypersetup{
+  pdftitle={Promotion Criteria and Surviving Packages on Fixed Support in Six Birds Theory},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Earlier fixed-support papers in Six Birds Theory introduced admissible event packages, predictive quotients, and recombination witnesses. They left open whether a recombination-positive witness family supports a genuine promoted package or only a lower-layer summary. We answer that question on a frozen Route~A corpus. We define a promotion criterion requiring sufficiency on the designated observable surface, induced update closure, admissible second-stage stability, control admissibility, protocol honesty, and slice legibility. The corpus is exact-finite and controlled: a two-anchor flagship core, four nearby positives, and matched null, memory-only, artifact, and boundary-sensitive controls, together with a support-only erasure comparison surface. We replace an earlier vacuous second-stage rule with an admissible surface-coarsening audit and treat the artifact control in paired protocol-aware form. On this pipeline, an intrinsic candidate package survives on both flagship anchors, covers the four nearby positives, preserves the required control contrasts, and remains honest under the paired artifact audit. Two representative-selected route families also survive on the flagship core, but only as secondary evidence: they do not support a unique best strategy and they do not displace the intrinsic survivor. Slice/dual analyses are support-only and the staging--packaging defect atlas is explanatory. A Lean criterion kernel formalizes the promotion vocabulary and the generic implication from the criterion fields to promoted-package status. The resulting claim is narrow: at least one promoted-package candidate survives honestly on fixed support in the Route~A flagship family.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} fixed support; promotion criterion; exact finite audit; protocol honesty; Six Birds Theory.
+
+\section{Introduction}\label{sec:intro}
+
+Interference-like phenomena are the clearest case where later observations depend on how alternative routes are organized even after current records no longer distinguish them. The lesson of which-path erasure is that removing which-path markers can restore structure because the assemblage of alternatives carries content that individual-branch readouts miss. Six Birds Theory is an autonomous emergence framework that constructs a stochastic substrate from stable records, package-relative identity, and admissible completion, without importing Hilbert space, amplitudes, or the Born rule. Its fixed-support line asks whether an analogous interference-like phenomenon --- later observable content that survives on a common support while being invisible to branchwise predictive bookkeeping --- can be identified on that substrate \citep{Tsiokos2026EventPackages,Tsiokos2026HolonomyMemory,Tsiokos2026MarkingErasureRecombination,Tsiokos2026RecombinationWitnesses}.
+
+Earlier papers in the series showed that the phenomenon arises. Event packages fixed the discipline of comparing candidate descriptions on a common support. Current and predictive quotients on single histories were shown to separate, so hidden predictive structure can exist below the current-event interface. Branchwise and recombination quotients on branch assemblages were then shown to separate as well, and a small control-stable Route~A witness family with a theorem-backed Lean kernel on the reference-positive anchor was isolated inside the recombination layer. Those papers left a sharper question open. A witness family shows that recombination-sensitive structure exists on fixed support; it does not show that the corresponding object deserves to be treated as a package in its own right rather than as a compressed summary of the lower layer. When does a recombination-positive witness family support a genuine promoted package?
+
+We require a promoted package to do more than compress lower-layer behavior on a single benchmark surface. It must support the designated observable family on the frozen corpus, admit a descended update law, survive an admissible second-stage coarse-graining audit, separate the required controls in the right way, and remain honest when omitted protocol state is internalized. Without those ingredients one has at most a useful compression of the current layer.
+
+We answer the promotion question on a frozen Route~A corpus consisting of a theorem-backed two-anchor flagship core, four nearby positives, matched null, memory-only, artifact, and boundary-sensitive controls, and a support-only erasure comparison surface. The computational side is exact-finite and reproducible. We replace an earlier vacuous second-stage rule with an admissible surface-coarsening audit and treat the artifact control in paired protocol-aware form rather than as a single legacy row.
+
+Our main result is intrinsic. On this pipeline, an intrinsic candidate package survives on both flagship anchors, preserves the required control contrasts, covers the four nearby positives, and remains honest under the paired artifact audit. Representative-selected routes also survive on the flagship core, but they remain secondary route-family evidence: they do not support a unique best strategy and they do not displace the intrinsic survivor. Slice/dual analyses remain support-only, and the staging--packaging defect atlas remains explanatory.
+
+We also contribute a narrow formal layer. We state an abstract promotion criterion in terms of sufficiency, induced closure, admissible second-stage stability, control admissibility, no-smuggling, and slice legibility, and we record a Lean criterion kernel formalizing those generic notions. The formal layer hardens the criterion vocabulary; it does not mechanize the full computational atlas.
+
+\paragraph{Scope.} We do not claim a unique best representative strategy, we do not present slice/dual tradeoff evidence as a decisive classification surface, we do not use the staging--packaging defect metric as a gate, and we do not claim a flagship-data mechanization in Lean. The result is correspondingly narrow: at least one promoted-package candidate survives honestly on fixed support in the Route~A flagship family, with the intrinsic route as the main result and the representative-selected routes as secondary support.
+
+The remainder of the paper is organized as follows. \Cref{sec:background} recalls the fixed-support framework and the Route~A starting point inherited from the earlier papers. \Cref{sec:criteria} states the promotion criteria and theorem spine. \Cref{sec:methods-core} records the frozen corpus and the audit pipeline. \Cref{sec:intrinsic} presents the intrinsic surviving package. \Cref{sec:lift} records the representative-selected secondary routes. \Cref{sec:support} summarizes the support-only slice/dual and explanatory defect analyses. \Cref{sec:formal} describes the formal criterion layer. \Cref{sec:discussion} and \Cref{sec:conclusion} close with interpretation, limitations, and the final claim.
+ \section{Fixed-Support Background and Route A Starting Point}\label{sec:background}
+
+We sit inside the fixed-support line of Six Birds Theory and inherit its terminology. The first paper established the basic discipline: candidate descriptions are compared on a common support object, and admissibility is enforced at the level of package formation rather than deferred to informal interpretation \citep{Tsiokos2026EventPackages}. Once the support object is held fixed, differences between quotients can be read as genuine structural losses or gains rather than as artifacts of changing context. The second paper introduced the predictive quotient viewpoint on that surface, distinguishing what is visible at the current event interface from what is required to preserve predictive sufficiency under admissible continuations \citep{Tsiokos2026HolonomyMemory,Fisher1922,Blackwell1953,CrutchfieldYoung1989,ShaliziCrutchfield2001,LittmanSuttonSingh2001,Jaeger2000}. A quotient can therefore be operationally real even when it is not visible at the current-event surface. The third paper moved from single-history predictive structure to branch assemblages and showed that the branchwise quotient and the recombination quotient can differ on fixed support, and that the difference can survive matched controls \citep{Tsiokos2026MarkingErasureRecombination}. This is the point at which recombination-positive structure enters the series as a fixed-support phenomenon rather than as a metaphor. At the level of external lineage, this quotient-and-comparison move sits near controlled-state abstraction and model minimization traditions rather than outside them entirely \citep{DeanGivan1997,GivanDeanGreig2003,LiWalshLittman2006}.
+
+The fourth paper narrowed the starting surface decisively. It isolated a small control-stable Route~A flagship family with a theorem-backed core and a matched control neighborhood \citep{Tsiokos2026RecombinationWitnesses}. From that paper we inherit a frozen, trusted starting surface: a two-anchor flagship core, four nearby positives in the same local neighborhood, matched null, memory-only, artifact, and boundary-sensitive controls, and a formal kernel certifying the core recombination witness structure. We do not restart the search for witnesses across all routes; we begin from the already isolated Route~A flagship family and ask what kind of object, if any, is supported above it. The earlier witness work did not prove that a next package already exists simply because a recombination witness exists, and it did not promote every benchmark-side diagnostic to theorem status. The question taken up here is correspondingly more exacting: whether any candidate package built over that structure deserves to count as a promoted package under explicit criteria.
+ \section{Promotion Criteria and Theorem Spine}\label{sec:criteria}
+
+We ask whether a recombination-positive witness family supports a genuine promoted package or only a lower-layer summary. This section fixes the criterion vocabulary used throughout. The definitions are intentionally structural and route-family-level; they do not presuppose linearity, additivity, or a unique surviving package. Each individual field of the criterion has a recognizable neighbor in the existing literature; a consolidated positioning statement appears at the end of the section.
+
+\begin{definition}[Candidate promoted package]\label{def:candidate-promoted-package}
+Fix a common support surface together with a designated observable family and an admissible family of lower-layer operations. A \emph{candidate promoted package} is an abstract package-level description intended to summarize lower-layer states or histories on that fixed-support surface. Its purpose is not merely to record a smaller state space but to provide a package on which the designated observables and admissible operations can be read without hidden dependence on arbitrary representatives. A candidate may be intrinsic, representative-selected, protocol-indexed, or otherwise structured, but it is always evaluated on the same frozen corpus and designated slice.
+\end{definition}
+
+\begin{definition}[Induced update law]\label{def:induced-update-law}
+A candidate carries an \emph{induced update law} when the admissible lower-layer operations act on the package in a well-defined way that does not depend on the choice of lower representative. If two lower states are identified by the candidate package, admissible continuations must not immediately reintroduce an unrecorded distinction at the package level. The induced update law is the package-level expression of descent from the lower surface.
+\end{definition}
+
+\begin{definition}[Admissible second-stage coarse-graining]\label{def:second-stage-coarse-graining}
+An \emph{admissible second-stage coarse-graining} is a further package-level coarse-graining or repackaging that remains admissible relative to the retained observable surface and the induced update law. Not every quotient of the candidate is admissible; admissibility is tied to the structure the package is supposed to preserve. The identity coarse-graining is always admissible. The substantive question is whether nontrivial admissible further coarse-grainings exist and, if so, whether the decisive structure survives them.
+\end{definition}
+
+\begin{definition}[Promoted-package criterion]\label{def:promoted-package-criterion}
+A candidate package counts as a \emph{promoted package} on the designated corpus and slice only if all of the following hold:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Sufficiency.} The candidate supports the designated observable family on the frozen corpus.
+\item \textbf{Induced closure.} The admissible lower-layer operations descend to a well-defined package-level update law.
+\item \textbf{Second-stage stability.} The decisive structure survives admissible further coarse-graining, or else the candidate is rigid-minimal for explicit admissibility reasons rather than vacuous fragility.
+\item \textbf{Control admissibility.} The candidate separates the required null, memory-only, artifact, and boundary-sensitive controls in the right way.
+\item \textbf{No-smuggling.} The candidate's apparent success does not depend on omitted protocol or scheduler variables that should have been internalized.
+\item \textbf{Slice legibility.} On at least one designated slice, the candidate is not merely sufficient but distinguished as a frontier-level package.
+\end{enumerate}
+\end{definition}
+
+\[
+\mathrm{Promoted}(P;\mathcal C,s)
+\iff
+\mathrm{Suf}(P;\mathcal C)\wedge
+\mathrm{Clos}(P)\wedge
+\mathrm{Stab}(P;\mathcal C)\wedge
+\mathrm{Ctrl}(P;\mathcal C)\wedge
+\mathrm{Hon}(P;\mathcal C)\wedge
+\mathrm{Leg}(P;s).
+\]
+
+\begin{definition}[Protocol-indexed promotion]\label{def:protocol-indexed-promotion}
+A distinct case occurs when promotion is available only after context or protocol state is internalized into the package. We call this \emph{protocol-indexed promotion}. The base candidate does not qualify honestly on its own, because its apparent success depends on omitted protocol state, but an internalized or explicitly indexed version satisfies the promoted-package criterion once that dependence is represented inside the state object. This is stronger than a mere artifact diagnosis and weaker than intrinsic promotion: the route remains live, but only as an indexed package rather than as a context-free one.
+\end{definition}
+
+\begin{proposition}[Generic promotion criterion]\label{prop:generic-promotion-criterion}
+Let a candidate package on fixed support be equipped with an induced update law. Suppose that, on the designated frozen corpus and slice, the candidate is sufficient for the observable family, satisfies the admissible second-stage stability condition, is control-admissible on the required controls, obeys the no-smuggling condition, and is slice-legible. Then the candidate satisfies the promoted-package criterion on that surface.
+\end{proposition}
+
+Promoted-package status is earned by this conjunction of properties, not by witness positivity alone and not by appeal to an external representational preference. The formal layer of \Cref{sec:formal} records a compile-checked criterion kernel for the implication; here we only fix its logical spine.
+
+\paragraph{Relation to adjacent literatures.}
+Each criterion field has recognizable neighbors, and the distinctive content of the bundle lies in the conjunction rather than in any individual condition. Sufficiency corresponds to the Fisher--Blackwell tradition of sufficient statistics and comparison of experiments, and more recently to causal-state, observable-operator, and predictive-state formalisms in which state is defined by future-observable consequences \citep{Fisher1922,Blackwell1953,CrutchfieldYoung1989,ShaliziCrutchfield2001,Jaeger2000,LittmanSuttonSingh2001}. Induced closure is the congruence condition used to define exact lumpability in finite Markov chains, bisimulation and behavioral equivalence in concurrency, and controlled-state abstraction and model minimization in Markov decision processes \citep{Nerode1958,Park1981,KemenySnell1960,RogersPitman1981,Buchholz1994,DeanGivan1997,GivanDeanGreig2003}. Second-stage stability is an iterated-abstraction condition in the spirit of abstract interpretation and state-abstraction refinement \citep{CousotCousot1977,LiWalshLittman2006}, asking whether the candidate survives further admissible coarse-graining rather than being minimal by overconstraint. Control admissibility is a matched-control condition in the experimental sense, placed here structurally rather than statistically. No-smuggling is a hidden-variable or omitted-context condition with the same logical shape as the belief-state and state-augmentation moves used for partial observation in controlled systems \citep{KaelblingLittmanCassandra1998,LittmanSuttonSingh2001,Jaeger2000}. Slice legibility plays the role of a multiobjective or frontier condition \citep{Pareto1896,Miettinen1998,Ehrgott2005}, but is kept at the level of tradeoff support rather than promoted to a decision rule. The point of the criterion is not that any one of these conditions is novel; it is that fragile positives on fixed support can pass one or two of them while failing the rest, and the criterion refuses to promote them for that reason.
+ \section{Canonical Corpus and Audit Pipeline}\label{sec:methods-core}
+
+We evaluate the promotion criterion on a frozen finite corpus rather than on a broad uncontrolled family. Promotion claims are more fragile than witness claims because they depend not only on the existence of a recombination-sensitive contrast but also on the stability of a candidate package under further admissible comparison. The corpus is therefore intentionally narrow: the theorem-backed Route~A flagship core inherited from the earlier witness work, a small local neighborhood of nearby positives, the matched controls required for discrimination, and one support-only comparison surface.
+
+The flagship core consists of two anchors. The first is the reference-positive anchor inherited from the Route~A witness family. The second is its completion-partner anchor, which preserves the same decisive recombination profile while enriching the observable surface with completion-sensitive structure. These two anchors form the core surface on which the promotion question is decided. Around that core we retain four nearby positives from the same local Route~A neighborhood. They are not elevated to theorem-core status here, but they test whether a surviving route is confined to a single anchor or extends across the immediate local neighborhood.
+
+The control bundle contains a null baseline, a memory-only control, an artifact control, and a boundary-sensitive negative. The null and memory-only controls test whether a candidate package is merely reproducing trivial or predictive-memory structure. The boundary-sensitive negative tests whether the candidate is robust to completion-sensitive or edge-collapse failure modes. The artifact control tests whether an apparent route survives once omitted protocol state is represented honestly. We also retain an erasure-side comparison surface as support-only material; it is useful for interpretation but is not used as a decisive comparison.
+
+\[
+\mathcal C
+=
+\mathcal C_{\mathrm{flag}}
+\sqcup
+\mathcal C_{\mathrm{near}}
+\sqcup
+\mathcal C_{\mathrm{ctrl}}
+\sqcup
+\mathcal C_{\mathrm{supp}},
+\]
+where $\mathcal C_{\mathrm{flag}}$ consists of the two flagship anchors, $\mathcal C_{\mathrm{near}}$ of the four nearby positives, $\mathcal C_{\mathrm{ctrl}}$ of the required controls, and $\mathcal C_{\mathrm{supp}}$ of the support-only erasure surface.
+
+\[
+\mathcal C_{\mathrm{ctrl}}
+=
+\{\text{null},\ \text{memory-only},\ \text{artifact},\ \text{boundary-sensitive}\}.
+\]
+
+The composition of the frozen corpus is summarized in \Cref{tab:main-corpus-overview}.
+
+\begin{table}[t]
+\centering
+\caption{Canonical frozen corpus used in the promotion audit. The flagship core is the decision-bearing surface, the nearby positives provide local robustness support, the required controls test admissibility and honesty, and the erasure-side surface remains support-only.}
+\label{tab:main-corpus-overview}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X l@{}}
+\hline
+Corpus component & Count & Role in paper & Status \\
+\hline
+Flagship anchors & 2 & main decision surface & claim-bearing \\
+Nearby positives & 4 & local robustness support & support for main route \\
+Required controls & 4 & admissibility and honesty checks & claim-bearing controls \\
+Erasure-side comparison & 1 surface & interpretive comparison & support-only \\
+\hline
+\end{tabularx}
+\end{table}
+ 
+An earlier exploratory pipeline used an exact-signature second-stage rule that became vacuous on the real corpus: once the intrinsic package was already minimal under that rule, all real cases appeared rigid-minimal and the rule could not discriminate substantive survival from formal dead end. We replace it with an admissible surface-coarsening audit. Conceptually, this is closer to exact aggregation and descended-dynamics constructions than to repeated class merging inside a fixed minimal partition \citep{KemenySnell1960,RogersPitman1981,Buchholz1994}. It also sits more naturally inside a coarse-graining and multiscale reading than the older all-or-nothing exact-signature rule \citep{Kadanoff1966,Wilson1971}. The computation layer then proceeds in three stages:
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Intrinsic layer.} The candidate package is rebuilt on the benchmark's effective finite runtime surface, correcting an earlier failure that was insensitive to nearby-positive carrier sizes.
+\item \textbf{Second-stage audit.} Explicit admissible surface-coarsening proposals are evaluated by rebuilding the effective package on the reduced retained surface, rather than by attempting class merges inside an already minimal package.
+\item \textbf{Protocol-paired artifact control.} The artifact control is evaluated through an uninternalized endpoint, an internalized partner endpoint, and the corresponding verdict, so no current-package claim depends on the legacy single-row interpretation.
+\end{enumerate}
+
+The earlier exploratory intrinsic and second-stage outputs are retained in the repository for historical traceability, but they are superseded for the present purposes and are not claim-bearing here. The main text uses conceptual route names rather than repository artifact identifiers; exact file-level mappings are recorded in the reproducibility materials. \Cref{sec:intrinsic} applies the criterion of \Cref{sec:criteria} to the intrinsic route as the main result, and \Cref{sec:lift} records the representative-selected routes as secondary support.
+ \section{Intrinsic Surviving Package on the Route A Flagship Core}\label{sec:intrinsic}
+
+We now apply the promotion criterion of \Cref{sec:criteria} to the canonical frozen corpus of \Cref{sec:methods-core}. Among the intrinsic candidates produced by the surface-coarsening audit, one route plays the central role: the least-burden intrinsic envelope selected by the current-package classification surface. We denote it $P_{\mathrm{int}}$. The notation is only a label; its role is to identify the intrinsic surviving package that carries our main result.
+
+$P_{\mathrm{int}}$ is the strongest surviving route that does not depend on representative choice: once the observable surface is fixed, the package is determined without appeal to a separate representative-selection rule. This is why we treat the intrinsic route as primary. Representative-selected routes are considered in \Cref{sec:lift}, but they are not needed to state the main surviving-package claim. At the level of external mathematical context, this use of an intrinsic route is closer to representative-free state abstraction and predictive-state constructions than to a strategy-selected refinement \citep{GivanDeanGreig2003,LiWalshLittman2006,LittmanSuttonSingh2001,Jaeger2000}.
+
+\begin{proposition}[Intrinsic survivor on the flagship core]\label{prop:intrinsic-main-result}
+On the canonical promotion pipeline, the intrinsic route $P_{\mathrm{int}}$ survives on both Route~A flagship anchors, remains separated from the required controls, and remains honest under the paired artifact audit. In this sense it is a surviving promoted-package route on the flagship core.
+\end{proposition}
+
+\[
+P_{\mathrm{int}}:\qquad
+\mathcal C_{\mathrm{flag}}^{(2)}\ \text{survives},\quad
+\mathcal C_{\mathrm{near}}^{(4)}\ \text{supported},\quad
+\mathcal C_{\mathrm{ctrl}}\ \text{separated},\quad
+\text{paired audit honest}.
+\]
+
+\subsection{Flagship-core survival}
+
+On the two-anchor Route~A flagship core, $P_{\mathrm{int}}$ survives on both anchors. In both the reference-positive anchor and the completion-partner anchor, the intrinsic surface yields an effective package of the same target size after the second-stage audit. In exact finite terms, both flagship anchors pass through the intrinsic layer to the same three-state promoted package. This agreement matters because the result is not tied to a single benchmark presentation or to the completion-partner enrichment alone. The earlier witness papers showed that the Route~A core carries non-factorizing recombination-sensitive structure on fixed support; we now show that, on the present pipeline, the same core supports a surviving intrinsic package under the explicit criterion. The intrinsic route is sufficient on the designated surface, admits a descended package-level update law, and does not collapse under admissible second-stage comparison.
+
+\subsection{Local neighborhood support}
+
+The same intrinsic route remains live across all four nearby positives in the frozen local neighborhood. These cases are not promoted to theorem-core status, and we do not claim a broad route atlas on their basis. They test whether the intrinsic survivor is confined to a single hand-picked flagship pair or extends across the immediate local Route~A neighborhood. A route that survived only on one anchor pair could still be a fragile benchmark accident; the local neighborhood evidence does not by itself establish broad generality, but it shows that the intrinsic survivor is not pinned to a single isolated data point.
+
+\subsection{Required-control separation}
+
+$P_{\mathrm{int}}$ also survives the required control bundle. The null baseline and the memory-only control do not reproduce the flagship-core intrinsic package, so $P_{\mathrm{int}}$ is neither a trivial compression nor a re-expression of predictive-memory structure. The boundary-sensitive negative is likewise kept separate, so the intrinsic route is not an artifact of completion-edge collapse.
+
+The most delicate case is the artifact control. In the canonical protocol-aware treatment, that control is not represented by a single legacy row but by a paired uninternalized/internalized comparison. On the paired audit, the intrinsic route remains honest: the control does not collapse the flagship result into an omitted-state artifact, and the intrinsic package does not require a protocol-indexed reinterpretation in order to survive. This is the key no-smuggling point for the intrinsic route. \Cref{tab:intrinsic-summary} gathers the flagship-core result, the nearby-positive support, and the control separation in one place.
+
+\begin{table}[t]
+\centering
+\caption{Intrinsic surviving route $P_{\mathrm{int}}$ on the frozen Route~A corpus. The flagship anchors support the same survivor, the nearby local neighborhood remains covered, and the required controls remain separated under the paired artifact audit.}
+\label{tab:intrinsic-summary}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\hline
+Surface & Cases & Status under $P_{\mathrm{int}}$ & Summary \\
+\hline
+Flagship core & 2 anchors & survives on both & common target size $3$ \\
+Nearby neighborhood & 4 positives & supported & local coverage $4/4$ \\
+Null baseline & 1 control & separated & not a trivial compression \\
+Memory-only control & 1 control & separated & not predictive-memory only \\
+Artifact control & paired endpoints & separated under paired audit & protocol-honest \\
+Boundary-sensitive control & 1 control & separated & no boundary-collapse mimicry \\
+\hline
+\end{tabularx}
+\end{table}
+ 
+\subsection{Protocol honesty}
+
+The intrinsic route does not survive merely because omitted protocol state was left outside the package. Once that state is represented honestly in the control comparison, the flagship-core intrinsic route remains live and the artifact control remains a genuine contrast rather than a hidden duplicate of the positive cases. By the criterion of \Cref{sec:criteria}, $P_{\mathrm{int}}$ is therefore a surviving promoted package on the Route~A flagship core: it combines flagship-core survival, nearby-positive support, control separation, and protocol honesty without requiring representative-selected correction.
+ \section{Representative-Selected Secondary Routes}\label{sec:lift}
+
+The intrinsic survivor $P_{\mathrm{int}}$ of \Cref{sec:intrinsic} is not the only surviving route on the flagship core. Two representative-selected route families also remain live there. Their role is secondary and comparative: they show that the surviving-package picture is richer than a single route, but they neither displace $P_{\mathrm{int}}$ as the principal result nor support a unique best strategy claim. We label the first family $P_{\mathrm{decl}}$, the declared-completion-family route, and the second $P_{\mathrm{pair}}$, the paired-observable-enrichment route evaluated together with paired flattening control. Both are representative-selected in the sense that they use an explicit representative-selection layer above the lower recombination quotient. In external terms, they are closer to abstraction/refinement and controlled-state minimization traditions than to a new strategy-ranking theorem \citep{CousotCousot1977,DeanGivan1997,GivanDeanGreig2003,LiWalshLittman2006}.
+
+\begin{proposition}[Secondary representative-selected survivors]\label{prop:secondary-lift-survivors}
+On the Route~A flagship core, the declared-completion family $P_{\mathrm{decl}}$ and the paired-enrichment family $P_{\mathrm{pair}}$ survive as representative-selected route-family results. They refine the survivor picture on the flagship core but remain secondary to the intrinsic main result.
+\end{proposition}
+
+\begin{remark}[Protocol caveat for the paired family]\label{rem:paired-family-caveat}
+$P_{\mathrm{pair}}$ is live only when read together with the dedicated paired-lift protocol override artifacts. The older protocol summary alone is not a sufficient basis for its canonical status.
+\end{remark}
+
+\begin{remark}[No unique best strategy]\label{rem:no-unique-best-strategy}
+The surviving representative-selected evidence remains route-family-level. We do not identify a uniquely preferred declared-family or paired-enrichment strategy.
+\end{remark}
+
+\subsection{Surviving representative-selected routes}
+
+$P_{\mathrm{decl}}$ survives on the flagship core as a secondary route-family result. Relative to the best intrinsic envelope, it reaches the same flagship support with lower coarsening burden on the core surface. The declared-family route therefore adds value by showing that the same flagship-core package behavior can be stabilized along a route that uses an explicit representative-selection layer. The current evidence supports this as a route-family effect, not as a strategy-ranking theorem: in the current-package classification surface, the declared-family lift rows remain tied on the metrics relevant to survivor classification.
+
+$P_{\mathrm{pair}}$ is more delicate. On the flagship core it survives as a secondary route-family result, again without displacing the intrinsic route, but its protocol status must be read with the caveat in \Cref{rem:paired-family-caveat}. With that caveat observed, $P_{\mathrm{pair}}$ belongs with the representative-selected survivor routes rather than with the artifact or protocol-indexed failure cases. As in the declared-family case, the paired-enrichment strategies remain tied on the classification-relevant metrics. The evidence therefore supports the existence of a surviving paired-enrichment route family, not a uniquely best paired-enrichment strategy.
+
+A compact comparison of the two families is given in \Cref{tab:lift-route-summary}.
+
+\begin{table}[t]
+\centering
+\caption{Representative-selected survivor families on the Route~A flagship core. Both remain secondary to the intrinsic main route. The paired-enrichment family is live only with its explicit protocol-override caveat, and neither family supports a unique best strategy.}
+\label{tab:lift-route-summary}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\hline
+Route family & Flagship-core status & Protocol status & Strategy-level claim \\
+\hline
+Declared completion family ($P_{\mathrm{decl}}$) & survives & protocol-honest on canonical surface & no unique best strategy \\
+Paired enrichment family ($P_{\mathrm{pair}}$) & survives & live only with explicit override caveat & no unique best strategy \\
+\hline
+\end{tabularx}
+\end{table}
+  \section{Support Analyses: Slice/Dual Tradeoffs and Staging--Packaging Defect}\label{sec:support}
+
+The decision-bearing surface has been settled in the preceding sections. The slice/dual analyses and the staging--packaging defect atlas reported here are not coequal with that surface: the slice/dual layer is support-only and provisional, and the defect atlas is explanatory only.
+
+\subsection{Slice/dual tradeoff signal}
+
+The slice/dual analysis asks a different question from the current-package classification surface. Instead of asking whether a given route satisfies the promotion criterion on the frozen corpus, it compares candidate families across designated tradeoff slices that emphasize different combinations of burden, nearby support, control preservation, and related quantities. On that basis, the slice analysis reveals nontrivial tradeoff structure: the same material candidate family need not dominate every slice simultaneously, in the sense of a multiobjective tradeoff rather than a single scalar optimum \citep{Pareto1896,Miettinen1998,Ehrgott2005}.
+
+That observation is useful, but we do not promote it to a decisive classifier. The current-package checkpoint is settled by the intrinsic and representative-selected route evaluations together with the protocol-aware audit, not by the slice layer. The slice analysis helps explain why multiple surviving route families can remain simultaneously meaningful on different tradeoff surfaces, and it provides context for why representative-selected families can remain live without displacing the intrinsic survivor, but it is not used to overturn the main intrinsic ranking or to certify a distinct slice-selected package.
+
+\subsection{Staging--packaging defect as explanatory geometry}
+
+The staging--packaging defect atlas measures a commutator-like discrepancy between a packaging-first comparison and a staging-sensitive comparison and was introduced to illuminate route-family geometry rather than to classify survivors. In the present atlas, the defect signal is real but interpretive. It is informative about route-family contrasts, yet it does not support a simple reading in which positive cases uniformly exhibit lower defect than controls, and it does not produce a decisive ranking among the surviving route families. The relevant intuition is the projection-and-dynamics tension familiar from coarse-graining formalisms, not a decision rule \citep{Zwanzig1960,Mori1965,Kadanoff1966,Wilson1971}.
+
+The defect atlas is not used as a gate anywhere in our claim-bearing pipeline. It does not decide whether a route is intrinsic, representative-selected, or protocol-indexed, and it does not certify or reject a route on its own. It does help display how route families differ geometrically and where route-class structure is being changed by staging-sensitive constructions. The evidence remains route-family-level: where the defect atlas distinguishes anything reliably, it does so at the level of route families or fallback-shaped route behavior, not at the level of a uniquely preferred strategy inside the surviving representative-selected families.
+ \section{Formal Criterion Layer}\label{sec:formal}
+
+The empirical and computational results above are carried by the fixed-support audit pipeline, not by theorem proving alone. We supplement them with a small formal layer that records a compile-checked definition package for the promotion criterion and a generic kernel theorem assembling the criterion fields into promoted-package status. The Lean development is not a mechanization of the full computational atlas. The implementation context is Lean~4 with the surrounding mathlib ecosystem \citep{deMouraUllrich2021,Mathlib2020}.
+
+The development is organized around a generic promotion namespace. At the definition level, it formalizes the abstract notions used in \Cref{sec:criteria}: candidate promoted packages, induced update laws, admissible second-stage coarse-grainings, promoted-layer criteria, and protocol-indexed promotion criteria. These definitions are route-family-level. They do not encode repository artifacts, benchmark identifiers, or pipeline-level details; they make precise the logical shape of the criterion rather than reproduce the workflow inside Lean.
+
+On top of those definitions sits a small criterion kernel. It says that if a candidate package is supplied with the relevant update structure and is shown to satisfy sufficiency, second-stage stability, control admissibility, no-smuggling, and slice legibility on the designated surface, then it satisfies the promoted-package criterion. This is the formal analogue of \Cref{prop:generic-promotion-criterion}.
+
+The development also contains an abstract flagship-oriented witness stub and a small example layer. The stub is not a formalization of the Route~A flagship artifact data; it packages exactly the assumptions a flagship-style surviving route would have to satisfy in order to invoke the criterion kernel, and so acts as an interface between the abstract criterion layer and the route-family evidence used in the main text. The example layer demonstrates that the definitions and kernel are usable on small self-contained examples; it is a sanity check on the formal vocabulary, not an independent source of empirical evidence. Together, the formal layer captures the abstract promotion criterion and the generic implication from the criterion fields to promoted-package status, without claiming a Lean mechanization of the full corpus.
+ \section{Discussion and Limitations}\label{sec:discussion}
+
+The intrinsic route $P_{\mathrm{int}}$ is the main result because it survives on both flagship anchors, covers the four nearby positives, separates the required controls, and remains honest under the paired artifact audit without requiring representative-selected correction. The representative-selected routes refine that picture rather than replacing it. They show that the surviving-package surface on the flagship core is richer than a single route, but their support remains route-family-level: they do not justify a unique best strategy claim, and they do not displace the intrinsic route. If $P_{\mathrm{int}}$ had failed and only a representative-selected route had survived, the natural reading would have shifted toward a lift-selected or protocol-indexed package. That is not the current evidential state. Interpreted modestly, this intrinsic-versus-representative asymmetry is closer to familiar contrasts between intrinsic state abstraction, predictive state, and selected refinement than to a claim that one universal abstraction recipe has been proved \citep{LiWalshLittman2006,LittmanSuttonSingh2001,Jaeger2000,CousotCousot1977}.
+
+The support layers are easier to interpret when kept in their proper place. The slice/dual analysis shows that the surviving-route picture is not exhausted by a single scalar tradeoff ordering: different slices can favor different material route families. This is informative but remains support-only and provisional. The staging--packaging defect atlas contributes explanatory route geometry; it is not a classifier and not even positively ordered in the simplest positive-versus-control way. It sharpens interpretation without entering the claim-bearing pipeline.
+
+The protocol result is one of the paper's most important limitations as well as one of its strengths. The artifact control had to be treated in paired form to make the no-smuggling condition honest. Under that audit, the intrinsic route survives without being reclassified as protocol-indexed, and the declared-family representative-selected route also remains live on the canonical protocol-aware surface. The paired-enrichment family remains live only with the explicit paired-lift override caveat. The paper therefore supports real route-family survivors under protocol honesty, but not a blanket statement that every live route is equally direct or equally easy to certify.
+
+Several further limitations are explicit. First, the corpus is intentionally narrow: we do not claim a broad route atlas beyond the frozen Route~A flagship family and its immediate local neighborhood. Second, the nearby-positive coverage is local robustness evidence rather than theorem-core extension. Third, we do not claim a unique best representative strategy. Fourth, the slice/dual and defect layers are not promoted to decisive classifiers. Fifth, the Lean development is a generic criterion-support layer and not a mechanization of the full computational atlas or the full flagship dataset.
+
+Taken together, the results support a precise reading. The fixed-support promotion pipeline does more than confirm witness positivity: it identifies at least one honest surviving package on the flagship core, shows that the strongest such survivor is intrinsic, and places the representative-selected route families in a secondary supporting role. Once promotion is treated as a criterion-governed question rather than as a loose extrapolation from witness structure, the decision surface becomes clear: the frozen corpus, the second-stage audit, the paired artifact control, and the protocol-honesty requirement together determine which route families count as surviving packages.
+ \section{Conclusion}\label{sec:conclusion}
+
+We asked whether a recombination-positive witness family on fixed support supports a genuine promoted package or only a lower-layer summary. On a frozen Route~A corpus and a second-stage audit pipeline that replaces an earlier vacuous rule with admissible surface coarsening, the answer is narrow and positive. An intrinsic candidate package survives on the flagship core, remains supported across the four nearby positives, separates the required controls, and remains honest under the paired artifact audit. Two representative-selected route families also survive on the flagship core, but only as secondary route-family results, and the formal layer records a generic criterion kernel for the promotion vocabulary.
+
+The resulting claim is correspondingly narrow: at least one promoted-package candidate survives honestly on fixed support in the Route~A flagship family, with the intrinsic route as the main result and the representative-selected route families as secondary support.
+ 
+\appendix
+\section{Formal Definitions and Theorem Statements}\label{app:formal}
+
+This appendix records the formal vocabulary behind \Cref{sec:criteria} in compact form. It does not replace the computational analysis of the main text and does not enlarge the paper's claim surface \citep{Nerode1958,Park1981,KemenySnell1960,RogersPitman1981,Fisher1922,Blackwell1953,CousotCousot1977}.
+
+\begin{definition}[Candidate promoted package]
+Fix a common support surface, a designated observable family, and an admissible family of lower-level operations. A candidate promoted package consists of a package-level state object together with a way of reading lower-level states or histories into that package-level object. The package is intended to capture the structure relevant for the designated observables and admissible operations, without hidden dependence on an arbitrary lower-level representative.
+\end{definition}
+
+\begin{definition}[Induced update law]
+A candidate package carries an induced update law when the admissible lower-level operations descend to package-level updates in a representative-independent way. Lower-level identifications that define the package must remain respected under admissible continuation at the package level.
+\end{definition}
+
+\begin{definition}[Admissible second-stage coarse-graining]
+An admissible second-stage coarse-graining is a further package-level repackaging that preserves the retained observable surface together with the descended update structure. The identity coarse-graining is always admissible. The substantive question is whether a candidate survives nontrivial admissible further coarse-graining, or is rigid-minimal for explicit admissibility reasons rather than by vacuous overconstraint.
+\end{definition}
+
+\begin{definition}[Promoted-package criterion]
+A candidate package satisfies the promoted-package criterion on a designated corpus and slice if it satisfies all of the following:
+\begin{enumerate}[label=(\roman*)]
+\item sufficiency for the designated observable family;
+\item induced closure under admissible lower-level operations;
+\item admissible second-stage stability;
+\item control admissibility on the required control bundle;
+\item no-smuggling with respect to omitted protocol or scheduler state; and
+\item slice legibility on at least one designated slice.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Protocol-indexed promotion criterion]
+A protocol-indexed promoted package is one for which the base candidate does not qualify honestly without additional protocol or context state, but an internalized or indexed refinement of that candidate satisfies the promoted-package criterion once the omitted dependence is represented inside the package itself.
+\end{definition}
+
+\begin{proposition}[Generic promotion criterion]
+Let a candidate promoted package be equipped with an induced update law. If, on the designated corpus and slice, the candidate satisfies sufficiency, admissible second-stage stability, control admissibility, no-smuggling, and slice legibility, then it satisfies the promoted-package criterion on that surface.
+\end{proposition}
+ \section{Lean Formalization Summary}\label{app:lean}
+
+The Lean development provides a compile-checked criterion layer corresponding to the promotion vocabulary of \Cref{sec:criteria} and \Cref{app:formal}. It does not mechanize the full current-package atlas and does not import the full flagship corpus into theorem-prover form; it formalizes the generic criterion vocabulary and the small kernel implication used in the main text. The implementation context is Lean~4 together with the mathlib library environment \citep{deMouraUllrich2021,Mathlib2020}.
+
+\subsection{Namespace and definition layer}
+
+The development is organized under a dedicated promotion namespace. At the definition level, it introduces formal counterparts of the criterion concepts: candidate promoted packages, induced update laws, admissible second-stage coarse-grainings, promoted-layer criteria, and protocol-indexed promotion criteria. These are route-family-level abstractions and are not tied to repository artifact identifiers or benchmark-specific file structure.
+
+The main modules are:
+\begin{itemize}
+\item \texttt{Recombination/Promotion.lean}: namespace entry point for the promotion layer.
+\item \texttt{Recombination/Promotion/Definitions.lean}: abstract definitions corresponding to the criterion vocabulary.
+\item \texttt{Recombination/Promotion/Statements.lean}: compile-safe statement layer built on the definitions.
+\item \texttt{Recombination/Promotion/CriterionKernel.lean}: generic kernel theorem assembling the criterion fields.
+\item \texttt{Recombination/Promotion/Examples.lean}: small self-contained examples demonstrating usability.
+\item \texttt{Recombination/Promotion/FlagshipStub.lean}: abstract flagship-oriented witness stub for kernel instantiation.
+\end{itemize}
+
+\subsection{Criterion kernel}
+
+A small statement layer records compile-safe lemmas showing that the definitions are usable. The criterion-kernel theorem packages the logical spine: given the relevant update structure and the proofs of sufficiency, second-stage stability, control admissibility, no-smuggling, and slice legibility, the promoted-layer criterion follows. In the development this is represented as a generic constructor-style kernel rather than as a deep theorem about the specific finite corpus.
+
+\subsection{Flagship witness stub and examples}
+
+The flagship-oriented witness stub does not claim that the actual Route~A flagship computation has been mechanized. It packages the assumptions a flagship-style survivor route would need in order to instantiate the criterion kernel, and so functions as an interface between the abstract criterion language and the route-family evidence used in the main text. The accompanying examples demonstrate that the definitions and kernel are usable on small formal objects; their purpose is pedagogical and sanity-checking, not empirical.
+ \section{Computational Methods}\label{app:methods}
+
+This appendix summarizes the computational surface used in the paper and records the role of the canonical pipeline in relation to the earlier exploratory outputs. The computational surface is narrow: a frozen corpus, an intrinsic layer, a second-stage audit, a protocol-aware artifact control, a current-package classification checkpoint, and clearly delimited support and explanatory layers.
+
+\paragraph{Frozen corpus.}
+The corpus is frozen at the level of a small exact-finite comparison set. It contains a two-anchor Route~A flagship core, four nearby positives in the same local neighborhood, a control bundle consisting of null, memory-only, artifact, and boundary-sensitive controls, and one support-only erasure comparison surface. The corpus is identified canonically by the frozen corpus artifact used throughout the paper. The flagship core is the empirical decision surface, the nearby positives provide local robustness evidence, the controls are used for admissibility and honesty checks, and the erasure-side comparison remains support-only.
+
+\paragraph{Intrinsic layer.}
+The canonical intrinsic layer is the path that reconstructs the effective benchmark surface for the finite route under study. It corrects an earlier failure in which nearby positives with different carrier sizes were evaluated on an inherited, overly rigid runtime surface. The canonical intrinsic artifacts are the \texttt{ticket27r1\_*} outputs, not the original \texttt{ticket27\_intrinsic\_*} outputs.
+
+\paragraph{Second-stage audit.}
+The canonical second-stage layer is the \texttt{ticket27r2\_*} path. The original exploratory second-stage rule attempted exact-signature comparison inside already minimal packages and became vacuous on the real corpus. The canonical route instead evaluates admissible surface-coarsening proposals and rebuilds the effective package on the reduced retained surface. The original \texttt{ticket27\_second\_stage\_*} outputs are retained only for historical traceability and are not claim-bearing.
+
+\paragraph{Current-package decision surface.}
+The current-package checkpoint is encoded by the canonical classification surface. At that checkpoint, the intrinsic route is classified as the main survivor family, the representative-selected route families are classified as secondary survivor families, the slice/dual layer is retained as support-only and provisional, and the staging--packaging defect layer is retained as explanatory only.
+
+\paragraph{Protocol-aware artifact control.}
+The artifact control is canonical only in paired form. The older single-row presentation is a legacy convenience and is not claim-bearing. The protocol-aware comparison consists of an uninternalized endpoint, an internalized partner endpoint, and the corresponding verdict. For the paired-observable-enrichment representative-selected family, the canonical reading also requires the dedicated paired-lift override artifacts; the older protocol summary alone is not sufficient for that family.
+
+\paragraph{Support and explanatory layers.}
+The slice/dual artifacts and the staging--packaging defect atlas are retained in the repository and cited in the paper, but only in support or explanatory roles. They do not replace the current-package classification surface and are not used as decisive comparisons.
+
+\paragraph{Artifact notation in the paper.}
+The main text uses conceptual labels rather than raw artifact identifiers. The intrinsic survivor is denoted $P_{\mathrm{int}}$, the declared-family representative-selected route $P_{\mathrm{decl}}$, and the paired-enrichment representative-selected route $P_{\mathrm{pair}}$. The exact mapping between these labels and repository artifacts is given in the reproducibility note below.
+ \section{Artifact and Reproducibility Note}\label{app:repro}
+
+This appendix records the canonical artifact surface used in the paper and points to the repository materials needed for verification. The repository runbook and asset index remain the detailed navigational documents; this appendix provides only the artifact mapping needed to read the paper accurately.
+
+\paragraph{Canonical artifact surface.}
+The artifact surface used in the paper is:
+\begin{itemize}
+\item the frozen corpus artifact for the exact comparison set;
+\item the canonical intrinsic artifacts (\texttt{ticket27r1\_*});
+\item the canonical second-stage artifacts (\texttt{ticket27r2\_*});
+\item the current-package classification surface;
+\item the paired protocol-audit artifacts for artifact honesty;
+\item the dedicated paired-lift override artifacts for the paired-enrichment route family;
+\item the Lean promotion foundation and kernel as formal-support material.
+\end{itemize}
+
+\paragraph{Paper notation to artifact mapping.}
+The paper-facing labels correspond to the canonical artifact surface as follows:
+\begin{itemize}
+\item $P_{\mathrm{int}}$: the selected intrinsic survivor represented by the current-package atlas together with the canonical intrinsic and second-stage artifacts.
+\item $P_{\mathrm{decl}}$: the declared-completion-family representative-selected route class in the lift-selection summary and registry.
+\item $P_{\mathrm{pair}}$: the paired-observable-enrichment representative-selected route class, read canonically only together with the dedicated paired-lift override artifacts.
+\end{itemize}
+
+\paragraph{Superseded and non-canonical artifacts.}
+The following artifacts are retained for historical traceability but are not claim-bearing:
+\begin{itemize}
+\item the original exploratory intrinsic artifacts:
+  \begin{itemize}[leftmargin=1.5em]
+  \item \path{ticket27_intrinsic_smoke.json};
+  \item \path{ticket27_intrinsic_candidate_registry.json};
+  \item \path{ticket27_intrinsic_family_summary.json}.
+  \end{itemize}
+\item the original exploratory second-stage artifacts:
+  \begin{itemize}[leftmargin=1.5em]
+  \item \path{ticket27_second_stage_smoke.json};
+  \item \path{ticket27_second_stage_registry.json};
+  \item \path{ticket27_second_stage_stability_summary.json}.
+  \end{itemize}
+\item the old \path{ticket27_representative_frontier.json}, which is non-canonical because a later dominance correction superseded it.
+\end{itemize}
+
+\paragraph{Protocol caveat.}
+The paired-observable-enrichment route family must not be read from the older protocol summary alone. Its canonical live status depends on the dedicated paired-lift override artifacts.
+
+\paragraph{Support-only and explanatory artifacts.}
+The slice/dual frontier and shadow-price materials are support-only and provisional. The staging--packaging defect summary and atlas are explanatory only. None of these artifacts is decision-bearing for the main result.
+
+For detailed reproduction commands and the full canonical-vs-historical artifact index, see the repository runbook and asset index.
+ \section{Exact Tables}\label{app:tables}
+
+This appendix collects the exact tables backing the main text. The tables are restricted to the canonical or explicitly support-only artifact surface. Superseded exploratory artifacts are not used here except by name in the reproducibility note.
+
+\begin{table}[H]
+\centering
+\caption{Frozen corpus used in the paper. The flagship core is decision-bearing, the nearby positives provide local robustness support, the required controls are used for control admissibility and honesty checks, and the erasure-side surface remains support-only.}
+\label{tab:exact-corpus-freeze}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\hline
+Category & Count & Role in paper & Status \\
+\hline
+Flagship anchors & 2 & main decision surface & claim-bearing \\
+Nearby positives & 4 & local robustness support & support for main route \\
+Required controls & 4 & control admissibility / honesty & claim-bearing controls \\
+Erasure-side comparison & 1 surface & interpretive comparison & support-only \\
+\hline
+\end{tabularx}
+\end{table}
+ 
+\begin{table}[H]
+\centering
+\caption{Current-package route-family status used by the paper. The intrinsic route is the main result, the two representative-selected route families are secondary, slice/dual remains support-only, and the defect layer remains explanatory only.}
+\label{tab:exact-current-package-atlas}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\hline
+Layer or route family & Paper status & Decision role & Caveat \\
+\hline
+Intrinsic route $P_{\mathrm{int}}$ & surviving package & main result & none beyond fixed-support scope \\
+Declared-family route $P_{\mathrm{decl}}$ & surviving package & secondary route-family support & no unique best strategy \\
+Paired-family route $P_{\mathrm{pair}}$ & surviving package & secondary route-family support & live only with override caveat \\
+Slice/dual layer & live signal & support-only / provisional & not decisive here \\
+Defect atlas & live signal & explanatory only & not a gate \\
+\hline
+\end{tabularx}
+\end{table}
+ 
+\begin{table}[H]
+\centering
+\caption{Protocol-honesty rollup for the route families retained in the paper. The paired-enrichment family is canonical only with the dedicated paired-lift override artifacts.}
+\label{tab:exact-protocol-rollup}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.21\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}@{}}
+\hline
+Route family & Protocol reading in paper & Artifact-control status & Writing caveat \\
+\hline
+Intrinsic route $P_{\mathrm{int}}$ & protocol-honest & survives paired audit & main result surface \\
+Declared-family route $P_{\mathrm{decl}}$ & protocol-honest & survives paired audit & secondary route-family support \\
+Paired-family route $P_{\mathrm{pair}}$ & live with override & depends on paired-lift override artifacts & do not use older summary alone \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{table}[H]
+\centering
+\caption{Support and explanatory layers retained in the paper. These layers remain visible for interpretation but are not decision-bearing for the main result.}
+\label{tab:exact-support-layers}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\hline
+Layer & Status in paper & What it contributes & What it does not do \\
+\hline
+Slice/dual frontier & support-only / provisional & tradeoff context & does not decide survivor status \\
+Staging--packaging defect & explanatory only & route-family geometry & not a gate or classifier \\
+Lean criterion layer & formal support & criterion hardening & not the empirical engine \\
+\hline
+\end{tabularx}
+\end{table}
+  
+\bibliographystyle{plainnat}
+\bibliography{paper/references}
+\end{document}

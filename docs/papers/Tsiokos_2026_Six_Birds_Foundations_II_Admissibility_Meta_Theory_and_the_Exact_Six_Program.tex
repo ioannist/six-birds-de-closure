@@ -1,0 +1,2446 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{orcidlink}
+\usepackage{titling}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+
+\hypersetup{
+  pdftitle={Six Birds Foundations II: Admissibility, Meta-Theory, and the Exact-Six Program},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period,
+  margin=1em
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\setlength{\bibsep}{2pt plus 0.3ex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Six Birds Foundations II}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad DOI: \href{https://doi.org/10.5281/zenodo.19672278}{10.5281/zenodo.19672278} \quad Preprint --- not peer reviewed.}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{2.8ex plus 1.0ex minus 0.4ex}{1.6ex plus 0.4ex}
+\titlespacing*{\subsection}{0pt}{2.2ex plus 0.8ex minus 0.3ex}{1.1ex plus 0.3ex}
+
+\newcommand{\classid}[1]{\texttt{\small\hyphenchar\font=`\_ #1}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\FATCD}{\ensuremath{\mathsf{FATCD}}}
+\newcommand{\Raw}[1]{\ensuremath{\operatorname{Raw}\!\left(#1\right)}}
+\newcommand{\Audit}[1]{\ensuremath{\operatorname{Audit}\!\left(#1\right)}}
+\newcommand{\Closed}[1]{\ensuremath{\operatorname{Closed}\!\left(#1\right)}}
+\newcommand{\Dec}[1]{\ensuremath{\operatorname{Dec}\!\left(#1\right)}}
+\newcommand{\Residual}[1]{\ensuremath{\operatorname{Residual}\!\left(#1\right)}}
+\newcommand{\Chan}[2]{\ensuremath{\operatorname{Chan}_{#1}\!\left(#2\right)}}
+\newcommand{\Status}[2]{\ensuremath{\operatorname{Status}_{#1}\!\left(#2\right)}}
+\newcommand{\ScopedExactSix}[1]{\ensuremath{\operatorname{ScopedExactSix}\!\left(#1\right)}}
+
+\newcommand{\activeproj}{\texttt{active\_projection}}
+\newcommand{\belowthr}{\texttt{below\_threshold}}
+\newcommand{\collapsedbc}{\texttt{collapsed\_boundary\_case}}
+\newcommand{\absentrec}{\texttt{absent\_with\_record}}
+\newcommand{\outsidescope}{\texttt{inapplicable\_outside\_scope}}
+
+\newcommand{\Pone}{\ensuremath{\mathrm{P1}}}
+\newcommand{\Ptwo}{\ensuremath{\mathrm{P2}}}
+\newcommand{\Pthree}{\ensuremath{\mathrm{P3}}}
+\newcommand{\Pfour}{\ensuremath{\mathrm{P4}}}
+\newcommand{\Pfive}{\ensuremath{\mathrm{P5}}}
+\newcommand{\Psix}{\ensuremath{\mathrm{P6}}}
+ 
+\begin{document}
+
+\title{Six Birds Foundations II:\\[4pt]
+Admissibility, Meta-Theory, and the Exact-Six Program}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+\noindent
+Six Birds Foundations I~\citep{Tsiokos2026SixBirdsFoundations}
+introduced a stratified closure calculus with six primitive closure
+roles. The present paper extends that calculus
+into a theorem-level framework in three parts: a primitive role
+architecture fixing the meanings, levels, local boundaries, and
+selected lifts of the six typed closure roles \(P_1,\ldots,P_6\); an
+admissibility and meta-theory regime in which honest bookkeeping,
+typed non-collapse, level profiles, forgetting with selected lifts,
+activation thresholds, instrument-relative visibility, and
+empirical-bridge admissibility are stated as theorem schemas; and a
+scoped exact-six theorem chain over the domain \(\FATCD{}\) of finite
+audited typed closure descriptions. Within this domain we prove six
+role-lower-bound witnesses, an upper-bound classification with
+corrected role-projection alignments (closing the probability,
+causality, and agency threats in the covered scope), a
+decomposition/exhaustion theorem, and an integrated stress
+certification. The terminal theorem asserts that every
+\(D \in \FATCD{}\) admits a well-formed decomposition/exhaustion
+record with exactly six role channels, each in one of five recorded
+statuses, with residual features classified under an explicit scheme
+and no seventh irreducible role required in the covered scope. The
+claim concerns role channels rather than active projections, and the
+decomposition is existential, not unique. We do not claim unrestricted
+exact-six, all-emergence coverage, a full six-primitives algebra,
+global primitive independence, empirical realization, or internal
+instrument-family completeness.
+\end{abstract}
+ \section{Introduction}\label{sec:introduction}
+
+
+
+Six Birds Foundations I~\citep{Tsiokos2026SixBirdsFoundations}
+introduced a stratified closure-calculus
+perspective~\citep{Anderson1972} on finite theory packages,
+\(\mathcal{T} = (Z, f, \Sigma_f, E, \mathcal{A})\), in which theories
+arise as fixed points of idempotent
+operators~\citep{DaveyPriestley2002} and six primitive closure roles
+\Pone{}, \ldots, \Psix{} emerge from composability combined with
+limited-interface observation. The present paper extends
+that calculus into a theorem-level framework. It fixes the primitive
+role architecture, specifies the admissibility and meta-theory regime
+under which role talk is licensed, and proves a scoped exact-six
+terminal result over a precisely delimited domain. The exact-six
+theorem is the consequence of that stack, not its whole content.
+
+\subsection{The three parts}\label{subsec:three-pillars}
+
+Each of the three parts below supplies structure the other two do not.
+The \emph{primitive role architecture}
+(Section~\ref{sec:primitive-role-architecture}) fixes the six role
+meanings of \Pone{}--\Psix{} at their corrected alignments, records
+the common behavioral, verification, and structural-categorical level
+pattern, enumerates the local boundary distinctions under scoped
+bookkeeping, and states the selected-lift atlas vocabulary. The
+\emph{admissibility and meta-theory regime}
+(Section~\ref{sec:admissibility-meta-theory}) elevates honest
+bookkeeping from a per-description condition to a meta-theoretic
+discipline, replaces flat primitive independence by typed
+non-collapse, and records level, forgetting, threshold, visibility,
+and empirical-bridge theorem schemas. The \emph{exact-six theorem
+chain}
+(Sections~\ref{sec:fatcd-domain}--\ref{sec:integrated-stress})
+quantifies the exact-six question precisely over the domain \FATCD{}
+of finite audited typed closure descriptions and proves the terminal
+result via lower-bound witnesses, an upper-bound classification with
+corrected role-projection alignments, a decomposition/exhaustion
+theorem, and an integrated stress certification.
+
+\subsection{The terminal theorem, informally}\label{subsec:terminal-informal}
+
+A finite audited typed closure description \(D\) is a finitely
+presented collection of typed raw records and annotations subject to
+finiteness, closure, and honest-bookkeeping conditions. The role
+vocabulary \Pone{}--\Psix{} enters \(D\) not as a constraint on
+admissibility but as a family of derived projections \(\pi_i(D)\),
+each available when threshold, witness, level, and audit data are
+attached to raw features. The terminal theorem
+(Theorem~\ref{thm:scoped-exact-six}) states that for every
+\(D \in \FATCD{}\) there exists a well-formed
+decomposition/exhaustion record \(\Dec{D}\) carrying exactly the six
+typed closure-role channels \Pone{}, \ldots, \Psix{}, each in exactly
+one of five statuses, with all residual features covered by an
+explicit classification and no seventh irreducible role required in
+the covered scope. The claim is about role channels, not active
+projections, and the decomposition is existential, not unique.
+
+\subsection{What the paper does and does not claim}\label{subsec:intro-nonclaims}
+
+The terminal theorem is scoped exact-six, not unrestricted exact-six.
+It makes none of the following stronger claims:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item unrestricted exact-six, or any claim about all emergence
+    phenomena;
+  \item that every \(D \in \FATCD{}\) activates all six roles or
+    carries six active nontrivial witnesses;
+  \item that the decomposition/exhaustion record \(\Dec{D}\) is unique
+    or canonical;
+  \item a full six-primitives algebra or global primitive
+    independence;
+  \item empirical realization;
+  \item internal instrument-family completeness;
+  \item any statement about broader domains without further work.
+\end{itemize}
+These are scope boundaries, collected in
+Section~\ref{sec:limitations-nonclaims} and enforced locally by the
+theorem-chain results that would otherwise overread them.
+
+\subsection{Organization}\label{subsec:organization}
+
+After this introduction, Section~\ref{sec:primitive-role-architecture}
+fixes the primitive role meanings, level trichotomy, boundary
+distinctions, and selected-lift atlas. Section~\ref{sec:admissibility-meta-theory}
+states the seven-schema admissibility regime. Section~\ref{sec:fatcd-domain}
+defines \FATCD{} and formulates the exact-six question over it.
+Section~\ref{sec:lower-bounds} proves the six-role lower bounds.
+Section~\ref{sec:upper-bound-classification} proves the repaired
+upper-bound classification theorem, closing the probability,
+causality, and agency threats within the covered scope.
+Section~\ref{sec:decomposition-exhaustion} proves decomposition
+existence, six-channel exactness, and residual exhaustion, and records
+the channel-versus-activation discipline and non-uniqueness.
+Section~\ref{sec:integrated-stress} records the anti-overclaim stress
+families and the integrated stress certification.
+Section~\ref{sec:scoped-exact-six} states and proves the terminal
+theorem. Sections~\ref{sec:limitations-nonclaims}
+and~\ref{sec:future-work} record scope boundaries and future
+directions. Appendix~\ref{app:api-provenance} records the API
+provenance of the theorem-chain artifacts.
+ \section{Primitive role architecture}\label{sec:primitive-role-architecture}
+
+
+
+This section fixes the meanings of the six typed closure roles
+\Pone{}, \ldots, \Psix{}, the behavioral, verification, and
+structural-categorical level pattern they share, the local boundary
+distinctions between them, and the selected-lift atlas vocabulary.
+These meanings are fixed for the remainder of the paper and govern
+every subsequent definition, lower bound, and upper-bound
+classification.
+
+\subsection{Role meanings}\label{subsec:role-meanings}
+
+\begin{definition}[Primitive closure roles]\label{def:primitive-roles}
+The six primitive closure roles are
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{} --- update-vs-quotient compatibility / descent
+    obstruction~\citep{GrothendieckSGA1,JanelidzeTholen1994};
+  \item \Ptwo{} --- macro-specification
+    representability~\citep{MacLane1998};
+  \item \Pthree{} --- enriched route/coherence
+    mismatch~\citep{BaaderNipkow1998,Nakahara2003}; \Pthree{} is not a
+    directionality certificate;
+  \item \Pfour{} --- stage/order/transition/refinement
+    structure~\citep{Milner1989,BackVonWright1998};
+  \item \Pfive{} --- quotient packaging /
+    quotienting~\citep{KemenySnell1960};
+  \item \Psix{} --- audit/bookkeeping/provenance/replay/checkability~\citep{GreenKarvounarakisTannen2007,Merkle1987}.
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Corrected alignments]\label{rem:repaired-alignments}
+Three alignments that Definition~\ref{def:primitive-roles} rules out
+are used throughout later classification: generic transition data is
+not \Pthree{}; generic path or derivation data is not \Pfive{}; and
+generic semantic or interpretation data is not \Pone{}. These
+constraints determine which feature clusters can later be interpreted
+as active projections of each role.
+\end{remark}
+
+\begin{remark}[Drive face of \Psix{}]\label{rem:p6-drive}
+Arguments about affinities, detailed balance, or honest directionality
+use the narrower \(\mathrm{P6}_{\mathrm{drive}}\) specialization of
+\Psix{}: its affinity-carrying, detailed-balance-breaking
+face~\citep{Seifert2012}. \(\mathrm{P6}_{\mathrm{drive}}\) is a face
+of \Psix{}, not a replacement for it. A \Pthree{}
+route/coherence-mismatch witness does not establish directionality
+without a \Psix{}-side audit.
+\end{remark}
+
+\subsection{Behavioral, verification, and structural-categorical levels}\label{subsec:levels}
+
+Each role admits a common three-level pattern.
+
+\begin{definition}[Level trichotomy]\label{def:level-trichotomy}
+For each role \Pone{}, \ldots, \Psix{}, we distinguish
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the \emph{behavioral level}: status, occurrence, or observed
+    behavior of the role in a description;
+  \item the \emph{verification level}: proof, witness, certificate, or
+    checkable record supporting a behavioral
+    claim~\citep{MartinLof1984};
+  \item the \emph{structural-categorical level}: reusable structure
+    supporting the primitive role.
+\end{itemize}
+Forgetting proceeds from structural-categorical to verification to
+behavioral and is lossy. Lifting proceeds from behavioral to
+verification to structural-categorical only after adding explicitly
+recorded data, and selected lifts are not unique.
+\end{definition}
+
+\begin{remark}[Level content per primitive]\label{rem:per-primitive-levels}
+The level trichotomy instantiates as follows.
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: descent success or descent obstruction status; descent
+    proof or obstruction witness; quotient data equipped with a descended
+    map, or an explicit no-descended-map obstruction record.
+  \item \Ptwo{}: representability or non-representability status;
+    representability or non-representability certificate;
+    macro-specification layer together with a realization relation.
+  \item \Pthree{}: witness behavior of route disagreement; generated route
+    terms and non-reducibility certificates; categorical route grammar or a
+    reduced categorical universe.
+  \item \Pfour{}: stage status, transition occurrence, or refinement
+    behavior; order/preorder, transition, or refinement certificates;
+    stage/refinement architecture.
+  \item \Pfive{}: packaging or identification behavior; equivalence and
+    quotient-validity certificate; quotient object with a packaging map
+    and universal-property or tower/coarsening data.
+  \item \Psix{}: audit-relevant event occurrence or record--event
+    association; checkable audit record; audit schema with provenance,
+    replay, and check relations.
+\end{itemize}
+The meta-theoretic properties of this trichotomy --- lossy forgetting,
+selected non-unique lifts, and the absence of lower-to-higher determinacy
+without added data --- are formalized in
+Section~\ref{sec:admissibility-meta-theory}.
+\end{remark}
+
+\subsection{Local boundary distinctions}\label{subsec:boundary-matrix}
+
+With role meanings and level pattern fixed, we turn to how the six
+roles remain distinct. Table~\ref{tab:boundary-matrix} records the
+pairwise local rules. These are local distinctions under scoped
+bookkeeping, not a global primitive-independence theorem: two roles
+may interact legitimately in a single description, but neither
+collapses into the other. The table is reproduced in landscape
+orientation on the page immediately preceding the references.
+
+\begin{proposition}[Boundary distinctions under scoped bookkeeping]\label{prop:boundary-distinctions}
+For every pair of roles listed in Table~\ref{tab:boundary-matrix}, the
+corresponding ``forbidden collapse'' is ruled out as a locally admissible
+identification of those two roles under the repaired alignments of
+Remark~\ref{rem:repaired-alignments} together with the honest bookkeeping
+required by a \FATCD{}.
+\end{proposition}
+
+\begin{remark}[Not a global independence theorem]\label{rem:not-global-independence}
+The boundary matrix asserts local distinctions, not global
+independence. Primitives interact legitimately in a single
+description: \Pone{} descent is audited by \Psix{}; \Pthree{} route
+terms may be indexed by \Pfour{} stages; nontrivial \Ptwo{}
+representability is typically carried over \Pfive{} quotient structure.
+No claim is made that the six roles are independent generators of a
+global algebra. The typed-non-collapse counterpart of this observation
+appears in Section~\ref{sec:admissibility-meta-theory}.
+\end{remark}
+
+\subsection{Selected-lift atlas and global nonclaims}\label{subsec:lift-atlas}
+
+The remaining architectural data are the selected lifts between levels
+and the nonclaims that accompany them. Upgrading from behavioral or
+verification content to the structural-categorical level requires
+explicitly recorded added data. The resulting lifts are selected, not
+unique, and the atlas carries structural content that is lost under
+forgetting.
+
+\begin{definition}[Selected-lift atlas]\label{def:selected-lift-atlas}
+The \emph{selected-lift atlas} for the six roles records, for each
+\Pone{}, \ldots, \Psix{}:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: proof or witness together with quotient structure, carrying
+    either a descended map or an explicit no-map obstruction;
+  \item \Ptwo{}: representability or non-representability certificates
+    together with the macro-specification layer and realization relation;
+  \item \Pthree{}: the selected lift data recorded in the promoted atlas,
+    carrying generated route terms, non-reducibility certificates, and
+    categorical route grammar or a reduced categorical universe;
+  \item \Pfour{}: validity certificates together with structural
+    stage/refinement architecture;
+  \item \Pfive{}: quotient-validity certificates together with the
+    structural quotient data, a packaging map, and universal-property or
+    tower/coarsening data;
+  \item \Psix{}: record-event or check evidence together with the audit
+    schema and its provenance and replay/check relations.
+\end{itemize}
+Each lift is selected and not unique, and forgetting from a higher level
+loses structural content that is not recoverable without re-adding data.
+\end{definition}
+
+\begin{remark}[Global nonclaims for the role architecture]\label{rem:atlas-global-nonclaims}
+The role architecture preserves the following nonclaims, all carried
+forward into the admissibility regime of
+Section~\ref{sec:admissibility-meta-theory} and the theorem chain of
+Sections~\ref{sec:lower-bounds}--\ref{sec:decomposition-exhaustion}:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item no full six-primitives algebra is claimed;
+  \item no global primitive-independence theorem is claimed;
+  \item no empirical realization is claimed;
+  \item no uniqueness of primitive presentations is claimed;
+  \item no uniqueness of selected lifts is claimed;
+  \item no lower-level-to-higher-level determinacy is claimed;
+  \item no instrument-free formulation is claimed;
+  \item direct cross-level comparison remains inadmissible without
+    translation.
+\end{itemize}
+\end{remark}
+ \section{Admissibility and meta-theory}\label{sec:admissibility-meta-theory}
+
+
+
+The admissibility regime is honest bookkeeping, elevated from a
+per-description condition on \(D \in \FATCD{}\) to a meta-theoretic
+discipline governing which claims about admissible descriptions enter
+the theorem chain. Under honest bookkeeping, the flat
+primitive-independence question is replaced by typed non-collapse,
+level transitions are controlled by forgetting and selected lifts,
+thresholds govern activation, instruments govern visibility, and
+empirical-bridge claims are admitted only as threshold-dependent,
+level-indexed, instrument-visible assertions. Seven theorem schemas
+formalize the regime and preserve the global nonclaims of
+Remark~\ref{rem:atlas-global-nonclaims}.
+
+\subsection{Honest bookkeeping as an admissibility regime}\label{subsec:honest-bookkeeping}
+
+The audit condition of Definition~\ref{def:audited} records enough
+data for each claim, promotion, translation, lift, forgetting,
+visibility, and empirical-bridge assertion to be interrogated on its
+own terms. The following proposition states that these record
+requirements jointly constitute the admissibility regime, in a spirit
+analogous to the axiomatic specification discipline of Hoare
+logic~\citep{Hoare1969}.
+
+\begin{proposition}[Honest bookkeeping is an admissibility regime]\label{prop:honest-bookkeeping}
+Honest bookkeeping is a necessary part of the admissibility regime for
+claims about a description \(D \in \FATCD{}\). Concretely, any claim that
+enters the theorem chain is admissible only if every assertion below
+carries an explicit record in \(\Audit{D}\):
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the claim itself, with its statement, hypotheses, and scope;
+  \item every promotion, with its source level, target level, added data,
+    losses, and preserved nonclaims;
+  \item every translation, with its source context, target context,
+    preserved data, suppressed data, and claim strength;
+  \item every selected lift, marked selected and non-unique;
+  \item every forgetting map, with its record of losses;
+  \item every visibility claim, with both its visible and its suppressed
+    data;
+  \item every empirical-bridge assertion, with its substrate, observable,
+    instrument, level map, threshold-witness relation, and
+    suppressed-structure nonclaims.
+\end{itemize}
+Accordingly, unrecorded claims, implicit promotions, silent translations,
+asserted-but-unselected lifts, lossless forgetting without proof,
+visibility overreads, and bare empirical-realization assertions are all
+inadmissible.
+\end{proposition}
+
+\begin{remark}[Why the regime is necessary]\label{rem:why-honest-bookkeeping}
+The bookkeeping requirement is a structural check, not a stylistic
+one. Without explicit records, passive observation can be misread as
+\Psix{}, mere packaging as \Pone{} descent, and route failure as
+\Pthree{} mismatch. The regime prevents those misreadings from
+entering the theorem chain.
+\end{remark}
+
+
+\subsection{Typed non-collapse}\label{subsec:typed-non-collapse}
+
+The regime does not include flat primitive independence --- the claim
+that \Pone{}, \ldots, \Psix{} are independent generators of a global
+algebra. Its meta-theoretic counterpart here is typed non-collapse.
+
+\begin{proposition}[Typed non-collapse]\label{prop:typed-non-collapse}
+Under honest bookkeeping (Proposition~\ref{prop:honest-bookkeeping}) and
+the repaired alignments of Remark~\ref{rem:repaired-alignments}, for
+every pair of primitive roles \((P_i, P_j)\) with \(i \ne j\), the
+``forbidden collapse'' of the corresponding row in
+Table~\ref{tab:boundary-matrix} is not admissible as an identification
+of \(P_i\) with \(P_j\); the ``permitted interaction'' of the same row is
+not thereby excluded and may remain admissible when its own bookkeeping
+conditions are met.
+\end{proposition}
+
+\begin{remark}[Typed non-collapse versus global independence]\label{rem:typed-non-collapse-vs-independence}
+Typed non-collapse is strictly weaker than global primitive
+independence. It does not assert that the six roles are logically or
+categorically independent in a global algebra; it asserts only that
+the pairwise identifications listed as forbidden collapses in
+Table~\ref{tab:boundary-matrix} are inadmissible under honest
+bookkeeping, leaving the corresponding typed interactions available.
+\end{remark}
+
+
+\subsection{Level-profile architecture}\label{subsec:level-profile-architecture}
+
+Typed non-collapse fixes which identifications are inadmissible; the
+regime must also record the level at which each admissible claim is
+made. The level trichotomy of Definition~\ref{def:level-trichotomy}
+is therefore lifted from a role-by-role template to a regime-level
+structure.
+
+\begin{proposition}[Level-profile architecture]\label{prop:level-profile}
+Every admissible claim about a description \(D \in \FATCD{}\) carries a
+level profile: each claim is located on the behavioral, verification, or
+structural-categorical level, and each cross-level assertion is
+accompanied by a translation record in the sense of
+Proposition~\ref{prop:honest-bookkeeping}. Direct comparison of claims at
+different levels without a translation record is inadmissible.
+\end{proposition}
+
+\subsection{Forgetting and selected lifts}\label{subsec:forgetting-lifts}
+
+Level transitions are controlled by forgetting and selected lifts.
+
+\begin{proposition}[Forgetting and selected-lift architecture]\label{prop:forgetting-lifts}
+Forgetting from the structural-categorical level to verification, and
+from verification to behavioral, is admissible and is always lossy in
+principle: an admissible forgetting carries a record of the losses in
+\(\Audit{D}\). Lifting from a lower level to a higher level is
+admissible only when accompanied by
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the added data required to support the higher-level statement;
+  \item the mark that the lift is selected and non-unique;
+  \item explicit preservation of lower-level invariants and explicit
+    losses where the lift is partial.
+\end{itemize}
+Lossless forgetting and unique lifts are inadmissible unless the losslessness
+or uniqueness is itself proved and recorded.
+\end{proposition}
+
+\begin{remark}[Lower-to-higher non-determinacy]\label{rem:lower-to-higher-non-determinacy}
+Proposition~\ref{prop:forgetting-lifts} formalizes the non-determinacy of
+lower-level data: given behavioral or verification content alone, no
+choice of structural-categorical content is forced by the admissibility
+regime, and any asserted choice must be marked as a selected lift.
+\end{remark}
+
+\subsection{Activation thresholds}\label{subsec:activation-thresholds}
+
+The regime must also state when a projected role is active. The
+attachment protocol of Definition~\ref{def:threshold-attachment} is
+lifted to a regime-level principle.
+
+\begin{proposition}[Activation thresholds]\label{prop:activation-thresholds}
+An admissible active derived role projection \(\pi_i(D)\) exists only when
+\(D\) carries the threshold, witness, level, collapse, and audit data
+required by Definition~\ref{def:threshold-attachment}. Below-threshold
+clusters carry an explicit \(\belowthr\) status, and boundary-collapsed
+clusters carry \(\collapsedbc\). Arbitrary enrichment, adding structure
+solely to force a role projection, is inadmissible unless the additions
+are themselves honestly bookkept as raw features or annotations.
+\end{proposition}
+
+\subsection{Instrument-relative visibility and suppression}\label{subsec:visibility-suppression}
+
+Threshold-governed activation still leaves open what an instrument
+makes visible or suppresses. Admissibility is therefore
+instrument-relative.
+
+\begin{proposition}[Instrument-relative visibility]\label{prop:visibility}
+Every admissible claim carries an explicit visibility record comprising
+its visible content, its suppressed content, the instruments under which
+the visibility and suppression are asserted, and the resulting
+instrument-relative claim strength. Overreading a suppressed claim as
+visible under a different instrument is inadmissible. Partial visibility,
+in which a claim is visible only up to some coarsening or translation, is
+admitted when the visibility record itself makes the partiality explicit.
+\end{proposition}
+
+\begin{remark}[No instrument-free truth]\label{rem:no-instrument-free}
+Proposition~\ref{prop:visibility} does not claim that instruments are
+free of distortion or that any single instrument is canonical. It
+asserts only that admissible claims carry an instrument-relative
+visibility record. Instrument completeness is deferred to
+Section~\ref{sec:future-work}.
+\end{remark}
+
+\subsection{Empirical-bridge admissibility}\label{subsec:empirical-bridge}
+
+Any claim crossing from the closure-algebraic side of the framework
+to a substrate-level observable must pass through the
+empirical-bridge discipline, related to but narrower than
+the empirical-adequacy view of theories~\citep{vanFraassen1980}.
+
+\begin{proposition}[Empirical-bridge admissibility]\label{prop:empirical-bridge}
+An empirical-bridge claim about \(D \in \FATCD{}\) is admissible only when
+it carries, in \(\Audit{D}\),
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the substrate and observable to which the bridge relates;
+  \item the instrument under which the observable is measured;
+  \item the level map between the closure-algebraic content and the
+    substrate-level content;
+  \item a threshold-witness relation recording when the bridge is
+    crossed;
+  \item the nonclaims suppressed by the bridge record, in particular any
+    structural content of \(D\) that is not tracked by the substrate or
+    instrument.
+\end{itemize}
+Empirical realization --- the claim that \(D\) is itself a substrate
+observation --- is stronger than empirical-bridge admissibility and is
+not asserted by any empirical-bridge claim.
+\end{proposition}
+
+
+\subsection{Nonclaim closure across the seven schemas}\label{subsec:nonclaim-closure}
+
+The seven schemas of
+Propositions~\ref{prop:honest-bookkeeping}--\ref{prop:empirical-bridge}
+together preserve the global nonclaims of
+Remark~\ref{rem:atlas-global-nonclaims} and block a corresponding
+class of overclaims.
+
+\begin{proposition}[Admissibility-regime nonclaim closure]\label{prop:nonclaim-closure}
+Under the seven schemas, the following remain non-claims of the
+admissibility regime:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item no full six-primitives algebra is claimed;
+  \item no global primitive-independence theorem is claimed;
+  \item no empirical realization is claimed;
+  \item no unique lift theorem is claimed;
+  \item no lower-level-to-higher-level determinacy is claimed;
+  \item no instrument-free truth claim is made;
+  \item direct cross-level comparison remains inadmissible without
+    translation;
+  \item forgetting remains lossy unless losslessness is explicitly proved;
+  \item empirical-bridge claims require threshold data, level maps,
+    instrument visibility records, and suppressed-structure nonclaims.
+\end{itemize}
+Each schema blocks a specific class of overclaims. Honest bookkeeping blocks
+unrecorded claims, promotions, translations, lifts, visibility claims, and
+empirical-bridge assertions; typed non-collapse blocks forbidden primitive
+collapses and flat independence overclaims while leaving restricted typed
+boundary interactions available; level-profile architecture blocks direct
+cross-level comparison without translation; forgetting-and-lift architecture
+blocks lossless forgetting, unique lifts, and lower-to-higher determinacy;
+activation thresholds block arbitrary enrichment and threshold-free
+nontriviality claims; instrument-relative visibility blocks instrument-free
+truth and visible-to-suppressed overreads; empirical-bridge admissibility
+blocks empirical-realization overclaims and bridge claims without threshold or
+level-map data.
+\end{proposition}
+ \section{The FATCD domain and the exact-six question}\label{sec:fatcd-domain}
+
+
+
+The scoped exact-six theorem quantifies over a specific class of
+admissible descriptions; this section defines that class. A
+\emph{finite audited typed closure description}, abbreviated \FATCD{},
+is a finitely presented collection of typed raw records and
+annotations subject to finiteness, closure, and honest-bookkeeping
+conditions, sitting in the broader finite-structure tradition of
+finite model theory~\citep{Libkin2004}. Threshold annotations attach to raw features before any
+role projection is attempted; the active projections
+\(\pi_1(D),\dots,\pi_6(D)\) for the primitives \Pone{}--\Psix{} are
+derived interpretations of raw material, not conditions of domain
+membership. Candidate raw features not absorbed into such projections
+are carried into an explicit residual classification, so seventh-role
+threats are not excluded by definition. The section closes with
+non-circularity and non-overbreadth schemas and formulates the
+exact-six question precisely over \FATCD{}: whether every
+\(D \in \FATCD{}\) admits a decomposition/exhaustion record with
+exactly six role channels. The theorem chain answering that question
+appears in
+Sections~\ref{sec:lower-bounds}--\ref{sec:decomposition-exhaustion}.
+
+The domain is framed in the finite theory-package setting of
+Foundations~I~\citep{Tsiokos2026SixBirdsFoundations}, where one works
+with tuples \(\mathcal{T} = (Z, f, \Sigma_f, E, \mathcal{A})\)
+carrying a lens, a completion operator, and an audit functional. \FATCD{} does not
+identify a description with such a tuple; it extracts from that
+setting the structural requirements relevant to the scoped exact-six
+question: finite typed raw data, closure under references, sources,
+targets, endpoints, and annotations, and honest bookkeeping in the
+sense of Section~\ref{sec:admissibility-meta-theory}. Optimization,
+objective, and richer semantic material are not excluded at the
+outset; they belong in the domain when finitely represented and
+honestly recorded as raw or annotated data.
+
+\subsection{Raw grammar}\label{subsec:raw-grammar}
+
+We begin with the neutral typed raw grammar from which every element
+of \FATCD{} is built. The alphabet is fixed in advance of the role
+vocabulary and follows standard typed-record
+conventions~\citep{CardelliMitchell1991}.
+
+\begin{definition}[Raw record]\label{def:raw-record}
+A \emph{raw record} is a finite typed syntactic or relational feature of a
+description. The admissible record kinds are
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{object} and \emph{state} records;
+  \item \emph{relation} records, \emph{map} records, and \emph{partial-map}
+    records;
+  \item \emph{predicate} records and \emph{comparison} records;
+  \item \emph{path} or \emph{derivation} records;
+  \item \emph{index}, \emph{order}, \emph{transition}, and \emph{refinement}
+    records;
+  \item \emph{trace}, \emph{event}, and \emph{provenance} records;
+  \item \emph{replay} and \emph{check} records.
+\end{itemize}
+A raw record is not, by itself, a \Pone{}--\Psix{} role.
+\end{definition}
+
+\begin{definition}[Annotations]\label{def:annotations}
+In addition to raw records, a description admits \emph{annotations} of six
+declared kinds:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item level annotations \(\mathrm{Ann}_L\);
+  \item threshold annotations \(\mathrm{Ann}_\Theta\);
+  \item lift annotations \(\mathrm{Ann}_{\mathrm{Lift}}\);
+  \item forgetting annotations \(\mathrm{Ann}_{\mathrm{Forget}}\);
+  \item instrument-visibility annotations \(\mathrm{Ann}_{\mathrm{Vis}}\);
+  \item empirical-bridge annotations \(\mathrm{Ann}_{\mathrm{Bridge}}\).
+\end{itemize}
+These annotation kinds belong to the raw grammar; the finiteness and closure
+conditions on how they attach to declared records are imposed in the next
+subsection. For a description \(D\), we write \(\Raw{D}\) for the finite
+collection of raw records and annotations of \(D\).
+\end{definition}
+
+\begin{remark}[Independence of the feature alphabet]\label{rem:alphabet-independence}
+The record and annotation kinds in Definitions~\ref{def:raw-record} and
+\ref{def:annotations} are syntactic or relational entities. No kind is named
+\Pone{}, \ldots, \Psix{}. Consequently, membership in \FATCD{} does not
+require any derived role projection, does not require an exact-six
+decomposition/exhaustion record, and does not exclude candidate seventh-role
+features by definition. The role vocabulary will enter only in
+\S\ref{subsec:derived-role-projections} as a derived interpretation of raw
+features under threshold and witness data.
+\end{remark}
+
+\subsection{Finiteness, closure, and audit conditions}\label{subsec:conditions}
+
+Three further restrictions turn the raw grammar into a domain of
+admissible descriptions: finiteness, closure, and audit.
+
+\begin{definition}[Finite description]\label{def:finite}
+A description \(D\) is \emph{finite} when
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \(\Raw{D}\) contains finitely many records and annotations;
+  \item every record or annotation carries finite typed fields;
+  \item every relation, map, path, trace, or annotation is finitely
+    represented;
+  \item every reference in a record points to a declared finite record of
+    \(D\);
+  \item no infinite semantic, probabilistic, topological, geometric, causal,
+    optimization, or resource structure is admitted unless it is finitely
+    represented and bookkept as a raw feature of \(D\).
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Closed description]\label{def:closed}
+A finite description \(D\) satisfies the \emph{closure condition} \(\Closed{D}\)
+when
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item every source and target of every relation or map record is a declared
+    record of \(D\);
+  \item every endpoint of every path or derivation record is a declared record
+    of \(D\);
+  \item every index, transition, order, or refinement reference is a declared
+    record of \(D\);
+  \item every trace, event, provenance, replay, or check record references
+    declared records of \(D\);
+  \item every level, threshold, lift, forgetting, visibility, or
+    empirical-bridge annotation references declared records of \(D\);
+  \item every claim carried by \(D\) has a bookkeeping record.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Audited description]\label{def:audited}
+A description \(D\) is \emph{audited} when every claim carried by \(D\) has an
+honest bookkeeping record. The collection of such records is denoted
+\(\Audit{D} \subseteq \Raw{D}\), subject to the following discipline:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item every promotion records its source level, target level, added data,
+    losses, and nonclaims;
+  \item every translation records its source context, target context,
+    preserved data, suppressed data, and claim strength;
+  \item every lift is marked as selected, not unique;
+  \item every forgetting map records its losses;
+  \item every visibility claim records both visible and suppressed data;
+  \item every empirical-bridge claim records substrate, observable,
+    instrument, level map, threshold witness relation, and
+    suppressed-structure nonclaims.
+\end{itemize}
+\end{definition}
+
+\subsection{Finite audited typed closure descriptions}\label{subsec:fatcd}
+
+Combining the grammar with the three admissibility conditions yields
+the domain over which the exact-six question is posed.
+
+\begin{definition}[Finite audited typed closure description]\label{def:fatcd}
+A \emph{finite audited typed closure description} is a finitely presented,
+closed, audited collection of typed raw records and annotations, equipped with
+honest bookkeeping for claims, levels, thresholds, visibility, forgetting,
+lifts, and empirical-bridge assertions where present. Equivalently, it is a
+description \(D\) whose raw content \(\Raw{D}\) is drawn from the kinds
+declared in Definitions~\ref{def:raw-record} and~\ref{def:annotations}, such
+that \(D\) is finite in the sense of Definition~\ref{def:finite}, satisfies
+the closure condition \(\Closed{D}\) of Definition~\ref{def:closed}, and is
+audited in the sense of Definition~\ref{def:audited}. We write \FATCD{} for
+the class of all such descriptions, and \(D \in \FATCD{}\) for membership.
+\end{definition}
+
+\begin{remark}[No minimum richness]\label{rem:fatcd-minimality}
+\FATCD{} imposes no lower bound on description size. A description
+consisting of a single object record together with the bookkeeping
+required by its claims may be admissible, as may a richer description
+carrying transitions, paths or derivations, annotations of every kind,
+and empirical-bridge annotations. The domain is defined by structural
+discipline, not by the presence of any particular feature kind.
+\end{remark}
+
+\subsection{Threshold attachment}\label{subsec:threshold-attachment}
+
+Membership in \FATCD{} is fixed; the next step is to specify how
+role-theoretic claims may attach to the raw data of an admissible
+description. Role projections in \FATCD{} enter only through a
+disciplined attachment of threshold and witness data to raw features.
+The condition below is the structural precondition for the role
+vocabulary introduced in the next subsection.
+
+\begin{definition}[Threshold attachment]\label{def:threshold-attachment}
+A threshold annotation \(\mathrm{Ann}_\Theta \in \Raw{D}\) attaches first to
+a finite cluster \(C \subseteq \Raw{D}\) of raw features of \(D\), where \(C\)
+may consist of a single raw feature. No role projection is attempted on \(C\)
+until all of the following are present in \(\Raw{D}\):
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the raw features of \(C\) themselves;
+  \item a threshold annotation \(\mathrm{Ann}_\Theta\) attached to \(C\);
+  \item a witness schema specifying what in \(C\) would support the attempted
+    projection;
+  \item a record of the collapse cases that would invalidate the witness;
+  \item a level annotation \(\mathrm{Ann}_L\) attached to \(C\);
+  \item an audit record in \(\Audit{D}\) honestly bookkeeping the claim.
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Pre-projection discipline]\label{rem:pre-projection}
+The items of Definition~\ref{def:threshold-attachment} form a structural
+precondition, not a process narrative. What matters is that each item is
+present explicitly in \(\Raw{D}\) before a role projection is asserted, so
+that no threshold, witness, collapse case, or level is supplied tacitly by
+the act of projection itself.
+\end{remark}
+
+\subsection{Derived role projections}\label{subsec:derived-role-projections}
+
+The role vocabulary \Pone{}--\Psix{} now enters \FATCD{}, not as a
+constraint on membership but as a derived interpretation of raw
+features conditioned on the attachment data of
+\S\ref{subsec:threshold-attachment}.
+
+\begin{definition}[Derived role projection]\label{def:role-projection}
+A \emph{derived role projection} for a description \(D \in \FATCD{}\) at
+role index \(i \in \{1,\ldots,6\}\) is an active derived interpretation
+\(\pi_i(D)\) of raw features of \(D\) as the role \(\mathrm{P}_i\), supported
+by threshold data, witness schema, level assignment, and honest bookkeeping.
+Concretely, \(\pi_i(D)\) is specified by
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the proposed role name, one of \Pone{}, \Ptwo{}, \Pthree{},
+    \Pfour{}, \Pfive{}, \Psix{};
+  \item a raw feature cluster \(C \subseteq \Raw{D}\) on which the role is
+    interpreted;
+  \item the threshold data \(\Theta_i\) attached to \(C\) in the sense of
+    Definition~\ref{def:threshold-attachment};
+  \item a witness schema \(W_i\) specifying what constitutes a witness for
+    the candidate role under its fixed meaning;
+  \item a level assignment \(\mathrm{Level}_i\);
+  \item an evidence or certificate type;
+  \item a record of collapse cases avoided or accepted;
+  \item loss and lift annotations for any level crossings involved;
+  \item the explicit nonclaims preserved by the projection.
+\end{itemize}
+The supporting data for \(\pi_i(D)\) are carried by \(\Raw{D}\) and certified
+by \(\Audit{D}\) in the sense of Definition~\ref{def:audited}.
+\end{definition}
+
+\begin{remark}[Fixed role meanings]\label{rem:fixed-role-meanings}
+The role names \Pone{}--\Psix{} are defined by their meanings in
+Section~\ref{sec:primitive-role-architecture}: \Pone{} concerns
+update-vs-quotient compatibility and descent obstruction; \Ptwo{} concerns
+macro-specification representability; \Pthree{} concerns enriched
+route and coherence mismatch, not a directionality certificate; \Pfour{}
+concerns stage, order, transition, and refinement structure; \Pfive{}
+concerns quotient packaging; and
+\Psix{} concerns audit, bookkeeping, provenance, replay, and checkability.
+The witness schema \(W_i\) in Definition~\ref{def:role-projection} must be
+aligned with these meanings; a cluster whose raw features do not support the
+meaning of the proposed role contributes no \(\pi_i(D)\).
+\end{remark}
+
+\begin{remark}[Projection and membership are independent]\label{rem:projection-vs-membership}
+Whether a description \(D\) supports a given derived role projection
+\(\pi_i(D)\) is not part of the admissibility conditions of
+Definitions~\ref{def:finite}--\ref{def:audited}. A description
+\(D \in \FATCD{}\) may carry no derived role projection, projections
+for some roles, or projections for all six; its membership in
+\FATCD{} is unaffected. The decomposition/exhaustion record of
+Section~\ref{sec:decomposition-exhaustion} accordingly assigns a
+status to every role channel of \(D\), only some of which need be
+active.
+\end{remark}
+
+\subsection{Residual classification scheme}\label{subsec:residual-classification}
+
+Some raw features remain role-theoretically unsettled at the
+raw-grammar level. \FATCD{} provides an explicit scheme for
+classifying them.
+
+\begin{definition}[Residual feature; residual classification scheme]\label{def:residual-scheme}
+Let \(D \in \FATCD{}\). A \emph{residual feature} of \(D\) is a raw record
+or annotation in \(\Raw{D}\) whose role-theoretic disposition is not fixed
+solely by its raw-grammar kind. The \emph{residual classification scheme}
+assigns to each residual feature \(r\) a single label
+\(\operatorname{Classify}(r)\) drawn from the list
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item already absorbed into a derived \Pone{}--\Psix{} projection
+    \(\pi_i(D)\);
+  \item composite of such projections;
+  \item presentation variant of an already classified feature;
+  \item level shift of an already classified feature;
+  \item activation-threshold refinement;
+  \item instrument-visibility artifact;
+  \item empirical-bridge annotation;
+  \item outside-domain structure;
+  \item already-covered bookkeeping or annotation data;
+  \item unresolved candidate seventh-role threat;
+  \item genuine seventh irreducible typed role.
+\end{enumerate}
+The scheme is declarative. At the domain-definition level, \FATCD{} records
+the available labels but neither proves that every residual feature lands in
+categories (i)--(ix) nor proves that categories (x) and (xi) are empty. Those
+claims are deferred to Section~\ref{sec:upper-bound-classification}.
+\end{definition}
+
+\begin{remark}[Optimization and objective data are not excluded]\label{rem:optimization-not-excluded}
+Raw features expressing optimization, objective, or selection criteria
+pass through the scheme of Definition~\ref{def:residual-scheme}; they
+are not dismissed by definition. Under the fixed role meanings
+(Remark~\ref{rem:fixed-role-meanings}), typical classifications
+include: a predicate or specification record possibly supporting a
+\Ptwo{} projection; a map or transition-selection record possibly
+supporting a \Pone{} or \Pfour{} projection; a route-comparison or
+route-choice record possibly supporting a \Pthree{} projection; an
+audit or check record possibly supporting a \Psix{} projection; an
+empirical-bridge annotation; or an outside-domain structure when the
+feature requires non-finite or unbookkept semantics. A feature that
+fits none of these is recorded under category~(x).
+\end{remark}
+
+\subsection{Non-circularity and non-overbreadth}\label{subsec:non-circularity-non-overbreadth}
+
+Two proposition schemas record the definition-theoretic facts used by
+the later theorem chain: the domain does not presuppose the answer to
+the exact-six question, and it is structurally restrictive enough
+for that question to remain substantive.
+
+\begin{proposition}[Non-circularity schema for \FATCD{}]\label{prop:non-circularity}
+Inspection of Definitions~\ref{def:raw-record}--\ref{def:fatcd} shows that
+membership in \FATCD{} is not defined by requiring a decomposition/exhaustion record or
+by requiring any derived role projection to exist. In particular:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item no clause of Definitions~\ref{def:raw-record},
+    \ref{def:annotations}, \ref{def:finite}, \ref{def:closed}, or
+    \ref{def:audited} quantifies over the role index \(i\) or requires a
+    role-channel assignment;
+  \item no membership clause excludes a candidate seventh-role feature by
+    definition;
+  \item the residual classification scheme (Definition~\ref{def:residual-scheme})
+    is declarative and carries the categories (x) and (xi) as explicit
+    failure options.
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Non-overbreadth schema for \FATCD{}]\label{prop:non-overbreadth}
+Inspection of Definitions~\ref{def:finite}--\ref{def:threshold-attachment}
+shows that \FATCD{} is structurally restricted and does not admit arbitrary
+syntactic material:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item \(\Raw{D}\) contains finitely many records and annotations, each
+    record or annotation carries finite typed fields, and no infinite
+    semantic, probabilistic, topological, geometric, causal, optimization, or
+    resource structure is admitted unless finitely represented and bookkept as
+    a raw feature, exactly as required by Definition~\ref{def:finite};
+  \item every reference is bound to a declared record
+    (Definition~\ref{def:closed});
+  \item every claim is bookkept, and every promotion, translation, lift,
+    forgetting, visibility, and empirical-bridge assertion carries the
+    structured audit record required by
+    Definition~\ref{def:audited};
+  \item a role projection cannot be asserted without the full attachment
+    data of Definition~\ref{def:threshold-attachment}.
+\end{enumerate}
+Consequently, arbitrary unaudited syntactic material cannot enter \FATCD{},
+and mentioning a role name without the supporting threshold, witness, level,
+collapse, and bookkeeping data does not by itself produce a derived role
+projection.
+\end{proposition}
+
+\subsection{The scoped exact-six question over \FATCD{}}\label{subsec:scoped-exact-six-question}
+
+We can now state the scoped exact-six question precisely.
+
+\begin{definition}[Scoped exact-six question]\label{def:scoped-exact-six-question}
+The \emph{scoped exact-six question} over \FATCD{} asks whether, for every
+\(D \in \FATCD{}\), there exists at least one decomposition/exhaustion record
+\(\Dec{D}\) whose role-channel structure consists of exactly the six typed
+closure-role channels \Pone{}, \Ptwo{}, \Pthree{}, \Pfour{}, \Pfive{},
+\Psix{}, each assigned exactly one of the five statuses later formalized in
+Section~\ref{sec:decomposition-exhaustion}, with all residual features of
+\(D\) classified under the scheme of Definition~\ref{def:residual-scheme}
+without recourse to categories (x) or (xi). No uniqueness is built into this
+question. The affirmative answer is denoted \(\ScopedExactSix{\FATCD{}}\).
+\end{definition}
+
+\begin{remark}[Channels, not active projections]\label{rem:channel-vs-activation-reminder}
+An affirmative answer to the scoped exact-six question asserts the
+existence of six role channels per description, not six active derived
+projections per description. The distinction introduced in
+Remark~\ref{rem:projection-vs-membership} and formalized in
+Section~\ref{sec:decomposition-exhaustion} is preserved throughout.
+\end{remark}
+
+\begin{remark}[Relation to the Foundations theorem]\label{rem:fatcd-foundations-relation}
+Proving \(\ScopedExactSix{\FATCD{}}\) is not a re-derivation of the
+canonical unavoidability result of Foundations~I~\citep{Tsiokos2026SixBirdsFoundations},
+and \(\ScopedExactSix{\FATCD{}}\) does not follow from that result
+alone. The Foundations theorem derives the \Pone{}--\Psix{} vocabulary
+under minimal hypotheses of composability with limited interface
+access; the scoped exact-six claim asserts that, within the finite
+audited typed closure regime of \FATCD{}, every admissible description
+admits a six-channel decomposition/exhaustion record without a seventh
+irreducible typed role in the covered scope. The two results share
+vocabulary but address different questions.
+\end{remark}
+ \section{Six-role lower bounds}\label{sec:lower-bounds}
+
+
+
+
+The exact-six question of
+\S\ref{subsec:scoped-exact-six-question} has two directions. The
+lower-bound direction asserts that each of \Pone{}, \ldots, \Psix{}
+is instantiated in \FATCD{}; the upper-bound classification of
+Section~\ref{sec:upper-bound-classification} will assert that no
+covered seventh role is needed. This section establishes the
+lower-bound direction by constructing one admissible witness for each
+role. The content is occurrence, not exhaustion: lower bounds alone
+do not answer the exact-six question, but they rule out the
+trivialization in which some role has no admissible witness in the
+domain.
+
+\subsection{Lower-bound theorem and common witness requirements}\label{subsec:lower-bound-theorem}
+
+\begin{theorem}[Six-role lower bounds]\label{thm:six-role-lower-bounds}
+For each role index \(i \in \{1,\ldots,6\}\), there exists a description
+\(D_i \in \FATCD{}\) and a derived active projection
+\(\pi_i(D_i)\) witnessing the role channel \(P_i\) in the sense of
+Definition~\ref{def:role-projection}. In particular, each of
+\Pone{}, \Ptwo{}, \Pthree{}, \Pfour{}, \Pfive{}, \Psix{} is instantiated
+by at least one admissible description in \FATCD{}. This is an occurrence
+theorem, not an exhaustion theorem.
+\end{theorem}
+
+A witness for role \(P_i\) consists of the data specified below,
+following the role-projection discipline of
+\S\ref{subsec:derived-role-projections} and the threshold-attachment
+discipline of \S\ref{subsec:threshold-attachment}.
+
+\begin{definition}[Common witness data for role \(P_i\)]\label{def:common-witness-data}
+A \emph{witness of role \(P_i\) in \FATCD{}} is a tuple
+\[
+\bigl(D_i,\; C_i,\; \Theta_i,\; W_i,\; \mathrm{Level}_i,\;
+v_i^{\mathrm{fin}},\; v_i^{\mathrm{cl}},\; v_i^{\mathrm{aud}},\;
+n_i,\; \pi_i(D_i)\bigr)
+\]
+where
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \(D_i \in \FATCD{}\) is the ambient admissible description;
+  \item \(C_i \subseteq \Raw{D_i}\) is the raw feature cluster on which
+    the projection is interpreted;
+  \item \(\Theta_i\) is the threshold annotation attached to \(C_i\);
+  \item \(W_i\) is the witness schema for the role meaning of \(P_i\)
+    fixed in Definition~\ref{def:primitive-roles};
+  \item \(\mathrm{Level}_i\) is the level assignment in the sense of
+    Definition~\ref{def:level-trichotomy};
+  \item \(v_i^{\mathrm{fin}}, v_i^{\mathrm{cl}}, v_i^{\mathrm{aud}}\) are
+    the finite-description, closure, and audit/bookkeeping verifications
+    for \(D_i\);
+  \item \(n_i\) is the explicit nonclaim record carried by the witness;
+  \item \(\pi_i(D_i)\) is the derived role projection of
+    Definition~\ref{def:role-projection}.
+\end{itemize}
+A witness is admissible only if every item in this tuple is present and
+correctly aligned with the role meaning of \(P_i\).
+\end{definition}
+
+The proof of Theorem~\ref{thm:six-role-lower-bounds} proceeds role by
+role: for each \(i \in \{1,\ldots,6\}\) we exhibit an admissible
+tuple of the form in Definition~\ref{def:common-witness-data}. The
+six constructions are collected in
+\S\ref{subsec:per-role-witnesses}.
+
+\subsection{Per-role witnesses}\label{subsec:per-role-witnesses}
+
+Each construction below specifies a raw feature cluster, threshold
+annotation, witness schema, level assignment, derived active
+projection, and explicit nonclaim record. The finite-description,
+closure, and audit/bookkeeping verifications are routine once these
+data are placed in a description built from the raw grammar of
+\S\ref{subsec:raw-grammar} and checked against the admissibility
+conditions of \S\ref{subsec:conditions}.
+
+\begin{proposition}[\Pone{} lower bound]\label{prop:p1-witness}
+There exists \(D_1 \in \FATCD{}\) with a derived active projection
+\(\pi_1(D_1)\) witnessing \Pone{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_1\) carry object records \(x, y\), a relation record
+\(x \sim y\), a selected update map record \(F\), and a comparison
+record exhibiting \(F(x) \not\sim' F(y)\) in the target relation
+\(\sim'\). Attach a threshold annotation
+\(\Theta_1 = \mathrm{Ann}_\Theta[\text{descent obstruction}]\) to the
+cluster \(C_1\) comprising these records, and record the witness schema
+\(W_1\) that detects update-vs-quotient incompatibility between \(\sim\)
+and \(\sim'\) under \(F\). Take \(\mathrm{Level}_1\) on the verification
+level, and let \(\pi_1(D_1)\) be the derived active projection
+interpreting \(C_1\) via \((\Theta_1,W_1,\mathrm{Level}_1)\). The
+finiteness, closure, and audit verifications \(v_1^{\mathrm{fin}},
+v_1^{\mathrm{cl}}, v_1^{\mathrm{aud}}\) then attach routinely. The
+nonclaim record \(n_1\) excludes any \Pfive{}-packaging
+identification (Remark~\ref{rem:repaired-alignments}) and any claim of
+an unconditional descended map in the obstruction case.
+\end{proof}
+
+\begin{proposition}[\Ptwo{} lower bound]\label{prop:p2-witness}
+There exists \(D_2 \in \FATCD{}\) with a derived active projection
+\(\pi_2(D_2)\) witnessing \Ptwo{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_2\) carry object records together with a predicate record \(s\)
+playing the role of a macro specification, a relation record
+\(\mathrm{Real}\) connecting realizers to \(s\), and a comparison
+record showing that the realizer relation is not reducible to
+quotient-class equality alone. Attach
+\(\Theta_2 = \mathrm{Ann}_\Theta[\text{nontrivial representability}]\)
+to the resulting cluster \(C_2\), and record \(W_2\) as the schema
+checking that \(s\) has or lacks a realizer through \(\mathrm{Real}\) in
+a way not reducible to quotient-class equality alone. Take
+\(\mathrm{Level}_2\) on the verification level, and let \(\pi_2(D_2)\)
+be the derived active projection determined by
+\((C_2,\Theta_2,W_2,\mathrm{Level}_2)\). The finiteness, closure, and
+audit checks then follow from the construction. The
+nonclaim \(n_2\) excludes collapse to \Pfive{} quotient equality alone
+and excludes arbitrary relation promotion.
+\end{proof}
+
+\begin{proposition}[\Pthree{} lower bound]\label{prop:p3-witness}
+There exists \(D_3 \in \FATCD{}\) with a derived active projection
+\(\pi_3(D_3)\) witnessing \Pthree{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_3\) carry object records \(u, v\), two path records
+\(\rho_1, \rho_2\) both from \(u\) to \(v\) generated by the enriched
+route grammar, and a comparison record recording that \(\rho_1\) and
+\(\rho_2\) are distinguishable by a non-reducibility certificate.
+Attach \(\Theta_3 = \mathrm{Ann}_\Theta[\text{route mismatch}]\) to the
+cluster \(C_3 = \{u, v, \rho_1, \rho_2, \text{comparison}\}\), and
+record \(W_3\) as the schema certifying that two generated same-source,
+same-target route records are distinguishable by a non-reducibility or
+coherence-mismatch certificate. Take \(\mathrm{Level}_3\) on the
+verification level, and let \(\pi_3(D_3)\) be the derived active
+projection determined by
+\((C_3,\Theta_3,W_3,\mathrm{Level}_3)\). The routine verifications
+\(v_3^{\mathrm{fin}}, v_3^{\mathrm{cl}}, v_3^{\mathrm{aud}}\) then
+follow. The nonclaim \(n_3\) excludes conflation with
+\Pone{} route undefinedness and with direct cross-level comparison.
+\end{proof}
+
+\begin{proposition}[\Pfour{} lower bound]\label{prop:p4-witness}
+There exists \(D_4 \in \FATCD{}\) with a derived active projection
+\(\pi_4(D_4)\) witnessing \Pfour{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_4\) carry index records \(i_0 < i_1 < i_2\) and transition
+records \(t_{01}, t_{12}\) linking them, together with a refinement
+record connecting two levels of indexing with explicit transition laws,
+and closure records for the endpoints and refinement references used by
+those transitions. Attach
+\(\Theta_4 = \mathrm{Ann}_\Theta[\text{nontrivial stage/refinement}]\)
+to the cluster \(C_4\) comprising these records, and record \(W_4\) as
+the schema certifying a non-identity
+order, transition, refinement, or stage tower. Take
+\(\mathrm{Level}_4\) on the structural-categorical level, and let
+\(\pi_4(D_4)\) be the derived active projection determined by
+\((C_4,\Theta_4,W_4,\mathrm{Level}_4)\). The routine verifications
+\(v_4^{\mathrm{fin}}, v_4^{\mathrm{cl}}, v_4^{\mathrm{aud}}\) then
+follow. The nonclaim \(n_4\) excludes bare labels and arbitrary
+relations or transitions without laws.
+\end{proof}
+
+\begin{proposition}[\Pfive{} lower bound]\label{prop:p5-witness}
+There exists \(D_5 \in \FATCD{}\) with a derived active projection
+\(\pi_5(D_5)\) witnessing \Pfive{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_5\) carry distinct object records \(x \ne y\), a relation
+record \(x \sim y\), a packaging map record
+\(\mathrm{pack}\) with \(\mathrm{pack}(x) = \mathrm{pack}(y)\), and a
+comparison record providing quotient-validity evidence. Attach
+\(\Theta_5 = \mathrm{Ann}_\Theta[\text{nontrivial quotient packaging}]\)
+to the cluster \(C_5\) comprising these records, and record \(W_5\) as
+the schema certifying
+that distinct raw objects are related and packaged together by a valid
+packaging map with quotient-validity evidence. Take
+\(\mathrm{Level}_5\) on the verification level, and let \(\pi_5(D_5)\)
+be the derived active projection determined by
+\((C_5,\Theta_5,W_5,\mathrm{Level}_5)\). The routine verifications
+\(v_5^{\mathrm{fin}}, v_5^{\mathrm{cl}}, v_5^{\mathrm{aud}}\) then
+follow. The nonclaim \(n_5\) excludes identity packaging and
+weak-distinctness witnesses.
+\end{proof}
+
+\begin{proposition}[\Psix{} lower bound]\label{prop:p6-witness}
+There exists \(D_6 \in \FATCD{}\) with a derived active projection
+\(\pi_6(D_6)\) witnessing \Psix{}.
+\end{proposition}
+
+\begin{proof}
+Let \(D_6\) carry event records, a trace record, a provenance record
+referencing the events, and a replay or check record. Record an audit
+entry that references the event, tracks provenance and dependency, and
+supports a replay or check relation. Attach
+\(\Theta_6 = \mathrm{Ann}_\Theta[\text{nontrivial audit schema}]\) to
+the cluster \(C_6\) comprising these records, and record \(W_6\) as the
+schema certifying that
+the audit record contains event-reference, provenance/dependency, and
+replay/check structure. Take \(\mathrm{Level}_6\) on the verification
+level, and let \(\pi_6(D_6)\) be the derived active projection
+determined by \((C_6,\Theta_6,W_6,\mathrm{Level}_6)\). The routine
+verifications \(v_6^{\mathrm{fin}}, v_6^{\mathrm{cl}},
+v_6^{\mathrm{aud}}\) then follow. The nonclaim \(n_6\) excludes passive
+logs, certificate-only content, and partial audit records.
+\end{proof}
+
+Propositions~\ref{prop:p1-witness}--\ref{prop:p6-witness} supply, for
+each \(i \in \{1,\ldots,6\}\), an admissible witness tuple of the
+form in Definition~\ref{def:common-witness-data}. This proves
+Theorem~\ref{thm:six-role-lower-bounds}.
+
+\begin{remark}[What the lower bounds do and do not establish]\label{rem:lower-bounds-scope}
+Theorem~\ref{thm:six-role-lower-bounds} asserts that each of the six
+roles is instantiated somewhere in \FATCD{}. It does not prove
+exact-six, does not rule out candidate seventh-role threats, does not
+prove decomposition, and does not prove uniqueness of any later
+decomposition/exhaustion record. It also does not assert that any
+single description activates all six channels simultaneously. Those
+questions are handled in
+Sections~\ref{sec:upper-bound-classification}
+and~\ref{sec:decomposition-exhaustion}.
+\end{remark}
+ \section{Upper-bound classification: no seventh irreducible role}\label{sec:upper-bound-classification}
+
+
+
+
+The lower bounds of Section~\ref{sec:lower-bounds} rule out the
+trivialization in which some primitive role lacks an admissible
+witness in \FATCD{}. The upper-bound direction addresses the
+complementary question: whether some additional, seventh closure role
+is needed in the covered scope. This section shows that no such role
+is needed. The argument proceeds in three steps. First, we state the
+alignment rules that constrain how raw features may project to
+\Pone{}, \ldots, \Psix{}. Second, we close the three high-priority
+candidate seventh-role threats: probability and uncertainty, residual
+causality, and residual agency. Third, we record the upper-bound
+classification theorem that collects these local classifications into
+a single covered-scope statement.
+
+\subsection{Role-projection alignment rules}\label{subsec:alignment-rules}
+
+The role meanings of Definition~\ref{def:primitive-roles} carry
+alignment rules constraining which raw features may be interpreted as
+active projections of each role. These rules refine the corrected
+alignments of Remark~\ref{rem:repaired-alignments} and form the
+discipline under which the classification theorem is proved.
+
+\begin{proposition}[Role-projection alignment]\label{prop:alignment-rules}
+Under honest bookkeeping and the witness discipline of
+Definition~\ref{def:common-witness-data}, each role projection is
+constrained as follows.
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: admissible only when the candidate cluster carries a
+    selected update, a quotient or relation record, and a witness of
+    descent compatibility, descent obstruction, or update-vs-quotient
+    mismatch. Generic semantics, generic predicate meaning, generic
+    selection criteria, and generic agency are not admissible as
+    \Pone{} projections in the absence of such a witness.
+  \item \Ptwo{}: admissible only when the candidate carries a macro
+    specification, a realization relation, specification-satisfaction
+    data, and evidence of representability or non-representability.
+    Macro-level predicates or objectives count only insofar as they are
+    treated as content to be represented. Mere quotient equality,
+    arbitrary relations without representability structure, and
+    empirical observations without level and threshold data are not
+    admissible as \Ptwo{} projections.
+  \item \Pthree{}: admissible only when the candidate carries enriched
+    route grammar, generated same-source, same-target route terms, and
+    route-comparison data with a non-reducibility or coherence-mismatch
+    certificate. Generic transitions, generic causal arrows, generic
+    path records, and route undefinedness arising from \Pone{}
+    obstruction are not admissible as \Pthree{} projections unless the
+    route/coherence threshold is explicitly present and the route
+    comparison is specifically of the \Pthree{} type.
+  \item \Pfour{}: admissible only when the candidate carries a stage,
+    order, transition, refinement, staged-dynamics, or regime-ordering
+    record with laws beyond bare labels. Bare labels, arbitrary
+    relations without order, transition, or refinement law, quotient
+    packaging, and audit bookkeeping are not admissible as \Pfour{}
+    projections.
+  \item \Pfive{}: admissible only when the candidate carries a quotient
+    relation, a packaging map, the identification of distinct
+    micro-elements, a same-package or quotient-object record, and
+    quotient-validity evidence. Generic structural paths, derivations,
+    topologies or geometries merely because they have paths, and causal
+    chains are not admissible as \Pfive{} projections unless quotient
+    or packaging data is present.
+  \item \Psix{}: admissible only when the candidate carries an audit
+    record with event reference, provenance or dependency trace, replay
+    or check structure, and bookkeeping or checkability structure.
+    Passive logs alone, arbitrary metadata, and certificate-only
+    content without audit/provenance/replay/check structure are not
+    admissible as \Psix{} projections.
+\end{itemize}
+\end{proposition}
+
+\begin{remark}[Three corrected alignments, held fixed]\label{rem:three-repaired-alignments}
+Proposition~\ref{prop:alignment-rules} fixes three alignments that
+are held throughout: generic transition data does not project to
+\Pthree{}, generic path or derivation data does not project to
+\Pfive{}, and generic semantic or interpretation data does not project
+to \Pone{}. These are carried into every step of the classification
+theorem below.
+\end{remark}
+
+\subsection{High-priority threat closures}\label{subsec:threat-closures}
+
+Three classes of candidate seventh-role feature require particular
+scrutiny: probability and uncertainty, residual causality in the
+sense of the interventional and counterfactual
+hierarchy~\citep{Pearl2009}, and residual agency in the planning
+sense~\citep{Bratman1987}. Each closure is recorded as a proposition.
+In every case the candidate is classified under the alignment rules
+of Proposition~\ref{prop:alignment-rules} together with the residual
+scheme of Definition~\ref{def:residual-scheme}; no candidate is
+dismissed by definition. These closures remove the remaining
+high-priority blockers before the general classification theorem.
+
+\begin{proposition}[Closure of probability and uncertainty]\label{prop:probability-closure}
+Every admissible probability or uncertainty feature of a description
+\(D \in \FATCD{}\) classifies, within the covered scope, as one of
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item a \Ptwo{} projection, when the feature is a macro-specification
+    or representability condition;
+  \item a \Pfour{} projection, when the feature is a stochastic
+    transition or regime structure carrying valid stage or transition
+    data;
+  \item a \Psix{} projection, when the feature is an audited
+    uncertainty-bookkeeping record;
+  \item an activation-threshold refinement, when the uncertainty data
+    modulates when an already admissible role projection activates
+    without supplying a new witness schema;
+  \item an empirical-bridge annotation, when the feature expresses
+    measurement uncertainty bridged to a substrate observable;
+  \item or a composite of the foregoing projections and annotations when
+    the admissible bookkeeping carries several of these aspects at once.
+\end{itemize}
+No residual probability or uncertainty feature remains as an unresolved
+seventh-role threat within the covered scope.
+\end{proposition}
+
+\begin{proposition}[Closure of residual causality]\label{prop:causality-closure}
+Every admissible residual-causality feature of a description
+\(D \in \FATCD{}\) classifies, within the covered scope, as one of
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item a \Pfour{} projection, as the primary classification when the
+    feature is a directed transition, refinement, or staged-dependence
+    record;
+  \item a \Pthree{} projection, only when the feature is specifically a
+    route/coherence comparison between generated same-source,
+    same-target routes;
+  \item a \Psix{} projection, when the feature is a provenance or
+    dependency audit;
+  \item a composite of \Pfour{} and \Psix{}, when directed dependence
+    and provenance audit occur together in the same admissible feature;
+  \item an outside-domain structure, when the feature requires
+    metaphysical causation not amenable to honest bookkeeping.
+\end{itemize}
+Classification as \Pfive{} is inadmissible in the absence of quotient
+packaging. No residual-causality feature remains as an unresolved
+seventh-role threat within the covered scope.
+\end{proposition}
+
+\begin{proposition}[Closure of residual agency]\label{prop:agency-closure}
+Every admissible residual-agency feature of a description
+\(D \in \FATCD{}\) classifies, within the covered scope, as one of
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item a composite of \Ptwo{}, \Pfour{}, and \Psix{}, when the feature
+    decomposes into an objective or specification to be represented, a
+    transition, regime, or staged selection event, and an audited
+    decision-provenance record;
+  \item an empirical-bridge annotation, when observed agency serves as
+    substrate evidence for a bridged claim;
+  \item an outside-domain structure, when irreducible intentional or
+    teleological content is asserted beyond what admissible
+    bookkeeping reduces to \Ptwo{}, \Pfour{}, and \Psix{}.
+\end{itemize}
+Classification as \Pone{} is inadmissible in the absence of an explicit
+update-vs-quotient descent obstruction. No residual-agency feature remains
+as an unresolved seventh-role threat within the covered scope.
+\end{proposition}
+
+\begin{remark}[Scope of the closures]\label{rem:threat-closures-scope}
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure}
+close the three threats within the covered scope; they do not make
+scope-free claims. A feature that falls outside the covered scope is
+classified as an outside-domain structure via
+Definition~\ref{def:residual-scheme}, not absorbed into a primitive role
+by default.
+\end{remark}
+
+\subsection{The upper-bound classification theorem}\label{subsec:classification-theorem}
+
+The alignment rules of Proposition~\ref{prop:alignment-rules}, the
+threat closures of
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure},
+and the residual scheme of Definition~\ref{def:residual-scheme}
+combine to yield the upper-bound classification theorem: alignment
+rules fix the admissible role meanings, threat closures rule out the
+three misclassifications that otherwise block the argument, and the
+theorem records the classification codomain for every covered
+residual feature.
+
+\begin{theorem}[Upper-bound classification]\label{thm:upper-bound-classification}
+Let \(D \in \FATCD{}\) and let \(r\) be a residual feature of \(D\) in the
+sense of Definition~\ref{def:residual-scheme}. Then within the covered
+scope, \(r\) classifies as one of
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item already absorbed into an admissible \Pone{}, \Ptwo{}, \Pthree{},
+    \Pfour{}, \Pfive{}, or \Psix{} projection under the alignment rules of
+    Proposition~\ref{prop:alignment-rules};
+  \item a composite of such projections;
+  \item a presentation variant of an already classified feature;
+  \item a level shift of an already classified feature;
+  \item an activation-threshold refinement;
+  \item an instrument-visibility artifact;
+  \item an empirical-bridge annotation;
+  \item an outside-domain structure;
+  \item already-covered bookkeeping or annotation data.
+\end{enumerate}
+Equivalently, within the covered scope, categories (x) and (xi) of
+Definition~\ref{def:residual-scheme}, namely the unresolved-threat and
+genuine-seventh-role categories, are empty: no covered candidate
+seventh-role feature remains as an unresolved threat, and no covered
+candidate seventh-role feature requires a genuine seventh irreducible
+typed closure role.
+\end{theorem}
+
+\begin{proof}[Outline]
+Let \(r\) be a residual feature of \(D\). If its raw feature form,
+threshold data, witness data, level assignment, and bookkeeping align
+with one of the fixed role meanings under
+Proposition~\ref{prop:alignment-rules}, then \(r\) falls under category
+(i). If several such aligned components are required, \(r\) falls under
+the composite category (ii). Presentation variants and level shifts fall
+under (iii) and (iv), activation-threshold refinements under (v),
+instrument-visibility artifacts under (vi), empirical-bridge annotations
+under (vii), and outside-domain structures under (viii). Features already
+covered as bookkeeping or annotation data fall under (ix). The three
+high-priority threat classes are handled decisively by
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure},
+so none of them remains in the unresolved-threat bucket. Therefore every
+covered residual feature lands in categories (i)--(ix), and categories
+(x) and (xi) are empty in the covered scope.
+\end{proof}
+
+\begin{remark}[Scope of the theorem]\label{rem:classification-scope}
+Theorem~\ref{thm:upper-bound-classification} is scoped to \FATCD{}
+and its covered scope. It does not claim that no seventh role can
+arise outside \FATCD{}, that the alignment rules are exhaustive for
+richer domains, or that the three threat closures settle analogous
+questions beyond the covered scope. Nor does it prove exact-six on
+its own: the decomposition/exhaustion theorem of
+Section~\ref{sec:decomposition-exhaustion} remains necessary. Broader
+questions are deferred to Section~\ref{sec:future-work}.
+\end{remark}
+ \section{Decomposition and exhaustion}\label{sec:decomposition-exhaustion}
+
+
+
+
+The lower-bound theorem of Section~\ref{sec:lower-bounds} and the
+upper-bound classification of
+Section~\ref{sec:upper-bound-classification} reduce the scoped
+exact-six question to a decomposition-existence problem: given
+\(D \in \FATCD{}\), does \(D\) admit a well-formed record combining
+the six role channels, their statuses, and the classification of any
+raw features not absorbed into active projections? This section
+answers affirmatively and records the channel-versus-activation
+discipline that the answer requires. The lower bounds show that each
+of the six channels is materially realizable in the domain; the
+upper-bound classification shows that no covered seventh role channel
+is needed.
+
+\subsection{Decomposition records and channel statuses}\label{subsec:dec-records}
+
+\begin{definition}[Channel status]\label{def:channel-status}
+For each \(i \in \{1,\ldots,6\}\), the \emph{role channel}
+\(\Chan{i}{D}\) of a description \(D \in \FATCD{}\) is the
+\(P_i\)-labeled slot in the six-channel interface associated to \(D\),
+regardless of whether that slot is active. A \emph{channel status} for
+\(\Chan{i}{D}\) is exactly one of the five values
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \(\activeproj\) --- an active derived role projection
+    \(\pi_i(D)\) in the sense of
+    Definition~\ref{def:role-projection} exists, with the full
+    attachment data of
+    Definition~\ref{def:threshold-attachment};
+  \item \(\belowthr\) --- candidate raw features are present but the
+    threshold data required by
+    Definition~\ref{def:threshold-attachment} is absent;
+  \item \(\collapsedbc\) --- the candidate cluster is a boundary case
+    that collapses under the witness schema \(W_i\);
+  \item \(\absentrec\) --- no relevant raw features for role \(P_i\) are
+    present in \(\Raw{D}\), and the absence is itself recorded;
+  \item \(\outsidescope\) --- the role-\(P_i\) content of \(D\) lies
+    outside the covered scope.
+\end{itemize}
+We write \(\Status{i}{D}\) for the channel status of \(\Chan{i}{D}\).
+\end{definition}
+
+\begin{definition}[Decomposition/exhaustion record]\label{def:decomposition-record}
+A \emph{decomposition/exhaustion record} for \(D \in \FATCD{}\) is a tuple
+\[
+\Dec{D} = \bigl(\Raw{D},\; (\Chan{i}{D}, \Status{i}{D})_{i=1}^{6},\;
+\Residual{D},\; \mathrm{Classify},\; \mathcal{L},\; \mathcal{V},\;
+\Audit{D},\; \mathcal{N}\bigr)
+\]
+where
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the six role channels together with their statuses form the
+    six-channel status sequence. If \(\Status{i}{D} = \activeproj\), the channel
+    carries an active projection \(\pi_i(D)\) with its full attachment
+    data. If \(\Status{i}{D}\) is inactive, the channel carries the
+    corresponding below-threshold, collapsed-boundary,
+    absent-with-record, or outside-scope status record;
+  \item \(\Residual{D} \subseteq \Raw{D}\) is the residual feature set
+    (the raw records and annotations not already accounted for by an
+    active projection or an inactive status record), and
+    \(\mathrm{Classify}\) assigns to each \(r \in \Residual{D}\) a label
+    in the scheme of Definition~\ref{def:residual-scheme};
+  \item \(\mathcal{L}\) collects the loss and lift records for any level
+    crossings involved in projections or classifications;
+  \item \(\mathcal{V}\) collects instrument-visibility and
+    empirical-bridge annotations where these are asserted;
+  \item \(\Audit{D}\) is the honest bookkeeping subrecord;
+  \item \(\mathcal{N}\) is the explicit nonclaim record.
+\end{itemize}
+A decomposition/exhaustion record is \emph{well-formed} when each
+\(\Status{i}{D}\) is drawn from the five values of
+Definition~\ref{def:channel-status}, each active
+\(\pi_i(D)\) is admissible in the sense of
+Definitions~\ref{def:role-projection} and~\ref{def:threshold-attachment},
+each inactive status record is honestly supported by the corresponding
+raw-feature situation, and every raw feature is accounted for at the
+channel/exhaustion level either by an active projection, by a status
+record for its channel, or by a residual classification. The records in
+\(\mathcal{L}\) and \(\mathcal{V}\) are auxiliary annotations on this
+coverage, not additional role channels.
+\end{definition}
+
+
+\subsection{Existence, six-channel exactness, and residual exhaustion}\label{subsec:dec-theorems}
+
+\begin{theorem}[Decomposition existence]\label{thm:decomposition-existence}
+Every description \(D \in \FATCD{}\) admits a well-formed decomposition/exhaustion
+record \(\Dec{D}\) in the sense of
+Definition~\ref{def:decomposition-record}.
+\end{theorem}
+
+\begin{proof}
+For each \(i \in \{1,\ldots,6\}\), inspect \(\Raw{D}\) for a cluster
+aligned with the meaning of \(P_i\) under
+Proposition~\ref{prop:alignment-rules}. If such a cluster carries the
+threshold, witness, level, and audit data of
+Definition~\ref{def:threshold-attachment}, record
+\(\Status{i}{D} = \activeproj\) and an active projection
+\(\pi_i(D)\) in the sense of Definition~\ref{def:role-projection};
+otherwise record one of the four inactive statuses, determined by
+which attachment data is missing, whether the cluster is a
+boundary-case collapse, whether no relevant cluster exists, or
+whether the role lies outside the covered scope. Six status entries
+result, one per role. The raw features absorbed by these channel
+records are removed from the residual stage; the remainder pass to
+\(\Residual{D}\). By Theorem~\ref{thm:upper-bound-classification},
+every covered residual feature classifies under categories (ii)--(ix)
+of Definition~\ref{def:residual-scheme}, with categories (x) and (xi)
+empty in the covered scope, so \(\mathrm{Classify}\) is total on
+\(\Residual{D}\). The records \(\mathcal{L}\) and \(\mathcal{V}\) are
+read from \(\Raw{D}\) and \(\Audit{D}\); the bookkeeping subrecord is
+\(\Audit{D}\); and \(\mathcal{N}\) records the nonclaims carried
+forward from the witness discipline. The resulting tuple is a
+decomposition/exhaustion record, well-formed by construction.
+Non-vacuity of the six channels follows from
+Theorem~\ref{thm:six-role-lower-bounds}, which supplies, for each
+channel, a description in which that channel is active.
+\end{proof}
+
+\begin{theorem}[Six-channel exactness and residual exhaustion]\label{thm:six-channel-exactness}
+For every \(D \in \FATCD{}\) and every well-formed
+\(\Dec{D}\) in the sense of
+Definition~\ref{def:decomposition-record}:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item the channel sequence \((\Chan{i}{D})_{i=1}^{6}\) has length
+    exactly six, one per primitive role \Pone{}, \ldots, \Psix{};
+  \item every raw feature of \(D\) is accounted for at the
+    channel/exhaustion level by an active projection \(\pi_i(D)\), a
+    channel-status record for an inactive channel, or a residual
+    classification under the scheme of
+    Definition~\ref{def:residual-scheme}; the records in \(\mathcal{L}\)
+    and \(\mathcal{V}\) are auxiliary annotations on this coverage;
+  \item within the covered scope, no raw feature is classified as
+    an unresolved seventh-role threat or as a genuine seventh
+    irreducible typed closure role
+    (Theorem~\ref{thm:upper-bound-classification}).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Exactness of the channel sequence is built into the definition of
+\(\Dec{D}\); there are six role channels by
+Definition~\ref{def:decomposition-record}. Coverage of raw features is
+the well-formedness condition of
+Definition~\ref{def:decomposition-record} together with totality of
+\(\mathrm{Classify}\) on \(\Residual{D}\), which is delivered by
+Theorem~\ref{thm:upper-bound-classification}. Emptiness of categories
+(x) and (xi) within the covered scope is
+Theorem~\ref{thm:upper-bound-classification} directly.
+\end{proof}
+
+\subsection{Channel-versus-activation discipline}\label{subsec:channel-vs-activation}
+
+Theorem~\ref{thm:six-channel-exactness} asserts six channels in every
+decomposition/exhaustion record. It does not assert six active
+projections in every record, nor does it assert that a well-formed
+record is unique. The distinction between channel presence and
+channel activation prevents six-channel exactness from being read as
+an all-six-active claim.
+
+\begin{proposition}[Channel-versus-activation discipline]\label{prop:channel-vs-activation}
+Let \(D \in \FATCD{}\) and let \(\Dec{D}\) be a well-formed decomposition/exhaustion
+record. The following are distinct statements:
+\begin{enumerate}[label=(\roman*),topsep=2pt,itemsep=1pt]
+  \item \emph{Six channels}: the channel sequence
+    \((\Chan{i}{D})_{i=1}^{6}\) has length six with the fixed role names
+    \Pone{}, \ldots, \Psix{}.
+  \item \emph{Six active projections}: for each \(i\),
+    \(\Status{i}{D} = \activeproj\) and the channel carries an active
+    \(\pi_i(D)\).
+\end{enumerate}
+Theorem~\ref{thm:six-channel-exactness} establishes (i) for every
+\(D \in \FATCD{}\). It does not establish (ii). In particular, an
+admissible \(D \in \FATCD{}\) may carry any number of active projections
+between zero and six; inactive channels are recorded with status
+\(\belowthr\), \(\collapsedbc\), \(\absentrec\), or \(\outsidescope\)
+and are not active witnesses for the corresponding roles.
+\end{proposition}
+
+\begin{proposition}[Decomposition records are not unique]\label{prop:non-uniqueness}
+A description \(D \in \FATCD{}\) may admit more than one well-formed
+decomposition/exhaustion record in the sense of
+Definition~\ref{def:decomposition-record}. Distinct well-formed records
+may differ in level assignments, choice of witness schema, residual
+classification labels for features admitting more than one admissible
+category under the alignment rules, or placement of loss/lift and
+visibility records. Theorems~\ref{thm:decomposition-existence}
+and~\ref{thm:six-channel-exactness} assert existence, not uniqueness.
+\end{proposition}
+
+\begin{remark}[What the decomposition theorems do and do not prove]\label{rem:dec-scope}
+Theorems~\ref{thm:decomposition-existence}
+and~\ref{thm:six-channel-exactness} establish the structural side of
+the scoped exact-six claim: every \(D \in \FATCD{}\) admits a
+six-channel decomposition/exhaustion record with residual exhaustion
+in the covered scope. Together with the lower-bound theorem
+(Section~\ref{sec:lower-bounds}) and the upper-bound classification
+(Section~\ref{sec:upper-bound-classification}), they prepare the
+scoped exact-six theorem but do not replace the integrated-stress
+check that follows. They do not assert that every description
+activates all six roles, that the decomposition is canonical or
+unique, or that the scoped exact-six program extends beyond \FATCD{};
+those remain nonclaims.
+\end{remark}
+
+ \section{Integrated stress}\label{sec:integrated-stress}
+
+
+
+
+With the theorem chain of Sections~\ref{sec:lower-bounds},
+\ref{sec:upper-bound-classification}, and
+\ref{sec:decomposition-exhaustion} in place, we record six stress
+families that act as consistency checks against overclaims. These are
+not proofs of the scoped exact-six target; they verify that the
+theorem chain does not silently admit overclaims. Their joint
+satisfaction is the last requirement before the terminal statement in
+Section~\ref{sec:scoped-exact-six}.
+
+\subsection{Dependency stress}\label{subsec:dependency-stress}
+
+\begin{proposition}[Dependency stress]\label{prop:dependency-stress}
+The scoped exact-six target is dependency-coherent only when the theorem
+chain is assembled in the order
+\[
+\text{\FATCD{} domain} \;\rightarrow\; \text{lower bounds} \;\rightarrow\;
+\text{upper-bound classification} \;\rightarrow\;
+\text{decomposition/exhaustion}.
+\]
+Accordingly, the following are inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item asserting the target without the \FATCD{} domain of
+    Section~\ref{sec:fatcd-domain};
+  \item asserting the target without the lower-bound theorem of
+    Section~\ref{sec:lower-bounds};
+  \item asserting the target without the upper-bound classification
+    theorem of Section~\ref{sec:upper-bound-classification};
+  \item asserting the target without the decomposition and exhaustion
+    theorems of Section~\ref{sec:decomposition-exhaustion};
+  \item promoting the assembled target before the integrated stress
+    check of Theorem~\ref{thm:integrated-stress}.
+\end{itemize}
+\end{proposition}
+
+\subsection{Circularity stress}\label{subsec:circularity-stress}
+
+\begin{proposition}[Circularity stress]\label{prop:circularity-stress}
+Three circularity patterns are inadmissible under the theorem chain:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item redefining \FATCD{} so that it already contains exactly six role
+    slots by construction;
+  \item declaring the absence of a seventh role by definition rather
+    than by classification under Definition~\ref{def:residual-scheme};
+  \item justifying decomposition existence by assuming scoped
+    exact-six.
+\end{itemize}
+The non-circularity schema of Proposition~\ref{prop:non-circularity} and
+the constructive proof of Theorem~\ref{thm:decomposition-existence}
+block each pattern.
+\end{proposition}
+
+\subsection{Channel-versus-activation stress}\label{subsec:channel-activation-stress}
+
+\begin{proposition}[Channel-versus-activation stress]\label{prop:channel-activation-stress}
+The following conflations are inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item requiring that every \(D \in \FATCD{}\) activates all six role
+    channels;
+  \item treating an inactive channel of status \(\belowthr\) as an
+    active witness for its role;
+  \item treating an inactive channel of status \(\collapsedbc\) as an
+    active witness;
+  \item treating an inactive channel of status \(\absentrec\) as an
+    active witness.
+\end{itemize}
+Proposition~\ref{prop:channel-vs-activation} enforces each distinction.
+The same inactive-status guardrail also applies to
+\(\outsidescope\).
+\end{proposition}
+
+\subsection{Role-alignment stress}\label{subsec:role-alignment-stress}
+
+\begin{proposition}[Role-alignment stress]\label{prop:role-alignment-stress}
+The three forbidden assignments of
+Remark~\ref{rem:three-repaired-alignments} are inadmissible: generic
+transition data does not project to \Pthree{}, generic path or
+derivation data does not project to \Pfive{}, and generic semantic or
+interpretation data does not project to \Pone{}. The alignment rules
+of Proposition~\ref{prop:alignment-rules} enforce each prohibition.
+\end{proposition}
+
+\subsection{Upper-bound residual stress}\label{subsec:upper-bound-residual-stress}
+
+\begin{proposition}[Upper-bound residual stress]\label{prop:residual-stress}
+Under Theorem~\ref{thm:upper-bound-classification} and within the covered
+scope, the following regressions are inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item probability or uncertainty features reopening as unresolved
+    threats;
+  \item residual-causality features reopening as unresolved threats;
+  \item residual-agency features reopening as unresolved threats;
+  \item any covered residual feature remaining unclassified under
+    Definition~\ref{def:residual-scheme};
+  \item any covered residual feature requiring a genuine seventh
+    irreducible typed closure role.
+\end{itemize}
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure}
+settle the three threat closures, and
+Theorem~\ref{thm:upper-bound-classification} delivers the emptiness of
+categories (x) and (xi).
+\end{proposition}
+
+\subsection{Overclaim stress}\label{subsec:overclaim-stress}
+
+\begin{proposition}[Overclaim stress]\label{prop:overclaim-stress}
+The following restatements of the scoped exact-six target are
+inadmissible:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item restatement as a full six-primitives algebra;
+  \item restatement as a global primitive-independence theorem;
+  \item restatement as unique or canonical decomposition;
+  \item restatement as empirical realization;
+  \item restatement as a claim about all emergence phenomena, or any
+    domain broader than \FATCD{}.
+\end{itemize}
+Remark~\ref{rem:atlas-global-nonclaims},
+Proposition~\ref{prop:nonclaim-closure}, and
+Proposition~\ref{prop:non-uniqueness} carry the corresponding nonclaims
+forward through the theorem chain. In particular, nonclaim closure
+survives the exact-six assembly.
+\end{proposition}
+
+\subsection{The integrated stress theorem}\label{subsec:integrated-stress-theorem}
+
+\begin{theorem}[Integrated stress]\label{thm:integrated-stress}
+The theorem chain of Sections~\ref{sec:fatcd-domain},
+\ref{sec:lower-bounds}, \ref{sec:upper-bound-classification}, and
+\ref{sec:decomposition-exhaustion} satisfies each of the six stress
+families stated in
+Propositions~\ref{prop:dependency-stress}--\ref{prop:overclaim-stress}.
+Dependency, circularity, channel-versus-activation, role-alignment,
+upper-bound residual, and overclaim regressions are all blocked, and
+the assembled target is ready for the terminal statement of
+Section~\ref{sec:scoped-exact-six}.
+\end{theorem}
+
+\begin{proof}
+Each family is discharged by its corresponding proposition.
+Dependency stress follows from the ordered presence of the \FATCD{}
+domain (Section~\ref{sec:fatcd-domain}), lower bounds
+(Section~\ref{sec:lower-bounds}), upper-bound classification
+(Section~\ref{sec:upper-bound-classification}), and
+decomposition/exhaustion (Section~\ref{sec:decomposition-exhaustion}).
+Circularity stress follows from
+Proposition~\ref{prop:non-circularity} and the constructive proof of
+Theorem~\ref{thm:decomposition-existence}. Channel-versus-activation
+stress follows from Proposition~\ref{prop:channel-vs-activation} and
+the five-status taxonomy of Definition~\ref{def:channel-status}.
+Role-alignment stress follows from
+Proposition~\ref{prop:alignment-rules} and
+Remark~\ref{rem:three-repaired-alignments}. Upper-bound residual
+stress follows from
+Propositions~\ref{prop:probability-closure}--\ref{prop:agency-closure}
+and Theorem~\ref{thm:upper-bound-classification}. Overclaim stress
+follows from Remark~\ref{rem:atlas-global-nonclaims},
+Proposition~\ref{prop:nonclaim-closure}, and
+Proposition~\ref{prop:non-uniqueness}. Together: dependencies cohere,
+the channel/activation distinction holds, nonclaim closure holds, and
+the target is eligible for the terminal statement.
+\end{proof}
+ \section{The scoped exact-six theorem}\label{sec:scoped-exact-six}
+
+
+
+
+The theorem chain of
+Sections~\ref{sec:fatcd-domain}--\ref{sec:decomposition-exhaustion}
+and the integrated stress certification of
+Section~\ref{sec:integrated-stress} together permit the terminal
+statement. The scoped exact-six theorem combines the definition of
+\FATCD{} with the lower bounds, the upper-bound classification, and
+the decomposition/exhaustion theorems into a single quantified claim
+over the domain.
+
+\begin{theorem}[Scoped exact-six]\label{thm:scoped-exact-six}
+Let \(D \in \FATCD{}\). Then \(D\) admits a well-formed
+decomposition/exhaustion record \(\Dec{D}\) with exactly six typed
+closure-role channels:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \Pone{}: update-vs-quotient compatibility / descent obstruction;
+  \item \Ptwo{}: macro-specification representability;
+  \item \Pthree{}: enriched route/coherence mismatch;
+  \item \Pfour{}: stage/order/transition/refinement structure;
+  \item \Pfive{}: quotient packaging / quotienting;
+  \item \Psix{}: audit/bookkeeping/provenance/replay/checkability.
+\end{itemize}
+Each channel carries exactly one recorded status from
+\(\{\activeproj,\; \belowthr,\; \collapsedbc,\; \absentrec,\;
+\outsidescope\}\). Every active projection is supported by threshold
+data, a witness schema, a level assignment, and an honest bookkeeping
+record. Every residual raw feature of \(D\) is classified, under the
+upper-bound classification of
+Section~\ref{sec:upper-bound-classification}, as one of:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item composite of existing role channels;
+  \item presentation variant;
+  \item level shift;
+  \item activation-threshold refinement;
+  \item instrument-visibility artifact;
+  \item empirical-bridge annotation;
+  \item outside-domain structure;
+  \item already-covered bookkeeping or annotation data.
+\end{itemize}
+No covered residual feature remains as an unresolved candidate seventh
+role or genuine seventh irreducible typed closure role. We denote this
+conclusion by
+\[
+\ScopedExactSix{\FATCD{}}.
+\]
+\end{theorem}
+
+\begin{proof}
+Fix \(D \in \FATCD{}\). By Theorem~\ref{thm:decomposition-existence},
+\(D\) admits a well-formed decomposition/exhaustion record \(\Dec{D}\)
+in the sense of Definition~\ref{def:decomposition-record}. By
+Theorem~\ref{thm:six-channel-exactness}, the channel sequence of
+\(\Dec{D}\) has length six, each channel carries one of the five
+statuses of Definition~\ref{def:channel-status}, and every raw
+feature of \(D\) is accounted for by an active projection, by a
+status record, by a residual classification, or by an auxiliary
+loss/lift or visibility annotation. By
+Theorem~\ref{thm:upper-bound-classification}, residual features in
+the covered scope classify under categories (ii)--(ix) of
+Definition~\ref{def:residual-scheme}, and categories (x) and (xi) are
+empty. Theorem~\ref{thm:six-role-lower-bounds} supplies, for each
+channel, a \(D' \in \FATCD{}\) at which that channel is active. The
+integrated stress certification of
+Theorem~\ref{thm:integrated-stress} discharges the dependency,
+circularity, channel-versus-activation, role-alignment, upper-bound
+residual, and overclaim families. Hence \(\ScopedExactSix{\FATCD{}}\).
+\end{proof}
+
+\subsection{What scoped exact-six means and does not mean}\label{subsec:exact-six-meaning}
+
+Theorem~\ref{thm:scoped-exact-six} has a reading that should be
+preserved throughout what follows.
+
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{Six channels, not six active witnesses.} The theorem
+    asserts six role channels in \(\Dec{D}\) for every
+    \(D \in \FATCD{}\). It does not assert that every \(D\) activates
+    all six roles, that every \(D\) carries six active projections
+    \(\pi_1(D), \ldots, \pi_6(D)\), or that a single \(D\) realizes
+    all six witness schemas of Section~\ref{sec:lower-bounds}.
+  \item \emph{Existential, not unique, decomposition.} The theorem
+    asserts existence of \(\Dec{D}\); it does not assert uniqueness or
+    canonicity. Distinct well-formed records of the same \(D\) may
+    exist (Proposition~\ref{prop:non-uniqueness}).
+  \item \emph{Covered-scope residual exhaustion.} The residual
+    exhaustion clause is restricted to the covered scope. Features
+    outside that scope are classified as outside-domain structures
+    under category~(viii) of Definition~\ref{def:residual-scheme},
+    not absorbed into primitive roles.
+  \item \emph{No broader claim.} Theorem~\ref{thm:scoped-exact-six}
+    is a statement about \FATCD{}. It does not assert a full
+    six-primitives algebra, global primitive independence, empirical
+    realization, instrument-family completeness, or coverage of all
+    emergence phenomena. See Section~\ref{sec:limitations-nonclaims}.
+\end{itemize}
+
+ \section{Discussion}\label{sec:discussion}
+
+
+
+The terminal theorem is stated at scoped strength over \FATCD{}.
+This section discusses what the statement earns and what it leaves
+unstated, how the three parts of
+Sections~\ref{sec:primitive-role-architecture},
+\ref{sec:admissibility-meta-theory}, and
+\ref{sec:fatcd-domain}--\ref{sec:integrated-stress} combine into one
+theorem stack, and how the result sits next to earlier Six Birds
+literature.
+
+\subsection{The shape of the scoped claim}\label{subsec:discussion-shape}
+
+Each of the three scope features --- domain restriction, existence
+rather than uniqueness, residual exhaustion within a covered scope
+--- is structural rather than cosmetic. An unrestricted exact-six
+theorem would require a domain-free argument for which the present
+paper does not claim to have the instruments. A uniqueness or
+canonicity claim would require a theory of translation records
+identifying distinct well-formed decompositions, which lies outside
+the present admissibility regime. Scope-free residual exhaustion
+would require scope-free closure of the three high-priority threats
+addressed in Section~\ref{sec:upper-bound-classification}. Stating
+the theorem at the scope the proof supports keeps the
+endogenous-instrument meta-limit (Section~\ref{subsec:meta-limit})
+separate from the current claim instead of folded into it. The posture
+aligns with the broader view that scientific laws form a patchwork of
+domain-local regularities rather than a single global
+theory~\citep{Cartwright1999}.
+
+\subsection{The three parts as one theorem stack}\label{subsec:discussion-pillars}
+
+The three parts introduced in Section~\ref{subsec:three-pillars} play
+complementary roles. The primitive role architecture
+(Section~\ref{sec:primitive-role-architecture}) fixes the vocabulary:
+six role meanings, the behavioral, verification, and
+structural-categorical level pattern, and the local boundary
+distinctions. This vocabulary alone does not certify any claim,
+since it does not specify which role talk is admissible. The
+admissibility and meta-theory regime
+(Section~\ref{sec:admissibility-meta-theory}) supplies that
+certification through honest bookkeeping, typed non-collapse, the
+forgetting and selected-lift architecture, activation thresholds,
+instrument-relative visibility, and empirical-bridge admissibility.
+Admissibility alone, however, yields no terminal claim; it only
+regulates what may be asserted. The exact-six theorem chain
+(Sections~\ref{sec:fatcd-domain}--\ref{sec:integrated-stress})
+supplies the quantification: the \FATCD{} domain, the six
+lower-bound witnesses, the upper-bound classification, the
+decomposition/exhaustion theorem, and the integrated stress
+certification together deliver Theorem~\ref{thm:scoped-exact-six}.
+Vocabulary without admissibility would be undisciplined; admissibility
+without a theorem chain would be inconclusive; a theorem chain without
+the first two would lack a subject.
+
+\subsection{Channel versus activation}\label{subsec:discussion-channel-vs-activation}
+
+The channel-versus-activation discipline of
+Proposition~\ref{prop:channel-vs-activation}, enforced throughout
+Sections~\ref{sec:fatcd-domain}--\ref{sec:scoped-exact-six},
+separates two statements that are easily conflated. The structural
+statement is that every admissible description carries six typed
+closure-role slots. The activation statement is that every admissible
+description realizes all six slots with active projections. The
+activation statement is too strong: it fails on descriptions that
+carry no route grammar and therefore have no active \Pthree{}
+projection, and on descriptions whose raw material carries no
+\Psix{}-aligned event/provenance/replay/check witness cluster and
+therefore have no active \Psix{} projection. The structural
+statement, which is what we prove, is compatible with any activation
+profile. Inactive channels carry one of the statuses
+\(\belowthr{}\), \(\collapsedbc{}\), \(\absentrec{}\), or
+\(\outsidescope{}\), describing the way a role fails to activate.
+Separating the two statements is what lets the terminal theorem hold
+of every \(D \in \FATCD{}\) without requiring activation of all six
+roles in every description; it also lets the lower-bound theorem of
+Section~\ref{sec:lower-bounds} be stated existentially over the
+domain rather than uniformly. An informal reading that elides the
+distinction silently recovers the stronger activation claim, which we
+do not prove.
+
+\subsection{Instrument-relative methodology}\label{subsec:discussion-instrument-relative}
+
+A methodological choice underlying
+Section~\ref{sec:admissibility-meta-theory} deserves explicit
+statement as a contribution. Instruments are treated as mathematical
+probes rather than as neutral tools, in the spirit of ontic structural
+realism~\citep{LadymanRoss2007} and the sheaf-theoretic treatment of
+contextuality~\citep{AbramskyBrandenburger2011}. The technical form
+is Proposition~\ref{prop:visibility}; the associated nonclaim is that
+no result here rests on an instrument-free truth.
+
+The motivation is reflexive. The subject matter --- finite audited
+typed closure descriptions and the six typed closure roles that
+project them --- is the same descriptional machinery from which any
+instrument for detecting closure structure must itself be built.
+Operator-presentation, quotient/descent, coherence/route,
+constructive/proof-theoretic, and information/regime instruments are
+not vantage points outside the domain: each is a closure structure
+probing another closure structure. A claim asserted under one such
+instrument while silently suppressing what another would have
+revealed would privilege that instrument without bookkeeping for the
+privilege --- the overread that Proposition~\ref{prop:visibility}
+blocks.
+
+The consequence is epistemic. Every admissible claim carries an
+explicit visibility record: its visible content, its suppressed
+content, the instruments under which visibility and suppression are
+asserted, and the resulting instrument-relative claim strength
+(Proposition~\ref{prop:visibility}). Triangulating a role projection
+across several instruments is a disciplined way to strengthen an
+assertion; reading a projection off a single instrument and declaring
+its content canonical is not admissible. The discipline is one of
+epistemic hygiene, in the spirit of Bohr's complementarity
+doctrine~\citep{Bohr1958}: we do not claim that instruments are
+incompatible in principle, only that they are not interchangeable
+without explicit visibility bookkeeping and, where contexts shift,
+explicit translation records
+(Propositions~\ref{prop:visibility} and~\ref{prop:level-profile}).
+
+This posture also explains why the endogenous-instrument meta-limit
+(Sections~\ref{subsec:meta-limit} and~\ref{subsec:future-meta-limit})
+is deferred to future work. Taking instrument-relativity seriously
+from the outset lets the meta-limit be stated as its own question ---
+whether the accepted internal instrument family can certify its own
+soundness and completeness --- a question made statable, but not
+settled, by the stance adopted here.
+
+\subsection{Relation to earlier Six Birds results}\label{subsec:discussion-earlier-results}
+
+Six Birds Foundations~I~\citep{Tsiokos2026SixBirdsFoundations}
+introduced the theory-package formalism
+\(\mathcal{T} = (Z, f, \Sigma_f, E, \mathcal{A})\) and derived the
+\Pone{}--\Psix{} vocabulary under minimal hypotheses of composability
+with limited interface access. The present paper does not re-derive
+that vocabulary; it takes the six roles as given and asks a
+different question: whether, within a specific admissibility regime
+and over a specific class of admissible descriptions, the six roles
+are exactly enough. The Foundations theorem gives the canonical
+unavoidability side of the picture; the terminal theorem here gives
+the scoped exhaustion side. The two statements address different
+questions and address them at different levels; combining them does
+not yield a stronger claim, and neither theorem follows from the
+other.
+
+The theorem chain also draws on a nearby
+result. \citet{Tsiokos2026SixBirdsProtocolTrap}, complementing the
+no-go analysis of \citet{Tsiokos2026SixBirdsNoGo}, established that
+protocol holonomy is not a directionality certificate:
+noncommutativity of update sequences can be nonzero while
+path-reversal asymmetry remains zero, so route mismatch is a
+diagnostic, not an arrow of time. That observation is load-bearing
+for the role-projection alignment rules of
+Section~\ref{sec:upper-bound-classification}, where \Pthree{}
+route/coherence mismatch is kept structurally distinct from the
+affinity-carrying face of \Psix{}. The next section records the
+scope boundaries and nonclaims of the present theorem stack.
+ \section{Limitations and nonclaims}\label{sec:limitations-nonclaims}
+
+
+
+This section collects the scope restrictions of
+Theorem~\ref{thm:scoped-exact-six} and the global nonclaims
+preserved throughout.
+
+\subsection{Scope of the terminal theorem}\label{subsec:terminal-scope}
+
+Theorem~\ref{thm:scoped-exact-six} quantifies over \(D \in \FATCD{}\),
+where \FATCD{} is the finite audited typed closure description domain
+of Definition~\ref{def:fatcd}. The theorem asserts:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item existence of a decomposition/exhaustion record \(\Dec{D}\)
+    with six role channels and one status per channel;
+  \item residual-feature exhaustion under the upper-bound
+    classification within the covered scope, so that no seventh
+    irreducible role is required there;
+  \item activation of any \(\pi_i(D)\) only under the threshold,
+    witness, level, and audit data of
+    Definition~\ref{def:threshold-attachment}.
+\end{itemize}
+
+It does not assert:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item decomposition uniqueness or canonicity;
+  \item six active projections, or six active nontrivial witnesses, in
+    every description;
+  \item scope-free residual exhaustion, or any claim about features
+    outside the covered scope;
+  \item unrestricted exact-six, or coverage of all emergence
+    phenomena;
+  \item that broader domains require no further work.
+\end{itemize}
+
+\subsection{Global nonclaims}\label{subsec:global-nonclaims}
+
+Each nonclaim below is preserved throughout the paper and is enforced
+locally by the theorem-chain result that would otherwise overread it.
+
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item \emph{No full six-primitives algebra.} Scoped exact-six is
+    proved over \FATCD{}; it is not claimed that \Pone{}--\Psix{}
+    generate a global algebra of closure operations
+    (Remark~\ref{rem:atlas-global-nonclaims},
+    Proposition~\ref{prop:overclaim-stress}).
+  \item \emph{No global primitive-independence theorem.} Typed
+    non-collapse (Proposition~\ref{prop:typed-non-collapse}) is
+    strictly weaker than global independence and is the sole claim at
+    that level.
+  \item \emph{No empirical realization.} Empirical-bridge admissibility
+    (Proposition~\ref{prop:empirical-bridge}) admits
+    threshold-dependent, level-indexed, instrument-visible substrate
+    evidence; it does not assert that any \(D \in \FATCD{}\) is itself
+    a substrate observation.
+  \item \emph{No unique selected lift.} Every lift is recorded as
+    selected and non-unique
+    (Proposition~\ref{prop:forgetting-lifts}).
+  \item \emph{No lower-to-higher determinacy.} Behavioral or
+    verification content does not determine structural-categorical
+    content.
+  \item \emph{No instrument-free formulation.} Admissible claims carry
+    an instrument-relative visibility record
+    (Proposition~\ref{prop:visibility}).
+  \item \emph{No internal instrument-family completeness.} The
+    accepted instrument family is not asserted to be sufficient for
+    every exact-six judgment formulable in the same regime.
+  \item \emph{No unrestricted all-emergence coverage.}
+    Theorem~\ref{thm:scoped-exact-six} is scoped to \FATCD{}.
+  \item \emph{No surrogate terminal evidence.} The proof chain does
+    not invoke any surrogate for the terminal scoped exact-six
+    theorem.
+  \item \emph{No uniqueness of primitive presentations.} Distinct
+    admissible presentations of the same role may coexist.
+  \item \emph{Cross-level comparison requires translation.} Direct
+    comparison of claims at different levels is inadmissible without a
+    translation record (Proposition~\ref{prop:level-profile}).
+\end{itemize}
+
+\subsection{The endogenous-instrument meta-limit}\label{subsec:meta-limit}
+
+An adjacent meta-theoretic question, deferred to future work, is
+whether the accepted internal instrument family can itself certify
+both its soundness and its completeness for exact-six judgments
+formulable inside the same regime. A plausible sharp formulation is
+that no internal argument should be expected to accomplish all three
+of the following at once:
+\begin{enumerate}[topsep=2pt,itemsep=1pt]
+  \item establish the scoped exact-six claim;
+  \item certify the soundness of the accepted instrument family;
+  \item certify the completeness of that family for exact-six
+    judgments expressible inside the same regime.
+\end{enumerate}
+Such self-certification limits are of a piece with the classical
+G{\"o}del--L{\"o}b tradition on internal consistency and provability
+statements~\citep{Godel1931,Lob1955}. This question is not part of
+the proof of Theorem~\ref{thm:scoped-exact-six} and does not weaken
+or retract the theorem's scoped conclusion. It is taken up as a
+follow-on direction in Section~\ref{sec:future-work}.
+ \section{Future work}\label{sec:future-work}
+
+
+
+Theorem~\ref{thm:scoped-exact-six} and the limitations of
+Section~\ref{sec:limitations-nonclaims} suggest several follow-on
+research directions. Each subsection below states a direction, not a
+commitment.
+
+\subsection{Endogenous-instrument meta-limit}\label{subsec:future-meta-limit}
+
+A formalization of the meta-limit described in
+Section~\ref{subsec:meta-limit} would target a three-way
+impossibility statement: no internal argument can simultaneously
+establish the scoped exact-six claim, certify the soundness of the
+accepted instrument family, and certify its completeness for
+exact-six judgments formulable inside the same regime.
+Theorem~\ref{thm:scoped-exact-six} would remain intact under such a
+result; the additional content would be a precise account of
+self-certification boundaries.
+
+\subsection{Broader-domain exact-six}\label{subsec:future-broader-domain}
+
+Candidate extensions beyond \FATCD{} include admissibility regimes
+that weaken finiteness, closure, or audit
+(Section~\ref{sec:fatcd-domain}), and regimes that admit annotation
+kinds beyond the six \(\mathrm{Ann}_*\) categories of
+Definition~\ref{def:annotations}. Any such extension would require
+fresh upper-bound and decomposition/exhaustion analysis, since the
+alignment rules and threat closures are not stated at scope-free
+strength.
+
+\subsection{Uniqueness or canonical decomposition}\label{subsec:future-uniqueness}
+
+Theorem~\ref{thm:scoped-exact-six} is existential. A uniqueness study
+would investigate when distinct well-formed decomposition/exhaustion
+records of the same \(D \in \FATCD{}\) are equivalent under explicit
+translation records, or when a canonical representative can be
+selected. The channel-versus-activation discipline
+(Proposition~\ref{prop:channel-vs-activation}) is compatible with
+such a study; no uniqueness claim is part of the present theorem.
+
+\subsection{Full six-primitives algebra}\label{subsec:future-algebra}
+
+The generator-and-relation structure of \Pone{}--\Psix{} beyond
+typed non-collapse remains open. A full algebra would require
+scope-free independence data, not just the local boundary
+distinctions of Table~\ref{tab:boundary-matrix}, and would likely
+require a categorical apparatus richer than the raw grammar of
+Section~\ref{subsec:raw-grammar}.
+
+\subsection{Empirical substrate mapping}\label{subsec:future-substrate}
+
+The empirical-bridge admissibility regime
+(Proposition~\ref{prop:empirical-bridge}) can be connected to
+concrete substrate-level observables. The present paper treats
+empirical bridges as threshold-dependent, level-indexed, and
+instrument-visible annotations; later work can couple this to
+substrate-specific measurement theory while preserving the nonclaim
+of empirical realization.
+
+\subsection{Mechanization}\label{subsec:future-mechanization}
+
+The typed non-collapse proposition, the decomposition-existence
+theorem, and the upper-bound classification theorem are natural
+targets for mechanization in a proof
+assistant~\citep{DeMouraUllrich2021}. Work-in-progress Lean
+mechanization accompanying the present paper is available at the
+code repository of Appendix~\ref{app:code-availability}, and the
+Foundations program~\citep{Tsiokos2026SixBirdsFoundations} has
+already mechanized closure-related infrastructure that can be
+reused.
+
+\subsection{Cross-instrument comparison}\label{subsec:future-cross-instrument}
+
+Decomposition/exhaustion records of the same \(D \in \FATCD{}\) can
+be compared under different admissible instrument assignments.
+Proposition~\ref{prop:visibility} admits visibility records that
+suppress different portions of a claim under different instruments; a
+cross-instrument study could make the instrument-dependence of
+\(\Dec{D}\) explicit and sharpen the notion of instrument-relative
+claim strength.
+ 
+\appendix
+\section{API provenance and evidence hygiene}\label{app:api-provenance}
+
+
+
+The theorem-chain artifacts supporting
+Sections~\ref{sec:fatcd-domain}--\ref{sec:integrated-stress} were
+generated by audited API runs of the Aristotle verification
+system~\citep{Achim2025Aristotle}.
+This appendix records their provenance for evidence-hygiene purposes.
+Provenance is not proof: the theorems of the body text are supported
+by the normalized result-shape gates, accepted theorem
+specifications, and scoped promotion artifacts cited in each section.
+
+\subsection{Run inventory}\label{app:run-inventory}
+
+The theorem chain draws on five API runs, each accompanied by an
+accepted result-shape gate and a clean-snapshot manifest:
+
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item the \FATCD{} domain exactification, underlying
+    Section~\ref{sec:fatcd-domain};
+  \item the six-role lower-bound exactification, underlying
+    Section~\ref{sec:lower-bounds};
+  \item the upper-bound classification, underlying
+    Section~\ref{sec:upper-bound-classification};
+  \item the decomposition/exhaustion exactification, underlying
+    Section~\ref{sec:decomposition-exhaustion};
+  \item the integrated exact-six stress run, underlying
+    Section~\ref{sec:integrated-stress}.
+\end{itemize}
+
+For each run, the repository records a result-shape gate confirming
+usability, a content-review record where applicable, an acceptance
+record, and a reproducibility manifest.
+
+\subsection{Excluded evidence}\label{app:excluded-evidence}
+
+The following evidence classes are not used in the manuscript and are
+excluded from the provenance chain:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item surrogate artifacts for the terminal exact-six theorem or for
+    any step in the lower-bound or upper-bound chain;
+  \item raw Aristotle outputs, packages, and unpack directories used
+    as mathematical evidence;
+  \item quarantined primitive-independence runs;
+  \item any artifact not accompanied by an accepted result-shape
+    gate.
+\end{itemize}
+
+\subsection{Scope of provenance}\label{app:scope-of-provenance}
+
+API provenance supports evidence hygiene only. It does not imply that
+the accepted internal instrument family is globally complete or sound
+for exact-six judgments; those questions are deferred to
+Section~\ref{subsec:future-meta-limit}. The mathematical evidence for
+Theorem~\ref{thm:scoped-exact-six} is the theorem chain and
+integrated stress certification of
+Sections~\ref{sec:fatcd-domain}--\ref{sec:integrated-stress},
+together with the normalized result-shape gates, accepted theorem
+specifications, and scoped promotion artifacts supporting those
+sections.
+
+\subsection{Code availability}\label{app:code-availability}
+
+The \LaTeX{} source of this manuscript and the accompanying Lean
+mechanization artifacts are available at
+\url{https://github.com/ioannist/six-birds-foundations-ii}.
+ 
+
+
+\begin{landscape}
+\begin{table}
+\caption{Local boundary distinctions. Each row records the distinction
+rule between two roles, a permitted interaction, and the collapse that
+is forbidden under scoped bookkeeping.}
+\label{tab:boundary-matrix}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lp{0.34\linewidth}p{0.24\linewidth}p{0.24\linewidth}@{}}
+\toprule
+pair & distinction rule & permitted interaction & forbidden collapse \\
+\midrule
+\Pone{}/\Pfive{} & \Pfive{} supplies quotient packaging; \Pone{} tests selected update compatibility with quotient packaging & \Pone{} uses \Pfive{} when checking descent or obstruction & packaging alone is not \Pone{} \\
+\Pone{}/\Pfour{} & \Pfour{} supplies stage/refinement structure; \Pone{} may vary by stage & stage-indexed descent or obstruction & stage index alone is not \Pone{} \\
+\Pone{}/\Ptwo{} & \Pone{} is update compatibility; \Ptwo{} is macro-specification representability & representability may be studied over quotient structures affected by descent & representability failure is not automatically descent obstruction \\
+\Pone{}/\Pthree{} & \Pone{} is failure or success of a descended route; \Pthree{} compares already-defined routes & \Pone{} may block a route before \Pthree{} comparison & route undefinedness is not route mismatch \\
+\Pone{}/\Psix{} & \Psix{} audits a \Pone{} event; \Pone{} is the event content & audited descent success or obstruction & audit record is not descent obstruction \\
+\Ptwo{}/\Pfive{} & \Pfive{} is quotient packaging; \Ptwo{} requires macro-specification representability beyond quotient equality & \Ptwo{} can collapse to \Pfive{} when specifications are just quotient classes; nontrivial \Ptwo{} uses \Pfive{} & nontrivial \Ptwo{} is not mere packaging \\
+\Ptwo{}/\Pfour{} & \Pfour{} supplies stages; \Ptwo{} representability may vary by stage & stage-indexed representability & stage variation alone is not \Ptwo{} \\
+\Ptwo{}/\Pthree{} & \Ptwo{} concerns representability of specifications; \Pthree{} concerns route disagreement & route grammar may be built over represented macro structure & non-representability is not route mismatch \\
+\Ptwo{}/\Psix{} & \Psix{} audits representability claims; \Ptwo{} is the representability content & audited representability or non-representability & audit trail is not representability \\
+\Pthree{}/\Pfour{} & \Pfour{} supplies stage/regime structure; \Pthree{} route mismatch may be stage-indexed & route systems vary over valid stages & stage-indexed route mismatch is not \Pfour{} itself \\
+\Pthree{}/\Pfive{} & \Pfive{} supplies quotient objects; \Pthree{} compares defined routes over objects & routes over quotient objects & quotient object is not route mismatch \\
+\Pthree{}/\Psix{} & \Psix{} audits route comparisons; \Pthree{} is the route mismatch content & audited route mismatch & audit record is not route mismatch \\
+\Pfour{}/\Pfive{} & \Pfour{} supplies stage/refinement structure; \Pfive{} supplies packaging at a stage & stage-indexed packaging & packaging is not stage structure \\
+\Pfour{}/\Psix{} & \Pfour{} supplies staged structure; \Psix{} audits staged histories or transitions & audited stage transitions & audit record is not staging \\
+\Pfive{}/\Psix{} & \Pfive{} supplies packaging; \Psix{} audits packaging events & audited packaging & audit record is not packaging map \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}
+ 
+\bibliographystyle{plainnat}
+\bibliography{bib/references}
+
+\end{document}

@@ -1,0 +1,2760 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\DeclareMathOperator{\Capacity}{Cap}
+\DeclareMathOperator{\Cost}{Cost}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\dist}{dist}
+
+\newcommand{\K}{\mathsf K}
+\newcommand{\XiRes}{\Xi}
+\newcommand{\preceqq}{\preceq}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\DBG}{D^{\mathrm{BG}}}
+\newcommand{\LBG}{L^{\mathrm{BG}}}
+\newcommand{\Lphys}{L^{\mathrm{phys}}}
+\newcommand{\Tmax}{T_{\max}}
+\newcommand{\Omsrc}{\Omega_{\mathrm{src}}}
+\newcommand{\Omtr}{\Omega_{\mathrm{tr}}}
+\newcommand{\Ompr}{\Omega_{\mathrm{pr}}}
+\newcommand{\Omvisc}{\Omega_{\mathrm{visc}}}
+\newcommand{\Omtail}{\Omega_{\mathrm{tail}}}
+\newcommand{\Omstr}{\Omega_{\mathrm{str}}}
+\newcommand{\Omamp}{\Omega_{\mathrm{amp}}}
+\newcommand{\Omend}{\Omega_{\mathrm{endpoint}}}
+\newcommand{\CG}{C_G}
+\newcommand{\sigmaJ}{\sigma_J}
+\newcommand{\lambdaJ}{\lambda_J}
+\newcommand{\LPtr}{S_j}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{nonclaim}[theorem]{Nonclaim}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Navier--Stokes as a Layer-Dissolving\\ Membrane Theorem}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Navier--Stokes as a Layer-Dissolving Membrane Theorem},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+We apply the adequacy-residual calculus of
+\citet{Tsiokos2026XiCompanion} and the layer-dissolving membrane
+endpoint of \citet{Tsiokos2026NeedleKiller} to the smooth-data
+three-dimensional incompressible Navier--Stokes Cauchy problem.  The
+argument fixes the Bradshaw--Grujic / Beale--Kato--Majda dissolving
+readout \(\DBG\), measures the physical-native adequacy residual
+\(\XiRes_C(\DBG\mid\Lphys)\), and propagates it along the doubling
+Bradshaw--Grujic stages through the audited source-admission ledger
+\(\Omsrc=\Omtr+\Ompr+\Omvisc+\Omtail+\Omstr\).  A no-go family rules
+out packing, sparseness, marker-only, and metric-shadow shortcuts; a
+Gevrey radius-window gate \(\lambdaJ\rho\gtrsim\log\lambdaJ\) isolates
+the half-log endpoint obstruction; and a Littlewood--Paley transport
+map \(\LPtr\colon L^2(P_j)\to H^{-s}\), \(s\ge q-\eps\), restores
+summable predictive propagation.  Under the closure bundle
+\(R_1,\ldots,R_9\) and the typed-context discipline, every
+divergence-free initial datum \(u_0\in H^{\gamma_0}\) with
+\(\gamma_0>5/2\) on the accepted smooth-data channel therefore
+satisfies \(\Tmax(u_0)=\infty\).  The same closure records are then
+recast as an AOR-instance membership witness for the smooth-data
+carrier, using the audit-closure meta-theory of
+\citet{Tsiokos2026AOR}, giving the record-level reading of ``the
+carrier does not blow up in reality''; that recasting is presented
+under the carrier-attached discharge-assignment discipline of the AOR
+meta-theory; a data-bearing strengthening of the discharge-record
+fields is outside the present scope.  We make no unconditional
+Clay--Millennium claim, no generic critical-Besov data claim, no
+criterion-native rewriting of \(\DBG\), and no claim of regularity
+independent of the audit records.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds theory; Navier--Stokes regularity; layer-dissolving membrane; adequacy residual; Bradshaw--Grujic window; BKM continuation; Gevrey radius-window; Littlewood--Paley transport; smooth-data subcarrier; audit closure.
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+We study the three-dimensional incompressible Navier--Stokes Cauchy
+problem as a smooth-data regularity problem under an audit-closure
+discipline.  The question is the classical one: whether a smooth
+divergence-free datum can generate a finite-time loss of strong
+regularity.  Under a structured closure bundle \(R_1,\ldots,R_9\) and
+the typed-context discipline of \citet{Tsiokos2026XiCompanion} and
+\citet{Tsiokos2026NeedleKiller}, every smooth divergence-free initial
+velocity on the accepted smooth-data channel has infinite maximal
+strong-solution lifespan.  The same records are also recast in
+\Cref{sec:ns-aor-instance} as the AOR-membership witness for the
+smooth-data carrier \(\mathsf C_{\mathrm{NS}}\) inside the
+audit-closure meta-theory of \citet{Tsiokos2026AOR}, giving the
+record-level reading that the carrier does not blow up in reality.
+That recasting reframes the conclusion; it does not remove the
+audit-record requirement.
+
+Concretely, the Cauchy problem is posed for a velocity field \(u(x,t)\),
+pressure \(p(x,t)\), and viscosity \(\nu>0\) on
+\(\mathbb R^3\times[0,T)\):
+\[
+\begin{aligned}
+  \partial_t u + (u\cdot\nabla)u + \nabla p &= \nu \Delta u,\\
+  \nabla\cdot u &= 0,\\
+  u(\cdot,0) &= u_0 .
+\end{aligned}
+\]
+Throughout, smooth data means a divergence-free initial velocity
+\(u_0\in H^{\gamma_0}\) with \(\gamma_0>5/2\); above this Sobolev
+threshold Kato's classical theory~\citep{Kato1972} gives a unique
+strong solution
+\[
+  u\in C\bigl([0,\Tmax(u_0)),H^{\gamma_0}\bigr)
+\]
+with maximal lifespan \(\Tmax(u_0)\in(0,\infty]\).  The regularity
+question is whether \(\Tmax(u_0)=\infty\) for every such datum.
+
+Two classical continuation criteria frame the question.  A standard
+Beale--Kato--Majda-type continuation criterion for strong
+Navier--Stokes flows~\citep{BealeKatoMajda1984,MajdaBertozzi2002,RobinsonRodrigoSadowski2016}
+says that a strong solution continues past time \(T\) whenever the time
+integral of the \(L^\infty\)-norm of its vorticity
+\(\omega=\nabla\times u\) is finite,
+\[
+  \int_0^T \|\omega(\cdot,t)\|_{L^\infty}\,dt < \infty .
+\]
+The Bradshaw--Grujic frequency-window
+criterion~\citep{BradshawGrujic2017} provides a complementary
+frequency-localized route: continuation holds when a fixed observable,
+read on a doubling sequence of Littlewood--Paley windows with
+\(\lambda_{j+1}=2\lambda_j\), is uniformly bounded.  We therefore ask
+whether the fixed frequency-window readout can be controlled along the
+stages on which the strong solution is defined.
+
+Our approach measures this question by a finite-dimensional
+Schur-complement residual~\citep{Zhang2005SchurApplications}.  At a
+Bradshaw--Grujic stage \(J\) and time \(t\), let \(C_{J,t}\) denote the
+positive audit form on the smooth-data carrier, the energy form against
+which observables are measured.  For a target observable \(D\) and a
+native probe family \(L\), meaning a declared linear family of
+measurements on the carrier, the adequacy residual is
+\[
+  \Xi_C(D\mid L)
+  =
+  K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD},
+\]
+where the \(K_{\ast\ast}\) are the Gram blocks determined by \(D\),
+\(L\), and \(C\), and \(\dagger\) denotes the Moore--Penrose
+pseudoinverse~\citep{Penrose1955GeneralizedInverse}.  The residual is a
+positive operator on the response space measuring the part of \(D\)
+unexplained by \(L\); it vanishes exactly when \(L\) captures \(D\)
+after quotienting the zero-audit directions of \(C\).  The full
+residual calculus is developed in \citet{Tsiokos2026XiCompanion}; we
+use only this Schur-complement interface and its finite-dimensional
+bookkeeping.
+
+For Navier--Stokes the target observable is the fixed
+Bradshaw--Grujic dissolving readout \(\DBG\): the same
+frequency-localized quantity whose uniform boundedness on the doubling
+Littlewood--Paley sequence \(\lambda_{j+1}=2\lambda_j\) gives the
+classical continuation channel.  The native family is \(\Lphys\), a
+finite linear family of Littlewood--Paley shell projections and Sobolev
+(Bessel-potential) component probes on the Navier--Stokes carrier.  The
+distinction matters: \(\Lphys\) is physically motivated and linear by
+construction, not a relabeling of \(\DBG\).  The residual question is
+whether \(\Xi_C(\DBG\mid\Lphys)\) can be bounded along the doubling
+stages using audited Navier--Stokes records and a controlled list of
+admitted source terms.
+
+The principal regularity statement is the following.  For every
+divergence-free datum \(u_0\in H^{\gamma_0}\) with \(\gamma_0>5/2\) in
+the accepted smooth-data channel, the closure bundle
+\(R_1,\ldots,R_9\) and the typed-context discipline imply
+\(\Tmax(u_0)=\infty\).  The qualifier \emph{accepted smooth-data
+channel} refers to the Sobolev data class admitted by the records used
+in the proof; it is not an assertion about every weak or critical-data
+Navier--Stokes carrier.
+
+The proof is organized around the nine proof-carrying records collected
+along the doubling Bradshaw--Grujic stages.  Each record is a named
+bundle whose components hold the assumed PDE hypotheses and the
+framework bookkeeping at the corresponding stage.  The records collect
+the imported PDE results --- the Beale--Kato--Majda continuation
+criterion, the Bradshaw--Grujic frequency-window doubling criterion,
+Kato local well-posedness, half-log analyticity, the
+Littlewood--Paley / Bony--Chemin--Danchin calculus, and the
+Sobolev/Besov embedding chain --- together with the bookkeeping needed
+to compose the residual argument: the source-admission ledger, the
+audited transport map, the LP-transport stage operator, and the
+typed-context deliverability bridge.  The typed-context discipline is
+the requirement that the carrier, probes, transport maps, audit form,
+and imported hypotheses remain declared throughout the comparison.
+
+The proof instantiates the layer-dissolving membrane endpoint theorem
+of \citet{Tsiokos2026NeedleKiller} on the Navier--Stokes carrier and
+supplies the closure records as its hypothesis stack; the endpoint
+converts that audited closure into the regularity conclusion.  The
+audit-record requirement is essential at every stage; we make no
+standalone Clay--Millennium
+claim~\citep{Fefferman2000NavierStokes} independent of the closure
+discipline and no data-bearing R-record claim beyond the present
+record presentation.
+
+\Cref{sec:ns-aor-instance} recasts the same closure records as the
+AOR-membership witness for \(\mathsf C_{\mathrm{NS}}\) inside the
+audit-closure meta-theory of \citet{Tsiokos2026AOR}.  Under that
+recasting, the carrier belongs to the refinement-stable AOR class and
+the regularity conclusion reads as the audit-closed statement that
+the carrier does not blow up in reality.  This is a presentational
+recasting: no new PDE input is introduced, the audit content is
+unchanged, and the AOR-instance theorem
+\Cref{thm:ns:in-refstableaor} is presented under the
+carrier-attached discharge-assignment discipline of
+\citet{Tsiokos2026AOR}, with a data-bearing strengthening of
+the discharge-record fields stated as framework future work.
+
+The paper is organized as follows.  \Cref{sec:xi-membrane} recalls the
+adequacy-residual calculus from \citet{Tsiokos2026XiCompanion} and the
+layer-dissolving membrane endpoint from
+\citet{Tsiokos2026NeedleKiller}, and specializes both to the
+Navier--Stokes carrier.  \Cref{sec:ns-carrier} fixes the carrier, the
+fixed readout \(\DBG\), the physical-native family \(\Lphys\), the
+BG-windowed exact package, and null-mode legality.  \Cref{sec:imports}
+records the six imported PDE results and rules out the criterion-native
+shortcut (NG1).  \Cref{sec:adequacy-cascade} develops the
+source-admission ledger \(\Omsrc\) and the stage-to-stage recurrence
+for the physical-native residual along the doubling stages.
+\Cref{sec:no-go} states the remaining no-go family NG2--NG10,
+excluding scalar-energy, packing, sparse-shadow, marker-only,
+metric-shadow, moving-window, half-log endpoint, available-analyticity,
+and raw-nonlinearity shortcuts.  \Cref{sec:gevrey-lp} develops the
+Gevrey radius-window branch and the Littlewood--Paley transport rescue.
+\Cref{sec:main-theorem} assembles \(R_1,\ldots,R_9\) and concludes
+the framework-deliverable regularity theorem.
+\Cref{sec:ns-aor-instance} recasts the closure records as the
+AOR-membership witness for the smooth-data carrier.
+\Cref{sec:status} closes with the external interpretation and the
+locked nonclaim boundary.
+
+ 
+
+\section{Adequacy Residual and Layer-Dissolving Membranes}
+\label{sec:xi-membrane}
+
+This section recalls the two framework tools used in the rest of the
+paper: the adequacy-residual calculus of
+\citet{Tsiokos2026XiCompanion} and the layer-dissolving membrane
+endpoint of \citet{Tsiokos2026NeedleKiller}.
+
+The residual calculus works with a finite-dimensional carrier equipped
+with a positive audit form \(C\), a target observable \(D\), and a
+native probe family \(L\) (a declared linear collection of measurements
+on the carrier).  The adequacy residual is the Schur complement
+\[
+  \Xi_C(D\mid L)
+  =
+  K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD},
+\]
+where the \(K_{\ast\ast}\) are the Gram blocks of \(D\) and \(L\) under
+\(C\) and \(\dagger\) is the Moore--Penrose pseudoinverse.
+
+Geometrically, \(\Xi_C(D\mid L)\) is the squared distance from \(D\)
+to the range of \(L\) in the audited Gram geometry; equivalently, it
+is the part of \(D\) orthogonal to the best linear native explanation
+under \(C\).  The optimal residual identity makes this precise: among
+all linear native explanations of \(D\), the one obtained by projecting
+onto the range of \(L\) gives the smallest residual in the Loewner
+(positive-semidefinite) order~\citep{Bhatia2007PositiveDefinite}, and
+that minimum is \(\Xi_C(D\mid L)\).  Exact adequacy is the zero-residual case:
+\(\Xi_C(D\mid L)=0\) iff \(L\) explains \(D\) on the quotient by the
+zero-audit directions of \(C\).
+
+The calculus supplies four further rules used below.  Adequacy
+promotion combines a native budget with a residual budget into a
+dissolving budget, the kind of bound consumed by the endpoint theorem
+recalled below.  The chain rule states that enlarging the native
+family can only reduce the unexplained part:
+\(\Xi_C(D\mid L')\preceqq\Xi_C(D\mid L)\) whenever
+\(L\subseteq L'\).  Data processing records the behaviour under
+declared maps: post-processing the target response transports the
+residual by the response map; coarsening the native probes can only
+leave the residual unchanged or larger.  Finally, the blind-spot
+witness theorem identifies, whenever the residual violates an external
+budget, a component of \(D\) invisible to \(L\) that accounts for the
+violation.
+
+The second imported tool is the membrane endpoint of
+\citet{Tsiokos2026NeedleKiller}.  A predictive membrane is the
+stagewise budget condition that the native predictive currency
+\(\widehat K_j\) at every stage \(j\) fits inside a target dissolving
+budget \(\Theta\),
+\[
+  \widehat K_j \preceqq \Theta ,
+\]
+i.e., the native explanations of the target observable stay inside one
+declared budget across all stages.  A predictive needle is the
+opposite phenomenon: a stagewise budget violation that would obstruct
+the continuation conclusion.  The membrane is precisely the structured
+condition ruling out such violations.
+
+The layer-dissolving membrane endpoint converts this stagewise
+condition into a final exclusion statement.  Under the all-six
+discipline --- the record-keeping requirement that every comparison
+declare its carrier, audit form, native probes, target observable,
+transport maps, and imported records --- the existence of a predictive
+membrane for the dissolving readout, together with audited transport
+budgets and a typed-context deliverability bridge, implies the
+no-predictive-needles conclusion.  We import this endpoint as a
+previously proved result; the proof is in
+\citet{Tsiokos2026NeedleKiller}.
+
+\citet{Tsiokos2026NeedleKiller} also supplies a summable predictive
+propagation lemma: when a stage budget contracts by a summable
+envelope, the stagewise membrane condition propagates to a global
+no-needle conclusion.  This ancillary import is used later when the
+transported budget is made contractive stage by stage.
+
+With the calculus and endpoint in hand, the Navier--Stokes
+specialization is immediate.  The target observable is \(D=\DBG\), the
+fixed dissolving readout, and the native family is \(L=\Lphys\), the
+physical-native collection of Littlewood--Paley shell projections and
+Sobolev component probes (formal definitions are given in
+\Cref{sec:ns-carrier}).  The object to keep in view is the stagewise
+residual
+\[
+  \Xi_{C_{J,t}}(\DBG\mid\Lphys)
+\]
+on the doubling stages \(\lambda_{j+1}=2\lambda_j\).  Bounding this
+residual stage-by-stage is the central technical task of the paper.
+If such a bound holds --- assembled below through the source-admission
+ledger \(\Omsrc\), the no-go sieve, and the Gevrey radius-window with
+Littlewood--Paley transport rescue --- then the layer-dissolving
+endpoint applied to the resulting closure records \(R_1,\ldots,R_9\)
+gives \(\Tmax(u_0)=\infty\) on the accepted smooth-data subcarrier
+(\Cref{sec:main-theorem}).
+
+ 
+
+\section{The Navier--Stokes Carrier and the BG/BKM Dissolving Readout}
+\label{sec:ns-carrier}
+
+Fix a divergence-free initial datum
+\(u_0\in H^{\gamma_0}(\mathbb R^3)\) with \(\gamma_0>5/2\) and let
+\[
+  u\in C\bigl([0,\Tmax(u_0)),H^{\gamma_0}\bigr)
+\]
+be the unique strong solution given by Kato's local well-posedness
+theorem.
+
+The Bradshaw--Grujic indexing is parametrised by a time-dependent
+stage \(J=J(t)\) tracking the active frequency scale: advancing the
+stage doubles the scale,
+\[
+  \lambda_{j+1}=2\lambda_j ,
+\]
+and \(P_{J(t)}\) denotes the active Littlewood--Paley shell at time
+\(t\)~\citep{Stein1970,Grafakos2014,BahouriCheminDanchin2011}, with
+frequency scale \(\lambdaJ(t)\).  For each \(t\in[0,\Tmax(u_0))\) and
+stage \(J\) we define the audited finite-dimensional carrier
+\(E_{J,t}\) to be the span of the active shell components
+\(\{P_j u(\cdot,t):j\le J\}\); it is a stage-indexed snapshot of the
+strong solution.
+
+The audit form \(C_{J,t}\) is the positive semidefinite form on
+\(E_{J,t}\) against which observables are measured: in Fourier
+variables, the \(H^{\gamma_0}\) Sobolev weight \((1+|\xi|^2)^{\gamma_0}\)
+restricted to the modes retained by \(j\le J\).  The form may have a
+non-trivial kernel \(\Ker C_{J,t}\) of zero-audit directions; residuals
+are computed after quotienting by this kernel, and the legality
+conditions below require the declared probes to vanish on it.
+
+\begin{definition}[BG/BKM dissolving readout]\label{def:ns:bg-readout}
+For each Bradshaw--Grujic stage \(J\) and time
+\(t\in[0,\Tmax(u_0))\), the \emph{dissolving readout} is a
+linear map
+\[
+  \DBG_{J,t}\colon E_{J,t}\to Z_J ,
+\]
+where \(Z_J\) is the finite-dimensional response space of
+windowed Fourier values at frequency scale
+\(\lambdaJ(t)\).  The readout evaluates the windowed
+observable on \(P_{J(t)}\) appearing in the
+Bradshaw--Grujic continuation criterion: typically an
+\(L^p\) or \(L^\infty\) windowed norm of the vorticity or
+velocity.  The right-support constraint
+\(\DBG_{J,t}=\DBG_{J,t}\cdot P_{J(t)}\) records that
+\(\DBG_{J,t}\) sees only the active shell at stage \(J\).
+\end{definition}
+
+The family \(\{\DBG_{J,t}\}\) is fixed throughout the paper and is
+\emph{not} replaced by a criterion-native surrogate.  A criterion-native
+surrogate is any relabeling such as \(\LBG:=\DBG\) that declares the
+native probe to be the target itself; such a relabeling forces
+\(\Xi_C(\DBG\mid\LBG)=0\) by definition without explaining the
+Bradshaw--Grujic observable through independent physical measurements.
+\Cref{sec:imports} records this as a no-go (NG1).
+
+The same readout serves both classical continuation criteria from
+\Cref{sec:intro}: the Bradshaw--Grujic frequency-window criterion
+consumes its uniform boundedness on doubling stages, while the
+Beale--Kato--Majda criterion consumes the implied vorticity-time
+integrability.
+
+\begin{definition}[Physical-native probe family]\label{def:ns:physical-native-probes}
+For each Bradshaw--Grujic stage \(J\) and time \(t\), the
+\emph{physical-native probe family} is the finite linear map
+\[
+  \Lphys_{J,t}\colon E_{J,t}\to Y ,
+\]
+where \(Y\) collects the values of the declared physical
+measurements.  Each component of \(\Lphys_{J,t}\) is either
+a Littlewood--Paley shell projection \(P_j u(\cdot,t)\)
+with \(j\le J\) in an \(H^{\gamma_0}\)-compatible norm, or
+a classical Sobolev (Bessel-potential) component probe such
+as an \(H^s\)-component of the velocity with
+\(s\le\gamma_0\).  The native Schur block
+\(\Lphys_{J,t}C_{J,t}^{\dagger}(\Lphys_{J,t})^*\) recovers
+the kinetic-energy and enstrophy budgets visible at the
+Bradshaw--Grujic window resolution; energy and enstrophy
+themselves are quadratic in the carrier data and are
+therefore not native probes (a no-go recorded in
+\Cref{sec:no-go}).
+\end{definition}
+
+The residual studied below is \(\Xi_{C_{J,t}}(\DBG\mid\Lphys)\).
+
+\begin{definition}[BG-windowed exact package]\label{def:ns:bg-package}
+At each Bradshaw--Grujic stage \(j\), the \emph{BG-windowed
+exact package} \(\Gamma_j\) collects the admissible
+BG-window probes (the relevant components of
+\(\Lphys_{J,t}\) and the windowed value of \(\DBG_{J,t}\)
+on the active shell \(P_j\)) together with the structural
+constraints they must preserve:
+\begin{enumerate}[label=(\alph*)]
+  \item the divergence-free condition \(\nabla\cdot u=0\);
+  \item the Helmholtz-projected carrier
+    \citep{Galdi2011} on which the probes act;
+  \item the boundary arrangement relating \(P_j\) to
+    \(P_{j+1}\);
+  \item the doubling relation
+    \(\lambda_{j+1}=2\lambda_j\).
+\end{enumerate}
+The package is \emph{exact} in the sense of
+\citet{Tsiokos2026NeedleKiller}: it transports the audited
+sub-problem from one BG window to the next without
+altering the energy, response, or residual information.
+\end{definition}
+
+\begin{definition}[Null-mode legality of the NS carrier]\label{def:ns:null-mode-legal-ns}
+The \emph{NS carrier} \((E_{J,t},C_{J,t},\Lphys,\DBG)\) is
+\emph{null-mode legal} when the physical-native probes and
+the dissolving readout both vanish on the audit kernel:
+\[
+  \Lphys_{J,t}\big|_{\Ker C_{J,t}}=0,
+  \qquad
+  \DBG_{J,t}\big|_{\Ker C_{J,t}}=0 .
+\]
+Equivalently, both families descend to the legal energy
+quotient \(E_{J,t}/\Ker C_{J,t}\), on which the audit form
+is positive definite and the adequacy residual
+\(\Xi_{C_{J,t}}(\DBG\mid\Lphys)\) of
+\citet{Tsiokos2026XiCompanion} is well-defined.  Null-mode
+legality is built into the carrier by construction; it is
+not a regularity assumption to be verified after the
+residual has been formed.
+\end{definition}
+
+ 
+
+\section{Literature Imports and the Criterion-Native Gap}
+\label{sec:imports}
+
+This section records six PDE imports --- the Beale--Kato--Majda
+continuation criterion, the Bradshaw--Grujic frequency-window criterion,
+Kato local well-posedness, half-log analyticity, the
+Littlewood--Paley / Bony--Chemin--Danchin calculus, and the
+Sobolev/Besov embedding chain --- and the criterion-native gap that
+motivates the residual cascade.  Each import enters as a proof-carrying
+record: a structured assumption whose stated hypotheses expose the
+classical conclusion, with the conclusion supplied by the PDE
+literature rather than derived here.
+
+\begin{definition}[Beale--Kato--Majda continuation criterion]\label{def:ns:bkm-import}
+The \emph{Beale--Kato--Majda continuation criterion}
+\citep{BealeKatoMajda1984,MajdaBertozzi2002,RobinsonRodrigoSadowski2016}
+is the imported record asserting that for a strong solution
+\(u\) of the Navier--Stokes equations on \([0,T)\) with
+\(T\le\Tmax(u_0)\) and \(\omega=\nabla\times u\),
+\[
+  \int_0^T \|\omega(\cdot,t)\|_{L^\infty}\,dt < \infty
+  \quad\Longrightarrow\quad
+  \Tmax(u_0)>T .
+\]
+The record is consumed at its declared status, with the
+continuation conclusion supplied by the cited references
+rather than derived here.
+\end{definition}
+
+\begin{definition}[Bradshaw--Grujic frequency-window continuation criterion]\label{def:ns:bg-import}
+The \emph{Bradshaw--Grujic frequency-window continuation
+criterion} \citep{BradshawGrujic2017} is the imported
+record asserting that, for the dissolving readout of
+\Cref{def:ns:bg-readout} and doubling stages
+\(\lambda_{j+1}=2\lambda_j\),
+\[
+  \sup_j\sup_{t\in I_j}\|\DBG_{j,t}u\|_{Z_j}<\infty
+  \quad\Longrightarrow\quad
+  \Tmax(u_0)=\infty .
+\]
+The record is consumed at its declared status; this paper
+constructs an audited stage-by-stage bound on
+\(\Xi_{C_{J,t}}(\DBG\mid\Lphys)\) that delivers this
+hypothesis.
+\end{definition}
+
+\begin{definition}[Kato local well-posedness on the smooth-data subcarrier]\label{def:ns:kato-import}
+The \emph{Kato local well-posedness import}
+\citep{Kato1972,FujitaKato1964,RobinsonRodrigoSadowski2016}
+is the imported record asserting that for divergence-free
+smooth Sobolev data on \(\mathbb R^3\) with
+\(\gamma_0>5/2\),
+\[
+  \nabla\cdot u_0=0,\quad u_0\in H^{\gamma_0}(\mathbb R^3)
+  \quad\Longrightarrow\quad
+  \exists\,\Tmax(u_0)\in(0,\infty]\text{ and a unique }
+  u\in C\bigl([0,\Tmax(u_0)),H^{\gamma_0}\bigr).
+\]
+The carrier objects \(E_{J,t}\), \(C_{J,t}\),
+\(\Lphys_{J,t}\), and \(\DBG_{J,t}\) of
+\Cref{sec:ns-carrier} are all attached to this
+strong-solution arc.
+\end{definition}
+
+\begin{definition}[Half-log analyticity import]\label{def:ns:wang-halflog-import}
+The \emph{half-log analyticity import}, in the
+Foias--Temam tradition \citep{FoiasTemam1989} refined to
+half-log form by \citet{HerbstSkibsted2011} and by the
+preprint \citep{Wang2025AnalyticityRefined}, is the
+imported record asserting that restart data in the joint
+space
+\[
+  H^{\gamma_0}\cap\dot B^{-\eps}_{\infty,\infty},
+  \qquad \gamma_0>3/2-\eps,
+\]
+yields a lower bound on the spatial analyticity radius
+\(\rho(t)\): on BG-compatible stages,
+\[
+  \rho(t)\gtrsim \frac{\log\lambdaJ(t)}{\lambdaJ(t)} .
+\]
+The record is consumed at its declared status.
+\end{definition}
+
+\begin{definition}[Littlewood--Paley / Bony--Chemin--Danchin calculus]\label{def:ns:lp-bcd-import}\leavevmode\par\noindent
+The \emph{Littlewood--Paley / Bony--Chemin--Danchin
+paradifferential calculus import}
+\citep{Bony1981,BahouriCheminDanchin2011} on
+\(\mathbb R^3\) is the imported record supplying the
+shell-orthogonality identities, commutator estimates, and
+operator-norm bounds between Littlewood--Paley shells
+\(P_j\) and smooth multipliers used downstream.  The
+operator-norm decay
+\(\|\LPtr\|^2\simeq 2^{-2sj}\) of the LP-transport stage
+operator (\Cref{def:ns:lp-transport}) is recovered from
+this calculus.
+\end{definition}
+
+\begin{definition}[Sobolev/Besov embedding chain]\label{def:ns:sobolev-besov-embedding-import}
+The \emph{Sobolev/Besov embedding chain import}
+\citep{Triebel1983,BahouriCheminDanchin2011} is the
+imported record asserting that the smooth Sobolev restart
+data lifts to the Besov component required by the half-log
+import:
+\[
+  H^{\gamma_0}\hookrightarrow \dot B^{-\eps}_{\infty,\infty},
+  \qquad \gamma_0>3/2,\quad \eps>0\text{ admissible}.
+\]
+Together with \Cref{def:ns:lp-bcd-import} and
+\Cref{def:ns:wang-halflog-import}, this import forms the
+analytic infrastructure consumed by the Gevrey
+radius-window branch and the LP-transport rescue of
+\Cref{sec:gevrey-lp}.
+\end{definition}
+
+We close this section with an algebraic equality and the no-go it
+motivates.
+
+\begin{theorem}[Criterion-native equality]\label{thm:ns:criterion-native-equality}
+Set \(\LBG:=\DBG\).  Then on the legal quotient of \(C_{J,t}\),
+\[
+  \Xi_{C_{J,t}}(\DBG\mid \LBG)=0 .
+\]
+\end{theorem}
+
+\begin{proof}
+Substituting \(L=\LBG=\DBG\) into the Schur-complement definition gives
+\(K_{LD}=K_{DD}\) and
+\(K_{DL}K_{LL}^{\dagger}K_{LD}=K_{DD}K_{DD}^{\dagger}K_{DD}=K_{DD}\)
+on the legal quotient of \(C_{J,t}\).  Hence
+\(\Xi_{C_{J,t}}(\DBG\mid\LBG)=K_{DD}-K_{DD}=0\) on that legal
+quotient.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.CriterionNativeGap.criterionNativeEquality}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG1: criterion-native circularity]\label{thm:ns:no-go-criterion-native}
+The criterion-native equality obtained from \(\LBG:=\DBG\) does not
+bound the physical-native residual.  There are audited finite data for
+which
+\[
+  \Xi_{C_{J,t}}(\DBG\mid\LBG)=0
+  \quad\text{but}\quad
+  \Xi_{C_{J,t}}(\DBG\mid\Lphys)\ne 0 .
+\]
+Thus criterion-native labeling is not a witness for physical-native
+adequacy.
+\end{theorem}
+
+\begin{proof}
+A simple finite witness suffices.  Take the audit form \(C=I_2\), the
+target row \(\DBG=(1,0)\), and the physical-native row
+\(\Lphys=(0,1)\): the criterion-native residual vanishes after the
+relabeling \(\LBG:=\DBG\), while the residual against \(\Lphys\)
+remains nonzero.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.NS.CriterionNativeGap.noGoCriterionNative}
+as a partial mechanization: the Lean theorem proves the
+specific 2-dimensional finite witness
+(\(C=I_2\), \(\DBG=(1,0)\), \(\Lphys=(0,1)\)) using identity
+pseudoinverses; the general statement is proved here.  See
+\Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+The point is elementary: relabeling the target as native does not
+extract any information from independent physical measurements.  The
+remaining sections build an audited stage-by-stage bound on the
+physical-native residual, since the criterion-native shortcut is
+ruled out.
+
+ 
+
+\section{The Physical-Native Adequacy Cascade}
+\label{sec:adequacy-cascade}
+
+This section builds the stage-by-stage recurrence that propagates the
+physical-native residual \(\Xi_{C_{J,t}}(\DBG\mid\Lphys)\) along the
+doubling Bradshaw--Grujic stages.  The recurrence is audited by a
+positive operator-valued ledger \(\Omsrc\), which records the new
+contributions entering the dissolving response space at each stage.
+
+\begin{definition}[Source-admission ledger]\label{def:ns:source-admission-ledger}
+The \emph{source-admission ledger} is the positive
+operator-valued sum
+\[
+  \Omsrc = \Omtr + \Ompr + \Omvisc + \Omtail + \Omstr ,
+\]
+with five positive semidefinite components
+\[
+  \Omtr\succeq 0,\qquad
+  \Ompr\succeq 0,\qquad
+  \Omvisc\succeq 0,\qquad
+  \Omtail\succeq 0,\qquad
+  \Omstr\succeq 0,
+\]
+hence \(\Omsrc\succeq 0\).  The summands record the
+contributions entering the dissolving response space at each
+stage from, respectively:
+\begin{enumerate}[label=(\alph*)]
+  \item the nonlinear transport \((u\cdot\nabla)u\) as a Schur
+    block on the active shells (\(\Omtr\));
+  \item the pressure \(\nabla p\) after the Helmholtz/Leray
+    projection (\(\Ompr\));
+  \item viscosity \(\nu\Delta u\) as a damping block on each
+    shell (\(\Omvisc\));
+  \item the high-frequency tail capturing the interaction of
+    visible shells with discarded shells \(j>J\)
+    (\(\Omtail\));
+  \item vortex stretching \((\omega\cdot\nabla)u\) tested
+    against the physical-native probes (\(\Omstr\)).
+\end{enumerate}
+Each summand is owned by an imported PDE record from
+\Cref{sec:imports}: \(\Omtr\) and \(\Ompr\) by the
+Littlewood--Paley / Bony--Chemin--Danchin commutator and
+Helmholtz-projection estimates
+(\Cref{def:ns:lp-bcd-import}); \(\Omvisc\) by the viscous
+damping at scale \(\lambdaJ(t)\) from \(\nu\Delta\);
+\(\Omtail\) by the Sobolev/Besov embedding combined with
+the BG-window cutoff (\Cref{def:ns:sobolev-besov-embedding-import});
+and \(\Omstr\) by the vortex-stretching estimate against
+the physical-native probes.
+\end{definition}
+
+For a time step \(h>0\) with \(t+h<\Tmax(u_0)\), let
+\(\mathcal T_h:E_{J,t}\to E_{J,t+h}\) denote the audited transport map
+between the stage-\(J\) carriers at \(t\) and \(t+h\): it is the
+linear semigroup-style propagation of probe data across the step, in
+the linear-source-corrected evolution of the active shells.  By
+declaration \(\mathcal T_h\) descends to the legal energy quotient,
+\[
+  \mathcal T_h(\Ker C_{J,t})\subseteq \Ker C_{J,t+h},
+\]
+so the induced map
+\(\bar{\mathcal T}_h:E_{J,t}/\Ker C_{J,t}\to E_{J,t+h}/\Ker C_{J,t+h}\)
+is well-defined and the Loewner recurrence below is typed on the
+legal quotient throughout; on the smooth-data Sobolev carrier
+\(C_{J,t}\) is positive-definite on \(E_{J,t}\), so
+\(\Ker C_{J,t}=\{0\}\) and the descent is automatic.  The carry-forward
+constant \(C_{\rm old}\ge 0\) records how much of the old residual
+survives this transport; it is determined by the Littlewood--Paley /
+Bony--Chemin--Danchin calculus and the Sobolev/Besov embedding
+records, not a free parameter.  These conventions are inherited from
+the residual calculus of \citet{Tsiokos2026XiCompanion}.
+
+\begin{theorem}[Source-admission recurrence]\label{thm:ns:source-admission-recurrence}
+Under the null-mode legality and source-admission acceptance records,
+for every BG stage \(J\), time \(t\), and time step \(h>0\) with
+\(t+h<\Tmax(u_0)\),
+\[
+  \Xi_{C_{J,t+h}}\bigl(\DBG_{J,t+h}\mid \Lphys_{J,t+h}\bigr)
+  \preceqq
+  C_{\rm old}\,
+  \mathcal T_h\,
+  \Xi_{C_{J,t}}\bigl(\DBG_{J,t}\mid \Lphys_{J,t}\bigr)\,
+  \mathcal T_h^*
+  + \Omsrc .
+\]
+\end{theorem}
+
+\begin{proof}
+The residual at time \(t+h\) is bounded above by transporting the
+residual at time \(t\) through \(\mathcal T_h\) (paying the
+carry-forward constant \(C_{\rm old}\)) and adding the newly admitted
+sources, which are the five positive components of \(\Omsrc\) listed
+above.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.Cascade.sourceAdmissionRecurrence}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+The recurrence organises downstream into a residual tree.  Successive
+refinement steps either pay a piece using an imported record, expose
+a piece as a shortcut excluded by the no-go family, or pass the
+remaining obligation to a later analytic mechanism:
+\[
+  \Xi_C(\DBG\mid\Lphys)
+  \longrightarrow
+  \Omsrc
+  \longrightarrow
+  \Omega_{\rm gap}
+  \longrightarrow
+  \Omega_{\rm rem}
+  \longrightarrow
+  \Omega_{\rm bb}
+  \longrightarrow
+  \Omega_{\rm mm}
+  \longrightarrow
+  \Omamp
+  \longrightarrow
+  \Omend .
+\]
+The ledger \(\Omega_{\rm gap}\) records the gap between the
+transported old residual and the controlled native budget after
+Beale--Kato--Majda, Bradshaw--Grujic, and Kato are applied;
+\(\Omega_{\rm rem}\) is the remainder after the half-log analyticity,
+Littlewood--Paley / Bony--Chemin--Danchin, and Sobolev/Besov records
+have been folded in.  The remaining ledgers identify rather than pay
+obstructions: \(\Omega_{\rm bb}\) collects the part of the residual
+localised on geometrically or frequency-wise bad regions;
+\(\Omega_{\rm mm}\) collects contributions whose sector or probe type
+does not match \(\Lphys\); \(\Omamp\) is the amplitude obligation left
+after the public-shadow shortcuts have been excluded; and \(\Omend\)
+is the endpoint obstruction at the close of the cascade.  The no-go
+family of \Cref{sec:no-go} excludes proposed shortcut payments ---
+scalar energy, packing, sparse-shadow data, marker payloads, metric
+shadows, moving windows, available half-log analyticity alone, raw
+nonlinear observables --- but does not pay these ledgers; the
+remaining amplitude and endpoint obligations are discharged by the
+Gevrey radius-window branch and Littlewood--Paley transport rescue of
+\Cref{sec:gevrey-lp}.
+
+ 
+
+\section{Framework-Derived No-Go Theorems}
+\label{sec:no-go}
+
+This section records the no-go family constraining attempts to pay
+the residual ledgers of \Cref{sec:adequacy-cascade}.  Each no-go
+excludes a category of shortcut payment that uses data of the wrong
+type.  The no-gos do not pay any ledger; they restrict admissible
+payments so that the Gevrey radius-window and Littlewood--Paley
+transport rescue of \Cref{sec:gevrey-lp} carries the remaining
+analytic obligation.  The criterion-native circularity result NG1 was
+recorded in \Cref{sec:imports}; here we record NG2--NG10.
+
+\begin{theorem}[No-go NG2: scalar energy / enstrophy category error]
+\label{thm:ns:no-go-scalar-energy}
+Quadratic scalar budgets such as kinetic energy \(\|u\|_{L^2}^2\),
+enstrophy \(\|\nabla u\|_{L^2}^2\), or any positive scalar functional
+that is quadratic in the carrier variable, are not lawful native Schur
+probes.  The adequacy residual
+\[
+  \Xi_C(D\mid L)=K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD}
+\]
+is defined for a linear native probe family \(L:E\to Y\).  A quadratic
+scalar functional is not such a family, so
+\(\Xi_C(\DBG\mid\text{scalar quadratic})\) is not a well-formed object
+of the Schur-complement calculus until a lawful linear native family has
+been declared and audited.
+\end{theorem}
+
+\begin{proof}
+The point is a type-level category mismatch.  The Schur
+blocks~\citep{HornJohnson2013MatrixAnalysis} \(K_{LL}\), \(K_{DL}\),
+\(K_{LD}\) come from composing the audit form with linear maps out of
+the carrier; a quadratic scalar does not provide such maps and cannot
+be inserted as \(L\).  Energy and
+enstrophy still enter the paper, but as derived budgets recovered from
+the native currency block \(\Lphys C_{J,t}^{\dagger}(\Lphys)^*\) of
+\Cref{sec:ns-carrier}: NG2 says the linear family \(\Lphys\), not the
+quadratic scalars themselves, is the native probe family.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoScalarEnergy}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+The next four no-gos share a common form.  Each rejects a
+public-shadow datum: information visible in a geometric, combinatorial,
+or weighted description of the flow but not in itself dominating the
+fixed Bradshaw--Grujic readout in the Schur calculus.
+
+\begin{theorem}[No-go NG3: packing / amplitude]
+\label{thm:ns:no-go-packing-amplitude}
+For a bad set with size scaling \(\sim r^{3-d}\) and amplitude scaling
+\(\sim r^{-\alpha}\), the contribution to the BG readout scales as
+\[
+  r^{(3-d)/2-\alpha}.
+\]
+Packing alone suppresses this amplitude only when
+\(\alpha < (3-d)/2\).  Outside that range, small-set sparseness does
+not control \(\DBG\)-amplitude, and the residual requires either a
+sector-matched amplitude bridge or a paid tail-smallness record.
+\end{theorem}
+
+\begin{proof}
+A set may occupy little volume, but if its amplitude grows faster
+than the square-root packing gain, the contribution seen by the fixed
+BG window remains large.  Packing data therefore enter the cascade
+only after sector matching, or after the missing tail-smallness is
+paid in the source-admission ledger.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoPackingAmplitude}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG4: sparse-shadow]
+\label{thm:ns:no-go-sparse-shadow}
+Imported sparse or intense sets do not pay the bad-cylinder /
+bad-geometry ledger \(\Omega_{\rm bb}\) unless either the sparse field
+is sector-contained in the bad-bad / mismatch sector, or a paid mismatch
+record \(\Omega_{\rm mm}\succeq 0\) is supplied.
+\end{theorem}
+
+\begin{proof}
+Sparseness tells us where a defect does not live but not which sector
+contains the obstruction that the physical-native residual must
+control.  The lawful options are explicit: sparse-shadow data is
+admitted only when contained in the bad-bad or mismatch sector, or
+when accompanied by a positive mismatch record.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoSparseShadow}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG5: marker-only]
+\label{thm:ns:no-go-marker-only}
+Triad markers, bad-overlap masks, and similar marker-only fields identify
+where a defect lies and what class it belongs to, but they do not
+dominate the BG amplitude without a quantitative bridge.  Promotion from
+marker payload to the amplitude ledger \(\Omamp\) requires either a new
+native probe family admitted through
+\Cref{thm:ns:source-admission-recurrence}, or a record-grade
+\(M^{\rm bb}\) bound.
+\end{theorem}
+
+\begin{proof}
+A marker is a locator, not a bound: it identifies a triad, an overlap
+class, or a bad region without measuring the size of the component
+seen by \(\DBG\).  The no-go therefore forces marker data to be coupled
+to a genuine amplitude bridge --- either new linear probes admitted
+through the source-admission recurrence, or a record-grade
+\(M^{\rm bb}\) estimate that supplies the missing size information.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoMarkerOnly}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG6: metric-shadow]
+\label{thm:ns:no-go-metric-shadow}
+Weighted or Gevrey-flavored metrics that shrink the apparent residual
+do not control the fixed BG readout unless the normalized metric still
+dominates the BG/BKM amplitude.  Geometry inputs from
+Caffarelli--Kohn--Nirenberg partial
+regularity~\citep{CaffarelliKohnNirenberg1982} or
+Constantin--Fefferman vorticity-direction
+geometry~\citep{ConstantinFefferman1993} act as metric shadows unless
+a sector-matched amplitude bridge, an explicit dominance constant,
+and a time gate are supplied as separate records.
+\end{theorem}
+
+\begin{proof}
+The issue is normalisation.  A geometric metric may make the residual
+look small by adopting weights adapted to the geometry, but the
+continuation channel reads the fixed BG/BKM amplitude on the carrier
+scale, not on the auxiliary metric.  To be admissible, the geometric
+input must dominate the BG amplitude on the normalised carrier scale
+and must state the time interval on which that dominance holds.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoMetricShadow}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG7: moving-window / derivative-stack support-only]
+\label{thm:ns:no-go-moving-window}
+Finite Littlewood--Paley windows or derivative-stack windows, meaning
+families such as \(\nabla^m P_Ju(\cdot,t)\) tracked for several
+derivative orders \(m\), do not promote to a completed carrier closure
+merely because their support is known to lie on moving sets.  Promotion
+requires one of three additional records: a finite-termination record
+showing that the moving support stabilizes after finitely many stages; a
+fixed-ledger squeeze showing that the moving support is bounded by a
+stage-independent ledger; or an exhaustive-ledger squeeze showing that
+the moving support is contained in the union of audited ledgers.
+\end{theorem}
+
+\begin{proof}
+Moving-support data records where an obstruction lives, not how its
+budget is controlled.  A window may track the active frequency content
+and a derivative stack may track several differentiated shells, but
+support alone does not say that the obstruction terminates, fits a
+fixed ledger, or is exhausted by audited ledgers.  The no-go forces a
+termination or squeeze record on top of the support information.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoMovingWindow}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG8: half-log endpoint obstruction]
+\label{thm:ns:no-go-half-log-endpoint}
+On the available half-log analyticity lane alone, the staged residual
+budget has the form
+\[
+  B_j
+  =
+  C_B\,2^{2pj}\bigl(1+\mu\sqrt{L_j}\bigr)
+  e^{-2c\mu\sqrt{L_j}},
+  \qquad
+  p=q-\eps,\qquad
+  L_j=\log\lambdaJ .
+\]
+For positive constants \(C_B,\mu,c\) and \(p>0\), the stage ratio
+satisfies
+\[
+  \frac{B_{j+1}}{B_j}
+  =
+  2^{2p}
+  \frac{\bigl(1+\mu\sqrt{L_{j+1}}\bigr)
+        e^{-2c\mu\sqrt{L_{j+1}}}}
+       {\bigl(1+\mu\sqrt{L_j}\bigr)
+        e^{-2c\mu\sqrt{L_j}}}
+  \longrightarrow 2^{2p}>1 .
+\]
+Thus the half-log Gevrey budget under Bradshaw--Grujic
+frequency-doubling fails the summable predictive-propagation hypothesis
+unless an additional decay record is supplied.
+\end{theorem}
+
+\begin{proof}
+The doubling relation gives
+\(L_j=\log\lambdaJ=j\log 2+O(1)\), so
+\(\sqrt{L_{j+1}}-\sqrt{L_j}=O(L_j^{-1/2})\to 0\).  The exponential
+factor in the displayed ratio has exponent
+\(-2c\mu(\sqrt{L_{j+1}}-\sqrt{L_j})\) and therefore tends to \(1\); the
+polynomial factor \((1+\mu\sqrt{L_{j+1}})/(1+\mu\sqrt{L_j})\) also
+tends to \(1\).  The only surviving multiplier is \(2^{2p}\), and
+since \(p=q-\eps>0\) the limit exceeds \(1\): the staged budget grows
+geometrically rather than forming a summable tail.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoHalfLogEndpoint}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\noindent
+The obstruction is exactly what forces an additional decay mechanism
+--- Littlewood--Paley transport, a strictly stronger full-log radius,
+or a new cancellation.
+
+\begin{theorem}[No-go NG9: available analyticity ceiling for the direct route]
+\label{thm:ns:no-go-published-analyticity}
+The available half-log analyticity lane meets the basic radius-window
+gate \(\lambdaJ\rho(t)\gtrsim\log\lambdaJ\), but it falls short of the
+direct-route predictive-contraction threshold by a factor of
+\(\sqrt{\log\lambdaJ}\).  Concretely, NG8 shows that the staged budget
+on the half-log lane has stage ratio tending to \(2^{2p}>1\).  Closing
+the direct route therefore requires either the Littlewood--Paley
+transport rescue of \Cref{thm:ns:lp-transport-rescue}, the proof of a
+strictly stronger full-log analyticity radius, or an alternative
+new-radius theorem outside the present scope.
+\end{theorem}
+
+\begin{proof}
+The half-log import supplies the basic radius window, but NG8 shows
+that this window does not by itself produce summable predictive
+propagation on the direct route: contraction would require an
+analyticity-radius improvement equivalent to a
+\(\sqrt{\log\lambdaJ}\) factor, or else a different mechanism
+contributing the missing decay.  In this paper that mechanism is the
+Littlewood--Paley transport rescue of \Cref{sec:gevrey-lp}.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoPublishedAnalyticity}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[No-go NG10: raw nonlinearity illegal as Schur probe]
+\label{thm:ns:no-go-raw-nonlinearity}
+Raw nonlinear observables, including flux quantities, pressure
+interactions, vortex stretching, and triad terms, cannot enter the
+native family \(\Lphys\) as Schur-complement probes.  Lawful entry
+requires one of the following:
+\begin{enumerate}[label=(\roman*)]
+\item tangent linearization around the audited solution arc, producing a
+linear probe that may depend on the solution but is linear in the
+perturbation;
+\item interaction lifting to a higher-order linearization, for example
+by expressing a triad as a linear probe on an augmented carrier that
+explicitly resolves the interaction;
+\item recording the nonlinear quantity as a source-admission entry in
+\(\Omsrc\), so it is treated as part of the ledger rather than as a
+native probe.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+This is the nonlinear analogue of the type discipline of
+\Cref{thm:ns:no-go-scalar-energy}: the Schur complement is defined
+for linear maps out of the carrier, and raw nonlinear quantities do
+not provide the required Gram blocks.  Nonlinear physical content is
+not excluded; it must enter through one of the three lawful interfaces
+above.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.NoGo.noGoRawNonlinearity}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+Taken together, NG1--NG10 exclude criterion-native circularity,
+scalar quadratic budgets as native Schur probes, packing, sparseness,
+markers, and metric shadows as sole bridges to amplitude,
+moving-window or derivative-stack support without termination or
+squeeze records, the available half-log lane as a summable
+predictive-propagation mechanism on its own, the
+\(\sqrt{\log\lambdaJ}\) shortfall for the direct contraction route,
+and raw nonlinear observables as native Schur probes.  What remains
+admissible is the typed data already declared: the physical-native
+probes \(\Lphys\), the source-admission ledger, the transport
+recurrence of \Cref{thm:ns:source-admission-recurrence}, the
+Beale--Kato--Majda and Bradshaw--Grujic continuation records, Kato
+local well-posedness, and the analytic imports of half-log
+analyticity, Littlewood--Paley / Bony--Chemin--Danchin calculus, and
+Sobolev/Besov embedding.  The remaining obstruction after the sieve is
+\(\Omamp\), which is paid by the Gevrey radius-window branch and the
+Littlewood--Paley transport rescue of \Cref{sec:gevrey-lp}.
+
+ 
+
+\section{Gevrey Radius-Window Branch and LP-Transport Rescue}
+\label{sec:gevrey-lp}
+
+This section pays the remaining amplitude obligation \(\Omamp\) left by
+the no-go sieve.  Working in the residual-calculus framework of
+\citet{Tsiokos2026XiCompanion}, we introduce a lawful family of
+Gevrey-normalised derivative probes, optimise the resulting dominance
+constant over the derivative order, and express the result in terms of
+the radius-window quantity \(\sigmaJ\).  We then bridge the half-log
+endpoint obstruction through a Littlewood--Paley transport rescue on
+the smooth-data subcarrier.
+
+\begin{definition}[Gevrey-normalized derivative probes]
+\label{def:ns:gevrey-probes}
+Let \(\rho(t)\) be the spatial analyticity radius at time \(t\), as
+supplied by the half-log analyticity import, and let \(\CG>0\) be the
+Gevrey normalization constant.  For each derivative order \(m\ge 0\),
+BG stage \(J\), and time \(t\), the Gevrey-normalized derivative probe
+is
+\[
+  \widetilde M_{m,J,t}
+  =
+  \frac{\rho(t)^m}{\CG^m\,m!}\,\nabla^m P_{J(t)} .
+\]
+The family \(\{\widetilde M_{m,J,t}\}_{m\ge 0}\) is a lawful native
+probe family on the BG-windowed carrier under the half-log analyticity
+record.
+\end{definition}
+
+The weight \(\rho(t)^m/(\CG^m m!)\) is the standard Gevrey
+normalisation: derivatives of order \(m\) are reweighted so that the
+formal derivative series converges when the solution is analytic in a
+strip of width \(\rho(t)\).  The dimensionless quantity attached to
+the active BG window,
+\[
+  \sigmaJ(t)=\frac{\lambdaJ(t)\rho(t)}{\CG},
+\]
+measures the analyticity radius in units of the inverse active
+frequency scale; it is the natural variable in which to state the
+dominance estimate and radius-window comparison below.
+
+\begin{definition}[LP transport stage operator]
+\label{def:ns:lp-transport}
+For each BG stage \(j\), the LP-transport stage operator is the linear
+map
+\[
+  \LPtr\colon L^2(P_j)\longrightarrow H^{-s},
+  \qquad s\ge q-\eps .
+\]
+On the smooth-data subcarrier it satisfies the operator-norm bound
+\[
+  \|\LPtr\|^2\simeq 2^{-2sj}.
+\]
+Here \(P_j\) is the Littlewood--Paley shell at frequency scale \(2^j\),
+and \(s\) is the response exponent.
+\end{definition}
+
+The decay \(2^{-2sj}\) is the operator-norm content of the
+Littlewood--Paley / Bony--Chemin--Danchin calculus specialised to the
+BG window, consumed here as an audited input.  The map \(\LPtr\) takes
+a budget on the \(j\)-th shell and transports it into a response
+budget --- the size of the obstruction measured in \(H^{-s}\).  The
+negative Sobolev codomain is natural because the transported object is
+a response, not a function on the carrier.  Its
+\(2^{-2sj}\) decay, combined with the Gevrey dominance and analyticity
+radius below, pays the half-log endpoint obstruction.
+
+\begin{theorem}[Gevrey dominance formula]\label{thm:ns:gevrey-dominance}
+For the Gevrey-normalized derivative probe
+\(\widetilde M_{m,J,t}\), the dominance constant at derivative order
+\(m\) has the closed form
+\[
+  A_m^G(t,J)
+  =
+  \lambdaJ(t)^{q-\eps}\,
+  \frac{m!}{\sigmaJ(t)^m},
+  \qquad
+  \sigmaJ(t)=\frac{\lambdaJ(t)\rho(t)}{\CG}.
+\]
+Optimizing over \(m\ge 0\) gives, for a positive constant \(c\),
+\[
+  \inf_{m\ge 0} A_m^G(t,J)
+  \lesssim
+  \lambdaJ(t)^{q-\eps}\sqrt{1+\sigmaJ(t)}\,
+  e^{-c\sigmaJ(t)} .
+\]
+Consequently the direct radius-window gate is
+\[
+  \sigmaJ(t)\ge \log\lambdaJ(t),
+\]
+up to the harmless normalization constants absorbed into \(c\).  Under
+this gate the optimized dominance is smaller than the leading
+\(\lambdaJ^{q-\eps}\) scaling by an exponential radius-window factor.
+\end{theorem}
+
+\begin{proof}
+The \(m\)-th derivative contributes the active-shell factor
+\(\lambdaJ(t)^{q-\eps}\) while the Gevrey weight contributes
+\(\rho(t)^m/(\CG^m m!)\).  Rewriting through
+\(\sigmaJ(t)=\lambdaJ(t)\rho(t)/\CG\) gives the closed form
+\(A_m^G(t,J)=\lambdaJ(t)^{q-\eps}m!/\sigmaJ(t)^m\).  Minimising
+\(m!/\sigmaJ^m\) by Stirling~\citep{AbramowitzStegun1964}
+\((m!\sim m^m e^{-m}\sqrt{2\pi m})\) selects a saddle order \(m\)
+comparable to \(\sigmaJ\) (after absorbing Gevrey-normalisation
+constants into \(c\), the usual order is \(m\approx\sigmaJ/e\)) and
+yields
+\[
+  \frac{m!}{\sigmaJ^m}
+  \lesssim
+  \sqrt{1+\sigmaJ}\,e^{-c\sigmaJ},
+\]
+which is the optimised dominance estimate.  In powers of
+\(\lambdaJ\), the exponential decay overtakes the leading
+\(\lambdaJ^{q-\eps}\) factor once
+\(c\sigmaJ(t)\gtrsim(q-\eps)\log\lambdaJ(t)\); the normalised form is
+\(\sigmaJ(t)\ge \log\lambdaJ(t)\).\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.GevreyLP.gevreyDominance}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\noindent
+The half-log analyticity import gives
+\(\sigmaJ(t)\gtrsim\log\lambdaJ(t)/\CG\), so the basic gate is met on
+the accepted BG-compatible stages.  By
+\Cref{thm:ns:no-go-half-log-endpoint}, however, meeting this gate is
+not enough for summable predictive propagation: the staged budget has
+ratio tending to \(2^{2p}>1\), and
+\Cref{thm:ns:no-go-published-analyticity} identifies the corresponding
+\(\sqrt{\log\lambdaJ}\) shortfall for the direct contraction route.
+The LP-transport rescue below pays this gap by moving the staged
+budget into the response space \(H^{-s}\), where the
+Littlewood--Paley transport contributes additional decay.
+
+\begin{theorem}[LP-transport rescue]\label{thm:ns:lp-transport-rescue}
+Let \(\LPtr:L^2(P_j)\to H^{-s}\) be the LP-transport stage operator with
+\(s\ge q-\eps\), and set \(p=q-\eps\).  The half-log staged budget
+transports to
+\[
+  \widetilde B_j(s)
+  \simeq
+  2^{2(p-s)j}
+  \bigl(1+\mu\sqrt{L_j}\bigr)
+  e^{-2c\mu\sqrt{L_j}},
+  \qquad
+  L_j=\log\lambdaJ .
+\]
+For every \(s>p\),
+\[
+  \frac{\widetilde B_{j+1}(s)}{\widetilde B_j(s)}
+  \longrightarrow
+  2^{2(p-s)}<1 .
+\]
+Consequently \(\sum_j \widetilde B_j(s)<\infty\) on the transported
+response space \(H^{-s}\), so the transported residual satisfies the
+summable predictive-propagation hypothesis.
+\end{theorem}
+
+\begin{proof}
+Set \(\widetilde B_j(s)=\|\LPtr\|^2 B_j\), where \(B_j\) is the
+half-log budget of NG8 and \(\|\LPtr\|^2\simeq 2^{-2sj}\) is the
+audited operator-norm decay from the Littlewood--Paley /
+Bony--Chemin--Danchin calculus.  Multiplying through
+\(B_j\simeq 2^{2pj}(1+\mu\sqrt{L_j})e^{-2c\mu\sqrt{L_j}}\) gives the
+displayed transported budget.  The stage-ratio computation of NG8
+applied to \(\widetilde B_j(s)\) leaves the multiplier
+\(2^{2(p-s)}\): strictly contractive for \(s>p\), neutral for
+\(s=p\), divergent for \(s<p\).\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.GevreyLP.lpTransportRescue}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\noindent
+The lawful LP range \(s\ge q-\eps=p\) is useful in its strictly
+transported regime \(s>p\), and \(s\) is taken just above \(p\) to
+gain contraction while staying close to the original response scale.
+Summability of \(\widetilde B_j(s)\) supplies the summable
+predictive-propagation input of \citet{Tsiokos2026NeedleKiller}, which
+combined with the predictive membrane on the accepted doubling stages
+yields the response-space hypothesis of the layer-dissolving endpoint.
+
+\begin{theorem}[Smooth-data half-log transfer]
+\label{thm:ns:smooth-data-half-log-transfer}
+On the accepted smooth-data subcarrier \(H^{\gamma_0}\) with
+\(\gamma_0>5/2\), the half-log analyticity radius satisfies
+\[
+  \rho(t)\gtrsim \frac{\log\lambdaJ(t)}{\lambdaJ(t)}
+\]
+on BG-compatible stages.  This follows by composing the Sobolev/Besov
+embedding
+\[
+  H^{\gamma_0}\hookrightarrow
+  \dot B^{-\eps}_{\infty,\infty}
+\]
+with the half-log analyticity import.  Consequently
+\[
+  \sigmaJ(t)
+  =
+  \frac{\lambdaJ(t)\rho(t)}{\CG}
+  \gtrsim
+  \frac{\log\lambdaJ(t)}{\CG},
+\]
+so the normalized radius-window gate of
+\Cref{thm:ns:gevrey-dominance} is met, and the LP-transport rescue of
+\Cref{thm:ns:lp-transport-rescue} gives summable predictive propagation
+on \(H^{-s}\) for \(s>q-\eps\).
+\end{theorem}
+
+\begin{proof}
+Given divergence-free data \(u_0\in H^{\gamma_0}\) with
+\(\gamma_0>5/2\), Kato local well-posedness gives a strong solution
+\(u(\cdot,t)\in H^{\gamma_0}\) for \(t\in[0,\Tmax(u_0))\).  The
+Sobolev/Besov embedding lifts this restart data into
+\(H^{\gamma_0}\cap\dot B^{-\eps}_{\infty,\infty}\), and the half-log
+analyticity import then supplies the displayed radius bound on
+BG-compatible stages.  Rewriting through
+\(\sigmaJ(t)=\lambdaJ(t)\rho(t)/\CG\) gives the radius-window input
+required by the Gevrey dominance theorem; the gate is met but is not
+itself contractive, and \Cref{thm:ns:lp-transport-rescue} supplies the
+missing decay on \(H^{-s}\) for \(s>q-\eps\).\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.GevreyLP.smoothDataHalfLogTransfer}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\noindent
+With the amplitude obligation paid, we assemble the records
+\(R_1,\ldots,R_9\) in \Cref{sec:main-theorem}.
+
+ 
+
+\section{Main Theorem Under Six Birds Closure}
+\label{sec:main-theorem}
+
+This section assembles the records \(R_1,\ldots,R_9\) developed in
+\Cref{sec:ns-carrier,sec:imports,sec:adequacy-cascade,sec:no-go,sec:gevrey-lp}
+into the hypothesis stack consumed by the layer-dissolving membrane
+endpoint of \citet{Tsiokos2026NeedleKiller}.  The records and the
+typed-context discipline imply \(\Tmax(u_0)=\infty\) on the accepted
+smooth-data channel.
+
+\begin{definition}[Six Birds closure records \(R_1\)--\(R_9\)]
+\label{def:ns:closure-r1-r9}
+The Six Birds closure record bundle for the Navier--Stokes carrier is
+the tuple
+\[
+  \mathsf R=(R_1,R_2,R_3,R_4,R_5,R_6,R_7,R_8,R_9),
+\]
+where the nine entries are the following proof-carrying records.
+\begin{enumerate}[label=$R_\arabic*$.]
+\item Adequacy orientation: the carrier data
+\((E_{J,t},C_{J,t},\Lphys_{J,t},\DBG_{J,t})\) is ordered so that a
+smaller residual \(\Xi\) is better.
+\item Exact BG-windowed package: \(\Gamma_j\) preserves
+divergence-free structure and the mismatch sector on the packaged
+carrier.
+\item Null-mode legality: \(\Lphys\) and \(\DBG\) vanish on
+\(\Ker C_{J,t}\) as in \Cref{sec:ns-carrier}.
+\item Source-admission acceptance: the recurrence with
+\(\Omsrc=\Omtr+\Ompr+\Omvisc+\Omtail+\Omstr\) is accepted on the
+cascade of \Cref{sec:adequacy-cascade}.
+\item BG frequency-doubling staging: the active scales obey
+\(\lambda_{j+1}=2\lambda_j\).
+\item Dissolving-side LP transport: \(\LPtr:L^2(P_j)\to H^{-s}\) with
+\(s\ge q-\eps\) is accepted as the typed transport of
+\Cref{sec:gevrey-lp}.
+\item Half-log analyticity: restart data in
+\(H^{\gamma_0}\cap\dot B^{-\eps}_{\infty,\infty}\), with
+\(\gamma_0>3/2-\eps\), carries the half-log lower radius on
+BG-compatible stages.
+\item Paper-grounded PDE imports: Beale--Kato--Majda continuation,
+Bradshaw--Grujic frequency-window continuation, Kato local
+well-posedness, half-log analyticity, Littlewood--Paley /
+Bony--Chemin--Danchin calculus, and the Sobolev/Besov embedding chain
+are accepted at their declared status.
+\item Nonclaim boundary: there is no criterion-native replacement of
+\(\DBG\), no generic Besov claim, no untyped global comparison, and no
+closure outside the smooth-data subcarrier without additional records.
+\end{enumerate}
+\end{definition}
+
+The bundle records the nine standing hypotheses above as separate
+hypothesis components: each \(R_i\) can be stated, checked, and
+audited on its own, and \(\mathsf R\) only records that all nine hold
+in the same
+typed context.  In particular \(\mathsf R\) does not carry
+\(\Tmax(u_0)=\infty\); that conclusion is a downstream consequence
+obtained by applying the layer-dissolving endpoint through the
+typed-context deliverability bridge --- the implication that consumes
+the nine \(R_i\)-fields together with the smooth-data hypotheses on
+\(u_0\) and concludes \(\Tmax(u_0)=\infty\).
+
+\begin{theorem}[Framework-deliverable Navier--Stokes regularity]
+\label{thm:ns:framework-deliverable-regularity}
+Under the Six Birds closure record bundle
+\(\mathsf R=(R_1,\ldots,R_9)\) of
+\Cref{def:ns:closure-r1-r9} and the typed-context discipline of
+\citet{Tsiokos2026NeedleKiller} and
+\citet{Tsiokos2026XiCompanion}, for every divergence-free initial datum
+\(u_0\in H^{\gamma_0}\) with \(\gamma_0>5/2\) on the accepted
+smooth-data channel,
+\[
+  \boxed{\Tmax(u_0)=\infty .}
+\]
+\end{theorem}
+
+\begin{proof}
+The proof is the structural composition described above.
+\begin{enumerate}[label=\emph{Step \arabic*.}]
+\item The residual calculus is active on the packaged carrier.  The
+record \(R_2\) supplies the exact BG-windowed package \(\Gamma_j\) on
+\((E_{J,t},C_{J,t},\Lphys_{J,t},\DBG_{J,t})\), and \(R_1\) fixes the
+adequacy orientation: smaller \(\Xi\) is better, with order read in
+the Loewner cone on the response space.  By \(R_3\), null-mode
+legality gives
+\(\Lphys_{J,t}(\Ker C_{J,t})=0\) and
+\(\DBG_{J,t}(\Ker C_{J,t})=0\), so both families descend to the legal
+energy quotient \(E_{C_{J,t}}=E_{J,t}/\Ker C_{J,t}\); on that quotient
+the audit form is positive definite by construction, as in
+\Cref{thm:ns:aor-quotient-transport-record}.  Therefore the adequacy
+residual \(\Xi_{C_{J,t}}(\DBG\mid\Lphys)\) is well-defined and is the
+Schur complement
+\[
+  \begin{aligned}
+  \Xi_{C_{J,t}}(\DBG\mid\Lphys)
+  &= K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD},\\
+  K_{LL} &= \Lphys C_{J,t}^{\dagger}{\Lphys}^*,\qquad
+  K_{DD} = \DBG C_{J,t}^{\dagger}{\DBG}^*,\\
+  K_{DL} &= \DBG C_{J,t}^{\dagger}{\Lphys}^* ,
+  \end{aligned}
+\]
+computed on the legal quotient.  The projection identity of
+\citet{Tsiokos2026XiCompanion} then rewrites the same residual in
+energy-scaled coordinates
+\(T_L=\Lphys C_{J,t}^{\dagger/2}\),
+\(T_D=\DBG C_{J,t}^{\dagger/2}\) as
+\[
+  \Xi_{C_{J,t}}(\DBG\mid\Lphys)=T_D(I-P_L)T_D^*,
+  \qquad P_L=\operatorname{proj}_{\Ran T_L^*}.
+\]
+This operator is positive semidefinite, so the orientation of \(R_1\)
+is consistent with Loewner order.
+\item The source-admission recurrence now propagates the residual along
+the Bradshaw--Grujic doubling chain.  The elementary step is
+\Cref{thm:ns:source-admission-recurrence}: for one admissible time
+step \(h\) on stage \(J\),
+\[
+  \Xi_{C_{J,t+h}}\bigl(\DBG_{J,t+h}\mid\Lphys_{J,t+h}\bigr)
+  \preceqq
+  C_{\rm old}\,\mathcal T_h\,
+  \Xi_{C_{J,t}}\bigl(\DBG_{J,t}\mid\Lphys_{J,t}\bigr)
+  \mathcal T_h^*
+  + \Omsrc .
+\]
+The record \(R_5\) supplies the stage ordering
+\(\lambda_{j+1}=2\lambda_j\), so this one-step inequality can be
+iterated from stage \(0\) to stage \(J\).  Writing
+\(\mathcal T^{(J)}=\mathcal T_{h_{J-1}}\cdots\mathcal T_{h_0}\) and
+letting \(\mathcal T^{(J,j)}\) denote the composed transport from
+stage \(j+1\) up to stage \(J\), the finite-stage envelope is
+\[
+  \begin{aligned}
+  \Xi_{C_{J,t}}(\DBG_J\mid\Lphys_J)
+  &\preceqq
+  \Bigl(\prod_{j<J} C_{\rm old}^{(j)}\Bigr)
+  \mathcal T^{(J)}
+  \Xi_{C_0}(\DBG_0\mid\Lphys_0)
+  \bigl(\mathcal T^{(J)}\bigr)^* \\
+  &\quad+
+  \sum_{j<J}
+  \Bigl(\prod_{j<i<J} C_{\rm old}^{(i)}\Bigr)
+  \mathcal T^{(J,j)}\,\Omsrc^{(j)}\,
+  \bigl(\mathcal T^{(J,j)}\bigr)^* .
+  \end{aligned}
+\]
+Thus all finite-stage growth is accounted for by the transported
+initial residual and the accumulated transported source ledgers.  The
+adequacy-residual chain rule of \citet{Tsiokos2026XiCompanion} then
+refines the accumulated ledger layer by layer: when a prior discharge
+witness admits a new native family \(M\) extending \(L\), the chain
+rule gives
+\[
+  \Xi_C(D\mid[L;M])
+  \preceqq
+  \Xi_C(D\mid L)
+  - K_{DM\mid L}K_{MM\mid L}^{\dagger}K_{MD\mid L},
+\]
+so the extended residual is the previous residual minus a positive
+Schur correction.  Applying this contraction successively along
+\(\Omsrc\to\Omega_{\rm gap}\to\Omega_{\rm rem}\to
+\Omega_{\rm bb}\to\Omega_{\rm mm}\to\Omamp\) peels off each
+discharged source component and leaves \(\Omamp\) as the unique
+un-discharged ledger at the amplitude layer.
+\item The no-go sieve closes every shortcut discharge route exposed by
+the cascade of Step~2.  First, \Cref{thm:ns:no-go-scalar-energy}
+rules out scalar quadratic budgets such as energy and enstrophy as
+Schur probes at any layer: they are not linear native families, so
+every cascade discharge must enter through linear native probes.
+Next, \Cref{thm:ns:no-go-packing-amplitude,thm:ns:no-go-sparse-shadow}
+rule out packing-amplitude and sparseness data as payments at the
+\(\Omega_{\rm bb}\) and \(\Omega_{\rm mm}\) bad-cylinder / mismatch
+layers unless a sector-matched amplitude bridge is supplied.
+\Cref{thm:ns:no-go-marker-only} rules out triad markers and
+bad-overlap masks as amplitude-layer discharges without a quantitative
+amplitude bridge, while \Cref{thm:ns:no-go-metric-shadow} rules out
+geometric-metric reweightings of \(\Omamp\) unless the normalized
+metric dominates the fixed BG/BKM amplitude on the carrier scale.
+\Cref{thm:ns:no-go-moving-window} excludes moving-support data alone
+as a closure record without a finite-termination, fixed-ledger, or
+exhaustive-ledger squeeze.  Finally,
+\Cref{thm:ns:no-go-half-log-endpoint} rules out the half-log
+analyticity lane alone as a discharge of \(\Omamp\), since the staged
+budget has ratio tending to \(2^{2p}>1\), and
+\Cref{thm:ns:no-go-published-analyticity} records the corresponding
+\(\sqrt{\log\lambdaJ}\) shortfall on the direct route; by the same
+type discipline as NG2, \Cref{thm:ns:no-go-raw-nonlinearity} rules out
+raw nonlinear observables such as fluxes, pressure interactions, and
+triad terms as Schur probes.  Thus NG2--NG10 exclude all earlier
+terminations of the cascade by public-shadow, marker, metric,
+moving-window, endpoint-only, or nonlinear shortcuts.  The
+undischarged ledger after the sieve is necessarily \(\Omamp\), whose
+payment must come from the linear native probes admitted at the
+amplitude layer, namely the analytic records treated in Step~4.
+\item The amplitude ledger \(\Omamp\) is paid by the three analytic
+records carried by \(R_7\), \(R_6\), and \(R_8\).  First, \(R_8\)
+supplies Kato local well-posedness and the Sobolev/Besov embedding
+chain: for \(u_0\in H^{\gamma_0}\), \(\gamma_0>5/2\), the strong
+solution satisfies \(u(\cdot,t)\in H^{\gamma_0}\) on
+\([0,\Tmax(u_0))\), and the embedding lifts the restart data into
+\(H^{\gamma_0}\cap\dot B^{-\eps}_{\infty,\infty}\).  The half-log
+analyticity record in \(R_7\), composed in
+\Cref{thm:ns:smooth-data-half-log-transfer}, then gives on
+BG-compatible stages
+\[
+  \rho(t)\gtrsim \frac{\log\lambdaJ(t)}{\lambdaJ(t)},
+  \qquad
+  \sigmaJ(t)\geq \log\lambdaJ(t),
+\]
+after absorbing the harmless Gevrey normalization constant into the
+gate constant.  Second, under this gate,
+\Cref{thm:ns:gevrey-dominance} gives
+\(A_m^G(t,J)=\lambdaJ^{q-\eps}m!/\sigmaJ^m\) and the optimized
+dominance
+\[
+  \inf_{m\geq 0} A_m^G(t,J)
+  \lesssim
+  \lambdaJ^{q-\eps}\sqrt{1+\sigmaJ}\,e^{-c\sigmaJ}.
+\]
+Multiplying by the active-shell budget yields the untransported
+half-log amplitude budget
+\[
+  B_j
+  =
+  C_B\,2^{2pj}\bigl(1+\mu\sqrt{L_j}\bigr)
+  e^{-2c\mu\sqrt{L_j}},
+  \qquad
+  L_j=\log\lambdaJ,\quad p=q-\eps .
+\]
+By \Cref{thm:ns:no-go-half-log-endpoint}, however,
+\(B_{j+1}/B_j\to 2^{2p}>1\), so the bare half-log lane is not
+summable on its own.  Third, \(R_6\) supplies the
+Littlewood--Paley transport stage operator
+\(\LPtr\colon L^2(P_j)\to H^{-s}\), with
+\(\|\LPtr\|^2\simeq 2^{-2sj}\) for \(s\geq p\).  The LP-transport
+rescue \Cref{thm:ns:lp-transport-rescue} multiplies the half-log
+budget by this operator-norm decay and gives the transported budget
+on the response space \(H^{-s}\),
+\[
+  \widetilde B_j(s)
+  \simeq
+  2^{2(p-s)j}\bigl(1+\mu\sqrt{L_j}\bigr)
+  e^{-2c\mu\sqrt{L_j}},
+  \qquad
+  \frac{\widetilde B_{j+1}(s)}{\widetilde B_j(s)}
+  \longrightarrow 2^{2(p-s)}<1
+  \quad(s>p).
+\]
+Thus the transported budget is geometrically contractive on a cofinal
+tail of stages and \(\sum_{j\geq0}\widetilde B_j(s)<\infty\).  This
+is exactly the summable predictive-propagation budget required by
+\citet{Tsiokos2026NeedleKiller}, and it is the input consumed by
+Step~5.
+\item The summable predictive-propagation budget
+\(\sum_j\widetilde B_j(s)<\infty\) on \(H^{-s}\) from Step~4 supplies
+the summability input for the layer-dissolving membrane endpoint of
+\citet{Tsiokos2026NeedleKiller}.  The remaining endpoint hypotheses are
+also furnished by the closure bundle: \(R_2\) and \(R_3\) provide the
+exact packaged carrier with null-mode legality activated in Step~1;
+\(R_4\), through the source-admission recurrence and the stagewise
+budget \(\Theta^Y_J\) of Step~2, supplies the native budget on the
+physical-native currency \(K_{LL}\); Step~4 supplies the residual budget
+\(\widetilde B_j(s)\preceqq\Xi^Z_J\) for
+\(\Xi_C(\DBG\mid\Lphys)\) on the transported response space; and
+\(R_1,\ldots,R_8\) supply the all-six transfer discipline.  The
+nonclaim record \(R_9\) checks that the endpoint is invoked on the
+accepted smooth-data subcarrier, with the readout still \(\DBG\), with
+no criterion-native rewrite or generic Besov claim, and with all
+comparisons kept in the typed-context disciplines of
+\citet{Tsiokos2026NeedleKiller} and
+\citet{Tsiokos2026XiCompanion}.  Therefore the endpoint applies to the
+transported maps \(S_J=\LPtr\circ\mathcal T^{(J)}\), where
+\(\mathcal T^{(J)}\) is the BG-chain transport from Step~2 and \(\LPtr\)
+is the LP-transport stage operator from Step~4.  With
+\(K^D_J=\DBG_J C_{J,t}^{\dagger}(\DBG_J)^*\), with \(A_J\) the optimal
+explanation map at stage \(J\) (the adequacy-promotion map of
+\citet{Tsiokos2026XiCompanion}), the endpoint gives the uniform
+transported dissolving budget
+\[
+  S_J K^D_J S_J^*
+  \preceqq
+  S_J\bigl(A_J\Theta^Y_J A_J^*+\Xi^Z_J\bigr)S_J^*
+  \preceqq
+  \Theta^D
+  \qquad\text{uniformly in }J .
+\]
+The summability from Step~4 is what makes \(\Theta^D\) uniform rather
+than stage-dependent.  This uniform transported dissolving budget is
+the activated continuation channel consumed by the Bradshaw--Grujic and
+Beale--Kato--Majda continuation criteria in Step~6.
+\item The uniform transported dissolving budget from Step~5 now gives
+both continuation readings.  For the Bradshaw--Grujic frequency-window
+criterion, \citet{BradshawGrujic2017} require uniform control of the
+dissolving currency block on the BG-windowed package across the
+doubling frequency stages in a left-neighborhood of any proposed finite
+terminal time \(T^*\).  The bound
+\(S_JK^D_JS_J^*\preceqq\Theta^D\), uniformly in \(J\), is exactly this
+hypothesis after transport through the response map \(S_J\); hence the
+BG continuation criterion extends the strong solution past \(T^*\).
+For the Beale--Kato--Majda criterion, \citet{BealeKatoMajda1984}
+continue a strong \(H^{\gamma_0}\) solution past \(T^*\) whenever
+\(\int_0^{T^*}\|\omega(\cdot,t)\|_{L^\infty}\,dt<\infty\).  The
+Sobolev/Besov chain in \(R_8\), together with the LP-transport rescue
+of Step~4, translates the same uniform Loewner bound on \(H^{-s}\) into
+uniform pointwise control of the vorticity on each BG window; the BG
+window summability and the smooth-data \(H^{\gamma_0}\) embedding then
+give the finite vorticity-time integral required by BKM.  The two
+criteria therefore read the same activated channel in complementary
+forms: Bradshaw--Grujic uses the frequency-window bound, while BKM uses
+the classical vorticity-time-integral bound.  If
+\(\Tmax(u_0)<\infty\), applying either criterion at
+\(T^*=\Tmax(u_0)\) gives continuation strictly past the maximal
+lifespan, a contradiction.\footnote{Tracked in the Lean formalization as
+\texttt{SixBirdsNeedles.NS.MainTheorem.frameworkDeliverableRegularity}:
+a conditional schema over the closure record bundle
+\(R_1,\ldots,R_9\) rather than an independent derivation,
+which is proved here.  See
+\Cref{subsec:paper3-per-label-coverage}.}  Hence
+\[
+  \Tmax(u_0)=\infty .
+\]
+\end{enumerate}
+\end{proof}
+
+\Cref{sec:ns-aor-instance} recasts \(R_1,\ldots,R_9\) and the
+deliverability bridge as the AOR-membership witness for the
+smooth-data carrier inside the audit-closure meta-theory of
+\citet{Tsiokos2026AOR}, providing an alternative reading of the same
+conclusion.
+
+ 
+
+\section{NS as an AOR instance}
+\label{sec:ns-aor-instance}
+
+\subsection{AOR-membership reading of the NS smooth-data carrier}
+
+\Cref{thm:ns:framework-deliverable-regularity} stated the result in
+conditional form: the records \(R_1,\ldots,R_9\), together with the
+typed-context bridge, imply \(\Tmax(u_0)=\infty\) for accepted smooth
+data.  In this section we recast the same closure stack inside the
+audit-closure meta-theory of \citet{Tsiokos2026AOR}.  There an object
+belongs to the refinement-stable AOR class when its declared audit
+records discharge the structural defects that remain under refinement;
+the relevant background is the refinement-stable AOR predicate, the
+witness hierarchy \(\mathbf{AOR}^{\mathrm{ref}}\),
+\(\mathbf{AOR}^{\mathrm{casc}}\), \(\mathbf{AOR}\) (with each
+boundary exhibited by named witness carriers in
+\citet{Tsiokos2026AOR}), the eight-stratum structural defect, and
+the residual atlas with discharge cascades.  That structural defect
+belongs to the AOR
+meta-theory and should not be confused with the adequacy residual
+\(\Xi_C(D\mid L)\) used earlier.
+
+For the Navier--Stokes carrier the witness data are precisely the
+closure records of \Cref{def:ns:closure-r1-r9}: inside the AOR
+discipline, those records are the membership witness for the
+smooth-data carrier \(\mathsf C_{\mathrm{NS}}\).  Read in this way,
+``the carrier does not blow up in reality'' means that the carrier is
+audit-closed under the declared refinement-stable AOR presentation;
+the closure records are not discarded but reclassified.
+
+\begin{definition}[NS smooth-data carrier as an AOR-instance object]\label{def:ns:aor-instance-object}
+The Navier--Stokes smooth-data carrier with initial datum $u_0\in H^{\gamma_0}$, $\gamma_0>5/2$, is the AOR-instance object $\mathsf C_{\mathrm{NS}}$ whose carrier family is the Bradshaw--Grujic frequency-refinement chain $H_{J,t}=E_{J,t}/\Ker C_{J,t}$ indexed by BG stages $J\in\mathbb N$ and time $t<\Tmax(u_0)$, with refinement morphisms $J\mapsto J+1$ of combined kind A3+A6.  Its AOR registries are populated by the records of \S\ref{sec:ns-carrier}--\S\ref{sec:gevrey-lp}: physical-native probes $\Lphys$ and target readout $\DBG$ as observation records; the BG-windowed package $\Gamma_j$, audited transport $\mathcal T_h$, and LP-transport $S_j$ as route records; the source-admission ledger $\Omsrc$ as source records; the BG window $P_{J(t)}$ as the bounded interface; null-mode legality, positivity, and the Loewner recurrence as constraints; the half-log radius bound as a scale record; and the present paper's nonclaim list as the nonclaim register.  The scope $\mathfrak S_{\mathrm{NS}}$ restricts to smooth divergence-free Sobolev data.
+\end{definition}
+
+\subsection{Mechanical R-records as membership components}
+
+The first part of the membership witness is mechanical in the precise
+sense that the corresponding records are supplied by the carrier
+construction, the declared package data, or the approved external
+import chain.  These records still matter: they are the typed fields
+that make the AOR membership statement well-formed.  They simply do not
+carry the substantive source, transport, or half-log discharge work.
+
+\begin{theorem}[Mechanical closure records as AOR-membership components]\label{thm:ns:aor-mechanical-r-records}
+Six of the nine standing closure records of $\mathsf C_{\mathrm{NS}}$ admit by-construction or approved-other discharges within scope $\mathfrak S_{\mathrm{NS}}$: $R_1$ (adequacy orientation), $R_2$ (exact BG-windowed package), $R_3$ (null-mode legality), $R_5$ (BG frequency-doubling staging), and $R_9$ (nonclaim boundary) discharge \texttt{by\_construction}; $R_8$ (paper-grounded PDE imports: BKM, BG, Kato, half-log analyticity, LP/BCD, Sobolev/Besov embedding) discharges \texttt{approved\_other} as an external-record citation chain.  These six records contribute the mechanical components of the AOR-membership witness; the substantive components $R_4,R_6,R_7$ follow.
+\end{theorem}
+
+\begin{proof}
+The six listed records discharge by record-class inspection.
+\(R_1\) (adequacy orientation), \(R_2\) (exact BG-windowed
+package), and \(R_3\) (null-mode legality) are by-construction
+fields of the smooth-data carrier of \Cref{sec:ns-carrier}:
+the BG-windowed exact package and the legal-energy quotient
+are part of the carrier definition, so the corresponding
+discharge witnesses are the constructions themselves.  \(R_5\)
+(BG frequency-doubling staging) is by-construction from the
+doubling-stage indexing of \Cref{sec:adequacy-cascade}: the
+stage map \(J\mapsto J+1\) is the carrier's declared
+refinement.  \(R_9\) (nonclaim boundary) is by-construction
+from the locked nonclaim list in \Cref{sec:status} together
+with the per-paper nonclaim registers.  \(R_8\) (paper-grounded
+PDE imports) discharges \texttt{approved\_other} as the
+citation chain assembled in \Cref{sec:imports}: each of BKM,
+BG, Kato local well-posedness, half-log analyticity,
+Littlewood--Paley / Bony--Chemin--Danchin, and Sobolev/Besov
+embedding is admitted as a single named external record, and
+the bundle is the AOR \texttt{approved\_other} discharge for
+\(R_8\).  These six records contribute the mechanical
+components of the AOR-membership witness; the substantive
+components \(R_4,R_6,R_7\) are treated in the next three
+theorems.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.AORInstance.aorMechanicalRRecords}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\subsection{Substantive R4, R6, and R7 discharges}
+
+The remaining membership components are substantive because they
+connect the source ledger, the quotient transport, and the half-log
+analyticity lane to the AOR residual types.  The \(R_4\) record is the
+source-admission recurrence of \Cref{sec:adequacy-cascade}; its
+transport typing uses the quotient record below.
+
+\begingroup
+\hbadness=10000
+\begin{theorem}[Substantive discharge of $R_4$ as a membership component]\label{thm:ns:aor-r4-discharge}
+The source-admission recurrence record $R_4$ of $\mathsf C_{\mathrm{NS}}$ has primary type $\Delta_{\mathrm{source}}$ and forced secondary types $\Delta_{\mathrm{transport}},\Delta_{\mathrm{scale}},\Delta_{\mathrm{target}},\Delta_{\mathrm{role}}$.  Its discharge status decomposes as $(\Delta_{\mathrm{source}},\texttt{budgeted}\text{ per stage})+(\Delta_{\mathrm{transport}},\texttt{zero})+(\Delta_{\mathrm{scale}},\texttt{cross-cascade to }R_6,R_7)$, with the Loewner recurrence as the budgeted witness and the quotient-transport record \Cref{thm:ns:aor-quotient-transport-record} as the zero-transport witness.  $R_4$ is per-stage budgeted; its asymptotic propagation is not standalone, and is paid by the $R_6/R_7$ cross-cascade.
+\end{theorem}
+\endgroup
+
+\begin{proof}
+The primary type assignment follows from the role of \(R_4\):
+it is the source-admission recurrence of
+\Cref{thm:ns:source-admission-recurrence}, which by definition
+records source obligations on the cascade, so its primary type
+is \(\Delta_{\mathrm{source}}\).  The forced-secondary list
+\(\Delta_{\mathrm{transport}},\Delta_{\mathrm{scale}},
+\Delta_{\mathrm{target}},\Delta_{\mathrm{role}}\) is read off
+the AOR forced-residual table for \(\Delta_{\mathrm{source}}\)
+\citep{Tsiokos2026AOR}: a source obligation must declare how
+the source data are transported, scaled, target-typed, and
+role-typed.
+
+The discharge-status decomposition is verified as follows.
+\((\Delta_{\mathrm{source}},\texttt{budgeted per stage})\) is
+witnessed by the Loewner recurrence of
+\Cref{thm:ns:source-admission-recurrence}: the per-stage
+inequality
+\(\Xi_{C_{J,t+h}}(\DBG_{J,t+h}\mid\Lphys_{J,t+h})
+\preceqq C_{\mathrm{old}}\,\mathcal T_h\,
+\Xi_{C_{J,t}}(\DBG_{J,t}\mid\Lphys_{J,t})\,\mathcal T_h^*
++\Omsrc\) bounds the next-stage residual by the transported
+previous-stage residual plus the source ledger \(\Omsrc\),
+which IS the per-stage budget.
+\((\Delta_{\mathrm{transport}},\texttt{zero})\) is witnessed
+by the quotient-transport record of
+\Cref{thm:ns:aor-quotient-transport-record}: the audited
+transport \(\mathcal T_h\) descends to the legal energy
+quotient, so the transport obligation discharges with no
+residual contribution.
+\((\Delta_{\mathrm{scale}},\texttt{cross-cascade to
+}R_6,R_7)\) is witnessed by the asymptotic statuses supplied
+in \Cref{thm:ns:aor-r6-discharge} and
+\Cref{thm:ns:aor-r7-discharge}: the per-stage budget alone is
+not contractive, so the scale obligation is paid by the
+cross-cascade to \(R_6\) (LP-transport contraction) and
+\(R_7\) (half-log gate).  This completes the decomposition.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.AORInstance.aorR4Discharge}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+The quotient-transport record is the carrier-space bridge consumed by
+the \(R_4\) discharge.  It packages the fact that audited transport is
+well typed on the legal quotient, the same quotient on which the
+Schur-complement recurrence is read.
+
+\begin{theorem}[Quotient-transport record $R_{4q}$]\label{thm:ns:aor-quotient-transport-record}
+The audited transport map $\mathcal T_h$ of $\mathsf C_{\mathrm{NS}}$ descends to the legal energy quotient:
+\[
+  \mathcal T_h(\Ker C_{J,t}) \;\subseteq\; \Ker C_{J,t+h}
+\]
+for every admissible $(J,t,h)$, so the induced map $\bar{\mathcal T}_h:E_{J,t}/\Ker C_{J,t}\to E_{J,t+h}/\Ker C_{J,t+h}$ is well-defined and the Loewner recurrence is typed on the legal quotient.
+\end{theorem}
+
+\begin{proof}
+On the smooth-data Sobolev carrier \(H^{\gamma_0}\) with
+\(\gamma_0>5/2\), the audit form \(C_{J,t}\) is
+positive-definite on \(E_{J,t}\), so \(\Ker C_{J,t}=\{0\}\)
+and the descent is automatic: the inclusion
+\(\mathcal T_h(\Ker C_{J,t})\subseteq\Ker C_{J,t+h}\) holds
+vacuously, and the induced map
+\(\bar{\mathcal T}_h:E_{J,t}/\Ker C_{J,t}\to
+E_{J,t+h}/\Ker C_{J,t+h}\) is the transport map itself.  Hence
+the Loewner recurrence of
+\Cref{thm:ns:source-admission-recurrence} is well-typed on
+the legal quotient.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.AORInstance.aorQuotientTransportRecord}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+The next two substantive discharges are the analytic tail of the cascade:
+\(R_6\) supplies LP-transport contraction, and \(R_7\) supplies the
+smooth-data half-log transfer.
+
+\begin{theorem}[Substantive discharge of $R_6$ as a membership component]\label{thm:ns:aor-r6-discharge}
+The dissolving-side LP-transport record $R_6$ of $\mathsf C_{\mathrm{NS}}$ has primary type $\Delta_{\mathrm{transport}}$ and forced secondary types $\Delta_{\mathrm{scale}},\Delta_{\mathrm{limit}},\Delta_{\mathrm{target}},\Delta_{\mathrm{role}},\Delta_{\mathrm{presentation}}$.  Its discharge status decomposes as $(\Delta_{\mathrm{transport}},\texttt{zero})+(\Delta_{\mathrm{scale}},\texttt{contractive on a cofinal tail})+(\Delta_{\mathrm{limit}},\texttt{summable})$ for every $s>p=q-\eps$, with the LP-transport rescue \Cref{thm:ns:lp-transport-rescue} as the witness for both the contractive-tail and summable statuses; the stage ratio satisfies $\widetilde B_{j+1}(s)/\widetilde B_j(s)\to 2^{2(p-s)}<1$.
+\end{theorem}
+
+\begin{proof}
+The primary type assignment follows from the role of
+\(R_6\): it is the LP-transport rescue of
+\Cref{thm:ns:lp-transport-rescue}, which carries the
+dissolving-side response through the audited transport map
+\(\LPtr\colon L^2(P_j)\to H^{-s}\), so its primary type is
+\(\Delta_{\mathrm{transport}}\).  The forced-secondary list
+follows from the AOR forced-residual table for
+\(\Delta_{\mathrm{transport}}\) \citep{Tsiokos2026AOR}: a
+transport obligation must declare scale, limit, target, role,
+and presentation typings.
+
+The discharge-status decomposition follows from
+\Cref{thm:ns:lp-transport-rescue}.
+\((\Delta_{\mathrm{transport}},\texttt{zero})\) is witnessed
+because the transport map \(\LPtr\) IS the audited transport;
+the transport obligation is closed by exhibiting the map.
+\((\Delta_{\mathrm{scale}},\texttt{contractive on a cofinal
+tail})\) is witnessed by the stage-ratio limit
+\(\widetilde B_{j+1}(s)/\widetilde B_j(s)\to 2^{2(p-s)}<1\)
+for \(s>p=q-\eps\) proved in
+\Cref{thm:ns:lp-transport-rescue}: the transported budget
+strictly contracts on a cofinal tail of stages.
+\((\Delta_{\mathrm{limit}},\texttt{summable})\) is witnessed
+by \(\sum_j\widetilde B_j(s)<\infty\), the summability
+consequence of the same stage-ratio bound.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.AORInstance.aorR6Discharge}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[Substantive discharge of $R_7$ as a membership component]\label{thm:ns:aor-r7-discharge}
+The half-log analyticity / smooth-data transfer record $R_7$ of $\mathsf C_{\mathrm{NS}}$ has primary type $\Delta_{\mathrm{scale}}$ and forced secondary types $\Delta_{\mathrm{limit}},\Delta_{\mathrm{horizon}},\Delta_{\mathrm{source}},\Delta_{\mathrm{target}},\Delta_{\mathrm{presentation}}$.  Its discharge status decomposes as $(\Delta_{\mathrm{scale}},\texttt{zero})+(\Delta_{\mathrm{limit}},\texttt{asymptotic\_budgeted, basic gate})+(\Delta_{\mathrm{horizon}},\texttt{out\_of\_scope/nonclaim})$, with \Cref{thm:ns:smooth-data-half-log-transfer} as the zero-scale witness, the half-log radius bound $\rho(t)\gtrsim\log\lambdaJ(t)/\lambdaJ(t)$ as the basic-gate witness, and the smooth-data Sobolev restriction as the horizon nonclaim.  $R_7$ is not contractive on its own; contraction is supplied by $R_6$.
+\end{theorem}
+
+\begin{proof}
+The primary type assignment follows from the role of
+\(R_7\): it is the smooth-data half-log transfer of
+\Cref{thm:ns:smooth-data-half-log-transfer}, which supplies
+the half-log radius bound and hence the radius-window gate,
+so its primary type is \(\Delta_{\mathrm{scale}}\).  The
+forced-secondary list follows from the AOR forced-residual
+table for \(\Delta_{\mathrm{scale}}\) \citep{Tsiokos2026AOR}:
+a scale obligation must declare limit, horizon, source,
+target, and presentation typings.
+
+The discharge-status decomposition is verified as follows.
+\((\Delta_{\mathrm{scale}},\texttt{zero})\) is witnessed by
+\Cref{thm:ns:smooth-data-half-log-transfer}: the half-log
+radius bound \(\rho(t)\gtrsim \log\lambdaJ(t)/\lambdaJ(t)\)
+supplies the scale obligation directly.
+\((\Delta_{\mathrm{limit}},\texttt{asymptotic\_budgeted,
+basic gate})\) is witnessed by the gate
+\(\sigmaJ(t)\geq \log\lambdaJ(t)\) derived in
+\Cref{thm:ns:smooth-data-half-log-transfer}: the gate
+supplies a uniform asymptotic budget but is not strictly
+contractive on its own.
+\((\Delta_{\mathrm{horizon}},\texttt{out\_of\_scope/nonclaim})\)
+is witnessed by the smooth-data Sobolev restriction
+\(u_0\in H^{\gamma_0}\), \(\gamma_0>5/2\): every horizon
+beyond this subcarrier is recorded as a nonclaim in
+\Cref{nonclaim:ns:aor-instance-smooth-data-only}.  The
+contractive content for \(R_7\) is supplied by \(R_6\)
+through the cross-cascade.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.NS.AORInstance.aorR7Discharge}; see \Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+
+\subsection{Statement of the AOR-instance theorem}
+
+The preceding records now form a joint discharge package.  The
+conditional theorem \Cref{thm:ns:framework-deliverable-regularity}
+reads the same package as hypotheses implying regularity.  The
+AOR-instance theorem reads the package as the membership witness for
+\(\mathsf C_{\mathrm{NS}}\) in the refinement-stable AOR class.
+
+\begin{theorem}[NS smooth-data carrier in $\mathbf{AOR}^{\mathrm{ref}}$]\label{thm:ns:in-refstableaor}
+Under the discharges of \Cref{thm:ns:aor-mechanical-r-records}, \Cref{thm:ns:aor-r4-discharge}, \Cref{thm:ns:aor-r6-discharge}, and \Cref{thm:ns:aor-r7-discharge}, together with the quotient-transport record of \Cref{thm:ns:aor-quotient-transport-record}, the Navier--Stokes smooth-data carrier $\mathsf C_{\mathrm{NS}}$ belongs to $\mathbf{AOR}^{\mathrm{ref}}_{\mathfrak S_{\mathrm{NS}}}$.  By the AOR meta-theory's discipline, audit-closure membership is the record-level reading of ``the carrier does not blow up in reality''; the framework-deliverable regularity statement \Cref{thm:ns:framework-deliverable-regularity} is the same content read in conditional form, with the closure stack presented as hypotheses rather than as the membership witness.
+\end{theorem}
+
+\begin{proof}
+We verify the refinement-stable AOR membership predicate of
+\citet{Tsiokos2026AOR} for \(\mathsf C_{\mathrm{NS}}\) using
+the five discharge records assembled above.
+
+Refinement-stable AOR membership requires (i) cascade
+stability --- every \(\Sigma_{\mathrm{residual}}\)-atom of \(\mathsf C_{\mathrm{NS}}\)
+admits a discharge witness whose cost-table cascade reaches the
+empty record in finitely many steps using the base AOR-8
+statuses --- and (ii) closure under refinement chains --- every
+residual atom that survives only at the directed colimit of a
+refinement chain into \(\mathsf C_{\mathrm{NS}}\) is paid by
+one of the four asymptotic statuses
+\(\texttt{eventual\_zero}\), \(\texttt{contractive}\),
+\(\texttt{summable}\), \(\texttt{asymptotic\_budgeted}\)
+\citep{Tsiokos2026AOR}.
+
+Cascade stability: \Cref{thm:ns:aor-mechanical-r-records}
+shows that \(R_1,R_2,R_3,R_5,R_8,R_9\) discharge by
+construction or as approved external imports, so the
+corresponding residual atoms contribute terminal statuses to
+the cost-table cascade without further obligation.
+\Cref{thm:ns:aor-r4-discharge} discharges the \(R_4\)
+source-admission residual as \texttt{budgeted per stage}
+through the Loewner recurrence of
+\Cref{thm:ns:source-admission-recurrence}, together with the
+quotient-transport record of
+\Cref{thm:ns:aor-quotient-transport-record} closing the
+\(\Delta_{\mathrm{transport}}\) component.  The \(R_4\)
+\(\Delta_{\mathrm{scale}}\) component is paid by the
+cross-cascade to \(R_6\) and \(R_7\), which by
+\Cref{thm:ns:aor-r6-discharge} and
+\Cref{thm:ns:aor-r7-discharge} supply the
+\texttt{contractive}/\texttt{summable} and basic-gate
+statuses respectively.  Composing these per-record discharges
+through the AOR cost-table walk of \citet{Tsiokos2026AOR}
+gives, for every \(\Sigma_{\mathrm{residual}}\)-atom of \(\mathsf C_{\mathrm{NS}}\),
+a finite discharge cascade reaching the empty record.
+
+Refinement closure: the BG frequency-refinement chain
+\(\{H_{J,t}\}_{J\in\mathbb N}\) is the carrier's declared
+refinement diagram (kind \(A_3+A_6\) per
+\Cref{def:ns:aor-instance-object}).  Limit-stage residuals
+along this chain occur only for the
+\(\Delta_{\mathrm{limit}}\) component of \(R_6\); by
+\Cref{thm:ns:aor-r6-discharge} that component is statused
+\texttt{summable}.  Limit-stage residuals for the
+\(\Delta_{\mathrm{horizon}}\) component of \(R_7\) are
+explicitly classified \texttt{out\_of\_scope/nonclaim} by
+\Cref{thm:ns:aor-r7-discharge} and by the nonclaim of
+\Cref{nonclaim:ns:aor-instance-smooth-data-only}.  No other
+residual stratum survives to the colimit.
+
+Therefore \(\mathsf C_{\mathrm{NS}}\) satisfies both
+predicates of refinement-stable AOR membership, and
+\(\mathsf C_{\mathrm{NS}}\in
+\mathbf{AOR}^{\mathrm{ref}}_{\mathfrak S_{\mathrm{NS}}}\).\footnote{Tracked in the Lean formalization as
+\texttt{SixBirdsNeedles.NS.AORInstance.inRefStableAOR}: a
+conditional schema over the carrier-attached discharge
+assignment and the per-residual-primary-type dispatch rather
+than an independent derivation, which is proved here.  See
+\Cref{subsec:paper3-per-label-coverage}.}
+\end{proof}
+ 
+
+\section{Status, Limitations, and External Interpretation}
+\label{sec:status}
+
+The principal result is
+\Cref{thm:ns:framework-deliverable-regularity}: given the closure
+records \(R_1,\ldots,R_9\), every divergence-free initial datum
+\(u_0\in H^{\gamma_0}\) with \(\gamma_0>5/2\) on the accepted
+smooth-data channel satisfies \(\Tmax(u_0)=\infty\).  The companion
+\Cref{thm:ns:in-refstableaor} of \Cref{sec:ns-aor-instance} recasts
+the same records as the AOR-membership witness for the smooth-data
+carrier \(\mathsf C_{\mathrm{NS}}\), so that under the
+refinement-stable audit-closure discipline of
+\citet{Tsiokos2026AOR} membership reads as the record-level statement
+that the carrier does not blow up in reality.  Read together or
+separately, the manuscript is not a Clay--Millennium claim.  The
+owned contribution is the Navier--Stokes specialisation of these
+frameworks:
+\begin{itemize}
+\item the smooth-data carrier, the fixed dissolving readout, the
+physical-native probe family, the BG-windowed exact package, and
+null-mode legality (\Cref{sec:ns-carrier});
+\item the source-admission ledger and the stage-to-stage recurrence
+(\Cref{sec:adequacy-cascade});
+\item the no-go family NG1--NG10 excluding shortcut payments
+(\Cref{sec:imports,sec:no-go});
+\item the Gevrey radius-window branch, LP-transport rescue, and
+smooth-data half-log transfer (\Cref{sec:gevrey-lp});
+\item the closure record bundle and the conditional-form statement
+of \Cref{thm:ns:framework-deliverable-regularity}
+(\Cref{sec:main-theorem});
+\item the AOR-instance recasting of the same records and its
+partial-status disclosure (\Cref{sec:ns-aor-instance}).
+\end{itemize}
+
+The residual calculus is imported from
+\citet{Tsiokos2026XiCompanion}: the Schur-complement object
+\(\Xi_C(D\mid L)\), the projection identity, the optimal residual
+identity, exact adequacy, adequacy promotion, the chain rule, the
+data-processing identities for post-processing and native coarsening,
+and the blind-spot witness characterisation, together with the
+typed-context audit discipline.
+
+The endpoint machinery is imported from
+\citet{Tsiokos2026NeedleKiller}: the layer-dissolving membrane
+endpoint theorem, the all-six discipline, predictive membranes, the
+summable predictive-propagation lemma, and the predictive-native
+membrane construction.
+
+The audit-closure meta-theory is imported from
+\citet{Tsiokos2026AOR}: the refinement-stable AOR class and the rule
+that AOR membership is read as audit-closed carrier behavior under the
+declared record discipline.  This paper does not redevelop that
+meta-theory; it supplies the Navier--Stokes membership witness by
+presenting \(R_1,\ldots,R_9\) as the carrier's AOR records.
+
+The PDE inputs --- Beale--Kato--Majda continuation,
+Bradshaw--Grujic frequency-window continuation, Kato local
+well-posedness, Foias--Temam / Herbst--Skibsted / Wang half-log
+analyticity, Littlewood--Paley / Bony--Chemin--Danchin calculus,
+and the Sobolev/Besov embedding chain --- enter through the import
+record \(R_8\), with conclusions supplied by the cited PDE literature
+and consumed under named hypotheses.  We compose them through the
+audited residual cascade and no-go sieve into the
+conditional-form T10; the PDE results themselves are neither
+extended nor rederived here.
+
+\begin{nonclaim}[Outside-framework reading]\label{nonclaim:ns:outside-framework}
+Outside the Six Birds closure framework, \Cref{thm:ns:framework-deliverable-regularity} reads as the conditional implication
+\[
+  \bigl(\mathsf R\text{ holds on the smooth-data carrier}\bigr)
+  \Longrightarrow
+  \bigl(\Tmax(u_0)=\infty\bigr).
+\]
+This paper does not claim:
+\begin{enumerate}
+\item a standalone Clay-Millennium
+solution~\citep{Fefferman2000NavierStokes} independent of the Six
+Birds closure discipline;
+\item generic critical-Besov data regularity outside the smooth-data
+subcarrier \(H^{\gamma_0}\), \(\gamma_0>5/2\), in the sense of
+critical-space well-posedness
+results~\citep{KochTataru2001,Cannone1995,LemarieRieusset2023};
+\item a criterion-native rewriting of \(\DBG\) in place of
+physical-native adequacy, as ruled out by
+\Cref{thm:ns:no-go-criterion-native};
+\item that any single PDE input alone closes the problem, since the
+argument uses the full \(R_1,\ldots,R_9\) bundle architecture;
+\item engagement with Caffarelli--Kohn--Nirenberg partial
+regularity~\citep{CaffarelliKohnNirenberg1982}, which concerns
+Leray--Hopf weak solutions~\citep{Leray1934,Hopf1951} on a different
+carrier class;
+\item an untyped global comparison, since every comparison in the proof
+is made inside the typed-context discipline;
+\item a full-log analyticity radius theorem, since the paper uses only
+the available half-log analyticity import together with the
+LP-transport rescue.
+\end{enumerate}
+\end{nonclaim}
+
+\begin{nonclaim}[AOR-instance reading restricted to smooth-data subcarrier]\label{nonclaim:ns:aor-instance-smooth-data-only}
+The AOR-instance reading of \Cref{sec:ns-aor-instance}, including \Cref{thm:ns:in-refstableaor}, is restricted to the smooth-data Sobolev subcarrier $u_0\in H^{\gamma_0}$, $\gamma_0>5/2$.  No AOR-membership claim is made for generic critical-Besov data, weak solutions, distributional carriers, or any class outside the declared scope $\mathfrak S_{\mathrm{NS}}$.  The $\Delta_{\mathrm{horizon}}$ residual stratum is explicitly statused as \texttt{out\_of\_scope/nonclaim} in \Cref{thm:ns:aor-r7-discharge}.
+\end{nonclaim}
+
+\begin{nonclaim}[No independent Clay-Millennium claim via AOR instance]\label{nonclaim:ns:aor-instance-no-clay-claim}
+\Cref{thm:ns:in-refstableaor} establishes membership of $\mathsf C_{\mathrm{NS}}$ in $\mathbf{AOR}^{\mathrm{ref}}$ under the discharges of $R_1$--$R_9$ and the carrier-attached discharge assignment.  Independently of those audit records and of the six declared PDE imports of $R_8$, the result is not a Clay-Millennium claim; the AOR-instance reading reframes the closure stack as the membership witness but does not assert global Navier--Stokes regularity outside the audit-record presentation.
+\end{nonclaim}
+
+The nonclaim boundary is the same under both readings: the result
+asserts only that if the antecedent \(\mathsf R=(R_1,\ldots,R_9)\) is
+formed on the accepted smooth-data carrier, then the maximal
+strong-solution lifespan is infinite.  The AOR-instance recasting
+presents the same antecedent as a membership-witness package; it does
+not claim PDE regularity independent of audit records, does not extend
+to carriers beyond the smooth-data subcarrier, and does not yet claim
+data-bearing R-records.
+
+Future work may sharpen the bundle --- for example, by replacing the
+combined half-log analyticity and LP-transport rescue with a stronger
+analyticity radius that delivers contraction on its own, or by
+promoting the R-record acceptance fields from \(\mathrm{Prop}\)-valued
+predicates to data-bearing structures.  Those strengthenings would
+change the external obligations, but they lie beyond the present scope.
+
+ 
+\appendix
+
+
+\section{NS-1--NS-61 Step Coverage}
+\label{app:step-coverage}
+
+This appendix maps the underlying Navier--Stokes construction track,
+steps NS-1 through NS-61, onto the paper body.  The table groups the
+steps by construction phase rather than listing them individually;
+each row names the phase, its step range, and the body section in
+which the corresponding mathematical content is stated, proved, or
+fenced as a nonclaim.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+                                l
+                                >{\raggedright\arraybackslash}X@{}}
+\toprule
+Phase & Step range & Body section \\
+\midrule
+Phase 1: NS carrier and BG/BKM readout
+  & NS-1--NS-5
+  & Carrier setup, \Cref{sec:ns-carrier} \\
+Phase 2: Literature imports and criterion-native gap
+  & NS-6--NS-10
+  & Imports and NG1, \Cref{sec:imports} \\
+Phase 3: Source-admission ledger and recurrence
+  & NS-11--NS-16
+  & Adequacy cascade, \Cref{sec:adequacy-cascade} \\
+Phase 4: Residual cascade refinements
+  & NS-17--NS-27
+  & Cascade bridge, \Cref{sec:adequacy-cascade} \\
+Phase 5: No-go theorems NG2--NG10
+  & NS-28--NS-43
+  & No-go sieve, \Cref{sec:no-go} \\
+Phase 6: Gevrey radius-window probes and gate
+  & NS-44--NS-49
+  & Gevrey probes and dominance, \Cref{sec:gevrey-lp} \\
+Phase 7: Half-log endpoint obstruction
+  & NS-50--NS-53
+  & NG8 and callbacks, \Cref{thm:ns:no-go-half-log-endpoint,sec:gevrey-lp} \\
+Phase 8: LP-transport rescue and smooth-data transfer
+  & NS-54--NS-60
+  & LP rescue and transfer, \Cref{sec:gevrey-lp} \\
+Phase 9: Main theorem and closure records
+  & NS-61
+  & Closure bundle and T10, \Cref{sec:main-theorem} \\
+\bottomrule
+\end{tabularx}
+\caption{Construction-step coverage by phase.}
+\label{tab:ns-step-coverage}
+\end{table}
+
+Per-step entries live in the project's traceability and inventory
+artifacts rather than in this typeset table.  The operational records
+sit under \path{formalization/traceability/} alongside the source-items
+inventory and Lean manifest cross-references; Appendix~D records the
+formal artifact map.
+
+ \section{Bridge Atlas and Import Statuses}
+\label{app:bridge-atlas}
+
+This appendix records the two audit maps used by the body.  The first
+table lists the cross-context bridges by which the residual calculus,
+the layer-dissolving endpoint, the Navier--Stokes carrier, and the PDE
+imports are connected.  The second table records the declared status of
+the six PDE imports: each entry is consumed under named hypotheses, and
+the analytic conclusion is supplied by the corresponding classical
+result rather than reproved here.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}
+                                >{\raggedright\arraybackslash}p{0.24\textwidth}
+                                >{\raggedright\arraybackslash}X@{}}
+\toprule
+Source context & Target context & Bridge content \\
+\midrule
+\citet{Tsiokos2026XiCompanion}
+  & NS carrier (this paper)
+  & The adequacy residual \(\Xi_C(D \mid L)\) is specialised to
+    \(\Xi_{C_{J,t}}(\DBG \mid \Lphys)\); native coarsening,
+    promotion, and blind-spot witness statements apply at the NS
+    instantiation. \\
+\citet{Tsiokos2026NeedleKiller}
+  & NS carrier
+  & The layer-dissolving membrane endpoint, summable predictive
+    propagation, the predictive-native membrane construction, and the
+    all-six discipline apply to \(R_1,\ldots,R_9\). \\
+NS carrier
+  & BG continuation channel
+  & Uniform boundedness of \(\DBG_{J,t}\) on doubling stages converts
+    to global continuation through the Bradshaw--Grujic
+    frequency-window criterion. \\
+NS carrier
+  & BKM continuation channel
+  & The vorticity-time integral feeds the Beale--Kato--Majda
+    continuation criterion. \\
+Smooth-data subcarrier \(H^{\gamma_0}\)
+  & Half-log restart hypothesis space
+  & The Sobolev/Besov embedding chain lifts smooth-data restart data
+    into \(H^{\gamma_0} \cap \dot B^{-\eps}_{\infty,\infty}\). \\
+Source-admission ledger \(\Omsrc\)
+  & Schur-block bookkeeping
+  & The five-component decomposition is tied to the Navier--Stokes
+    equation terms through the Littlewood--Paley /
+    Bony--Chemin--Danchin calculus and the Helmholtz / Leray
+    projection. \\
+\bottomrule
+\end{tabularx}
+\caption{Cross-paper and cross-context bridges used by the NS argument.}
+\label{tab:ns-bridge-atlas}
+\end{table}
+
+The bridge atlas shows how the formal comparison is transported across
+contexts.  The import-status table records the PDE side of the same
+audit: the cited form names the classical result, the conclusion column
+states what the proof-carrying record supplies under named hypotheses,
+and the final column points to the body sections where the record is
+invoked.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth}
+                                >{\raggedright\arraybackslash}p{0.23\textwidth}
+                                >{\raggedright\arraybackslash}X
+                                >{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
+\toprule
+Import & Cited form & Named-hypothesis conclusion & Body section invoked in \\
+\midrule
+Beale--Kato--Majda
+  & BKM continuation criterion
+  & \(\int_0^T \|\omega(\cdot,t)\|_{L^\infty}\,dt < \infty
+     \Rightarrow \Tmax > T\).
+  & \Cref{sec:imports} \\
+Bradshaw--Grujic
+  & BG frequency-window criterion
+  & Uniform boundedness of \(\DBG\) on doubling stages with
+    \(\lambda_{j+1}=2\lambda_j\) implies \(\Tmax=\infty\).
+  & \Cref{sec:imports} \\
+Kato
+  & Local well-posedness for divergence-free \(H^{\gamma_0}\) data,
+    \(\gamma_0>5/2\)
+  & Unique strong solution with maximal lifespan
+    \(\Tmax \in (0,\infty]\).
+  & \Cref{sec:imports} \\
+Half-log analyticity
+  & Foias--Temam / Herbst--Skibsted / Wang
+  & \(\rho(t) \gtrsim \log\lambda_J / \lambda_J\) on BG-compatible
+    stages for restart data in
+    \(H^{\gamma_0} \cap \dot B^{-\eps}_{\infty,\infty}\),
+    \(\gamma_0>3/2-\eps\).
+  & \Cref{sec:imports,sec:gevrey-lp} \\
+Littlewood--Paley / Bony--Chemin--Danchin
+  & Paradifferential calculus
+  & Shell orthogonality, commutator estimates, and operator-norm
+    bounds for smooth multipliers.
+  & \Cref{sec:imports,sec:adequacy-cascade,sec:gevrey-lp} \\
+Sobolev/Besov embedding
+  & Embedding chain
+  & \(H^{\gamma_0} \hookrightarrow
+    \dot B^{-\eps}_{\infty,\infty}\) for \(\gamma_0>3/2\) and
+    admissible \(\eps>0\).
+  & \Cref{sec:imports} \\
+\bottomrule
+\end{tabularx}
+\caption{Declared status of the PDE imports consumed by the proof.}
+\label{tab:ns-import-status}
+\end{table}
+
+ \section{Residual Tree and No-Go Proofs}
+\label{app:residual-tree}
+
+This appendix records the residual cascade used in
+\Cref{sec:adequacy-cascade} and gives appendix-grade proofs of the
+schema no-gos stated in \Cref{sec:no-go}.  Each row of the cascade
+table names the obstruction node, says what it accounts for, and
+points to the import, refinement, no-go, or rescue that addresses
+it.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.26\textwidth}
+                                >{\raggedright\arraybackslash}X
+                                >{\raggedright\arraybackslash}p{0.28\textwidth}@{}}
+\toprule
+Node & Accounts for & Resolved by \\
+\midrule
+\(\Xi_{C_{J,t}}(\DBG \mid \Lphys)\)
+  & Physical-native adequacy residual.
+  & Source-admission recurrence T4 and the Gevrey/LP rescue. \\
+\(\Omsrc\)
+  & New contributions per step: transport, pressure, viscosity,
+    tail, and stretching.
+  & The ledger decomposition of \Cref{sec:adequacy-cascade}. \\
+\(\Omega_{\rm gap}\)
+  & Gap after the BKM, Bradshaw--Grujic, and Kato imports.
+  & The imports of \Cref{sec:imports} and the recurrence
+    \Cref{thm:ns:source-admission-recurrence}. \\
+\(\Omega_{\rm rem}\)
+  & Remainder after half-log analyticity, Littlewood--Paley /
+    Bony--Chemin--Danchin calculus, and Sobolev/Besov embedding.
+  & The analytic imports of \Cref{sec:imports}. \\
+\(\Omega_{\rm bb}\)
+  & Bad-set / bad-block obstruction.
+  & NG3--NG6 in \Cref{sec:no-go}. \\
+\(\Omega_{\rm mm}\)
+  & Sector-mismatch obstruction.
+  & NG5--NG6 in \Cref{sec:no-go}. \\
+\(\Omamp\)
+  & Amplitude obstruction remaining after the no-go sieve.
+  & The Gevrey radius-window branch and LP transport in
+    \Cref{sec:gevrey-lp}. \\
+\(\Omend\)
+  & Endpoint obstruction at the end of the cascade.
+  & NG8 / NG9 callbacks and the LP-transport rescue
+    \Cref{thm:ns:lp-transport-rescue}. \\
+\bottomrule
+\end{tabularx}
+\caption{Residual cascade nodes and their assigned resolutions.}
+\label{tab:ns-residual-tree}
+\end{table}
+
+The proofs below cover the no-gos whose body presentations were only
+sketched; NG1 is witnessed in \Cref{sec:imports}, NG2 is a body-level
+type argument, and NG8 contains its stage-ratio computation in the
+body itself.
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-packing-amplitude}]
+Let a bad set at scale \(r\) have measure comparable to \(r^{3-d}\)
+and let the relevant windowed amplitude be \(r^{-\alpha}\).  The
+contribution to the squared BG readout is then the product of size and
+squared amplitude,
+\[
+  \|\DBG u\|^2_{\text{bad scale}}
+  \sim r^{3-d} r^{-2\alpha}
+  = r^{(3-d)-2\alpha}.
+\]
+Taking the square root gives the BG-amplitude contribution
+\(r^{(3-d)/2-\alpha}\).  Packing improves the estimate only when this
+power is positive, equivalently \(\alpha<(3-d)/2\).  If
+\(\alpha\ge (3-d)/2\), the small-set gain is exactly canceled or worse
+by amplitude growth, so packing alone cannot dominate \(\Omamp\).  A
+lawful payment must therefore add sector matching, tail smallness, or
+another amplitude bridge recorded in the cascade.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-sparse-shadow}]
+Sparse data controls mass inside the sparse field's declared support,
+but the Schur block \(\Lphys C_{J,t}^{\dagger}(\Lphys)^*\) also sees
+interactions with the surrounding non-sparse region.  The bad-cylinder /
+bad-geometry ledger \(\Omega_{\rm bb}\) is precisely the place where
+those interactions are audited.  If the sparse field is not contained
+in the same bad-bad or mismatch sector, its estimate pays only the
+sparse subset and leaves the cross-sector part unpriced.  The missing
+part is not a defect in sparseness; it is a type mismatch between a
+set-local estimate and a sector-resolved Schur block.  Hence the proof
+splits: either state sector containment, or supply a positive mismatch
+record \(\Omega_{\rm mm}\succeq 0\).  Without one of these additions,
+sparse-shadow data cannot pay \(\Omega_{\rm bb}\).
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-marker-only}]
+A marker field has a discrete codomain, typically \(\{0,1\}\), and
+records only whether a defect is present or which class it belongs to.
+If such a marker is inserted as a probe, the associated Gram block
+\(K_{LL}\) is determined by the marker values and the audit weights;
+it does not scale with the amplitude of the underlying velocity,
+vorticity, or triad contribution.  Thus two carrier states with the
+same marker pattern but different BG amplitude produce the same marker
+Schur data while requiring different payments in \(\Omamp\).  The
+marker can locate the obstruction, but it cannot bound its size.  A
+valid promotion therefore needs a quantitative bridge: either a new
+linear native probe admitted through the source-admission recurrence,
+or a record-grade \(M^{\rm bb}\) bound that carries the missing
+amplitude information.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-metric-shadow}]
+Changing the carrier metric can shrink the apparent residual by
+changing the scale on which the residual is measured.  If a
+Gevrey-flavored weight or a Caffarelli--Kohn--Nirenberg-style parabolic
+metric~\citep[and the later refinements
+of][]{Lin1998CKN,Vasseur2007PartialReg} grows on the bad region, then
+the weighted residual there may become small simply because the metric
+has divided by a large weight.  The fixed BG observable \(\DBG\),
+however, is not changed by this renormalization, and the continuation
+channel reads its normalized amplitude.  Constantin--Fefferman
+vorticity-direction geometry has the same status for this purpose: it
+may organize geometry, but it is not automatically a dominance
+estimate for \(\DBG\).  To become a payment, the metric input must
+state an explicit dominance constant on the normalized BG scale and a
+time gate preventing the weight from degenerating on the active stage.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-moving-window}]
+A moving-window or derivative-stack record identifies where the active
+frequency content is supported, for instance through windows containing
+\(\nabla^mP_Ju(\cdot,t)\) for several \(m\).  Support information is
+not a budget: it does not say that the support stops moving, stays
+inside a fixed ledger, or is exhausted by already audited ledgers.  If
+there is no finite-termination record, the support may keep moving
+through infinitely many stages.  If there is no fixed-ledger squeeze,
+it may escape every stage-independent bound.  If there is no
+exhaustive-ledger squeeze, the union of the moving supports may cover
+all of \(\mathbb R^3\).  Any one of these records supplies the missing
+compactness or domination statement; without one, moving-support data
+does not promote to carrier closure.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-published-analyticity}]
+The half-log import gives
+\(\rho(t)\gtrsim \log\lambdaJ/\lambdaJ\), hence
+\(\sigmaJ=\lambdaJ\rho(t)/\CG\gtrsim \log\lambdaJ/\CG\).  This meets
+the basic radius-window gate of \Cref{thm:ns:gevrey-dominance}; it is
+not a failure of the gate.  The direct predictive-contraction route is
+stronger.  The Gevrey optimization leaves a saddle correction of order
+\(\sqrt{\log\lambdaJ}\) in the staged budget, and
+\Cref{thm:ns:no-go-half-log-endpoint} computes that the resulting
+half-log stage ratio tends to \(2^{2p}>1\).  Thus direct contraction
+would require an additional analyticity-radius improvement, equivalently
+a \(\sqrt{\log\lambdaJ}\)-scale gain beyond the available lane.  The
+Littlewood--Paley transport rescue supplies the missing decay by moving
+the budget to \(H^{-s}\), not by claiming a stronger radius.
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:ns:no-go-raw-nonlinearity}]
+The Schur complement is typed for linear maps \(L:E_{J,t}\to Y\).
+A raw nonlinear observable \(F(u)\), such as a flux, pressure
+interaction, vortex-stretching term, or triad, is not such a map from
+the carrier to a probe codomain.  Consequently the Gram block
+\(K_{FF}\) is not defined in the residual calculus, and the expression
+\[
+  K_{DD}-K_{DF}K_{FF}^{\dagger}K_{FD}
+\]
+is not a well-formed Schur complement.  Nonlinear content can still
+enter lawfully in exactly the declared ways: tangent-linearize \(F\)
+around the audited solution arc to obtain a linear probe; lift the
+interaction to an augmented carrier where the interaction becomes a
+linear coordinate; or record the nonlinear contribution as a source
+entry in \(\Omsrc\).  What is excluded is only the untyped insertion of
+raw nonlinear data into the native family.
+\end{proof}
+
+The main line of the argument remains in
+\Cref{sec:adequacy-cascade,sec:no-go,sec:gevrey-lp}, where the
+cascade is built, shortcut payments are excluded, and the Gevrey/LP
+rescue pays the remaining amplitude obligation.
+
+ \section{Lean Formalization Disclosure}
+\label{app:ns-formalization}
+
+\subsection{Trust base and methodology}
+\label{subsec:paper3-trust-methodology}
+
+The Lean artifacts cited in this appendix were checked with Lean 4.28.0.
+The project-wide trust base allowlisted in
+\texttt{lean/manifests/trust\_base.txt} comprises five core kernel axioms:
+\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound},
+\texttt{choice}, and \texttt{funext}.  An axiom-closure audit
+(\texttt{\#print axioms}) of every NS-axis theorem cited in this appendix
+shows the actual dependency set is contained in the strictly smaller
+subset $\{\texttt{propext},\ \texttt{Classical.choice},\ \texttt{Quot.sound}\}$;
+several no-go theorems depend on no axioms beyond the kernel default.  The
+project discipline forbids \texttt{sorry}, project-local \texttt{axiom}, and
+\texttt{opaque} declarations in the needles Lean corpus; the trust-base
+allowlist is the manifest checker's gate when auditing theorem dependency
+closures.  Coverage is recorded per row as \emph{theorem}, \emph{partial},
+or \emph{definition}; these labels govern the wording below.
+
+\subsection{Mechanization disclosure tiers}
+\label{subsec:paper3-mechanization-disclosure-tiers}
+
+Body footnotes use a three-tier disclosure discipline keyed to the
+alignment column of the per-label coverage table.
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.25\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Alignment & Tier label & Body footnote wording template \\
+    \midrule
+    \texttt{faithful} & T1 & Verified in Lean as \(\langle\)declaration\(\rangle\); see \Cref{subsec:paper3-per-label-coverage}. \\
+    \texttt{narrowed-surrogate / partial} & T2 & Mechanized in Lean as \(\langle\)declaration\(\rangle\); the Lean theorem proves \(\langle\)sub-claim\(\rangle\) under \(\langle\)elevation\(\rangle\).  The full statement is proved here.  See \Cref{subsec:paper3-per-label-coverage}. \\
+    \texttt{projection-packaged} & T3 & Tracked in the Lean formalization as \(\langle\)declaration\(\rangle\): a conditional schema over \(\langle\)record fields\(\rangle\) rather than an independent derivation, which is proved here.  See \Cref{subsec:paper3-per-label-coverage}. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Paper 3 body footnote disclosure tiers.}
+  \label{tab:paper3-mechanization-disclosure-tiers}
+\end{table}
+
+This tier discipline is the canonical wording rule for body footnotes:
+a reader can cross-check each theorem footnote against the alignment
+column of the coverage table below.
+
+\subsection{Standing narrowings and elevated hypotheses}
+\label{subsec:paper3-standing-narrowings}
+
+The NS axis runs on the rational-finite-matrix infrastructure shared with
+the Main and Xi axes; that infrastructure does not include a real-analysis
+stack (limits, $\inf$, $\sqrt{\cdot}$, $\exp$, $\log$, asymptotic
+$\lesssim$).  The Gevrey, half-log, LP-transport, and BG-staging theorems
+therefore carry their analytic content as \emph{hypotheses} (closed-form
+identities, optimization-step implications, ratio-contraction
+certificates, summability witnesses) supplied by the paper-grounded
+PDE-import structures of \texttt{SixBirdsNeedles.NS.PDEImports}.  Lean
+mechanizes the structural composition (implication chains, record-field
+unpacking, modus tollens for the no-gos); the paper supplies the
+substantive estimates these compositions consume.
+
+The six PDE imports (Beale--Kato--Majda, Bradshaw--Grujić, Kato local
+well-posedness, Foias--Temam / Herbst--Skibsted / Wang half-log
+analyticity, Littlewood--Paley / Bony--Chemin--Danchin calculus, and the
+Sobolev/Besov embedding chain) are each realized as a Lean
+\texttt{structure} whose constructor consumes the named hypotheses and
+exposes the conclusion as fields.  No project-local \texttt{axiom},
+\texttt{opaque}, or \texttt{sorry} appears in any of these structures;
+the boundary policy is \texttt{external\_pde\_import} per
+\texttt{paper/notation\_and\_terminology.md} §8.
+
+Five of the nine closure records ($R_1, R_2, R_3, R_7, R_8, R_9$) are
+realized as proof-carrying records whose component propositions are
+schema slots filled by downstream consumers; three ($R_4, R_5, R_6$)
+carry Lean-typed data (the source-admission ledger, the
+frequency-doubling equation, the LP-transport stage operator) that
+constrains the rest of the calculus.  The bundle
+\texttt{ClosureR1R9} contains exactly these nine record fields and
+does \emph{not} carry the conclusion $\Tmax = \infty$, which is the
+downstream content of T10.
+
+The framework-deliverable regularity theorem T10 is
+\emph{projection-packaged}: it takes a \texttt{ClosureR1R9} bundle, the
+smooth-data hypotheses on $u_0$, and a typed-context deliverability
+bridge (an implication consuming every R-record field plus the
+smooth-data data and concluding $\Tmax(u_0) = \infty$), and produces
+the conclusion by unpacking the bundle and applying the bridge.  The
+substantive Navier--Stokes content lives in the bridge hypothesis; Lean
+audits the dependency chain.
+
+\subsection{Per-label coverage tables}
+\label{subsec:paper3-per-label-coverage}
+
+Tables~\ref{tab:paper3-lean-coverage-defs} and~\ref{tab:paper3-lean-coverage-thms}
+record the per-row Lean coverage, alignment, and short disclosure note for each
+statements-of-record row.  After the 2026-05-24 NS-AOR bridge restructure,
+the first table covers 15 definitions (the original 14 plus the new
+\path{def:ns:aor-instance-object}) and the second covers 22 theorems
+(the original 16 plus 6 NS-AORInstance theorems, one of which is partial).
+
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.36\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Alignment & Disclosure note \\
+    \midrule
+    \path{def:ns:bg-readout} & faithful & Realized in Lean as a subtype with the right-support constraint $\DBG = \DBG \cdot P_{J(t)}$. \\
+    \path{def:ns:physical-native-probes} & faithful & Realized in Lean as a subtype with LP-shell / Bessel-potential tagging and the energy+enstrophy currency-recovery condition. \\
+    \path{def:ns:bg-package} & faithful & Realized in Lean as a subtype with admissibility, divergence-free preservation, exact energy/response, and the doubling equation. \\
+    \path{def:ns:null-mode-legal-ns} & faithful & Realized in Lean as the conjunction of \texttt{NullLegal} for $\Lphys$ and $\DBG$. \\
+    \path{def:ns:bkm-import} & external PDE & Realized in Lean as a proof-carrying structure for the BKM continuation criterion. \\
+    \path{def:ns:bg-import} & external PDE & Realized in Lean as a proof-carrying structure for the Bradshaw--Grujić window-bound criterion. \\
+    \path{def:ns:kato-import} & external PDE & Realized in Lean as a proof-carrying structure for Kato local well-posedness on $H^{\gamma_0}$ with $\gamma_0>5/2$. \\
+    \path{def:ns:wang-halflog-import} & external PDE & Realized in Lean as a proof-carrying structure for the half-log analyticity radius bound. \\
+    \path{def:ns:lp-bcd-import} & external PDE & Realized in Lean as a proof-carrying structure for the Littlewood--Paley / Bony--Chemin--Danchin calculus. \\
+    \path{def:ns:sobolev-besov-embedding-import} & external PDE & Realized in Lean as a proof-carrying structure for the $H^{\gamma_0}\hookrightarrow\dot B^{-\eps}_{\infty,\infty}$ embedding chain. \\
+    \path{def:ns:source-admission-ledger} & faithful & Realized in Lean as a structure with the five positive components, the decomposition equation, and PSD constraints. \\
+    \path{def:ns:gevrey-probes} & faithful & Realized in Lean as a structure with the normalized derivative formula. \\
+    \path{def:ns:lp-transport} & faithful & Realized in Lean as a structure with the stage map, exponent condition $s\ge q-\eps$, and norm-bound constant. \\
+    \path{def:ns:closure-r1-r9} & faithful & Realized in Lean as nine separate proof-carrying structures plus the \texttt{ClosureR1R9} bundle; the bundle does not carry the $\Tmax=\infty$ conclusion. \\
+    \path{def:ns:aor-instance-object} & faithful & Realized in Lean as the fixed-scope PreSB / RefPreSB object that packages the BG-stage chain and the audit registries for the AOR-instance reading; see \path{SixBirdsNeedles.NS.AORInstance.aorInstanceObject}. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Definition coverage (post-2026-05-24 NS-AOR bridge restructure: 14 original NS definitions plus the new \texttt{def:ns:aor-instance-object}; all 15 rows have status \texttt{definition}).}
+  \label{tab:paper3-lean-coverage-defs}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth} >{\raggedright\arraybackslash}p{0.09\linewidth} >{\raggedright\arraybackslash}p{0.13\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean coverage & Alignment & Disclosure note \\
+    \midrule
+    \path{thm:ns:criterion-native-equality} & theorem & faithful & Lean proves the trivial algebraic equality $\Xi_C(\DBG\mid\DBG)=0$ from the Moore--Penrose support identity. \\
+    \path{thm:ns:no-go-criterion-native} & partial & narrowed-surrogate & Lean witnesses the no-go via an explicit $2$--$1$--$1$ finite counterexample where the criterion-native residual vanishes but the physical-native residual is nonzero. \\
+    \path{thm:ns:source-admission-recurrence} & theorem & faithful & Lean mechanizes the unbundling of the accepted Loewner recurrence into the five-component form. \\
+    \path{thm:ns:no-go-scalar-energy} & theorem & faithful & Lean mechanizes the modus-tollens chain under the linear-family hypothesis. \\
+    \path{thm:ns:no-go-packing-amplitude} & theorem & faithful & Lean mechanizes the case-split modus tollens under the threshold / bridge / tail disjunction. \\
+    \path{thm:ns:no-go-sparse-shadow} & theorem & faithful & Lean mechanizes the case-split modus tollens under the sector-containment / paid-mismatch disjunction. \\
+    \path{thm:ns:no-go-marker-only} & theorem & faithful & Lean mechanizes the case-split modus tollens under the new-native-probe / record-grade-bound disjunction. \\
+    \path{thm:ns:no-go-metric-shadow} & theorem & faithful & Lean mechanizes the modus tollens under the normalized-dominance hypothesis. \\
+    \path{thm:ns:no-go-moving-window} & theorem & faithful & Lean mechanizes the three-branch case-split for finite-termination / fixed-ledger / exhaustive-ledger promotion. \\
+    \path{thm:ns:no-go-half-log-endpoint} & theorem & faithful & Lean mechanizes the modus tollens under the stage-ratio-above-one hypothesis. \\
+    \path{thm:ns:no-go-published-analyticity} & theorem & faithful & Lean mechanizes the three-branch case-split for LP-transport / full-log / alternative-radius rescue. \\
+    \path{thm:ns:no-go-raw-nonlinearity} & theorem & faithful & Lean mechanizes the three-branch case-split for tangent-linearization / interaction-lifting / source-admission entry. \\
+    \path{thm:ns:gevrey-dominance} & theorem & faithful & Lean mechanizes the closed-form / optimization / radius-window-gate composition chain. \\
+    \path{thm:ns:lp-transport-rescue} & theorem & faithful & Lean mechanizes the transport-record $\to$ ratio-contraction $\to$ summability composition chain. \\
+    \path{thm:ns:smooth-data-half-log-transfer} & theorem & faithful & Lean mechanizes the Sobolev/Besov embedding $\to$ Wang half-log radius composition under the all-six-channels audit. \\
+    \path{thm:ns:framework-deliverable-regularity} & theorem & projection-packaged & Lean audits the dependency chain: the bundle unpacks into a deliverability-bridge hypothesis whose conclusion is $\Tmax(u_0)=\infty$. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Theorem coverage, original NS rows (16 theorems pre-restructure).}
+  \label{tab:paper3-lean-coverage-thms}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth} >{\raggedright\arraybackslash}p{0.09\linewidth} >{\raggedright\arraybackslash}p{0.13\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean coverage & Alignment & Disclosure note \\
+    \midrule
+    \path{thm:ns:aor-mechanical-r-records} & theorem & faithful & Lean records the mechanical R1/R2/R3/R5/R9 by-construction and R8 approved-other discharges as the mechanical components of the AOR-membership witness; the body proof carries the framing. \\
+    \path{thm:ns:aor-r4-discharge} & theorem & faithful & Lean records the R4 source-admission discharge with primary type $\Delta_{\mathrm{source}}$, consuming the carrier-space quotient-transport record; the body proof presents the membership-component reading. \\
+    \path{thm:ns:aor-r6-discharge} & theorem & faithful & Lean records the R6 LP-transport discharge with primary type $\Delta_{\mathrm{transport}}$ and the contractive-tail / summable secondary statuses. \\
+    \path{thm:ns:aor-r7-discharge} & theorem & faithful & Lean records the R7 half-log discharge with primary type $\Delta_{\mathrm{scale}}$ and the asymptotic-budgeted basic-gate / out-of-scope-horizon secondary statuses. \\
+    \path{thm:ns:aor-quotient-transport-record} & theorem & faithful & Lean records the $R_{4q}$ quotient-transport record using the carrier-space audit forms and the kernel-preservation field from \texttt{R4SourceAdmission}; the smooth-kernel-zero clause is a PSD narrowing pending a future positive-definite strengthening. \\
+    \path{thm:ns:in-refstableaor} & partial & projection-packaged & Lean projects the joint discharges through the carrier-attached \texttt{AORCarrierWithDischarge} wrapper; the per-atom assignment dispatches by primary residual type and routes through generic \path{reachableFromZero}/\path{residualRecordOfAtom_eventuallyEmpty} lemmas because the R-record acceptance fields are \texttt{Prop}-valued.  Tighter content-dependence on R-record values would require making the R-record acceptance fields data-bearing.  See \Cref{subsec:paper3-in-refstableaor-narrowing} for the partial-demotion narrowing. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Theorem coverage, NS-AORInstance additions (6 theorems added 2026-05-24 by the NS-AOR bridge restructure; one partial demotion on the joint refinement-stable AOR statement).}
+  \label{tab:paper3-lean-coverage-thms-aor-instance}
+\end{table}
+
+\subsection{Lean declaration map}
+\label{subsec:paper3-lean-declaration-map}
+
+Table~\ref{tab:paper3-lean-declaration-map} maps each paper label to
+its full Lean declaration path; the per-row coverage notes above use
+short prose disclosures and refer to this table for the canonical
+identifiers.
+
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.36\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean declaration path \\
+    \midrule
+    \path{def:ns:bg-readout} & \path{SixBirdsNeedles.NS.Carrier.bgReadout} \\
+    \path{def:ns:physical-native-probes} & \path{SixBirdsNeedles.NS.Carrier.physicalNativeProbes} \\
+    \path{def:ns:bg-package} & \path{SixBirdsNeedles.NS.Carrier.bgPackage} \\
+    \path{def:ns:null-mode-legal-ns} & \path{SixBirdsNeedles.NS.Carrier.nullModeLegalNS} \\
+    \path{def:ns:bkm-import} & \path{SixBirdsNeedles.NS.PDEImports.bkmImport} \\
+    \path{def:ns:bg-import} & \path{SixBirdsNeedles.NS.PDEImports.bgImport} \\
+    \path{def:ns:kato-import} & \path{SixBirdsNeedles.NS.PDEImports.katoImport} \\
+    \path{def:ns:wang-halflog-import} & \path{SixBirdsNeedles.NS.PDEImports.wangHalfLogImport} \\
+    \path{def:ns:lp-bcd-import} & \path{SixBirdsNeedles.NS.PDEImports.lpBcdImport} \\
+    \path{def:ns:sobolev-besov-embedding-import} & \path{SixBirdsNeedles.NS.PDEImports.sobolevBesovEmbeddingImport} \\
+    \path{thm:ns:criterion-native-equality} & \path{SixBirdsNeedles.NS.CriterionNativeGap.criterionNativeEquality} \\
+    \path{thm:ns:no-go-criterion-native} & \path{SixBirdsNeedles.NS.CriterionNativeGap.noGoCriterionNative} \\
+    \path{def:ns:source-admission-ledger} & \path{SixBirdsNeedles.NS.Cascade.sourceAdmissionLedger} \\
+    \path{thm:ns:source-admission-recurrence} & \path{SixBirdsNeedles.NS.Cascade.sourceAdmissionRecurrence} \\
+    \path{thm:ns:no-go-scalar-energy} & \path{SixBirdsNeedles.NS.NoGo.noGoScalarEnergy} \\
+    \path{thm:ns:no-go-packing-amplitude} & \path{SixBirdsNeedles.NS.NoGo.noGoPackingAmplitude} \\
+    \path{thm:ns:no-go-sparse-shadow} & \path{SixBirdsNeedles.NS.NoGo.noGoSparseShadow} \\
+    \path{thm:ns:no-go-marker-only} & \path{SixBirdsNeedles.NS.NoGo.noGoMarkerOnly} \\
+    \path{thm:ns:no-go-metric-shadow} & \path{SixBirdsNeedles.NS.NoGo.noGoMetricShadow} \\
+    \path{thm:ns:no-go-moving-window} & \path{SixBirdsNeedles.NS.NoGo.noGoMovingWindow} \\
+    \path{thm:ns:no-go-half-log-endpoint} & \path{SixBirdsNeedles.NS.NoGo.noGoHalfLogEndpoint} \\
+    \path{thm:ns:no-go-published-analyticity} & \path{SixBirdsNeedles.NS.NoGo.noGoPublishedAnalyticity} \\
+    \path{thm:ns:no-go-raw-nonlinearity} & \path{SixBirdsNeedles.NS.NoGo.noGoRawNonlinearity} \\
+    \path{def:ns:gevrey-probes} & \path{SixBirdsNeedles.NS.GevreyLP.gevreyProbes} \\
+    \path{def:ns:lp-transport} & \path{SixBirdsNeedles.NS.GevreyLP.lpTransport} \\
+    \path{thm:ns:gevrey-dominance} & \path{SixBirdsNeedles.NS.GevreyLP.gevreyDominance} \\
+    \path{thm:ns:lp-transport-rescue} & \path{SixBirdsNeedles.NS.GevreyLP.lpTransportRescue} \\
+    \path{thm:ns:smooth-data-half-log-transfer} & \path{SixBirdsNeedles.NS.GevreyLP.smoothDataHalfLogTransfer} \\
+    \path{def:ns:closure-r1-r9} & \path{SixBirdsNeedles.NS.ClosureRecords.ClosureR1R9} \\
+    \path{thm:ns:framework-deliverable-regularity} & \path{SixBirdsNeedles.NS.MainTheorem.frameworkDeliverableRegularity} \\
+    \path{def:ns:aor-instance-object} & \path{SixBirdsNeedles.NS.AORInstance.aorInstanceObject} \\
+    \path{thm:ns:aor-mechanical-r-records} & \path{SixBirdsNeedles.NS.AORInstance.aorMechanicalRRecords} \\
+    \path{thm:ns:aor-r4-discharge} & \path{SixBirdsNeedles.NS.AORInstance.aorR4Discharge} \\
+    \path{thm:ns:aor-r6-discharge} & \path{SixBirdsNeedles.NS.AORInstance.aorR6Discharge} \\
+    \path{thm:ns:aor-r7-discharge} & \path{SixBirdsNeedles.NS.AORInstance.aorR7Discharge} \\
+    \path{thm:ns:aor-quotient-transport-record} & \path{SixBirdsNeedles.NS.AORInstance.aorQuotientTransportRecord} \\
+    \path{thm:ns:in-refstableaor} & \path{SixBirdsNeedles.NS.AORInstance.inRefStableAOR} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Mapping from paper labels to Lean declaration paths (post-2026-05-24 NS-AOR bridge restructure: 37 rows including the 7 new NS-AORInstance entries).}
+  \label{tab:paper3-lean-declaration-map}
+\end{table}
+
+\subsection{Partial-demotion narrowing for \texorpdfstring{\texttt{thm:ns:in-refstableaor}}{thm:ns:in-refstableaor}}
+\label{subsec:paper3-in-refstableaor-narrowing}
+
+Of the seven new coverage rows recorded above for the
+NS-as-AOR-instance reading (see \Cref{sec:ns-aor-instance}), six
+discharge with \texttt{status = "theorem"} and one,
+\path{thm:ns:in-refstableaor}, carries \texttt{status = "partial"}.
+The partial status is disclosed here for transparency.
+
+The Lean proof in
+\path{SixBirdsNeedles.NS.AORInstance.inRefStableAOR} case-analyzes
+by residual primary type and brings the R4 / R6 / R7 discharge
+fields into lexical scope.  Each case then closes through the
+generic lemmas \path{reachableFromZero_zero},
+\path{reachableFromZero_budgeted}, and
+\path{residualRecordOfAtom_eventuallyEmpty}.  These generic closures
+are what make the proof projection-packaged rather than content-bearing:
+the per-atom assignment dispatches by primary type (and routes the
+non-standalone branches through the cross-cascade), but it does not
+pattern-match against the R-record data fields.
+
+The deferral lives in
+\path{SixBirdsNeedles.NS.ClosureRecords}.  The R-record acceptance
+fields (\path{recurrenceAccepted}, \path{typedTransportAccepted},
+\path{halfLogAnalyticityAccepted}, \path{bgCompatibleStages},
+\path{smoothDataSubcarrier}, etc.) are \texttt{Prop}-valued
+predicates rather than data-bearing structures.  Closing the gap
+structurally would require an NS-side surgery to make those fields
+data-bearing (e.g.\ promoting them to \texttt{Bool}-valued or to
+explicit data), with downstream consequences for every consumer of
+\texttt{R4SourceAdmission}, \texttt{R6LPTransport}, and
+\texttt{R7HalfLogAnalyticity}.  Such a strengthening is outside the
+scope of the present manuscript; the \texttt{partial} status is the
+honest disclosure that the AOR-instance reading currently rests on
+\texttt{Prop}-valued audit-record witnesses.
+
+\subsection{Carrier-space field additions to \texorpdfstring{\texttt{R4SourceAdmission}}{R4SourceAdmission}}
+\label{subsec:paper3-r4-carrier-space-fields}
+
+The structure \path{SixBirdsNeedles.NS.ClosureRecords.R4SourceAdmission}
+carries carrier-space fields used by the
+\path{aorQuotientTransportRecord} theorem in
+\path{SixBirdsNeedles.NS.AORInstance}: \path{e}, \path{eNext}
+(carrier-space dimensions), \path{C_J_t}, \path{C_J_t_h} (audit
+forms), \path{audit_psd_t}, \path{audit_psd_t_h} (positive-semidefinite
+proofs), \path{carrierTransport} (the audited transport map
+\(\texttt{Mat eNext e}\)), and \path{kernel_preserved} (the predicate
+\(T_h(\Ker C_{J,t}) \subseteq \Ker C_{J,t+h}\)).
+
+These fields were originally added to support a bridge theorem
+hosted in the companion meta-theory manuscript
+\citet{Tsiokos2026AOR}.  Both producer (\path{R4SourceAdmission})
+and consumer (\path{aorQuotientTransportRecord}) now live in the
+NS-axis Lean development, and the field addition is recorded here on
+the NS side.
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

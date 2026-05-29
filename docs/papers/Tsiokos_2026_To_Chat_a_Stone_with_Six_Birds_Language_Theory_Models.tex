@@ -1,0 +1,799 @@
+\documentclass{article}
+
+\usepackage{neurips_2026}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{cleveref}
+
+
+
+\newcommand{\Tlayer}[1]{T_{#1}}                    \newcommand{\Xspace}[1]{X_{#1}}                    \newcommand{\opmap}[1]{\mathrm{op}_{#1}}           \newcommand{\CDtau}{\mathrm{CD}_{\tau}}            \newcommand{\IDef}{\delta_{\tau,f}}                \newcommand{\strictcert}{\mathsf{StrictExtCert}}   \newcommand{\Kquot}{K}                             \newcommand{\Rquot}{R}                              
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+
+\title{To Chat a Stone with Six Birds: Language Theory Models}
+
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+
+Next-token prediction is not, by itself, a theory of compositional content: finite predictive statistics can agree while the induced quotients compose differently under larger contexts. We study an alternative, non-gradient formulation in which a language model is an audited ledger of finite theory extensions rather than a parameter vector. Six Birds Theory (SBT) supplies the admissibility calculus: typed closure-package layers, explicit quotient maps, audit records, nonclaim records, and promotion gates based on descent, stability, control, no-smuggling, legibility, and strict factorization failure. We introduce Language Theory Models (LTMs), a prototype architecture for structural recovery on fixed sequence corpora. An LTM accumulates typed transition evidence, monitors each active layer with a conditional-information closure-deficit statistic and an idempotence/self-consistency defect, and proposes new layers only when the current quotient leaves recoverable structure unresolved. Candidate layers are committed only after an explicit gate panel emits a strict-extension certificate; otherwise the runtime records a typed defect or remains silent rather than laundering fallback evidence into a stronger claim. We report a code-backed feasibility study on Shakespeare: the runtime builds closure-package layers, records promotion attempts and failures, emits halt verdicts, caps unaudited fallback readout, and demonstrates strict R-layer growth in bounded runs. Independent of the LTM runtime, we provide a structural probe suite that tests SBT framework-level commitments under blue-team and red-team cases, including growth, forgetting, uncertainty, auditability, and concept-separation scenarios. The contribution is a concrete audited substrate for testing whether compositional structure in a fixed corpus can be recovered as a finite ladder of certified theory refinements.
+ \end{abstract}
+
+\section{Introduction}\label{sec:introduction}
+
+Next-token prediction has become the dominant operational objective for language models \cite{Vaswani2017Attention,Radford2019GPT2,Kaplan2020Scaling}, but the objective alone does not specify what compositional content a model has recovered. On a fixed corpus or finite evaluation suite, two systems can match the same conditional distributions, losses, or probe statistics while grouping histories into different predictive equivalence classes. Those groupings matter because compositional generalization asks whether a representation that was adequate in one context remains adequate when later context recombines, extends, or disambiguates it \cite{FodorPylyshyn1988Connectionism,Hupkes2020Compositionality}. A model can therefore be predictively indistinguishable at the measured horizon yet induce a quotient of the data that composes differently under larger contexts. The motivating problem is to make this gap observable: to distinguish finite predictive agreement from certified recovery of compositional structure.
+
+We study an alternative formulation: a non-gradient setting in which the language model is an audited ledger of finite theory extensions rather than a parameter vector. Six Birds Theory (SBT) supplies the admissibility calculus for that ledger: typed audited layers of the language model (called closure-package layers when formalized in \Cref{sec:problem-setup}), explicit quotient maps, audit and nonclaim records, and promotion gates for deciding when a proposed layer is a strict extension rather than an unaudited readout \cite{Tsiokos2026FoundationsIII}. These objects are not presented as a replacement for large-scale parametric training, but as a controlled substrate for asking when a fixed corpus supports a structural refinement claim. We instantiate the substrate as Language Theory Models (LTMs), a prototype architecture whose runtime accumulates transition evidence, proposes audited layers, and records failed or non-certifying attempts rather than converting fallback evidence into stronger claims. \Cref{sec:methods} describes the gate panel and runtime mechanics; here the point is the modelling shift from learned weights alone to an explicit audit trail of finite extensions.
+
+The contribution is a code-backed feasibility study asking whether compositional structure in a fixed Shakespeare corpus can be recovered as a finite ladder of certified theory refinements. In bounded runs, the runtime builds typed audited layers, records promotion attempts and failures, emits halt verdicts, caps unaudited fallback readout, and demonstrates strict layer growth without turning every signal into a claim; \Cref{sec:primary-results} reports those runtime results. Independent of the runtime, a structural probe suite tests framework-level commitments under blue-team and red-team cases covering growth, forgetting, uncertainty, auditability, and concept separation; \Cref{sec:secondary-results} separates those probes from the Shakespeare run. The scope is deliberately narrower than a full dynamical theory of interacting layers. This paper studies constructive bottom-up native growth on a static-parent substrate: it operates in a frozen-parent regime, with live parent dynamics deferred to future work, and with bidirectional inter-layer substrate flow not modelled. \Cref{sec:discussion} states these as limitations rather than treating them as implementation details.
+
+The remaining sections cover background and related work, problem setup, methods, primary and secondary results, analysis, synthesis, discussion and limitations, and conclusion; appendices A--E carry the definitions, extended methods, artifact source map, formalization material, and overflow.
+ \section{Background and Related Work}\label{sec:background}
+
+Six Birds Theory (SBT) enters this paper as an admissibility calculus for structural claims, not as a replacement training objective. Its primitive objects are typed audited layers, explicit quotient maps, audit and nonclaim records, and promotion gates that determine whether a proposed extension can be claimed \cite{Tsiokos2026FoundationsI,Tsiokos2026FoundationsII,Tsiokos2026FoundationsIII}. In ML terms, the calculus specifies what counts as evidence, what must be logged, what must remain a nonclaim, and when a gate panel may certify that a candidate layer strictly refines the current quotient; this is distinct from learning, since it constrains when a recovered structure is admissible rather than choosing what the next model should optimize. The load-bearing sources are used narrowly: Foundations I supplies the typed layer atom and its idempotence condition \cite{Tsiokos2026FoundationsI}, Foundations II the admissibility meta-theory \cite{Tsiokos2026FoundationsII}, Foundations III the dependency-relation calculus and gate scaffolding \cite{Tsiokos2026FoundationsIII}, with Promotion Criteria for gate templates \cite{Tsiokos2026PromotionCriteria}, the strict-extension paper for the relabeling-rejection hypothesis cluster \cite{Tsiokos2026CantorShell}, the accepted-new-layer tests for readout-sufficiency contracts \cite{Tsiokos2026AcceptedNewLayer}, To Notch a Stone for the causation/enablement-time distinction \cite{Tsiokos2026NotchAStone}, Recombination Witnesses for the recombination-aware quotient \cite{Tsiokos2026RecombinationWitnesses}, and the no-go results for the conditional-information obstruction \cite{Tsiokos2026NoGo}.
+
+Relative to next-token and autoregressive language modeling \cite{Bengio2003NPLM,Vaswani2017Attention}, the LTM is not a replacement objective: it adds a non-gradient ledger that audits where a fixed corpus does or does not support compositional refinement claims. Relative to compositional generalization benchmarks such as SCAN, COGS, and CFQ, which usually evaluate trained models post hoc \cite{Hupkes2020Compositionality}, the LTM instruments the recovery process itself and records non-certifying attempts before a finished artifact is declared; relative to mechanistic interpretability and circuits work \cite{Olah2020ZoomIn,Elhage2021Framework,Olsson2022InductionHeads,Conmy2023ACDC}, it shares the auditability motivation but tracks typed recovery layers and gate-panel decisions rather than activation patches or circuit attributions; and relative to symbolic, neurosymbolic, and program-induction approaches \cite{Ellis2023DreamCoder,GarcezLamb2020Neurosymbolic}, it is adjacent in seeking typed structural objects but treats them as recoveries from a fixed corpus with explicit nonclaim records rather than as programs from a search engine.
+ \section{Problem Setup}\label{sec:problem-setup}
+
+The LTM setting in this paper is fixed-corpus inverse recovery: the input is a finite sequence corpus, and the task is to recover audited refinements already supported by that corpus rather than to explain how the corpus was produced. The locked empirical instantiation uses a Shakespeare corpus derived from a Gutenberg source, tokenized by a word-punctuation regular-expression tokenizer with a frozen vocabulary; \Cref{sec:primary-results} reports the resulting run. At startup, the runtime declares its scope in a regime record naming the corpus, tokenization surface, lens family, candidate-search family, budget profile, and audit instrument stack. This declaration is the operational boundary for every later evidence record: candidate layers, quotient tests, and gate outcomes are interpreted only relative to the declared corpus and tokenizer. In SBT terms this is an inverse-emergence regime, but the ML claim is narrower: fixed-corpus structural recovery under explicit nonclaim discipline, with runtime mechanics described in \Cref{sec:methods} \cite{Tsiokos2026FoundationsII}. The runtime, locked-run artifact set, and probe suite are available at \url{https://anonymous.4open.science/r/how-to-chat-a-stone-nips} (anonymous code repository for double-blind review).
+
+\subsection{Audited layers}\label{subsec:audited-layers}
+
+An LTM organizes recovered structure as an indexed sequence of typed audited layers. The layer atom is the closure-package layer of SBT: a typed audited layer of the language model comprising a microstate space and an idempotent quotient map \cite{Tsiokos2026FoundationsI}. We write the $i$th layer as $\Tlayer{i}$, with internal pair $(\Xspace{i},\opmap{i})$, where $\Xspace{i}$ is the layer's microstate space and $\opmap{i}:\Xspace{i}\to\Xspace{i}$ is its self-map. Idempotence means that applying the layer's quotient map twice yields the same partition as applying it once:
+\[
+\opmap{i}\circ\opmap{i}=\opmap{i}.
+\]
+In ML terms, the layer's recoverable content is already fully captured after one application of the map; a second pass cannot introduce a new distinction that the layer itself did not audit. The audit metadata associated with a typed layer records how its microstates, quotient decisions, and admissibility status were obtained, so later sections can distinguish committed refinements from candidates that failed a gate. \Cref{app:definitions} gives the formal definition used by the appendices, while the body uses the audited-layer phrasing except where the SBT source object is being attributed.
+
+\subsection{Branchwise versus recombination-aware quotients}\label{subsec:k-vs-r}
+
+Two quotient notions organize claims about histories. The branchwise predictive quotient, written $\Kquot$, identifies histories whose next-token or per-branch predictive distributions agree; this is the equivalence relation implicit in standard next-token prediction. The recombination-aware quotient, written $\Rquot$, identifies histories whose behavior remains equivalent when later observable context recombines them, so agreement must be stable under larger contexts \cite{Tsiokos2026RecombinationWitnesses}. The distinction matters because branchwise and recombination-aware agreement can diverge: two histories may be indistinguishable for the next token but factor differently when a later context combines them. We therefore treat branchwise claims as predictive-equivalence claims and reserve language-level structural claims for recombination-aware evidence, with the operational use of the distinction described in \Cref{sec:methods} and run-level layer reporting in \Cref{sec:primary-results}.
+
+\subsection{Bootstrap layer}\label{subsec:bootstrap-layer}
+
+The runtime begins with a non-native bootstrap layer, $\Tlayer{0}$, rather than with a layer certified by the same gate panel as later growth. Its seed quotient is derived from the declared corpus surface, such as raw token-level statistics, and gives the system an initial partition from which audited refinements can be proposed. Native growth begins at $\Tlayer{1}$: from that point onward, every committed layer passes through the same admissibility machinery. The bootstrap layer carries an explicit nonclaim that its strict-extension status was not audited, so downstream reports can separate the scoped starting surface from committed native layers; \Cref{sec:primary-results} reports the locked-run instantiation, and \Cref{app:artifact-map} maps the literal bootstrap-policy field.
+
+\subsection{Notation: closure deficit, idempotence defect, strict-extension certificate}\label{subsec:notation}
+
+Three runtime objects carry the measurable status of a candidate layer. The closure-deficit statistic $\CDtau$ is a conditional-information residual statistic at lookahead $\tau$ that measures unresolved structure under the current quotient \cite{CoverThomas1991Information,Tishby2000Bottleneck}: positive values indicate that recoverable structure remains outside the layer, while values bounded near zero indicate that the quotient is consistent with the corpus at the declared lookahead \cite{Tsiokos2026NoGo}. The idempotence/self-consistency defect $\IDef$ is a fixed-point gap for the layer's own quotient map at lookahead $\tau$ through readout $f$, measuring how closely the empirical data satisfy the idempotence relation introduced above \cite{Tsiokos2026FoundationsI}. Schematically, the diagnostics separate residual structure from self-consistency:
+\[
+\CDtau > 0 \;\Rightarrow\; \text{unresolved structure}, \qquad
+\IDef \approx 0 \;\Rightarrow\; \text{empirical self-consistency}.
+\]
+Where \Cref{subsec:audited-layers} states an exact idempotent map, the empirical estimator allows a small positive $\IDef$ deviation and reports it in the audit log rather than hiding it. The symbol $\strictcert$ denotes the strict-extension certificate, a typed witness object that licenses adding a candidate as a new layer in the ladder \cite{Tsiokos2026CantorShell}. A candidate is committed only after the gate panel emits this certificate; otherwise the runtime records a typed defect or remains silent, with the gate mechanics described in \Cref{sec:methods} and formal definitions deferred to \Cref{app:definitions}.
+ \section{Methods}\label{sec:methods}
+
+\subsection{Six-gate promotion panel}\label{subsec:six-gates}
+
+Candidate layers enter the LTM ledger through a six-gate promotion panel, not through an unconstrained score threshold. The conjunctive panel is in the spirit of verifier-based and process-supervised pipelines that license outputs only after explicit per-step checks pass \cite{Cobbe2021Verifiers,Lightman2023StepByStep}. The gates are descent, stability, control, no-smuggling, legibility, and strict factorization failure: respectively, residual reduction, quotient robustness, falsification evidence, audit-scope compliance, audit-log reconstructability, and a parent-identified/candidate-distinguished witness pair \cite{Tsiokos2026FoundationsIII, Tsiokos2026PromotionCriteria}. The panel is conjunctive: all six gates must pass before the runtime commits the candidate and emits a strict-extension certificate; otherwise the runtime records a typed defect or remains silent, with evaluator details in \Cref{app:methods}, notation in \Cref{subsec:notation}, and empirical outcomes in \Cref{sec:primary-results}.
+
+\subsection{Three-ingredient strict-extension precondition}\label{subsec:three-ingredient}
+
+Before a candidate reaches the six-gate panel, the runtime requires a three-ingredient strict-extension precondition \cite{Tsiokos2026CantorShell}. First, the parent layer's quotient must have saturated at the current sample depth, meaning that $\opmap{i}$ is no longer producing new observed partitions under the present evidence budget. Second, lookahead-driven forcing must produce new strata at extended depth, showing that the parent quotient fails to capture later-context structure. Third, the macro-admissibility obstruction must be positive: the closure-deficit statistic $\CDtau$ from \Cref{subsec:notation} exceeds the declared threshold \cite{Tsiokos2026NoGo}. Together these ingredients authorize a candidate to enter the gate panel, but they do not promote it; promotion still requires the six-gate certificate described above.
+
+\subsection{Strict-extension certificate and audited ledger}\label{subsec:strict-cert-ledger}
+
+When the precondition and all six gates pass, the panel emits $\strictcert$, the strict-extension certificate: a local typed witness that records a concrete separation showing the candidate quotient does not factor through the parent quotient \cite{Tsiokos2026CantorShell}. The certificate plays the role that proof-carrying code plays for verified compilation \cite{Necula1997PCC}: a candidate layer travels with the typed evidence that licenses its commit, so downstream consumers can re-check rather than trust on report. The append-only audit ledger signs every committed layer, dependency relation, strict-growth evidence record, and production verdict \cite{Tsiokos2026FoundationsIII}; certificate fields are deferred to \Cref{app:methods}, locked-run artifacts mapped in \Cref{app:artifact-map}, and counts reported in \Cref{sec:primary-results}.
+
+\paragraph{Dependency relations and active relation kinds.}\label{subsec:dep-relations}
+The audit ledger also records a typed dependency relation for each committed child layer. We use the dependency-relation vocabulary from the SBT admissibility calculus, whose full form declares eight relation kinds \cite{Tsiokos2026FoundationsIII}. In this paper, only upward layer-birth dependence is active: the parent's audit surface enables the child's strict extension. This restricted relation is sufficient for the static-parent setting because every committed native layer is justified as a child extension of the previous audited surface, not as a claim about parent revision or bidirectional flow. Other relation kinds are deferred to future work and appear as paper-level limitations in \Cref{sec:discussion}; \Cref{app:formalization} lists the full vocabulary.
+
+\paragraph{Carrier exactification and the relabeling check.}\label{subsec:exactification}
+Carrier exactification rules out relabeling-only candidates by requiring readout sufficiency, transport coherence, non-reducibility, honest section behavior, protocol honesty, stress robustness, and declared seed support; \Cref{app:methods} gives the criterion details \cite{Tsiokos2026AcceptedNewLayer}. As a behavioral test, the relabeling check is in the same lineage as targeted capability probes for NLP systems \cite{Ribeiro2020CheckList}.
+
+\paragraph{Birth-pressure gate and birth-class taxonomy.}\label{subsec:birth-pressure}
+The birth-pressure gate prevents premature commits by requiring sustained unresolved structure across multiple cadence ticks; admitted proposals receive a birth-class label for the pressure pathway that made them eligible \cite{Tsiokos2026FoundationsIII}. \Cref{app:methods} gives the persistence setting and class definitions, and \Cref{sec:primary-results} reports the empirical class distribution.
+
+\paragraph{Theory-relative birth frontier and stratum canonicalisation.}\label{subsec:frontier-canonicalisation}
+Layer-birth is theory-relative: when \Cref{subsec:three-ingredient}'s precondition holds, the candidate is built from the current parent theory's frontier rather than from a metronome or fixed event count \cite{Tsiokos2026FoundationsIII}. Before packaged strata enter a strict-extension test, bounded canonicalisation reduces surface-order and transient-prediction variants to a common form, so strict factorization failure compares stratum structure rather than presentation accidents \cite{Tsiokos2026HolonomyMemory}. \Cref{app:methods} gives the frontier-workspace details, predictive-quotient \(M\) construction, and cap parameters.
+
+\subsection{Cadenced closure-recovery loop}\label{subsec:cadence-loop}
+
+The runtime separates event processing into two clocks: a per-event ingestion clock and a cadenced closure-recovery clock that fires every \(C\) events. The ingestion clock updates sequence evidence and per-event counters, while the recovery clock runs the heavier structural checks. On a recovery tick, the runtime evaluates closure-deficit and idempotence-defect samples for each active layer, advances the frontier workspace, canonicalises packaged strata when needed, and dispatches any candidate satisfying \Cref{subsec:three-ingredient} through the gate panel. This separation keeps closure-recovery work off the per-event ingestion path. The resulting cost is governed by the cadence, active-layer cap, and finite audit budgets rather than by running the full recovery stack at every corpus event; \Cref{sec:secondary-results} reports cost-stability evidence, and \Cref{app:methods} records the cadence parameter.
+
+\subsection{Honest fallback cap and halt verdict}\label{subsec:fallback-halt}
+
+The readout path is capped by the same nonclaim discipline as layer promotion \cite{Tsiokos2026FoundationsII}. When the audited path does not produce a committed answer, for example because no current layer's quotient covers the requested microstate at sufficient confidence, the runtime does not promote fallback statistics into a stronger claim. Instead, it either emits a provisional or silent claim with a typed defect record, or refuses to emit a token claim. The structural posture is the abstention / reject-option discipline familiar from selective classification \cite{Chow1970Reject,ElYanivWiener2010Selective}, paired with the reliability concern that motivates calibration in modern neural networks \cite{Guo2017Calibration}. At pass end, a halt-verdict classifier reports the final status as accepted, provisional, blocked, outside-scope, failed-audit, absent-with-record, or below-threshold \cite{Tsiokos2026FoundationsIII}. Each verdict is paired with required nonclaim references that state what is and is not in scope; \Cref{sec:primary-results} reports the locked-run outcome, \Cref{sec:analysis} analyzes the verdict semantics, and \Cref{app:methods} gives the verdict-class table.
+ \section{Primary Results}\label{sec:primary-results}
+
+\subsection{Headline: a strict-growth ladder on Shakespeare}\label{subsec:headline}
+
+In the locked Shakespeare run, the LTM completed one pass over the corpus, ingesting 1,008,050 events and 977,834 admissible transitions. The run committed 20 native strict theory layers, with first native growth at level 1 and maximum chain level \(N=20\). All 20 committed births were closure-saturation-driven, under the birth-class taxonomy of \Cref{subsec:birth-pressure}. Across 1,968 strict-growth evidence reports, 1,967 passed carrier exactification, and the static-parent audit chain sealed at 2,009 signed records. The end-of-pass audit verdict accepted the committed layers as a strict-growth ladder, with no runaway and no unsafe local-positive condition. \Cref{tab:headline} gives the field/value view of these headline quantities, and \Cref{app:artifact-map} maps each claim to the locked-run artifact that supports it.
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Locked-run headline metrics. The runtime committed 20 strict theory layers in one pass over the Shakespeare corpus and the audit chain accepted the resulting ladder. Source files mapped in \Cref{app:artifact-map}.}
+  \label{tab:headline}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \toprule
+    Field & Value \\
+    \midrule
+    Corpus & Shakespeare (Gutenberg source) \\
+    Total events ingested & 1{,}008{,}050 \\
+    Total admissible transitions & 977{,}834 \\
+    Pass count & 1 \\
+    Native strict theory layers committed & 20 \\
+    Maximum chain depth & 20 \\
+    First native layer level & 1 \\
+    Strict-growth evidence reports & 1{,}968 \\
+    Carrier-exactification passes & 1{,}967 \\
+    Birth-class distribution & all 20 closure-saturation-driven \\
+    Phase-19 audit chain status & sealed \\
+    Phase-19 signed audit records & 2{,}009 \\
+    Production verdict & accepted \\
+    Runaway detected & false \\
+    Unsafe local-positive detected & false \\
+    Immediate parent-recurrence check & passed \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+\subsection{Per-tick instrumentation coverage}\label{subsec:per-tick-instrumentation}
+
+The recovery loop also covered every cadence tick with finite measurements rather than sparse after-the-fact summaries. In the locked run, the recovery scheduler fired 1,968 times, and the runtime recorded exactly 1,968 closure-deficit samples, 1,968 idempotence-defect samples, 1,968 typed per-layer health decisions, and 1,968 health-route records. Thus every recovery tick produced both the numerical evidence needed by the gate panel and a typed decision about how that evidence affected the active layer. The locked artifact map in \Cref{app:artifact-map} records the source file for these counters; the important result here is the absence of silent skipped ticks or missing-measurement gaps.
+
+\subsection{Typed promotion pipeline}\label{subsec:promotion-pipeline}
+
+The promotion-attempt ledger shows a typed pipeline rather than a collection of silent drops. Across 1,968 evaluated cadence rows, 20 were admitted through the birth-pressure pathway and committed as native layers, while 1,948 did not reach the birth-pressure precondition. The upstream rows separate into 1,808 rows that observed enrichment without satisfying the precondition and 140 rows that registered pressure but did not sustain it across the persistence streak, matching the precondition structure in \Cref{subsec:three-ingredient}. At the final status layer, 1,937 rows stayed upstream of candidate checking, 10 entered with an incomplete three-ingredient record, and one exhausted the construction budget. \Cref{tab:precondition-and-rejections} will summarize the typed rejection surfaces, and \Cref{app:artifact-map} records the corresponding artifact fields.
+
+\subsection{Typed gate-failure breakdown}\label{subsec:gate-breakdown}
+
+The rejected promotion attempts did not collapse onto a single failure mode. All 20 committed births were closure-saturation-driven, and carrier exactification passed for 1,967 of the 1,968 strict-growth evidence rows, with one row remaining upstream of that relabeling-only check. The blocked rows still expose distinct typed surfaces: saturation, persistent forcing, and birth-pressure requirements dominate, while macro-obstruction, macro-admissibility, descriptor consistency, parent non-reducibility, and completion-map well-definedness each appear as separate residual checks. Thus the gate panel in \Cref{subsec:six-gates} records both precondition failures and gate-level failures as typed outcomes, rather than reducing every rejection to a generic non-promotion label. \Cref{tab:precondition-and-rejections} gives the compact breakdown.
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Typed precondition and rejection breakdown for the locked run. Promotion attempts spread across distinct typed surfaces rather than collapsing to a single failure mode. Source files mapped in \Cref{app:artifact-map}.}
+  \label{tab:precondition-and-rejections}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X r@{}}
+    \toprule
+    Outcome & Count \\
+    \midrule
+    Strict-growth evidence rows & 1{,}968 \\
+    Committed native layers & 20 \\
+    Did not reach the birth-pressure precondition & 1{,}948 \\
+    Birth proposal allowed (admitted to gate evaluation) & 20 \\
+    Pressure observed without sustained birth & 140 \\
+    Enrichment-only rows & 1{,}808 \\
+    Incomplete three-ingredient record & 10 \\
+    Construction budget exceeded & 1 \\
+    Carrier-exactification: passed & 1{,}967 \\
+    Carrier-exactification: not checked & 1 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+\subsection{Audit-chain integrity at pass end}\label{subsec:audit-integrity}
+
+At pass end, the production-verdict check accepted the run's committed layers as a strict-growth ladder, with no runaway condition, no unsafe local-positive condition, and a passed immediate-parent recurrence check. The static-parent audit chain was sealed with no missing audit requirements. The static-parent audit summary contains 20 signed layer-commit records, 20 signed upward dependency records of the kind described in \Cref{subsec:dep-relations}, 1,968 signed strict-growth evidence records, and one production-verdict record, for 2,009 signed records total. These counts confirm the commit/dependency-relation correspondence and the signed evidence surface behind the parent-recurrence check; \Cref{tab:audit-ledger} will give the compact ledger view, and \Cref{app:artifact-map} maps the supporting artifacts.
+
+\subsection{Readout cascade and non-monotone mode flips}\label{subsec:readout-attribution}
+
+The inference comparison also shows that the closure cascade was exercised at every snapshot, not bypassed as a fallback path. All 45 records use the cascade transport path, including the 0-native-layer baseline at 50k events. The final readout mode is non-monotone in committed-native-layer count: at 0, 1, and 6 native layers, all nine records per snapshot use a typed candidate-cluster mode; at 14 layers, all nine records flip to token-claim mode; at 20 layers, all nine records return to candidate-cluster mode. This flip-and-return should not be read as ``more native layers imply richer readout attribution''; the analysis of non-monotone layer quality in \Cref{subsec:non-monotone} discusses the implications. The inference summary is in \Cref{tab:inference-summary} and the artifact fields in \Cref{app:artifact-map}.
+
+\subsection{Cross-policy completion identity}\label{subsec:cross-policy}
+
+The post-training inference comparison returns a negative result for readout-policy separation. It evaluated five snapshots, three prompts, and three readout policies--strict-native, closure-cascade, and algebraic-native--for 45 records total. Under the chosen decoding parameters (seed 7, temperature 0.9, top-\(p=0.95\), target length 48), the three policies produced identical text for every fixed snapshot/prompt pair. Two readings remain compatible: the policies may share a dominant common path under these decoding settings, or the differentiating evidence added by each policy may not be exercised by this prompt set and decoding budget. We therefore make no cross-policy advantage claim; the fallback discipline of \Cref{subsec:fallback-halt} records the null rather than absorbing it. The summary is in \Cref{tab:inference-summary} and the artifact mapping in \Cref{app:artifact-map}.
+ \section{Secondary Results}\label{sec:secondary-results}
+
+\subsection{Structural probe suite}\label{subsec:probe-suite}
+
+Independent of the LTM runtime, we provide a structural probe suite for framework-level commitments under blue-team and red-team cases. The suite covers the five categories named in the abstract: growth, forgetting, uncertainty, auditability, and concept-separation. Concretely, these correspond to open-ended structural-recovery growth \cite{DeLaHiguera2010Grammatical}, monotonic growth without catastrophic forgetting \cite{McCloskeyCohen1989Catastrophic,Kirkpatrick2017EWC}, truthful uncertainty and structural backoff \cite{Guo2017Calibration}, causal legibility through audit logs \cite{Mitchell2019ModelCards,Gebru2018Datasheets}, and separating a candidate layer from a parent re-encoding \cite{Conneau2018Probing,HewittManning2019StructuralProbe}. The probes operate on synthetic fixtures rather than on the locked Shakespeare run; \Cref{app:extended-material} gives the category details.
+
+\subsection{Blue-team and red-team probes}\label{subsec:probe-split}
+
+Blue-team probes are positive fixtures for cases the framework should accept, including structural identity, referential identity, and Cantor-style positive examples. Red-team probes are negative fixtures the framework should reject, including mutation tests, obvious-reencoding candidates, and round-trip identity violations; the split follows the behavioral-testing tradition for NLP systems \cite{Ribeiro2020CheckList,Perez2022RedTeaming}. The blue/red split is therefore not a benchmark score or a claim of language-model performance; it is a structural test suite for whether the admissibility machinery accepts and rejects the intended cases.
+
+\subsection{Cost stability}\label{subsec:cost-stability}
+
+The locked one-pass run also exposes the cost profile of the cadenced recovery design. At pass end, bounded algebraic validation took 20.4 s, state-checkpoint writing took 34.1 s, readout-capsule construction took 232.6 s, and the final timeseries write took 0.002 s. These constants are not optimized; the relevant point is that closure-recovery work is governed by cadence and the active-layer cap rather than by running the full recovery stack on every corpus event. \Cref{tab:cost-stability} will summarize the timing fields.
+
+\subsection{Lifecycle hygiene and architectural backpressure}\label{subsec:lifecycle-and-backpressure}
+
+The committed-layer lifecycle is auditable in the locked run: the ledger records 20 committed layers, the runtime operates under an active-layer cap, and the strict-growth report writer maintains 1{,}968 typed promotion outcomes aligned with \Cref{subsec:promotion-pipeline}. When a layer is not currently active, its status is a typed record rather than a missing entry; \Cref{app:artifact-map} maps the source files for these counters. The runtime also carries a background-task backpressure commitment under harsh cadence or budget conditions, but the locked run did not exercise that lane, so this is a design-contract statement tied to the bounded loop in \Cref{subsec:cadence-loop}.
+ \section{Analysis}\label{sec:analysis}
+
+\paragraph{Margins at the threshold floor.}\label{subsec:margin-tightness}
+Threshold-based gates use bounded-precision floors; verdicts near those floors are reported as runtime approximations rather than tight numerical bounds. The threshold is a precision floor used by the implementation, not an absolute mathematical boundary; \Cref{app:formalization} records this runtime-approximation nonclaim.
+
+\paragraph{Bridge versus native boundary.}\label{subsec:bridge-native}
+The runtime counts only native strict layer commits as growth, namely the 20 committed layers reported in \Cref{subsec:headline}. Earlier non-native promotion paths are outside the claim path of this paper, so the empirical result is a native-growth claim rather than a claim about every historical development mechanism.
+
+\paragraph{Failure modes encountered and resolved.}\label{subsec:failure-modes}
+The present pipeline is the one we trust because earlier development exposed typed failure modes that were fixed before the locked run: certify-versus-commit misalignment, parent-quotient layering boundaries, hardcoded shortcut removal, controlled non-smoke probe coverage, and theory-relative rather than metronome-driven births. These are methodological risk controls, not additional empirical results. \Cref{app:formalization} summarizes the relevant boundary conditions and deferrals behind this analysis.
+
+\paragraph{Halt-verdict architecture.}\label{subsec:halt-architecture}
+The halt-verdict classifier reports one of seven typed verdict classes, paired with required nonclaim references, distinguishing accepted, provisional, blocked, outside-scope, failed-audit, absent-with-record, and below-threshold outcomes. The locked run's pass-end production verdict was accepted, as reported in \Cref{subsec:audit-integrity}; the halt-classifier verdict produced during readout-capsule replay is a separate output and is not in scope for the present claim. \Cref{app:methods} gives the verdict-class table.
+
+\paragraph{Non-monotone generated-text qualities.}\label{subsec:non-monotone}
+The non-monotone readout-mode flips reported in \Cref{subsec:readout-attribution} do not support the reading ``more layers imply richer language.'' They show instead that theory growth changes the readout basin substantially: the inference-comparison records show a qualitative shift from a typed candidate-cluster mode to a token-claim mode at 14 layers and back to candidate clusters at 20 layers. The paper's claim is structural recovery under audit, not a numerical diversity score or monotone improvement in generated prose; \Cref{sec:discussion} returns to the associated deferrals.
+ \setcounter{section}{8}                     \section{Synthesis}\label{sec:synthesis}
+
+\subsection{What we demonstrate}\label{subsec:demonstrate}
+
+Taken together, \Cref{sec:primary-results,sec:secondary-results} show that bottom-up native growth on a static-parent substrate is constructible end to end: every cadenced tick is paired with finite closure-deficit and idempotence-defect samples and a typed health decision; every committed layer carries a parent pointer, a strict-extension certificate, and an upward dependency-relation record; and every promotion attempt that did not commit leaves a typed rejection trace. The Shakespeare run instantiates this as a sealed strict-extension ladder of 20 native layers, while the structural probe suite exercises the same admissibility commitments on synthetic fixtures.
+
+\subsection{What we do not demonstrate}\label{subsec:do-not-demonstrate}
+
+The result is not a claim of monotone prose improvement, live parent dynamics, bidirectional inter-layer flow, or benchmark superiority over neural language models. \Cref{subsec:non-monotone,sec:discussion} separate the generated-text caveat from the typed limitations that bound the claim.
+ \section{Discussion and Limitations}\label{sec:discussion}\label{subsec:joint-deferral}\label{subsec:approximations}\label{subsec:static-parent}
+
+The runtime models a frozen-parent regime: parent layers are committed once and not subsequently updated, and bidirectional inter-layer substrate flow is not modelled. Both halves are deferred to future work as a joint pair, because unfreezing parents without bidirectional flow models a half-loop no published characterization covers, with the underlying causation/enablement distinction following \cite{Tsiokos2026NotchAStone,Pearl2000Causality}; \Cref{app:formalization} records the literal nonclaims and the maintenance-loop rationale. The runtime also relies on bounded-precision thresholds and a small set of finite hyperparameters (cadence, persistence streak, canonicalisation iteration cap), each reported as a runtime approximation in \Cref{app:formalization}. The concrete trigger for reopening the deferred work would be persistent stagnation at intermediate chain depths despite long horizons and sustained pressure-source diversity; the locked run does not show this signal.
+ \section{Conclusion}\label{sec:conclusion}
+
+We presented a code-backed feasibility study showing that audited bottom-up structural recovery on a static-parent substrate is constructible and produces an audited strict-extension ladder over Shakespeare, with a companion probe suite for the same admissibility commitments; the deferred parent-dynamics and bidirectional-flow halves of the framework remain as joint future work, and this paper does not claim either half in isolation.
+ 
+\begin{ack}
+\end{ack}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\section{Definitions and Notation}\label{app:definitions}
+
+\begin{definition}[Closure-package layer]
+A typed audited layer is a pair
+\[
+\Tlayer{i}=(\Xspace{i},\opmap{i}),
+\]
+where \(\Xspace{i}\) is a finite microstate space and \(\opmap{i}:\Xspace{i}\to\Xspace{i}\) is an idempotent self-map,
+\[
+\opmap{i}\circ\opmap{i}=\opmap{i}.
+\]
+The induced equivalence relation on \(\Xspace{i}\) identifies two microstates when they lie in the same pre-image of a fixed point in the image of \(\opmap{i}\). Equivalently, the quotient partition is the partition of \(\Xspace{i}\) into fibers of the map onto its fixed-point image \cite{Tsiokos2026FoundationsI}.
+\end{definition}
+
+\begin{definition}[Closure-deficit statistic]
+Given a layer \(\Tlayer{i}\) and a declared lookahead \(\tau\), the closure-deficit statistic \(\CDtau\) is the conditional-information residual measuring how much next-\(\tau\)-token structure on \(\Xspace{i}\) remains unresolved by the quotient map \(\opmap{i}\). Schematically, for an observed current microstate \(X_0\) and a future window \(X_{>0,\le \tau}\),
+\[
+\CDtau
+\;\approx\;
+H\!\left(X_{>0,\le \tau}\mid \opmap{i}(X_0)\right)
+-
+H\!\left(X_{>0,\le \tau}\mid X_0\right).
+\]
+Thus \(\CDtau\) is the conditional-entropy gap between prediction from the layer quotient and prediction from the raw microstate, restricted to the declared lookahead window. The runtime estimates this quantity from finite samples and reports estimator-quality flags alongside the value \cite{Tsiokos2026NoGo}.
+\end{definition}
+
+\begin{definition}[Idempotence/self-consistency defect]
+Given a layer \(\Tlayer{i}\), lookahead \(\tau\), and readout \(f\), the idempotence/self-consistency defect \(\IDef\) is the empirical fixed-point gap measuring deviation from \(\opmap{i}\circ\opmap{i}=\opmap{i}\) on observed data through \(f\). A typical estimator is a total-variation or analogous distributional distance between the empirical readout distribution after one application of \(\opmap{i}\) and after two applications:
+\[
+\IDef
+\;\approx\;
+d\!\left(f(\opmap{i}(X_0)),\, f(\opmap{i}(\opmap{i}(X_0)))\right),
+\]
+with the future window and readout determining which empirical events are compared. As with \(\CDtau\), the runtime reports finite-sample support and propagates estimator-quality flags rather than treating small empirical deviations as exact equalities \cite{Tsiokos2026FoundationsI}.
+\end{definition}
+
+\begin{definition}[Strict extension]
+Let \(q_i(s)=\opmap{i}(s)\) denote the parent quotient representative for a parent layer \(\Tlayer{i}\), and let \(q_{i+1}\) denote the candidate quotient evaluated on the same observed support through the declared candidate lift into \(\Xspace{i+1}\). A candidate layer \(\Tlayer{i+1}\) is a strict extension of \(\Tlayer{i}\) when there exist observed microstates \(s,s'\in \Xspace{i}\) such that
+\[
+q_i(s)=q_i(s')
+\qquad\text{and}\qquad
+q_{i+1}(s)\ne q_{i+1}(s').
+\]
+Equivalently, the candidate quotient does not factor through the parent quotient: it separates at least one pair that the parent identifies. The strict-extension certificate \(\strictcert\) records such a witness pair together with the audit evidence that licenses committing the candidate as a new layer \cite{Tsiokos2026CantorShell}.
+\end{definition}
+ \section{Methods Extended}\label{app:methods}
+
+\paragraph{Gate evaluators.}
+The promotion panel is conjunctive: every gate below must pass before a candidate layer can be committed \cite{Tsiokos2026FoundationsIII}.
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Gate & Operational claim & Runtime measure & Verdict record \\
+\midrule
+Descent & Candidate explains structure the parent leaves unresolved. & Decrease in conditional-information residual relative to the parent. & Pass/fail evidence attached to the promotion attempt. \\
+Stability & Candidate quotient is robust to bounded perturbations. & Quotient-class agreement under small declared input changes. & Stability verdict with perturbation support. \\
+Control & Candidate survives non-trivial falsification controls. & Null, memory-only, artifact, or boundary-sensitive control evidence. & Control verdict; empty controls do not certify. \\
+No-smuggling & Evidence stays inside the declared evidence regime. & Audit check that no unaudited or out-of-scope information is used. & Scope verdict and any typed defect. \\
+Legibility & Candidate can be reconstructed from the audit log. & Availability of semantic and procedural reconstruction records. & Legibility verdict linked to audit evidence. \\
+Strict factorization failure & Candidate strictly refines the parent quotient. & Witness pair identified by the parent and distinguished by the candidate. & Strict-refinement verdict entering the certificate. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Strict-extension certificate contents.}
+The strict-extension certificate records four compact fields:
+\begin{itemize}
+\item a typed witness pair \((s,s')\) for the parent-identified and candidate-distinguished separation;
+\item gate-panel verdicts, one per promotion gate;
+\item recent \(\CDtau\) and \(\IDef\) samples grounding admissibility;
+\item an audit-record id linking the certificate into the static-parent ledger.
+\end{itemize}
+
+\paragraph{Carrier exactification criteria.}
+Carrier exactification is recorded through seven criteria:
+\begin{itemize}
+\item readout sufficiency: the candidate's readout exposes the claimed distinction;
+\item coherent transport-readout: transported evidence and readout evidence agree;
+\item non-reducibility: the candidate is not a simpler parent relabeling;
+\item honest section behavior: section choices do not manufacture the distinction;
+\item protocol honesty: the declared evaluation protocol matches the evidence used;
+\item robustness under stress: the distinction persists under bounded stress tests;
+\item declared seed support: the evidence is supported by declared corpus-derived seeds.
+\end{itemize}
+
+\paragraph{Birth pressure and birth classes.}
+The locked run used persistence streak \(K=8\): a parent had to show sustained unresolved structure across eight cadence ticks before a layer-birth proposal could enter the panel. The parameter is configurable, and the locked-run choice is documented in \Cref{app:artifact-map}. Births are then classified by pressure pathway:
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Birth class & Role \\
+\midrule
+Closure-saturation-driven & Saturation of the parent quotient is the dominant pressure. \\
+Saturation with admissibility obstruction & Saturation is accompanied by a positive unresolved-structure statistic. \\
+Saturation with quotient under-resolution & Saturation is accompanied by evidence that the parent quotient misses later-context structure. \\
+Joint case & Saturation, admissibility obstruction, and quotient under-resolution all contribute. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Theory-relative frontier workspace.}
+Each active theory maintains a frontier workspace that accumulates packaged strata derived from its parent quotient. The workspace persists across cadence ticks, so candidate construction depends on the theory's accumulated audit surface rather than on a fixed event schedule. When a layer commits or a candidate is rejected, the runtime resets or forks the relevant workspace so later proposals are scoped to the updated theory state.
+
+\paragraph{Stratum canonicalisation.}
+Before a packaged stratum enters a strict-extension test, the runtime applies predictive-quotient \(M\) canonicalisation as a bounded fixed-point procedure. The procedure uses a finite iteration cap: App B records the runtime form, while \Cref{app:artifact-map} records the locked-run cap value. The cap prevents canonicalisation from becoming an unaudited search while still reducing order and presentation artifacts before comparison.
+
+\paragraph{Halt-verdict classes.}
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Verdict class & Meaning \\
+\midrule
+Accepted & The audited path completed without unresolved promotion or readout defects. \\
+Provisional & The runtime emitted only a bounded claim with explicit defect or uncertainty records. \\
+Blocked & A gate, control, or scope condition prevented certification. \\
+Outside scope & The request or evidence fell outside the declared regime. \\
+Failed audit & Required audit records were missing, inconsistent, or non-reconstructable. \\
+Absent with record & The runtime remained silent and recorded why no claim was emitted. \\
+Below threshold & Evidence existed but did not meet the declared certification threshold. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+ \section{Artifact Map}\label{app:artifact-map}
+
+All empirical claims in the body resolve to the frozen run directory
+\path{paper/assets/run_20260507T082204Z/}. This directory is the read-only
+asset freeze for the paper, and no other empirical training run is cited. The
+run records its Git commit hash in \path{phase18_10_production_verdict.json};
+the branch name is redacted for double-blind review.
+
+\begin{table}[t]
+  \centering
+  \footnotesize
+  \caption{Per-claim source map for the locked run. Paths are relative to the frozen run directory.}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}X@{}}
+    \toprule
+    Body claim & Source file & Field / metric \\
+    \midrule
+    Total events ingested & \path{training_timeseries_summary.json} & \path{final_event_count} \\
+    Admissible transitions & \path{training_timeseries_summary.json} & \path{final_transition_count} \\
+    Native strict layers committed & \path{strict_growth_summary.json} & \path{final_native_strict_layer_count} \\
+    Maximum chain depth & \path{strict_growth_summary.json} & \path{final_native_strict_max_level_n_in_chain} \\
+    Strict-growth evidence reports & \path{strict_growth_summary.json} & \path{report_count} \\
+    Birth-class distribution & \path{strict_growth_summary.json} & \path{birth_class_verdict_distribution} \\
+    Carrier-exactification passes & \path{strict_growth_summary.json} & \path{exactification_status_distribution.passed} \\
+    Birth-pressure precondition outcomes & \path{strict_growth_summary.json} & \path{birth_pressure_status_distribution} \\
+    Conversion outcomes & \path{strict_growth_summary.json} & \path{conversion_status_distribution} \\
+    Typed missing-requirement breakdown & \path{strict_growth_summary.json} & \path{missing_requirement_distribution} \\
+    Production verdict & \path{phase18_10_production_verdict.json} & \path{verdict} (literal: \path{native_positive}) \\
+    Runaway / unsafe-local-positive & \path{phase18_10_production_verdict.json} & \path{runaway_detected}, \path{unsafe_local_positive_detected} \\
+    Phase-19 audit chain status & \path{phase18_10_production_verdict.json} & \path{phase19_audit_chain_status} \\
+    Audit ledger record-kind counts & \path{phase19_static_parent_audit_summary.json} & \path{record_kind_counts} \\
+    Required Phase-19 deferral nonclaims & \path{phase19_static_parent_audit_summary.json} & \path{required_static_parent_nonclaims} \\
+    Per-tick instrumentation counts & \path{training_timeseries_summary.json} & \path{native_organism_summary} \\
+    Pass-end phase timings & \path{training_timeseries_summary.json} & \path{pass_end_phase_timings} \\
+    Inference comparison (45 records) & \path{inference_comparison/completions.json} & full file \\
+    Cascade transport source per record & \path{inference_comparison/completions.json} & \path{transport_index_source} \\
+    Final readout mode per record & \path{inference_comparison/completions.json} & \path{final_readout_mode} \\
+    Decoding parameters & \path{inference_comparison/completions.json} and text dumps & seed=7, \(T=0.9\), top-\(p=0.95\), target=48 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Inference-comparison summary across the five state checkpoints. All three readout policies (strict-native, closure-cascade, algebraic-native) emit identical text per (snapshot, prompt) under decoding parameters seed=7, \(T=0.9\), top-\(p=0.95\), target=48; only the closure-cascade transport source is exercised. The non-monotone flip at 14 layers is the headline qualitative signal of \Cref{subsec:non-monotone}. Source: \texttt{inference\_comparison/completions.json}.}
+  \label{tab:inference-summary}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr>{\raggedright\arraybackslash}p{0.32\linewidth}@{}}
+    \toprule
+    Snapshot & Native layers & Final readout mode \\
+    \midrule
+    50{,}000 & 0 & candidate cluster \\
+    100{,}000 & 1 & candidate cluster \\
+    300{,}000 & 6 & candidate cluster \\
+    650{,}000 & 14 & token claim \\
+    1{,}008{,}050 (pass end) & 20 & candidate cluster \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+The required Phase-19 deferral nonclaims are recorded literally as:
+\begin{itemize}
+  \item \path{NC.PARENT_LAYER_FROZEN_AT_COMMIT_DEFERRED_TO_PHASE_20}: frozen-parent regime; live parent dynamics deferred to future work.
+  \item \path{NC.BIDIRECTIONAL_INTER_LAYER_FLOW_DEFERRED_TO_PHASE_21}: bidirectional inter-layer substrate flow not modelled; deferred to future work.
+  \item \path{NC.PHASE_20_AND_PHASE_21_MUST_LAND_TOGETHER_FUTURE_PAPER}: the two deferrals must land together because unfreezing parents without bidirectional flow models a half-loop.
+\end{itemize}
+
+The bootstrap policy is recorded in \path{strict_growth_summary.json::bootstrap_policy}. The locked run uses the literal field
+\path{bootstrap_policy.bootstrap_policy_status = "non_native_bootstrap_scoped"}, meaning that \(\Tlayer{0}\) is scoped as a non-native bootstrap layer and equal-citizen native growth begins after the bootstrap.
+
+\subsection*{Code and data availability}
+The LTM runtime, locked-run artifact set, and structural probe suite are available at
+\href{https://anonymous.4open.science/r/how-to-chat-a-stone-nips}{https://anonymous.4open.science/r/how-to-chat-a-stone-nips}.
+This URL is the anonymous reviewing version of the code repository, and the locked-run artifact directory
+\path{paper/assets/run_20260507T082204Z/} is mirrored there.
+ \section{Formalization}\label{app:formalization}
+
+\paragraph{Dependency-relation kinds.}
+The dependency-relation calculus declares eight relation kinds \cite{Tsiokos2026FoundationsIII}; this paper activates only the upward layer-birth dependence used by the static-parent audit ledger.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+Relation kind & Status / role \\
+\midrule
+\texttt{enables} & Active in this paper: upward layer-birth dependence. \\
+\texttt{suffices} & Inactive; reserved for future framework instantiations. \\
+\texttt{insufficient} & Inactive; reserved for future framework instantiations. \\
+\texttt{destroys} & Inactive; reserved for live parent dynamics, deferred here. \\
+\texttt{blocks} & Inactive; reserved for live parent dynamics, deferred here. \\
+\texttt{equivalent} & Inactive; reserved for cross-layer canonicalization, deferred here. \\
+\texttt{requires\_bridge} & Inactive; reserved for bidirectional inter-layer flow, deferred here. \\
+\texttt{outside\_scope} & Inactive; reserved for explicit out-of-scope marking. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Phase-19 static-parent audit ledger record-kind counts for the locked run. The 1-to-1-to-1 correspondence between commits, dependency relations, and the parent-recurrence check confirms a strict-extension ladder. Source: \texttt{phase19\_static\_parent\_audit\_summary.json}.}
+  \label{tab:audit-ledger}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+    \toprule
+    Record kind & Count \\
+    \midrule
+    \texttt{native\_strict\_layer\_commit} & 20 \\
+    \texttt{dependency\_relation} (active kind: \texttt{enables}) & 20 \\
+    \texttt{strict\_growth\_evidence} & 1{,}968 \\
+    \texttt{production\_verdict} & 1 \\
+    \textbf{Total signed records} & \textbf{2{,}009} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+\paragraph{Required Phase-19 deferral nonclaims.}
+The locked run records the following required nonclaims:
+\begin{itemize}
+\item \path{NC.PARENT_LAYER_FROZEN_AT_COMMIT_DEFERRED_TO_PHASE_20}: frozen-parent regime; live parent dynamics deferred to future work.
+\item \path{NC.BIDIRECTIONAL_INTER_LAYER_FLOW_DEFERRED_TO_PHASE_21}: bidirectional inter-layer substrate flow not modelled; deferred to future work.
+\item \path{NC.PHASE_20_AND_PHASE_21_MUST_LAND_TOGETHER_FUTURE_PAPER}: the two deferrals must land together because unfreezing parents without bidirectional flow models a half-loop.
+\end{itemize}
+
+\paragraph{Maintenance-loop deferral rationale.}
+The maintenance-loop argument is that unfreezing parents without bidirectional flow opens a regime no published characterization covers, because parents would drift on raw events without the cross-layer maintenance feedback the framework relies on for closure stability. The two deferrals are therefore linked: implementing one without the other models a half-loop. \Cref{subsec:static-parent} states this as a body-level limitation, and \cite{Tsiokos2026NotchAStone} supplies the causation-time and enablement-time framing.
+
+\paragraph{Runtime-approximation declarations.}
+The runtime uses bounded-precision floors and a small number of finite hyperparameters: closure-recovery cadence, birth-pressure persistence streak, predictive-quotient canonicalisation iteration cap, and minimum fiber size for the threshold floor. Each is reported as a runtime approximation rather than a tight numerical bound. \Cref{subsec:approximations} states the body-level caveat, and \Cref{app:methods} gives the relevant runtime parameters.
+ \section{Extended Material}\label{app:extended-material}
+
+\paragraph{Growth.}
+The growth probes test open-ended structural recovery: the runtime should accept a new audited layer when the parent quotient demonstrably leaves recoverable structure unresolved. Positive fixtures use Cantor-style strict-extension cases and check that the accepted candidate is tied to a strict-extension certificate, as described in \Cref{subsec:probe-suite}.
+
+\paragraph{Forgetting.}
+The forgetting probes test monotonic growth without silent loss of audited content. Because the R-to-K projection record explicitly carries a losslessness nonclaim, the probe checks that the nonclaim fires when the readout path cannot certify lossless projection from recombination-aware structure to branchwise prediction.
+
+\paragraph{Uncertainty.}
+The uncertainty probes test truthful uncertainty and structural backoff. When evidence is incomplete, the halt-verdict classifier should report a provisional or absent-with-record outcome rather than promote fallback evidence to a token claim; this is the same discipline described in \Cref{subsec:fallback-halt}.
+
+\paragraph{Auditability.}
+The auditability probes test causal legibility through audit logs. Every committed layer's strict-extension certificate must be traceable to its parent, gate verdicts, and recent closure-deficit and idempotence-defect samples through the audit chain.
+
+\paragraph{Concept-separation.}
+The concept-separation probes test that a candidate layer is not merely a re-encoding of its parent. Carrier exactification should reject relabeling-only candidates, and red-team mutation fixtures confirm that rejection path; \Cref{subsec:exactification} gives the body-level check.
+
+\paragraph{Blue-team and red-team split.}
+Blue-team probes are positive fixtures, while red-team probes are negative cases such as mutations and obvious-reencoding fixtures. The split is structural: the same probe scaffold can be invoked with either orientation by switching the expected verdict.
+
+\paragraph{Cost-stability support.}
+The runtime's per-event hot path does not perform closure recovery; recovery work runs on the cadence clock described in \Cref{subsec:cadence-loop}. Pass-end overhead, including audit-ledger sealing and capsule construction, is a one-time cost rather than a per-event cost. \Cref{app:artifact-map} maps the pass-end timing source.
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Pass-end phase timings for the locked run. Closure-recovery work runs on a cadence clock (per \Cref{subsec:cadence-loop}) rather than on the per-event hot path; pass-end overhead is a one-time cost dominated by readout-capsule build. Source: \texttt{training\_timeseries\_summary.json::pass\_end\_phase\_timings}.}
+  \label{tab:cost-stability}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+    \toprule
+    Pass-end phase & Elapsed (s) \\
+    \midrule
+    Algebraic validation & 20.4 \\
+    State-checkpoint write & 34.1 \\
+    Readout-capsule build & 232.6 \\
+    Timeseries write & 0.002 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+  
+\newpage
+\section*{NeurIPS Paper Checklist}
+
+The checklist is designed to encourage best practices for responsible machine learning research, addressing issues of reproducibility, transparency, research ethics, and societal impact. Do not remove the checklist: {\bf The papers not including the checklist will be desk rejected.} The checklist should follow the references and follow the (optional) supplemental material.  The checklist does NOT count towards the page
+limit. 
+
+Please read the checklist guidelines carefully for information on how to answer these questions. For each question in the checklist:
+\begin{itemize}
+    \item You should answer \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item \answerNA{} means either that the question is Not Applicable for that particular paper or the relevant information is Not Available.
+    \item Please provide a short (1--2 sentence) justification right after your answer (even for \answerNA). 
+\end{itemize}
+
+{\bf The checklist answers are an integral part of your paper submission.} They are visible to the reviewers, area chairs, senior area chairs, and ethics reviewers. You will also be asked to include it (after eventual revisions) with the final version of your paper, and its final version will be published with the paper.
+
+The reviewers of your paper will be asked to use the checklist as one of the factors in their evaluation. While \answerYes{} is generally preferable to \answerNo{}, it is perfectly acceptable to answer \answerNo{} provided a proper justification is given (e.g., error bars are not reported because it would be too computationally expensive'' or ``we were unable to find the license for the dataset we used''). In general, answering \answerNo{} or \answerNA{} is not grounds for rejection. While the questions are phrased in a binary way, we acknowledge that the true answer is often more nuanced, so please just use your best judgment and write a justification to elaborate. All supporting evidence can appear either in the main paper or the supplemental material, provided in appendix. If you answer \answerYes{} to a question, in the justification please point to the section(s) where related material for the question can be found.
+
+IMPORTANT, please:
+\begin{itemize}
+    \item {\bf Delete this instruction block, but keep the section heading ``NeurIPS Paper Checklist"},
+    \item  {\bf Keep the checklist subsection headings, questions/answers and guidelines below.}
+    \item {\bf Do not modify the questions and only use the provided macros for your answers}.
+\end{itemize} 
+ 
+
+
+
+
+\begin{enumerate}
+
+\item {\bf Claims}
+    \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
+        \item The abstract and/or introduction should clearly state the claims made, including the contributions made in the paper and important assumptions and limitations. A \answerNo{} or \answerNA{} answer to this question will not be perceived well by the reviewers. 
+        \item The claims made should match theoretical and experimental results, and reflect how much the results can be expected to generalize to other settings. 
+        \item It is fine to include aspirational goals as motivation as long as it is clear that these goals are not attained by the paper. 
+    \end{itemize}
+
+\item {\bf Limitations}
+    \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
+        \item The authors are encouraged to create a separate ``Limitations'' section in their paper.
+        \item The paper should point out any strong assumptions and how robust the results are to violations of these assumptions (e.g., independence assumptions, noiseless settings, model well-specification, asymptotic approximations only holding locally). The authors should reflect on how these assumptions might be violated in practice and what the implications would be.
+        \item The authors should reflect on the scope of the claims made, e.g., if the approach was only tested on a few datasets or with a few runs. In general, empirical results often depend on implicit assumptions, which should be articulated.
+        \item The authors should reflect on the factors that influence the performance of the approach. For example, a facial recognition algorithm may perform poorly when image resolution is low or images are taken in low lighting. Or a speech-to-text system might not be used reliably to provide closed captions for online lectures because it fails to handle technical jargon.
+        \item The authors should discuss the computational efficiency of the proposed algorithms and how they scale with dataset size.
+        \item If applicable, the authors should discuss possible limitations of their approach to address problems of privacy and fairness.
+        \item While the authors might fear that complete honesty about limitations might be used by reviewers as grounds for rejection, a worse outcome might be that reviewers discover limitations that aren't acknowledged in the paper. The authors should use their best judgment and recognize that individual actions in favor of transparency play an important role in developing norms that preserve the integrity of the community. Reviewers will be specifically instructed to not penalize honesty concerning limitations.
+    \end{itemize}
+
+\item {\bf Theory assumptions and proofs}
+    \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include theoretical results. 
+        \item All the theorems, formulas, and proofs in the paper should be numbered and cross-referenced.
+        \item All assumptions should be clearly stated or referenced in the statement of any theorems.
+        \item The proofs can either appear in the main paper or the supplemental material, but if they appear in the supplemental material, the authors are encouraged to provide a short proof sketch to provide intuition. 
+        \item Inversely, any informal proof provided in the core of the paper should be complemented by formal proofs provided in appendix or supplemental material.
+        \item Theorems and Lemmas that the proof relies upon should be properly referenced. 
+    \end{itemize}
+
+    \item {\bf Experimental result reproducibility}
+    \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item If the paper includes experiments, a \answerNo{} answer to this question will not be perceived well by the reviewers: Making the paper reproducible is important, regardless of whether the code and data are provided or not.
+        \item If the contribution is a dataset and\slash or model, the authors should describe the steps taken to make their results reproducible or verifiable. 
+        \item Depending on the contribution, reproducibility can be accomplished in various ways. For example, if the contribution is a novel architecture, describing the architecture fully might suffice, or if the contribution is a specific model and empirical evaluation, it may be necessary to either make it possible for others to replicate the model with the same dataset, or provide access to the model. In general. releasing code and data is often one good way to accomplish this, but reproducibility can also be provided via detailed instructions for how to replicate the results, access to a hosted model (e.g., in the case of a large language model), releasing of a model checkpoint, or other means that are appropriate to the research performed.
+        \item While NeurIPS does not require releasing code, the conference does require all submissions to provide some reasonable avenue for reproducibility, which may depend on the nature of the contribution. For example
+        \begin{enumerate}
+            \item If the contribution is primarily a new algorithm, the paper should make it clear how to reproduce that algorithm.
+            \item If the contribution is primarily a new model architecture, the paper should describe the architecture clearly and fully.
+            \item If the contribution is a new model (e.g., a large language model), then there should either be a way to access this model for reproducing the results or a way to reproduce the model (e.g., with an open-source dataset or instructions for how to construct the dataset).
+            \item We recognize that reproducibility may be tricky in some cases, in which case authors are welcome to describe the particular way they provide for reproducibility. In the case of closed-source models, it may be that access to the model is limited in some way (e.g., to registered users), but it should be possible for other researchers to have some path to reproducing or verifying the results.
+        \end{enumerate}
+    \end{itemize}
+
+
+\item {\bf Open access to data and code}
+    \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that paper does not include experiments requiring code.
+        \item Please see the NeurIPS code and data submission guidelines (\url{https://neurips.cc/public/guides/CodeSubmissionPolicy}) for more details.
+        \item While we encourage the release of code and data, we understand that this might not be possible, so \answerNo{} is an acceptable answer. Papers cannot be rejected simply for not including code, unless this is central to the contribution (e.g., for a new open-source benchmark).
+        \item The instructions should contain the exact command and environment needed to run to reproduce the results. See the NeurIPS code and data submission guidelines (\url{https://neurips.cc/public/guides/CodeSubmissionPolicy}) for more details.
+        \item The authors should provide instructions on data access and preparation, including how to access the raw data, preprocessed data, intermediate data, and generated data, etc.
+        \item The authors should provide scripts to reproduce all experimental results for the new proposed method and baselines. If only a subset of experiments are reproducible, they should state which ones are omitted from the script and why.
+        \item At submission time, to preserve anonymity, the authors should release anonymized versions (if applicable).
+        \item Providing as much information as possible in supplemental material (appended to the paper) is recommended, but including URLs to data and code is permitted.
+    \end{itemize}
+
+
+\item {\bf Experimental setting/details}
+    \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The experimental setting should be presented in the core of the paper to a level of detail that is necessary to appreciate the results and make sense of them.
+        \item The full details can be provided either with the code, in appendix, or as supplemental material.
+    \end{itemize}
+
+\item {\bf Experiment statistical significance}
+    \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The authors should answer \answerYes{} if the results are accompanied by error bars, confidence intervals, or statistical significance tests, at least for the experiments that support the main claims of the paper.
+        \item The factors of variability that the error bars are capturing should be clearly stated (for example, train/test split, initialization, random drawing of some parameter, or overall run with given experimental conditions).
+        \item The method for calculating the error bars should be explained (closed form formula, call to a library function, bootstrap, etc.)
+        \item The assumptions made should be given (e.g., Normally distributed errors).
+        \item It should be clear whether the error bar is the standard deviation or the standard error of the mean.
+        \item It is OK to report 1-sigma error bars, but one should state it. The authors should preferably report a 2-sigma error bar than state that they have a 96\% CI, if the hypothesis of Normality of errors is not verified.
+        \item For asymmetric distributions, the authors should be careful not to show in tables or figures symmetric error bars that would yield results that are out of range (e.g., negative error rates).
+        \item If error bars are reported in tables or plots, the authors should explain in the text how they were calculated and reference the corresponding figures or tables in the text.
+    \end{itemize}
+
+\item {\bf Experiments compute resources}
+    \item[] Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce the experiments?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The paper should indicate the type of compute workers CPU or GPU, internal cluster, or cloud provider, including relevant memory and storage.
+        \item The paper should provide the amount of compute required for each of the individual experimental runs as well as estimate the total compute. 
+        \item The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn't make it into the paper). 
+    \end{itemize}
+    
+\item {\bf Code of ethics}
+    \item[] Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics \url{https://neurips.cc/public/EthicsGuidelines}?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the authors have not reviewed the NeurIPS Code of Ethics.
+        \item If the authors answer \answerNo, they should explain the special circumstances that require a deviation from the Code of Ethics.
+        \item The authors should make sure to preserve anonymity (e.g., if there is a special consideration due to laws or regulations in their jurisdiction).
+    \end{itemize}
+
+
+\item {\bf Broader impacts}
+    \item[] Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that there is no societal impact of the work performed.
+        \item If the authors answer \answerNA{} or \answerNo, they should explain why their work has no societal impact or why the paper does not address societal impact.
+        \item Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact specific groups), privacy considerations, and security considerations.
+        \item The conference expects that many papers will be foundational research and not tied to particular applications, let alone deployments. However, if there is a direct path to any negative applications, the authors should point it out. For example, it is legitimate to point out that an improvement in the quality of generative models could be used to generate Deepfakes for disinformation. On the other hand, it is not needed to point out that a generic algorithm for optimizing neural networks could enable people to train models that generate Deepfakes faster.
+        \item The authors should consider possible harms that could arise when the technology is being used as intended and functioning correctly, harms that could arise when the technology is being used as intended but gives incorrect results, and harms following from (intentional or unintentional) misuse of the technology.
+        \item If there are negative societal impacts, the authors could also discuss possible mitigation strategies (e.g., gated release of models, providing defenses in addition to attacks, mechanisms for monitoring misuse, mechanisms to monitor how a system learns from feedback over time, improving the efficiency and accessibility of ML).
+    \end{itemize}
+    
+\item {\bf Safeguards}
+    \item[] Question: Does the paper describe safeguards that have been put in place for responsible release of data or models that have a high risk for misuse (e.g., pre-trained language models, image generators, or scraped datasets)?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper poses no such risks.
+        \item Released models that have a high risk for misuse or dual-use should be released with necessary safeguards to allow for controlled use of the model, for example by requiring that users adhere to usage guidelines or restrictions to access the model or implementing safety filters. 
+        \item Datasets that have been scraped from the Internet could pose safety risks. The authors should describe how they avoided releasing unsafe images.
+        \item We recognize that providing effective safeguards is challenging, and many papers do not require this, but we encourage authors to take this into account and make a best faith effort.
+    \end{itemize}
+
+\item {\bf Licenses for existing assets}
+    \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not use existing assets.
+        \item The authors should cite the original paper that produced the code package or dataset.
+        \item The authors should state which version of the asset is used and, if possible, include a URL.
+        \item The name of the license (e.g., CC-BY 4.0) should be included for each asset.
+        \item For scraped data from a particular source (e.g., website), the copyright and terms of service of that source should be provided.
+        \item If assets are released, the license, copyright information, and terms of use in the package should be provided. For popular datasets, \url{paperswithcode.com/datasets} has curated licenses for some datasets. Their licensing guide can help determine the license of a dataset.
+        \item For existing datasets that are re-packaged, both the original license and the license of the derived asset (if it has changed) should be provided.
+        \item If this information is not available online, the authors are encouraged to reach out to the asset's creators.
+    \end{itemize}
+
+\item {\bf New assets}
+    \item[] Question: Are new assets introduced in the paper well documented and is the documentation provided alongside the assets?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not release new assets.
+        \item Researchers should communicate the details of the dataset\slash code\slash model as part of their submissions via structured templates. This includes details about training, license, limitations, etc. 
+        \item The paper should discuss whether and how consent was obtained from people whose asset is used.
+        \item At submission time, remember to anonymize your assets (if applicable). You can either create an anonymized URL or include an anonymized zip file.
+    \end{itemize}
+
+\item {\bf Crowdsourcing and research with human subjects}
+    \item[] Question: For crowdsourcing experiments and research with human subjects, does the paper include the full text of instructions given to participants and screenshots, if applicable, as well as details about compensation (if any)? 
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not involve crowdsourcing nor research with human subjects.
+        \item Including this information in the supplemental material is fine, but if the main contribution of the paper involves human subjects, then as much detail as possible should be included in the main paper. 
+        \item According to the NeurIPS Code of Ethics, workers involved in data collection, curation, or other labor should be paid at least the minimum wage in the country of the data collector. 
+    \end{itemize}
+
+\item {\bf Institutional review board (IRB) approvals or equivalent for research with human subjects}
+    \item[] Question: Does the paper describe potential risks incurred by study participants, whether such risks were disclosed to the subjects, and whether Institutional Review Board (IRB) approvals (or an equivalent approval/review based on the requirements of your country or institution) were obtained?
+    \item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not involve crowdsourcing nor research with human subjects.
+        \item Depending on the country in which research is conducted, IRB approval (or equivalent) may be required for any human subjects research. If you obtained IRB approval, you should clearly state this in the paper. 
+        \item We recognize that the procedures for this may vary significantly between institutions and locations, and we expect authors to adhere to the NeurIPS Code of Ethics and the guidelines for their institution. 
+        \item For initial submissions, do not include any information that would break anonymity (if applicable), such as the institution conducting the review.
+    \end{itemize}
+
+\item {\bf Declaration of LLM usage}
+    \item[] Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.
+\item[] Answer: \answerTODO{} \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the core method development in this research does not involve LLMs as any important, original, or non-standard components.
+        \item Please refer to our LLM policy in the NeurIPS handbook for what should or should not be described.
+    \end{itemize}
+
+\end{enumerate} 
+\end{document}

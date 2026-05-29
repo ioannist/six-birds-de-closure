@@ -1,0 +1,549 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{titling}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{xurl}
+
+\usepackage[sort&compress]{natbib}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\usepackage{orcidlink}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\frenchspacing
+
+\graphicspath{{figures/raw/}{figures/generated/}}
+
+\setlength{\droptitle}{-3.5em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vskip 0.4em}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}\vskip 1.0em}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vskip -0.8em}
+\setlength{\parindent}{1.25em}
+\setlength{\emergencystretch}{2em}
+\setlength{\textfloatsep}{12pt plus 3pt minus 3pt}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\captionsetup{justification=justified,singlelinecheck=false}
+\captionsetup[table]{position=top}
+\urlstyle{same}
+
+\raggedbottom
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\predisplaypenalty=10000
+
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\dbltopfraction}{0.9}
+
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad DOI: 10.5281/zenodo.18926433 \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad Preprint --- not peer reviewed.}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+ 
+\title{To Cast a Stone with Six Birds:\texorpdfstring{\\[4pt]}{ }A Closure-Deficit Account of Randomness\texorpdfstring{\\}{ }under Packaging and Budget}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{March 9, 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Randomness is often treated as either ontic indeterminacy or epistemic ignorance. We develop a third, operational account within Six Birds: layer-relative randomness is the predictive residue of non-closure under a chosen packaging and budget. For a micro process $X_t$ and a packaging $\Pi : X \to Y$, we define the micro-closure deficit at scale $\tau$ by $\mathsf{CD}_\tau(\Pi)=I(X_t; Y_{t+\tau} \mid Y_t)$, the information about the next packaged state that remains hidden inside the current macro-object. This yields the exact decomposition $H(Y_{t+\tau}\mid Y_t)=H(Y_{t+\tau}\mid X_t)+\mathsf{CD}_\tau(\Pi)$, separating intrinsic substrate uncertainty from randomness introduced by discarded distinctions. We connect this exact quantity to computable diagnostics native to earlier Six Birds work, including route mismatch for coarse-grained Markov dynamics and predictive log-loss gaps under limited-memory models. In controlled Markov benchmarks, closure deficit vanishes on exactly lumpable partitions and rises with within-fiber heterogeneity, while route mismatch tracks it closely. In budgeted prediction, increasing memory order buys back hidden distinctions and lowers held-out log loss. In toy hashing, one-wayness and random-lookingness emerge as the same packaging-and-budget phenomenon: high-entropy inputs obey $q/2^n$ inversion scaling, while low-entropy inputs collapse the effect. The result is a measurable account of randomness that unifies coarse-graining, limited prediction, and feasible one-wayness without treating randomness as primitive.
+ \end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Randomness is often described in one of two ways. On one view, it is a primitive feature of the world: outcomes are genuinely indeterminate. On the other, it is a deficit on the side of the observer: the world is orderly, but the observer lacks the information or computational power required to predict it. Both descriptions leave out an operational fact that scientific theories cannot avoid. A theory never receives the substrate for free. It packages some distinctions into stable objects, ignores others, and then calls the predictive remainder noise, chance, or stochasticity. Without specifying the layer, the packaging, and the budget that maintains it, claims about randomness remain underdetermined.
+
+Within the Six Birds program, closure is organized by six primitive operations: \emph{P1 operator rewrite}, \emph{P2 constraints}, \emph{P3 protocol holonomy / route mismatch}, \emph{P4 staging}, \emph{P5 packaging}, and \emph{P6 accounting} \citep{tsiokos2026sixbirds}. In the present paper, P5 and P6 do most of the work. Packaging decides which substrate distinctions become objects at the layer, while accounting decides which such distinctions can actually be afforded, stabilized, and audited. P4 sets the scale and timescale at which closure is attempted, P2 specifies which distinctions are admissible, P3 captures variability induced by untracked route dependence, and P1 describes the interventions required when closure fails to descend. Randomness is not a seventh primitive. It is the variability that remains when these closure mechanics do not fully stabilize the distinctions that matter for prediction at the chosen layer.
+
+This paper develops that claim in a form that can be computed and tested. Our thesis is that randomness is the predictive residue of non-closure. Let $X_t$ denote a micro process and let $\Pi : X \to Y$ be a packaging map, with $Y_t = \Pi(X_t)$ the packaged state observed at the layer. We define the \emph{micro-closure deficit} at scale $\tau$ by
+\[
+\mathsf{CD}_\tau(\Pi) := I(X_t; Y_{t+\tau} \mid Y_t).
+\]
+This quantity measures exactly how much information about the next packaged state is still hidden inside the current macro-object. It yields the decomposition
+\[
+H(Y_{t+\tau}\mid Y_t)
+=
+H(Y_{t+\tau}\mid X_t)
++
+\mathsf{CD}_\tau(\Pi),
+\]
+which separates intrinsic substrate uncertainty from randomness introduced by discarded distinctions. A macrostate looks random exactly to the extent that it has failed to become a sufficient statistic for its own future. When the substrate is deterministic, the closure deficit is the whole story. When the substrate itself is stochastic, observable layer-relative randomness decomposes into intrinsic noise and non-closure.
+
+This viewpoint extends and sharpens several earlier strands of the Six Birds sequence. \emph{Six Birds: Foundations of Emergence Calculus} defined packaging as an idempotent form of closure and distinguished it from novelty and directionality \citep{tsiokos2026sixbirds}. \emph{To Notch a Stone with Six Birds} operationalized predictive non-closure through an order-1 versus order-2 log-loss gap, using that gap to motivate theory birth and lens refinement \citep{tsiokos2026notch}. \emph{To Create a Stone with Six Birds} supplied an explicit coarse-graining pipeline for induced macro kernels and route-mismatch diagnostics on stochastic substrates \citep{tsiokos2026pica}. If \emph{To Notch a Stone} asked when failure of closure forces a richer theory to be born, the present paper asks what that failure looks like inside the theory that still tries to run. Our answer is: unresolved closure is experienced as randomness.
+
+The paper also places this Six Birds account in contact with existing external traditions. The compression--prediction trade-off studied by the information bottleneck and related representation-learning programs already treats predictive quality as something purchased under a representational budget \citep{tishby1999bottleneck,geiger2015optimalkullbackleibleraggregation}. Computational mechanics similarly isolates predictive sufficiency as the criterion that separates structure from randomness in a process \citep{shalizi2001computationalmechanics}. Our contribution is different in emphasis. We treat predictive residue explicitly as a \emph{closure deficit} of a packaging, connect it to concrete coarse-graining diagnostics already native to Six Birds, and then carry the same logic into engineered one-wayness. In particular, hashing will appear not as a source of mysterious randomness, but as an especially sharp case of many-to-one packaging under feasibility constraints, in the same spirit that the random-oracle tradition uses idealized random functions to reason about one-way behavior \citep{bellare1993randomoracles}.
+
+Three controlled demonstrations drive the paper. First, on finite Markov chains with known partitions, closure deficit vanishes on exactly lumpable constructions and rises under controlled within-fiber heterogeneity, while route mismatch tracks it closely. This gives a direct bridge between the exact quantity introduced here and the computable coarse-graining diagnostics already used in Six Birds and in classical lumpability analyses of Markov chains \citep{kemeny1976finitemarkovchains,buchholz1994exactordinarylumpability,tsiokos2026pica}. Second, in budget-limited prediction, increasing memory order buys back hidden distinctions that the current packaged state failed to stabilize, producing a concrete randomness--budget curve. Third, in a toy-safe hashing setting, inversion success follows the familiar $q/2^n$ scaling for high-entropy inputs at small success probabilities, while low-entropy inputs collapse the effect entirely. One-wayness and random-lookingness then appear as the same packaging-and-budget phenomenon: not entropy creation, but feasible irreversibility relative to bounded observers.
+
+Our claims are deliberately narrower than the familiar metaphysical debate between ontic and epistemic randomness. We do not claim that all randomness is reducible to hidden microstructure, nor do we identify route mismatch with genuine irreversibility. We claim something operationally sharper: once a substrate, a packaging, and a maintenance budget are fixed, the non-intrinsic part of layer-relative randomness is measurable as the information about the next packaged state that remains hidden inside the current one. That claim is exact, falsifiable, and portable across domains.
+
+All experiments, figure-generation code, and supporting formal files for this manuscript are tracked in the companion repository at \url{https://github.com/ioannist/six-birds-randomness}.
+
+The rest of the paper proceeds as follows. \Cref{sec:setup} briefly recalls the Six Birds setting needed here. \Cref{sec:closure} defines closure deficit and states the exact decomposition. \Cref{sec:diagnostics} connects the exact quantity to route mismatch and budget-limited predictors. \Cref{sec:results-markov,sec:results-budget,sec:results-hashing} present the three controlled demonstrations. \Cref{sec:discussion} discusses scope, limitations, and the distinction between randomness, novelty, and arrow-of-time; \Cref{sec:conclusion} closes.
+ \section{Six Birds Recap and Problem Setup}\label{sec:setup}
+
+Six Birds treats higher-level description not as a free summary of a substrate, but as a maintained closure. The full framework organizes this closure by six primitives: P1 operator rewrite, P2 constraints, P3 protocol holonomy / route mismatch, P4 staging, P5 packaging, and P6 accounting \citep{tsiokos2026sixbirds}. In the present paper, the main roles are played by P5, P4, and P6. Packaging chooses which distinctions become objects at the layer. Staging chooses the scale and timescale at which those objects are expected to persist. Accounting records the fact that keeping those objects predictive requires memory, sensing, or computational expenditure.
+
+We work throughout in a finite-state setting, which is already rich enough to capture the closure problem studied here and matches the controlled experiments later in the paper. The substrate is a stationary process $X_t$ on a microstate space $\mathcal{X}$. When we need explicit dynamics, we take $X_t$ to be a Markov chain with transition kernel $P$ and stationary distribution $\pi$. A layer is specified by a packaging map $\Pi : \mathcal{X} \to \mathcal{Y}$ together with a staging parameter $\tau \in \{1,2,\dots\}$. The packaged variable is
+\begin{equation}
+Y_t := \Pi(X_t).
+\label{eq:packaged-process}
+\end{equation}
+All information-theoretic quantities in this paper are computed under the stationary joint law of $(X_t,Y_t,Y_{t+\tau})$, and all logarithms are natural, so entropies are measured in nats.
+
+The predictive question is then immediate. If two microstates $x,x' \in \mathcal{X}$ share the same current package $\Pi(x)=\Pi(x')$, do they induce the same distribution of future packaged outcomes at scale $\tau$? If they do, then the current package is already sufficient for the next packaged step. If they do not, then the current macro-object hides a micro-index that still matters for prediction. The present paper identifies that hidden predictive residue with randomness at the layer.
+
+This finite-state specialization aligns directly with the operational coarse-graining pipeline used in earlier Six Birds work \citep{tsiokos2026pica}. It also makes the later budgeted analysis precise. Once $\Pi$ and $\tau$ are fixed, one may either keep the full microstate $X_t$, keep only the packaged state $Y_t$, or pay for intermediate side information through richer predictors. \Cref{sec:closure} first isolates the exact information lost in going from $X_t$ to $Y_t$; \Cref{sec:diagnostics} will then show how that loss is approximated in practice by route mismatch and limited-memory predictive gaps.
+ \section{Closure Deficit and the Exact Decomposition}\label{sec:closure}
+
+For each microstate $x \in \mathcal{X}$, define the packaged $\tau$-step future distribution
+\begin{equation}
+p_x^{(\tau)}(y') := \Pr(Y_{t+\tau}=y' \mid X_t=x),
+\qquad y' \in \mathcal{Y}.
+\label{eq:micro-future}
+\end{equation}
+For each packaged state $y \in \mathcal{Y}$, define the packaged future conditioned only on the current package by
+\begin{equation}
+\bar p_y^{(\tau)}(y') := \Pr(Y_{t+\tau}=y' \mid Y_t=y).
+\label{eq:macro-future}
+\end{equation}
+Under the stationary micro law $\pi$, the latter is the fiber-average of the former:
+\begin{equation}
+\bar p_y^{(\tau)}(\cdot)
+=
+\sum_{x \in \Pi^{-1}(y)}
+\pi(x \mid y)\, p_x^{(\tau)}(\cdot).
+\label{eq:fiber-average}
+\end{equation}
+Here
+\[
+\pi(x \mid y) := \frac{\pi(x)}{\pi_Y(y)},
+\qquad
+\pi_Y(y) := \sum_{x:\Pi(x)=y}\pi(x),
+\]
+whenever $\pi_Y(y)>0$; packaged states with $\pi_Y(y)=0$ do not contribute under the stationary law. The issue of closure is exactly whether conditioning on $Y_t$ alone loses predictive information relative to conditioning on $X_t$.
+
+\begin{definition}[Micro-closure deficit]\label{def:closure-deficit}
+Given a packaging $\Pi : \mathcal{X}\to\mathcal{Y}$ and a staging scale $\tau$, the \emph{micro-closure deficit} is
+\begin{equation}
+\mathsf{CD}_\tau(\Pi)
+:=
+I(X_t; Y_{t+\tau} \mid Y_t).
+\label{eq:closure-deficit}
+\end{equation}
+\end{definition}
+
+The conditioning on $Y_t$ is essential. The quantity $\mathsf{CD}_\tau(\Pi)$ is not the absolute dependence of the next packaged state on the current microstate. It is the \emph{extra} predictive information left in $X_t$ once the current packaged state is already known. In other words, it measures exactly how much of the next packaged outcome remains hidden inside the current macro-object.
+
+\begin{proposition}[Exact decomposition]\label{prop:cd-decomposition}
+Under the stationary law of $(X_t,Y_t,Y_{t+\tau})$,
+\begin{equation}
+H(Y_{t+\tau}\mid Y_t)
+=
+H(Y_{t+\tau}\mid X_t)
++
+\mathsf{CD}_\tau(\Pi).
+\label{eq:cd-decomposition}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By the chain-rule identity for conditional mutual information,
+\[
+I(X_t;Y_{t+\tau}\mid Y_t)
+=
+H(Y_{t+\tau}\mid Y_t)
+-
+H(Y_{t+\tau}\mid X_t,Y_t).
+\]
+Since $Y_t=\Pi(X_t)$ is a deterministic function of $X_t$, conditioning on $Y_t$ adds nothing once $X_t$ is known, so
+\[
+H(Y_{t+\tau}\mid X_t,Y_t)=H(Y_{t+\tau}\mid X_t).
+\]
+Substituting into the first display gives \eqref{eq:cd-decomposition}.
+\end{proof}
+
+\Cref{fig:concept-cd} summarizes the decomposition schematically.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{concept_closure_deficit_schematic}
+\caption{Schematic of the closure-deficit decomposition. Access to the current microstate $X_t$ leaves only intrinsic packaged uncertainty $H(Y_{t+\tau}\mid X_t)$, while prediction from the current packaged state $Y_t=\Pi(X_t)$ incurs the additional deficit $\mathsf{CD}_\tau(\Pi)$ when the package is not yet sufficient for its own future.}
+\label{fig:concept-cd}
+\end{figure}
+
+The two terms in \eqref{eq:cd-decomposition} have different meanings. The term $H(Y_{t+\tau}\mid X_t)$ measures what remains unpredictable about the future packaged outcome even with exact access to the current microstate. It captures genuine substrate uncertainty propagated to the packaged level. The term $\mathsf{CD}_\tau(\Pi)$ measures something else: the unpredictability created by refusing or failing to retain micro distinctions that still matter once the current package is fixed. In deterministic substrates the intrinsic term vanishes, so all packaged randomness comes from non-closure.
+
+\begin{proposition}[Expected KL form]\label{prop:cd-kl}
+The micro-closure deficit can be written as
+\begin{equation}
+\mathsf{CD}_\tau(\Pi)
+=
+\sum_{x \in \mathcal{X}}
+\pi(x)\,
+D_{\mathrm{KL}}\!\bigl(
+p_x^{(\tau)}
+\,\|\,
+\bar p_{\Pi(x)}^{(\tau)}
+\bigr),
+\label{eq:cd-kl}
+\end{equation}
+where, in the finite case,
+\[
+D_{\mathrm{KL}}(p\|q) := \sum_{y' \in \mathcal{Y}} p(y') \log \frac{p(y')}{q(y')},
+\]
+with the convention $0 \log (0/q)=0$.
+\end{proposition}
+
+\begin{proof}
+Conditional mutual information is the expectation of the Kullback--Leibler divergence between the conditional law of $Y_{t+\tau}$ given $(X_t,Y_t)$ and the conditional law of $Y_{t+\tau}$ given $Y_t$ alone. Because $Y_t$ is determined by $X_t$, the first law is exactly $p_x^{(\tau)}$ and the second is $\bar p_{\Pi(x)}^{(\tau)}$. Averaging these divergences under the stationary law $\pi$ yields \eqref{eq:cd-kl}.
+\end{proof}
+
+\begin{definition}[$\tau$-closed packaging]\label{def:tau-closed}
+A packaging $\Pi$ is \emph{$\tau$-closed} if for every $x,x' \in \mathcal{X}$ with $\Pi(x)=\Pi(x')$, one has
+\begin{equation}
+p_x^{(\tau)} = p_{x'}^{(\tau)}
+\quad\text{as distributions on }\mathcal{Y}.
+\label{eq:tau-closed}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Closure, sufficiency, and vanishing deficit]\label{prop:cd-zero}
+If $\Pi$ is $\tau$-closed, then $\mathsf{CD}_\tau(\Pi)=0$. Conversely, if $\pi(x)>0$ for every $x \in \mathcal{X}$ and $\mathsf{CD}_\tau(\Pi)=0$, then $\Pi$ is $\tau$-closed.
+\end{proposition}
+
+\begin{proof}
+If $\Pi$ is $\tau$-closed, then all microstates inside the same fiber have the same packaged future distribution, so for every $x$ one has $p_x^{(\tau)}=\bar p_{\Pi(x)}^{(\tau)}$. Every divergence in \eqref{eq:cd-kl} is therefore zero, and thus $\mathsf{CD}_\tau(\Pi)=0$.
+
+Conversely, assume $\pi(x)>0$ for all $x$ and $\mathsf{CD}_\tau(\Pi)=0$. By \eqref{eq:cd-kl}, a weighted sum of nonnegative KL divergences is zero. Since every weight $\pi(x)$ is positive, each divergence must itself be zero. Hence $p_x^{(\tau)}=\bar p_{\Pi(x)}^{(\tau)}$ for every $x$. If $\Pi(x)=\Pi(x')$, then both $p_x^{(\tau)}$ and $p_{x'}^{(\tau)}$ equal the same $\bar p_{\Pi(x)}^{(\tau)}$, so $p_x^{(\tau)}=p_{x'}^{(\tau)}$. Thus $\Pi$ is $\tau$-closed.
+\end{proof}
+
+The last proposition is the formal version of the paper's slogan. A packaged state looks random exactly to the extent that it has failed to become a sufficient statistic for its own packaged future. In finite Markov settings, $\tau$-closedness at $\tau=1$ is the classical lumpability condition stated in terms of packaged destination distributions; for $\tau>1$ it is the same condition after staging by $\tau$ \citep{kemeny1976finitemarkovchains,buchholz1994exactordinarylumpability}. This is why closure deficit is the right exact object for the rest of the paper: it vanishes precisely when the current package already carries everything the layer needs for one staged step of prediction, and it becomes strictly positive exactly when hidden within-fiber distinctions remain unpaid for.
+ \section{From Exact Quantity to Computable Diagnostics}\label{sec:diagnostics}
+
+The quantity $\mathsf{CD}_\tau(\Pi)$ is exact, but one rarely has direct access to the full stationary law of $(X_t,Y_t,Y_{t+\tau})$. In practice, the exact object must be approached through observables that live at different levels of accessibility. This section introduces three such bridges. The first is a route-mismatch diagnostic for coarse-grained Markov dynamics. The second is a predictive-gap proxy based on richer packaged history when the microstate itself is unavailable. The third is a budgeted log-loss formulation that turns randomness into a resource-relative curve. \Cref{tab:diagnostics} summarizes the relation between the exact quantity and the main operational surrogates used in the paper.
+
+\begin{table}[tbp]
+\centering
+\caption{The exact quantity used in this paper and the main diagnostics or proxies used to approximate it in practice.}
+\label{tab:diagnostics}
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{0.98\linewidth}{@{}>{\RaggedRight\arraybackslash}p{0.16\linewidth} >{\RaggedRight\arraybackslash}p{0.35\linewidth} >{\RaggedRight\arraybackslash}X@{}}
+\toprule
+Quantity & Formal role & Operational reading \\
+\midrule
+$\mathsf{CD}_\tau(\Pi)$ & exact hidden predictive information after conditioning on $Y_t$ & target object \\
+$\mathrm{RM}_\tau^{\mathrm{lift}}(\Pi)$ & stationary-weighted distributional mismatch between micro futures and induced macro rows & computable coarse-graining diagnostic \\
+$\Delta_{\mathrm{pred}}^{(2,1)}$ & extra held-out gain from one additional packaged-history step & macro-history proxy when $X_t$ is unavailable \\
+$\mathsf{Rand}_B(\Pi,\tau)$ & best achievable predictive log loss under feasible class $\mathcal{Q}_B$ & randomness--budget curve \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Suppose an operational coarse-graining procedure supplies, for each current packaged state $y \in \mathcal{Y}$, an induced packaged row $\widehat p_y^{(\tau,\mathrm{lift})}$ intended to summarize the $\tau$-step packaged future from that macrostate. Following the induced-kernel pipeline of \citeauthor{tsiokos2026pica}, such rows are obtained by choosing a lift on each fiber and then evolving for $\tau$ steps before pushing forward again \citep{tsiokos2026pica}. The associated stationary-weighted route mismatch is
+\begin{equation}
+\mathrm{RM}_\tau^{\mathrm{lift}}(\Pi)
+:=
+\sum_{x \in \mathcal{X}}
+\pi(x)\,
+\bigl\|
+p_x^{(\tau)} - \widehat p_{\Pi(x)}^{(\tau,\mathrm{lift})}
+\bigr\|_1.
+\label{eq:route-mismatch}
+\end{equation}
+When the lift is stationary-conditional, one has $\widehat p_y^{(\tau,\mathrm{lift})}=\bar p_y^{(\tau)}$ for every $y$, and we write the resulting quantity as $\mathrm{RM}_\tau^{\mathrm{stat}}(\Pi)$.
+
+\begin{proposition}[Route mismatch lower bound]\label{prop:rm-lower-bound}
+If the induced packaged rows coincide with the stationary-conditioned rows, then
+\begin{equation}
+\mathsf{CD}_\tau(\Pi)
+\ge
+\frac{1}{2}\bigl(\mathrm{RM}_\tau^{\mathrm{stat}}(\Pi)\bigr)^2.
+\label{eq:rm-lower-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By \Cref{prop:cd-kl},
+\[
+\mathsf{CD}_\tau(\Pi)
+=
+\sum_{x \in \mathcal{X}}
+\pi(x)\,
+D_{\mathrm{KL}}\!\bigl(
+p_x^{(\tau)}
+\,\|\,
+\bar p_{\Pi(x)}^{(\tau)}
+\bigr).
+\]
+Pinsker's inequality in natural units gives \citep{cover2006elementsofinformationtheory}
+\[
+D_{\mathrm{KL}}(p\|q)
+\ge
+\frac{1}{2}\|p-q\|_1^2.
+\]
+Therefore
+\[
+\mathsf{CD}_\tau(\Pi)
+\ge
+\frac{1}{2}
+\sum_{x \in \mathcal{X}}
+\pi(x)\,
+\bigl\|
+p_x^{(\tau)}-\bar p_{\Pi(x)}^{(\tau)}
+\bigr\|_1^2.
+\]
+Applying Jensen's inequality to the convex map $u \mapsto u^2$ yields
+\[
+\sum_{x \in \mathcal{X}}
+\pi(x)\,
+\bigl\|
+p_x^{(\tau)}-\bar p_{\Pi(x)}^{(\tau)}
+\bigr\|_1^2
+\ge
+\left(
+\sum_{x \in \mathcal{X}}
+\pi(x)\,
+\bigl\|
+p_x^{(\tau)}-\bar p_{\Pi(x)}^{(\tau)}
+\bigr\|_1
+\right)^2,
+\]
+which is exactly $\bigl(\mathrm{RM}_\tau^{\mathrm{stat}}(\Pi)\bigr)^2$.
+\end{proof}
+
+Thus the exact deficit controls any stationary-conditioned route-mismatch diagnostic. Operational route mismatch need not use the stationary-conditional lift, however. In particular, \emph{To Create a Stone with Six Birds} uses induced macro kernels derived from explicit lift choices, including uniform-in-fiber lifts, as a practical audit of how badly macro rows fail to summarize the micro futures they stand for \citep{tsiokos2026pica}. In the experiments below we report both a stationary version, which targets $\bar p_y^{(\tau)}$ directly, and a uniform version, which measures non-closure relative to a cheaper operational packaging choice.
+
+When the microstate is inaccessible but a packaged sequence $y_{1:T}$ is observed, one can still ask whether the current package is sufficient for one more packaged step. Let $\operatorname{NLL}_1$ and $\operatorname{NLL}_2$ denote held-out average negative log-likelihood under first- and second-order Markov predictors on the packaged sequence. Define the predictive gap
+\begin{equation}
+\Delta_{\mathrm{pred}}^{(2,1)}
+:=
+\operatorname{NLL}_1-\operatorname{NLL}_2.
+\label{eq:pred-gap}
+\end{equation}
+In the infinite-data idealization, with exact predictors of the stated orders on the same stationary source, this gap becomes
+\[
+\Delta_{\mathrm{pred}}^{(2,1)}
+=
+I(Y_{t-1};Y_{t+1}\mid Y_t).
+\]
+A positive gap therefore indicates that one additional unit of packaged history still carries predictive information not stabilized into the current package. This is the predictive non-closure signal used operationally in \emph{To Notch a Stone with Six Birds} \citep{tsiokos2026notch}. It is not identical to the micro-closure deficit: it probes hidden predictive residue inside macro history rather than inside the current microstate. But when omitted micro distinctions persist through the packaged history, the predictive gap becomes a practical proxy for the same underlying failure of closure.
+
+This viewpoint leads naturally to a budgeted notion of randomness. Let $\mathcal{Q}_B$ be a feasible predictor class available under budget $B$, and let $S_t^{(B)}$ denote the state summary accessible to that class. Define
+\begin{equation}
+\mathsf{Rand}_B(\Pi,\tau)
+:=
+\inf_{Q \in \mathcal{Q}_B}
+\mathbb{E}\!\left[
+-\log Q(Y_{t+\tau}\mid S_t^{(B)})
+\right].
+\label{eq:budgeted-rand}
+\end{equation}
+If $\mathcal{Q}_B$ contains all conditional distributions on the same accessible state, then $\mathsf{Rand}_B(\Pi,\tau)=H(Y_{t+\tau}\mid S_t^{(B)})$. As the budget grows and the feasible class expands, $\mathsf{Rand}_B(\Pi,\tau)$ can only decrease. In the simplest case studied later, $B=L$ is packaged memory order and $S_t^{(L)}=(Y_{t-L+1},\dots,Y_t)$. The resulting randomness--budget curve is then the held-out log loss of the best order-$L$ predictor. Extra memory lowers that curve exactly when the current package has failed to absorb distinctions that still matter for its future. At the top end of this scale, access to the exact microstate would reduce the best achievable loss to $H(Y_{t+\tau}\mid X_t)$, leaving only intrinsic substrate uncertainty.
+
+Three distinctions are important before turning to data. First, closure deficit is not novelty. A layer can have $\mathsf{CD}_\tau(\Pi)>0$ without forcing a theory extension or a new ontology. Second, closure deficit is not irreversibility. Arrow-of-time audits compare forward and reversed path measures and obey different monotonicity constraints under coarse-graining, whereas route mismatch and predictive gap only register unresolved predictive dependence \citep{tsiokos2026sixbirds,esposito2012stochasticthermodynamicsundercoarsegraining}. Hidden protocol phases or omitted state variables can therefore make a layer look random without certifying any genuine nonequilibrium drive. Third, route mismatch and predictive gap are diagnostics, not replacements for the exact object. They are useful precisely because $\mathsf{CD}_\tau(\Pi)$ is the right target and these observables track different operational shadows of it.
+
+With these bridges in place, the remaining sections can move back and forth between the exact quantity and the observables without changing the underlying claim. \Cref{sec:results-markov} uses route mismatch to track known closure deficits in controlled Markov families. \Cref{sec:results-budget} measures $\mathsf{Rand}_B$ directly through held-out log loss under increasing memory order. \Cref{sec:results-hashing} shows the same packaging-and-budget logic in a deterministic many-to-one map.
+ \section{Controlled Demonstrations}\label{sec:results}
+
+\subsection{Markov Coarse-Graining Benchmark}\label{sec:results-markov}
+
+We begin with the controlled finite-state benchmark in which the exact object $\mathsf{CD}_\tau(\Pi)$ is available by construction. The benchmark consists of four families: exactly lumpable chains \citep{kemeny1976finitemarkovchains,buchholz1994exactordinarylumpability}, perturbed-lumpable chains with heterogeneity parameter $\alpha \in \{0,0.2,0.5\}$, metastable block chains with escape parameter $p_{\mathrm{out}} \in \{0.02,0.08,0.20\}$, and hidden-type chains with within-fiber type strength in $\{0.1,0.5,0.9\}$. Across these $17$ staged conditions we compute the exact closure deficit, the intrinsic term, the decomposition residual, and both uniform- and stationary-lift route mismatch.
+
+The benchmark behaves exactly as \Cref{prop:cd-zero} predicts on the closed cases. The exactly lumpable constructions collapse to machine zero at both staging depths: at $\tau=1$, for example, the benchmark gives $\mathsf{CD}_1(\Pi)=4.34\times 10^{-17}$ and $\mathrm{RM}^{\mathrm{uniform}}_1(\Pi)=5.29\times 10^{-17}$. The decomposition identity is numerically stable throughout the sweep, with maximum absolute residual $2.87\times 10^{-16}$ over all rows. In this sense the benchmark serves as a calibration device: the exact object vanishes when it should vanish, and the numerical implementation does not introduce visible leakage.
+
+Once within-fiber predictive heterogeneity is introduced, the deficit becomes strictly positive and the cheaper uniform-lift mismatch already tracks it closely. Over all benchmark rows, the Pearson correlation between $\mathrm{RM}^{\mathrm{uniform}}$ and $\mathsf{CD}$ is $r=0.959$. The most extreme perturbed-lumpable condition, $\alpha=0.5$ at $\tau=1$, reaches $\mathsf{CD}=0.0482$ with $\mathrm{RM}^{\mathrm{uniform}}=0.2757$. The strongest hidden-type condition reaches $\mathsf{CD}=0.0310$ with $\mathrm{RM}^{\mathrm{uniform}}=0.2125$. By contrast, the metastable family produces smaller but still systematic non-closure, topping out at $\mathsf{CD}=7.22\times 10^{-4}$ and $\mathrm{RM}^{\mathrm{uniform}}=2.30\times 10^{-2}$ when $p_{\mathrm{out}}=0.20$. \Cref{fig:markov-rm-cd} shows the aggregate pattern. Although \Cref{prop:rm-lower-bound} is stated for the stationary-conditioned route mismatch, the cheaper operational mismatch already serves as a practical proxy for non-closure in this controlled setting.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{markov_rm_vs_cd}
+\caption{Uniform-lift route mismatch against exact closure deficit across the controlled Markov benchmark. Exactly lumpable cases remain at numerical zero, while controlled within-fiber heterogeneity and hidden types move points away from the origin in tandem.}
+\label{fig:markov-rm-cd}
+\end{figure}
+
+The perturbed-lumpable family isolates the cleanest knob, because only the within-fiber heterogeneity parameter $\alpha$ is varied. At $\tau=1$, raising $\alpha$ from $0.2$ to $0.5$ increases the exact closure deficit from $0.00827$ to $0.0482$. At $\tau=2$, the same perturbations remain visible but contract to $0.00125$ and $0.00479$, respectively. \Cref{fig:markov-cd-heterogeneity} makes the staging effect explicit: longer staging partially absorbs the predictive consequences of hidden micro-variation, but it does not erase them. This is precisely the P4 point in Six Birds terms. Randomness is not fixed independently of scale; it is what remains unresolved at the scale and timescale the layer chooses to run.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{markov_cd_vs_heterogeneity}
+\caption{Exact closure deficit in the perturbed-lumpable family as a function of within-fiber heterogeneity $\alpha$. Increasing heterogeneity raises the deficit, while larger staging depth $\tau$ reduces but does not eliminate it.}
+\label{fig:markov-cd-heterogeneity}
+\end{figure}
+
+The controlled benchmark therefore establishes the key empirical claim of the paper in the cleanest possible setting. Closure deficit vanishes on closed partitions, rises under controlled violations, and is tracked well by route-mismatch diagnostics that are much cheaper to compute than the exact object. The next subsection turns from controlled coarse-graining to the complementary question of what it costs to buy those hidden distinctions back once the current package has failed to stabilize them.
+ \subsection{Budgeted Prediction}\label{sec:results-budget}
+
+The controlled Markov benchmark established what unresolved closure is. The complementary question is what it costs to buy the missing distinctions back once the current package has already failed to stabilize them. To expose that accounting side directly, we fix the strongest hidden-type benchmark and measure the budgeted randomness curve $\mathsf{Rand}_B$ empirically using packaged predictors of increasing memory order.
+
+The empirical curve is reported in the feasible-class sense of \eqref{eq:budgeted-rand}: at budget $B=L$, we plot the best held-out log loss available among predictors of order at most $L$. This matters because sparse higher-order contexts can make the raw loss of a particular order-$L$ fit fluctuate upward in finite data, whereas the feasible-class quantity itself should never worsen when the admissible predictor class strictly expands.
+
+In the frozen run, the order-$0$ baseline is $1.09565$ nats. Allowing one packaged step of memory lowers the held-out loss to $1.04394$, a gain of $5.17\times 10^{-2}$ nats. Allowing two packaged steps lowers it again to $1.03855$, buying back an additional $5.38\times 10^{-3}$ nats. Beyond that point the feasible-class curve saturates through orders $3$, $4$, and $5$, indicating that the hidden predictive residue visible to this sequence has been exhausted at the present sample size. The exact packaged first-order benchmark for the same process is $H(Y_{t+1}\mid Y_t)=1.04953$, so the order-$1$ held-out estimate sits within $5.60\times 10^{-3}$ nats of the theoretical line, while the best order-$\le 2$ predictor improves on that baseline by $1.10\times 10^{-2}$ nats. \Cref{fig:budget-curve} shows the resulting randomness--budget curve.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{budget_curve_vs_theory}
+\caption{Held-out predictive log loss versus packaged memory order in the hidden-type benchmark. The horizontal line marks the exact packaged first-order uncertainty $H(Y_{t+1}\mid Y_t)$. The reported curve is the feasible-class envelope up to order $L$, so saturation indicates that additional packaged memory no longer buys back detectable predictive distinctions at this sample size.}
+\label{fig:budget-curve}
+\end{figure}
+
+The point of this experiment is not that higher order is always better. The point is that randomness can be priced. Extra memory lowers predictive loss exactly when the current package has failed to absorb distinctions that still matter for its future. In Six Birds language, this is the P6 side of the story: what looks like chance at one budget becomes predictable at another because the layer has paid to carry more of its unresolved closure forward.
+
+\subsection{Hashing as Packaging and One-Wayness}\label{sec:results-hashing}
+
+Hashing provides an engineered version of the same logic in a deterministic many-to-one map. A truncated digest $H_n : \{0,1\}^m \to \{0,1\}^n$ does not create new entropy; it packages a large input space into a short stable record and leaves preimage identification to whatever budget the observer can afford \citep{rogaway2004cryptographichashfunctionbasics}. We therefore examine three input regimes on small safe truncations: a uniform high-entropy source, a low-entropy synthetic dictionary of size $256$, and a fifty-fifty medium mixture of dictionary and out-of-dictionary inputs.
+
+In the uniform regime, the familiar one-wayness heuristic appears exactly where it should: in the small-success region $q/2^n \le 0.25$, empirical inversion success tracks the line $q/2^n$ with mean absolute deviation $3.70\times 10^{-3}$. \Cref{fig:hashing-inversion} plots empirical success against $q/2^n$ directly. For example, at $n=16$ and budget $q=256$, the empirical success rate is $6.67\times 10^{-3}$ against the simple baseline $256/2^{16}=3.91\times 10^{-3}$. In this regime, the digest is effectively random-looking relative to the bounded inversion budget, even though the map is fully deterministic.
+
+That behavior collapses once the input distribution is small. At the same truncation $n=16$ and the same budget $q=256$, low-entropy dictionary inputs invert with probability $1.00$, while the medium mixture already reaches $0.463$. The difference is not in the hash function but in how much preimage uncertainty the input source actually contains. Hashing does not manufacture entropy; it can only hide distinctions that were present to begin with.
+
+Simple random-lookingness tests tell the same story. Using $3000$ sampled digests and $16$-bit truncation for the collision audit, the uniform regime has collision ratio $0.816$ relative to the ideal random-output expectation and is not grossly flagged by simple byte- or bit-level tests. The medium mixture and low-entropy regimes, by contrast, jump to collision ratios $66.24$ and $255.30$, with distinct-value fractions $0.569$ and $0.0853$, respectively. \Cref{fig:hashing-collision} shows the collision-ratio separation on a log scale. A bounded observer therefore distinguishes these regimes without sophisticated cryptanalysis: high-entropy inputs look random enough, low-entropy inputs do not, and medium mixtures fall in between.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{hashing_inversion_vs_q_over_2n}
+\caption{Uniform-input inversion success in the low-success regime plotted against the baseline $q/2^n$. Across truncation levels, empirical success remains close to the diagonal, matching the expected feasibility-limited scaling of one-way search.}
+\label{fig:hashing-inversion}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{hashing_collision_ratio_by_distribution}
+\caption{Collision-ratio separation for $16$-bit truncated digests under three input regimes. The vertical axis is logarithmic. High-entropy uniform inputs remain near the ideal random-output expectation, while medium-mixture and low-entropy inputs become trivially distinguishable.}
+\label{fig:hashing-collision}
+\end{figure}
+
+The hashing experiment is deliberately toy-sized, but its conceptual role is exact. One-wayness and random-lookingness do not require a primitive source of randomness. They arise when a deterministic packaging map is observed through a bounded budget and supplied with enough input entropy to make unpaid distinctions expensive to reconstruct. This is the same closure-and-accounting mechanism seen earlier in coarse-grained dynamics, now displayed in an engineered many-to-one map.
+ \section{Discussion and Scope}\label{sec:discussion}
+
+The paper's claim can now be stated compactly. Once a substrate, a packaging, and a staging scale are fixed, observable packaged randomness decomposes into two parts: intrinsic substrate uncertainty and closure deficit. The first term is what remains unpredictable even with exact access to the current microstate. The second is the information about the next packaged state that remains hidden inside the current one because the layer has not stabilized all the distinctions that still matter for prediction. In the controlled Markov benchmark, this deficit vanishes on closed partitions and rises under controlled violations; in budgeted prediction, it is partially bought back by extra memory; and in hashing, it appears as feasibility-limited irreversibility rather than entropy creation. Across these domains, the same explanatory pattern repeats: what a layer calls noise is often unresolved predictive structure.
+
+One advantage of this account is that it separates questions that are often blurred together. Closure deficit is not novelty. A layer may have $\mathsf{CD}_\tau(\Pi)>0$ and still admit a perfectly serviceable ontology; the deficit only says that the current package is not sufficient for one staged step of prediction. Nor is closure deficit the same as genuine irreversibility. Path-space asymmetry and entropy-production audits obey different monotonicity constraints under coarse observation, whereas route mismatch and predictive gaps only register unresolved dependence \citep{tsiokos2026sixbirds,esposito2012stochasticthermodynamicsundercoarsegraining}. Hidden protocol phases, omitted variables, or cheap lifts can therefore make a layer look random without certifying any genuine nonequilibrium drive. The present paper is about the predictive residue of non-closure, not about novelty or arrows of time.
+
+A second advantage is that the account makes randomness explicitly budget-relative without reducing it to a vague appeal to ignorance. Budget matters because records and distinctions are costly to maintain. The curve in \Cref{fig:budget-curve} is therefore not merely a machine-learning performance plot. It is a ledger: increasing memory order lowers the best achievable loss only when the current package has failed to absorb distinctions that still matter for its future. In that sense, randomness is what prediction looks like when closure has been budgeted too cheaply.
+
+The hashing demonstration sharpens the same lesson in an engineered setting. A one-way hash is a deliberately extreme packaging: huge preimage fibers are compressed into a short stable record. But the experiment shows that the appearance of randomness depends as much on the source as on the map. High-entropy inputs produce the familiar small-success $q/2^n$ inversion law and pass simple random-lookingness checks; low-entropy inputs collapse both effects immediately. One-wayness is thus not metaphysical irreversibility. It is packaging observed through a bounded budget, supplied with enough entropy that unpaid distinctions remain expensive to reconstruct.
+
+The auxiliary clustering experiment in \Cref{app:aux-rep} is useful precisely because it does \emph{not} support a simplistic monotonic story. Increasing the number of learned clusters there does not reduce the empirical closure deficit; in the frozen run it increases from $0.0782$ at $k=2$ to $0.1579$ at $k=8$, while held-out packaged prediction worsens at the same time. The lesson is not that the account fails, but that representational budget is not the same as good packaging. More bins do not help when the learned partition is misaligned with the dynamics. Six Birds does not say that refinement is always better; it says that refinement only pays when it closes the right distinctions at the right staging scale.
+
+Several limitations should be kept explicit. The exact treatment here is finite-state and stationary. That is sufficient for the controlled claims we make, but continuous-state or strongly nonstationary settings will require estimators and approximation schemes rather than exact sums. The route-mismatch bound in \Cref{prop:rm-lower-bound} is stated for the stationary-conditioned lift, while many operational pipelines use cheaper lifts for practical reasons. The predictive-gap proxy likewise detects unresolved dependence in packaged history, not literally the micro-closure deficit. These are not objections to the framework; they are reminders that diagnostics should be interpreted as shadows of the exact object rather than substitutes for it.
+
+What the paper does provide is a portable operational answer to a question that is usually posed metaphysically. Randomness need not be treated as a primitive ingredient of explanation at the layer where it is observed. Once the substrate, packaging, staging, and budget are specified, the non-intrinsic part of that randomness is measurable as the information about the next packaged state that remains hidden inside the current one. You usually do not remove such randomness outright; you relocate it, price it, or decide not to pay for it.
+ \section{Conclusion}\label{sec:conclusion}
+
+We have argued that a layer looks random exactly to the extent that its current packaged state has failed to become a sufficient statistic for its own packaged future. The exact quantity capturing that failure is the micro-closure deficit
+\[
+\mathsf{CD}_\tau(\Pi)=I(X_t;Y_{t+\tau}\mid Y_t),
+\]
+which yields the decomposition
+\[
+H(Y_{t+\tau}\mid Y_t)=H(Y_{t+\tau}\mid X_t)+\mathsf{CD}_\tau(\Pi).
+\]
+This separates intrinsic substrate uncertainty from randomness introduced by discarded distinctions. The controlled Markov benchmark showed that the deficit vanishes on closed partitions and rises under controlled violations, while route mismatch tracks it closely. Budget-limited prediction showed that extra memory buys back hidden distinctions and lowers predictive loss. Toy hashing showed the same mechanism in a deterministic many-to-one map: one-wayness and random-lookingness emerge under bounded budgets and sufficient input entropy, not from entropy creation by the hash itself.
+
+Within Six Birds, this gives randomness a precise place. It is not a new primitive alongside P1--P6, and it is not interchangeable with novelty or irreversibility. It is the predictive residue of non-closure under a chosen packaging, staging scale, and maintenance budget. That residue can be measured exactly in controlled settings and approximated operationally when only coarser observables are available.
+
+The broader consequence is methodological. Debates about whether randomness is intrinsic or merely epistemic often collapse because the relevant layer has not been specified. Once the layer is specified, much of the question becomes concrete: which distinctions were stabilized into objects, which were left unresolved, and what would it cost to recover them? That is the sense in which randomness becomes an accounting problem. It is what remains after a theory has decided what to make real and what not to pay for.
+ 
+\appendix
+\section{Auxiliary Clustering Result}\label{app:aux-rep}
+
+This appendix records the representation-learning result that we treat as auxiliary rather than core evidence \citep{tishby1999bottleneck,geiger2015optimalkullbackleibleraggregation}. The experiment asks whether increasing representational budget, measured by the number of learned clusters $k$, automatically reduces predictive non-closure when packaging is learned from observations rather than supplied by construction. It does not.
+
+We generate observation sequences from the hidden-type process used earlier and learn $k$-means partitions on those observations for $k \in \{2,4,8\}$ \citep{macqueen1967somemethods}. For each learned packaging we then evaluate the resulting packaged sequence by held-out first- and second-order predictive log loss and by the empirical conditional mutual information
+\[
+\widehat I(X_t;Y_{t+1}\mid Y_t),
+\]
+computed from the joint sequence of hidden microstates and learned packaged labels. In this appendix we report the \emph{raw} empirical conditional mutual information, not the normalized version used only for diagnostics during development.
+
+The resulting trend is a useful caution. As $k$ increases from $2$ to $8$, the empirical closure deficit rises from $0.0782$ to $0.1356$ and then to $0.1579$ rather than falling. Held-out first-order predictive loss rises in the same direction, from $0.626$ to $1.307$ and then to $2.005$. Second-order predictive loss likewise worsens, from $0.628$ to $1.318$ and then to $2.837$. \Cref{fig:appendix-rep-cd,fig:appendix-rep-nll} summarize the pattern.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{appendix_rep_cd_vs_k}
+\caption{Auxiliary clustering result: raw empirical closure deficit versus learned cluster count $k$. Increasing representational granularity does not reduce non-closure in this run; it increases it.}
+\label{fig:appendix-rep-cd}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.85\linewidth]{appendix_rep_nll_vs_k}
+\caption{Auxiliary clustering result: held-out packaged predictive loss versus learned cluster count $k$. Both first- and second-order losses worsen as the learned partition becomes more finely split.}
+\label{fig:appendix-rep-nll}
+\end{figure}
+
+The lesson is not that the closure-deficit account fails outside controlled partitions. The lesson is that more representational bins are not automatically the same thing as better packaging. A learned partition only helps if it closes distinctions that matter for the staged dynamics. If the partition instead slices the observations in a way that is misaligned with the predictive structure, additional representational budget can make the packaged process harder rather than easier to predict. This is why the result is auxiliary: it is informative about misaligned packaging, but it is not needed for the paper's main evidentiary arc.
+
+For the same reason, we do not use the exploratory neural bottleneck runs as evidence. In those runs the learned code usage collapsed below the nominal category count, so they do not provide a clean same-budget comparison to the clustering baseline. The controlled Markov, budgeted-prediction, and hashing demonstrations are therefore the proper basis of the main claims.
+ \section{Lean KL Bridge}\label{app:lean}
+
+The main text uses the expected-Kullback--Leibler form of closure deficit in \Cref{prop:cd-kl}. As a small formal appendix, the companion repository at \url{https://github.com/ioannist/six-birds-randomness} includes a machine-checked Lean development that bridges probability-level KL divergence to the expected log-likelihood ratio form used in the finite arguments \citep{demoura2015leantheoremprover,mathlib2020leanmathematicallibrary}. The formal artifact is intentionally modest. It does not attempt a full mechanization of conditional mutual information or of the complete closure-deficit theory. Instead it certifies the KL step on which the expected-divergence reading rests.
+
+For probability measures $\mu$ and $\nu$ with $\mu \ll \nu$, the formal development proves the identity
+\[
+(\mathrm{klDiv}(\mu,\nu))^{\mathrm{toReal}}
+=
+\int \mathrm{llr}_{\mu,\nu}\, d\mu,
+\]
+that is, the real-valued Kullback--Leibler divergence equals the integral of the log-likelihood ratio under $\mu$. From that bridge it derives the nonnegativity statement
+\[
+0 \le \int \mathrm{llr}_{\mu,\nu}\, d\mu.
+\]
+The development also records the zero-divergence characterization for probability measures, namely that KL divergence vanishes exactly when the two measures are equal.
+
+Conceptually, this appendix matters because the paper's finite-state formula
+\[
+\mathsf{CD}_\tau(\Pi)
+=
+\sum_x \pi(x)\,
+D_{\mathrm{KL}}\!\bigl(p_x^{(\tau)} \,\|\, \bar p_{\Pi(x)}^{(\tau)}\bigr)
+\]
+is an instance of this more general expected-divergence pattern. The Lean artifact therefore does not formalize the entire manuscript, but it does machine-check the bridge between divergence and expected log-likelihood ratio that underwrites the KL reading of hidden predictive residue.
+
+The tracked Lean files in the repository are the smoke module and the KL bridge module. Their role in the present paper is evidentiary rather than expository: they certify a core algebraic step, while the manuscript itself remains focused on the conceptual and empirical account of randomness as predictive non-closure.
+ 
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

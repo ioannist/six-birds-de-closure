@@ -1,0 +1,545 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks,
+    pdfusetitle,
+    bookmarksnumbered=true]{hyperref}
+\usepackage{orcidlink}
+\usepackage{xurl}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{needspace}
+\usepackage{etoolbox}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\KL}{D_{\mathrm{KL}}}
+\newcommand{\SigmaT}{\Sigma_T}
+\newcommand{\betaone}{\beta_1}
+\newcommand{\num}[1]{#1}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\DeclareRobustCommand{\code}[1]{{\begingroup\urlstyle{tt}\nolinkurl{#1}\endgroup}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+ \pdfstringdefDisableCommands{\def\orcidlink#1{}}
+
+\setlength{\emergencystretch}{1.5em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\allowdisplaybreaks[1]
+
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\textfloatsep}{12pt plus 2pt minus 4pt}
+\setlength{\floatsep}{10pt plus 2pt minus 3pt}
+\setlength{\intextsep}{12pt plus 2pt minus 4pt}
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    justification=justified,
+    singlelinecheck=true,
+    skip=6pt
+}
+
+\setlength{\droptitle}{-4em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{0.2em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{-1.2em}}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.75em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.75em}{}
+\titlespacing*{\section}{0pt}{2.6ex plus 0.8ex minus 0.4ex}{1.0ex plus 0.2ex}
+\titlespacing*{\subsection}{0pt}{1.8ex plus 0.6ex minus 0.2ex}{0.7ex plus 0.2ex}
+
+\pretocmd{\section}{\Needspace{6\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+
+\fancypagestyle{firstpage}{\fancyhf{}
+    \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad DOI: 10.5281/zenodo.18926771 \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad Preprint --- not peer reviewed.}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{To Spend a Stone with Six Birds: Currency--Constraint Duality and Shadow Prices Across Closure Layers}
+\author{Ioannis Tsiokos\texorpdfstring{\,\orcidlink{0009-0009-7659-5964}}{}}
+\date{March 9, 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Across disciplines, stable descriptive layers rely on small sets of variables that budget feasibility, accumulate along protocols, or appear as exchange rates between incompatible objectives. We call such variables currencies. This paper gives a layer-relative definition of currency within the Six Birds closure calculus and proposes a currency--constraint principle: lower-layer currencies become higher-layer constraints because packaged higher-level objects can persist only under bounded lower-layer spending, while higher-layer currencies emerge as the shadow prices of those budgets. In finite Markov laboratories this principle becomes measurable. Path-reversal asymmetry and cycle affinities furnish lower-layer audits; constrained maximum-entropy closure yields dual prices; and across a resolution ladder we observe five robust signatures: honest coarse-grained directionality, monotone price emergence with a slack regime, growth of currency dimension with resolution, failure of proxy currencies under prediction and dual stability, and improved packaging coherence under stronger budget enforcement. A Lean formalization proves deterministic-pushforward monotonicity for a finite KL form, providing a formal anchor for the audit side of the story. The result is a practical and conceptual account of why temperatures, prices, regularizers, and attention weights recur across sciences as the same mathematical kind of object.
+\end{abstract}
+ \section{Introduction}
+
+\subsection{The recurrence of currencies across sciences}
+
+Energy in physics, code length in information theory, money in economics, compute in algorithms, and attention or precision in cognition are usually introduced inside separate disciplinary languages. Yet they keep doing the same mathematical work. They budget which states or protocols are feasible, they add along sequences of operations, and they reappear as exchange rates between objectives that cannot be simultaneously optimized. The recurrence is too regular to be dismissed as metaphor. Mature theories seem to grow something price-like whenever they stabilize a descriptive layer \cite{jaynes1957information,shannon1948mathematical,arrowdebreu1954,sims2003rationalinattention}.
+
+What is still missing is a layer-relative account of why such quantities recur. It is easy to point to a familiar local example---temperature as the dual of an energy constraint, price as the dual of a budget, regularization strength as the dual of a complexity penalty. It is harder to explain why one layer's ledger becomes the next layer's feasibility law, and why the next layer then speaks back in the language of prices.
+
+\subsection{What standard duality explains, and what it misses}
+
+Standard duality theory explains a great deal once the optimization problem is already on the page \cite{boyd2004convex}. If an agent maximizes utility under a budget, or if an ensemble maximizes entropy under a mean-energy constraint, then shadow prices or multipliers are exactly what one should expect. But that familiar result begins too late for the present question. It presupposes the layer, its state space, and its constraints. It does not explain how a constraint becomes natural at one level because something had to be spent at another.
+
+This paper addresses that missing step. Its central claim is cross-layer: a lower-layer currency becomes a higher-layer constraint because packaged higher-level objects can persist only under bounded lower-layer spending. Once the higher layer is organized by those budgets, its own currency appears as the corresponding shadow price. The point is not merely that multipliers exist. The point is that stable closures inherit prices from the budgets of the substrate that maintains them.
+
+\subsection{Six Birds in one paragraph}
+
+Six Birds Theory provides the closure language in which to state that claim. The framework organizes emergent description around six primitives: \textbf{P1} operator rewrite, \textbf{P2} constraints or gating, \textbf{P3} protocol holonomy or route mismatch, \textbf{P4} staging or sectors, \textbf{P5} packaging, and \textbf{P6} accounting or audit \cite{tsiokos2026sixbirds}. The present paper is primarily about the chain \textbf{P5}--\textbf{P6}--\textbf{P2}: packaging creates higher-level objects, accounting measures what must be spent to keep them coherent, and constraints turn that spending into a feasibility boundary for the next descriptive layer.
+
+That perspective immediately separates genuine currencies from convenient statistics. A quantity earns the name only when it structurally governs closure: when it gates feasibility, adds along protocols, generates a monotone potential, or reappears as a shadow price. Not every salient coordinate or route-dependent effect qualifies. In particular, protocol mismatch by itself is not yet a directionality currency unless it is backed by an honest audit that survives coarse observation.
+
+\subsection{Thesis and contributions}
+
+Our thesis is that currencies are structural, not metaphorical. A currency is what a layer spends to stay closed. A shadow price is the name the next layer gives to the previous layer's budget. The next layer experiences that spending as a feasibility boundary, and organizes its own choices around the marginal value of relaxing it.
+
+The paper makes four contributions.
+\begin{enumerate}[leftmargin=*]
+    \item It gives a strict, layer-relative definition of currency that distinguishes constraint currencies, ledger currencies, potential currencies, and dual currencies.
+    \item It formulates a currency--constraint principle: lower-layer currencies become higher-layer feasibility constraints, and higher-layer currencies emerge as the shadow prices of those constraints.
+    \item It implements that principle in a finite-state stochastic laboratory with frozen, reproducible evidence: honest audits under coarse-graining, monotone price emergence with a slack regime, growth of currency dimension with resolution, failure of proxy currencies, and improved packaging coherence under stronger budget enforcement.
+    \item It provides a formal anchor for the audit side of the story via a Lean theorem proving deterministic-pushforward monotonicity for a finite KL form.
+\end{enumerate}
+
+The empirical aim is modest but important. We do not claim to have formalized every layer transition or every scientific use of a currency. We claim instead that there is a common mathematical pattern strong enough to define, measure, stress-test, and partially formalize.
+
+\subsection{Place in the Six Birds series}
+
+Within the Six Birds series, \emph{Six Birds: Foundations of Emergence Calculus} introduced the primitive vocabulary of closure and the layer package built from lenses, packaging, and audits \cite{tsiokos2026sixbirds}. \emph{To Create a Stone with Six Birds} then turned those primitives into an interaction algebra and a finite stochastic laboratory in which geometric and thermodynamic regimes can be observed side by side \cite{tsiokos2026create}. The present paper adds the economics of closure. It asks what a closure must spend to maintain its packaged objects, and shows that such spending is not merely local bookkeeping: lower-layer audits reappear as higher-layer constraints, while higher-layer currencies emerge as the shadow prices of those same budgets.
+
+The rest of the paper makes that claim precise, operational, and testable. We first define currencies within the Six Birds framework, then state the currency--constraint principle, then realize it in finite Markov systems and evaluate its empirical signatures using a frozen evidence pack.
+ \section{Six Birds recap and a strict definition of currency}\label{sec:framework}
+
+\subsection{Layers as closure packages}
+
+Six Birds treats a descriptive layer not as a metaphysical stratum but as a closure package: a finite carrier or state space, a lens that determines what can be said at that resolution, a packaging rule that turns recurrent structure into objects, and an audit that certifies what survives coarse observation \cite{tsiokos2026sixbirds}. In the foundations notation one may write a theory package as
+\[
+\mathcal T=(Z,f,\Sigma_f,E,\mathcal A),
+\]
+where \(Z\) is a finite substrate, \(f\) is a lens or coarse description, \(\Sigma_f\) is the induced definability algebra, \(E\) is a packaging endomap, and \(\mathcal A\) is an audit functional. The crucial point for the present paper is that currencies are never absolute. A variable becomes a currency only relative to a layer, its allowed operations, and the audits by which the layer keeps score.
+
+That layer-relativity matters because the same numerical quantity can play very different roles at different resolutions. Energy at a microscopic dynamics layer may be a conserved or budgeted resource, while at a statistical layer the meaningful currency may instead be inverse temperature or free energy. Likewise, a regularization multiplier is not a currency of the task world; it is a currency of the learning layer that decides which updates are affordable.
+
+\subsection{The six primitives with emphasis on P5, P6, and P2}
+
+The Six Birds calculus organizes closure with six primitives \cite{tsiokos2026sixbirds}: \textbf{P1} operator rewrite, \textbf{P2} constraints or gating, \textbf{P3} protocol holonomy or route mismatch, \textbf{P4} staging or sectors, \textbf{P5} packaging, and \textbf{P6} accounting or audit. The present paper uses all six only in outline. Its working core is the chain \textbf{P5}--\textbf{P6}--\textbf{P2}.
+
+Packaging (\textbf{P5}) is what makes an object available as a fixed or nearly fixed point of completion. Audit (\textbf{P6}) is what records whether maintaining that object requires irreversible drive, pathwise asymmetry, cost, or retained resource. Constraint (\textbf{P2}) is what turns those expenditures into a boundary between what can and cannot be stably maintained. The currency question sits precisely at that interface: what must be spent for a packaged description to remain closed, and how does that spending reorganize the next layer?
+
+\subsection{A strict definition of currency}
+
+Fix a layer with state space \(Y\). A currency is a low-dimensional map
+\[
+u:Y\to \R^k,
+\]
+typically with \(k\ll \dim Y\), that plays at least one structural role.
+
+\paragraph{Constraint currency (C1).}
+Feasibility is written in terms of \(u\). There exists a feasible set \(K\subseteq Y\) expressible as
+\[
+K=\{y\in Y: g(u(y))\le 0\},
+\]
+or by a family of inequalities of that kind. This is the primal budget view: currency is what the layer must keep within bounds.
+
+\paragraph{Ledger currency (C2).}
+Costs add along protocols. For a path or protocol \(\gamma=(y_0\to y_1\to\cdots\to y_T)\),
+\[
+\mathrm{Cost}(\gamma)\approx \sum_{t=0}^{T-1}\ell\big(u(y_t),y_t\to y_{t+1}\big),
+\]
+exactly or in expectation. This is the accounting view: currency is what the layer keeps books in.
+
+\paragraph{Potential currency (C3).}
+The ledger induces a monotone potential. There exists a scalar \(U\) such that trajectories satisfy \(U(y_{t+1})\le U(y_t)\) up to controlled noise, or \(\dot U\le 0\) in continuous time. This is the Lyapunov or thermodynamic view.
+
+\paragraph{Dual currency (C4).}
+The layer closes by optimizing under constraints, and the relevant currency appears as a shadow price. If
+\[
+\argmax_{q\in\mathcal Q}\ \Phi(q)\qquad \text{subject to}\qquad \E_q[f_i]=b_i,
+\]
+defines the closure problem, then the Lagrange multipliers
+\[
+\lambda_i=\frac{\partial \Phi^\star}{\partial b_i}
+\]
+are currencies because they price marginal slack in the constraint.
+
+Most real currencies fall into one of two broad families: primal resources, such as energy, time, mass, bandwidth, or compute, and dual prices, such as temperature, chemical potential, market price, or regularization strength. The definition above separates both from mere correlates. A statistic that predicts behavior but plays none of these structural roles may still be useful, but it is not yet a currency in the sense of this paper.
+
+These four roles are not introduced as free terminology. Shadow prices are standard dual objects in constrained optimization, money admits a canonical ledger-memory interpretation, and thermodynamic potentials arise as constrained dual quantities in the Jaynes program \cite{boyd2004convex,kocherlakota1998money,jaynes1957information}.
+
+\subsection{Structural currencies, proxies, and path-vs-state quantities}
+
+The definition is intentionally strict. Many variables discussed as currencies in applied work are only proxies: they correlate with feasibility or performance without structurally entering the layer's constraints, ledgers, or dual programs. Trust scores, prestige metrics, or ad hoc complexity measures often live in this intermediate zone. They may still be useful summaries, but they do not yet deserve the name in the sense used here.
+
+A second distinction is between state currencies and path currencies. A state currency depends on an instantaneous state \(y\), as in \(u(y)\). A path currency is defined on trajectories or protocols. Action functionals, path-reversal asymmetry, and accumulated entropy production are of this latter kind. Six Birds allows both because audits can live on states, edges, or whole paths \cite{tsiokos2026sixbirds}. The common requirement is structural role, not instantaneous representation.
+
+The practical consequence is that not every low-dimensional coordinate is a currency, and not every order parameter is a budget. A quantity becomes a currency only when the theory uses it to decide feasibility, maintenance, or exchange.
+
+\subsection{Why route dependence alone is not enough}
+
+Protocol mismatch or holonomy (\textbf{P3}) is often the first sign that a system carries memory of how it was driven. But route dependence alone does not yet give a directionality currency. A protocol can fail to commute simply because a schedule variable has been hidden, while the enlarged autonomous system remains reversible. In the Six Birds framework, what matters is not bare route dependence but an honest audit that remains monotone under coarse observation \cite{tsiokos2026sixbirds}.
+
+That is why the present paper treats path-reversal KL and cycle affinities as currencies, but treats protocol mismatch by itself only as a diagnostic. A genuine directionality currency must survive the relevant audit rule. Path-reversal relative entropy is used here precisely because irreversible drive is classically identified against reversed-path laws in information-theoretic and nonequilibrium terms \cite{kullback1951information,lebowitz1999gallavotti,seifert2005entropy}. Coarse-graining may hide such a currency, but it must not create one from nothing. This discipline will matter later when we interpret the empirical DPI result.
+
+\section{Currency--constraint duality across closure layers}\label{sec:morphism}
+
+\subsection{The currency--constraint principle}
+
+Consider a lower layer with states \(y_\ell\in Y_\ell\) and a lower-layer currency \(u_\ell(y_\ell)\). Let a packaging map
+\[
+\Pi:Y_\ell\to Y_{\ell+1}
+\]
+define a higher-layer macrostate \(Y=\Pi(y_\ell)\). If that macrostate is to persist as a packaged object rather than a fleeting observation, the substrate must keep lower-layer spending within bounds while maintaining it. In the simplest form, persistence imposes a budget condition such as
+\[
+\E[u_\ell\mid Y]\le b
+\qquad\text{or}\qquad
+\mathrm{Rate}(u_\ell\mid Y)\le b.
+\]
+
+This is the first half of the paper's main principle. What was a currency at the lower layer becomes a constraint at the higher layer because the higher layer cannot spend arbitrarily much of the lower-layer resource and remain closed. Packaging therefore converts a ledger into a feasibility law.
+
+\subsection{Shadow prices as emergent higher-layer currencies}
+
+Once the higher layer is organized by such budget constraints, a new currency appears automatically \cite{boyd2004convex}. If the higher layer optimizes a potential \(\Phi\) subject to the induced budget \(b\), then the dual variable
+\[
+\lambda=\frac{\partial \Phi^\star}{\partial b}
+\]
+measures the marginal value of relaxing that budget. This \(\lambda\) is the higher-layer currency: the exchange rate between what the higher layer wants and what the lower layer can afford.
+
+The point is not merely formal. The dual variable is what the higher layer actually experiences when lower-layer spending binds. When budgets are loose, the corresponding price collapses toward zero. When budgets are tight, price becomes the effective coordinate around which feasible action reorganizes. A currency is therefore what a layer spends to stay closed, and a shadow price is the name the next layer gives to that spending.
+
+\subsection{Canonical examples}
+
+The classical examples all have this form. In equilibrium statistical mechanics, energy is the lower-layer ledger. At the ensemble layer one maximizes entropy under a mean-energy constraint, and inverse temperature appears as the corresponding dual currency; free energy packages the resulting tradeoff into a potential \cite{jaynes1957information,presse2013maxent}. In rate--distortion theory, bits or mutual-information rate are the lower-layer currency. At the representation layer they appear as a compression constraint, and the rate--distortion multiplier becomes the exchange rate between fidelity and code budget \cite{berger1971ratedistortion,coverthomas2006}. In economics, money or budget is the direct feasibility currency, while market prices are the dual variables associated with clearing and resource constraints \cite{arrowdebreu1954}.
+
+The mathematics does not change when the disciplinary names do. The same pattern also explains why compute limits induce approximation pressure, why regularization strengths behave like prices for model complexity, and why bounded attention in cognitive systems can be modeled as a price on representational bandwidth \cite{sims2003rationalinattention}. What changes across fields is the substrate; what remains invariant is the closure geometry of spending, constraint, and dualization.
+
+\subsection{Why this is a closure law rather than a metaphor}
+
+The unifying claim of this paper is therefore not that many disciplines happen to use words like price or cost. It is that stable packaged layers force a recurrent mathematical architecture. If higher-level objects are real only insofar as they can be maintained, then maintenance must be budgeted. Those budgets define what can persist, and their shadow prices define the exchange rates of the next layer. Currency is not added from the outside as an interpretation; it is induced from the requirement that closure survive on a finite substrate.
+
+This is why the present account is more specific than a generic appeal to Lagrange multipliers. Multipliers explain the local geometry of a given constrained program. The currency--constraint principle explains why those constrained programs appear across layers in the first place. Packaging and audit make them unavoidable.
+
+\subsection{Relation to PICA}
+
+PICA turns this argument into an operational interaction pattern. In the PICA enable-matrix language, the most relevant cell is \textbf{P2} $\leftarrow$ \textbf{P6}: accounting informs gating \cite{tsiokos2026create}. That cell is precisely the local signature of the first half of the morphism. A ledger or audit variable becomes a feasibility boundary. Two nearby cells are also suggestive: \textbf{P5} $\leftarrow$ \textbf{P6}, in which audit reshapes packaging, and \textbf{P6} $\leftarrow$ \textbf{P6}, in which accounting regulates itself.
+
+The present paper extracts the general law behind those interactions. PICA supplied the laboratory in which closure primitives can be turned on and off. Here we interpret that laboratory economically. The question is no longer only how closures interact, but what they must spend, how that spending becomes the next layer's constraint, and why the next layer replies with a price.
+ \section{Finite-state realization and measurement pipeline}\label{sec:methods}
+
+\subsection{Finite Markov substrate and coarse-graining lenses}
+
+To operationalize Sections~\ref{sec:framework} and \ref{sec:morphism}, we work in a finite-state stochastic laboratory of the kind developed in the Six Birds program \cite{tsiokos2026sixbirds,tsiokos2026create}. A micro-layer is a finite Markov chain with row-stochastic kernel \(P\) on state set \(Z=\{1,\dots,n\}\) \cite{kemeny1960finite}. A trajectory \(x_{0:T}=(x_0,\dots,x_T)\) is sampled from an initial distribution \(\rho_0\) and the kernel \(P\). Coarse description is implemented by a lens or partition \(f:Z\to X\), equivalently by block labels on microstates. The corresponding macro path is obtained pointwise as \(f(x_{0:T})=(f(x_0),\dots,f(x_T))\). This distinction matters: when the claim concerns audit monotonicity under observation, we always push forward the trajectories themselves rather than replacing them by a coarse Markov approximation.
+
+When a Markov representative at the coarse level is needed, as in the resolution-ladder experiment, we use stationary-conditional lumping \cite{kemeny1960finite,buchholz1994lumpability}. If \(\pi\) is a stationary distribution of \(P\), then the macro kernel \(Q\) induced by a partition \(f\) is
+\[
+Q_{ab}=\sum_{i:f(i)=a}\pi(i\mid a)\sum_{j:f(j)=b} P_{ij},
+\]
+where \(\pi(i\mid a)\) is \(\pi\) conditioned on block \(a\). This is a measurement convenience, not an ontological claim: the DPI experiment is deliberately performed on pushed-forward trajectories, while the ladder and cycle-rank measurements use the lumped kernel as a compact representative of coarse support structure.
+
+We use several controlled kernel families. Reversible kernels furnish null cases in which detailed balance holds and pathwise asymmetry should vanish. Driven ring and module-of-rings kernels furnish non-equilibrium cases with calibrated cycle affinities, allowing us to separate honest drive from artifacts of schedule or resolution. All reported results are drawn from frozen runs of this finite laboratory; no new experiments are introduced after the evidence freeze.
+
+\subsection{Audits: path-reversal KL and cycle affinities}
+
+Two audit families play the role of lower-layer currencies. The first is path-reversal asymmetry. For a horizon \(T\), let \(\mathbb{P}_{\rho_0,T}\) be the law of a length-\(T\) path and let \(\mathcal R\) reverse path order. The directionality audit is
+\[
+\SigmaT = \KL\!\big(\mathbb{P}_{\rho_0,T}\,\|\,\mathcal R_*\mathbb{P}_{\rho_0,T}\big).
+\]
+This is the standard relative-entropy form of forward-versus-reversed-path asymmetry in information-theoretic and stochastic-thermodynamic treatments \cite{kullback1951information,lebowitz1999gallavotti,seifert2005entropy}.
+For known kernels we can compute this analytically from the boundary term and expected log-ratio increments; for data we estimate it from sliding windows of length \(T+1\). The estimator counts each observed window \(s\), compares it to its reversal \(\mathrm{rev}(s)\), and accumulates \(\hat p(s)\log\!\big(\hat p(s)/\hat p(\mathrm{rev}(s))\big)\). Windows whose reverse is unobserved are not silently ignored; their mass is tracked as an explicit reverse-support diagnostic. This is the audit used in the coarse-graining honesty experiment.
+
+The second audit family is cycle drive. On each bidirected edge of the support graph we compute the antisymmetric 1-form
+\[
+a_{ij}=\log\frac{P_{ij}}{P_{ji}},
+\]
+with \(a_{ij}=0\) when either direction is absent from the bidirected support. A cycle basis of the undirected support graph then yields affinity coordinates
+\[
+A(\gamma)=\sum_{(i\to j)\in \gamma} a_{ij}.
+\]
+This network-affinity construction follows the standard cycle-decomposition view of nonequilibrium steady states \cite{schnakenberg1976network,esposito2010threefaces}.
+These coordinates are low-dimensional drive currencies: they vanish for reversible dynamics, survive only on loops, and their ambient dimension is controlled by the cycle rank \(\betaone = m-n+c\) of the support graph. The resolution-ladder experiment uses \(\betaone\) and the norm of the affinity vector to quantify how many independent currency directions become visible as resolution increases.
+
+\subsection{Dual recovery: MaxCal and conditional-logit fitting}
+
+To recover higher-layer prices from lower-layer budgets we use the simplest constrained-maximum-entropy closure compatible with the story in Section~\ref{sec:morphism} \cite{jaynes1957information,presse2013maxent}. Given a nonnegative cost matrix \(u_{ij}\), the one-constraint MaxCal family is
+\[
+q_{ij}(\lambda)=\frac{e^{-\lambda u_{ij}}}{\sum_k e^{-\lambda u_{ik}}}.
+\]
+Here \(\lambda\ge 0\) is the dual price of the expected-cost budget. For a given budget \(b\), we solve for \(\lambda\) so that the expected cost under \(q(\lambda)\) matches \(b\). If the budget is slack---that is, if \(b\) is at or above the unconstrained cost at \(\lambda=0\)---the solver returns \(\lambda=0\) exactly. This is the mechanism behind the budget-sweep figure: shadow price appears only when the budget binds.
+
+The cost matrix itself is derived from lower-layer currencies. In the budget-sweep experiment we estimate macro costs by aggregating the positive part of micro entropy-production-like increments,
+\[
+c(i\to j)=\max\left\{0,\log\frac{P_{ij}}{P_{ji}}\right\},
+\]
+conditioned on observed macro transitions. In the object-stability experiment we instead use a maintenance cost that penalizes transitions leaving the current package. Both are instances of the same methodological rule: the dual price is not fitted against an arbitrary penalty but against a cost extracted from the lower-layer audit or maintenance ledger.
+
+For data-driven recovery we fit \(\lambda\) directly from transition counts. Given counts \(C_{ij}\) and a candidate cost matrix \(u_{ij}\), the conditional-logit likelihood is
+\[
+\ell(\lambda)=\sum_{i,j} C_{ij}\log q_{ij}(\lambda).
+\]
+This is the standard one-parameter conditional-logit form for discrete choice over outgoing transitions \cite{mcfadden1974conditional}.
+We maximize this likelihood by one-dimensional root finding on the score, and estimate uncertainty from the observed curvature. This is the inference engine used both to validate synthetic recovery and to compare structurally motivated currencies against proxy costs in the held-out prediction experiment. In the proxy-ablation study the same train/test counts are evaluated under three models: a row-wise empirical baseline, a one-parameter model built from the structurally aligned cost, and a scale-matched proxy cost obtained by row-wise permutation of the good cost.
+
+\subsection{Packaging endomaps and idempotence defect}
+
+To measure how budgets buy object stability, we use a packaging endomap of the Six Birds form \cite{tsiokos2026sixbirds}. For a distribution \(\mu\) on microstates, a partition \(f\), and a time horizon \(\tau\), define
+\[
+E_{\tau,f}(\mu)=U_f\big(Q_f(\mu P^\tau)\big),
+\]
+where \(Q_f\) pushes a micro distribution forward to blocks and \(U_f\) lifts it back using either uniform prototypes within each block or stationary prototypes conditioned inside each block. The idempotence defect is
+\[
+\delta_{\tau,f}(\mu)=\left\|E_{\tau,f}\!\big(E_{\tau,f}(\mu)\big)-E_{\tau,f}(\mu)\right\|_1.
+\]
+If a packaged object is perfectly compatible with the closure rule, packaging twice changes nothing and the defect vanishes. Positive defect measures how much additional correction the packaging map must perform after one round of evolution and re-projection.
+
+In the idempotence-versus-budget experiment we use ring-collapsed packages as macro objects. A budget-controlled micro kernel is constructed by reweighting the base kernel according to the macro maintenance cost:
+\[
+W^{(\lambda)}_{ij}=P^{\mathrm{base}}_{ij}\exp\!\big(-\lambda\,u_{f(i),f(j)}\big),
+\]
+followed by row normalization. Larger \(\lambda\) suppresses budget-expensive exits from the current package. We then compute defects on prototype representatives of each macro object and summarize them by blockwise mean, standard deviation, and maximum. This gives an operational link between currency and objecthood: stronger budget enforcement should purchase more nearly idempotent packaging.
+
+\subsection{Frozen evidence pack and formal anchor}
+
+All quantitative claims in the paper are drawn from a frozen evidence pack. The pack contains per-experiment summary tables, figures, a claim ledger linking each headline statement to its primary artifact, a manifest recording the canonical runs, and a clean-room reproducibility audit that rebuilds the evidence from scratch within prespecified tolerances. The implementation of the experimental pipeline and analysis code is maintained in the public repository \url{https://github.com/ioannist/six-birds-currency}. The results section therefore reports only frozen quantities: no parameter retuning, rerunning, or post hoc exploratory analysis is introduced during manuscript preparation.
+
+The formal component is narrower than the full paper claim and is meant as an anchor, not a replacement, for the empirical argument. Against the standard information-theoretic background for KL monotonicity under deterministic observation \cite{coverthomas2006}, we prove in Lean~4 with mathlib \cite{demoura2015lean,mathlib2020} the theorem \texttt{CurrencyMorphism.finiteKL\_map\_le}, which establishes deterministic-pushforward monotonicity for a finite KL quantity written in the \(q\,\mathrm{klFun}(p/q)\) form. This theorem formalizes the idea that coarse deterministic observation cannot increase the relevant finite KL audit. It directly supports the monotonicity discipline behind our use of path-reversal asymmetry as an honest currency of directionality. It does not mechanize the entire currency--constraint principle, nor does it prove the empirical claims of the Markov laboratory; rather, it secures one foundational audit inequality on which the broader narrative relies.
+ \section{Results}\label{sec:results}
+
+\subsection{Honest audits under coarse-graining}
+
+The first empirical burden of the paper is methodological. If path-reversal asymmetry is to count as a directionality currency, then coarse observation must not manufacture it. We therefore evaluate the DPI-style margin
+\[
+\Delta=\SigmaT^{\mathrm{micro}}-\SigmaT^{\mathrm{coarse}}
+\]
+on pushed-forward trajectories across the frozen five-seed sweep described in Section~\ref{sec:methods}.
+
+The result is clean. No violating seed-run survives the tolerance check, and the weakest aggregated audit margin remains positive. In the frozen summary, the minimum audit margin is \num{0.001069} (\code{min_delta_mean}). Figure~\ref{fig:results_dpi} shows the scan across the resolution ladder.
+
+This matters conceptually as much as numerically. A putative directionality currency that can be created by forgetting variables would not be an honest audit of closure. The positive margin in the frozen sweep supports the stricter discipline adopted here: coarse observation may hide a directionality currency, but it does not create one from nothing, in line with the standard information-theoretic monotonicity intuition behind data-processing arguments \cite{coverthomas2006,kullback1951information}.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.88\linewidth,trim=0 0 0 25bp,clip]{figures/fig_dpi_scan.png}
+    \caption{DPI-style audit honesty under coarse-graining. The plotted margin is \(\Delta=\SigmaT^{\mathrm{micro}}-\SigmaT^{\mathrm{coarse}}\) across the resolution ladder. Across the frozen five-seed sweep, no seed-run violates the tolerance check, and the minimum aggregated margin remains positive at \num{0.001069} (\code{min_delta_mean}).}
+    \label{fig:results_dpi}
+\end{figure}
+
+\subsection{Price emergence and slack}
+
+The second empirical burden is to show that shadow price is not an interpretive flourish but an induced coordinate of binding budget. Using the macro cost derived from lower-layer entropy-production-like increments, we sweep budgets and solve the single-constraint MaxCal closure from Section~\ref{sec:methods}. The aggregate monotonicity is nearly perfect: the frozen summary reports \num{-0.99923} for \code{spearman_rho_mean}.
+
+Equally important, the same sweep exhibits a genuine slack regime. In every seed run, the high-budget tail contains a near-zero-price point; in the frozen summary, \code{n_tail_zero_lambda} is \(5\). Figure~\ref{fig:results_budget} shows the resulting price curve.
+
+Together these two facts give the higher-layer interpretation of shadow price. When the lower-layer budget binds, \(\lambda\) is positive and reorganizes feasible transitions. When the budget is sufficiently relaxed, the dual currency collapses to zero. The price is therefore not an arbitrary fit parameter layered on top of the problem; it is the higher-layer response to an active lower-layer constraint.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.88\linewidth,trim=0 0 0 25bp,clip]{figures/fig_budget_sweep.png}
+    \caption{Shadow-price emergence from budget. The aggregated sweep shows a nearly perfect anti-monotone relation between budget and recovered price, with \code{spearman_rho_mean} = \num{-0.99923}. The high-budget tail enters the slack regime in every seed run, with \code{n_tail_zero_lambda} = \(5\).}
+    \label{fig:results_budget}
+\end{figure}
+
+\subsection{Currency dimension grows with resolution}
+
+The ladder experiment addresses a different part of the argument. If currencies are the low-dimensional coordinates in which a layer budgets or expresses drive, then finer resolution should reveal additional independent directions in which such currencies can live. We therefore summarize the visible loop structure of the coarse support graph by its cycle rank \(\betaone\) across the frozen coarse, intermediate, and fine lenses.
+
+The frozen ladder summary reports \code{beta1_coarse_mean} = \(0\), \code{beta1_mid_mean} = \(5\), and \code{beta1_fine_mean} = \(11\). Figure~\ref{fig:results_ladder} shows the three-level increase.
+
+This is the empirical version of a currency-dimension claim. At the coarsest level no independent loop survives, and thus no independent cycle-affinity coordinate is available. At intermediate and fine resolution, additional loop directions appear, enlarging the space in which distinct affinity currencies can in principle be expressed.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.88\linewidth,trim=0 0 0 25bp,clip]{figures/fig_currency_ladder.png}
+    \caption{Resolution ladder and currency dimension. The frozen ladder summary reports \code{beta1_coarse_mean} = \(0\), \code{beta1_mid_mean} = \(5\), and \code{beta1_fine_mean} = \(11\). Finer resolution reveals more independent loop directions and therefore a larger space of potential cycle currencies.}
+    \label{fig:results_ladder}
+\end{figure}
+
+\subsection{Proxy currencies fail}
+
+The proxy-ablation experiment asks whether any low-dimensional penalty will do, or whether genuine currencies are structurally special. The answer is no. On held-out test data, the frozen summary reports \code{mean_nll_baseline} = \num{5.288}, \code{mean_nll_good} = \num{2.220}, and \code{mean_nll_bad} = \num{2.769}. The relative advantage of the structural cost over the proxy, measured on the baseline scale, is \num{0.1040} for \code{rel_adv}. Figure~\ref{fig:results_proxy} shows the comparison.
+
+The same contrast appears in the stability of recovered prices. The frozen summary reports \code{std_lam_good} = \num{2.120} and \code{std_lam_bad} = \num{3.361}. The structurally aligned currency therefore does better on prediction and yields the more stable dual variable.
+
+This is the strongest empirical reason for maintaining a strict definition of currency. A useful statistic can correlate with behavior without being the right spending coordinate of the layer. When the cost is structurally aligned with the lower-layer ledger, prediction improves and the inferred price stabilizes. When the cost is merely a proxy, both properties degrade.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.88\linewidth]{figures/fig_proxy_ablation.png}
+    \caption{Structural versus proxy currencies. Held-out performance favors the structurally aligned cost, with \code{mean_nll_good} = \num{2.220} versus \code{mean_nll_bad} = \num{2.769}, against \code{mean_nll_baseline} = \num{5.288}. The structural currency also yields the more stable recovered price, with \code{std_lam_good} = \num{2.120} versus \code{std_lam_bad} = \num{3.361}.}
+    \label{fig:results_proxy}
+\end{figure}
+
+\subsection{Budgets buy object stability}
+
+The last experiment closes the loop between budget and objecthood. Increasing maintenance price should not only change transition statistics; it should also make packaged objects more nearly idempotent under the packaging map. In the frozen summary, the relation between price and mean defect is essentially perfectly monotone, with \code{spearman_rho} numerically indistinguishable from \(-1\).
+
+Across the sweep, mean defect falls from \code{defect_mean_max} = \num{0.1160} at the weakest enforcement end to \code{defect_mean_min} = \num{0.001443} at the strongest enforcement end. Figure~\ref{fig:results_idempotence} shows the defect-versus-price curve.
+
+This is the most direct object-level signature in the paper. Budgets do not merely trade off motion against expenditure; they purchase closure coherence. Stronger enforcement makes packaged representatives more nearly fixed under package--evolve--repackage, which is exactly what the idempotence defect is designed to measure.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.88\linewidth,trim=0 0 0 25bp,clip]{figures/fig_idempotence_budget.png}
+    \caption{Budgets buy object stability. The frozen idempotence summary reports \code{spearman_rho} numerically indistinguishable from \(-1\) between price and mean defect. Across the sweep, mean defect drops from \code{defect_mean_max} = \num{0.1160} to \code{defect_mean_min} = \num{0.001443}.}
+    \label{fig:results_idempotence}
+\end{figure}
+
+\FloatBarrier
+ \section{Discussion}\label{sec:discussion}
+
+\subsection{Why temperatures, prices, regularizers, and attention weights are the same kind of object}
+
+The unifying claim of this paper is not that many disciplines happen to reuse the rhetoric of cost. It is that a common mathematical role keeps reappearing whenever a descriptive layer must remain closed under bounded spending. Temperature, market price, regularization strength, and attention-like priority variables all function as dual coordinates of constrained maintenance. They are not interchangeable in substance, but they are the same kind of object in form: each is a shadow price attached to a resource that the layer cannot spend without limit \cite{jaynes1957information,arrowdebreu1954,sims2003rationalinattention}.
+
+That is why the paper insists on a strict, layer-relative definition of currency. What matters is not the physical or semantic meaning of the quantity in isolation, but whether it structurally governs feasibility, protocol accounting, monotone potential, or dual exchange. Under that criterion, energy and budget are primal currencies, while temperature and price are dual currencies; in learning, complexity penalties and their multipliers play the same role; in bounded-representation settings, priority or attention parameters can be interpreted in the same formal register when they price limited bandwidth or precision. The recurrence is therefore not an analogy imported after the fact. It is the repeated appearance of the same closure geometry under different substrates.
+
+\subsection{Why this is a cross-layer story rather than a remark about multipliers}
+
+The familiar statement that Lagrange multipliers exist is correct but incomplete \cite{boyd2004convex}. It describes the local geometry of a constrained optimization problem once the variables, state space, and constraints have already been chosen. The present paper addresses an earlier and more structural question: why do such constrained problems appear across layers in the first place?
+
+The answer proposed here is that packaging and maintenance force them to appear. A higher-level object can persist only if lower-level spending remains bounded while that object is maintained. That bounded spending becomes a feasibility law at the higher layer, and the marginal value of relaxing it becomes the higher-layer currency. The empirical budget sweep makes this point visible. Price is not inserted interpretively on top of the problem. It emerges when the inherited lower-layer budget binds, and it vanishes when the budget becomes slack.
+
+This is also why the paper's main principle is directional. Lower-layer currency becomes higher-layer constraint; higher-layer constraint becomes higher-layer shadow price. The layers are linked by maintenance, not merely by formal duality. That is the sense in which the paper offers an economics of closure rather than a relabeling of existing optimization theory.
+
+\subsection{Why proxy currencies fail, and why cycle-space can appear before strong affinity norms}
+
+The proxy-ablation result sharpens the distinction between structural currencies and convenient correlates. A proxy can predict some behavior without being the quantity the layer is truly spending. But once the task is to recover a stable dual variable and to generalize out of sample, structural alignment matters. The good cost in the ablation inherits its meaning from the lower-layer ledger; the bad cost preserves scale while destroying that alignment. The result is exactly what the strict definition predicts: worse held-out performance and a less stable inferred price. Calling every useful statistic a currency would blur precisely the distinction the experiment makes visible.
+
+The resolution-ladder result adds a complementary lesson. Finer resolution reveals a larger cycle space before it necessarily reveals large surviving affinity norms. That is not a defect of the theory; it is an important structural fact. Resolution can expose the capacity for independent currency coordinates before those coordinates carry substantial active drive at the observed scale. In other words, the dimension of the available currency space can grow before the realized spending in that space becomes large. This is one reason the paper separates the existence of a currency direction from the magnitude currently expressed along it.
+
+\subsection{What the experiments establish, and what they do not}
+
+The empirical results establish five things within a controlled finite-state laboratory. First, directionality audits are honest under coarse observation: pushed-forward trajectories do not manufacture path-reversal asymmetry. Second, shadow price emerges monotonically from active budget and collapses in the slack regime. Third, the number of independent currency directions grows with resolution as loop structure becomes visible. Fourth, structurally aligned currencies outperform proxy costs both predictively and inferentially. Fifth, stronger budget enforcement improves packaging coherence as measured by idempotence defect.
+
+These results do not establish that every real scientific system admits a one-dimensional price description, nor that every cross-layer transition is captured by the simple MaxCal family used here. The paper offers a finite-state realization and a reusable measurement discipline, not a universal reduction. The currency notion is explicitly layer-relative: what counts as a currency depends on the layer's objects, protocols, and audits. The proxy-ablation study is controlled and synthetic, designed to isolate structural alignment rather than to emulate a naturally occurring benchmark. The Lean theorem proves deterministic-pushforward monotonicity for a finite KL quantity in the finite-\(\mathrm{klFun}\) form; it is a formal anchor for the audit side of the argument, not a full mechanization of the currency--constraint principle or of the empirical Markov laboratory.
+
+Those limitations matter because they mark the paper's scope honestly. The contribution is not to have completed a general theory of all cross-scale economics. It is to have identified a precise structural pattern, defined it tightly enough to distinguish genuine currencies from proxies, and demonstrated it in a reproducible finite setting with a partial formal guarantee on the monotonicity side.
+
+\subsection{What this paper adds to the Six Birds series}
+
+Within the Six Birds series, the foundations paper established the primitive vocabulary of closure and made audits, packaging, and definability explicit at the layer level \cite{tsiokos2026sixbirds}. PICA then supplied an interaction algebra and a stochastic laboratory in which closure primitives can be enabled, coupled, and measured \cite{tsiokos2026create}. The present paper adds the spending law of that program. It identifies what a closure must budget to remain stable, shows how that budget becomes the next layer's feasibility boundary, and explains why the next layer responds with a price.
+
+In that sense, this paper sits between theory and measurement. It extends the conceptual side of Six Birds by defining currencies strictly and cross-layerly, and it extends the empirical side by turning that definition into a measurable set of signatures. The result is not just another example paper in the series. It is the point at which closure acquires an economy.
+ \section{Conclusion}\label{sec:conclusion}
+
+\subsection{Stable closures develop something price-like}
+
+This paper began from a familiar but under-explained recurrence: mature theories repeatedly introduce small sets of variables that budget feasibility, accumulate along protocols, or appear as exchange rates between incompatible aims. We argued that these variables should be treated neither as loose metaphors nor as merely local optimization artifacts. Within the Six Birds closure calculus, they are currencies: low-dimensional structural coordinates that govern what a layer can afford in order to stay closed.
+
+The paper's main principle is therefore cross-layer. A lower-layer currency becomes a higher-layer constraint because packaged higher-level objects can persist only under bounded lower-layer spending. Once the higher layer is organized by those inherited budgets, its own currency emerges as the corresponding shadow price. The recurrence of temperature, price, regularization, and attention-like tradeoff parameters is thus not accidental. It is the signature of closure living on a finite substrate.
+
+The finite-state realization made this principle measurable. Five signatures supported the account: honest path-audit monotonicity under coarse observation, monotone price emergence with a slack regime, growth of currency dimension with resolution, predictive and inferential failure of proxy currencies, and reduced packaging defect under stronger budget enforcement. A Lean formalization supplied a narrower but important formal anchor by proving deterministic-pushforward monotonicity for a finite KL quantity.
+
+The broader claim is modest and strong at the same time. It is modest because the notion of currency is layer-relative, the laboratory is finite-state, and the formal proof anchors only one part of the story. It is strong because the same mathematical pattern appears across physics, information, economics, learning, and cognition whenever stable description must be maintained under bounded spending. Stable closures do not merely accumulate description. They develop budgets, and budgets develop prices. Stable closures develop something price-like.
+ 
+\appendix
+\section{Evidence map and frozen claims}\label{app:evidence}
+
+This appendix records where each headline claim in the manuscript comes from and what artifact supports it. The paper is written against a frozen evidence pack exported under \code{docs/experiments/final/}. The main writing-facing artifacts are \code{run_manifest.json}, \code{claim_ledger.csv}, the five per-experiment summary CSV files, the five figure files copied into \code{paper/figures/}, \code{lean_summary.json}, and the reproducibility-audit files \code{repro_audit.json} and \code{repro_audit.csv}. All quantitative statements in Section~\ref{sec:results} are taken from those frozen summaries rather than from raw experiment logs.
+
+Table~\ref{tab:claimledger} compresses the writing-facing claim ledger into a referee-readable map. Claims C1--C7 correspond to the five empirical exhibits, while C8 records the existence of the Lean formalization anchor discussed in Section~\ref{sec:methods}. The purpose of the table is documentary rather than inferential: it tells the reader which file one would inspect to verify each headline statement.
+
+\begin{table}[tbp]
+    \centering
+    \small
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.1}
+    \caption{Frozen claim map for the main text. All primary artifacts are files under the frozen export directory {\small\texttt{docs/experiments/final/}}.}
+    \label{tab:claimledger}
+    \begin{tabularx}{\linewidth}{L{0.06\linewidth}Y L{0.27\linewidth}}
+        \toprule
+        ID & Claim carried in the manuscript & Primary frozen artifact \\
+        \midrule
+        C1 & Coarse observation does not manufacture path-audit asymmetry. & \code{dpi_summary.csv} \\
+        C2 & Price emerges monotonically as the budget tightens. & \code{budget_summary.csv} \\
+        C3 & The budget sweep enters a zero-price slack regime. & \code{budget_summary.csv} \\
+        C4 & Currency dimension grows with resolution. & \code{ladder_summary.csv} \\
+        C5 & Structural currencies outperform proxy costs on held-out prediction. & \code{proxy_summary.csv} \\
+        C6 & Proxy currencies yield less stable recovered prices. & \code{proxy_summary.csv} \\
+        C7 & Stronger budget enforcement lowers packaging defect. & \code{idempotence_summary.csv} \\
+        C8 & Deterministic-pushforward finite-KL monotonicity is formally proved in Lean. & \code{lean_summary.json} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The provenance of the manuscript figures is equally direct. Figure~\ref{fig:results_dpi} comes from \code{fig_dpi_scan.png}, Figure~\ref{fig:results_budget} from \code{fig_budget_sweep.png}, Figure~\ref{fig:results_ladder} from \code{fig_currency_ladder.png}, Figure~\ref{fig:results_proxy} from \code{fig_proxy_ablation.png}, and Figure~\ref{fig:results_idempotence} from \code{fig_idempotence_budget.png}. Those files were copied into \code{paper/figures/} for manuscript build stability, but their provenance remains the frozen export in \code{docs/experiments/final/}.
+
+The point of this appendix is simple. The manuscript does not ask the reader to trust an informal narrative assembled after the fact. Each headline claim is tied to a frozen artifact, and the full manifest of those artifacts is itself part of the exported evidence pack.
+ \section{Lean formalization}\label{app:lean}
+
+The formal component of the paper lives under \path{lean/}. Its role is intentionally narrow. The manuscript's main argument is cross-layer and empirical, but one part of that argument depends on an audit monotonicity discipline: deterministic coarse observation should not increase the relevant finite KL audit. The Lean development formalizes exactly that anchor in Lean~4 with mathlib \cite{demoura2015lean,mathlib2020}. The writing-facing provenance of this formal component is recorded in \path{docs/experiments/final/lean_summary.json}.
+
+The central theorem proved in the project is \texttt{CurrencyMorphism.finiteKL\_map\_le}. In mathematical form, for finite types \(\alpha\) and \(\beta\), a surjective deterministic map \(f:\alpha\to\beta\), probability mass functions \(p\) and \(q\) on \(\alpha\), and strictly positive \(q\), the theorem establishes
+\[
+\mathrm{finiteKL}(\mathrm{PMF.map}\ f\ p,\mathrm{PMF.map}\ f\ q)\le \mathrm{finiteKL}(p,q).
+\]
+Here \(\mathrm{finiteKL}\) is represented in the \(q\,\mathrm{klFun}(p/q)\) form used by the Lean development. This is the formal statement that deterministic pushforward cannot increase the chosen finite-KL audit, matching the standard KL monotonicity background from information theory \cite{kullback1951information,coverthomas2006}.
+
+What is formalized is therefore specific and useful: finite deterministic pushforward monotonicity for a KL-type audit. What is not formalized is equally important to state explicitly. The Lean project does not mechanize the full currency--constraint principle of Sections~\ref{sec:framework} and \ref{sec:morphism}; it does not encode the MaxCal dual-recovery pipeline of Section~\ref{sec:methods}; it does not verify the stochastic experiments of Section~\ref{sec:results}; and it does not prove that every higher-layer shadow price arises from every lower-layer ledger. The formalization supports one foundational audit inequality on which the paper relies, and no more should be claimed for it.
+
+The manuscript therefore uses the Lean result as a formal anchor rather than as a substitute for the empirical argument. This is exactly the right scope for the present paper. The directionality-audit story needs a monotonicity backbone, and \texttt{CurrencyMorphism.finiteKL\_map\_le} supplies one in a precise finite setting. The broader cross-layer economics of closure remains a mathematical and empirical interpretation built on top of that anchor, not something already exhaustively mechanized.
+ \section{Reproducibility audit}\label{app:repro}
+
+The manuscript is tied to a frozen export in \code{docs/experiments/final/}. The key writing-facing files are the manifest (\code{run_manifest.json}), the claim ledger (\code{claim_ledger.csv}), the five experiment summary CSVs, the copied figure assets, the Lean summary (\code{lean_summary.json}), and the audit pair (\code{repro_audit.json} and \code{repro_audit.csv}). These files are derived from a canonical evidence pack assembled after the experimental phase and then exported into a snapshot-stable location for writing. The full implementation repository for the code, experiments, and analysis used to produce this evidence pack is \url{https://github.com/ioannist/six-birds-currency}.
+
+The clean-room reproducibility audit reruns the canonical build chain from a fresh install path: editable package installation, test suite, lint checks, Lean build, the canonical evidence-pack script, and comparison of rebuilt summaries against the frozen manifest within preset tolerances. The writing-facing audit outcome is stored in \code{docs/experiments/final/repro_audit.json} and \code{docs/experiments/final/repro_audit.csv}. In the frozen export, every tracked experiment passes its tolerance check, and the Lean build passes as well.
+
+\begin{table}[tbp]
+    \centering
+    \small
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.1}
+    \caption{Frozen writing-facing artifacts used by the manuscript. All listed basenames refer to files under {\small\texttt{docs/experiments/final/}}.}
+    \label{tab:frozenassets}
+    \begin{tabularx}{\linewidth}{L{0.32\linewidth}Y}
+        \toprule
+        Artifact & Role in the manuscript \\
+        \midrule
+        \code{run_manifest.json} & Canonical manifest of the frozen evidence pack used as the writing baseline. \\
+        \code{claim_ledger.csv} & Claim-level ledger linking each headline statement to a primary artifact. \\
+        \code{dpi_summary.csv}, \code{budget_summary.csv}, \code{ladder_summary.csv}, \code{proxy_summary.csv}, \code{idempotence_summary.csv} & Quantitative summaries from which all reported numbers in Section~\ref{sec:results} are drawn. \\
+        \code{fig_*.png} & Frozen figure assets imported into \code{paper/figures/} for stable manuscript builds. \\
+        \code{lean_summary.json} & Writing-facing record of the formalization target and build status. \\
+        \code{repro_audit.json}, \code{repro_audit.csv} & Clean-room rebuild comparison against the frozen manifest. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+This separation between evidence generation and manuscript writing is deliberate. The paper is written against exported summaries rather than live experimental state. That makes the manuscript easier to review, the claims easier to audit, and the later archival snapshot easier to trust. A referee need not reconstruct the entire development environment to understand where a number or figure came from; the frozen writing-facing artifacts already provide that map.
+
+The broader methodological point is that reproducibility here is not an afterthought appended to a finished narrative. It is part of the paper's argumentative structure. The currency--constraint claim is intentionally ambitious in scope, so the paper offsets that ambition with a narrow and explicit evidentiary discipline: frozen claims, named artifacts, and a clean-room rebuild check against tolerance-bound summaries.
+ 
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

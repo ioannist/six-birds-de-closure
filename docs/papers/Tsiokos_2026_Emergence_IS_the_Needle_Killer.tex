@@ -1,0 +1,2106 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\DeclareMathOperator{\Capacity}{Cap}
+\DeclareMathOperator{\Cost}{Cost}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\dist}{dist}
+
+\newcommand{\K}{\mathsf K}
+\newcommand{\XiRes}{\Xi}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\preceqq}{\preceq}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Emergence IS the Needle Killer}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Emergence IS the Needle Killer},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Many obstruction arguments exhibit a localized failure mode that appears
+irreducible at the layer where it is first visible; this paper studies
+one audited route by which such needle obstructions cease to be
+obstructions, namely passage to a higher layer where additional
+admissible dissolving probes are available.  The framework is the
+formed-layer membrane setting: zero-energy directions are removed by a
+legal quotient, native probes are assigned a quadratic native currency,
+unexplained dissolving currency is measured by an adequacy residual, and
+predictive membranes, dissolving transport records, and the all-six
+taxonomy control the transfer.  The layer-dissolving endpoint theorem
+shows that, under predictive native bounds, residual bounds, and
+transport hypotheses, the dissolving currency is bounded uniformly
+across accepted stages, so no layer-dissolving predictive needles exist
+within the declared scope.  The complementary duality-confinement
+membrane theorem shows that, under a separating anti-invariant readout
+and a vanishing-trace sequence of domination records, visible object
+mass is confined to the fixed locus of the involution.  These are
+framework-bound dissolution results, not a universal
+singularity-elimination theorem or a claim about any named external
+problem.  The adequacy-residual calculus on which the layer-dissolving
+endpoint depends is developed in \citet{Tsiokos2026XiCompanion}.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds theory; formed-layer membrane; emergence; dissolution; adequacy residual; duality-confinement; all-six taxonomy.
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+Many obstruction arguments begin in the layer where the obstruction is
+first visible.  One has a space of objects, a family of tests, and a
+localized failure mode that survives those tests.  A \emph{lower layer}
+will mean this original mathematical setting, including the tests and
+bookkeeping available there.  A \emph{native probe family} is the
+family of linear measurements available in that lower layer.  A
+\emph{needle obstruction}, or simply a \emph{needle} after first use, is
+a localized obstruction, singular concentration, or persistent failure
+mode that cannot be removed using the native probes of the layer in
+which it appears.
+
+This terminology is deliberately neutral.  The paper does not need a
+single classical model of singularity in order to begin: the same lower
+layer may present a point concentration, a support-overlap failure, a
+direction outside a measurement range, or a symmetry-breaking
+displacement.  The shared shape is what matters: the obstruction is
+localized enough to be named, persistent enough to survive the tests
+that the layer authorizes, and sharp enough that improving constants
+inside the same probe family does not remove it.
+
+The difficulty is that persistence under native probes is not the same
+as absolute irreducibility.  A point concentration may survive all
+energy-shell tests because those tests average over the very coordinate
+in which the concentration lives \citep{Lions1984ConcentrationI,Evans2010PartialDifferential}.  A residual vector may be invisible to
+a chosen family of linear measurements, even though it is detected
+immediately after one adds a missing readout.  A displacement may look
+like genuine motion when only symmetric probes are allowed, although the
+anti-invariant part of the same displacement is the quantity that must
+be audited.  In each case the native layer has not necessarily found an
+unavoidable singularity; it may have found the limit of its own probe
+language.
+
+This paper studies one audited route by which that situation is
+resolved.  \emph{Emergence} means passage from the original setting to a
+richer setting with additional admissible probes and records that can
+measure or eliminate the obstruction.  The \emph{higher layer} is that
+richer mathematical setting, equipped with the extra probes and
+bookkeeping needed for the argument.  An \emph{emergent layer} is a
+higher layer viewed as the destination of such a passage.  A
+\emph{dissolving probe family} is a family of measurements available in
+the higher layer that may see an obstruction the native probes cannot
+explain.  \emph{Dissolution} is the conversion of a lower-layer needle
+into bounded residual accounting, confinement to a fixed locus, or a
+no-critical-pair conclusion after passing to the richer layer.
+
+``Dissolution'' is meant literally in this restricted sense: the
+obstruction is not declared harmless by changing notation, nor ignored
+by embedding the problem into a larger ambient space.  The higher
+layer must carry probes that are admissible for the original energy
+and records that explain how the lower-layer statement is being
+transported.  A finite-dimensional sketch makes the discipline
+concrete.  Suppose a semidefinite energy prices vectors, a native
+family records only a few responses, and a vector direction remains
+unpriced because it lies outside the native explanation range.  If a
+higher response space adds a concentration or anti-invariant readout,
+the formerly hidden direction becomes an audited residual, and the
+question is no longer whether the native probes alone can remove it,
+but whether the residual is bounded by the declared higher-layer
+budget.
+
+The proof apparatus is the \emph{formed-layer membrane}: a package of
+quotient, probe, currency, residual, and budget data used to test
+whether bounds transfer across layers.  The first step is the
+\emph{legal quotient}, the quotient or restricted subspace obtained
+after removing zero-energy directions that should not count as
+admissible degrees of freedom.  On this quotient the native probes carry
+a \emph{native currency}, a quadratic accounting object that measures
+what the lower-layer probes can spend and explain.  The higher-layer
+dissolving probes then introduce an \emph{adequacy residual}, the part
+of the dissolving currency not explained by the native currency.  The
+residual is the gate at which the present development meets the
+adequacy-residual calculus of \citet{Tsiokos2026XiCompanion}, where the
+projection, optimality, exactness, transport, and blind-spot witness
+theorems are developed.
+
+The ingredients are standard in their local mathematical behavior.
+Quadratic forms price vectors, quotienting removes directions that cost
+zero energy, positive semidefinite matrices are compared by Loewner
+order, and residual blocks are measured by Schur-complement accounting.
+The contribution of the framework is not to rename these constructions,
+but to keep their roles synchronized across a passage between layers.
+The quotient must be the quotient used by the probes; the native
+currency must be the one used by the predictive budget; the residual
+must be the unexplained part seen by the dissolving probes; and the
+endpoint theorem must spend exactly those currencies, not a nearby
+informal analogue.
+
+With this accounting in place, the membrane results have a direct
+interpretation.  A \emph{predictive native membrane} is a native-layer
+budget condition whose failure is equivalent to an accepted
+critical-pair witness.  Thus the lower layer is not merely asserted to
+be controlled; the accepted predictive family carries finite Loewner
+bounds that can be propagated to the dissolution step.  The
+\emph{layer-dissolving endpoint} is the theorem that transports native
+and residual bounds to a higher-layer dissolving budget.  It is the
+first of the paper's two main results: what looked like a needle at the
+lower layer is bounded after the dissolving probes and adequacy residual
+are included.
+
+The second main result is \emph{duality-confinement}, the membrane
+theorem saying that, when the relevant anti-invariant currency is
+forced into a vanishing budget, visible objects are confined to the
+fixed locus of the involution.  This is not redundant with the
+layer-dissolving endpoint.  The endpoint transports bounded dissolving
+currency into a target budget; duality-confinement treats the case in
+which the moving, anti-invariant part of the object is squeezed away by
+the available ledger.  The two mechanisms address different ways in
+which a lower-layer obstruction can cease to be an obstruction once the
+right higher-layer records are present.
+
+In the formed-layer membrane setting, emergence can dissolve
+needle-class lower-layer obstructions when the legal quotient, native
+currency, adequacy residual, predictive membrane bounds, and dissolving
+transport records are all present.  \Cref{sec:dissolution} proves the
+layer-dissolving membrane endpoint theorem, the transport statement that
+places the dissolving currency inside the target budget.
+\Cref{sec:duality-confinement} proves the duality-confinement membrane
+theorem, the fixed-locus conclusion obtained from anti-invariant ledger
+collapse.  \Cref{sec:taxonomy} gives the qualifying discipline: the
+\emph{all-six taxonomy}, a six-role checklist of rewrite, feasibility,
+routing, staging, packaging, and audit data, determines when a
+dissolution instance is a valid transfer record rather than an informal
+analogy.
+
+That last qualification is essential.  A higher-layer argument can fail
+by using the right-looking probes in the wrong quotient, by transporting
+data through an unrecorded map, by proving a budget at the wrong stage,
+or by hiding a residual defect in the packaging.  The all-six taxonomy
+does not classify all possible needles.  It records the roles that must
+be present for the instances treated here, so that the conclusion is a
+checked transfer from lower-layer obstruction to higher-layer
+dissolution.
+
+The scope is correspondingly narrow.  The paper proves a formed-layer
+dissolution mechanism for needle-class obstructions under its standing
+records; it is not a universal singularity-elimination theorem and does
+not claim that every mathematical obstruction can be removed by moving
+to a higher layer.  It also does not give an application proof for the
+Riemann hypothesis \citep{Bombieri2000Riemann}, Navier--Stokes regularity
+\citep{Fefferman2000NavierStokes}, or any other named external problem
+in this submission.  Those applications would require
+separate problem-specific records and separate verification of the
+required membrane hypotheses.
+
+The organization is as follows.  \Cref{sec:framework} constructs the
+legal quotient, native probe accounting, and minimum-spend language used
+throughout the paper.  \Cref{sec:xi-interface} states the adequacy gate
+that separates native explanation from residual dissolving currency.
+\Cref{sec:predictive-membranes} develops the predictive native membrane
+criterion and the finite propagation bounds that feed the endpoint.
+\Cref{sec:dissolution} proves the layer-dissolving endpoint, and
+\Cref{sec:duality-confinement} proves the complementary
+duality-confinement theorem.  \Cref{sec:critical-pairs} records the
+strict-extension completion needed for critical-pair control, while
+\Cref{sec:taxonomy} closes the body by stating the all-six and
+adequacy-aware transfer discipline.  The discussion and conclusion then
+return to the scope of the dissolution claim and the role of the
+residual calculus of \citet{Tsiokos2026XiCompanion}.
+
+ 
+
+\section{The Formed-Layer Framework}
+\label{sec:framework}
+
+The introduction used the language of needles, emergence, and
+dissolution informally.  We now pass to the finite-dimensional
+operator setting in which those words acquire a budget.  The section
+first fixes the legal quotient and packaged native currency, then
+turns that currency into a minimum-spend formula, and finally records
+the Schur-block tests that certify lawful witnesses.
+
+\subsection{Legal quotient and packaged native currency}
+
+Let \(E\) be a finite-dimensional carrier, meaning the ambient vector
+space on which the lower-layer audit is first written.  An
+\emph{audit energy} is a positive semidefinite quadratic form
+\[
+  C=C^*\succeq 0
+\]
+on \(E\).  Since \(C\) may have a kernel, formulas that look like
+division by \(C\) must be interpreted only after the zero-energy
+directions have been removed.  The \emph{legal quotient} is represented
+through the legal carrier
+\[
+  E_C=(\Ker C)^\perp,\qquad C_0=C|_{E_C}>0.
+\]
+Thus \(E_C\) is the positive-energy representative of the quotient by
+\(\Ker C\), and \(C_0\) is the strictly positive restriction on which
+pseudoinverse and inverse-style capacity formulas have their intended
+variational meaning.
+
+A \emph{native probe family} is the family of linear measurements
+available in the original layer.  We write it as a linear map
+\[
+  L:E\to Y,
+\]
+where \(Y\) is the response space.  The probe family is
+\emph{null-legal} when
+\[
+  L(\Ker C)=0.
+\]
+Equivalently, the measurements vanish on zero-energy directions, so
+they descend to the legal quotient.  We use ``null-legality'' and
+``null-mode legality'' interchangeably for this condition.  It is not
+cosmetic: if null-legality fails, a matrix expression using the
+Moore--Penrose pseudoinverse \(C^\dagger\)
+\citep{Penrose1955GeneralizedInverse,BenIsraelGreville2003GeneralizedInverses}
+can appear finite because the pseudoinverse suppresses
+the kernel, while the true variational capacity is infinite, since a
+zero-energy direction would change the response at no energy cost.  The formed-layer
+framework therefore treats legality as part of the data, not as a
+regularity condition to be checked after the fact.
+
+In applications the audited sub-problem may be expressed through an
+internal package rather than through the full carrier \(E\).  An exact
+package \(\Gamma\) is the package data selecting the admissible
+directions and coordinates used for that audited sub-problem, without
+changing the probe and energy information that the sub-problem is meant
+to preserve.  It determines the \emph{packaged audit} and
+\emph{packaged native family}
+\[
+  C_\Gamma=\Gamma^*C\Gamma,\qquad L_\Gamma=L\Gamma.
+\]
+The following definition is the first currency object used throughout
+the paper.
+
+\begin{definition}[Packaged native currency]\label{def:main:packaged-currency}
+Let \(\Gamma\) be an exact package.  Set
+\[
+  C_\Gamma=\Gamma^*C\Gamma,\qquad L_\Gamma=L\Gamma.
+\]
+If \(L_\Gamma\) is null-legal for \(C_\Gamma\), the
+\emph{packaged native currency} is
+\[
+  \K_{C,\Gamma}(L)=L_\Gamma C_\Gamma^\dagger L_\Gamma^*.
+\]
+\end{definition}
+
+This matrix is the quadratic response currency attached to the native
+probe family after the package and legal quotient have been imposed.
+It is the object against which later native membrane budgets are
+compared.
+
+\begin{theorem}[Probe-family currency]\label{thm:main:probe-family-currency}
+Assume the relevant null-mode legality hypotheses for the packaged
+native family.  Then, for every native recombination \(y\in Y\),
+\[
+  \Capacity_C(y^*L;\Ran\Gamma)=y^*\K_{C,\Gamma}(L)y.
+\]
+Consequently, a native membrane budget is the Loewner inequality
+\[
+  \K_{C,\Gamma}(L)\preceqq\Theta,
+\]
+and failure of this budget is equivalent to the existence of a
+critical-pair witness \(y\) such that
+\[
+  y^*(\K_{C,\Gamma}(L)-\Theta)y>0.
+\]
+\end{theorem}
+
+\begin{proof}
+The recombination \(y\) turns the native probe family into the scalar
+probe \(y^*L\).  Restricting the admissible vectors to \(\Ran\Gamma\)
+is the same as evaluating this scalar probe through the packaged data
+\((C_\Gamma,L_\Gamma)\).  Null-mode legality ensures that this
+evaluation descends to the positive-energy quotient, so the standard
+variational capacity calculation gives the quadratic form
+\[
+  y^*L_\Gamma C_\Gamma^\dagger L_\Gamma^*y
+  =y^*\K_{C,\Gamma}(L)y.
+\]
+In the general null-legal regime, this identity gives \(\K_{C,\Gamma}(L)\)
+its capacity interpretation: it is not merely a formal pseudoinverse
+expression, but the finite minimum-spend value of the native
+recombination.
+
+The budget statement is then the elementary separation property of the
+Loewner order \citep{Lowner1934Monotone,Bhatia1997MatrixAnalysis}.  The inequality
+\(\K_{C,\Gamma}(L)\preceqq\Theta\) holds exactly when
+\[
+  y^*(\K_{C,\Gamma}(L)-\Theta)y\le 0
+\]
+for every response vector \(y\).  If the inequality fails, some \(y\)
+has positive excess; that vector is the critical-pair witness for the
+native budget failure.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.LegalQuotient.probeFamilyCurrency}; the Lean
+theorem proves the point-evaluation matrix identity under stricter
+positivity on a fixed positive legal subspace.  The full statement is
+proved here.  See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+\subsection{Minimum-spend duality}
+
+The preceding currency identity says what a native recombination can
+extract from admissible inputs, and it packages native budgets as
+Loewner inequalities such as \(\K_{C,\Gamma}(L)\preceqq\Theta\).
+The dual question is how much audit energy is needed to realize a
+specified native response.  The \emph{minimum spend} for a desired
+response \(z\) is the variational infimum of the packaged audit energy
+over native inputs whose probe value is \(z\), whenever such inputs
+exist.
+
+\begin{theorem}[Minimum-spend duality]\label{thm:main:minimum-spend-duality}
+For a desired response \(z\), define
+\[
+  \Cost_C(z;L,\Gamma)
+    :=\inf\{a^*C_\Gamma a: L_\Gamma a=z\}.
+\]
+Let \(L_{\Gamma,0}\) denote \(L_\Gamma\) restricted to the legal
+subspace of \(C_\Gamma\), after quotienting by \(\Ker C_\Gamma\).
+Then
+\[
+  \Cost_C(z;L,\Gamma)
+    =z^*\K_{C,\Gamma}(L)^\dagger z
+\]
+when
+\[
+  z\in\Ran L_{\Gamma,0}=\Ran\K_{C,\Gamma}(L),
+\]
+and \(\Cost_C(z;L,\Gamma)=+\infty\) otherwise.
+\end{theorem}
+
+In the proof below, \(C_{\Gamma,0}\) denotes the positive restriction
+of \(C_\Gamma\) to the legal subspace used by \(L_{\Gamma,0}\).
+
+\begin{proof}
+On the legal subspace of \(C_\Gamma\), the packaged audit is positive
+and \(L_{\Gamma,0}\) is an ordinary finite-dimensional linear map from
+the audited carrier to the response space.  If
+\(z\in\Ran L_{\Gamma,0}\), the admissible set in the definition of
+\(\Cost_C(z;L,\Gamma)\) is nonempty.  Among all preimages of \(z\), the
+minimizer is the least-energy preimage, equivalently the least-norm
+preimage after conjugating the legal carrier by the square root of the
+positive audit.  The standard pseudoinverse variational identity
+\citep{BoydVandenberghe2004Convex} then
+identifies the achieved energy with
+\[
+  z^*(L_{\Gamma,0}C_{\Gamma,0}^{-1}L_{\Gamma,0}^*)^\dagger z
+  =z^*\K_{C,\Gamma}(L)^\dagger z.
+\]
+This is the finite-range branch of the formula.
+
+If \(z\notin\Ran\K_{C,\Gamma}(L)=\Ran L_{\Gamma,0}\), then no legal
+native input has packaged probe value \(z\).  Null-legality ensures
+that adding a vector in \(\Ker C_\Gamma\) cannot change the response,
+so there is no hidden zero-energy correction that would realize
+\(z\).  The admissible set in the defining infimum is empty, and the
+minimum spend is therefore \(+\infty\).\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.LegalQuotient.minimumSpendDuality}; the Lean
+theorem proves the off-range infinite-cost branch under the finite
+packaged legal-carrier hypotheses.  The full statement is proved here.
+See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+Minimum-spend duality gives the packaged native currency its cost
+interpretation.  The matrix \(\K_{C,\Gamma}(L)\) records the finite
+responses that native probes can explain, while its pseudoinverse
+prices the least audit energy needed to produce each explained
+response; responses outside its range are not expensive but unavailable
+to the native layer.
+
+\subsection{Schur squares and lawful witnesses}
+
+Before moving to the interface section, we need the block algebra that
+separates a component already represented by one block from the
+remaining Schur margin.  The classical Schur-complement test
+\citep{Schur1917Potenzreihen,Zhang2005SchurApplications,HornJohnson2013MatrixAnalysis}
+has to be read through the legal quotient introduced above.  When the lower block
+is only semidefinite, the off-diagonal data must itself be legal;
+otherwise the pseudoinverse gives a finite-looking number that is not a
+finite variational cost.
+
+The scalar Schur block criterion is the basic case.  Let
+\(C=C^*\succeq 0\) be a positive semidefinite quadratic form on \(E\),
+let \(a\in\mathbb R\), and let \(g\in E\).  Then
+\[
+  \begin{pmatrix}
+    a & g^*\\
+    g & C
+  \end{pmatrix}\succeq 0
+\]
+if and only if
+\[
+  g\perp\Ker C
+  \qquad\text{and}\qquad
+  g^*C^\dagger g\le a.
+\]
+The condition \(g\perp\Ker C\) is the null-legality condition for the
+off-diagonal vector.  If it fails, the displayed pseudoinverse
+expression still has a formal value, but the block cannot be positive:
+a zero-energy direction would see a nonzero off-diagonal coupling.  This
+is the scalar/vector instance of the lawful Schur identity used below;
+the corresponding positive-semidefinite block criterion is the
+classical pseudoinverse condition of \citet{Albert1969PSDPartitioned}.
+
+The same idea appears in compressed form.  An \emph{internal low
+package} \(\Phi\) is a linear embedding that selects an interior
+subspace of the relevant carrier; it is dual in role to the exact
+package \(\Gamma\) above, but it selects an interior block rather than
+restricting to an admissible carrier.  Let \(M\succeq 0\) be a positive
+semidefinite form on a larger Hilbert space \(H\), and let
+\(Q:H\to H\) be the orthogonal projection onto the orthogonal complement
+of \(\Ran\Phi\).  Define
+\[
+  A=\Phi^*M\Phi,\qquad
+  B=QM\Phi,\qquad
+  C_Q=QMQ|_{QH}.
+\]
+When \(B\) is null-legal for \(C_Q\), in the sense that it vanishes on
+the zero-energy directions of the complementary block, the compressed
+Schur margin is
+\[
+  S=A-B^*C_Q^\dagger B.
+\]
+Under the same quotient-legality hypotheses, this margin satisfies
+\[
+  S=(\Phi^*M^\dagger\Phi)^{-1}.
+\]
+Thus the compressed Schur margin records the part of \(M\) carried by
+the interior subspace after the complementary part has been subtracted.
+Null-legality is what makes both displayed inverse operations
+variationally meaningful: \(C_Q^\dagger\) is applied only after its
+zero-energy directions have been quotiented away, and the inverse of
+\(\Phi^*M^\dagger\Phi\) is taken only on the resulting positive
+interior block.
+
+This is the algebraic setting for a \emph{lawful witness}.  A witness
+vector for a Loewner failure such as
+\(\K_{C,\Gamma}(L)\not\preceqq\Theta\) is lawful when it satisfies the
+null-legality constraints inherited from the legal quotient, so that it
+can be packaged into a Schur block of the form above without hiding an
+infinite variational cost behind a finite pseudoinverse expression.
+Lawful witnesses are the audit-respecting analogue of the witnesses
+produced by the scalar Schur criterion.
+
+The legal quotient and null-legality requirements introduced above
+are what make the minimum-spend formula meaningful.  The scalar and
+compressed Schur criteria give the algebraic certificates by which a
+candidate witness is checked against those requirements before the
+next section introduces the interface statement.
+
+ 
+
+\section{The Adequacy-Residual Interface}
+\label{sec:xi-interface}
+
+This paper uses the adequacy residual only as a gate.  It is the Schur
+leftover between dissolving and native currencies on the legal quotient,
+invoked here to give an upper bound on the dissolving block in terms
+of native and residual budgets.  The full residual calculus---projection, optimality,
+exactness in multiple equivalent forms, transport, post-processing, and
+witness characterization---is developed in
+\citet{Tsiokos2026XiCompanion}.  This section records only the interface
+identity needed later in the paper.
+
+The point of making this gate explicit is to prevent the higher-layer
+probe family from being treated as a free enlargement of the native
+data.  A dissolving probe may see more than a native probe sees, but the
+extra visibility has to be paid for by a residual budget.  The interface
+below separates the part explained by the native block from the part
+that must be carried forward as residual currency.
+
+Recall the native probe family \(L:E\to Y\) from
+\Cref{sec:framework}.  A \emph{dissolving probe family}, also called a
+\emph{layer-dissolving probe family} when it is used in the endpoint
+theorem, is a family of measurements available in the higher layer that
+may see information the native probes cannot explain; write it as
+\(D:E\to Z\).  On the legal carrier \(E_C\), with
+\(C_0=C|_{E_C}>0\) and with \(L_0,D_0\) denoting the corresponding
+restrictions, set
+\[
+  K_{LL}=L_0C_0^{-1}L_0^*,\quad
+  K_{DL}=D_0C_0^{-1}L_0^*,\quad
+  K_{DD}=D_0C_0^{-1}D_0^*.
+\]
+The block \(K_{LL}\) is the native self-currency, \(K_{DL}\) is the
+dissolving-by-native cross currency, and \(K_{DD}\) is the dissolving
+self-currency.  We also write \(K_{LD}=K_{DL}^*\) for the adjoint cross
+block.
+
+Together these are the blocks of the joint currency of the native and
+dissolving probe families after all zero-energy directions have been
+removed.  The notation mirrors the Schur-block discussion in
+\Cref{sec:framework}: the native block is the part already priced by the
+lower layer, the dissolving block is the higher-layer quantity later to
+be bounded, and the cross block records how much of the dissolving
+response is routed through native responses.
+
+The \emph{adequacy residual} is the Schur leftover
+\[
+  \XiRes_C(D\mid L)=K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}.
+\]
+Thus the residual is not an arbitrary error term.  It is the part of the
+dissolving self-currency that remains after the native block has
+accounted for everything it can through the cross currency, and it is
+the quantity that will receive a separate budget here.  The formal
+development of the residual as a calculus---projection identity,
+optimal-residual identity, exact-adequacy equivalence, chain rule,
+post-processing laws, and blind-spot witnesses---is the body of
+\citet{Tsiokos2026XiCompanion}; the present paper cites that calculus by
+name rather than reproving its theorems.
+
+In the interface estimate below, \(\Theta_Y\) denotes a budget on the
+native response space \(Y\), while \(\Xi_Z\) denotes a residual
+budget on the dissolving response space \(Z\).
+
+\begin{theorem}[Adequacy interface]\label{thm:main:adequacy-interface}
+Let \(A_*:=K_{DL}K_{LL}^\dagger\).  Then
+\[
+  K_{DD}=A_*K_{LL}A_*^*+\XiRes_C(D\mid L).
+\]
+Consequently, if \(K_{LL}\preceqq\Theta_Y\) and
+\(\XiRes_C(D\mid L)\preceqq\Xi_Z\), then
+\[
+  K_{DD}\preceqq A_*\Theta_YA_*^*+\Xi_Z.
+\]
+Moreover,
+\[
+  \XiRes_C(D\mid L)=0
+  \iff \exists A\text{ with }D_0=AL_0
+  \iff \Ker L_0\subseteq\Ker D_0.
+\]
+\end{theorem}
+
+\begin{proof}
+The first assertion is the Schur identity prepared by
+\Cref{sec:framework}.  By definition of \(A_*\), the native-explained
+part of the dissolving block is
+\[
+  A_*K_{LL}A_*^*
+  =K_{DL}K_{LL}^\dagger K_{LD},
+\]
+where the pseudoinverse is taken on the native currency coming from the
+legal quotient.  Hence
+\[
+  K_{DD}
+  =A_*K_{LL}A_*^*
+   +\bigl(K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}\bigr)
+  =A_*K_{LL}A_*^*+\XiRes_C(D\mid L).
+\]
+The point of the legal-quotient discipline is that \(K_{LL}^\dagger\)
+is not a free formal inverse: it is the pseudoinverse of the native
+currency after null-legality has forced the relevant probes to descend
+to the quotient.  This is the same legality issue as in
+\Cref{sec:framework}: without it, the Schur expression could look finite
+while the variational problem it is meant to represent has an illegal
+zero-energy direction.
+
+The budget consequence is monotonicity in the Loewner order.  If
+\(K_{LL}\preceqq\Theta_Y\), then conjugating by \(A_*\) gives
+\[
+  A_*K_{LL}A_*^*\preceqq A_*\Theta_YA_*^*.
+\]
+Adding the residual bound
+\(\XiRes_C(D\mid L)\preceqq\Xi_Z\) to this inequality and using the
+Schur splitting gives
+\[
+  K_{DD}\preceqq A_*\Theta_YA_*^*+\Xi_Z.
+\]
+This is the interface estimate used later by the layer-dissolving
+endpoint theorem in \Cref{sec:dissolution}.  Its two inputs are
+exactly the native budget on \(K_{LL}\) and the residual budget on
+\(\XiRes_C(D\mid L)\).
+
+Finally, \(\XiRes_C(D\mid L)=0\) is the exact-adequacy case.
+If \(D_0=AL_0\), then every vector killed by \(L_0\) is killed by
+\(D_0\), so \(\Ker L_0\subseteq\Ker D_0\), and the dissolving currency
+has no Schur leftover after the native block explains it.  Conversely,
+in finite dimension, the inclusion
+\(\Ker L_0\subseteq\Ker D_0\) says exactly that \(D_0\) factors through
+the quotient by \(\Ker L_0\), hence through the native map \(L_0\);
+this gives a linear map \(A\) with \(D_0=AL_0\).  This proves the
+three-form exactness statement used here.  The full optimal native
+explanation characterization, including the Loewner-minimal residual
+form and the additional equivalent formulation, belongs to
+\citet{Tsiokos2026XiCompanion}.
+
+The exact case marks the boundary between native sufficiency and
+residual currency that still has to be budgeted.  In the nonzero case,
+the present paper does not classify the residual or produce witnesses
+for it; that classification is developed in
+\citet{Tsiokos2026XiCompanion}.  We only need the residual as a positive
+budgeted object that can be transported into the dissolution theorem.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.XiInterface.adequacyInterface}; the Lean
+theorem proves the Schur identity under explicit algebraic hypotheses
+on the legal subspace and packaged data.  The full statement, including
+Loewner monotonicity and exact-factorization equivalence, is proved
+here.  See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+This theorem is the sole interface the rest of the paper needs to the
+\(\XiRes\)-machinery.  The predictive native membranes of
+\Cref{sec:predictive-membranes} spend against \(\K\) and \(\Theta_Y\);
+the layer-dissolving endpoint of \Cref{sec:dissolution} consumes a
+bounded \(\XiRes_C(D\mid L)\) and produces the dissolving budget for
+\(K_{DD}\); and the duality-confinement theorem of
+\Cref{sec:duality-confinement} imports the residual budget without
+re-developing it.  Keeping the interface narrow lets the present paper
+use the residual calculus without duplicating it.  The blind-spot
+interpretation---that the adequacy residual captures the part of the
+dissolving probes' measurements that the native probes cannot
+explain---is developed quantitatively as blind-spot currency in
+\citet{Tsiokos2026XiCompanion}.
+
+ 
+
+\section{Predictive Native Membranes}
+\label{sec:predictive-membranes}
+
+The adequacy interface of \Cref{sec:xi-interface} asks for two inputs:
+a native budget on the native block and a residual budget on the
+adequacy residual.  This section supplies the native side in staged
+form.  At each accepted stage of a refinement or acceptance process, a
+predictive currency records the native-layer measurement that will later
+be spent by the layer-dissolving endpoint.
+
+\subsection{Predictive currency and the membrane criterion}
+
+In many applications the native data is not accepted all at once.  It is
+assembled stage by stage: by refinement, enlargement, or passage to an
+accepted stage.  At an accepted stage \(j\), we have a stage-local
+instance of the framework from \Cref{sec:framework}: a carrier, an audit
+energy \(C_j\), an exact package \(\Gamma_j\), a native probe family
+\(L_j\) with its response space, and a routing map \(R_j\) into a common
+response target.  The predictive currency at stage \(j\) is the
+packaged native currency for these data, transported by \(R_j\).
+
+Informally, the predictive currency is
+\[
+  \widehat K_j
+  =R_jL_j\Gamma_j(\Gamma_j^*C_j\Gamma_j)^\dagger
+    \Gamma_j^*L_j^*R_j^*.
+\]
+The middle block
+\[
+  L_j\Gamma_j(\Gamma_j^*C_j\Gamma_j)^\dagger\Gamma_j^*L_j^*
+\]
+is the stage-local instance of the packaged native currency
+\(\K_{C_j,\Gamma_j}(L_j)\) from \Cref{sec:framework}; the outer
+conjugation by \(R_j\) places that currency in the common response
+space.  As before, this expression is variationally meaningful only
+when \(L_j\Gamma_j\) is null-legal for the packaged audit
+\(\Gamma_j^*C_j\Gamma_j\), which is the legal-quotient discipline of
+\Cref{sec:framework} applied at stage \(j\).
+
+\begin{theorem}[Predictive native membrane]\label{thm:main:predictive-native-membrane}
+A native predictive membrane with budget \(\Theta\) is the bound
+\[
+  \widehat K_j\preceqq\Theta\qquad\forall j\text{ accepted}.
+\]
+Equivalently, no accepted stage contains a native recombination witness
+\((j,y)\) with
+\[
+  y^*(\widehat K_j-\Theta)y>0.
+\]
+\end{theorem}
+
+\begin{proof}
+The equivalence is the Loewner-separation argument from
+\Cref{sec:framework}, now indexed by accepted stages.  For a fixed
+stage \(j\), the inequality \(\widehat K_j\preceqq\Theta\) holds if and
+only if
+\[
+  y^*(\widehat K_j-\Theta)y\le 0
+\]
+for every response vector \(y\).  Requiring the inequality for every
+accepted \(j\) is therefore the same as ruling out every pair \((j,y)\)
+with strict positive excess; these are precisely the native critical-pair
+witnesses for the predictive currency.\footnote{Verified in Lean as
+\texttt{SixBirdsNeedles.Main.PredictiveNative.predictiveNativeMembrane};
+see \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+Thus a predictive native membrane is a stage-by-stage Loewner
+certificate: producing one is exactly ruling out all accepted
+critical-pair witnesses.  The next step is to propagate such certificates
+across the accepted refinement.
+
+\subsection{Summable predictive propagation}
+
+The preceding criterion is stagewise: it certifies a Loewner budget at
+each accepted stage.  The remaining question is when such certificates
+survive passage from one accepted stage to the next, and when they can
+be aggregated over the whole accepted refinement in a common response
+space.  The mechanism is multiplicative inflation at each step, together
+with additive defects whose total contribution is summable.
+
+\begin{theorem}[Summable predictive propagation]\label{thm:main:summable-predictive-propagation}
+If, in a common response space,
+\[
+  \widehat K_{j+1}\preceqq (1+\varepsilon_j)\widehat K_j+D_j,
+\]
+with
+\[
+  \prod_j(1+\varepsilon_j)<\infty,\qquad \sum_jD_j\preceqq D_\infty,
+\]
+then
+\[
+  \widehat K_n\preceqq P_\infty(\widehat K_0+D_\infty),
+\]
+where \(P_\infty\) denotes \(\prod_j(1+\varepsilon_j)\).
+\end{theorem}
+
+\begin{proof}
+The hypothesis is the Loewner inflation-plus-defect step.  Iterating it
+from stage \(0\) to stage \(n\) gives the finite-stage envelope
+\[
+  \widehat K_n
+  \preceqq
+  \Bigl(\prod_{i=0}^{n-1}(1+\varepsilon_i)\Bigr)\widehat K_0
+  +
+  \sum_{i=0}^{n-1}
+  \Bigl(\prod_{k=i+1}^{n-1}(1+\varepsilon_k)\Bigr)D_i .
+\]
+Each scalar product is bounded above by \(P_\infty\), and the defect
+terms are positive semidefinite.  Hence the finite sum of propagated
+defects is bounded by \(P_\infty D_\infty\) in the Loewner order, while
+the propagated initial term is bounded by \(P_\infty\widehat K_0\).  This
+is exactly the displayed estimate.
+
+The conclusion is uniform in the finite stage index: the constants
+\(P_\infty\) and \(D_\infty\) are fixed by the propagation data, so the
+same envelope bounds every \(\widehat K_n\) for which the iteration is
+defined.  No convergence of the sequence \(\widehat K_n\) is asserted or
+needed.
+
+The limiting character of the statement lies in the hypotheses, not in
+the conclusion.  The infinite product and the operator-valued sum are
+read as uniform bounds over all finite truncations: finite products are
+bounded by \(P_\infty\), and finite defect sums are bounded by
+\(D_\infty\) in the Loewner order.  This is the passage from the
+infinite-index hypotheses to the uniform finite-truncation bounds used
+above.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.PredictiveNative.summablePredictivePropagation};
+the Lean theorem proves the finite-stage propagation form under
+finite-truncation product and defect bounds.  The full statement is
+proved here.  See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+The operational consequence is that a large enough budget propagates the
+membrane.  If \(\widehat K_0\preceqq\Theta_0\) and
+\(D_\infty\preceqq\Delta\), then
+\(\widehat K_n\preceqq P_\infty(\Theta_0+\Delta)\) for every \(n\).  Thus
+the native predictive membrane survives to every accepted stage with a
+uniform budget, and this uniform native budget is the input consumed by the
+layer-dissolving endpoint of \Cref{sec:dissolution}.
+
+ 
+
+\section{Layer-Dissolving Membrane Endpoint}
+\label{sec:dissolution}
+
+This section proves the first of the paper's two main results.
+\Cref{sec:predictive-membranes} supplied a uniform native budget for
+accepted predictive stages, while \Cref{sec:xi-interface} supplied the
+adequacy residual as a separately budgeted object.  The endpoint theorem
+combines those two inputs with transport into a common dissolving
+response space.  The lower-layer obstruction is not declared harmless;
+it is priced by native and residual currencies, and that price is
+transported into the higher-layer accounting.
+
+At an accepted stage \(j\), the dissolving probe family of
+\Cref{sec:xi-interface} is realized as a linear map
+\[
+  D_j:E_j\to Z_j,
+\]
+where \(E_j\) is the stage carrier and \(Z_j\) is the stage dissolving
+response space.  On the legal quotient at stage \(j\), with \(C_j\) the
+stage audit energy restricted to the legal carrier and \(C_j^\dagger\)
+its pseudoinverse there, set
+\[
+  K^L_j=L_jC_j^\dagger L_j^*,\qquad
+  K^D_j=D_jC_j^\dagger D_j^*.
+\]
+Also let
+\[
+  \Xi_j=\XiRes_{C_j}(D_j\mid L_j),\qquad
+  A_j=K^{DL}_j(K^L_j)^\dagger,
+\]
+where \(K^{DL}_j\) is the dissolving-by-native cross block at stage
+\(j\).  The block \(K^L_j\) is the stage-local native self-currency,
+\(K^D_j\) is the stage-local dissolving self-currency, \(A_j\) is the
+stage-local optimal native explanation map, and \(\Xi_j\) is the
+stage-local adequacy residual.  The stagewise Schur identity is
+\[
+  K^D_j=A_jK^L_jA_j^*+\Xi_j.
+\]
+This is exactly the adequacy interface theorem of
+\Cref{sec:xi-interface} read at stage \(j\).  The predictive currency
+\(\widehat K_j\) of \Cref{sec:predictive-membranes} is the routed native
+currency in a common native response space; the \(K^L_j\) used here is
+the un-routed native block on the stage response space.  Thus the
+native-side routing \(R_j\) from \Cref{sec:predictive-membranes} is
+distinct from the dissolving-side transport \(S_j\) below, which carries
+the dissolving currency into a common target response space.
+The superscripts in \(\Theta^Y_j\), \(\Xi^Z_j\), and \(\Theta^D\)
+mark, respectively, stage-native, stage-residual, and transported
+dissolving target budgets.
+
+\begin{theorem}[Layer-dissolving membrane master theorem]\label{thm:main:layer-dissolving-master}
+Assume a formed closure/layer with exact package, null-mode legality,
+declared native and dissolving probe families, accepted predictive
+transport, all-six records, and nonclaim boundary.  If
+\[
+  K^L_j\preceqq\Theta^Y_j,
+\]
+\[
+  \Xi_j\preceqq\Xi^Z_j,
+\]
+and after transport \(S_j:Z_j\to Z\),
+\[
+  S_j(A_j\Theta^Y_jA_j^*+\Xi^Z_j)S_j^*\preceqq\Theta^D,
+\]
+then
+\[
+  S_jK^D_jS_j^*\preceqq\Theta^D.
+\]
+Consequently, for every layer-dissolving recombination \(z\in Z\),
+\[
+  \sup_j \Capacity_{C_j}(z^*S_jD_j;E_j)\le z^*\Theta^Dz.
+\]
+There are no layer-dissolving predictive needles within the declared scope.
+\end{theorem}
+
+\begin{proof}
+The six named hypotheses specify the scope in which the algebra is
+allowed to be read as dissolution.  The exact package and null-mode
+legality hypotheses put the stage currencies on the legal quotient; the
+declared native and dissolving probe families identify the two probe
+blocks; accepted predictive transport supplies the native-side budget;
+the all-six records are the transfer records later organized in
+\Cref{sec:taxonomy}; and the nonclaim boundary records that the theorem
+asserts only this audited endpoint, not a universal singularity-removal
+principle.
+
+Start from the stagewise Schur identity
+\[
+  K^D_j=A_jK^L_jA_j^*+\Xi_j.
+\]
+Conjugating by the dissolving-side transport \(S_j\) gives
+\[
+  S_jK^D_jS_j^*
+  =S_jA_jK^L_jA_j^*S_j^*+S_j\Xi_jS_j^*.
+\]
+The native budget \(K^L_j\preceqq\Theta^Y_j\), the residual budget
+\(\Xi_j\preceqq\Xi^Z_j\), and Loewner monotonicity under conjugation
+therefore imply
+\[
+  S_jK^D_jS_j^*
+  \preceqq
+  S_j(A_j\Theta^Y_jA_j^*+\Xi^Z_j)S_j^*.
+\]
+The transport hypothesis bounds the right-hand side by \(\Theta^D\),
+which proves the transported dissolving budget.  The capacity bound and
+the no-layer-dissolving-needle conclusion are established below using
+this transported bound and the framework currency identity.
+
+For the capacity estimate, fix \(z\in Z\).  The recombination
+\(z^*S_jD_j\) is a scalar dissolving probe on the stage carrier
+\(E_j\), so the probe-family currency identity from
+\Cref{sec:framework} gives
+\[
+  \Capacity_{C_j}(z^*S_jD_j;E_j)=z^*S_jK^D_jS_j^*z.
+\]
+Applying the transported dissolving budget yields
+\[
+  \Capacity_{C_j}(z^*S_jD_j;E_j)\le z^*\Theta^Dz
+\]
+at every accepted stage.  Taking the supremum over \(j\) gives the
+displayed capacity bound.
+
+Finally, a layer-dissolving predictive needle within this paper's scope
+would be a dissolving recombination \(z\in Z\) and an accepted stage
+\(j\) with strict budget excess
+\[
+  z^*(S_jK^D_jS_j^*-\Theta^D)z>0.
+\]
+The transported dissolving budget is exactly the assertion that no such
+critical pair exists.  Thus the no-needle conclusion is not an
+additional classification theorem; it is the critical-pair translation
+of the same Loewner inequality.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.LayerDissolving.layerDissolvingMaster}; the
+Lean theorem proves the transport-bound branch under the stagewise
+budgets and the transport hypothesis.  The full statement is proved
+here.  See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+This theorem is the paper's first main dissolution result.  A
+lower-layer needle that survives native probes and accepted predictive
+certificates is priced rather than dismissed.  The price has two
+parts: the native budget \(\Theta^Y_j\) supplied by
+\Cref{sec:predictive-membranes}, and the adequacy residual budget
+\(\Xi^Z_j\) supplied by \Cref{sec:xi-interface} and developed
+quantitatively in \citet{Tsiokos2026XiCompanion}.  After transport by
+\(S_j\), the resulting dissolving budget \(\Theta^D\) is uniform across
+accepted stages and against arbitrary dissolving recombinations.  The
+second main result, the duality-confinement theorem, is the subject of
+the next section.
+
+ 
+
+\section{Duality-Confinement Membrane Theorem}
+\label{sec:duality-confinement}
+
+The previous section priced a layer-dissolving probe family against a
+native one through the adequacy interface.  The complementary geometric
+setting occurs when the layer carries an involutive duality, such as an
+anti-linear or anti-isometric symmetry, and the question is whether
+visible object mass is confined to the duality's fixed locus.  The
+framework theorem of this section gives conditions under which
+anti-invariant membrane collapse implies object-side confinement to
+that fixed locus.  Both main results inhabit the same formed-layer theory; they differ
+in what is priced and what is confined.
+
+\subsection{Duality-confinement records}
+
+The duality-confinement theorem uses two ledgers.  The first is an
+object-side ledger that records how visible objects move under an
+involution.  The second is a carrier-side membrane that prices
+anti-invariant probe response.  This subsection fixes those records
+before the next subsection turns ledger collapse into confinement.
+Throughout the section, the superscript ``\(-\)'' marks anti-invariant
+carrier-side currencies and budgets.
+
+\begin{definition}[Involutive object ledger]\label{def:main:involutive-ledger}
+An involutive object ledger is a tuple
+\[
+  \mathfrak X=(X,J,\mu,\psi,Y,\mathcal J),
+\]
+where:
+\begin{enumerate}[label=(\roman*)]
+\item \(X\) is the visible object space;
+\item \(J:X\to X\) is an involution;
+\item \(\mu\) is a positive object ledger measure, meaning a positive
+  Radon-type measure on \(X\), or a finite positive weight system on
+  \(X\);
+\item \(Y\) is a real Hilbert response space;
+\item \(\mathcal J:Y\to Y\) is a linear isometric involution;
+\item \(\psi:X\to Y\) is an equivariant readout:
+\[
+  \psi(Jx)=\mathcal J\psi(x).
+\]
+\end{enumerate}
+Define
+\[
+  P_-:=\frac{I-\mathcal J}{2},\qquad \psi_-(x):=P_-\psi(x).
+\]
+Here \(P_-\) is the spectral projection onto the \(-1\)-eigenspace
+of the isometric involution \(\mathcal J\), which is the standard
+anti-invariant decomposition for an involution on a Hilbert space
+\citep{Conway1990FunctionalAnalysis}.
+The anti-invariant object ledger is
+\[
+  \mathsf A_X:=\int_X \psi_-(x)\psi_-(x)^*\,d\mu(x),
+\]
+interpreted in the finite-rank or trace-class sense whenever required.
+\end{definition}
+
+\begin{definition}[Separating anti-invariant readout]\label{def:main:separating-readout}
+The anti-invariant readout separates the fixed locus when
+\[
+  \psi_-(x)=0 \quad\Longleftrightarrow\quad x\in\Fix(J)
+\]
+on the visible support of \(\mu\).  It is quantitatively separating if,
+for every \(\varepsilon>0\), there exists \(m(\varepsilon)>0\) such that
+\[
+  \dist(x,\Fix(J))\ge \varepsilon
+  \quad\Longrightarrow\quad
+  \|\psi_-(x)\|\ge m(\varepsilon).
+\]
+\end{definition}
+
+\begin{definition}[Carrier-side anti-invariant membrane]\label{def:main:anti-invariant-membrane}
+Let \(E\) be an exact packaged carrier with audit \(C\succeq 0\) on its
+legal quotient and anti-invariant native probe family
+\[
+  L^-:E\to Y^-.
+\]
+The anti-invariant carrier currency is
+\[
+  \K^-:=L^-C^\dagger (L^-)^*,
+\]
+with null-mode legality required.  A budget record is a positive
+operator \(\Theta^-\) with
+\[
+  \K^-\preceqq \Theta^-.
+\]
+A collapse ladder is a family of records
+\[
+  \K^-_n\preceqq B_n,\qquad \tr B_n\to 0,
+\]
+or a defected version with \(B_n\) replaced by a bridge budget as
+developed in the domination-bridges subsection.
+\end{definition}
+
+Together these records separate the two sides of the
+duality-confinement argument.  The ledger \(\mathfrak X\) carries the
+visible structure and its anti-invariant readout; the separating-readout
+condition quantifies how reliably that readout detects departure from
+\(\Fix(J)\); and the carrier-side anti-invariant membrane supplies the
+framework currency that will be forced to collapse.  The next subsection
+turns these records into a confinement conclusion, while the
+domination-bridges subsection supplies the comparison from object-side
+ledger to carrier-side membrane.
+
+\subsection{Object-side confinement from anti-invariant ledger collapse}
+
+This subsection turns the records of the previous subsection into the
+first confinement statements.  The trace identity expresses
+\(\mathsf A_X\) as the \(L^2\)-mass of the anti-invariant readout, so
+ledger collapse and pointwise vanishing of \(\psi_-\) coincide in the
+positive-measure sense.  Combined with the separating-readout condition,
+this gives the qualitative and quantitative confinement statements that
+anchor the duality-confinement framework.
+
+\begin{lemma}[Trace identity]\label{lem:main:trace-identity}
+If \(\mathsf A_X\) is trace-class \citep{Simon2005TraceIdeals}, then
+\[
+  \tr\mathsf A_X=\int_X \|\psi_-(x)\|^2\,d\mu(x).
+\]
+Consequently, \(\mathsf A_X=0\) if and only if \(\psi_-(x)=0\) for
+\(\mu\)-almost every visible object \(x\).
+\end{lemma}
+
+\begin{proof}
+The identity follows from the definition of trace for rank-one positive
+operators integrated against a positive measure: the trace of
+\(\psi_-(x)\psi_-(x)^*\) is \(\|\psi_-(x)\|^2\).  Since the integrand is
+nonnegative, its integral vanishes exactly when the integrand vanishes
+almost everywhere; and a positive trace-class operator has trace zero
+if and only if it is the zero operator
+\citep{ReedSimon1980FunctionalAnalysis}.
+\end{proof}
+
+\begin{theorem}[Separation implies fixed-locus confinement]\label{thm:main:separation-confinement}
+Assume the anti-invariant readout separates the fixed locus.  If
+\[
+  \mathsf A_X=0,
+\]
+then
+\[
+  \mu(X\setminus\Fix(J))=0.
+\]
+If the ledger is finite with positive weights, every visible object with
+positive weight lies in \(\Fix(J)\).
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:main:trace-identity}, \(\psi_-(x)=0\) for
+\(\mu\)-almost every visible object \(x\).  The separating-readout
+condition identifies this zero set with \(\Fix(J)\) on the visible
+support of \(\mu\), so the complement of the fixed locus has
+\(\mu\)-measure zero.  In the finite positive-weight case, a visible
+object outside \(\Fix(J)\) would carry positive mass on the complement,
+contradicting that measure-zero conclusion.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.DualityConfinement.separationConfinement};
+the Lean theorem proves the finite positive-weight confinement clause
+under finite-support separation.  The full statement is proved here.
+See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[Quantitative confinement]\label{thm:main:quantitative-confinement}
+Assume quantitative separation.  Then
+\[
+  \mu\{x:\dist(x,\Fix(J))\ge\varepsilon\}
+  \le
+  \frac{\tr\mathsf A_X}{m(\varepsilon)^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+On the set
+\(\{x:\dist(x,\Fix(J))\ge\varepsilon\}\), quantitative separation gives
+\[
+  \|\psi_-(x)\|^2\ge m(\varepsilon)^2.
+\]
+Applying Markov's inequality \citep{Billingsley1995ProbabilityMeasure}
+to the trace identity therefore bounds the
+measure of this set by
+\(\tr\mathsf A_X/m(\varepsilon)^2\).
+\end{proof}
+
+The subsection has converted collapse of the object-side ledger
+\(\mathsf A_X\) into confinement to \(\Fix(J)\).  The carrier-side
+membrane from the previous subsection has not yet entered the argument;
+the next step is to compare it with \(\mathsf A_X\).
+
+\subsection{Domination bridges}
+
+\Cref{thm:main:separation-confinement} obtained confinement from
+collapse of the object-side ledger \(\mathsf A_X\), while the
+formed-layer framework prices anti-invariant motion on the carrier side
+through the membrane currency \(\K^-\).  To use carrier-side membrane
+data to drive object-side confinement, the two sides must be related by
+a comparison record.  A completed domination bridge is that record;
+Douglas domination \citep{Douglas1966Majorization,FillmoreWilliams1971OperatorRanges}
+supplies its operator-theoretic foundation; and the
+duality-confinement membrane theorem combines bridge collapse with the
+trace identity to produce confinement.
+
+\begin{definition}[Completed domination bridge]\label{def:main:domination-bridge}
+A completed domination bridge from the object ledger to the carrier
+membrane is a record
+\[
+  \mathsf A_X\preceqq \K^-+E
+\]
+with \(E\succeq 0\) a declared bridge defect.  Equivalently, in the
+exact case \(E=0\), if
+\[
+  \mathsf A_X=V^*V,\qquad \K^-=W^*W,
+\]
+then the bridge is exact precisely when there is a contraction \(T\)
+such that
+\[
+  V=TW.
+\]
+\end{definition}
+
+\begin{theorem}[Douglas domination]\label{thm:main:douglas-domination}
+Let \(\mathsf A=V^*V\) and \(\mathsf K=W^*W\) be bounded positive
+operators on the same response space.  Then
+\[
+  \mathsf A\preceqq\mathsf K
+\]
+if and only if there exists a contraction \(T\) with
+\[
+  V=TW.
+\]
+\end{theorem}
+
+\begin{proof}
+The reverse direction is immediate.  If \(V=TW\) and \(T\) is a
+contraction, then
+\[
+  V^*V=W^*T^*TW\preceqq W^*W,
+\]
+because \(T^*T\preceqq I\).
+
+For the forward direction, apply Douglas's factorization lemma to
+\(V^*\) and \(W^*\).  The domination
+\(V^*V\preceqq W^*W\) is equivalently the range inclusion and uniform
+norm bound required by that lemma, so there is a contraction \(T\) with
+\(V^*=W^*T^*\), equivalently \(V=TW\).\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.DualityConfinement.douglasDominationReverse};
+the Lean theorem proves the reverse contraction-to-domination
+implication under the stated contraction hypothesis.  The full
+statement is proved here.  See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+\begin{theorem}[Duality-confinement membrane theorem]\label{thm:main:duality-confinement-master}
+Let \(\mathfrak X=(X,J,\mu,\psi,Y,\mathcal J)\) be an involutive object
+ledger with separating anti-invariant readout, as in
+\Cref{def:main:involutive-ledger,def:main:separating-readout}.  Suppose
+there is a sequence of completed domination records
+\[
+  \mathsf A_X\preceqq B_n \qquad (n=1,2,\ldots)
+\]
+where \(B_n\succeq 0\) and
+\[
+  \tr B_n\to 0.
+\]
+Then
+\[
+  \mu(X\setminus\Fix(J))=0.
+\]
+\end{theorem}
+
+\begin{proof}
+For every \(n\), the completed domination record gives
+\[
+  0\preceqq \mathsf A_X\preceqq B_n.
+\]
+By positivity and trace monotonicity,
+\[
+  0\le \tr\mathsf A_X\le \tr B_n.
+\]
+Taking \(n\to\infty\) and using \(\tr B_n\to 0\) gives
+\(\tr\mathsf A_X=0\).  Since \(\mathsf A_X\) is positive trace-class,
+this implies \(\mathsf A_X=0\).
+
+The separating anti-invariant readout now turns ledger collapse into
+object-side confinement.  Applying
+\Cref{thm:main:separation-confinement} gives\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.DualityConfinement.dualityConfinementMaster};
+the Lean theorem proves a finite-rank single-bridge version with
+positive-weight confinement.  The full statement is proved here.  See
+\Cref{subsec:paper1-per-label-coverage}.}
+\[
+  \mu(X\setminus\Fix(J))=0.
+\]
+\end{proof}
+
+This subsection delivers the master theorem of
+\Cref{sec:duality-confinement}.  The two-ledger records of the first
+subsection, the trace-identity reasoning of the second, and the
+comparison apparatus above together give the conditional confinement
+promised in the section opener.  The remaining subsections supply the
+finite-ledger and defect-budget machinery needed to use that theorem.
+
+\subsection{Exhaustive finite ledgers}
+
+\Cref{thm:main:duality-confinement-master} requires a sequence of
+completed domination records that drives the object ledger to zero.  In
+many applications the completed ledger is not accessed directly; one
+has finite-window or moving approximations instead.  Exhaustive finite
+ledgers package those approximations so that vanishing exhaustivity
+supplies the input required by the master theorem.
+
+\begin{definition}[Exhaustive moving ledger]\label{def:main:exhaustive-moving-ledger}
+A finite-window or moving object ledger \(\mathsf A_{X,n}\) is
+exhaustive for a completed ledger \(\mathsf A_X\) if there are
+inclusions or transports \(\iota_n\) and tail operators
+\(T_n\succeq 0\) such that
+\[
+  \mathsf A_X\preceqq \iota_n\mathsf A_{X,n}\iota_n^*+T_n.
+\]
+It is vanishing-exhaustive under bounds
+\(\mathsf A_{X,n}\preceqq B_n\) if
+\[
+  \tr(\iota_nB_n\iota_n^*)+\tr T_n\to 0.
+\]
+\end{definition}
+
+\begin{theorem}[Exhaustive ledger squeeze]\label{thm:main:exhaustive-ledger-squeeze}
+If \(\mathsf A_{X,n}\preceqq B_n\) and the moving ledger is
+vanishing-exhaustive for \(\mathsf A_X\), then
+\[
+  \mathsf A_X=0.
+\]
+Consequently, under readout separation, visible object mass is confined
+to \(\Fix(J)\).
+\end{theorem}
+
+\begin{proof}
+By exhaustivity and the bounds \(\mathsf A_{X,n}\preceqq B_n\),
+\[
+  0\preceqq\mathsf A_X
+  \preceqq \iota_nB_n\iota_n^*+T_n.
+\]
+Taking traces gives
+\[
+  0\le \tr\mathsf A_X
+  \le \tr(\iota_nB_n\iota_n^*)+\tr T_n.
+\]
+The right-hand side tends to \(0\) by vanishing exhaustivity, so
+\(\tr\mathsf A_X=0\).  Since \(\mathsf A_X\) is positive trace-class,
+this implies \(\mathsf A_X=0\).  Under readout separation, the
+confinement consequence follows from
+\Cref{thm:main:separation-confinement}.
+\end{proof}
+
+The exhaustive-ledger squeeze packages the typical application pattern:
+finite or moving approximations dominate the full ledger with shrinking
+tails.  The remaining subsection handles the case where the domination
+records themselves come with declared defects.
+
+\subsection{Defected obstruction budgets}
+
+The master theorem and the exhaustive squeeze use completed domination
+records with no residual defect.  In practice, both the bridge from
+object ledger to carrier membrane and the source-side membrane estimate
+may carry declared positive defects.  This subsection packages the
+defected obstruction budget and records the scalar optimization that
+turns those defects into a single sufficient sublinear condition.
+
+\begin{definition}[General obstruction budget]\label{def:main:obstruction-budget}
+A defected duality-confinement record has the form
+\[
+  \mathsf A_X
+  \preceqq
+  (1+t)(\K^-_n+E_{\mathrm{src},n})
+  +(1+t^{-1})E_{\mathrm{br},n}
+\]
+for \(t>0\), where \(E_{\mathrm{br},n}\) is bridge/domination defect
+and \(E_{\mathrm{src},n}\) is source/membrane defect.  In a collapse
+ladder one often has
+\[
+  \K^-_n\preceqq \Lambda_n^{-1}\Theta_0^-.
+\]
+Then the budget is
+\[
+  B_n(t)
+  =(1+t)(\Lambda_n^{-1}\Theta_0^-+E_{\mathrm{src},n})
+   +(1+t^{-1})E_{\mathrm{br},n}.
+\]
+\end{definition}
+
+This is the operator Cauchy-Schwarz or Young splitting of the cross
+term \citep{BhatiaDavis1995CauchySchwarz,Ando1995MatrixYoung} that
+appears when both the source membrane and the domination bridge carry
+positive defects; the parameter \(t\) balances the two defect
+contributions.
+
+\begin{proposition}[Optimized scalar trace budget]\label{prop:main:optimized-trace-budget}
+Let
+\[
+  a_n=\tr(\Lambda_n^{-1}\Theta_0^-+E_{\mathrm{src},n}),
+  \qquad
+  b_n=\tr E_{\mathrm{br},n}.
+\]
+Then
+\[
+  \inf_{t>0}\tr B_n(t)=(\sqrt{a_n}+\sqrt{b_n})^2.
+\]
+Thus a sufficient scalar condition for exact confinement by the
+exhaustive-ledger squeeze is
+\[
+  a_n\to 0,\qquad b_n\to 0.
+\]
+\end{proposition}
+
+\begin{proof}
+Taking traces in the definition of \(B_n(t)\) gives
+\[
+  \tr B_n(t)=(1+t)a_n+(1+t^{-1})b_n.
+\]
+For \(a_n,b_n>0\), differentiating in \(t>0\) gives the minimizer
+\[
+  t=\sqrt{b_n/a_n},
+\]
+and substitution gives
+\[
+  \inf_{t>0}\tr B_n(t)=(\sqrt{a_n}+\sqrt{b_n})^2.
+\]
+If one of \(a_n,b_n\) is zero, the same value follows by continuity, or
+by taking the corresponding endpoint limit in \(t\).
+
+If \(a_n\to0\) and \(b_n\to0\), then the optimized traces tend to zero.
+Choosing \(t_n\) at, or arbitrarily near, the scalar infimum produces
+budgets \(B_n(t_n)\) with \(\tr B_n(t_n)\to0\).  The
+exhaustive-ledger squeeze of
+\Cref{thm:main:exhaustive-ledger-squeeze} then gives exact
+confinement.
+\end{proof}
+
+This subsection closes the framework apparatus for
+duality-confinement.  The five subsections have isolated the involutive
+object ledger and carrier-side anti-invariant membrane records, the
+trace identity connecting anti-invariant ledger collapse to fixed-locus
+confinement, the domination bridges and master theorem, the
+exhaustive-finite-ledger squeeze, and finally the defected obstruction
+budget that admits declared bridge and source defects.  Falsifiability
+is therefore record-level: an instance that fails to achieve confinement
+must fail by lacking, weakening, or defecting one of these records, in a
+way exposed by the layer-dissolving and duality-confinement endpoints.
+This concludes the body's treatment of the duality-confinement
+mechanism; the next section turns to the critical-pair-completion and
+strict-extension records that the membrane theorems rely on, and
+\Cref{sec:taxonomy} organizes the all-six taxonomy that scopes when a
+record is admissible.
+
+ 
+
+\section{Critical-Pair Completion and Strict Extension}
+\label{sec:critical-pairs}
+
+The layer-dissolving endpoint, \Cref{thm:main:layer-dissolving-master},
+and the duality-confinement master theorem,
+\Cref{thm:main:duality-confinement-master}, both use critical-pair
+language---adapted here from the rewriting-systems usage of
+\citet{KnuthBendix1970SimpleWord} and the modern exposition of
+\citet{BaaderNipkow1998TermRewriting}---to translate failure of a
+Loewner budget into a witness pair.
+This section makes that translation explicit on the native and
+residual sides of the adequacy interface, records what counts as a
+lawful repair, and proves the strict-extension contraction that
+explains why adding genuinely new native probes can only decrease the
+adequacy residual.
+
+A native-side budget failure has the following form.  If \(K\) denotes
+one of the native currencies used earlier in the paper---for example
+the packaged native currency \(\K_{C,\Gamma}(L)\) of \Cref{sec:framework}
+or the predictive currency \(\widehat K_j\) of
+\Cref{sec:predictive-membranes}---then failure of
+\[
+  K\preceqq\Theta
+\]
+is equivalent to the existence of a response vector \(y\) with
+\[
+  y^*(K-\Theta)y>0.
+\]
+The vector \(y\), together with the budget it violates, is the
+native-side critical pair.  Similarly, if \(\Xi\) denotes the adequacy
+residual of \Cref{sec:xi-interface} and \(\Xi_Z\) a declared residual
+budget, failure of
+\[
+  \Xi\preceqq\Xi_Z
+\]
+is equivalent to the existence of a dissolving response vector \(z\)
+with
+\[
+  z^*(\Xi-\Xi_Z)z>0.
+\]
+This pair \((\Xi,z)\) is the residual-side critical pair.  Thus a
+critical pair is not extra structure; it is the vector witness supplied
+by Loewner separation when a declared budget fails.
+
+The framework allows only certain repairs to such a failure.  A repair
+is lawful if it excludes the offending recombination by a declared
+nonclaim, weakens the claim by raising the relevant budget, strengthens
+or rewrites the carrier and audit so that the legal quotient has
+changed, adds native probes that see the residual direction, or
+completes the missing protocol or transport family and then retests the
+same block.  These options are deliberately narrow: they change either
+the scope of the claim, the budget being asserted, the legal carrier on
+which the currency is computed, the probe family available to explain
+the residual, or the transfer record that transports the budget.  By
+contrast, same-package repetition saturates.  Repeating the same
+Schur-block repair with no new probe content, no new audit, and no new
+transport data does not change the residual and therefore cannot remove
+the critical pair.
+
+\begin{theorem}[Strict extension contraction]\label{thm:main:strict-extension-contraction}
+If a strict native extension adds probes
+\[
+  L^+=\begin{bmatrix}L\\M\end{bmatrix},
+\]
+then
+\[
+  \XiRes_C(D\mid L^+)
+  =
+  \XiRes_C(D\mid L)
+  -K_{DM\mid L}K_{MM\mid L}^\dagger K_{MD\mid L}
+  \preceqq \XiRes_C(D\mid L).
+\]
+Strict contraction occurs exactly in the directions seen by the new probes.
+\end{theorem}
+
+\begin{proof}
+The theorem is the Schur-update form of the adequacy residual,
+in the lineage of the Crabtree--Haynsworth quotient identity
+\citep{CrabtreeHaynsworth1969Quotient} and the operator-theoretic
+treatment of Schur complements in \citep{Ando2005SchurOperator}.  Passing
+from \(L\) to
+\[
+  L^+=\begin{bmatrix}L\\M\end{bmatrix}
+\]
+enlarges the native block in the joint dissolving-native currency.  The
+new block \(M\) has a conditional residual \(K_{MM\mid L}\), obtained by
+subtracting the part already explained by \(L\), and cross terms
+\(K_{DM\mid L}\) and \(K_{MD\mid L}\) against the dissolving block.  The
+chain rule for adequacy residuals gives
+\[
+  \XiRes_C(D\mid L^+)
+  =
+  \XiRes_C(D\mid L)
+  -K_{DM\mid L}K_{MM\mid L}^\dagger K_{MD\mid L},
+\]
+and the full residual chain-rule calculus is developed in
+\citet{Tsiokos2026XiCompanion}.  In this paper the displayed identity is
+used only as the strict-extension update governing lawful repairs by
+new native probes.
+
+The Loewner contraction follows because the Schur correction
+\[
+  K_{DM\mid L}K_{MM\mid L}^\dagger K_{MD\mid L}
+\]
+is positive semidefinite.  Subtracting a positive semidefinite
+correction from \(\XiRes_C(D\mid L)\) can only decrease the residual in
+the Loewner order, giving
+\[
+  \XiRes_C(D\mid L^+)\preceqq\XiRes_C(D\mid L).
+\]
+The strict-contraction-along-seen-directions content follows from
+positive semidefiniteness of the Schur correction.
+
+Finally, the correction is nonzero exactly where the newly added probes
+have conditional content beyond what the old native family already
+explained.  If \(M\) sees no additional conditional direction, then the
+Schur correction vanishes and the residual is unchanged.  If it sees a
+new direction coupled to the dissolving block, that direction is
+subtracted from the residual budget.  This is the precise sense in
+which strict extension contracts the adequacy residual only along
+directions seen by the new probes.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.Main.CriticalPair.strictExtensionContraction};
+the Lean theorem proves the Loewner inequality under elevated
+Schur-update hypotheses.  The full statement is proved here.  See
+\Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+Critical pairs are therefore the operational form that Loewner failure
+takes inside the formed-layer framework.  Lawful repair is constrained
+to the five mechanisms above, and strict extension contraction
+quantifies the repair obtained by adding native probes: the adequacy
+residual monotonically shrinks as genuinely new native information is
+made available.  \Cref{sec:taxonomy} records the all-six discipline
+that decides when such a repair record is admissible as a lawful
+transfer rather than an informal analogy.
+
+ 
+
+\section{All-Six Records and Adequacy-Aware Transfer}
+\label{sec:taxonomy}
+
+The two main results---the layer-dissolving endpoint of
+\Cref{sec:dissolution} and the duality-confinement master theorem of
+\Cref{sec:duality-confinement}---together with the strict-extension
+contraction of \Cref{sec:critical-pairs}, all depend on the records
+that justify their hypotheses.  This section organizes those records
+into a six-role checklist, the \emph{all-six taxonomy}.  The taxonomy
+decides whether a proposed transfer is a lawful membrane transfer
+rather than an analogy between layers, and the adequacy-aware transfer
+condition records the residual budgets that must move with it.
+
+The six primitive roles are
+\[
+  P_1:\text{ rewrite/gauge},\quad
+  P_2:\text{ feasibility/channel},\quad
+  P_3:\text{ route/holonomy},
+\]
+\[
+  P_4:\text{ staging/refinement},\quad
+  P_5:\text{ packaging/canonicalization},\quad
+  P_6:\text{ audit/currency}.
+\]
+Here \(P_1\) is the formal rewrite or change of presentation, such as
+replacing a lower-layer obstruction statement by a higher-layer
+residual statement.  \(P_2\) records admissibility of the maps and
+constraints being used, including null-legality of native and dissolving
+probes and well-defined Loewner inequalities.  \(P_3\) records how data
+moves through the required transport maps, such as the dissolving-side
+transport \(S_j\) in \Cref{sec:dissolution}.  \(P_4\) records the finite
+stage, refinement, or accepted index at which the claim is made, as in
+the accepted predictive stages of \Cref{sec:predictive-membranes}.
+\(P_5\) records the canonical package or quotient in which the data is
+represented, including the legal carrier \(E_C\) and the exact package
+\(\Gamma\) of \Cref{sec:framework}.  \(P_6\) records the currency,
+budget, or checkable accounting that validates the transfer, such as a
+Loewner budget on native currency, dissolving currency, or adequacy
+residual.
+
+Omitting any of these six channels yields a finite overclaim
+countermodel: the formal rewrite or budget claim becomes either
+ill-defined or unaudited, and the framework treats such an omission as
+a failure of the record rather than a failure of the underlying
+mathematics.  This is the role of the taxonomy.  It is not meant to
+name every possible obstruction; it identifies which records must be
+present before the endpoint theorems can be read as transfer across
+layers.
+
+Membranes may appear in several strengths.  An \emph{intrinsic}
+membrane is stated directly on the target object, without auxiliary
+choices; a \emph{sectioned} membrane depends on a chosen section or
+presentation; a \emph{bundle/fiber} membrane is stated fiberwise over a
+base; and a \emph{protocol-indexed} membrane is indexed by an accepted
+process or refinement stage.  Intrinsic form is the strongest.  A
+weaker membrane promotes to intrinsic only through faithful
+reconstruction, which supplies the \(P_5\) and \(P_1\) records; full
+block currency control, which supplies the \(P_6\) audit; and defect
+accounting, again a \(P_6\) requirement and possibly a defected budget
+of the kind used in \Cref{sec:duality-confinement}.
+
+\begin{definition}[Lawful transfer record]\label{def:main:lawful-transfer}
+A lawful transfer record between two exact packaged carriers
+\(E_{\mathrm{src}}\) and \(E_{\mathrm{tgt}}\), with audit operators
+\(C_{\mathrm{src}},C_{\mathrm{tgt}}\), native probe families
+\(L_{\mathrm{src}},L_{\mathrm{tgt}}\), dissolving probe families
+\(D_{\mathrm{src}},D_{\mathrm{tgt}}\), and adequacy residuals
+\(\XiRes^{\mathrm{src}},\XiRes^{\mathrm{tgt}}\), consists of four
+transport maps
+\[
+  T_E:E_{\mathrm{src}}\to E_{\mathrm{tgt}},\quad
+  T_L:Y_{\mathrm{src}}\to Y_{\mathrm{tgt}},\quad
+  T_D:Z_{\mathrm{src}}\to Z_{\mathrm{tgt}},\quad
+  T_\Xi:Z_{\mathrm{src}}\to Z_{\mathrm{tgt}},
+\]
+each declaring its role under \(P_1,\ldots,P_6\), together with the
+currency-block compatibility data declared in the next two definitions.
+The transport \(T_\Xi\) carries the adequacy-residual budget on the
+dissolving response space.
+\end{definition}
+
+\begin{definition}[Exact bridge]\label{def:main:exact-bridge}
+A lawful transfer record is an exact bridge when the transport maps
+deliver currency-block congruences on the source and target legal
+quotients:
+\[
+  T_L^*K^{\mathrm{tgt}}_{LL}T_L=K^{\mathrm{src}}_{LL},
+  \qquad
+  T_D^*K^{\mathrm{tgt}}_{DD}T_D=K^{\mathrm{src}}_{DD},
+\]
+and the residual-transport map \(T_\Xi\) satisfies the adequacy-residual
+congruence
+\[
+  T_\Xi^*\,\XiRes_{C_{\mathrm{tgt}}}(D_{\mathrm{tgt}}\mid L_{\mathrm{tgt}})\,
+  T_\Xi
+  =
+  \XiRes_{C_{\mathrm{src}}}(D_{\mathrm{src}}\mid L_{\mathrm{src}}).
+\]
+\end{definition}
+
+\begin{definition}[Defective bridge]\label{def:main:defective-bridge}
+A lawful transfer record is a defective bridge with defect operator
+\(\Delta\succeq0\) on the target dissolving block when the transport
+maps deliver
+\[
+  T_L^*K^{\mathrm{tgt}}_{LL}T_L=K^{\mathrm{src}}_{LL},
+\]
+together with the currency-block Loewner domination
+\[
+  K^{\mathrm{tgt}}_{DD}\preceqq
+  T_D\,K^{\mathrm{src}}_{DD}\,T_D^*+\Delta
+\]
+on the target dissolving block.
+\end{definition}
+
+\begin{proposition}[Adequacy-aware transfer]\label{thm:main:adequacy-aware-transfer}
+A lawful transfer of a layer-dissolving membrane must transport energy,
+native probes, dissolving probes, and adequacy residuals.  Exact bridges
+transfer the native and dissolving budgets by congruence.  Defective
+bridges produce explicit residual currencies; these must be paid in the
+target budget.
+\end{proposition}
+
+\begin{proof}
+A lawful transfer record, in the sense of
+\Cref{def:main:lawful-transfer}, declares each of \(P_1,\ldots,P_6\)
+for the transported energy, native probes, dissolving probes, and
+adequacy residuals.  If one of these roles is omitted, then a channel
+in the all-six checklist is undeclared, and the proposed transfer is
+not eligible to carry a membrane.  This proves the first clause of the
+statement.
+
+For the congruence clause, suppose the transfer record is an exact
+bridge as in \Cref{def:main:exact-bridge}.  Then the currency-block
+congruences
+\[
+  T_L^*K^{\mathrm{tgt}}_{LL}T_L=K^{\mathrm{src}}_{LL},
+  \qquad
+  T_D^*K^{\mathrm{tgt}}_{DD}T_D=K^{\mathrm{src}}_{DD},
+\]
+and the adequacy-residual congruence
+\[
+  T_\Xi^*\XiRes_{C_{\mathrm{tgt}}}(D_{\mathrm{tgt}}\mid L_{\mathrm{tgt}})
+  T_\Xi
+  =
+  \XiRes_{C_{\mathrm{src}}}(D_{\mathrm{src}}\mid L_{\mathrm{src}})
+\]
+are exactly the budget-level assertion that native, dissolving, and
+adequacy-residual budgets transfer by congruence.  No further
+calculation is required: the exact-bridge definition is the congruence
+statement.
+
+For the residual-payment clause, suppose the transfer record is a
+defective bridge with defect operator \(\Delta\succeq0\) on the target
+dissolving block, as in \Cref{def:main:defective-bridge}.  Then the
+domination
+\[
+  K^{\mathrm{tgt}}_{DD}
+    \preceqq T_DK^{\mathrm{src}}_{DD}T_D^*+\Delta,
+\]
+is the Loewner statement that the target dissolving currency is bounded
+by the transported source dissolving currency plus the explicit
+positive defect \(\Delta\).  The defect operator \(\Delta\) is therefore
+the residual currency that must be paid in the target adequacy budget;
+the budget-aware transfer used in \Cref{sec:dissolution} routes it
+through the dissolving budget on the target side.\footnote{Tracked in the Lean formalization as
+\texttt{SixBirdsNeedles.Main.AllSix.adequacyAwareTransfer}: a conditional
+schema over the lawful-transfer record fields rather than an independent
+derivation of the quantitative all-six transfer conditions, which are
+proved here.  See \Cref{subsec:paper1-per-label-coverage}.}
+\end{proof}
+
+The quantitative all-six conditions are made explicit by the per-budget
+statements of \Cref{sec:dissolution} and \Cref{sec:duality-confinement},
+which respectively supply the optimized scalar trace budget and the
+layer-dissolving budget consumed in the congruence and residual-payment
+clauses above.
+
+The all-six discipline and adequacy-aware transfer together fix what
+counts here as lawful emergence: a dissolution claim is admissible only
+when its records cover all six roles and the transport carries adequacy
+data with declared budgets.  This taxonomy does not classify all
+needles or all possible repairs.  It records the roles required for the
+instances treated in this paper, so that the conclusion is a checked
+transfer from lower-layer obstruction to higher-layer dissolution.  The
+remaining sections discuss the scope of that transfer and the limits of
+the present framework.
+
+ 
+
+\section{Discussion}
+\label{sec:discussion}
+
+The paper has proved two framework-bound dissolution mechanisms.  In
+the formed-layer membrane setting, where the legal quotient, packaged
+native currency, adequacy residual, predictive native membrane, and
+dissolving transport records are all present, the layer-dissolving
+endpoint converts a bounded native budget and a bounded adequacy
+residual into a uniform dissolving budget.  Within that declared scope,
+there are no layer-dissolving predictive needles.  The complementary
+duality-confinement theorem turns anti-invariant ledger collapse into
+fixed-locus confinement under separating readouts.  These are
+formed-layer dissolution mechanisms, not universal
+singularity-elimination results.
+
+The local mathematics used by the framework is classical.  Positive
+semidefinite quadratic forms, Loewner order, Moore--Penrose
+pseudoinverses, Schur complements, and Douglas factorization enter in
+standard ways, and the paper does not claim novelty for those
+constructions.  The contribution is the synchronization of these
+constructions across a passage between layers.  The quotient used by
+the probes must be the quotient used by the budget; the native currency
+must be the currency spent by the predictive membrane; the adequacy
+residual must be the part of the dissolving currency that native probes
+do not explain; and the endpoint theorem must spend exactly those
+currencies.  This is the framework-as-discipline claim: the same
+operator tools become a dissolution theorem only when their roles are
+kept aligned.
+
+The two main results are not redundant.  The layer-dissolving
+endpoint requires a dissolving response space, stagewise residual
+budgets, and transport maps \(S_j\) into a common target; it prices the
+dissolving block from above.  The duality-confinement theorem requires
+an involutive object ledger, a separating anti-invariant readout, and
+domination records that force the anti-invariant ledger to collapse; it
+confines visible object mass to the fixed locus of the involution.  The
+two endpoints share the legal-quotient discipline, the formed-layer
+budget language, the all-six taxonomy, and the adequacy-aware transfer
+condition, but their hypothesis classes are not nested.  A problem with
+no involutive duality has no duality-confinement instance, while a
+problem with no transport into a common dissolving response space has
+no layer-dissolving endpoint instance.
+
+The separation between this paper and the residual-calculus development
+of \citet{Tsiokos2026XiCompanion} is also part of the architecture.  The
+present paper owns the emergence-and-dissolution narrative: it states the
+adequacy interface theorem (\Cref{thm:main:adequacy-interface}) as the
+gate through which native and residual budgets enter the endpoint.  The
+adequacy-residual calculus---projection, optimality, exactness, chain
+rule, data-processing, and witness theorems---is developed in
+\citet{Tsiokos2026XiCompanion}.  Keeping the developments separate lets
+the present paper state the dissolution mechanisms without forcing every
+reader through the full Schur-complement calculus, while leaving the
+residual-calculus development self-contained for readers who need that
+theory in its own right.
+
+The scope fence is correspondingly explicit.  The paper does not claim
+that emergence dissolves every mathematical singularity or obstruction,
+does not give a complete classification of needles or repairs, and does
+not depend on any particular application instance.  It also does not
+claim novelty for the classical operator-theoretic constructions it
+uses.  The result is a framework theorem: needle-class obstructions
+satisfying the stated predictive, adequacy, endpoint,
+duality-confinement, and all-six records can be dissolved in the
+formed-layer membrane setting.  Future application papers may aim this
+machinery at specific external problems, but each such use would need
+its own framework-specific records, scope fence, and formalization
+disclosure.
+
+Several directions remain open.  The strict-extension contraction of
+\Cref{thm:main:strict-extension-contraction} suggests a quantitative
+theory of probe-family enlargement, with the residual chain rule of
+\citet{Tsiokos2026XiCompanion} as the natural tool.  The defected obstruction budget
+machinery in \Cref{sec:duality-confinement} may admit sharper tradeoffs
+between source and bridge defects under stronger structural assumptions
+on the involution.  Finally, the all-six taxonomy and
+adequacy-aware-transfer discipline may apply to transfer settings beyond
+layer-dissolving emergence, but such uses would require their own
+audited instances and are outside the present paper.
+
+ 
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The paper's main claim has been proved in framework-bound form.  In
+the formed-layer membrane setting, emergence can dissolve needle-class
+lower-layer obstructions when the legal quotient, native currency,
+adequacy residual, predictive membrane bounds, dissolving transport
+records, and all-six admissibility discipline are all present.  Two
+complementary main results establish this conclusion: the layer-dissolving
+endpoint and the duality-confinement membrane theorem, supported by
+the adequacy interface, the strict-extension contraction, and the
+all-six taxonomy.
+
+The dissolution claim is therefore instance-specific.  It is not a
+universal singularity-elimination theorem, not a complete
+classification of needles or repairs, and not an application proof for
+any named external problem in this submission.  Future work that aims
+the framework at a specific external problem must supply its own
+application-specific records, scope fence, and formalization disclosure.
+
+The present paper uses the adequacy residual only as a gate, through
+the adequacy interface theorem (\Cref{thm:main:adequacy-interface}).  The full residual
+calculus, including projection, optimality, exactness, chain-rule,
+data-processing, and witness results, is developed in
+\citet{Tsiokos2026XiCompanion}.
+
+Several concrete directions remain.  The all-six discipline may extend
+to transfer settings beyond layer-dissolving emergence; the
+defect-budget tradeoffs in duality-confinement may sharpen under
+stronger involution hypotheses; and explicit audited application
+instances may exercise every record required by the framework.  These
+are further instances of the rule already used here: emergence
+dissolves needles only when the layer change is paid for by the
+correct records.
+
+ 
+\appendix
+\section{Lean Formalization Disclosure}
+\label{app:formalization}
+
+\subsection{Trust base and methodology}
+\label{subsec:paper1-trust-methodology}
+
+The Lean artifacts cited in this appendix were checked with Lean 4.28.0 \citep{deMouraUllrich2021Lean4,MathlibCommunity2020Lean}.  For every cited theorem entry, the audited axiom closure is contained in the standard trust base: \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.  The project discipline forbids \texttt{sorry}, project-local \texttt{axiom}, and \texttt{opaque} declarations in the needles Lean corpus; \texttt{lean/manifests/trust\_base.txt} is the locked allowlist used by the manifest checker when auditing theorem dependency closures.  Coverage is recorded per row as \emph{theorem}, \emph{partial}, \emph{definition}, or \emph{not mechanized}; these labels are recorded in the per-label coverage table below.
+
+\subsection{Mechanization disclosure tiers}
+\label{subsec:paper1-mechanization-disclosure-tiers}
+
+Body footnotes use a three-tier disclosure discipline keyed to the alignment column of the per-label coverage table.
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.25\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Alignment & Tier label & Body footnote wording template \\
+    \midrule
+    faithful & T1 & Verified in Lean as \(\langle\)module\(\rangle\). \\
+    narrowed-surrogate / needs-strengthening & T2 & Mechanized in Lean as \(\langle\)module\(\rangle\); proves \(\langle\)sub-claim\(\rangle\) under \(\langle\)elevation\(\rangle\); full statement paper-side. \\
+    projection-packaged & T3 & Tracked in the Lean formalization as \(\langle\)module\(\rangle\): conditional schema over \(\langle\)record fields\(\rangle\), not an independent derivation. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Body footnote disclosure tiers.}
+  \label{tab:paper1-mechanization-disclosure-tiers}
+\end{table}
+
+This tier discipline is the canonical wording rule for body footnotes: a reader can cross-check each body footnote against the alignment column of the coverage table below.
+
+\subsection{Standing narrowings and elevated hypotheses}
+\label{subsec:paper1-standing-narrowings}
+
+Several Lean fragments use the concrete diagonal pseudoinverse \texttt{diagonalPseudoInverse C} as the finite-matrix representative of the paper's Moore--Penrose inverse \(C^\dagger\).  This is paper-faithful on the legal quotient under the corresponding strict-positivity support hypotheses, but the full quotient-level pseudoinverse theory is not mechanized in this codebase.  When the body invokes \(C^\dagger\), the per-label disclosure below records whether Lean proves the stated clause directly or proves a finite surrogate under stricter positivity.
+
+Many partial-status theorems also carry elevated algebraic hypotheses, such as transposition symmetry, Moore--Penrose-on-support identities, or explicit Schur-update assumptions.  The elevation is documented per row in the coverage table; the paper supplies the ordinary mathematical proof or explanation for the remaining clause.  These elevations should be stated in mathematical language when relevant and should not be hidden behind manifest terminology.
+
+The projection-packaged status flags statements whose Lean form retrieves data from a proof-carrying record \citep{Necula1997ProofCarryingCode} or conditional schema rather than deriving the paper theorem independently.  Such rows are traceability coverage, not substantive Lean proof coverage.  The body relies on the mathematical statement, while the coverage table records the traceability role.
+
+\subsection{Per-label coverage table}
+\label{subsec:paper1-per-label-coverage}
+
+Tables~\ref{tab:paper1-lean-coverage} and~\ref{tab:paper1-lean-coverage-continued}
+record the per-row Lean coverage, alignment, and short disclosure
+note for each statements-of-record row.
+Table~\ref{tab:paper1-nonmechanized-coverage} lists the rows retained
+with no Lean entry.
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \renewcommand{\arraystretch}{0.92}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.38\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean coverage & Alignment & Disclosure note \\
+    \midrule
+    \path{def:main:packaged-currency} & definition & faithful & Realized in Lean as the packaged native currency definition. \\
+    \path{thm:main:probe-family-currency} & partial & narrowed-surrogate & Lean proves the point-evaluation matrix identity under stricter positivity; the variational capacity characterization is established in the paper. \\
+    \path{thm:main:minimum-spend-duality} & partial & needs-strengthening & Lean proves the off-range infinite-cost branch; the finite-range branch is supplied as paper-side proof. \\
+    \path{thm:main:adequacy-interface} & partial & needs-strengthening & Lean proves the Schur identity under explicit algebraic hypotheses; Loewner monotonicity and exact-factorization equivalence are paper-side. \\
+    \path{thm:main:predictive-native-membrane} & theorem & faithful & Lean proves the faithful finite predictive-membrane statement. \\
+    \path{thm:main:summable-predictive-propagation} & partial & narrowed-surrogate & Lean proves the finite-stage propagation form; infinite convergence remains a paper-side limiting statement. \\
+    \path{thm:main:layer-dissolving-master} & partial & needs-strengthening & Lean proves the transport-bound branch; capacity-bound and no-needle conclusions are paper-side. \\
+    \path{def:main:involutive-ledger} & partial & narrowed-surrogate & Lean records the finite-rank rational-matrix object ledger; measure-theoretic generality is paper-side. \\
+    \path{def:main:separating-readout} & partial & narrowed-surrogate & Lean records finite-support separation and a rational lower-bound variant. \\
+    \path{def:main:anti-invariant-membrane} & partial & narrowed-surrogate & Lean records the finite-rank carrier currency with diagonal pseudoinverse infrastructure. \\
+    \path{lem:main:trace-identity} & partial & needs-strengthening & Lean proves the finite-sum trace equality; the almost-everywhere consequence is paper-side. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Manifest coverage at commit \texttt{3bbe9f9}, part 1.}
+  \label{tab:paper1-lean-coverage}
+\end{table}
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \renewcommand{\arraystretch}{0.92}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.38\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean coverage & Alignment & Disclosure note \\
+    \midrule
+    \path{thm:main:separation-confinement} & partial & needs-strengthening & Lean proves the finite positive-weight confinement clause; the measure-zero formulation is paper-side. \\
+    \path{thm:main:quantitative-confinement} & partial & narrowed-surrogate & Lean proves the finite-rank rational Markov-style bound. \\
+    \path{def:main:domination-bridge} & partial & narrowed-surrogate & Lean records the finite-rank domination bridge predicate and related factorization predicates. \\
+    \path{thm:main:douglas-domination} & partial & needs-strengthening & Lean proves only the reverse contraction-to-domination direction; the forward Douglas factorization is paper-side. \\
+    \path{thm:main:duality-confinement-master} & partial & narrowed-surrogate & Lean proves a finite-rank single-bridge version with positive-weight confinement. \\
+    \path{def:main:exhaustive-moving-ledger} & partial & narrowed-surrogate & Lean records a single finite exhaustive ledger relation rather than a sequence with limits. \\
+    \path{thm:main:exhaustive-ledger-squeeze} & partial & narrowed-surrogate & Lean proves a single-record finite-rank squeeze; sequence and limit language remains paper-side. \\
+    \path{def:main:obstruction-budget} & partial & narrowed-surrogate & Lean records the finite-rank per-parameter obstruction budget. \\
+    \path{prop:main:optimized-trace-budget} & partial & needs-strengthening & Lean proves the per-\(t\) trace formula; the closed-form infimum and convergence clause are paper-side. \\
+    \path{thm:main:strict-extension-contraction} & partial & needs-strengthening & Lean proves the Loewner inequality from elevated Schur-update hypotheses; strict seen-direction content is paper-side. \\
+    \path{thm:main:adequacy-aware-transfer} & partial & projection-packaged & Lean records data shape and certificate fields only; quantitative all-six transfer is paper-side. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Manifest coverage at commit \texttt{3bbe9f9}, part 2.}
+  \label{tab:paper1-lean-coverage-continued}
+\end{table}
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.40\linewidth} >{\raggedright\arraybackslash}p{0.14\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Destination & Disclosure note \\
+    \midrule
+    \path{rmk:main:blind-spot-interpretation} & appendix & No Lean entry; interpretive material is handled in prose, with the body-facing blind-spot calculus developed in \citet{Tsiokos2026XiCompanion}. \\
+    \path{warn:main:defect-paid-version} & appendix & No Lean entry; this variant warning is retained as appendix support and is not part of the body theorem spine. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Retained rows with no Lean entry.}
+  \label{tab:paper1-nonmechanized-coverage}
+\end{table}
+
+\subsection{Lean declaration map}
+\label{subsec:paper1-lean-declaration-map}
+
+Table~\ref{tab:paper1-lean-declaration-map} maps each paper label to
+its full Lean declaration path; the per-row coverage notes above use
+short prose disclosures and refer to this table for the canonical
+identifiers.
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.38\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean declaration path \\
+    \midrule
+    \path{def:main:packaged-currency} & \path{SixBirdsNeedles.Main.LegalQuotient.packagedCurrency} \\
+    \path{thm:main:probe-family-currency} & \path{SixBirdsNeedles.Main.LegalQuotient.probeFamilyCurrency} \\
+    \path{thm:main:minimum-spend-duality} & \path{SixBirdsNeedles.Main.LegalQuotient.minimumSpendDuality} \\
+    \path{thm:main:adequacy-interface} & \path{SixBirdsNeedles.Main.XiInterface.adequacyInterface} \\
+    \path{thm:main:predictive-native-membrane} & \path{SixBirdsNeedles.Main.PredictiveNative.predictiveNativeMembrane} \\
+    \path{thm:main:summable-predictive-propagation} & \path{SixBirdsNeedles.Main.PredictiveNative.summablePredictivePropagation} \\
+    \path{thm:main:layer-dissolving-master} & \path{SixBirdsNeedles.Main.LayerDissolving.layerDissolvingMaster} \\
+    \path{def:main:involutive-ledger} & \path{SixBirdsNeedles.Main.DualityConfinement.antiInvariantObjectLedger} \\
+    \path{def:main:separating-readout} & \path{SixBirdsNeedles.Main.DualityConfinement.SeparatesFixedLocus} \\
+    \path{def:main:anti-invariant-membrane} & \path{SixBirdsNeedles.Main.DualityConfinement.antiInvariantCarrierCurrency} \\
+    \path{lem:main:trace-identity} & \path{SixBirdsNeedles.Main.DualityConfinement.traceIdentity} \\
+    \path{thm:main:separation-confinement} & \path{SixBirdsNeedles.Main.DualityConfinement.separationConfinement} \\
+    \path{thm:main:quantitative-confinement} & \path{SixBirdsNeedles.Main.DualityConfinement.quantitativeConfinement} \\
+    \path{def:main:domination-bridge} & \path{SixBirdsNeedles.Main.DualityConfinement.DominationBridge} \\
+    \path{thm:main:douglas-domination} & \path{SixBirdsNeedles.Main.DualityConfinement.douglasDominationReverse} \\
+    \path{thm:main:duality-confinement-master} & \path{SixBirdsNeedles.Main.DualityConfinement.dualityConfinementMaster} \\
+    \path{def:main:exhaustive-moving-ledger} & \path{SixBirdsNeedles.Main.DualityConfinement.ExhaustiveMovingLedger} \\
+    \path{thm:main:exhaustive-ledger-squeeze} & \path{SixBirdsNeedles.Main.DualityConfinement.exhaustiveLedgerSqueeze} \\
+    \path{def:main:obstruction-budget} & \path{SixBirdsNeedles.Main.DualityConfinement.obstructionBudget} \\
+    \path{prop:main:optimized-trace-budget} & \path{SixBirdsNeedles.Main.DualityConfinement.optimizedTraceBudget} \\
+    \path{thm:main:strict-extension-contraction} & \path{SixBirdsNeedles.Main.CriticalPair.strictExtensionContraction} \\
+    \path{thm:main:adequacy-aware-transfer} & \path{SixBirdsNeedles.Main.AllSix.adequacyAwareTransfer} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Mapping from paper labels to Lean declaration paths.}
+  \label{tab:paper1-lean-declaration-map}
+\end{table}
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

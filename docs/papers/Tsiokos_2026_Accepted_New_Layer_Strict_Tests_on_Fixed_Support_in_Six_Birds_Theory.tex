@@ -1,0 +1,2187 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\newcommand{\OldLayer}{H2}
+\newcommand{\NewLayer}{H6}
+
+\newcommand{\PaperNine}{Paper~9}
+\newcommand{\PaperEight}{Paper~8}
+\newcommand{\AcceptedTestCount}{three}
+\newcommand{\FinalVerdict}{\textsc{H6\_NEW\_LAYER\_STRICT\_THEORY\_EXTENSION\_WITH\_OLD\_LAYER\_REAL\_PROVISIONAL}}
+\newcommand{\OldLayerStatus}{real-provisional non-factorization boundary}
+
+\newcommand{\SlotReadoutAgreement}{\texttt{slot.h6\_pica\_new\_layer\_protocol\_indexed\_readout\_agreement\_family}}
+\newcommand{\SlotQuadraticWitness}{\texttt{slot.h6\_pica\_new\_layer\_quadratic\_witness\_family}}
+\newcommand{\SlotTransitionWitness}{\texttt{slot.h6\_pica\_new\_layer\_transition\_witness\_family}}
+
+\newcommand{\TestFamilyCompletion}{\texttt{test.h6\_pica.strict\_family.completion\_family\_surface}}
+\newcommand{\TestFamilyLifted}{\texttt{test.h6\_pica.strict\_family.lifted\_package\_surface}}
+\newcommand{\TestFamilyHigher}{\texttt{test.h6\_pica.strict\_family.protocol\_indexed\_higher\_witness\_surface}}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Accepted New-Layer Strict Tests on Fixed Support in Six Birds Theory}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Accepted New-Layer Strict Tests on Fixed Support in Six Birds Theory},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Scoped event admissibility on fixed support leaves a specific gap for strict
+tests: the protocol-indexed flagship-seed bridge family realizes the
+quadratic-levelset and transition-stability slots, but the
+protocol-indexed readout-agreement slot remains unrealized, so no accepted
+strict test family is available at the bridge-native event level.  This paper
+asks whether strict-test acceptance is admissible on fixed support without
+repairing that bridge level.  The method is a layer-local, audit-based PICA
+route: promotion, internalization of protocol coordinates, carrier
+exactification, and audited source admission produce a \NewLayer{} carrier
+substrate above the bridge-native \OldLayer{} level.  On the resulting
+\NewLayer{} carriers, the readout-agreement, quadratic-witness, and
+transition-witness slots are strict-realized natively; the three-slot strict
+domain closes; and \AcceptedTestCount{} accepted scoped strict test families
+survive the required control panel.  The panel covers null-baseline,
+memory-only, artifact, boundary, selected-lift, visibility, and claim-boundary
+checks.  The bridge-native \OldLayer{} level is
+retained as the \OldLayerStatus{}: descent from new-layer evidence to
+old-layer compatibility preserves non-factorization without inducing
+old-layer strict realization.  The final classification is a strict theory
+extension at the new layer with old-layer real-provisional compatibility
+intact.  The result is bounded: it does not assert event-package construction,
+shared-event identity, proto-effect or effect-algebra structure, Born
+valuation, composition readiness, faithful public compression, a lawful public
+carrier, or canonical selected lifts.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds Theory; fixed support; strict theory extension; carrier exactification; protocol-indexed event admissibility; layer localization; non-factorization; claim-boundary discipline.
+
+\section{Introduction}\label{sec:intro}
+
+The fixed-support Six Birds series has progressed from same-support event
+admissibility and obstruction
+\cite{Tsiokos2026LocallyBoolean,Tsiokos2026HolonomyMemory,Tsiokos2026MarkingErasureRecombination,Tsiokos2026RecombinationWitnesses}
+through promoted-package classification and carrier exactification
+\cite{Tsiokos2026PromotionCriteria,Tsiokos2026InternalStructure,Tsiokos2026CarrierExactification}
+to scoped event admissibility \cite{Tsiokos2026CarrierToEvent}.  The immediate
+predecessor, \PaperEight{} \cite{Tsiokos2026CarrierToEvent}, ends with a
+three-slot proto-family domain at the bridge-native event level: the
+quadratic-levelset and transition-stability slots are realized as scoped event
+positives, while the protocol-indexed readout-agreement slot remains
+unrealized.  Consequently, no accepted strict test family is available at that
+bridge level.  The question of \PaperNine{} is whether strict-test acceptance
+is admissible at all on fixed support, and, if so, at which layer.
+
+\PaperNine{} answers by separating the layer of strict-test admissibility from
+the inherited bridge-native layer.  The paper does not attempt a direct repair
+of the bridge level.  Instead, it constructs a new-layer carrier substrate by
+the PICA route: the protocol-indexed carrier-audit route of
+\Cref{sec:methods}, combining promotion, internalization of protocol
+coordinates, carrier exactification, and audited source admission.  In the
+paper-local notation, \OldLayer{} denotes the bridge-native event level
+inherited from \PaperEight{}, and \NewLayer{} denotes the new-layer carrier
+substrate constructed here.
+
+The principal result is that the \NewLayer{} carriers admit a closed
+three-slot strict domain with \AcceptedTestCount{} accepted strict test
+families that survive the required control panel.  The bridge-native
+\OldLayer{} is retained as the \OldLayerStatus{}: descent from \NewLayer{}
+evidence to \OldLayer{} compatibility preserves non-factorization without
+inducing old-layer strict realization.  The final classification is therefore a
+strict theory extension at the new layer with old-layer real-provisional
+compatibility intact; the formal verdict and its legality constraints are
+recorded in \Cref{sec:final-gate}.
+
+The result is bounded.  \PaperNine{} does not assert event-package
+construction, shared-event identity, proto-effect or effect-algebra structure,
+Born valuation, composition readiness, faithful public compression, a lawful
+public carrier, or canonical selected lifts.  These nonclaims are inherited and
+then enforced by the present paper's claim-boundary discipline; the compact
+inheritance statement appears in \Cref{subsec:inherited-nonclaims}, and the
+complete ledger appears in \Cref{subsec:nonclaims-ledger}.
+
+\Cref{sec:background,sec:problem-setup} record the inherited state and the
+layer-local setup.  \Cref{sec:methods,sec:primary-results,sec:secondary-results}
+construct the \NewLayer{} carriers and report the strict-realization, descent,
+and control-survival audits.  The remaining sections give the
+layer-localization analysis, formal schemas, final gate, discussion, and
+conclusion.
+ \section{Starting point: scoped event admissibility after \PaperEight{}}\label{sec:background}
+
+\subsection{Earlier papers in the fixed-support series}\label{subsec:earlier-papers-chain}
+
+The fixed-support sequence begins with
+\cite{Tsiokos2026LocallyBoolean}, which establishes event packages and the
+same-support comparison discipline.  \cite{Tsiokos2026HolonomyMemory}
+introduces the current and predictive quotients on single histories.
+\cite{Tsiokos2026MarkingErasureRecombination} extends the setting to
+branchwise and recombination quotients on branch assemblages.
+\cite{Tsiokos2026RecombinationWitnesses} isolates the control-stable Route A
+flagship family with a Lean-formal kernel.  \cite{Tsiokos2026PromotionCriteria}
+then supplies the promotion criteria and identifies the intrinsic
+promoted-package survivor.
+
+The next two papers analyze that survivor.  \cite{Tsiokos2026InternalStructure}
+classifies the surviving promoted package and retains the invariant and
+quadratic families used downstream.  \cite{Tsiokos2026CarrierExactification}
+performs the seven-criterion carrier-exactification audit and obtains the
+lawful same-branch witness with its public-shadow split.  The immediate
+predecessor, \PaperEight{} \cite{Tsiokos2026CarrierToEvent}, closes this chain
+at scoped event admissibility and is treated in
+\Cref{subsec:paper8-inherited-contract}.
+
+\subsection{\PaperEight{} inherited contract}\label{subsec:paper8-inherited-contract}
+
+\PaperEight{} raises the carrier atlas of
+\cite{Tsiokos2026CarrierExactification} to the event level by introducing
+event bridge records and admissibility audits
+\cite{Tsiokos2026CarrierToEvent}.  Its principal classification is that the
+protocol-indexed flagship-seed bridge family is event-level admissible.  The two
+scoped event positives, the quadratic-levelset event and the
+transition-stability test, pass the event gate as positively claimed scoped
+events.  The same bridge family is not a closed test family: its proto-family
+domain has three required slots, and only two are realized at the bridge level.
+
+\PaperNine{} inherits this state.  The bridge-native event level
+becomes the \OldLayer{} of the present paper; the two scoped event positives
+are retained as inherited evidence; and the unrealized readout-agreement slot is
+the gap addressed below.  It also inherits the test-family discipline of
+mutual exclusivity, exhaustivity, readout-category coverage, and family
+structure used in \Cref{sec:primary-results}; the bridge-native source policy
+that \Cref{sec:methods} replaces with a PICA-bound policy at the new layer; and
+the explicit nonclaim record, including no event package, no proto-effect
+structure, and no faithful public compression.  The readout-agreement gap is
+isolated in \Cref{subsec:unrealized-readout-slot}, the inherited nonclaims are
+recorded in \Cref{subsec:inherited-nonclaims}, and
+\Cref{subsec:inherited-state-table} summarizes the inherited state.
+
+\subsection{Unrealized readout-agreement slot}\label{subsec:unrealized-readout-slot}
+
+At the bridge level of \PaperEight{}, the proto-family domain requires three
+slots under the test-family discipline of \cite{Tsiokos2026CarrierToEvent}: a
+quadratic-levelset slot, a transition-stability slot, and a protocol-indexed
+readout-agreement slot.  The first two are realized as scoped event positives
+at that level.  The readout-agreement slot is not realized there because the
+bridge-native source policy admits the relevant committed-state evidence only
+for provisional inspection, which is insufficient for strict realization under
+the threshold-and-witness discipline of \cite{Tsiokos2026FoundationsII}.  This
+is the structural opening addressed by \PaperNine{} through a layer change
+rather than direct repair: \Cref{sec:methods} describes the new-layer route, and
+\Cref{subsec:source-backed-threshold-evidence,subsec:new-layer-readout-slot-gate}
+record the new-layer threshold evidence and readout-slot gate in
+\Cref{sec:primary-results}.
+
+\subsection{Inherited nonclaims}\label{subsec:inherited-nonclaims}
+
+\PaperEight{}'s scoped event admissibility is bounded by an explicit nonclaim
+record \cite{Tsiokos2026CarrierToEvent}, in the foundations claim-discipline
+sense of \cite{Tsiokos2026FoundationsII}.  It does not assert event-package
+construction, a proto-effect fragment, an effect algebra, a Born valuation,
+composition readiness, faithful public compression, a lawful public carrier, or
+a canonical selected lift.  These nonclaims survive intact into \PaperNine{}:
+they are not reopened by the new-layer construction, strict-test acceptance, or
+descent-and-control survival.  The claim-boundary discipline of
+\Cref{subsec:pica-claim-boundary-report} preserves the same nonclaim record at
+both layers, and the claim-boundary control of
+\Cref{subsec:protocol-honesty-claim-boundary} verifies that the accepted
+families respect it.
+
+\subsection{Inherited fixed-support state}\label{subsec:inherited-state-table}
+
+\Cref{tab:inherited-state} summarizes the fixed-support state inherited from
+\PaperEight{} and carried forward into \PaperNine{}.
+
+\begin{table}[tbp]
+  \centering
+  \caption{Inherited fixed-support state at the close of \PaperEight{}: status, scope, and disposition carried forward into \PaperNine{}.}
+  \label{tab:inherited-state}
+  \small
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}@{}}
+    \toprule
+    Inherited element & Status at \PaperEight{} & Scope & Carried forward as \\
+    \midrule
+    Quadratic-levelset scoped event
+      & scoped event positive
+      & bridge-native; scoped protocol-indexed
+      & inherited evidence at \OldLayer{} \\
+    Transition-stability scoped test
+      & scoped event positive; pre-test
+      & bridge-native; scoped protocol-indexed
+      & inherited evidence at \OldLayer{} \\
+    Old-layer readout-agreement slot
+      & unrealized at the bridge level
+      & bridge-native; protocol-indexed
+      & gap addressed by layer change \\
+    Accepted strict tests at the bridge level
+      & none asserted
+      & bridge-native
+      & old-layer boundary condition \\
+    Public shadow / public-lawful carrier
+      & nonfaithful public shadow; no lawful public carrier asserted
+      & public shadow of the bridge-native carrier
+      & nonclaim record \\
+    Selected lifts (canonical-lift status)
+      & selected lifts nonunique; no canonical selected lift asserted
+      & level-crossing records
+      & nonclaim record \\
+    Higher structures (event package, proto-effect, effect algebra, Born valuation, composition)
+      & not asserted
+      & beyond \PaperEight{}'s scoped event result
+      & nonclaim record \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+With the inherited state fixed, \Cref{sec:problem-setup} formulates the
+layer-local strict-test problem that the rest of the paper addresses.
+ \section{Layer-local strict-test admissibility and the \OldLayer{} baseline}\label{sec:problem-setup}
+
+\subsection{Old-layer bridge baseline}\label{subsec:h2-bridge-baseline}
+
+At the close of \PaperEight{}, the bridge-native \OldLayer{} event level carries
+a three-slot proto-family domain
+\cite{Tsiokos2026CarrierToEvent}.  Its quadratic-levelset slot and
+transition-stability slot are realized as scoped event positives at that level.
+Its protocol-indexed readout-agreement slot remains unrealized.  This missing
+readout-agreement slot is the local gap inherited by \PaperNine{}: the old layer
+contains genuine scoped event structure, but it does not support an accepted
+strict test family.
+
+Throughout this paper, \OldLayer{} is retained as the \OldLayerStatus{}.  This
+means that the old layer is neither falsified nor strict-realized.  Its scoped
+event positives remain valid, its readout-agreement slot remains unrealized,
+and it remains the inherited target of any descent from a higher-layer
+construction under the foundations layer discipline
+\cite{Tsiokos2026FoundationsII}.  \PaperNine{} therefore does not attempt a
+direct repair of the bridge-native level.  Its question is whether a
+\NewLayer{} construction can supply strict realization while preserving this
+boundary.  \Cref{subsec:new-layer-carrier-native-slots} introduces the new-layer
+carrier and native slots, \Cref{subsec:non-factorization-baseline} records the
+non-factorization requirement, and \Cref{subsec:old-layer-status-table} records
+the old-layer status ledger.
+
+\subsection{New-layer carrier and native strict slots}\label{subsec:new-layer-carrier-native-slots}
+
+A new-layer carrier is a finite description with its own native state space,
+transport law, and readout law, constructed above the bridge-native event level
+of \PaperEight{} by the methodology of \Cref{sec:methods}.  Conceptually, it is
+the substrate on which later strict-realization claims may be made.  The state
+space supplies the carrier's content domain, the transport law specifies its
+dynamics, and the readout law specifies the observable content available under
+the carrier's instrument.  This notion is inherited from carrier
+exactification and the foundations framework
+\cite{Tsiokos2026CarrierExactification,Tsiokos2026FoundationsII}.  At this
+point the carrier is a conceptual object; the concrete \NewLayer{} carriers are
+introduced only in \Cref{sec:methods}.
+
+A native strict slot is a strict-realization claim attached to the native state
+space of such a carrier.  Its threshold-attachment data are populated at the
+\NewLayer{} level, in the sense of \cite{Tsiokos2026FoundationsII}, rather than
+imported from the bridge-native \OldLayer{} level.  The realization assertion is
+therefore layer-local: it concerns the new-layer description and does not
+upgrade the bridge-level slot status.
+
+The native three-slot strict domain is the conjunction of three native strict
+slots on the same new-layer carrier: readout-agreement, quadratic-witness, and
+transition-witness.  The domain is closed only when all three slots are
+strict-realized at that same layer and the status-family discipline of the
+audit framework is preserved.  This closed domain is the structural object on
+which strict-test reassembly later operates in \Cref{sec:primary-results}.
+\Cref{subsec:strict-test-family-descent-compatibility} introduces strict test
+families and descent compatibility, \Cref{subsec:non-factorization-baseline}
+records the non-factorization boundary, and
+\Cref{subsec:old-layer-status-table} records the \OldLayer{} status ledger.
+
+\subsection{Strict test families and descent compatibility}\label{subsec:strict-test-family-descent-compatibility}
+
+A strict test family is a finite family of test predicates over the slots of a
+closed strict domain.  It satisfies the inherited test-family discipline:
+mutual exclusivity, exhaustivity, readout-category coverage, and family
+structure \cite{Tsiokos2026CarrierToEvent}.  It is accepted only after the
+family-criteria gate and the required controls have been passed under the
+foundations audit discipline \cite{Tsiokos2026FoundationsII}.  In
+\PaperNine{}, this is a layer-local notion.  Acceptance at a \NewLayer{} carrier
+does not by itself imply acceptance at the bridge-native \OldLayer{} level,
+where no accepted strict test family is asserted.
+
+Descent compatibility is the corresponding level-crossing notion.  A descent
+map sends new-layer evidence back to the \OldLayer{} description through the
+loss-record framework of \cite{Tsiokos2026FoundationsII}.  Compatibility means
+that the image of new-layer strict realization is a real-provisional
+pair-observable record together with a boundary record on slot identities, not
+an old-layer strict-realization claim.  This relation lets new-layer strict
+realization coexist with the inherited \OldLayer{} status without upgrading the
+old layer or destabilizing the new one.  \Cref{subsec:non-factorization-baseline}
+records the irreducibility condition, \Cref{sec:primary-results} supplies the
+strict-test audits, and \Cref{sec:secondary-results} supplies the descent and
+control-survival audits.
+
+\subsection{Non-factorization boundary}\label{subsec:non-factorization-baseline}
+
+In the foundations sense, a layer transition is a strict extension when the
+new-layer carrier cannot be reconstructed from the old-layer description alone
+\cite{Tsiokos2026FoundationsII}.  Equivalently, the descent map admits no
+section recovering the carrier from its old-layer image.  The boundary between
+layers is then non-factorizing: it carries \NewLayer{} structure that does not
+factor through any \OldLayer{} presentation.  \PaperNine{} uses this as a
+conceptual definition here.  The carrier-side certificate for the exactified
+carriers and the preservation of non-factorization under descent are recorded
+in
+\Cref{subsec:non-factorization-certificate,subsec:non-factorization-preservation}.
+
+\subsection{Old-layer baseline status}\label{subsec:old-layer-status-table}
+
+The inherited \OldLayer{} profile is organized by six dimensions.  Its
+pair-observable support is real-provisional in the sense of \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}.  Its bridge-level threshold status is not
+met under the inherited threshold-and-witness discipline; only provisional
+inspection is admitted there \cite{Tsiokos2026FoundationsII}.  Its control
+status is control-ready, because the bridge-level controls validated in
+\PaperEight{} remain available.  Its strict-slot status is mixed: the
+quadratic-levelset and transition-stability slots are realized as scoped event
+positives, but the readout-agreement slot remains unrealized, so the strict
+three-slot domain does not close at \OldLayer{}.  Its test-family status is
+that no accepted strict test family is asserted at the old layer.  Its descent
+status is compatibility target: any higher-layer descent lands in the
+\OldLayer{} description through the foundations loss-record discipline.
+
+This prose ledger records the starting state needed for the rest of the paper.
+The extended status table appears in \Cref{app:extended-material}.  The status
+is inherited and retained throughout \PaperNine{} as the \OldLayerStatus{}, not
+established here as a new result.  The non-factorizing character of the boundary
+is the conceptual condition recorded in
+\Cref{subsec:non-factorization-baseline}.
+
+\subsection{Layer-localization picture}\label{subsec:layer-localization-figure}
+
+\Cref{fig:layer-localization} summarizes the layer-local picture established in
+\Cref{subsec:h2-bridge-baseline,subsec:new-layer-carrier-native-slots,subsec:strict-test-family-descent-compatibility,subsec:non-factorization-baseline,subsec:old-layer-status-table}.
+
+\begin{figure}[tbp]
+  \centering
+  \small
+  \setlength{\fboxsep}{6pt}
+  \begin{tabular}{@{}c@{\hspace{0.04\textwidth}}c@{\hspace{0.04\textwidth}}c@{}}
+    \fbox{\begin{minipage}{0.31\textwidth}
+        \textbf{Old layer (\OldLayer{})}
+        \begin{itemize}
+          \setlength{\itemsep}{0.2em}
+          \setlength{\leftmargin}{1.2em}
+          \item scoped event positives
+          \item real-provisional bridge compatibility
+          \item non-factorization boundary
+        \end{itemize}
+      \end{minipage}
+    }
+    &
+    \begin{minipage}{0.18\textwidth}
+      \centering
+      \(\Longleftarrow\)\\[0.35em]
+      descent\\
+      compatibility only\\
+      no old-layer overwrite
+    \end{minipage}
+    &
+    \fbox{\begin{minipage}{0.31\textwidth}
+        \textbf{New layer (\NewLayer{})}
+        \begin{itemize}
+          \setlength{\itemsep}{0.2em}
+          \setlength{\leftmargin}{1.2em}
+          \item exactified carrier
+          \item native three-slot strict domain
+          \item accepted strict test families
+        \end{itemize}
+      \end{minipage}
+    }
+  \end{tabular}
+  \caption{Layer-localization picture for \PaperNine{}: bridge-native \OldLayer{} retains scoped event positives and the real-provisional non-factorization boundary; the \NewLayer{} carrier carries the closed native three-slot strict domain and the accepted strict test families; descent maps new-layer evidence to old-layer compatibility without inducing strict realization at \OldLayer{}.}
+  \label{fig:layer-localization}
+\end{figure}
+ 
+With the conceptual layer separation fixed, \Cref{sec:methods} constructs the
+\NewLayer{} carriers to which the later strict-realization audits apply.
+ \section{PICA route and carrier exactification}\label{sec:methods}
+
+\subsection{PICA route overview}\label{subsec:pica-route-overview}
+
+The methodology of \PaperNine{} is the PICA route.  PICA abbreviates
+``Primitive Interaction Closure Algebra'' in the underlying dynamics
+formalism; in the present paper the name denotes the protocol-indexed
+carrier-audit route that promotes one-layer-up candidate objects, internalizes
+their protocol coordinates, exactifies the resulting carriers, and admits
+sources under an explicit audit policy.  The route operates above the
+bridge-native \OldLayer{} event level inherited from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}.  It is therefore not a direct repair of the
+old layer, but the method by which \PaperNine{} constructs the native
+\NewLayer{} carrier on which later strict-test questions are posed.
+
+The component stages are inherited from the fixed-support sequence.  Promotion
+uses the criteria of \cite{Tsiokos2026PromotionCriteria}; the one-layer-up
+structure being promoted is constrained by the internal-structure analysis of
+\cite{Tsiokos2026InternalStructure}; carrier exactification supplies the native
+carrier, transport law, and readout law of
+\cite{Tsiokos2026CarrierExactification}; and the source-policy and audit
+discipline are those of the foundations framework
+\cite{Tsiokos2026FoundationsII}.  The remainder of this section records these
+stages in order: carrier formation and source policy
+(\Cref{subsec:pica-readiness,subsec:pica-source-policy-profile}), claim-boundary
+discipline (\Cref{subsec:pica-claim-boundary-report}), candidate inputs and the
+promotion gate (\Cref{subsec:candidate-objects-promotion-gate}), carrier
+exactification (\Cref{subsec:carrier-exactification}), native state space with
+transport and readout law (\Cref{subsec:native-state-transport-readout}),
+non-factorization (\Cref{subsec:non-factorization-certificate}), and the table
+of exactified carriers (\Cref{subsec:exactified-carriers-table}).
+
+\subsection{Carrier-formation prerequisites}\label{subsec:pica-readiness}
+
+Before the audits of \Cref{sec:primary-results,sec:secondary-results} are
+applied, the \NewLayer{} carriers are already fixed by the upstream construction
+stages.  Promotion of one-layer-up candidate objects follows
+\cite{Tsiokos2026PromotionCriteria}; the promoted structure is constrained by
+the internal-structure analysis of \cite{Tsiokos2026InternalStructure}; and
+carrier exactification supplies the exactified carrier objects of
+\cite{Tsiokos2026CarrierExactification}.  The end state of this finite audited
+construction is the three carriers used below: the lifted-package surface, the
+protocol-indexed higher-witness surface, and the completion-family surface.
+Their existence is taken as fixed from this point on.  The later sections test
+threshold attachment, slot realization, descent, and control survival over
+these carriers.  The exactification step that closes the construction is
+recorded in \Cref{subsec:carrier-exactification}.
+
+\subsection{Source-policy profile}\label{subsec:pica-source-policy-profile}
+
+The source-policy profile is the foundations-level rule that decides which
+source classes may support which role claims under a declared instrument
+\cite{Tsiokos2026Foundations,Tsiokos2026FoundationsII}.  It assigns classes
+such as committed-state evidence, audited cell records, simulation traces,
+ablation records, and fallback evidence to admissibility statuses for roles
+such as pair-observable status, threshold realization, and slot realization.
+A role projection may be asserted only when the active policy admits the
+relevant source class for the role and instrument in question.  The policy is
+therefore an admissibility rule, not itself a projection or a realization gate.
+
+\PaperNine{} specializes this rule layer-locally.  The bridge-native policy
+inherited from \PaperEight{} remains the policy for the \OldLayer{} description
+\cite{Tsiokos2026CarrierToEvent}; the PICA-bound policy instantiated here is
+the policy for the native \NewLayer{} carriers.  In particular,
+committed-state evidence is admitted for new-layer threshold realization when
+the attachment contract of
+\Cref{subsec:threshold-attachment-requirements} is satisfied.  The same source
+class is not thereby admitted as old-layer strict-realization evidence; at the
+bridge-native level it remains within the provisional-inspection discipline of
+\PaperEight{}.  Thus the source policy is not a global table applied uniformly
+across levels, but a pair of layer-indexed policies tied to the active
+instrument and carrier.
+
+The policy guarantees admissibility discipline: no role projection is asserted
+without source evidence admitted at the layer where the claim is made, and
+admission at one layer does not transfer automatically to another.  The audit
+record remains separate from the policy decision.  The policy says which source
+classes may count; the audit records that the required evidence is present and
+meets the attachment contract.  It does not by itself strict-realize a slot or
+accept a test family.  Those decisions are made by the gates of
+\Cref{sec:primary-results}, after promotion and exactification have supplied
+the carrier inputs of
+\Cref{subsec:candidate-objects-promotion-gate,subsec:carrier-exactification}.
+Nor does the policy license public-shadow inversion or a canonical lift; those
+remain explicit nonclaims taken up again in \Cref{sec:analysis}.
+
+\subsection{Claim-boundary discipline}\label{subsec:pica-claim-boundary-report}
+
+\PaperNine{} uses the claim and nonclaim discipline of the foundations layer
+\cite{Tsiokos2026FoundationsII} to separate three kinds of statements.  The
+positive claim is the strict-extension result: the construction of native
+\NewLayer{} carriers, closure of the three-slot strict domain, acceptance of
+the strict test families, and survival of the required controls.  The retained
+compatibility claim is the \OldLayer{} real-provisional non-factorization
+boundary, including the scoped event positives inherited from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}.  The explicit nonclaims are stronger
+structures not asserted here: an event package, a proto-effect fragment, an
+effect algebra, a Born valuation, composition readiness, faithful public
+compression, a lawful public carrier, and a canonical selected lift.
+
+This discipline is enforced throughout the paper rather than only at the final
+statement.  The gates of \Cref{sec:primary-results} attach the acceptance claim
+to the new-layer domain and its control-survival condition; the controls of
+\Cref{sec:secondary-results}, especially
+\Cref{subsec:protocol-honesty-claim-boundary}, check that the accepted families
+respect the nonclaim record; \Cref{sec:final-gate} applies the legality
+constraints that select the final verdict; and \Cref{sec:analysis} gives the
+layer-localization argument explaining why the positive claim does not imply
+the stronger structures just disclaimed.
+
+\subsection{Candidate objects and promotion gate}\label{subsec:candidate-objects-promotion-gate}
+
+The candidate objects for the PICA route are the three live one-layer-up
+surfaces retained by the carrier-exactification enumeration
+\cite{Tsiokos2026CarrierExactification}.  The lifted-package surface records
+the packaged higher-level lift data; the protocol-indexed higher-witness
+surface organizes candidate witness data by the protocol coordinates that will
+remain in scope; and the completion-family surface records the completion-side
+family structure needed for later carrier formation.  These surfaces are also
+constrained by the internal-structure analysis of
+\cite{Tsiokos2026InternalStructure}.  They are named here as methodological
+inputs, not as already exactified carriers or strict-test evidence.
+
+The promotion gate applies the six-criterion test of
+\cite{Tsiokos2026PromotionCriteria}.  In prose, the candidate must be
+sufficient on the designated observables, induce closure of the update law,
+remain stable at the second stage under admissible recoarsening, be admissible
+against the matched controls, preserve protocol honesty by avoiding smuggled
+claims, and remain legible on at least one designated slice.  Each of the
+lifted-package, protocol-indexed higher-witness, and completion-family surfaces
+passes all six criteria.  The result is the three promoted candidates that
+proceed to carrier exactification in \Cref{subsec:carrier-exactification}.
+
+\subsection{Carrier exactification}\label{subsec:carrier-exactification}
+
+Carrier exactification applies the audit framework of
+\cite{Tsiokos2026CarrierExactification} to the promoted candidates of
+\Cref{subsec:candidate-objects-promotion-gate}.  The audit asks whether a
+candidate survives as a carrier-level object with its own native state space,
+transport law, and readout law, rather than collapsing back to lower-level
+quotient baselines.  Its criteria require readout sufficiency, coherent
+transport and readout laws, non-reducibility against the lower quotient
+baselines, honest section behavior, protocol honesty, robustness under stress
+and expansion, and support across the declared seed samples.  These criteria
+extend the promotion discipline of \cite{Tsiokos2026PromotionCriteria} from
+candidate admissibility to carrier formation.
+
+Applied at the flagship-only protocol-indexed scope inherited from
+\PaperEight{}'s carrier analysis \cite{Tsiokos2026CarrierToEvent}, each of the
+three promoted candidates passes the exactification audit.  The lifted-package
+surface, the protocol-indexed higher-witness surface, and the completion-family
+surface therefore produce the three exactified carriers used downstream.  This
+scope qualifier is part of the claim discipline: the carriers are exactified at
+the present flagship-only protocol-indexed scope, not at a broader cross-seed
+or fully public-shadow scope.  Their native state spaces, transport laws, and
+readout laws are recorded in \Cref{subsec:native-state-transport-readout}.
+
+\subsection{Native state space, transport law, and readout law}\label{subsec:native-state-transport-readout}
+
+Each exactified carrier carries three structural components of its own: a native
+state space, a transport law on that state space, and a readout law for the
+observable content presented through the carrier's instrument
+\cite{Tsiokos2026CarrierExactification,Tsiokos2026FoundationsII}.  The state
+space provides the domain on which the carrier's content lives.  The transport
+law specifies how that content is moved by the carrier dynamics.  The readout
+law specifies which carrier-internal content is observable under the declared
+instrument.  These structures are native to the \NewLayer{} carrier; they are
+not inherited as bridge-native \OldLayer{} state, transport, or readout data.
+
+The carrier record also contains a public-shadow split and a forward-invariance
+record.  The public-shadow split is nonfaithful: the carrier has a public
+projection to the bridge-native surface, but the carrier is not reducible to
+that projection, and faithful public compression remains an explicit nonclaim
+\cite{Tsiokos2026CarrierExactification}.  The forward-invariance record is the
+audit datum stating that the transport law is stable under the operations
+permitted by the foundations framework.  The slot construction of
+\Cref{sec:primary-results} uses the native state space, transport law, and
+readout law as the substrate on which the required slots are realized.  The
+non-factorization property relating these carriers to the bridge-native
+description is recorded in \Cref{subsec:non-factorization-certificate}.
+
+\subsection{Non-factorization certificate}\label{subsec:non-factorization-certificate}
+
+Each exactified carrier carries a carrier-side non-factorization certificate:
+its native state space, transport law, and readout law do not factor through the
+bridge-native \OldLayer{} description.  Equivalently, the carrier cannot be
+reconstructed from old-layer data alone.  This is the carrier-level instance of
+the foundations non-factorization condition for a strict extension
+\cite{Tsiokos2026FoundationsII}, applied to the exactified carrier structures
+of \cite{Tsiokos2026CarrierExactification}.
+
+The certificate is methodological.  It records why the \NewLayer{} carriers are
+not reformulations of bridge-native data and supplies the structural
+prerequisite for the final strict-extension verdict of \Cref{sec:final-gate}.
+The descent-side statement that this non-factorization is preserved when
+new-layer evidence is translated back to old-layer compatibility is separate
+and is recorded in \Cref{subsec:non-factorization-preservation}.
+
+\subsection{Exactified carriers}\label{subsec:exactified-carriers-table}
+
+\Cref{tab:exactified-carriers} summarizes the three exactified \NewLayer{}
+carriers produced by the PICA route, recording their source candidates, native
+structure, public-shadow split, carrier-side non-factorization, and scope.
+
+\begin{table}[tbp]
+  \centering
+  \caption{Exactified \NewLayer{} carriers of \PaperNine{}: source candidate, native structure, public-shadow split, non-factorization, and scope.}
+  \label{tab:exactified-carriers}
+  \small
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+    \toprule
+    Carrier & Native structure & Public-shadow split & Non-factorization & Scope \\
+    \midrule
+    Lifted-package surface
+      & native state, transport, and readout laws
+      & nonfaithful projection
+      & carrier-side certificate
+      & flagship-only protocol-indexed \\
+    Protocol-indexed higher-witness surface
+      & native state, transport, and readout laws
+      & nonfaithful projection
+      & carrier-side certificate
+      & flagship-only protocol-indexed \\
+    Completion-family surface
+      & native state, transport, and readout laws
+      & nonfaithful projection
+      & carrier-side certificate
+      & flagship-only protocol-indexed \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+With the carrier substrate fixed, \Cref{sec:primary-results} turns to threshold
+attachment, slot realization, and strict-test-family construction on these
+carriers.
+ \section{Native strict domain and strict-test acceptance}\label{sec:primary-results}
+
+\subsection{Threshold attachment requirements}\label{subsec:threshold-attachment-requirements}
+
+The threshold-realization claim used in this section is governed by the
+attachment discipline of the scoped exact-six framework
+\cite{Tsiokos2026FoundationsII}.  Before any role projection is asserted, the
+description must already carry the relevant raw feature cluster, a threshold
+annotation attached to that cluster, a witness schema specifying what would
+support the claim, a collapse-case record, a level annotation, and an audit
+record.  The requirement is preconditional: threshold data and witness data are
+records on the description, not labels inferred after a channel has been marked
+active.
+
+\PaperNine{} inherits this contract from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent} and specializes it in two ways.  First,
+attachment is checked on the native state space of the \NewLayer{} carrier; the
+bridge-native \OldLayer{} level cannot by itself supply attachment for
+new-layer realization without a recorded bridge.  Second, the admissible source
+policy is the PICA-bound policy fixed in \Cref{sec:methods}, replacing the
+bridge-native source policy used in \PaperEight{}.  The next subsection applies
+this contract; the present subsection fixes only the requirements.
+
+\subsection{Source-backed threshold evidence}\label{subsec:source-backed-threshold-evidence}
+
+The attachment audit is applied to the new-layer carriers produced by the PICA
+route of \Cref{sec:methods}: the lifted-package surface, the protocol-indexed
+higher-witness surface, and the completion-family surface.  On each carrier's
+native state space, the six records required by
+\Cref{subsec:threshold-attachment-requirements} are present: the raw feature
+cluster, threshold annotation, witness schema, collapse-case record, level
+annotation, and audit record are populated before any active role projection is
+claimed.  This is the inherited attachment discipline of
+\cite{Tsiokos2026FoundationsII}, applied at the \NewLayer{} carrier level rather
+than at the bridge-native level inherited from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}.
+
+The admitted source class for this threshold stage is committed-state evidence
+under the PICA-bound source-of-truth policy of \Cref{sec:methods}.  That
+admission is layer-specific: the same source class is not admitted as
+threshold-realization evidence for the bridge-native \OldLayer{} level, where
+the inherited source-policy discipline permits only provisional inspection.  The
+new-layer policy therefore supplies source-backed threshold evidence, on each of
+the three carriers, for the readout-agreement role.  The gate that decides
+whether this evidence strict-realizes the readout slot is
+\Cref{subsec:new-layer-readout-slot-gate}; the present subsection records only
+that the evidence exists and satisfies the attachment contract.
+
+\subsection{New-layer readout slot gate}\label{subsec:new-layer-readout-slot-gate}
+
+The readout slot gate consumes the source-backed threshold evidence of
+\Cref{subsec:source-backed-threshold-evidence} together with the PICA-bound
+source-policy contract fixed in \Cref{sec:methods}.  Its output is a
+strict-realization decision for the readout-agreement slot at the native
+\NewLayer{} carrier level.  This is a layer-local decision in the sense of the
+inherited slot-realization discipline \cite{Tsiokos2026FoundationsII}: evidence
+attached to the new-layer carrier does not by itself upgrade the bridge-native
+\OldLayer{} slot status, and the gate does not infer an active projection from
+threshold data without the intervening slot-realization check.
+
+Applied to the three carriers, the gate accepts strict realization of the
+readout-agreement slot on each carrier's native state space.  The
+bridge-native \OldLayer{} readout slot is unchanged by this acceptance and
+remains within the \OldLayerStatus{}.  Strict realization of this one slot does
+not close the strict three-slot domain and does not license strict-test
+acceptance.  The companion quadratic-witness and transition-witness slots are
+treated in
+\Cref{subsec:native-quadratic-witness-slot-construction,subsec:native-transition-witness-slot-construction},
+and the all-slot closure test is deferred to
+\Cref{subsec:all-slot-gate-and-strict-domain-closure}.
+
+\subsection{Native quadratic-witness slot construction}\label{subsec:native-quadratic-witness-slot-construction}
+
+The second required slot is the quadratic-witness slot.  Its source material is
+the retained exact-finite quadratic structure isolated in the internal-structure
+and carrier-exactification papers: the self-quadratic readout family
+(\texttt{q\_readout\_l2\_self}), the gap-type quadratic family
+(\texttt{q\_readout\_gap}), and the recoarsening-consistency family
+(\texttt{q\_coarsening\_consistency})
+\cite{Tsiokos2026InternalStructure,Tsiokos2026CarrierExactification}.  In
+\PaperNine{} these families are not imported as bridge-native names.  They are
+revalidated on the native state space of the \NewLayer{} carrier introduced in
+\Cref{sec:methods}: each family is carried by the new-layer transport and
+readout law, and each carries the attachment records required by
+\Cref{subsec:threshold-attachment-requirements} under the inherited
+threshold-and-witness discipline \cite{Tsiokos2026FoundationsII}.
+
+The resulting quadratic-witness slot is strict-realized at the new layer on
+each of the three carriers.  This is a native construction on the exactified
+carrier, not inheritance-by-name from the bridge-native level.  The quadratic
+event family retained by \PaperEight{} remains scoped to the \OldLayer{} side
+and does not by itself license the new-layer slot.  The transition-witness slot
+is treated in \Cref{subsec:native-transition-witness-slot-construction}, and
+the strict three-slot domain is not closed until
+\Cref{subsec:all-slot-gate-and-strict-domain-closure}.
+
+\subsection{Native transition-witness slot construction}\label{subsec:native-transition-witness-slot-construction}
+
+The third required slot is the transition-witness slot.  Its source material is
+the transition structure isolated in the holonomy-with-memory paper: the
+distinction between the current quotient and the predictive quotient, predictive
+witness pairs separating histories that agree at the current level but differ
+predictively, and the lifted loop action on the predictive quotient
+\cite{Tsiokos2026HolonomyMemory}.  It also uses the carrier-level transition
+records supplied by carrier exactification, where transition-stability data is
+carried at the refinement level \cite{Tsiokos2026CarrierExactification}.  In
+\PaperNine{} these structures are not imported as bridge-native names.  They
+are revalidated on the native state space of the \NewLayer{} carrier introduced
+in \Cref{sec:methods}: the carrier transport law acts on the predictive
+quotient, the predictive witnesses persist on the carrier surface, and the
+attachment records required by \Cref{subsec:threshold-attachment-requirements}
+are populated for the transition-witness slot under the inherited
+threshold-and-witness discipline \cite{Tsiokos2026FoundationsII}.
+
+The resulting transition-witness slot is strict-realized at the new layer on
+each of the three carriers.  This is a native transition construction on the
+exactified carrier, not inheritance-by-name from the bridge-native level.  The
+transition-stability event family retained from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent} remains scoped to the \OldLayer{} side and
+does not by itself license the new-layer slot.  The strict three-slot domain is
+not closed until \Cref{subsec:all-slot-gate-and-strict-domain-closure}, and no
+strict-test acceptance is licensed here.
+
+\subsection{All-slot gate and strict-domain closure}\label{subsec:all-slot-gate-and-strict-domain-closure}
+
+The all-slot gate consumes the three slot-realization results established in
+\Cref{subsec:new-layer-readout-slot-gate,subsec:native-quadratic-witness-slot-construction,subsec:native-transition-witness-slot-construction}.
+It returns closure of the \NewLayer{} strict three-slot domain only when the
+readout-agreement, quadratic-witness, and transition-witness slots are all
+strict-realized on the same exactified carrier.  The gate therefore enforces
+the status-family discipline of the foundations layer
+\cite{Tsiokos2026FoundationsII}: realization at one slot does not imply
+realization at another, and the conjunction is checked explicitly.  The
+bridge-native \OldLayer{} domain is not closed by this gate, which operates on
+new-layer evidence under the layer-local attachment discipline fixed in
+\Cref{subsec:threshold-attachment-requirements}.
+
+On each of the three carriers, all three required slots are strict-realized on
+the carrier's native state space.  The \NewLayer{} strict three-slot domain is
+therefore closed on each carrier.  This closes the slot-realization phase of
+\Cref{sec:primary-results}; \Cref{subsec:native-strict-domain-table} records
+the closed domain, and \Cref{subsec:strict-test-family-construction} begins the
+separate test-family construction.  Domain closure is the structural
+prerequisite for that construction, not a test-acceptance result.
+
+\subsection{Native strict three-slot domain}\label{subsec:native-strict-domain-table}
+
+\Cref{tab:native-strict-domain} records the closed \NewLayer{} strict
+three-slot domain produced by the all-slot gate: the source structure for each
+slot, the carriers on which it is supported, its strict-realization status, and
+the layer-local claim scope.
+
+\begin{table}[tbp]
+  \centering
+  \caption{Native PICA \NewLayer{} strict three-slot domain at \PaperNine{}: source structure, supporting carriers, strict-realization status, and claim scope per slot.}
+  \label{tab:native-strict-domain}
+  \small
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+    \toprule
+    Slot & Source structure & Carriers supporting & Strict realization & Claim scope \\
+    \midrule
+    Readout-agreement slot
+      & PICA-bound source-policy admission of committed-state evidence under the threshold-realization framework of \cite{Tsiokos2026FoundationsII}
+      & lifted-package surface; protocol-indexed higher-witness surface; completion-family surface
+      & strict-realized at the new layer
+      & new-layer slot only; bridge-native \OldLayer{} slot unchanged \\
+    Quadratic-witness slot
+      & three retained quadratic families of \cite{Tsiokos2026InternalStructure} and \cite{Tsiokos2026CarrierExactification}
+      & lifted-package surface; protocol-indexed higher-witness surface; completion-family surface
+      & strict-realized at the new layer
+      & new-layer slot only; bridge-native \OldLayer{} slot unchanged \\
+    Transition-witness slot
+      & predictive-quotient and lifted-loop-action structure of \cite{Tsiokos2026HolonomyMemory} together with the carrier-level transition records of \cite{Tsiokos2026CarrierExactification}
+      & lifted-package surface; protocol-indexed higher-witness surface; completion-family surface
+      & strict-realized at the new layer
+      & new-layer slot only; bridge-native \OldLayer{} slot unchanged \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+This table completes the slot-domain record used by the test-family
+construction of \Cref{subsec:strict-test-family-construction}.
+
+\subsection{Strict test-family construction}\label{subsec:strict-test-family-construction}
+
+The construction step takes the closed \NewLayer{} strict three-slot domain of
+\Cref{subsec:all-slot-gate-and-strict-domain-closure}, summarized in
+\Cref{tab:native-strict-domain}, and assembles a candidate strict test family on
+each carrier.  Each candidate is a finite family of test predicates over the
+readout-agreement, quadratic-witness, and transition-witness slots, constructed
+with the aim of satisfying the test-family discipline inherited from
+\PaperEight{}: mutual exclusivity, exhaustivity, readout-category coverage, and
+family structure \cite{Tsiokos2026CarrierToEvent}.  The construction is carried
+out under the finite-audited-interaction discipline of
+\cite{Tsiokos2026FoundationsII}.  It is native to the carrier: the family uses
+the strict-realized slots of that carrier and is not assembled from the
+bridge-native event family retained by \PaperEight{}.
+
+There are three constructed candidates, one per supporting carrier: the test
+family on the lifted-package surface, the test family on the protocol-indexed
+higher-witness surface, and the test family on the completion-family surface.
+This is the structural construction step.  The family-criteria gate is treated
+in \Cref{subsec:family-criteria-gate}, and the final accepted set is reported
+in \Cref{subsec:accepted-strict-test-families}.
+
+\subsection{Test-family admissibility gate}\label{subsec:family-criteria-gate}
+
+The admissibility gate applies the test-family discipline inherited from
+\PaperEight{} to the three candidates constructed in
+\Cref{subsec:strict-test-family-construction} \cite{Tsiokos2026CarrierToEvent}.
+It checks that each candidate is finite and that its predicates form an
+internally consistent partition of the closed \NewLayer{} strict three-slot
+domain: mutual exclusivity prevents overlap between test alternatives,
+exhaustivity is evaluated against the closed domain of
+\Cref{subsec:all-slot-gate-and-strict-domain-closure}, readout-category
+coverage is evaluated against the readout-agreement slot on the carrier's
+native state space, and family structure checks that the predicates remain a
+single coherent test family rather than unrelated slotwise assertions.  These
+checks remain within the finite-audited-interaction framework of
+\cite{Tsiokos2026FoundationsII}.
+
+Each of the three constructed candidates satisfies the gate on its supporting
+carrier.  Each meets the finiteness, mutual-exclusion, exhaustivity,
+readout-coverage, and family-structure requirements over its native strict
+three-slot domain.  This gate passage is still not the acceptance declaration:
+the accepted strict test families are named only in
+\Cref{subsec:accepted-strict-test-families}.
+
+\subsection{Accepted strict test families}\label{subsec:accepted-strict-test-families}
+
+Acceptance follows the gate passage established in
+\Cref{subsec:family-criteria-gate}.  On each supporting carrier, the constructed
+family is accepted as a strict test family of the \NewLayer{} strict three-slot
+domain: it qualifies under the inherited test-family discipline as a finite,
+mutually exclusive, exhaustive, readout-covering, and structurally coherent test
+partition over the closed domain \cite{Tsiokos2026CarrierToEvent}.  The
+acceptance is local to \PaperNine{}'s native carrier construction and to its
+scoped protocol-indexed mode.  It does not extend to the bridge-native
+\OldLayer{} level of \PaperEight{}, which retains its scoped event positivity
+but no accepted strict test family.
+
+The accepted set comprises \AcceptedTestCount{} families, one for each carrier:
+the strict test family on the lifted-package surface, the strict test family on
+the protocol-indexed higher-witness surface, and the strict test family on the
+completion-family surface.  Acceptance at this stage remains subject to the
+control-survival analysis of \Cref{sec:secondary-results}.  The table in
+\Cref{subsec:accepted-strict-test-families-table} records the per-family
+acceptance attributes; the canonical operational identifiers for the three
+families are recorded in \Cref{app:artifact-map}.
+
+\subsection{Accepted strict test families table}\label{subsec:accepted-strict-test-families-table}
+
+\Cref{tab:accepted-strict-test-families} records the three accepted PICA
+\NewLayer{} new-layer strict test families, their source carriers, their member
+slots, their family-criteria status, and the control-survival condition attached
+to the acceptance claim.
+
+\begin{table}[tbp]
+  \centering
+  \caption{Accepted PICA \NewLayer{} new-layer strict test families on the carriers of \PaperNine{}: source carrier, member slots, criteria status, scope, and acceptance condition.  Test-family identifiers are recorded in \Cref{subsec:accepted-strict-test-families}.}
+  \label{tab:accepted-strict-test-families}
+  \small
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+    \toprule
+    Test family & Member slots & Family criteria & Scope & Acceptance \\
+    \midrule
+    Family on lifted-package surface
+      & readout-agreement, quadratic-witness, transition-witness
+      & all five criteria pass
+      & new-layer; protocol-indexed
+      & accepted, conditional on \Cref{sec:secondary-results} \\
+    Family on protocol-indexed higher-witness surface
+      & readout-agreement, quadratic-witness, transition-witness
+      & all five criteria pass
+      & new-layer; protocol-indexed
+      & accepted, conditional on \Cref{sec:secondary-results} \\
+    Family on completion-family surface
+      & readout-agreement, quadratic-witness, transition-witness
+      & all five criteria pass
+      & new-layer; protocol-indexed
+      & accepted, conditional on \Cref{sec:secondary-results} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+With the new-layer strict domain and accepted family record fixed, the analysis
+turns in \Cref{sec:secondary-results} to descent and control survival.
+ \section{New-to-old descent and control survival}\label{sec:secondary-results}
+
+\subsection{Descent map and loss records}\label{subsec:descent-map}
+
+\Cref{sec:primary-results} establishes strict realization on the native
+\NewLayer{} carriers.  The descent map sends those new-layer records back to
+the \OldLayer{} description through the loss/lift bookkeeping of the scoped
+exact-six framework \cite{Tsiokos2026FoundationsII}.  Its purpose is not to
+repeat the strict realization at the old layer.  Rather, it records which
+new-layer structure can be translated into old-layer compatibility, which
+structure is forgotten in the level crossing, and where the inherited
+bridge-native event level of \PaperEight{} remains the relevant target
+\cite{Tsiokos2026CarrierToEvent}.  The map is therefore the bridge from
+new-layer strict realization to old-layer compatibility statements, not an
+upgrade to old-layer strict realization.
+
+Under this descent, the readout-agreement role descends as a real-provisional
+pair-observable record, the boundary separating new-layer strict realization
+from old-layer compatibility is retained, and the new-layer slot identities are
+not collapsed into old-layer slot identities.  The carrier-native state space,
+transport law, and quadratic- and transition-witness substructure are forgotten
+as old-layer structure; the loss record marks this forgetting as part of the
+translation rather than as falsification.  Thus the descent preserves
+\OldLayer{} as the \OldLayerStatus{}: compatibility is retained, while
+old-layer strict realization is not asserted.  \Cref{subsec:non-factorization-preservation}
+records the non-factorization statement explicitly, \Cref{subsec:old-h2-compatibility-status}
+records the old-layer compatibility status, and the subsequent control panel
+tests the accepted families against comparator constructions.
+
+\subsection{Non-factorization preservation}\label{subsec:non-factorization-preservation}
+
+The descent of \Cref{subsec:descent-map} preserves non-factorization: the
+new-layer strict realization established in \Cref{sec:primary-results} does not
+factor through any old-layer strict-realization claim.  Equivalently, the
+descent map has no section that reconstructs the native \NewLayer{} carrier
+from the \OldLayer{} description alone.  This is the formal sense in which the
+result is a strict extension in the foundations framework: the layer transition
+adds structure that cannot be reduced to the lower-layer description
+\cite{Tsiokos2026FoundationsII}.  The inherited bridge-native setting is the
+\OldLayer{} level of \PaperEight{} \cite{Tsiokos2026CarrierToEvent}, which
+serves as the target of compatibility translation rather than as a source of
+new-layer strict realization.
+
+This preservation is what keeps the strict-extension verdict of
+\Cref{sec:final-gate} from collapsing into an old-layer claim.  If
+factorization were available, the new-layer strict realization could in
+principle be read as old-layer strict realization, and the boundary enforced by
+the descent would fail.  The structural picture is therefore a one-way
+combination: new-layer strict realization descends to old-layer compatibility,
+but no inverse reconstruction turns that compatibility into the new-layer
+carrier.  \Cref{subsec:old-h2-compatibility-status} records the complementary
+old-layer status.
+
+\subsection{Old-layer compatibility status}\label{subsec:old-h2-compatibility-status}
+
+After descent, the bridge-native \OldLayer{} level retains the scoped event
+positivity inherited from \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.  The
+quadratic level-set event and the transition-stability test remain unchanged,
+the readout-agreement slot remains unrealized at the old layer, and no accepted
+strict test family is placed there.  The evidence constructed in
+\Cref{sec:primary-results} is therefore not imported into \OldLayer{} as strict
+realization.  Its old-layer image is the compatibility record described in
+\Cref{subsec:descent-map}: a real-provisional pair-observable record on the
+readout-agreement role together with a boundary record preventing the new-layer
+slot identities from being identified with old-layer slot identities.
+
+This status is part of the strict-extension result, not a negative residue.  It
+supplies the boundary condition under which the \NewLayer{} construction is
+genuinely new: the \OldLayer{} description is left intact, the
+non-factorization statement of \Cref{subsec:non-factorization-preservation} is
+preserved, and the descent records compatibility rather than inverse
+reconstruction.  The section now turns from this layer-separation picture to
+the robustness tests for the accepted families.
+
+\subsection{Null baseline and memory-only controls}\label{subsec:control-panel-null-memory}
+
+The control panel asks whether the accepted families of
+\Cref{subsec:accepted-strict-test-families} survive degenerate comparators
+rather than merely reflecting the construction of a sufficiently elaborate
+carrier.  This is the audited-control role of the foundations framework
+\cite{Tsiokos2026FoundationsII}, with control vocabulary inherited from the
+fixed-support sequence \cite{Tsiokos2026CarrierToEvent,Tsiokos2026PromotionCriteria}.
+The present subsection treats the first two control classes; later subsections
+address artifact and boundary-sensitive controls, selected-lift and visibility
+perturbations, and protocol-honesty checks.
+
+The null baseline is an uninformative comparator: it preserves the carrier
+shape but supplies no candidate-distinguishing structure.  Passing this control
+shows that the family is not accepted merely because some carrier was
+constructed.  The memory-only comparator supplies history or memory but not the
+structure that separates the predictive quotient from the current quotient
+\cite{Tsiokos2026HolonomyMemory}.  Passing this control shows that the family
+is not accepted merely because memory is present.  The three accepted families
+pass both controls on their supporting carriers.  This establishes control
+survival only for the two comparator classes treated here; the remaining
+classes are handled in
+\Cref{subsec:control-panel-artifact-boundary,subsec:selected-lift-visibility-controls,subsec:protocol-honesty-claim-boundary}.
+
+\subsection{Artifact-internalization and boundary controls}\label{subsec:control-panel-artifact-boundary}
+
+The artifact-internalization controls test whether acceptance depends on the
+operational bookkeeping by which the carrier was exactified or on the particular
+way protocol coordinates were internalized into state.  This control class is
+inherited from the promotion and carrier-exactification stages, where candidate
+structure must survive variation of the audit record rather than merely
+reproduce it \cite{Tsiokos2026PromotionCriteria,Tsiokos2026CarrierExactification}.
+Passing the control means that the accepted family does not collapse when the
+internalization is varied or when the bookkeeping itself is treated as a
+comparator.
+
+The boundary-sensitive control supplies a negative comparator at the edge of
+the closed \NewLayer{} strict three-slot domain, in the completion-sensitive
+sense inherited from \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.  It asks
+whether the family detects only structure internal to its closed domain, rather
+than producing spurious positives just outside that boundary.  Both controls
+pass for all three accepted families on their supporting carriers.  This
+extends the control-survival record but does not complete it; selected-lift and
+visibility perturbations are treated in
+\Cref{subsec:selected-lift-visibility-controls}, and protocol-honesty and
+claim-boundary compliance are treated in
+\Cref{subsec:protocol-honesty-claim-boundary}.
+
+\subsection{Selected-lift and visibility-suppression controls}\label{subsec:selected-lift-visibility-controls}
+
+The selected-lift variation control applies the Foundations II discipline that
+a level crossing may record selected lifts without making any one lift
+canonical \cite{Tsiokos2026FoundationsII}.  The control varies the selected lift
+within its admissible alternatives and tests whether the accepted family remains
+stable under that variation, using the inherited lift records of the promotion
+stage \cite{Tsiokos2026PromotionCriteria}.  Passing the control means that the
+family is not parasitic on a particular lift choice; the result persists while
+the lift remains noncanonical.
+
+The visibility-suppression control perturbs the instrument-relative record of
+what is visible and what is suppressed within the admissible range of the
+foundations bookkeeping \cite{Tsiokos2026FoundationsII}.  Passing this control
+means that acceptance is not an artifact of a single visibility record or a
+single suppression convention.  The same per-family passage holds for
+selected-lift variation and visibility-suppression perturbation.  These
+controls preserve the public-shadow boundary inherited from \PaperEight{}: the
+public compression remains nonfaithful, and no additional public-carrier claim
+is licensed
+\cite{Tsiokos2026CarrierToEvent}.  The final control class, protocol honesty and
+claim-boundary compliance, is treated in
+\Cref{subsec:protocol-honesty-claim-boundary}.
+
+\subsection{Protocol honesty and claim-boundary compliance}\label{subsec:protocol-honesty-claim-boundary}
+
+The protocol-honesty control checks that the accepted families remain presented
+at the scoped protocol-indexed mode in which they were constructed.  Its role is
+to prevent protocol coordinates from being silently elided when the family is
+reported as a result, a discipline inherited from the promotion and
+carrier-exactification stages
+\cite{Tsiokos2026PromotionCriteria,Tsiokos2026CarrierExactification}.  Passing
+the control means that the family does not pretend to a public-shadow result
+that has not been established; the protocol-indexed scope is preserved.
+
+The claim-boundary control checks the explicit nonclaim record of the
+foundations framework \cite{Tsiokos2026FoundationsII}.  The accepted families do
+not implicitly construct an event package, a proto-effect fragment, an effect
+algebra, a Born valuation, or composition readiness; nor do they assert
+faithful public compression, a lawful public carrier, or a canonical selected
+lift.  These structures are named here only as disclaimed stronger conclusions.
+Passing the control means that the accepted families respect that nonclaim
+record rather than carrying stronger structure into the acceptance result.
+
+Each of the three accepted families passes the protocol-honesty and
+claim-boundary controls on its supporting carrier, in addition to the controls
+of \Cref{subsec:control-panel-null-memory,subsec:control-panel-artifact-boundary,subsec:selected-lift-visibility-controls}.
+The control-survival condition attached to
+\Cref{subsec:accepted-strict-test-families} and
+\Cref{tab:accepted-strict-test-families} is therefore satisfied in full: the
+families are accepted on \PaperNine{}'s evidence, with layer separation,
+non-factorization preservation, and the inherited claim discipline intact.
+\Cref{sec:analysis} gives the corresponding layer-localization and
+claim-boundary analysis.
+ \section{Claim-boundary analysis and layer localization}\label{sec:analysis}
+
+\subsection{Why strict tests are layer-local}\label{subsec:strict-tests-layer-local}
+
+The strict-test acceptance of \Cref{sec:primary-results} is layer-local because
+its supporting conditions are layer-local.  First, the source-policy profile is
+not global: the PICA-bound policy of
+\Cref{subsec:pica-source-policy-profile}, formalized at schema level in
+\Cref{subsec:schema-source-policy-threshold}, admits the relevant source class
+for \NewLayer{} threshold realization while the inherited bridge-native policy
+of \PaperEight{} does not do so at \OldLayer{}
+\cite{Tsiokos2026CarrierToEvent,Tsiokos2026FoundationsII}.  Second, the
+threshold-attachment data required by
+\Cref{subsec:threshold-attachment-requirements} are populated on the native
+state space of the exactified \NewLayer{} carrier, not on the bridge-native
+description.  Third, the strict-realization gates of \Cref{sec:primary-results}
+operate on that new-layer evidence, and the no-propagation schema of
+\Cref{subsec:schema-old-blocks-old-only} prevents their acceptance from being
+read as old-layer strict realization.  These conditions make accepted strict
+tests an attribute of the new layer's description and audit chain, not of the
+layer transition by itself.
+
+The same separation excludes the converse reading.  The inherited \OldLayer{}
+status of \PaperEight{} does not propagate as a constraint on \NewLayer{}
+test-family acceptance: the unrealized old-layer readout slot blocks old-layer
+strict-test closure, but it does not block a new-layer carrier that carries its
+own readout slot, its own threshold attachment, and its own native state space.
+Likewise, the bridge-native restriction of committed-state evidence to
+provisional inspection is replaced, at the new layer only, by the PICA-bound
+policy.  The result is a clean layer separation: strict-test acceptance lives at
+\NewLayer{}, the inherited real-provisional boundary lives at \OldLayer{}, and
+the descent map between them is a compatibility translation rather than an
+inheritance of strict realization.
+
+\subsection{Bounded scope: no event package, no shared-event identity}\label{subsec:tests-do-not-imply-event-package}
+
+Strict-test acceptance certifies that, on each \NewLayer{} carrier, the family
+criteria pass and the controls survive.  It does not provide a packaging
+operator over the accepted families, an identification of shared events across
+families, or any compositional structure linking the three carriers as a single
+algebraic object.  Under the claim/nonclaim discipline of
+\cite{Tsiokos2026FoundationsII}, those are additional structural moves, not
+consequences of test-family acceptance.  The event-packaging structures
+introduced in \cite{Tsiokos2026LocallyBoolean} and bounded at the event bridge
+in \cite{Tsiokos2026CarrierToEvent} therefore remain explicit nonclaims in
+\PaperNine{}.
+
+An event package would require a packaging operator that respects
+shared-event identification across the three accepted families and remains
+audited under the foundations framework.  A shared-event identity claim would
+require a verified equivalence among events from different families on a common
+comparison base \cite{Tsiokos2026LocallyBoolean}.  Neither structure is
+constructed here.  The claim-boundary control of
+\Cref{subsec:protocol-honesty-claim-boundary} is the audit-side check that
+these structures are not imported into the acceptance result.
+
+\subsection{Higher structures remain future work}\label{subsec:higher-structures-blocked}
+
+The accepted strict-test families are partitions of the closed three-slot
+domain at each carrier.  Building a proto-effect fragment would require
+identifying effect-shaped structure in those families that survives the
+foundations claim discipline; building an effect algebra would require
+composition-respecting operations on such effects across the three carriers; a
+Born valuation would require a state-functional pairing whose values respect
+the effect-algebra structure; and composition readiness would require the
+algebraic and state-side constructions to combine coherently.  Each step is a
+separate structural construction beyond the strict-test acceptance reported in
+\PaperNine{}.  Under \cite{Tsiokos2026FoundationsII}, absence of those
+constructions is a nonclaim boundary, not an implied consequence of the
+accepted tests.
+
+The blockers are constructive rather than refutative.  These higher structures
+remain possible targets for later work; the present paper neither constructs
+them nor rules them out.  The claim-boundary discipline of
+\Cref{subsec:pica-claim-boundary-report} keeps them explicit as nonclaims, and
+the claim-boundary control of \Cref{subsec:protocol-honesty-claim-boundary}
+verifies on the audit side that the accepted families respect that boundary.
+
+\subsection{Public-shadow nonfaithfulness as a structural prerequisite}\label{subsec:public-shadow-nonfaithfulness}
+
+The public-shadow split inherited from
+\cite{Tsiokos2026CarrierExactification} is part of each \NewLayer{} carrier's
+structure: the carrier projects to a bridge-native public surface, but it is
+not reducible to that projection.  This nonfaithfulness matters directly for
+\PaperNine{}'s strict-extension claim.  If the public projection were faithful,
+then the new-layer carrier would be reducible to old-layer public-shadow data,
+which would make inverse reconstruction available and would collapse the
+non-factorization boundary of
+\Cref{subsec:non-factorization-baseline,subsec:non-factorization-certificate}.
+Nonfaithfulness is therefore a structural prerequisite of the strict-extension
+verdict, not a separate caveat.  The visibility-suppression control of
+\Cref{subsec:selected-lift-visibility-controls} verifies on the audit side that
+the result is preserved across admissible perturbations of the visibility
+record without licensing faithful public compression.
+
+\subsection{Selected-lift nonuniqueness}\label{subsec:selected-lift-nonuniqueness-analysis}
+
+The selected-lift discipline of \cite{Tsiokos2026FoundationsII} allows level
+crossings to record selected lifts without making any one lift canonical.
+\PaperNine{}'s strict-extension verdict respects this discipline: it does not
+claim that a particular lift is uniquely admissible, and the selected-lift
+variation control of \Cref{subsec:selected-lift-visibility-controls} certifies
+that the accepted families survive admissible variation.  A canonical selected
+lift would assert that one section across the layer transition is privileged;
+such a claim would conflict with the descent-and-no-section structure of
+\Cref{subsec:non-factorization-baseline,subsec:non-factorization-preservation}.
+Non-factorization and selected-lift nonuniqueness are therefore complementary:
+the \NewLayer{} carrier admits no inverse reconstruction, and no particular
+lift across the transition is canonical.  The acceptance result lives within
+both constraints.  These constraints shape the discussion of
+\Cref{sec:discussion}.
+ \section{Formal support and Lean schemas}\label{sec:formal-framework}
+
+\subsection{Theorem schemas overview}\label{subsec:theorem-schemas-overview}
+
+This section records the schema-level support behind the gate logic of
+\PaperNine{}.  The formal layer consists of theorem schemas that codify the
+discipline by which threshold attachment, slot realization, test-family
+acceptance, descent compatibility, and the legality constraints of the final
+gate are organized.  The schemas are inherited from the foundations layer
+\cite{Tsiokos2026FoundationsII} and follow the convention of \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}: formal support is a typed mirror of the gate
+discipline, not an independent derivation of empirical content.
+
+The schemas check legality and gate compatibility.  They do not prove that the
+\NewLayer{} carriers exist, that source-backed threshold evidence is present,
+or that the controls pass; those empirical premises are supplied by the methods
+and results sections \Cref{sec:methods,sec:primary-results,sec:secondary-results}.
+The role of this section is conditional: if the empirical premises hold, then
+the resulting claims obey the paper's internal discipline.  The schemas proceed
+in order: source-policy admission required for threshold realization
+(\Cref{subsec:schema-source-policy-threshold}), promotion versus carrier
+exactification (\Cref{subsec:schema-promotion-not-exactification}),
+exactified-carrier attachment licensing new-layer slots
+(\Cref{subsec:schema-attachment-licenses-slot}), new-layer slots licensing
+new-layer test-family reassembly (\Cref{subsec:schema-slots-license-tests}),
+the real-provisional old layer blocking old-layer tests but not new-layer tests
+(\Cref{subsec:schema-old-blocks-old-only}), unrealized required new-layer slots
+blocking accepted new-layer strict tests
+(\Cref{subsec:schema-unrealized-blocks-test}), and the boundary on what the
+formal layer does not prove (\Cref{subsec:schema-legality-not-existence}).
+
+\subsection{Source-policy admission for threshold realization}\label{subsec:schema-source-policy-threshold}
+
+The first schema states that a threshold-realization claim at a layer is
+licensed only when the active source-of-truth policy at that layer admits the
+source class supplying the threshold evidence for the relevant role
+\cite{Tsiokos2026FoundationsII}.  Source-policy admission is therefore a
+structural precondition of every active threshold-realization claim.  In
+\PaperNine{}, this schema underwrites the layer-locality of the threshold claims
+used in \Cref{sec:primary-results}: committed-state evidence is admitted for
+threshold realization at the \NewLayer{} carrier under the PICA-bound policy of
+\Cref{subsec:pica-source-policy-profile}, while the same source class remains
+only provisionally inspectable at the bridge-native \OldLayer{} level under the
+inherited policy of \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.
+
+\subsection{Promotion and carrier exactification as distinct stages}\label{subsec:schema-promotion-not-exactification}
+
+The second schema states that promotion of a candidate object, in the sense of
+\cite{Tsiokos2026PromotionCriteria}, is distinct from carrier exactification, in
+the sense of \cite{Tsiokos2026CarrierExactification}.  A promoted candidate is
+not by itself an exactified carrier: carrier exactification requires
+already-promoted candidates as input and applies its own audit.  Promotion is
+therefore necessary but not sufficient for carrier-level standing.  In
+\PaperNine{}, this schema underwrites the staged method of \Cref{sec:methods},
+where \Cref{subsec:candidate-objects-promotion-gate} applies the promotion gate
+and \Cref{subsec:carrier-exactification} applies the exactification audit with
+a separate criterion set.  It also enforces the claim discipline that the three
+\NewLayer{} carriers are exactified, not merely promoted, before any
+slot-realization claim is asserted in \Cref{sec:primary-results}.
+
+\subsection{Exactified-carrier attachment licenses a native strict slot}\label{subsec:schema-attachment-licenses-slot}
+
+The third schema states a conditional slot-licensing principle.  If an
+exactified carrier carries threshold-attachment data on its native state space,
+in the sense of \cite{Tsiokos2026FoundationsII}, and the active source policy
+admits the supplying source class for threshold realization, then a native
+strict slot is licensed at that carrier under the inherited slot-realization
+framework.  Equivalently, carrier exactification
+\cite{Tsiokos2026CarrierExactification}, threshold attachment, and source-policy
+admission are jointly sufficient for new-layer slot licensing.  This schema
+underwrites the readout-slot gate of
+\Cref{subsec:new-layer-readout-slot-gate} and the native companion-slot
+constructions of
+\Cref{subsec:native-quadratic-witness-slot-construction,subsec:native-transition-witness-slot-construction}.
+
+\subsection{Strict-domain closure licenses test-family reassembly}\label{subsec:schema-slots-license-tests}
+
+The fourth schema states that closure of the \NewLayer{} strict three-slot
+domain at a carrier licenses strict-test-family reassembly at that carrier.
+Closure means that the readout-agreement, quadratic-witness, and
+transition-witness slots are all strict-realized at the same carrier.  It is
+the necessary licensing input to family construction, but acceptance still
+requires the family-criteria gate: mutual exclusivity, exhaustivity,
+readout-category coverage, and family structure
+\cite{Tsiokos2026CarrierToEvent}, under the audit framework of
+\cite{Tsiokos2026FoundationsII}.  This schema underwrites the closure result of
+\Cref{subsec:all-slot-gate-and-strict-domain-closure} and the construction and
+criteria-gate steps of
+\Cref{subsec:strict-test-family-construction,subsec:family-criteria-gate}.  It
+does not by itself license acceptance; that requires gate passage and the
+control panel of \Cref{sec:secondary-results}.
+
+\subsection{Old-layer real-provisional status blocks old-layer tests only}\label{subsec:schema-old-blocks-old-only}
+
+The fifth schema is a no-propagation statement.  Retaining \OldLayer{} at
+real-provisional non-factorization status blocks acceptance of strict test
+families at \OldLayer{}, but it does not block acceptance at \NewLayer{} when
+the evidence is constructed at the new layer under the PICA-bound source policy.
+Equivalently, an inherited unrealized old-layer slot constrains old-layer
+test-family acceptance only; it is not a constraint on new-layer test-family
+acceptance whose threshold evidence, slot realization, and controls are
+layer-local.  This is the formal counterpart of the layer-locality framework of
+\cite{Tsiokos2026FoundationsII} applied to the inherited setting of
+\cite{Tsiokos2026CarrierToEvent}.  It underwrites the principal positive case
+of \Cref{sec:final-gate} and the descent-side compatibility statements of
+\Cref{subsec:non-factorization-preservation,subsec:old-h2-compatibility-status}.
+
+\subsection{Unrealized required slot blocks new-layer test acceptance}\label{subsec:schema-unrealized-blocks-test}
+
+The sixth schema is the corresponding new-layer blocking statement.  If any
+required slot of the \NewLayer{} strict three-slot domain is not strict-realized
+at a carrier, then the all-slot gate of
+\Cref{subsec:all-slot-gate-and-strict-domain-closure} fails for that carrier,
+and no accepted strict test family is licensed there.  Equivalently, the
+readout-agreement, quadratic-witness, and transition-witness slots are jointly
+necessary for new-layer test-family acceptance; partial slot realization is
+insufficient.  This schema is the new-layer counterpart of
+\Cref{subsec:schema-old-blocks-old-only}: partial realization at the new layer
+does not propagate to test-family acceptance at that layer.  It formalizes the
+discipline applied in the empirical run of \PaperNine{}, where the companion
+slots had to be constructed before the strict-domain rerun audit could close
+and acceptance could become available, in accordance with the audit and
+test-family frameworks of \cite{Tsiokos2026FoundationsII} and
+\cite{Tsiokos2026CarrierToEvent}.
+
+\subsection{Boundary: schema legality, not empirical existence}\label{subsec:schema-legality-not-existence}
+
+The schemas of this section establish schema legality and gate constraints:
+they record the conditions under which \PaperNine{}'s claim discipline is
+internally consistent, not what is empirically the case.  They do not prove that
+the \NewLayer{} carriers exist, that source-backed threshold evidence is
+present, that the controls pass, or that descent compatibility holds.  Those
+are empirical statements established by the artifact pipeline described in
+\Cref{sec:methods,sec:primary-results,sec:secondary-results}.  This boundary is
+the one inherited from \cite{Tsiokos2026FoundationsII} and used throughout the
+fixed-support series
+\cite{Tsiokos2026CarrierToEvent,Tsiokos2026CarrierExactification,Tsiokos2026PromotionCriteria,Tsiokos2026InternalStructure}.
+The appendix \Cref{app:formalization} records the corresponding Lean-side
+schema entries and proof structure where formalized; the present section is the
+manuscript-side mirror of those entries.
+ \section{Final gate}\label{sec:final-gate}
+
+\subsection{Final verdict statement}\label{subsec:final-verdict-statement}
+
+Relative to the event-admissibility endpoint inherited from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}, \PaperNine{} establishes a strict extension
+on fixed support.  More precisely, the PICA route described in
+\Cref{sec:methods}, consisting here of promotion, exactification, and
+source-policy-admitted carrier construction, yields a \NewLayer{} carrier with a
+native three-slot strict domain.  The readout, quadratic-witness, and
+transition-witness slots are strict-realized at that layer, and
+\AcceptedTestCount{} accepted PICA \NewLayer{} strict test families survive the
+required controls.
+
+The old layer does not become a strict-test layer in the present analysis.  It
+remains the bridge-native event level of \PaperEight{}, retained throughout as a
+\OldLayerStatus{}; non-factorization is preserved.  This separates new-layer
+strict realization from old-layer compatibility.  \Cref{subsec:decision-logic}
+explains the ordered case selection, and \Cref{subsec:final-claim-boundary}
+records the boundary between what the paper claims, what it retains as
+compatibility, and what it explicitly disclaims.
+
+\subsection{Decision logic}\label{subsec:decision-logic}
+
+The final gate is an ordered case analysis over the upstream audits from
+\Cref{sec:methods,sec:primary-results,sec:secondary-results}.  The principal
+positive case is reached when the native \NewLayer{} strict domain closes, the
+strict test families on the new-layer carrier survive controls, and descent
+preserves old-layer compatibility without turning \OldLayer{} into a
+strict-realized layer.  Three weaker positive cases are reserved for incomplete
+new-layer evidence: a threshold-only case in which the new-layer readout slot is
+strict-realized but test-family reassembly is unavailable; a real-provisional
+case in which the route preserves or improves support without a completed
+threshold-and-slot gate; and a below-threshold or pending case.
+
+The same case analysis contains five blocking cases and two terminal negative
+cases.  A blocker case obtains if promotion supplies no surviving object, if
+promotion survives but carrier exactification does not, if exactified threshold
+evidence cannot descend compatibly to the old layer, if source-policy admission
+blocks the source use, or if public-shadow safety blocks the route.  A
+falsification case is legal only when neither old-layer nor new-layer threshold,
+readout, real-provisional, or below-threshold evidence remains.  A separate
+implementation-failure case is reserved for malformed or unavailable artifacts,
+not for mathematical absence.
+
+These constraints are needed because partial evidence can otherwise be read in
+more than one way: for example, incomplete new-layer evidence could be mistaken
+for falsification if retained provisional evidence were ignored.  The final gate
+therefore closes such overlaps.  The falsification case is unavailable in the
+presence of retained provisional or below-threshold evidence; the threshold-only
+case requires a strict-realized new-layer readout slot; and the strict-extension
+case requires the accepted strict test families on the new-layer carrier
+together with control survival.  The persistence of the old-layer
+real-provisional non-factorization boundary is not a negative result; it is the
+old-layer condition under which the new-layer strict extension is licensed.
+Artifact provenance for these audits is collected in \Cref{app:artifact-map}.
+
+\subsection{Final claim boundary}\label{subsec:final-claim-boundary}
+
+\Cref{tab:final-claim-boundary} records the final claim boundary: what the paper
+claims, what it retains as compatibility, and what it explicitly disclaims.  The
+table distinguishes the accepted strict tests on the new-layer carrier, the
+retained \OldLayer{} compatibility boundary, and the stronger structures that
+remain explicit nonclaims.
+
+\begin{table}[tbp]
+  \centering
+  \caption{Final claim boundary for \PaperNine{}: results claimed at the new layer, old-layer compatibility boundaries, explicit nonclaims, and supporting artifact families.}
+  \label{tab:final-claim-boundary}
+  \small
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}@{}}
+    \toprule
+    Item & Status & Claimed? & Supporting artifact family \\
+    \midrule
+    Accepted PICA \NewLayer{} new-layer strict tests
+      & accepted; control-surviving
+      & yes (count = \AcceptedTestCount)
+      & H, I, J, K \\
+    \OldLayer{} strict tests
+      & not constructed
+      & no
+      & C, K \\
+    \OldLayer{} strict readout realization
+      & not realized
+      & no
+      & C, G, K \\
+    \OldLayer{} real-provisional boundary
+      & \OldLayerStatus{}
+      & yes (as boundary)
+      & B, C, G, K \\
+    Shared-event identity
+      & not assumed
+      & no
+      & G, I, J, K \\
+    Event package
+      & not constructed
+      & no
+      & I, J, K \\
+    Proto-effect fragment
+      & not constructed
+      & no
+      & I, J, K \\
+    Effect algebra
+      & not constructed
+      & no
+      & I, J, K \\
+    Born valuation
+      & not constructed
+      & no
+      & I, J, K \\
+    Composition readiness
+      & not investigated
+      & no
+      & I, J, K \\
+    Faithful public compression
+      & not assumed
+      & no
+      & G, J, K \\
+    Lawful public carrier
+      & not claimed
+      & no
+      & G, J, K \\
+    Canonical selected lift
+      & not assumed
+      & no
+      & G, J, K \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+The table records the discipline that distinguishes the strict-extension result
+from an old-layer strict realization and from any stronger structure not claimed
+in this paper.
+ \section{Discussion and limitations}\label{sec:discussion}
+
+\subsection{Discussion of the strict-extension result}\label{subsec:discussion-strict-extension}
+
+\PaperNine{} establishes strict-test acceptance as a layer-local result.  The
+accepted families are attached to the \NewLayer{} carriers constructed by the
+PICA route, while the bridge-native \OldLayer{} inherited from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent} is retained as a real-provisional
+non-factorization boundary.  The principal contribution is therefore not a
+repair of the old layer, but the layer-localization picture: strict tests are
+admissible at the new layer, the inherited old-layer setting is preserved, and
+the one-way descent between them records compatibility without inverse
+reconstruction.  This is the strict-extension form anticipated by the
+foundations framework \cite{Tsiokos2026FoundationsII}.
+
+The result also clarifies the role of controls.  Control survival does not
+enlarge the claim beyond the new-layer strict domain; it confirms that the
+accepted families are stable under the comparator, perturbation, protocol, and
+claim-boundary tests of \Cref{sec:secondary-results}.  The analysis of
+\Cref{sec:analysis} is consequently a localization argument: the accepted
+families are genuine at \NewLayer{}, compatible with \OldLayer{}, and bounded
+against stronger readings.
+
+\subsection{Scope, limitations, and future work}\label{subsec:discussion-scope-limitations}
+
+The main limitations are structural.  The accepted strict test families do not
+constitute an event package, a proto-effect fragment, an effect algebra, a Born
+valuation, or a composition-ready structure.  Those remain explicit nonclaims,
+for the reasons given in
+\Cref{subsec:tests-do-not-imply-event-package,subsec:higher-structures-blocked}:
+each would require additional construction beyond strict-test acceptance.
+They are future-work targets rather than negative results.
+
+Public-shadow nonfaithfulness and selected-lift nonuniqueness also remain part
+of the result's scope.  They are not incidental caveats; they are structural
+conditions that keep the strict extension from collapsing into a public-shadow
+or canonical-lift reconstruction, as discussed in
+\Cref{subsec:public-shadow-nonfaithfulness,subsec:selected-lift-nonuniqueness-analysis}.
+Finally, \PaperNine{} is scoped to the flagship-only protocol-indexed setting.
+Global, cross-seed, and full-core test claims are out of scope here.  Whether
+the carrier exactification framework of \cite{Tsiokos2026CarrierExactification}
+can be extended to broader support is a methodological question for a successor
+paper.
+ \section{Conclusion}\label{sec:conclusion}
+
+\PaperNine{} establishes the layer-localization of strict-test admissibility on
+fixed support.  The \NewLayer{} carriers constructed by the PICA route admit a
+closed three-slot strict domain with three accepted strict test families
+surviving controls.  The bridge-native \OldLayer{} of \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent} is retained intact as a real-provisional
+non-factorization boundary, in the sense of the foundations framework
+\cite{Tsiokos2026FoundationsII}.  Descent from new-layer evidence to old-layer
+compatibility preserves non-factorization without inducing strict realization
+at the old layer.  The result therefore supplies a strict extension rather than
+a repair of the inherited bridge-native level.  It does not extend to
+event-package construction, shared-event identity, proto-effect or
+effect-algebra structure, Born valuation, composition readiness, faithful
+public compression, lawful public carriers, or canonical selected lifts.  Those
+structures are nonclaims of the present paper and remain future-work targets as
+discussed in \Cref{sec:discussion}.
+ 
+\appendix
+\section{Definitions and gate predicates}\label{app:definitions}
+
+\subsection{Definitions}\label{subsec:definitions-list}
+
+\begin{description}
+\item[\OldLayer{}.]
+The bridge-native event level inherited from \PaperEight{}
+\cite{Tsiokos2026CarrierToEvent}.  It carries scoped event positives and an
+unrealized readout-agreement slot.
+
+\item[\NewLayer{}.]
+The new-layer carrier substrate constructed by the PICA route of
+\Cref{sec:methods}.  It is the layer at which \PaperNine{} states native strict
+slot realization.
+
+\item[Real-provisional non-factorization boundary.]
+The status retained for \OldLayer{} throughout \PaperNine{}.  It is neither
+falsification nor old-layer strict realization; it is the boundary condition
+under which the new-layer strict extension is assessed.
+
+\item[Exactified carrier.]
+A carrier-level object surviving the seven-criterion exactification audit of
+\cite{Tsiokos2026CarrierExactification}.  Such a carrier has its own native
+state space, transport law, and readout law.
+
+\item[Native strict slot.]
+A strict-realization claim attached to the native state space of an exactified
+carrier.  The threshold-attachment data of
+\cite{Tsiokos2026FoundationsII} must be populated at that layer.
+
+\item[Native three-slot strict domain.]
+The conjunction of the readout-agreement, quadratic-witness, and
+transition-witness native strict slots on the same exactified carrier.  The
+domain is closed only when all three slots are strict-realized at that carrier.
+
+\item[Strict test family.]
+A finite family of test predicates over the slots of a closed strict domain.
+It satisfies the test-family discipline of
+\cite{Tsiokos2026CarrierToEvent}, including mutual exclusivity, exhaustivity,
+readout-category coverage, and family structure.
+
+\item[Descent compatibility.]
+The property that new-layer evidence descends to old-layer compatibility
+without inducing old-layer strict realization.  In \PaperNine{}, the descent
+image is a real-provisional pair-observable record together with a boundary
+record on slot identities.
+
+\item[Non-factorization.]
+The property that the new-layer carrier cannot be reconstructed from the
+old-layer description alone.  Equivalently, in the sense of
+\cite{Tsiokos2026FoundationsII}, the descent map admits no section recovering
+the carrier from its old-layer image.
+\end{description}
+
+\subsection{Gate predicates}\label{subsec:gate-predicates-list}
+
+\begin{description}
+\item[Promotion gate.]
+The six-criterion test of \cite{Tsiokos2026PromotionCriteria} applied to
+one-layer-up candidate objects in
+\Cref{subsec:candidate-objects-promotion-gate}.
+
+\item[Exactification gate.]
+The seven-criterion test of \cite{Tsiokos2026CarrierExactification} applied to
+promoted candidates in \Cref{subsec:carrier-exactification}.
+
+\item[Threshold gate.]
+The source-policy admission gate that decides whether threshold-realization
+evidence at a carrier is admissible at that layer, as used in
+\Cref{subsec:source-backed-threshold-evidence,subsec:new-layer-readout-slot-gate}.
+
+\item[Slot-realization gate.]
+The per-slot gate that decides strict realization at a carrier in
+\Cref{subsec:new-layer-readout-slot-gate,subsec:native-quadratic-witness-slot-construction,subsec:native-transition-witness-slot-construction}.
+
+\item[All-slot gate.]
+The conjunction-checking gate that closes the strict three-slot domain in
+\Cref{subsec:all-slot-gate-and-strict-domain-closure}.
+
+\item[Descent audit.]
+The audit that records which structure descends to old-layer compatibility and
+which structure is forgotten, as used in \Cref{subsec:descent-map}.
+
+\item[Test-family admissibility gate.]
+The family-criteria gate of \Cref{subsec:family-criteria-gate}, which applies
+the inherited test-family discipline of \cite{Tsiokos2026CarrierToEvent}.
+
+\item[Control panel.]
+The panel of comparator and perturbation tests recorded in
+\Cref{subsec:control-panel-null-memory,subsec:control-panel-artifact-boundary,subsec:selected-lift-visibility-controls,subsec:protocol-honesty-claim-boundary}.
+
+\item[Final gate.]
+The ordered case selection of \Cref{sec:final-gate}.
+\end{description}
+ \section{Methods, artifacts, and reproducibility contract}\label{app:methods}
+
+\subsection{Artifact discipline}\label{subsec:artifact-discipline}
+
+The empirical content of \PaperNine{} is recorded in machine-readable artifacts
+under stable namespaces, following the convention used through the
+fixed-support series
+\cite{Tsiokos2026CarrierToEvent,Tsiokos2026CarrierExactification}.  The
+PICA-bound construction uses a dedicated namespace, separate from the earlier
+route-discovery and bridge-diagnosis namespaces, so that \NewLayer{} carrier
+formation, threshold evidence, slot realization, descent, and controls are
+tracked without overwriting inherited \OldLayer{} records.  The per-family
+catalog is given in \Cref{app:artifact-map}.
+
+The artifact pipeline is finite and audited.  Each stage produces a named
+output, and the audit chain checks that downstream stages consume the upstream
+outputs on which they depend, with no silent rewriting of the recorded inputs.
+End-state asset readiness is therefore a structural condition: every claim in
+the paper is supported by an artifact whose existence and content are fixed
+before the audit gates of
+\Cref{sec:primary-results,sec:secondary-results,sec:final-gate} are applied.
+
+\subsection{Artifact families}\label{subsec:artifact-families}
+
+The artifact pipeline is organized by stage, in the convention of
+\cite{Tsiokos2026CarrierToEvent,Tsiokos2026CarrierExactification}.  The
+source-policy and exactification artifacts correspond to \Cref{sec:methods};
+the threshold and slot-realization artifacts correspond to
+\Cref{sec:primary-results}; the descent and control artifacts correspond to
+\Cref{sec:secondary-results}; and the final-gate artifact corresponds to
+\Cref{sec:final-gate}.  Each family is documented in \Cref{app:artifact-map}
+with stage-keyed identifiers and dependency relations.  The body sections refer
+to the families by descriptive name; the catalog supplies the per-artifact
+identifiers.
+
+\subsection{Reproducibility contract}\label{subsec:reproducibility-contract}
+
+The artifact pipeline of \PaperNine{} follows a standard reproducibility
+contract: each derived artifact carries enough metadata to reconstruct its
+computation from the upstream artifacts on which it depends, in the spirit of
+reproducible computational research \cite{Donoho2010,Sandve2013}.  This is the
+same contract used through the fixed-support series
+\cite{Tsiokos2026CarrierToEvent,Tsiokos2026CarrierExactification}, adapted here
+to the PICA-bound construction and its \NewLayer{} audit chain.
+
+The contract covers the structural artifacts of the audit chain, including
+source-policy contracts, exactified-carrier records, threshold and
+slot-realization audits, descent records, control-panel summaries, and the
+final-gate decision.  Stage-specific re-runs and independent verification are
+within scope.  Exhaustive numerical reproducibility of stochastic auxiliary
+computations is not within scope by design, because the strict-test-family
+acceptance asserted in the paper is structural rather than statistical.  This
+scope follows the audit-record discipline of
+\cite{Tsiokos2026FoundationsII}.
+ \section{Artifact source map}\label{app:artifact-map}
+
+This appendix records the stage-keyed artifact catalog for \PaperNine{}.  The
+body sections refer to artifact families by scientific role; the catalog below
+gives the corresponding machine-readable source files.  The convention follows
+the fixed-support artifact discipline of
+\cite{Tsiokos2026CarrierToEvent,Tsiokos2026CarrierExactification} and the
+audit-record framework of \cite{Tsiokos2026FoundationsII}.
+
+\begin{description}
+\item[Inherited route-discovery.]
+Part A records the inherited route atlas, candidate placements, comparison
+matrices, and route-level gate outputs that precede the \OldLayer{} diagnosis.
+The stage is represented by
+\begin{itemize}
+\item \path{results/derived/ticket33a_route_atlas.json},
+\path{results/derived/ticket33a_route_comparison_matrix.json},
+\path{results/derived/ticket33a_route_hypothesis_registry.json};
+\item \path{results/derived/ticket33a_candidate_readout_agreement_registry.json},
+\path{results/derived/ticket33a_candidate_test_registry.json},
+\path{results/derived/ticket33a_missing_slot_placement_atlas.json};
+\item \path{results/derived/ticket33a_domain_audit_summary.json},
+\path{results/derived/ticket33a_final_route_gate.json},
+\path{results/derived/ticket33a_partB_recommendation.json};
+\item \path{results/derived/ticket33a_claim_boundary_manifest.json},
+\path{results/derived/ticket33a_artifact_contract_report.json},
+\path{results/derived/ticket33a_asset_index.json}.
+\end{itemize}
+
+\item[Inherited \OldLayer{} diagnosis.]
+Part B records the bridge-native diagnosis inherited from \PaperEight{} and
+used in \Cref{sec:background,sec:problem-setup}.  The stage is represented by
+\begin{itemize}
+\item \path{results/derived/ticket33b_bridge_candidate_registry.json},
+\path{results/derived/ticket33b_bridge_source_inventory.json},
+\path{results/derived/ticket33b_bridge_threshold_recovery_summary.json};
+\item \path{results/derived/ticket33b_readout_agreement_gate.json},
+\path{results/derived/ticket33b_threshold_status_decision.json},
+\path{results/derived/ticket33b_strict_slot_realization_audit.json};
+\item \path{results/derived/ticket33b_strict_test_reassembly_summary.json},
+\path{results/derived/ticket33b_test_gate_summary.json},
+\path{results/derived/ticket33b_final_gate_decision.json};
+\item \path{results/derived/ticket33b_inherited_nonclaims.json},
+\path{results/derived/ticket33b_control_bundle_summary.json},
+\path{results/derived/ticket33b_asset_index.json}.
+\end{itemize}
+
+\item[Pre-PICA diagnostic Part C.]
+The early Part C records collect the diagnostic material that identifies the
+one-layer-up route later isolated as the PICA construction.  The stage is
+represented by
+\begin{itemize}
+\item \path{results/derived/ticket33c_foundations_alignment_contract.json},
+\path{results/derived/ticket33c_import_rule_registry.json},
+\path{results/derived/ticket33c_import_rule_summary.json};
+\item \path{results/derived/ticket33c_one_layer_up_candidate_registry.json},
+\path{results/derived/ticket33c_new_layer_formation_certificate.json},
+\path{results/derived/ticket33c_nonfactorization_obstruction_report.json};
+\item \path{results/derived/ticket33c_source_policy_contract.json},
+\path{results/derived/ticket33c_source_policy_validation_summary.json},
+\path{results/derived/ticket33c_threshold_candidate_registry.json},
+\path{results/derived/ticket33c_threshold_source_audit_summary.json};
+\item \path{results/derived/ticket33c_partC_gate_invariants.json},
+\path{results/derived/ticket33c_partC_pica_reset_manifest.json},
+\path{results/derived/ticket33c_partC_restart_readiness.json}.
+\end{itemize}
+
+\item[PICA reset and source policy.]
+This stage records the dedicated PICA namespace, source-policy profile, warning
+resolution, and imported bridge material used by \Cref{sec:methods}.  The stage
+is represented by
+\begin{itemize}
+\item \path{results/derived/ticket33c_pica_namespace_acceptance_certificate.json},
+\path{results/derived/ticket33c_pica_source_policy_contract.json},
+\path{results/derived/ticket33c_pica_source_policy_validation_summary.json};
+\item \path{results/derived/ticket33c_pica_warning_taxonomy.json},
+\path{results/derived/ticket33c_pica_warning_resolution_ledger.json},
+\path{results/derived/ticket33c_pica_claim_boundary_report.json};
+\item \path{results/derived/ticket33c_pica_bridge_adapter_manifest.json},
+\path{results/derived/ticket33c_pica_bridge_import_diff.json},
+\path{results/derived/ticket33c_pica_bridge_source_index.json};
+\item \path{results/derived/ticket33c_pica_bundle_input_freeze.json},
+\path{results/derived/ticket33c_pica_pipeline_run_manifest.json},
+\path{results/derived/ticket33c_pica_artifact_contract_report.json}.
+\end{itemize}
+
+\item[PICA carrier formation and exactification.]
+This stage records the promoted candidates, exactified carriers, native carrier
+laws, and carrier-side non-factorization certificates consumed by
+\Cref{sec:methods}.  The stage is represented by
+\begin{itemize}
+\item \path{results/derived/ticket33c_pica_promotion_candidate_registry.json},
+\path{results/derived/ticket33c_pica_promotion_gate_summary.json},
+\path{results/derived/ticket33c_clean_new_layer_formation_certificate.json};
+\item \path{results/derived/ticket33c_pica_exactification_gate_summary.json},
+\path{results/derived/ticket33c_pica_exactified_carrier_registry.json},
+\path{results/derived/ticket33c_operator_exactification_registry_pica.json};
+\item \path{results/derived/ticket33c_pica_lawful_shell_summary.json},
+\path{results/derived/ticket33c_pica_forward_invariance_registry.json},
+\path{results/derived/ticket33c_pica_law_readout_parity_gate.json};
+\item \path{results/derived/ticket33c_clean_h6_new_layer_readiness_decision.json},
+\path{results/derived/ticket33c_readout_law_summary_pica.json},
+\path{results/derived/ticket33c_transport_law_summary_pica.json}.
+\end{itemize}
+
+\item[PICA threshold, slot realization, descent, and strict-domain audits.]
+This stage records the threshold-evidence audits, slot-realization gates,
+new-to-old descent records, and strict-domain closure data used by
+\Cref{sec:primary-results,sec:secondary-results}.  The stage is represented by
+\begin{itemize}
+\item \path{results/derived/ticket33c_pica_new_layer_threshold_candidate_registry.json},
+\path{results/derived/ticket33c_pica_new_layer_threshold_source_audit_summary.json},
+\path{results/derived/ticket33c_pica_new_layer_slot_realization_gate.json},
+\path{results/derived/ticket33c_pica_new_layer_slot_status_registry.json};
+\item \path{results/derived/ticket33c_pica_new_layer_quadratic_witness_registry.json},
+\path{results/derived/ticket33c_pica_new_layer_quadratic_slot_summary.json},
+\path{results/derived/ticket33c_pica_new_layer_transition_witness_registry.json},
+\path{results/derived/ticket33c_pica_new_layer_transition_slot_summary.json};
+\item \path{results/derived/ticket33c_pica_all_slot_threshold_candidate_registry.json},
+\path{results/derived/ticket33c_pica_companion_slot_threshold_audit_summary.json},
+\path{results/derived/ticket33c_pica_all_slot_realization_gate.json},
+\path{results/derived/ticket33c_pica_all_slot_status_registry.json};
+\item \path{results/derived/ticket33c_pica_new_to_old_descent_audit_summary.json},
+\path{results/derived/ticket33c_pica_old_layer_compatibility_registry.json},
+\path{results/derived/ticket33c_pica_strict_domain_rerun_audit.json},
+\path{results/derived/ticket33c_pica_strict_domain_status_registry.json}.
+\end{itemize}
+
+\item[PICA accepted tests, control panel, and final gate.]
+This stage records the accepted strict test families, the control panel, and
+the final claim-boundary decision used by
+\Cref{sec:primary-results,sec:secondary-results,sec:final-gate}.  The stage is
+represented by
+\begin{itemize}
+\item \path{results/derived/ticket33c_pica_strict_test_reassembly_summary.json},
+\path{results/derived/ticket33c_pica_accepted_test_family_registry.json},
+\path{results/derived/ticket33c_pica_control_panel_summary.json};
+\item \path{results/derived/ticket33c_pica_final_gate_decision.json},
+\path{results/derived/ticket33c_pica_findings_digest.json},
+\path{results/derived/ticket33c_pica_asset_index.json};
+\item \path{results/derived/ticket33c_pica_final_implementation_readiness.json},
+\path{results/derived/ticket33c_pica_final_handoff_cleanup_report.json},
+\path{results/derived/ticket33c_pica_final_terminology_contract.json}.
+\end{itemize}
+\end{description}
+
+All listed artifacts live under \path{results/derived/} in the repository.
+Their dependencies and rerun expectations are governed by the reproducibility
+contract of \Cref{subsec:reproducibility-contract}.
+ \section{Lean formalization notes}\label{app:formalization}
+
+\subsection{Lean theorem schemas}\label{subsec:lean-theorem-schemas}
+
+The schemas of \Cref{sec:formal-framework} are mirrored on the Lean side as
+typed entries in the Mathlib-style formalization convention used throughout the
+fixed-support series
+\cite{Tsiokos2026FoundationsII,Tsiokos2026CarrierExactification,Tsiokos2026PromotionCriteria,Tsiokos2026CarrierToEvent}.
+Each manuscript schema has a corresponding typed-record entry, and together
+these entries give the Lean view of \PaperNine{}'s claim discipline.  The
+entries record preconditions and schema claims: source-policy admission appears
+as a typed predicate, exactified-carrier attachment as a structural condition,
+and strict-domain closure as a conjunction of the three \NewLayer{} slot
+statuses.  They do not contain constructive proofs of the empirical premises;
+they record the implication structure under which the manuscript's claim
+discipline is internally consistent.
+
+\subsection{Conditional proof structure}\label{subsec:lean-proof-structure}
+
+Each Lean-side schema is supported by a typed proof under explicit assumptions
+matching the schema's preconditions.  The proofs are conditional: given the
+inputs named by the schema, such as source-policy admission, exactified-carrier
+attachment, or slot strict-realization, the claimed implication holds in the
+Lean type theory.  This follows the inherited formalization convention of
+\cite{Tsiokos2026FoundationsII} and the carrier-side developments of
+\cite{Tsiokos2026CarrierExactification,Tsiokos2026PromotionCriteria}.  The
+proofs do not derive the empirical premises themselves.  The Lean side does not
+construct a particular \NewLayer{} carrier for \PaperNine{} or compute that
+committed-state evidence is admitted by the active policy; those are statements
+of the artifact pipeline, not of the type theory.  The development is therefore
+proof-search-tractable but empirically underdetermined by design: it records the
+discipline, not the data.
+
+\subsection{Schema legality and empirical content}\label{subsec:lean-boundary}
+
+The Lean development summarized in
+\Cref{subsec:lean-theorem-schemas,subsec:lean-proof-structure} establishes
+schema legality and conditional proof structure; it does not establish
+empirical witness existence.  This is the same boundary stated in
+\Cref{subsec:schema-legality-not-existence}: the appendix records the Lean-side
+mirror of the manuscript schemas, not a stronger claim.  The empirical content
+is supplied by the artifact pipeline of
+\Cref{sec:methods,sec:primary-results,sec:secondary-results}.  This boundary is
+consistent with the convention used throughout the fixed-support series
+\cite{Tsiokos2026FoundationsII,Tsiokos2026CarrierToEvent,Tsiokos2026CarrierExactification,Tsiokos2026PromotionCriteria,Tsiokos2026InternalStructure}.
+ \section{Extended tables and nonclaims ledger}\label{app:extended-material}
+
+\subsection{Extended \OldLayer{} status across audit dimensions}\label{subsec:extended-table-h2-status}
+
+\Cref{tab:extended-h2-status} expands the inherited \OldLayer{} status
+summarized in \Cref{subsec:old-layer-status-table}.
+
+\begin{table}[tbp]
+\centering
+\footnotesize
+\caption{Extended status ledger for \OldLayer{} at the close of \PaperEight{}:
+status across the six audit dimensions, source of inheritance, and the
+disposition retained throughout \PaperNine{}.}
+\label{tab:extended-h2-status}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Dimension & Status at \OldLayer{} & Inherited from & Carried forward as \\
+\midrule
+Pair-observable support
+  & Real-provisional support for the readout-agreement role.
+  & \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.
+  & Old-layer compatibility record. \\
+Threshold status
+  & Not met; provisional inspection only under the inherited threshold-and-witness discipline.
+  & \cite{Tsiokos2026FoundationsII,Tsiokos2026CarrierToEvent}.
+  & Reason the readout slot is not strict-realized at \OldLayer{}. \\
+Control status
+  & Control-ready at the bridge-native level.
+  & \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.
+  & Inherited control availability; not old-layer test acceptance. \\
+Strict-slot realization
+  & Two of three slots realized as scoped event positives; readout-agreement slot unrealized.
+  & \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.
+  & Baseline gap addressed by the \NewLayer{} construction. \\
+Test-family acceptance
+  & No accepted strict test family asserted at \OldLayer{}.
+  & \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.
+  & Layer-local boundary; new-layer acceptance does not descend. \\
+Descent compatibility
+  & Compatibility target for higher-layer descent under loss-record discipline.
+  & \cite{Tsiokos2026FoundationsII}, applied to \PaperEight{} \cite{Tsiokos2026CarrierToEvent}.
+  & Descent target preserving non-factorization. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Extended control survival}\label{subsec:extended-table-control-survival}
+
+\Cref{tab:extended-control-survival} expands the control panel reported in
+\Cref{subsec:control-panel-null-memory,subsec:control-panel-artifact-boundary,subsec:selected-lift-visibility-controls,subsec:protocol-honesty-claim-boundary}.
+The three accepted families pass each control class uniformly.
+
+\begin{table}[tbp]
+\centering
+\small
+\caption{Extended control-survival table.  Each of the three accepted strict
+test families on its supporting carrier passes each control class.}
+\label{tab:extended-control-survival}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Control class & Outcome (per family) & Verdict \\
+\midrule
+Null baseline & Passes & Control survived. \\
+Memory-only & Passes & Control survived. \\
+Artifact-internalization & Passes & Control survived. \\
+Boundary-sensitive negative & Passes & Control survived. \\
+Selected-lift variation & Passes & Control survived. \\
+Visibility/suppression perturbation & Passes & Control survived. \\
+Protocol honesty and claim-boundary & Passes & Control survived; accepted. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Complete nonclaims ledger}\label{subsec:nonclaims-ledger}
+
+This ledger collects the structures that \PaperNine{} explicitly does not
+assert, under the claim/nonclaim discipline of
+\cite{Tsiokos2026FoundationsII}.
+
+\begin{description}
+\item[Old-layer strict test closure.]
+This would assert a closed strict test-family domain at \OldLayer{}.  It remains
+a nonclaim because the bridge-native readout-agreement slot is not
+strict-realized.
+
+\item[Old-layer readout strict realization.]
+This would assert strict realization of the readout-agreement role at
+\OldLayer{}.  It remains a nonclaim because committed-state evidence is not
+admitted for that strict role under the inherited bridge-native policy of
+\PaperEight{}.
+
+\item[Shared-event identity.]
+This would identify the new-layer accepted families with old-layer event
+objects.  It remains a nonclaim because descent records compatibility and
+forgetting, not identity of events across layers.
+
+\item[Event package.]
+This would assert an event-algebraic package derived from the accepted families
+with additional packaging structure.  It remains a nonclaim because the paper
+constructs accepted strict test families only, not an event package.
+
+\item[Proto-effect fragment.]
+This would assert a fragment of effect-like structure on the accepted families.
+It remains a nonclaim because no such fragment is constructed or audited here.
+
+\item[Effect algebra.]
+This would assert a full algebraic effect structure.  It remains a nonclaim
+because the strict-test acceptance result does not supply the operations,
+identities, or laws required for an effect algebra.
+
+\item[Born valuation.]
+This would assert a valuation rule of Born type on the accepted families.  It
+remains a nonclaim because no valuation map or valuation law is constructed.
+
+\item[Composition readiness.]
+This would assert that the accepted families are prepared for composition with
+other structures in the series.  It remains a nonclaim because the paper proves
+strict-test acceptance and control survival, not a composition interface.
+
+\item[Faithful public compression.]
+This would assert a faithful public projection of the new-layer carrier.  It
+remains a nonclaim because the public-shadow split is explicitly non-faithful.
+
+\item[Lawful public carrier.]
+This would assert a public carrier satisfying the relevant carrier laws.  It
+remains a nonclaim because the exactified carriers are protocol-indexed
+\NewLayer{} carriers, not lawful public carriers.
+
+\item[Canonical selected lift.]
+This would assert a distinguished selected lift independent of admissible
+variation.  It remains a nonclaim because selected-lift variation is controlled
+without choosing a canonical lift.
+
+\item[Global, cross-seed, or full-core tests.]
+This would assert that the accepted strict test families extend beyond the
+scoped protocol-indexed setting of \PaperNine{}.  It remains a nonclaim because
+the paper's evidence is confined to the fixed-support and scoped carrier
+construction used in the audit.
+\end{description}
+
+\subsection{Extended new-to-old descent audit}\label{subsec:extended-table-descent-audit}
+
+\Cref{tab:extended-descent-audit} expands the descent and compatibility
+statements of
+\Cref{subsec:descent-map,subsec:non-factorization-preservation,subsec:old-h2-compatibility-status}.
+The descent profile is uniform across the three carriers; the table records the
+shared profile.
+
+\begin{table}[tbp]
+\centering
+\small
+\caption{Extended new-to-old descent audit.  The profile is uniform across the
+lifted-package surface, the protocol-indexed higher-witness surface, and the
+completion-family surface.}
+\label{tab:extended-descent-audit}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.28\textwidth}X@{}}
+\toprule
+Field & Value \\
+\midrule
+Carriers
+  & Lifted-package surface; protocol-indexed higher-witness surface; completion-family surface. \\
+Retained data
+  & Readout-agreement role descends as a real-provisional pair-observable, with a boundary record on slot identities. \\
+Forgotten data
+  & Carrier-native state space, transport law, quadratic-witness substructure, and transition-witness substructure. \\
+Non-factorization preserved
+  & Yes; the descent map admits no inverse reconstruction of the carrier from its old-layer image. \\
+Old-layer status after descent
+  & \OldLayerStatus{}; readout slot remains unrealized at \OldLayer{}. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The table is the appendix form of the prose ledger in
+\Cref{subsec:old-layer-status-table}; it records inherited status, not a new
+result of \PaperNine{}.
+
+\subsection{Extended new-layer threshold witness audit}\label{subsec:extended-table-threshold-audit}
+
+\Cref{tab:extended-threshold-audit} expands the per-carrier threshold evidence
+reported in \Cref{subsec:source-backed-threshold-evidence}.  As with the
+descent audit, the per-carrier profile is uniform; the table records the
+shared profile.
+
+\begin{table}[tbp]
+\centering
+\small
+\caption{Extended threshold-witness audit.  The profile is uniform across the
+three exactified carriers.}
+\label{tab:extended-threshold-audit}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.32\textwidth}X@{}}
+\toprule
+Field & Value \\
+\midrule
+Carriers
+  & Lifted-package surface; protocol-indexed higher-witness surface; completion-family surface. \\
+Source class admitted
+  & Committed-state evidence under the PICA-bound source-of-truth policy of \Cref{subsec:pica-source-policy-profile}. \\
+Six attachment fields populated
+  & Raw feature cluster, threshold annotation, witness schema, collapse-case record, level annotation, and audit record are all populated on the carrier's native state space. \\
+Threshold attachment audit
+  & Passes on each carrier. \\
+Result
+  & Source-backed threshold evidence at \NewLayer{} for the readout-agreement role on each of the three carriers. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

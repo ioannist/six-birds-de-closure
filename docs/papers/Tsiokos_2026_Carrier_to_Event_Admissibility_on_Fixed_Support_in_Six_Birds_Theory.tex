@@ -1,0 +1,1874 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Carrier-to-Event Admissibility on Fixed Support in Six Birds Theory}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Carrier-to-Event Admissibility on Fixed Support in Six Birds Theory},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+The preceding carrier-exactification paper \citep{Tsiokos2026CarrierExactification} established a scoped carrier layer on the Route A flagship support: a lawful same-branch witness, a non-faithful public signature shadow, a protocol-indexed carrier surface, scoped quadratic carrying, and two proto-event and proto-test pilots. We ask whether this carrier structure supports admissible event and test structure on fixed support. The central construct is an event bridge record \(\mathcal B_E=(C,P,I,L,V,\Theta,S,A)\) binding a carrier-side predicate, a public/readout-side predicate, an instrument, a selected lift or forgetting map, a visibility and suppression record, a threshold record, an exact-six role profile, and an audit record. A deterministic artifact pipeline generates candidate events, constructs bridge records, applies an admissibility gate, runs controls, scores layer placement, attempts finite test-family construction, and records the consequences for shared-event identity, proto-effect structure, quadratic alignment, and exact-six bookkeeping. From a pool of seventeen candidates, two inherited scoped positives --- a quadratic level-set event and a transition-stability test --- are accepted at the event gate and retained under controls as protocol-indexed event-level objects. No finite admissible test family is accepted: the one serious protocol-indexed bridge-family candidate is non-exhaustive because a required readout-agreement slot is unrealized. The scoped quadratic families organize the accepted q-levelset event boundary at event level but not at test level. The resulting classification is accepted scoped protocol-indexed event-level structure without accepted tests, shared-event identity, or proto-effect operations.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} carrier-to-event admissibility; event bridge records; protocol-indexed events; selected lifts; public signature shadow; exact-six profiles; fixed support; Six Birds Theory.
+
+\paragraph{Contribution and scope.}
+The substrate contributed by this paper is a \emph{carrier-to-event admissibility layer} on fixed support: a record-level discipline in which every candidate event carries an explicit instrument, a selected lift, visibility and suppression data, a threshold record, an exact-six role profile, and an audit trail, and in which tests and higher structure are built only from accepted records of this kind. The admissibility audit that evaluates these records — ten event-level gate checks and the corresponding test-, shared-identity-, and proto-effect-level checks — is adapted from the exact-six admissibility meta-theory of \citet{Tsiokos2026FoundationsII} and the seven-criterion exactification audit of the preceding carrier paper \citep{Tsiokos2026CarrierExactification}, and draws standard operational-measurement vocabulary \citep{DaviesLewis1970,Hardy2001Axioms}. The audit is adapted, not new; the contributions of the present paper are the substrate it stabilizes and the demonstration that the audit lands on that substrate with a specific, bounded verdict. We do not claim an accepted test package, shared-event identity, proto-effect fragment, probability valuation, composition result, lawful public carrier, faithful public compression, cross-seed event package, or full-core event package.
+
+\section{Introduction}
+\label{sec:introduction}
+
+The preceding carrier-exactification paper left the carrier-to-event problem at a deliberately scoped point \citep{Tsiokos2026CarrierExactification}. A lawful same-branch witness and a protocol-indexed carrier surface were established on the Route A flagship support, while the public signature shadow remained non-faithful. Scoped quadratic carrying and two proto-event and proto-test pilots were retained. What was not established, and was explicitly not claimed, was a lawful public carrier, a faithful public compression, a finite test family, or a full event package. The present work takes up the next admissibility question directly: when a lawful refined carrier and a non-faithful public shadow coexist, which candidate event claims can be made honestly, and do any of them assemble into admissible tests?
+
+The fixed-support line leading to that carrier result developed predictive route transport with memory \citep{Tsiokos2026HolonomyMemory}; marking, erasure, and recombination \citep{Tsiokos2026MarkingErasureRecombination}; a control-stable witness family with a formal kernel \citep{Tsiokos2026RecombinationWitnesses}; globally obstructed event packages \citep{Tsiokos2026LocallyBoolean}; promotion criteria \citep{Tsiokos2026PromotionCriteria}; and the internal structure of the surviving promoted package \citep{Tsiokos2026InternalStructure}.
+
+The question is subtle because an event claim is not just a pattern visible somewhere in the data. A carrier-side predicate may be lawful but not public-readable. A public signature may be readable but too coarse to determine the refined carrier condition. A selected lift may connect the two, but unless uniqueness is proved it remains a selected lift rather than a proved inverse. We therefore treat event claims as instrument-relative and lift-relative objects, in the operational tradition of generalized probabilistic theories \citep{Hardy2001Axioms,Plavala2023GPT}. The basic unit is an event bridge record
+\[
+  \mathcal B_E=(C,P,I,L,V,\Theta,S,A),
+\]
+where \(C\) is a carrier-side condition, \(P\) is a public/readout-side condition, \(I\) is an instrument, \(L\) is a selected lift or forgetting map, \(V\) records visibility and suppression, \(\Theta\) records threshold evidence, \(S\) is an exact-six role profile, and \(A\) is the audit record.
+
+The bridge-record discipline is implemented as a deterministic, contract-checked artifact pipeline that freezes the admissible surfaces and claim boundaries, generates and classifies candidate events, runs controls, scores layer placement, attempts test-family construction, and aggregates the outcomes at a final gate. Section~\ref{sec:pipeline} and Appendix~\ref{app:methods-artifacts} describe the pipeline stages and the reproducibility contract; implementation-level identifiers are listed in Appendix~\ref{app:artifact-source-map}. The derived artifacts serve as the evidence spine for the results that follow.
+
+The contribution of the paper is the admissibility layer itself and the demonstration that it earns a specific, bounded verdict on the inherited carrier substrate. The audit machinery — ten event-level gate checks, the test-, shared-identity-, and proto-effect-level checks, and the exact-six and formal bookkeeping — is adapted from the exact-six admissibility meta-theory of \citet{Tsiokos2026FoundationsII}, the seven-criterion exactification audit of the preceding carrier paper \citep{Tsiokos2026CarrierExactification}, and standard operational-measurement vocabulary \citep{DaviesLewis1970}. The audit is adapted, not new. The four specific contributions are the following: first, an event-bridge vocabulary $\mathcal B_E = (C, P, I, L, V, \Theta, S, A)$ together with an admissibility gate that operates on it at the event, test, shared-identity, and proto-effect levels; second, the acceptance of two scoped protocol-indexed event-level positives under that gate and under controls; third, a demonstration that the serious protocol-indexed bridge-family attempt does not close into an admissible finite test family, with the obstruction localised to a specific unrealized slot of the complete proto-family domain; and fourth, the determination that the scoped quadratic families are event-boundary-organizing for one accepted event, without test-level or probabilistic promotion.
+
+A pool of seventeen candidate events is generated, each represented by a complete bridge record. Two inherited scoped positives survive the event gate and controls as accepted protocol-indexed event-level objects: the quadratic level-set event and the transition-stability test. Both are scoped to the protocol-indexed flagship setting; both are pre-test objects and not members of an accepted event package. The first is directly organized by the scoped quadratic levelset structure. The second retains a proto-test-seed origin that, by itself, does not constitute an accepted finite test family.
+
+The negative half of the result concerns test-family closure. The one serious protocol-indexed bridge-family attempt fails to close. Its declared complete proto-family domain requires three slots: a quadratic-levelset slot, a transition-stability slot, and a protocol-indexed readout-agreement slot. The retained positives realize the first two; the third is unrealized. Because the domain is declared as requiring a complete partition, exhaustivity fails and no finite admissible test family is accepted.
+
+Consequently the later test-dependent structures also do not form. Shared-event identity across accepted tests is skipped for lack of accepted tests. Proto-effect operations are skipped for the same reason. The scoped quadratic families do organize the accepted q-levelset event boundary at event level, but they do not organize an accepted test partition. Exact-six profiles are complete for the two accepted event-level claims, and their residuals explicitly record the missing higher structure.
+
+The resulting classification is an accepted scoped protocol-indexed event layer without an accepted test package. This is neither a no-event result nor an event-package result: scoped protocol-indexed event-level positives are admissible on the declared carrier/public bridge discipline, but they do not yet form an admissible finite test family on the declared complete domain.
+
+The remainder of the paper is organized as follows. Section~\ref{sec:prior-contract} records the inherited carrier result and claim boundaries. Section~\ref{sec:bridge-records} defines surfaces, instruments, selected lifts, event bridge records, and the admissibility discipline. Section~\ref{sec:pipeline} describes the artifact pipeline, the reproducibility contract, and the candidate-event pool. Section~\ref{sec:event-admissibility-controls} reports event-level admissibility, controls, and layer placement. Section~\ref{sec:test-families} gives the test-family obstruction. Section~\ref{sec:higher-structure} reports the secondary-layer outcomes for shared-event identity, proto-effect structure, and quadratic alignment. Section~\ref{sec:exact-six-formal} reports the exact-six profile registry and the formal layer. Section~\ref{sec:final-gate} states the final classification, and Sections~\ref{sec:discussion}--\ref{sec:conclusion} discuss limitations and conclude.
+ \section{Prior carrier result and claim contract}
+\label{sec:prior-contract}
+
+The prior carrier-exactification result \citep{Tsiokos2026CarrierExactification} is deliberately scoped: it is a carrier-exactification statement on the fixed Route A flagship support, not a public event package and not a public carrier theorem. Its lawful object is a refined same-branch witness; its public-side object is a coarse signature shadow. The relationship between the two is non-faithful: public signatures retain operational readout information but do not determine the refined law-bearing carrier data. In standard ontic/epistemic language \citep{HarriganSpekkens2010,Pusey2012PBR}, the public shadow is an epistemic image of the carrier; in Markov-chain language \citep{KemenySnell1976}, the carrier-to-public map is lumpable only in a restricted sense.
+
+Throughout this paper we refer to these objects descriptively — the \emph{refined witness} (lawful, carrier-side), the \emph{public signature shadow} (coarse, readout-side), and the \emph{witness-to-shadow basis} that relates them without supplying a faithful inverse. The corresponding machine-readable identifiers are listed once, in Appendix~\ref{app:artifact-source-map}. Consequently the public shadow can supply public/readout-side predicates for later bridge records, but it cannot by itself supply lawful carrier structure or shared-event identity.
+
+The strongest carrier conclusion inherited here is that the carrier result lands only on a \emph{protocol-indexed carrier surface}, flagship-scoped. The protocol coordinates are part of the claim, not removable presentation data, in the same sense in which device-independent protocols treat apparatus coordinates as first-class \citep{MayersYao1998}, and in which the carrier-vs-readout distinction is the unit of analysis in process- and gate-set tomography \citep{Nielsen2021GST}. This distinction matters throughout: a candidate event may be admissible at the protocol-indexed carrier/public bridge layer while still failing to be public-shadow-native, cross-seed, full-core, or test-package-level.
+
+Three scoped \emph{quadratic families} are also inherited: a self-inner-product readout family $q_{\mathrm{L2}}$, a readout-gap family $q_{\mathrm{gap}}$, and a coarsening-consistency family $q_{\mathrm{coarse}}$. These families are carried on the scoped protocol-indexed surface. They are not probabilities, and they are not a global covariance or bilinear geometry. In the present work they are treated as event-boundary evidence only when the relevant event bridge, instrument, lift, threshold, control, and exact-six records support that use.
+
+The inherited proto-event pilot contains two positive scoped objects and one negative baseline. The positives are the \emph{quadratic level-set event} and the \emph{transition-stability test}; their names record the prior pilot structure and do not, by inheritance alone, constitute an accepted test family. The negative baseline is the absent \emph{protocol-indexed readout-agreement event}; it is retained as a missing-slot diagnostic and will become important below when the complete protocol-indexed proto-family domain requires a readout-agreement slot that the present run does not realize.
+
+Table~\ref{tab:prior-inputs-permissions} summarizes the inherited objects and their permitted use here. The table is phrased as a claim contract: it records what may be used and what may not be inferred.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.25\linewidth}p{0.20\linewidth}p{0.26\linewidth}p{0.22\linewidth}}
+\hline
+\textbf{Inherited object} & \textbf{Prior status} & \textbf{Use here} & \textbf{Nonclaim} \\
+\hline
+Refined same-branch witness (carrier side)
+&
+Lawful refined carrier-side witness
+&
+Carrier-side conditions in event bridge records
+&
+Not public-shadow-native; not cross-seed; not test-package-level
+\\[0.5em]
+Public signature shadow
+&
+Signature-only readout
+&
+Public/readout-side of bridge records
+&
+Not a lawful public carrier; not faithful to the refined carrier data
+\\[0.5em]
+Witness-to-shadow basis
+&
+Non-faithful public compression
+&
+Carrier/public bridge discipline with explicit suppression records
+&
+No faithful inverse; no automatic shared-event identity
+\\[0.5em]
+Protocol-indexed carrier surface
+&
+Protocol-indexed-only, flagship-scoped
+&
+Declared layer for scoped event-level positives
+&
+Protocol coordinates are not erasable; not full-core or cross-seed
+\\[0.5em]
+Scoped quadratic families $q_{\mathrm{L2}},\ q_{\mathrm{gap}},\ q_{\mathrm{coarse}}$
+&
+Scoped carrying on the flagship surface
+&
+Candidate event-boundary and alignment evidence
+&
+Not probabilities; no global quadratic or covariance bridge
+\\[0.5em]
+Scoped proto-event positives (quadratic level-set event; transition-stability test)
+&
+Scoped protocol-indexed pilots
+&
+Baseline candidates for the event gate and controls
+&
+Not an accepted test family by inheritance
+\\[0.5em]
+Protocol-indexed readout-agreement event
+&
+Absent in the prior run
+&
+Negative baseline and missing-slot diagnostic
+&
+Not accepted as an event without new evidence
+\\
+\hline
+\end{tabular}
+\caption{Inherited prior-work inputs and their permitted use in the present paper. The prior result supplies a lawful refined witness, a non-faithful public signature shadow, a protocol-indexed carrier surface, scoped quadratic families, and proto-event pilots. It does not supply a lawful public carrier, faithful compression, cross-seed carrier, full-core carrier, accepted test family, shared-event identity, or proto-effect structure.}
+\label{tab:prior-inputs-permissions}
+\end{table}
+
+A machine-readable claim-boundary manifest enforces the same discipline throughout the pipeline. The following claims are held false at every stage and are never silently widened: a lawful public carrier, a faithful public compression, a cross-seed carrier, a full-core carrier, a global quadratic or covariance bridge, a full event or effect geometry, a probability-facing bridge, and composition readiness. The question under study is whether scoped event-level structure is admissible on the declared bridge; a public shadow is not to be promoted to a lawful public carrier, nor are proto-event pilots to be promoted to a test package, without demonstration.
+ \section{Event bridge records and admissibility discipline}
+\label{sec:bridge-records}
+
+The previous section fixed the inherited carrier result and the claims it does not license. We now introduce the admissibility vocabulary used to test whether any part of that carrier result can be treated as event-level or test-level structure. An event claim is not accepted merely because a pattern is visible in the data; it must be visible under a declared instrument, honest about what the instrument suppresses, explicit about any selected lift, and compatible with the relevant claim boundaries.
+
+A \emph{surface} is a declared domain on which a candidate claim is tested. Surfaces are classified as \emph{claim-bearing}, \emph{support-only}, or \emph{control-only}. The claim-bearing surfaces include the refined witness surface, the protocol-indexed carrier surface, the public signature shadow, the witness-to-shadow bridge surface, the scoped quadratic-carrying surface, and the proto-event pilot surface. Nearby-positive rows and erasure comparison rows are support-only unless a later gate accepts them. Null, memory-only, artifact or internalization, and boundary or completion-sensitive rows are control-only. A statement about a surface therefore always carries a claim boundary: a support-only surface cannot silently become an accepted event surface, and a control-only surface cannot become positive evidence.
+
+An \emph{instrument} is a declared way of making some structure visible while suppressing other structure. The concept is the operational-measurement ancestor in the sense of \citet{DaviesLewis1970} and \citet{Kraus1983}, and is treated at textbook length in \citet{BuschLahti2016}. An instrument record has the form
+\[
+  I=(\mathrm{name},\mathrm{domain},\mathrm{visible},\mathrm{suppressed},
+      \mathrm{readout},\mathrm{threshold},\mathrm{admissibility},\mathrm{nonclaims}).
+\]
+The suppressed component is not optional. It is what prevents a public signature from being read as a refined carrier, a quadratic diagnostic from being read as a valuation, or a protocol-indexed carrier from being read as a nonindexed object. Table~\ref{tab:instruments-suppression} summarizes the seven instruments used here.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.20\linewidth}p{0.26\linewidth}p{0.30\linewidth}p{0.16\linewidth}}
+\hline
+\textbf{Instrument} & \textbf{Visible structure} & \textbf{Suppressed structure} & \textbf{Admissible use} \\
+\hline
+Carrier instrument
+&
+Refined witness and lawful carrier-side predicates
+&
+Public compression fibers, public-shadow collapse classes, public-only signature equality, nonindexed reading of protocol-indexed data
+&
+Carrier-side conditions
+\\[0.5em]
+Public-shadow instrument
+&
+Public signature classes and coarse public readout
+&
+Refined witness distinctions, carrier-side law-bearing structure, non-faithful compression fibers, protocol-indexed carrier coordinates
+&
+Public readout only
+\\[0.5em]
+Quadratic-levelset instrument
+&
+Readout self-L2, readout-gap, and coarsening-consistency values; levelsets; gaps
+&
+Non-quadratic carrier structure, probability interpretation, global covariance bridge, bilinear comparison as claim-bearing geometry
+&
+Scoped quadratic event-boundary candidates
+\\[0.5em]
+Transition-stability instrument
+&
+Transition-stability classes, instability boundaries, stable readout transition behavior
+&
+Raw carrier provenance outside transition readout, public-shadow-only collapse, full event or effect geometry
+&
+Transition-stability event candidates
+\\[0.5em]
+Completion-lift instrument
+&
+Selected completion or lift structure and section-dependence records
+&
+Alternative unselected lifts, hidden section choices, public-only signatures without carrier pullback, uniqueness of the selected lift
+&
+Lift-dependent event candidates
+\\[0.5em]
+Carrier/public bridge instrument
+&
+Carrier/public predicate pairs, forgetting behavior, public-readable bridge predicates
+&
+Unmatched carrier-only distinctions, public-only collapse without carrier pullback, faithful-inverse assumption, instrument-free shared-event identity
+&
+Carrier/public bridge candidates
+\\[0.5em]
+Protocol-indexed instrument
+&
+Protocol-tagged carrier predicates and flagship-only protocol-indexed distinctions
+&
+Nonindexed carrier interpretation, cross-seed carrier generalization, full-core interpretation, protocol erasure
+&
+Protocol-indexed event candidates
+\\
+\hline
+\end{tabular}
+\caption{Instruments and suppressed structure. The public-shadow instrument is intentionally restricted to signature-level readout; it does not see refined carrier distinctions. The bridge and lift instruments make compatibility claims possible only with explicit suppression and nonuniqueness records.}
+\label{tab:instruments-suppression}
+\end{table}
+
+A \emph{selected lift} is a declared map or section connecting one layer to another, in the category-theoretic sense of a lens or a section of a fibered structure \citep{Spivak2019Lens,MacLaneMoerdijk1992}. The lift registry contains seven declared lifts: an identity lift on the refined witness; a public-shadow-to-carrier selected lift; a carrier-to-public forgetting map; a protocol-indexed lift; a completion-preserving lift; a quadratic-levelset lift; and a transition-stability lift. Except for identity on the declared refined surface and the forgetting map in its declared direction, none of these lifts is treated as canonical. The public-shadow-to-carrier selected lift is nonunique and is not a faithful inverse to the public compression; it is analogous to a nonunique Stinespring dilation \citep{Stinespring1955}. The carrier-to-public forgetting map is stable only as a many-to-one map in its declared direction and does not preserve all refined carrier distinctions.
+
+The basic candidate event object is an \emph{event bridge record}
+\[
+  \mathcal B_E=(C,P,I,L,V,\Theta,S,A).
+\]
+Here \(C\) is a carrier-side condition, \(P\) is a public/readout-side condition, \(I\) is the declared instrument, \(L\) is the selected lift or forgetting map, \(V\) is the visibility and suppression record, \(\Theta\) is the threshold or witness record, \(S\) is the exact-six role profile, and \(A\) is the audit record. The record is redundant by design: the carrier and public sides are documented separately, the instrument and its suppressed structure are made explicit, the selected lift relating the sides is named, and the threshold and audit basis that later gate decisions will consult are recorded in advance.
+
+Figure~\ref{fig:witness-public-bridge} summarizes the witness-to-shadow discipline schematically. The forgetting direction is many-to-one; the reverse bridge is recorded only through explicit nonunique selected lifts and bridge records, not through a faithful inverse.
+
+\begin{figure}[t]
+\centering
+\fbox{\begin{minipage}{0.92\linewidth}
+\small
+\centering
+\begin{tabular}{ccc}
+Refined witness (carrier side)
+&
+\(\xrightarrow{\;\text{many-to-one forgetting}\;}\)
+&
+Public signature shadow (signature-only)
+\\[0.6em]
+\multicolumn{3}{c}{\(\uparrow\) selected nonunique section / bridge records \(\downarrow\)}
+\\[0.6em]
+Carrier-side condition \(C\)
+&
+\(\mathcal B_E=(C,P,I,L,V,\Theta,S,A)\)
+&
+Public or readout condition \(P\)
+\end{tabular}
+\end{minipage}}
+\caption{Witness-to-shadow bridge schematic. The public shadow supplies signature-level readout but not a faithful inverse to the refined carrier. Event bridge records explicitly record the carrier condition, the public or readout condition, the instrument, the selected lift or forgetting map, visibility and suppression data, threshold data, the exact-six profile, and the audit record.}
+\label{fig:witness-public-bridge}
+\end{figure}
+
+A \emph{candidate event} is a bridge-record object before event admissibility has been decided. Candidates are drawn from five sources: scoped quadratic levelsets, transition-stability structure, public-shadow signatures, carrier/public bridge predicates, and completion-invariant predicates. Candidate status is not acceptance. It means only that the candidate has enough declared structure to be converted into a bridge record and tested at the event gate.
+
+A \emph{candidate test} is a finite family of event-level objects proposed as a test on a declared surface. A candidate test is admissible only if all member events are accepted and control-retained, the family is finite, mutual exclusivity and exhaustivity are established on the declared surface, instrument and lift compatibility hold, protocol honesty is preserved, public-readout compatibility is recorded, control separation is retained, exact-six profiles are complete, and the claim-boundary manifest is respected. A pair of interesting event-level positives is not automatically a test.
+
+An \emph{exact-six profile} records how a claim uses the six role channels $P_1,\ldots,P_6$ introduced as closure-operation primitives in \citet{Tsiokos2026Foundations}. In the scoped exact-six discipline of \citet{Tsiokos2026FoundationsII}, the role meanings are fixed: $P_1$ is update-vs-quotient compatibility and descent obstruction; $P_2$ is macro-specification representability; $P_3$ is enriched route and coherence mismatch (which by itself is not a directionality certificate); $P_4$ is stage, order, transition, and refinement structure; $P_5$ is quotient packaging; and $P_6$ is audit, bookkeeping, provenance, replay, and checkability. Each role channel carries exactly one of five statuses: \emph{active-projection}, \emph{below-threshold}, \emph{collapsed-boundary-case}, \emph{absent-with-record}, or \emph{inapplicable-outside-scope}. No additional role status is introduced for fallback provenance, probability, missing tests, or quadratic alignment; those matters are recorded as residuals, visibility and suppression notes, or audit evidence. A role may be marked active-projection only when the corresponding threshold, witness, and audit basis is present.
+
+The admissibility discipline used below can be summarized in six rules:
+\begin{enumerate}[label=(\roman*),leftmargin=*,itemsep=1pt,topsep=2pt]
+\item every candidate event must name a surface, an instrument, and at least one selected lift or forgetting map;
+\item every instrument must record suppressed structure;
+\item public-shadow readability is not treated as refined-carrier visibility;
+\item selected lifts are nonunique unless the registry explicitly says otherwise;
+\item event-level acceptance does not imply test-family acceptance;
+\item no candidate is allowed to violate the claim-boundary manifest inherited from the prior carrier result.
+\end{enumerate}
+Under these rules, the later sections can accept scoped event-level positives without promoting them to public carriers, finite tests, or event packages.
+ \section{Corpus, pipeline, and candidate generation}
+\label{sec:pipeline}
+
+The admissibility claims reported here are finite and artifact-backed, in the spirit of reproducible computational research \citep{Donoho2010}. The implementation materializes a sequence of machine-readable artifacts, each with a declared role in the claim chain, and all reported counts and classifications are derived directly from these artifacts. Implementation-level identifiers, file paths, and classification tokens are collected in the appendix source map (Appendix~\ref{app:artifact-source-map}).
+
+The pipeline begins from the materialized artifacts of the preceding carrier-exactification paper \citep{Tsiokos2026CarrierExactification} and freezes the claim boundary before any event claims are generated. It then proceeds in fixed order: it registers surfaces, instruments, and selected lifts; fixes the exact-six role schema; generates candidate events and constructs bridge records; applies the event-admissibility gate and runs controls; scores layer placement; attempts test-family construction; records the consequences for shared-event identity, proto-effect operations, and quadratic alignment; compiles exact-six profiles; and issues the final gate. The stage order is fixed so that later claims cannot justify earlier gates.
+
+Figure~\ref{fig:carrier-to-event-pipeline} shows the dependency order schematically; Table~\ref{tab:ticket32-artifact-spine} lists the main stages and their results. The full artifact inventory, artifact hashes, and determinism records are kept in the derived outputs and cross-referenced in the appendix. Each stage has a finite input-output contract, and downstream stages consume upstream artifacts.
+
+\begin{figure}[t]
+\centering
+\fbox{\begin{minipage}{0.92\linewidth}
+\small
+\centering
+\begin{tabular}{c}
+Prior-work carrier artifacts \\
+\(\downarrow\) \\
+Surfaces, instruments, selected lifts, and exact-six schema \\
+\(\downarrow\) \\
+Candidate events and event bridge records \\
+\(\downarrow\) \\
+Event admissibility, controls, and layer placement \\
+\(\downarrow\) \\
+Candidate test-family attempt \\
+\(\downarrow\) \\
+Higher-structure skip records and quadratic alignment \\
+\(\downarrow\) \\
+Exact-six profiles and final gate
+\end{tabular}
+\end{minipage}}
+\caption{Carrier-to-event admissibility pipeline. The figure shows dependency order, not a promotion of event-level positives into tests. The run accepts scoped protocol-indexed event-level positives, but the test-family stage returns no accepted tests.}
+\label{fig:carrier-to-event-pipeline}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.28\linewidth}p{0.38\linewidth}p{0.28\linewidth}}
+\hline
+\textbf{Stage} & \textbf{Primary role} & \textbf{Result} \\
+\hline
+Input inventory
+&
+Checks materialized prior inputs and dependency map
+&
+Prior inputs fully materialized
+\\
+Surface freeze
+&
+Freezes surfaces, seeds, and claim boundaries
+&
+Twelve surfaces registered; claim-boundary nonclaims enforced
+\\
+Instrument registry
+&
+Registers visibility and suppression instruments
+&
+Seven instruments; public-shadow refinement guardrail passed
+\\
+Selected-lift registry
+&
+Registers selected lifts and forgetting maps
+&
+Source-defined fallback used; caveat recorded explicitly
+\\
+Exact-six primitives
+&
+Fixes the six role channels and allowed statuses
+&
+Role schema ready
+\\
+Candidate events
+&
+Generates the candidate event pool
+&
+Seventeen candidates across five source classes
+\\
+Event bridge records
+&
+Builds complete \(C/P/I/L/V/\Theta/S/A\) records
+&
+Seventeen bridge records; no acceptance decided at this stage
+\\
+Event admissibility
+&
+Classifies bridge records at the event gate
+&
+Two protocol-indexed events accepted; tests still to be attempted
+\\
+Event controls
+&
+Runs controls and threshold-sensitivity checks
+&
+Controls pass; no accepted-event downgrades
+\\
+Layer placement
+&
+Scores carrier, public, bridge, and lifted placements
+&
+Protocol-indexed bridge placement leads
+\\
+Test families
+&
+Attempts finite candidate test construction
+&
+No accepted tests
+\\
+Shared-event identity
+&
+Tests shared-event identity across accepted tests
+&
+Skipped for lack of accepted tests
+\\
+Proto-effect fragment
+&
+Tests proto-effect operations over accepted tests
+&
+Skipped for lack of accepted tests
+\\
+Quadratic-event alignment
+&
+Compares accepted events and tests against scoped quadratic families
+&
+Event-organizing at event level; no test-level promotion
+\\
+Exact-six profiles
+&
+Profiles the accepted claim objects
+&
+Complete profiles for two event-level claims
+\\
+Final gate
+&
+Aggregates the event-layer classification
+&
+Accepted scoped protocol-indexed events without an accepted test package
+\\
+\hline
+\end{tabular}
+\caption{Artifact spine. Each stage consumes prior artifacts and emits machine-readable outputs used by later gates. The machine-level classification tokens are listed in Appendix~\ref{app:artifact-source-map}.}
+\label{tab:ticket32-artifact-spine}
+\end{table}
+
+With the surfaces, instruments, and lifts fixed, the first constructive output of the pipeline is a pool of candidate event objects. Candidate generation is deliberately broad, exposing every plausible source of event-level structure without granting admissibility to any of them. Candidates are drawn from five source classes: scoped quadratic levelsets, transition-stability structure, public-shadow signatures, carrier/public bridge predicates, and completion-invariant predicates. The resulting pool contains seventeen records.
+
+Table~\ref{tab:candidate-event-sources} summarizes the source classes. The public-shadow source is included because public readout is eventually necessary for public-side event claims, but those candidates are marked as readout-side and high-risk: a public signature class is not by itself a lawful carrier condition, and public-shadow equality is not shared-event identity. The completion-invariant source is likewise treated conservatively: it records selected-completion or section dependence without making the selected lift canonical.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.22\linewidth}p{0.10\linewidth}p{0.36\linewidth}p{0.26\linewidth}}
+\hline
+\textbf{Source} & \textbf{Count} & \textbf{Typical proposed instrument and lift} & \textbf{Candidate-stage nonclaim} \\
+\hline
+Quadratic levelsets
+&
+4
+&
+Quadratic-levelset instrument with quadratic-levelset lift
+&
+Not probability; not an accepted event by generation alone
+\\[0.4em]
+Transition stability
+&
+3
+&
+Transition-stability instrument with transition-stability lift
+&
+Not an accepted finite test family by name or origin
+\\[0.4em]
+Public-shadow signatures
+&
+3
+&
+Public-shadow instrument with carrier/public forgetting or pullback records
+&
+Readout-side and high-risk; not a lawful public carrier
+\\[0.4em]
+Carrier/public bridge
+&
+4
+&
+Carrier/public bridge instrument with carrier-to-public forgetting map
+&
+No faithful inverse; no automatic shared-event identity
+\\[0.4em]
+Completion-invariant
+&
+3
+&
+Completion-lift instrument with completion-preserving lift
+&
+Selected completion is nonunique; not a lifted event package
+\\
+\hline
+\end{tabular}
+\caption{Candidate-event source classes. The run generates seventeen candidate events across five source classes. Candidate status does not imply event admissibility; every candidate still requires a complete bridge record and a later event gate.}
+\label{tab:candidate-event-sources}
+\end{table}
+
+Three inherited pilot objects are carried into the candidate registry as baseline cases. The first two are the positive proto-event and proto-test pilots from the prior carrier result; the third is the absent readout-agreement pilot, retained as a negative baseline. Table~\ref{tab:inherited-baseline-handling} records their handling. The later positive event-level result relies on preserving the scoped inherited positives, and the later test-family obstruction relies on carrying forward the absent readout-agreement baseline.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.26\linewidth}p{0.18\linewidth}p{0.30\linewidth}p{0.20\linewidth}}
+\hline
+\textbf{Inherited object} & \textbf{Candidate role} & \textbf{Bridge-record handling} & \textbf{Later admissibility constraint} \\
+\hline
+Quadratic level-set event
+&
+Baseline candidate
+&
+Baseline bridge record, using the quadratic-levelset instrument and lift
+&
+May be tested as a scoped protocol-indexed event-level positive
+\\[0.5em]
+Transition-stability test
+&
+Baseline candidate and proto-test seed
+&
+Baseline bridge record, using the transition-stability instrument and lift
+&
+Name records pilot origin; not an accepted finite test by inheritance
+\\[0.5em]
+Protocol-indexed readout-agreement event
+&
+Negative baseline candidate
+&
+Negative-baseline bridge record; readout-agreement threshold not met
+&
+Must not be dropped or accepted without new evidence
+\\
+\hline
+\end{tabular}
+\caption{Inherited proto-event and proto-test pilot handling. The two positive pilot rows are retained as baseline candidates; the absent readout-agreement row is retained as a negative baseline. No row is accepted at the candidate or bridge-record stage.}
+\label{tab:inherited-baseline-handling}
+\end{table}
+
+Every candidate is then converted into an event bridge record of the form introduced in Section~\ref{sec:bridge-records}. The resulting artifact contains seventeen bridge records, one per candidate, each recording a carrier-side condition, a public/readout-side condition, an instrument, one or more selected lifts or forgetting maps, a visibility and suppression record, a threshold record, a reference to an exact-six skeleton, and an audit record. Each bridge record also annotates the candidate's weaknesses. Public-shadow candidates carry carrier-pullback or fiber-record requirements; they do not assert that public signatures determine refined carrier conditions. Quadratic candidates carry nonclaims against probability and against a global quadratic geometry. Completion candidates carry selected-lift and section-dependence notes. The absent readout-agreement baseline is represented as a negative bridge record rather than silently dropped. The bridge stage therefore establishes representational completeness for later testing, not event acceptance: a complete bridge record is necessary for event acceptance but not sufficient, and the event gate must still check the declared surface, instrument visibility, suppression honesty, selected-lift stability, protocol honesty, threshold activation, controls, layer assignment, exact-six completeness, and claim-boundary compliance.
+
+The run carries a reproducibility contract along the lines recommended in the computational-reproducibility literature \citep{Sandve2013}. The canonical pipeline can be rebuilt end-to-end, checked in place, and compared for deterministic output. The final contract reports all required artifacts as present and valid. The determinism report records stable hashes for the ordinary semantic artifacts; only run-metadata and self-hash bookkeeping artifacts are excluded from the comparison. The full test suite and Python compilation checks pass, and the Lean event-admissibility definitions and proof-kernel modules compile.
+
+The test suite covers negative paths as well as the main one, exercising missing optional and core prior inputs, malformed bridge records, missing instruments, empty selected-lift or suppression records, incomplete exact-six profiles, active roles without supporting evidence, public-shadow overclaims, clean skips when no accepted tests exist, and final-gate branch alternatives. These tests add no scientific claims; they verify that gates fail in controlled ways and that the intended branch logic is preserved.
+
+One caveat is carried through the contract. The selected-lift stage records explicit contract-level fallback provenance because some optional detailed prior-work lift and protocol artifacts are not materialized in the present repository. The affected lift records are marked as such, and the final contract reports the caveat. The fallback does not license uniqueness of selected lifts, faithful public compression, or any public-carrier claim.
+
+The results that follow are read directly from the artifacts summarized above: the accepted scoped event-level positives, the absence of accepted tests, the event-level quadratic alignment, and the final classification.
+ \section{Event-level admissibility, controls, and placement}
+\label{sec:event-admissibility-controls}
+
+The event gate is the first stage at which bridge-record candidates can become accepted event-level objects. The gate does not ask whether a test family exists. It asks whether an individual bridge record satisfies the declared surface, instrument, suppression, lift, protocol, threshold, control-placeholder, layer-assignment, exact-six-completeness, and claim-boundary-compliance requirements. Acceptance is therefore a property of the full record, not of a carrier-side predicate alone. The outcome is an event-level classification, not a package classification.
+
+All seventeen bridge records receive an admissibility status. The gate accepts exactly two of them as protocol-indexed event-level objects: the inherited quadratic level-set event and the inherited transition-stability test. Both are scoped positives from the prior carrier result, and both are accepted only with their protocol-indexed scope retained. The gate does not strip the protocol coordinates, does not promote them to public-shadow-native events, and does not treat the proto-test-seed origin of the second as evidence that a finite test family has already been formed.
+
+The remaining bridge records divide into support-only, borderline, and rejected cases. The three public-shadow signature candidates remain support-only: public readout does not determine the refined carrier condition, and the public-to-carrier section is nonunique. Eleven generated candidates remain borderline because their threshold activation, lift dependence, or completion-and-readout compatibility remain pending. The inherited absent baseline — the protocol-indexed readout-agreement event — is rejected: its inherited status is absent and its bridge threshold is not met. This rejection preserves the negative baseline that reappears below as the missing slot that blocks test-family closure.
+
+Table~\ref{tab:event-gate-control-outcomes} summarizes the event-gate and control outcomes. The table separates three facts that must not be conflated: event-level acceptance, control retention, and test-family formation. The first two are positive for the two inherited scoped events. The third is not decided here and, as Section~\ref{sec:test-families} shows, later fails.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.26\linewidth}p{0.20\linewidth}p{0.20\linewidth}p{0.26\linewidth}}
+\hline
+\textbf{Object class or event} & \textbf{Event-gate outcome} & \textbf{Control outcome} & \textbf{Interpretation} \\
+\hline
+Quadratic level-set event
+&
+Accepted, protocol-indexed
+&
+Retained
+&
+Scoped protocol-indexed q-levelset event-level positive; pre-test
+\\[0.4em]
+Transition-stability test
+&
+Accepted, protocol-indexed
+&
+Retained
+&
+Scoped protocol-indexed transition-stability event and proto-test seed; pre-test
+\\[0.4em]
+Public-shadow signature candidates (3)
+&
+Support-only
+&
+Excluded from full control rows
+&
+Readout-side support only; carrier pullback or fiber not resolved
+\\[0.4em]
+Generated non-inherited candidates (11)
+&
+Borderline
+&
+Borderline retained
+&
+Threshold, lift, completion, or bridge-readiness still pending
+\\[0.4em]
+Protocol-indexed readout-agreement event
+&
+Rejected
+&
+Excluded
+&
+Absent negative baseline; readout-agreement threshold not met
+\\
+\hline
+\end{tabular}
+\caption{Event-gate and control outcomes. The two inherited scoped positives are accepted and retained after controls as protocol-indexed event-level objects. Three public-shadow candidates remain support-only; eleven generated candidates remain borderline; the absent readout-agreement baseline remains rejected. No row in this table is an accepted finite test family.}
+\label{tab:event-gate-control-outcomes}
+\end{table}
+
+The control stage then tests every accepted or borderline event-gate row. It applies null-baseline, memory-only, artifact or internalization, boundary or completion-sensitive, selected-lift variation, protocol-internalization, visibility and suppression perturbation, threshold-sensitivity, and support-only erasure comparison controls. Thirteen rows are targeted: the two accepted protocol-indexed events and the eleven borderline rows. Both accepted events are retained. No accepted event receives a downgrade recommendation. The eleven borderline rows remain borderline; none changes status at the control stage.
+
+The control interpretation is scoped. Protocol-indexed dependence is not treated as an artifact failure: for the two accepted inherited positives, protocol internalization passes because the claim is explicitly protocol-indexed, and the control stage preserves the inherited threshold support for those rows rather than resetting them to threshold-pending. The generated non-inherited candidates, by contrast, remain threshold-sensitive or threshold-selection-dependent, which is why they do not become accepted event-level positives at this gate.
+
+At the event level, the run has accepted structure only in scoped protocol-indexed form. It has not accepted public-shadow-native events, has not accepted the absent readout-agreement baseline, and has not formed a test. The two retained positives are legitimate inputs to the subsequent layer-placement and test-family stages, but they remain pre-test objects until a finite family satisfies mutual exclusivity and exhaustivity on a declared surface.
+
+\subsection{Layer placement}
+\label{sec:layer-placement}
+
+After the event gate and controls, the pipeline compares possible placements for every accepted or borderline event-level object. The stage does not accept new events or construct tests; it asks where the existing event-level claims are best placed: carrier-native, public-shadow-native, bridge-native, lifted-package-native, or not present. Each target is scored on admissibility, stability, public readability, suppression burden, lift dependence, protocol dependence, compatibility with other events, and exact-six strength.
+
+The overall placement verdict is that the protocol-indexed carrier/public bridge leads. This does not say that every individual event is carrier-native, nor that the public shadow has become lawful. The strongest per-event placement for the retained accepted positives is bridge-native, and the overall verdict is protocol-indexed because the decisive retained positives are bridge-native only within the protocol-indexed flagship scope; their protocol coordinates are part of the admissible claim, not removable presentation data.
+
+Across the thirteen accepted-or-borderline targets, ten are strongest at bridge-native and three at lifted-package-native; none is strongest at carrier-native, public-shadow-native, or not-present. The absence of public-shadow-native placements is a guardrail, not a failure of public readout. Public-shadow candidates can be readable at the signature level, but their carrier pullback remains unresolved and the public compression is non-faithful; they therefore cannot be placed as public-shadow-native events without assuming faithful compression.
+
+Table~\ref{tab:layer-placement-results} summarizes the placement results for the retained positives and the main nonaccepted classes. The two accepted events are ready for a later test-family attempt, but readiness is not test acceptance. The borderline rows remain pending because threshold, lift, completion, or bridge-readout structure is not yet strong enough. Completion-invariant rows cluster at lifted-package-native placement but remain borderline rather than accepted lifted-package events.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.26\linewidth}p{0.18\linewidth}p{0.20\linewidth}p{0.28\linewidth}}
+\hline
+\textbf{Object or class} & \textbf{Input status} & \textbf{Strongest placement} & \textbf{Placement interpretation} \\
+\hline
+Quadratic level-set event
+&
+Accepted, protocol-indexed
+&
+Bridge-native
+&
+Protocol-indexed carrier/public bridge event; ready for a test-family attempt, not a test
+\\[0.4em]
+Transition-stability test
+&
+Accepted, protocol-indexed
+&
+Bridge-native
+&
+Protocol-indexed transition-stability bridge object; proto-test seed, not an accepted finite test
+\\[0.4em]
+Borderline bridge, quadratic, and transition candidates
+&
+Borderline
+&
+Mostly bridge-native
+&
+Carrier/public bridge structure present, but threshold or readout closure remains pending
+\\[0.4em]
+Completion-invariant candidates
+&
+Borderline
+&
+Lifted-package-native
+&
+Selected-completion or lift dependence is explicit, but not enough for accepted lifted-package events
+\\[0.4em]
+Public-shadow signature candidates
+&
+Support-only
+&
+Excluded from target placement
+&
+Public readout support only; no faithful carrier pullback and no public-lawful carrier
+\\[0.4em]
+Absent readout-agreement baseline
+&
+Rejected
+&
+Excluded from target placement
+&
+Negative baseline; not resurrected by placement scoring
+\\
+\hline
+\end{tabular}
+\caption{Layer-placement results. The two accepted event-level positives are strongest as bridge-native objects with protocol-indexed scope retained. The overall verdict is that the protocol-indexed bridge leads, because the decisive retained positives require the protocol-indexed flagship carrier/public bridge layer. No public-shadow-native placement is selected by assuming faithful compression.}
+\label{tab:layer-placement-results}
+\end{table}
+
+The placement result prepares the test-family attempt without deciding it. The layer gate records a protocol-indexed flagship seed group containing the two retained positives as a test-construction input; it does not establish mutual exclusivity, exhaustivity, shared-event identity, or a unit event. Those questions are taken up in Section~\ref{sec:test-families}. Retained event-level structure exists at the protocol-indexed carrier/public bridge layer, but there is no public-shadow-native event structure and no test package.
+ \section{Test-family construction and obstruction}
+\label{sec:test-families}
+
+The previous sections established two accepted, control-retained, protocol-indexed event-level positives. The next question is stronger: do those event-level positives form a finite admissible test family? The test-family stage attempts five candidate families and accepts none. This is not a failure of the earlier event gate. It is the result of applying the stricter test-family criteria: accepted member events, finite family, mutual exclusivity, exhaustivity, declared surface, instrument stability, selected-lift stability, protocol honesty, public-readout compatibility, control separation, exact-six completeness, and claim-boundary compliance.
+
+The serious attempt is a protocol-indexed flagship-seed bridge family whose member pool consists of the two retained positives — the quadratic level-set event and the transition-stability test. These two members realize two slots of the declared local domain. The domain, however, is not an arbitrary two-element family. It is the \emph{complete protocol-indexed proto-family domain}, marked as requiring a complete partition. That domain has three required slots: a quadratic-levelset slot, a transition-stability slot, and a protocol-indexed readout-agreement slot. The first two slots are realized; the third is not.
+
+\begin{figure}[t]
+\centering
+\fbox{\begin{minipage}{0.86\linewidth}
+\small
+\centering
+\begin{tabular}{p{0.58\linewidth}p{0.24\linewidth}}
+\textbf{Required slot in the complete protocol-indexed proto-family} & \textbf{Status} \\
+\hline
+Quadratic-levelset slot & Realized \\
+Transition-stability slot & Realized \\
+Protocol-indexed readout-agreement slot & Missing \\
+\hline
+Complete partition required & Exhaustivity fails \\
+\end{tabular}
+\end{minipage}}
+\caption{The test-family obstruction. The serious protocol-indexed bridge-family attempt uses a declared complete proto-family domain. The retained event-level positives realize the quadratic-levelset and transition-stability slots, but the readout-agreement slot is unrealized. Because the domain requires a complete partition, the candidate test is non-exhaustive.}
+\label{fig:test-family-obstruction}
+\end{figure}
+
+The missing readout-agreement slot is the negative baseline preserved in the earlier stages — the absent protocol-indexed readout-agreement event. It was carried through the candidate and bridge stages as a negative baseline, rejected at the event gate, and reappears here as the unrealized slot blocking test-family exhaustivity. The obstruction is a declared component of the declared complete domain, not an implementation artifact or a post-hoc absence.
+
+Table~\ref{tab:candidate-test-outcomes} summarizes the candidate-test outcomes. The quadratic and transition-stability singleton attempts remain borderline because their domains are partial: they may carry event-level information, but they do not establish a complete family of alternatives. The public-shadow and lifted-package attempts are skipped because their potential members are not accepted event-level objects. The bridge-predicate attempt is rejected because the serious complete domain is non-exhaustive.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.22\linewidth}p{0.16\linewidth}p{0.26\linewidth}p{0.30\linewidth}}
+\hline
+\textbf{Candidate test family} & \textbf{Status} & \textbf{Member basis} & \textbf{Decisive reason} \\
+\hline
+Quadratic-levelset test
+&
+Borderline
+&
+Quadratic level-set event
+&
+Partial q-levelset event support; no exhaustive accepted family established
+\\[0.4em]
+Transition-stability test
+&
+Borderline
+&
+Transition-stability test
+&
+Proto-test seed retained, but no complete finite family established
+\\[0.4em]
+Bridge-predicate test
+&
+Rejected
+&
+Two accepted protocol-indexed event-level members
+&
+Complete proto-family lacks the readout-agreement slot; exhaustivity fails
+\\[0.4em]
+Public-shadow-signature test
+&
+Skipped
+&
+None
+&
+Public-shadow signature candidates are support-only, not accepted members
+\\[0.4em]
+Lifted-package test
+&
+Skipped
+&
+None
+&
+Completion-and-lift candidates remain borderline, not accepted members
+\\
+\hline
+\end{tabular}
+\caption{Candidate test-family outcomes. Five candidate families are attempted or explicitly skipped. None is accepted. The only serious bridge-family attempt fails exhaustivity because the required protocol-indexed readout-agreement slot is missing.}
+\label{tab:candidate-test-outcomes}
+\end{table}
+
+This is the principal negative result. It does not downgrade the two accepted event-level positives, which remain accepted, protocol-indexed, control-retained, and exact-six-profiled. The conclusion is that the retained positives do not close into an admissible finite test family on the declared complete domain.
+
+The domain is not redefined retrospectively to accommodate the obstruction. A two-slot partial context containing only the quadratic and transition-stability rows may have diagnostic value, but it is not the complete test family under attempt here. The serious domain declares a third required slot, and the run does not realize it. The test gate records no accepted test family, and the subsequent shared-identity and proto-effect stages read this result directly: with no accepted test contexts, they have no local contexts over which to build overlap edges, partial additions, or normalization candidates.
+ \section{Secondary layers: higher structure and quadratic alignment}
+\label{sec:higher-structure}
+
+The negative test-family result has direct consequences for the two stages that depend on accepted tests, and a separate consequence for the quadratic-alignment stage, which can still operate at the event level. This section reports all three outcomes.
+
+\subsection{Shared-event identity and proto-effect nonformation}
+
+Shared-event identity and proto-effect operations are not defined directly from isolated event-level positives in the present admissibility discipline; they require accepted test contexts. Since Section~\ref{sec:test-families} found no accepted finite test family, both stages skip cleanly.
+
+The shared-identity stage asks whether events appearing in different accepted tests or contexts can be identified as the same event. Its criteria require compatible carrier pullbacks, compatible public readouts, compatible visibility and suppression records, compatible exact-six profiles, and no hidden-section-only dependence. With no accepted tests from which to build context nodes, the context-overlap graph has no nodes and no edges. The stage is therefore skipped. This is not an additional rejection of the two accepted event-level positives; it records that the precondition for cross-context identity is absent.
+
+The proto-effect stage has the same dependency. A proto-effect fragment would require accepted local test contexts on which zero, unit, complement-like, partial-addition, coarse-graining, or normalization candidates could be evaluated. Since there are no accepted tests, no candidate proto-effect operations are generated: the partial-addition table is empty, and no normalization candidates are produced. The proto-effect stage is also skipped.
+
+Table~\ref{tab:higher-structure-nonformation} summarizes these outcomes. The skip is principled: the pipeline does not repair the missing test-family structure by inventing overlap edges, unit events, complements, or partial additions. It carries the event-level positives forward while recording that the structures requiring accepted tests are unavailable.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.22\linewidth}p{0.24\linewidth}p{0.22\linewidth}p{0.26\linewidth}}
+\hline
+\textbf{Stage} & \textbf{Required input} & \textbf{Observed input} & \textbf{Outcome} \\
+\hline
+Shared-event identity
+&
+Accepted test contexts
+&
+No accepted tests
+&
+Skipped; graph has zero nodes and zero edges
+\\[0.4em]
+Context-overlap graph
+&
+Accepted tests as nodes and shared events as edges
+&
+No accepted tests and no accepted shared events
+&
+Empty graph; no overlap relation asserted
+\\[0.4em]
+Proto-effect fragment
+&
+Accepted tests and local event operations
+&
+No accepted tests; no shared-identity layer
+&
+Skipped; no operations accepted
+\\[0.4em]
+Partial addition
+&
+Mutually exclusive accepted events inside accepted tests
+&
+No accepted test context
+&
+Zero defined pairs; no coarse-graining operation asserted
+\\[0.4em]
+Normalization candidates
+&
+Accepted test context with a stable unit candidate
+&
+No accepted test context
+&
+Zero candidates; no unit or normalization claim
+\\
+\hline
+\end{tabular}
+\caption{Higher-structure nonformation. Shared-event identity and proto-effect operations require accepted tests. Because no finite test family is accepted, these stages skip cleanly rather than inventing context overlap, partial addition, or normalization structure.}
+\label{tab:higher-structure-nonformation}
+\end{table}
+
+\subsection{Quadratic-event alignment}
+\label{sec:quadratic-alignment}
+
+The quadratic-alignment stage asks a narrower question that does not require accepted tests. Do the scoped quadratic families from the carrier result merely serve as diagnostics, or do they organize any accepted event-level boundary? The question here is only whether they carry event-boundary content; probability or valuation claims remain out of scope.
+
+The stage evaluates the three scoped carried families — the readout self-inner-product $q_{\mathrm{L2}}$, the readout-gap $q_{\mathrm{gap}}$, and the coarsening-consistency $q_{\mathrm{coarse}}$. The verdict is that the carried families are \emph{event-organizing} at event level but not test-organizing: the accepted test count remains zero, so the quadratic families do not organize an accepted test partition.
+
+The direct alignment occurs for the accepted quadratic level-set event. That event was generated from the scoped quadratic-levelset structure, retained through the event gate and controls, and placed at the protocol-indexed carrier/public bridge layer. Its boundary alignment is therefore not merely a diagnostic association: the carried $q_{\mathrm{L2}}, q_{\mathrm{gap}}, q_{\mathrm{coarse}}$ families organize the accepted q-levelset event boundary under the declared quadratic instrument and selected lift.
+
+The second accepted event, the transition-stability test, has a different status. It is retained as a scoped protocol-indexed transition-stability event and proto-test seed, and it has quadratic support in the broader event-level atlas, but it is not a q-induced test partition. Its alignment is indirect support, not direct quadratic boundary organization. The historical word ``test'' in its name records the prior pilot origin; it does not make this row an accepted finite test family.
+
+Table~\ref{tab:quadratic-alignment} summarizes the alignment result. The table also records the negative comparison row and the bilinear comparison-only material. The absent readout-agreement baseline remains non-accepted, and q-related borderline candidates are not changed by the alignment stage.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.26\linewidth}p{0.28\linewidth}p{0.24\linewidth}p{0.16\linewidth}}
+\hline
+\textbf{Object or family} & \textbf{Quadratic relation} & \textbf{Role in this run} & \textbf{Limitation} \\
+\hline
+Quadratic level-set event
+&
+Direct alignment with the scoped q-levelset boundary using $q_{\mathrm{L2}}$, $q_{\mathrm{gap}}$, and $q_{\mathrm{coarse}}$
+&
+Accepted protocol-indexed event-level object; contributes event-organizing evidence
+&
+Not a test partition; not a valuation
+\\[0.4em]
+Transition-stability test
+&
+Indirect quadratic support through diagnostic association with the scoped quadratic atlas
+&
+Accepted protocol-indexed event and proto-test seed
+&
+Not q-induced test organization
+\\[0.4em]
+Protocol-indexed readout-agreement event
+&
+No change from quadratic alignment
+&
+Rejected negative baseline and missing-slot comparison
+&
+Readout-agreement threshold remains unmet
+\\[0.4em]
+Borderline q-related candidates
+&
+Diagnostic or boundary-support associations
+&
+Remain borderline or nonaccepted
+&
+Threshold or readiness still pending
+\\[0.4em]
+Bilinear or inner-product material
+&
+Comparison-only, where present
+&
+May support comparison or audit context
+&
+Not claim-bearing event or test geometry
+\\
+\hline
+\end{tabular}
+\caption{Quadratic-event alignment. The scoped quadratic families organize the retained q-levelset event boundary at event level. They do not organize an accepted test partition, do not change the absent readout-agreement baseline, and are not interpreted as probabilities or valuation data.}
+\label{tab:quadratic-alignment}
+\end{table}
+
+The result is positive but bounded. For one accepted scoped event, the retained quadratic structure is treated as event-level boundary organization rather than as diagnostic carry-through alone. It does not repair the missing readout-agreement slot, does not establish mutual exclusivity or exhaustivity, does not produce shared-event identity, and does not create proto-effect operations. No number in the quadratic registry is treated as a probability or valuation. The bilinear or inner-product material, where present in the prior artifacts, remains comparison-only.
+
+\subsection{Implications for the final classification}
+
+Taken together, the secondary layers sharpen the final classification. The run is not a no-event result, because two scoped protocol-indexed event-level positives survive the event gate and controls. It is also not an event-package result, because no accepted tests exist and no shared-event identity or proto-effect fragment can therefore be formed. The intermediate regime is accepted scoped event-level structure without accepted test-level closure. The run has a positive event-level alignment — one accepted event boundary is organized by the scoped q-families — but it has no test-level alignment, because no tests are accepted and the q-families do not supply a complete family of alternatives. Quadratic alignment thus strengthens the event-level result while leaving the test-family obstruction intact.
+ \section{Exact-six profiles and formal layer}
+\label{sec:exact-six-formal}
+
+The preceding sections identify what is accepted, what remains borderline, and what fails to form. This section records three things: (a)~the exact-six role profiles of the accepted claims, (b)~the typed vocabulary in which the event- and test-admissibility predicates are stated, and (c)~the proof-kernel implications that follow by type-checking from those typed definitions. The formal layer is an instantiation of the paper's record discipline in a dependently typed proof assistant \citep{AvigadHarrison2014}, not an independent mathematical contribution: the typed definitions encode the admissibility vocabulary used in the preceding sections, and the proof-kernel propositions are the implications one obtains from those definitions by case analysis.
+
+\subsection{Role activation in the run}
+
+The exact-six stage records the role profile of the accepted claims after the earlier gates have run. It neither accepts new events nor repairs missing tests; it is a bookkeeping step on the finite lattice of role-status assignments, in the classical order-theoretic sense \citep{Tarski1955,DaveyPriestley2002}. Every accepted claim must carry a complete $P_1$--$P_6$ profile, every active role must have supporting evidence, and every residual limitation must be classified rather than left implicit.
+
+The stage produces two final exact-six profiles, both for accepted event-level claims: the quadratic level-set event and the transition-stability test. No accepted test, shared-event identity, or proto-effect operation exists, so no profiles of those object types are created; the profile registry records zero accepted objects in those classes. Table~\ref{tab:exact-six-role-activation} summarizes the role-activation counts. The two accepted event-level claims activate representability ($P_2$), descent ($P_1$), quotient packaging ($P_5$), and audit-and-bookkeeping ($P_6$). The transition-stability row additionally activates the stage-and-refinement role ($P_4$), while the quadratic-levelset event records that role as \emph{below-threshold}. Route-and-coherence ($P_3$) is \emph{absent-with-record} for both accepted events.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.08\linewidth}p{0.24\linewidth}p{0.26\linewidth}p{0.36\linewidth}}
+\hline
+\textbf{Role} & \textbf{Role channel} & \textbf{Observed status counts (out of 2)} & \textbf{Interpretation} \\
+\hline
+$P_1$
+&
+Update-vs-quotient compatibility; descent obstruction
+&
+Active in 2
+&
+Carrier/public bridge and descent evidence is present for both accepted event-level claims
+\\[0.4em]
+$P_2$
+&
+Macro-specification representability
+&
+Active in 2
+&
+Both accepted events are represented on their declared scoped surfaces
+\\[0.4em]
+$P_3$
+&
+Enriched route and coherence mismatch
+&
+Absent-with-record in 2
+&
+No additional route-and-coherence claim is made
+\\[0.4em]
+$P_4$
+&
+Stage, order, transition, and refinement structure
+&
+Active in 1; below-threshold in 1
+&
+Transition-stability activates this role; the quadratic-levelset event does not
+\\[0.4em]
+$P_5$
+&
+Quotient packaging
+&
+Active in 2
+&
+Protocol-indexed-lift and selected-lift evidence is essential to both accepted claims
+\\[0.4em]
+$P_6$
+&
+Audit, bookkeeping, provenance, replay, checkability
+&
+Active in 2
+&
+Controls, suppression records, provenance, and claim-boundary checks are present
+\\
+\hline
+\end{tabular}
+\caption{Exact-six role activation for the accepted event-level claims. The profile registry contains two event profiles and zero accepted test, shared-event, or proto-effect profiles. Active roles are evidence-backed; residuals record scoped protocol-indexed status and missing higher structure.}
+\label{tab:exact-six-role-activation}
+\end{table}
+
+The residuals are part of the result. Both profiles record protocol-indexed scope, the absence of accepted tests, shared-event identity, and proto-effect operations, and the status of accepted event-level claims as pre-test. The quadratic-levelset profile additionally records that quadratic organization is event-level only. The transition-stability profile records its proto-test-seed origin without converting it into an accepted finite test.
+
+\subsection{Typed vocabulary}
+\label{subsec:typed-vocabulary}
+
+The formal layer is written in Lean~4 \citep{deMouraUllrich2021} using Mathlib \citep{Mathlib2020} and the idioms of \citet{Avigad2023Lean}. We present the definitions below in mathematical form while keeping the Lean reading explicit: the relations are \textsc{Prop}-valued in the code and can be read set-theoretically in the usual way.
+
+\begin{definition}[Designated surface]
+\label{def:designated-surface}
+A \emph{designated surface} is a tuple
+\[
+  \Sigma = (Z,\ f,\ \Sigma_f,\ \mathcal{I},\ \mathcal{L},\ \kappa),
+\]
+where $Z$ is a finite carrier set, $f : Z \to X$ is a lens, $\Sigma_f$ is the induced definability structure, $\mathcal{I}$ is a family of admissible instruments, $\mathcal{L}$ is a family of selected lifts, and
+$\kappa \in \{\textnormal{claim-bearing},\ \textnormal{support-only},\ \textnormal{control-only}\}$ is the surface classification.
+\end{definition}
+
+\begin{definition}[Event bridge record]
+\label{def:event-bridge}
+An \emph{event bridge record} on $\Sigma$ is an eight-tuple
+\[
+  \mathcal{B}_E = (C,\ P,\ I,\ L,\ V,\ \Theta,\ S,\ A),
+\]
+where $C$ is a carrier-side condition, $P$ is a public/readout-side condition, $I \in \mathcal{I}$ is the declared instrument, $L \in \mathcal{L}$ is the selected lift (or forgetting map), $V$ is a visibility-and-suppression record, $\Theta$ is the threshold-or-witness record, $S$ is the exact-six role profile of the bridge, and $A$ is the audit record.
+\end{definition}
+
+The admissibility gate is expressed as the conjunction of ten predicates on $(\mathcal{B}_E, \Sigma)$.
+
+\begin{definition}[Event admissibility]
+\label{def:event-admissibility}
+An event bridge record $\mathcal{B}_E$ is \emph{admissible} on $\Sigma$, written $\operatorname{Admissible}(\mathcal{B}_E, \Sigma)$, if
+\[
+\begin{gathered}
+  \operatorname{DS}(\mathcal{B}_E)\ \wedge\ \operatorname{IV}(\mathcal{B}_E)\ \wedge\ \operatorname{SH}(\mathcal{B}_E)\ \wedge\ \operatorname{LS}(\mathcal{B}_E)\ \wedge\ \operatorname{PH}(\mathcal{B}_E)\\
+  \wedge\ \operatorname{TA}(\mathcal{B}_E)\ \wedge\ \operatorname{CP}(\mathcal{B}_E)\ \wedge\ \operatorname{LA}(\mathcal{B}_E)\ \wedge\ \operatorname{XC}(\mathcal{B}_E)\ \wedge\ \operatorname{CB}(\mathcal{B}_E),
+\end{gathered}
+\]
+where the ten conjuncts are declared surface, instrument visibility, suppression honesty, selected-lift stability, protocol honesty, threshold activation, control-separation placeholder, layer assignment, exact-six completeness, and claim-boundary compliance, respectively.
+\end{definition}
+
+Test-family admissibility is built on top of event admissibility.
+
+\begin{definition}[Candidate test family]
+\label{def:test-family}
+A \emph{candidate test family} on $\Sigma$ is a tuple
+\[
+  \mathcal{T} = \bigl(\{\mathcal{B}_i\}_{i \in F},\ \Sigma_T,\ \mu\bigr),
+\]
+where $F$ is a finite index set, $\{\mathcal{B}_i\}_{i \in F}$ is a family of event bridge records proposed as members, $\Sigma_T$ is the declared test surface, and $\mu$ is an assignment of members to declared slots on $\Sigma_T$.
+\end{definition}
+
+\begin{definition}[Test admissibility]
+\label{def:test-admissibility}
+A candidate test family $\mathcal{T}$ is \emph{admissible}, written $\operatorname{AdmissibleTest}(\mathcal{T}, \Sigma_T)$, if every $\mathcal{B}_i$ is admissible, the family is finite and nonempty, and
+\[
+  \operatorname{ME}(\mathcal{T}, \Sigma_T)\ \wedge\ \operatorname{EX}(\mathcal{T}, \Sigma_T)\ \wedge\ \operatorname{IS}(\mathcal{T})\ \wedge\ \operatorname{LS}_{\mathrm{fam}}(\mathcal{T})\ \wedge\ \operatorname{PC}(\mathcal{T})\ \wedge\ \operatorname{CS}(\mathcal{T})\ \wedge\ \operatorname{XC}_{\mathrm{fam}}(\mathcal{T})\ \wedge\ \operatorname{CB}_{\mathrm{fam}}(\mathcal{T}),
+\]
+where the conjuncts are mutual exclusivity on $\Sigma_T$, exhaustivity on $\Sigma_T$, instrument stability, family-level selected-lift stability, public-readout compatibility, control separation, family-level exact-six completeness, and family-level claim-boundary compliance.
+\end{definition}
+
+Shared-event identity and proto-effect admissibility are formalized similarly as compatibility predicates on accepted tests; their full statements are given in the Lean module \texttt{SharedIdentity.lean} and \texttt{ProtoEffect.lean} (see Appendix~\ref{app:lean}).
+
+\subsection{Proof kernel}
+\label{subsec:proof-kernel}
+
+The proof kernel type-checks three groups of implications on top of the typed vocabulary. Each proposition below is a definitional consequence of the records introduced in \S\ref{subsec:typed-vocabulary}: unfolding the admissibility predicate yields the corresponding component. The propositions are stated as theorems in Lean only to register that the unfoldings type-check; they are not contributions beyond the definitions themselves.
+
+\begin{proposition}[Admissibility implies bridge well-formedness]
+\label{prop:admissibility-well-formed}
+If $\operatorname{Admissible}(\mathcal{B}_E, \Sigma)$ holds, then each component of $\mathcal{B}_E$ is a well-formed instance of its declared record type and every field required by Definition~\ref{def:event-bridge} is populated.
+\end{proposition}
+
+\begin{proposition}[Test admissibility has admissible nonempty members]
+\label{prop:test-admissible-members}
+If $\operatorname{AdmissibleTest}(\mathcal{T}, \Sigma_T)$ holds, then $\mathcal{T}$ has at least one member, every member satisfies $\operatorname{Admissible}(\mathcal{B}_i, \Sigma)$, and the slot assignment $\mu$ realizes every required slot of $\Sigma_T$.
+\end{proposition}
+
+\begin{proposition}[Shared-event identity requires compatibility witnesses]
+\label{prop:shared-identity-compat}
+If two admissible bridges $\mathcal{B}_E$, $\mathcal{B}_F$ share an event identity under a witness $w$, then $w$ supplies compatible carrier pullbacks, compatible public readouts, compatible visibility-and-suppression records, and compatible exact-six profiles, with no hidden-section-only dependence.
+\end{proposition}
+
+\begin{proposition}[Proto-effect admissibility requires normalization]
+\label{prop:proto-effect-normalization}
+An admissible proto-effect fragment over an admissible test family carries at least one normalization candidate and a complement-like operation compatible with the partial-addition structure.
+\end{proposition}
+
+\begin{proposition}[Final-gate licensing]
+\label{prop:final-gate-licensing}
+Each final-gate classification $c$ listed in the permitted final-gate set is licensed by a specific conjunction of accepted-object predicates:
+\[
+  c = \textnormal{isolated\_proto\_events} \iff (\exists \mathcal{B}_E.\ \operatorname{Admissible}(\mathcal{B}_E, \Sigma))\ \wedge\ \neg(\exists \mathcal{T}.\ \operatorname{AdmissibleTest}(\mathcal{T}, \Sigma_T)),
+\]
+and analogously for the other classifications. The gate classification is a function of accepted-object predicates alone.
+\end{proposition}
+
+\begin{remark}
+\label{rem:kernel-is-not-empirical}
+Propositions~\ref{prop:admissibility-well-formed}--\ref{prop:final-gate-licensing} are definitional unfoldings of the records in \S\ref{subsec:typed-vocabulary}, and are proved in Lean by case analysis on those records. They are not independent mathematical results and make no claim about any specific run; the bridge from abstract predicate to empirical instance is artifact-backed (Section~\ref{sec:pipeline}) and preserved as an explicit trust boundary.
+\end{remark}
+
+\subsection{Trust boundary}
+\label{subsec:trust-boundary}
+
+The Lean layer formalizes the typed vocabulary and the implication structure. The empirical pipeline supplies the evidence that the typed predicates are instantiated on a specific artifact surface. Neither layer is a theorem that the other is correct. Table~\ref{tab:formal-repro-layers} summarizes the division of labor.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.22\linewidth}p{0.32\linewidth}p{0.36\linewidth}}
+\hline
+\textbf{Layer} & \textbf{What is formalized or validated} & \textbf{What remains external} \\
+\hline
+Typed vocabulary (Defs.~\ref{def:designated-surface}--\ref{def:test-admissibility}) & Designated surfaces, event bridge records, test families, and the corresponding admissibility predicates & Empirical instantiation of those predicates on the present run \\[0.5em]
+Proof kernel (Props.~\ref{prop:admissibility-well-formed}--\ref{prop:final-gate-licensing}) & Abstract implications from admissibility to well-formedness, member admissibility, compatibility, normalization, and final-gate licensing & Proof that any particular bridge record satisfies the premises \\[0.5em]
+Artifact pipeline (Section~\ref{sec:pipeline}) & Deterministic rebuild, contract checks, determinism report, test suite, and negative-path safeguards & Environment-dependent runtime and external-software trust boundaries \\[0.5em]
+Remaining trust boundary & Explicit proof-gap ledger in \texttt{ProofGaps.lean} & Final soundness from artifacts to Lean; external software correctness \\
+\hline
+\end{tabular}
+\caption{Formal and reproducibility layers. The Lean layer formalizes the event-admissibility vocabulary and abstract implications; the artifact pipeline supplies the empirical rebuild surface. Neither layer proves the other.}
+\label{tab:formal-repro-layers}
+\end{table}
+
+The Lean modules compile without \texttt{sorry} and without \texttt{axiom}, in the sense standardized by recent Mathlib-scale developments \citep{Buzzard2020Perfectoid}. The explicit proof-gap ledger \texttt{ProofGaps.lean} records the unfinished bridges: empirical admissibility of specific bridge records, final-gate soundness from the artifact surface, the empirical test-family bridge, and the extraction trust boundary between JSON artifacts and Lean predicates. None of these are discharged inside Lean; they are made reproducible and inspectable through the canonical pipeline. The Lean layer is thus an instantiation of the paper's record discipline in a dependently typed setting, in the sense of \citet{AvigadHarrison2014}, rather than an independent mathematical contribution.
+ \section{Final gate}
+\label{sec:final-gate}
+
+The final gate aggregates the preceding stages without changing their status. It does not repair the missing test-family slot, does not promote event-level positives into tests, and does not collapse accepted event-level positives into a no-event result. The classification places the run in an intermediate regime: scoped protocol-indexed events are accepted, but no accepted test family exists, so the run is an accepted scoped protocol-indexed event layer without an accepted test package.
+
+The classification is determined by two facts held together. First, two scoped protocol-indexed event-level positives — the quadratic level-set event and the transition-stability test — survive the event gate, controls, layer placement, quadratic alignment, and exact-six profiling. The run is therefore not a no-event result. Second, no finite admissible test family is accepted: the serious complete protocol-indexed proto-family remains non-exhaustive because the readout-agreement slot is unrealized. The run is therefore not an event-package result.
+
+Table~\ref{tab:final-gate-decision} records the final-gate conditions. The accepted event layer is present and exact-six complete. The accepted test layer is absent. Shared-event identity and proto-effect structure are unavailable because they require accepted tests. Quadratic alignment is positive at event level but does not organize an accepted test partition.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.26\linewidth}p{0.32\linewidth}p{0.32\linewidth}}
+\hline
+\textbf{Gate component} & \textbf{Observed value} & \textbf{Consequence} \\
+\hline
+Accepted event layer
+&
+Two accepted scoped protocol-indexed events
+&
+Blocks a no-event-layer verdict; event-level positives survive
+\\[0.4em]
+Accepted test layer
+&
+No accepted tests
+&
+Blocks flagship-local, protocol-indexed, and lifted event-package classifications
+\\[0.4em]
+Readout-agreement slot
+&
+Required slot of the serious complete proto-family remains unrealized
+&
+Explains non-exhaustivity of the serious complete proto-family
+\\[0.4em]
+Shared-event identity
+&
+Skipped for lack of accepted tests
+&
+No context-overlap graph or shared-event relation
+\\[0.4em]
+Proto-effect structure
+&
+Skipped for lack of accepted tests
+&
+No partial addition, unit, or normalization candidate
+\\[0.4em]
+Quadratic alignment
+&
+Event-organizing at event level; no test-level promotion
+&
+Strengthens the retained q-levelset event but does not create a test partition
+\\[0.4em]
+Exact-six profiles
+&
+Complete for the accepted event-level claims
+&
+Accepted event-level claims have complete role profiles and classified residuals
+\\[0.4em]
+Final package atlas
+&
+No accepted event package
+&
+Final classification stays in the accepted-event-without-accepted-tests regime
+\\
+\hline
+\end{tabular}
+\caption{Final gate decision. The run contains accepted scoped protocol-indexed event-level positives but no accepted finite test family. The missing readout-agreement slot blocks exhaustivity for the serious complete protocol-indexed proto-family.}
+\label{tab:final-gate-decision}
+\end{table}
+
+The final package atlas gives the same result in layer language. The accepted event layer is present, scoped, protocol-indexed, control-retained, and exact-six complete. The accepted test layer is absent. The shared-identity and proto-effect layers are skipped because the test layer is absent. The quadratic layer contributes event-level organization, not test-level organization. The package status is therefore that no accepted event package exists.
+
+The final gate also preserves the claim-boundary contract. It does not claim a lawful public carrier, faithful public compression, cross-seed event package, full-core event package, accepted test package, shared-event identity, proto-effect fragment, probability valuation, or composition result. The positive part of the result is scoped event-level admissibility; the negative part is the failure of test-family closure on the declared complete protocol-indexed domain.
+ \section{Discussion and limitations}
+\label{sec:discussion}
+
+The outcome is mixed but precise. The run is not empty at the event level: two scoped protocol-indexed positives survive the event gate, controls, layer placement, quadratic alignment, and exact-six profiling. At the same time, no accepted finite test family is produced. The result is therefore neither that the carrier has no event content nor that it has already become an event package, but an intermediate regime between the two.
+
+The positive part is the survival of scoped event-level structure. The event bridge discipline accepts the quadratic level-set event and the transition-stability test as protocol-indexed event-level objects. Their acceptance is not public-shadow-native and not unscoped. It depends on the declared carrier/public bridge, explicit instruments, selected lifts, suppression records, controls, and exact-six profiles. This is why the result is stronger than a diagnostic observation but weaker than a package-level structure.
+
+The negative part is the failure of finite test closure. The accepted positives realize two slots of the serious protocol-indexed proto-family domain, but the readout-agreement slot remains unrealized. Since that domain is declared complete-partition-required, exhaustivity fails. This is a local obstruction, not a generic inability to write down candidate families: the pipeline does write down candidate families, and none passes the admissibility gate for tests.
+
+The missing readout-agreement slot is informative for the claim boundary. The retained positives show that internal quadratic-boundary and transition-stability structure survives at the scoped protocol-indexed event level. The missing slot shows that this is not yet enough to close a public/readout-compatible family of alternatives on the declared complete domain. This matches the inherited carrier situation: the public shadow is readable but non-faithful and does not determine the refined carrier condition.
+
+The quadratic result should be read in the same bounded way. The carried $q_{\mathrm{L2}}, q_{\mathrm{gap}}, q_{\mathrm{coarse}}$ families organize the retained q-levelset event boundary. They do not supply a complete test partition, and their values are not interpreted as probabilities or valuations. The transition-stability row has indirect quadratic support but is not converted into a q-induced test. Quadratic alignment therefore strengthens the event-level result while leaving the test-family obstruction intact.
+
+The higher-structure skips are part of the result rather than a missing implementation. Shared-event identity requires accepted test contexts; proto-effect operations require accepted local tests. With no accepted tests, both stages skip cleanly. The empty context graph, empty partial-addition table, and absence of normalization candidates are the expected consequences of the test-family gate, not additional empirical failures.
+
+Several limitations remain:
+\begin{enumerate}[label=(\roman*),leftmargin=*,itemsep=1pt,topsep=2pt]
+\item the event-level positives are scoped to the flagship protocol-indexed setting, and protocol indexing is part of the claim rather than removable presentation data;
+\item the public signature shadow remains non-faithful and is not promoted to a lawful public carrier;
+\item selected lifts remain selected and noncanonical unless the registry explicitly qualifies them otherwise;
+\item the selected-lift stage carries an explicit fallback caveat for optional detailed lift and protocol artifacts that are not materialized in the present repository;
+\item the readout-agreement slot is still missing, and this is the immediate obstruction to an accepted test-family claim.
+\end{enumerate}
+
+These limitations are not hidden by the classification, which is deliberately conservative: it preserves the accepted scoped event-level positives while declining to promote them to tests, shared identities, proto-effect operations, a public carrier, or a full package. The result is an admissibility boundary that identifies what survives, what does not close, and which missing slot blocks the next structural level.
+ \section{Conclusion}
+\label{sec:conclusion}
+
+This paper contributes a carrier-to-event admissibility layer on the fixed-support substrate inherited from the preceding carrier-exactification paper \citep{Tsiokos2026CarrierExactification}, together with the demonstration that a standard admissibility audit lands on that substrate with a specific, bounded verdict. The layer is implemented by explicit event bridge records — binding carrier-side and public-side predicates with instruments, selected lifts, visibility and suppression data, thresholds, exact-six role profiles, and audit records — over which the event-level, test-level, shared-identity, and proto-effect gates operate. The audit machinery is adapted from prior admissibility meta-theory \citep{Tsiokos2026FoundationsII} and from standard operational-measurement vocabulary; the substrate it stabilizes, and the bounded verdict it yields, are what this paper contributes.
+
+The run accepts two scoped protocol-indexed event-level positives: the inherited quadratic level-set event and the inherited transition-stability test. Both survive the event gate and the controls, and both receive complete exact-six profiles. The quadratic level-set event is directly organized by the scoped quadratic families at event level.
+
+No finite admissible test family is accepted. The serious protocol-indexed bridge-family attempt is non-exhaustive because the required readout-agreement slot is missing. Shared-event identity and proto-effect operations therefore do not form. The final classification places the run in an intermediate regime: accepted scoped protocol-indexed events without an accepted test package. The result is positive at the scoped event level and negative at the test-package level.
+ 
+\appendix
+\section{Formal definitions and gate predicates}
+\label{app:formal-definitions}
+
+This appendix collects the record-level definitions used in the main text. The definitions are stated at the level needed to read the artifact tables and gates; the Lean formalization in Appendix~\ref{app:lean} gives the corresponding abstract record skeletons.
+
+A \emph{surface} is a declared domain on which a claim is evaluated. The pipeline distinguishes claim-bearing surfaces, support-only surfaces, and control-only surfaces. A support-only surface cannot produce an accepted event unless a later gate explicitly accepts it, and no such acceptance is made for the erasure or nearby-positive comparison rows in this run.
+
+An \emph{instrument} is a record
+\[
+  I=(\mathrm{name},\mathrm{domain},\mathrm{visible},\mathrm{suppressed},
+  \mathrm{readout},\mathrm{threshold},\mathrm{admissibility},\mathrm{nonclaims}).
+\]
+The suppressed component is required. It records which structures are hidden by the instrument and prevents over-reading a public signature, a quadratic diagnostic, or a protocol-indexed carrier surface.
+
+A \emph{selected lift} is a declared map, section, or forgetting relation between surfaces. Selected public-to-carrier maps are nonunique unless separately proved otherwise. The carrier-to-public map is stable only as a many-to-one forgetting map in its declared direction.
+
+An \emph{event bridge record} is
+\[
+  \mathcal B_E=(C,P,I,L,V,\Theta,S,A),
+\]
+where \(C\) is a carrier-side condition, \(P\) is a public/readout-side condition, \(I\) is an instrument, \(L\) is a selected lift or forgetting map, \(V\) is the visibility/suppression record, \(\Theta\) is threshold or witness data, \(S\) is an exact-six profile, and \(A\) is an audit record.
+
+A \emph{candidate event} is a bridge-record object before event admissibility is decided. A \emph{candidate test} is a finite family of accepted, control-retained event-level objects proposed as a test on a declared surface. Candidate status is not acceptance.
+
+An \emph{exact-six profile} assigns each role channel $P_1,\ldots,P_6$ one of the five canonical statuses
+\[
+\begin{gathered}
+\texttt{active\_projection},\quad
+\texttt{below\_threshold},\\
+\texttt{collapsed\_boundary\_case},\quad
+\texttt{absent\_with\_record},\\
+\texttt{inapplicable\_outside\_scope}.
+\end{gathered}
+\]
+The role meanings are those of the scoped exact-six discipline: $P_1$ is update-vs-quotient compatibility and descent obstruction; $P_2$ is macro-specification representability; $P_3$ is enriched route and coherence mismatch; $P_4$ is stage, order, transition, and refinement structure; $P_5$ is quotient packaging; and $P_6$ is audit, bookkeeping, provenance, replay, and checkability. Fallback provenance, missing tests, probability language, and quadratic alignment are not role statuses; they are recorded as residuals, visibility or suppression notes, or audit evidence.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.22\linewidth}p{0.33\linewidth}p{0.35\linewidth}}
+\hline
+\textbf{Gate} & \textbf{Required checks} & \textbf{Output used in this paper} \\
+\hline
+Event admissibility
+&
+Declared surface; instrument visibility; suppression honesty; selected-lift stability; protocol honesty; threshold activation; control placeholder; layer assignment; exact-six completeness; claim-boundary compliance
+&
+Two accepted protocol-indexed event-level positives; public-shadow support rows and readout-agreement rejection retained
+\\[0.8em]
+Event controls
+&
+Null, memory-only, artifact/internalization, boundary/completion-sensitive, selected-lift variation, protocol internalization, visibility/suppression perturbation, threshold sensitivity, erasure comparison
+&
+Accepted positives retained; no accepted-event downgrades
+\\[0.8em]
+Layer placement
+&
+Carrier-native, public-shadow-native, bridge-native, lifted-package-native, and not-present scores across admissibility, stability, public readability, suppression, lift, protocol, compatibility, and exact-six dimensions
+&
+Overall branch \(\texttt{PROTOCOL\_INDEXED\_LEADS}\); retained positives strongest as bridge-native with protocol-indexed scope
+\\[0.8em]
+Test admissibility
+&
+Accepted members; finite family; mutual exclusivity; exhaustivity; declared surface; instrument and lift stability; protocol honesty; public-readout compatibility; controls; exact-six completeness
+&
+No accepted test family; complete protocol-indexed proto-family lacks readout-agreement slot
+\\[0.8em]
+Final gate
+&
+Accepted events, tests, shared identity, proto-effect operations, quadratic alignment, exact-six completion, and claim-boundary compliance
+&
+\(\texttt{isolated\_proto\_events\_only}\)
+\\
+\hline
+\end{tabular}}
+\caption{Gate predicates used by the Paper 8 artifact pipeline. The gates are cumulative: later gates consume earlier outputs rather than revising their meaning.}
+\label{tab:appendix-gate-predicates}
+\end{table}
+ \section{Computational methods and artifact discipline}
+\label{app:methods-artifacts}
+
+The run is organized as a deterministic artifact pipeline. Each stage reads declared upstream artifacts, writes declared downstream artifacts, and is covered by tests that enforce the relevant guardrails. The canonical pipeline is run by
+\[
+  \texttt{python scripts/ticket32/run\_canonical\_pipeline.py --all},
+\]
+and validated in place by
+\[
+  \texttt{python scripts/ticket32/run\_canonical\_pipeline.py --check-only}.
+\]
+The final contract reports all required artifacts as present and valid. The determinism report compares artifact hashes across consecutive deterministic runs. Ordinary semantic artifacts are hash-stable; run-metadata and self-hash bookkeeping artifacts are the only documented exclusions.
+
+The test suite covers both successful and negative paths. Robustness tests exercise missing optional and core inputs, malformed bridge records, missing instruments, empty selected-lift lists, empty suppression records, incomplete exact-six profiles, active roles without evidence, public-shadow overclaims, clean skips when no accepted tests exist, and final-gate branch alternatives. These tests do not add scientific claims; they check that the implemented gates fail in controlled ways.
+
+The Lean files under \(\texttt{lean/Recombination/EventAdmissibility}\) provide a separate formal support layer. They define abstract record types and theorem schemas for event bridges, test families, shared-event identity, proto-effect fragments, and final-gate licensing. They do not import the empirical JSON artifacts and do not prove the present run from those files.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.26\linewidth}p{0.28\linewidth}p{0.36\linewidth}}
+\hline
+\textbf{Contract component} & \textbf{Observed status} & \textbf{Role in the paper} \\
+\hline
+Input inventory
+&
+\(\texttt{FULL\_MATERIALIZED\_INPUTS}\)
+&
+Confirms the core Paper 7 inputs used by this paper are materialized
+\\[0.7em]
+Artifact contract
+&
+\(\texttt{pass}\)
+&
+Checks required pipeline outputs are present and structurally valid
+\\[0.7em]
+Final contract
+&
+\(\texttt{pass}\)
+&
+Records the final gate, required artifact coverage, and nonclaims
+\\[0.7em]
+Determinism report
+&
+\(\texttt{pass}\)
+&
+Confirms ordinary semantic artifacts are hash-stable across deterministic runs
+\\[0.7em]
+Robustness tests
+&
+Pass
+&
+Check controlled failure modes and branch alternatives
+\\[0.7em]
+Lean definitions and proof kernel
+&
+Compile
+&
+Provide abstract record/proof-kernel support without empirical JSON hardcoding
+\\[0.7em]
+Selected-lift provenance
+&
+Explicit caveat
+&
+Records contract-level fallback for optional missing Paper 7 lift/protocol detail artifacts
+\\
+\hline
+\end{tabular}}
+\caption{Reproducibility and contract components. The artifact pipeline is complete and deterministic, with one explicit selected-lift provenance caveat carried from the lift registry.}
+\label{tab:appendix-reproducibility-contract}
+\end{table}
+
+The selected-lift caveat is not a hidden dependency. It records that optional detailed lift/protocol artifacts from the previous carrier run are not materialized in the present repository. The lift records therefore carry explicit contract-level fallback provenance. This caveat does not make selected lifts canonical, does not supply a faithful public inverse, and does not affect the final claim that no accepted test package forms.
+ \section{Full artifact source map}
+\label{app:artifact-source-map}
+
+This appendix lists the principal pipeline artifacts used by the paper. The table groups artifacts by role rather than reproducing every JSON field. The machine-readable findings digest and final contract give the complete artifact-derived counts, hashes, and final branch values.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.20\linewidth}p{0.39\linewidth}p{0.31\linewidth}}
+\hline
+\textbf{Artifact group} & \textbf{Primary files} & \textbf{Main manuscript use} \\
+\hline
+Input and prior dependency
+&
+\shortstack[l]{\texttt{ticket32\_input\_inventory.json}\\\texttt{ticket32\_prior\_dependency\_map.json}}
+&
+Materialized input branch and prior-artifact dependency contract
+\\[0.8em]
+Surfaces and claim boundaries
+&
+\shortstack[l]{\texttt{ticket32\_surface\_registry.json}\\\texttt{ticket32\_seed\_corpus.json}\\\texttt{ticket32\_claim\_boundary\_manifest.json}}
+&
+Claim-bearing/support/control surfaces and false permissions
+\\[0.8em]
+Instruments and lifts
+&
+\shortstack[l]{\texttt{ticket32\_instrument\_registry.json}\\\texttt{ticket32\_visibility\_suppression\_summary.json}\\\texttt{ticket32\_selected\_lift\_registry.json}\\\texttt{ticket32\_lift\_stability\_summary.json}}
+&
+Visibility/suppression records, selected-lift nonuniqueness, and lift caveats
+\\[0.8em]
+Candidate events and bridge records
+&
+\shortstack[l]{\texttt{ticket32\_candidate\_event\_registry.json}\\\texttt{ticket32\_event\_bridge\_records.json}}
+&
+17 candidate events and 17 complete bridge records
+\\[0.8em]
+Event gate and controls
+&
+\shortstack[l]{\texttt{ticket32\_event\_admissibility\_summary.json}\\\texttt{ticket32\_event\_acceptance\_registry.json}\\\texttt{ticket32\_rejected\_event\_registry.json}\\\texttt{ticket32\_event\_control\_summary.json}\\\texttt{ticket32\_threshold\_sensitivity\_summary.json}}
+&
+Two accepted protocol-indexed event-level positives, nonaccepted rows, and control retention
+\\[0.8em]
+Layer placement and tests
+&
+\shortstack[l]{\texttt{ticket32\_layer\_placement\_atlas.json}\\\texttt{ticket32\_event\_layer\_gate\_decision.json}\\\texttt{ticket32\_candidate\_test\_registry.json}\\\texttt{ticket32\_test\_admissibility\_summary.json}}
+&
+Protocol-indexed leading layer signal and no accepted finite test family
+\\[0.8em]
+Higher structure
+&
+\shortstack[l]{\texttt{ticket32\_shared\_event\_identity\_summary.json}\\\texttt{ticket32\_context\_overlap\_graph.json}\\\texttt{ticket32\_proto\_effect\_fragment\_summary.json}\\\texttt{ticket32\_partial\_addition\_table.json}\\\texttt{ticket32\_normalization\_candidate\_summary.json}}
+&
+Clean skips for shared identity and proto-effect structure because accepted tests are absent
+\\[0.8em]
+Quadratic alignment
+&
+\shortstack[l]{\texttt{ticket32\_quadratic\_event\_alignment\_summary.json}\\\texttt{ticket32\_quadratic\_boundary\_registry.json}}
+&
+Event-level \(\texttt{EVENT\_ORGANIZING}\) alignment and boundary records
+\\[0.8em]
+Exact-six profiles
+&
+\shortstack[l]{\texttt{ticket32\_exact\_six\_role\_schema.json}\\\texttt{ticket32\_exact\_six\_profile\_registry.json}\\\texttt{ticket32\_role\_activation\_summary.json}\\\texttt{ticket32\_residual\_classification\_summary.json}}
+&
+Complete profiles for accepted event-level claims and residual classification
+\\[0.8em]
+Final gate and package atlas
+&
+\shortstack[l]{\texttt{ticket32\_final\_gate\_decision.json}\\\texttt{ticket32\_event\_package\_atlas.json}}
+&
+Final classification \(\texttt{isolated\_proto\_events\_only}\) and package-status boundary
+\\[0.8em]
+Reproducibility and digest
+&
+\shortstack[l]{\texttt{ticket32\_asset\_index.json}\\\texttt{ticket32\_artifact\_contract\_report.json}\\\texttt{ticket32\_pipeline\_determinism\_report.json}\\\texttt{ticket32\_final\_contract\_report.json}\\\texttt{ticket32\_findings\_digest.json}}
+&
+Artifact inventory, deterministic rebuild, contract status, and technical findings digest
+\\
+\hline
+\end{tabular}}
+\caption{Artifact source map. Artifacts are grouped by their role in the manuscript. The paper reports derived counts and branch values from these files rather than re-deriving them in prose.}
+\label{tab:appendix-artifact-source-map}
+\end{table}
+
+The paper also uses the Lean EventAdmissibility modules:
+\[
+\begin{gathered}
+\texttt{Definitions.lean},\quad
+\texttt{EventBridge.lean},\quad
+\texttt{TestFamilies.lean},\\
+\texttt{SharedIdentity.lean},\quad
+\texttt{ProtoEffect.lean},\quad
+\texttt{Statements.lean},\\
+\texttt{ProofKernel.lean},\quad
+\texttt{WitnessData.lean},\quad
+\texttt{ProofGaps.lean}.
+\end{gathered}
+\]
+These files support the formal-layer discussion. They remain abstract and do not encode the empirical JSON atlas.
+ \section{Lean formalization}
+\label{app:lean}
+
+The Lean formalization is a small abstract layer over the record vocabulary used in the paper. It continues the fixed-support formal-kernel line introduced in the recombination-witness paper and narrowed again in the carrier-exactification paper \citep{Tsiokos2026RecombinationWitnesses,Tsiokos2026CarrierExactification}. It does not import the empirical JSON artifacts, and it does not prove the numerical branch result of the pipeline. Its purpose is to make the admissibility record structure explicit and to check a proof kernel of definitional consequences.
+
+The Lean modules are organized under
+\[
+  \texttt{lean/Recombination/EventAdmissibility}.
+\]
+The aggregator module \(\texttt{EventAdmissibility.lean}\) imports the definition modules, theorem-statement modules, proof kernel, toy witness data, and proof-gap boundary file.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.30\linewidth}p{0.56\linewidth}}
+\hline
+\textbf{Lean module} & \textbf{Role} \\
+\hline
+\texttt{Definitions.lean}
+&
+Role channels $P_1$--$P_6$, role-status vocabulary, layer placements, event, test, and final-gate statuses, and abstract surface, instrument, and lift records
+\\[0.7em]
+\texttt{EventBridge.lean}
+&
+Exact-six profiles, carrier/public conditions, visibility/suppression records, threshold and audit records, event bridge records, and event-admissibility predicates
+\\[0.7em]
+\texttt{TestFamilies.lean}
+&
+Finite test-family records, accepted-member predicates, witness data for mutual exclusivity/exhaustivity/stability, and test-admissibility predicate
+\\[0.7em]
+\texttt{SharedIdentity.lean}
+&
+Shared-event identity witnesses and compatibility requirements for carrier pullbacks, public readouts, visibility/suppression records, exact-six profiles, and hidden-section dependence
+\\[0.7em]
+\texttt{ProtoEffect.lean}
+&
+Proto-effect fragment skeleton, partial-addition predicate, and normalization-candidate predicate
+\\[0.7em]
+\texttt{Statements.lean}
+&
+Abstract final-gate evidence structures, nonclaim discipline, and final-gate licensing predicate
+\\[0.7em]
+\texttt{ProofKernel.lean}
+&
+Projection theorems and theorem schemas following from the abstract definitions
+\\[0.7em]
+\texttt{WitnessData.lean}
+&
+Small non-empirical toy witnesses showing that the definitions are usable
+\\[0.7em]
+\texttt{ProofGaps.lean}
+&
+Boundary structures for empirical discharge; no empirical JSON data are encoded
+\\
+\hline
+\end{tabular}}
+\caption{Lean EventAdmissibility module layout. The Lean layer formalizes record structure and theorem schemas, not the empirical atlas.}
+\label{tab:appendix-lean-modules}
+\end{table}
+
+The proof kernel contains theorem schemas corresponding to the record logic used by the Python artifacts.  Examples include: an admissible event implies a well-formed event bridge; an admissible test has admissible nonempty member events; shared-event identity implies the required compatibility components; proto-effect admissibility implies the presence of a normalization candidate; and final-gate classifications are licensed by abstract accepted-object predicates.
+
+The witness file contains toy examples only. These examples are marked as non-empirical and are not the present run. They show that a complete exact-six profile, a well-formed event bridge, and isolated-final-gate evidence can be expressed in the formal vocabulary.
+
+The proof-gap boundary is also explicit. Empirical carrier/public compatibility, threshold support, control separation, and artifact audit evidence are discharged by the pipeline, not by Lean computation over JSON. The Lean layer therefore supports the shape of the admissibility logic while leaving the finite empirical atlas in the repository artifacts.
+
+The current Lean status is that the EventAdmissibility modules compile. The checked files contain no \texttt{sorry} and no \texttt{axiom}. No theorem claims an accepted test family, shared-event identity, proto-effect fragment, probability valuation, public carrier theorem, or composition result for the current run. Consistent with Section~\ref{subsec:proof-kernel}, the Lean layer is an instantiation of the paper's record discipline, not an independent theorem line.
+ \section{Extended tables}
+\label{app:extended-tables}
+
+This appendix gives compact extended tables for the finite objects most frequently referenced in the main text. The tables are derived from the pipeline artifacts and are grouped to avoid reproducing the full JSON payloads.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.24\linewidth}p{0.12\linewidth}p{0.34\linewidth}p{0.20\linewidth}}
+\hline
+\textbf{Candidate source} & \textbf{Count} & \textbf{Representative candidates} & \textbf{Status at generation} \\
+\hline
+\texttt{quadratic\_levelset}
+&
+4
+&
+\texttt{flagship\_quadratic\_levelset\_event}; q-threshold and q-consistency candidates
+&
+Candidate only; not accepted at generation
+\\[0.7em]
+\texttt{transition\_stability}
+&
+3
+&
+\texttt{flagship\_transition\_stability\_test}; stable and instability-boundary candidates
+&
+Candidate only; not an accepted test by name
+\\[0.7em]
+\texttt{public\_shadow\_signature}
+&
+3
+&
+Public signature class, collapse-fiber, and distinguishability candidates
+&
+High-risk/readout-side; support-only later
+\\[0.7em]
+\texttt{carrier\_public\_bridge}
+&
+4
+&
+Bridge q/public, bridge transition/public, bridge protocol/readout, readout-agreement baseline
+&
+Bridge candidates; readout-agreement retained as negative baseline
+\\[0.7em]
+\texttt{completion\_invariant}
+&
+3
+&
+Completion-preserving, completion-variation, and selected-section candidates
+&
+Lift-dependent candidates; later borderline
+\\
+\hline
+\end{tabular}}
+\caption{Extended candidate-event summary.  The candidate registry contains 17 candidates across five source classes.  Candidate status does not imply event acceptance.}
+\label{tab:appendix-candidate-events}
+\end{table}
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.24\linewidth}p{0.14\linewidth}p{0.30\linewidth}p{0.22\linewidth}}
+\hline
+\textbf{Bridge-record class} & \textbf{Count} & \textbf{Representative objects} & \textbf{Bridge-stage interpretation} \\
+\hline
+\texttt{baseline\_bridge\_record}
+&
+2
+&
+\texttt{flagship\_quadratic\_levelset\_event}; \texttt{flagship\_transition\_stability\_test}
+&
+Complete bridge records for inherited scoped positives; not yet event-gate accepted
+\\[0.8em]
+\texttt{bridge\_record}
+&
+14
+&
+Generated quadratic, transition, public-shadow, bridge, and completion candidates
+&
+Complete candidate bridge records; later support-only or borderline unless accepted by event gate
+\\[0.8em]
+\texttt{negative\_baseline\_}\linebreak[0]\texttt{bridge\_record}
+&
+1
+&
+\texttt{flagship\_protocol\_indexed\_}\linebreak[0]\texttt{readout\_agreement\_event}
+&
+Retained negative baseline; threshold not met and later rejected
+\\
+\hline
+\end{tabular}}
+\caption{Extended bridge-record summary.  The bridge artifact contains 17 records, one for each candidate.  Bridge completeness is necessary for event admissibility but not sufficient for acceptance.}
+\label{tab:appendix-bridge-records}
+\end{table}
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.25\linewidth}p{0.18\linewidth}p{0.27\linewidth}p{0.22\linewidth}}
+\hline
+\textbf{Candidate test family} & \textbf{Status} & \textbf{Member basis} & \textbf{Reason} \\
+\hline
+\texttt{quadratic\_levelset\_test}
+&
+\texttt{borderline}
+&
+\texttt{flagship\_quadratic\_levelset\_event}
+&
+Partial q-levelset support without exhaustive accepted family
+\\[0.7em]
+\texttt{transition\_stability\_test}
+&
+\texttt{borderline}
+&
+\texttt{flagship\_transition\_stability\_test}
+&
+Proto-test seed without complete finite family
+\\[0.7em]
+\texttt{bridge\_predicate\_test}
+&
+\texttt{rejected}
+&
+Two accepted protocol-indexed event-level positives
+&
+Complete proto-family lacks readout-agreement slot
+\\[0.7em]
+\texttt{public\_shadow\_signature\_test}
+&
+\texttt{skipped\_no\_accepted\_events}
+&
+None
+&
+Public-shadow candidates are support-only, not accepted members
+\\[0.7em]
+\texttt{lifted\_package\_test}
+&
+\texttt{skipped\_no\_accepted\_events}
+&
+None
+&
+Completion/lifted candidates are not accepted members
+\\
+\hline
+\end{tabular}}
+\caption{Extended candidate-test summary.  No candidate test is accepted.  The serious bridge-family attempt is rejected for non-exhaustivity.}
+\label{tab:appendix-candidate-tests}
+\end{table}
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.34\linewidth}p{0.12\linewidth}p{0.42\linewidth}}
+\hline
+\textbf{Residual class} & \textbf{Count} & \textbf{Interpretation} \\
+\hline
+\texttt{protocol\_indexed\_scope\_residual}
+&
+2
+&
+Accepted event-level positives remain scoped to the protocol-indexed flagship setting
+\\[0.65em]
+\texttt{pre\_test\_no\_accepted\_test\_residual}
+&
+2
+&
+Accepted event-level positives do not form an accepted finite test family
+\\[0.65em]
+\texttt{no\_shared\_identity\_residual}
+&
+2
+&
+No shared-event identity exists because no accepted tests exist
+\\[0.65em]
+\texttt{no\_proto\_effect\_residual}
+&
+2
+&
+No proto-effect operations exist because no accepted tests exist
+\\[0.65em]
+\texttt{born\_and\_composition\_out\_of\_scope\_residual}
+&
+2
+&
+No valuation or composition claim is made
+\\[0.65em]
+\texttt{public\_shadow\_nonfaithful\_residual}
+&
+2
+&
+Public shadow remains non-faithful and does not determine refined carrier data
+\\[0.65em]
+\texttt{quadratic\_event\_level\_only\_residual}
+&
+1
+&
+Quadratic organization is event-level, not test-level
+\\[0.65em]
+\texttt{selected\_lift\_nonuniqueness\_residual}
+&
+1
+&
+Selected-lift nonuniqueness remains recorded
+\\[0.65em]
+\texttt{transition\_proto\_test\_seed\_residual}
+&
+1
+&
+Transition-stability row is historically test-shaped but not an accepted finite test
+\\
+\hline
+\end{tabular}}
+\caption{Extended exact-six residual summary.  Residuals are classified limitations and nonclaims, not hidden failures of the accepted event-level profiles.}
+\label{tab:appendix-exact-six-residuals}
+\end{table}
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{\begin{tabular}{p{0.38\linewidth}p{0.48\linewidth}}
+\hline
+\textbf{Nonclaim} & \textbf{Recorded reason} \\
+\hline
+No accepted finite test package
+&
+\(\texttt{accepted\_test\_count}=0\); complete protocol-indexed proto-family lacks readout-agreement slot
+\\[0.65em]
+No shared-event identity
+&
+Shared-identity stage skipped because no accepted tests exist
+\\[0.65em]
+No proto-effect fragment
+&
+Proto-effect stage skipped because no accepted tests exist
+\\[0.65em]
+No lawful public carrier
+&
+Public shadow remains \(\texttt{signature\_only}\)
+\\[0.65em]
+No faithful public compression
+&
+Carrier/public relationship remains non-faithful; public-shadow-to-carrier lift is nonunique
+\\[0.65em]
+No cross-seed or full-core event package
+&
+Accepted positives are scoped to the protocol-indexed flagship setting
+\\[0.65em]
+No global quadratic or covariance bridge
+&
+Quadratic alignment is scoped and event-level only
+\\[0.65em]
+No valuation or composition result
+&
+Final gate and claim-boundary artifacts explicitly exclude these claims
+\\
+\hline
+\end{tabular}}
+\caption{Final nonclaims. The paper's positive result is scoped event-level admissibility. The listed structures are not claimed by the run.}
+\label{tab:appendix-final-nonclaims}
+\end{table}
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

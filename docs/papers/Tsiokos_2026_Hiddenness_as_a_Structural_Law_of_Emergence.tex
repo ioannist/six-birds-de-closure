@@ -1,0 +1,1764 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\newcommand{\PaperOne}{Paper~1}
+\newcommand{\PaperTwo}{Paper~2}
+
+\newcommand{\CSL}{\textsc{csl}}            \newcommand{\CSLcore}{Candidate Structural Law}    
+
+\newcommand{\Substrate}{\sigma}             \newcommand{\Lift}{L}                       \newcommand{\LiftState}{\sigma_{L}}         \newcommand{\HistorySpace}{H_{\Substrate}^{\Lift}}
+
+\newcommand{\Qquotient}{Q_{\Substrate}^{\Lift}}
+\newcommand{\Mquotient}{M_{\Substrate}^{\Lift}}
+\newcommand{\ForgetWitnessMap}{\pi}
+\newcommand{\Qclass}[1]{[#1]_{Q}}
+\newcommand{\Mclass}[1]{[#1]_{M}}
+
+\newcommand{\CurrentObservable}{\varphi_{Q}}    \newcommand{\Exposure}{\operatorname{Exposure}} 
+
+\newcommand{\TraceFPLoopClass}{L_{\mathrm{traceFP}}}
+\newcommand{\LoopActionQ}[2]{#1\cdot\Qclass{#2}}
+\newcommand{\LoopActionM}[2]{#1\cdot\Mclass{#2}}
+
+\newcommand{\StrengthClass}[1]{S_{#1}}      
+
+\newcommand{\PiQP}{\pi_{QP}}                \newcommand{\PiMNP}{\pi_{MNP}}              
+
+\newcommand{\DiagnosisGrade}{\emph{diagnosis grade}}
+\newcommand{\RDiagnosis}{\emph{R-Diagnosis}}
+
+\newcommand{\FATCD}{\mathsf{FATCD}}
+\newcommand{\BirdInt}{\mathbf{BirdInt}^{\mathrm{aud}}_{\mathrm{fin}}}
+
+\newcommand{\CSLSATHidden}{\Gamma_{\textsc{csl-sat-hidden}}}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Hiddenness as a Structural Law of Emergence}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Hiddenness as a Structural Law of Emergence},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+When does prediction become trivial?  This paper gives a typed
+structural answer: predictive content collapses exactly when an
+upstream determining state is exposed to current observation.  The
+load-bearing variable is the visibility coupling predicate
+\(\Exposure(\Lift,\Substrate)\), which asks whether some polynomial-time
+current observable factors through the autonomous lift's internal state
+by a function non-constant on the realized carrier.  We state a typed
+\CSLcore{} (\(\CSL\)) over the predictive-quotient holonomy carrier on
+autonomous-lifted polynomial-time substrates.  The law has four clauses:
+dissolution under exposure, preservation under non-exposure, a
+degenerate clause when there is no predictive witness content, and
+strength-independence of the coupling function.  The \CSL{} is stated
+at \DiagnosisGrade{}.  We also prove a granularity-mismatch theorem at
+\RDiagnosis{}: the framework's current and predictive quotients are
+strictly finer than the standard classes \(P\) and \(NP\) at the
+history level, but this strictness can be lost under standard
+language-level projection.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds Theory; predictive-quotient holonomy; visibility coupling; exposure predicate; Candidate Structural Law; granularity mismatch; computational complexity; structural law.
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+When does prediction become trivial?  In an ordinary computation one
+can distinguish the information visible at the present time from the
+information that would become visible only after consulting a witness,
+a continuation, or a later trace.  Sometimes this distinction is real:
+two computation histories look identical to every current test, yet
+they separate once witness-augmented tests are allowed.  Sometimes the
+distinction is only apparent: the purportedly predictive information is
+already encoded in a state variable that a current polynomial-time
+observer can read.  The question of this paper is where that boundary
+lies.
+
+The answer proposed here is structural.  Prediction
+collapses exactly when the upstream state that determines the future
+behavior is exposed to current observation.  The strength of a feedback
+function, seed schedule, or coupling map is not the primary variable:
+a very strong hidden coupling can preserve predictive content, while a
+weak but visible coupling can dissolve it.  What matters is whether a
+polynomial-time current observable can factor through the internal
+determining state in a way that is non-constant on the states actually
+realized by the bounded carrier.  This condition is the visibility
+coupling predicate, written \(\Exposure(\Lift,\Substrate)\).
+
+The language used to make this precise comes from Six Birds Theory, a
+typed, audited calculus of emergence.  The present paper applies it to
+a computational substrate, where we use it as a vocabulary for naming
+structural data: what the carrier is, which observables are allowed,
+what is recorded by an audit, and how quotients are formed.  The underlying finite-audit machinery is the
+\(\FATCD\) discipline of Foundations II and the finite audited
+interaction calculus \(\BirdInt\) of Foundations III; in ordinary terms,
+these provide typed records saying what data are present, what
+projections are lawful, and what visibility tags have been declared
+\citep{TsiokosFoundationsII2026,TsiokosFoundationsIII2026}.
+
+The basic carrier is a \emph{substrate} \(\Substrate\): a typed bounded
+context specifying an instance family, a size bound, and the trace
+structure by which computation histories are generated.  An
+\emph{autonomous lift} \(\Lift\) is a deterministic policy over that
+substrate together with an internal-state readout
+\(\LiftState\).  In standard language, it is a self-contained
+generative process whose behavior is determined by its state.  For
+such a pair \((\Substrate,\Lift)\), the history space
+\(\HistorySpace\) is the finite typed set of bounded polynomial-time
+histories generated by \(\Lift\) on \(\Substrate\).  A history records
+the input instance, the solver-prefix trace, the lift state
+\(\LiftState(h)\), declared continuations, and audit bookkeeping.
+This is the predictive-quotient holonomy carrier developed in the
+earlier holonomy-with-memory work \citep{TsiokosHolonomyMemory2026}.
+
+On this same carrier there are two quotients.  The \emph{current
+quotient} \(\Qquotient\) identifies two histories when every declared
+polynomial-time current observable gives the same value on them.  The
+\emph{predictive quotient} \(\Mquotient\) identifies two histories
+when every declared witness-augmented polynomial-time observable gives
+the same value under the admissible continuations.  Thus
+\(\Mquotient\) remembers witness-side and continuation-side structure
+that \(\Qquotient\) may forget.  Predictive witness content is the
+existence of two histories that are equal in \(\Qquotient\) but
+distinct in \(\Mquotient\): the carrier then contains predictive
+information beyond what current observation exposes.
+
+The central object of the paper is the \CSLcore{} (\(\CSL\)).  It is a
+four-clause structural law over the carrier just described.  In plain
+terms, the law says: if exposure holds and predictive witness content
+is present, then the apparent extra predictive motion dissolves into
+current motion; if exposure fails and predictive witness content is
+present, then the M-versus-Q asymmetry is preserved; if there is no
+predictive witness content, there is no asymmetry to explain; and the
+dissolution status depends only on the binary exposure predicate, not
+on a separate strength scale for the coupling function.  The formal
+statement in \Cref{sec:csl-core} gives the typed hypotheses under
+which this four-clause shape is proved.
+
+The second headline result records a boundary with standard
+complexity-theoretic language.  The quotients \(\Qquotient\) and
+\(\Mquotient\) are quotients of histories: they remember trace
+features, witness identity, solver-prefix behavior, and audit
+bookkeeping.  The standard classes \(P\) and \(NP\), by contrast, are
+language classes.  The natural projections from \(\Qquotient\) to
+polynomial-time decision predicates and from \(\Mquotient\) to
+existential verifier predicates discard trace and witness identity.
+The granularity-mismatch theorem in
+\Cref{sec:granularity-mismatch} exhibits this loss explicitly: strict
+refinement at the history-quotient level can collapse after projection
+to language-level predicates.
+
+The scope of the paper is correspondingly narrow.  The \CSL{} is a
+framework-internal structural law at \DiagnosisGrade{}, meaning
+bounded finite-carrier evidence with a falsifier audit, not an
+asymptotic theorem over all polynomial-time computation histories.  The
+granularity-mismatch theorem is at \RDiagnosis{}, meaning that it
+identifies a structural obstruction while the representation theorem
+from arbitrary polynomial-time deciders to these autonomous-lift
+carriers is named but not constructed.  This paper does not claim that
+the \CSL{} implies a standard \(P\neq NP\) separation
+\citep{Cook2000PNPClay,Aaronson2016PNP}; the precise scope is recorded
+in \Cref{sec:scope}.
+ 
+
+\section{Framework}
+\label{sec:framework}
+
+We now make precise the typed objects introduced in
+\Cref{sec:intro}.  This section first fixes the computational
+substrate and the finite history carrier; it then places two
+equivalence relations on that carrier --- the current and predictive
+quotients --- and records the refinement map between them.
+
+The bookkeeping is typed in the sense of the underlying finite-audit
+framework: the instance family, size bound, trace data, state record,
+and audit record are all declared as part of the object rather than
+left implicit.  This is the role played by the \(\FATCD\) discipline
+and the finite audited interaction calculus \(\BirdInt\) in the
+background foundations \citep{TsiokosFoundationsII2026,TsiokosFoundationsIII2026}.
+
+\begin{definition}[Computational substrate]
+\label{def:substrate}
+A \emph{computational substrate} \(\Substrate\) is a typed bounded
+polynomial-time computation context \citep{AroraBarak2009Complexity}.
+It consists of:
+\begin{enumerate}
+  \item an instance family \(X_{\Substrate}\);
+  \item a size function on instances together with a bound
+  \(N_{\Substrate}\), so that only instances of size at most
+  \(N_{\Substrate}\) belong to the bounded carrier considered here;
+  \item a declared solver-prefix family, assigning to each bounded
+  instance the finite trace shape that a polynomial-time computation
+  may generate before the history is audited.
+\end{enumerate}
+A substrate is therefore the typed context in which instances, scale,
+and trace formation have all been fixed, rather than a language or a
+set of inputs.
+\end{definition}
+
+\begin{remark}[Example: 3-SAT substrate]
+Fix a bound \(N\).  One may take \(X_{\Substrate}\) to be the family
+of 3-CNF formulas of size at most \(N\), measured for instance by the
+number of variables and clauses
+\citep{Cook1971TheoremProving,Karp1972Reducibility,GareyJohnson1979Intractability}.  The solver-prefix family can be a
+declared polynomial-time decision-attempt policy: for each formula it
+records the finite sequence of inspected clauses, partial assignments,
+branching choices, local simplifications, and time-certificate data
+produced before the bounded audit closes.  No completeness claim for
+3-SAT is built into this example; the substrate only declares the
+finite typed traces on which the later quotients will act.
+\end{remark}
+
+The next object is the carrier on which current and predictive
+observations will be compared.  An autonomous lift \(\Lift\) on
+\(\Substrate\) is, for the purposes of this section, a deterministic
+polynomial-time policy together with an internal-state readout
+\(\LiftState\); its full definition is given in
+\Cref{sec:autonomous-lifts}.
+
+\begin{definition}[History space]
+\label{def:history-space}
+Let \(\Substrate\) be a computational substrate and let \(\Lift\) be
+an autonomous lift on \(\Substrate\).  The \emph{history space}
+\(\HistorySpace\) is the finite typed set of bounded polynomial-time
+computation histories generated by \(\Lift\) on \(\Substrate\).  Each
+history \(h\in\HistorySpace\) records:
+\begin{enumerate}
+  \item the substrate input instance;
+  \item the solver-prefix trace generated under \(\Lift\);
+  \item the autonomous-lift internal-state record \(\LiftState(h)\);
+  \item the declared predictive continuations available from \(h\);
+  \item the audit bookkeeping attached to \(h\).
+\end{enumerate}
+\end{definition}
+
+This finite carrier is the bounded form of the predictive-quotient
+holonomy carrier used in the earlier holonomy-with-memory framework
+\citep{TsiokosHolonomyMemory2026}.  The next step is to place two
+equivalence relations on \(\HistorySpace\)
+\citep{Halmos1960NaiveSetTheory}: one for what current polynomial-time
+observation can see, and one for what witness-augmented prediction can
+still distinguish.
+
+A \emph{current observable} is a declared polynomial-time function on
+\(\HistorySpace\) whose value is available at the current stage of the
+history: decision output, visible trace features, solver-prefix
+bookkeeping, or other audited quantities not requiring a witness or a
+future continuation.  We write \(\CurrentObservable\) for such an
+observable when its codomain is understood.
+
+\begin{definition}[Current quotient]
+\label{def:current-quotient}
+The \emph{current quotient} \(\Qquotient\) is the equivalence relation
+on \(\HistorySpace\) that identifies two histories exactly when every
+declared polynomial-time current observable gives the same value on
+them.  Thus, for \(h,h'\in\HistorySpace\),
+\[
+  \Qclass{h}=\Qclass{h'}
+  \quad\Longleftrightarrow\quad
+  \CurrentObservable(h)=\CurrentObservable(h')
+  \text{ for every declared current observable }\CurrentObservable .
+\]
+\end{definition}
+
+A \emph{witness-augmented observable} is a declared polynomial-time
+test allowed to inspect the witness-side data and the admissible
+continuation records attached to a history.  In ordinary terms, it is
+the same kind of finite typed test as a current observable, but with
+the additional witness and continuation fields left visible.
+
+\begin{definition}[Predictive quotient]
+\label{def:predictive-quotient}
+The \emph{predictive quotient} \(\Mquotient\) is the equivalence
+relation on \(\HistorySpace\) that identifies two histories exactly
+when every declared witness-augmented polynomial-time observable agrees
+on them under all admissible continuations.  Thus, for
+\(h,h'\in\HistorySpace\),
+\[
+  \Mclass{h}=\Mclass{h'}
+  \quad\Longleftrightarrow\quad
+  \varphi_{M}(h)=\varphi_{M}(h')
+  \text{ for every declared witness-augmented observable }\varphi_{M}.
+\]
+\end{definition}
+
+The predictive quotient is therefore the finer comparison whenever the
+witness-side fields carry information not visible to current
+observation.  The next definition records the canonical way to forget
+that extra witness-side information.
+
+\begin{definition}[Forget-witness map]
+\label{def:forget-witness-map}
+The \emph{forget-witness map}
+\[
+  \ForgetWitnessMap:\Mquotient\longrightarrow\Qquotient
+\]
+sends each predictive class to the unique current class containing it:
+\[
+  \ForgetWitnessMap(\Mclass{h})=\Qclass{h}.
+\]
+It is well defined because every polynomial-time current observable is
+also a witness-augmented observable with the witness and continuation
+fields ignored.
+\end{definition}
+
+The carrier has predictive witness content, in the sense formalized in
+\Cref{sec:witness-content}, when \(\Mquotient\) strictly refines
+\(\Qquotient\) on the support of \(\HistorySpace\).
+
+\begin{proposition}[Witness refinement]
+\label{prop:witness-refinement}
+The predictive quotient refines the current quotient: for all
+\(h,h'\in\HistorySpace\), if \(\Mclass{h}=\Mclass{h'}\), then
+\(\Qclass{h}=\Qclass{h'}\).  Equivalently, the map
+\(\ForgetWitnessMap:\Mquotient\to\Qquotient\) is surjective.
+\end{proposition}
+
+\begin{proof}
+Unfold the two equivalence relations.  Suppose
+\(\Mclass{h}=\Mclass{h'}\).  Then every declared
+witness-augmented polynomial-time observable gives the same value on
+\(h\) and \(h'\), under all admissible continuations.  A current
+observable \(\CurrentObservable\) is a special case: view it as a
+witness-augmented observable that ignores the witness and continuation
+coordinates.  Hence \(\CurrentObservable(h)=\CurrentObservable(h')\)
+for every declared current observable \(\CurrentObservable\), which is
+exactly \(\Qclass{h}=\Qclass{h'}\).  Surjectivity follows because
+every current class \(\Qclass{h}\) is the image of the predictive class
+\(\Mclass{h}\) under \(\ForgetWitnessMap\).\footnote{This proposition
+is verified in Lean by the witness-refinement declaration listed in
+\Cref{app:formalization}.}
+\end{proof}
+ 
+
+\section{Autonomous lifts}
+\label{sec:autonomous-lifts}
+
+The carrier \(\HistorySpace\) depends not only on the substrate
+\(\Substrate\), but also on the rule by which histories are generated.
+We now define that rule precisely as an autonomous lift, and then
+record the strength stratification used later in the
+strength-independence clause of the \CSL{}.
+
+\begin{definition}[Autonomous lift]
+\label{def:autonomous-lift}
+Let \(\Substrate\) be a computational substrate.  An
+\emph{autonomous lift} on \(\Substrate\) is a typed object
+\[
+  \Lift=(\mathrm{gen}_{\Lift},\LiftState,\mathrm{replay}_{\Lift})
+\]
+with the following components:
+\begin{enumerate}
+  \item \(\mathrm{gen}_{\Lift}\) is a deterministic polynomial-time
+  history-generation procedure.  In plain terms, it is a deterministic
+  polynomial-time algorithm that, given the substrate input and the
+  prior trace data, extends the computation history by one audited
+  step.
+  \item \(\LiftState:\HistorySpace\to S\) is the internal-state
+  readout of the lift, where \(S\) is the lift's finite typed state
+  space.  The value \(\LiftState(h)\) records the internal determining
+  state of the procedure at the history \(h\).
+  \item \(\mathrm{replay}_{\Lift}\) is the all-input replay record for
+  \(\mathrm{gen}_{\Lift}\): an audited machine-index and
+  time-certificate object that allows the same polynomial-time
+  procedure to be reproduced on any input.  This is the audit-side
+  bookkeeping supplied by the \(\FATCD\) discipline
+  \citep{TsiokosFoundationsII2026}.\footnote{The autonomous lift is
+  realized in Lean by the autonomous-lift declaration listed in
+  \Cref{app:formalization}; the Lean record exposes additional
+  family-characterizing predicates beyond the components named in the
+  definition above.  The narrowing-disclosure discipline is recorded in
+  \Cref{app:formalization}.}
+\end{enumerate}
+\end{definition}
+
+In standard mathematical language, an autonomous lift is a deterministic
+finite-control algorithm whose behavior depends only on its declared
+inputs, its prior trace, and its own internal state.  The readout
+\(\LiftState\) exposes that internal state as a function on histories.
+The replay record is what distinguishes the audited lift from an
+unaudited algorithm with the same input-output behavior: it records
+which machine is being run and why the bounded run is accepted as a
+lawful polynomial-time history generator.
+
+\begin{remark}[Strength stratification]
+The later \CSL{} statement refers to a four-level strength
+stratification
+\[
+  \StrengthClass{1},\ \StrengthClass{2},\ \StrengthClass{3},\
+  \StrengthClass{4}
+\]
+for coupling functions used inside \(\mathrm{gen}_{\Lift}\).  The
+levels should be read as a graded family of implementation strengths:
+\(\StrengthClass{1}\) is trivial or absent coupling,
+\(\StrengthClass{2}\) is weak coupling such as linear feedback,
+\(\StrengthClass{3}\) is standard cryptographic-strength coupling in
+the sense of pseudorandom-function families
+\citep{GoldreichGoldwasserMicali1986RandomFunctions,Goldreich2001FoundationsCryptography},
+and \(\StrengthClass{4}\) is beyond-cryptographic-strength coupling
+\citep{HastadImpagliazzoLevinLuby1999PRG}.
+These labels are not formalized here as complexity classes.  They are
+placeholders for any fixed four-level grading of coupling strength.
+The strength-independence clause in \Cref{sec:csl-core} says that the
+dissolution status of the M-versus-Q asymmetry depends only on the
+binary exposure predicate, not on which class
+\(\StrengthClass{k}\) contains the coupling function.
+\end{remark}
+
+Four canonical families of autonomous lifts illustrate the structural
+distinctions that the \CSL{} uses.  They name recurring ways in which
+\(\mathrm{gen}_{\Lift}\) can depend on state, trace, randomness, and
+witness-side information: a self-generating family, a feedback-coupled
+family, an internally seeded random family, and a planted-suppressed
+family.
+
+\begin{definition}[Lift A---Self-generating substrate]
+\label{def:lift-family-A}
+An autonomous lift \(\Lift\) on \(\Substrate\) is in \emph{Lift A} if
+\(\mathrm{gen}_{\Lift}\) generates substrate instances internally from
+the lift's own state, without an external instance feed.  In plain
+terms, the lift is itself the instance generator: for example, a
+deterministic algorithm that, given only its current internal state,
+emits a new bounded 3-SAT instance \citep{Cook1971TheoremProving} and
+then attempts to decide it.
+\end{definition}
+
+\begin{definition}[Lift B---Feedback-coupled]
+\label{def:lift-family-B}
+An autonomous lift \(\Lift\) on \(\Substrate\) is in \emph{Lift B} if
+\(\mathrm{gen}_{\Lift}\) couples instance generation to the running
+trace, so that the lift's internal state and prior trace data feed
+back into the next instance-generation step.  In plain terms, the
+lift produces the next instance as a function of what it has already
+done; the strength of that function may range over the
+\(\StrengthClass{k}\) stratification.
+\end{definition}
+
+\begin{definition}[Lift C---Internally-seeded random]
+\label{def:lift-family-C}
+An autonomous lift \(\Lift\) on \(\Substrate\) is in \emph{Lift C} if
+\(\mathrm{gen}_{\Lift}\) uses an internal seed to inject randomness
+into instance generation, while the seed is not visible to current
+observation.  Equivalently, the apparent randomness is controlled by a
+state variable seen by \(\LiftState\), not by an external oracle; the
+current observation channel cannot read that seed directly.
+\end{definition}
+
+\begin{definition}[Lift D---Planted-suppressed internalization]
+\label{def:lift-family-D}
+An autonomous lift \(\Lift\) on \(\Substrate\) is in \emph{Lift D} if
+\(\mathrm{gen}_{\Lift}\) plants witness content into the generated
+instance but suppresses its visibility from current observation.  For
+example, the lift may construct a 3-SAT instance from a satisfying
+assignment that it knows internally, while the current observation
+channel is configured so that the planted assignment is not exposed.
+\end{definition}
+
+These families are not mutually exclusive.  A single autonomous lift
+may be both internally seeded and feedback-coupled, or may combine
+planted witness content with self-generation.  The names mark the
+structural distinction relevant to the exposure predicate: in the
+typical configurations, Lift A and Lift D keep the determining state
+or witness-side content unavailable to current observation, while Lift
+B and Lift C can make that state available depending on the coupling
+function and seed exposure.  The \CSL{} states precisely when such
+access dissolves the M-versus-Q asymmetry; that statement appears in
+\Cref{sec:csl-core}.
+ 
+
+\section{Loop class and loop actions}
+\label{sec:loop-action}
+
+The \CSL{} is formulated in terms of how a designated family of
+structural loops interacts with the two quotients on \(\HistorySpace\).
+We now fix that loop class, define its actions on \(\Qquotient\) and
+\(\Mquotient\), and name the resulting M-versus-Q asymmetry predicate.
+
+Here a \emph{loop class} should be read in concrete finite-carrier
+terms.  It is a designated collection of structural rewrites on
+histories: relabelings, controlled trace permutations, audited
+continuations, or similar transformations that leave the typed carrier
+intact \citep{DummitFoote2004AbstractAlgebra}.  The word ``trace-fingerprint'' records that the rewrite may
+alter the audited record of trace structure while preserving the
+underlying substrate instance and the compatibility data needed to
+descend to the quotients.
+
+\begin{definition}[Trace-fingerprint loop class]
+\label{def:trace-fingerprint-loop-class}
+A \emph{trace-fingerprint loop class}
+\(\TraceFPLoopClass\) on \(\HistorySpace\) is a declared family of
+loops in the predictive-quotient holonomy carrier.  Each
+\(\ell\in\TraceFPLoopClass\) acts on histories by a structured
+trace-level modification
+\[
+  h\longmapsto \ell.h .
+\]
+The map \(h\mapsto\ell.h\) preserves the finite carrier's typed
+structure, preserves the underlying substrate instance, and is
+measure-preserving when \(\HistorySpace\) is read with its finite
+counting support.  The family is chosen so that its actions are
+compatible with both \(\Qquotient\) and \(\Mquotient\).
+\end{definition}
+
+\begin{definition}[Loop action on \(Q\)]
+\label{def:loop-action-q}
+Let \(\ell\in\TraceFPLoopClass\) and let \(\Qclass{h}\in\Qquotient\).
+The \emph{loop action on \(Q\)} is
+\[
+  \LoopActionQ{\ell}{h}=\Qclass{\ell.h}.
+\]
+This is well defined because the loop class is compatible with
+Q-equivalence: if \(\Qclass{h}=\Qclass{h'}\), then
+\(\Qclass{\ell.h}=\Qclass{\ell.h'}\).
+\end{definition}
+
+\begin{definition}[Loop action on \(M\)]
+\label{def:loop-action-m}
+Let \(\ell\in\TraceFPLoopClass\) and let \(\Mclass{h}\in\Mquotient\).
+The \emph{loop action on \(M\)} is
+\[
+  \LoopActionM{\ell}{h}=\Mclass{\ell.h}.
+\]
+This is well defined because the loop class is compatible with
+M-equivalence: if \(\Mclass{h}=\Mclass{h'}\), then
+\(\Mclass{\ell.h}=\Mclass{\ell.h'}\).
+\end{definition}
+
+\begin{definition}[M-vs-Q loop-action asymmetry]
+\label{def:asymmetry}
+The pair \((\Substrate,\Lift)\) exhibits an
+\emph{M-vs-Q loop-action asymmetry} if there exist
+\(\ell\in\TraceFPLoopClass\) and \(h\in\HistorySpace\) such that the
+loop action is trivial on the current class but non-trivial on the
+predictive class:
+\[
+  \LoopActionQ{\ell}{h}=\Qclass{h}
+  \qquad\text{and}\qquad
+  \LoopActionM{\ell}{h}\neq\Mclass{h}.
+\]
+Equivalently, there is a structural rewrite that current observation
+cannot detect, because it leaves the \(Q\)-class fixed, while
+predictive observation can detect it, because it moves the
+\(M\)-class.
+\end{definition}
+
+The asymmetry predicate is a yes-or-no condition attached to the
+chosen pair \((\Substrate,\Lift)\) and its declared loop class.  When
+it holds, the M-versus-Q distinction is preserved by a loop that is
+invisible to current observation.  When predictive witness content is
+present and this asymmetry fails, the paper calls that failure
+dissolution: the predictive motion has no independent quotient-level
+effect beyond what current observation already captures.  The next
+sections define the exposure predicate and then state the CSL relation
+between exposure, preservation, and dissolution.
+ 
+
+\section{Visibility coupling}
+\label{sec:visibility-coupling}
+
+We now define the visibility coupling predicate
+\(\Exposure(\Lift,\Substrate)\).  This is the load-bearing predicate
+of the \CSL{}: the four-clause structural law in
+\Cref{sec:csl-core} is organized entirely around whether exposure
+holds or fails.
+
+The predicate is meant to capture a simple standard mathematical
+condition.  The lift has an internal-state readout
+\(\LiftState:\HistorySpace\to S\), where \(S\) is the lift's finite
+state space.  Exposure holds when some polynomial-time current
+observable can read a non-trivial function of that internal state.  In
+other words, current observation does not merely see the instance or
+the visible trace; it detects a genuine variation in the lift's
+determining state.
+
+Two nearby conditions are excluded.  First, the lift state
+may vary while no declared polynomial-time current observable can read
+that variation; then there is no exposure.  Second, a function
+\(f:S\to\mathcal O\) may be non-constant on the abstract state space
+\(S\) but constant on the states that actually occur in histories; it
+also does not witness exposure.  The predicate is about what is visible
+on the realized carrier, not about irrelevant state values.
+
+\begin{definition}[Visibility coupling / exposure]
+\label{def:visibility-coupling}
+Let \(\Substrate\) be a computational substrate, let \(\Lift\) be an
+autonomous lift on \(\Substrate\), and write
+\(\LiftState:\HistorySpace\to S\) for its internal-state readout.
+The \emph{visibility coupling predicate}
+\(\Exposure(\Lift,\Substrate)\) holds if and only if there exist an
+observable codomain \(\mathcal O\), a declared polynomial-time current
+observable
+\[
+  \CurrentObservable:\HistorySpace\to\mathcal O,
+\]
+and a polynomial-time function \(f:S\to\mathcal O\) such that
+\[
+  \bigl(\exists h,h'\in\HistorySpace,\,
+      f(\LiftState(h))\neq f(\LiftState(h'))\bigr)
+  \quad\text{and}\quad
+  \bigl(\forall h\in\HistorySpace,\,
+      \CurrentObservable(h)=f(\LiftState(h))\bigr).
+\]
+\end{definition}
+
+The first conjunct is the realized-support nonconstancy condition.  It
+says that \(f\) is non-constant on the realized image
+\[
+  \{\LiftState(h)\mid h\in\HistorySpace\},
+\]
+not merely on the ambient state space \(S\).  The second conjunct says
+that this non-trivial state function is actually visible through a
+polynomial-time current observable on the history carrier.
+
+\begin{remark}[Example: planted witness without exposure]
+Consider a Lift D-like configuration in which the internal state space
+contains a planted witness, say \(S=\{0,1\}^{k}\), and
+\(\LiftState(h)\) records the planted assignment used to generate a
+bounded 3-SAT instance.  The abstract function \(f:S\to S\) given by
+the identity is certainly non-constant, and it may even be
+non-constant on the realized states.  Nevertheless, if the declared
+current observables see only the formula, visible trace features, and
+audit bookkeeping, and no polynomial-time current observable computes
+that planted assignment on \(\HistorySpace\), then
+\(\Exposure(\Lift,\Substrate)\) fails.  The state carries predictive
+content, but the current observation channel is configured to suppress
+it.
+\end{remark}
+
+\begin{remark}[Example: feedback exposure]
+Consider a Lift B-like configuration in which a feedback-coupled
+generator stores an internal seed coordinate in \(\LiftState(h)\), and
+that coordinate takes at least two values on realized histories.  If
+the decision-output observable depends non-trivially on that seed
+coordinate, then exposure holds.  Take \(\CurrentObservable\) to be
+the decision-output observable and take \(f\) to be the seed-coordinate
+projection composed with the decision rule on that coordinate.  The
+factorization \(\CurrentObservable(h)=f(\LiftState(h))\) holds on
+\(\HistorySpace\), and the seed dependence gives nonconstancy on the
+realized image.
+\end{remark}
+
+The contrast is the point of the definition.  Lift D-like
+configurations can carry rich witness-side information while satisfying
+\(\neg\Exposure(\Lift,\Substrate)\), because the visibility channel
+suppresses the determining state.  Lift B-like configurations often
+satisfy \(\Exposure(\Lift,\Substrate)\), because their feedback
+structure produces an observable that factors through the lift state.
+The \CSL{} will say that, when predictive witness content is present,
+exposure dissolves the M-versus-Q asymmetry, while non-exposure
+preserves it.
+
+Finally, \(\Exposure(\Lift,\Substrate)\) is finite-carrier testable.
+It ranges over the finite history space \(\HistorySpace\), the
+realized image of \(\LiftState\) on that carrier, and the declared
+families of polynomial-time current observables and polynomial-time
+state functions.  No mutual-information estimate or algebraic
+dependence test is part of the predicate; the functional-dependence
+condition is direct.
+ 
+
+\section{Predictive witness content}
+\label{sec:witness-content}
+
+The \CSL{} distinguishes dissolution from preservation only when there
+is something for that distinction to act on.  We now name this
+precondition: the selected carrier has predictive witness content when
+the predictive quotient strictly refines the current quotient on the
+support of \(\HistorySpace\).
+
+\begin{definition}[Predictive witness content]
+\label{def:predictive-witness-content}
+The pair \((\Substrate,\Lift)\) has \emph{predictive witness content}
+in the selected carrier if there exist histories
+\(h,h'\in\HistorySpace\) such that
+\[
+  \Qclass{h}=\Qclass{h'}
+  \qquad\text{but}\qquad
+  \Mclass{h}\neq\Mclass{h'} .
+\]
+Equivalently, the forget-witness map
+\[
+  \ForgetWitnessMap:\Mquotient\to\Qquotient
+\]
+is not a bijection: \(\Mquotient\) strictly refines \(\Qquotient\) on
+the support of \(\HistorySpace\).
+\end{definition}
+
+In standard mathematical terms, predictive witness content means that
+two histories look identical to every current observable but separate
+once witness-augmented observation is allowed.  The presence of such a
+pair is the operational meaning of saying that the predictive quotient
+contains more information than the current quotient.
+
+\begin{remark}[Example: two satisfying witnesses]
+A prototypical case is a bounded 3-SAT instance
+\citep{Cook1971TheoremProving,GareyJohnson1979Intractability} with two
+distinct satisfying assignments.  Two histories may have the same visible
+instance and the same decision-bit current output, and therefore agree
+under decision-level current observation.  A witness-augmented
+observable that reads the satisfying assignment can still distinguish
+the histories.  In the notation above, this gives
+\(\Qclass{h}=\Qclass{h'}\) but
+\(\Mclass{h}\neq\Mclass{h'}\).
+\end{remark}
+
+If \((\Substrate,\Lift)\) lacks predictive witness content, then
+\(\Mquotient\) and \(\Qquotient\) coincide on the carrier support and
+\(\ForgetWitnessMap\) is a bijection.  In that case the
+dissolution/preservation distinction is vacuous: there is no
+M-versus-Q asymmetry to preserve or dissolve.  The degenerate clause
+of the \CSL{} records exactly this case, and the next section states
+the full structural law.
+ 
+
+\section{CSL core lemma}
+\label{sec:csl-core}
+
+We now state the \CSLcore{} (\(\CSL\)).  The law has four clauses:
+dissolution, preservation, the degenerate case, and
+strength-independence.  Together they relate the M-vs-Q loop-action
+asymmetry of \Cref{sec:loop-action} to the exposure predicate of
+\Cref{sec:visibility-coupling} and the predictive-witness precondition
+of \Cref{sec:witness-content}.  The law is stated at
+\DiagnosisGrade{}, meaning bounded finite-carrier evidence with a
+falsifier audit, not an asymptotic claim over all polynomial-time
+histories.  The discipline follows the tradition of computer-assisted
+finite-case verification used elsewhere in mathematics
+\citep{AppelHaken1989FourColorable,HalesEtAl2017Flyspeck,BaileyEtAl2007ExperimentalMath}.
+
+\paragraph{Structural premises required by the typed abstract statement.}
+At the typed abstract level, the law assumes the following framework
+facts about the predictive-quotient holonomy carrier and the
+trace-fingerprint loop class.  These are hypotheses made available to
+the abstract statement; they are not consequences of the \CSL{} itself.
+The quotient and loop vocabulary is the carrier vocabulary developed
+for predictive-quotient holonomy, while the audited state and replay
+bookkeeping are typed by the finite-audit framework
+\citep{TsiokosHolonomyMemory2026,TsiokosFoundationsII2026}.
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{Loop-state detection.}  If a loop
+  \(\ell\in\TraceFPLoopClass\) changes the predictive class of a
+  history, then it also changes the lift state:
+  \[
+    \LoopActionM{\ell}{h}\neq\Mclass{h}
+    \quad\Longrightarrow\quad
+    \LiftState(\ell.h)\neq\LiftState(h).
+  \]
+  This premise records that the loop class is rich enough to move the
+  internal state, not merely to relabel quotient classes.
+
+  \item \emph{Exposure-observable detects state change.}  Suppose
+  \(\CurrentObservable=f\circ\LiftState\), with \(f\) non-constant on
+  the realized image of \(\LiftState\).  If a loop changes
+  \(\LiftState(h)\), then it changes the exposed observable value
+  \(\CurrentObservable(h)\).  This premise records that the current
+  observable actually detects the state variation that exposure claims
+  to expose.
+
+  \item \emph{Loop Q-action via observable.}  If a loop changes some
+  declared current observable at \(h\), then it changes the current
+  quotient class:
+  \[
+    \CurrentObservable(\ell.h)\neq\CurrentObservable(h)
+    \quad\Longrightarrow\quad
+    \LoopActionQ{\ell}{h}\neq\Qclass{h}.
+  \]
+  This clause says that Q-equivalence is exactly the equivalence
+  relation seen by all declared current observables.
+
+  \item \emph{Loop preservation witness.}  When
+  \(\neg\Exposure(\Lift,\Substrate)\), the loop class contains a
+  connector loop for any pair \(h,h'\in\HistorySpace\) with
+  \(\Qclass{h}=\Qclass{h'}\) and
+  \(\Mclass{h}\neq\Mclass{h'}\).  This premise records that the loop
+  class is rich enough to witness predictive separation that current
+  observation cannot see.
+
+  \item \emph{M-refines-Q.}  For all histories \(h,h'\in\HistorySpace\),
+  \[
+    \Mclass{h}=\Mclass{h'}
+    \quad\Longrightarrow\quad
+    \Qclass{h}=\Qclass{h'} .
+  \]
+  This is the refinement direction from
+  \Cref{prop:witness-refinement}, not a \CSL{} conclusion.
+
+  \item \emph{Strength-decision equivalence.}  The predicate deciding
+  the strength-indexed dissolution status is equivalent to
+  \(\Exposure(\Lift,\Substrate)\).  This clause says that the strength
+  label \(\StrengthClass{k}\) enters through the implementation of
+  \(\mathrm{gen}_{\Lift}\), while the law's decision variable is the
+  binary exposure predicate.
+\end{enumerate}
+
+\begin{lemma}[\CSLcore{} (core)]
+\label{lem:csl-core}
+Let \(\Substrate\) be a computational substrate, let \(\Lift\) be an
+autonomous lift on \(\Substrate\), and let \(\TraceFPLoopClass\) be
+the trace-fingerprint loop class on \(\HistorySpace\).  Assume the six
+structural premises (a)--(f) above.  Then the following four clauses
+hold.
+\begin{enumerate}
+  \item \emph{Dissolution.}  If \(\Exposure(\Lift,\Substrate)\) holds
+  and \((\Substrate,\Lift)\) has predictive witness content, then for
+  every loop \(\ell\in\TraceFPLoopClass\) and every history
+  \(h\in\HistorySpace\),
+  \[
+    \Mclass{\ell.h}\neq\Mclass{h}
+    \quad\Longrightarrow\quad
+    \Qclass{\ell.h}\neq\Qclass{h}.
+  \]
+  Equivalently, the M-vs-Q loop-action asymmetry fails: every
+  M-class change is accompanied by a Q-class change.
+
+  \item \emph{Preservation.}  If \(\Exposure(\Lift,\Substrate)\) fails
+  and \((\Substrate,\Lift)\) has predictive witness content, then
+  there exist a loop \(\ell\in\TraceFPLoopClass\) and a history
+  \(h\in\HistorySpace\) such that
+  \[
+    \LoopActionQ{\ell}{h}=\Qclass{h}
+    \qquad\text{and}\qquad
+    \LoopActionM{\ell}{h}\neq\Mclass{h}.
+  \]
+  The M-vs-Q loop-action asymmetry holds.
+
+  \item \emph{Degenerate.}  If \((\Substrate,\Lift)\) has no
+  predictive witness content, then \(\Mquotient=\Qquotient\) on the
+  support of \(\HistorySpace\), and the M-vs-Q distinction is vacuous.
+
+  \item \emph{Strength-independence.}  Given the value of
+  \(\Exposure(\Lift,\Substrate)\), the dissolution or preservation
+  status of the loop-action asymmetry does not depend on the strength
+  class \(\StrengthClass{k}\) of the coupling function used inside
+  the lift's generation procedure.
+\end{enumerate}
+\end{lemma}
+
+The lemma is stated at \DiagnosisGrade{}: the empirical hardening of
+the law's qualifier --- the falsifier audit over the bounded finite
+carrier --- is a paper-side certification rather than part of the
+lemma's formal content.
+
+Before the proof, an outline.  The degenerate clause is the negation of
+predictive witness content, and strength-independence is a one-line
+consequence of exposure being a binary predicate.  The dissolution and
+preservation clauses carry the substantive content: they explain how
+exposure forces M-motion to become Q-visible, while non-exposure allows
+a connector loop to preserve the M-vs-Q asymmetry.
+
+\begin{proof}
+\emph{Clause 3, degenerate.}  Suppose first that
+\((\Substrate,\Lift)\) has no predictive witness content.  Unfolding
+\Cref{def:predictive-witness-content}, this is the negation of the
+existence of histories \(h,h'\in\HistorySpace\) with the same current
+class and distinct predictive classes.  Equivalently, for all
+\(h,h'\in\HistorySpace\),
+\[
+  \Qclass{h}=\Qclass{h'}
+  \quad\Longrightarrow\quad
+  \Mclass{h}=\Mclass{h'} .
+\]
+Premise (e) supplies the refinement direction
+\(\Mclass{h}=\Mclass{h'}\Rightarrow\Qclass{h}=\Qclass{h'}\) for the
+same histories.  Combining the two implications gives, on the support
+of \(\HistorySpace\),
+\[
+  \Qclass{h}=\Qclass{h'}
+  \quad\Longleftrightarrow\quad
+  \Mclass{h}=\Mclass{h'}
+\]
+for every pair \(h,h'\).  The two quotient relations therefore have
+the same equivalence classes on the realized carrier.  Hence
+\(\Qquotient=\Mquotient\) on that support, and the M-versus-Q
+distinction is vacuous.
+
+\emph{Clause 4, strength-independence.}  The predicate
+\(\Exposure(\Lift,\Substrate)\) is a binary condition.  It is true
+exactly when there exist a declared current observable
+\(\CurrentObservable\) and a state function \(f\) satisfying
+realized-support nonconstancy and the factorization
+\(\CurrentObservable=f\circ\LiftState\) on \(\HistorySpace\); otherwise
+it is false.  The strength label \(\StrengthClass{k}\) enters through
+the implementation of \(\mathrm{gen}_{\Lift}\), but it is not an
+additional value of the exposure predicate.  By premise (f), the
+strength-indexed decision predicate for dissolution is equivalent to
+\(\Exposure(\Lift,\Substrate)\).  Therefore two implementations with
+the same exposure value have the same strength-indexed decision value:
+when exposure holds they are in the dissolution branch, and when
+exposure fails they are in the preservation branch.  The
+dissolution/preservation status is consequently independent of
+\(\StrengthClass{k}\) once the value of
+\(\Exposure(\Lift,\Substrate)\) is fixed.
+
+\emph{Clause 1, dissolution.}  Assume \(\Exposure(\Lift,\Substrate)\)
+holds and that \((\Substrate,\Lift)\) has predictive witness content.
+Unfolding predictive witness content gives histories
+\(h_{0},h_{1}\in\HistorySpace\) with
+\[
+  \Qclass{h_{0}}=\Qclass{h_{1}}
+  \qquad\text{and}\qquad
+  \Mclass{h_{0}}\neq\Mclass{h_{1}} .
+\]
+Thus the selected carrier is nondegenerate: current observation
+identifies histories that witness-augmented observation separates.  An
+M-class change along a loop is therefore genuine predictive motion
+whose current-quotient visibility is the issue.
+
+By \(\Exposure(\Lift,\Substrate)\), choose a polynomial-time current
+observable \(\CurrentObservable:\HistorySpace\to\mathcal O\) and a
+polynomial-time function \(f:S\to\mathcal O\) such that \(f\) is
+non-constant on the realized image of \(\LiftState\) and
+\[
+  \CurrentObservable(x)=f(\LiftState(x))
+  \qquad\text{for every }x\in\HistorySpace .
+\]
+Now fix an arbitrary \(\ell\in\TraceFPLoopClass\) and an arbitrary
+\(h\in\HistorySpace\), and suppose that
+\(\Mclass{\ell.h}\neq\Mclass{h}\).  Equivalently, by the definition of
+the loop action on \(M\),
+\(\LoopActionM{\ell}{h}\neq\Mclass{h}\).  Premise (a), the loop-state
+detection hypothesis, turns this predictive-class change into an
+internal-state change:
+\[
+  \LiftState(\ell.h)\neq\LiftState(h).
+\]
+Because exposure has supplied a current observable factoring through
+\(\LiftState\), premise (b) applies to this state change and gives
+\[
+  \CurrentObservable(\ell.h)\neq\CurrentObservable(h).
+\]
+Finally, premise (c) says that any change in a declared current
+observable changes the current quotient class.  Therefore
+\[
+  \LoopActionQ{\ell}{h}=\Qclass{\ell.h}\neq\Qclass{h},
+\]
+where the equality is the definition of the loop action on \(Q\).
+Since \(\ell\) and \(h\) were arbitrary, every M-class change in the
+trace-fingerprint loop class is accompanied by a Q-class change.  This
+is precisely dissolution of the M-vs-Q loop-action asymmetry.
+
+\emph{Clause 2, preservation.}  Assume
+\(\neg\Exposure(\Lift,\Substrate)\) and that \((\Substrate,\Lift)\)
+has predictive witness content.  Unfolding the predictive-witness
+precondition, choose histories \(h,h'\in\HistorySpace\) such that
+\[
+  \Qclass{h}=\Qclass{h'}
+  \qquad\text{and}\qquad
+  \Mclass{h}\neq\Mclass{h'} .
+\]
+The failure of exposure is exactly the hypothesis needed to invoke
+premise (d).  That premise says that, for any pair with this
+Q-identification and M-separation, the trace-fingerprint loop class
+contains a connector loop.  Hence there is
+\(\ell\in\TraceFPLoopClass\) connecting the chosen pair.  Applying the
+connector loop to the starting history \(h\), the connector property
+keeps the current class fixed while moving the predictive class; using
+the definitions of the two loop actions, this gives
+\[
+  \LoopActionQ{\ell}{h}=\Qclass{h}
+  \qquad\text{and}\qquad
+  \LoopActionM{\ell}{h}\neq\Mclass{h}.
+\]
+Thus the loop action is trivial on the current class and non-trivial
+on the predictive class, which exhibits the asymmetry-preserving pair.
+
+The four clauses together prove the lemma.\footnote{This lemma is
+verified in Lean by the CSL core declaration listed in
+\Cref{app:formalization}; the Lean theorem proves the four-clause
+structure from the six structural premises (a)--(f) supplied as
+parametric hypotheses.  The narrowing-disclosure discipline is recorded
+in \Cref{app:formalization}.}
+\end{proof}
+
+This is the structural law on which the rest of the paper rests.
+\Cref{sec:v-differential} classifies the four named substrates by the
+kind of exposure their autonomous lifts can exhibit.
+\Cref{sec:granularity-mismatch} then records why the typed quotients
+used here do not project to a standard \(P\)/\(NP\) separation.  The
+\CSL{} remains at \DiagnosisGrade{} throughout: it is the bounded
+finite-carrier structural law, not an asymptotic theorem over all
+polynomial-time histories.
+ 
+
+\section{Substrate differentiation}
+\label{sec:v-differential}
+
+The \CSL{} applies to the framework-wide carrier described above, but
+its consequences are substrate-differentiated.  Some substrates admit
+autonomous lifts whose current observables expose witness-side content;
+others admit autonomous lifts whose current observables expose only
+trace state.  The V-Differential classification records this difference
+across four named substrates.
+
+An autonomous lift \(\Lift\) on a substrate \(\Substrate\) is
+\emph{witness-content-exposing} when
+\(\Exposure(\Lift,\Substrate)\) holds with a current observable that
+depends on witness-side data: an assignment, a certificate value, or a
+field that reveals a specific solution coordinate.  Equivalently, the
+polynomial-time current observable reads through the lift state to a
+witness-side coordinate.  This is a statement about the selected
+carrier and its observation channel, not a claim that the corresponding
+host problem has been solved.
+
+By contrast, an autonomous lift is \emph{trace-state-exposing} when
+\(\Exposure(\Lift,\Substrate)\) holds only through trace bookkeeping or
+replay-side data: a step count, a partial decision-tree position, an
+audit field, or a similar record of how the computation proceeded.
+Such a lift is exposed in the sense of \Cref{sec:visibility-coupling},
+because a current observable factors through the lift state.  It does
+not thereby reveal witness-side content such as a satisfying assignment,
+a regulator-prediction value, a weak-solution selection datum, or a
+zeta-zero certificate coordinate.
+
+\begin{proposition}[V-Differential classification]
+\label{prop:v-differential}
+Within the typed substrate apparatus, the following four named
+substrates admit autonomous lifts of the indicated exposure type.
+\begin{enumerate}
+  \item \emph{BSD substrate.}  The Birch--Swinnerton-Dyer substrate
+  \citep{BirchSwinnertonDyer1965NotesII}, read here through
+  elliptic-curve regulator content
+  \citep{Silverman2009ArithmeticEllipticCurves}, admits autonomous
+  lifts that are witness-content-exposing.
+
+  \item \emph{NS substrate.}  The Navier--Stokes substrate
+  \citep{Fefferman2006NavierStokesClay}, read here through
+  weak-solution selection content \citep{Leray1934LiquideVisqueux},
+  admits autonomous lifts that are witness-content-exposing.
+
+  \item \emph{PvNP substrate.}  The \(P\)-versus-\(NP\) substrate
+  \citep{Cook2000PNPClay}, read here through satisfying-assignment
+  witness content for \(3\)-SAT \citep{Cook1971TheoremProving}, admits
+  autonomous lifts that are trace-state-exposing but not
+  witness-content-exposing under the polynomial-time current instrument.
+
+  \item \emph{RH substrate.}  The Riemann-hypothesis substrate
+  \citep{Bombieri2000RiemannClay}, read here through zeta-zero
+  certificate content \citep{Conrey2003RiemannHypothesis}, admits
+  autonomous lifts that are trace-state-exposing but not
+  witness-content-exposing under the polynomial-time current instrument.
+\end{enumerate}
+In each case the lift's existence and its classification are
+framework-internal facts about the substrate's adequacy-residual
+machinery.  The classification records which exposure channel,
+witness-content or trace-state, is available under the framework's
+lawful instrument.
+\end{proposition}
+
+\begin{proof}
+The proof consumes, for each of the four named substrates, the
+framework-internal exposure profile of its admissible autonomous lifts.
+These are per-substrate inputs to the V-Differential classification,
+supplied by the substrate's adequacy-residual machinery; they are not
+derived inside this proof.
+
+For the BSD substrate, the elliptic-curve regulator content carried by
+lift internal-state readouts is, on the witness-content channel,
+polynomial-time exposed to current observation by a deterministic
+readout of the regulator coordinate.  Hence the BSD substrate admits
+autonomous lifts that are witness-content-exposing.
+
+For the NS substrate, the weak-solution selection content carried by
+lift internal-state readouts admits, on the witness-content channel, a
+polynomial-time current readout of the selection datum.  Hence the NS
+substrate admits autonomous lifts that are witness-content-exposing.
+
+For the PvNP substrate, the satisfying-assignment witness content for
+\(3\)-SAT is, under the polynomial-time current instrument, available
+only to predictive observation; current observation under that
+instrument admits only the trace-state side, such as replay records,
+decision-tree partial position, and audit fields.  Hence the PvNP
+substrate admits autonomous lifts that are trace-state-exposing but not
+witness-content-exposing under the polynomial-time current instrument.
+
+For the RH substrate, the zeta-zero certificate content is, under the
+polynomial-time current instrument, similarly available only to
+predictive observation; current observation admits only trace state.
+Hence the RH substrate admits autonomous lifts that are
+trace-state-exposing but not witness-content-exposing under the
+polynomial-time current instrument.
+
+These four substrate placements record the kind of exposure their
+admissible autonomous lifts admit.  The classification is structural:
+it records what current observation can reveal under the framework's
+lawful instrument, without making framework-internal claims about
+\CSL{} dissolution or preservation for each substrate.\footnote{This proposition is
+verified in Lean by the V-Differential declaration listed in
+\Cref{app:formalization}; the Lean theorem proves the sorted
+classification from per-substrate empirical hypotheses, namely
+witness-exposure-fraction bounds for trace-state-exposing substrates and
+witness-exposing lift constructions for witness-content-exposing
+substrates, supplied as typed structural inputs.  The
+narrowing-disclosure discipline is recorded in \Cref{app:formalization}.}
+\end{proof}
+
+This proposition is a classification of framework carriers, not a
+theorem resolving the Birch--Swinnerton-Dyer conjecture, the
+Navier--Stokes problem, the Riemann hypothesis, or the \(P\)-versus-\(NP\)
+problem.  The per-substrate exposure profiles are framework-internal
+inputs to the classification, supplied by the corresponding substrate's
+adequacy-residual machinery; the classification does not derive the
+host-mathematical substrate facts.
+
+The V-Differential gives the exposure analysis substrate-level content.
+For the PvNP substrate in particular, the trace-state-only
+classification has structural consequences for what kind of
+framework-internal conditional theorem could be formulated over the
+\(P\)-versus-\(NP\) problem; those consequences fall outside the scope of
+the present paper and are noted in \Cref{sec:scope,sec:discussion}.
+The next section turns from substrate-level structure to the
+relationship between the framework's typed quotients and the standard
+classes \(P\) and \(NP\).
+ 
+
+\section{Granularity mismatch}
+\label{sec:granularity-mismatch}
+
+The framework quotients \(\Qquotient\) and \(\Mquotient\) are quotients
+of computation histories.  The standard complexity classes \(P\) and
+\(NP\), by contrast, are language classes
+\citep{AroraBarak2009Complexity}: they classify membership predicates on
+strings, or verifier predicates whose existential projection is a
+language \citep{Cook2000PNPClay}.  The natural maps from the typed quotients to
+the standard language-level objects are therefore projections that
+discard information carried by the history.
+
+There are two projections to keep separate.  The map \(\PiQP\) sends a
+current quotient class to the polynomial-time decision predicate read
+from that class.  The map \(\PiMNP\) sends a predictive quotient class
+to a verifier predicate on instance--witness pairs.  Both are natural
+standard quotient constructions, and both are well-defined for the
+same reason the quotient definitions were well-defined in
+\Cref{sec:framework}: the relevant output is one of the observables
+used to form the quotient.  Neither projection is a bijection.  The
+two obstruction propositions below record the mismatch; the next
+subsection gives the constructive witness showing that strict
+\(\Mquotient\)-over-\(\Qquotient\) refinement can collapse to one
+language-level outcome under these projections.
+
+\begin{definition}[Q-to-P projection]
+\label{def:projection-q-to-p}
+The \emph{Q-to-P projection} is the map
+\[
+  \PiQP:\Qquotient\longrightarrow
+  \{\text{polynomial-time decision predicates}\}
+\]
+that sends a current class \(\Qclass{h}\) to the polynomial-time
+decision predicate read off from any representative history \(h\) in
+that class.  This is well-defined because the decision output of a
+history is itself a polynomial-time current observable
+\(\CurrentObservable\), hence is constant on \(\Qquotient\)-classes.
+\end{definition}
+
+\begin{proposition}[\(\PiQP\) is not a bijection onto \(P\)]
+\label{prop:c1-not-bijective}
+The projection \(\PiQP\) is not a bijection from \(\Qquotient\) onto
+the standard class \(P\).  The obstruction has three parts.
+\begin{enumerate}
+  \item \emph{Histories versus languages.}  A \(\Qquotient\)-class is
+  a class of histories, possibly over a single bounded instance.  A
+  polynomial-time decision predicate is a function on all inputs.  A
+  single current class does not by itself define a language predicate
+  over all input strings.
+
+  \item \emph{Trace observables beyond decision output.}  The quotient
+  \(\Qquotient\) identifies histories by equality of all declared
+  polynomial-time current observables, not merely by equality of the
+  decision bit.  Two histories computing the same language may still be
+  \(\Qquotient\)-distinct because their trace, solver-prefix, or audit
+  bookkeeping observables differ.
+
+  \item \emph{Machine multiplicity.}  Different polynomial-time
+  machines may decide the same language while producing different
+  \(\Qquotient\)-observable histories on the same instance.  These
+  histories can map to different current classes but to the same
+  language predicate.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Each item is a direct comparison of the two granularities.  Item (1)
+shows that a history class is not, without extra data over all inputs,
+a language predicate.  Items (2) and (3) show non-injectivity after
+projection to language-level predicates: \(\Qquotient\) retains trace,
+solver-prefix, audit, and machine-choice information that standard
+language equality forgets.  Thus a theorem-grade bijection with
+standard \(P\) is unavailable without an additional quotient that
+forgets those features.  Equivalently, once any of the carrier-side
+sources above supplies two distinct \(\Qquotient\)-classes with the same
+\(\PiQP\)-image, \(\PiQP\) fails to be injective, and hence cannot be a
+bijection onto \(P\).\footnote{This proposition is verified in Lean by
+the C1-obstruction collision-schema declaration listed in
+\Cref{app:formalization}; the Lean theorem proves a collision schema
+parameterized by a supplied collision witness, leaving the carrier-side
+obstruction clauses as paper-side input.  The narrowing-disclosure
+discipline is recorded in \Cref{app:formalization}.}
+\end{proof}
+
+\begin{definition}[M-to-NP projection]
+\label{def:projection-m-to-np}
+The \emph{M-to-NP projection} is the map
+\[
+  \PiMNP:\Mquotient\longrightarrow
+  \{\text{verifier predicates }V(x,w)\text{ on instance--witness pairs}\}
+\]
+that sends a predictive class \(\Mclass{h}\) to the verifier predicate
+observed in that class.  This is well-defined because verifier
+acceptance is a witness-augmented polynomial-time observable, hence is
+constant on \(\Mquotient\)-classes.
+\end{definition}
+
+\begin{proposition}[\(\PiMNP\) is not a bijection onto \(NP\)]
+\label{prop:c2-not-bijective}
+The projection \(\PiMNP\) is not a bijection from \(\Mquotient\) onto
+the standard class \(NP\).  The obstruction is witness identity:
+\(\Mquotient\) can distinguish different satisfying witnesses for the
+same instance, through witness-trace features such as Hamming-distance
+fingerprints, satisfaction-fraction sequences, and partial-assignment
+branching records \citep{BiereHeuleMaarenWalsh2009HandbookSAT}.  Standard \(NP\)-membership is existential; it
+retains only that some witness exists, not which witness or which
+witness trace was observed.
+\end{proposition}
+
+\begin{proof}
+Consider any substrate that admits a satisfiable instance with two
+distinct witnesses, as in the usual SAT example with multiple
+satisfying assignments.  The two corresponding histories can be
+separated by witness-augmented observables, so they can represent
+different \(\Mquotient\)-classes.  Under standard \(NP\)-membership,
+however, both witnesses certify the same existential fact for the same
+instance.  The projection therefore forgets the witness identity that
+\(\Mquotient\) records, and a bijection onto standard \(NP\) cannot be
+maintained without quotienting away that identity.  Equivalently, once
+such a witness-identity collision supplies two distinct
+\(\Mquotient\)-classes with the same \(\PiMNP\)-image, \(\PiMNP\) fails
+to be injective, and hence cannot be a bijection onto \(NP\).\footnote{This
+proposition is verified in Lean by the C2-obstruction collision-schema
+declaration listed in \Cref{app:formalization}; the Lean theorem proves
+a collision schema parameterized by a supplied collision witness, with
+the witness-identity content paper-side.  The narrowing-disclosure
+discipline is recorded in \Cref{app:formalization}.}
+\end{proof}
+
+Thus \(\PiQP\) and \(\PiMNP\) become surjective onto natural
+language-level target classes only after additional quotienting that
+forgets trace and witness identity.  The full granularity-mismatch
+theorem in the next subsection records the consequence: strict
+\(\Mquotient\)-over-\(\Qquotient\) refinement at the history level can
+collapse under projection to a single language-level outcome.  That
+theorem is stated at \RDiagnosis{}.
+
+With the projections and non-bijection records in place, the
+granularity-mismatch theorem can be stated precisely.  It is an
+existence theorem over the typed carrier: the witness is a pair of
+histories whose predictive classes differ while their current class and
+language-level projections agree.
+
+\begin{theorem}[Granularity mismatch]
+\label{thm:granularity-mismatch}
+There exist a substrate \(\Substrate\), an autonomous lift \(\Lift\) on
+\(\Substrate\), and histories \(h,h'\in\HistorySpace\) such that
+\begin{enumerate}
+  \item \(\Mclass{h}\neq\Mclass{h'}\);
+  \item \(\Qclass{h}=\Qclass{h'}\);
+  \item \(\PiMNP(\Mclass{h})=\PiMNP(\Mclass{h'})\);
+  \item \(\PiQP(\Qclass{h})=\PiQP(\Qclass{h'})\).
+\end{enumerate}
+Thus strict \(\Mquotient\)-over-\(\Qquotient\) refinement at the
+history level can fail to survive projection to standard
+language-level classes.  The strictness lives at the witness-trace
+level, which the projections discard.
+\end{theorem}
+
+\begin{proof}
+We construct the required data.  Let the substrate \(\Substrate\) be a
+SAT-like bounded substrate containing a single \(3\)-SAT instance
+\(\phi_{0}\) with two distinct satisfying assignments.  Let the
+autonomous lift \(\Lift\) be any feedback-coupled or
+planted-suppressed lift whose histories record both the fixed instance
+and the satisfying assignment used by the lift.  On the finite carrier
+under consideration, model histories as pairs
+\[
+  (\text{instance},\text{witness bit})
+  \qquad\text{with instance fixed at }\phi_{0}
+  \text{ and witness bit in }\{0,1\}.
+\]
+Let \(h=(\phi_{0},0)\) and \(h'=(\phi_{0},1)\).  We verify the four
+asserted conditions.
+
+First, \(\Mclass{h}\neq\Mclass{h'}\).  The two histories differ in the
+witness bit, and witness-augmented observation includes observables
+that may read witness-side data.  The observable that reads this bit
+separates \(h\) from \(h'\), so the two histories lie in distinct
+\(\Mquotient\)-classes.
+
+Second, \(\Qclass{h}=\Qclass{h'}\).  The current observables in this
+carrier record the fixed instance, the decision-level output, and
+trace data that do not read the witness bit.  Since \(h\) and \(h'\)
+share the same instance \(\phi_{0}\) and have the same decision output,
+namely that \(\phi_{0}\) is satisfiable, every declared current
+observable takes the same value on the two histories.  Hence they are
+\(\Qquotient\)-equivalent.
+
+Third, \(\PiMNP(\Mclass{h})=\PiMNP(\Mclass{h'})\).  Although the two
+\(\Mquotient\)-classes remember which satisfying assignment was used,
+the \(M\)-to-\(NP\) projection forgets witness identity and retains the
+existential verifier-level fact.  Both witnesses certify the same
+statement, namely that the fixed instance \(\phi_{0}\) is satisfiable.
+Thus the two predictive classes have the same image under \(\PiMNP\).
+
+Fourth, \(\PiQP(\Qclass{h})=\PiQP(\Qclass{h'})\).  This is immediate
+from the equality of current classes, and concretely both histories
+project to the same polynomial-time decision predicate on the fixed
+instance: the predicate answering yes for the satisfiable instance
+\(\phi_{0}\).
+
+The constructed \(\Substrate\), \(\Lift\), \(h\), and \(h'\) therefore
+satisfy all four clauses in the theorem statement.  The strict
+refinement is real inside the typed history carrier, because the
+predictive quotient separates the witness-bit histories, but it is
+invisible to the standard language-level projections, because both
+projections discard that witness identity.\footnote{This theorem is
+verified in Lean by the granularity-mismatch declaration listed in
+\Cref{app:formalization}; the Lean theorem exhibits a SAT-like
+finite-carrier witness with \(\Mquotient\) instantiated as literal
+history equality, rather than as the kernel of a witness-augmented
+observable.  The narrowing-disclosure discipline is recorded in
+\Cref{app:formalization}.}
+\end{proof}
+
+The theorem is at \RDiagnosis{}.  In plain terms, the structural
+obstruction is identified and supported by a constructive finite-carrier
+witness, while the bridging representation theorem from arbitrary
+polynomial-time deciders to autonomous-lift carriers preserving
+witness-content exposure is named but not constructed here.  The
+theorem records the obstruction; it does not claim that all
+polynomial-time-decider settings exhibit the obstruction asymptotically.
+
+The granularity-mismatch theorem completes the substantive body of the
+paper.  The next section states the nonclaims explicitly, including
+what this paper does not prove about standard \(P\) and \(NP\);
+see \Cref{sec:scope}.
+ 
+
+\section{Scope and non-claims}
+\label{sec:scope}
+
+The body has stated the \CSL{} at \DiagnosisGrade{}, the
+V-Differential substrate classification, and the granularity-mismatch
+theorem at \RDiagnosis{}.  This section gives an explicit accounting
+of what those results do and do not claim, so that the preceding
+statements are not mistaken for standard complexity-theoretic
+conclusions.
+
+\begin{remark}[Nonclaim: no standard \(P\neq NP\) consequence]
+The \CSL{} is a framework-internal structural law at diagnosis grade
+over predictive-quotient holonomy on autonomous-lifted polynomial-time
+substrates; it does not imply standard \(P\neq NP\).  This paper does
+not claim, and the present results do not provide, a standard-ZFC
+unconditional proof of \(P\neq NP\)
+\citep{Cook2000PNPClay,Fortnow2009StatusPNP}.  The granularity-mismatch
+theorem records the precise reason that the framework-internal strict
+refinement does not project to a standard \(P\)/\(NP\) separation.
+\end{remark}
+
+\begin{remark}[Nonclaim: no asymptotic theorem-grade CSL]
+The \CSL{} is hardened to diagnosis grade by the cascade work it
+summarizes: bounded finite-carrier evidence with falsifier audit.  It
+is not stated as an asymptotic theorem over all polynomial-time
+computation histories.  The empirical hardening is a paper-side
+certification rather than a derivable consequence of the lemma's formal
+content; the boundary is set explicitly by the \DiagnosisGrade{}
+qualifier.
+\end{remark}
+
+\begin{remark}[Nonclaim: no representation theorem]
+The granularity-mismatch theorem at R-Diagnosis identifies the
+structural obstruction; the representation theorem is named but not
+constructed.  More explicitly, the theorem identifies the structural
+obstruction between the framework's typed quotients and the standard
+\(P\)/\(NP\) language classes, and it exhibits a constructive
+finite-carrier witness for the existential conclusion.  The bridging
+representation theorem from arbitrary polynomial-time deciders to
+autonomous-lift carriers preserving witness-content exposure is the
+asymptotic step this paper does not establish; the \RDiagnosis{} grade
+label records this gap explicitly.
+\end{remark}
+
+\begin{remark}[Additional nonclaims]
+The framework is similar in spirit to, but structurally distinct from,
+the natural-proofs barrier of Razborov--Rudich
+\citep{RazborovRudich1997NaturalProofs}, the algebrization barrier of
+Aaronson--Wigderson \citep{AaronsonWigderson2009Algebrization}, and the
+relativization barrier of Baker--Gill--Solovay
+\citep{BakerGillSolovay1975Relativization}.  The predictive-quotient
+holonomy carrier is not a circumvention of any of those three barriers
+in their native senses; the relationship is discussed in
+\Cref{sec:discussion}.
+
+The framework also uses standard mathematical constructions throughout:
+quotients of finite carriers, projection maps, the equivalence of
+refinement and surjection between quotient relations, and finite
+Boolean carriers for the granularity-mismatch witness.  The
+contribution is the typed \CSL{} apparatus and the
+granularity-mismatch packaging, not these underlying mathematical
+constructions.
+\end{remark}
+
+Positively, the paper claims three things.  First, it states a typed
+\CSL{} over the predictive-quotient holonomy carrier on
+autonomous-lifted polynomial-time substrates, with dissolution,
+preservation, degenerate, and strength-independence clauses, at
+\DiagnosisGrade{}.  Second, it gives the V-Differential classification
+of four named substrates by whether their autonomous lifts expose
+witness content or only trace state.  Third, it proves the
+granularity-mismatch theorem at \RDiagnosis{}, with a constructive
+finite-carrier witness showing how history-level strictness can
+collapse under standard language-level projection.
+
+The next section discusses how these results relate to classical
+complexity-theoretic barriers and to neighboring framework directions.
+ 
+
+\section{Discussion}
+\label{sec:discussion}
+
+The preceding sections give a framework-internal structural law at
+\DiagnosisGrade{} and a projection obstruction.  This discussion
+positions those results against classical complexity barriers, comments
+on the minimal finite witness, the standard constructions used in the
+paper, and the word ``candidate'' in \CSLcore{}, and points to
+neighboring framework directions.
+
+\paragraph{Classical complexity barriers.}
+The framework is similar in spirit to, but structurally distinct from,
+the natural-proofs barrier of Razborov--Rudich
+\citep{RazborovRudich1997NaturalProofs}, the algebrization barrier of
+Aaronson--Wigderson \citep{AaronsonWigderson2009Algebrization}, and the
+relativization barrier of Baker--Gill--Solovay
+\citep{BakerGillSolovay1975Relativization}; each constrains a different
+class of proof techniques inside its own setting
+\citep{Wigderson2019MathematicsComputation,Aaronson2016PNP}.  The
+\CSL{}'s load-bearing variable is the binary exposure predicate
+\(\Exposure\), and its strength-independence clause is explicit,
+whereas the natural-proofs barrier is about cryptographic strength
+\citep{GoldreichGoldwasserMicali1986RandomFunctions,HastadImpagliazzoLevinLuby1999PRG}.
+The predictive-quotient holonomy carrier does not invoke oracle access:
+quotient classes depend on the declared families of polynomial-time
+current and witness-augmented observables, so a relativized or
+algebrized version would change the observable families and therefore
+change the quotients themselves.  The framework is therefore neither a
+circumvention nor a refinement of these three barriers; it is a
+carrier-internal statement with a different dependency structure.
+
+\paragraph{The minimal witness.}
+The constructive finite-carrier witness in
+\Cref{thm:granularity-mismatch} is intentionally minimal: one bounded
+instance and one Boolean witness bit.  This is the smallest carrier on
+which the structural-obstruction shape is visible: \(\Mquotient\)
+strictly refines \(\Qquotient\) because of witness identity, while the
+language-level projections forget that identity.  A non-minimal
+witness, for example SAT under a feedback-coupled autonomous lift with
+several satisfying assignments, carries the same structural shape.
+The \RDiagnosis{} label records this scope: the theorem captures the
+typed obstruction and does not promote the finite witness into a deep
+asymptotic complexity claim.
+
+\paragraph{Standard constructions.}
+The paper uses standard mathematical constructions throughout:
+quotients \citep{Halmos1960NaiveSetTheory},
+projection maps, refinement-as-surjection comparisons, and finite
+Boolean carriers.  The contribution is the typed \CSL{}
+apparatus and the granularity-mismatch packaging, not novelty in those
+underlying constructions.  The audited finite-carrier framework of
+Foundations II and the finite-audit interaction calculus of
+Foundations III provide the typed setting in which the quotients are
+audited, while the predictive-quotient holonomy carrier was developed
+in the holonomy-with-memory work
+\citep{TsiokosFoundationsII2026,TsiokosFoundationsIII2026,TsiokosHolonomyMemory2026}.
+The \CSL{} is a structural law at \DiagnosisGrade{} on that carrier.
+
+\paragraph{Why ``candidate''.}
+The law is labeled \CSLcore{} rather than ``Structural Theorem''
+because it is hardened to diagnosis grade by the cascade work it
+summarizes: bounded finite-carrier evidence with a falsifier audit, not
+an asymptotic theorem over all polynomial-time computation histories.
+The word ``candidate'' marks this epistemic placement.  The
+four-clause structural shape is established by typed reasoning from the
+structural premises stated in \Cref{sec:csl-core}; the universal claim
+over all asymptotic carriers is a separate theorem-grade target.  The
+label marks the work needed before the law could be promoted.
+
+\paragraph{Open directions.}
+The V-Differential classification places PvNP and RH as trace-state
+exposing, while BSD and NS are witness-content exposing.  These are
+framework-internal structural placements, not claims about resolving
+the \(P\)-versus-\(NP\) problem, the Riemann hypothesis, the
+Birch--Swinnerton-Dyer conjecture, or the Navier--Stokes problem.  They
+suggest research directions: one may ask what additional
+substrate-specific typed content would be needed to turn each
+classification into a conditional framework theorem.  The present
+paper does not develop those directions.
+
+The conclusion summarizes the contribution and the extension targets
+left by this scope.
+ 
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper has stated a typed \CSLcore{} (\(\CSL\)) over the
+predictive-quotient holonomy carrier on autonomous-lifted
+polynomial-time substrates.  It has also proved a
+granularity-mismatch theorem recording why the framework's typed
+quotients are strictly finer than the standard classes \(P\) and
+\(NP\) at the history level: strictness can live in witness-trace
+identity and disappear under standard language-level projection.  The
+\CSL{} remains at \DiagnosisGrade{}, and the granularity-mismatch
+theorem remains at \RDiagnosis{}.  Together with the V-Differential
+classification of four named host substrates, the headline is a typed
+structural picture, not a standard-ZFC theorem about \(P\)-versus-\(NP\).
+
+Three kinds of work remain.  First, asymptotic hardening of the
+\CSL{} would require moving beyond bounded finite carriers to a
+theorem-grade statement over polynomial-time computation histories
+\citep{AroraBarak2009Complexity,Wigderson2019MathematicsComputation}.
+Second, the \RDiagnosis{} grade of the granularity-mismatch theorem
+marks the missing representation theorem: a construction from
+arbitrary polynomial-time deciders to autonomous-lift carriers that
+preserve witness-content exposure.  Third, the V-Differential
+classification suggests substrate-specific conditional frameworks: for
+each named substrate, one can ask what additional typed content would
+turn its trace-state-only or witness-content-exposing placement into a
+conditional framework theorem.  These are targets named by the present
+paper, not results established here.
+
+The present paper therefore does not claim a standard-ZFC
+unconditional proof of \(P\neq NP\).  It does not claim circumvention
+of the natural-proofs, algebrization, or relativization barriers in
+their native senses.  It also does not claim resolutions of the host
+problems named by the V-Differential classification.  The grade
+qualifiers \(\DiagnosisGrade{}\) and \(\RDiagnosis{}\) record the
+binding scope of the two central claims.
+
+The framework provides a typed structural vocabulary for naming when
+prediction is more than current observation, when it collapses to
+current observation, and why that distinction does not project to the
+standard complexity-theoretic story without further work.
+ 
+\appendix
+
+
+\section{Formalization (Lean coverage)}
+\label{app:formalization}
+
+This appendix records how the paper-side definitions and claims are
+realized in Lean \citep{DeMouraUllrich2021Lean4}.  It is a per-row map
+from the labeled mathematical statements in the body to their
+declarations in the \texttt{SixBirdsHiddenness.Hiddenness} namespace,
+together with the coverage and alignment language used in the paper.  It is not a
+restatement of the body theorems, not a substitute for the mathematical
+proof sketches, and not an external-bibliography list.
+
+Lean identifier strings appear here and only here.  The body prose uses
+paper-prose names such as ``current quotient'' or ``granularity
+mismatch''; this appendix gives the corresponding module path and
+declaration name for audit and review.
+
+\paragraph{Lean-disclosure wording.}
+The body and appendix use the following wording discipline.
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Coverage / alignment & Permitted wording & Meaning in this paper \\
+\midrule
+theorem / faithful & ``Lean proves'' or ``verified in Lean'' & The Lean theorem matches the paper statement. \\
+theorem / narrowed surrogate & ``Lean proves the stated scope; the broader claim is paper-side with narrowing disclosed here'' & The structural shape is mechanized, with explicit premises or finite witnesses exposed. \\
+definition / faithful & ``realized in Lean as \texttt{Module.name}'' & The Lean declaration is the paper definition's typed realization. \\
+definition / narrowed surrogate & ``realized in Lean with the parameter or scope exposed'' & The Lean definition exposes an extra structural field or predicate. \\
+not mechanized & No Lean citation & The row is a nonclaim; the body uses the scope-fence wording. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{landscape}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.88}
+\noindent\textbf{Coverage table.}\par\smallskip
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.09\linewidth}>{\raggedright\arraybackslash}p{0.21\linewidth}@{}}
+\toprule
+Paper label & Paper-prose name & Lean decl & Coverage / alignment & Disclosure wording (body location) \\
+\midrule
+\endfirsthead
+\toprule
+Paper label & Paper-prose name & Lean decl & Coverage / alignment & Disclosure wording (body location) \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\footnotesize\itshape continued on next page} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\path|def:hiddenness:substrate| & substrate & \mbox{\texttt{Hiddenness.HistorySpace.substrate}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:framework}). \\
+\path|def:hiddenness:history-space| & history space & \mbox{\texttt{Hiddenness.HistorySpace.historySpace}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:framework}). \\
+\path|def:hiddenness:current-quotient| & current quotient & \mbox{\texttt{Hiddenness.Quotients.currentQuotient}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:framework}). \\
+\path|def:hiddenness:predictive-quotient| & predictive quotient & \mbox{\texttt{Hiddenness.Quotients.predictiveQuotient}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:framework}). \\
+\path|def:hiddenness:forget-witness-map| & forget-witness map & \mbox{\texttt{Hiddenness.Quotients.forgetWitnessMap}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:framework}). \\
+\path|prop:hiddenness:witness-refinement| & witness refinement proposition & \mbox{\texttt{Hiddenness.Quotients.witnessRefinement}} & theorem / faithful & Verified in Lean; body proof explains the current-observable inclusion (\Cref{sec:framework}). \\
+\path|def:hiddenness:autonomous-lift| & autonomous lift & \mbox{\texttt{Hiddenness.AutonomousLift.autonomousLift}} & definition / narrowed surrogate & Realized with family-characterizing predicates exposed in the Lean record (\Cref{sec:autonomous-lifts}). \\
+\path|def:hiddenness:lift-family-A| & Lift A (self-generating substrate) & \mbox{\texttt{Hiddenness.AutonomousLift.liftFamilyA}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:autonomous-lifts}). \\
+\path|def:hiddenness:lift-family-B| & Lift B (feedback-coupled) & \mbox{\texttt{Hiddenness.AutonomousLift.liftFamilyB}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:autonomous-lifts}). \\
+\path|def:hiddenness:lift-family-C| & Lift C (internally-seeded random) & \mbox{\texttt{Hiddenness.AutonomousLift.liftFamilyC}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:autonomous-lifts}). \\
+\path|def:hiddenness:lift-family-D| & Lift D (planted-suppressed internalization) & \mbox{\texttt{Hiddenness.AutonomousLift.liftFamilyD}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:autonomous-lifts}). \\
+\texttt{def:hiddenness:\allowbreak trace-fingerprint-\allowbreak loop-class} & trace-fingerprint loop class & \mbox{\texttt{Hiddenness.LoopAction.traceFingerprintLoopClass}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:loop-action}). \\
+\path|def:hiddenness:loop-action-q| & loop action on Q & \mbox{\texttt{Hiddenness.LoopAction.loopActionQ}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:loop-action}). \\
+\path|def:hiddenness:loop-action-m| & loop action on M & \mbox{\texttt{Hiddenness.LoopAction.loopActionM}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:loop-action}). \\
+\path|def:hiddenness:asymmetry| & M-vs-Q loop-action asymmetry & \mbox{\texttt{Hiddenness.LoopAction.asymmetry}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:loop-action}). \\
+\path|def:hiddenness:visibility-coupling| & visibility coupling / Exposure predicate & \mbox{\texttt{Hiddenness.VisibilityCoupling.visibilityCoupling}} & definition / faithful & Definition entry; realized with realized-support nonconstancy (\Cref{sec:visibility-coupling}). \\
+\path|def:hiddenness:predictive-witness-content| & predictive witness content & \mbox{\texttt{Hiddenness.WitnessContent.predictiveWitnessContent}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:witness-content}). \\
+\path|lem:csl-core| & CSL core lemma / Candidate Structural Law & \mbox{\texttt{Hiddenness.CSLCore.cslCore}} & theorem / narrowed surrogate & Lean proves the four clauses from six structural premises; empirical hardening is paper-side (\Cref{sec:csl-core}). \\
+\path|prop:hiddenness:v-differential| & V-Differential proposition & \mbox{\texttt{Hiddenness.VDifferential.vDifferential}} & theorem / narrowed surrogate & Lean proves the sorted classification from per-substrate hypotheses (\Cref{sec:v-differential}). \\
+\path|def:hiddenness:projection-q-to-p| & Q-to-P projection & \mbox{\texttt{Hiddenness.GranularityMismatch.projectionQToP}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:granularity-mismatch}). \\
+\path|prop:hiddenness:c1-not-bijective| & C1 obstruction (Q-to-P non-bijection) & \mbox{\texttt{Hiddenness.GranularityMismatch.c1NotBijective}} & theorem / narrowed surrogate & Lean proves a collision schema: any supplied collision between distinct \(\Qquotient\)-classes sharing a \(\PiQP\) image yields non-injectivity. The three carrier-side obstruction clauses are paper-side (\Cref{sec:granularity-mismatch}). \\
+\path|def:hiddenness:projection-m-to-np| & M-to-NP projection & \mbox{\texttt{Hiddenness.GranularityMismatch.projectionMToNP}} & definition / faithful & Definition entry; realized in Lean as listed here (\Cref{sec:granularity-mismatch}). \\
+\path|prop:hiddenness:c2-not-bijective| & C2 obstruction (M-to-NP non-bijection) & \mbox{\texttt{Hiddenness.GranularityMismatch.c2NotBijective}} & theorem / narrowed surrogate & Lean proves a collision schema: any supplied collision between distinct \(\Mquotient\)-classes sharing a \(\PiMNP\) image yields non-injectivity. The witness-identity content is paper-side (\Cref{sec:granularity-mismatch}). \\
+\path|thm:granularity-mismatch| & granularity-mismatch theorem & \mbox{\texttt{Hiddenness.GranularityMismatch.granularityMismatch}} & theorem / narrowed surrogate & Lean exhibits a SAT-like finite-carrier witness with the witness-discriminating setoid \(M\) instantiated as literal history equality and a constant verifier output, rather than as the kernel of a witness-augmented observable reading the witness bit; no standard \(P\)-vs-\(NP\) bridge is claimed (\Cref{sec:granularity-mismatch}). \\
+\path|thm:standard-pvnp-implication| & standard \(P\)-vs-\(NP\) implication nonclaim & --- & not mechanized & No Lean citation; scope-fence wording only (\Cref{sec:scope}). \\
+\path|thm:csl-theorem-grade-asymptotic| & asymptotic theorem-grade CSL nonclaim & --- & not mechanized & No Lean citation; diagnosis-grade scope wording only (\Cref{sec:scope}). \\
+\path|thm:razborov-rudich-internal-restatement| & classical-barrier circumvention nonclaim & --- & not mechanized & No Lean citation; barrier-comparison wording only (\Cref{sec:scope,sec:discussion}). \\
+\end{longtable}
+\end{landscape}
+
+The three nonclaim rows carry no Lean coverage.  They are included in
+the table because they are paper-side rows of record, but the body does
+not cite Lean for them.  Their content is expressed through the
+scope-fence language in \Cref{sec:scope}: no standard-ZFC unconditional
+\(P\neq NP\) consequence, no asymptotic theorem-grade \CSL{}, and no
+native circumvention claim for the classical barriers discussed in
+\Cref{sec:discussion}.
+
+The narrowed-surrogate rows are the main disclosure points.  For
+\path|lem:csl-core|, Lean proves the four-clause structure from the six
+structural premises stated in \Cref{sec:csl-core}; the
+\DiagnosisGrade{} empirical hardening is paper-side.  For
+\path|prop:hiddenness:v-differential|, Lean proves the sorted
+classification from per-substrate empirical hypotheses.  For
+\path|prop:hiddenness:c1-not-bijective| and
+\path|prop:hiddenness:c2-not-bijective|, Lean proves a collision
+schema: any supplied collision between distinct classes that share a
+projection image yields non-injectivity.  The carrier-side obstruction
+clauses (Q-to-P: histories-vs-languages, trace observables, machine
+multiplicity; M-to-NP: witness-identity content) are paper-side; the
+schemata apply once such a collision is supplied.  For
+\path|thm:granularity-mismatch|, Lean realizes the typed projections
+and a SAT-like finite-carrier witness; it does not claim a bridge from
+that framework-internal projection to a standard \(P\)-vs-\(NP\)
+implication.
+
+The Lean development is mathlib-free
+\citep{MathlibCommunity2020LeanMathematicalLibrary}.  All declarations
+listed here live in the Six Birds Hiddenness hierarchy, with the
+\path|Hiddenness| subnamespace reserved for this paper.  The theorem
+rows pass the project's axiom audit under the trust base
+\(\{\)\path|Classical.choice|, \path|propext|, \path|Quot.sound|,
+\path|choice|, \path|funext|\(\}\) \citep{MartinLof1984IntuitionisticTypeTheory}.
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

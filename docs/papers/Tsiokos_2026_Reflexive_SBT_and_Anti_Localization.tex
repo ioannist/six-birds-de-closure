@@ -1,0 +1,1243 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{fancyhdr}
+\usepackage{natbib}
+\usepackage{orcidlink}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=green!50!black,
+  urlcolor=blue!80!black,
+  bookmarksnumbered=true,
+  pdfauthor={Ioannis Tsiokos},
+  pdftitle={Reflexive SBT and Anti-Localization}
+}
+
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+ 
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+\title{Reflexive SBT and Anti-Localization}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{15 February 2026}
+
+\newcommand{\printaffiliation}{\begin{center}\small \end{center}}
+
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad DOI: TBD \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad Preprint --- not peer reviewed.}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+\printaffiliation
+
+
+
+\section*{Abstract}\label{sec:abstract}
+
+\noindent
+Accounting-style inequalities are central in Six Birds Theory, but they do not by themselves rule out catastrophic extremes: highly localized ``needle'' probes can satisfy global budgets while producing large peaks. We ask when packaging plus accounting forces anti-localization, and propose \emph{Reflexive SBT}: a capacity-based audit of the packaged artifacts (subspaces, feasibility dictionaries, and route ladders). We define a localization metric \(\eta_j\) at cell scale \(2^{-j}\), compute it via an eigenvalue method, and upper-bound it using three auditable capacities: subspace trace/diagonal dispersion, sparse feasibility conditioning on small supports, and a route-union ledger charging multi-route inflation. We find three controlled separations: (i) shift-invariant channels (Fourier/circulant) have uniform projector diagonals and \(\eta_j\) follows the deterministic \(m/2^j\) bound, while diagonal disorder drives \(\eta_j\) rapidly toward \(1\) compared with full-noise perturbations; (ii) feasibility-level needles arise exactly when small-support conditioning collapses (\(\sigma_{\min}\!\to 0\)) and are absent in random baselines; (iii) for spectral packaging, route mismatch spikes only at degenerate cutoffs and is eliminated by a canonical tie-break, with remaining route effects captured by the union ledger. This turns the anti-localization hinge into a reproducible checklist and yields a conditional theorem: vanishing capacity implies \(\eta_j\to 0\) along a ladder. We are explicit that Reflexive SBT is not proven here to universally drive capacities to zero; we prove the capacity\(\Rightarrow\)anti-localization implications and provide auditable closure evidence on canonical failure and repair modes.
+
+\noindent\textbf{keywords:} reflexive SBT; anti-localization; localization metric; capacity audit; packaging; route stability; Six Birds framework
+ \section{Introduction}\label{sec:introduction}
+
+Six Birds Theory (SBT) proposes a primitive-based dictionary for understanding complex systems through \emph{packaging} (bridge objects, reductions, sectorizations) and \emph{accounting} (ledger constraints that certify passivity/tameness) \cite{sixbirds_foundations}.
+In the Foundations paper, this dictionary is developed as a general method: instead of analyzing a substrate dynamics directly, one repeatedly packages it into coarser artifacts while tracking feasibility, composition/route effects, and conserved or monotone quantities.
+This follow-up paper asks a pointed question that emerges naturally from that framework:
+\emph{when does ``packaging + accounting'' force anti-concentration?}
+
+\paragraph{Why needles are the obstruction.}
+A global ledger can bound total energy, total work, or total dissipation, yet still permit arbitrarily large peaks on small spatial (or spatiotemporal) regions.
+These ``needle'' patterns are not a technical nuisance: they are the mechanism that turns universal inequalities into supremum-type bottlenecks.
+If the admissible/feasible class contains arbitrarily concentrated probes, then any certificate intended to hold uniformly over that class is forced to control extreme localization.
+In many settings this collapses the theory back to pointwise or worst-case bounds, defeating the purpose of coarse packaging.
+
+\paragraph{Reflexive SBT.}
+Our core move is to apply the Six-Birds primitives not only to the substrate, but also to the \emph{artifacts produced by packaging}.
+We call this \emph{Reflexive SBT}: the state of the analysis at depth \(j\) is itself an artifact (a packaged interface, its channelization, its feasibility constraints, and its route/ledger bookkeeping), and we study which structural invariants must hold \emph{for the ladder} as depth increases.
+This is not an infinite regress; it is a search for fixed-point constraints of the packaging process.
+
+\paragraph{A quantitative hinge: anti-localization.}
+We formalize ``needle exclusion'' using a localization metric \(\eta_j\) (defined in \S\ref{sec:eta-metric}) that measures how much feasible energy can concentrate inside a single cell of a uniform partition at resolution \(2^{-j}\).
+An \emph{anti-localizing ladder} is one for which \(\eta_j \to 0\) as \(j \to \infty\).
+The central theme of the paper is that anti-localization is governed by \emph{addressability} of the packaged interface: what the interface can ``target'' at fine scales.
+
+\paragraph{Capacity terms.}
+Our results isolate three capacity-like controls that imply anti-localization:
+(i) a symmetry-compatible \emph{diagonal/trace capacity} for subspace artifacts (\S\ref{sec:symmetry-trace-al}),
+(ii) a \emph{conditioning capacity} for feasibility under sparse cancellation (\S\ref{sec:cancellation-conditioning}), and
+(iii) a \emph{route union ledger} that charges multi-route systems by the capacity of the union of routes (\S\ref{sec:routes-union-ledger}).
+We prove modular implications showing that if these capacities vanish along a refinement ladder, then anti-localization follows.
+We also provide necessity assets: explicit counterexamples where each missing capacity term allows needle synthesis.
+
+\paragraph{What this paper does not claim.}
+We do \emph{not} prove that Reflexive SBT necessarily drives these capacities to zero for every admissible packaging ladder.
+Instead, we give (a) theorem-quality implications of the form \emph{capacity} \(\Rightarrow\) \emph{anti-localization}, (b) counterexamples showing the capacities are not optional, and (c) an auditable Reflexive SBT loop (closure tests and primitive-move analogues) whose trajectories empirically reduce the relevant capacities on canonical obstructions.
+Proving capacity decay as a consequence of SBT minimality/closure principles is a natural next-paper target; this paper supplies the clean capacity objects that such a theorem must control.
+
+\paragraph{Contributions.}
+\begin{itemize}
+  \item We define a robust localization metric \(\eta_j\) for packaged feasibility (subspaces, dictionaries, and routes) and validate its computation by brute-force audits on small instances.
+  \item We establish a reusable inequality chain \(\eta_j \le \text{trace\_bound}_j\) and promote proof-friendly diagonal bounds (including an \(L^2\) diagonal dispersion bound) that quantify how symmetry defects inflate trace capacity.
+  \item We identify and quantify a feasibility-level failure mode: sparse cancellation needles arise when small-support submatrices are ill-conditioned; we provide both theorem skeletons and strong numerical evidence linking needle gains to \(\sigma_{\min}\) (and its inverse).
+  \item We provide a route ledger principle: multi-route behavior is controlled by the capacity of the union artifact, together with an explicit route-stability theorem for spectral packaging with canonical tie-breaks in degenerate regimes.
+  \item We implement a Reflexive SBT loop (audits \(\to\) closure tests \(\to\) primitive moves) and demonstrate capacity decreases on canonical failure modes, yielding an assets package suitable for future closure theorems.
+\end{itemize}
+
+\paragraph{What is proved vs.\ what is evidenced.}
+Our main formal contribution is a set of \emph{implications}: given auditable capacity bounds on packaged artifacts, we prove anti-localization of feasible probes at refined cell scales.
+We do \emph{not} prove that the Reflexive SBT loop necessarily drives these capacities to zero in all settings; rather, we provide a reproducible audit/closure workflow and controlled case studies showing how specific primitive-like moves decrease the relevant capacity terms on canonical failure modes.
+
+\paragraph{Organization.}
+We introduce \(\eta_j\) in \S\ref{sec:eta-metric}.
+Symmetry/trace mechanisms appear in \S\ref{sec:symmetry-trace-al}.
+Cancellation and conditioning appear in \S\ref{sec:cancellation-conditioning}.
+Route effects and the union ledger appear in \S\ref{sec:routes-union-ledger}.
+Reflexive SBT and the closure loop appear in \S\ref{sec:reflexive-loop}.
+We collect the combined capacity-to-anti-localization statement in \S\ref{sec:capacity-theorem} and conclude in \S\ref{sec:discussion}.
+ \section{Six Birds refresher: the six primitives}\label{sec:six-birds-refresher}
+
+This paper is a follow-up to the Six Birds Foundations manuscript \cite{sixbirds_foundations}.
+We reuse its dictionary and notation, but we deploy it in a ``reflexive'' way: the primitives are applied not only to a substrate system, but also to the \emph{packaged artifacts} produced by prior rounds of packaging.
+For convenience, we restate the six primitives in a minimal form as \emph{closure-changing operations} (a vocabulary of moves), not as axioms.
+
+\paragraph{P1 (operator rewrite).}
+A P1 move rewrites the substrate operator itself: replace an update rule \(P\) by a new operator \(P'\) (or a finite family \(\{P^{(m)}\}\)).
+This changes the induced endomap on states/observables.
+In this paper, P1 will also appear at the artifact level as a controlled rewrite of an interface (e.g.\ replacing a non-symmetric packaging by a symmetry-adapted one).
+
+\paragraph{P2 (gating / constraints).}
+A P2 move restricts feasibility by imposing constraints: delete admissible transitions, restrict to a subgraph/support, or impose feasibility limits on inputs/controls.
+Conceptually, P2 is the primitive that answers: \emph{which probes are feasible at this depth?}
+In our setting, P2 is the natural place where ``addressability'' constraints live.
+
+\paragraph{P3 (autonomous protocol holonomy / route mismatch).}
+A P3 move records that the effective behavior can depend on \emph{route}: composition order, internal phase/protocol state, or the path taken through a ladder of reductions.
+In Foundations \cite{sixbirds_foundations}, this is treated in an autonomous lifted form (protocol state included in the system) and is a \emph{route-geometry diagnostic} rather than an arrow-of-time certificate.
+Here we use P3 as a bookkeeping primitive: if different packaging routes produce different interfaces, the discrepancy must be charged to a route ledger.
+
+\paragraph{P4 (sectors / invariants).}
+A P4 move introduces (or reveals) conserved sector labels or invariant decompositions: block structure, disconnected components, or other invariant coordinates preserved by evolution.
+In this paper, P4 is the symmetry/sector primitive that supports channelization: it is the mechanism by which a packaged interface decomposes into modes/channels that cannot mix.
+
+\paragraph{P5 (packaging).}
+A P5 move is the packaging operation itself: an idempotent endomap \(e\) whose fixed points \(\mathrm{Fix}(e)\) are the packaged objects of the theory at a given depth.
+Packaging is a \emph{compression map} on descriptions/interfaces; it is not merely an order-closure.
+In our experiments and theorem notes, P5 corresponds to forming explicit subspace/dictionary artifacts and their canonicalizations.
+
+\paragraph{P6 (accounting / audit).}
+A P6 move equips the system with an audit/ledger: a monotone certificate under coarse maps or packaging (e.g.\ feasibility orders, information monotonicity, or other accounting functionals in \cite{sixbirds_foundations}).
+In this paper we use P6 in a focused way: it becomes a ledger over \emph{capacity-like quantities} that control whether needle-like localization is possible at fine scales.
+
+\paragraph{From SBT to Reflexive SBT.}
+Reflexive SBT treats the packaged ladder as a system in its own right.
+At depth \(j\), the ``state'' includes (i) the current packaged interface (e.g.\ a feasible subspace or dictionary), (ii) its channel decomposition, (iii) feasibility constraints, and (iv) route bookkeeping.
+We then ask which invariants or inequalities must hold \emph{for this ladder} as \(j\) increases.
+Operationally, we implement this as a loop: \emph{audit} (P6 on artifacts) \(\to\) \emph{closure tests} \(\to\) if closure fails, apply a primitive-analogue move (P1--P5) and re-audit.
+The remainder of the paper makes this concrete by defining a localization metric \(\eta_j\), identifying capacity terms that imply anti-localization, and exhibiting both repairs and counterexamples within this reflexive framework.
+ \section{A localization metric for packaged feasibility}\label{sec:eta-metric}
+
+The obstruction we study is \emph{concentration}: a feasible probe can place a large fraction of its energy into a tiny region, producing ``needle'' tests that defeat coarse accounting.
+To make this precise (and to connect directly to reproducible experiments), we define a quantitative localization metric \(\eta_j\) at a discrete resolution scale \(2^{-j}\).
+Throughout, we work on the cyclic grid \(\mathbb{Z}_N\) with vectors \(v \in \C^N\) and the \(\ell^2\) norm \(\|v\|_2^2 = \sum_{i=0}^{N-1} |v_i|^2\).
+
+\paragraph{Discrete domain, cells, and localization.}
+We work on the discrete cyclic domain \(\mathbb{Z}_N=\{0,1,\dots,N-1\}\), identifying vectors \(v\in\mathbb{C}^N\) with functions on \(\mathbb{Z}_N\).
+For an integer \(j\ge 0\) such that \(2^j\mid N\), let \(L=2^j\) and partition \(\mathbb{Z}_N\) into contiguous cells \(B_{j,\ell}\) of equal size \(|B_{j,\ell}|=N/L=N/2^j\).
+Define the cell localization of a nonzero vector \(v\) by
+\[
+\mathrm{Loc}_j(v)\;:=\;\max_{\ell\in\{0,\dots,L-1\}}\frac{\|v_{B_{j,\ell}}\|_2^2}{\|v\|_2^2}.
+\]
+
+\paragraph{Cells at depth \(j\).}
+Fix an integer \(j \ge 0\) such that \(2^j\) divides \(N\).
+Let \(\mathcal{B}_j\) be the uniform partition of \(\mathbb{Z}_N\) into \(2^j\) contiguous cells \(B\) of equal size
+\[
+|B| = b = N/2^j .
+\]
+For a vector \(v\), we write \(\|v\|_B^2 := \sum_{i \in B} |v_i|^2\) for the energy inside cell \(B\).
+
+\paragraph{Vector-level localization.}
+Define the depth-\(j\) localization of a vector \(v \neq 0\) by
+\begin{equation}\label{eq:Locj}
+\mathrm{Loc}_j(v) \;:=\; \max_{B \in \mathcal{B}_j} \frac{\|v\|_B^2}{\|v\|_2^2}
+\;\in\; [0,1].
+\end{equation}
+Thus \(\mathrm{Loc}_j(v)\) is the largest fraction of energy that can be placed in a single cell at that resolution.
+
+\paragraph{Feasible-set localization.}
+For any feasible set \(\mathcal{F} \subseteq \C^N\), define
+\begin{equation}\label{eq:etaj_general}
+\eta_j(\mathcal{F}) \;:=\; \sup_{\substack{v \in \mathcal{F}\\ \|v\|_2 = 1}} \;\max_{B \in \mathcal{B}_j} \|v\|_B^2
+\;=\; \sup_{\substack{v \in \mathcal{F}\\ \|v\|_2 = 1}} \mathrm{Loc}_j(v).
+\end{equation}
+An anti-localizing ladder is one for which \(\eta_j(\mathcal{F}_j) \to 0\) as \(j \to \infty\).
+
+\subsection{Subspace artifacts: eigenvalue formula}\label{subsec:eta_eig_formula}
+
+In many SBT artifacts (and throughout our baseline experiments), feasibility is represented by a linear subspace.
+Let \(U \subseteq \C^N\) be an \(m\)-dimensional feasible subspace with an orthonormal basis matrix
+\[
+\Psi \in \C^{N \times m}, \qquad \Psi^\ast \Psi = I_m, \qquad U = \mathrm{range}(\Psi).
+\]
+For a cell \(B \in \mathcal{B}_j\), let \(\Psi_B \in \C^{b \times m}\) denote the restriction of \(\Psi\) to the rows indexed by \(B\).
+
+\begin{proposition}[Eigenvalue characterization]\label{prop:eta_eigenvalue}
+For a subspace \(U = \mathrm{range}(\Psi)\),
+\begin{equation}\label{eq:eta_eig}
+\eta_j(U) \;=\; \max_{B \in \mathcal{B}_j} \lambda_{\max}\!\bigl(\Psi_B^\ast \Psi_B\bigr),
+\end{equation}
+where \(\Psi_B^\ast \Psi_B\) is Hermitian positive semidefinite.
+\end{proposition}
+
+\begin{proof}
+Any unit vector \(v \in U\) can be written as \(v = \Psi a\) with \(\|a\|_2 = 1\).
+Then \(\|v\|_B^2 = \|\Psi_B a\|_2^2 = a^\ast (\Psi_B^\ast \Psi_B)a\).
+Maximizing over \(\|a\|_2=1\) yields the Rayleigh quotient, whose supremum equals \(\lambda_{\max}(\Psi_B^\ast \Psi_B)\).
+Taking the maximum over cells \(B\) gives \eqref{eq:eta_eig}.
+\end{proof}
+
+\subsection{Trace bound and per-channel cell energies}\label{subsec:trace_bound}
+
+The eigenvalue formula gives an exact metric, but it is often useful to upper bound \(\eta_j\) by simpler ledger quantities.
+
+\paragraph{Trace bound.}
+Define
+\begin{equation}\label{eq:trace_bound_def}
+\mathrm{trace\_bound}_j(U) \;:=\; \max_{B \in \mathcal{B}_j} \mathrm{tr}\!\bigl(\Psi_B^\ast \Psi_B\bigr).
+\end{equation}
+Since \(\Psi_B^\ast \Psi_B \succeq 0\), we have \(\lambda_{\max} \le \mathrm{tr}\), hence:
+
+\begin{lemma}[Trace dominates localization]\label{lem:eta_le_trace}
+For every subspace \(U\) and depth \(j\),
+\[
+\eta_j(U) \;\le\; \mathrm{trace\_bound}_j(U).
+\]
+\end{lemma}
+
+\noindent
+Equivalently, writing the orthogonal projector \(P := \Psi\Psi^\ast \in \C^{N\times N}\), we have
+\[
+\mathrm{tr}(\Psi_B^\ast \Psi_B)
+= \mathrm{tr}(\Psi_B\Psi_B^\ast)
+= \sum_{i\in B} P_{ii},
+\]
+so \(\mathrm{trace\_bound}_j\) is the maximum cell sum of the projector diagonal.
+This identity is the entry point for symmetry/diagonal-capacity bounds in \S\ref{sec:symmetry-trace-al}.
+
+\paragraph{Per-channel cell energies.}
+Let \(\psi_r\) denote the \(r\)-th column of \(\Psi\).
+Define the per-channel localization scores
+\begin{equation}\label{eq:bj_def}
+b_{j,r}(U) \;:=\; \max_{B \in \mathcal{B}_j} \|\psi_r\|_B^2
+\qquad (r=1,\dots,m).
+\end{equation}
+These satisfy
+\[
+\mathrm{trace\_bound}_j(U)
+= \max_{B \in \mathcal{B}_j} \sum_{r=1}^m \|\psi_r\|_B^2
+\;\le\; \sum_{r=1}^m b_{j,r}(U),
+\]
+and they provide a channel-resolved view of what the interface can ``address'' at resolution \(2^{-j}\).
+
+\subsection{Computation and validation}\label{subsec:eta_computation}
+
+\paragraph{Eigenvalue method.}
+In our experiments, \(\eta_j(U)\) is computed directly from \eqref{eq:eta_eig} by looping over cells \(B\) and forming the \(m\times m\) Gram matrix
+\(K_B := \Psi_B^\ast \Psi_B\), then extracting its largest eigenvalue.
+The trace bound \eqref{eq:trace_bound_def} is computed as \(\max_B \mathrm{tr}(K_B)\), and the per-channel scores \eqref{eq:bj_def} are computed as \(b_{j,r}=\max_B \|\psi_r\|_B^2\).
+This implementation is deterministic for deterministic inputs.
+
+\paragraph{Correctness checks.}
+We validated the eigenvalue computation in two complementary ways.
+First, we enforce structural invariants in unit tests (e.g.\ \(0 \le \eta_j \le 1\), and \(\eta_j \le \mathrm{trace\_bound}_j\)).
+Second, for small sizes we cross-check \(\eta_j\) against brute-force maximization by sampling many random coefficients \(a\) on the unit sphere and measuring the maximum observed cell energy \(\max_B \|\Psi_B a\|_2^2\); the sampled value is always \(\le \eta_j\) and converges upward with sample count.
+Reproduction details for these audits are listed in \S\ref{sec:reproducibility}.
+
+\paragraph{Preview: baseline scaling fits.}
+As a preview of the regimes studied later, Table~\ref{tab:baseline-scaling-fits} reports simple regression fits for \(\eta_j\) under controlled subspace families (random, Fourier, delta-type).
+These fits are generated from CSV outputs by a reproducible export script (\S\ref{sec:reproducibility}).
+
+\begin{table}[t]
+\centering
+\begin{tabular}{llrrr}
+\toprule
+model & fit\_name & C & rmse & n\_points \\
+\midrule
+delta & fit\_a\_eta\_vs\_m\_over\_2powj & 0.0679 & 0.889 & 120 \\
+fourier & fit\_a\_eta\_vs\_m\_over\_2powj & 0.0656 & 0.537 & 120 \\
+random & fit\_a\_eta\_vs\_m\_over\_2powj & 0.0291 & 0.154 & 120 \\
+random & fit\_b\_random\_collapse & 0.91 & 0.0274 & 120 \\
+\bottomrule
+\end{tabular}
+ \caption{Baseline scaling fits for \(\eta_j\) in canonical subspace families (exported from experiment CSVs).}
+\label{tab:baseline-scaling-fits}
+\end{table}
+ \section{Symmetry, trace uniformity, and anti-localization}\label{sec:symmetry-trace-al}
+
+This section isolates the cleanest deterministic mechanism we found for anti-localization:
+\emph{exact symmetry at the subspace level forces uniform projector diagonal, hence uniform trace across cells, hence \(\eta_j\) decays at the symmetry-compatible rate \(m/2^j\).}
+We then relax exact symmetry and treat non-uniformity of the diagonal as a quantitative \emph{capacity} term that upper bounds \(\eta_j\) via the trace bound from \S\ref{sec:eta-metric}.
+All statements are compatible with the Six Birds ``sectors/invariants'' and ``packaging'' viewpoint \cite{sixbirds_foundations}.
+
+\subsection{Exact shift symmetry forces a uniform diagonal}\label{subsec:exact_shift_symmetry}
+
+Let \(S\) denote the cyclic shift operator on \(\C^N\), \((Sv)_i = v_{i-1}\) (indices mod \(N\)).
+Let \(U \subseteq \C^N\) be an \(m\)-dimensional subspace with orthogonal projector \(P\).
+We say \(U\) is \emph{shift-invariant} if \(SU = U\), equivalently if \(PS = SP\).
+
+\begin{lemma}[Shift commutation implies constant diagonal]\label{lem:shift-commute-constant-diag}
+Let \(S\) be the cyclic shift on \(\mathbb{C}^N\) defined by \(Se_i=e_{i+1}\) (indices mod \(N\)).
+If an orthogonal projector \(P\) satisfies \(PS=SP\), then its diagonal is constant: \(P_{ii}=P_{00}\) for all \(i\).
+Consequently, if \(\mathrm{tr}(P)=m\) then \(P_{ii}=m/N\) for all \(i\).
+\end{lemma}
+\begin{proof}[Proof sketch]
+By commutation, \(S^{-1}PS=P\). Therefore
+\[
+\langle e_{i+1},Pe_{i+1}\rangle
+=\langle Se_i,PS e_i\rangle
+=\langle e_i,S^{-1}PS\,e_i\rangle
+=\langle e_i,Pe_i\rangle,
+\]
+so the diagonal entries are all equal. Summing the diagonal gives \(\sum_i P_{ii}=\mathrm{tr}(P)=m\), hence \(P_{ii}=m/N\).
+\end{proof}
+
+\begin{theorem}[Shift invariance \(\Rightarrow\) uniform diagonal]\label{thm:shift_invariance_uniform_diag}
+If \(P\) commutes with the shift \(S\), then \(\mathrm{diag}(P)\) is constant:
+\[
+P_{00} = P_{11} = \cdots = P_{N-1,N-1} = \frac{m}{N}.
+\]
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Since \(PS=SP\), we also have \(SPS^{-1} = P\).
+Taking the \((i,i)\) entry gives \(P_{ii} = (SPS^{-1})_{ii} = P_{i-1,i-1}\), hence the diagonal is constant.
+Finally \(\mathrm{tr}(P)=m\) implies the constant value is \(m/N\).
+\end{proof}
+
+\begin{corollary}[Trace uniformity on uniform cells]\label{cor:trace_uniformity}
+Assume \(U\) is shift-invariant.
+For the uniform partition \(\mathcal{B}_j\) (cell size \(b=N/2^j\)),
+\[
+\max_{B\in\mathcal{B}_j}\sum_{i\in B} P_{ii}
+=\sum_{i\in B} P_{ii}
+= \frac{m}{N}\,|B|
+=\frac{m}{2^j}.
+\]
+Equivalently, \(\mathrm{trace\_bound}_j(U)=m/2^j\).
+\end{corollary}
+
+\begin{corollary}[Exact symmetry yields an anti-localization bound]\label{cor:symmetry_implies_AL_bound}
+Assume \(U\) is shift-invariant.
+Then for every \(j\),
+\[
+\eta_j(U)\;\le\;\mathrm{trace\_bound}_j(U)\;=\;\frac{m}{2^j}.
+\]
+In particular, along any refinement ladder where \(m_j/2^j \to 0\), we have \(\eta_j(U_j)\to 0\).
+\end{corollary}
+
+\begin{proof}
+Combine Lemma~\ref{lem:eta_le_trace} from \S\ref{sec:eta-metric} with Corollary~\ref{cor:trace_uniformity}.
+\end{proof}
+
+\subsection{Diagonal capacity bounds without exact symmetry}\label{subsec:diag_capacity_bounds}
+
+Exact commutation \(PS=SP\) is strong.
+To support Reflexive SBT ``closure tests'' (where symmetry can fail by degree), we bound trace capacity using only diagonal statistics.
+Let \(p := \mathrm{diag}(P) \in \R^N\) and \(\mu := \frac{1}{N}\sum_i p_i = m/N\).
+Recall \(\mathrm{trace\_bound}_j(U)=\max_{B\in\mathcal{B}_j}\sum_{i\in B} p_i\).
+
+\begin{lemma}[Diagonal extreme bounds]\label{lem:diag_extreme_bounds}
+Let \(b = |B| = N/2^j\).
+Then
+\[
+\mathrm{trace\_bound}_j(U)
+\;\le\;
+b\cdot \|p\|_\infty,
+\qquad
+\mathrm{trace\_bound}_j(U)
+\;\le\;
+\sum_{\ell=1}^{b} p_{(\ell)},
+\]
+where \(p_{(1)} \ge p_{(2)} \ge \cdots \ge p_{(N)}\) are the diagonal entries sorted in decreasing order.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+For any cell \(B\), \(\sum_{i\in B} p_i \le b \max_i p_i\).
+Also, among all subsets of size \(b\), the maximum sum is achieved by the \(b\) largest entries, hence \(\sum_{i\in B}p_i \le \sum_{\ell\le b} p_{(\ell)}\).
+\end{proof}
+
+\begin{lemma}[\(L^2\) diagonal dispersion bound]\label{lem:diag_L2_bound}
+For every cell \(B\) of size \(b\),
+\[
+\sum_{i\in B} p_i
+\;\le\;
+b\mu + \sqrt{b}\,\|p-\mu\|_2.
+\]
+Consequently,
+\begin{equation}\label{eq:trace_bound_L2}
+\mathrm{trace\_bound}_j(U)
+\;\le\;
+\frac{m}{2^j}
+\;+\;
+\sqrt{\frac{N}{2^j}}\;\Bigl\|\mathrm{diag}(P) - \frac{m}{N}\mathbf{1}\Bigr\|_2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write \(\sum_{i\in B} p_i = b\mu + \sum_{i\in B}(p_i-\mu)\) and apply Cauchy--Schwarz:
+\(\sum_{i\in B}(p_i-\mu) \le \|{\bf 1}_B\|_2\|p-\mu\|_2 = \sqrt{b}\|p-\mu\|_2\).
+\end{proof}
+
+Combining Lemma~\ref{lem:eta_le_trace} with \eqref{eq:trace_bound_L2} yields a proof-friendly \emph{diagonal capacity} upper bound on \(\eta_j\).
+In later sections, this term becomes the symmetry-compatible component of the overall ``addressability capacity'' ledger.
+
+\subsection{Empirical support and failure modes}\label{subsec:symmetry_empirics}
+
+The theory above makes a sharp prediction: in truly shift-invariant packaged subspaces, the normalized trace bound
+\(\mathrm{trace\_bound}_j / (m/2^j)\) is exactly \(1\).
+Our experiments separate three regimes:
+
+\begin{itemize}
+  \item \textbf{Invariant:} Fourier low-frequency subspaces and eigenchannels of circulant convolution operators satisfy trace uniformity to numerical precision \cite{gray2006toeplitz}.
+  \item \textbf{Nearly uniform but not invariant:} random Haar subspaces have diagonals close to constant in distribution, so the trace ratio stays near \(1\) but not exactly.
+  \item \textbf{Strongly non-uniform:} delta-type subspaces violate trace uniformity by large factors, producing maximal localization.
+\end{itemize}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_trace_bound_ratio_vs_j.png}
+\caption{Empirical test of Corollary~\ref{cor:trace_uniformity}: normalized trace capacity \(\mathrm{trace\_bound}_j/(m/2^j)\) across models and scales. Invariant constructions sit at \(1\) (up to numerical error); non-invariant constructions deviate.}
+\label{fig:trace_ratio_vs_j}
+\end{figure}
+
+\paragraph{Symmetry breaking is not unique: diagonal disorder behaves differently than full noise.}
+A key open-minded finding of the Reflexive SBT scans is that ``breaking symmetry'' can occur in qualitatively different ways.
+In the eigenchannel pipeline (extracting packaged channels as eigenvectors of a perturbed operator), diagonal disorder (Anderson-style \cite{anderson1958}) rapidly increases localization at fine scales, while full Wigner-type noise \cite{wigner1958_roots} does not in the same parameter range.
+This suggests that diagonal non-uniformity is a more direct driver of trace capacity than generic non-commutation alone.
+We emphasize that we do not claim a general theorem of the form ``small symmetry defect \(\Rightarrow\) approximately constant diagonal'' without additional hypotheses; instead we treat diagonal-dispersion bounds as the audit-friendly capacity proxy.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_symbreak_eta_j8_vs_eps.png}
+\caption{Symmetry-breaking scan at fixed scale \(j=8\): diagonal disorder induces a sharp increase in \(\eta_j\) as the perturbation strength grows, while full noise remains in a weak-localization regime over the same range. This motivates diagonal-capacity bounds such as Lemma~\ref{lem:diag_L2_bound}.}
+\label{fig:symbreak_eta}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+noise\_kind & eps & eta\_j8\_mean & inv\_score\_s1\_mean & diag\_std\_mean \\
+\midrule
+diag & 0 & 0.128 & 0.0345 & 0.00138 \\
+diag & 0.01 & 0.134 & 0.0381 & 0.00215 \\
+diag & 0.03 & 0.146 & 0.0594 & 0.00485 \\
+diag & 0.1 & 0.21 & 0.167 & 0.016 \\
+diag & 0.3 & 0.795 & 0.528 & 0.0754 \\
+diag & 1 & 0.996 & 0.945 & 0.218 \\
+full & 0 & 0.128 & 0.0345 & 0.00138 \\
+full & 0.01 & 0.129 & 0.0363 & 0.0014 \\
+full & 0.03 & 0.131 & 0.0482 & 0.00153 \\
+full & 0.1 & 0.137 & 0.117 & 0.00261 \\
+full & 0.3 & 0.149 & 0.334 & 0.0064 \\
+full & 1 & 0.15 & 0.848 & 0.0138 \\
+\bottomrule
+\end{tabular}
+ \caption{Symmetry-breaking summary (means over seeds) at \(j=8\): localization \(\eta_j\) and diagonal/symmetry diagnostics as a function of perturbation strength.}
+\label{tab:symbreak-summary}
+\end{table}
+
+\paragraph{Diagonal bounds are always valid but vary in tightness.}
+We validated the extreme bounds of Lemma~\ref{lem:diag_extreme_bounds} and the \(L^2\) dispersion bound \eqref{eq:trace_bound_L2} across Fourier, delta, random Haar, and symmetry-breaking regimes.
+The bounds are exact in the truly invariant cases; they remain valid but become looser as diagonal disorder increases.
+This is consistent with the intended role of the diagonal capacity term: it is a proof-friendly ledger quantity that charges symmetry defects, not necessarily a numerically sharp estimator in every regime.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_trace_bound_l2_ratio_vs_j.png}
+\caption{Ratio of the \(L^2\) diagonal dispersion bound \eqref{eq:trace_bound_L2} to the true trace bound across regimes. The bound is theorem-friendly and always valid, but can be looser than extreme-value bounds when the diagonal is highly non-uniform.}
+\label{fig:trace_L2_ratio}
+\end{figure}
+
+\paragraph{Takeaway.}
+Exact symmetry gives a clean deterministic anti-localization bound \(\eta_j \le m/2^j\).
+When symmetry is imperfect, anti-localization is controlled by diagonal capacity terms such as \eqref{eq:trace_bound_L2} and by how these terms scale along the packaging ladder.
+The next section shows why this subspace-level story is not sufficient by itself: feasibility constraints can reintroduce needles through \emph{cancellation}, even when individual channels are delocalized.
+ \section{Cancellation, conditioning, and feasibility-level needles}\label{sec:cancellation-conditioning}
+
+Section~\ref{sec:symmetry-trace-al} showed a clean subspace-level route to anti-localization: exact shift symmetry forces uniform trace capacity, hence \(\eta_j \le m/2^j\).
+However, packaged feasibility in SBT is not always ``all of a subspace.''
+Feasibility often comes with constraints (P2 in the Six Birds dictionary): sparsity limits, restricted supports, bounded actuation budgets, or other admissibility filters.
+In such settings, \emph{cancellation} becomes the dominant failure mode: even if each individual channel/atom is broad, combining a few nearly redundant channels can synthesize a highly localized residual.
+
+\subsection{Dictionary feasibility model and cancellation gain}\label{subsec:dictionary_feasibility_model}
+
+\paragraph{Dictionary feasibility (distinct from subspace feasibility).}
+A feasibility-level artifact is specified by a dictionary \(D=[d_1\,\cdots\,d_M]\in\mathbb{R}^{N\times M}\) together with coefficient constraints on \(a\in\mathbb{R}^M\).
+We assume columns are normalized \(\|d_i\|_2=1\) unless stated otherwise.
+A key family is \emph{sparse feasibility}: \(v=Da\) with support \(S=\mathrm{supp}(a)\) satisfying \(|S|\le s\).
+This differs fundamentally from a subspace model \(v\in U\): cancellation effects arise because multiple atoms can be activated with opposite signs, producing localized residuals even if each atom is delocalized.
+
+\paragraph{Restricted conditioning as cancellation capacity.}
+For sparsity level \(s\), define the restricted conditioning parameter
+\[
+\kappa_s(D)\;:=\;\min_{S:\,|S|\le s}\sigma_{\min}(D_S),
+\]
+where \(D_S\) is the subdictionary on columns in \(S\).
+Small \(\kappa_s(D)\) means there exist small supports on which coefficients can cancel strongly while leaving a large residual effect, enabling needle-like addressing.
+
+\paragraph{What we measure empirically.}
+Computing \(\kappa_s(D)\) exactly requires a combinatorial worst-case search over supports.
+We therefore estimate cancellation vulnerability via randomized and targeted support scans (including supports seeded by near-duplicate pairs), reporting the resulting \(\sigma_{\min}(D_S)\) statistics and their correlation with observed localization/gain metrics.
+
+Let \(D = [d_1,\dots,d_M] \in \C^{N\times M}\) be a dictionary of normalized atoms \(\|d_k\|_2=1\).
+A typical feasibility model is ``small-support synthesis'':
+\[
+v = D a, \qquad \mathrm{supp}(a) \subseteq S, \quad |S|\le s,
+\]
+together with a coefficient constraint (e.g.\ \(\|a\|_2 \le 1\)).
+This is a minimal mathematical proxy for ``an interface with \(M\) knobs, but only \(s\) knobs can be used jointly.''
+
+To quantify cancellation amplification, we use the vector localization \(\mathrm{Loc}_j(v)\) from \eqref{eq:Locj} and compare a combination against its constituents.
+For two atoms \(d_i,d_k\), define the \emph{pair-difference probe}
+\[
+v_{\Delta} := \frac{d_i - e^{\mathrm{i}\theta} d_k}{\|d_i - e^{\mathrm{i}\theta} d_k\|_2},
+\qquad \theta := \arg\langle d_i,d_k\rangle,
+\]
+which phase-aligns the dominant overlap before subtraction.
+A natural ``gain'' statistic is then
+\[
+\mathrm{gain}_j(i,k)
+\;:=\;
+\frac{\mathrm{Loc}_j(v_\Delta)}{\max\{\mathrm{Loc}_j(d_i),\mathrm{Loc}_j(d_k)\}}.
+\]
+Large gain means the interface can synthesize a needle \emph{by cancellation} even though each individual channel is broad.
+
+\paragraph{A cautionary limit.}
+If feasibility is \(\|a\|_2 \le 1\) with \emph{no sparsity} and \(\mathrm{rank}(D)=N\), then the feasible set spans all of \(\C^N\) and localization becomes trivial: \(\eta_j \approx 1\) at fine scales because a delta-like direction is reachable.
+Thus, in capacity-based anti-localization, coefficient constraints must be paired with a structural restriction such as sparsity (small \(s\)), channel count limits, or an explicit prohibition of cancellation patterns.
+This is exactly the role of P2-style gating in Reflexive SBT.
+
+\paragraph{Why dense \(\ell_2\) feasibility destroys anti-localization.}
+If \(D\) has full rank \(N\) and feasibility is only \(\|a\|_2\le 1\), then \(\{Da:\|a\|_2\le 1\}\) spans all directions in \(\mathbb{R}^N\) up to conditioning, so highly localized vectors are feasible.
+Thus anti-localization cannot hold without additional feasibility structure (e.g.\ sparsity, bandwidth, or explicit addressability limits).
+We treat this as a diagnostic: AL is a property of \emph{restricted} feasibility, not of unconstrained linear spans.
+
+\subsection{Conditioning controls cancellation}\label{subsec:conditioning_controls}
+
+\paragraph{Feasibility via sparse dictionaries.}
+In feasibility-level models we consider a dictionary \(D=[d_1\,\cdots\,d_M]\in\mathbb{R}^{N\times M}\) and sparse feasibility constraints of the form
+\(v=Da\) with \(\mathrm{supp}(a)=S\) and \(|S|\le s\).
+This is not merely a low-dimensional subspace model: the feasible set depends on the coefficient constraint and can exhibit cancellation even when each atom \(d_i\) is delocalized.
+
+\begin{theorem}[Conditioning controls cancellation-based localization (informal)]\label{thm:conditioning-controls-localization}
+Fix a support \(S\) with \(|S|\le s\). For any nonzero \(v=D_S a\),
+\[
+\max_{B\in\mathcal{B}_j}\frac{\|v_B\|_2^2}{\|v\|_2^2}\;\le\;
+\max_{B\in\mathcal{B}_j}\frac{\|D_{S,B}\|_{\mathrm{op}}^2}{\sigma_{\min}(D_S)^2}.
+\]
+In particular, if \(\sigma_{\min}(D_S)\ge \kappa>0\) for all \(|S|\le s\) and each atom has bounded cell energy \(\max_{B}\|d_i\|_{B}^2\le \alpha\), then localization is bounded at scale \(j\) by a constant of order \(s\alpha/\kappa^2\).
+\end{theorem}
+
+The cancellation mechanism is controlled by \emph{small-support conditioning}, a standard compressed-sensing-style lens for sparse feasibility \cite{foucart_rauhut_2013}.
+For a support \(S\subseteq \{1,\dots,M\}\), write \(D_S\in\C^{N\times |S|}\) for the restricted dictionary and \(D_{S,B}\) for its row restriction to a cell \(B\).
+Let \(\sigma_{\min}(D_S)\) denote the smallest singular value of \(D_S\).
+
+\begin{lemma}[Sparse conditioning bound]\label{lem:sparse_conditioning_bound}
+Fix a support \(S\) with \(|S|\le s\) and a nonzero feasible vector \(v=D_S a\).
+Then for every depth \(j\),
+\begin{equation}\label{eq:cond_bound_cell}
+\max_{B\in\mathcal{B}_j} \frac{\|v\|_B^2}{\|v\|_2^2}
+\;\le\;
+\max_{B\in\mathcal{B}_j}\frac{\|D_{S,B}\|_{\mathrm{op}}^2}{\sigma_{\min}(D_S)^2}.
+\end{equation}
+In particular, using the crude bound \(\|D_{S,B}\|_{\mathrm{op}}^2 \le s \cdot \max_{k\in S}\|d_k\|_B^2\),
+\begin{equation}\label{eq:cond_bound_crude}
+\mathrm{Loc}_j(v)
+\;\le\;
+\frac{s}{\sigma_{\min}(D_S)^2}\;\max_{k\in S}\max_{B\in\mathcal{B}_j}\|d_k\|_B^2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+For any cell \(B\),
+\[
+\|v\|_B = \|D_{S,B}a\|_2 \le \|D_{S,B}\|_{\mathrm{op}}\|a\|_2.
+\]
+Also,
+\[
+\|v\|_2 = \|D_S a\|_2 \ge \sigma_{\min}(D_S)\|a\|_2.
+\]
+Divide and maximize over \(B\).
+The crude estimate follows from \(\|D_{S,B}\|_{\mathrm{op}}^2 \le \mathrm{tr}(D_{S,B}^\ast D_{S,B}) = \sum_{k\in S}\|d_k\|_B^2 \le s\max_{k\in S}\|d_k\|_B^2\).
+\end{proof}
+
+Lemma~\ref{lem:sparse_conditioning_bound} has a direct ``capacity'' interpretation:
+needle-making is possible when there exist small supports \(S\) with very small \(\sigma_{\min}(D_S)\) (nearly singular cancellation supports) \emph{and} nontrivial atom mass inside some cell.
+In practice, the most informative predictor is often \(1/\sigma_{\min}(D_S)\), which directly measures how much cancellation amplification a support can produce.
+
+\paragraph{Two-atom specialization.}
+If \(S=\{i,k\}\) and the atoms are normalized, the Gram matrix is
+\(\begin{psmallmatrix}1 & \langle d_i,d_k\rangle\\ \langle d_k,d_i\rangle & 1\end{psmallmatrix}\),
+whose smallest eigenvalue is \(1-|\langle d_i,d_k\rangle|\).
+Thus,
+\[
+\sigma_{\min}(D_S) = \sqrt{1-|\langle d_i,d_k\rangle|},
+\]
+so near-parallel pairs (\(|\langle d_i,d_k\rangle|\approx 1\)) are exactly the ill-conditioned supports that drive cancellation.
+
+\subsection{Empirical evidence: gain tracks inverse conditioning}\label{subsec:conditioning_empirics}
+
+Figures~\ref{fig:gain_sigma_s2}--\ref{fig:gain_sigma_s4} summarize a robust empirical finding across dictionaries and artifacts:
+\emph{cancellation gain is strongly controlled by inverse conditioning.}
+In paired/coherent regimes, large gains concentrate at very small \(\sigma_{\min}\), and the correlation with \(1/\sigma_{\min}\) is stronger than with simple coherence proxies such as \(|\langle d_i,d_k\rangle|\) alone.
+This is precisely the theorem-shaped hinge suggested by Lemma~\ref{lem:sparse_conditioning_bound}.
+
+\paragraph{How the plots relate to the bound.}
+Theorem~\ref{thm:conditioning-controls-localization} upper-bounds the achievable localization on a fixed support \(S\) by a ratio of a local operator norm to \(\sigma_{\min}(D_S)^2\).
+In the experiments we use probe constructions (e.g.\ near-duplicate differences and best-pair differences) that concentrate on small supports, and we report \(\mathrm{gain\_rel}\) as a normalization of the resulting localization relative to the localization of individual atoms.
+A strong empirical correlation between \(\mathrm{gain\_rel}\) and \(1/\sigma_{\min}(D_S)\) is therefore evidence that restricted ill-conditioning is the operative cancellation mechanism.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_gain_vs_sigma_min_s2.png}
+\caption{Cancellation gain vs.\ \(\sigma_{\min}\) for \(s=2\) supports.
+Large gains concentrate at small \(\sigma_{\min}\), consistent with Lemma~\ref{lem:sparse_conditioning_bound}.}
+\label{fig:gain_sigma_s2}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_gain_vs_sigma_min_s4.png}
+\caption{Cancellation gain vs.\ \(\sigma_{\min}\) for \(s=4\) supports (including targeted supports seeded by near-duplicate structure).
+The same mechanism persists beyond pairs: extreme gains arise from ill-conditioned small supports.}
+\label{fig:gain_sigma_s4}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{llrrr}
+\toprule
+dict\_type & support\_kind & n & corr\_inv\_sigma\_gain\_rel & corr\_abs\_dot\_gain\_rel \\
+\midrule
+all & all & 8000 & 0.876 & 0.718 \\
+paired\_dict & all & 3600 & 0.868 & 0.828 \\
+paired\_dict & top\_pairs & 1800 & 0.699 & 0.721 \\
+two\_route\_dict & all & 2000 & -0.030 & -0.031 \\
+two\_route\_dict & top\_pairs & 1000 & 0.036 & 0.038 \\
+random\_dict & all & 1200 & -0.010 & -0.008 \\
+random\_dict & top\_pairs & 600 & -0.025 & -0.025 \\
+\bottomrule
+\end{tabular}
+ \caption{Correlation summary for \(s=2\): inverse conditioning vs.\ gain and other predictors (exported from experiment CSVs).}
+\label{tab:cond_corr_s2}
+\end{table}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{llrr}
+\toprule
+dict\_type & support\_kind & n & corr\_inv\_sigma\_min\_best\_gain\_rel \\
+\midrule
+all & all & 17000 & 0.892 \\
+paired\_dict & all & 9000 & 0.864 \\
+paired\_dict & near\_duplicate\_seeded\_s4 & 4500 & 0.695 \\
+paired\_dict & random\_s4 & 4500 & 0.906 \\
+random\_dict & all & 3000 & 0.010 \\
+random\_dict & near\_duplicate\_seeded\_s4 & 1500 & 0.063 \\
+random\_dict & random\_s4 & 1500 & -0.042 \\
+two\_route\_dict & all & 5000 & 0.011 \\
+two\_route\_dict & near\_duplicate\_seeded\_s4 & 2500 & 0.016 \\
+two\_route\_dict & random\_s4 & 2500 & -0.010 \\
+\bottomrule
+\end{tabular}
+ \caption{Correlation summary for \(s=4\): inverse conditioning vs.\ gain and other predictors (exported from experiment CSVs).}
+\label{tab:cond_corr_s4}
+\end{table}
+
+\subsection{Near-duplicates are a gateway, but not the whole story}\label{subsec:near_duplicates_gateway}
+
+Near-parallel pairs provide a concrete mechanism for ill-conditioning at \(s=2\): \(|\langle d_i,d_k\rangle|\approx 1\) implies \(\sigma_{\min}\approx 0\).
+In paired dictionary constructions, this gateway is ubiquitous, and the localized residual lives in the \emph{difference mode}.
+Figure~\ref{fig:near_dup_diff_loc} shows this directly: high absolute inner products correlate with highly localized difference vectors at fine scale.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_near_duplicate_diff_loc.png}
+\caption{Near-duplicate census in paired regimes: abs\_dot vs.\ localization of the aligned difference vector at fine scale.
+Very high abs\_dot pairs can yield needle-like differences even when each atom is individually broad.}
+\label{fig:near_dup_diff_loc}
+\end{figure}
+
+At the same time, near-duplicates are not a universal explanation across all artifacts.
+For example, in two-route constructions arising from route mismatch, near-duplicate counts at strict thresholds can be small even when multi-route union effects matter.
+This motivates tracking conditioning over general small supports \(S\), not only pairs.
+
+\subsection{Counterexample CX1: two broad atoms whose difference is a needle}\label{subsec:cx1}
+
+We record a proof-quality necessity asset: without a conditioning/cancellation-resistance hypothesis, anti-localization can fail even when \emph{each channel is delocalized}.
+Consider two unit atoms of the form
+\[
+d_+ = g + \varepsilon h,\qquad d_- = g - \varepsilon h,
+\]
+where \(g\) is broad/delocalized and \(h\) is highly localized (delta-like), with \(\varepsilon\ll 1\).
+Then both \(d_+\) and \(d_-\) can be delocalized (dominated by \(g\)), yet their aligned difference is
+\[
+\frac{d_+ - d_-}{\|d_+ - d_-\|_2} \approx \frac{h}{\|h\|_2},
+\]
+which is needle-localized.
+Meanwhile \(|\langle d_+,d_-\rangle|\approx 1\), so \(\sigma_{\min}(\{d_+,d_-\})\approx 0\), matching Lemma~\ref{lem:sparse_conditioning_bound}.
+
+A minimal numerical instantiation of this counterexample yields individual atom localization \(\approx 0.016\) while the difference mode has localization \(1\), with \(|\langle d_+,d_-\rangle|\approx 0.9998\) and \(\sigma_{\min}\approx 0.014\) (reproducible scripts listed in \S\ref{sec:reproducibility}).
+This demonstrates that cancellation-resistance is not optional: to force anti-localization, Reflexive SBT must either gate these supports (P2), canonicalize them into explicit difference modes and then pay for their capacity (P5/P6), or otherwise prevent small-support singularity (a conditioning capacity bound).
+
+\paragraph{Takeaway.}
+Subspace symmetry controls trace/diagonal capacity.
+Feasibility constraints control cancellation capacity.
+Both are necessary: anti-localization at fine scales requires not only symmetry-compatible uniform trace, but also cancellation-resistant feasibility, quantitatively captured by small-support conditioning (\(\sigma_{\min}\) bounded away from \(0\) at the relevant sparsity scale).
+The next section adds the remaining piece: route effects (P3) can enlarge effective feasibility by taking unions over routes, which must be charged by a route-union ledger.
+ \section{Routes: a union ledger and when route stability holds}\label{sec:routes-union-ledger}
+
+The Six Birds route primitive (P3) highlights a subtle obstruction: if packaging is applied along different reduction routes, the resulting packaged interfaces need not agree.
+Even when each route individually looks ``tame,'' the \emph{collection of routes} can enlarge the effective feasible set and thereby reintroduce fine-scale localization.
+This section makes route effects rigorous by charging them to a \emph{route union ledger}, and then isolates a class of packaging maps (spectral/canonical packaging) where a route-stability theorem is plausible.
+
+\subsection{Route union ledger}\label{subsec:route_union_ledger}
+
+Fix a depth \(j\) and let \(\{U_{j,r}\}_{r\in\mathcal{R}_j}\) be the feasible subspaces produced by a family of routes \(r\).
+Define the \emph{route union subspace}
+\begin{equation}\label{eq:U_union_def}
+U_{j,\mathrm{union}} \;:=\; \mathrm{span}\{U_{j,r} : r\in\mathcal{R}_j\}.
+\end{equation}
+Let \(\eta_j(U)\) be the subspace localization metric from \S\ref{sec:eta-metric}.
+
+\begin{lemma}[Inclusion monotonicity]\label{lem:route_inclusion_monotonicity}
+If \(U \subseteq V\), then \(\eta_j(U) \le \eta_j(V)\).
+In particular, for every route \(r\),
+\begin{equation}\label{eq:eta_route_le_union}
+\eta_j(U_{j,r}) \;\le\; \eta_j(U_{j,\mathrm{union}}).
+\end{equation}
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+\(\eta_j(U)\) is a supremum over unit vectors in \(U\) (Definition~\eqref{eq:etaj_general}).
+If \(U\subseteq V\), the admissible set of vectors for \(V\) contains that of \(U\), so the supremum cannot decrease.
+\end{proof}
+
+Lemma~\ref{lem:route_inclusion_monotonicity} converts a potentially complicated multi-route system into a single auditable object:
+it suffices to control \(\eta_j(U_{j,\mathrm{union}})\), and the bound automatically transfers to every route.
+This is the core of the P3 ``ledger'' viewpoint: route effects are charged to the size/structure of the union subspace.
+
+\subsection{A proof-friendly route capacity via trace/diagonal bounds}\label{subsec:route_capacity}
+
+Let \(m_{\mathrm{union}} := \dim(U_{j,\mathrm{union}})\) and let \(P_{\mathrm{union}}\) be the orthogonal projector onto \(U_{j,\mathrm{union}}\).
+By Lemma~\ref{lem:eta_le_trace} (trace dominates localization) and the diagonal dispersion bound \eqref{eq:trace_bound_L2} from \S\ref{sec:symmetry-trace-al},
+\begin{equation}\label{eq:route_union_capacity_bound}
+\eta_j(U_{j,\mathrm{union}})
+\;\le\;
+\mathrm{trace\_bound}_j(U_{j,\mathrm{union}})
+\;\le\;
+\frac{m_{\mathrm{union}}}{2^j}
+\;+\;
+\sqrt{\frac{N}{2^j}}\;\Bigl\|\mathrm{diag}(P_{\mathrm{union}}) - \frac{m_{\mathrm{union}}}{N}\mathbf{1}\Bigr\|_2.
+\end{equation}
+We refer to the right-hand side as a \emph{union capacity} (a route ledger term).
+Combining \eqref{eq:eta_route_le_union} and \eqref{eq:route_union_capacity_bound} yields the theorem skeleton:
+
+\begin{theorem}[Route-union ledger \(\Rightarrow\) anti-localization for all routes]\label{thm:route_union_ledger_AL}
+Assume along a refinement ladder \(j\to\infty\) that the union capacity in \eqref{eq:route_union_capacity_bound} tends to \(0\).
+Then for every route \(r\), \(\eta_j(U_{j,r}) \to 0\).
+\end{theorem}
+
+The importance of this formulation is conceptual: we do \emph{not} need to assume route stability.
+If routes diverge, the union dimension \(m_{\mathrm{union}}\) (and/or the diagonal dispersion of \(P_{\mathrm{union}}\)) increases, and the ledger records this increase explicitly.
+
+\subsection{Empirical evidence: union dimension inflation predicts localization gain}\label{subsec:union_empirics}
+
+In route-mismatch experiments, we observed that scalar mismatch measures (e.g.\ \(\|P_{\mathrm{seq}}-P_{\mathrm{direct}}\|_F\)) are not always the best predictors of localization risk.
+\paragraph{Basis-invariant mismatch and principal angles.}
+Throughout, route comparisons are made at the \emph{subspace} level.
+Given two \(m\)-dimensional subspaces \(U,V\subset\mathbb{C}^N\) with orthogonal projectors \(P_U,P_V\), we measure mismatch by
+\[
+\mathrm{mismatch}(U,V)\;:=\;\|P_U-P_V\|_F.
+\]
+This quantity is invariant to the choice of orthonormal bases for \(U\) and \(V\).
+Moreover, if \(\theta_1,\dots,\theta_m\) are the principal angles between \(U\) and \(V\) \cite{bjork_golub_1973}, then
+\(\|P_U-P_V\|_F^2 = 2\sum_{i=1}^m \sin^2\theta_i\), so mismatch summarizes the aggregate subspace rotation.
+
+A more stable signal is \emph{union capacity}: when routes produce different subspaces, the union dimension increases and \(\eta_j(U_{\mathrm{union}})\) can increase accordingly.
+Figure~\ref{fig:union_delta_eta_vs_uniondim} shows this ledger effect in a non-spectral packaging family (Krylov packaging \cite{saad2011_large_eigs}): \(\Delta\eta_j\) tracks union dimension inflation more clearly than mismatch alone.
+We therefore treat mismatch primarily as a diagnostic; the proof-friendly route capacity term is the \emph{union} subspace (span over routes), which directly upper-bounds localization via monotonicity and the trace/diagonal capacity bounds.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_union_delta_eta_vs_uniondim.png}
+\caption{Route union ledger effect in a non-spectral packaging family: the change \(\Delta\eta_j\) for the union subspace correlates with union dimension inflation. This motivates charging route effects via \(m_{\mathrm{union}}\) and diagonal dispersion rather than relying only on mismatch scalars.}
+\label{fig:union_delta_eta_vs_uniondim}
+\end{figure}
+
+\subsection{When route stability holds: spectral packaging}\label{subsec:spectral_route_stability}
+
+There is nevertheless an important class of packaging maps where a route-stability theorem is plausible and supported by experiments:
+\emph{spectral/eigenchannel packaging}.
+Let \(A\in\R^{N\times N}\) be symmetric and define
+\[
+\mathrm{Pkg}(A,m) := \text{the top-}m\text{ eigenspace of }A,
+\]
+with projector \(P_m(A)\).
+Consider the sequential route: compute \(U_{m_2}=\mathrm{Pkg}(A,m_2)\), restrict \(A\) to \(U_{m_2}\) (Rayleigh--Ritz), then take its top-\(m_1\) subspace \cite{golub_vanloan_2013}.
+Compare to the direct route \(\mathrm{Pkg}(A,m_1)\).
+
+\begin{theorem}[Gap case: uniqueness implies route stability]\label{thm:spectral_gap_route_stability}
+If the top-\(m_1\) eigenspace of \(A\) is uniquely defined by an eigen-gap at the cutoff, then the sequential Rayleigh--Ritz route equals the direct route:
+\[
+P_{\mathrm{seq}} = P_{\mathrm{direct}} = P_{m_1}(A).
+\]
+\end{theorem}
+
+The only generic obstruction is \emph{degeneracy at the cutoff}; this aligns with classical perturbation and subspace-rotation theory \cite{davis_kahan_1970,stewart_sun_1990}.
+In that case the top-\(m_1\) subspace is not uniquely defined, so different numerical or procedural choices can yield different (but equally valid) outputs.
+This is exactly what we observed: naive spectral packaging exhibits a mismatch spike when the cutoff gap is essentially zero.
+\paragraph{Why mismatch spikes at degenerate cutoffs.}
+For spectral packaging maps, the top-\(m\) eigenspace is uniquely defined only when there is a nonzero eigen-gap at the cutoff.
+When the cutoff lies inside a degenerate (or near-degenerate) block, the top-\(m\) selection is \emph{non-unique}:
+different numerical choices (or different routes) may return different but equally valid subspaces unless a canonical selection rule is specified.
+In this regime, a large mismatch should be interpreted as \emph{non-uniqueness of packaging}, not necessarily as a physically meaningful instability.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_spectral_mismatch_vs_eps.png}
+\caption{Spectral route mismatch vs perturbation strength \(\varepsilon\): mismatch spikes in the degenerate cutoff regime and collapses to numerical noise once a cutoff gap opens.}
+\label{fig:spectral_mismatch_vs_eps}
+\end{figure}
+
+\paragraph{Canonical tie-break repairs degeneracy.}
+A Reflexive SBT interpretation is that packaging must include a canonicalization step (P5): when a cutoff eigenspace is degenerate, select a canonical \(m\)-dimensional subspace inside the degenerate block.
+In our experiments, a canonical tie-break that minimizes a symmetry-defect proxy produces a unique, reproducible choice and restores route stability:
+\paragraph{Scope of canonicalization.}
+Our canonical tie-break is a deterministic rule that operates \emph{within} an (approximately) degenerate eigenspace using symmetry-defect proxies (e.g.\ diagonal dispersion / shift-commutation surrogates).
+We do not claim that all packaging families admit such a canonicalizer, nor that canonicalization is unique; we present it as one explicit, auditable choice that removes degeneracy-driven non-uniqueness in the spectral setting.
+
+\begin{theorem}[Degenerate case with canonical tie-break]\label{thm:spectral_canonical_route_stability}
+Define \(\mathrm{Pkg}_{\mathrm{can}}(A,m)\) to be spectral packaging with a canonical tie-break inside any near-degenerate cutoff block (e.g.\ select the \(m\)-subspace minimizing a symmetry-defect proxy).
+Then for all \(m_1<m_2\), the sequential and direct routes agree:
+\[
+P_{\mathrm{seq,can}} = P_{\mathrm{direct,can}}.
+\]
+\end{theorem}
+
+Figure~\ref{fig:degeneracy_tiebreak} and Table~\ref{tab:route_stability_degeneracy} illustrate this sharply: in controlled degeneracy scenarios, the canonical rule reduces mismatch to numerical zero.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_degeneracy_tiebreak.png}
+\caption{Degeneracy tie-break: naive spectral packaging can yield large route mismatch in degenerate settings, while canonical tie-break produces route agreement to numerical precision.}
+\label{fig:degeneracy_tiebreak}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrr}
+\toprule
+scenario & mismatch\_fro\_naive & mismatch\_fro\_canonical \\
+\midrule
+gauss\_circ & 1.03 & 0 \\
+flat\_band\_K50 & 5.63 & 0 \\
+\bottomrule
+\end{tabular}
+ \caption{Degenerate-cutoff scenarios: naive vs canonical spectral packaging route mismatch (exported from experiment CSVs).}
+\label{tab:route_stability_degeneracy}
+\end{table}
+
+\subsection{Non-spectral packaging: status and why we use the ledger}\label{subsec:nonspectral_status}
+
+Outside the spectral setting, route stability can fail for reasons beyond cutoff degeneracy.
+In particular, in Krylov/non-spectral packaging families, mismatch does not necessarily collapse as perturbations open gaps, and canonicalization does not automatically repair mismatch in the same way.
+Empirically, mismatch can remain large across perturbation strengths.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_nonspectral_mismatch_vs_eps.png}
+\caption{Non-spectral route mismatch vs perturbation strength in a Krylov packaging family.
+Unlike the spectral case, mismatch need not collapse away from degeneracy, so route stability remains an open theorem problem in general.}
+\label{fig:nonspectral_mismatch_vs_eps}
+\end{figure}
+
+For this reason, we do not assume route stability as a universal primitive consequence.
+Instead, Reflexive SBT treats route divergence as a ledgered capacity increase via the union subspace \(U_{j,\mathrm{union}}\), and anti-localization is tied to the scaling of that union capacity along the ladder (Theorem~\ref{thm:route_union_ledger_AL}).
+This keeps the framework honest: stability can be used when provable (spectral/canonical packaging), but it is not required for the general capacity-based anti-localization story.
+ \section{Reflexive SBT as a closure-driven audit loop}\label{sec:reflexive-loop}
+
+This section introduces the \emph{Reflexive SBT loop}: we treat packaged artifacts (subspaces, dictionaries with feasibility constraints, and multi-route collections) as first-class objects and apply Six Birds primitives \emph{again} at the artifact level.
+The loop is not presented as a universal theorem.
+Rather, it is a rigorous \emph{bridge asset} connecting the primitives (P1--P6) to the capacity terms that appear in the anti-localization theorem skeleton (Section~\ref{sec:capacity-theorem}).
+
+\subsection{Artifacts, audits, and closure tests}\label{subsec:audits-closure}
+
+An artifact at depth \(j\) can be:
+(i) a subspace basis \(\Psi_j\) (hence projector \(P_j\)),
+(ii) a dictionary \(D_j\) with a feasibility specification (e.g.\ \(s\)-sparse supports),
+or (iii) a multi-route collection \(\{U_{j,r}\}\) which we charge via the union ledger.
+
+We implement a uniform \emph{audit} procedure that computes:
+\begin{itemize}
+  \item \textbf{Symmetry / uniformity diagnostics:} shift non-commutation scores, diagonal dispersion of \(P\), and trace-ratio tests.
+  \item \textbf{Localization metrics:} \(\eta_j\) and \(\eta_j/\mathrm{trace\_bound}_j\) for subspaces (Section~\ref{sec:eta-metric}).
+  \item \textbf{Cancellation diagnostics:} small-support conditioning proxies (notably $1/\sigma_{\min}$) and gain statistics (Section~\ref{sec:cancellation-conditioning}).
+  \item \textbf{Route diagnostics:} mismatch scalars (when meaningful) and union capacity terms (Section~\ref{sec:routes-union-ledger}).
+\end{itemize}
+
+A \emph{closure test} is a thresholded predicate on these audited quantities.
+It returns pass/fail, a short reason, and a list of primitives suggested to ``fire'' next.
+For example: symmetry failure suggests P4/P1 (sectorization/invariance); cancellation failure suggests P2/P5 (feasibility gating + canonicalization); route failure suggests P3 (ledgering union capacity).
+
+\subsection{Meta-moves as experimental analogues of primitive firings}\label{subsec:meta-moves}
+
+When a closure test fails, we apply a \emph{meta-move}: a deterministic transform on the current artifact designed to model the corresponding primitive at the artifact level.
+These moves are not asserted to be universally correct; they are operators we can test and audit.
+
+Representative moves used in our case studies:
+\begin{itemize}
+  \item \textbf{(P4/P1-like) Symmetrize a subspace:} rewrite \(U\) into a symmetry-adapted subspace via group averaging and spectral selection, producing an approximately shift-invariant projector.
+  \item \textbf{(P2/P5-like) Gate coherent cancellation supports:} attenuate or prune supports that enable extreme cancellation (equivalently enforce a lower bound on small-support conditioning).
+  \item \textbf{(P3) Merge routes into a union ledger:} replace a multi-route system by its union subspace and charge the resulting union capacity.
+\end{itemize}
+
+\subsection{What is proved vs.\ what is evidenced}\label{subsec:proved-vs-evidenced}
+
+\paragraph{Proved (mathematical assets).}
+The paper's formal anti-localization implications are capacity statements:
+if symmetry-compatible trace/diagonal capacity, feasibility conditioning capacity, and route-union capacity vanish along a refinement ladder, then \(\eta_j\to 0\).
+The ingredients are Lemma~\ref{lem:eta_le_trace}, the diagonal bounds in Section~\ref{sec:symmetry-trace-al}, the conditioning bound in Lemma~\ref{lem:sparse_conditioning_bound}, and the union ledger theorem in Section~\ref{sec:routes-union-ledger}.
+
+\paragraph{Evidenced (reflexive bridge assets).}
+We do \emph{not} prove that Reflexive SBT necessarily drives these capacities to zero in all systems.
+Instead, we provide an auditable loop implementation and controlled case studies showing that, in canonical failure modes, the primitive-suggested moves reduce the corresponding capacity terms and restore closure.
+
+\subsection[Trajectory evidence: closure triggers the right move]{Trajectory evidence: closure failure triggers the right move and drops the right capacity}\label{subsec:trajectory-evidence}
+
+Figures~\ref{fig:reflexive_cap_delta} and \ref{fig:reflexive_cap_paired} show two representative trajectories:
+a maximally non-uniform delta subspace repaired by symmetry-adaptation, and a cancellation-vulnerable paired dictionary repaired by feasibility gating.
+In both cases, the move suggested by the closure test produces a sharp drop in the targeted capacity term.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_reflexive_capacity_delta.png}
+\caption{Reflexive loop trajectory (delta subspace): a symmetry/anti-localization closure failure triggers a symmetry-adaptation move, after which diagonal dispersion and the symmetry-compatible capacity drop sharply and closure passes.}
+\label{fig:reflexive_cap_delta}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\linewidth]{figures/fig_reflexive_capacity_paired.png}
+\caption{Reflexive loop trajectory (paired dictionary): feasibility closure fails due to cancellation gain, triggering a gating move that reduces the cancellation capacity proxy and restores closure.}
+\label{fig:reflexive_cap_paired}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\resizebox{\linewidth}{!}{\begin{tabular}{lrlrrr}
+\toprule
+run\_id & step & move\_applied & cap\_sym\_j8 & cap\_cancel\_pairbound & cap\_union\_j8 \\
+\midrule
+delta\_subspace\_demo & 0 & symmetrize\_subspace\_via\_projector & 3.94 & -- & -- \\
+delta\_subspace\_demo & 1 & -- & 0.0625 & -- & -- \\
+paired\_dictionary\_demo & 0 & gate\_coherent\_pairs & -- & 7.35 & -- \\
+paired\_dictionary\_demo & 1 & -- & -- & 0.242 & -- \\
+two\_route\_demo & 0 & -- & -- & -- & 0.949 \\
+\bottomrule
+\end{tabular}
+ }
+\caption{Reflexive capacity bridge excerpt: audited capacities before/after primitive-suggested moves in canonical trajectories.}
+\label{tab:reflexive_capacity_bridge}
+\end{table}
+
+\subsection{Interpretation: Reflexive SBT as capacity bookkeeping}\label{subsec:interpretation-capacity}
+
+The loop supports a pragmatic, SBT-first interpretation:
+\begin{quote}
+Reflexive SBT does not magically prevent needles.
+It either (i) repairs artifacts so that needle-relevant capacities decrease, or (ii) requires the artifact to record the increased capacity on a ledger (notably via route unions).
+\end{quote}
+This is exactly the role needed for the anti-localization program:
+it connects primitive-level closure pressure to the capacity functional whose vanishing implies \(\eta_j\to 0\).
+
+In the next section, we assemble the theorem skeleton: a single capacity functional composed of symmetry, feasibility, and route ledger terms, and the precise assumptions required for anti-localization along the packaging ladder.
+ \section{A conditional anti-localization theorem via capacities}\label{sec:capacity-theorem}
+
+We now state the main conditional result of the paper.
+It is intentionally formulated as a \emph{capacity theorem}: anti-localization follows whenever a small collection of auditable capacity terms vanishes along the packaging ladder.
+This is the point where the Six Birds ``accounting'' philosophy becomes coercive without collapsing to supremum control.
+
+\subsection{Capacity terms}\label{subsec:capacity_terms}
+
+Fix a refinement depth \(j\) and a uniform partition \(\mathcal{B}_j\) into \(2^j\) cells of size \(|B|=N/2^j\).
+We define three capacity contributions, matching the three failure modes isolated by experiments and proof notes.
+
+\paragraph{(C1) Subspace trace/diagonal capacity (symmetry-compatible).}
+For a subspace artifact \(U_j\) with projector \(P_j\) and \(\dim(U_j)=m_j\), define
+\begin{equation}\label{eq:Cap_sym_def}
+\mathrm{Cap}_{\mathrm{sym}}(j)
+\;:=\;
+\frac{m_j}{2^j}
+\;+\;
+\sqrt{\frac{N}{2^j}}\;\Bigl\|\mathrm{diag}(P_j)-\frac{m_j}{N}\mathbf{1}\Bigr\|_2.
+\end{equation}
+This is the right-hand side of the diagonal \(L^2\) trace bound (Section~\ref{sec:symmetry-trace-al}); under exact shift invariance, the dispersion term vanishes and \(\mathrm{Cap}_{\mathrm{sym}}(j)=m_j/2^j\).
+
+\paragraph{(C2) Feasibility cancellation capacity (conditioning).}
+For a dictionary feasibility artifact, we assume feasibility is \(s\)-sparse synthesis:
+\(v=D a\) with \(|\mathrm{supp}(a)|\le s\).
+Define a small-support conditioning margin
+\begin{equation}\label{eq:kappa_s_def}
+\kappa_s(j)
+\;:=\;
+\inf_{\substack{S\subseteq\{1,\dots,M\}\\1\le |S|\le s}}\sigma_{\min}(D_{j,S}),
+\end{equation}
+and define an atom-localization envelope at scale \(j\),
+\begin{equation}\label{eq:Cap_atom_def}
+\mathrm{Cap}_{\mathrm{atom}}(j)
+\;:=\;
+\max_{k}\ \max_{B\in\mathcal{B}_j}\ \|d_{j,k}\|_B^2.
+\end{equation}
+Lemma~\ref{lem:sparse_conditioning_bound} implies a coarse bound of the form
+\begin{equation}\label{eq:Cap_cancel_def}
+\mathrm{Cap}_{\mathrm{cancel}}(j)
+\;:=\;
+\frac{s}{\kappa_s(j)^2}\ \mathrm{Cap}_{\mathrm{atom}}(j),
+\end{equation}
+which controls the worst-case feasible localization at scale \(j\).
+(We use \(\kappa_s\) because it is theorem-shaped and empirically the strongest predictor of cancellation gain.)
+
+\paragraph{(C3) Route union capacity (ledger term).}
+For a multi-route system, define the union subspace \(U_{j,\mathrm{union}}\) as in \eqref{eq:U_union_def}, with projector \(P_{j,\mathrm{union}}\) and dimension \(m_{j,\mathrm{union}}\).
+Define
+\begin{equation}\label{eq:Cap_union_def}
+\mathrm{Cap}_{\mathrm{union}}(j)
+\;:=\;
+\frac{m_{j,\mathrm{union}}}{2^j}
+\;+\;
+\sqrt{\frac{N}{2^j}}\;\Bigl\|\mathrm{diag}(P_{j,\mathrm{union}})-\frac{m_{j,\mathrm{union}}}{N}\mathbf{1}\Bigr\|_2.
+\end{equation}
+This charges route divergence by the capacity of the \emph{union} feasible set, not by a mismatch scalar.
+
+\subsection{Conditional theorem: capacity vanishing implies anti-localization}\label{subsec:capacity_implies_AL}
+
+On dictionary-based feasibility layers, a proof-friendly cancellation-resistance hypothesis is a uniform lower bound on \(\kappa_s(D_j)\) (restricted smallest singular value on supports of size \(\le s\)), together with a per-atom cell-energy bound; these are exactly the terms that control cancellation localization via Theorem~\ref{thm:conditioning-controls-localization}.
+
+\begin{theorem}[Capacity functional \(\Rightarrow\) anti-localization]\label{thm:capacity_implies_AL}
+Fix a refinement ladder \(j\to\infty\).
+
+\begin{enumerate}
+\item \textbf{(Subspace artifact)} If \(U_j\) is the feasible subspace at depth \(j\) and \(\mathrm{Cap}_{\mathrm{sym}}(j)\to 0\), then \(\eta_j(U_j)\to 0\).
+
+\item \textbf{(Dictionary feasibility)} If feasibility at depth \(j\) is \(s\)-sparse synthesis in dictionary \(D_j\) and \(\mathrm{Cap}_{\mathrm{cancel}}(j)\to 0\), then every feasible \(v\) satisfies \(\mathrm{Loc}_j(v)\to 0\) uniformly; equivalently, the feasible class is anti-localizing at scale \(j\).
+
+\item \textbf{(Multi-route system)} If the feasible family is \(\{U_{j,r}\}\) and \(\mathrm{Cap}_{\mathrm{union}}(j)\to 0\), then \(\eta_j(U_{j,r})\to 0\) for every route \(r\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof sketch and dependencies]
+(1) Use Lemma~\ref{lem:eta_le_trace} to bound \(\eta_j(U_j)\le \mathrm{trace\_bound}_j(U_j)\), then apply the diagonal \(L^2\) trace bound to obtain \(\mathrm{trace\_bound}_j(U_j)\le \mathrm{Cap}_{\mathrm{sym}}(j)\).
+
+(2) Apply Lemma~\ref{lem:sparse_conditioning_bound} and the crude estimate \eqref{eq:cond_bound_crude}, yielding \(\mathrm{Loc}_j(v)\le \mathrm{Cap}_{\mathrm{cancel}}(j)\) for all feasible \(v\).
+
+(3) Use inclusion monotonicity \eqref{eq:eta_route_le_union} to reduce to \(\eta_j(U_{j,\mathrm{union}})\), then apply (1) with \(U_{j,\mathrm{union}}\).
+\end{proof}
+
+\paragraph{Scope.}
+Theorem~\ref{thm:capacity_implies_AL} is a statement about \emph{what suffices} for anti-localization.
+We do \emph{not} prove that Reflexive SBT forces these capacities to vanish in all systems.
+Instead, Section~\ref{sec:reflexive-loop} provides an auditable closure loop and controlled case studies showing that primitive-suggested moves reduce the corresponding capacities in canonical failure modes.
+ \section{Discussion and future work}\label{sec:discussion}
+
+\subsection{What we proved and what we did not}\label{subsec:what_proved}
+
+This paper isolates a concrete hinge for making Six Birds accounting coercive:
+\emph{anti-localization} follows when a small set of auditable capacities vanishes along the packaging ladder.
+Theorem~\ref{thm:capacity_implies_AL} is the formal core: it turns the ``needle obstruction'' into three quantitative capacity terms matching three empirically observed failure modes:
+\begin{enumerate}
+  \item symmetry/diagonal dispersion (subspace addressability),
+  \item sparse ill-conditioning (cancellation addressability),
+  \item union capacity inflation (route effects).
+\end{enumerate}
+We do not study sparse recovery or identifiability guarantees here; restricted conditioning is used purely as an auditable \emph{capacity proxy} for cancellation-based addressability (needle synthesis).
+
+What we did \emph{not} prove is a universal Reflexive SBT theorem of the form:
+\begin{quote}
+``Under Six Birds primitives alone, repeated packaging necessarily drives the relevant capacities to \(0\) as depth increases.''
+\end{quote}
+Establishing such a statement would require an abstract model of packaging minimality, feasibility gating, and canonicalization strong enough to imply capacity contraction in general.
+Our stance is deliberately more modest and audit-friendly:
+Reflexive SBT is a closure-driven loop that either reduces capacity (when moves are available) or charges the remaining capacity explicitly on a ledger.
+
+\subsection{How to read Reflexive SBT in the Six Birds dictionary}\label{subsec:reflexive_interpretation}
+
+From an SBT-first perspective, Reflexive SBT is best seen as a statement about \emph{artifacts}:
+the outputs of packaging (P5) and accounting (P6) themselves form a dynamical system.
+The loop's closure tests define when an artifact is ``closed'' with respect to the six primitives at the artifact level.
+In our controlled experiments, canonical failure modes correspond to specific primitive firings and targeted capacity drops.
+
+\subsection{Open problems and the next paper}\label{subsec:open_problems}
+
+Several directions are natural follow-ups:
+
+\paragraph{(F1) Approximate symmetry \(\Rightarrow\) approximate diagonal uniformity.}
+We used diagonal dispersion as a robust proxy, but a theorem that converts small commutator norms \(\|SP-PS\|\) into an explicit diagonal \(L^2\) bound would strengthen the symmetry route.
+
+\paragraph{(F2) Non-spectral route stability.}
+Spectral packaging admits a clean route-stability theorem modulo degeneracy and canonical tie-break.
+For non-spectral packaging families (e.g.\ Krylov-type maps \cite{saad2011_large_eigs}), mismatch can persist across perturbations.
+A general route-stability theorem may require new hypotheses (e.g.\ contractive functorial packaging) or may be false in general.
+The union-ledger formulation provides a principled fallback that remains correct without stability.
+
+\paragraph{(F3) Reflexive capacity contraction theorems.}
+The main conceptual conjecture suggested by this paper is:
+\begin{quote}
+Closure pressure under Reflexive SBT tends to drive the capacity functional down along depth, or else forces explicit ledger growth (route union capacity, conditioning failures, symmetry defects).
+\end{quote}
+Turning this into a theorem would require a formal model of ``minimal packaging'' and ``feasibility gating'' at the artifact level.
+We view Theorem~\ref{thm:capacity_implies_AL} and the assets in Section~\ref{sec:reflexive-loop} as a foundation on which such a theory can be built.
+
+\subsection{Practical takeaway}\label{subsec:practical_takeaway}
+
+Accounting inequalities become powerful when the system cannot produce or address needles.
+This paper provides a way to make that statement testable:
+compute the capacity terms, audit closure, and either repair the artifact or record the remaining addressability on the ledger.
+ 
+\appendix
+\section{Reproducibility and artifact map}\label{app:repro}\label{sec:reproducibility}
+
+This appendix records (i) how to reproduce the computational artifacts (CSVs, plots, tables), (ii) how those artifacts are exported into the paper, and (iii) where the formal Lean proof assets live.
+All experiment outputs are written under \texttt{experiments/results/} (tables/CSVs) and \texttt{experiments/artifacts/plots/} (PNGs).
+Paper-facing assets live under \texttt{paper/figures/} and \texttt{paper/tables/}.
+
+\subsection{Environment and basic checks}
+
+We assume a Python environment with the repository requirements installed.
+The following commands verify the core experiment/test stack:
+
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python -m experiments.sanity_check
+pytest -q
+\end{verbatim}
+
+\subsection{Canonical experiment runs}
+
+The paper is supported by a small number of canonical experiment pipelines.
+These commands (re)generate the key result CSVs and plots referenced throughout:
+
+\begin{verbatim}
+python -m experiments.run_baselines_sweep
+python -m experiments.analyze_baselines
+
+python -m experiments.run_reflexive_case_suite
+
+python -m experiments.run_reflexive_symmetry_breaking \
+  --config experiments/configs/reflexive_sbt/symmetry_breaking.yaml
+
+python -m experiments.run_sparse_conditioning_scan
+python -m experiments.run_sparse_conditioning_s4_targeted
+
+python -m experiments.run_degeneracy_tiebreak_route_stability
+\end{verbatim}
+
+\noindent
+Additional supporting scripts exist (see the internal manifest), but the list above is sufficient to reproduce the central claims and the most frequently cited plots/tables.
+
+\paragraph{Numerical conventions.}
+Unless otherwise stated, our implementations use:
+(i) orthonormality checks for bases \(\Psi\) via \(\|\Psi^\ast\Psi-I\|_\infty\) within a fixed tolerance;
+(ii) Hermitian eigensolvers for \(\lambda_{\max}\) computations;
+(iii) SVD-based column-space extraction for union subspaces with a fixed rank tolerance (so \(\dim(U_{\mathrm{union}})\) is reproducible);
+and (iv) effective-rank style thresholds for orbit-rank diagnostics stated explicitly in the corresponding experiment scripts.
+Randomized constructions record seeds in the exported CSV outputs.
+
+\subsection{Exporting figures and tables into the paper}
+
+Figures in the paper are copied from \texttt{experiments/artifacts/plots/} into \texttt{paper/figures/} with short, stable names.
+The file \texttt{paper/figures/FIGURE\_MAP.md} records the provenance mapping from each paper figure name to its original experiment path.
+
+Tables in the paper are generated (not hand-copied) from CSVs under \texttt{experiments/results/} into LaTeX \texttt{.tex} files under \texttt{paper/tables/}.
+
+To (re)export both figures and tables:
+
+\begin{verbatim}
+python paper/scripts/export_assets.py
+\end{verbatim}
+
+\subsection{Building the PDF}
+
+The paper builds via \texttt{latexmk}:
+
+\begin{verbatim}
+cd paper
+make pdf
+\end{verbatim}
+
+\subsection{Lean proof assets}
+
+The project includes a small Lean4/mathlib subproject that formalizes a core linear-algebra lemma used in the paper \cite{moura2015lean,mathlib2020}.
+The Lean sources live under:
+
+\begin{verbatim}
+lean/MetaSBTLean/
+\end{verbatim}
+
+To build the Lean project:
+
+\begin{verbatim}
+cd lean/MetaSBTLean
+lake build
+\end{verbatim}
+
+\noindent
+The internal proof note registry (with lemma names, locations, and status) lives under \texttt{docs/\allowbreak proof-notes/}.
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{bib/references}
+
+\end{document}

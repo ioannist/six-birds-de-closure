@@ -1,0 +1,1703 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\trace}{tr}
+
+\newcommand{\Pminus}{P_{-}}
+\newcommand{\psim}{\psi_{-}}
+\newcommand{\AX}{A_{X}}
+\newcommand{\Kminus}{K^{-}}
+\newcommand{\Jiso}{J_{\mathrm{iso}}}
+\newcommand{\IOL}{\hat{\mathfrak{X}}}
+
+\newcommand{\GamSDTC}{\Gamma_{\mathrm{SDTC}}}
+
+\newcommand{\SiblingRH}{[2]}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\-\do\:}
+\makeatother
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Self-Dual Trace Confinement: A Six Birds Structural Law for Formed Closures Under Involutive Self-Duality}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Self-Dual Trace Confinement: A Six Birds Structural Law for Formed Closures Under Involutive Self-Duality},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+When must an operator-valued obstruction associated with an
+involutive system vanish?  This paper answers that question inside
+the Six Birds framework by naming Self-Dual Trace Confinement
+(SDTC) as the recognition source for formed closures with genuine
+involutive self-duality.  The mechanism is the
+duality-confinement membrane theorem: for an involutive object
+ledger with separating anti-invariant readout, a sequence of
+positive domination records \(\AX\preceq B_n\) with
+\(\trace B_n\to0\) forces the anti-invariant ledger \(\AX\) to
+vanish and confines visible mass to the fixed locus of the
+duality.  The supporting apparatus develops the involutive object
+ledger, the anti-invariant ledger and trace identity, direct
+qualitative and quantitative confinement, completed-domination
+bridges, Douglas factorization in typed-cone form, exhaustive
+moving ledgers, and optimized scalar trace budgets.
+Operator-theoretic realization over trace-class operators is an
+open extension, as is a derivation of the AM--GM step inside a
+typed real-arithmetic structure.  The development is formalized in
+Lean as a mathlib-free mechanization at the typed positive-cone
+level (Appendix~\ref{app:formalization}).  Cross-substrate
+generalizations such as CPT symmetry,
+gauge invariance, quantum self-adjointness, and function-field RH
+are presented as structural predictions, not theorems; the paper
+develops the abstract apparatus layer and names the hypotheses any
+single-substrate validation must supply.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Self-Dual Trace Confinement; Six Birds Theory; involutive self-duality; fixed-locus confinement; typed positive cone; anti-invariant ledger; Lean formalization.
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+When must an operator-valued obstruction associated with an
+involutive system vanish?  The simplest form of the question is
+familiar.  Suppose a space of objects carries an involution \(J\),
+so that applying \(J\) twice returns the original object, and
+suppose the objects are observed through a Hilbert-valued readout
+\(\psi\) whose response space carries a compatible isometric
+involution \(\Jiso\).  The response then splits into invariant and
+anti-invariant parts.  The anti-invariant projector is
+\[
+  \Pminus = \frac{I_Y-\Jiso}{2},
+\]
+and the corresponding anti-invariant readout is
+\[
+  \psim(x) = \Pminus \psi(x).
+\]
+This readout detects the part of the object that changes sign under
+the duality.  If its vanishing set is exactly the fixed locus
+\(\Fix(J)\), then showing \(\psim=0\) in the appropriate measured
+sense is the same as showing that visible mass is confined to
+\(\Fix(J)\).
+
+The obstruction studied in this paper is the positive operator
+formed from that anti-invariant readout,
+\[
+  \AX = \int_X \psim(x)\psim(x)^*\,d\mu(x).
+\]
+In classical analytic language one would place \(\AX\) in a positive
+trace-class cone and use the trace identity
+\[
+  \trace \AX = \int_X \|\psim(x)\|^2\,d\mu(x),
+\]
+so \(\AX\) vanishes precisely when the anti-invariant readout
+vanishes almost everywhere, modulo the usual positivity hypotheses.
+The abstract argument is an operator squeeze: if there is a sequence
+of positive bounds \(B_n\) with
+\[
+  \AX \preceq B_n
+  \qquad\text{and}\qquad
+  \trace B_n \to 0,
+\]
+then monotonicity of the trace gives \(0 \leq \trace \AX \leq
+\trace B_n\) for all \(n\), hence \(\trace \AX=0\), and positivity
+forces \(\AX=0\).  Separation of the readout then converts
+\(\AX=0\) into the confinement statement
+\[
+  \mu\bigl(X\setminus \Fix(J)\bigr)=0.
+\]
+The remaining sections make each part of this preview precise:
+the involutive object ledger in \Cref{sec:involutive_ledger}, the
+anti-invariant ledger and separating readout in
+\Cref{sec:anti_invariant_ledger}, the direct confinement results in
+\Cref{sec:direct_confinement}, and the full squeeze theorem in
+\Cref{sec:master_theorem}.
+
+The Six Birds framework gives this argument a structural
+interpretation.  Six Birds Theory is used here as a typed, audited
+calculus for naming structural data in a formed closure: a typed
+presentation of a mathematical substrate together with the assumption
+that its carriers, observables, comparison maps, and audit data have
+been admissibly closed under the framework's formation discipline.
+Within that vocabulary, the tuple
+\[
+  \IOL=(X,J,\mu,\psi,Y,\Jiso)
+\]
+is called an involutive object ledger.  In ordinary terms, it is a
+measure space or finite weighted carrier with an involution, together
+with an equivariant Hilbert-valued observable.  The paper's central
+structural assertion is named Self-Dual Trace Confinement,
+\(\GamSDTC\), abbreviated SDTC: a formed closure with genuine
+involutive self-duality and a
+separating anti-invariant readout cannot host visible mass away from
+the fixed locus of that duality.
+
+SDTC is named as a recognition source: an explicit structural
+hypothesis about the substrate, supplied as content of the formed
+layer rather than proved from earlier framework primitives.  The
+paper plays two roles.  It states the SDTC structural law and the
+closure shape in which it applies, and it proves the
+duality-confinement membrane theorem: once domination records
+\(\AX \preceq B_n\) with \(\trace B_n\to0\) are available,
+fixed-locus confinement follows from the typed positive-cone
+squeeze sketched above.
+
+A useful mental model is the functional-equation symmetry of the
+Riemann zeta function.  The involution
+\[
+  J_L(s)=1-\bar{s}
+\]
+on the complex plane has critical-line fixed locus
+\(\Re(s)=1/2\), and the signed real-part displacement
+\(\Re(s)-1/2\) is its anti-invariant coordinate.  The example serves
+as a guide to the shape of the abstraction---an involution, a
+fixed locus, an anti-invariant readout, and a positive ledger
+measuring mass away from the fixed locus.  No result about
+\(\zeta\) is used below.
+
+The typed cone records only what the squeeze proof needs: the order
+\(\preceq\), the trace functional \(\trace\), trace monotonicity,
+and the principle that a positive element of trace zero is the zero
+element.  A full operator-theoretic realization over trace-class
+operators, Hilbert--Schmidt operators, Schatten ideals, or the
+trace-norm topology \citep{Simon2005,ReedSimon1980} is not developed
+here; extending the theorem to that operator-theoretic setting is an
+open extension.
+
+The classical ingredients in the apparatus---Loewner order
+\citep{Loewner1934,Bhatia1997}, trace functionals
+\citep{Simon2005}, Markov-style estimates \citep{Folland1999},
+AM--GM optimization \citep{HardyLittlewoodPolya1952}, and Douglas
+factorization \citep{Douglas1966}---are not claimed as novel.  What
+is new is the structural packaging: the anti-invariant ledger, the
+domination-record discipline, and the master theorem that converts
+vanishing trace budgets into fixed-locus confinement.  The optimized
+scalar trace budget in \Cref{sec:exhaustive_squeeze_and_budgets}
+takes the AM--GM step as a typed-scalar hypothesis; a substantive
+derivation inside the abstract scalar encoding would require
+additional typed real-arithmetic structure.
+
+Cross-substrate examples such as CPT symmetry, gauge invariance,
+particle--antiparticle duality, quantum self-adjointness, and
+function-field analogues are structural predictions and validation
+targets for future work, not theorems established here.
+ 
+
+\section{Framework}
+\label{sec:framework}
+
+The framework context for SDTC is the Six Birds organization of
+formed-layer structural laws.  In this paper, Six Birds Theory is
+used as a typed and audited calculus for the closure-formation
+discipline originating in Foundations I: it gives names to the
+carriers, observables, comparison maps, and audit data that a
+mathematical substrate presents when treated as a formed object.
+A \emph{formed closure} is such a typed bundle together with the
+assumption that the bundle has been closed under the relevant
+formation discipline.  Concretely, one may think of a
+substrate---algebraic, analytic, computational, or
+geometric---equipped with a finite amount of visible structure and
+with a declaration that this visible structure is stable under the
+closure rules being used.  The admissibility schemas and typed
+record interfaces used for this purpose are those of Foundations II
+\cite{TsiokosFoundationsII2026}; the audited vocabulary of
+visibility, threshold, gate, and claim-status data is part of the
+Foundations III layer \cite{TsiokosFoundationsIII2026}.
+
+This language does not replace the underlying mathematics; it
+records which data are visible at a given layer and which comparison
+principles are licensed there.  When the paper later writes an
+involutive ledger \(\IOL\), a positive cone containing \(\AX\), or a
+domination sequence \(B_n\), these objects do not add analytic
+content.  They make explicit which carrier, readout, order relation,
+trace functional, and audit conditions are in play.  The local
+mathematics is the operator-style squeeze of the introduction; the
+typed framework fixes the bookkeeping that keeps the squeeze inside
+the same formed layer throughout.
+
+Closure content is treated as a structural fact of the formed layer
+rather than something to be re-derived from earlier framework
+primitives.  If a witness, comparison map, domination sequence, or
+recognition record is part of what makes the layer formed, the
+structural law is allowed to name that item as supplied data.  This
+is not an axiom inserted into the surrounding metatheory; it
+identifies which hypothesis about the substrate is load-bearing.
+
+The framework distinguishes a structural law from an apparatus
+theorem.  The structural law names the formed-layer recognition
+content; here \(\GamSDTC\) says that an admissibly formed involutive
+self-dual closure supplies the trace-vanishing domination data
+needed by the confinement mechanism.  The apparatus theorem is the
+ordinary mathematical implication proved once those data are
+present: a separating anti-invariant readout and bounds
+\(\AX \preceq B_n\) with \(\trace B_n\to0\) force confinement on
+\(\Fix(J)\).
+
+The V-Differential classification is the framework's way of sorting
+structural laws by the determining-state content the formed layer
+permits.  Here a determining state is the internal state through
+which later observable behavior is required to factor.  In some
+substrates that state may expose witness-like data: for example,
+explicit configurations, certificates, or geometric carriers.  In a
+\emph{trace-state-only} column, by contrast, the admissible
+determining-state information is restricted to trace observables on
+a typed positive cone.  The readout is allowed to see aggregate
+quantities such as \(\trace A\), but not a full state vector, a
+hidden witness, or a richer invariant that would determine the
+answer directly.
+
+SDTC is the V-Differential trace-state-only law for involutive
+self-dual closures.  Its visible object is not a hidden witness for
+membership in \(\Fix(J)\); it is the anti-invariant ledger \(\AX\)
+and its trace budget.  The readout \(\psim\) detects displacement
+from the fixed locus, but the formed layer's determining information
+is the positive-cone trace state: \(\trace \AX\), domination
+inequalities, and vanishing bounds.  This is why the trace identity
+and monotonicity of \(\trace\) are central.  The proof never needs
+access to a denser internal state once the trace-state domination
+records have been supplied.
+
+Within this framing, SDTC joins parallel internal Six Birds
+developments that organize other formed closures along the same
+shape: a recognition source names the formed-layer structural
+content, and an apparatus theorem extracts the advertised
+mathematical consequence once that content is present.  Those
+developments are mentioned here only to position SDTC inside the
+program; none is an input to any definition, estimate, or theorem
+below.
+
+This section is organizational rather than deductive.  The
+mathematical work begins in the next section: defining \(\IOL\),
+constructing \(\AX\), stating the separation and domination
+hypotheses, and proving the master theorem.
+ 
+
+\section{Involutive object ledger}
+\label{sec:involutive_ledger}
+
+The first piece of apparatus is the object on which the confinement
+argument is allowed to operate.  The framework section explained
+that SDTC is a structural law over a formed layer.  For the present
+paper, the mathematical data inside such a layer are concrete: a
+carrier of visible objects, an involution on that carrier, a
+positive measure or finite weight system, and a Hilbert-valued
+observable compatible with the involution.  Throughout, this package
+is denoted
+\[
+  \IOL=(X,J,\mu,\psi,Y,\Jiso).
+\]
+Read first as ordinary analysis: \(X\) is the space whose mass we
+want to localize; \(J:X\to X\) is a symmetry with
+\(J^2=\mathrm{id}_X\); \(\mu\) says which objects are visible;
+\(Y\) is the response space in which the objects are observed;
+\(\Jiso:Y\to Y\) is the corresponding symmetry of responses; and
+\(\psi:X\to Y\) is the observable.
+
+\begin{definition}[Involutive object ledger\protect\footnote{Realized in Lean as \nolinkurl{Involution.InvolutiveObjectLedger}; see App~\ref{app:formalization}.}]
+\label{def:duality_confinement:involutive-object-ledger}
+An \emph{involutive object ledger} is a tuple
+\[
+  \IOL=(X,J,\mu,\psi,Y,\Jiso)
+\]
+consisting of the following data:
+\begin{enumerate}
+  \item a visible carrier \(X\);
+  \item an involution \(J:X\to X\), so \(J(Jx)=x\) for every
+    \(x\in X\);
+  \item a positive measure, or in the finite case a positive weight
+    system, \(\mu\) on \(X\);
+  \item a real Hilbert response space \(Y\);
+  \item a linear isometric involution \(\Jiso:Y\to Y\);
+  \item a measurable readout \(\psi:X\to Y\) satisfying the
+    equivariance condition
+    \[
+      \psi(Jx)=\Jiso\psi(x)
+      \qquad (x\in X).
+    \]
+\end{enumerate}
+The fixed locus of the ledger involution is
+\[
+  \Fix(J)=\{x\in X: Jx=x\}.
+\]
+\end{definition}
+
+The definition separates carrier-side symmetry from response-side
+symmetry: \(J\) acts on the objects whose mass is being studied,
+while \(\Jiso\) acts on the Hilbert space in which those objects
+are read.  The equivariance condition says that observing an
+object after applying the carrier involution is the same as
+observing first and then applying the response involution.  Here
+``linear isometric involution'' for \(\Jiso\) means
+\[
+  \Jiso^2=I_Y,
+  \qquad
+  \langle \Jiso v,\Jiso w\rangle_Y=\langle v,w\rangle_Y
+  \quad(v,w\in Y).
+\]
+In topological or measure-theoretic examples the displayed maps are
+normally assumed measurable, and often \(\mu\) is \(J\)-invariant
+or at least \(J\)-quasi-invariant.  The abstract ledger definition
+records only the positive measured carrier and the equivariant
+readout; later hypotheses, such as separation and trace-class
+positivity, state the additional structure needed for a particular
+confinement argument.
+
+The convention covers both finite and analytic situations.  In a
+finite ledger, \(X\) may be a finite list of roots, defects, modes,
+or objects, and \(\mu(x)>0\) is the weight assigned to an object
+visible to the argument.  In a continuous ledger, \(\mu\) is a
+positive measure on the carrier, and the statements are read modulo
+null sets where appropriate.  The phrase ``visible support'' always
+means the part of \(X\) carrying positive \(\mu\)-mass:
+positive-weight points in the finite case and non-null measurable
+regions in the measure-theoretic case.  This is the only part of
+the carrier that the confinement theorem can see; objects outside
+the visible support may exist as elements of \(X\), but they play
+no role in the measure conclusion
+\(\mu(X\setminus\Fix(J))=0\).
+
+The fixed locus \(\Fix(J)\) is the target of the confinement
+conclusion.  In a topological example it is usually a closed
+subspace, but no topology is needed to name it: it is the set of
+points left unchanged by \(J\).  The ledger terminology
+emphasizes that \(\mu\) is not merely background measure; it is the
+accounting device that tells the theorem which visible objects
+remain after the obstruction has been squeezed to zero.  The
+anti-invariant projection associated with \(\Jiso\) and the positive
+ledger built from it are introduced in
+\Cref{sec:anti_invariant_ledger}.
+
+A simple model is complex conjugation.  Let \(X\) be a bounded
+measurable region in \(\mathbb{C}\), stable under conjugation, with
+\(\mu\) the restricted planar Lebesgue measure.  Put
+\[
+  J(z)=\overline{z},\qquad
+  Y=\mathbb{R}^2,\qquad
+  \Jiso(u,v)=(u,-v),
+\]
+and let
+\[
+  \psi(z)=(\operatorname{Re}z,\operatorname{Im}z).
+\]
+Then
+\[
+  \psi(Jz)
+  =
+  (\operatorname{Re}z,-\operatorname{Im}z)
+  =
+  \Jiso\psi(z),
+\]
+so the readout is equivariant.  The fixed locus is the real axis
+inside \(X\); the coordinate that changes sign is the imaginary
+coordinate, so mass away from the real axis is exactly the mass
+visible to the sign-changing part of the readout.  The toy model
+contains no analysis, but it displays the geometry of the
+definition: a duality, a fixed locus, and an observable whose
+coordinates respect the duality.
+
+The same pattern explains the motivating analytic example.  In the
+functional-equation symmetry of the completed Riemann zeta function
+\citep{TitchmarshHeathBrown1986}, the involution
+\[
+  J_L(s)=1-\overline{s}
+\]
+on the critical strip has fixed locus the critical line
+\(\operatorname{Re}(s)=1/2\).  Specializing \(X\) to the visible
+multiset of nontrivial zeros with \(\mu\) the multiplicity-weighted
+measure makes \(\operatorname{Re}(s)-1/2\) the sign-changing
+displacement from the fixed line.  The worked single-substrate
+validation of that instance is developed in
+\citet{TsiokosRHviaSDTC2026}; no result from there is used here.
+
+The mathematical work begins once this ledger is equipped with its
+anti-invariant projection, trace ledger, and separation hypotheses.
+ 
+
+\section{Anti-invariant ledger and separation}
+\label{sec:anti_invariant_ledger}
+
+Fix an involutive object ledger
+\(\IOL=(X,J,\mu,\psi,Y,\Jiso)\).  The preceding section supplied
+the carrier-side involution \(J\) and the response-side involution
+\(\Jiso\).  This section extracts the part of the readout that
+changes sign under the duality and turns it into a positive
+observable.  The isometric involution \(\Jiso\) splits \(Y\) into
+invariant and anti-invariant directions, and the confinement
+mechanism reads only the second component: the direction in which
+the response is reversed by the involution.
+
+The anti-invariant projector is
+\[
+  \Pminus=\frac{I_Y-\Jiso}{2}.
+\]
+Since \(\Jiso^2=I_Y\), this is the orthogonal projection onto the
+subspace of vectors \(v\in Y\) satisfying \(\Jiso v=-v\).  Applying
+it to the ledger readout gives the anti-invariant readout
+\[
+  \psim(x)=\Pminus\psi(x).
+\]
+Equivariance of \(\psi\) makes this readout odd with respect to the
+carrier involution:
+\[
+  \psim(Jx)
+  =
+  \Pminus\psi(Jx)
+  =
+  \Pminus\Jiso\psi(x)
+  =
+  -\Pminus\psi(x)
+  =
+  -\psim(x).
+\]
+So \(\psim\) is the component of the observable that can detect
+departure from the fixed locus.  If \(x\in\Fix(J)\), the same
+identity gives \(\psim(x)=-\psim(x)\), hence \(\psim(x)=0\) over a
+real response space.  The converse need not hold automatically; it
+is exactly the separation condition defined below.
+
+The positive object associated with \(\psim\) is introduced in a
+typed positive cone rather than as a trace-class operator: an
+ordered setting with a positive order \(\preceq\), a trace
+functional \(\trace\), and two positivity principles.  Trace is
+monotone,
+\[
+  A\preceq B \quad\Longrightarrow\quad \trace A\leq \trace B,
+\]
+and a positive element of trace zero is the zero element.  The
+classical model is the cone of positive trace-class operators on a
+Hilbert space; the typed abstraction records only the order, trace,
+and positivity facts used by the confinement proof.
+
+\begin{definition}[Anti-invariant object ledger\protect\footnote{Realized in Lean as \nolinkurl{AntiInvariantLedger.AntiInvariantLedger}; see App~\ref{app:formalization}.}]
+\label{def:duality_confinement:anti-invariant-ledger}
+The \emph{anti-invariant object ledger} of \(\IOL\) is the positive
+cone element
+\[
+  \AX
+  :=
+  \int_X \psim(x)\psim(x)^*\,d\mu(x),
+  \qquad
+  \psim(x)=\Pminus\psi(x).
+\]
+Equivalently, \(\AX\) is the Gram-type positive element generated
+by integrating the anti-invariant readout against the object-ledger
+measure \(\mu\).
+\end{definition}
+
+In a finite weighted ledger, the same formula reads
+\[
+  \AX=\sum_{x\in X}\mu(x)\,\psim(x)\psim(x)^*.
+\]
+This finite expression is the easiest way to see positivity: every
+summand is a rank-one positive contribution from the part of the
+readout that changes sign under the involution.  In a
+measure-theoretic ledger, the integral notation records the
+corresponding positive accumulation over the visible support of
+\(\mu\).
+
+In the classical trace-class reading the displayed integral is a
+positive operator on \(Y\) assembled from rank-one positive
+operators \(\psim(x)\psim(x)^*\).  In the typed-cone reading the
+integral notation specifies the positive element \(\AX\) together
+with the trace and order structure needed to compare \(\AX\) with
+later domination bounds.  The abstraction preserves the algebra of
+positive operators that enters the master theorem without claiming a
+development of the full analytic theory of trace-class operators.
+
+\begin{definition}[Separating anti-invariant readout]
+\label{def:duality_confinement:separating-readout}
+The anti-invariant readout \(\psim\) is
+\emph{qualitatively separating} when, on the visible support of
+\(\mu\),
+\[
+  \psim(x)=0
+  \quad\Longleftrightarrow\quad
+  x\in\Fix(J).
+\]
+In the finite weighted case this means the equivalence holds for
+every \(x\in X\) with positive weight.  In the measure-theoretic
+case it means the equivalence holds outside a \(\mu\)-null set.
+
+It is \emph{quantitatively separating} with modulus \(m\) when
+\[
+  m:(0,\infty)\to(0,\infty)
+\]
+and, for every \(\varepsilon>0\) and every \(x\in X\),
+\[
+  \dist(x,\Fix(J))\geq\varepsilon
+  \quad\Longrightarrow\quad
+  \|\psim(x)\|\geq m(\varepsilon).
+\]
+\end{definition}
+
+Qualitative separation says that vanishing of the anti-invariant
+readout identifies the fixed locus.  Quantitative separation says
+more: once a point is at least \(\varepsilon\) away from
+\(\Fix(J)\), the anti-invariant readout is bounded below by a
+positive amount depending only on that distance scale.  The modulus
+is often chosen nondecreasing in applications, but the confinement
+estimate only needs the displayed positive lower bound.
+
+The next statement is the trace identity relating \(\trace\AX\) to
+the integral of \(\|\psim(x)\|^2\); together with separation, it is
+what turns vanishing of \(\AX\) into fixed-locus confinement.
+
+\begin{lemma}[Trace identity\protect\footnote{Verified in Lean as \nolinkurl{AntiInvariantLedger.traceIdentity} via constructor unfolding from the typed \nolinkurl{AntiInvariantLedger} field; see App~\ref{app:formalization}.}]
+\label{lem:duality_confinement:trace-identity}
+Let \(\AX\) be the anti-invariant ledger of an involutive object
+ledger \(\IOL\), with anti-invariant readout \(\psim\).  Then
+\[
+  \trace\AX
+  =
+  \int_X \|\psim(x)\|^2\,d\mu(x).
+\]
+\end{lemma}
+
+\begin{proof}
+In the classical operator-theoretic regime, where
+\[
+  \AX=\int_X \psim(x)\psim(x)^*\,d\mu(x)
+\]
+is a positive trace-class operator on \(Y\), the identity is the
+standard rank-one trace computation \citep{ReedSimon1980,Simon2005}.
+Taking the trace of each rank-one operator
+\(\psim(x)\psim(x)^*\) gives \(\|\psim(x)\|^2\), and integration
+against the positive measure \(\mu\) gives the displayed identity.
+The right-hand side accordingly measures the mean-square amplitude of
+the anti-invariant readout.
+
+In the typed positive cone, the same identity is recorded as a
+structural axiom of the cone rather than derived: the cone is
+specified by the order, trace, and positivity facts used by the
+confinement proof, and the value of \(\trace\) on the generator
+\(\int_X\psim(x)\psim(x)^*\,d\mu(x)\) is one of those facts.  The
+lemma packages that axiom for use alongside the classical
+operator-theoretic derivation.  Either way, the identity holds.
+\end{proof}
+
+Vanishing of \(\trace\AX\), vanishing of \(\AX\), and vanishing of
+\(\psim\) almost everywhere are therefore equivalent under the
+trace identity and the positivity axioms of the cone.  Combining
+this with a separating readout is the direct route to the
+fixed-locus confinement statement proved in the next section.
+ 
+
+\section{Direct confinement}
+\label{sec:direct_confinement}
+
+With the trace identity in place, the separating-readout conditions
+give two confinement consequences.  The first is qualitative: if
+the anti-invariant ledger vanishes, then visible mass cannot remain
+away from the fixed locus.  The second is quantitative: if the
+readout grows at least by a modulus away from \(\Fix(J)\), then the
+trace of \(\AX\) bounds the amount of visible mass at that distance
+scale.  Together these furnish the consequence step used later by the
+master theorem, which adds the separate squeeze argument that forces
+\(\AX=0\).
+
+\begin{theorem}[Separation--confinement\protect\footnote{Verified in Lean as \nolinkurl{DirectConfinement.separationConfinement} via typed-bridge composition over the measure-reading bridges \nolinkurl{mu_zero_of_ae} and \nolinkurl{visible_zero_of_ae}; see App~\ref{app:formalization}.}]
+\label{thm:duality_confinement:separation-confinement}
+Let \(\IOL\) be an involutive object ledger with anti-invariant
+ledger \(\AX\) and qualitatively separating anti-invariant readout
+\(\psim\).  If \(\AX=0\) in the typed positive cone, then
+\[
+  \mu\bigl(X\setminus\Fix(J)\bigr)=0.
+\]
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:duality_confinement:trace-identity},
+\[
+  \trace\AX=\int_X\|\psim(x)\|^2\,d\mu(x).
+\]
+Since \(\AX=0\), the left-hand side is zero.  The integrand on the
+right is nonnegative, so the integral can vanish only when
+\(\|\psim(x)\|=0\) for \(\mu\)-almost every visible point.
+Qualitative separation
+(\Cref{def:duality_confinement:separating-readout}) identifies the
+zero set of \(\psim\) with \(\Fix(J)\) on the visible support, so
+the complement of \(\Fix(J)\) has \(\mu\)-measure zero.
+\end{proof}
+
+In the finite weighted case, the same proof says that every visible
+object with positive weight lies in \(\Fix(J)\).
+
+\begin{theorem}[Quantitative confinement\protect\footnote{Verified in Lean as \nolinkurl{DirectConfinement.quantitativeConfinement} via typed-bridge composition with a Markov-step hypothesis; see App~\ref{app:formalization}.}]
+\label{thm:duality_confinement:quantitative-confinement}
+Let \(\IOL\) be an involutive object ledger with anti-invariant
+ledger \(\AX\) and quantitatively separating anti-invariant readout
+\(\psim\) with modulus \(m\).  Then, for every
+\(\varepsilon>0\),
+\[
+  \mu\bigl(\{x\in X:\dist(x,\Fix(J))\geq\varepsilon\}\bigr)
+  \leq
+  \frac{\trace\AX}{m(\varepsilon)^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+Fix \(\varepsilon>0\), and set
+\[
+  E_\varepsilon=\{x\in X:\dist(x,\Fix(J))\geq\varepsilon\}.
+\]
+Quantitative separation gives
+\[
+  \|\psim(x)\|\geq m(\varepsilon)
+  \qquad (x\in E_\varepsilon).
+\]
+A Markov-style integration step \citep{Folland1999} then yields
+\[
+  m(\varepsilon)^2\,\mu(E_\varepsilon)
+  \leq
+  \int_{E_\varepsilon}\|\psim(x)\|^2\,d\mu(x)
+  \leq
+  \int_X\|\psim(x)\|^2\,d\mu(x).
+\]
+The trace identity identifies the final integral with
+\(\trace\AX\).  Since \(m(\varepsilon)>0\), division by
+\(m(\varepsilon)^2\) gives the displayed bound.
+\end{proof}
+
+\Cref{sec:master_theorem} combines these direct consequences with
+a domination squeeze: once a sequence of records
+\(\AX\preceq B_n\) with \(\trace B_n\to0\) forces \(\AX=0\),
+\Cref{thm:duality_confinement:separation-confinement} converts that
+algebraic collapse into fixed-locus confinement.  The quantitative
+bound above supplies the scale-sensitive refinement when one works
+with finite-window or approximate data.
+ 
+
+\section{Domination and Douglas factorization}
+\label{sec:domination}
+
+The direct confinement results of \Cref{sec:direct_confinement}
+show what happens once \(\AX\) has vanished.  The master theorem
+needs a way to force that vanishing from upper bounds whose trace
+tends to zero, and domination records supply that input.  They
+compare the anti-invariant ledger \(\AX\) to a positive
+carrier-side quantity, denoted \(\Kminus\), together with an
+explicit positive defect \(E\); the bridge formalism keeps the
+useful carrier-side contribution and the residual error visible as
+separate pieces.
+
+\begin{definition}[Completed domination bridge]
+\label{def:duality_confinement:completed-domination-bridge}
+A \emph{completed domination bridge} from \(\AX\) to a
+carrier-side anti-invariant currency \(\Kminus\) consists of a
+positive defect \(E\) in the typed positive cone, with
+\[
+  0\preceq E,
+\]
+together with the domination relation
+\[
+  \AX\preceq \Kminus+E.
+\]
+The bridge is \emph{exact} when \(E=0\) and \emph{defected} when
+the defect term is retained.  A sequence of bridges
+\[
+  \AX\preceq \Kminus_{n}+E_n
+\]
+is a \emph{domination-record sequence} when the associated positive
+bounds
+\[
+  B_n=\Kminus_{n}+E_n
+\]
+satisfy
+\[
+  \trace B_n\to0
+  \qquad (n\to\infty).
+\]
+\end{definition}
+
+In ordinary operator language, the bridge says that the obstruction
+\(\AX\) is controlled by something built on the carrier side, up to
+a declared positive error.  The term \(\Kminus\) is the usable
+anti-invariant currency: the part of the construction that an
+application tries to make small by structural or analytic means.
+The defect \(E\) records the part not absorbed into that currency.
+If both terms can be arranged so that the trace of their sum tends
+to zero along a sequence, trace monotonicity in the typed positive
+cone gives the squeeze input needed later.
+
+No proof is attached to the bridge itself; its content is the explicit
+bookkeeping of the domination relation and the defect.
+Proof work begins when one explains how such relations are
+recognized or transported.  In the operator-theoretic setting used
+as motivation here, exact bridges are represented through
+operator-square-root data (see App.~\ref{app:formalization}); the
+relevant factorization principle is Douglas factorization, taken
+up next.
+
+The factorization principle behind exact bridges is the classical
+Douglas factorization \citep{Douglas1966}, traditionally stated as
+a Hilbert-space operator equivalence.  In the present paper it is
+used only through the typed-cone formulation needed by the bridge
+apparatus.
+
+\begin{theorem}[Douglas factorization, typed-cone form\protect\footnote{Verified in Lean as \nolinkurl{Domination.douglasDomination} via typed-carrier packaging in the \nolinkurl{DouglasData} structure; see App~\ref{app:formalization}.}]
+\label{thm:duality_confinement:douglas-domination}
+Let \(A=V^*V\) and \(K=W^*W\) be bounded positive operators on the
+same response space, represented as positive elements of the typed
+positive cone.  Then
+\[
+  A\preceq K
+  \quad\Longleftrightarrow\quad
+  \exists\,T\ \text{a contraction such that}\ V=TW.
+\]
+\end{theorem}
+
+\begin{proof}
+In the classical operator-theoretic setting, this is Douglas's
+factorization theorem: domination \(V^*V\preceq W^*W\) is equivalent
+to the range-inclusion and norm-control condition that permits a
+contractive factor \(T\) with \(V=TW\).  Conversely, if such a
+contraction exists, then
+\[
+  V^*V = W^*T^*TW \preceq W^*W,
+\]
+because \(T^*T\preceq I\).
+
+For the typed positive cone used in this paper, the equivalence and
+its witness data are bundled into a typed carrier.  This records the
+domination witness and the contractive-factor witness together, so
+downstream arguments may pass between the two forms without
+developing the full Hilbert-space proof inside the typed calculus.
+\end{proof}
+ 
+
+\section{The duality-confinement membrane theorem}
+\label{sec:master_theorem}
+
+This section states the main result: the duality-confinement
+membrane theorem, also called the master theorem.  It takes the
+apparatus built in the preceding sections and turns a sequence of
+domination records into fixed-locus confinement.  The input is
+algebraic and trace-theoretic---\(\AX\) is dominated by positive
+bounds \(B_n\) whose traces tend to zero---and the output is
+geometric: visible mass is confined to \(\Fix(J)\).  In framework
+terms, this is the apparatus theorem for the SDTC structural law
+\(\GamSDTC\): it does not derive the recognition source, only the
+mathematical consequence once the source has supplied the required
+sequence.
+
+\begin{theorem}[Duality-confinement membrane theorem\protect\footnote{Verified in Lean as \nolinkurl{MasterTheorem.masterTheorem}; see App~\ref{app:formalization}.}]
+\label{thm:duality_confinement:master-theorem}
+Let \(\IOL\) be an involutive object ledger with carrier \(X\),
+involution \(J\), measure \(\mu\), anti-invariant readout
+\(\psim\), and anti-invariant ledger \(\AX\).  Assume that
+\(\psim\) is qualitatively separating.  Suppose there is a sequence
+of positive cone elements \(B_n\) such that
+\[
+  \AX\preceq B_n
+  \qquad (n=1,2,\ldots)
+\]
+and
+\[
+  \trace B_n\to0
+  \qquad (n\to\infty).
+\]
+Then \(\AX=0\) in the typed positive cone.  Consequently,
+\[
+  \mu\bigl(X\setminus\Fix(J)\bigr)=0.
+\]
+\end{theorem}
+
+The proof is an operator-style squeeze, composing the apparatus of
+\Cref{sec:anti_invariant_ledger,sec:direct_confinement,sec:domination}
+with the direct-confinement consequence of
+\Cref{thm:duality_confinement:separation-confinement}.
+
+\begin{proof}
+The argument has four steps.  First, trace monotonicity in the
+typed positive cone turns each domination record into a scalar
+inequality:
+\[
+  \AX\preceq B_n
+  \quad\Longrightarrow\quad
+  \trace\AX\leq\trace B_n.
+\]
+Since \(\AX\) is positive, \(\trace\AX\geq0\), so for every \(n\),
+\[
+  0\leq\trace\AX\leq\trace B_n.
+\]
+
+Second, the vanishing trace budget for the bounds gives the
+squeeze.  The scalar quantity \(\trace\AX\) is independent of
+\(n\), while \(\trace B_n\) tends to zero, so \(\trace\AX=0\).
+
+Third, positivity-to-zero in the typed positive cone converts
+trace-zero positivity into equality in the cone: \(\AX=0\).  This
+is the point at which the proof uses the typed-cone abstraction
+rather than a full trace-class operator theory.  In a classical
+positive trace-class cone, the corresponding statement is that a
+positive trace-class operator with trace zero is the zero operator.
+
+Fourth, qualitative separation converts algebraic vanishing into
+confinement.  With \(\AX=0\), the separation--confinement theorem
+gives
+\[
+  \mu\bigl(X\setminus\Fix(J)\bigr)=0.
+\]
+That theorem in turn rests on the trace identity
+\Cref{lem:duality_confinement:trace-identity}, which identifies
+\(\trace\AX\) with the squared-norm integral of \(\psim\).
+\end{proof}
+
+The theorem is stated at the typed positive-cone level.  The cone
+records exactly the primitives used by the proof: the order
+\(\preceq\), the trace functional \(\trace\), trace monotonicity, and
+the positivity-to-zero principle.  A fully operator-theoretic
+treatment would require the trace-class topology, Hilbert--Schmidt
+and Schatten-ideal infrastructure, and the corresponding analytic
+closure lemmas \citep{Simon2005,ReedSimon1980}; that
+operator-theoretic generality remains an open extension.
+
+\paragraph{Worked single-substrate validation.}
+The master theorem applies to any involutive object ledger whose
+recognition source supplies the domination records required by the
+squeeze hypothesis.  This paper develops the typed apparatus and
+proves the squeeze.  A worked single-substrate validation,
+instantiating the apparatus on the saturated completed Selberg trace
+closure of the Riemann zeta function and applying the master theorem
+to the corresponding zero ledger, is given in
+\citet{TsiokosRHviaSDTC2026}.  That paper specifies the involution
+\(J_L(s)=1-\bar{s}\), identifies its fixed locus with the critical
+line, treats the saturated Selberg trace shell as the typed
+substrate, and uses the Selberg-class instance of the SDTC
+recognition source.  Its main theorem is conditional on the standard
+Six Birds closure assumption and that Selberg-class instance of
+SDTC; it imports the master theorem as stated in this section.  No
+result from \citet{TsiokosRHviaSDTC2026} is used here.
+
+The next section develops refinements, including exhaustive moving
+ledgers and optimized scalar trace budgets, that adapt the master
+theorem to finite-window and tail-defect situations.
+ 
+
+\section{Exhaustive squeeze and defected budgets}
+\label{sec:exhaustive_squeeze_and_budgets}
+
+The master theorem is stated for ambient domination records
+\(\AX\preceq B_n\) whose traces vanish.  In applications, the records
+often arrive less directly: finite-window ledgers \(A_{X,n}\),
+transports \(\iota_n\) into the completed ambient cone, and tails
+\(T_n\) measuring what the window has not captured.  The exhaustive
+moving ledger formalizes this finite-window-plus-tail situation.
+
+\begin{definition}[Exhaustive moving ledger]
+\label{def:duality_confinement:exhaustive-moving-ledger}
+An \emph{exhaustive moving ledger} over an involutive object ledger
+\(\IOL\) consists of a sequence of positive cone elements
+\(A_{X,n}\), inclusion transports \(\iota_n\), and positive tails
+\(T_n\) with \(0\preceq T_n\), such that, for every \(n\),
+\[
+  \AX\preceq \iota_n A_{X,n}\iota_n^*+T_n.
+\]
+It is \emph{vanishing-exhaustive} when there are positive bounds
+\(B_n\) satisfying
+\[
+  A_{X,n}\preceq B_n
+\]
+and
+\[
+  \trace(\iota_n B_n\iota_n^*)+\trace T_n\to0
+  \qquad (n\to\infty).
+\]
+\end{definition}
+
+The finite-window term \(A_{X,n}\) approximates the completed ledger
+\(\AX\); \(\iota_n\) transports it into the ambient cone, and \(T_n\)
+records the residual positive contribution not captured by the
+window.  The definition does not choose a particular analytic
+truncation.  It isolates the trace-theoretic data needed for the
+squeeze mechanism of \Cref{sec:master_theorem}:
+the transported upper bound and the tail become invisible to the
+trace in the limit.  This covers progressively finer finite windows,
+increasing carrier subspaces, and approximation schemes where the
+completed ledger is controlled by a transported finite piece plus a
+trace-vanishing tail.
+
+\begin{theorem}[Exhaustive ledger squeeze\protect\footnote{Verified in Lean as \nolinkurl{ExhaustiveSqueeze.exhaustiveSqueeze}; the ambient bound is supplied as a moving-ledger field. See App~\ref{app:formalization}.}]
+\label{thm:duality_confinement:exhaustive-squeeze}
+Let \(\IOL\) be an involutive object ledger with anti-invariant
+ledger \(\AX\).  If \(\IOL\) admits a vanishing-exhaustive moving
+ledger, then \(\AX=0\).  If, moreover, the anti-invariant readout
+\(\psim\) is qualitatively separating, then
+\[
+  \mu\bigl(X\setminus\Fix(J)\bigr)=0.
+\]
+\end{theorem}
+
+\begin{proof}
+For each \(n\), exhaustiveness gives
+\[
+  \AX\preceq \iota_n A_{X,n}\iota_n^*+T_n.
+\]
+The transported domination bound \(A_{X,n}\preceq B_n\) gives
+\[
+  \iota_n A_{X,n}\iota_n^*
+  \preceq
+  \iota_n B_n\iota_n^*.
+\]
+By trace monotonicity in the typed positive cone,
+\[
+  0\leq\trace\AX
+  \leq
+  \trace(\iota_n B_n\iota_n^*)+\trace T_n.
+\]
+The right-hand side tends to zero by vanishing-exhaustiveness, so
+\(\trace\AX=0\).  Positivity-to-zero in the cone gives
+\(\AX=0\).  If \(\psim\) is qualitatively separating, then
+\Cref{thm:duality_confinement:separation-confinement} gives the
+displayed fixed-locus confinement.
+\end{proof}
+
+The exhaustive squeeze covers records that vanish only after
+transport and tail control.  The defected-budget refinement below
+tracks two residual mechanisms---a source or membrane defect and a
+bridge or domination defect---and re-weights them by a positive
+scalar before minimizing the trace.
+
+\begin{definition}[Defected obstruction budget]
+\label{def:duality_confinement:defected-budget}
+A \emph{defected obstruction budget} at level \(n\) is a domination
+record of the form
+\[
+  \AX
+  \preceq
+  (1+t)\bigl(\Kminus_{n}+E_{\mathrm{src},n}\bigr)
+  +(1+t^{-1})E_{\mathrm{br},n},
+\]
+where \(t>0\), where \(E_{\mathrm{src},n}\) is a source defect, and
+where \(E_{\mathrm{br},n}\) is a bridge defect.  Both defects are
+positive cone elements.  The unparameterized budget is obtained by
+setting \(t=1\), which adds the two defect contributions without
+optimization.
+\end{definition}
+
+The parameter \(t\) allocates weight between the source-side
+contribution \(\Kminus_{n}+E_{\mathrm{src},n}\) and the bridge
+defect \(E_{\mathrm{br},n}\); the reciprocal \(t^{-1}\) is the usual
+two-term balancing factor.  The load-bearing scalar result is the
+optimized trace estimate that follows.
+
+\begin{proposition}[Optimized scalar trace budget\protect\footnote{Tracked in the formalization harness as \nolinkurl{DefectedBudget.optimizedTraceBudget}; the AM--GM step is supplied as a typed-scalar hypothesis. See App~\ref{app:formalization}.}]
+\label{prop:duality_confinement:optimized-trace-budget}
+For a defected obstruction budget at level \(n\), set
+\[
+  a_n=\trace(\Kminus_{n}+E_{\mathrm{src},n}),
+  \qquad
+  b_n=\trace E_{\mathrm{br},n},
+\]
+with \(a_n,b_n\geq0\).  Then
+\[
+  \inf_{t>0}
+  \bigl[(1+t)a_n+(1+t^{-1})b_n\bigr]
+  =
+  \bigl(\sqrt{a_n}+\sqrt{b_n}\bigr)^2.
+\]
+In particular, if \(a_n\to0\) and \(b_n\to0\), then the optimized
+trace budget tends to zero.
+\end{proposition}
+
+\begin{proof}
+For \(a_n,b_n>0\), minimize
+\[
+  (1+t)a_n+(1+t^{-1})b_n
+  =
+  a_n+b_n+t a_n+\frac{b_n}{t}
+\]
+over \(t>0\).  The derivative vanishes at
+\[
+  t=\sqrt{\frac{b_n}{a_n}}.
+\]
+Substitution gives
+\[
+  a_n+b_n+2\sqrt{a_n b_n}
+  =
+  \bigl(\sqrt{a_n}+\sqrt{b_n}\bigr)^2.
+\]
+Equivalently, the AM--GM inequality
+\citep{HardyLittlewoodPolya1952} applied to \(t a_n\) and
+\(b_n/t\) gives
+\[
+  t a_n+\frac{b_n}{t}\geq2\sqrt{a_n b_n},
+\]
+with equality at the displayed value of \(t\).  If one of
+\(a_n,b_n\) is zero, the same value is obtained as an infimum by
+letting \(t\) tend to \(0\) or to \(+\infty\), as appropriate.
+\end{proof}
+
+The next section gives the scope fence around the typed-cone level,
+the AM--GM hypothesis, cross-substrate predictions, and SDTC as a
+named structural law.
+ 
+
+\section{Scope and non-claims}
+\label{sec:scope}
+
+Several scope boundaries deserve explicit statement so the paper's
+main claim remains sharp.  The point is not to weaken the apparatus
+developed above, but to identify which structural content is being
+invoked, which encoding choices are being made, and which
+extensions remain outside the present paper.
+
+\paragraph{SDTC is a named structural law, not a derived theorem.}
+Self-Dual Trace Confinement is named as a recognition source:
+structural content supplied by formed-layer closure per Foundations
+I, not derived from framework primitives alone.  This paper does
+not present SDTC as a theorem derived from earlier Six Birds
+primitives.  The duality-confinement membrane theorem of
+\Cref{sec:master_theorem} is the apparatus theorem proved here: it
+takes domination records as input and extracts fixed-locus
+confinement.  The load-bearing structural-law content is the
+recognition source that supplies those records on a formed
+self-dual layer.  The paper also establishes only the forward
+apparatus implication from domination records to confinement; no
+bidirectional equivalence between the SDTC structural claim and
+the existence of those records is established here.
+
+\paragraph{The theorem is at the typed-cone level.}
+The master theorem is stated at the abstract positive-cone level with
+an explicit trace functional, recording only the order \(\preceq\),
+\(\trace\), trace monotonicity, and the positivity-to-zero principle.
+Operator-theoretic generality---trace-class operators,
+Hilbert--Schmidt operators, Schatten norms, trace-norm topology---is
+not developed here as a full analytic model.  The classical
+trace-class setting is the motivating model for the abstraction.
+
+\paragraph{The scalar budget uses an AM--GM hypothesis.}
+The AM--GM step in
+\Cref{prop:duality_confinement:optimized-trace-budget} is the
+classical inequality \citep{HardyLittlewoodPolya1952}.  In the
+typed-scalar encoding used here, it is taken as a hypothesis on the
+scalar interface; a derivation of AM--GM inside the abstract scalar
+encoding would require additional typed real-arithmetic structure.
+This is a scope statement on the typed-scalar abstraction, not a math
+nonclaim about AM--GM itself.
+
+\paragraph{Cross-substrate generalizations are structural predictions.}
+The discussion of CPT symmetry, gauge invariance, Hermitian
+conjugation, particle--antiparticle symmetry, quantum
+self-adjointness, and function-field RH is predictive rather than
+theorem-level.  These are structural predictions that genuine
+involutive self-duality at the formed-layer level implies
+fixed-locus confinement; their plausibility comes from consistency
+with observed physical and mathematical symmetries.  They are not
+established results in this paper, and each remains a
+single-substrate validation problem outside the abstract apparatus
+developed here.
+
+\paragraph{No novelty is claimed for standard operator theory.}
+Douglas factorization \citep{Douglas1966}, trace functionals
+\citep{Simon2005}, Loewner-style order
+\citep{Loewner1934,Bhatia1997,HornJohnson2013}, Markov-type
+estimates \citep{Folland1999}, AM--GM
+\citep{HardyLittlewoodPolya1952}, and standard rank-one trace
+identities \citep{ReedSimon1980} are treated as classical
+mathematical constructions; the present paper does not rebrand
+those results as new.  The
+contribution is the structural packaging: the involutive object
+ledger, the anti-invariant ledger, the completed-domination bridge,
+the exhaustive moving ledger, and the master theorem that converts
+vanishing trace budgets into fixed-locus confinement.  Classical
+operator-theoretic references are background for the operator
+model, not novelty claims of this paper.
+
+These boundaries identify which framework content is supplied as
+recognition source, which typed abstractions are used here, and what
+would count as an extension of the present result.  \(\GamSDTC\) is
+the named structural law, and the master theorem is its apparatus
+theorem.
+ 
+
+\section{Discussion}
+\label{sec:discussion}
+
+The duality-confinement membrane theorem suggests three lines of
+further thought: a common structural pattern behind several
+self-dual settings, the relation between the typed-cone squeeze and
+standard operator-theoretic squeeze arguments, and the extensions
+needed to move from the present apparatus to broader
+single-substrate validations.
+
+\paragraph{Cross-substrate structural pointers.}
+The examples below are structural predictions of the
+\(\GamSDTC\) framing, not established theorems of this paper.  The
+common template is conditional: if a formed closure carries a
+genuine involutive self-duality on its visible ledger, then the
+master theorem's hypotheses would apply once the corresponding
+separating readout and domination-record discipline are supplied.
+
+For quantum self-adjointness, the candidate involution is Hermitian
+conjugation \(T\mapsto T^*\) on an operator ledger
+\citep{ReedSimon1975,Hall2013}.  The fixed locus is the self-adjoint
+part \(T=T^*\), and the natural anti-invariant readout is the
+skew-Hermitian component.  The required single-substrate validation
+would show that this skew component is separating and that the
+formed quantum closure supplies trace-vanishing domination records
+for it.
+
+For CPT symmetry, the candidate involution is the CPT operation on
+field or state data \citep{StreaterWightman2000,Weinberg1995}.  The
+fixed locus is the CPT-invariant sector, and the readout is the
+CPT-anti-invariant component.  The structural prediction is that a
+CPT-genuine formed layer cannot retain visible CPT-odd mass once
+the domination records are available.  This is a pointer toward the
+shape of a validation problem, not a derivation of CPT invariance.
+
+For gauge invariance, the relevant involution would have to be an
+order-two gauge operation, gauge-duality, or gauge reflection
+realized on the visible ledger of the substrate
+\citep{PeskinSchroeder1995,Bleecker1981}.  The fixed locus would be
+the gauge-invariant observables, while the readout would record
+gauge-variant components.  The master theorem would then ask for
+the same three ingredients as before: an involutive object ledger,
+a separating anti-invariant readout, and a trace-vanishing
+domination sequence.
+
+For particle--antiparticle symmetry, charge conjugation is the
+candidate involution \citep{PeskinSchroeder1995,Weinberg1995}.  The
+fixed locus consists of self-conjugate states or charge-neutral
+visible configurations, and the anti-invariant readout measures the
+matter--antimatter asymmetry coordinate.  The prediction is again
+structural: confinement to the fixed locus would follow only after
+the substrate-specific recognition source supplies the domination
+records.
+
+For function-field RH, the candidate involution is the
+Frobenius-functional-equation involution for the relevant
+function-field \(L\)-function \citep{Weil1948a,Weil1948b,Stepanov1969,Bombieri1974}.
+The fixed locus is the analogue of the critical line in the
+Frobenius eigenvalue plane, and the anti-invariant readout is the
+corresponding off-line displacement.  This is closest in shape to
+the Riemann-zero ledger used above as a motivating example, but it
+still requires its own formed-layer ledger, separation proof, and
+recognition source.
+
+These five examples share a shape but not a proof.  Each would
+require a separate validation establishing the involution and
+fixed locus as data of a formed-layer involutive object ledger,
+proving the readout's separating property, and supplying the
+domination records required by the master theorem.  Until those
+pieces are in place, the examples remain pointers for
+cross-substrate applicability.
+
+\paragraph{Relation to classical operator theory.}
+Outside the Six Birds framing, the master theorem reads as a typed
+abstraction of a classical operator-theoretic fact: a positive
+operator dominated by a sequence of positive operators whose traces
+tend to zero must itself vanish.  In the concrete positive
+trace-class cone, this follows from the Loewner order, trace
+monotonicity, and positivity of the trace.  Standard operator-theory
+and matrix-analysis references
+\citep{ReedSimon1980,Simon2005,Bhatia1997,HornJohnson2013} provide
+the classical ambient language for such facts.
+
+The present paper shares the spirit of that operator theory but is
+structurally distinct from it.  The typed positive cone is an
+abstraction of the order, trace, and positivity principles used by
+the proof; it is not a development of the trace-norm topology or
+Schatten-ideal infrastructure.  The additional Six Birds content is
+not the scalar squeeze itself but the structural-law framing: the
+trace-vanishing sequence is supplied as recognition-source content
+of a formed self-dual closure, and the apparatus theorem turns
+that content into fixed-locus confinement.
+
+\paragraph{Future work.}
+The first extension target is an operator-theoretic realization of
+the typed cone.  One would instantiate the cone with positive
+trace-class operators on a Hilbert space, prove the trace identity
+and positivity-to-zero inside that setting, and connect the
+Douglas factorization carrier used here to the usual range
+inclusion theorem for bounded Hilbert-space operators.
+
+The second extension target is scalar arithmetic.  The optimized
+trace budget currently tracks the AM--GM step through a
+typed-scalar hypothesis.  A stronger treatment would introduce
+enough typed real-arithmetic structure to express
+\[
+  \bigl(\sqrt{a}-\sqrt{b}\bigr)^2\geq0
+\]
+and derive AM--GM internally rather than using it as a supplied
+scalar fact.
+
+The third extension target is additional single-substrate
+validation.  The Riemann-zero ledger is the guiding analytic
+instance; the structural pointers above suggest other candidates,
+but each must be developed on its own terms.  A natural sequence
+would begin with function-field RH and then proceed to quantum
+self-adjointness or charge-conjugation settings, where the
+involution and fixed locus are comparatively explicit.
+
+Read outside the Six Birds framing, the master theorem is a
+typed-cone squeeze theorem abstracting a familiar positive-operator
+argument; the additional structural-law content of SDTC is the
+claim that, in formed self-dual closures, the trace-vanishing
+domination sequence is supplied as closure content rather than
+derived from the readout alone.  Once such a sequence is in place,
+the apparatus does one thing: it converts the trace-vanishing
+content into confinement on \(\Fix(J)\).
+ 
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper names \(\GamSDTC\) as the structural law for formed
+closures with genuine involutive self-duality: visible mass is
+confined to the fixed locus of the duality.  Its apparatus is the
+duality-confinement membrane theorem, which converts a
+vanishing-trace domination sequence
+\[
+  \AX\preceq B_n,
+  \qquad
+  \trace B_n\to0,
+\]
+into \(\AX=0\), hence confinement on \(\Fix(J)\).  The body
+develops the corresponding typed machinery: involutive object
+ledgers, anti-invariant ledgers with trace identity and separating
+readout, completed-domination bridges with typed-cone Douglas
+factorization, exhaustive moving ledgers, and optimized scalar
+trace budgets.  The development is formalized in Lean as a
+mathlib-free mechanization at the typed positive-cone level
+(Appendix~\ref{app:formalization}).
+
+Two apparatus-layer extensions remain open.  First, the typed positive cone
+should be realized as the full positive trace-class cone on a
+Hilbert space, with the trace-norm topology, Hilbert--Schmidt and
+Schatten infrastructure, and the classical operator-theoretic
+lemmas made explicit \citep{Simon2005,ReedSimon1980}.  Second, the
+optimized scalar trace budget should be strengthened by deriving
+AM--GM \citep{HardyLittlewoodPolya1952} inside a typed
+real-arithmetic structure rather than taking the inequality as a
+scalar hypothesis.
+
+No single-substrate validation is used here.  The present paper is
+the abstract apparatus layer; substrate-specific applications must
+supply their own involutive ledger, separating readout, and
+recognition source.
+
+Code and data availability.  The source repository is available at
+\url{https://github.com/ioannist/six-birds-duality-confinement}.
+The math source-of-record for the paper's claims is the artifact at
+\path{anti_loc/extracted_math/duality_confinement_master.md} within
+that repository.  The per-paper manifest is at
+\path{lean/manifests/duality_confinement_manifest.toml}.
+ 
+\appendix
+
+
+\section{Lean formalization}
+\label{app:formalization}
+
+This appendix records the Lean-disclosure discipline for the paper.
+Body prose uses mathematical names; Lean declarations, coverage modes,
+representation notes, trust-base information, and code availability
+appear here.
+
+\subsection*{Disclosure discipline}
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.23\linewidth}
+  >{\raggedright\arraybackslash}p{0.28\linewidth}
+  >{\raggedright\arraybackslash}X}
+\toprule
+Mode & Permitted wording & Use in this paper \\
+\midrule
+\texttt{lean\_substantive} (pure derivation) &
+``Verified in Lean as \textlangle declaration\textrangle.'' &
+Used when the Lean theorem derives the paper statement from
+typed-cone primitives within its declared scope.  Here this applies
+to the master theorem (\Cref{thm:duality_confinement:master-theorem});
+the typed positive-cone scope is stated explicitly. \\
+\texttt{lean\_substantive} (typed-interface / typed-bridge composition) &
+``Verified in Lean as \textlangle declaration\textrangle\ via
+typed-interface composition over the \textlangle Carrier\textrangle\
+fields,'' or ``\dots\ via typed-bridge composition over the
+\textlangle Carrier\textrangle.'' &
+Used when the theorem composes typed hypotheses, constructor fields,
+or carrier data rather than deriving all content from primitives:
+trace identity, direct confinement, quantitative confinement, Douglas
+factorization, and exhaustive squeeze. \\
+\texttt{definition\_entry} &
+``Realized in Lean as \textlangle declaration\textrangle.'' &
+Used for paper definitions; definitions are not described as proved. \\
+\texttt{harness\_tracked} &
+``Tracked in the formalization harness as \textlangle declaration\textrangle.'' &
+Used for a typed projection over an explicit hypothesis.  Here the
+optimized scalar trace budget supplies AM--GM as a typed-scalar
+hypothesis. \\
+\texttt{typed\_carrier} &
+``Encoded in Lean as a typed structure carrier
+\textlangle declaration\textrangle, not as a Lean axiom; downstream
+theorems take a value of this carrier as an explicit hypothesis.'' &
+Included for completeness.  No inventory entry of this paper has
+this mode; the Selberg recognition-source carrier belongs to
+\citet{TsiokosRHviaSDTC2026}. \\
+\texttt{support\_only} &
+No Lean mention. &
+Used for the defected obstruction budget.  It is paper-side
+motivation for the optimized scalar trace budget and has no manifest
+entry. \\
+\bottomrule
+\end{tabularx}
+\caption{Lean-disclosure wording used by this paper.}
+\label{tab:lean-disclosure-discipline}
+\end{table}
+
+The per-axis manifest enumerates the tracked entries; the coverage
+table below renders it in mathematical language.  The validator also
+audits theorem dependencies against the project trust base.  The
+permitted axiom closure is the standard Lean core list
+\(\texttt{Classical.choice}\), \(\texttt{propext}\),
+\(\texttt{Quot.sound}\), \(\texttt{choice}\), and
+\(\texttt{funext}\).
+
+\subsection*{Typed positive-cone encoding}
+
+The formalization uses a mathlib-free typed positive cone for \(\AX\),
+the bounds \(B_n\), the carrier currency \(\Kminus\), and the tails
+\(T_n\).  The cone records exactly the primitives used in the paper:
+an order \(\preceq\), a trace functional \(\trace\), trace monotonicity,
+and the positivity-to-zero principle.  The trace identity is encoded
+at this level: the Gram-type construction of \(\AX\) is bundled with
+the assertion that \(\trace\AX\) is the integral of
+\(\|\psim(x)\|^2\).
+
+This is narrower than full Hilbert-space operator theory.  The master
+theorem uses only order, trace monotonicity, scalar squeezing, and
+positivity-to-zero; it does not formalize trace-class operators,
+Hilbert-Schmidt maps, Schatten ideals, or trace-norm topology
+\citep{Simon2005,ReedSimon1980}.  Realizing the theorem in the full
+positive trace-class cone is an operator-theoretic extension, not a
+hidden Lean claim.
+
+\subsection*{Response-space typed carrier}
+
+The body definition
+(\Cref{def:duality_confinement:involutive-object-ledger}) takes \(Y\)
+to be a real Hilbert space with \(\Jiso\) a linear isometric
+involution.  In Lean, \(Y\) is a typed carrier with the primitives used
+above: \(\mathtt{add}\), \(\mathtt{smul}\) over a typed
+\(\mathtt{Scalar}\), \(\mathtt{inner}\), \(\mathtt{norm}\),
+\(\mathtt{J\_iso}\), the laws \(\mathtt{J\_iso\_involutive}\),
+\(\mathtt{J\_iso\_linear}\), \(\mathtt{J\_iso\_isometry}\), and the
+readout/equivariance fields \(\mathtt{psi}\) and
+\(\mathtt{psi\_equivariant}\).  The full Hilbert-space stack
+(\citealp{ReedSimon1980,Conway1990}) is not encoded: completeness,
+polarization, parallelogram law, full inner-product axioms, and
+\(\mathbb{R}\)-vector-space axioms beyond the bundled addition and
+scalar action remain operator-theoretic extensions.
+
+\subsection*{Representation notes}
+
+\paragraph{Douglas factorization.}
+The classical mathematical content here is Douglas factorization
+\citep{Douglas1966}: for bounded positive operators \(A=V^*V\) and
+\(K=W^*W\) on a Hilbert space, domination \(A\preceq K\) is
+equivalent to the existence of a contraction \(T\) with \(V=TW\).
+The domination section uses this as operator-theoretic motivation.
+
+In the mathlib-free typed-cone encoding this theorem is represented
+by a typed \texttt{DouglasData} carrier.  The carrier records
+\(A=V^*V\), \(K=W^*W\), the domination relation \(A\preceq K\), the
+contractive factor witness \(T\) with \(V=TW\), and the two fields
+\texttt{order\_to\_factor} and \texttt{factor\_to\_order}.  Downstream
+theorems read the domination--factorization implication from these
+fields.
+
+Thus \texttt{douglasDomination} repackages stored carrier fields into
+the
+\(\mathtt{Nonempty\ Domination}\leftrightarrow\mathtt{Nonempty\ ContractiveFactor}\)
+form used by the bridge apparatus.  This is typed-carrier packaging,
+not a Lean development of the full Hilbert-space theorem from
+operator-square-root primitives.
+
+\paragraph{AM--GM in the scalar trace budget.}
+The optimized scalar trace budget depends on the elementary
+optimization
+\[
+  \inf_{t>0}\bigl((1+t)a+(1+t^{-1})b\bigr)
+    = \bigl(\sqrt a+\sqrt b\bigr)^2 .
+\]
+In ordinary real arithmetic this follows from the AM--GM inequality
+\citep{HardyLittlewoodPolya1952}, or equivalently from
+non-negativity of \((\sqrt a-\sqrt b)^2\).  The abstract scalar
+encoding used here is weaker: it provides the scalar interface
+needed by the trace-budget statement but does not supply enough
+ordered real arithmetic to derive AM--GM substantively.
+
+Accordingly, the Lean-side statement uses an explicit
+\texttt{am\_gm\_optimization} hypothesis.  The optimized scalar trace
+budget is tracked as a typed projection over that hypothesis, not as a
+substantive Lean derivation of AM--GM.  A future strengthening would
+add typed real-arithmetic structure for square roots, non-negativity
+of squares, and the derivation of \((\sqrt a-\sqrt b)^2\geq0\).
+
+\paragraph{Anti-invariant readout as typed field.}
+The body defines \(\psim(x)=\Pminus\psi(x)\), and equivariance of
+\(\psi\) forces \(\psim(Jx)=-\psim(x)\).  The mathlib-free typed-cone
+encoding does not represent \(\Pminus\), so \(\psim\) is an
+independent typed field of the separating-readout and
+anti-invariant-ledger carriers.  A coherence hypothesis identifies the
+two occurrences pointwise, and downstream theorems consume \(\psim\)
+through these fields.
+
+The projection identity and anti-equivariance are therefore paper-side
+mathematics, not derived inside Lean from the ledger's \(\psi\) and
+\(\Jiso\) fields.  A future strengthening would add a response-side
+\(\Pminus\) primitive, or an anti-action on the readout codomain, so
+that the projection and equivariance identities can be derived rather
+than supplied as typed-interface data.
+
+\begin{landscape}
+\begin{table}[H]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}
+  >{\raggedright\arraybackslash}p{0.17\linewidth}
+  >{\raggedright\arraybackslash}p{0.14\linewidth}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{0.12\linewidth}
+  >{\raggedright\arraybackslash}p{0.08\linewidth}
+  >{\raggedright\arraybackslash}p{0.07\linewidth}@{}}
+\toprule
+Paper label & Paper-prose name & Lean declaration &
+Proof mode & Coverage & Alignment \\
+\midrule
+\nolinkurl{def:involutive-object-ledger} &
+involutive object ledger &
+\nolinkurl{Involution.InvolutiveObjectLedger} &
+definition entry &
+definition &
+faithful \\
+
+\nolinkurl{def:separating-readout} &
+separating anti-invariant readout &
+\nolinkurl{Separation.SeparatingReadout} &
+definition entry &
+definition &
+faithful \\
+
+\nolinkurl{def:anti-invariant-ledger} &
+anti-invariant object ledger &
+\nolinkurl{AntiInvariantLedger.AntiInvariantLedger} &
+definition entry &
+definition &
+faithful \\
+
+\nolinkurl{lem:trace-identity} &
+trace identity &
+\nolinkurl{AntiInvariantLedger.traceIdentity} &
+lean substantive &
+theorem &
+faithful \\
+
+\nolinkurl{thm:separation-confinement} &
+separation--confinement theorem &
+\nolinkurl{DirectConfinement.separationConfinement} &
+lean substantive; measure-reading bridges
+supplied as typed hypotheses &
+theorem &
+faithful \\
+
+\nolinkurl{thm:quantitative-confinement} &
+quantitative confinement bound &
+\nolinkurl{DirectConfinement.quantitativeConfinement} &
+lean substantive; Markov step supplied as typed interface &
+theorem &
+faithful \\
+
+\nolinkurl{def:completed-domination-bridge} &
+completed domination bridge &
+\nolinkurl{Domination.CompletedDominationBridge} &
+definition entry &
+definition &
+faithful \\
+
+\nolinkurl{thm:douglas-domination} &
+Douglas factorization, typed-cone form &
+\nolinkurl{Domination.douglasDomination} &
+lean substantive; typed-carrier packaging via
+\texttt{DouglasData} fields (\S A1) &
+theorem &
+faithful \\
+
+\nolinkurl{thm:master-theorem} &
+duality-confinement membrane theorem &
+\nolinkurl{MasterTheorem.masterTheorem} &
+lean substantive &
+theorem &
+faithful \\
+
+\nolinkurl{def:exhaustive-moving-ledger} &
+exhaustive moving ledger &
+\nolinkurl{ExhaustiveSqueeze.ExhaustiveMovingLedger} &
+definition entry &
+definition &
+faithful \\
+
+\nolinkurl{thm:exhaustive-squeeze} &
+exhaustive ledger squeeze &
+\nolinkurl{ExhaustiveSqueeze.exhaustiveSqueeze} &
+lean substantive; ambient bound supplied as moving-ledger field &
+theorem &
+faithful \\
+
+\nolinkurl{def:defected-budget} &
+defected obstruction budget &
+\emph{none; support only} &
+no body Lean citation &
+not mechanized &
+n/a \\
+
+\nolinkurl{prop:optimized-trace-budget} &
+optimized scalar trace budget &
+\nolinkurl{DefectedBudget.optimizedTraceBudget} &
+tracked by harness; \S A2 &
+theorem &
+faithful \\
+\bottomrule
+\end{tabularx}
+\caption{Formalization coverage for the thirteen inventory entries
+of this paper.  Paper labels are shown without the common
+\texttt{duality\_confinement:} prefix; Lean declarations are shown
+without the common \texttt{SixBirdsDualityConfinement.DualityConfinement.}
+namespace prefix.}
+\label{tab:dc-formalization-coverage}
+\end{table}
+\end{landscape}
+
+\Cref{tab:dc-formalization-coverage} records the per-row coverage
+for the thirteen inventory entries: the twelve mechanized entries
+referenced in the abstract, together with the support-only
+defected-obstruction-budget row that carries no Lean citation.
+Three rows require the representation discipline stated above:
+Douglas factorization is the typed-cone form recorded by the
+\texttt{DouglasData} carrier; the optimized scalar trace budget is
+tracked over the \texttt{am\_gm\_optimization} hypothesis; and the
+defected obstruction budget is support-only material with no Lean
+citation.
+In addition, the anti-invariant-readout typed-field disclosure
+above applies across the separating-readout, anti-invariant-ledger,
+and direct-confinement entries: \(\psim\) is supplied as a typed
+field with a coherence hypothesis between its two occurrences,
+while the projection identity \(\psim=\Pminus\psi\) and
+equivariance \(\psim(Jx)=-\psim(x)\) are paper-side content rather
+than Lean-derived from \(\psi\) and \(\Jiso\).  The remaining ten
+rows are direct definition entries or faithful theorem entries in
+the typed positive-cone formalization, so all twelve mechanize-now
+entries carry faithful semantic alignment under these disclosures.
+The real-part abstraction used for the Riemann-hypothesis zero
+ledger is the corresponding representation note for
+\citet{TsiokosRHviaSDTC2026}; that note and the recognition-source
+carrier row both belong to its formalization appendix.
+
+\subsection*{Code and data availability}
+
+The source repository is available at
+\url{https://github.com/ioannist/six-birds-duality-confinement}.
+The math source of record for this paper is
+\path{anti_loc/extracted_math/duality_confinement_master.md} within
+that repository, and the per-paper formal manifest is
+\path{lean/manifests/duality_confinement_manifest.toml}.
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

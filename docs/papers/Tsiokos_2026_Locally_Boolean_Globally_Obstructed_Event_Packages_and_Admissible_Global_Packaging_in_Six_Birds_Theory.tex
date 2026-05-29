@@ -1,0 +1,858 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+\newcommand{\EventPackage}{\mathfrak{E}}
+\newcommand{\CtxFamily}{\mathcal{C}}
+\newcommand{\BoolAlg}[1]{B_{#1}}
+\newcommand{\SharedEventEq}{\sim}
+\newcommand{\AdmissibleFamily}{\mathcal{A}}
+\newcommand{\GPDstr}{\mathrm{GPD}_{\mathrm{str}}}
+\newcommand{\GPDstat}{\mathrm{GPD}_{\mathrm{stat}}}
+\newcommand{\llbracket}{\mathopen{[\mkern-3mu[}}
+\newcommand{\rrbracket}{\mathclose{]\mkern-3mu]}}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Locally Boolean, Globally Obstructed: Event Packages and Admissible Global Packaging in Six Birds Theory}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{March 31, 2026}
+\hypersetup{
+  pdftitle={Locally Boolean, Globally Obstructed: Event Packages and Admissible Global Packaging in Six Birds Theory},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Previous demonstrations of contextuality-type obstruction start from quantum mechanics or from externally specified measurement scenarios. We show that the same locally-Boolean-but-globally-obstructed structure can arise from an autonomous emergence framework---Six Birds Theory---without importing Hilbert space, amplitudes, or the Born rule. The formal vehicle is a finite \emph{event package}: a family of stable-record contexts, each carrying a finite Boolean event algebra, together with a layer-relative shared-event identification and an audit layer. Obstruction is the failure of admissible global realization for that package. The computational framework combines exact and quotient-backed feasibility, structural and statistical deficits, provenance auditing, and false-positive controls. The evidence base includes a classical control, a boundary-case epistemic calibration, an explicit finite parity/context witness, and autonomous discovery organized by mechanism, lens, and packaging axes. The results are stratified: mechanism variation yields package-sensitive structure with a quotient-backed witness under a weaker claim ceiling; lens variation closes with a cross-resolution strict extension obstruction on fixed support; and packaging variation produces the strongest current obstruction, subject to a package conflict caveat. Where applicable, the principal cases persist under bounded robustness checks. The paper therefore provides the first computationally explicit evidence that contextuality-type obstruction can emerge from a system's own packaging structure rather than from quantum theory or an externally imposed scenario.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} contextuality; event packages; admissible global realization; frozen slices; shared support.
+
+\section{Introduction}\label{sec:introduction}
+A recurrent lesson of contextuality-style phenomena is that local classicality does not by itself guarantee global compatibility \citep{Bell1966HiddenVariables,KochenSpecker1967Problem,AbramskyBrandenburger2011Sheaf,BudroniEtAl2022KochenSpecker}. One may have a family of contexts in which each context individually supports an ordinary Boolean event algebra, while the family as a whole still fails to arise from any single globally admissible realization. In every previous treatment, however, the contexts entering such a result are either derived from quantum mechanics or stipulated by an externally defined measurement scenario. Here we formulate the same problem for contexts that arise from an autonomous emergence framework---Six Birds Theory---in the language of stable records, package-relative identity, and admissible completion. The question is not whether one can always write down a larger hidden description in the abstract, but whether one can do so \emph{within the same audited layer} while respecting the package discipline that makes the contexts meaningful.
+
+The problem is precise: given a finite family of stable-record contexts, when does there exist one admissible global realization that realizes them all at once, and when does no such realization exist? To answer that question we introduce the event package
+\[
+\EventPackage = (\mathcal C,\{B_c\}_{c\in\mathcal C},\sim,\mathcal A),
+\]
+whose data consist of a family of contexts, a finite Boolean event algebra for each context, a shared-event identification relation, and an audit layer. The formal task is an extension problem: does the event package admit a single global realization? At the level of classical probability, the closest precursor is Fine's characterization of when local marginals admit a joint distribution; the present paper asks a stricter admissibility-filtered extension version of that question for event packages \citep{Fine1982HiddenVariables}.
+
+A second ingredient is needed for same-support claims. The comparisons that matter most here are comparisons on a fixed support object---a frozen slice or shared-support regime in which what varies is a context-generating operation rather than the underlying support itself. That distinction is already implicit in the package-change and strict extension papers \citep{Tsiokos2026PackageChange,Tsiokos2026Cantor}. In the present work, this fixed comparison base (denoted \(\Sigma\)) appears underneath the event package whenever same-support claims are made.
+
+The paper contributes in two directions. First, it gives a formal object for contextual event structure in which contexts are admissible stable-record packages whose coarse-grainings form finite Boolean algebras, and shared events are identified by layer-relative empirical identity rather than by imported operator ontology \citep{Tsiokos2026Foundations,Tsiokos2026Quantum}. In external terms, the formulation sits closest to the global-section tradition and the operational-equivalence tradition, while targeting a different object: an admissibility-filtered event package built from stable record contexts \citep{AbramskyBrandenburger2011Sheaf,Spekkens2005Contextuality,SchmidEtAl2021Noncontextuality}. Second, it turns the obstruction question into a computationally explicit problem, combining exact and quotient-backed feasibility, structural and statistical deficits, provenance auditing, and false-positive controls to separate genuine obstruction from hidden bookkeeping, route artifacts, or unsupported package claims.
+
+The findings are stratified. A benchmark suite---classical control, epistemic calibration, and explicit finite parity/context witness---establishes that the framework can distinguish globally packageable, boundary, and obstructed cases. Beyond these benchmarks, autonomous discovery is organized by a three-axis hierarchy (mechanism, lens, packaging) whose axes differ in what is held fixed while contexts vary and in the resulting strength of same-support claims. The evidence grows stronger as the comparison base tightens, with the strongest current obstruction appearing on the packaging axis. Where applicable, bounded robustness checks confirm that the principal cases persist under false-positive controls. \Cref{sec:discussion} keeps explicit track of what has been established and where the main caveats remain.
+
+\Cref{sec:event-packages} introduces event packages and fixed comparison objects. \Cref{sec:global-packaging} defines shared events and global realization. \Cref{sec:theorem-spine} states the theorem spine. \Cref{sec:computational-framework} summarizes the computational framework. \Cref{sec:benchmarks} presents benchmarks and the explicit finite witness. \Cref{sec:discovery} develops the three-axis discovery results. \Cref{sec:controls} reports false-positive controls. \Cref{sec:discussion} closes with scope and limitations.
+
+\section{Event Packages and Fixed Comparison Objects}\label{sec:event-packages}
+The formal object studied here is an \emph{event package}: a finite family of stable-record contexts together with their local Boolean event algebras, a shared-event relation, and an audit layer. Each context may be perfectly classical on its own, yet the family may still fail to arise from any single global realization. The question is not local nonclassicality inside one context, but whether a family of locally Boolean contexts can be realized together within one audited package.
+
+\subsection{Contexts, atoms, and local Booleanity}
+
+A \emph{context} is a finite stable-record test environment at the layer under study. Concretely, a context \(c \in \mathcal C\) comes with a finite atomic outcome set
+\[
+A_c = \{a_{c,1},\dots,a_{c,n_c}\},
+\]
+whose elements are the stable atomic records recognized in that context. The associated event algebra is the full finite Boolean algebra
+\[
+B_c := \mathcal P(A_c),
+\]
+whose elements are the context-events obtained by coarse-graining atomic outcomes. Thus each context is locally classical in the strongest finite sense: events are subsets of a finite atomic test, and coarse-graining is just set union inside \(B_c\).
+
+\begin{definition}[Finite stable-record context]
+A finite stable-record context is a pair
+\[
+c = (A_c,B_c)
+\]
+with \(A_c\) a finite atomic outcome set and \(B_c=\mathcal P(A_c)\) its Boolean event algebra. We refer to the elements of \(A_c\) as the \emph{atoms} of \(c\), and to the elements of \(B_c\) as its \emph{events}.
+\end{definition}
+
+The local Booleanity built into \(B_c\) is a starting assumption, not a conclusion. What is nontrivial is the relation among different contexts: whether events from different Boolean algebras can be interpreted as belonging to one larger admissible package.
+
+\subsection{Event packages}
+
+The family of contexts is assembled into one finite event object.
+
+\begin{definition}[Event package]
+An event package is a quadruple
+\[
+\EventPackage = (\mathcal C,\{B_c\}_{c\in\mathcal C},\sim,\mathcal A),
+\]
+where
+\begin{enumerate}
+    \item \(\mathcal C\) is a finite set of contexts,
+    \item for each \(c\in\mathcal C\), \(B_c=\mathcal P(A_c)\) is the finite Boolean event algebra of \(c\),
+    \item \(\sim\) is a cross-context shared-event relation,
+    \item \(\mathcal A\) is the audit layer, including the admissibility and defect diagnostics used to decide whether the package is well-formed and globally realizable.
+\end{enumerate}
+\end{definition}
+
+As a mathematical object, the present construction sits nearest the traditions of empirical test spaces and local-to-global pasting of Boolean fragments, while differing from both by making admissibility and stable-record identity internal to the package itself \citep{FoulisRandall1972Operational,NavaraRogalewicz1991Pasting}. Later sections will ask whether \(\EventPackage\) admits an admissible global realization, how obstruction is detected, and how finite computational witnesses are extracted. At this stage, the important point is only that the package is built from contexts and their Boolean event algebras, not from a prior global ontology.
+
+\subsection{Shared events and empirical identity}
+
+The relation \(\sim\) identifies events across different contexts. It is not a primitive syntactic equality: shared events are identified by a layer-relative empirical criterion, so that two events drawn from different contexts count as the same event only insofar as the admissible probes available at the layer fail to distinguish them \citep{Tsiokos2026Quantum,Spekkens2005Contextuality,SchmidEtAl2021Noncontextuality}.
+
+Thus, if \(E \in B_c\) and \(F \in B_d\), the intended reading of
+\[
+E \sim F
+\]
+is that, relative to the package's own admissible tests and audits, \(E\) and \(F\) are treated as the same event-object at the layer. The exact admissibility and stability conditions on \(\sim\) are deferred to \Cref{sec:global-packaging,sec:theorem-spine}; the key point here is that \(\sim\) is package-relative and empirical.
+
+\subsection{Admissible global realization as an extension problem}
+
+Once an event package has been specified, the global question is an extension question: does there exist one global realization whose global atoms realize all context event algebras simultaneously while respecting \(\sim\) and the audit layer?
+
+Combinatorially, such a realization consists of a finite set of global atoms \(\Omega\) together with realization maps
+\[
+\pi_c : \Omega \to A_c \qquad (c\in\mathcal C),
+\]
+so that each context sees a compatible coarse view of one global object. But admissibility is stronger than bare combinatorial realizability. A candidate realization must also respect the package discipline encoded in \(\mathcal A\): auditability, boundedness, stable records, and the prohibition against smuggling in unlicensed hidden distinctions. The formal statement of global realization is postponed to \Cref{sec:global-packaging}; here we only fix the problem to be studied.
+
+\subsection{Frozen slices and shared support}
+
+Same-support claims require a fixed comparison base. We distinguish the event package itself from the \emph{comparison base} over which contexts are compared.
+
+\begin{definition}[Frozen-slice/shared-support object]
+A frozen-slice/shared-support object is a finite comparison base
+\[
+\Sigma = (S,\mathrm{prep},\mathrm{prot},\mathrm{reg}),
+\]
+where \(S\) is a finite support index set and \((\mathrm{prep},\mathrm{prot},\mathrm{reg})\) record the fixed preparation, protocol, and evaluation regime under which the support is being compared.
+\end{definition}
+
+Intuitively, \(\Sigma\) answers the question: \emph{what is being held fixed while contexts vary?} It prevents same-support comparisons from silently drifting as the ledger moves. A context on \(\Sigma\) is realized by an outcome map
+\[
+\lambda_c : S \to A_c,
+\]
+which assigns to each support element the atomic outcome recognized in context \(c\). The event package remains the central formal object, but the comparison base \(\Sigma\) is the fixed layer over which contexts are compared whenever we claim that several contexts concern one and the same support object \citep{Tsiokos2026PackageChange,Tsiokos2026Cantor}.
+
+\subsection{Mechanism, lens, and packaging as context-generating axes}
+
+We distinguish three nested axes along which contexts may be generated. We call the strongest type of claim an axis can support its \emph{claim ceiling}.
+
+First, the \emph{mechanism axis} varies the outer theory-point or control-space configuration. This is the weakest axis for same-support claims, since changing the mechanism may change the ambient support object itself.
+
+Second, the \emph{lens axis} varies the record algebra on a fixed support object. Here what changes is the coarse-description or definability structure: different partitions, different record languages, or different projection families may be applied to the same frozen slice. This is closer to the contextuality-style setting, because it concerns competing record structures on shared support.
+
+Third, the \emph{packaging axis} varies the completion rule or package action on a fixed support object. This is the strongest axis: it asks whether different admissible completion maps, applied over the same support and evaluation regime, induce event structures that can or cannot be realized together.
+
+The three axes are not coequal. They specify what kind of comparison generates the contexts entering \(\EventPackage\) and what claim ceiling belongs to that comparison. With this notation in place, the remaining sections ask one question in increasingly constrained settings: when does a finite event package \(\EventPackage\) fail to admit any global realization?
+
+\section{Shared Events and Admissible Global Packaging}\label{sec:global-packaging}
+With the event package and comparison base in place, the global question can now be stated precisely. The package \(\EventPackage\) is locally classical by construction: every context \(c\) carries a finite Boolean event algebra \(B_c=\mathcal P(A_c)\). The problem is whether these locally Boolean contexts can be realized together in one global realization.
+
+\subsection{Admissible global realization}
+
+A global realization is specified by a finite family of candidate global atoms together with context projections. If \(\Omega\) is a finite set and \(c\in\mathcal C\), we write
+\[
+\pi_c : \Omega \to A_c
+\]
+for the map that sends a global atom to the atomic outcome seen in context \(c\). For any event \(E\in B_c\), its global realization set is then
+\[
+\llbracket E \rrbracket_\Omega^c := \{\omega\in\Omega : \pi_c(\omega)\in E\}.
+\]
+Thus every context event is realized as the inverse image of a subset of \(A_c\).
+
+\begin{definition}[Admissible global realization]
+An \emph{admissible global realization} of an event package
+\[
+\EventPackage=(\mathcal C,\{B_c\}_{c\in\mathcal C},\sim,\mathcal A)
+\]
+consists of a finite set \(\Omega\) and maps \(\pi_c:\Omega\to A_c\) for all \(c\in\mathcal C\) such that:
+\begin{enumerate}
+    \item \textbf{Context coverage.} For every \(c\in\mathcal C\) and every atom \(a\in A_c\), there exists \(\omega\in\Omega\) with \(\pi_c(\omega)=a\).
+    \item \textbf{Event realization.} Each context event \(E\in B_c\) is realized by \(\llbracket E \rrbracket_\Omega^c\subseteq \Omega\).
+    \item \textbf{Shared-event consistency.} Whenever \(E\in B_c\), \(F\in B_d\), and \(E\sim F\), one has
+    \[
+    \llbracket E \rrbracket_\Omega^c = \llbracket F \rrbracket_\Omega^d.
+    \]
+    \item \textbf{Audit admissibility.} The realization respects the package discipline encoded in \(\mathcal A\): no unlicensed hidden distinctions are introduced, and the realization remains within the layer's admissible record and interface class.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Admissible global package]
+An event package \(\EventPackage\) \emph{admits an admissible global package} if it admits an admissible global realization in the above sense.
+\end{definition}
+
+This formulation captures the central question: does one finite global realization realize all contexts simultaneously, or is such a realization impossible?
+
+\subsection{Obstruction language}
+
+The strongest negative statement available in this framework is failure of global realization.
+
+\begin{definition}[Global obstruction]
+An event package \(\EventPackage\) is \emph{globally obstructed} if it admits no admissible global package.
+\end{definition}
+
+Later sections attach computable diagnostics to this definition. The exact structural question is whether the realization conditions above can be satisfied at all. The relaxed diagnostics measure how far the package sits from exact realizability when one allows weighted violations or empirical mismatch; they are computational witnesses for the same extension question.
+
+It is convenient to distinguish the formal obstruction statement from the computational witness labels that appear later. In particular:
+\begin{itemize}
+    \item an \emph{accepted-proposal obstruction} means that the currently accepted shared-event identifications already render the package globally obstructed;
+    \item a \emph{candidate-subset quotient witness} means that some bounded subset of candidate identifications would obstruct the package, although that subset is not yet part of the admitted shared-event relation;
+    \item \emph{no quotient obstruction} means that the tested proposal sets remain globally realizable on the quotient backend.
+\end{itemize}
+These are evidential categories attached to later exact backends, not new formal objects.
+
+\subsection{Proposition layer}
+
+The three-axis hierarchy is a disciplined account of how contexts are generated and what kind of claim each comparison may support. The resulting implications and non-implications can be stated compactly.
+
+\begin{proposition}[Mechanism change does not by itself imply lens incompatibility]\label{prop:mechanism-nonimplication}
+Variation of the outer mechanism or control-space point may change which contexts or package families are available, but it does not by itself imply that two contexts form incompatible record algebras on one fixed support object.
+\end{proposition}
+
+\noindent This non-implication is built into the hierarchy: a mechanism-side comparison may move between outer theory-points rather than compare two record structures on a single frozen support, so it carries the weakest claim ceiling.
+
+\begin{proposition}[Lens incompatibility does not by itself imply packaging obstruction]\label{prop:lens-nonimplication}
+Non-nestedness, strict extension, or empirical incompatibility of record algebras on fixed support does not by itself imply that the associated event package is globally obstructed.
+\end{proposition}
+
+\noindent Lens-side variation can produce nontrivial multi-context structure, strict extension, and weak frustration while still admitting a global realization. Packaging obstruction is a stronger statement than lens incompatibility alone.
+
+\begin{proposition}[Packaging obstruction implies no admissible global package]\label{prop:packaging-obstruction}
+If an event package is globally obstructed, then no admissible global package realizes all of its contexts simultaneously.
+\end{proposition}
+
+\noindent This is a formal consequence of the definitions above. Here ``packaging obstruction'' simply means that global realization fails.
+
+\begin{proposition}[Cross-resolution strict extension under fixed support]\label{prop:cross-resolution}
+Let two contexts be realized on the same comparison base \(\Sigma\) under one fixed evaluation regime. If they differ by resolution but remain comparisons on the same support, and one yields a strict extension of the other's record structure, then their comparison remains a valid lens/package comparison.
+\end{proposition}
+
+\noindent Same-support claims do not require literal equality of resolution labels. What must remain fixed is the support object and evaluation regime, not every context-generating parameter. When a higher-resolution context yields new distinctions on the same support, the comparison remains within the same-support framework \citep{Tsiokos2026PackageChange,Tsiokos2026Cantor}.
+
+\subsection{Claim ceilings across the three axes}
+
+These are claim ceilings, not guarantees. An axis may fail to reach its strongest possible claim in a bounded campaign. But the hierarchy prevents a weaker axis from being inflated into a stronger one: mechanism evidence remains weaker than lens evidence for same-support claims, and lens evidence remains weaker than packaging evidence when the latter is available on one fixed support object.
+
+\section{Obstruction Language and Theorem Spine}\label{sec:theorem-spine}
+This section states the formal core. The proofs are deferred to \Cref{app:proofs}; here we isolate the structural statements that later computational sections instantiate in finite form. The central object is the event package \(\EventPackage\), and the central question is whether it admits a global realization.
+
+\subsection{Fixed-context Booleanity}
+
+The first statement is immediate from the way contexts were defined, but it is still worth stating explicitly because it fixes the local classical baseline against which the global obstruction problem is measured.
+
+\begin{theorem}[Fixed-context Booleanity]\label{thm:fixed-context-booleanity}
+For every context \(c\in\CtxFamily\), the event algebra
+\[
+\BoolAlg{c}=\mathcal P(A_c)
+\]
+is a finite Boolean algebra whose atoms are exactly the singleton atomic outcomes of \(A_c\). In particular, every event \(E\in \BoolAlg{c}\) is uniquely determined by its atomic support
+\[
+\operatorname{supp}_c(E):=\{a\in A_c : a\in E\},
+\]
+and every context is locally classical in the finite Boolean sense.
+\end{theorem}
+
+The nontrivial issue is whether several such locally Boolean contexts can be realized together in one global realization.
+
+\subsection{Shared-event quotient and Boolean stability}
+
+Shared-event identification is expressed by the relation \(\SharedEventEq\). To serve as part of the event package rather than a loose analogy, that relation must be stable under the local Boolean operations whenever the compared events live on a common admissible comparison base.
+
+\begin{theorem}[Shared-event quotient stability]\label{thm:shared-event-quotient}
+Let \(E,F\) be events in two contexts \(c,d\in\CtxFamily\) with \(E\SharedEventEq F\). Assume the shared-event relation is admissible on the relevant fixed comparison object and is stable under the local Boolean operations there. Then:
+\begin{enumerate}
+    \item if \(E_1\SharedEventEq F_1\) and \(E_2\SharedEventEq F_2\), then \(E_1\cup E_2 \SharedEventEq F_1\cup F_2\);
+    \item if \(E\SharedEventEq F\), then \(E^{\complement_c}\SharedEventEq F^{\complement_d}\), where complements are taken in \(A_c\) and \(A_d\) respectively.
+\end{enumerate}
+Consequently, the quotient obtained by identifying shared events is compatible with the local Boolean structure carried by the contexts.
+\end{theorem}
+
+This theorem is deliberately phrased as a stability theorem rather than as a fully abstract quotient-construction theorem. The point needed in the main line is that shared events can be glued without abandoning the local Boolean structure.
+
+\subsection{Admissible global realization}
+
+The next statement records what a genuine global realization must accomplish.
+
+\begin{theorem}[Admissible global realization]\label{thm:global-packaging}
+Let
+\[
+\EventPackage=(\CtxFamily,\{\BoolAlg{c}\}_{c\in\CtxFamily},\SharedEventEq,\AdmissibleFamily)
+\]
+be an event package. If \(\EventPackage\) admits an admissible global realization \((\Omega,\{\pi_c\}_{c\in\CtxFamily})\), then:
+\begin{enumerate}
+    \item every context atom is covered by some \(\omega\in\Omega\);
+    \item every context event is realized as an inverse image under the corresponding \(\pi_c\);
+    \item every accepted shared-event identification is globally respected;
+    \item every exact admissible backend built from the realized global atoms is feasible.
+\end{enumerate}
+In particular, no accepted-proposal exact obstruction can occur when an admissible global realization exists.
+\end{theorem}
+
+The final clause bridges to the computational side: exact infeasibility is formal evidence, not an artifact of one solver implementation.
+
+\subsection{Finite obstruction certificates}
+
+The central negative theorem is the contrapositive of global realizability, expressed in a finite form.
+
+\begin{theorem}[Finite obstruction certificate]\label{thm:finite-obstruction}
+Let \(\EventPackage\) be finite. If some admissible exact global-realization backend for \(\EventPackage\) is infeasible for the accepted shared-event relation, then \(\EventPackage\) is globally obstructed: it admits no admissible global package.
+\end{theorem}
+
+The theorem is backend-agnostic: it applies to any exact candidate-global-atom construction that is itself admissible for the package. The most important special case for same-support claims is the quotient backend.
+
+\begin{corollary}[Quotient-backed obstruction on fixed support]\label{cor:quotient-obstruction}
+Let \(\Sigma\) be a comparison base for a selected family of contexts, and let \(Q_\Sigma\) be the finite Leibniz quotient of the support by indistinguishability under those contexts. If no family of quotient classes realizes all context atoms while respecting the accepted shared-event relation, then \(\EventPackage\) is globally obstructed on \(\Sigma\).
+\end{corollary}
+
+This corollary is the formal statement behind the quotient feasibility calculations reported later. It gives one exact finite backend for the global realization question without replacing the event package by a new formal object.
+
+\subsection{Protocol-trap exclusion and control principle}
+
+The final main-line statement concerns false positives. Route mismatch, holonomy, or closure defect may be diagnostically informative, but they are not by themselves obstruction witnesses.
+
+\begin{proposition}[Protocol-trap exclusion and control principle]\label{prop:protocol-trap-exclusion}
+Route-sensitive noncommutation diagnostics such as route mismatch, closure deficit, or control-path dependence do not by themselves certify global obstruction. They become formal evidence only when they are realized as failure of global realization for one event package on one fixed comparison base and survive the package's control discipline, including hidden-record and flattening/completion checks where meaningful \citep{Tsiokos2026NoGo,Tsiokos2026ProtocolTrap}.
+\end{proposition}
+
+The audits \(\mathcal A\) decide whether a package is well-formed, whether a shared-event identification is admissible, and whether an apparent obstruction survives the available false-positive controls. But the formal negative statement remains the same throughout: no global realization exists.
+
+\Cref{thm:fixed-context-booleanity,thm:shared-event-quotient,thm:global-packaging,thm:finite-obstruction,cor:quotient-obstruction,prop:protocol-trap-exclusion} give the theorem spine. The remaining sections instantiate it in explicit finite settings: computational framework, benchmarks, discovery, and controls.
+
+\section{Computational Framework}\label{sec:computational-framework}
+The event package is finite, and the global realization problem is correspondingly a finite decision and optimization problem. The computational framework provides explicit finite backends for the global realization question of \Cref{sec:global-packaging,sec:theorem-spine}. Throughout, numerical outputs are interpreted relative to the same ingredients: an event package \(\EventPackage\), a selected shared-event relation, and a comparison base.
+
+\subsection{Exact feasibility backends}
+
+Exact feasibility asks whether some admissible family of global atoms covers every context atom while respecting the accepted shared-event relation. We instantiate that question through two finite backends.
+
+The first backend is the \emph{raw-support} or direct tuple backend. Its candidate global atoms are finite tuples of context atoms, and feasibility asks whether some surviving family of those tuples covers every context atom while respecting the accepted identifications. This backend is useful as a baseline and as an exact control in small cases.
+
+The second, and decisive, same-support backend is the \emph{quotient backend}. Starting from a comparison base \(\Sigma\), one forms the finite Leibniz quotient \(Q_\Sigma\) by context-level indistinguishability on the selected support and asks the exact realization question on quotient classes rather than on raw aligned support rows. If the accepted shared-event relation is not realizable on \(Q_\Sigma\), then the package is globally obstructed on \(\Sigma\) by \Cref{cor:quotient-obstruction}.
+
+Both backends return the same kind of output: a finite feasibility verdict together with survivor counts and, where relevant, a covering or blocking certificate. What changes is only the admissible candidate-global-atom basis.
+
+\subsection{Structural and statistical deficits}
+
+Exact feasibility is decisive, but the finite backends also report graded diagnostics when exact realization fails or when empirical data are only approximately compatible with one global model.
+
+The \emph{structural global packaging deficit},
+\[
+\GPDstr,
+\]
+is a weighted minimum-relaxation quantity over the exact structural constraints. Intuitively, it measures how far one must relax accepted equalities, coverage conditions, or other admissible hard constraints before an exact structural realization becomes possible. A zero value means that the tested package is exactly structurally realizable on the chosen backend. A strictly positive value means that exact structural realization fails and that some nonzero constraint violation is unavoidable.
+
+The \emph{statistical global packaging deficit},
+\[
+\GPDstat,
+\]
+plays the corresponding role when empirical context statistics are included. It measures the minimum discrepancy between the observed context statistics and any admissible global model built on the selected exact support. In the present finite implementation this is treated as an optimization problem over a finite candidate-global-atom set. A zero or near-zero value indicates statistical compatibility with one admissible global model; a positive value indicates that no such exact statistical fit exists on the tested support.
+
+Both deficit quantities remain subordinate to exact feasibility; they register how and where the exact extension problem fails. Computationally, this places the framework alongside graph-theoretic and hypergraph-based approaches to contextuality, while keeping a different formal object in view: an admissibility-filtered global-realization problem for event packages rather than an exclusivity graph or contextuality scenario alone \citep{CabelloSeveriniWinter2014Graph,AcinEtAl2015Combinatorial,AbramskyBarbosaMansfield2017ContextualFraction,Schrijver1986TheoryLIP}.
+
+The core backend workflow is summarized in \Cref{alg:exact-backend-workflow}; the numerical sections simply specialize it to accepted proposals, candidate subsets, and the regime under study.
+
+\begin{algorithm}[t]
+    \caption{Exact and Quotient-Backed Backend Workflow}
+    \label{alg:exact-backend-workflow}
+    \small
+    \textbf{Input:} event package \(\EventPackage\), tested proposal family, admissible comparison base, and backend choice. \par\smallskip
+    \begin{enumerate}[leftmargin=1.8em,label=\arabic*.,itemsep=2pt,topsep=3pt]
+        \item \textbf{Fix} the admissible comparison base and the proposal family to be tested.
+        \item \textbf{Choose} a candidate-global-atom basis: raw-support tuples or quotient classes \(Q_\Sigma\).
+        \item \textbf{Build} the exact coverage and shared-event consistency constraints on that basis.
+        \item \textbf{Solve} the exact feasibility problem and record survivor counts together with any covering or blocking certificate.
+        \item \textbf{Compute}, when requested, \(\GPDstr\) or \(\GPDstat\) on the same basis.
+        \item \textbf{Classify} the result as an accepted-proposal obstruction, a candidate-subset quotient witness, or no quotient obstruction according to the status of the tested proposal family.
+        \item \textbf{Attach} provenance and admissibility metadata before treating the result as formal evidence.
+    \end{enumerate}
+    \textbf{Output:} exact feasibility verdict, survivor counts, optional deficit values, and the corresponding witness classification.
+\end{algorithm}
+
+\subsection{Accepted obstruction, candidate witnesses, and no witness}
+
+The numerical outputs are interpreted through a small witness language. An \emph{accepted-proposal obstruction} means that the accepted shared-event relation already renders the package exactly infeasible on the selected backend. A \emph{candidate-subset quotient witness} means that some bounded subset of candidate identifications would obstruct the quotient backend, although that subset is not yet part of the admitted relation. A \emph{no quotient obstruction} outcome means that the tested proposal families remain feasible on the quotient backend, even if the numerical evidence shows tension, non-nestedness, or strict extension. We also distinguish raw-support and quotient outputs: a package may remain realizable on the raw-support backend while failing on the quotient one, so same-support claims are always read from the quotient side.
+
+\subsection{Provenance and admissibility}
+
+Every claimed package, witness, or obstruction in the computational program is tied to an explicit provenance and admissibility layer. Provenance tracks which contexts, events, proposals, and comparison bases were constructed from which source artifacts. Admissibility then asks whether those objects remain legitimate at the claimed layer: whether source references resolve, whether hidden distinctions are being smuggled in, and whether the package remains within the allowed record and interface discipline.
+
+This provenance layer matters because global obstruction is not the same as arbitrary inconsistency in a badly specified model. A package may fail for trivial reasons if its contexts, events, or shared-event claims are not actually licensed by the layer that is supposed to support them. The numerical program treats provenance/admissibility as a gate on formal interpretation: an exact obstruction built from unsupported or unresolved package claims does not count as an accepted result.
+
+\subsection{Control suite and false-positive discipline}
+
+The same event package may appear obstructed for bad reasons: hidden bookkeeping variables may have been suppressed, route structure may have been flattened incorrectly, or the observed incompatibility may be too fragile to survive modest perturbation. For that reason the numerical framework includes an explicit control suite \citep{Tsiokos2026NoGo,Tsiokos2026ProtocolTrap}.
+
+The \emph{hidden-record} control asks whether making previously hidden protocol or bookkeeping residue explicitly record-admissible dissolves an apparent obstruction. The \emph{flattening/completion} control asks whether route-sensitive or nonconfluent structure can be removed without changing the underlying package claim. The \emph{bounded robustness} control asks whether an accepted obstruction survives small admissible perturbations of the relevant numerical structure. Where a control is not meaningful for a given case, the framework records this explicitly as \emph{not applicable} rather than silently treating the control as passed.
+
+The control suite ensures that the principal accepted cases are not route artifacts, hidden-record defects, or unsupported bookkeeping mismatches.
+
+\subsection{Claim ceilings and axis discipline}
+
+The computational framework is stratified by axis. Mechanism-axis searches sit under the weakest claim ceiling; lens-axis searches on fixed support can support stronger claims; packaging-axis searches are the strongest current route to same-support obstruction. Exact obstruction on one axis is not interchangeable with exact obstruction on another: the framework guarantees uniformity of question---global realization or its failure---not uniformity of claim ceiling.
+
+The exact backends, deficit diagnostics, provenance gate, and control suite together provide a finite computational realization of the theorem spine from \Cref{sec:theorem-spine}. Backend details are collected in \Cref{app:computational-methods}.
+
+\section{Benchmark Suite and Explicit Finite Witness}\label{sec:benchmarks}
+Before turning to autonomous discovery, the framework must be calibrated on cases whose interpretation is already controlled. The benchmark suite has three roles: a sanity baseline on a globally packageable family, a structured boundary case that is richer than the classical control yet still extendable, and an explicit finite obstruction witness whose infeasibility can be checked independently of the discovery pipeline.
+
+\subsection{Classical master-test control}
+
+The classical master-test control is built from one finite master sample space together with several contexts that are honest coarse views of that same global family. It tests the easiest case: a package that really does come from one global realization. As expected, the exact structural backend declares the control feasible, the structural deficit vanishes,
+\[
+\GPDstr = 0,
+\]
+and the clean statistical fit is numerically at zero up to solver tolerance (\(\GPDstat \approx 0\)). The clean context-closure defect also vanishes. This is the intended baseline: the framework does not hallucinate obstruction when the contexts really are compatible coarse views of one underlying global realization.
+
+\subsection{Boundary-case epistemic benchmark}
+
+The second benchmark is a finite restricted-knowledge six-state epistemic package \citep{Spekkens2007ToyTheory}, more structured than the classical control but still short of obstruction under the present admissibility semantics. Exact structural feasibility holds, the structural deficit vanishes,
+\[
+\GPDstr = 0,
+\]
+and the clean statistical fit remains at zero up to solver tolerance. The role of this benchmark is calibrational: it shows that the framework can register nontrivial multi-context structure without automatically converting it into a no-global-packaging verdict. Nonclassical-looking organization is weaker than global nonextendability.
+
+\subsection{Explicit parity/context witness}
+
+The obstruction anchor of the benchmark suite is the explicit finite parity/context witness. For a broad review of Kochen--Specker contextuality and the place of finite parity-style witnesses within that literature, see \citet{BudroniEtAl2022KochenSpecker}; the explicit finite lineage most directly relevant here is the Peres--Mermin line \citep{Peres1990IncompatibleResults,Mermin1993HiddenVariables}. The witness is a fully explicit finite package in which the accepted constraints admit no exact global realization. In the canonical witness instance, exact structural feasibility in the hard-only mode fails, the respecting tuple count is zero, and the structural deficit is strictly positive:
+\[
+\GPDstr = 1.0.
+\]
+The statistical backend is correspondingly unsolved because there are no respecting tuples from which to build an exact statistical fit. This is exactly the type of finite exact infeasibility covered by \Cref{thm:finite-obstruction}. It is the clearest finite obstruction case in the paper and serves as the benchmark witness against which the discovery-side evidence can be positioned.
+
+To reduce the chance that this conclusion depends on one particular backend, the parity/context witness is also cross-checked by a mixed-integer exact backend, which independently certifies infeasibility and confirms that the witness is not an artifact of one brute-force covering routine.
+
+\begin{table}[t]
+    \centering
+    \small
+    \caption{Benchmark calibration summary. Here ``feasible'' and ``infeasible'' refer to the exact structural backend in the benchmark's primary evaluation mode. Values close to zero are reported as \(\approx 0\) because the canonical clean runs differ only at solver tolerance scale.}
+    \label{tab:benchmark-summary}
+    \begin{tabularx}{\textwidth}{@{}l l c c c X@{}}
+        \toprule
+        Benchmark & Exact status & \(\GPDstr\) & \(\GPDstat\) & Clean CCD & Role \\
+        \midrule
+        Classical master-test & feasible & \(0\) & \(\approx 0\) & \(0\) & sanity baseline \\
+        Epistemic six-state & feasible & \(0\) & \(\approx 0\) & \(0\) & boundary calibration \\
+        Parity/context witness & infeasible & \(1.0\) & unsolved & n/a & explicit obstruction anchor \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The baseline, boundary, and explicit-witness roles of the benchmark suite are summarized compactly in \Cref{tab:benchmark-summary}.
+
+The benchmarks calibrate the later results. The classical control confirms that exact feasibility and statistical compatibility are recognized when a global realization exists. The epistemic benchmark shows that richer multi-context organization can remain extendable. The parity/context witness shows that the obstruction language is not vacuous: finite accepted constraints can force exact global infeasibility.
+
+\section{Autonomous Substrate Discovery Under a Three-Axis Hierarchy}\label{sec:discovery}
+The autonomous discovery program is organized by the three-axis hierarchy: mechanism, lens, and packaging. The hierarchy states how contexts are generated and what kind of claim each comparison can support. Mechanism variation compares outer theory-points or control-space configurations; lens variation compares record-algebra changes on one fixed support object; packaging variation compares package actions on one fixed support object. The strongest same-support obstruction claims belong deepest in the hierarchy. This section reports the evidence in that order.
+
+\subsection{Mechanism Axis Evidence}\label{sec:discovery-mechanism}
+
+The mechanism axis varies the outer mechanism configuration while holding the lens family, packaging policy, and evaluation discipline as fixed as practicable. It is the weakest axis for same-support claims, because mechanism variation may move between outer theory-points rather than compare two context-generating operations on one frozen support. The right question is not whether same-support closure has been established, but how much package-sensitive structure and obstruction pressure arise across mechanism-space.
+
+The bounded mechanism axis campaign produced a mixed but instructive result. At the campaign level, it remained below its own adequacy threshold. The campaign was \emph{design-inadequate}: three points built admissible packages, two points produced proper-coarse events, and one point showed a changed packaging surface relative to the control, but no point produced the required baseline-versus-all-proposals divergence at the campaign level. The mechanism axis campaign did not deliver an axis-wide accepted obstruction result.
+
+At the same time, the mechanism axis contains a canonical finite witness case that is materially stronger than the campaign-wide label suggests. On the fixed \texttt{EXP-104 / P6\_row\_all / n=64 / seed 0} case, the quotient backend yields an accepted-proposal obstruction. The relevant same-support quotient has \(13\) classes derived from \(24\) aligned support rows. The accepted proposal set is exactly infeasible: the survivor count is \(10\), but one context atom remains uncovered, so the result fails by \emph{coverage failure}. By contrast, the natural-pairing control remains feasible with all \(13\) quotient classes surviving. The mechanism axis thus contains a quotient-backed obstruction witness in the sense of \Cref{cor:quotient-obstruction}.
+
+The split between the axis-wide campaign and the canonical witness is the correct reading of the mechanism evidence. The campaign does not yet earn an axis-wide conclusion, but the axis is not empty of obstruction structure. Mechanism variation shows package-sensitive regime structure and one quotient-backed witness, while remaining under the weakest claim ceiling.
+
+\subsection{Lens Axis Evidence}\label{sec:discovery-lens}
+
+The lens axis holds the mechanism fixed and varies the record-algebra structure on one comparison base \(\Sigma\). It is stronger than the mechanism axis: what varies is no longer the outer theory-point, but the context-generating record structure on a fixed support. This is the first axis on which an accepted same-support obstruction can be read directly as evidence about incompatible context structure on one support object.
+
+The lens axis evidence closes in two regimes. The first is a narrower same-step regime. The compared contexts remain on the same support object and within the same step-level comparison discipline. This regime produces genuine same-slice non-nestedness, accepted proper-coarse structural proposals, and a nontrivial quotient comparison, but it remains globally realizable at the accepted-proposal level. All three points are \emph{weakly frustrated candidates}, and the quotient diagnostics show only candidate-subset quotient witnesses rather than accepted-proposal obstructions. That is the relevant calibration point: lens-side record-algebra variation can generate real pressure without yet forcing exact global failure.
+
+The second regime is the cross-resolution strict extension regime, and this is the canonical lens axis result. The comparison still takes place on one comparison base and one fixed evaluation regime, but the contexts differ in the resolution at which the record structure is induced. Under the adjudicated comparison rule (\Cref{prop:cross-resolution}), this remains a same-support comparison: the support object stays fixed while the higher-resolution context yields a strict extension of the lower-resolution record structure.
+
+On that cross-resolution regime the quotient backend yields an accepted obstruction. The package is provenance-admissible, and the accepted proposal set is exactly infeasible on the quotient classes: the accepted-only calculation leaves \(10\) surviving quotient classes but fails by \emph{coverage failure}---one required context atom is left uncovered. By contrast, the natural-pairing control remains feasible with all \(13\) quotient classes surviving. This contrast shows that the obstruction is not a trivial consequence of cross-resolution comparison as such: the same support object remains globally realizable under the natural control, but not under the accepted cross-resolution identifications (\Cref{cor:quotient-obstruction}).
+
+The lens axis closure is two-part. Same-step lens variation on fixed support remains a bounded-negative subregime: it produces weak frustration and candidate-level quotient pressure, but no accepted obstruction. Cross-resolution strict extension on the same support closes with an accepted quotient obstruction. The evidence shows a threshold structure: ordinary same-step lens variation may remain globally compatible, while cross-resolution strict extension on fixed support pushes the event package across the global-realization boundary.
+
+\subsection{Packaging Axis Evidence}\label{sec:discovery-packaging}
+
+The packaging axis holds both the mechanism and the primary lens family fixed as far as practicable and varies the package action on one comparison base. This is the strongest numerical axis, because it is the closest computational analog of the incompatible-completion question posed by global realization.
+
+The packaging axis campaign asks: when package-divergent context pairs are generated on one fixed support object, do their accepted shared-event identifications already force quotient-backed global infeasibility? The campaign keeps the backend fixed to the quotient feasibility audit, treats raw-support exact metrics as diagnostic only, and requires provenance-admissible package construction throughout. All three bounded points build admissible packages, all three produce same-support packaging-divergent pairs, and all three yield nontrivial quotient-feasibility diagnostics. The family clears its adequacy floor, unlike the mechanism axis campaign.
+
+The strongest point is \texttt{packaging\_cross\_res\_k4\_k20}, classified as \emph{strongly nonextendable candidate} and the strongest accepted numerical result in this paper. Its accepted packaging-divergent proposal set contains \(31\) accepted proposals, of which \(22\) are proper-coarse. On the quotient backend, the fixed-support comparison base yields \(11\) quotient classes. Under the accepted proposal set, only \(3\) quotient classes survive, and the resulting package is exactly infeasible with
+\[
+\GPDstr = 3.0.
+\]
+By contrast, the natural-pairing control remains feasible with all \(11\) quotient classes surviving. The accepted package conflict crosses the quotient-backed global-realization boundary in the sense of \Cref{cor:quotient-obstruction}.
+
+Two features of this result are important. First, it is an \emph{accepted-proposal obstruction}, not only a candidate-level witness: the accepted shared-event relation itself makes the quotient backend infeasible. Second, the result is driven by package conflict in the sharpened sense: it is not projection difference, lens mismatch, or packaging-surface divergence alone. The accepted proposals arise from same-support packaging-divergent pairs rather than from a re-expression of one already packaged state.
+
+The current packaging result carries an explicit caveat. The package conflict adjudication does not yet show a broad multi-family landscape. The present case is driven by selector-branch divergence on fixed operator/family/source rather than by a wide family of distinct package actions already separated at the catalog level. That does not invalidate the accepted obstruction, but it narrows its scope: the result is best read as a strong accepted package conflict obstruction on a still narrow package-action surface.
+
+\subsection{Cross-axis comparison}\label{sec:discovery-comparison}
+
+The three-axis evidence can now be read as one ordered comparison. The hierarchy ranks what is held fixed while contexts vary and what kind of claim the resulting evidence may support. Because the same-support constraint becomes stronger inward through the hierarchy, the strongest obstruction claim should appear deepest.
+
+\begin{table}[t]
+    \centering
+    \small
+    \caption{Cross-axis evidence summary. What changes across the rows is the strength of the fixed comparison base and the strength of the resulting claim.}
+    \label{tab:axis-hierarchy-summary}
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}X@{}}
+        \toprule
+        Axis & What varies & Strongest current evidence & Axis-wide outcome & Current ceiling / caveat \\
+        \midrule
+        Mechanism & outer theory-point / control-space configuration & canonical accepted witness in the EXP-104 / P6\_row\_all family & campaign design inadequate & package-sensitive regime structure across theory-points; not same-support closure \\
+        Lens & record algebra on fixed support & cross-resolution strict extension obstruction & closed with two regimes & same-step subregime stays bounded negative; principal result depends on cross-resolution strict extension \\
+        Packaging & package action on fixed support & accepted package conflict obstruction at the \(k=4\) / \(k=20\) cross-resolution case & strongest current accepted campaign result & selector-branch divergence on a narrow package-action surface; not yet broad multi-family package conflict \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+For a compact visual summary of the same ordering and witness distribution, see \Cref{tab:axis-hierarchy-summary,fig:axis-claim-order,fig:axis-quotient-status}; fuller axis-by-axis summaries are collected in \Cref{app:axis-tables}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/event_packages/axis_claim_order.pdf}
+    \caption{Current hierarchy ordering of the three context axes. The ordering reflects the strength of the fixed comparison base and corresponding claim ceiling. Packaging carries the strongest same-support accepted result, lens the strongest record-algebra comparison on fixed support, and mechanism the weakest claim ceiling despite containing a canonical accepted witness.}
+    \label{fig:axis-claim-order}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/event_packages/axis_quotient_status.pdf}
+    \caption{Quotient witness status across the three axes. The mechanism axis contains one canonical accepted witness but remains campaign-wide design inadequate. The lens axis contains one accepted obstruction regime together with a bounded-negative same-step regime. The packaging axis contains the strongest current accepted same-support result and additional candidate-level quotient witnesses.}
+    \label{fig:axis-quotient-status}
+\end{figure}
+
+Obstruction pressure first appears on the mechanism axis, but under the weakest claim ceiling. Accepted same-support obstruction first appears on the lens axis, once cross-resolution strict extension on fixed support is admitted. The lens result is two-part: same-step variation stays bounded negative, while the cross-resolution regime yields the accepted result.
+
+The packaging axis strengthens this further: on the deepest same-support comparison axis, accepted obstruction reappears with the strongest package conflict interpretation currently available. The resulting claim ordering is
+\[
+\text{packaging} \;>\; \text{lens} \;>\; \text{mechanism}.
+\]
+
+The hierarchy is ordered but not flat. The mechanism axis contributes a canonical accepted witness despite its weaker campaign-wide status. The lens axis does not produce uniform obstruction across all subregimes. The packaging axis, although strongest, still carries the selector-branch caveat. Each axis contributes different evidence under a different claim ceiling.
+
+\section{False-Positive Controls}\label{sec:controls}
+The numerical results would be incomplete without an explicit false-positive discipline. An accepted obstruction is not automatically trustworthy merely because an exact backend declares the accepted proposal set infeasible. One must still ask whether the apparent failure is driven by hidden bookkeeping residue, removable route structure, or a numerical configuration too fragile to survive modest perturbation. This insistence on separating genuine obstruction from bookkeeping or direct-influence artifacts is close in spirit to contextuality-by-default style control discipline, even though the present paper formulates the issue in package-native terms \citep{DzhafarovKujala2014QualifiedKolmogorovian}. The control suite combines hidden-record intervention, flattening/completion intervention, and bounded robustness/noise discipline.
+
+Only controls that preserve the same formal object count as genuine trustworthiness checks. If a proposed intervention would silently change the comparison base, replace the accepted proposal set, or move the comparison outside the current package discipline, then it is recorded as \emph{not applicable} rather than counted as passed. \Cref{alg:control-bundle-workflow} summarizes this discipline; the subsections below report how it closes on the principal cases.
+
+\begin{algorithm}[t]
+    \caption{Flagship Control-Bundle Evaluation}
+    \label{alg:control-bundle-workflow}
+    \small
+    \textbf{Input:} principal case, accepted proposal set, quotient backend, and control family. \par\smallskip
+    \begin{enumerate}[leftmargin=1.8em,label=\arabic*.,itemsep=2pt,topsep=3pt]
+        \item \textbf{Ask} for each control whether the intervention preserves the same formal object: fixed support, accepted package claim, and quotient backend.
+        \item \textbf{Record} \emph{not applicable} if the intervention does not preserve that object.
+        \item \textbf{Rerun} the quotient obstruction test when the control is meaningful on the same object.
+        \item \textbf{Compare} the post-control verdict with the pre-control accepted obstruction using survivor counts, quotient class counts, and exact failure classification.
+        \item \textbf{Mark} the case as \emph{survived} only when the accepted obstruction remains intact under the same-object control.
+        \item \textbf{Aggregate} the per-control outcomes into a case verdict and then into the bundle-level control summary.
+    \end{enumerate}
+    \textbf{Output:} per-control verdicts (\emph{not applicable}/\emph{survived}) together with case-level and bundle-level control classifications.
+\end{algorithm}
+
+\subsection{Hidden-record and flattening controls}
+
+The hidden-record intervention asks whether an apparent obstruction disappears once previously hidden protocol residue is made record-admissible. The flattening/completion intervention asks whether route-sensitive structure can be removed without changing the package claim. Both are indispensable in principle, but not automatically meaningful for every case.
+
+For the mechanism axis witness, all three controls are currently \emph{not applicable}: no hidden-record, flattening, or bounded-noise path presently preserves the same formal object for the full mechanism witness. The accepted obstruction remains a real quotient result, but it is control-limited.
+
+For the lens and packaging principal cases, hidden-record and flattening are likewise \emph{not applicable}: no same-object intervention has yet been defined that preserves the fixed support, accepted proposal set, and quotient backend used by those cases.
+
+\subsection{Robustness and current flagship verdicts}
+
+Where the control suite is applicable, the key test is bounded robustness: does the accepted quotient obstruction persist under an admissible perturbation of the same formal object? This control applies to the lens and packaging cases, and in both cases the accepted obstruction survives.
+
+For the lens axis, the pre-control result is an accepted-proposal obstruction on \(11\) quotient classes with one surviving class and a \emph{coverage failure} verdict. Under the bounded robustness check, that verdict is unchanged: survivor count stays at \(1\), quotient class count stays at \(11\). The lens case is recorded as \emph{survived}.
+
+For the packaging axis, the pre-control result is likewise an accepted-proposal obstruction with \(11\) quotient classes and \(3\) surviving classes. Under the bounded robustness check, the obstruction remains unchanged. The packaging case is also recorded as \emph{survived}.
+
+\begin{table}[t]
+    \centering
+    \caption{Principal case control-bundle verdicts. ``n/a'' means that no same-object control preserving the current comparison was available.}
+    \label{tab:flagship-control-summary}
+    \footnotesize
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{2.0cm}}
+        \toprule
+        Principal case & Hidden-record & Flattening & Robustness & Final verdict \\
+        \midrule
+        Mechanism witness\\(\texttt{EXP-104 / P6\_row\_all / n=64 / seed 0}) & n/a & n/a & n/a & control-limited \\
+        Lens principal\\(\texttt{cross\_res\_all\_steps}) & n/a & n/a & survived & survived \\
+        Packaging principal\\(\texttt{packaging\_cross\_res\_k4\_k20}) & n/a & n/a & survived & survived \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The main-text control verdicts in \Cref{tab:flagship-control-summary} are expanded in \Cref{tab:flagship-controls-extended}; the appendix-level applicability discussion is collected in \Cref{app:controls}.
+
+The overall control-bundle verdict is that every applicable control left the accepted quotient obstruction intact. This does not mean that every case survived every imaginable control; it means that every control that was both available and object-preserving for a given case left the accepted obstruction unchanged.
+
+\subsection{Applicability limits}
+
+The control suite closes the trustworthiness story to the extent currently earned. The lens and packaging principal cases survive the applicable bounded robustness checks; the mechanism witness remains real but control-limited. Hidden-record and flattening interventions remain conceptually important, but they are not yet available as same-object controls for the present same-support obstruction cases.
+
+This limitation does not downgrade the accepted lens and packaging obstructions to mere suggestions. It states the exact strength of the present control evidence: accepted quotient obstruction has been shown, and the strongest currently applicable robustness discipline does not remove it. The evidence base is stronger than an unchecked numerical anomaly but weaker than a regime in which all three controls are applicable to every case at once.
+
+\section{Discussion}\label{sec:discussion}
+We set out to answer one question: when does a finite family of stable-record contexts admit one global realization, and when does it not? The answer is deliberately finite: the event package \(\EventPackage\) is the central formal object, and the main negative statement is failure of global realization for that object. The formal side isolates this extension problem; the computational side supplies exact, quotient-backed, and audited finite witnesses for its success or failure.
+
+What has been established is more precise than a generic ``contextuality'' claim. Each context is locally Boolean by construction, so the global problem is genuinely about compatibility among locally classical contexts. The framework cleanly separates exact obstruction from weaker structural pressure, as the benchmark suite demonstrates. And the three-axis discovery program stratifies the evidence by claim ceiling rather than flattening it into one undifferentiated result.
+
+The hierarchy is not merely organizational; it is explanatory. Tension becomes stronger and more formally grounded as the comparison base becomes more tightly fixed: mechanism variation already reveals package-sensitive obstruction pressure, lens variation on fixed support can force accepted obstruction once strict extension enters, and packaging variation on fixed support yields the strongest current accepted evidence. The comparison base tightens from outer theory-point variation, to fixed-support record-algebra variation, to fixed-support package-action variation.
+
+The paper also sharpens what ``package conflict'' means. Package conflict is not identical to a projection difference, not identical to lens mismatch, and not exhausted by thin packaging metadata alone. The sharpened notion requires a fixed comparison base together with evidence that different package actions are genuinely in play on that support. Even then, package conflict and package obstruction remain distinct: package conflict is the structural condition that makes obstruction possible at the deepest level of the hierarchy; packaging obstruction is the stronger formal statement that no global realization exists. This distinction prevents the current packaging result from being overstated, since the present case lives on a narrow package-action surface shaped by selector-branch divergence.
+
+The false-positive evidence is exact rather than inflated. The lens and packaging principal cases survive the applicable bounded robustness checks; the mechanism witness remains real but control-limited. Hidden-record and flattening interventions are not yet available as same-object controls for the current same-support cases.
+
+The strongest results are all finite and bounded to specific families, supports, and comparison regimes. The mechanism witness does not upgrade the whole mechanism campaign. The lens principal result depends on the cross-resolution strict extension regime. The packaging principal result is strongest but carries the selector-branch caveat. Quotient-backed exact infeasibility is central to the same-support claims made here. None of these caveats undermines the contribution, but all of them matter for interpreting exactly what has and has not been shown.
+
+In summary, we have shown that contextuality-type obstruction---locally Boolean contexts that admit no single admissible global realization---can arise from an autonomous emergence framework without importing quantum mechanics, Hilbert space, or an externally defined measurement scenario. The event package formalism makes this precise, the computational pipeline makes it checkable, and the three-axis evidence base shows that the obstruction is not confined to a single hand-built witness but emerges across the substrate's own packaging structure. The strongest current evidence is concentrated where the comparison base is most tightly fixed and the package question is most directly exposed. Formal proofs, backend details, extended axis summaries, control details, and reproducibility pointers are consolidated in \Cref{app:proofs,app:computational-methods,app:axis-tables,app:controls,app:reproducibility}.
+
+\appendix
+
+\section{Proof Details and Formal Definitions}\label{app:proofs}
+This appendix records the short proof details and formal clarifications deferred from the main text. The aim is not to expand the theorem spine into a second full formal development, but to make explicit how the claims stated in \Cref{sec:theorem-spine} follow from the paper's definitions.
+
+\subsection{Proof of fixed-context Booleanity}
+
+\paragraph{Proof of \Cref{thm:fixed-context-booleanity}.}
+By definition, every context \(c\in\CtxFamily\) carries a finite atomic outcome set \(A_c\) and a Boolean event algebra \(\BoolAlg{c}=\mathcal P(A_c)\). The power set of a finite set is a finite Boolean algebra under union, intersection, and complement relative to that same set. Its atoms are the singleton subsets \(\{a\}\) for \(a\in A_c\). Every event \(E\in\BoolAlg{c}\) is the union of the singleton atoms corresponding to its support. Hence the context is locally classical in the finite Boolean sense. \qed
+
+\subsection{Proof sketch for shared-event quotient stability}
+
+\paragraph{Proof sketch of \Cref{thm:shared-event-quotient}.}
+The theorem is conditional on the admissibility and Boolean-stability of the shared-event relation on the relevant fixed comparison object. Under that assumption, if \(E_1\SharedEventEq F_1\) and \(E_2\SharedEventEq F_2\), then admissible probes and downstream identifications cannot distinguish the left and right unions either, so \(E_1\cup E_2\SharedEventEq F_1\cup F_2\). Likewise, if \(E\SharedEventEq F\), then admissible Boolean complementation on the local event algebras preserves the identification. The quotient is therefore stable under the local Boolean operations that the theorem uses. \qed
+
+\subsection{Admissible global realization and its contrapositive}
+
+\paragraph{Proof of \Cref{thm:global-packaging}.}
+Every clause in the theorem is unpacked directly from the definition of admissible global realization. Context coverage is clause (1) of the definition, event realization is clause (2), shared-event consistency is clause (3), and the admissibility of any exact backend induced from the chosen global atoms is part of clause (4): if a realization exists, then the exact candidate-global-atom family produced from it is feasible by construction. \qed
+
+\paragraph{Proof of \Cref{thm:finite-obstruction}.}
+Take the contrapositive. Suppose an admissible global realization exists. By \Cref{thm:global-packaging}, every admissible exact backend built from that same event package is feasible. Therefore, if some admissible exact backend is infeasible for the accepted shared-event relation, no admissible global realization can exist. Hence the package is globally obstructed. \qed
+
+\subsection{Quotient-backed finite backend}
+
+\paragraph{Proof of \Cref{cor:quotient-obstruction}.}
+Let \(\Sigma\) be the fixed frozen-slice/shared-support object and let \(Q_\Sigma\) be the finite quotient of the selected support rows by context-level indistinguishability on that same support. The quotient classes inherit well-defined context-atom assignments precisely because they were defined by indistinguishability under the selected contexts. They therefore form an admissible candidate-global-atom basis for the exact realization question on \(\Sigma\). If no family of quotient classes covers all context atoms while respecting the accepted shared-event relation, then by \Cref{thm:finite-obstruction} the package is globally obstructed on that fixed comparison base. \qed
+
+\subsection{Protocol-trap exclusion}
+
+\paragraph{Justification of \Cref{prop:protocol-trap-exclusion}.}
+The proposition is not a claim that route mismatch or closure deficit are irrelevant. On the contrary, they are often the first diagnostics that something structurally interesting is happening. The point is only that they do not by themselves certify the global realization question. A route-sensitive effect may disappear once hidden bookkeeping residue is made admissible, once a flattening/completion procedure is applied, or once the comparison object is fixed more carefully. Route-sensitive diagnostics become formal evidence only when they survive the global realization question on one event package and one comparison base.
+
+\subsection{Frozen slices and comparison bases}
+
+Same-support claims require a fixed comparison object. The frozen-slice/shared-support layer is not a rival formal object, but a disciplined answer to the question ``what is being held fixed while contexts vary?'' The event package remains the central object; the frozen slice supplies the comparison base over which it is interpreted for same-support claims.
+
+\subsection{Hierarchy propositions}
+
+The proposition layer from \Cref{sec:global-packaging} is short because the point is not to build a second theorem branch around mechanism, lens, and packaging. The hierarchy only states what follows from what and what does not. Mechanism change need not imply lens incompatibility; lens incompatibility need not imply packaging obstruction; packaging obstruction is simply the formal statement that no admissible global package exists; and cross-resolution strict extension can still count as an admissible same-support comparison when the support object and evaluation regime remain fixed. Those claims are all consistent with the formal framework and with the evidence used in the body of the paper.
+
+\section{Computational Methods}\label{app:computational-methods}
+This appendix records the finite numerical backends used by the paper. The main text states only their conceptual role; here we spell out the backend logic more explicitly.
+
+\subsection{Raw-support exact backend}
+
+The raw-support exact backend begins from a finite candidate-global-atom set built directly from aligned support tuples or their finite direct products. Each candidate global atom specifies one atomic outcome in each participating context. Exact feasibility asks whether a nonempty surviving family of these tuples covers every context atom while respecting the accepted shared-event constraints.
+
+This backend is useful as a baseline and as a simple exact solver in small finite cases. However, it is not the decisive backend for same-support claims, because raw aligned tuples can retain distinctions that are already invisible at the layer represented by the contexts.
+
+\subsection{Quotient-backed exact backend}
+
+The quotient backend begins from a fixed comparison base \(\Sigma\). Let \(S\) be the aligned support set for the chosen context family. Two support elements are identified when they are indistinguishable under the selected contexts. The resulting quotient classes form the finite Leibniz quotient \(Q_\Sigma\).
+
+Each quotient class induces a well-defined atomic assignment in every selected context, and thus serves as a candidate global atom. Exact feasibility on the quotient backend asks whether some family of quotient classes covers all required context atoms while respecting the accepted shared-event relation. This backend is decisive for same-support results because it evaluates global realizability at the same layer at which the contexts themselves are defined.
+
+\subsection{Structural deficit}
+
+The structural global packaging deficit \(\GPDstr\) is computed as a minimum-relaxation optimization over the exact structural realization problem. Informally, it answers: how much of the accepted structural package must be relaxed before exact realization becomes possible? In the finite implementation this can mean relaxing accepted equality proposals, relaxing atom-coverage requirements, or allowing explicitly weighted structural repairs. A value of \(0\) means exact structural realizability. A positive value means that exact realization fails unless some structural condition is weakened.
+
+\subsection{Statistical deficit}
+
+The statistical global packaging deficit \(\GPDstat\) asks the corresponding question for empirical context statistics. One first fixes a finite candidate-global-atom basis and then minimizes the discrepancy between the observed context marginals and any admissible global distribution on that basis. In the canonical implementation, the statistical backend is a finite optimization problem over that candidate set. Zero or near-zero discrepancy indicates statistical compatibility with one admissible global model; a positive discrepancy indicates that no such exact fit exists on the tested basis.
+
+\subsection{Accepted obstruction, candidate witness, and no witness}
+
+We use a deliberately narrow witness language. An accepted-proposal obstruction means that the accepted shared-event relation itself is already enough to make the chosen exact backend infeasible. A candidate-subset quotient witness means that some bounded candidate subset would obstruct the quotient backend, although that subset is not yet admitted. No quotient obstruction means that the tested proposal sets remain feasible on the quotient backend.
+
+This witness language is a disciplined way of describing what kind of finite evidence has actually been found for the event package under study.
+
+\subsection{Provenance and admissibility}
+
+Every formal numerical object is tied to an explicit provenance chain: source context families, source event families, source candidate tables, quotient backends, and package-level audits. The provenance layer ensures that an apparent obstruction does not arise from unresolved source references, illicit hidden distinctions, or objects that are not legitimate at the claimed comparison layer. A finite exact obstruction without provenance is treated as an unsupported inconsistency, not as an accepted result.
+
+\subsection{Control-bundle interpretation}
+
+The control suite is evaluated against the same quotient backend as the accepted result. When a case is said to survive a control, the accepted quotient obstruction remains after the relevant same-object intervention or bounded perturbation. Conversely, if a control is marked \emph{not applicable}, no same-object control preserving the current comparison was available. A case is never silently upgraded for surviving a control that was not meaningful for it.
+
+\section{Extended Axis Tables}\label{app:axis-tables}
+This appendix collects compact machine-readable-to-human-readable summaries of the three axes. The main text uses only one cross-axis comparison table; the present appendix keeps a slightly fuller set of summaries in view.
+
+\begin{table}[t]
+    \centering
+    \caption{Mechanism axis extended summary. The campaign remains weaker than the canonical witness it contains.}
+    \label{tab:mechanism-axis-extended}
+    \footnotesize
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}X}
+        \toprule
+        Object & Status & Quotient result & Interpretation \\
+        \midrule
+        Mechanism axis bounded campaign & design inadequate & no axis-wide accepted obstruction & package-sensitive regime structure appears, but the campaign remains below its adequacy target \\
+        \texttt{EXP-104 / P6\_row\_all / n=64 / seed 0} & canonical witness & accepted-proposal obstruction & quotient-backed accepted witness under the weaker mechanism axis claim ceiling \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Lens axis extended summary. The same-step and cross-resolution subregimes are both part of the canonical record.}
+    \label{tab:lens-axis-extended}
+    \footnotesize
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}X}
+        \toprule
+        Lens regime & Campaign status & Quotient result & Interpretation \\
+        \midrule
+        Same-step fixed-support regime & bounded negative & candidate-subset quotient witness & nontrivial pressure without accepted obstruction \\
+        Cross-resolution strict extension regime & accepted principal result & accepted-proposal obstruction & same-support accepted obstruction on a fixed evaluation regime \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Packaging axis extended summary. The strongest current numerical evidence sits here, but with a narrow package-action caveat.}
+    \label{tab:packaging-axis-extended}
+    \scriptsize
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}X}
+        \toprule
+        Packaging case & Candidate class & Quotient result & Interpretation \\
+        \midrule
+        Same-step packaging control & weaker point & candidate-subset quotient witness & package conflict pressure without accepted obstruction \\
+        Same-step \(k=20\) point & weaker point & candidate-subset quotient witness & stronger package pressure but still not the principal result \\
+        \texttt{packaging\_cross\_}\\\texttt{res\_k4\_k20} & strongly nonextendable candidate & accepted-proposal obstruction & strongest current accepted result; selector-branch caveat remains \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Claim-strength ordering across the three axes. The ordering reflects the fixed comparison base, not the numerical severity of the current principal result.}
+    \label{tab:claim-ordering}
+    \footnotesize
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X}
+        \toprule
+        Axis & Strongest current claim & Main caveat \\
+        \midrule
+        Mechanism & package-sensitive regime structure with one canonical accepted witness & axis-wide campaign remains design inadequate and does not yet license the strongest same-support reading \\
+        Lens & same-support accepted obstruction in the cross-resolution strict extension regime & same-step subregime remains bounded negative \\
+        Packaging & strongest current same-support accepted obstruction & present principal result lies on a narrow package-action surface shaped by selector-branch divergence \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{Intervention and Robustness Details}\label{app:controls}
+This appendix records the control-bundle logic in more explicit form than the main text.
+
+\subsection{Applicability discipline}
+
+A control is counted only when it preserves the same formal object: the same support, the same accepted package claim, and the same quotient backend. The control bundle records \emph{not applicable} rather than silently interpreting every missing intervention as a pass.
+
+\subsection{Principal case control verdicts}
+
+\begin{table}[t]
+    \centering
+    \caption{Expanded principal case control verdicts. The control bundle reported here is authoritative for these values.}
+    \label{tab:flagship-controls-extended}
+    \footnotesize
+    \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}X}
+        \toprule
+        Principal case & Hidden-record & Flattening & Robustness & Interpretation \\
+        \midrule
+        Mechanism witness & n/a & n/a & n/a & real accepted witness, but currently control-limited \\
+        Lens principal & n/a & n/a & survived & accepted obstruction persists under same-object bounded perturbation \\
+        Packaging principal & n/a & n/a & survived & accepted obstruction persists under same-object bounded perturbation \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+For the lens principal case, the quotient-backed accepted obstruction remains unchanged under the bounded robustness check: the accepted-only survivor count remains at \(1\). For the packaging principal case, the accepted-only survivor count remains at \(3\).
+
+\subsection{Current limits of the control suite}
+
+The control suite is stronger than a purely rhetorical trustworthiness statement but weaker than a universal ``every control passed everywhere'' claim. The mechanism witness remains control-limited. Hidden-record and flattening interventions are conceptually central, but not yet available as same-object controls for the current same-support cases. Every currently applicable control survives, and the rest remain explicit applicability limits rather than hidden assumptions.
+
+\section{Reproducibility Note}\label{app:reproducibility}
+The article is intended to stand on its own, but the repository provides the stable evidence base for the numerical claims. The active manuscript lives in the repository's top-level \texttt{paper/} workspace, while the internal Six Birds reference manuscripts remain in \texttt{docs/papers/}. The numerical assets used in this article are stored under \texttt{experiments/instances/} rather than in transient run directories.
+
+The most useful stable entry point is the evidence pack under \texttt{experiments/instances/paper/}, together with the hierarchy evidence index under \texttt{experiments/instances/hierarchy/}. The benchmark, mechanism axis, lens axis, packaging axis, and control summaries referenced in the body are all drawn from assets in those trees. The principal cases are also stored as package, provenance, and quotient-feasibility artifacts under their respective axis directories.
+
+A minimal reproducibility path has two parts. First, the manuscript may be compiled from the \texttt{paper/} directory using the repository's standard \texttt{latexmk} path. Second, the numerical evidence may be checked by inspecting the machine-readable summaries referenced throughout: the benchmark summaries, the mechanism witness quotient summary, the lens closure summaries, the packaging axis quotient summaries, the hierarchy evidence index, and the control-bundle summary.
+
+The article distinguishes between canonical evidence and transient run outputs. Where a transient runtime artifact was not stored, the evidence bundle replaces it with a stable summary artifact. The article's claims should be read against the canonical evidence pack, not against any particular ephemeral run directory.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

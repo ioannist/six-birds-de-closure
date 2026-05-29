@@ -1,0 +1,1540 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\DeclareMathOperator{\Capacity}{Cap}
+\DeclareMathOperator{\Cost}{Cost}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Ker}{Ker}
+
+\newcommand{\preceqq}{\preceq}
+\newcommand{\eps}{\varepsilon}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Adequacy Residuals and Blind-Spot Currency}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Adequacy Residuals and Blind-Spot Currency},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Given two probe families on the same finite-dimensional carrier, this paper asks what a dissolving family \(D\) measures beyond what a native family \(L\) can explain under an audit energy \(C\).  Under the standing legal-energy quotient and null-mode legality hypotheses, the adequacy residual \(\Xi_C(D\mid L)\) is the Schur-complement leftover built from the block currencies \(K_{LL}\), \(K_{DD}\), \(K_{DL}\), and \(K_{LD}\).  We develop this residual as a calculus: the projection identity identifies it with \(T_D(I-P_L)T_D^*\) in energy-scaled coordinates; the optimal-residual and exact-adequacy theorems characterize Loewner minimality and zero residual; promotion combines native and residual budgets into a dissolving budget; and chain-rule, data-processing, and transfer laws describe how the residual changes under native extension, post-processing, coarsening, and exact or defective bridges, including the dissolving post-processing congruence.  The blind-spot witness theorem turns failure of a declared residual budget into an explicit recombination vector with positive excess.  The paper does not claim exact adequacy generically, does not classify all probe-family pairs, and does not claim novelty for the classical operator-theoretic constructions it packages; an application of the resulting calculus in a layer-dissolving emergence framework is given in \citet{Tsiokos2026NeedleKiller}.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds theory; adequacy residual; blind-spot currency; Schur complement; Moore--Penrose pseudoinverse; Loewner order; data-processing.
+
+\section{Introduction}
+\label{sec:intro}
+
+In many finite-dimensional operator problems one has two families of
+measurements on the same carrier.  The first family records what is available at
+the original level of description; the second becomes available only after the
+description has been enriched.  The natural question is not merely whether the
+second family is large, but how much of its response is already explained by the
+first family and how much remains genuinely leftover.  For a block-positive
+currency matrix, the Schur complement is exactly the algebraic operation that
+subtracts the explained block and leaves the unexplained one.  This paper
+develops that leftover block as a first-class residual object.
+
+A \emph{native probe family} is the linear family of measurements available at
+the original layer; throughout the paper it is represented by a finite-rank map
+\(L\colon E\to Y\) from a finite-dimensional carrier \(E\) to a response space
+\(Y\).  A \emph{dissolving probe family} is a second linear family
+\(D\colon E\to Z\), available after passing to a richer layer; the name records
+its use in \citet{Tsiokos2026NeedleKiller}, where such probes are used to
+dissolve lower-layer obstructions, but the present paper treats \(D\) simply as
+another declared measurement family.  The carrier is priced by an audit energy
+\(C=C^*\succeq 0\), zero-energy modes are handled by the legal quotient fixed in
+\Cref{sec:setup}, and the currency matrices are the finite-dimensional
+quadratic response operators obtained from \(C\), its Moore--Penrose
+pseudoinverse, and the chosen probes.  In this language, \emph{leftover
+currency} means the quantitative content of what \(D\) measures beyond what
+\(L\) explains, expressed as a positive operator on the dissolving response
+space \(Z\).  A \emph{blind-spot currency} is the same leftover operator viewed
+as a budgeted obstruction: it is a positive residual that must be dominated by a
+declared budget before downstream arguments may treat the native family as
+adequate for the dissolving family.
+
+The central object is the \emph{adequacy residual}.  Informally, before the
+formal definition in \Cref{sec:adequacy-residual}, it is the Schur complement of
+the native block in the joint native-dissolving currency:
+\[
+  \Xi_C(D\mid L)
+  =
+  K_{DD}-K_{DL}K_{LL}^{\dagger}K_{LD}.
+\]
+Here \(K_{LL}\) is the native block currency, \(K_{DD}\) is the dissolving block
+currency, and \(K_{DL},K_{LD}\) are the cross currencies built from the two probe
+families and the audit energy.  Thus \(\Xi_C(D\mid L)\) is the residual left
+after the part of the dissolving response explained through the native block has
+been subtracted.
+
+The paper develops this residual through a sequence of standard
+finite-dimensional operator identities, organized around the role the residual
+plays in budgeted adequacy.  First, \Cref{sec:projection} identifies
+\(\Xi_C(D\mid L)\) with the dissolving readout after projection away from the
+energy-scaled native probe range.  This projection identity gives the Schur
+complement its geometric interpretation and shows positivity directly.  Next,
+\Cref{sec:optimal-exact} proves the optimal residual identity: among residual
+currencies produced by explanation maps from native responses to dissolving
+responses, the adequacy residual is Loewner-minimal.  The same section records
+the exact-adequacy equivalences, including the zero-residual condition
+\(\Xi_C(D\mid L)=0\), kernel containment on the legal quotient, and the
+existence of an explanation map \(A\) with \(D_0=AL_0\).  These equivalences are
+the finite ``no leftover'' tests for the framework.
+
+The later sections record how the residual behaves under the operations needed
+to use it.  \Cref{sec:promotion} shows that native and residual budgets combine
+through the optimal native explanation to produce a dissolving budget; this is
+the adequacy-promotion step.  \Cref{sec:chain-rule} proves the chain rule under
+strict native extension: when the native family is enlarged, a conditional
+Schur term is subtracted, so the residual cannot increase under the stated
+hypotheses.  \Cref{sec:data-processing} gives the data-processing and transfer
+identities: post-processing the dissolving probes conjugates the residual,
+coarsening the native probes can only enlarge it under the comparison
+hypotheses, and exact or defective bridges transport it with the corresponding
+congruence or paid defect.  Finally, \Cref{sec:blind-spot} turns residual-budget
+failure into a witness statement: a budget violation is equivalent to an
+explicit recombination vector whose quadratic excess is positive.
+
+The present paper is self-contained as a Schur-complement residual paper:
+its hypotheses, definitions, identities, and witness theorem are stated
+in the finite operator-theoretic setting just described.  An application
+of the calculus to a layer-dissolving framework is given in
+\citet{Tsiokos2026NeedleKiller}, which readers may consult for that use.
+
+The scope is deliberately narrow.  The paper does not claim that every raw
+substrate sees every dissolving probe, nor that the residual vanishes
+generically; exact adequacy is a hypothesis to be verified, not a default
+state.  It also does not transfer a residual computed from a coarse view to an
+intrinsic fine view without an audited bridge: such transfer requires the exact
+or defective bridge machinery developed later.  A residual bound at one
+accepted finite stage is not treated as predictive adequacy across an indexed
+family.  Finally, the paper does not claim novelty for the classical
+constructions it uses, such as Schur complements, Moore--Penrose
+pseudoinverses, projection identities, and Douglas-style factorization.  The
+contribution is to package the Schur-complement residual as an audited currency
+with projection, optimality, exactness, extension, data-processing, transfer,
+and blind-spot witness laws.
+
+The organization follows this progression.  \Cref{sec:setup} fixes the standing
+hypotheses: the finite-dimensional carrier, the audit energy \(C\), the legal
+energy quotient \(E_C\), and null-mode legality for probes.  \Cref{sec:currency}
+develops probe-family currency and minimum-spend duality, while
+\Cref{sec:adequacy-residual} gives the formal definition of
+\(\Xi_C(D\mid L)\) and its block currencies.  The main calculus then proceeds
+through projection, optimality and exactness, promotion, chain rule, data
+processing and transfer, and the blind-spot witness theorem in
+\Cref{sec:projection,sec:optimal-exact,sec:promotion,sec:chain-rule,sec:data-processing,sec:blind-spot}.
+The discussion and conclusion close by placing the residual calculus back in
+the framework that motivates it, without adding new hypotheses or applications.
+ \section{Standing Hypotheses: The Legal Energy Quotient}
+\label{sec:setup}
+
+This section fixes the standing hypotheses used by every later definition and
+identity in the paper.  The data are a finite-dimensional carrier, a positive
+semidefinite audit energy, the legal energy quotient determined by the kernel
+of that energy, and a null-mode legality condition for probe families.  Once
+stated here, these hypotheses are assumed throughout the residual calculus.
+
+\begin{definition}[Audit energy]\label{def:xi:audit-energy}
+Let \(E\) be a finite-dimensional real or complex Hilbert space.  An
+\emph{audit energy} on \(E\) is a self-adjoint positive-semidefinite operator
+\(C=C^*\succeq 0\) on \(E\).  The audit cost of a carrier vector \(u\in E\) is
+the quadratic form \(u^*Cu\), and the kernel \(\Ker C\) consists of the
+zero-audit-cost directions.
+\end{definition}
+
+The form may be semidefinite, so directions in \(\Ker C\) cannot be treated as
+ordinary finite-energy degrees of freedom without an additional quotient step.
+
+\begin{definition}[Legal energy quotient]\label{def:xi:legal-energy-quotient}
+The \emph{legal energy quotient} of \((E,C)\) is the orthogonal complement
+\[
+  E_C=(\Ker C)^\perp\subseteq E,
+\]
+together with the restricted audit form
+\[
+  C_0=C|_{E_C}>0
+\]
+which is strictly positive on \(E_C\).  The \emph{Moore--Penrose pseudoinverse}
+\(C^\dagger\), following
+\citet{Penrose1955GeneralizedInverse,BenIsraelGreville2003GeneralizedInverses},
+acts as \(C_0^{-1}\) on \(E_C\) and as zero on \(\Ker C\).
+\end{definition}
+
+All finite-currency formulas in the paper are read on this legal subspace.
+Equivalently, quadratic response expressions involving \(C^\dagger\) are
+shorthand for first passing to \(E_C\), applying \(C_0^{-1}\), and then viewing
+the result back in the original coordinates.
+
+\begin{definition}[Null-legal probe family]\label{def:xi:null-legal-probe-family}
+A linear map \(F\colon E\to Y\) is a \emph{null-legal probe family} when it
+vanishes on the zero-audit-cost directions:
+\[
+  F|_{\Ker C}=0.
+\]
+For such an \(F\), its \emph{restriction to the legal subspace} is
+\[
+  F_0=F|_{E_C}\colon E_C\to Y.
+\]
+The native and dissolving probe families used throughout the paper are taken to
+be null-legal: their restrictions are written \(L_0\) and \(D_0\).
+\end{definition}
+
+Null-mode legality says that the probe descends cleanly through the quotient:
+no response is assigned to a direction whose audit cost is zero.
+
+This condition is part of the adequacy record, not a disposable regularity
+assumption.  If a probe sees a zero-energy direction, then the variational
+capacity associated to that response is infinite, even when a formal
+pseudoinverse expression might appear finite after the zero mode has been
+silenced algebraically.  Throughout the paper, every probe family that enters a
+currency matrix or an adequacy residual is taken to be null-legal from the
+start.  The assumption is data of the probe family, checked before forming the
+currency, rather than a condition repaired after the residual has been written
+down.
+
+Consequently, every later currency and residual is computed on \(E_C\) with
+\(C_0\) and the restricted probes.  The convention for \(C^\dagger\) is the
+canonical Moore--Penrose convention just described; the distinction between the
+pseudoinverse on \(E\) and the inverse on \(E_C\) matters only as bookkeeping,
+not as a separate mathematical choice in the body of the paper.  With the legal
+quotient fixed, \Cref{sec:currency} develops the probe-family currency and
+minimum-spend duality used throughout.  \Cref{sec:adequacy-residual} then
+defines the adequacy residual \(\Xi_C(D\mid L)\) from the native, dissolving,
+and cross currency blocks computed under these standing hypotheses.
+ \section{Currency and Minimum Spend}
+\label{sec:currency}
+
+With the legal quotient and null-mode legality of \Cref{sec:setup} in place,
+every probe family produces a currency matrix recording its response per unit
+of audit cost.  The minimum-spend formula completes the duality: it prices the
+least audit cost needed to realize a desired response, while the off-range
+branch records that responses outside the represented range are unattainable at
+finite cost.  This is the accounting language used in every later residual
+identity.
+
+\begin{definition}[Probe-family currency]\label{def:xi:probe-family-currency}
+Let \(F\colon E\to Y\) be a null-legal probe family in the sense of
+\Cref{def:xi:null-legal-probe-family}, with restriction \(F_0=F|_{E_C}\).
+Its \emph{probe-family currency} is the positive semidefinite operator on \(Y\)
+\[
+  K_F = F_0C_0^{-1}F_0^* = FC^{\dagger}F^*,
+\]
+where the right-hand expression uses the Moore--Penrose pseudoinverse
+\(C^\dagger\) of \Cref{def:xi:legal-energy-quotient}.  For a recombination
+\(y\in Y\), the variational capacity of the scalar probe \(y^*F\) is
+\[
+  \Capacity_C(y^*F)=y^*K_Fy.
+\]
+\end{definition}
+
+Thus \(K_F\) is the compliance matrix associated with \(F\): it records how much
+response the probe family can produce per audit dollar in each recombined
+direction of the response space.
+
+\begin{theorem}[Minimum-spend duality]\label{thm:xi:minimum-spend-duality}
+For \(z\in Y\), define
+\[
+  \Cost_C(z;F)
+  =
+  \inf\bigl\{\langle u,Cu\rangle:\ Fu=z\bigr\}.
+\]
+Then
+\[
+  \Cost_C(z;F)
+  =
+  \begin{cases}
+    z^*K_F^\dagger z,
+      & z\in \Ran F_0=\Ran K_F,\\
+    +\infty,
+      & z\notin \Ran F_0.
+  \end{cases}
+\]
+\end{theorem}
+
+\begin{proof}
+Because all probes entering the currency are null-legal, the optimization may
+be read on \(E_C\).  Set \(v=C_0^{1/2}u\).  Since \(C_0>0\) on \(E_C\), this
+substitution is legitimate, the audit cost becomes the ordinary squared norm
+\(\|v\|^2\), and the constraint \(Fu=z\) becomes
+\[
+  F_0C_0^{-1/2}v=z.
+\]
+Writing \(T=F_0C_0^{-1/2}\), the problem is therefore the standard
+least-norm problem of minimizing \(\|v\|^2\) subject to \(Tv=z\).  If
+\(z\in\Ran T\), the minimum is \(z^*(TT^*)^\dagger z\); if
+\(z\notin\Ran T\), the admissible set is empty and the cost is \(+\infty\).
+Since
+\[
+  TT^*=F_0C_0^{-1}F_0^*=K_F,
+\]
+the finite branch is \(z^*K_F^\dagger z\).  The range condition can be written
+as \(z\in\Ran T=\Ran F_0=\Ran K_F\), using invertibility of \(C_0^{-1/2}\) on
+\(E_C\) and the finite-dimensional identity \(\Ran(TT^*)=\Ran T\).\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.Currency.xiMinimumSpendDuality}; the Lean theorem proves the off-range \((+\infty)\) branch under the finite-range pseudoinverse identity being established here as a least-norm calculation.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+The theorem gives the variational meaning of \(K_F\).  As a compliance currency,
+it measures the response made available by the probe family, while its
+pseudoinverse prices the least audit spend needed to realize a represented
+response.  If \(z\) lies outside \(\Ran F_0\), no vector of finite audit spend
+can realize it through \(F\).  The remaining sections build on this language:
+\Cref{sec:adequacy-residual} constructs the joint native-dissolving currency
+matrix and defines the adequacy residual as the Schur complement of the native
+block.
+ \section{Definition of the Adequacy Residual}
+\label{sec:adequacy-residual}
+
+This section gives the central object of the paper.  With the standing
+hypotheses of \Cref{sec:setup} and the probe-family currency of
+\Cref{sec:currency} in place, the joint native-dissolving currency matrix
+decomposes into four blocks.  The adequacy residual is the Schur complement of
+the native block
+\citep{Schur1917Potenzreihen,Haynsworth1968Inertia,Albert1969PSDPartitioned,Cottle1974Manifestations,Zhang2005SchurApplications,HornJohnson2013MatrixAnalysis}:
+the leftover content of the dissolving block after the native
+block has explained as much as it can.
+
+\begin{definition}[Native, dissolving, and joint block currencies]\label{def:xi:block-currencies}
+Let \(L\colon E\to Y\) and \(D\colon E\to Z\) be null-legal probe families (in
+the sense of \Cref{def:xi:null-legal-probe-family}), with restrictions
+\(L_0,D_0\).  The \emph{native, dissolving, and cross currencies} are
+\[
+  K_{LL}=L_0C_0^{-1}L_0^*,
+  \qquad
+  K_{DL}=D_0C_0^{-1}L_0^*,
+\]
+\[
+  K_{LD}=L_0C_0^{-1}D_0^*,
+  \qquad
+  K_{DD}=D_0C_0^{-1}D_0^*.
+\]
+Here \(K_{LL}=K_F\) for \(F=L\) and \(K_{DD}=K_F\) for \(F=D\) in the
+probe-family currency of \Cref{def:xi:probe-family-currency}.  Equivalently,
+\(K_{LL}\) and \(K_{DD}\) are positive semidefinite operators on \(Y\) and
+\(Z\) respectively; \(K_{DL}\) and \(K_{LD}=K_{DL}^*\) are the corresponding
+rectangular cross operators.  The \emph{joint currency matrix} of the combined
+family \((L,D)\) is
+\[
+  K(D,L)
+  =
+  \begin{pmatrix}
+    K_{LL} & K_{LD} \\
+    K_{DL} & K_{DD}
+  \end{pmatrix}.
+\]
+\end{definition}
+
+The convention is that \(L\) is the measurement family available at the
+original layer, while \(D\) is the measurement family available after passing to
+the richer layer.
+
+\begin{definition}[Adequacy residual]\label{def:xi:adequacy-residual}
+The adequacy residual of \(D\) relative to \(L\) is
+\[
+  \boxed{\Xi_C(D\mid L)=K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}.}
+\]
+\end{definition}
+
+The residual is the Schur complement of the native block inside the joint
+currency matrix of \Cref{def:xi:block-currencies}.  In the standard
+\(2\times2\) block Schur-complement decomposition,
+\(\Xi_C(D\mid L)\) is the \((2,2)\) Schur complement: \(K_{DD}\) minus the part
+of the dissolving block explained through the native block by the cross term
+\(K_{DL}K_{LL}^\dagger K_{LD}\).  If \(K_{LL}\) is invertible on the native
+response space \(Y\), this is the ordinary inverse formula.  The Moore--Penrose
+pseudoinverse is what keeps the same expression meaningful when the native
+currency is rank deficient.
+
+This is exactly the algebraic operation needed for leftover currency.  The
+native block first accounts for every component of the dissolving response that
+can be explained through native coordinates; the residual is what remains.
+Equivalently, \(\Xi_C(D\mid L)\) is the unexplained dissolving currency under
+the native block's optimal explanation.  \Cref{sec:projection} makes this
+geometric by identifying the residual with a projected dissolving readout, and
+\Cref{sec:optimal-exact} shows that it is Loewner-minimal among residuals
+arising from explanation maps.
+
+The joint currency matrix is positive semidefinite whenever the audit energy
+is: it is the currency of the combined probe family \((L,D)\) on the legal
+subspace.  The Schur complement of this positive semidefinite block matrix is
+therefore positive semidefinite under the standing hypotheses.  Consequently
+\(\Xi_C(D\mid L)\) is a positive operator on \(Z\), and so it is a valid
+currency in the sense of \Cref{sec:currency}.  The remaining sections develop
+the calculus of this positive residual.
+ \section{Projection Theorem}
+\label{sec:projection}
+
+The projection theorem gives the geometric meaning of the adequacy residual.
+After rescaling by the square root of the audit energy, the native and
+dissolving probes become ordinary linear maps in energy-scaled coordinates.  In
+those coordinates, the residual is the dissolving readout after projecting away
+the part already explained by the native probe range.  Positive
+semidefiniteness of \(\Xi_C(D\mid L)\) follows directly from this formulation.
+
+\begin{definition}[Energy-scaled probes and native-explanation projection]\label{def:xi:energy-scaled-probes}
+The \emph{energy-scaled native and dissolving probes} are
+\[
+  T_L=L_0C_0^{-1/2},
+  \qquad
+  T_D=D_0C_0^{-1/2}.
+\]
+Here \(C_0^{1/2}\) is the unique positive square root of \(C_0\) on \(E_C\)
+\citep{Higham2008Functions,Bhatia2007PositiveDefinite}.  The
+\emph{native-explanation projection} \(P_L\) is the orthogonal projection in
+\(E_C\) onto
+\[
+  \Ran(T_L^*)\subseteq E_C,
+\]
+the native probe range in the energy-scaled coordinate system.
+\end{definition}
+
+The maps \(T_L\) and \(T_D\) record the same response data as \(L_0\) and
+\(D_0\), but expressed against the energy-orthonormal coordinates determined by
+\(C_0\).  The range defining \(P_L\) is not the range of \(L_0\) in the original
+response coordinates.
+
+\begin{theorem}[Projection identity]\label{thm:xi:projection-identity}
+\[
+  \boxed{\Xi_C(D\mid L)=T_D(I-P_L)T_D^*\succeq 0.}
+\]
+\end{theorem}
+
+\begin{proof}
+In terms of the energy-scaled probes, the four currency blocks are
+\[
+  K_{LL}=T_LT_L^*,
+  \qquad
+  K_{DD}=T_DT_D^*,
+  \qquad
+  K_{DL}=T_DT_L^*,
+  \qquad
+  K_{LD}=T_LT_D^*.
+\]
+The standard Moore--Penrose projection identity
+\citep{Penrose1956BestApprox,Halmos1982HilbertSpace} says that
+\[
+  T_L^*(T_LT_L^*)^\dagger T_L=T_L^*K_{LL}^\dagger T_L
+\]
+is the orthogonal projection onto \(\Ran(T_L^*)\), namely \(P_L\).  Therefore
+\[
+  K_{DL}K_{LL}^\dagger K_{LD}
+  =
+  T_DT_L^*K_{LL}^\dagger T_LT_D^*
+  =
+  T_D P_L T_D^*.
+\]
+Substituting this into the definition of the residual gives
+\[
+  \Xi_C(D\mid L)
+  =
+  K_{DD}-T_D P_L T_D^*
+  =
+  T_D T_D^*-T_D P_L T_D^*
+  =
+  T_D(I-P_L)T_D^*.
+\]
+Since \(I-P_L\) is the orthogonal projection onto the complementary subspace,
+it is positive semidefinite, and conjugation by \(T_D\) preserves positive
+semidefiniteness.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.Projection.projectionIdentity}; the Lean theorem proves the algebraic Schur-complement identity \(\Xi_C(D\mid L)=T_D(I-P_L)T_D^*\) under \(T_L\), \(T_D\), and \(P_L\) being exposed as free parameters under four algebraic hypotheses replacing the paper's constructive square-root and projection machinery.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+The projection identity shows that \(\Xi_C(D\mid L)\) is the dissolving readout
+after the part explained by native probes has been removed in the energy-dual
+geometry.  Equivalently, it measures the dissolving response against the
+orthogonal complement of the native probe range in \(E_C\)-scaled coordinates.
+The residual is therefore a true projection residual, not merely an arbitrary
+subtraction of two positive operators.
+
+This formulation makes positivity manifest and supplies the ``removed by native
+explanation'' reading used in \Cref{sec:optimal-exact}.  It also gives the
+algebraic basis for the data-processing identities of
+\Cref{sec:data-processing}: when dissolving probes are post-processed, the
+projected readout is conjugated by the post-processing map.  The next section
+quantifies optimality and exactness for the same residual.
+ \section{Optimal Residual and Exact Adequacy}
+\label{sec:optimal-exact}
+
+This section answers two questions about the adequacy residual.  Among all
+linear explanation maps \(A\colon Y\to Z\) that try to factor the dissolving
+probe \(D\) through the native probe \(L\), which map minimizes the residual
+currency?  And when is the minimum residual equal to zero?  The first answer is
+the optimal residual identity, which shows that \(\Xi_C(D\mid L)\) is
+Loewner-minimal across choices of \(A\).  The second is exact adequacy: four
+equivalent ways of saying that no dissolving currency is left over.
+
+\begin{definition}[Optimal native explanation map]\label{def:xi:optimal-explanation-map}
+Given native and dissolving probe families \(L,D\) and their block currencies
+\(K_{LL},K_{DL}\) of \Cref{def:xi:block-currencies}, the \emph{optimal native
+explanation map} is
+\[
+  A_*=K_{DL}K_{LL}^\dagger\colon Y\to Z.
+\]
+When \(K_{LL}\) is invertible on \(Y\), \(A_*\) reduces to the ordinary
+regression-style \(K_{DL}K_{LL}^{-1}\), the matrix-form Gauss--Markov /
+generalized-least-squares explanation map
+\citep{Aitken1935LeastSquares,Rao1973LinearInference}.
+\end{definition}
+
+This is the linear map that best approximates the dissolving block by
+composition through the native block, in the Loewner sense made precise below.
+
+\begin{theorem}[Optimal residual identity]
+\label{thm:xi:optimal-residual-identity}
+For every linear map \(A\colon Y\to Z\),
+\[
+  \boxed{
+  (D_0-AL_0)C_0^{-1}(D_0-AL_0)^*
+  =
+  \Xi_C(D\mid L)
+  +(A-A_*)K_{LL}(A-A_*)^*.}
+\]
+Consequently, \(\Xi_C(D\mid L)\) is the Loewner-minimal residual currency
+among all attempts to factor \(D\) through \(L\).
+\end{theorem}
+
+\begin{proof}
+Expanding the left-hand side by linearity gives
+\[
+  K_{DD}-AK_{LD}-K_{DL}A^*+AK_{LL}A^*.
+\]
+Write \(A=A_*+B\), where \(B=A-A_*\).  The Moore--Penrose identities, together
+with the block-range fact that \(K_{DL}\) vanishes on \(\Ker K_{LL}\), give
+\[
+  A_*K_{LL}
+  =
+  K_{DL}K_{LL}^\dagger K_{LL}
+  =
+  K_{DL}
+\]
+and the corresponding adjoint identity for \(K_{LD}A_*^*\).  Substituting
+\(A_*+B\) into the expansion, the linear terms in \(B\) telescope, while the
+\(A_*\)-part leaves
+\[
+  K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}
+  =
+  \Xi_C(D\mid L).
+\]
+The remaining quadratic term is \(BK_{LL}B^*\), which is
+\((A-A_*)K_{LL}(A-A_*)^*\).  Since this correction is positive semidefinite for
+every \(A\), the displayed residual is always Loewner-above
+\(\Xi_C(D\mid L)\), with equality at \(A=A_*\).\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.OptimalResidual.optimalResidualIdentity}; the Lean theorem proves the Loewner-domination consequence under the paper-algebraic identity \(\mathrm{residualQuad}\,A=\mathrm{adequacyResidual}+\mathrm{penalty}(A-A_*)\) and a PSD hypothesis on \(K_{LL}\); the identity itself is established here by the expansion just given.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Exact adequacy]\label{thm:xi:exact-adequacy}
+The following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+  \item \(\Xi_C(D\mid L)=0\);
+  \item \(D_0=A_*L_0\);
+  \item there exists a linear map \(A\colon Y\to Z\) such that \(D_0=AL_0\);
+  \item \(\Ker L_0\subseteq \Ker D_0\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+First assume (i).  Applying the optimal residual identity at \(A=A_*\) gives
+\[
+  (D_0-A_*L_0)C_0^{-1}(D_0-A_*L_0)^*
+  =
+  \Xi_C(D\mid L).
+\]
+If the residual is zero, then the left-hand side is the zero positive
+semidefinite operator.  Since \(C_0^{-1}\) is strictly positive on \(E_C\), this
+forces \(D_0-A_*L_0=0\), proving (ii).  The implication (ii) implies (iii) is
+immediate by taking \(A=A_*\).  If (iii) holds and \(v\in\Ker L_0\), then
+\(D_0v=AL_0v=0\), so \(v\in\Ker D_0\); hence (iv) follows.
+
+It remains to see that (iv) gives zero residual.  In finite dimension, the
+kernel containment \(\Ker L_0\subseteq\Ker D_0\) is exactly the factorization
+criterion for the existence of a linear map \(A\colon Y\to Z\) with
+\(D_0=AL_0\), in the range-inclusion / factorization tradition of
+\citet{Douglas1966Majorization} and \citet{FillmoreWilliams1971OperatorRanges}.  Substituting this factorization into the optimal residual
+identity gives
+\[
+  0
+  =
+  \Xi_C(D\mid L)
+  +(A-A_*)K_{LL}(A-A_*)^*.
+\]
+Both summands are positive semidefinite, so each must vanish; in particular
+\(\Xi_C(D\mid L)=0\).  Equivalently, by the projection theorem, the same
+condition can be read as
+\(\Xi_C(D\mid L)=0\) iff \(T_D=T_DP_L\), iff
+\(\Ran(T_D^*)\subseteq\Ran(T_L^*)\), which is the energy-scaled form of
+factorization through \(L_0\).\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.OptimalResidual.exactAdequacy}; the Lean theorem proves the trivial direction chains (ii)\(\to\)(iii)\(\to\)(iv) in the four-way equivalence under the hard directions (i)\(\leftrightarrow\)(ii) and (iv)\(\to\)(ii) being elevated as paper-citation hypotheses; the full cycle is established here using the Douglas--Fillmore-Williams factorization criterion.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+The exact-adequacy theorem is the paper's finite ``no leftover'' test.  It says
+that zero residual, exact factorization through the native family, existence of
+some explanation map, and kernel containment are the same condition on the
+legal quotient.  Together with the optimal residual identity, it makes
+\(\Xi_C(D\mid L)\) the canonical leftover currency selected by the
+Schur-complement framework, not merely one possible residual.  The next
+sections develop its behavior under operations: \Cref{sec:promotion} combines
+native and residual budgets into a dissolving budget, while
+\Cref{sec:chain-rule,sec:data-processing} track how the residual changes under
+probe-family extension, coarsening, post-processing, and transfer.
+ \section{Promotion from Native Membrane to Dissolving Membrane}
+\label{sec:promotion}
+
+The previous sections built the adequacy residual, gave its projection
+interpretation, and characterized when it vanishes.  The present section records
+the operational consequence.  When a native budget and a residual budget are
+both available, they combine through the optimal native explanation to produce
+a dissolving budget.  This is the promotion step from a native membrane budget
+record to a dissolving one, and it is the form used at the layer-dissolving
+endpoint of \citet{Tsiokos2026NeedleKiller}.
+
+Suppose first that the native currency is controlled by a positive operator
+\(\Theta_Y\) on \(Y\):
+\[
+  K_{LL}\preceqq \Theta_Y.
+\]
+This is the \emph{native budget}.  Suppose also that the adequacy residual is
+controlled by a positive operator \(\Xi_Z\) on \(Z\):
+\[
+  \Xi_C(D\mid L)\preceqq \Xi_Z.
+\]
+This is the \emph{residual budget}.  The two hypotheses are independent: the
+first prices what the native probes already explain, while the second prices
+what remains after native explanation.
+
+\begin{theorem}[Adequacy promotion]\label{thm:xi:adequacy-promotion}
+Under the two budget hypotheses above,
+\[
+  \boxed{K_{DD}\preceqq A_*\Theta_YA_*^*+\Xi_Z.}
+\]
+In particular, if \(\Xi_C(D\mid L)=0\), the native budget transfers exactly to
+the dissolving family through \(A_*\).
+\end{theorem}
+
+\begin{proof}
+The Schur identity obtained from the optimal residual identity at
+\(A=A_*\) gives
+\[
+  K_{DD}=A_*K_{LL}A_*^*+\Xi_C(D\mid L).
+\]
+Apply the native budget and conjugate by \(A_*\); Loewner order is monotone
+under conjugation, so
+\[
+  A_*K_{LL}A_*^*\preceqq A_*\Theta_YA_*^*.
+\]
+The residual budget gives \(\Xi_C(D\mid L)\preceqq\Xi_Z\).  Adding the two
+Loewner inequalities yields the displayed promotion bound.  If exact adequacy
+holds, then \(\Xi_C(D\mid L)=0\), so no residual budget is needed and the
+native budget transfers through \(A_*\) alone.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.Promotion.adequacyPromotion}; the Lean theorem proves the Loewner promotion bound \(K_{DD}\preceqq A_*\Theta_Y A_*^*+\Xi_Z\) under the adequacy-interface algebraic identity and the public Loewner-monotonicity infrastructure; the identity is the elevated hypothesis.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+Operationally, adequacy promotion is the bridge result invoked at the
+layer-dissolving endpoint of \citet{Tsiokos2026NeedleKiller}.  The optimal explanation map \(A_*\)
+plays the role of a best linear predictor of the dissolving response from the
+native response, and adequacy promotion is the corresponding budget transfer;
+the analogous orthogonality-principle and best-linear-prediction picture is
+developed in \citet{KailathSayedHassibi2000LinearEstimation}.
+There, a native budget and a residual budget are converted into a dissolving
+budget through the Xi interface, and the resulting dissolving currency can then be routed into a
+common target space by the maps belonging to that application.  From the
+standpoint of this paper, promotion is the simplest direct use of the optimal
+residual identity: Schur decomposition plus two Loewner bounds gives the
+dissolving budget.  For the endpoint application, see
+\citet{Tsiokos2026NeedleKiller}.
+ \section{Strict Native Extension}
+\label{sec:chain-rule}
+
+This section asks how the adequacy residual changes when the native probe
+family \(L\) is enlarged by adding new probes.  The answer is a Schur-complement
+chain rule: extending the native family subtracts a conditional residual term
+built from the added probes.  Consequently the residual can only shrink under
+strict native extension.  If the added probes are already linear functions of
+the original native family, the residual is unchanged.
+
+\begin{definition}[Extended native family and conditional currencies]\label{def:xi:extended-native-family}
+Let \(M\colon E\to W\) be an additional null-legal native probe family.  The
+\emph{extended native family} is
+\[
+  L^+
+  =
+  \begin{bmatrix}
+    L\\
+    M
+  \end{bmatrix}
+  \colon E\to Y\oplus W,
+  \qquad
+  L^+u=(Lu,Mu),
+\]
+which is null-legal because \(L\) and \(M\) both vanish on \(\Ker C\).  The
+\emph{conditional native currency of \(M\) given \(L\)} is the Schur complement
+\[
+  K_{MM\mid L}
+  =
+  K_{MM}-K_{ML}K_{LL}^\dagger K_{LM},
+\]
+also known as the shorted operator of \(K_{MM}\) by the \(L\)-block
+\citep{AndersonWN1971Shorted,AndersonTrapp1975ShortedII}.  The
+\emph{conditional dissolving-extension cross currency} is
+\[
+  K_{DM\mid L}
+  =
+  K_{DM}-K_{DL}K_{LL}^\dagger K_{LM},
+  \qquad
+  K_{MD\mid L}=K_{DM\mid L}^*.
+\]
+The conditional joint currency block is positive semidefinite, so in
+particular \(K_{MM\mid L}\succeq 0\) on \(W\); the rectangular cross
+block \(K_{DM\mid L}\) is paired with its adjoint \(K_{MD\mid L}\).
+\(K_{MM\mid L}\) vanishes precisely when the added probes \(M\) are
+already explained by \(L\) on the legal quotient.
+\end{definition}
+
+\begin{theorem}[Chain rule for adequacy residuals]\label{thm:xi:chain-rule}
+\[
+  \boxed{
+  \Xi_C(D\mid L^+)
+  =
+  \Xi_C(D\mid L)
+  -
+  K_{DM\mid L}K_{MM\mid L}^\dagger K_{MD\mid L}.}
+\]
+In particular,
+\[
+  \Xi_C(D\mid L^+)\preceqq \Xi_C(D\mid L).
+\]
+\end{theorem}
+
+\begin{proof}
+Consider the joint currency matrix with rows and columns indexed by \(L\),
+\(M\), and \(D\).  Its diagonal blocks are \(K_{LL}\), \(K_{MM}\), and
+\(K_{DD}\), with the corresponding cross-currency blocks off the diagonal.
+Taking the Schur complement of the \(L\)-block gives the conditional joint
+currency of \((M,D)\) given \(L\):
+\[
+  \begin{pmatrix}
+    K_{MM\mid L} & K_{MD\mid L}\\
+    K_{DM\mid L} & K_{DD\mid L}
+  \end{pmatrix},
+  \qquad
+  K_{DD\mid L}
+  =
+  K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}
+  =
+  \Xi_C(D\mid L).
+\]
+Computing \(\Xi_C(D\mid L^+)\) means taking the Schur complement of the full
+\((L,M)\)-native block.  By the iterated Schur-complement identity, also known
+as the Crabtree--Haynsworth quotient formula
+\citep{CrabtreeHaynsworth1969Quotient,Ando2005SchurOperator}, this is the same
+as first
+conditioning on \(L\) and then taking the Schur complement of the remaining
+\(M\)-block inside the conditional \((M,D)\) matrix.  Therefore
+\[
+  \Xi_C(D\mid L^+)
+  =
+  \Xi_C(D\mid L)
+  -
+  K_{DM\mid L}K_{MM\mid L}^\dagger K_{MD\mid L}.
+\]
+The subtracted term is positive semidefinite, because it is the usual
+cross-block--pseudoinverse--cross-block term associated to a positive
+conditional Schur block.  Hence
+\(\Xi_C(D\mid L^+)\preceqq \Xi_C(D\mid L)\).\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.StrictExtension.chainRule}; the Lean theorem proves the Loewner-domination consequence under the elevated Schur chain-rule identity and PSD-of-conditional-Schur hypotheses; the identity itself is derived here from the Crabtree--Haynsworth iterated Schur formula.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+\begin{corollary}[Same-family saturation]\label{cor:xi:same-family-saturation}
+If \(M=BL\) for some linear map \(B\colon Y\to W\), then
+\[
+  \Xi_C(D\mid [L;M])=\Xi_C(D\mid L).
+\]
+\end{corollary}
+
+\begin{proof}
+If \(M=BL\), then \(M_0=BL_0\) on the legal quotient.  Thus
+\[
+  K_{ML}=BK_{LL},
+  \qquad
+  K_{LM}=K_{LL}B^*,
+  \qquad
+  K_{MM}=BK_{LL}B^*.
+\]
+Substitution into the conditional \(M\)-currency gives
+\[
+  K_{MM\mid L}
+  =
+  BK_{LL}B^*-BK_{LL}K_{LL}^\dagger K_{LL}B^*
+  =
+  0,
+\]
+using \(K_{LL}K_{LL}^\dagger K_{LL}=K_{LL}\).  Similarly,
+\[
+  K_{DM}=K_{DL}B^*,
+  \qquad
+  K_{DM\mid L}
+  =
+  K_{DL}B^*-K_{DL}K_{LL}^\dagger K_{LL}B^*
+  =
+  0.
+\]
+The chain-rule subtraction therefore vanishes, so
+\(\Xi_C(D\mid L^+)=\Xi_C(D\mid L)\), equivalently
+\(\Xi_C(D\mid [L;M])=\Xi_C(D\mid L)\).
+\end{proof}
+
+The chain rule is the residual analogue of partial regression.  Adding new
+native probes can only subtract from the residual budget, and the subtraction
+depends only on the component of the new probes that remains after conditioning
+on \(L\).  Same-family saturation makes the boundary precise: adding probes
+that are already linear combinations of \(L\) does not change the residual.
+\Cref{sec:data-processing} turns next to the dual operations of post-processing
+the dissolving probes and coarsening the native probes.
+ \section{Data Processing and Transfer}
+\label{sec:data-processing}
+
+This section records how the adequacy residual behaves under the natural
+operations on probe families and carriers.  On the dissolving side, a response
+map simply post-processes the residual by congruence.  On the native side,
+coarsening the available probes can only enlarge the residual, because the
+explanation subspace has become smaller.  Finally, bridges between legal
+energy quotients transport residuals exactly when the bridge is exact, and with
+an explicit defect term when the dissolving part of the bridge has an error.
+Together these four laws turn \(\Xi_C(D\mid L)\) from a single Schur complement
+into a calculus.
+
+\begin{theorem}[Dissolving post-processing]
+\label{thm:xi:dissolving-post-processing}
+For a response map \(F\colon Z\to Z'\),
+\[
+  \boxed{\Xi_C(FD\mid L)=F\Xi_C(D\mid L)F^*.}
+\]
+\end{theorem}
+
+\begin{proof}
+Replace \(D\) by \(FD\) in the block currencies of
+\Cref{def:xi:adequacy-residual}.  The native block is unchanged, while every
+dissolving block is transformed by \(F\):
+\[
+  K_{(FD)(FD)}=FK_{DD}F^*,
+  \qquad
+  K_{(FD)L}=FK_{DL},
+  \qquad
+  K_{L(FD)}=K_{LD}F^*.
+\]
+Substitution gives\footnote{Verified in Lean as \texttt{SixBirdsNeedles.Xi.DataProcessing.dissolvingPostProcessing}; see \Cref{subsec:paper2-coverage-table}.}
+\[
+  \Xi_C(FD\mid L)
+  =
+  FK_{DD}F^*-FK_{DL}K_{LL}^\dagger K_{LD}F^*
+  =
+  F\bigl(K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}\bigr)F^*
+  =
+  F\Xi_C(D\mid L)F^*.
+\]
+\end{proof}
+
+\begin{definition}[Faithful reparameterization on the native range]\label{def:xi:faithful-reparameterization}
+A linear map \(A\colon Y\to Y'\) is a \emph{faithful
+reparameterization on \(\Ran L_0\)} when its restriction to
+the range of the native probe family is injective:
+\[
+  \Ker A\cap \Ran L_0=\{0\}.
+\]
+Equivalently, in the energy-scaled coordinates of
+\Cref{def:xi:energy-scaled-probes},
+\(\Ran(T_{AL}^*)=\Ran(T_L^*)\) and the native-explanation
+projection is unchanged: \(P_{AL}=P_L\).  Under this
+condition the Moore--Penrose comparison
+\(A^*(AK_{LL}A^*)^{\dagger}A=K_{LL}^{\dagger}\) holds on the
+range relevant to the Schur correction.
+\end{definition}
+
+\begin{theorem}[Native coarsening]\label{thm:xi:native-coarsening}
+For a native response map \(A\colon Y\to Y'\),
+\[
+  \boxed{\Xi_C(D\mid AL)\succeq \Xi_C(D\mid L).}
+\]
+If \(A\) is a faithful reparameterization on \(\Ran L_0\)
+in the sense of \Cref{def:xi:faithful-reparameterization},
+equality holds.
+\end{theorem}
+
+\begin{proof}
+For the energy-scaled probes of \Cref{sec:projection}, the coarsened native
+probe is
+\[
+  T_{AL}=A T_L.
+\]
+Hence the explanation range becomes
+\[
+  \Ran(T_{AL}^*)=\Ran(T_L^*A^*)\subseteq \Ran(T_L^*).
+\]
+Let \(P_{AL}\) and \(P_L\) be the orthogonal projections onto these two
+subspaces.  Since \(\Ran(T_{AL}^*)\subseteq\Ran(T_L^*)\), one has
+\(P_{AL}\preceqq P_L\), and therefore \(I-P_{AL}\succeq I-P_L\).  The
+projection identity gives
+\[
+  \Xi_C(D\mid AL)
+  =
+  T_D(I-P_{AL})T_D^*
+  \succeq
+  T_D(I-P_L)T_D^*
+  =
+  \Xi_C(D\mid L).
+\]
+If \(A\) is a faithful reparameterization on \(\Ran L_0\) in the sense of
+\Cref{def:xi:faithful-reparameterization}, then coarsening is only a
+change of coordinates on that range: \(\Ran(T_{AL}^*)=\Ran(T_L^*)\).  Thus
+\(P_{AL}=P_L\), and equality follows.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.DataProcessing.nativeCoarsening}; the Lean theorem proves the Loewner inequality \(\Xi_C(D\mid AL)\succeq \Xi_C(D\mid L)\) under the projection-comparison algebraic hypothesis on \(A^*(AK_{LL}A^*)^\dagger A\) versus \(K_{LL}^\dagger\); the reduction to comparing native-explanation subspaces is the argument here.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Exact reducing bridge]\label{thm:xi:exact-reducing-bridge}
+Suppose \(U\colon E'_{C'}\to E_C\) is an isometric energy bridge with
+\[
+  C'_0=U^*C_0U,
+  \qquad
+  L'_0=AL_0U,
+  \qquad
+  D'_0=BD_0U,
+\]
+where \(A\) is a faithful reparameterization on \(\Ran L_0\) in the
+sense of \Cref{def:xi:faithful-reparameterization}.  Assume the
+bridge is reducing on the probe-image subspace, so that the
+transported-currency identities
+\[
+  K'_{L'L'}=AK_{LL}A^*,
+  \qquad
+  K'_{D'L'}=BK_{DL}A^*,
+  \qquad
+  K'_{D'D'}=BK_{DD}B^*
+\]
+hold.  Then
+\[
+  \boxed{\Xi_{C'}(D'\mid L')=B\Xi_C(D\mid L)B^*.}
+\]
+\end{theorem}
+
+\begin{proof}
+Substituting the transported-currency identities into the Schur-complement
+definition of \(\Xi_{C'}(D'\mid L')\) gives
+\[
+  \Xi_{C'}(D'\mid L')
+  =
+  BK_{DD}B^*
+  -
+  BK_{DL}A^*(AK_{LL}A^*)^\dagger AK_{LD}B^*.
+\]
+By \Cref{def:xi:faithful-reparameterization}, faithfulness of
+\(A\) on the represented native range supplies the
+pseudoinverse comparison
+\[
+  A^*(AK_{LL}A^*)^\dagger A=K_{LL}^\dagger
+\]
+on the range relevant to the Schur correction.  Therefore the last display is
+\[
+  B\bigl(K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}\bigr)B^*
+  =
+  B\Xi_C(D\mid L)B^*.
+\]
+If \(A\) is not a faithful reparameterization in the sense of
+\Cref{def:xi:faithful-reparameterization}, this comparison can fail,
+and the situation reverts to the coarsening direction of
+\Cref{thm:xi:native-coarsening}.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.DataProcessing.exactReducingBridge}; the Lean theorem proves the bridge residual congruence under separate transported \(K_{DD}\) and Schur-correction identities under the bridge equations; the identities are derived here by direct calculation.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Defective dissolving bridge]\label{thm:xi:defective-bridge}
+Decompose the target dissolving probe as
+\[
+  D'_0 = \widetilde D'_0 + R,
+  \qquad
+  \widetilde D'_0 = BD_0U,
+\]
+and suppose the native bridge is exact and that the exact source
+probe \(\widetilde D'_0\) satisfies the hypotheses of
+\Cref{thm:xi:exact-reducing-bridge}: the bridge is reducing on
+the probe-image subspace, so that the transported-currency
+identities \(K'_{L'L'}=AK_{LL}A^*\),
+\(K'_{\widetilde D' L'}=BK_{DL}A^*\), and
+\(K'_{\widetilde D' \widetilde D'}=BK_{DD}B^*\) hold.  Then for
+every \(t>0\),
+\[
+  \boxed{
+  \Xi_{C'}(D'\mid L')
+  \preceqq
+  (1+t)B\Xi_C(D\mid L)B^*
+  +(1+t^{-1})\Xi_{C'}(R\mid L').}
+\]
+\end{theorem}
+
+\begin{proof}
+Apply the projection theorem on the primed side:
+\[
+  \Xi_{C'}(D'\mid L')=T_{D'}(I-P_{L'})T_{D'}^*.
+\]
+The decomposition \(D'_0 = \widetilde D'_0 + R\) splits the
+energy-scaled dissolving probe as
+\[
+  T_{D'}=X+Y,
+\]
+where \(X=T_{\widetilde D'}\) is the transported contribution
+from \(\widetilde D'_0=BD_0U\), and \(Y=T_R\) is the contribution
+of the defect \(R\).  After projecting away the target native
+explanation space, the standard Young splitting for operators
+\citep{BhatiaDavis1995CauchySchwarz,Ando1995MatrixYoung} gives, for every
+\(t>0\),
+\[
+  (X+Y)(I-P_{L'})(X+Y)^*
+  \preceqq
+  (1+t)X(I-P_{L'})X^*
+  +(1+t^{-1})Y(I-P_{L'})Y^*.
+\]
+The first term is identified by
+\Cref{thm:xi:exact-reducing-bridge} as \(B\Xi_C(D\mid L)B^*\),
+since \(\widetilde D'_0=BD_0U\) satisfies the exact-reducing-
+bridge hypotheses by the assumption above.  The second term is
+precisely \(\Xi_{C'}(R\mid L')\), the residual of the defect
+alone against the target native family.  This gives the
+displayed bound.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.DataProcessing.defectiveBridge}; the Lean theorem proves the defective bridge bound for every \(t>0\) under a residual decomposition and the public matrix AM--GM Loewner lemma; PSD of the transported source residual and of the defect residual are elevated hypotheses, and the Young-splitting reduction is the argument here.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+These four theorems are the data-processing and transfer calculus for the
+adequacy residual.  Post-processing on the dissolving side acts by congruence;
+coarsening on the native side enlarges the residual; exact bridges transport
+the residual by congruence on the dissolving response space; and defective
+bridges add an explicit defect residual that must be paid in the target budget.
+\Cref{sec:blind-spot} turns from transport to obstruction and repair: when a
+residual budget fails, the failure is witnessed by an explicit recombination
+vector.
+ \section{Obstruction and Repair Calculus}
+\label{sec:blind-spot}
+
+The calculus so far has built the adequacy residual, identified its projection
+geometry, and described how it behaves under extension, processing, and
+transfer.  This section turns the same residual into a budgeted obstruction.
+When a declared residual budget fails, the failure is not merely formal: it is
+detected by an explicit recombination vector in the dissolving response space.
+Such a vector is the blind-spot witness, and the section closes by listing the
+lawful repairs available after the witness has exposed the failure.
+
+\begin{definition}[Declared residual budget and adequacy defect]\label{def:xi:adequacy-defect}
+A \emph{declared residual budget} on \(Z\) is a positive semidefinite operator
+\(\Omega\succeq 0\).  The corresponding \emph{adequacy defect} of \(D\)
+relative to \(L\) and \(\Omega\) is the Hermitian operator
+\[
+  \Delta_\Xi=\Xi_C(D\mid L)-\Omega,
+\]
+where \(\Xi_C(D\mid L)\) is the adequacy residual of
+\Cref{def:xi:adequacy-residual}.  The budget holds when
+\(\Delta_\Xi\preceqq 0\); a positive quadratic-form direction of
+\(\Delta_\Xi\) is a certificate that it does not.
+\end{definition}
+
+The defect need not be positive semidefinite; only one positive quadratic-form
+direction is needed to witness failure.
+
+\begin{theorem}[Blind-spot witness]\label{thm:xi:blind-spot-witness}
+\[
+  \Xi_C(D\mid L)\npreceq \Omega
+\]
+if and only if there exists \(z\in Z\) such that
+\[
+  \boxed{z^*\bigl(\Xi_C(D\mid L)-\Omega\bigr)z>0.}
+\]
+Moreover, the maximum additive violation is \(\lambda_{\max}(\Delta_\Xi)\),
+the largest eigenvalue of the adequacy defect.
+\end{theorem}
+
+\begin{proof}
+The Loewner inequality \(A\preceqq B\) is equivalent to
+\[
+  z^*(B-A)z\geq 0
+\]
+for every vector \(z\).  Its negation is therefore the existence of some vector
+whose quadratic form makes \(B-A\) negative, equivalently whose quadratic form
+makes \(A-B\) positive.  Applying this with
+\[
+  A=\Xi_C(D\mid L),
+  \qquad
+  B=\Omega,
+\]
+shows that \(\Xi_C(D\mid L)\npreceq\Omega\) is exactly the existence of
+\(z\in Z\) with \(z^*\Delta_\Xi z>0\).  The largest normalized value of this
+quadratic form is
+\[
+  \sup_{z\neq 0}\frac{z^*\Delta_\Xi z}{z^*z}
+  =
+  \lambda_{\max}(\Delta_\Xi),
+\]
+by the Rayleigh-quotient principle for Hermitian operators
+\citep{Bhatia1997MatrixAnalysis,HornJohnson2013MatrixAnalysis}.  Thus
+\(\lambda_{\max}(\Delta_\Xi)\) is the largest single-vector additive violation.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.Xi.Obstruction.blindSpotWitness}; the Lean theorem proves the witness equivalence \(\Xi_C(D\mid L)\npreceq\Omega\) iff there exists \(z\) with \(z^*\Delta_\Xi z>0\) under the identification of the maximum additive violation with \(\lambda_{\max}(\Delta_\Xi)\) being the Rayleigh-quotient consequence proved here.  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}.}
+\end{proof}
+
+Once a blind-spot witness has been found, the repair options are constrained.
+Each lawful repair either reduces the residual by adding genuine explanatory
+data, improves the bridge through which the residual is transported, or narrows
+the claim being made.
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{Strict native extension} adds new native probes and subtracts a
+  positive Schur term from the residual, as in
+  \Cref{thm:xi:chain-rule}.
+
+  \item \emph{Bridge repair} improves the audited bridge data so that the
+  transferred residual is lowered or the explicit defect term is reduced, as
+  in \Cref{thm:xi:exact-reducing-bridge,thm:xi:defective-bridge}.
+
+  \item \emph{Null-mode repair} annihilates or quotients away illegal
+  zero-energy readouts so that the standing null-mode legality hypothesis is
+  restored on a corrected carrier.
+
+  \item \emph{Budget repair} weakens the claim by increasing \(\Omega\).  This
+  may make the inequality true, but it does not reduce the blind spot itself.
+
+  \item \emph{Nonclaim or gating} narrows the scope of the claim by excluding
+  the offending response direction instead of proving adequacy for it.
+\end{enumerate}
+Same-family repetition saturates this list: repeating an old probe, or
+repackaging the same native data, does not lower the witness because it does
+not change \(\Xi_C(D\mid L)\), as shown by
+\Cref{cor:xi:same-family-saturation}.  Thus a repair that merely renames the
+existing native family is not a residual repair.  This catalog is the dual of
+the all-six repair language of \citet{Tsiokos2026NeedleKiller}: here the same
+distinction is expressed entirely in residual-budget terms.
+
+The blind-spot witness theorem closes the calculus.  Every quantitative claim
+that a residual budget fails reduces to an explicit recombination vector with
+positive excess, and the excess is measured by the adequacy defect.  Combined
+with the projection, optimality, exactness, chain-rule, and data-processing
+identities of the preceding sections, this makes the adequacy residual a
+calculable currency rather than an opaque error term.  This witness equivalence
+is used inside the all-six taxonomy of \citet{Tsiokos2026NeedleKiller} to
+identify failure modes precisely.
+ 
+
+\section{Discussion}
+\label{sec:discussion}
+
+The paper has developed a residual calculus from one starting point: the Schur
+complement
+\[
+  \Xi_C(D\mid L)=K_{DD}-K_{DL}K_{LL}^\dagger K_{LD}
+\]
+formed on the legal energy quotient.  From that definition, the preceding
+sections proved the projection identity of \Cref{sec:projection}, the
+optimal-residual identity and Loewner minimality across explanation maps, the
+four-form exact-adequacy theorem, the adequacy-promotion step of
+\Cref{thm:xi:adequacy-promotion}, the chain rule under strict native
+extension, the four data-processing and transfer laws including
+\Cref{thm:xi:dissolving-post-processing} and
+\Cref{thm:xi:defective-bridge}, and the blind-spot witness characterization of
+\Cref{sec:blind-spot}.  Together these results give a self-contained
+Schur-complement-residual calculus under the legal-quotient hypotheses of
+\Cref{sec:setup}.
+
+The local mathematical tools are classical.  The construction uses Schur
+complements, Moore--Penrose pseudoinverses, the projection identity
+\[
+  T_L^*(T_LT_L^*)^\dagger T_L
+\]
+as the orthogonal projection onto \(\Ran(T_L^*)\), and Douglas-style
+factorization ideas behind the range-inclusion arguments for faithful
+reparameterizations and bridges.  The paper does not claim novelty for those
+operator-theoretic ingredients.  Its contribution is the framing: the Schur
+complement is treated as an audited residual currency, with projection,
+optimality, exactness, extension, data-processing, transfer, and witness laws
+all stated against one energy quotient and one null-mode legality discipline.
+This is why the object is not merely a block-matrix calculation but a residual
+accounting device.
+
+The phrase ``blind-spot currency'' is meant in that accounting sense.  A
+nonzero residual alone says that some dissolving response is not explained by
+the native family; it does not say how the failure is budgeted, transported, or
+repaired.  Treating the residual as a currency makes it a first-class positive
+operator with a declared budget, a witness theorem, and lawful repair
+operations.  From the standpoint of this paper, the witness theorem of
+\Cref{sec:blind-spot} is what gives quantitative residual claims their
+operational meaning: a failed budget is equivalent to a concrete recombination
+vector with positive excess.
+
+The pseudoinverse convention is also part of the standing setup, not an
+auxiliary choice made separately in each theorem.  The paper uses the
+Moore--Penrose pseudoinverse on the legal quotient: \(C^\dagger\) acts as
+\(C_0^{-1}\) on \(E_C\) and as zero on \(\Ker C\), and the block pseudoinverses
+are the corresponding Moore--Penrose pseudoinverses of positive operators on
+their response spaces.  The null-mode legality discipline of \Cref{sec:setup}
+is what makes this convention meaningful for all probe families entering a
+currency or residual.
+
+An application of this calculus in a layer-dissolving framework is given in
+\citet{Tsiokos2026NeedleKiller}.  In that application, the adequacy-promotion
+theorem is the gate converting native and residual bounds into a dissolving
+budget; the data-processing and bridge identities transport the residual
+through audited bridges; and the blind-spot witness theorem supplies the
+failure-detection statement inside the all-six taxonomy developed there.  The
+present paper does not develop those applications.  Its task is to supply the
+self-contained Schur-complement calculus that such applications can cite.
+
+Several scope fences are therefore part of the claim.  The paper does not
+assert that every raw substrate sees every dissolving probe, and it does not
+assert that \(\Xi_C(D\mid L)=0\) generically; exact adequacy is a hypothesis to
+verify, not a default state.  It does not promote a coarse residual view to an
+intrinsic fine-grained residual without an audited bridge, and it does not
+treat a finite-stage adequacy statement as predictive adequacy across an
+indexed family.  Finally, it does not claim novelty for Schur complements,
+pseudoinverses, projection identities, or Douglas-style factorization.  The
+claim is the residual-calculus packaging under the stated hypotheses.
+
+Several directions remain natural.  The defective dissolving bridge of
+\Cref{thm:xi:defective-bridge} should admit sharper source-defect tradeoffs
+under stronger structural hypotheses on the bridge map.  Predictive adequacy
+ladders, deferred to appendix material in this preparation arc, extend the
+chain-rule viewpoint across indexed families of native extensions and are the
+next development for layered or staged settings.  The witness theorem may also
+support finer repair classifications under additional record-keeping
+discipline; the all-six taxonomy of \citet{Tsiokos2026NeedleKiller} is one
+such refinement.
+ 
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The adequacy residual \(\Xi_C(D\mid L)\) is the Schur-complement leftover
+currency recording what the dissolving probe family \(D\) measures beyond what
+the native probe family \(L\) explains, relative to the audit energy on the
+legal quotient.  This paper developed that object as a calculus: projection,
+optimal residuality, exact adequacy, promotion, strict-extension chain rule,
+data processing, transfer, and blind-spot witnessing.  The result is a
+self-contained Schur-complement-residual calculus on the legal energy quotient.
+
+The calculus stands on its own as finite-dimensional operator theory under the
+standing hypotheses of \Cref{sec:setup}.  An application to a layer-dissolving
+framework is given in \citet{Tsiokos2026NeedleKiller}, where adequacy
+promotion converts native and residual budgets into a transferred dissolving
+budget.  From the standpoint of this paper, that is one use case; readers who
+want only the residual calculus need not consult that work.
+
+The residual is instance-specific.  The paper does not classify all possible
+probe-family pairs \((L,D)\), does not claim exact adequacy generically, does
+not claim novelty for the classical operator-theoretic constructions it uses,
+and does not depend on any particular application instance.  Its theorem-level
+claim is the Schur-complement-residual calculus under the stated hypotheses.
+
+Natural next steps are correspondingly precise.  Predictive adequacy ladders
+extend the chain rule across indexed native extensions; sharper defect-bridge
+tradeoffs may follow from stronger involution or structural hypotheses; and
+the witness theorem can support refined repair classifications under additional
+record-keeping discipline.  One natural future use is to deploy the witness
+theorem inside an audited framework with the all-six discipline described in
+\citet{Tsiokos2026NeedleKiller}.
+ 
+\appendix
+\section{Lean Formalization Disclosure}
+\label{app:formalization}
+
+\subsection{Trust base and methodology}
+\label{subsec:paper2-trust-methodology}
+
+The Lean artifacts cited in this appendix were checked with Lean 4.28.0
+\citep{deMouraUllrich2021Lean4,MathlibCommunity2020Lean}.  For
+every cited theorem entry, the audited axiom closure is contained in the
+standard trust base: \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}.  The project discipline forbids \texttt{sorry},
+project-local \texttt{axiom}, and \texttt{opaque} declarations in the needles
+Lean corpus; \texttt{lean/manifests/trust\_base.txt} is the locked allowlist
+used by the manifest checker when auditing theorem dependency closures.
+Coverage is recorded per row as \emph{theorem}, \emph{partial},
+\emph{definition}, or \emph{not mechanized}; these labels govern the wording
+below.
+
+\subsection{Mechanization disclosure tiers}
+\label{subsec:paper2-mechanization-disclosure-tiers}
+
+Body footnotes use a three-tier disclosure discipline keyed to the alignment
+column of the per-label coverage table.
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.25\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Alignment & Tier & Body footnote wording template \\
+    \midrule
+    \texttt{faithful} & T1 & Verified in Lean as \(\langle\)declaration\(\rangle\); see \Cref{subsec:paper2-coverage-table}. \\
+    \texttt{narrowed-surrogate / partial} & T2 & Mechanized in Lean as \(\langle\)declaration\(\rangle\); the Lean theorem proves \(\langle\)sub-claim\(\rangle\) under \(\langle\)elevation\(\rangle\).  The full statement is proved here.  See \Cref{subsec:paper2-coverage-table}. \\
+    \texttt{projection-packaged} & T3 & Tracked in the Lean formalization as \(\langle\)declaration\(\rangle\): a conditional schema over \(\langle\)record fields\(\rangle\) rather than an independent derivation, which is proved here.  See \Cref{subsec:paper2-coverage-table}. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Paper 2 body footnote disclosure tiers.}
+  \label{tab:paper2-mechanization-disclosure-tiers}
+\end{table}
+
+This tier discipline is the canonical wording rule for body footnotes: a
+reader can cross-check each theorem footnote against the alignment column of
+the coverage table below.
+
+\subsection{Standing narrowings and elevated hypotheses}
+\label{subsec:paper2-standing-narrowings}
+
+Several Lean fragments use the concrete diagonal pseudoinverse
+\texttt{diagonalPseudoInverse C} as the finite-matrix representative of the
+paper's Moore--Penrose inverse \(C^\dagger\).  This is paper-faithful on the
+legal quotient under the corresponding strict-positivity support hypotheses,
+but the full quotient-level pseudoinverse theory is not mechanized in this
+codebase.  When the body invokes \(C^\dagger\), the per-label disclosure below
+records whether Lean proves the stated clause directly or proves a finite
+surrogate under stricter positivity.
+
+Many partial-status theorems also carry elevated algebraic hypotheses, such as
+transposition symmetry, Moore--Penrose-on-support identities, or explicit
+Schur-update assumptions.  The elevation is documented per row in the coverage
+table; the paper supplies the ordinary mathematical proof or explanation for
+the remaining clause.  These elevations should be stated in mathematical
+language when relevant and should not be hidden behind manifest terminology.
+
+The projection-packaged status flags statements whose Lean form retrieves data
+from a proof-carrying record \citep{Necula1997ProofCarryingCode} or
+conditional schema rather than deriving the paper theorem independently.  Such rows are traceability coverage, not
+substantive Lean proof coverage.  The body may rely on the mathematical
+statement, but the Lean mention must use the tier wording in
+\Cref{tab:paper2-mechanization-disclosure-tiers}.
+
+\subsection{Per-label coverage table}
+\label{subsec:paper2-per-label-coverage}
+\label{subsec:paper2-coverage-table}
+
+Table~\ref{tab:paper2-lean-coverage} records the per-row Lean
+coverage, alignment, and short disclosure note for each
+statements-of-record row.
+Table~\ref{tab:paper2-nonmechanized-coverage} lists the rows
+retained with no Lean entry.
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{2.5pt}
+  \renewcommand{\arraystretch}{0.94}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.37\linewidth} >{\raggedright\arraybackslash}p{0.12\linewidth} >{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean coverage & Alignment & Disclosure note \\
+    \midrule
+    \path{thm:xi:minimum-spend-duality} & partial & needs-strengthening & Lean proves the off-range infinite-cost branch; the finite branch is paper-side. \\
+    \path{def:xi:adequacy-residual} & definition & narrowed-surrogate & The Lean realization exposes the pseudoinverse as a parameter; the paper states the Moore--Penrose object. \\
+    \path{thm:xi:projection-identity} & partial & narrowed-surrogate & Lean proves the algebraic identity from explicit projection and factorization hypotheses. \\
+    \path{thm:xi:optimal-residual-identity} & partial & needs-strengthening & Lean proves the Loewner-minimal consequence under the elevated algebraic identity; the full identity proof is paper-side. \\
+    \path{thm:xi:exact-adequacy} & partial & needs-strengthening & Lean proves the easy implication chain and records hard directions as hypotheses. \\
+    \path{thm:xi:adequacy-promotion} & partial & narrowed-surrogate & Lean proves promotion conditional on the upstream adequacy-interface algebraic hypotheses. \\
+    \path{thm:xi:chain-rule} & partial & needs-strengthening & Lean proves the Loewner consequence under an elevated Schur chain-rule identity. \\
+    \path{cor:xi:same-family-saturation} & partial & narrowed-surrogate & Lean proves saturation under the chain-rule identity and an elevated zero cross-currency hypothesis. \\
+    \path{thm:xi:dissolving-post-processing} & theorem & faithful & Lean proves the faithful finite data-processing identity. \\
+    \path{thm:xi:native-coarsening} & partial & narrowed-surrogate & Lean proves the Schur-complement difference under the explicit Moore--Penrose comparison hypothesis. \\
+    \path{thm:xi:exact-reducing-bridge} & partial & narrowed-surrogate & Lean proves the final residual equality from transported block and Schur-correction identities. \\
+    \path{thm:xi:defective-bridge} & partial & narrowed-surrogate & Lean proves the bound from a residual decomposition plus PSD hypotheses for source and defect residuals. \\
+    \path{thm:xi:blind-spot-witness} & partial & needs-strengthening & Lean proves the Loewner-violation witness equivalence; the maximum-violation spectral clause is paper-side. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Manifest coverage at commit \texttt{3bbe9f9}.}
+  \label{tab:paper2-lean-coverage}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.38\linewidth} >{\raggedright\arraybackslash}p{0.14\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Destination & Disclosure note \\
+    \midrule
+    \path{rmk:xi:null-mode-warning} & appendix & No Lean entry; this standing-hypothesis warning is retained as appendix or setup support. \\
+    \path{rmk:xi:projection-interpretation} & appendix & No Lean entry; this interpretive projection remark is handled in prose and may become a short body aside if needed. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Retained rows with no Lean entry.}
+  \label{tab:paper2-nonmechanized-coverage}
+\end{table}
+
+\subsection{Lean declaration map}
+\label{subsec:paper2-lean-declaration-map}
+
+Table~\ref{tab:paper2-lean-declaration-map} maps each paper label to
+its full Lean declaration path; the per-row coverage notes above use
+short prose disclosures and refer to this table for the canonical
+identifiers.
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{2.5pt}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Paper label & Lean declaration path \\
+    \midrule
+    \path{thm:xi:minimum-spend-duality} & \path{SixBirdsNeedles.Xi.Currency.xiMinimumSpendDuality} \\
+    \path{def:xi:adequacy-residual} & \path{SixBirdsNeedles.Xi.AdequacyResidual.adequacyResidual} \\
+    \path{thm:xi:projection-identity} & \path{SixBirdsNeedles.Xi.Projection.projectionIdentity} \\
+    \path{thm:xi:optimal-residual-identity} & \path{SixBirdsNeedles.Xi.OptimalResidual.optimalResidualIdentity} \\
+    \path{thm:xi:exact-adequacy} & \path{SixBirdsNeedles.Xi.OptimalResidual.exactAdequacy} \\
+    \path{thm:xi:adequacy-promotion} & \path{SixBirdsNeedles.Xi.Promotion.adequacyPromotion} \\
+    \path{thm:xi:chain-rule} & \path{SixBirdsNeedles.Xi.StrictExtension.chainRule} \\
+    \path{cor:xi:same-family-saturation} & \path{SixBirdsNeedles.Xi.StrictExtension.sameFamilySaturation} \\
+    \path{thm:xi:dissolving-post-processing} & \path{SixBirdsNeedles.Xi.DataProcessing.dissolvingPostProcessing} \\
+    \path{thm:xi:native-coarsening} & \path{SixBirdsNeedles.Xi.DataProcessing.nativeCoarsening} \\
+    \path{thm:xi:exact-reducing-bridge} & \path{SixBirdsNeedles.Xi.DataProcessing.exactReducingBridge} \\
+    \path{thm:xi:defective-bridge} & \path{SixBirdsNeedles.Xi.DataProcessing.defectiveBridge} \\
+    \path{thm:xi:blind-spot-witness} & \path{SixBirdsNeedles.Xi.Obstruction.blindSpotWitness} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Mapping from paper labels to Lean declaration paths.}
+  \label{tab:paper2-lean-declaration-map}
+\end{table}
+ \section{Predictive Adequacy Ladders}
+\label{app:predictive-ladders}
+
+This appendix records the staged propagation behavior of the adequacy residual
+when carriers and probe families are indexed by an accepted stage \(j\).  The
+forms below parallel the chain-rule and data-processing identities of
+\Cref{sec:chain-rule,sec:data-processing}, but they are written as recurrences
+rather than as single-step comparison laws.  The body of the paper stays with
+the single-step calculus; the ladder forms are retained here for the companion
+paper's predictive-membrane framework.
+
+At stage \(j\), write
+\[
+  \Xi_j=\Xi_{C_j}(D_j\mid L_j),
+\]
+the stage-local adequacy residual built from the stage carrier
+\((E_j,C_j)\), the stage native probe family \(L_j\), and the stage
+dissolving probe family \(D_j\).  Each \(\Xi_j\) is therefore the same
+Schur-complement residual studied in the body, but computed on the legal
+energy quotient at that stage.
+
+The first ladder is multiplicative-additive, in the discrete-Gronwall
+tradition of \citet{Pachpatte1998Inequalities}.  Suppose the transported
+residuals satisfy
+\[
+  \Xi_{j+1}\preceqq (1+\eps_j)A_j\Xi_j A_j^*+E_j,
+\]
+where \(A_j\) is the stage-to-stage transport map and \(E_j\succeq 0\) is
+the defect operator paid at stage \(j\).  If the budget recurrence behaves
+correspondingly and, after transporting into a common response space,
+\[
+  \prod_j(1+\eps_j)<\infty,
+  \qquad
+  \sum_j E_j\preceqq E_\infty,
+\]
+then predictive adequacy is maintained: one uniform budget bounds the
+residual across all accepted stages.  The conjugation by \(A_j\) carries the
+residual from one stage to the next, the factor \(1+\eps_j\) records the
+allowed multiplicative inflation, and the summability hypotheses say that
+neither the inflation nor the accumulated defect can grow without bound.
+
+A stronger ladder assumes strict collapse at each stage:
+\[
+  \Xi_{j+1}\preceqq (1-\alpha_j)\Xi_j+E_j,
+\]
+with \(\alpha_j>0\) and
+\[
+  \prod_j(1-\alpha_j)=0,
+\]
+together with controlled accumulated defects.  Here \(\alpha_j\) is the
+per-stage contraction coefficient.  The vanishing product forces the
+multiplicative memory of the initial residual to disappear, while the defect
+sum is the remaining obstacle to exact adequacy at the limit.  In the
+defect-free case, this is the strict-extension form of blind-spot elimination;
+with defects, the limit is controlled modulo the accumulated residual defect.
+
+The multiplicative-additive ladder is the staged analogue of the Schur-update
+chain rule in \Cref{thm:xi:chain-rule} together with the data-processing and
+transfer laws of \Cref{sec:data-processing}.  The strict-collapse ladder is
+the natural staged form of exact adequacy in \Cref{thm:xi:exact-adequacy}: in
+the limiting regime, residual disappearance gives the staged ``no leftover''
+condition for predictive adequacy.  These ladders are not proved in the body;
+they are recorded here because they are used in the predictive-membrane
+framework of \citet{Tsiokos2026NeedleKiller}.
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

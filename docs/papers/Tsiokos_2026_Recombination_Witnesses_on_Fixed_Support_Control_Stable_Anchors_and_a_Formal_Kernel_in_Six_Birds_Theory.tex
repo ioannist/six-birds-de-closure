@@ -1,0 +1,845 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+\newcommand{\BranchwiseQ}{K}
+\newcommand{\RecombinationQ}{R}
+\newcommand{\ForgetfulMap}{\eta}
+\newcommand{\BranchwiseEq}{\sim_{\mathrm{bw}}}
+\newcommand{\RecombinationEq}{\sim_{\mathrm{rec}}}
+\newcommand{\ObservableFamily}{\mathcal{O}}
+\newcommand{\Assemblage}{\mathcal{A}}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Recombination Witnesses on Fixed Support:\\Control-Stable Anchors and a Formal Kernel\\in Six Birds Theory}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{April 2026}
+\hypersetup{
+  pdftitle={Recombination Witnesses on Fixed Support: Control-Stable Anchors and a Formal Kernel in Six Birds Theory},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+This paper isolates a control-stable intrinsic family inside the fixed-support recombination layer of Six Birds theory. The first three papers of the series established admissible event packages on fixed support, predictive quotients on single histories, and the branchwise and recombination quotients on branch assemblages. Here we identify a two-anchor relative-cycle family in which branchwise predictive agreement does not determine later recombination observables. We instantiate the standard factorized no-interference collapse on the flagship surface, exhibit exact-finite separation for two flagship anchors, and formalize a concrete Lean witness kernel for the reference-positive anchor, including a no-factorization corollary. We separate the flagship positives from classical mixture, hidden predictive memory, protocol artifact, and boundary-collapse or completion-sensitive negatives using an explicit matched control bundle. We also show that nearby exact positives exist within the same relative-cycle family, while the erasure side remains empirical support rather than formal core.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords:} Six Birds Theory; fixed support; recombination witnesses; exact-finite models; formal verification.
+
+\section{Introduction}
+
+Six Birds Theory is an autonomous emergence calculus: it constructs layered descriptions of a stochastic substrate from stable records, package-relative identity, and admissible completion, without importing Hilbert space, amplitudes, or the Born rule \cite{Tsiokos2026LocallyBoolean,Tsiokos2026HolonomyMemory}. A central question for the theory is whether its substrate can exhibit interference-like phenomena, in which the collective organization of alternative branches carries observable content beyond what is available from examining each branch independently. In quantum mechanics, this is the lesson of which-path erasure: erasing which-path markers can restore interference fringes, because the assemblage of alternatives encodes structure that individual-branch readouts miss. Whether an analogous phenomenon arises on a purely stochastic substrate, and whether it survives rigorous controls, is what this paper series investigates.
+
+The first three papers developed the fixed-support setting in stages. The opening paper established admissible event packages and the discipline of comparing candidate packages on a common fixed support, showing that locally classical event structure need not extend to an admissible global package. The second introduced current and predictive quotients on single histories and gave an exact witness logic for hidden predictive memory on the reachable image. The third lifted the same discipline to branch assemblages and showed that branchwise predictive content and later recombination-sensitive content can separate: the branchwise quotient $K_i$, which captures what is available from independent predictive treatment of branches, need not exhaust the recombination quotient $R_i$, which captures what later observations on the branch family as a whole can distinguish. That separation, strict refinement of $R_i$ over $K_i$, is the substrate-level analogue of which-path interference. \cite{Tsiokos2026LocallyBoolean,Tsiokos2026HolonomyMemory,Tsiokos2026MarkingErasureRecombination}
+
+The present paper asks a narrower question than the third paper, but a sharper one. Once strict recombination refinement has been exhibited on fixed support, which positives survive a full matched-control program, and which of those support a concrete formal witness kernel rather than only benchmark-side evidence? We isolate a small intrinsic family inside the recombination layer: a two-anchor relative-cycle flagship family that survives null, memory-only, artifact, and completion-sensitive controls, admits nearby breadth within the same family, and now supports a concrete formal witness kernel for the reference-positive anchor.
+
+At the level of neighboring literature, the present paper sits at the intersection of four established mathematical strands. Its quotient language is closest to behavioral and observational equivalence, from Nerode-style future indistinguishability to bisimulation and probabilistic bisimulation \cite{Nerode1958,Park1981,Milner1980,LarsenSkou1991,Sangiorgi2011,vanGlabbeek2001}. Its predictive quotient viewpoint is closest to causal-state, observable-operator, and predictive-state models, which likewise define state through future-observable consequences rather than current labels alone \cite{CrutchfieldYoung1989,ShaliziCrutchfield2001,Jaeger2000,LittmanSuttonSingh2001}. Its factorized collapse theorem sits near exact lumpability and state aggregation in finite stochastic systems \cite{KemenySnell1976,Buchholz1994,GivanDeanGreig2003,LiWalshLittman2006}. And its formal kernel belongs to the now-standard practice of machine-checked finite mathematics in modern proof assistants \cite{deMouraUllrich2021,MathlibCommunity2020,Gonthier2008,Paulson2015,LiuHasanTahar2011}. The contribution of the present paper is not to introduce these general mathematical ideas, but to compose them into a fixed-support recombination program with explicit matched controls and a concrete intrinsic flagship family.
+
+The paper does not attempt a generic classification of all recombination-positive families. It does not present a route atlas as its main object, and it does not treat budget-mediated or protocol-mediated surfaces as coequal positive stories. Those surfaces remain relevant as controls and exclusions, and they matter to the internal development of the broader program, but the positive result of the present paper is simpler. It is the identification and consolidation of a control-stable intrinsic exact-finite family on fixed support.
+
+The paper makes four contributions. First, it isolates a two-anchor flagship core inside the recombination layer: a reference-positive anchor and a matched completion-partner anchor in a relative-cycle family. Second, it shows that these anchors are separated from classical mixture, hidden predictive memory without recombination refinement, protocol artifact, and boundary-collapse or completion-sensitive negatives by an explicit matched control bundle. Third, it shows that the flagship pair is not an isolated accident: nearby exact positives exist within the same relative-cycle family, even though the erasure side remains support rather than formal core. Fourth, it upgrades the positive core from benchmark-backed evidence alone to a theorem-backed kernel: the factorized no-interference collapse theorem is instantiated on the flagship surface, and concrete Lean witness kernels are now available for the reference-positive anchor and its matched completion-partner counterpart.
+
+The evidence has a stratified status. The two relative-cycle anchors form the formal and empirical core. The erasure anchor remains empirical support rather than formal core. Nearby shortlist-confirmed positives provide bounded breadth. The Lean formalization proves the flagship collapse and witness kernels, while benchmark-side diagnostics such as route readability and visibility recovery remain outside the present formal kernel.
+
+The comparative benchmark arc is organized accordingly. We move from a null baseline, to hidden predictive memory without recombination refinement, to readable suppression and erased-recovery references, to the flagship positives, and finally to artifact and completion-sensitive negatives. Each stage fixes a same-support alternative that must be separated from the flagship family.
+
+The rest of the paper is organized as follows. Section 2 recalls the fixed-support preliminaries inherited from the first three papers. Section 3 introduces the flagship family and its comparison surfaces. Section 4 states the theorem spine, including the factorized no-interference collapse result and the anchor-level witness and contrast targets. Section 5 presents the exact-finite flagship anchors. Section 6 gives the matched controls and exclusions. Section 7 turns to nearby breadth within the same relative-cycle family. Section 8 summarizes the formal kernel and its present boundary. Section 9 discusses scope and limitations, and Section 10 concludes.
+
+\section{Preliminaries from the First Three Papers}
+
+This section recalls only the fixed-support structures needed in the present paper. The underlying admissibility framework, the single-history predictive quotients, and the branch-assemblage recombination layer were developed in the first three papers of the series; here we use only the parts needed to define the comparison base for the flagship family studied below. \cite{Tsiokos2026LocallyBoolean,Tsiokos2026HolonomyMemory,Tsiokos2026MarkingErasureRecombination}
+
+\subsection{Fixed support, admissibility, and same-object comparison}
+
+The first paper fixed the comparison discipline used throughout the series: candidate packages are compared on a common finite support rather than by changing the underlying object being compared. In particular, admissibility is always a same-support notion. This is what makes later quotient comparisons meaningful: when two packages or observables are compared, they are compared on the same comparison base rather than by moving to a different support on which the distinction may be trivialized or manufactured. \cite{Tsiokos2026LocallyBoolean}
+
+We therefore work throughout on a fixed exact-finite support and compare later structures only after the support has been fixed. The present paper does not revisit the full admissibility theory of the opening paper; it uses that theory only to ensure the intrinsic recombination claim rests on well-founded comparisons.
+
+\subsection{Current and predictive quotients on single histories}
+
+The second paper introduced the current and predictive quotients on reachable single-history states. At an interface \(i\), let \(\mathcal H_i\) denote the reachable histories or interface states under the admissible dynamics. The current quotient
+\[
+Q_i
+\]
+identifies histories that are indistinguishable by the current event package at that interface. The predictive quotient
+\[
+M_i
+\]
+identifies histories that remain indistinguishable under all admissible future generator/observable words on the reachable image. There is a canonical factor map
+\[
+\pi_i : M_i \to Q_i,
+\]
+and strict refinement of \(\pi_i\) is the exact witness signature for hidden predictive memory. \cite{Tsiokos2026HolonomyMemory}
+
+The present paper uses only the future-sufficiency and factorization logic of \(M_i\). It does not reopen the full predictive-memory taxonomy. Instead, \(Q_i\) and \(M_i\) provide the single-history ingredients from which the later branchwise and recombination quotients are built.
+
+As external comparison points, causal states, predictive state representations, and observable-operator models are the closest established future-sufficient state formalisms \cite{CrutchfieldYoung1989,ShaliziCrutchfield2001,LittmanSuttonSingh2001,Jaeger2000}. The present use is narrower: it keeps the future-sufficiency logic but applies it on a fixed-support comparison base that is later lifted to branch assemblages.
+
+\subsection{Branch assemblages and the quotients \(K_i\) and \(R_i\)}
+
+The third paper lifted the same fixed-support discipline from single histories to branch assemblages. At interface \(i\), a branch assemblage \(B\) is a finite weighted family of reachable branches on common support. Its branchwise summary \(\kappa_i(B)\) records the weighted multiset of predictive classes of its members. This yields the branchwise quotient
+\[
+K_i = \mathcal B_i / {\equiv_i^{\mathrm{bw}}},
+\]
+which identifies branch assemblages with the same branchwise predictive summary. \cite{Tsiokos2026MarkingErasureRecombination}
+
+The same paper then introduced the recombination quotient
+\[
+R_i = \mathcal B_i / {\equiv_i^{\mathrm{rec}}},
+\]
+which identifies branch assemblages that are indistinguishable by the admissible later recombination observables. When recombination equivalence refines branchwise equivalence, there is a canonical forgetful map
+\[
+\eta_i : R_i \to K_i.
+\]
+The key exact-finite signal is strict refinement: \(R_i\) need not collapse to \(K_i\). In that case, later recombination-sensitive content is not exhausted by branchwise predictive bookkeeping alone. \cite{Tsiokos2026MarkingErasureRecombination}
+
+This is the layer in which the present paper operates. The question is no longer whether recombination-sensitive refinement can occur at all; the third paper already established that it can. The present paper asks which such positives survive a full matched-control program and support a concrete formal witness kernel.
+
+At the level of general mathematical form, this move sits near the passage from behavioral equivalence on a base state surface to quotients on finite composites, and to the broader literature on observational equivalence, bisimulation, and probabilistic bisimulation \cite{Nerode1958,Park1981,Milner1980,LarsenSkou1991,Sangiorgi2011,vanGlabbeek2001}. What is specific here is the fixed-support branch-assemblage setting and the later recombination observable family.
+
+\subsection{Factorized and no-interference comparison surface}
+
+The clean comparison surface used throughout the present paper is the factorized or no-interference regime inherited from the third paper and now exposed again in the formal kernel. In this regime, later recombination observables factor through the branchwise summary, so recombination contributes no extra distinguishing power beyond \(K_i\). Equivalently, on the relevant support the recombination quotient collapses to the branchwise quotient: \cite{Tsiokos2026MarkingErasureRecombination}
+\[
+R_i \cong K_i.
+\]
+
+This collapse is the natural null comparison target for the flagship family. The positive results of the present paper therefore do not rest merely on the existence of a quotient \(R_i\). They rest on exact-finite cases that depart from the factorized baseline while remaining separated from null, memory-only, artifact, and completion-sensitive explanations by explicit matched controls.
+
+This collapse is mathematically closest to exact aggregation or lumpability: a coarser summary remains sufficient because later evolution and observation factor through it \cite{KemenySnell1976,Buchholz1994,GivanDeanGreig2003}. By design, the present paper stays on the exact side of this literature rather than the approximate abstraction side \cite{LiWalshLittman2006}. Conversely, the flagship no-factorization contrasts use the standard quotient-factorization obstruction pattern familiar from universal algebra and quotient structures \cite{BurrisSankappanavar1981}.
+
+These preliminaries are all that are needed for the core argument. The detailed admissibility theory remains in the first paper, the predictive-witness theory in the second, and the general recombination construction in the third.
+
+\section{Flagship Target Family and Comparison Surfaces}
+
+The positive core of the paper is a small intrinsic family inside the fixed-support recombination layer. It is not a generic classification result, and it is not the claim that every recombination-positive family should be treated as intrinsic in the same way. The paper instead isolates a specific exact-finite family in which branchwise agreement fails to determine later recombination observables, while matched controls remove the most immediate alternative explanations.
+
+\subsection{The two-anchor flagship core}
+
+The formal and empirical core of the paper consists of two recombination-quotient anchors in a relative-cycle family. We refer to them as the \emph{reference-positive anchor} and the \emph{completion-partner anchor}. The first is the primary intrinsic witness surface; the second is its matched partner on the paired completion surface. They are treated as a two-anchor core rather than as interchangeable duplicates: the reference-positive anchor is the primary formal target, while the completion-partner anchor shows that the same intrinsic recombination signal survives the paired completion surface rather than disappearing under it.
+
+At the level relevant for the present paper, the two anchors share the same core qualitative structure. In each case there is branchwise agreement on the chosen support and strict recombination separation under a later admissible observable family. This is the paper's flagship phenomenon. The exact invariant snapshots are deferred to Section~5, but the structural point can be stated here: the flagship family does not merely exhibit later visible differences; it exhibits later differences that are invisible at the branchwise predictive level yet visible at the recombination level on the same support.
+
+\subsection{Support-only erasure side and family context}
+
+The erasure side remains part of the paper, but not as a third flagship theorem target. It serves two different roles. First, it provides the clearest readable-suppression versus erased-recovery comparison surface within the fixed-support corpus. Second, it supports the family-level interpretation of the flagship pair by showing that recombination-sensitive refinement is not confined to a single benchmark idiom. At the same time, the present local-neighborhood and formal evidence is stronger for the relative-cycle family than for the erasure anchor itself. For that reason the erasure anchor remains empirical support rather than formal core.
+
+The same distinction governs nearby breadth. Later sections will show that nearby exact positives exist within the same relative-cycle family as the flagship anchors, but these nearby positives are not introduced here as coequal theorem targets. Their role is to show that the flagship pair is not an isolated accident, while keeping the paper's formal core small and explicit.
+
+\subsection{Matched comparison surfaces}
+
+The flagship family is studied against a matched comparison bundle fixed in advance. The paper uses five comparison surfaces:
+\begin{enumerate}
+    \item a \emph{null baseline}, represented by classical mixture on fixed support;
+    \item a \emph{memory-only control}, in which hidden predictive refinement occurs without later recombination refinement;
+    \item a \emph{readable suppression or erased-recovery reference}, which keeps readable route information distinct from erased-recovery-side recombination phenomena;
+    \item an \emph{artifact exclusion surface}, which removes hidden protocol or hidden-phase explanations;
+    \item a \emph{boundary-collapse or completion-sensitive negative}, which marks the edge of the positive family and keeps completion-sensitive failure modes explicit.
+\end{enumerate}
+
+These surfaces are fixed in advance as part of the object being studied, not added after the fact. The positive intrinsic claim is meaningful only because it is made on the same support against these explicit alternatives.
+
+\subsection{Decisive observable family and factorized comparison target}
+
+For the two flagship anchors, the decisive observable family has a simple finite shape. One observable records an erased-mix type marginal, and one observable records a screen-history type marginal. The erased-mix observable provides an agreement surface: the decisive witness pair agrees there. The screen-history observable provides a separation surface: the same pair is distinguished there at a fixed decisive event. The paper therefore does not appeal to an unspecified class of ``later observables.'' It works with a fixed exact-finite family containing both an agreement observable and a separating observable.
+
+The natural null comparison target for this witness family is the factorized or no-interference surface inherited from the earlier recombination paper. On that surface, later recombination observables factor through the branchwise summary, so no later observable can distinguish assemblages once the branchwise summary has been fixed. In the flagship family this factorized comparison target fails. The point of the theorem spine in the next section is to state that contrast cleanly: the null collapse theorem remains true in the factorized regime, but the flagship anchors admit concrete witness pairs that depart from that regime on fixed support.
+
+This is all the setup needed for the rest of the paper. Section~4 states the theorem layer. Section~5 then turns from the abstract comparison surface to the exact-finite flagship anchors themselves.
+
+\section{Theorem Spine}
+
+This section records the theorem-level backbone of the paper. At the level of general mathematical form, these are instances of standard quotient-factorization and behavioral-separation patterns familiar from the lumpability, bisimulation, and observational-equivalence literature. The contribution is not the abstract patterns but their instantiation on the flagship surface and their machine-checked formalization. The statements here are restricted to results that are already supported either by the inherited abstract infrastructure or by the flagship formal kernel. Exact benchmark tables, breadth counts, and the full matched-control ledgers are deferred to later sections. In particular, route readability and visibility recovery remain benchmark-side diagnostics and do not enter the theorem spine as formal claims.
+
+\begin{theorem}[Well-defined branchwise and recombination quotients on the flagship surface]
+\label{thm:flagship-setoids}
+On the fixed-support flagship surface, the branchwise and recombination equivalence relations are well defined equivalence relations. Consequently the associated branchwise and recombination quotients are well defined on the flagship family.
+\end{theorem}
+
+\begin{theorem}[Factorized no-interference collapse]
+\label{thm:factorized-collapse}
+On the factorized or no-interference comparison surface, later recombination observables factor through the branchwise summary. Equivalently, on that surface the recombination quotient collapses to the branchwise quotient:
+\[
+R \cong K.
+\]
+In particular, no later recombination-sensitive refinement remains once the factorized hypothesis holds on the chosen support.
+\end{theorem}
+
+\begin{theorem}[Reference-positive witness separation]
+\label{thm:reference-positive-witness}
+For the reference-positive flagship anchor, there exists a concrete pair of branch assemblages on fixed support that are branchwise equivalent, agree under the erased-mix observable, and are separated by the screen-history observable at the decisive event. Hence the reference-positive anchor exhibits strict recombination-sensitive refinement beyond branchwise predictive bookkeeping on that support.
+\end{theorem}
+
+\begin{corollary}[Reference-positive no-factorization contrast]
+\label{cor:reference-positive-no-factorization}
+For the reference-positive flagship anchor, the decisive recombination separation does not factor through the corresponding branchwise summary layer. In particular, the flagship witness is incompatible with the factorized no-interference comparison target on the same support.
+\end{corollary}
+
+\begin{theorem}[Completion-partner witness separation]
+\label{thm:completion-partner-witness}
+For the completion-partner flagship anchor, there exists a matched concrete witness pair on the paired completion surface such that the same branchwise-versus-recombination contrast survives there as well: the pair agrees on the agreement-side observable surface and is separated by the decisive screen-history observable at the same decisive event. The paired completion data therefore do not remove the flagship recombination separation.
+\end{theorem}
+
+\begin{corollary}[Completion-partner no-factorization contrast]
+\label{cor:completion-partner-no-factorization}
+For the completion-partner flagship anchor, the decisive recombination-sensitive content likewise fails to factor through the corresponding branchwise summary layer on the relevant support.
+\end{corollary}
+
+The preceding statements divide naturally into two levels. The first two theorems are comparison-surface theorems: they describe the null collapse structure against which the flagship family is measured. The next two theorem--corollary pairs are anchor-specific flagship results: they say that the two selected anchors admit concrete witness separation and corresponding no-factorization contrasts on fixed support. Together they are the formal core of the paper.
+
+At the level of general mathematical form, these collapse-and-obstruction statements instantiate a familiar pattern: behavioral separation supplies a concrete obstruction to factorization through a coarser quotient \cite{Nerode1958,LarsenSkou1991,BurrisSankappanavar1981}.
+
+The matched controls are not presented as a second theorem program. Their role is comparative. The null baseline supplies the clean collapse surface; the memory-only control supplies predictive refinement without recombination refinement; the protocol-artifact surface supplies the hidden-phase exclusion; and the boundary-collapse or completion-sensitive negative marks the edge of the positive family. The exact evidence for these control contrasts is given in Section~6, and the nearby family breadth appears in Section~7.
+
+The theorem spine has one explicit boundary: diagnostics such as route readability and visibility recovery remain outside the current formal kernel, serving an evidential and comparative role rather than a theorem-forming one.
+
+\section{Exact-Finite Flagship Anchors}
+
+This section presents the empirical core of the paper. The flagship result is carried by two exact-finite anchors in the same relative-cycle family: the reference-positive anchor and the completion-partner anchor. The paper's claim is not that these two anchors exhaust the positive family; breadth within the same family will be treated in Section~7. The present section has the narrower purpose of showing, in explicit finite data, what the flagship anchors are and why they are the empirical center of the manuscript.
+
+\subsection{Reference-positive anchor}
+
+The reference-positive anchor is the primary intrinsic witness surface in the current corpus. At the inherited interface, it has one current class, one predictive class, one branchwise class, and three recombination classes. The canonical forgetful map from recombination classes to branchwise classes therefore has maximal fiber size three, and the exact recombination-gap value is \(2/3\). The same-support check passes, while the factorization test fails. The anchor is therefore not merely a branchwise-refined or memory-only case; it is a case in which later recombination-sensitive content strictly exceeds the branchwise predictive summary on fixed support.
+
+The witness pair is concrete. Both assemblages lie in the same branchwise class, and both agree under the erased-mix observable. In exact terms, the erased-mix observable returns the same distribution on both sides:
+\[
+(\tfrac12,\tfrac12).
+\]
+What separates the pair is the screen-history observable. For the left witness assemblage, the screen-history distribution is
+\[
+(\tfrac13,\tfrac23,0,0,0),
+\]
+while for the right witness assemblage it is
+\[
+(0,\tfrac13,\tfrac23,0,0).
+\]
+The decisive event is therefore \(\mathrm{screen}_2\): the left witness has zero mass there, while the right witness has mass \(2/3\). This is the concrete exact-finite separation that realizes the flagship witness theorem on the reference-positive anchor.
+
+\subsection{Completion-partner anchor}
+
+The completion-partner anchor is the matched flagship counterpart on the paired completion surface. It is not introduced in order to enlarge the paper's formal core beyond what can be sustained; rather, it shows that the same intrinsic recombination signal survives a matched completion step instead of disappearing under it.
+
+At the level of the quotient data, the completion-partner anchor has the same core exact-finite profile as the reference-positive anchor: one current class, one predictive class, one branchwise class, three recombination classes, maximal forgetful-map fiber size three, and recombination gap \(2/3\). The same-support check again passes, and the factorization test again fails. The branchwise-to-recombination contrast therefore survives the completion-partner surface at the same exact-finite strength.
+
+The witness comparison also survives. The anchor carries the same agreement-side erased mix,
+\[
+(\tfrac12,\tfrac12),
+\]
+and the same separating screen-history pair,
+\[
+(\tfrac13,\tfrac23,0,0,0)
+\quad\text{versus}\quad
+(0,\tfrac13,\tfrac23,0,0),
+\]
+with the same decisive event \(\mathrm{screen}_2\). What is added on this paired surface is one further observable layer: completion-bin data. The completion bins agree across the witness pair, with both sides carrying
+\[
+(\tfrac35,\tfrac25).
+\]
+Thus the paired completion surface does not remove the flagship recombination separation. It preserves the same decisive witness while adding a matched completion-side agreement surface.
+
+\begin{figure}[t]
+\centering
+\begin{tabular}{p{0.46\textwidth}p{0.46\textwidth}}
+\toprule
+\textbf{Reference-positive anchor} & \textbf{Completion-partner anchor} \\
+\midrule
+\textbf{Agreement-side observable:} Erased mix \newline $(\tfrac12,\tfrac12)$ on both witness sides. &
+\textbf{Agreement-side observable:} Erased mix \newline $(\tfrac12,\tfrac12)$ on both witness sides. \\
+\addlinespace
+\textbf{Separating observable:} Screen history \newline left $(\tfrac13,\tfrac23,0,0,0)$, \newline right $(0,\tfrac13,\tfrac23,0,0)$. &
+\textbf{Separating observable:} Screen history \newline left $(\tfrac13,\tfrac23,0,0,0)$, \newline right $(0,\tfrac13,\tfrac23,0,0)$. \\
+\addlinespace
+\textbf{Decisive event:} $\mathrm{screen}_2$. &
+\textbf{Decisive event:} $\mathrm{screen}_2$. \\
+\addlinespace
+& \textbf{Additional agreement surface:} Completion bins \newline $(\tfrac35,\tfrac25)$ on both witness sides. \\
+\bottomrule
+\end{tabular}
+\caption{Agreement-side and separating-side observable surfaces for the two flagship anchors. In both anchors the erased-mix observable agrees across the witness pair, while the screen-history observable separates the pair at the decisive event $\mathrm{screen}_2$. On the completion-partner anchor, completion-bin data add a matched agreement surface without removing the recombination separation.}
+\label{fig:flagship-anchor-separation}
+\end{figure}
+ 
+\subsection{Exact invariant snapshot}
+
+Table~\ref{tab:exact-invariant-snapshots} records the invariant snapshot for the two flagship anchors. The point of the table is not that the two rows differ dramatically in size data; they do not. The point is that both rows lie strictly beyond the factorized comparison surface on fixed support and do so in a matched way, which is why they function as a two-anchor flagship core rather than as a single isolated positive.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Exact invariant snapshot for the two flagship anchors. Both anchors lie on fixed support with one current class, one predictive class, one branchwise class, and three recombination classes. The point of the comparison is therefore not growth in branchwise bookkeeping, but strict recombination-sensitive refinement beyond the branchwise layer on the same support.}
+\label{tab:exact-invariant-snapshots}
+\begin{tabular}{lccccccc}
+\toprule
+Anchor & $|Q|$ & $|M|$ & $|K|$ & $|R|$ & $\eta_{\max}$ & gap & factorization \\
+\midrule
+Reference-positive & 1 & 1 & 1 & 3 & 3 & $2/3$ & failed \\
+Completion-partner & 1 & 1 & 1 & 3 & 3 & $2/3$ & failed \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+\subsection{Witness comparison and evidence status}
+
+Table~\ref{tab:flagship-witness-observables} records the decisive observable family in explicit finite form. The agreement-side erased mix is the same for both witness pairs, while the screen-history observable separates the left and right witnesses at the decisive event. For the completion-partner anchor, the completion-bin observable provides an additional agreement layer rather than a second source of separation.
+
+At the level of method, this is a finite distinguishability construction: one observable furnishes agreement and another furnishes separation, in the same spirit as classical state-identification and partial-observation distinguishability problems \cite{Gill1961,WangLafortuneLin2007}. The specific erased-mix and screen-history observables, however, are intrinsic to the flagship benchmarks.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Decisive observable family for the flagship witness pairs. In both anchors the erased-mix observable agrees across the witness pair, while the screen-history observable separates it. For the completion-partner anchor, the completion-bin observable adds a matched agreement layer rather than a second separation surface. Screen-history entries are listed in the order $(\mathrm{screen}_0,\mathrm{screen}_1,\mathrm{screen}_2,\mathrm{screen}_3,\mathrm{screen}_4)$.}
+\label{tab:flagship-witness-observables}
+\begin{tabular}{p{2.8cm}p{2.6cm}p{2.6cm}p{3.6cm}}
+\toprule
+Anchor & Agreement-side observable & Left / right values & Separating / additional observable \\
+\midrule
+Reference-positive &
+Erased mix &
+$(\tfrac12,\tfrac12)$ on both sides &
+Screen history:
+left $(\tfrac13,\tfrac23,0,0,0)$,
+right $(0,\tfrac13,\tfrac23,0,0)$;
+decisive event $\mathrm{screen}_2$ \\
+\addlinespace
+Completion-partner &
+Erased mix &
+$(\tfrac12,\tfrac12)$ on both sides &
+Screen history:
+left $(\tfrac13,\tfrac23,0,0,0)$,
+right $(0,\tfrac13,\tfrac23,0,0)$;
+decisive event $\mathrm{screen}_2$.
+Completion bins agree on both sides:
+$(\tfrac35,\tfrac25)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+The quotient counts, witness realization, and no-factorization contrasts for both anchors now belong to the theorem-backed kernel. By contrast, route readability, unconditional visibility, conditional visibility, and visibility recovery remain benchmark-side diagnostics: both flagship anchors report route readability \(0\), unconditional visibility \(0\), maximal conditional visibility \(3/5\), and visibility recovery gap \(3/5\), but these quantities are not used as theorem predicates. The flagship anchors are thus exact-finite benchmark objects whose core witness and factorization-contrast content is mirrored by a formal kernel, while secondary diagnostics remain empirical.
+
+The next section turns to the matched controls and exclusions that keep these anchors from being confused with null, memory-only, artifact, or completion-sensitive explanations.
+
+\section{Controls and Exclusions}
+
+The intrinsic claim made for the flagship anchors is meaningful only if the same-support recombination signal survives a matched control bundle. The control bundle fixes the alternative explanations against which the flagship family must be separated: trivial mixture, hidden predictive memory without recombination refinement, readable suppression versus erased recovery, hidden protocol or phase structure, and family-boundary or completion-sensitive collapse.
+
+\begin{figure}[t]
+\centering
+\setlength{\fboxsep}{6pt}
+\begin{tabular}{c@{\hspace{0.35em}$\rightarrow$\hspace{0.35em}}c@{\hspace{0.35em}$\rightarrow$\hspace{0.35em}}c@{\hspace{0.35em}$\rightarrow$\hspace{0.35em}}c@{\hspace{0.35em}$\rightarrow$\hspace{0.35em}}c}
+\fbox{\parbox[c][2.5cm][c]{1.7cm}{\centering Null baseline}} &
+\fbox{\parbox[c][2.5cm][c]{2.6cm}{\centering Hidden predictive memory without recombination refinement}} &
+\fbox{\parbox[c][2.5cm][c]{2.6cm}{\centering Readable suppression / erased recovery reference}} &
+\fbox{\parbox[c][2.5cm][c]{1.7cm}{\centering Flagship positives}} &
+\fbox{\parbox[c][2.5cm][c]{2.5cm}{\centering Artifact / completion-sensitive negatives}}
+\end{tabular}
+\caption{Comparative benchmark arc used in the paper. The flagship intrinsic claim is interpreted by moving from the null baseline, to the memory-only control, to the readable-suppression or erased-recovery reference surface, to the flagship positives, and finally to artifact and completion-sensitive negatives. The arc is comparative rather than chronological: each stage fixes a same-support alternative that must be separated from the flagship family.}
+\label{fig:comparative-benchmark-arc}
+\end{figure}
+ 
+\subsection{Null baseline and memory-only control}
+
+The null baseline is classical mixture. On that surface the branchwise and recombination layers collapse together, and no flagship-style witness exists. In exact-finite terms there is only one branchwise class and one recombination class. This removes the possibility that the flagship anchors are trivial mixture effects.
+
+The memory-only control is the sharper exclusion. There, hidden predictive refinement exists at the single-history level, but no later recombination refinement survives at the branch-assemblage level. In exact terms the control has
+\[
+|Q| = 1,\qquad |M| = 2,\qquad |K| = |R| = 3.
+\]
+The flagship anchors differ in kind. They do not carry extra predictive splitting at the single-history level, their branchwise layer remains collapsed, and the later separation appears only at the recombination layer. The flagship signal is therefore not reducible to hidden predictive memory without recombination refinement.
+
+This is the closest point in the paper to the hidden-state modeling tradition exemplified by hidden Markov models and later predictive-state formalisms \cite{Rabiner1989,LittmanSuttonSingh2001,Jaeger2000}, but the present comparison is stricter: the branchwise-versus-recombination split is made on a fixed-support assemblage surface rather than by changing hidden-state parameterizations.
+
+\subsection{Readable suppression and erased-recovery reference}
+
+The readable-suppression and erased-recovery pair is included to situate the flagship family relative to the most familiar fixed-support recombination references. Readable suppression retains an explicitly route-readable surface and does not function as a flagship positive. Erased recovery removes that readable route surface while retaining recombination-sensitive structure, and for that reason it remains an important empirical support point for the present paper. But it does not enter the formal core, where the current evidence is more developed for the relative-cycle flagship family.
+
+Accordingly, this comparison stage is used here as a reference surface rather than as a direct demoter of the flagship anchors. It keeps readable suppression distinct from erased recovery and places the erasure side in the paper's support layer, while leaving the formal and neighborhood core with the two selected relative-cycle anchors.
+
+\subsection{Artifact exclusion}
+
+The protocol-artifact pair removes the most immediate hidden-phase alternative. In its uninternalized presentation, later recombination-sensitive separation appears on fixed support. But once the scheduler or phase variable is honestly internalized into the state, the positive signal reclassifies and the recombination refinement disappears. The flagship anchors do not behave this way. Their positive status therefore does not derive from omitted protocol state or hidden scheduling.
+
+This control matters because route-dependent or later-distinguishable behavior alone would not be enough for an intrinsic claim. The paper's positive result requires later recombination separation that survives the same-support artifact exclusion surface. The flagship anchors do survive it.
+
+\subsection{Boundary collapse and completion-sensitive negatives}
+
+The final control surface marks the edge of the positive family rather than supplying another route to positivity. The committed boundary-collapse case fails to remain positive and is therefore retained as a negative boundary comparison. This matters because the flagship family is local rather than universal. The paper does not claim that every nearby exact-finite case in the same broad region is positive. On the contrary, it keeps the family boundary explicit and uses it to prevent completion-sensitive or boundary-sensitive failures from being quietly absorbed into the flagship claim.
+
+The positive family is therefore neither a single accidental point nor a generic open-ended region. It is a bounded intrinsic family with an explicit edge, and the control bundle records that edge rather than hiding it.
+
+\subsection{Control status of the flagship anchors}
+
+Table~\ref{tab:controls-and-exclusions} summarizes the matched control bundle. The null baseline, memory-only surface, artifact exclusion surface, and boundary negative are direct exclusions: the flagship anchors remain separated from them. The readable suppression / erased-recovery stage is a reference surface: it situates the erasure side and keeps readable suppression distinct from erased recovery, but it is not used to demote the relative-cycle flagship anchors themselves.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Matched control bundle for the flagship anchors. Direct exclusions rule out alternative explanations of the flagship recombination signal; the readable suppression / erased-recovery stage is included as a comparative reference surface rather than as a direct demoter of the relative-cycle anchors.}
+\label{tab:controls-and-exclusions}
+\begin{tabular}{p{2.8cm}p{3.2cm}p{4.2cm}p{2.7cm}}
+\toprule
+Control surface & Representative case & Role in the flagship comparison & Outcome for flagship anchors \\
+\midrule
+Null baseline &
+Classical mixture &
+Rules out trivial mixture or null collapse; on this surface the branchwise and recombination layers collapse together &
+Survived \\
+\addlinespace
+Memory-only control &
+Hidden predictive memory without later recombination refinement &
+Rules out explanation by predictive memory alone; exact finite control has $|Q|=1$, $|M|=2$, and $|K|=|R|=3$ &
+Survived \\
+\addlinespace
+Readable suppression / erased-recovery reference &
+Marked suppression and erased recovery &
+Keeps readable suppression distinct from erased-recovery-side recombination and places the erasure side in the support layer rather than the formal core &
+Reference only \\
+\addlinespace
+Artifact exclusion &
+Protocol-artifact pair &
+Rules out hidden scheduler or hidden-phase explanation; the apparent positive reclassifies under honest internalization &
+Survived \\
+\addlinespace
+Boundary / completion-sensitive negative &
+Committed boundary-collapse case &
+Marks the edge of the positive family and prevents boundary-sensitive failures from being counted as flagship positives &
+Survived \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+The net result is that the flagship anchors are not null cases, not memory-only cases, not hidden-phase artifacts, and not family-boundary collapses. The erasure side remains support rather than formal core. The control bundle is what allows the flagship claim to be stated as intrinsic rather than merely descriptive.
+
+\section{Breadth within the Relative-Cycle Family}
+
+The flagship pair is not presented as a generic classification result, but it is also not an isolated accident. This section records the paper's bounded breadth claim. The claim is deliberately conservative: breadth is counted only from explicit committed exact cases, on the same-support comparison discipline already used throughout the paper, after structural deduplication against the flagship anchors themselves. Under that policy, nearby non-anchor positives do exist. At the same time, the breadth remains concentrated in the same relative-cycle family as the flagship anchors rather than spreading uniformly across all recombination-positive surfaces.
+
+\subsection{Shortlist-confirmed nearby positives}
+
+Four nearby non-anchor positives survive the breadth policy and the deduplication screen:
+\begin{gather*}
+n5\_d2\_w1of3\_2of3,\qquad
+n4\_d1\_w1of3\_2of3,\\
+n3\_d1\_w1of3\_2of3,\qquad
+n5\_d1\_w1of2\_1of2.
+\end{gather*}
+These cases are not introduced as additional theorem anchors. Their role is narrower. They show that the flagship pair sits inside a real local family of exact-finite positives rather than constituting an isolated two-point anomaly. All four belong to the same relative-cycle neighborhood as the flagship core, and that concentration matters: the breadth claim of the paper is therefore local and family-specific rather than broad and generic.
+
+\subsection{Support-only erasure side}
+
+The erasure side contributes empirical support, but not shortlist breadth in the same sense. The erasure anchor remains useful because it keeps readable suppression distinct from erased recovery and shows that recombination-sensitive refinement is not confined to a single benchmark idiom. But it does not enter the nearby shortlist as an additional relative-cycle-style positive. In the paper's final evidence hierarchy it therefore remains family support rather than a breadth-defining non-anchor positive.
+
+This distinction is important. The paper's breadth claim is not that all positive evidence surfaces belong to one homogeneous family. It is that the flagship pair has a conservative nearby family in the relative-cycle regime, while the erasure side supports the broader empirical context without being merged into the same local shortlist.
+
+\subsection{Near misses, duplicates, and boundary collapse}
+
+The breadth surface is also bounded from within. One nearby case is structurally aligned so closely with a flagship anchor that it is treated as a duplicate rather than a new breadth item. One further nearby case remains a family-boundary near miss rather than a confirmed positive. Finally, one explicit boundary-collapse case shows that the positive family is not open-ended: under the committed collapse surface, the candidate fails and is retained as a negative edge case.
+
+This is exactly the pattern needed for a conservative breadth claim. The paper is not claiming an unrestricted region of positivity, and it is not quietly absorbing edge failures into the same family label. Instead, it records three distinct non-breadth outcomes: duplication, near miss, and boundary collapse.
+
+\subsection{Breadth status of the flagship family}
+
+Table~\ref{tab:route-a-breadth-shortlist} summarizes the breadth surface. The flagship anchors are carried for orientation, but they are not counted as breadth shortlist items. The shortlisted nearby positives are all non-anchor exact cases in the relative-cycle family. The erasure anchor remains support-only. The near-miss and boundary-collapse rows keep the edge of the family explicit.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Conservative breadth surface around the flagship relative-cycle family. The flagship anchors are listed for orientation only and are not counted as breadth shortlist items. Shortlist-confirmed rows are non-anchor nearby positives that survive the exact-finite breadth policy and structural deduplication. Support-only, near-miss, duplicate, and boundary-collapse rows mark the edge of the family rather than extending it.}
+\label{tab:route-a-breadth-shortlist}
+\begin{tabular}{p{2.8cm}p{3.6cm}p{5.2cm}p{1.8cm}}
+\toprule
+Role & Case & Breadth status & Counted in shortlist \\
+\midrule
+Flagship anchor &
+Reference-positive anchor &
+Formal-core anchor; carried for orientation, not as breadth evidence &
+No \\
+\addlinespace
+Flagship anchor &
+Completion-partner anchor &
+Formal-core anchor; carried for orientation, not as breadth evidence &
+No \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n5\_d2\_w1of3\_2of3$ &
+Nearby exact non-anchor positive in the same relative-cycle family &
+Yes \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n4\_d1\_w1of3\_2of3$ &
+Nearby exact non-anchor positive in the same relative-cycle family &
+Yes \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n3\_d1\_w1of3\_2of3$ &
+Nearby exact non-anchor positive in the same relative-cycle family &
+Yes \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n5\_d1\_w1of2\_1of2$ &
+Nearby exact non-anchor positive in the same relative-cycle family &
+Yes \\
+\addlinespace
+Support-only &
+Erasure anchor &
+Empirical family support, but not part of the nearby relative-cycle shortlist &
+No \\
+\addlinespace
+Duplicate of flagship anchor &
+$n5\_d1\_w1of3\_2of3$ &
+Anchor-aligned duplicate; retained as support, not as a new breadth item &
+No \\
+\addlinespace
+Near miss &
+$n4\_d2\_w1of3\_2of3$ &
+Family-boundary near miss rather than a confirmed nearby positive &
+No \\
+\addlinespace
+Boundary collapse &
+$n5\_d1\_w1of3\_2of3$\newline$\lambda\_1of1$ &
+Explicit collapse at the boundary of the positive family &
+No \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+\begin{figure}[t]
+\centering
+\small
+\setlength{\fboxsep}{6pt}
+\begin{tabular}{p{0.23\textwidth}p{0.23\textwidth}p{0.23\textwidth}p{0.23\textwidth}}
+\fbox{\parbox[c][4.7cm][t]{0.20\textwidth}{\textbf{Flagship anchors}\\[0.4em]
+Reference-positive anchor\\
+Completion-partner anchor\\[0.4em]
+\emph{Orientation/core only}}} &
+\fbox{\parbox[c][4.7cm][t]{0.20\textwidth}{\textbf{Shortlist-confirmed nearby positives}\\[0.4em]
+\texttt{n5\_d2\_w1of3\_2of3}\\
+\texttt{n4\_d1\_w1of3\_2of3}\\
+\texttt{n3\_d1\_w1of3\_2of3}\\
+\texttt{n5\_d1\_w1of2\_1of2}}} &
+\fbox{\parbox[c][4.7cm][t]{0.20\textwidth}{\textbf{Support-only}\\[0.4em]
+Erasure anchor\\[0.4em]
+\emph{Empirical family support}}} &
+\fbox{\parbox[c][4.7cm][t]{0.20\textwidth}{\textbf{Near misses / boundary collapse}\\[0.4em]
+Duplicate:\\ \texttt{n5\_d1\_w1of3\_2of3}\\[0.3em]
+Near miss:\\ \texttt{n4\_d2\_w1of3\_2of3}\\[0.3em]
+Boundary collapse:\\ \texttt{n5\_d1\_w1of3\_2of3\_}\\ \texttt{lambda\_1of1}}}
+\end{tabular}
+\caption{Bounded breadth around the flagship relative-cycle family. The two flagship anchors are carried only for orientation. The four shortlist-confirmed nearby positives remain inside the same relative-cycle family, the erasure anchor remains support-only, and the duplicate, near-miss, and boundary-collapse cases keep the edge of the family explicit.}
+\label{fig:route-a-breadth-and-near-misses}
+\end{figure}
+ 
+The conclusion of this section is that the flagship result does not rest on the two anchor cases alone. There is a real nearby exact-finite family around the flagship pair, but it remains concentrated in the relative-cycle family. The paper does not generalize it into a census of all recombination-positive families.
+
+\section{Formal Kernel Status}
+
+The empirical flagship family established in the preceding sections now has a real formal core. The purpose of this section is not to redescribe the implementation file-by-file, but to state clearly what part of the paper's positive result is now theorem-backed, how the benchmark objects are connected to the Lean surface, and where the formal boundary still lies.
+
+\subsection{From benchmark objects to flagship target data}
+
+The formalization is organized around a deliberately small flagship namespace. General quotient, refinement, and factorization infrastructure are inherited from the retained recombination core, while anchor-specific target data are encoded only for the two selected flagship anchors and their matched control surfaces. The paper does not attempt a generic formal census of recombination-positive families. Instead, it formalizes the exact finite data needed for the reference-positive anchor, the completion-partner anchor, and the null, memory-only, artifact, and boundary-collapse contrasts used to interpret them.
+
+An observable-bridge layer connects the benchmark-side identification of the decisive observable family to the Lean target surface. In particular, the flagship witness comparison no longer lives only as a prose description or external run artifact. The relevant observable family, target constants, and comparison targets now exist as explicit finite objects in the formal namespace. This is enough to move the flagship result beyond a benchmark-only status, while leaving some secondary diagnostics outside the present theorem kernel.
+
+As a piece of formal mathematics, the present kernel is deliberately small and finite-state. Lean~4 and mathlib supply the ambient proof infrastructure \cite{deMouraUllrich2021,MathlibCommunity2020}, while earlier machine-checked treatments of finite automata and finite-state Markov chains show the broader viability of this style of formalization \cite{Gonthier2008,Paulson2015,LiuHasanTahar2011}. The paper’s claim is not that such finite-structure formalization is new in itself, but that the present flagship recombination family has now been brought onto that formal surface in a concrete and anchor-specific way.
+
+\subsection{What is formally proved}
+
+At the abstract level, the formal kernel includes the well-definedness of the branchwise and recombination quotient surfaces and the factorized no-interference collapse theorem. At the anchor level, the reference-positive anchor has a concrete finite witness model whose decisive observable family is encoded in Lean and from which both witness separation and no-factorization are proved. The completion-partner anchor likewise has matched target data, witness separation, and no-factorization contrast on the paired surface. The formal core is therefore genuinely two-anchored rather than one-anchored with a benchmark-only companion.
+
+The formal core therefore establishes more than a generic existence claim: it contains a factorized comparison theorem, concrete witness separation on the two selected anchors, and anchor-level factorization contrasts on the flagship surface, all for a recombination phenomenon that survives the paired completion surface.
+
+\subsection{What remains benchmark-backed only}
+
+The current formalization is intentionally narrow. Route readability, unconditional visibility, conditional visibility, and visibility recovery remain benchmark-side quantities, and the erasure anchor remains empirical support rather than a third formal target. The formal kernel is a targeted bridge rather than a full formalization of the benchmark corpus: it supports the central intrinsic claim at the flagship anchors while preserving the distinction between theorem-backed and benchmark-backed evidence.
+
+\subsection{Status summary}
+
+Table~\ref{tab:formal-kernel-status} summarizes the current status of the formal layer. The formal core is centered on the two flagship anchors; the remaining benchmark-side diagnostics and broader family support are explicitly marked as empirical.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Current status of the formal kernel. The formal surface is intentionally narrow: it centers the two flagship anchors, the factorized comparison theorem, and the matched control targets needed to interpret them. Secondary benchmark-side diagnostics remain outside the present theorem kernel.}
+\label{tab:formal-kernel-status}
+\begin{tabular}{p{3.0cm}p{4.0cm}p{3.8cm}p{2.4cm}}
+\toprule
+Layer & Role in the paper & Current status & Evidence class \\
+\midrule
+General recombination scaffold &
+Quotient, refinement, factorization, and comparison-surface infrastructure &
+Retained in Lean and used by the flagship namespace &
+Theorem-backed \\
+\addlinespace
+Observable bridge &
+Connects benchmark-side observable identifiers to the flagship target surface &
+Active support layer for flagship target data; secondary diagnostic semantics remain outside the current theorem kernel &
+Bridge/support \\
+\addlinespace
+Reference-positive target data &
+Explicit invariant, witness, and factorization-contrast targets for the primary flagship anchor &
+Encoded as Lean target data &
+Formal target data \\
+\addlinespace
+Reference-positive witness kernel &
+Concrete finite observable family, witness separation, and no-factorization contrast &
+Proved in Lean &
+Theorem-backed \\
+\addlinespace
+Completion-partner target data &
+Matched paired-surface target data for the second flagship anchor &
+Encoded as Lean target data &
+Formal target data \\
+\addlinespace
+Completion-partner matched witness layer &
+Matched witness and factorization-contrast surface on the paired completion side &
+Present in the flagship formal surface as the second anchor-level theorem target &
+Theorem-backed \\
+\addlinespace
+Matched control targets &
+Null baseline, memory-only, artifact, and boundary contrasts &
+Encoded on the same formal surface as comparison targets &
+Control support \\
+\addlinespace
+Route readability / visibility diagnostics &
+Secondary descriptors of benchmark runs &
+Remain benchmark-side only &
+Benchmark-backed \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+\section{Discussion and Limitations}
+
+The paper establishes a positive result inside the fixed-support recombination layer of Six Birds theory: the isolation of a control-stable intrinsic exact-finite family, carried by two matched flagship anchors in a relative-cycle regime, together with a nearby exact breadth surface in the same family and a finite formal kernel for the flagship witness structure.
+
+Relative to the neighboring literature, the present result is narrower than a general theory of behavioral equivalence, predictive-state reconstruction, or state aggregation, and more concrete than a generic machine-checked quotient theorem. Its quotient language is closest to behavioral and probabilistic equivalence \cite{Nerode1958,Park1981,LarsenSkou1991,Sangiorgi2011,vanGlabbeek2001}; its future-sufficiency layer is closest to causal-state, observable-operator, and predictive-state models \cite{CrutchfieldYoung1989,ShaliziCrutchfield2001,Jaeger2000,LittmanSuttonSingh2001}; and its factorized comparison theorem sits closest to exact rather than approximate finite aggregation \cite{KemenySnell1976,Buchholz1994,GivanDeanGreig2003,LiWalshLittman2006}. The paper’s contribution is not a new generic quotient theory in those areas, but their composition inside a fixed-support recombination framework with matched controls and a concrete flagship family.
+
+Three features of that result are worth emphasizing. First, the positive claim is explicitly comparative: the flagship anchors are separated from classical mixture, hidden predictive memory without recombination refinement, protocol artifact, and boundary-collapse or completion-sensitive negatives by a matched control bundle on fixed support. Second, the result is local rather than generic; nearby exact positives exist, but they remain concentrated in the same relative-cycle family. Third, the claim is supported at two levels: a benchmark level, through exact finite witness tables and controls, and a theorem level, through the factorized collapse theorem, concrete anchor-level witness separation, and no-factorization contrasts on the flagship surface.
+
+The formal layer remains intentionally narrower than the benchmark corpus. The Lean kernel reaches the flagship anchors themselves, including the concrete witness surface for the reference-positive anchor and the matched paired-surface layer for the completion-partner anchor. Benchmark-side diagnostics such as route readability and visibility recovery are not internalized into the theorem surface. Likewise, breadth should be read as local support for the flagship family rather than as a generic census of recombination-positive exact-finite cases: it shows a real nearby family with a visible boundary and explicit near misses.
+
+Several natural extensions remain open. The paper does not classify all exact-finite recombination-positive families, does not promote the erasure side to a coequal formal flagship, and does not absorb every benchmark-side diagnostic into the Lean kernel. Those questions are meaningful, but they are not required for the local intrinsic flagship result established here.
+
+\section{Conclusion}
+
+This paper isolates a control-stable intrinsic family inside the fixed-support recombination layer of Six Birds theory. Building on the admissibility framework of the first paper, the predictive quotient machinery of the second, and the branchwise-versus-recombination quotient distinction of the third, it identifies a two-anchor relative-cycle flagship family in which later recombination-sensitive content strictly exceeds the branchwise predictive summary on fixed support.
+
+The paper's contribution is threefold. First, it gives a small exact-finite flagship core rather than a diffuse pool of positives: a reference-positive anchor and a matched completion-partner anchor. Second, it closes the matched control story needed to interpret that family intrinsically, separating the flagship anchors from null, memory-only, artifact, and boundary-sensitive alternatives. Third, it upgrades the positive core from benchmark evidence alone to a formal kernel, including factorized collapse, concrete witness separation, and no-factorization contrast on the flagship surface.
+
+The resulting picture is intentionally local. Nearby breadth exists within the same relative-cycle family, and the erasure side remains useful empirical support, but the paper does not claim a global classification of all recombination-positive families. What it does establish is a small, explicit, control-stable, exact-finite intrinsic family on fixed support with a matched formal kernel.
+
+\appendix
+\section{Formal Definitions and Theorem Statements}
+
+This appendix collects the formal definitions and theorem statements used in the main text. At the level of general mathematical form, the quotient and factorization language used here sits near behavioral equivalence, bisimulation, exact aggregation, and standard quotient-factorization arguments \cite{Nerode1958,Park1981,Milner1980,LarsenSkou1991,Sangiorgi2011,vanGlabbeek2001,KemenySnell1976,Buchholz1994,GivanDeanGreig2003,BurrisSankappanavar1981}. It does not reproduce proofs. The comparison base is inherited from the first three papers of the series: fixed support and admissibility, the current and predictive quotients on single histories, and the branchwise and recombination quotients on branch assemblages. The present paper uses those inherited structures only to define and compare the flagship recombination family on a common exact-finite support. \cite{Tsiokos2026LocallyBoolean,Tsiokos2026HolonomyMemory,Tsiokos2026MarkingErasureRecombination}
+
+At the single-history level, the current quotient \(Q_i\) identifies reachable histories that are indistinguishable by the current event package, while the predictive quotient \(M_i\) identifies histories that remain indistinguishable under all admissible future generator/observable words on the reachable image. At the branch-assemblage level, the branchwise quotient \(K_i\) identifies assemblages with the same weighted multiset of predictive classes, while the recombination quotient \(R_i\) identifies assemblages that are indistinguishable by admissible later recombination observables. When recombination equivalence refines branchwise equivalence there is a canonical forgetful map \(\eta_i : R_i \to K_i\). \cite{Tsiokos2026HolonomyMemory,Tsiokos2026MarkingErasureRecombination}
+
+The theorem backbone used in the paper is recorded in Theorem~\ref{thm:flagship-setoids}, Theorem~\ref{thm:factorized-collapse}, Theorem~\ref{thm:reference-positive-witness}, Corollary~\ref{cor:reference-positive-no-factorization}, Theorem~\ref{thm:completion-partner-witness}, and Corollary~\ref{cor:completion-partner-no-factorization}. On the flagship surface, the branchwise and recombination equivalence relations are well defined. On the factorized or no-interference comparison surface, recombination observables factor through the branchwise summary and the recombination quotient collapses to the branchwise quotient. For the reference-positive flagship anchor, there exists a concrete witness pair that is branchwise equivalent, agrees under the agreement-side observable, and is separated by the decisive screen-history observable. This yields a concrete no-factorization contrast on the same support. For the completion-partner anchor, matched witness separation and no-factorization likewise hold on the paired completion surface. These are the theorem-level statements on which the main paper relies.
+
+The paper's control surfaces are not a second theorem program. They function as explicit comparison targets: null baseline, memory-only control, artifact exclusion, and boundary-sensitive or completion-sensitive negatives. Their benchmark role is evidential and comparative, while the theorem backbone remains concentrated on the factorized comparison theorem and the concrete flagship witness surfaces.
+ \section{Exact Tables}
+
+This appendix collects the extended exact tables that support the main manuscript. The main text already contains the core flagship tables; the tables here gather the wider benchmark and breadth surfaces used to situate those anchors.
+
+\begin{table}[p]
+\centering
+\caption{Core benchmark and control surfaces used in the paper. The table collects the exact finite reference surfaces against which the flagship anchors are interpreted. Route readability and visibility recovery entries are benchmark-side diagnostics rather than theorem predicates.}
+\label{tab:core-benchmark-registry}
+\begin{tabular}{p{2.8cm}p{3.4cm}p{4.4cm}p{2.4cm}}
+\toprule
+Surface & Representative case & Exact status & Paper role \\
+\midrule
+Classical mixture &
+Classical mixture baseline &
+$|K|=|R|=1$, $\eta_{\max}=1$, gap $=0$ &
+Null baseline \\
+\addlinespace
+Memory-only control &
+Hidden predictive memory without later recombination refinement &
+$|Q|=1$, $|M|=2$, $|K|=|R|=3$, $\eta_{\max}=1$, gap $=0$ &
+Memory-only control \\
+\addlinespace
+Marked suppression &
+Readable suppression surface &
+route readability $=1$, visibility recovery gap $=0$, $|K|=|R|=3$ &
+Readable reference \\
+\addlinespace
+Erased recovery &
+Erasure-side reference surface &
+route readability $=0$, maximal conditional visibility $=1/2$, $|K|=1$, $|R|=3$, $\eta_{\max}=3$, gap $=1$ &
+Support-only reference \\
+\addlinespace
+Reference-positive anchor &
+Relative-cycle flagship anchor &
+$|Q|=|M|=|K|=1$, $|R|=3$, $\eta_{\max}=3$, gap $=2/3$, factorization failed &
+Flagship anchor \\
+\addlinespace
+Completion-partner anchor &
+Paired completion flagship anchor &
+$|Q|=|M|=|K|=1$, $|R|=3$, $\eta_{\max}=3$, gap $=2/3$, factorization failed &
+Flagship anchor \\
+\addlinespace
+Protocol artifact pair &
+Uninternalized / internalized comparison &
+uninternalized: $|K|=1$, $|R|=3$, gap $=1$; internalized: $|K|=|R|=3$, gap $=0$ &
+Artifact exclusion \\
+\addlinespace
+Boundary collapse &
+$n5\_d1\_w1of3\_2of3$\newline$\lambda\_1of1$ &
+explicit boundary collapse under the committed family edge case &
+Negative edge case \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+\begin{table}[p]
+\centering
+\caption{Expanded Route A breadth registry. The flagship anchors are listed for orientation only and are not counted as breadth shortlist items. Nearby positives, support-only rows, duplicates, near misses, and boundary-collapse cases are kept distinct.}
+\label{tab:appendix-route-a-breadth-registry}
+\begin{tabular}{p{2.8cm}p{3.8cm}p{4.8cm}p{1.8cm}}
+\toprule
+Role & Case & Registry status & Counted in shortlist \\
+\midrule
+Flagship anchor &
+Reference-positive anchor &
+Formal-core anchor; orientation only &
+No \\
+\addlinespace
+Flagship anchor &
+Completion-partner anchor &
+Formal-core anchor; orientation only &
+No \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n5\_d2\_w1of3\_2of3$ &
+Nearby exact non-anchor positive &
+Yes \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n4\_d1\_w1of3\_2of3$ &
+Nearby exact non-anchor positive &
+Yes \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n3\_d1\_w1of3\_2of3$ &
+Nearby exact non-anchor positive &
+Yes \\
+\addlinespace
+Shortlist-confirmed nearby positive &
+$n5\_d1\_w1of2\_1of2$ &
+Nearby exact non-anchor positive &
+Yes \\
+\addlinespace
+Support-only &
+Erasure anchor &
+Empirical family support, not shortlist breadth &
+No \\
+\addlinespace
+Duplicate of flagship anchor &
+$n5\_d1\_w1of3\_2of3$ &
+Anchor-aligned duplicate of the flagship surface &
+No \\
+\addlinespace
+Near miss &
+$n4\_d2\_w1of3\_2of3$ &
+Family-boundary near miss &
+No \\
+\addlinespace
+Boundary collapse &
+$n5\_d1\_w1of3\_2of3$\newline$\lambda\_1of1$ &
+Explicit boundary-collapse negative &
+No \\
+\bottomrule
+\end{tabular}
+\end{table}
+  \section{Lean Formalization Summary}
+
+The Lean formalization is intentionally narrow and anchor-centered. A retained recombination core provides the general quotient, refinement, and factorization infrastructure. The current formal summary should therefore be read in the context of Lean~4 and mathlib, and more broadly against earlier finite-structure formalizations in proof assistants, rather than as a standalone proof-assistant tutorial \cite{deMouraUllrich2021,MathlibCommunity2020,Gonthier2008,Paulson2015,LiuHasanTahar2011}. On top of that core, a dedicated flagship namespace encodes the two selected flagship anchors, their matched controls, and the theorem statement surface used in the paper. A target-data layer connects benchmark-side flagship targets to explicit Lean-side constants and structures. A proof kernel then carries the factorized no-interference collapse theorem and the anchor-level separation and factorization-contrast results needed by the flagship story. A witness-data layer supplies the concrete finite witness model and Lean-native decisive observable families used on the flagship surface.
+
+The reference-positive anchor now has explicit Lean-side invariant targets, witness targets, and factorization-contrast targets, together with a concrete finite witness realization. The completion-partner anchor likewise has matched target data together with witness separation and no-factorization contrast on the paired surface. At the same time, the formalization remains narrower than the full benchmark corpus: route readability, unconditional visibility, conditional visibility, and visibility recovery remain benchmark-side diagnostics, and the erasure anchor remains empirical support rather than formal core. The formal layer therefore mirrors the paper's evidence hierarchy rather than replacing it.
+ \section{Computational Methods}
+
+All benchmark and comparison work in the paper is exact-finite and same-support disciplined. This exact-finite choice is deliberate: the paper uses only exact collapse and separation surfaces, and does not rely on approximate aggregation or approximate state-abstraction machinery \cite{KemenySnell1976,Buchholz1994,GivanDeanGreig2003,LiWalshLittman2006}. Benchmark surfaces are defined by committed machine-readable configurations and compared only after the support has been fixed. The paper reuses the validated fixed-support corpus rather than introducing a second benchmark semantics stack. Quotient and carrier computations are exact over the current finite support surface, and branchwise-versus-recombination comparisons are carried out on explicit branch assemblages. The matched control bundle is likewise fixed in advance and reused across the paper rather than redefined section by section.
+
+The bounded breadth story is also conservative. Breadth is counted only from explicit committed exact cases, after structural deduplication against the flagship anchors themselves. Support-only rows, duplicates, near misses, artifact-tainted contexts, and boundary-collapse cases are kept explicit rather than absorbed into positivity. Likewise, the formal layer is built from explicit target-data encodings tied to the selected flagship anchors and their matched controls. The result is a paper whose empirical and formal surfaces remain aligned by construction rather than only by narrative comparison after the fact.
+ \section{Artifact and Reproducibility Note}
+
+The manuscript is backed by a machine-readable source map and artifact catalog in the accompanying repository, available at \url{https://github.com/ioannist/six-birds-carrier}. The source map links manuscript sections to canonical result artifacts, while the later artifact catalog and handoff tables provide family-level entry points for benchmark validation, controls, breadth, flagship-family status, and the Lean formal kernel. These materials are supplementary to the paper rather than substitutes for it: the paper itself contains the core theorem statements, flagship tables, control bundle, breadth summary, and formal-status summary needed to read the result independently of the repository.
+
+The repository also records the explicit evidence hierarchy used throughout the paper. Main-text theorem claims, benchmark-backed claims, control-backed exclusions, family-support claims, and deferred or benchmark-only diagnostics are stored separately rather than blended into one undifferentiated evidence pool. This keeps the manuscript's positive claims traceable and reproducible while preserving the distinction between theorem-backed and benchmark-backed parts of the result.
+ 
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

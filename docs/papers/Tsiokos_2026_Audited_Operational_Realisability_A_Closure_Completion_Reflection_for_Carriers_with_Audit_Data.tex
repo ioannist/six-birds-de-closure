@@ -1,0 +1,2603 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+
+
+\DeclareMathOperator{\Capacity}{Cap}
+\DeclareMathOperator{\Cost}{Cost}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\dist}{dist}
+
+\newcommand{\K}{\mathsf K}
+\newcommand{\XiRes}{\Xi}
+\newcommand{\preceqq}{\preceq}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\PreSB}{\mathbf{PreSB}}
+\newcommand{\AOR}{\mathbf{AOR}}
+\newcommand{\RefPreSB}{\mathbf{RefPreSB}}
+\newcommand{\CascadeStableAOR}{\mathbf{AOR}^{\mathrm{casc}}}
+\newcommand{\RefStableAOR}{\mathbf{AOR}^{\mathrm{ref}}}
+
+\newcommand{\ClSB}{\mathrm{Cl}_{SB}}
+
+\newcommand{\XiSB}{\Xi_{SB}}
+\newcommand{\Sigobs}{\Sigma_{\mathrm{obs}}}
+\newcommand{\Sigstage}{\Sigma_{\mathrm{stage}}}
+\newcommand{\Sigconstr}{\Sigma_{\mathrm{constraint}}}
+\newcommand{\Sigrewrite}{\Sigma_{\mathrm{rewrite}}}
+\newcommand{\Sighol}{\Sigma_{\mathrm{holonomy}}}
+\newcommand{\Sigres}{\Sigma_{\mathrm{residual}}}
+\newcommand{\Signon}{\Sigma_{\mathrm{nonclaim}}}
+\newcommand{\Sigmeta}{\Sigma_{\mathrm{meta}}}
+
+\newcommand{\Ddescent}{\Delta_{\mathrm{descent}}}
+\newcommand{\Dtransport}{\Delta_{\mathrm{transport}}}
+\newcommand{\Dinterface}{\Delta_{\mathrm{interface}}}
+\newcommand{\Dlocal}{\Delta_{\mathrm{local}}}
+\newcommand{\Dglobal}{\Delta_{\mathrm{global}}}
+\newcommand{\Dpresentation}{\Delta_{\mathrm{presentation}}}
+\newcommand{\Dsource}{\Delta_{\mathrm{source}}}
+\newcommand{\Dhorizon}{\Delta_{\mathrm{horizon}}}
+\newcommand{\Dscale}{\Delta_{\mathrm{scale}}}
+\newcommand{\Dlimit}{\Delta_{\mathrm{limit}}}
+\newcommand{\Dsym}{\Delta_{\mathrm{sym}}}
+\newcommand{\Drole}{\Delta_{\mathrm{role}}}
+\newcommand{\Dtarget}{\Delta_{\mathrm{target}}}
+
+\newcommand{\zeroSt}{\texttt{zero}}
+\newcommand{\budgeted}{\texttt{budgeted}}
+\newcommand{\bridged}{\texttt{bridged}}
+\newcommand{\hidden}{\texttt{hidden}}
+\newcommand{\moduli}{\texttt{moduli}}
+\newcommand{\selected}{\texttt{selected}}
+\newcommand{\probabilistic}{\texttt{probabilistic}}
+\newcommand{\outOfScope}{\texttt{out\_of\_scope}}
+\newcommand{\blocked}{\texttt{blocked}}
+\newcommand{\approvedOther}{\texttt{approved\_other}}
+
+\newcommand{\asymptoticBudgeted}{\texttt{asymptotic\_budgeted}}
+\newcommand{\summable}{\texttt{summable}}
+\newcommand{\contractive}{\texttt{contractive}}
+\newcommand{\eventualZero}{\texttt{eventual\_zero}}
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{nonclaim}[theorem]{Nonclaim}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{Audited Operational Realisability:\\
+A Closure-Completion Reflection for Carriers with Audit Data}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{\today}
+\hypersetup{
+  pdftitle={Audited Operational Realisability: A Closure-Completion Reflection for Carriers with Audit Data},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Many mathematical frameworks come with audit data alongside their
+main objects: source ledgers, route registries, residual budgets,
+status annotations, nonclaim boundaries, and meta-audit records.
+\emph{Audited Operational Realisability} (AOR) is the meta-theory of
+typed carriers that close as audit systems within a declared scope.
+A \emph{PreSB carrier} is a typed carrier together with this audit
+data; it is an \emph{AOR carrier} when every declared audit
+obligation is discharged inside the scope.  We show that every PreSB
+carrier \(\PreSB_{\mathfrak S}\) admits a canonical completion into
+the full subcategory of AOR carriers via a reflection
+\(\ClSB\dashv\iota\) obtained as a monotone Knaster--Tarski
+saturation on the complete lattice of AOR-extending operations.  The
+reflection is developed in four parts: the closure-completion
+construction and its universal property; the eight-stratum
+decomposition of the structural defect \(\XiSB\); the twelve-type
+\(\Sigma_{\mathrm{residual}}\) atlas with its discharge cascades and
+cascade-stable AOR; and refinement chains with asymptotic statuses,
+yielding the hierarchy
+\(\RefStableAOR\subseteq\CascadeStableAOR\subseteq\AOR\).  The
+development is meta-theoretic and carries no PDE-specific worked
+example.  An AOR-instance presentation of the Navier--Stokes
+smooth-data carrier is given in \citet{Tsiokos2026NavierStokes},
+which cites the present meta-theory at paper level.  Two scope
+choices apply.  Global cascade confluence is established by Newman's
+lemma applied to the local diamond property and the well-founded
+discharge relation, both of which we prove explicitly.  The hierarchy
+is exhibited via named witness carriers and their typed obstruction
+markers; full predicate-level non-membership proofs at every level
+remain framework future work.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} Six Birds theory; audited operational realisability; PreSB; closure completion; Knaster--Tarski reflection; residual atlas; discharge cascade; refinement-stable AOR.
+
+\section{Introduction}\label{sec:aor-intro}
+
+Fix a scope record \(\mathfrak S\) declaring the admissible
+carrier-class, source ledger, interface family, and route registry.
+The category \(\PreSB_{\mathfrak S}\) consists of typed carriers
+equipped with declared audit data over \(\mathfrak S\) --- observation,
+stage, constraint, rewrite, holonomy, residual, status, nonclaim, and
+meta-audit registries --- together with morphisms preserving the
+scoped package.  Its full subcategory \(\AOR_{\mathfrak S}\) contains
+the audit-closed carriers, those whose declared records, routes,
+residuals, nonclaims, and meta-audits have all been typed, registered,
+statused, or discharged inside \(\mathfrak S\).  The central question
+is the corresponding closure problem: when does an arbitrary object of
+\(\PreSB_{\mathfrak S}\) admit a canonical completion into
+\(\AOR_{\mathfrak S}\), and what is the structure of that completion?
+
+The construction is a categorical reflection.  The functor \(\ClSB\)
+sends a PreSB carrier to its closure-completed AOR carrier, and the
+inclusion \(\iota:\AOR_{\mathfrak S}\hookrightarrow
+\PreSB_{\mathfrak S}\) is its right adjoint, so that maps from a
+PreSB carrier into an audit-closed carrier factor uniquely through the
+closure-completed object.  What is specific to the present framework
+is the audit content of that closure: the completion is not a formal
+hull but the least saturation that adds the AOR-extending operations
+required by the carrier's records, residuals, and status obligations.
+
+The first diagnostic device is the structural defect \(\XiSB\).  For a
+PreSB carrier, \(\XiSB\) measures the aggregate failure of audit
+closure, split into eight strata: observation, stage, constraint,
+rewrite, holonomy, residual, nonclaim, and meta-audit defects.  AOR
+membership therefore decomposes: it holds exactly when every stratum
+is empty.  The residual stratum is refined further by a twelve-type
+residual atlas, which separates failures of descent, transport,
+interface, local and global consistency, presentation, source
+admission, horizon, scale, limit, symmetry, role, and target typing.
+Residual atoms carry statuses drawn from the AOR-8 catalogue and may
+generate downstream obligations, so audit closure is also an
+operational question about how discharge propagates.
+
+The second operational layer is the discharge cascade.  A cost record
+\(\Cost(t,s)\) assigns to a residual type \(t\) and status \(s\) the
+finite multiset of downstream obligations produced by that discharge
+choice; the operator \(\mathrm{Down}\) collects these obligations
+across a witness family.  The resulting cascade graph is bipartite,
+alternating residual atoms with discharge witnesses.  Cascade-stable
+AOR, \(\CascadeStableAOR\), consists of those audit-closed carriers
+that come equipped with a declared discharge assignment whose cascades
+terminate under the cost discipline.  The status assignment is part
+of the data of the carrier; it cannot be chosen after the fact to
+secure cascade stability.
+
+The third layer is asymptotic.  Refinement morphisms annotate
+scope-preserving PreSB morphisms by one of six refinement kinds, and
+directed refinement chains form the category \(\RefPreSB_{\mathfrak S}\).
+At directed colimits, finite cascade closure is not always enough; limit
+residuals require one of the asymptotic statuses
+\(\asymptoticBudgeted\), \(\summable\), \(\contractive\), or
+\(\eventualZero\).  The corresponding subclass
+\(\RefStableAOR\) consists of carriers whose audit closure survives both
+finite cascade discharge and refinement-colimit passage.  The resulting
+hierarchy is
+\[
+  \RefStableAOR_{\mathfrak S}
+  \subseteq
+  \CascadeStableAOR_{\mathfrak S}
+  \subseteq
+  \AOR_{\mathfrak S},
+\]
+and the witness carriers of \Cref{thm:aor:hierarchy} mark the two
+boundaries between ordinary audit closure, finite cascade closure, and
+refinement-stable closure.
+
+The motivation for the abstraction comes from earlier audited
+frameworks in the same programme.  The formed-layer membrane theory
+of \citet{Tsiokos2026NeedleKiller} and the adequacy-residual calculus
+of \citet{Tsiokos2026XiCompanion} both rely on a disciplined account
+of what has been registered, what has been transported, what residual
+remains, and what is explicitly out of scope.  The present paper
+abstracts that bookkeeping into a self-contained category-theoretic
+and order-theoretic meta-theory.  It does not reprove results from
+those works, nor does any theorem here depend on their internal
+labels.  In the opposite direction, \citet{Tsiokos2026NavierStokes}
+uses the AOR meta-theory as a consumer framework for a presentation
+of the Navier--Stokes smooth-data carrier as an AOR instance; the
+PDE-specific closure stack is developed there, not here.
+
+One notational ambiguity is worth flagging at the outset.  The symbol
+\(\XiSB\) in this paper denotes the eight-stratum structural defect of
+a PreSB carrier; it is not the adequacy residual \(\Xi_C(D\mid L)\) of
+\citet{Tsiokos2026XiCompanion}.  The two objects share the Greek
+letter because both measure a kind of leftover obligation, but they
+live in disjoint formal contexts: \(\XiSB\) belongs to the AOR
+meta-theory of typed audit records, while \(\Xi_C(D\mid L)\) belongs
+to the Schur-complement calculus of native and dissolving probe
+families.
+
+A formal companion of the development is recorded in
+\Cref{app:aor-formalization}; the body is self-contained and does not
+depend on it.
+
+The remainder of the paper proceeds as follows.  \Cref{sec:aor-background}
+sets up the mathematical entry point: scoped carriers, reflective
+completion, least fixed points, well-founded discharge, and directed
+colimits.  \Cref{sec:aor-problem-setup} defines PreSB carriers, their
+morphisms, and the AOR full subcategory.  \Cref{sec:aor-methods}
+constructs \(\ClSB\), states its universal property, and packages the
+adjunction with the inclusion.  \Cref{sec:aor-primary-results} develops the
+primary diagnostic layer: \(\XiSB\), the eight strata, the residual atlas,
+the atom calculus, and the AOR-8 status catalogue.  \Cref{sec:aor-secondary-results}
+builds discharge cascades and cascade-stable AOR.  \Cref{sec:aor-analysis}
+adds refinement chains, asymptotic statuses, directed-colimit behavior, and
+the hierarchy.  Finally, \Cref{sec:aor-discussion} records the status,
+scope, and nonclaim boundary, and \Cref{sec:aor-conclusion} summarizes the
+audit-closure meta-theory.
+ \section{Background}\label{sec:aor-background}
+
+The framework developed here abstracts an audit discipline that
+already appears in the formed-layer membrane theory of
+\citet{Tsiokos2026NeedleKiller}.  In that setting the mathematical
+object of interest is never just a bare carrier; it is accompanied by
+records of which probes are native, which routes are legal, which
+residuals remain unpaid, which statements are explicitly outside
+scope, and which bookkeeping obligations have been accepted.  We do
+not rederive that membrane theory, but isolate the meta-theoretic
+pattern behind it: a carrier can be meaningfully used only after its
+record layer has been audited inside a declared scope.
+
+The adequacy-residual calculus of \citet{Tsiokos2026XiCompanion}
+supplies a second motivating source.  There the central object is the
+Schur-complement residual \(\Xi_C(D\mid L)\), measuring what a
+dissolving probe family \(D\) cannot explain through a native probe
+family \(L\) under an audit operator \(C\).  The calculus distinguishes
+native explanation from leftover residual, exact adequacy from
+defective adequacy, and lawful promotion from blind-spot failure.
+AOR neither imports those theorems nor depends on them; it abstracts
+the surrounding bookkeeping question: once a residual, route, status,
+or nonclaim has been declared, what does it mean for the whole
+carrier to be audit-closed?
+
+The categorical language used below is standard
+\citep{MacLane1998Categories,Riehl2016CategoryTheory,Borceux1994CategoricalAlgebra}.
+A full subcategory keeps all morphisms between the selected objects; in
+this paper the selected objects are the audit-closed carriers.  A
+reflective subcategory is a full subcategory whose inclusion admits a
+left adjoint, so every ambient object has a universal approximation
+inside the subcategory.  The reflector here is the closure-completion
+functor \(\ClSB\), and the inclusion is
+\(\iota:\AOR_{\mathfrak S}\hookrightarrow\PreSB_{\mathfrak S}\).  The
+identity-field counit says that an already audit-closed carrier is
+unchanged by applying the closure completion.  Directed colimits enter
+later when a carrier is not built in one step but as the limit of a
+refinement chain; the relevant background is the theory of accessible
+and locally presentable categories \citep{AdamekRosicky1994LocallyPresentable}.
+
+The order-theoretic input is equally classical
+\citep{DaveyPriestley2002Lattices,GierzEtAl2003ContinuousLattices}.  A
+complete lattice is a partially ordered set in which every family has a
+meet and a join.  A monotone endomap on such a lattice has least and
+greatest fixed points by the Knaster--Tarski theorem
+\citep{Knaster1928SetFunctions,TarskiFixedPoint1955}.  The construction of
+\(\ClSB\) uses this pattern in the form of monotone saturation:
+starting from a seed carrier, one repeatedly adds the minimal
+AOR-extending operations forced by the audit data, and the least fixed
+point is the closure-completed carrier.  The constructive ordinal
+iteration giving this fixed point is the version of
+\citet{CousotCousotConstructive1979}; the same lattice-fixed-point
+machinery underlies abstract interpretation
+\citep{CousotCousot1977AbstractInterpretation}.  The body uses the
+fixed-point theorem as standard order theory.
+
+The defect layer should be read as typed diagnostic bookkeeping
+rather than as an analytic norm or an energy.  The structural defect
+\(\XiSB\) is a tagged aggregate of audit failures, and its eight
+strata separate observation typing, stage data, constraints, rewrites,
+holonomy records, residuals, nonclaims, and meta-audits.  This
+separation prevents a single error class from hiding several distinct
+audit obligations, and it makes the phrase ``defect zero'' operational:
+\(\XiSB=0\) means that each stratum has independently emptied.
+
+Residual discharge is modeled by a finite labelled rewriting discipline.
+A residual atom receives a status, a status produces downstream obligations
+through the cost table, and the downstream operator collects the next layer
+of atoms.  This is why the cascade graph is bipartite: its layers alternate
+between residual atoms and discharge witnesses.  Termination is expressed by
+a well-founded measure on the residual type and status data.  The relevant
+background is the standard rewriting-theory package in which termination
+and local confluence control normal-form behavior; see
+\citet{KnuthBendix1970SimpleWord} and \citet{Huet1980ConfluentReductions},
+the modern treatments in \citet{BaaderNipkow1998TermRewriting} and
+\citet{Terese2003TermRewriting}, and Newman's lemma in its original form
+\citep{Newman1942Combinatorial}.
+
+Refinement adds one more layer.  A refinement morphism is a
+scope-preserving map of carriers annotated by the kind of refinement being
+performed: expanding the scope, adding records, growing stages, tightening
+constraints, strengthening morphisms, or refining the carrier data.  A
+refinement chain is a directed diagram of such morphisms.  At a directed
+colimit, record data may be obtained by directed union while carrier data
+may be represented by compatible threads.  Finite cascade discharge need not
+survive this passage automatically, because a residual can appear only at
+the tail or limit stage.  The asymptotic statuses
+\(\asymptoticBudgeted\), \(\summable\), \(\contractive\), and
+\(\eventualZero\) are the vocabulary used to pay these limit-stage
+obligations.
+
+These ingredients yield the hierarchy developed later:
+\[
+  \RefStableAOR_{\mathfrak S}
+  \subseteq
+  \CascadeStableAOR_{\mathfrak S}
+  \subseteq
+  \AOR_{\mathfrak S}.
+\]
+Ordinary AOR membership means zero structural defect.  Cascade-stable
+AOR adds a declared discharge assignment whose finite cascades close.
+Refinement-stable AOR further requires compatibility with refinement
+chains and their asymptotic residuals.  The witness boundaries for these
+inclusions are exhibited in \Cref{sec:aor-analysis} via named carriers.
+
+The relationship to \citet{Tsiokos2026NavierStokes} is one-way.  That
+paper consumes the AOR vocabulary to present the Navier--Stokes
+smooth-data carrier as a refinement-stable AOR instance.  No
+theorem of the present paper depends on that presentation, and no
+PDE-specific worked example is carried here.
+ \section{Problem setup: PreSB carriers and the AOR full subcategory}\label{sec:aor-problem-setup}
+
+\Cref{sec:aor-background} described audit closure in ordinary
+mathematical terms.  This section fixes the formal objects used in
+the rest of the paper.  A PreSB carrier is not only a carrier space
+with quotient data; it is a scoped record package carrying the
+registries, residuals, statuses, nonclaims, and meta-audit entries
+that must be checked before the carrier can be treated as
+audit-closed.  The scope record \(\mathfrak S\) is part of the data of
+the carrier rather than an external side condition: two carriers
+whose admissible sources, interfaces, routes, or carrier classes are
+declared in different scopes are not compared inside a common
+category.
+
+The carrier data come first.  The next definition lists the seventeen
+fields that the paper audits.  The symbols \(H,q,Q\) encode the
+legal-quotient carrier data; \(\Gamma\) is the route registry; and
+the source, interface, observation, stage, constraint, rewrite,
+holonomy, residual, status, nonclaim, and meta-audit registries form
+the record layer to which the closure-completion construction will be
+applied.
+
+\begin{definition}[PreSB carrier]\label{def:aor:presb-carrier}
+A \emph{PreSB carrier} is a tuple
+\[
+  \mathsf C = (H,\,q,\,Q,\,\Gamma,\,\mathsf R,\,\mathsf C\text{-reg},\,
+                \mathrm{Src},\,\mathrm{Ifc},\,\mathrm{Obs},\,
+                \mathrm{Stage},\,\mathrm{Constr},\,\mathrm{Rewrite},\,
+                \mathrm{Hol},\,\mathrm{Res},\,\mathrm{Stat},\,
+                \mathrm{NC},\,\mathrm{Meta};\,\mathfrak S),
+\]
+of seventeen typed fields: legal-quotient carrier and audit data
+$(H,q,Q)$; route registry $\Gamma$; record registry $\mathsf R$ and
+claim registry $\mathsf C$-reg; source, interface, and observation
+registries $(\mathrm{Src},\mathrm{Ifc},\mathrm{Obs})$; stage, constraint,
+rewrite, and holonomy registries
+$(\mathrm{Stage},\mathrm{Constr},\mathrm{Rewrite},\mathrm{Hol})$;
+residual and status registries $(\mathrm{Res},\mathrm{Stat})$;
+nonclaim register $\mathrm{NC}$ and meta-audit register
+$\mathrm{Meta}$; together with the scope record $\mathfrak S$ on which
+the carrier is evaluated.
+\end{definition}
+
+The scope record is named separately because it controls the
+formation of both objects and morphisms.  A carrier-class declaration,
+source ledger, interface family, and route registry acquire their
+intended meaning only after the scope has fixed which such data are
+admissible.
+
+\begin{definition}[Scope record]\label{def:aor:scope-record}
+A \emph{scope record} $\mathfrak S$ is a typed declaration of the
+admissible carrier-class, the admissible source ledger, the admissible
+interface family, and the admissible route registry against which a
+PreSB carrier is audited.  Scope is a first-class field of a PreSB
+carrier; comparing two carriers of incompatible scopes is undefined.
+\end{definition}
+
+Morphisms preserve this scoped audit package.  They are not arbitrary maps
+between carriers, but tuples of field maps that respect the quotient,
+transport, and audit-pairing structure already declared in the objects.
+Thus, after a scope has been fixed, the PreSB carriers form an ordinary
+category with componentwise identities and composition.
+
+\begin{definition}[PreSB morphism]\label{def:aor:morphism-presb}
+A \emph{PreSB morphism} $f:\mathsf C\to\mathsf C'$ between two PreSB
+carriers of identical scope is a tuple of typed scope-preserving
+field morphisms that commute with the carrier quotient maps, the route
+registry transports, and the audit form pairings.  Morphisms compose
+componentwise; the identity morphism is the tuple of identity
+field-maps.  The category $\PreSB_{\mathfrak S}$ has PreSB carriers of
+scope $\mathfrak S$ as objects and the above morphisms as arrows.
+\end{definition}
+
+The audit-closed objects are then selected by a defect-zero
+condition.  The definition states this condition through the
+structural defect, whose eight strata are developed in
+\Cref{sec:aor-primary-results-defect}.  At this point the equivalent
+operational reading is the more useful one: the declared records are
+typed, the cited routes are audited, the residuals have statuses, the
+nonclaims have entries, and the meta-audit obligations have been
+discharged.
+
+\begin{definition}[AOR subcategory]\label{def:aor:aor-subcategory}
+The \emph{AOR subcategory} $\AOR_{\mathfrak S}$ is the full
+subcategory of $\PreSB_{\mathfrak S}$ whose objects are the PreSB
+carriers $\mathsf C$ for which the eight-stratum structural defect
+$\XiSB(\mathsf C)$ (\Cref{def:aor:xi-sb}) is zero.  Equivalently, every
+declared record of $\mathsf C$ is typed, every cited route is audited,
+every residual is statused, every nonclaim is registered, and every
+meta-audit obligation is discharged.
+\end{definition}
+
+Because \(\AOR_{\mathfrak S}\) is full, it inherits the ambient
+morphisms between selected objects.  What remains to verify is
+isomorphism-invariance of membership: if two scoped carriers are
+isomorphic in \(\PreSB_{\mathfrak S}\), then the typed audit
+obligations transported along the isomorphism vanish on one carrier
+exactly when they vanish on the other.
+
+\begin{theorem}[AOR is a full subcategory]\label{thm:aor:aor-full-subcat}
+The inclusion $\iota:\AOR_{\mathfrak S}\hookrightarrow\PreSB_{\mathfrak S}$
+is a fully faithful functor.  The defect predicate $\XiSB(\mathsf C)=0$
+is preserved by isomorphism and reflected by it, so AOR membership
+depends only on the isomorphism class of the carrier within scope
+$\mathfrak S$.
+\end{theorem}
+
+\begin{proof}
+The proof is the standard full-subcategory argument.  The inclusion is
+identity on the underlying scoped carriers and on the morphisms between
+selected objects, so it is full and faithful by construction.  The
+isomorphism-invariance statement follows because each audit obligation is a
+typed field-level condition: transporting a record, route, residual status,
+nonclaim entry, or meta-audit discharge across an isomorphism changes its
+presentation, not its existence inside the fixed scope.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.AOR.PreSB.aorFullSubcat}; see \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+ \section{\texorpdfstring{Methods: the closure-completion functor \(\ClSB\)}{Methods: the closure-completion functor ClSB}}\label{sec:aor-methods}
+
+\Cref{sec:aor-problem-setup} defined \(\AOR_{\mathfrak S}\) as the
+full subcategory of audit-closed carriers inside
+\(\PreSB_{\mathfrak S}\).  We now follow the standard reflection
+pattern \citep{MacLane1998Categories,Borceux1994CategoricalAlgebra}:
+construct a canonical completion of a seed carrier, show that maps
+from the seed into an audit-closed carrier factor uniquely through
+the completion, and package the result as a left adjoint to the
+inclusion.  The construction is order-theoretic.  Over a fixed scope
+\(\mathfrak S\), AOR-extending operations are ordered by subcarrier
+inclusion, and a seed carrier is saturated by repeatedly adding the
+minimal operations demanded by its missing audit obligations.
+
+\begin{definition}[Closure-completion operator]\label{def:aor:cl-sb-operator}
+The \emph{closure-completion operator}
+$\ClSB:\PreSB_{\mathfrak S}\to\AOR_{\mathfrak S}$ assigns to a PreSB
+carrier $\mathsf C$ the carrier obtained as the least fixed point of
+the monotone-saturation map
+\[
+  \mathsf C \;\longmapsto\;
+  \mathsf C \cup \{\text{minimal AOR-extending operations on }\mathsf C\}
+\]
+on the complete lattice of AOR-extending operations over the scope
+$\mathfrak S$, together with the reflection unit
+$\eta_{\mathsf C}:\mathsf C\to\ClSB(\mathsf C)$ given by the inclusion
+of the seed carrier into its saturation.
+\end{definition}
+
+The lattice in the definition has as elements the candidate extensions
+of the carrier's audit layer inside the fixed scope.  Its order is
+subcarrier inclusion: one candidate is below another when it contains
+no additional carrier or record data beyond the data of the second.
+Meets and joins are computed fieldwise by intersection and generated
+union of typed audit data, with the scope held fixed.  The saturation
+endomap is therefore monotone: adding data before applying the rule
+cannot remove any typed route, residual status, nonclaim entry, or
+meta-audit discharge after applying it.
+
+\begin{theorem}[Construction theorem for $\ClSB$]\label{thm:aor:cl-sb-construction}
+The lattice of AOR-extending operations over a fixed scope
+$\mathfrak S$ is a complete lattice, and the saturation map of
+\Cref{def:aor:cl-sb-operator} is monotone with respect to the
+subcarrier order.  By the Knaster--Tarski fixed-point theorem the
+least fixed point exists, is unique, and belongs to
+$\AOR_{\mathfrak S}$.  In particular $\ClSB(\mathsf C)$ is well-defined
+on every PreSB carrier of scope $\mathfrak S$.
+\end{theorem}
+
+\begin{proof}
+Fix the scope \(\mathfrak S\) and a seed carrier \(\mathsf C\).  Let
+\(\mathcal L_{\mathfrak S}(\mathsf C)\) be the poset of AOR-extending
+operation packages over \(\mathsf C\), ordered by subcarrier inclusion and
+typed-field extension.  The fieldwise meet of any family keeps precisely the
+data common to all packages, and the fieldwise generated join adjoins the
+union of all carrier, route, residual, nonclaim, and meta-audit data while
+retaining only well-typed scope-compatible entries.  These operations give a
+complete lattice.  The saturation endomap \(S\) sends a package to the same
+package together with the minimal operations forced by its currently missing
+AOR obligations.  If \(X\le Y\), then every obligation visible in \(X\) is
+also visible in \(Y\), and every operation forced over \(X\) is included
+among the operations forced over \(Y\); hence \(S(X)\le S(Y)\).
+
+Knaster--Tarski \citep{TarskiFixedPoint1955} now gives a least fixed
+point \(\mathrm{lfp}(S)\).  This object contains the seed package,
+because the seed is the bottom datum relative to which the lattice was
+formed, and the unit \(\eta_{\mathsf C}\) is the induced inclusion.  It is AOR because
+being fixed by \(S\) says that no further minimal AOR-extending operation is
+missing.  Equivalently, every typed-record, route, residual-status,
+nonclaim, and meta-audit obligation demanded by the package has already
+been supplied.  Uniqueness is uniqueness of the least fixed point in a
+poset: any other fixed point containing the seed is above \(\mathrm{lfp}(S)\).
+Thus \(\ClSB(\mathsf C)\) is defined for every scoped PreSB carrier.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.ClSB.clSBConstruction}; the Lean theorem proves the closure package, monotone saturation record, zero-defect target, and identity-field counit under the complete-lattice placeholder narrowing. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{lemma}[Initiality of saturation steps]
+Let \(\mathsf C\) be a PreSB carrier of scope \(\mathfrak S\), and let
+\(\mathsf D\) be an AOR carrier of the same scope.  For every PreSB
+morphism \(g:\mathsf C\to\iota\mathsf D\) and every minimal
+AOR-extending operation \(\sigma\) added by the saturation map \(S\) to
+a candidate package \(X\supseteq\mathsf C\), there is a unique PreSB
+morphism extension
+\(\widetilde g_\sigma:S(X)\to\iota\mathsf D\) such that
+\(\widetilde g_\sigma|_X=g_X\).
+\end{lemma}
+
+\begin{proof}
+The minimal operation \(\sigma\) adds exactly one of the audit-completion
+data types used by the saturation map: typed-record data, route audits,
+residual statuses, nonclaim entries, or meta-audit discharge records.  In
+each case, the AOR-extending datum of \(\sigma\) is the smallest typed
+completion of \(X\) that closes the obligation \(\sigma\) addresses.  The
+map \(g_X\) sends the fields already present in \(X\) to a typed
+configuration in \(\mathsf D\).  Because \(\mathsf D\) is AOR, the
+corresponding obligation is already discharged in \(\iota\mathsf D\), so
+the image of the new completion datum is forced.  This defines
+\(\widetilde g_\sigma\).
+
+Uniqueness is fieldwise.  Any extension of \(g_X\) across \(S(X)\) must
+agree with \(g_X\) on \(X\), and the only new datum is the minimal
+completion \(\sigma\).  Since \(\sigma\) closes the smallest obligation
+not yet closed in \(X\), its image in the AOR target is determined by
+the already fixed target fields.  Hence two such extensions agree on
+both \(X\) and \(\sigma\), and therefore on all of \(S(X)\).
+\end{proof}
+
+\begin{theorem}[Universal property of $\ClSB$]\label{thm:aor:cl-sb-universal-property}
+For every PreSB carrier $\mathsf C$, every AOR carrier $\mathsf D$ of
+the same scope, and every PreSB-morphism $g:\mathsf C\to\iota\mathsf D$,
+there exists a unique AOR-morphism
+$\bar g:\ClSB(\mathsf C)\to\mathsf D$
+satisfying $g = \iota(\bar g)\circ\eta_{\mathsf C}$.
+\end{theorem}
+
+\begin{proof}
+Let \(g:\mathsf C\to\iota\mathsf D\) be a PreSB morphism and suppose
+\(\mathsf D\) is already AOR in the same scope.  The carrier
+\(\ClSB(\mathsf C)\) is the least fixed point of the saturation map \(S\)
+starting from \(\mathsf C\).  At each successor stage of the
+Knaster--Tarski construction, the initiality lemma gives a unique PreSB
+morphism extension across every minimal AOR-extending operation added by
+\(S\).  At a limit stage, take the fieldwise union of the compatible
+extensions already constructed; compatibility holds because each successor
+extension restricts to the preceding one.
+
+Transfinite induction over the fixed-point iteration therefore gives a
+unique PreSB morphism
+\(\widetilde g:\ClSB(\mathsf C)\to\iota\mathsf D\) with
+\(\widetilde g\circ\eta_{\mathsf C}=g\).  Since \(\ClSB(\mathsf C)\) and
+\(\mathsf D\) are AOR carriers, \(\widetilde g\) is equivalently the
+inclusion of a unique AOR morphism
+\(\bar g:\ClSB(\mathsf C)\to\mathsf D\).  The displayed factorization
+holds by construction of \(\eta_{\mathsf C}\) as the seed inclusion.
+
+For uniqueness, let \(\bar g'\) be another AOR morphism with the same
+factorization property.  Its inclusion into \(\PreSB_{\mathfrak S}\)
+agrees with \(g\) on the seed.  By the initiality lemma it must agree
+with the constructed extension at every successor saturation step, and
+by fieldwise union it must agree at limit stages.  Hence the two maps
+agree on the least fixed point \(\ClSB(\mathsf C)\), so the
+factorization is unique.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.ClSB.clSBUniversalProperty}; the Lean theorem proves the unit, lifted morphism, and fieldwise uniqueness package under the narrowed reflection-package encoding. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[$\ClSB\dashv\iota$ adjunction]\label{thm:aor:cl-sb-adjunction}
+The closure-completion operator $\ClSB$ extends to a functor
+$\PreSB_{\mathfrak S}\to\AOR_{\mathfrak S}$ which is left adjoint to
+the inclusion $\iota$, with unit $\eta$ as in
+\Cref{def:aor:cl-sb-operator}.  The counit is the identity on AOR
+carriers: $\ClSB\circ\iota=\mathrm{id}_{\AOR_{\mathfrak S}}$.
+\end{theorem}
+
+\begin{proof}
+On objects, the functor sends \(\mathsf C\) to its least saturation
+\(\ClSB(\mathsf C)\).  On a morphism \(f:\mathsf C\to\mathsf C'\), apply
+the universal property to the composite
+\(\eta_{\mathsf C'}\circ f:\mathsf C\to \iota\ClSB(\mathsf C')\).  This
+produces the unique AOR morphism
+\(\ClSB(f):\ClSB(\mathsf C)\to\ClSB(\mathsf C')\) extending \(f\) through
+the unit.  Identity and composition laws follow from uniqueness: both sides
+of each functoriality equation are AOR morphisms whose inclusions agree
+after precomposition with the seed unit, so the universal property identifies
+them.
+
+The same universal property gives the adjunction.  For
+\(\mathsf C\in\PreSB_{\mathfrak S}\) and
+\(\mathsf D\in\AOR_{\mathfrak S}\), precomposition with
+\(\eta_{\mathsf C}\) gives the map
+\[
+  \mathrm{Hom}_{\AOR_{\mathfrak S}}(\ClSB(\mathsf C),\mathsf D)
+  \longrightarrow
+  \mathrm{Hom}_{\PreSB_{\mathfrak S}}(\mathsf C,\iota\mathsf D),
+\]
+and the preceding theorem gives its inverse by unique lifting.  Naturality
+is again forced by uniqueness of the lifted morphism.  If the input object is
+already \(\mathsf D\in\AOR_{\mathfrak S}\), the saturation step adds no new
+operations, so \(\ClSB(\iota\mathsf D)=\mathsf D\) with identity field maps.
+This is the identity counit.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.ClSB.clSBAdjunction}; the Lean theorem proves the functorial extension, unit, and identity-field counit under the narrowed Hom-bijection encoding. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+Thus \(\AOR_{\mathfrak S}\) is reflective inside
+\(\PreSB_{\mathfrak S}\).  Applying \(\ClSB\) to an arbitrary scoped carrier
+adds exactly the missing AOR-extending operations generated by monotone
+saturation; applying it to an already audit-closed carrier returns the same
+carrier through the identity-field counit.
+ \section{Primary results}\label{sec:aor-primary-results}
+
+\subsection{Structural defect and its eight strata}\label{sec:aor-primary-results-defect}
+
+The first diagnostic layer is the structural defect \(\XiSB\): the
+aggregate record of ways in which a scoped PreSB carrier has not yet
+closed as an AOR carrier.  Splitting the defect into strata keeps the
+failure mode visible, in the spirit of typed fault-and-failure
+taxonomies in the dependable-computing literature
+\citep{Avizienis2004Dependability}.  A missing observation typing, an
+undeclared stage law, an unwitnessed constraint, an unannotated
+rewrite, a missing holonomy transport, an unstatused residual, an
+unregistered nonclaim, and an undischarged meta-audit obligation are
+different audit failures, even when they all obstruct the same
+conclusion that the carrier is audit-closed.  Strata are recorded as
+finite multisets in the sense of \citet{Blizard1989Multiset}, so a
+record may appear with multiplicity matching the carrier-field data
+that creates it.
+
+\begin{definition}[Structural defect $\XiSB$]\label{def:aor:xi-sb}
+The \emph{structural defect} $\XiSB(\mathsf C)$ of a PreSB carrier
+$\mathsf C$ is the disjoint sum of its eight defect strata,
+\begin{align*}
+  \XiSB(\mathsf C)
+  \;=\;& \Sigobs(\mathsf C) \sqcup \Sigstage(\mathsf C) \sqcup \Sigconstr(\mathsf C) \sqcup \Sigrewrite(\mathsf C) \\
+  & {} \sqcup \Sighol(\mathsf C) \sqcup \Sigres(\mathsf C) \sqcup \Signon(\mathsf C) \sqcup \Sigmeta(\mathsf C),
+\end{align*}
+with the strata defined in \Cref{def:aor:sigma-obs}--\Cref{def:aor:sigma-meta}.
+The carrier is AOR exactly when every stratum is empty.
+\end{definition}
+
+The first three strata record failures in the typed interface between the
+carrier and its declared audit data: observations must have declared
+codomains and roles, stages must have refinement laws, and constraints must
+have typed witnesses.
+
+\begin{definition}[$\Sigobs$ stratum]\label{def:aor:sigma-obs}
+The \emph{observation defect stratum} $\Sigobs(\mathsf C)$ is the
+multiset of typed observation records on $\mathsf C$ whose target
+codomain, role, source provenance, or evaluation context is not fully
+declared.  The stratum is empty iff every declared observation in
+$\mathrm{Obs}$ is a fully typed record.
+\end{definition}
+
+\begin{definition}[$\Sigstage$ stratum]\label{def:aor:sigma-stage}
+The \emph{stage defect stratum} $\Sigstage(\mathsf C)$ is the multiset
+of stage / refinement entries whose stage law, refinement axis, or
+compatibility with the route registry is not declared.  The stratum is
+empty iff every entry of $\mathrm{Stage}$ has a declared refinement
+kind.
+\end{definition}
+
+\begin{definition}[$\Sigconstr$ stratum]\label{def:aor:sigma-constraint}
+The \emph{constraint defect stratum} $\Sigconstr(\mathsf C)$ is the
+multiset of constraint and budget entries that fail positivity, fail
+the audit-pairing typing, or are paired with no declared admissible
+solution.  The stratum is empty iff every entry of $\mathrm{Constr}$
+admits a typed witness.
+\end{definition}
+
+The rewrite and holonomy strata capture failures of motion through the audit
+system.  Rewrite entries need explicit source and target presentations;
+route-dependent memory needs a typed carrier-route and declared attribution.
+
+\begin{definition}[$\Sigrewrite$ stratum]\label{def:aor:sigma-rewrite}
+The \emph{rewrite defect stratum} $\Sigrewrite(\mathsf C)$ is the
+multiset of rewrite records whose source and target presentations,
+admissibility tags, or blocked-rewrite annotations are not declared.
+The stratum is empty iff every $\mathrm{Rewrite}$ entry is either an
+allowed or an explicitly blocked rewrite.
+\end{definition}
+
+\begin{definition}[$\Sighol$ stratum]\label{def:aor:sigma-holonomy}
+The \emph{holonomy defect stratum} $\Sighol(\mathsf C)$ is the multiset
+of route-dependent memory records whose carrier transport, source-ledger
+attribution, or nonclaim flag is not declared.  The stratum is empty
+iff every $\mathrm{Hol}$ entry has a typed carrier-route.
+\end{definition}
+
+The last three strata collect unpaid residuals, implicit exclusions,
+and meta-audit failures.  The residual stratum is refined in the next
+subsection; for now it is enough to record that residual records must
+carry both a type and a discharge status.
+
+\begin{definition}[$\Sigres$ stratum]\label{def:aor:sigma-residual}
+The \emph{residual defect stratum} $\Sigres(\mathsf C)$ is the multiset
+of Schur-typed residuals on $\mathsf C$, further decomposed by the
+twelve residual types of \Cref{def:aor:residual-types-twelve}.  The
+stratum is empty iff every residual record carries a discharge status
+from the AOR-8 catalogue of \Cref{def:aor:aor-8-statuses}.
+\end{definition}
+
+\begin{definition}[$\Signon$ stratum]\label{def:aor:sigma-nonclaim}
+The \emph{nonclaim defect stratum} $\Signon(\mathsf C)$ is the
+multiset of statements that the carrier needs to exclude (scope
+boundaries, blocked routes, blocked rewrites, deprecated claims) but
+that are not registered in $\mathrm{NC}$.  The stratum is empty iff
+every implicit nonclaim of the scope has an explicit entry.
+\end{definition}
+
+\begin{definition}[$\Sigmeta$ stratum]\label{def:aor:sigma-meta}
+The \emph{meta defect stratum} $\Sigmeta(\mathsf C)$ is the multiset
+of meta-audit obligations (provenance trail, version pin, audit pass
+log, dispute resolution) that are not discharged in $\mathrm{Meta}$.
+The stratum is empty iff every meta obligation has a typed audit
+record.
+\end{definition}
+
+The symbol \(\XiSB\) denotes this AOR structural defect only; it is not the
+adequacy residual \(\Xi_C(D\mid L)\) of \citet{Tsiokos2026XiCompanion}.
+
+\begin{theorem}[Eight-stratum decomposition]\label{thm:aor:eight-stratum-decomposition}
+For every PreSB carrier $\mathsf C$, the structural defect
+$\XiSB(\mathsf C)$ decomposes as a disjoint sum of the eight strata
+\[
+  \Sigobs,\ \Sigstage,\ \Sigconstr,\ \Sigrewrite,\ \Sighol,\ \Sigres,\ \Signon,\ \Sigmeta,
+\]
+and the decomposition is computable from the field data of
+$\mathsf C$.  Each stratum is preserved by PreSB-isomorphism.
+Consequently $\XiSB(\mathsf C)=0$ if and only if each of the eight
+strata is independently empty.
+\end{theorem}
+
+\begin{proof}
+Each defect record is created from a typed field of the carrier.  The field
+that creates it also determines its stratum: an observation record belongs
+to \(\Sigobs\), a stage entry to \(\Sigstage\), a constraint or budget entry
+to \(\Sigconstr\), a rewrite record to \(\Sigrewrite\), a holonomy or route
+memory record to \(\Sighol\), a residual record to \(\Sigres\), an implicit
+exclusion to \(\Signon\), and a meta-audit obligation to \(\Sigmeta\).  These
+field tags are disjoint by construction, so the structural defect is the
+coproduct of the eight typed collections.  Computability is simply the
+fieldwise scan of the carrier: inspect each declared record, test whether
+the corresponding required annotation is present, and emit the uniquely
+tagged defect record exactly when it is absent.
+
+A PreSB isomorphism transports each typed field to the corresponding typed
+field of the target carrier and transports the inverse field back.  It
+therefore carries observation defects to observation defects, stage defects
+to stage defects, and similarly for all eight strata.  Since the inverse
+isomorphism supplies the reverse transport, emptiness of a stratum is
+preserved and reflected.  Finally, a disjoint sum is empty exactly when each
+summand is empty, which gives the stated criterion for \(\XiSB(\mathsf C)=0\).\footnote{Verified in Lean as \texttt{SixBirdsNeedles.AOR.DefectStrata.eightStratumDecomposition}; see \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\subsection{\texorpdfstring{The twelve-type \(\Sigma_{\mathrm{residual}}\) atlas}{The twelve-type Sigma-residual atlas}}\label{sec:aor-primary-results-atlas}
+
+The residual stratum \(\Sigres\) tracks unpaid mathematical content
+rather than missing record syntax.  It is refined here along three
+axes: primary type, atom refinement, and product behavior.  We call
+the resulting classification the twelve-type atlas.  The displayed
+list of macros names thirteen symbols because \(\Dlocal\) and
+\(\Dglobal\) are presented as a paired entry; throughout the paper
+they form the local--global mismatch type of the atlas.
+
+\begin{definition}[Twelve residual types]\label{def:aor:residual-types-twelve}
+The residual stratum $\Sigres$ is partitioned by twelve disjoint
+\emph{residual types}: $\Ddescent$ (legal-quotient descent failure),
+$\Dtransport$ (route map failure), $\Dinterface$ (bounded-interface
+failure), $\Dlocal$ and $\Dglobal$ (local/global mismatch),
+$\Dpresentation$ (normalization mismatch), $\Dsource$ (source-admission
+failure), $\Dhorizon$ (carrier-class horizon failure), $\Dscale$
+(stage-law failure), $\Dlimit$ (asymptotic failure), $\Dsym$
+(symmetry/equivariance failure), $\Drole$ (role-typing failure), and
+$\Dtarget$ (response-target failure).  Every $\Sigres$ entry has a
+unique primary type from this list.
+\end{definition}
+
+Residual records are compared by refinement: a record refined into finer
+probe or stage data is strictly smaller in the refinement order, and a
+record's primary type plus its forced-secondary set fully determine the
+order at the atom level.
+
+\begin{definition}[Residual partial order]\label{def:aor:residual-partial-order}
+The relation $\preceq_{\mathrm{res}}$ on $\Sigres$ is generated by:
+(i) atom refinement, $a\preceq_{\mathrm{res}}b$ when $a$ is obtained
+from $b$ by splitting along a finer probe family or stage; (ii) type
+inclusion, $a\preceq_{\mathrm{res}}b$ when $a$ has $b$'s primary type
+together with strictly more forced secondary types than $b$; and
+(iii) componentwise products.  It is a partial order on isomorphism
+classes of residual records.
+\end{definition}
+
+\begin{definition}[Residual atom]\label{def:aor:residual-atom}
+A residual record $a\in\Sigres$ is an \emph{atom} if it is minimal
+under $\preceq_{\mathrm{res}}$ among non-empty records.  Equivalently,
+$a$ has a unique primary type and no proper non-empty refinement.
+\end{definition}
+
+\begin{theorem}[Atom decomposition]\label{thm:aor:atom-decomposition}
+Every residual record $r\in\Sigres$ admits a finite decomposition
+$r=\bigsqcup_{i} a_i$ as a disjoint sum of atoms.  The decomposition is
+unique up to permutation, and is computable from the carrier field
+data.
+\end{theorem}
+
+\begin{proof}
+The residual registry is finite at the carrier-field level used here.  Start
+with a non-empty residual record \(r\).  If \(r\) is not minimal, the
+definition of \(\preceq_{\mathrm{res}}\) supplies a proper non-empty
+\(c\prec_{\mathrm{res}} r\): either a split along finer probe or stage data,
+an added forced-secondary component, or a componentwise product split.
+Repeating this process must stop because each step moves to a strictly
+smaller finite record in the carrier's declared residual data.  The terminal
+pieces are precisely the atoms.
+
+The decomposition is unique up to permutation because the refinement steps
+are disjoint-sum refinements of typed records.  Two complete decompositions
+therefore have the same multiset of minimal typed components: compare the
+primary type and carrier-field provenance of each terminal component, match
+equal components, and use minimality to rule out any further splitting on
+one side but not the other.  The same field scan that detects residual
+defects computes the decomposition by recursively applying the finite
+refinement test.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.AOR.ResidualAtlas.atomDecomposition}; see \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Residual product]\label{thm:aor:residual-product}
+The product of two PreSB carriers $\mathsf C_1$ and $\mathsf C_2$ over
+the same scope (componentwise product of all seventeen fields) has
+residual stratum
+$\Sigres(\mathsf C_1\times\mathsf C_2)
+   = \Sigres(\mathsf C_1) \oplus \Sigres(\mathsf C_2)
+     \oplus \Sigres^{\mathrm{cross}}(\mathsf C_1,\mathsf C_2)$,
+where $\Sigres^{\mathrm{cross}}$ collects only those residuals whose
+primary type is $\Dinterface$, $\Dlocal$, $\Dglobal$, or $\Dsym$ and
+that arise from the product pairing.  In particular the eight other
+primary types are additive across products.
+\end{theorem}
+
+\begin{proof}
+The product carrier is defined componentwise across the seventeen fields.
+A residual whose evidence lives entirely in the first component contributes
+the corresponding element of \(\Sigres(\mathsf C_1)\); similarly, residual
+evidence entirely in the second component contributes an element of
+\(\Sigres(\mathsf C_2)\).  These two contributions are additive because the
+field tags and carrier projections keep their provenance.
+
+The only new residuals are those created by pairing the two components.
+Such cross terms can arise only where product formation genuinely couples
+the two carriers: at bounded interfaces, local/global compatibility checks,
+and symmetry or equivariance constraints.  These are exactly the primary
+types \(\Dinterface,\Dlocal,\Dglobal,\Dsym\).  Descent, transport,
+presentation, source, horizon, scale, limit, role, and target failures are
+read from a single component field and therefore do not create cross terms.
+This gives the displayed decomposition and the additivity statement for the
+remaining primary types.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.AOR.ResidualAtlas.residualProduct}; see \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Forced-residual theorem]\label{thm:aor:forced-residual}
+For each primary residual type $\Delta_*$, there is a fixed minimal set
+of \emph{forced secondary types} that any non-empty record of primary
+type $\Delta_*$ must also exhibit.  The complete forced-secondary list is
+recorded in \Cref{tab:aor-forced-secondary-types}.  Forcing is faithful:
+any discharge that closes the primary type without simultaneously closing
+each forced secondary type leaves a non-empty $\Sigres$ entry.
+\end{theorem}
+
+\begin{proof}
+Fix a primary residual type \(\Delta_*\) and an arbitrary non-empty record
+\(r\) of primary type \(\Delta_*\).  We show that \(r\) must exhibit every
+forced secondary type in the list assigned to \(\Delta_*\) by
+\Cref{tab:aor-forced-secondary-types}, and that any discharge of \(r\) that
+closes the primary type without closing each forced secondary leaves a
+non-empty \(\Sigres\) entry.
+
+By the residual-atom decomposition of \Cref{thm:aor:atom-decomposition},
+\(r\) decomposes uniquely as a sum of atoms whose primary tags refine
+\(\Delta_*\).  Each such atom carries a discharge audit obligation: it
+requires the audit fields whose primary tag is \(\Delta_*\) and every forced
+secondary tag listed for \(\Delta_*\).  Omitting any forced secondary tag from
+the discharge leaves the field tagged with that secondary type in the
+unclosed state, which by definition contributes a nonzero \(\Sigres\) entry
+of that secondary type.  Thus the forced-secondary list cannot be reduced.
+
+The forced-secondary list is derived row by row from the typed dependencies
+of the audit rules.  For \(\Dsource\), the table forces
+\(\Dtransport,\Dscale,\Drole,\Dtarget\), because source admission must specify
+how source data are transported, scaled, role-typed, and targeted.  For
+\(\Dtransport\), the table forces
+\(\Dscale,\Dlimit,\Drole,\Dtarget,\Dpresentation\), because transport audits
+depend on scale, limit behavior, role typing, target typing, and presentation
+normalization.  For \(\Dinterface\), the table forces
+\(\Dlocal,\Dglobal\), because a bounded-interface failure is visible only
+relative to the local and global compatibility checks.  The remaining rows
+are the same dependency-closure check, with the complete enumeration recorded
+in \Cref{tab:aor-forced-secondary-types}.
+
+Faithfulness is now immediate.  If a discharge witness for \(r\) closes
+\(\Delta_*\) but omits a forced secondary type, the preceding dependency
+argument leaves the corresponding secondary-tagged field unclosed.  That
+field contributes a non-empty element of \(\Sigres\), so the original
+residual record has not been fully discharged.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.AOR.ResidualAtlas.forcedResidual}; see \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\subsection{AOR-8 statuses and discharge}\label{sec:aor-primary-results-statuses}
+
+The atlas classifies residuals by primary type.  Discharge requires a second
+coordinate: a status saying how the atom is paid, blocked, cited, bounded, or
+deferred to an asymptotic regime.  In the base finite-stage theory this is the
+eleven-entry AOR-8 catalogue; the four asymptotic extensions are introduced
+later with refinement chains.  A discharge record pairs one residual atom with
+one such status and an appropriate witness payload, and a discharge witness is
+the family of these records over the atoms of a residual.
+
+\begin{definition}[AOR-8 status catalogue]\label{def:aor:aor-8-statuses}
+The \emph{AOR-8 status catalogue} is the eleven-entry vocabulary of
+discharge statuses for $\Sigres$ records:
+\texttt{zero}, \texttt{budgeted}, \texttt{bridged}, \texttt{hidden},
+\texttt{moduli}, \texttt{selected}, \texttt{probabilistic},
+\texttt{out\_of\_scope}, \texttt{nonclaim}, \texttt{blocked},
+\texttt{approved\_other}.
+The asymptotic extensions (\Cref{def:aor:asymptotic-statuses}) add
+\texttt{asymptotic\_budgeted}, \texttt{summable}, \texttt{contractive},
+\texttt{eventual\_zero} for limit-stage records.
+\end{definition}
+
+The base catalogue is intentionally finite.  It separates genuinely closed
+residuals from budgeted, bridged, selected, probabilistic, out-of-scope,
+nonclaim, blocked, and externally approved records, so that the cascade layer
+can compute downstream obligations from the pair consisting of a residual type
+and a declared status.
+
+\begin{definition}[Discharge record]\label{def:aor:discharge-record}
+A \emph{discharge record} on a residual atom $a\in\Sigres$ is a triple
+$(a,s,\pi)$ with $s$ an AOR-8 status (or asymptotic extension) and
+$\pi$ a typed witness payload appropriate to $s$: a positivity proof
+for \texttt{zero}; a finite budget bound for \texttt{budgeted}; a
+bridging carrier identifier for \texttt{bridged}; a moduli space pin
+for \texttt{moduli}; a selection rule for \texttt{selected}; a measure
+record for \texttt{probabilistic}; a scope reference for
+\texttt{out\_of\_scope} and \texttt{nonclaim}; a block reason for
+\texttt{blocked}; an external-record citation for \texttt{approved\_other};
+or an asymptotic-witness payload as appropriate.
+\end{definition}
+
+The payload \(\pi\) is deliberately status-dependent.  A zero record carries
+different evidence from a budgeted record or an approved-other record; keeping
+the payload typed prevents later cascade steps from treating all discharges as
+mere labels.
+
+\begin{definition}[Discharge witness]\label{def:aor:discharge-witness}
+A \emph{discharge witness} for a residual record $r=\bigsqcup_i a_i$
+is a family $(a_i,s_i,\pi_i)$ of discharge records, one per atom in
+the decomposition of $r$.  The witness \emph{closes} $r$ if every
+status $s_i$ is one of the AOR-8 statuses except \texttt{open}, and
+every forced-secondary type of $a_i$ also has a discharge record in
+the witness.
+\end{definition}
+
+The cascade-stable layer uses these definitions with a fixed
+carrier-level discharge assignment.  Stability is therefore not
+obtained by choosing a status to suit the atom; the assignment is part
+of the audit object, and the cascade test asks whether the declared
+assignment drives every residual atom to closure.
+ \section{\texorpdfstring{Secondary results: discharge cascades over \(\Sigma_{\mathrm{residual}}\)}{Secondary results: discharge cascades over Sigma-residual}}\label{sec:aor-secondary-results}
+
+\Cref{sec:aor-primary-results} classified residual failures by type
+and attached statuses and witness payloads to residual atoms.  This
+section records what happens after an atom is paid: the payment may
+generate downstream obligations, those obligations may themselves
+require statuses, and the resulting process is a cascade.  The
+cascade layer is the operational part of the audit theory: it turns
+the static residual atlas into a finite discharge process whenever
+the declared status assignment is compatible with the cost table.
+
+\begin{definition}[Cost record]\label{def:aor:cost-record}
+For each pair $(t,s)$ with $t$ a residual type and $s$ a status, the
+\emph{cost record} $\mathrm{Cost}(t,s)$ is a finite multiset of
+$(t',s')$ pairs called the \emph{downstream obligations} generated by
+paying a $t$-atom with status $s$.  Cost records are tabulated in the
+$132$-entry cost table $\mathrm{Cost}:\mathrm{Types}\times
+\mathrm{Statuses}\to\mathcal P_{\mathrm{fin}}(\mathrm{Types}\times
+\mathrm{Statuses})$.
+\end{definition}
+
+The cost record is the local transition rule.  It does not say that a
+residual has been globally closed; it says which new atoms and statuses must
+be checked after one atom has been paid with one declared status.
+
+\begin{definition}[Downstream operator]\label{def:aor:down-operator}
+The \emph{downstream operator} $\mathrm{Down}$ acts on a residual
+record $r$ with discharge witness $(a_i,s_i,\pi_i)$ by
+\[
+  \mathrm{Down}(r,\{(a_i,s_i,\pi_i)\})
+  \;=\;
+  \bigsqcup_i \mathrm{Cost}(\mathrm{type}(a_i),s_i)
+\]
+viewed as a new residual record of fresh atoms to be statused.
+\end{definition}
+
+Thus \(\mathrm{Down}\) is obtained by applying the local cost rule atom by atom and
+taking the disjoint union of the downstream obligations.
+
+\begin{definition}[Cost table]\label{def:aor:cost-table}
+The \emph{cost table} is the function
+$\mathrm{Cost}:\mathrm{Types}\times\mathrm{Statuses}\to
+\mathcal P_{\mathrm{fin}}(\mathrm{Types}\times\mathrm{Statuses})$
+with $12$ residual types and $11$ base AOR-8 statuses, totalling $132$
+entries.  Cost-free pairs $(t,s)$ are exactly those with
+$\mathrm{Cost}(t,s)=\emptyset$.
+\end{definition}
+
+The cost table is framework data, not a uniqueness theorem.  The
+\(132\)-entry base table counts \(12\) residual types against the
+\(11\) base AOR-8 statuses; the asymptotic limit rows belong to the
+separate asymptotic-status table used in the refinement-chain
+analysis and are not part of this base count.  The table is treated
+under the \texttt{definition\_metadata} discipline: the body uses the
+displayed representative non-trivial rows and structural defaults, and
+\Cref{tab:aor-cost-table-representative} records the representative
+subset used for reproducibility.  Alternative cost tables correspond
+to different framework choices with different cascade behavior, not to
+alternative proofs of a canonical table.
+
+\begin{lemma}[Cost-table admissibility]\label{lem:aor:cost-table-admissibility}
+The cost table of \Cref{def:aor:cost-table} satisfies two admissibility
+properties:
+\begin{enumerate}
+  \item \emph{Strict descent.}  For every cost-table row
+  \(\mathrm{Down}(a,s)=w\), the output multiset \(w\) is strictly less
+  than the singleton multiset \(\{(a,s)\}\) in the Dershowitz--Manna
+  multiset extension \citep{DershowitzManna1979Multiset} of the
+  well-founded order on AOR-8 status alone, where statuses are ordered by
+  the rank of \Cref{def:aor:aor-8-statuses} with \texttt{zero} as the unique
+  minimum and \texttt{contractive}, \texttt{eventual\_zero},
+  \texttt{summable}, and \texttt{asymptotic\_budgeted} ordered above
+  \texttt{zero} but below the base non-terminal statuses \texttt{budgeted},
+  \texttt{bridged}, \texttt{hidden}, \texttt{moduli}, \texttt{selected},
+  \texttt{probabilistic}, \texttt{out\_of\_scope}, \texttt{nonclaim},
+  \texttt{blocked}, \texttt{approved\_other}, with
+  \texttt{summable}<\texttt{asymptotic\_budgeted} inside the asymptotic
+  tier.  Concretely, every output element \((t',s')\in w\) satisfies
+  \(s'<s\) in this status order; the primary type coordinate is
+  unconstrained.
+  \item \emph{Local diamond.}  For every record \(r\) with two distinct
+  cost-table moves \(r\to r_1\) and \(r\to r_2\), there exists a common
+  cost-table-reachable record \(r_*\) with \(r_1\to^* r_*\) and
+  \(r_2\to^* r_*\).
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For strict descent, fix a cost-table row \(\mathrm{Down}(a,s)=w\) and verify
+\(w<\{(a,s)\}\) in the Dershowitz--Manna multiset extension on AOR-8 status.
+Since the multiset extension over a well-founded order is well-founded, it
+suffices to show that every output element \((t',s')\in w\) satisfies the
+status descent \(s'<s\); the empty case \(w=\emptyset\) is the trivial
+multiset descent.  We enumerate by row type using
+\Cref{tab:aor-cost-table-representative} of
+\Cref{app:extended-material}.
+
+\emph{Case A: empty-output rows.}  Any cost-table row with
+\(\mathrm{Down}(a,s)=\emptyset\) is trivially strictly less than
+\(\{(a,s)\}\) in Dershowitz--Manna.  These rows include ``any base type at
+\texttt{zero} \(\to\emptyset\)'', ``any base type at
+\texttt{approved\_other} \(\to\emptyset\)'', the asymptotic-terminal row
+\((\Dlimit,\texttt{contractive})\to\emptyset\), and any other empty-output
+row in the cost-table presentation.
+
+\emph{Case B: outputs at \texttt{zero}.}  Most structural-default rows emit a
+multiset whose elements are all at status \texttt{zero}.  Since
+\texttt{zero} is the unique minimum of the AOR-8 status order, every such
+output element \((t',\texttt{zero})\) satisfies \(\texttt{zero}<s\) for the
+input status \(s\), which is non-\texttt{zero} since the input is a
+non-terminal cost-table row.  This case covers the structural-default rows
+for all named primary types in the cost table:
+\[
+\begin{gathered}
+\Ddescent,\ \Dtransport,\ \Dinterface,\ \Dlocal,\ \Dglobal,\ \Dpresentation,\\
+\Dsource,\ \Dhorizon,\ \Dscale,\ \Dlimit,\ \Dsym,\ \Drole,\ \Dtarget.
+\end{gathered}
+\]
+It also covers the status-family representative rows for any non-explicit
+type at \texttt{budgeted}, \texttt{bridged}, \texttt{moduli},
+\texttt{selected}, \texttt{probabilistic}, \texttt{out\_of\_scope},
+\texttt{nonclaim}, \texttt{blocked}, and \texttt{hidden}.  Multiset descent
+follows because every output element has a status strictly less than the
+input status.
+
+\emph{Case C: non-\texttt{zero} explicit outputs.}  Three rows have outputs
+at a non-\texttt{zero} status.  The transport blocked row emits
+\((\Dtransport,\texttt{budgeted})\) and \((\Drole,\texttt{zero})\); the scale
+hidden row emits \((\Dscale,\texttt{blocked})\); and the limit
+asymptotic-budgeted row emits \((\Dlimit,\texttt{summable})\).  In each case,
+every output element's status is strictly less than the input status in the
+AOR-8 rank: \texttt{budgeted} and \texttt{zero} are both \(<\)
+\texttt{blocked} in the transport row; \texttt{blocked} \(<\) \texttt{hidden}
+in the scale row; and \texttt{summable} \(<\)
+\texttt{asymptotic\_budgeted} in the limit row.  These three rows therefore
+satisfy multiset descent on status.
+
+\emph{Case D: asymptotic-terminal rows.}  The asymptotic-terminal rows, for
+example the \(\Dlimit\)-contractive row with empty output and other rows of
+the asymptotic-status family, are subsumed by Cases A and B above; no
+additional analysis is required.
+
+Cases A, B, C, and D exhaust the cost-table presentation, so every output
+multiset satisfies the strict-descent invariant on the status order.
+Multiset descent on a well-founded order is well-founded by
+Dershowitz--Manna, completing the proof of clause (1).
+
+For the local diamond, the cost-table base assigns a unique output to each
+primary-type and status pair.  Two distinct moves from the same record \(r\)
+must therefore arise either from two distinct atoms in \(r\), in which case
+the moves act on disjoint atoms and the diamond closes by performing each
+move independently on the other atom's residue, or from a single atom
+carrying two assigned statuses, which is excluded by the
+single-status-per-atom rule of \Cref{def:aor:discharge-record}.  In the first
+case, the common record \(r_*\) is obtained by performing both moves in
+either order.
+\end{proof}
+
+\begin{definition}[Cascade graph]\label{def:aor:cascade-graph}
+The \emph{cascade graph} of a residual record $r$ is the bipartite
+labelled multigraph $G(r)$ whose vertices are residual-record atoms
+and discharge witnesses (alternating layers), and whose edges record
+the downstream obligations produced by $\mathrm{Down}$.  Edges are
+weighted by their AOR-8 status.
+\end{definition}
+
+The graph \(G(r)\) is a bookkeeping device for the iterated discharge
+process: atom vertices ask for evidence, witness vertices supply a
+status and payload, and outgoing edges list the obligations generated
+by the cost table.  Bipartite labelled multigraphs are treated with
+the standard graph-theory conventions of \citet{Diestel2017GraphTheory}.
+
+\begin{theorem}[Bipartite cascade graph]\label{thm:aor:cascade-bipartite}
+For every residual record $r$ and every choice of discharge witness,
+the cascade graph $G(r)$ is bipartite: edges alternate between
+atom-vertices and witness-vertices, and no edge connects two vertices
+of the same kind.
+\end{theorem}
+
+\begin{proof}
+The definition of \(G(r)\) has exactly two vertex sorts: residual atoms and
+discharge witnesses.  A cascade edge is created only when an atom is paired
+with a witness or when a witness emits downstream atom obligations through
+\(\mathrm{Down}\).  Both constructions cross from one sort to the other.  There is
+no constructor for an atom-to-atom edge or a witness-to-witness edge, so the
+graph is bipartite by inspection.\footnote{\hbadness=10000\emergencystretch=2em Mechanized in Lean as
+\texttt{SixBirdsNeedles.AOR.Cascades.cascadeBipartite}; the Lean
+theorem proves atom/witness alternation for the encoded cascade graph
+under the finite graph-record narrowing. The full statement is proved
+here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Cascade termination]\label{thm:aor:cascade-termination}
+The cascade graph $G(r)$ is well-founded under the
+status-multiset measure induced by the AOR-8 status rank and the
+Dershowitz--Manna multiset extension.  In particular every cascade
+terminates in finitely many discharge steps.
+\end{theorem}
+
+\begin{proof}
+Assign to each active atom-status obligation its status rank and collect the
+active obligations as a finite multiset of statuses.  The rank has
+\texttt{zero} as the unique minimum, places terminal asymptotic statuses
+below the non-terminal base statuses, and orders the explicit non-terminal
+rows so that \texttt{budgeted}<\texttt{blocked}<\texttt{hidden} and
+\texttt{summable}<\texttt{asymptotic\_budgeted}.
+
+By \Cref{lem:aor:cost-table-admissibility}(1), every cost-table move maps a
+singleton multiset \(\{(a,s)\}\) to a strictly smaller multiset in the
+Dershowitz--Manna extension of the status order.  Multiset descent in
+a well-founded order is well-founded, so no infinite descending chain of
+active obligations exists.  Therefore an iterated cascade can take only
+finitely many discharge steps before no active downstream obligation remains.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.Cascades.cascadeTermination}; the Lean theorem proves the well-founded discharge relation under the status-rank measure and finite-record narrowing. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Cascade confluence]\label{thm:aor:cascade-confluence}
+The discharge relation on $\Sigres$ is locally confluent: if a residual
+atom admits two distinct one-step discharges into records $r_1$ and
+$r_2$, then there exists a record $r_3$ reached by further discharges
+from both $r_1$ and $r_2$.  Together with termination
+(\Cref{thm:aor:cascade-termination}), Newman's lemma
+\citep{Newman1942Combinatorial} yields global confluence
+\citep{Huet1980ConfluentReductions}: every cascade has a unique normal
+form.
+\end{theorem}
+
+\begin{proof}
+By \Cref{lem:aor:cost-table-admissibility}(2), the local diamond holds for
+every pair of distinct cost-table moves.  By
+\Cref{lem:aor:cost-table-admissibility}(1) and
+\Cref{thm:aor:cascade-termination}, the discharge relation is well-founded:
+each cost-table move gives strict multiset descent in the
+Dershowitz--Manna extension of the status order.
+
+Newman's lemma \citep{Newman1942Combinatorial} states that local confluence
+together with well-founded termination implies global confluence and unique
+normal forms.  Applying it to the cost-table rewrite relation gives the
+global confluence and unique-normal-form conclusion for discharge cascades.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.AOR.Cascades.cascadeConfluence} as a partial
+mechanization: local confluence and the well-founded discharge relation are
+recorded in Lean; the Newman implication and the resulting
+unique-normal-form conclusion are supplied here as a classical input. See
+\Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Cross-cascade composition]\label{thm:aor:cross-cascade-composition}
+For two residual records $r_1$ and $r_2$ on the same carrier, their
+disjoint-union cascade $G(r_1\sqcup r_2)$ equals the disjoint union of
+cascades $G(r_1)\sqcup G(r_2)$ together with the cross-edges generated
+by interaction atoms of primary type $\Dinterface$, $\Dlocal$,
+$\Dglobal$, or $\Dsym$ produced by the residual-product theorem
+(\Cref{thm:aor:residual-product}).
+\end{theorem}
+
+\begin{proof}
+The cascade construction is additive over disjoint unions except where the
+residual-product theorem creates a cross residual.  Thus atom and witness
+vertices inherited from \(r_1\) generate the cascade \(G(r_1)\), and those
+inherited from \(r_2\) generate \(G(r_2)\).  The only additional edges arise
+from product-pairing atoms.  By the residual-product theorem these cross
+atoms have primary type \(\Dinterface,\Dlocal,\Dglobal\), or \(\Dsym\), and
+the corresponding downstream edges are exactly the displayed cross-edges.\footnote{Verified in Lean as \texttt{SixBirdsNeedles.AOR.Cascades.crossCascadeComposition}; see \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{definition}[Cascade-stable AOR]\label{def:aor:cascade-stable-aor}
+A PreSB carrier $\mathsf C\in\AOR_{\mathfrak S}$ is
+\emph{cascade-stable} if every residual record in $\Sigres(\mathsf C)$
+admits a discharge witness whose cascade reaches the empty record in
+finitely many steps using only the base AOR-8 statuses
+(\Cref{def:aor:aor-8-statuses}).  The class of cascade-stable AOR
+carriers is denoted $\CascadeStableAOR_{\mathfrak S}$.
+\end{definition}
+
+The predicate is evaluated on an AOR carrier together with its fixed
+residual-discharge assignment.  Cascade stability is therefore not
+proved by choosing a fresh \texttt{zero} status when an atom appears;
+it is verified by checking that the declared assignment drives the
+cost-table walk to the empty record.
+
+\begin{theorem}[Cascade-stable characterisation]\label{thm:aor:cascade-stable-characterisation}
+$\mathsf C\in\CascadeStableAOR_{\mathfrak S}$ if and only if every
+$\Sigres$-atom of $\mathsf C$ has a declared discharge status whose
+cost-table walk reaches a cost-free terminal status in finitely many
+moves.  Equivalently, the $\omega$-iteration of $\mathrm{Down}$ from
+the initial atoms of $\mathsf C$ produces an eventually empty sequence
+of records.
+\end{theorem}
+
+\begin{proof}
+Assume first that the carrier with its fixed discharge assignment is
+cascade-stable.  Apply the definition to a residual record consisting of a
+single atom.  Its declared status must produce a finite cascade to the empty
+record.  Reading the successive atom-status obligations along that finite
+cascade gives a finite path in the cost table from the assigned status to a
+cost-free terminal status, equivalently a finite \(\omega\)-iteration of
+\(\mathrm{Down}\) ending at the empty record.
+
+Conversely, suppose every residual atom has an assigned status whose
+cost-table walk reaches the empty record, and suppose the \(\omega\)-iteration
+from the initial atoms is eventually empty.  Decompose an arbitrary residual
+record into atoms by \Cref{thm:aor:atom-decomposition}.  For each atom use
+the assumed finite cost-table walk as its discharge witness.  Taking the
+disjoint union of these finite witnesses gives a witness for the whole
+residual record.  Termination ensures that the combined cascade is still
+finite, and the eventual-emptiness assumption says that no downstream
+obligation remains.  Hence the carrier is cascade-stable.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.Cascades.cascadeStableCharacterisation}; the Lean theorem proves the assignment-based cost-table reachability characterization under the carrier-with-discharge wrapper narrowing. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+ \section{Analysis: refinement chains, colimits, and the hierarchy}\label{sec:aor-analysis}
+
+Finite cascades close residuals stage by stage.  Refinement chains
+introduce a second phenomenon: a carrier may be closed at every
+finite stage while a residual appears only at the directed colimit.
+This section extends the finite cascade story by recording refinement
+morphisms, directed colimits in \(\RefPreSB\), and four asymptotic
+statuses for limit-stage residuals.  The asymptotic statuses are not
+additional base AOR-8 statuses; they form a separate limit-stage
+layer used only when colimits enter the audit problem.
+
+\begin{definition}[Refinement morphism]\label{def:aor:refinement-morphism}
+A \emph{refinement morphism} $\rho:\mathsf C\to\mathsf C'$ between two
+PreSB carriers is a PreSB morphism that additionally records, for each
+field, whether it is an A1--A6 refinement step
+(\Cref{def:aor:refinement-kinds-six}).  Refinement morphisms compose
+and have identities.  The category $\RefPreSB_{\mathfrak S}$ has PreSB
+carriers as objects and refinement morphisms as arrows.
+\end{definition}
+
+A refinement morphism is therefore a typed PreSB morphism together
+with an audit annotation that records the kind of refinement
+performed in each field.
+
+\begin{definition}[Six refinement kinds]\label{def:aor:refinement-kinds-six}
+A refinement morphism's per-field annotations belong to one of six
+disjoint kinds:
+\textbf{A1} scope expansion (enlarging $\mathfrak S$ within a fixed
+scope chain);
+\textbf{A2} record-field expansion (adding admissible records to one
+of the registries);
+\textbf{A3} stage / refinement-axis growth (extending $\mathrm{Stage}$
+by a new stage);
+\textbf{A4} constraint tightening (replacing a constraint by a
+strictly stronger one);
+\textbf{A5} morphism strengthening (replacing a morphism by a
+refinement of itself);
+\textbf{A6} carrier (probe / target) refinement (replacing $(H,q,Q)$
+or a probe/target family by a finer version, with a declared
+projection map).
+\end{definition}
+
+The six kinds separate changes of scope, changes of records, changes
+of staging, constraint strengthening, morphism strengthening, and
+carrier refinement proper.  The separation lets a refinement chain
+record whether a new limit residual is caused by a new stage, a
+stronger constraint, or a finer carrier presentation.
+
+\begin{definition}[$\RefPreSB$ category]\label{def:aor:refpresb-category}
+The category $\RefPreSB_{\mathfrak S}$ is the full category of PreSB
+carriers of scope $\mathfrak S$ with refinement morphisms.  A
+\emph{refinement chain} is a directed diagram in
+$\RefPreSB_{\mathfrak S}$ indexed by a directed poset.
+\end{definition}
+
+\begin{theorem}[$\RefPreSB$ is directed-cocomplete]\label{thm:aor:refpresb-cocomplete}
+The category $\RefPreSB_{\mathfrak S}$ has all directed colimits.
+Concretely, for a directed diagram
+$(\mathsf C_j,\rho_{jj'})$ with projections
+$p_{jj'}:\mathsf C_{j'}\to\mathsf C_j$ along reverse arrows, the
+colimit object $\mathsf C_\infty=\mathrm{colim}_j\mathsf C_j$ has
+record/scope data as the directed union of the corresponding $\mathsf
+C_j$ data, and carrier data as the inverse limit of compatible threads
+under the projections $p_{jj'}$.  The construction is functorial and
+preserves PreSB-typing.
+\end{theorem}
+
+\begin{proof}
+The directed-colimit construction follows the standard pattern in
+accessible and locally presentable categories
+\citep{AdamekRosicky1994LocallyPresentable,MacLane1998Categories}.  For
+the record-like fields, directedness lets one take the union of all
+records that appear at some finite stage.  Compatibility of the
+refinement maps ensures that a record admitted at one stage remains
+interpretable at later stages.  For the carrier-like fields, the
+reverse projections \(p_{jj'}\) define the compatible-thread condition,
+and the carrier part of the colimit is the inverse limit of those
+threads.  The structure maps are the evident inclusions on record data
+and projections on compatible carrier threads.  Functoriality follows
+by applying the same union and compatible-thread constructions to
+morphisms of directed diagrams, and PreSB-typing is preserved because
+every finite-stage typing condition is stable under the refinement
+morphisms.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.Refinement.refpresbCocomplete}; the Lean theorem proves existence of a representative colimit witness under the base-object cocone narrowing. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{definition}[Asymptotic statuses]\label{def:aor:asymptotic-statuses}
+For a residual atom $a$ of a colimit object
+$\mathsf C_\infty=\mathrm{colim}_j\mathsf C_j$, the
+\emph{asymptotic statuses} extending AOR-8 are:
+\texttt{asymptotic\_budgeted} (there exists a uniform finite budget
+$B$ and a tail index $J_0$ with the per-stage cost bounded by $B$ for
+all $j\ge J_0$);
+\texttt{summable} (the per-stage costs are summable across the
+directed chain);
+\texttt{contractive} (the per-stage cost ratios tend to a constant
+strictly less than $1$);
+\texttt{eventual\_zero} (the per-stage cost is zero for all $j\ge J_0$
+for some tail index $J_0$).
+\end{definition}
+
+These four statuses are limit-stage statuses; they do not alter the
+eleven-entry AOR-8 catalogue used for finite cascade discharge, but
+specify how a residual of primary type \(\Dlimit\) is paid at the
+colimit.
+
+\begin{theorem}[Asymptotic soundness]\label{thm:aor:asymptotic-soundness}
+The four asymptotic statuses of
+\Cref{def:aor:asymptotic-statuses} satisfy the implication chain
+\[
+  \texttt{eventual\_zero} \Rightarrow \texttt{contractive}
+  \Rightarrow \texttt{summable} \Rightarrow \texttt{asymptotic\_budgeted}.
+\]
+Each asymptotic status closes the colimit residual at level $\Dlimit$
+without producing a fresh atom in the limit.  Moreover, if every atom
+of $\mathsf C_\infty$ has an asymptotic status from this list and every
+finite stage $\mathsf C_j$ is in $\CascadeStableAOR_{\mathfrak S}$,
+then $\mathsf C_\infty\in\AOR_{\mathfrak S}$.
+\end{theorem}
+
+\begin{proof}
+The implication chain is the standard comparison among tail conditions
+of non-negative series \citep{Rudin1976Principles}.  If the per-stage
+cost is eventually zero, then on the same tail the cost ratios are
+eventually zero and hence bounded by a constant strictly less than
+one.  A contractive tail gives a summable geometric majorant after
+enlarging the initial finite segment if necessary.  A summable
+non-negative tail has bounded partial sums, and therefore supplies a
+uniform finite budget.  This proves
+\[
+  \texttt{eventual\_zero} \Rightarrow \texttt{contractive}
+  \Rightarrow \texttt{summable} \Rightarrow \texttt{asymptotic\_budgeted}.
+\]
+
+For closure at level \(\Dlimit\), each of the four statuses gives a typed
+tail witness that prevents a fresh limit atom from being generated: eventual
+zero leaves no tail cost, contractive and summable tails have finite total
+downstream obligation, and asymptotic boundedness gives a uniform budget
+record for the limit-stage atom.  If every finite stage is already
+cascade-stable, all finite-stage residuals discharge by the previous section.
+If every atom that survives to the colimit carries one of the four
+asymptotic statuses, then the only possible new \(\Dlimit\) residuals are
+also paid.  Thus the colimit carrier has no unpaid residual and remains in
+\(\AOR_{\mathfrak S}\).\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.Refinement.asymptoticSoundness}; the Lean theorem proves the asymptotic-status implication chain and limit-residual closure predicates under the representative colimit narrowing. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{definition}[Refinement-stable AOR]\label{def:aor:refinement-stable-aor}
+A PreSB carrier $\mathsf C\in\AOR_{\mathfrak S}$ is
+\emph{refinement-stable} if AOR-membership is preserved by every
+refinement morphism into $\mathsf C$ and by every directed colimit of
+refinement chains terminating at $\mathsf C$.  The class of
+refinement-stable AOR carriers is denoted
+$\RefStableAOR_{\mathfrak S}$.
+\end{definition}
+
+As with cascade stability, the formal predicate is evaluated on a carrier
+paired with a declared discharge assignment.  Refinement stability adds the
+requirement that limit-stage residuals are paid by the asymptotic layer.
+
+\begin{theorem}[Refinement-stable characterisation]\label{thm:aor:refinement-stable-characterisation}
+$\mathsf C\in\RefStableAOR_{\mathfrak S}$ if and only if (i)
+$\mathsf C\in\CascadeStableAOR_{\mathfrak S}$ and (ii) every residual
+atom of $\mathsf C$ that survives a colimit step is paid by an
+asymptotic status from \Cref{def:aor:asymptotic-statuses}.
+Equivalently, every refinement chain terminating at $\mathsf C$ has a
+discharge witness in which limit-stage atoms carry asymptotic
+statuses.
+\end{theorem}
+
+\begin{proof}
+Suppose first that \(\mathsf C\) is refinement-stable.  Applying the
+definition to the constant refinement chain shows that the finite-stage
+carrier must be cascade-stable: otherwise the constant chain would already
+contain an unpaid finite residual.  Applying the definition to an arbitrary
+directed chain terminating at \(\mathsf C\) shows that any residual atom that
+survives only at the colimit must be paid there; by the preceding definition,
+the available colimit payments are exactly the four asymptotic statuses.
+
+Conversely, assume that \(\mathsf C\) is cascade-stable and that every
+colimit-surviving atom is paid by an asymptotic status.  Along any refinement
+chain terminating at \(\mathsf C\), finite-stage atoms are discharged by
+cascade stability.  The only additional atoms that can appear at the colimit
+are the surviving limit-stage atoms, and by hypothesis they carry one of the
+asymptotic statuses.  By \Cref{thm:aor:asymptotic-soundness}, those statuses
+close the \(\Dlimit\) residual without producing a fresh atom in the limit.
+Hence AOR-membership is preserved under the relevant refinement morphisms and
+directed colimits.  This is precisely refinement stability.\footnote{Mechanized in Lean as \texttt{SixBirdsNeedles.AOR.Refinement.refinementStableCharacterisation}; the Lean theorem proves the cascade-stable plus colimit-payment characterization under the carrier-with-discharge and asymptotic-status narrowing. The full statement is proved here. See \Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+
+\begin{theorem}[Hierarchy witnesses]\label{thm:aor:hierarchy}
+There exist two named carriers
+\(\mathsf C_{\mathrm{witness},1}\) and
+\(\mathsf C_{\mathrm{witness},2}\), together with typed obstruction
+markers, that witness the failure of the stronger stability conditions:
+\(\mathsf C_{\mathrm{witness},1}\) lies in
+\(\CascadeStableAOR_{\mathfrak S}\) and carries a typed obstruction marker
+certifying that it does not satisfy the refinement-stability predicate;
+\(\mathsf C_{\mathrm{witness},2}\) lies in \(\AOR_{\mathfrak S}\) and
+carries a typed obstruction marker certifying that it does not satisfy the
+cascade-stability predicate.
+\end{theorem}
+
+\begin{proof}
+The first carrier \(\mathsf C_{\mathrm{witness},1}\) is constructed as in
+\Cref{tab:aor-counterexample-carriers}: it has a finite cascade that closes
+with base AOR-8 statuses, hence it lies in
+\(\CascadeStableAOR_{\mathfrak S}\), and it carries a typed
+\path{LimitAsymptoticNonpayment} marker that records a limit-stage residual
+whose discharge is not closed under the refinement chain demanded by
+refinement stability.  The marker is the typed witness that the carrier
+fails the refinement-stability predicate; the predicate's full
+quantifier-level negation is a separate framework-level verification and is
+not produced here.
+
+The second carrier \(\mathsf C_{\mathrm{witness},2}\) is constructed
+similarly: it has AOR field data, hence lies in \(\AOR_{\mathfrak S}\), and
+it carries a typed \path{BlockedCascadeNontermination} marker that records a
+residual atom whose discharge cascade does not close in finite steps under
+any AOR-8 status.  This marker is the typed witness for failure of cascade
+stability.
+
+Both carriers and their typed markers are recorded in
+\Cref{tab:aor-counterexample-carriers}.\footnote{Mechanized in Lean as
+\texttt{SixBirdsNeedles.AOR.Refinement.hierarchy} as a partial mechanization:
+the two witness carriers and their typed obstruction markers are recorded in
+Lean; full predicate-level non-membership verification remains framework
+future work and is stated as scope in the abstract. See
+\Cref{subsec:paper4-coverage-table}.}
+\end{proof}
+ 
+
+\section{Status, scope, and nonclaim boundary}\label{sec:aor-discussion}
+
+The preceding sections develop AOR as a meta-theory of audit-closed
+carriers.  Its formal objects are scope records, PreSB carriers,
+closure completion, defect strata, residual atoms, discharge
+cascades, and refinement chains; they are not a direct model of any
+particular analytic problem.  The Navier--Stokes smooth-data carrier
+appears as an AOR instance in \citet{Tsiokos2026NavierStokes}, but
+that paper is a consumer of the meta-theory developed here, not a
+theorem-level dependency of it.
+
+\begin{nonclaim}[No strong-realism reading of AOR]\label{nonclaim:aor:no-strong-realism}
+Membership in $\AOR_{\mathfrak S}$ is not a metaphysical or
+philosophical realism claim about the carrier's underlying domain.  It
+is a record-level audit predicate: every declared record is typed,
+every cited route is audited, every residual is statused, and every
+nonclaim is registered, within the declared scope $\mathfrak S$.  Any
+extra-scope interpretation requires its own audit and is outside the
+present framework.
+\end{nonclaim}
+
+The nonclaim fixes the intended reading of the full subcategory
+$\AOR_{\mathfrak S}$.  A carrier belongs to $\AOR_{\mathfrak S}$ when
+its declared audit obligations close inside its declared scope.  This
+is a structural predicate on a typed record, not a realism statement
+about the mathematical or physical domain from which that record was
+drawn.
+
+Several further scope decisions follow from the same discipline.  First,
+the present paper does not develop downstream applications beyond the
+audit-closed-carrier framework itself.  The current cited consumer is
+the NS-as-AOR-instance construction in
+\citet{Tsiokos2026NavierStokes}; any further application requires its
+own scope record, residual atlas, discharge assignment, and nonclaim
+ledger.
+
+Second, the cost table used in \Cref{sec:aor-secondary-results} is
+framework data rather than a uniqueness theorem.  The 132-entry base
+table records how residual type and base AOR-8 status generate
+downstream obligations; the asymptotic table for refinement limits is a
+separate layer.  Alternative cost tables would define related but
+different cascade systems, so the table should be read as part of the
+chosen AOR discipline, not as a canonical classification theorem.
+
+Third, the hierarchy statement \Cref{thm:aor:hierarchy} is a witness
+theorem rather than a complete classification theorem.  It exhibits
+named carriers and typed obstruction markers at the two stability
+boundaries in
+$\RefStableAOR \subseteq \CascadeStableAOR \subseteq \AOR$, while full
+predicate-level negated-membership proofs at every level remain
+framework future work.
+
+Fourth, the cascade-confluence statement
+\Cref{thm:aor:cascade-confluence} uses a classical confluence input.
+The local diamond and the well-founded termination measure are proved
+inside the cascade calculus; Newman's lemma then supplies global
+confluence and unique normal form for the induced discharge relation.
+
+Several adjacent lines of work in computer science treat audit data
+or proof obligations as first-class.  Hoare logic
+\citep{Hoare1969AxiomaticBasis} and the refinement
+calculus \citep{BackVonWright1998Refinement} formalize verification
+conditions and stepwise refinement, while audited-computation calculi
+\citep{BaveraBonelli2018AuditedComputation,RicciottiCheney2018ExplicitAuditing}
+and provenance-as-dependency semantics
+\citep{CheneyAhmedAcar2011Provenance} carry typed audit histories
+through computations.  AOR shares with these the discipline of
+treating audit content as part of the object rather than an external
+side condition, but its meta-theoretic question is different: rather
+than typing executions, it asks when a typed carrier with declared
+audit data admits a categorical completion into the audit-closed
+full subcategory.
+
+Finally, the cross-paper boundary is motivational and contextual
+only.  The formed-layer bookkeeping of
+\citet{Tsiokos2026NeedleKiller} and the adequacy-residual calculus of
+\citet{Tsiokos2026XiCompanion} motivate the audit vocabulary, but the
+AOR construction does not import their internal theorems as
+hypotheses; \citet{Tsiokos2026NavierStokes} uses the AOR meta-theory
+as a consumer rather than as an input.  The symbol $\XiSB$ continues
+to denote the structural defect of a PreSB carrier, not the adequacy
+residual $\Xi_C(D\mid L)$ of \citet{Tsiokos2026XiCompanion}.
+ 
+
+\section{Conclusion}\label{sec:aor-conclusion}
+
+The central result of this paper is a closure theorem for typed
+audit carriers.  Every carrier in $\PreSB_{\mathfrak S}$ admits a
+completion into the audit-closed full subcategory through the
+reflection $\ClSB\dashv\iota$.  The construction does not merely
+adjoin missing data; it makes audit closure a structural operation,
+so that records, routes, residuals, statuses, nonclaims, and
+meta-audits remain visible as typed fields rather than being
+collapsed into an external well-formedness assertion.  In that
+setting, the chain
+$\RefStableAOR\subseteq\CascadeStableAOR\subseteq\AOR$ organizes
+ordinary record-level audit closure, finite cascade closure, and
+closure stable under refinement limits.
+
+The framework comprises four layers.  The first is the
+closure-completion reflection and its universal property.  The second
+is the eight-stratum decomposition of the structural defect $\XiSB$,
+which turns failure of audit closure into typed diagnostic data.  The
+third is the residual layer: a twelve-type atlas, the status
+catalogue, cost records, downstream obligations, and cascade graphs
+tracing how residual atoms are paid.  The fourth is the refinement
+layer, where directed chains and asymptotic statuses distinguish
+finite discharge from discharge that only closes at a limit.
+Together they form a self-contained meta-theory of audit-closed
+carriers.
+
+The scope boundary is as important as the positive construction.
+\Cref{sec:aor-discussion} records that membership in
+$\AOR_{\mathfrak S}$ is not a strong-realism claim about the carrier's
+domain.  The paper also does not host a PDE-specific worked example;
+the NS-as-AOR-instance presentation belongs to
+\citet{Tsiokos2026NavierStokes}.  The cascade-confluence theorem
+proves the local diamond and well-founded termination, then applies
+Newman's lemma to obtain global confluence and unique normal form.  The
+hierarchy theorem exhibits named witness carriers and typed
+obstruction markers, while full predicate-level non-membership proofs
+at every level remain framework future work.
+
+The meta-theory developed here is intended for use by downstream
+audited applications.  The first such application is the
+NS-as-AOR-instance construction of
+\citet{Tsiokos2026NavierStokes}; further applications require their
+own scope records, residual atlases, cost tables, and discharge
+assignments.  Several natural strengthenings remain open: full
+predicate-level non-membership verification for the hierarchy witnesses,
+additional cost-table variants with their induced cascade systems, and
+data-bearing R-record extensions in the Navier--Stokes formal layer.  These are
+future refinements of the audit discipline, not assumptions needed
+for the closure-completion framework itself.
+ 
+\appendix
+\section{Definitions and gate predicates}\label{app:definitions}
+
+This appendix collects the recurring AOR vocabulary used in the body.
+It does not restate the formal definitions; each entry gives a short
+reminder and points back to the body location where the term is
+introduced.
+
+\subsection{Definitions}\label{subsec:definitions-list}
+
+\begin{description}[style=nextline]
+\item[PreSB carrier.]
+A typed carrier together with its audit data: quotient, audit form,
+record registries, stages, observations, constraints, rewrites,
+holonomy, residuals, statuses, nonclaims, and meta-audits.  See
+\Cref{def:aor:presb-carrier}.
+
+\item[Scope record.]
+The declaration of the carrier class, source ledger, interface family,
+and route registry inside which audit closure is evaluated.  See
+\Cref{def:aor:scope-record}.
+
+\item[PreSB morphism.]
+A scope-preserving field-tuple morphism between PreSB carriers,
+respecting the quotient, audit, route, and registry structure.  See
+\Cref{def:aor:morphism-presb}.
+
+\item[AOR subcategory.]
+The full subcategory of PreSB carriers whose declared records, routes,
+residuals, nonclaims, and meta-audits close inside the declared scope;
+equivalently, the structural defect is zero.  See
+\Cref{def:aor:aor-subcategory}.
+
+\item[Closure completion functor $\ClSB$.]
+The closure operation sending a PreSB carrier to its audit-closed
+completion and serving as the left adjoint to the inclusion
+$\iota:\AOR_{\mathfrak S}\hookrightarrow\PreSB_{\mathfrak S}$.  See
+\Cref{def:aor:cl-sb-operator}.
+
+\item[Structural defect $\XiSB$.]
+The aggregate defect object collecting all audit-obligation failures of
+a PreSB carrier as a disjoint sum of typed strata.  See
+\Cref{def:aor:xi-sb}.
+
+\item[Observation stratum $\Sigobs$.]
+The defect stratum for observation records whose target space,
+boundedness, or declared measurement role is not typed.  See
+\Cref{def:aor:sigma-obs}.
+
+\item[Stage stratum $\Sigstage$.]
+The defect stratum for stage data whose refinement axis, monotonicity
+law, or transition record is missing.  See
+\Cref{def:aor:sigma-stage}.
+
+\item[Constraint stratum $\Sigconstr$.]
+The defect stratum for constraints stated without a typed predicate,
+witness domain, or compatibility proof.  See
+\Cref{def:aor:sigma-constraint}.
+
+\item[Rewrite stratum $\Sigrewrite$.]
+The defect stratum for rewrite or normalization steps that lack a
+declared source, target, or preservation witness.  See
+\Cref{def:aor:sigma-rewrite}.
+
+\item[Holonomy stratum $\Sighol$.]
+The defect stratum for route-comparison or loop data whose holonomy
+record is absent or unaudited.  See \Cref{def:aor:sigma-holonomy}.
+
+\item[Residual stratum $\Sigres$.]
+The defect stratum for residual atoms that still require status,
+discharge, or cascade accounting.  See
+\Cref{def:aor:sigma-residual}.
+
+\item[Nonclaim stratum $\Signon$.]
+The defect stratum for exclusions or limitations that are being used
+implicitly but have not been registered as nonclaims.  See
+\Cref{def:aor:sigma-nonclaim}.
+
+\item[Meta-audit stratum $\Sigmeta$.]
+The defect stratum for higher-level audit obligations, such as
+manifest or provenance obligations, that have not themselves been
+discharged.  See \Cref{def:aor:sigma-meta}.
+
+\item[Residual-type atlas.]
+The named partition of $\Sigres$ into primary residual types such as
+$\Ddescent$, $\Dtransport$, $\Dinterface$, $\Dsource$, $\Dscale$,
+$\Dlimit$, $\Drole$, and $\Dtarget$.  See
+\Cref{def:aor:residual-types-twelve}.
+
+\item[Residual partial order.]
+The refinement order on residual atoms: splitting an atom into finer
+probe, stage, or obstruction data makes it strictly smaller in the residual
+order, so an atom is a minimal non-empty record.  See
+\Cref{def:aor:residual-partial-order}.
+
+\item[Residual atom.]
+A typed residual obligation consisting of a primary residual type,
+forced secondary types, and provenance data tying it to the carrier's
+record fields.  See \Cref{def:aor:residual-atom}.
+
+\item[AOR-8 status catalogue.]
+The eleven base statuses used to pay residual atoms, together with the
+four asymptotic extensions used for refinement limits.  See
+\Cref{def:aor:aor-8-statuses,def:aor:asymptotic-statuses}.
+
+\item[Discharge record and discharge witness.]
+A discharge record pairs a residual atom with a status and a witness;
+a discharge witness is the family of such records used for a carrier or
+cascade step.  See
+\Cref{def:aor:discharge-record,def:aor:discharge-witness}.
+
+\item[Cost record, downstream operator, and cost table.]
+The cost record $\mathrm{Cost}(t,s)$ lists downstream obligations
+generated by paying a residual type $t$ with status $s$; the downstream
+operator forms the next residual record, and the cost table packages
+the framework's rows.  The cost table is framework data under the
+documented \emph{definition metadata} discipline.  See
+\Cref{def:aor:cost-record,def:aor:down-operator,def:aor:cost-table}.
+
+\item[Cascade graph.]
+The bipartite graph whose layers alternate residual atoms and
+discharge witnesses, with edges recording downstream obligations
+created by the cost table.  See \Cref{def:aor:cascade-graph}.
+
+\item[Cascade-stable AOR.]
+The predicate that a carrier, paired with a fixed discharge assignment,
+has all residual atoms paid by finite cost-table cascades.  See
+\Cref{def:aor:cascade-stable-aor}.
+
+\item[Refinement morphism, six kinds, and $\RefPreSB$.]
+A refinement morphism is a PreSB morphism annotated by the A1--A6
+refinement kind of each field change; $\RefPreSB$ is the resulting
+category of PreSB carriers and refinement arrows.  See
+\Cref{def:aor:refinement-morphism,def:aor:refinement-kinds-six,def:aor:refpresb-category}.
+
+\item[Refinement-stable AOR.]
+The refinement-stable subclass of cascade-stable AOR carriers whose
+limit-stage residuals are paid by asymptotic statuses along directed
+refinement chains.  See \Cref{def:aor:refinement-stable-aor}.
+\end{description}
+
+\subsection{Gate predicates}\label{subsec:gate-predicates-list}
+
+The following five carrier-level predicates are the gate conditions in
+the AOR subcategory definition.  Their conjunction is the body-level
+form of the assertion that the eight-stratum structural defect $\XiSB$
+vanishes; compare \Cref{def:aor:aor-subcategory} with
+\Cref{thm:aor:eight-stratum-decomposition}.
+
+\begin{description}[style=nextline]
+\item[\texttt{declaredRecordsTyped}.]
+Every declared observation, source, interface, route, constraint, and
+related record has a specified type and carrier-level role.
+
+\item[\texttt{citedRoutesAudited}.]
+Every route or transport map cited by the carrier appears in the route
+registry with the audit data needed to compare its source and target
+records.
+
+\item[\texttt{residualsStatused}.]
+Every residual atom in the residual registry has an assigned AOR-8
+status and therefore enters the discharge calculus.
+
+\item[\texttt{nonclaimsRegistered}.]
+Every exclusion or limitation used by the carrier is explicitly
+registered as a nonclaim rather than left implicit.
+
+\item[\texttt{metaAuditDischarged}.]
+Every meta-level audit obligation, including provenance and manifest
+obligations, has a typed record witnessing its discharge.
+\end{description}
+ \section{Methods, artifacts, and reproducibility contract}\label{app:methods}
+
+This appendix expands the method sketches used in the body.  Its role
+is reproducibility and audit discipline: it explains what data are held
+fixed, what order-theoretic or graph-theoretic method is being used, and
+which framework choices downstream users must preserve.  The canonical
+definitions and theorem statements remain in the body.
+
+\subsection{\texorpdfstring{Knaster--Tarski monotone saturation for
+\(\ClSB\)}{Knaster--Tarski monotone saturation for ClSB}}
+\label{subsec:aor-methods-clsb-saturation}
+
+\Cref{sec:aor-methods} constructs \(\ClSB\) by applying a monotone
+saturation operation to a scoped PreSB carrier.  The reproducibility
+object is the complete lattice of AOR-extending operations over the
+fixed scope \(\mathfrak S\).  An element of this lattice is a candidate
+audit extension of the seed carrier: it adds typed record data, route
+audits, residual statuses, nonclaim entries, and meta-audit discharge
+records, but it does not change the declared scope.  The order is
+fieldwise extension, so meets and joins are computed by fieldwise
+intersection and generated union subject to scope compatibility.
+
+The saturation map adds the minimal operations forced by the currently
+visible audit gaps.  Monotonicity is the key reproducibility check: if
+one candidate extension contains another, then every obligation visible
+in the smaller candidate is visible in the larger one, and saturation
+cannot remove already-typed audit data.  Knaster--Tarski
+\citep{TarskiFixedPoint1955} then supplies a least fixed point of the
+saturation map, obtained by the constructive ordinal iteration of
+\citet{CousotCousotConstructive1979}.  That fixed point is the
+closure-completed carrier, and the inclusion of the seed into the
+fixed point is the reflection unit.
+
+For carriers already in \(\AOR_{\mathfrak S}\), no additional
+AOR-extending operation is forced.  The counit of the reflection is
+therefore the identity-field counit: applying \(\ClSB\) to an already
+audit-closed carrier returns the same carrier up to the fieldwise
+identity package.
+
+\subsection{Well-founded measure for cascade termination}
+\label{subsec:aor-methods-cascade-measure}
+
+\Cref{thm:aor:cascade-termination} uses a well-founded measure on
+discharge states.  The state consists of the multiset of residual atoms
+currently awaiting discharge, each tagged with its primary type and
+AOR-8 status.  The measure is the multiset of statuses obtained from
+that state by forgetting the primary-type coordinate; the type
+coordinate plays no role in the termination argument.
+
+The status order is the AOR-8 status rank of
+\Cref{def:aor:aor-8-statuses} with \texttt{zero} as the unique minimum
+and the asymptotic-terminal statuses placed above \texttt{zero} but
+below the base non-terminal statuses, with \(\texttt{summable} <
+\texttt{asymptotic\_budgeted}\) inside the asymptotic tier.  Cascade
+moves are then well-founded by Dershowitz--Manna multiset descent
+\citep{DershowitzManna1979Multiset} on this status order: by
+\Cref{lem:aor:cost-table-admissibility}(1), every cost-table move
+replaces an atom of status \(s\) by a multiset of atoms whose statuses
+are each strictly less than \(s\), so the cascade's status multiset
+strictly decreases at every step.  This is the method behind the
+finite-termination statement of \Cref{thm:aor:cascade-termination},
+and it supplies the well-founded discharge relation used as the
+termination input for the confluence argument in
+\Cref{thm:aor:cascade-confluence}.
+
+\subsection{\texorpdfstring{Representative-object cocompleteness for
+\(\RefPreSB\)}{Representative-object cocompleteness for RefPreSB}}
+\label{subsec:aor-methods-refpresb-cocomplete}
+
+\Cref{thm:aor:refpresb-cocomplete} is the directed-colimit method used
+for refinement chains.  A refinement chain is a directed diagram of
+PreSB carriers whose arrows are annotated by the A1--A6 refinement
+kinds.  The body argument separates two pieces of data: record and
+scope components are collected by directed union, while carrier-level
+data are read as compatible threads under the reverse projection maps.
+
+The method is representative-object cocompleteness.  Rather than treating
+the colimit as an unstructured quotient of all stages at once, the
+construction chooses representative stage objects, carries the cocone data
+through directed union, and tracks compatible carrier threads.  This is
+enough for the paper's audit discipline: the body identifies which data must
+be carried through a chain and how the representative witness sits in the
+directed system.
+
+The asymptotic-status arguments in \Cref{sec:aor-analysis} use this
+method by asking what residual obligations remain at the limit of a
+chain.  Finite cascade discharge is a statement about bounded cascade
+depth at each stage; refinement-stable discharge also requires that
+limit-stage residuals be paid by one of the four asymptotic statuses.
+The representative-object construction is the bookkeeping device that
+lets those two requirements be stated in the same scoped category.
+
+\subsection{\texorpdfstring{Cost-table reproducibility and the
+\texttt{definition\_metadata} discipline}{Cost-table reproducibility
+and definition metadata discipline}}
+\label{subsec:aor-methods-cost-table-reproducibility}
+
+\Cref{def:aor:cost-table} introduces the base cost table used by the
+cascade section.  The table is framework data: it specifies how each
+residual type and base AOR-8 status generates downstream obligations.
+It is not a theorem asserting that this table is uniquely forced by the
+rest of the framework.  A different audited cost table would define a
+different, though related, cascade discipline.
+
+The reproducibility discipline is therefore explicit.  The base table
+has \(12\times 11\) entries and belongs to the base AOR-8 status layer.
+The representative non-trivial base rows include the
+transport/\texttt{blocked}, source/\texttt{budgeted}, and
+scale/\texttt{hidden} cases, together with structural defaults for the
+remaining base rows.  The asymptotic limit rows, including the
+contractive and asymptotic-budgeted limit cases, live in a separate
+asymptotic table and are not counted as part of the 132-entry base
+catalogue.
+
+The body therefore treats the cost table as fixed framework data
+rather than as a canonical or unique object.  Appendix E reserves
+\Cref{tab:aor-cost-table-representative} for the representative
+cost-table subset.  Downstream users of the AOR framework should cite
+the cost table as part of the chosen audit discipline and should record any
+altered cost rows explicitly.
+ \section{Artifact source map}\label{app:artifact-map}
+
+This appendix maps the AOR statements of record to their rendered body
+locations and to any figure, table, or appendix support row.  It does
+not duplicate the declaration data of \Cref{app:aor-formalization};
+that material lives in the declaration maps of
+\Cref{tab:paper4-lean-declaration-map-a,tab:paper4-lean-declaration-map-b}.
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.045\linewidth} >{\raggedright\arraybackslash}p{0.28\linewidth} >{\raggedright\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}p{0.25\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Body section & Figure / table support & Appendix support \\
+    \midrule
+    01 & \path{def:aor:presb-carrier} & \Cref{sec:aor-problem-setup} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    02 & \path{def:aor:scope-record} & \Cref{sec:aor-problem-setup} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    03 & \path{def:aor:morphism-presb} & \Cref{sec:aor-problem-setup} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    04 & \path{def:aor:aor-subcategory} & \Cref{sec:aor-problem-setup} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    05 & \path{thm:aor:aor-full-subcat} & \Cref{sec:aor-problem-setup} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    06 & \path{def:aor:cl-sb-operator} & \Cref{sec:aor-methods} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    07 & \path{thm:aor:cl-sb-construction} & \Cref{sec:aor-methods} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    08 & \path{thm:aor:cl-sb-universal-property} & \Cref{sec:aor-methods} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    09 & \path{thm:aor:cl-sb-adjunction} & \Cref{sec:aor-methods} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    10 & \path{def:aor:xi-sb} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    11 & \path{def:aor:sigma-obs} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    12 & \path{def:aor:sigma-stage} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    13 & \path{def:aor:sigma-constraint} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    14 & \path{def:aor:sigma-rewrite} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    15 & \path{def:aor:sigma-holonomy} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    16 & \path{def:aor:sigma-residual} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    17 & \path{def:aor:sigma-nonclaim} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    18 & \path{def:aor:sigma-meta} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    19 & \path{thm:aor:eight-stratum-decomposition} & \Cref{sec:aor-primary-results-defect} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    20 & \path{def:aor:residual-types-twelve} & \Cref{sec:aor-primary-results-atlas} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    21 & \path{def:aor:residual-partial-order} & \Cref{sec:aor-primary-results-atlas} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    22 & \path{def:aor:residual-atom} & \Cref{sec:aor-primary-results-atlas} & \Cref{tab:aor-forced-secondary-types} & \Cref{tab:paper4-lean-declaration-map-a} \\
+    23 & \path{thm:aor:atom-decomposition} & \Cref{sec:aor-primary-results-atlas} & \Cref{tab:aor-forced-secondary-types} & \Cref{tab:paper4-lean-declaration-map-a} \\
+    24 & \path{thm:aor:residual-product} & \Cref{sec:aor-primary-results-atlas} & \Cref{tab:aor-forced-secondary-types} & \Cref{tab:paper4-lean-declaration-map-a} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR artifact source map, rows 1--24.}
+  \label{tab:aor-artifact-map-a}
+\end{table}
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2.5pt}
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.045\linewidth} >{\raggedright\arraybackslash}p{0.28\linewidth} >{\raggedright\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}p{0.25\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Body section & Figure / table support & Appendix support \\
+    \midrule
+    25 & \path{thm:aor:forced-residual} & \Cref{sec:aor-primary-results-atlas} & \Cref{tab:aor-forced-secondary-types} & \Cref{tab:paper4-lean-declaration-map-a} \\
+    26 & \path{def:aor:aor-8-statuses} & \Cref{sec:aor-primary-results-statuses} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    27 & \path{def:aor:discharge-record} & \Cref{sec:aor-primary-results-statuses} & -- & \Cref{tab:paper4-lean-declaration-map-a} \\
+    28 & \path{def:aor:discharge-witness} & \Cref{sec:aor-primary-results-statuses} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    29 & \path{def:aor:cost-record} & \Cref{sec:aor-secondary-results} & \Cref{tab:aor-cost-table-representative} & \Cref{tab:paper4-lean-declaration-map-b} \\
+    30 & \path{def:aor:down-operator} & \Cref{sec:aor-secondary-results} & \Cref{tab:aor-cost-table-representative} & \Cref{tab:paper4-lean-declaration-map-b} \\
+    31 & \path{def:aor:cost-table} & \Cref{sec:aor-secondary-results} & \Cref{tab:aor-cost-table-representative} & \Cref{tab:paper4-lean-declaration-map-b} \\
+    32 & \path{def:aor:cascade-graph} & \Cref{sec:aor-secondary-results} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    33 & \path{thm:aor:cascade-bipartite} & \Cref{sec:aor-secondary-results} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    34 & \path{thm:aor:cascade-termination} & \Cref{sec:aor-secondary-results} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    35 & \path{thm:aor:cascade-confluence} & \Cref{sec:aor-secondary-results} & -- & \Cref{tab:paper4-lean-declaration-map-b,subsec:paper4-partial-disclosures} \\
+    36 & \path{thm:aor:cross-cascade-composition} & \Cref{sec:aor-secondary-results} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    37 & \path{def:aor:cascade-stable-aor} & \Cref{sec:aor-secondary-results} & \Cref{tab:aor-cost-table-representative} & \Cref{tab:paper4-lean-declaration-map-b} \\
+    38 & \path{thm:aor:cascade-stable-characterisation} & \Cref{sec:aor-secondary-results} & \Cref{tab:aor-cost-table-representative} & \Cref{tab:paper4-lean-declaration-map-b} \\
+    39 & \path{def:aor:refinement-morphism} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    40 & \path{def:aor:refinement-kinds-six} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    41 & \path{def:aor:refpresb-category} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    42 & \path{thm:aor:refpresb-cocomplete} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    43 & \path{def:aor:asymptotic-statuses} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    44 & \path{thm:aor:asymptotic-soundness} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    45 & \path{def:aor:refinement-stable-aor} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    46 & \path{thm:aor:refinement-stable-characterisation} & \Cref{sec:aor-analysis} & -- & \Cref{tab:paper4-lean-declaration-map-b} \\
+    47 & \path{thm:aor:hierarchy} & \Cref{sec:aor-analysis} & \Cref{tab:aor-counterexample-carriers} & \Cref{tab:paper4-lean-declaration-map-b,subsec:paper4-partial-disclosures} \\
+    48 & \path{nonclaim:aor:no-strong-realism} & \Cref{sec:aor-discussion} & -- & -- \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR artifact source map, rows 25--48.}
+  \label{tab:aor-artifact-map-b}
+\end{table}
+
+Rows 1--47 are the AOR statements of record and are accompanied by the
+declaration maps in \Cref{app:aor-formalization}.  Row 48 is the
+post-restructure nonclaim boundary carried in
+\Cref{sec:aor-discussion}; it has no corresponding support row.
+ \section{Lean Formalization Disclosure}
+\label{app:aor-formalization}
+
+\subsection{Trust base and methodology}
+\label{subsec:paper4-trust-methodology}
+
+The AOR Lean artifacts cited in this appendix were checked with Lean
+4.28.0 \citep{deMouraUllrich2021Lean4}, whose dependent type theory
+descends from Martin-L{\"o}f's intuitionistic type theory
+\citep{MartinLof1984IntuitionisticTypeTheory} and the Calculus of
+Constructions of \citet{CoquandHuet1988CalculusConstructions}.  The
+project-wide trust base allowlisted in
+\path{lean/manifests/trust_base.txt} comprises five core kernel
+axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound},
+\texttt{choice}, and \texttt{funext}.  The AOR-axis theorem closures
+recorded by the manifest audit fit inside the smaller subset
+$\{\texttt{propext},\ \texttt{Classical.choice},\ \texttt{Quot.sound}\}$.
+The needles project remains mathlib-free \citep{MathlibCommunity2020Lean}
+on this axis: categorical records, fixed-point packages, residual
+types, cost rows, and refinement objects are represented locally by
+Lean structures, inductive types, and \texttt{Prop}-valued predicates,
+in the style familiar from other higher-order logic and dependent-type
+proof assistants \citep{NipkowPaulsonWenzel2002IsabelleHOL}.
+Project-local \texttt{sorry}, \texttt{axiom}, \texttt{opaque}, and
+\texttt{constant} declarations are forbidden in the needles Lean
+corpus; the manifest checker audits theorem closures against the
+trust base.
+
+\subsection{Mechanization disclosure tiers}
+\label{subsec:paper4-mechanization-disclosure-tiers}
+
+Body footnotes use a three-tier disclosure discipline keyed to the
+alignment column of the per-label coverage table.
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.25\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Alignment & Tier label & Body footnote wording template \\
+    \midrule
+    \texttt{faithful} & T1 & Verified in Lean as \(\langle\)declaration\(\rangle\); see \Cref{subsec:paper4-coverage-table}. \\
+    \texttt{narrowed\_surrogate} & T2 & Mechanized in Lean as \(\langle\)declaration\(\rangle\); the Lean theorem proves \(\langle\)sub-claim\(\rangle\) under \(\langle\)narrowing\(\rangle\).  The full statement is proved here.  See \Cref{subsec:paper4-coverage-table}. \\
+    \texttt{partial} with documented narrowing & T2-partial & Mechanized in Lean as \(\langle\)declaration\(\rangle\) as a partial mechanization: \(\langle\)recorded fragment\(\rangle\) is recorded; \(\langle\)deferred content\(\rangle\) is proved here.  See \Cref{subsec:paper4-coverage-table}. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR body footnote disclosure tiers.}
+  \label{tab:paper4-mechanization-disclosure-tiers}
+\end{table}
+
+This tier discipline is the canonical wording rule for body footnotes:
+a reader can cross-check each theorem footnote against the alignment
+column of the coverage table below.
+
+\subsection{Standing narrowings}
+\label{subsec:paper4-standing-narrowings}
+
+Several narrowings apply uniformly across the AOR formalization.  First,
+the \(\ClSB\) construction is presented in the paper as a
+Knaster--Tarski monotone saturation on the complete lattice of
+AOR-extending operations.  Lean records the complete-lattice side by a
+\texttt{Prop}-valued placeholder
+\(\texttt{completeLatticeOfOperations := True}\), while directly
+exhibiting the operative closure package: idempotent closure, monotone
+saturation, the universal lift, zero structural defect, and the
+identity-field counit.
+
+Second, the cost table is \texttt{definition\_metadata}.  The Lean
+function \path{costTable} (in \path{SixBirdsNeedles.AOR.Cascades})
+gives explicit non-trivial base rows for the pairs
+\((\Dtransport,\blocked)\), \((\Dsource,\budgeted)\), and
+\((\Dscale,\hidden)\).  The asymptotic limit rows live in
+\path{asymptoticCostTable} (in \path{SixBirdsNeedles.AOR.Refinement})
+and cover the \((\Dlimit,\contractive)\) and
+\((\Dlimit,\asymptoticBudgeted)\) cases.  Remaining base rows use
+structural defaults; \Cref{app:extended-material} reserves an appendix
+table for a representative subset of the 132-entry catalogue.
+
+Third, \texttt{closesLimitResidual} is no longer a uniform
+\texttt{True} predicate.  The four asymptotic statuses
+\(\eventualZero\), \(\contractive\), \(\summable\), and
+\(\asymptoticBudgeted\) carry distinct content-bearing predicates in
+\path{SixBirdsNeedles.AOR.Refinement}.
+
+Fourth, \path{refpresbCocomplete} is a representative-object
+narrowing.  Lean exhibits a colimit witness using the chain's base
+object, with \texttt{True}-placeholder fields for the cocone,
+directed-union, compatible-thread, functoriality, and
+PreSB-typing-preservation clauses.  The existence of the witness is
+captured; the full directed-colimit construction remains paper-side.
+
+Fifth, the carrier-attached discharge assignment is represented by
+the \path{AORCarrierWithDischarge} wrapper.  Cascade-stable AOR and
+refinement-stable AOR are predicates over an AOR carrier paired with
+a fixed residual-discharge assignment rather than over a free carrier
+alone, ruling out the post-hoc choice of \texttt{zero} status for
+every atom.  Any AOR-instance application, including the
+NS-as-AOR-instance presentation in
+\citet{Tsiokos2026NavierStokes}, inherits the wrapper.
+
+\subsection{Per-label coverage table}
+\label{subsec:paper4-coverage-table}
+
+Tables~\ref{tab:paper4-coverage-a}--\ref{tab:paper4-coverage-c} cover all 47 AOR \texttt{mechanize\_now} rows.  The two partial rows (\path{thm:aor:cascade-confluence} and \path{thm:aor:hierarchy}) include their narrowing notes in the wording column.
+
+\begin{landscape}
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.04\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Kind & Coverage & Alignment & Wording \\
+    \midrule
+    01 & \path{def:aor:presb-carrier} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    02 & \path{def:aor:scope-record} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    03 & \path{def:aor:morphism-presb} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    04 & \path{def:aor:aor-subcategory} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    05 & \path{thm:aor:aor-full-subcat} & \texttt{theorem} & \texttt{theorem} & \texttt{faithful} & Lean proves the stated structural claim. \\
+    06 & \path{def:aor:cl-sb-operator} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    07 & \path{thm:aor:cl-sb-construction} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    08 & \path{thm:aor:cl-sb-universal-property} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    09 & \path{thm:aor:cl-sb-adjunction} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    10 & \path{def:aor:xi-sb} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    11 & \path{def:aor:sigma-obs} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    12 & \path{def:aor:sigma-stage} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    13 & \path{def:aor:sigma-constraint} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    14 & \path{def:aor:sigma-rewrite} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    15 & \path{def:aor:sigma-holonomy} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    16 & \path{def:aor:sigma-residual} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    17 & \path{def:aor:sigma-nonclaim} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    18 & \path{def:aor:sigma-meta} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR per-label coverage, rows 1--18.}
+  \label{tab:paper4-coverage-a}
+\end{table}
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.04\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Kind & Coverage & Alignment & Wording \\
+    \midrule
+    19 & \path{thm:aor:eight-stratum-decomposition} & \texttt{theorem} & \texttt{theorem} & \texttt{faithful} & Lean proves the stated structural claim. \\
+    20 & \path{def:aor:residual-types-twelve} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    21 & \path{def:aor:residual-partial-order} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    22 & \path{def:aor:residual-atom} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    23 & \path{thm:aor:atom-decomposition} & \texttt{theorem} & \texttt{theorem} & \texttt{faithful} & Lean proves the stated structural claim. \\
+    24 & \path{thm:aor:residual-product} & \texttt{theorem} & \texttt{theorem} & \texttt{faithful} & Lean proves the stated structural claim. \\
+    25 & \path{thm:aor:forced-residual} & \texttt{theorem} & \texttt{theorem} & \texttt{faithful} & Lean proves the stated structural claim. \\
+    26 & \path{def:aor:aor-8-statuses} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    27 & \path{def:aor:discharge-record} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    28 & \path{def:aor:discharge-witness} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    29 & \path{def:aor:cost-record} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    30 & \path{def:aor:down-operator} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    31 & \path{def:aor:cost-table} & \texttt{definition} & \texttt{definition} & \texttt{narrowed\_surrogate} & Lean records representative cost-table rows as definition metadata; the remaining rows are structural defaults. \\
+    32 & \path{def:aor:cascade-graph} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    33 & \path{thm:aor:cascade-bipartite} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    34 & \path{thm:aor:cascade-termination} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    35 & \path{thm:aor:cascade-confluence} & \texttt{theorem} & \texttt{partial} & \texttt{narrowed\_surrogate} & Lean records the local confluence and well-founded discharge relation fragment; the body supplies the Newman implication and unique-normal-form conclusion as a classical input. \\
+    36 & \path{thm:aor:cross-cascade-composition} & \texttt{theorem} & \texttt{theorem} & \texttt{faithful} & Lean proves the stated structural claim. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR per-label coverage, rows 19--36.}
+  \label{tab:paper4-coverage-b}
+\end{table}
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.04\linewidth} >{\raggedright\arraybackslash}p{0.22\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.20\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Kind & Coverage & Alignment & Wording \\
+    \midrule
+    37 & \path{def:aor:cascade-stable-aor} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    38 & \path{thm:aor:cascade-stable-characterisation} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    39 & \path{def:aor:refinement-morphism} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    40 & \path{def:aor:refinement-kinds-six} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    41 & \path{def:aor:refpresb-category} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    42 & \path{thm:aor:refpresb-cocomplete} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    43 & \path{def:aor:asymptotic-statuses} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    44 & \path{thm:aor:asymptotic-soundness} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    45 & \path{def:aor:refinement-stable-aor} & \texttt{definition} & \texttt{definition} & \texttt{faithful} & Lean realizes the paper object as a Lean definition, structure, or inductive type. \\
+    46 & \path{thm:aor:refinement-stable-characterisation} & \texttt{theorem} & \texttt{theorem} & \texttt{narrowed\_surrogate} & Lean records a narrowed surrogate or audits the dependency package; the body carries the full mathematical proof. \\
+    47 & \path{thm:aor:hierarchy} & \texttt{theorem} & \texttt{partial} & \texttt{narrowed\_surrogate} & Lean records the two witness carriers and their typed obstruction markers; full predicate-level non-membership verification remains framework future work. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR per-label coverage, rows 37--47.}
+  \label{tab:paper4-coverage-c}
+\end{table}
+
+\end{landscape}
+
+\subsection{Two partial demotions: explicit narrowing disclosures}
+\label{subsec:paper4-partial-disclosures}
+
+Two partial demotions remain on the AOR axis; the third, \texttt{thm:aor:ns-refstableaor}, moved with the NS-as-AOR-instance content to \citet{Tsiokos2026NavierStokes} and is disclosed in that paper's formalization appendix.
+
+\subsubsection{\texorpdfstring{\texttt{thm:aor:cascade-confluence}}{thm:aor:cascade-confluence}}
+
+Lean mechanizes local confluence and the well-founded discharge relation.
+The body supplies the Newman global-confluence implication and the
+resulting unique-normal-form conclusion as a classical input.  The R1
+repair removed the permissive \path{DischargeReachable.merge}
+constructor, so the remaining local diamond is not obtained by an
+arbitrary same-primary merge; it is paired with the finite termination
+measure recorded by \path{cascadeTermination}.
+
+\subsubsection{\texorpdfstring{\texttt{thm:aor:hierarchy}}{thm:aor:hierarchy}}
+
+The hierarchy row is a witness-carrier theorem rather than a full
+predicate-level classification theorem.  Lean exhibits the named finite carriers
+\path{counterexampleAOROnly} and \path{counterexampleCascadeOnly},
+together with typed obstruction inductives
+\path{LimitAsymptoticNonpayment} and
+\path{BlockedCascadeNontermination}.  Full predicate-level non-membership
+verification remains framework future work and would require substantially
+more of the 132-entry cost table than the present
+\texttt{definition\_metadata} narrowing covers.
+
+\subsection{Lean declaration map}
+\label{subsec:paper4-declaration-map}
+
+Tables~\ref{tab:paper4-lean-declaration-map-a} and \ref{tab:paper4-lean-declaration-map-b} map every mechanized AOR paper label to its Lean declaration path (47 rows total after the 2026-05-24 NS-AOR bridge restructure).
+
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.06\linewidth} >{\raggedright\arraybackslash}p{0.35\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Lean declaration path \\
+    \midrule
+    01 & \path{def:aor:presb-carrier} & \path{SixBirdsNeedles.AOR.PreSB.preSBCarrier} \\
+    02 & \path{def:aor:scope-record} & \path{SixBirdsNeedles.AOR.PreSB.scopeRecord} \\
+    03 & \path{def:aor:morphism-presb} & \path{SixBirdsNeedles.AOR.PreSB.morphismPreSB} \\
+    04 & \path{def:aor:aor-subcategory} & \path{SixBirdsNeedles.AOR.PreSB.aorSubcategory} \\
+    05 & \path{thm:aor:aor-full-subcat} & \path{SixBirdsNeedles.AOR.PreSB.aorFullSubcat} \\
+    06 & \path{def:aor:cl-sb-operator} & \path{SixBirdsNeedles.AOR.ClSB.clSBOperator} \\
+    07 & \path{thm:aor:cl-sb-construction} & \path{SixBirdsNeedles.AOR.ClSB.clSBConstruction} \\
+    08 & \path{thm:aor:cl-sb-universal-property} & \path{SixBirdsNeedles.AOR.ClSB.clSBUniversalProperty} \\
+    09 & \path{thm:aor:cl-sb-adjunction} & \path{SixBirdsNeedles.AOR.ClSB.clSBAdjunction} \\
+    10 & \path{def:aor:xi-sb} & \path{SixBirdsNeedles.AOR.DefectStrata.xiSB} \\
+    11 & \path{def:aor:sigma-obs} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaObs} \\
+    12 & \path{def:aor:sigma-stage} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaStage} \\
+    13 & \path{def:aor:sigma-constraint} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaConstraint} \\
+    14 & \path{def:aor:sigma-rewrite} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaRewrite} \\
+    15 & \path{def:aor:sigma-holonomy} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaHolonomy} \\
+    16 & \path{def:aor:sigma-residual} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaResidual} \\
+    17 & \path{def:aor:sigma-nonclaim} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaNonclaim} \\
+    18 & \path{def:aor:sigma-meta} & \path{SixBirdsNeedles.AOR.DefectStrata.sigmaMeta} \\
+    19 & \path{thm:aor:eight-stratum-decomposition} & \path{SixBirdsNeedles.AOR.DefectStrata.eightStratumDecomposition} \\
+    20 & \path{def:aor:residual-types-twelve} & \path{SixBirdsNeedles.AOR.ResidualAtlas.residualTypesTwelve} \\
+    21 & \path{def:aor:residual-partial-order} & \path{SixBirdsNeedles.AOR.ResidualAtlas.residualPartialOrder} \\
+    22 & \path{def:aor:residual-atom} & \path{SixBirdsNeedles.AOR.ResidualAtlas.residualAtom} \\
+    23 & \path{thm:aor:atom-decomposition} & \path{SixBirdsNeedles.AOR.ResidualAtlas.atomDecomposition} \\
+    24 & \path{thm:aor:residual-product} & \path{SixBirdsNeedles.AOR.ResidualAtlas.residualProduct} \\
+    25 & \path{thm:aor:forced-residual} & \path{SixBirdsNeedles.AOR.ResidualAtlas.forcedResidual} \\
+    26 & \path{def:aor:aor-8-statuses} & \path{SixBirdsNeedles.AOR.Cascades.AOR8Status} \\
+    27 & \path{def:aor:discharge-record} & \path{SixBirdsNeedles.AOR.Cascades.DischargeWitness} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR Lean declaration map, rows 1--27.}
+  \label{tab:paper4-lean-declaration-map-a}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.0}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.06\linewidth} >{\raggedright\arraybackslash}p{0.35\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    \# & Paper label & Lean declaration path \\
+    \midrule
+    28 & \path{def:aor:discharge-witness} & \path{SixBirdsNeedles.AOR.Cascades.DischargeWitnessFamily} \\
+    29 & \path{def:aor:cost-record} & \path{SixBirdsNeedles.AOR.Cascades.costRecord} \\
+    30 & \path{def:aor:down-operator} & \path{SixBirdsNeedles.AOR.Cascades.downOperator} \\
+    31 & \path{def:aor:cost-table} & \path{SixBirdsNeedles.AOR.Cascades.costTable} \\
+    32 & \path{def:aor:cascade-graph} & \path{SixBirdsNeedles.AOR.Cascades.cascadeGraph} \\
+    33 & \path{thm:aor:cascade-bipartite} & \path{SixBirdsNeedles.AOR.Cascades.cascadeBipartite} \\
+    34 & \path{thm:aor:cascade-termination} & \path{SixBirdsNeedles.AOR.Cascades.cascadeTermination} \\
+    35 & \path{thm:aor:cascade-confluence} & \path{SixBirdsNeedles.AOR.Cascades.cascadeConfluence} \\
+    36 & \path{thm:aor:cross-cascade-composition} & \path{SixBirdsNeedles.AOR.Cascades.crossCascadeComposition} \\
+    37 & \path{def:aor:cascade-stable-aor} & \path{SixBirdsNeedles.AOR.Cascades.cascadeStableAOR} \\
+    38 & \path{thm:aor:cascade-stable-characterisation} & \path{SixBirdsNeedles.AOR.Cascades.cascadeStableCharacterisation} \\
+    39 & \path{def:aor:refinement-morphism} & \path{SixBirdsNeedles.AOR.Refinement.refinementMorphism} \\
+    40 & \path{def:aor:refinement-kinds-six} & \path{SixBirdsNeedles.AOR.Refinement.refinementKindsSix} \\
+    41 & \path{def:aor:refpresb-category} & \path{SixBirdsNeedles.AOR.Refinement.refpresbCategory} \\
+    42 & \path{thm:aor:refpresb-cocomplete} & \path{SixBirdsNeedles.AOR.Refinement.refpresbCocomplete} \\
+    43 & \path{def:aor:asymptotic-statuses} & \path{SixBirdsNeedles.AOR.Refinement.asymptoticStatuses} \\
+    44 & \path{thm:aor:asymptotic-soundness} & \path{SixBirdsNeedles.AOR.Refinement.asymptoticSoundness} \\
+    45 & \path{def:aor:refinement-stable-aor} & \path{SixBirdsNeedles.AOR.Refinement.refinementStableAOR} \\
+    46 & \path{thm:aor:refinement-stable-characterisation} & \path{SixBirdsNeedles.AOR.Refinement.refinementStableCharacterisation} \\
+    47 & \path{thm:aor:hierarchy} & \path{SixBirdsNeedles.AOR.Refinement.hierarchy} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{AOR Lean declaration map, rows 28--47.}
+  \label{tab:paper4-lean-declaration-map-b}
+\end{table}
+
+\subsection{Scope of this appendix}
+\label{subsec:paper4-restructure-note}
+
+This appendix covers the 47 mechanized AOR rows listed in
+\path{lean/manifests/aor_manifest.toml}.  The NS-as-AOR-instance
+content and its formalization disclosure, including the
+\texttt{R4SourceAdmission} carrier-space field extension, are carried
+by \citet{Tsiokos2026NavierStokes}.
+ \section{Extended tables and nonclaims ledger}\label{app:extended-material}
+
+This appendix collects framework data that are too detailed for the
+body: the representative cost-table subset, the hierarchy
+witness carriers, the forced-secondary table, and the complete
+scope ledger.  The tables are audit data, not additional theorem
+statements.
+
+\subsection{Representative cost-table subset}
+\label{subsec:aor-cost-table-representative}
+
+\Cref{def:aor:cost-table} introduces the base \(132\)-entry
+\(\mathrm{Cost}\) table as framework data.  The table below prints a
+representative \(22\)-row base subset plus the two asymptotic rows used
+for limit-stage refinement discharge.  The base rows and the asymptotic
+rows are deliberately separated in the notes column: the latter belong
+to the refinement-chain asymptotic table, not to the \(132\)-entry base
+count.
+
+\begin{table}[!ht]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{3pt}
+  \renewcommand{\arraystretch}{1.06}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}p{0.18\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.24\linewidth}}
+    \toprule
+    Primary residual type & Status & Downstream multiset & Reproducibility note \\
+    \midrule
+    \(\Dtransport\) & \texttt{blocked} & \(\Dtransport\) at \texttt{budgeted}; \(\Drole\) at \texttt{zero} & Explicit non-trivial base row. \\
+    \(\Dsource\) & \texttt{budgeted} & \(\Dtransport\), \(\Dscale\), \(\Dtarget\), \(\Drole\) at \texttt{zero} & Explicit non-trivial base row. \\
+    \(\Dscale\) & \texttt{hidden} & \(\Dscale\) at \texttt{blocked} & Explicit non-trivial base row. \\
+    any base type & \texttt{zero} & \(\varnothing\) & Cost-free base row. \\
+    any base type & \texttt{approved\_other} & \(\varnothing\) & Cost-free base row. \\
+    \(\Ddescent\) & other base statuses & \(\Ddescent,\Dtarget\) at \texttt{zero} & Structural default. \\
+    \(\Dtransport\) & other base statuses & \(\Dtransport\), \(\Dscale\), \(\Dlimit\), \(\Drole\), \(\Dtarget\), \(\Dpresentation\) at \texttt{zero} & Structural default. \\
+    \(\Dinterface\) & other base statuses & \(\Dinterface\), \(\Dlocal\), \(\Dglobal\) at \texttt{zero} & Structural default. \\
+    \(\Dlocal\) & other base statuses & \(\Dlocal\), \(\Dglobal\) at \texttt{zero} & Structural default. \\
+    \(\Dglobal\) & other base statuses & \(\Dglobal\), \(\Dlocal\) at \texttt{zero} & Structural default. \\
+    \(\Dpresentation\) & other base statuses & \(\Dpresentation\) at \texttt{zero} & Structural default. \\
+    \(\Dsource\) & other base statuses & \(\Dsource\), \(\Dtransport\), \(\Dscale\), \(\Drole\), \(\Dtarget\) at \texttt{zero} & Structural default. \\
+    \(\Dhorizon\) & other base statuses & \(\Dhorizon\) at \texttt{zero} & Structural default. \\
+    \(\Dscale\) & other base statuses & \(\Dscale\), \(\Dlimit\), \(\Dhorizon\), \(\Dsource\), \(\Dtarget\), \(\Dpresentation\) at \texttt{zero} & Structural default. \\
+    \(\Dlimit\) & other base statuses & \(\Dlimit\), \(\Dscale\), \(\Dhorizon\) at \texttt{zero} & Structural default. \\
+    \(\Dsym\) & other base statuses & \(\Dsym\) at \texttt{zero} & Structural default. \\
+    \(\Drole\) & other base statuses & \(\Drole\), \(\Dtarget\) at \texttt{zero} & Structural default. \\
+    \(\Dtarget\) & other base statuses & \(\Dtarget\), \(\Drole\), \(\Dpresentation\) at \texttt{zero} & Structural default. \\
+    any type except explicit cases & \texttt{budgeted} & type default at \texttt{zero} & Status-family representative. \\
+    any type except explicit cases & \texttt{bridged}, \texttt{moduli}, \texttt{selected} & type default at \texttt{zero} & Status-family representative. \\
+    any type except explicit cases & \texttt{probabilistic}, \texttt{out\_of\_scope}, \texttt{nonclaim} & type default at \texttt{zero} & Status-family representative. \\
+    any type except explicit cases & \texttt{blocked} or \texttt{hidden} & type default at \texttt{zero} & Status-family representative. \\
+    \(\Dlimit\) & \texttt{contractive} & \(\varnothing\) & Asymptotic companion row. \\
+    \(\Dlimit\) & \texttt{asymptotic\_budgeted} & \(\Dlimit\) at \texttt{summable} & Asymptotic companion row. \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Representative cost-table subset: 22 grouped base rows plus two asymptotic companion rows.}
+  \label{tab:aor-cost-table-representative}
+\end{table}
+
+\subsection{Witness carriers for the hierarchy}
+\label{subsec:aor-counterexample-carriers}
+
+\Cref{thm:aor:hierarchy} uses named finite carriers to mark the witness
+boundaries in the hierarchy.  The table records the construction data:
+carrier name, scope, residual type, status pattern, and typed obstruction
+marker.  Full predicate-level verification for the hierarchy witnesses
+remains framework future work.
+
+\begin{landscape}
+
+\begin{table}[!ht]
+  \centering
+  \small
+  \setlength{\tabcolsep}{6pt}
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.24\linewidth} >{\raggedright\arraybackslash}p{0.10\linewidth} >{\raggedright\arraybackslash}p{0.08\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.24\linewidth}}
+    \toprule
+    Carrier name & Scope & Residual type & Assignment / status pattern & Obstruction marker \\
+    \midrule
+    \path{counterexampleAOROnly} & finite toy scope & \(\Dtransport\) & declared transport residual assigned \texttt{blocked}, producing a non-terminating obstruction pattern in the chosen cost-table model & \path{BlockedCascadeNontermination} \\
+    \path{counterexampleCascadeOnly} & finite toy scope & \(\Dlimit\) & finite cascade closes, but the surviving limit residual is not paid by the asymptotic status required for refinement stability & \path{LimitAsymptoticNonpayment} \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Named witness carriers used by the hierarchy theorem.}
+  \label{tab:aor-counterexample-carriers}
+\end{table}
+
+\end{landscape}
+
+\subsection{Forced-secondary-type table}
+\label{subsec:aor-forced-secondary-types}
+
+The forced-secondary rule in \Cref{thm:aor:forced-residual} prevents a
+discharge from closing only the headline residual while leaving its
+typed dependencies open.  The local and global rows are grouped because
+they form a reciprocal pair.
+
+\begin{table}[!ht]
+  \centering
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.28\linewidth} >{\raggedright\arraybackslash}X}
+    \toprule
+    Primary residual type & Forced secondary types \\
+    \midrule
+    \(\Dsource\) & \(\Dtransport,\Dscale,\Drole,\Dtarget\) \\
+    \(\Dtransport\) & \(\Dscale,\Dlimit,\Drole,\Dtarget,\Dpresentation\) \\
+    \(\Dscale\) & \(\Dlimit,\Dhorizon,\Dsource,\Dtarget,\Dpresentation\) \\
+    \(\Dlimit\) & \(\Dscale,\Dhorizon\) \\
+    \(\Dtarget\) & \(\Drole,\Dpresentation\) \\
+    \(\Drole\) & \(\Dtarget\) \\
+    \(\Ddescent\) & \(\Dtarget\) \\
+    \(\Dinterface\) & \(\Dlocal,\Dglobal\) \\
+    \(\Dpresentation\) & none \\
+    \(\Dhorizon\) & none \\
+    \(\Dsym\) & none \\
+    \(\Dlocal,\Dglobal\) & reciprocal: \(\Dlocal\) forces \(\Dglobal\), and \(\Dglobal\) forces \(\Dlocal\) \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Forced secondary residual types used by \Cref{thm:aor:forced-residual}.}
+  \label{tab:aor-forced-secondary-types}
+\end{table}
+
+\subsection{Complete AOR nonclaims ledger}
+\label{subsec:aor-nonclaims-ledger}
+
+\begin{description}[style=nextline]
+\item[No strong-realism reading.]
+Membership in \(\AOR_{\mathfrak S}\) is a record-level audit predicate
+inside a declared scope, not a metaphysical claim about the carrier's
+underlying domain.  This is the canonical nonclaim of
+\Cref{nonclaim:aor:no-strong-realism}.
+
+\item[No applications outside the audit-closed-carrier discipline.]
+The framework stops at the AOR meta-theory.  Downstream applications
+must supply their own scope record, residual atlas, cost table, and
+discharge assignment; the current cited consumer is
+\citet{Tsiokos2026NavierStokes}.
+
+\item[No canonical-cost-table claim.]
+The base cost table and the asymptotic table are part of the chosen
+framework data.  They are not uniqueness theorems, and alternative
+audited row choices would define related but different cascade systems.
+
+\item[Hierarchy witness verification remains future work.]
+The hierarchy theorem exhibits named carriers and typed obstruction
+markers, but full predicate-level verification for the hierarchy witnesses
+remains future work pending a fuller cost-table enumeration.
+
+\item[Classical confluence input.]
+The cascade-confluence theorem proves the local diamond and well-founded
+termination, then applies Newman's lemma to obtain global confluence and
+unique normal form.
+\end{description}
+ 
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

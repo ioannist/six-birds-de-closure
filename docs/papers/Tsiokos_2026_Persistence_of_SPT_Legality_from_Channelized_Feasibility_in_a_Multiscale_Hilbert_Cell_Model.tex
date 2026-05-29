@@ -1,0 +1,1681 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage[section]{placeins}   
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.70}
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=green!50!black,
+  urlcolor=blue!80!black,
+  bookmarksnumbered=true,
+  pdfauthor={Ioannis Tsiokos},
+  pdftitle={Persistence of SPT-Legality from Channelized Feasibility in a Multiscale Hilbert/Cell Model}
+}
+\usepackage[numbers]{natbib}
+\usepackage{orcidlink}
+
+\let\H\relax
+\newcommand{\H}{\mathcal{H}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\conc}{\mathrm{conc}}
+\newcommand{\kappaFun}{\kappa}
+\newcommand{\proj}{P}
+\newcommand{\Ran}{\mathrm{Ran}}
+\newcommand{\Id}{\mathrm{Id}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+ 
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{example}[definition]{Example}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+\title{Persistence of SPT-Legality from Channelized Feasibility\\
+in a Multiscale Hilbert/Cell Model}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{15 February 2026}
+
+\newcommand{\printaffiliation}{\begin{center}\small \end{center}}
+
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA\;\texttt{ioannis@automorph.io}\;DOI: TBD\;\textcopyright\ 2026\;CC-BY 4.0\;Preprint --- not peer reviewed.}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{firstpage}
+\printaffiliation
+
+\begin{abstract}
+Certifying multiscale anti-localization only at $t=0$ is not useful unless legality is forward-closed; we lack general, mechanizable conditions under which SPT-legality propagates under time evolution.
+We propose a slot-audited channelized-feasibility contract in a Hilbert/band/cell model, where legality is defined by the normalized max-cell concentration audit $\kappa_j$ and enforced structurally by feasible representations $\mathcal{F}_j=\mathrm{Ran}(\Gamma_j)$ with packaging projectors $E_j$.
+We introduce these objects and theorem-grade constants (delocalization, frame bounds, mode growth, and cellwise defect), operationalize them with standardized experiment outputs and an automated \texttt{audit.json}, and evaluate the resulting bounds in toy dynamics together with matched failure-mode controls.
+In an invariant-ladder regime (exact feasibility invariance), $\kappa_j(t)$ stays uniformly below the predicted envelope $K^{\mathrm{pred}}_{\mathrm{glob}}$; injecting a globally tiny but cell-localized off-feasible component causes immediate deep-band violations despite leakage below $10^{-2}$.
+With per-channel delocalization held fixed, worsening frame conditioning produces extreme $\kappa$ tails, whereas well-conditioned artifacts keep $\kappa$ far below the envelope; under cellwise defect control $\mathrm{def}^{\infty}\le \varepsilon_\infty f_j$, maxima grow monotonically with $\varepsilon_\infty$ and remain within the robust bound $K^{\mathrm{rob}}(\varepsilon_\infty)$.
+This yields a closed, regression-tested regime for ``SPT-legal evolution'' in the model and pinpoints which structural slots are necessary (and which global diagnostics are misleading) when building auditable multiscale representations.
+We are explicit that stronger claims---PDE smoothing, physical entropy production, or emergent learning of channel maps---are not established here; our conclusions hold in a finite-dimensional Hilbert/cell setting and rely on theorem-aligned bounds together with controlled counterexamples.
+\end{abstract}
+
+\noindent\textbf{keywords:} SPT-legality; channelized feasibility; anti-localization; multiscale; concentration audit; Hilbert/cell model; Six Birds framework
+
+\section{Introduction}\label{sec:intro}
+
+\subsection{Legality as a closed regime}
+
+A recurring pattern in multiscale modeling is that one certifies a state as ``well-behaved'' at time $t=0$---for example, spread-out rather than wavepacket-like at fine scales---and then proceeds as if this property holds for the subsequent evolution.
+From a mathematical perspective this is unsatisfactory unless the property defines a \emph{closed regime}: once the evolution enters the regime, it cannot leave without violating explicit structural hypotheses.
+The goal of this paper is to formulate and prove such a closure statement for an anti-localization notion we call \emph{SPT-legality}.
+
+We deliberately avoid any PDE-specific smoothing theory.
+Instead we work in a minimal finite-dimensional setting and express hypotheses in the ``structural'' language promoted by the Six-Birds foundations paper \cite{Tsiokos2026SixBirds}:
+packaging (idempotent representations), gating/feasibility constraints, staged interface growth, and explicit audits.
+In this way, ``legality persistence'' becomes a theorem about compatibility between dynamics and representation, rather than a theorem about analytic regularization.
+
+\subsection{A minimal multiscale Hilbert/cell model}
+
+Let $H$ be a real Hilbert space with an orthogonal multiscale decomposition
+\[
+H \;=\; \bigoplus_{j=0}^{J_{\max}} H_j,
+\qquad u_j := P_j u \in H_j,
+\]
+and, for each depth $j$, a fixed orthogonal ``cell'' partition
+\[
+H_j \;\cong\; \bigoplus_{c\in \mathcal C_j} H_{j,c},
+\qquad P_{j,c}:H_j\to H_{j,c}.
+\]
+Write the baseline cell fraction $f_j := 1/|\mathcal C_j|$.
+For a nonzero $v\in H_j$, define the maximum cell energy fraction
+\[
+\mathrm{conc}_j(v) \;:=\; \max_{c\in\mathcal C_j}\frac{\|P_{j,c}v\|^2}{\|v\|^2},
+\]
+and the normalized concentration
+\[
+\kappa_j(v) \;:=\; \frac{\mathrm{conc}_j(v)}{f_j}.
+\]
+Thus $\kappa_j(v)\approx 1$ indicates that $v$ is spread roughly uniformly across cells at depth $j$, while $\kappa_j(v)\gg 1$ indicates localization.
+
+\paragraph{SPT-legality.}
+Fix a threshold $K_\kappa\ge 1$.
+A state $u\in H$ is \emph{SPT-legal} if for every depth $j$ with $u_j\neq 0$ one has $\kappa_j(u_j)\le K_\kappa$.
+The persistence problem asks: under what conditions on the dynamics does SPT-legality at $t=0$ imply SPT-legality for all later times?
+
+\subsection{Six-Birds framing: packaging, gating, staging, audits}
+
+The Six-Birds foundations paper \cite{Tsiokos2026SixBirds} emphasizes that closed regimes arise from a small set of primitives:
+\emph{packaging} (P5) provides an idempotent representation map whose fixed points define ``objects'';
+\emph{gating/constraints} (P2) restrict which patterns are reachable;
+\emph{sectors and staged interface growth} (P4) control complexity across refinement;
+and \emph{audits/accounting} (P6) provide explicit certificates.
+Route-mismatch/holonomy (P3) appears as a defect signal when packaging and evolution do not commute, and operator rewrite (P1) is required when one wants to restore closure by changing the representation.
+
+Our contribution is to instantiate this program concretely.
+At each depth $j$ we introduce a \emph{channel map} $\Gamma_j(a)=\sum_{r=1}^{m_j}a_r\psi_{j,r}$ with a feasible set $\mathcal F_j=\mathrm{Ran}(\Gamma_j)\subseteq H_j$.
+Packaging is modeled by the orthogonal projector $E_j$ onto $\mathcal F_j$.
+Delocalization and frame bounds are treated as \emph{artifact} properties of $\Gamma_j$ (auditable numerically), while invariance or controlled defect of feasibility is treated as the \emph{system} compatibility property that enables persistence.
+
+\subsection{Main results (informal)}
+
+Our results separate into three layers.
+
+\paragraph{(i) Static feasibility implies legality bounds.}
+If $v\in\mathcal F_j$ is representable through a channel map whose columns are cell-delocalized and whose Gram matrix has controlled condition number, then $\kappa_j(v)$ admits an explicit bound of the form
+\[
+\kappa_j(v)\;\lesssim\; \kappa_0(j)\,\mathrm{cond}(\Gamma_j)\,m_j,
+\]
+where $\kappa_0(j)$ is a delocalization constant and $m_j$ is the channel count at depth $j$.
+
+\paragraph{(ii) Exact invariance implies persistence.}
+If a dynamics preserves feasibility bandwise (i.e.\ $u_j(t)\in\mathcal F_j$ for all $t$), then the static bound propagates forward in time: SPT-legality is forward-closed with threshold $K=\max_j K^{\mathrm{feas}}_j$.
+
+\paragraph{(iii) Robust persistence from cellwise defect control.}
+Exact invariance is often too strong.
+We therefore prove a robust variant: if $(I-E_j)u_j(t)$ is small in a \emph{cellwise} sense, then SPT-legality persists with an explicit degraded bound $K^{\mathrm{rob}}(\varepsilon)$.
+A key point is that global distance-to-feasibility is not the right robustness notion; the relevant defect must be local in the cell partition.
+
+\subsection{Sharpness: what must fail if a slot is dropped}
+
+We also provide no-go results and counterexamples clarifying why persistence cannot be proved from accounting alone.
+
+\begin{itemize}
+\item \textbf{Ledger is not legality:} even with exactly conserved energy, $\kappa_j$ can approach its maximum $1/f_j$ along feasible directions if localized feasible patterns exist.
+\item \textbf{Delocalized columns are not enough:} without a frame lower bound, near-dependence produces coefficient directions with extreme concentration tails.
+\item \textbf{Tiny global leakage can hide deep illegality:} global norm leakage can be arbitrarily small while deep-band $\kappa_j$ becomes near-maximal.
+\end{itemize}
+
+These boundaries identify the true ``hard slots'' needed for a closed legal regime: structural anti-localization in feasibility, controlled channel count growth, and nondegenerate frame bounds, together with (exact or robust) invariance of feasibility.
+
+\subsection{Numerical hardening and assumption audits}
+
+To harden the theorem overlays and to support the sharpness claims, we include numerical experiments built directly in this Hilbert/cell model.
+Each run emits machine-readable outputs and an automated assumption audit report (\texttt{audit.json}) that checks delocalization, frame conditioning, mode growth, invariance/defect evidence, and intended failure modes.
+These experiments serve as regression tests against silent drift while the paper is written.
+
+\subsection{Contributions}
+
+\begin{itemize}
+\item We formalize SPT-legality as a quantitative anti-localization condition in a finite-dimensional Hilbert/band/cell model, with a simple concentration audit functional $\kappa_j$.
+\item We introduce channelized feasibility sets and packaging projectors as the structural mechanism enforcing anti-localization, in the spirit of the Six-Birds primitives \cite{Tsiokos2026SixBirds}.
+\item We state and prove a persistence theorem for SPT-legality under exact feasibility invariance, and a robust variant under cellwise defect control, with explicit constants.
+\item We prove sharp no-go boundaries showing that ledger invariants, delocalized columns without frame bounds, or global leakage metrics cannot guarantee legality persistence.
+\item We provide toy models and numerical experiments (with automated assumption audits) that validate the happy-path regime and isolate each failure mode.
+\end{itemize}
+
+\subsection{Organization}
+
+Section~2 restates the Six-Birds primitives (P1--P6) and maps them into the present Hilbert/cell setting.
+Section~3 gives formal definitions of concentration and legality, channel maps and feasible sets, packaging projectors, and artifact diagnostics.
+Sections~4--5 state the hypothesis slots and the main persistence theorems.
+Sections~6--8 contain proofs.
+Sections~9--10 present non-implications and no-go results.
+Section~11 gives toy models, and Section~12 reports numerical experiments and audits.
+We close with an assumption audit (Section~13), a conclusion (Section~14), and a reproducibility appendix (Appendix~A).
+ \section{Relation to the Six-Birds primitives (P1--P6)}\label{sec:six-birds}
+
+This paper is intentionally written in the structural style advocated by the Six-Birds foundations paper \cite{Tsiokos2026SixBirds}.
+Rather than relying on PDE-specific regularization, we identify a multiscale ``legal regime'' (anti-localization across cells) and ask for conditions under which this regime is \emph{closed} under time evolution.
+In the Six-Birds vocabulary, closure is not something one gets ``for free'' from accounting alone; it must be enforced by compatibility between dynamics and representation (packaging and gating), together with staged control of interface complexity and explicit audits.
+
+\subsection{The primitives (informal restatement)}
+
+The foundations paper \cite{Tsiokos2026SixBirds} proposes six primitives (``birds'') for emergence calculus.
+We restate them informally here, in the minimal form needed for the present work.
+
+\begin{description}
+\item[\textbf{P1: Operator rewrite.}]
+When closure fails, one often must change the effective operator/\hspace{0pt}representation used by the theory---not merely iterate the same dynamics.
+This is the ``rewrite'' move: replace the map one is studying by another that is compatible with the intended packaged objects.
+
+\item[\textbf{P2: Gating / constraints.}]
+Not all patterns are reachable or admissible.
+Gating restricts feasible macrostates to those representable through a finite interface, thereby eliminating unstable or non-representable degrees of freedom.
+
+\item[\textbf{P3: Route mismatch / holonomy (diagnostic).}]
+If two routes through a reduction pipeline do not commute (e.g.\ evolve then package vs.\ package then evolve), the mismatch provides a diagnostic signal.
+Route mismatch is not itself a certificate of control; it quantifies incompatibility.
+
+\item[\textbf{P4: Sectors and staged interface growth.}]
+A system may decompose into sectors (invariant labels) and a staged notion of depth/refinement.
+Crucially, the effective interface size (degrees of freedom needed to communicate with deeper scales) must remain controlled with depth for uniform statements to be meaningful.
+
+\item[\textbf{P5: Packaging.}]
+Packaging is an idempotent map whose fixed points define the ``objects'' of the theory.
+A packaged description discards irrelevant detail while retaining the invariant representation needed for subsequent evolution.
+
+\item[\textbf{P6: Accounting / audit.}]
+Audits are explicit, checkable certificates (often monotone quantities) that verify regime membership or rule out certain failures.
+Accounting alone does not force closure, but it can be used to \emph{detect} when closure hypotheses are violated.
+\end{description}
+
+\subsection{Instantiation in the Hilbert/band/cell model}
+
+Our multiscale setting (Section~\ref{sec:intro} and formalized in Section~3) provides concrete realizations of each primitive:
+
+\paragraph{P5 (packaging) as bandwise projectors onto feasible sets.}
+At depth $j$ we introduce a synthesis/channel map $\Gamma_j:\mathbb{R}^{m_j}\to H_j$ and define the feasible set
+\[
+\mathcal{F}_j := \mathrm{Ran}(\Gamma_j)\subseteq H_j.
+\]
+Packaging is modeled by the orthogonal projector
+\[
+E_j: H_j \to \mathcal{F}_j,
+\qquad E_j^2 = E_j,
+\qquad \mathcal{F}_j = \{v\in H_j:\;E_j v = v\}.
+\]
+In this paper, ``feasible at depth $j$'' is synonymous with ``packaged at depth $j$.''
+
+\paragraph{P2 (gating) as feasibility invariance or controlled feasibility defect.}
+Gating enters as a compatibility condition between the dynamics and the packaged feasible sets:
+either \emph{exact invariance} (for all times, $u_j(t)\in\mathcal{F}_j$) or \emph{robust invariance} (the deviation $(I-E_j)u_j(t)$ is controlled).
+This is the core structural assumption required for legality persistence.
+
+\paragraph{P4 (staging and interface growth) as controlled channel count $m_j$ across depth.}
+The depth index $j$ is the staging parameter, and the interface size at depth $j$ is captured by the channel count $m_j$.
+Uniform legality across depth is only plausible when $m_j$ grows slowly enough relative to the cell refinement $|\mathcal{C}_j|$.
+The ``mode explosion'' failure mode in our experiments illustrates that if $m_j$ grows too fast (e.g.\ to full dimension), a fixed legality threshold cannot hold across depth.
+
+\paragraph{P6 (audit) as concentration legality checks and artifact diagnostics.}
+Our legal regime is defined by an explicit audit functional: the normalized concentration $\kappa_j$ based on the cell partition.
+In addition, feasibility artifacts $\Gamma_j$ admit their own auditable diagnostics: empirical delocalization constants, frame bounds (via Gram spectra), and predicted feasibility legality envelopes.
+In the codebase, every run emits an \texttt{audit.json} that checks these slots numerically (Section~12).
+
+\paragraph{P3 (route mismatch) as a defect functional measured at cell resolution.}
+When packaging and evolution do not commute, the relevant diagnostic is not merely a global distance to feasibility but a \emph{cellwise} mismatch.
+Our robust persistence theorem is formulated in terms of cellwise defect measures of $(I-E_j)u_j(t)$, reflecting the fact that legality is itself a cell-level anti-localization notion.
+
+\paragraph{P1 (operator rewrite) as the remedy when invariance fails.}
+If the dynamics is not compatible with the packaged feasible sets (or if route mismatch is uncontrolled), legality cannot be forward-closed.
+In the Six-Birds language, the correct response is not to hope that an accounting invariant will prevent failure, but to rewrite: change the representation/packaging (the maps $\Gamma_j$ or $E_j$) or modify the effective operator so that feasibility becomes (approximately) invariant and auditable.
+
+\begin{table}[t]
+\centering
+\caption{Six-Birds primitives \cite{Tsiokos2026SixBirds} and their instantiation in the present Hilbert/band/cell legality framework.}
+\label{tab:six-birds-mapping}
+\begin{tabular}{@{}p{1.8cm}p{5.4cm}p{7.8cm}@{}}
+\toprule
+\textbf{Primitive} & \textbf{Role in Six-Birds} & \textbf{Instantiation here} \\
+\midrule
+\textbf{P1} & Operator rewrite when closure fails. & Modify packaging/feasibility maps $(\Gamma_j,E_j)$ or the effective evolution so feasibility becomes invariant/robustly invariant. \\
+\textbf{P2} & Gating/constraints restrict reachable patterns. & Bandwise feasibility: $u_j(t)\in\mathcal{F}_j=\mathrm{Ran}(\Gamma_j)$ (exact) or controlled defect $(I-E_j)u_j(t)$ (robust). \\
+\textbf{P3} & Route mismatch/holonomy is a diagnostic of incompatibility. & Cellwise defect metrics for $(I-E_j)u_j(t)$; ``evolve then package'' vs.\ ``package then evolve'' mismatch. \\
+\textbf{P4} & Sectors and staged interface growth. & Depth $j$ as refinement stage; channel count $m_j$ as interface size; mode-growth control prevents uniform legality collapse. \\
+\textbf{P5} & Packaging as an idempotent map; fixed points are objects. & $E_j$ orthogonal projector onto $\mathcal{F}_j$; packaged (feasible) band states satisfy $E_j v=v$. \\
+\textbf{P6} & Accounting/audit certificates. & Legality audit $\kappa_j$ and artifact diagnostics (empirical delocalization, frame bounds); emitted per run as \texttt{audit.json}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{How this framing structures the paper}
+
+With this mapping in place, our main theorems can be read as ``closure of a P6-defined legal regime'' under P5/P2/P4 compatibility hypotheses, with P3-style defect control providing robustness.
+The no-go results then identify which primitive assumptions are genuinely necessary: accounting invariants do not prevent concentration blow-up if the feasible sets admit localized directions, and delocalized columns without frame control do not prevent concentrated combinations.
+ \section{Model and Definitions}\label{sec:definitions}
+
+This section formalizes the minimal multiscale setting used throughout the paper.
+All statements are finite-dimensional (for mechanizability), but the definitions are written in Hilbert language.
+The intended interpretation is: depth $j$ indexes refinement, and the cell partition at depth $j$ represents the resolution at which localization is measured.
+
+\subsection{Multiscale bands and cell partitions}
+
+Fix a real Hilbert space $H$ with an orthogonal decomposition into depth/band subspaces
+\begin{equation}\label{eq:hilbert-decomp}
+H \;=\; \bigoplus_{j=0}^{J_{\max}} H_j,
+\qquad
+P_j:H\to H_j
+\text{ orthogonal projectors}.
+\end{equation}
+For a state $u\in H$ we write $u_j:=P_j u\in H_j$.
+
+For each depth $j$ we also fix an orthogonal decomposition into ``cells''
+\begin{equation}\label{eq:cell-decomp}
+H_j \;\cong\; \bigoplus_{c\in \mathcal{C}_j} H_{j,c},
+\qquad
+P_{j,c}:H_j\to H_{j,c}
+\text{ orthogonal projectors}.
+\end{equation}
+The cell count is $|\mathcal{C}_j|$ and we define the baseline cell fraction
+\begin{equation}\label{eq:baseline-fj}
+f_j \;:=\; \frac{1}{|\mathcal{C}_j|}.
+\end{equation}
+
+\subsection{Trajectories and lifespan}\label{subsec:traj}
+
+A \emph{trajectory} is a map $u:I\to H$, where the time set $I$ is either an interval $I\subset\mathbb{R}$ (continuous time) or a discrete set $I\subset\mathbb{Z}$ (discrete time).
+We refer to $I$ as the \emph{lifespan} of the trajectory.
+All persistence statements in this paper are of the form: ``for all $t\in I$'' under explicit HL slots; we do not assume any PDE-specific regularity or smoothing beyond the existence of the trajectory in the stated time domain.
+
+\subsection{Concentration and SPT-legality}
+
+\begin{definition}[Cell concentration]\label{def:cell-conc}
+For $j\le J_{\max}$ and nonzero $v\in H_j$, define the maximum cell energy fraction
+\begin{equation}\label{eq:conc-def}
+\conc_j(v) \;:=\; \max_{c\in\mathcal{C}_j}\frac{\|P_{j,c}v\|^2}{\|v\|^2}.
+\end{equation}
+We set $\conc_j(0):=0$ by convention.
+\end{definition}
+
+\begin{definition}[Normalized concentration]\label{def:kappa-def}
+For $j\le J_{\max}$ and $v\in H_j$, define
+\begin{equation}\label{eq:kappa-def}
+\kappa_j(v) \;:=\; \frac{\conc_j(v)}{f_j}.
+\end{equation}
+Thus $\kappa_j(v)\in[0,1/f_j]$, with $\kappa_j(v)\approx 1$ corresponding to roughly uniform energy distribution across cells, while $\kappa_j(v)\approx 1/f_j$ corresponds to near-complete localization in a single cell.
+\end{definition}
+
+\begin{definition}[SPT-legal state]\label{def:spt-legal}
+Fix a legality threshold $K_\kappa\ge 1$.
+A state $u\in H$ is \emph{SPT-legal} (with threshold $K_\kappa$) if for every $j\le J_{\max}$ with $u_j\neq 0$ one has
+\begin{equation}\label{eq:spt-legal}
+\kappa_j(u_j)\le K_\kappa.
+\end{equation}
+\end{definition}
+
+\subsection{Channel maps, feasible sets, and packaging}
+
+We model ``structural anti-localization'' not by analytic smoothing but by representability constraints.
+
+\begin{definition}[Channel map and feasible set]\label{def:channel-map}
+Fix a channel count $m_j\in\mathbb{N}$ for each depth $j$.
+A \emph{channel map} at depth $j$ is a linear synthesis operator
+\begin{equation}\label{eq:gamma-def}
+\Gamma_j:\mathbb{R}^{m_j}\to H_j,
+\qquad
+\Gamma_j a \;=\; \sum_{r=1}^{m_j} a_r\,\psi_{j,r},
+\end{equation}
+where $\psi_{j,r}\in H_j$ are the \emph{channels}.
+The associated feasible set is the range
+\begin{equation}\label{eq:feasible-set}
+\mathcal{F}_j \;:=\; \Ran(\Gamma_j)\subseteq H_j.
+\end{equation}
+We call $\Gamma_j$ (equivalently, the channel family $\{\psi_{j,r}\}$) an \emph{artifact} at depth $j$.
+\end{definition}
+
+\begin{definition}[Packaging projector]\label{def:packaging}
+The (bandwise) packaging map associated to $\mathcal{F}_j$ is the orthogonal projector
+\begin{equation}\label{eq:packaging-proj}
+E_j:H_j\to \mathcal{F}_j,
+\qquad
+E_j^2 = E_j,
+\qquad
+\mathcal{F}_j = \{v\in H_j:\;E_j v=v\}.
+\end{equation}
+We also write $I$ for the identity map on $H_j$ and refer to $(I-E_j)v$ as the \emph{off-feasible component} of $v$.
+\end{definition}
+
+\paragraph{Artifact vs.\ system.}
+Artifacts $(\Gamma_j,E_j)$ are fixed data of a multiscale representation.
+A dynamical system provides a trajectory $u(t)\in H$.
+The persistence results later in the paper combine (i) \emph{artifact} properties (delocalization, frame bounds, mode growth) with (ii) \emph{system} compatibility assumptions (invariance or controlled defect relative to feasibility).
+
+\subsection{Delocalization and frame bounds (artifact hypotheses)}
+
+We will formulate theorems in terms of auditable constants associated to an artifact.
+
+\begin{definition}[Channel delocalization]\label{def:deloc}
+A channel family $\{\psi_{j,r}\}_{r=1}^{m_j}$ is \emph{cell-delocalized} with constant $\kappa_0(j)\ge 1$ if
+\begin{equation}\label{eq:deloc-hyp}
+\max_{c\in\mathcal{C}_j}\|P_{j,c}\psi_{j,r}\|^2
+\;\le\;
+\kappa_0(j)\, f_j\,\|\psi_{j,r}\|^2
+\qquad
+\text{for all } r.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Frame bounds and conditioning]\label{def:frame-bounds}
+A channel map $\Gamma_j$ has (Euclidean) frame bounds $0<\alpha_j\le \beta_j<\infty$ if
+\begin{equation}\label{eq:frame-bounds}
+\alpha_j\,\|a\|^2 \;\le\; \|\Gamma_j a\|^2 \;\le\; \beta_j\,\|a\|^2
+\qquad
+\text{for all } a\in\mathbb{R}^{m_j}.
+\end{equation}
+We define the associated condition number proxy
+\begin{equation}\label{eq:cond-def}
+\mathrm{cond}(\Gamma_j) \;:=\; \beta_j/\alpha_j.
+\end{equation}
+In finite dimensions, one may take $\alpha_j,\beta_j$ as the smallest/largest eigenvalues of the Gram matrix $\Gamma_j^\top\Gamma_j$ when $\Gamma_j$ is full rank.
+See, e.g., \cite{Christensen2016Frames,DuffinSchaeffer1952Nonharmonic} for background on frames/Riesz sequences and the role of frame bounds.
+\end{definition}
+
+\begin{remark}[Terminology and scope: stable synthesis vs.\ redundant frames]\label{rem:stable-synthesis}
+The inequality \eqref{eq:frame-bounds} is a stability condition for the \emph{synthesis} map $a\mapsto \Gamma_j a$.
+In classical frame theory, this corresponds to the channels forming a \emph{Riesz sequence} (equivalently, $\Gamma_j$ is injective and coefficients are stable), rather than an arbitrary redundant frame.
+In particular, $\alpha_j>0$ forces $m_j\le \dim(H_j)$.
+We adopt this strong form because our legality envelopes are stated in terms of the coefficient norm and are representation-independent only when coefficients are unique (or otherwise canonically selected).
+Extending the theory to redundant dictionaries would require fixing a coefficient-selection rule (e.g.\ minimal $\ell_2$-norm coefficients) and replacing $\alpha_j$ by a pseudoinverse stability constant; we do not pursue this here.
+\end{remark}
+
+\subsection{Artifact diagnostics used in theorem overlays and audits}
+
+The experiments and automated audits compute empirical versions of the above constants.
+
+\begin{definition}[Empirical delocalization constant]\label{def:kappa0-emp}
+Given channels $\{\psi_{j,r}\}$ at depth $j$, define
+\begin{equation}\label{eq:kappa0-emp}
+\kappa_0^{\mathrm{emp}}(j)
+\;:=\;
+\max_{r}\max_{c\in\mathcal{C}_j}
+\frac{\|P_{j,c}\psi_{j,r}\|^2}{f_j\,\|\psi_{j,r}\|^2},
+\end{equation}
+In our finite-dimensional setting this is an exact worst-case artifact constant computed from the channels; the superscript ``emp'' emphasizes that it is audited from artifact data rather than estimated from trajectory samples.
+with the convention that zero-norm channels are ignored.
+\end{definition}
+
+\begin{definition}[Predicted feasibility legality envelope]\label{def:kfeas}
+Given diagnostics $\kappa_0^{\mathrm{emp}}(j)$ and frame bounds $(\alpha_j,\beta_j)$, we define the predicted feasibility bound
+\begin{equation}\label{eq:kfeas-def}
+K^{\mathrm{feas}}_j
+\;:=\;
+\kappa_0^{\mathrm{emp}}(j)\cdot \mathrm{cond}(\Gamma_j)\cdot m_j
+\;=\;
+\kappa_0^{\mathrm{emp}}(j)\cdot (\beta_j/\alpha_j)\cdot m_j.
+\end{equation}
+The main static theorem (T-SPT-00) justifies that $\kappa_j(v)$ is uniformly controlled on $v\in\mathcal{F}_j$ under the corresponding hypotheses, with explicit constants comparable to \eqref{eq:kfeas-def}.
+\end{definition}
+
+\subsection{Defect measures for robust invariance}
+
+Exact feasibility invariance is often too strong, so we also quantify route mismatch between evolution and packaging.
+
+\begin{definition}[Cellwise feasibility defect]\label{def:defect-infty}
+For $u_j\in H_j$ define the cellwise defect ratio
+\begin{equation}\label{eq:defect-infty}
+\mathrm{def}^{\infty}_j(u_j)
+\;:=\;
+\max_{c\in\mathcal{C}_j}
+\frac{\|P_{j,c}(I-E_j)u_j\|^2}{\|u_j\|^2},
+\end{equation}
+with $\mathrm{def}^{\infty}_j(0):=0$.
+The robust persistence theorem (T-SPT-02) assumes a bound of the form
+$\mathrm{def}^{\infty}_j(u_j(t)) \le \varepsilon_\infty f_j$ uniformly in time and depth, which is strictly stronger (and more relevant to localization) than a global bound on $\|(I-E_j)u_j(t)\|/\|u_j(t)\|$.
+\end{definition}
+
+\paragraph{Remark (finite-dimensional implementation).}
+In the numerical experiments, each $H_j$ is represented as $\mathbb{R}^{n_j}$ with a contiguous block structure for cells and a synthesis matrix $\Psi_j\in\mathbb{R}^{n_j\times m_j}$ whose columns are the channels $\psi_{j,r}$.
+The packaging projector $E_j$ is implemented via an orthonormal basis of $\Ran(\Psi_j)$, and all diagnostics in Definitions~\ref{def:kappa0-emp}--\ref{def:kfeas} are computed directly from $\Psi_j$.
+ \section{Hypothesis Ledger (HL) for SPT-legality persistence}\label{sec:hypotheses}
+
+This section records all assumptions as an explicit \emph{hypothesis ledger} (HL) in the style of \cite{Tsiokos2026SixBirds}.
+The main theorems in Section~\ref{sec:main-theorems} will reference these slots verbatim.
+The purpose is twofold:
+(i) to make the closure regime explicit and mechanizable, and
+(ii) to delineate sharp failure modes when a slot is dropped.
+
+\subsection{Conventions for constants}
+
+Throughout, $j\in\{0,\dots,J_{\max}\}$ denotes depth, $\mathcal{C}_j$ is the cell index set with baseline fraction $f_j=1/|\mathcal{C}_j|$, and $\Gamma_j:\mathbb{R}^{m_j}\to H_j$ is a channel map with feasible set $\mathcal{F}_j=\Ran(\Gamma_j)$ and packaging projector $E_j$ (Definition~\ref{def:packaging}).
+For convenience we also define the global packaging projector $E:H\to H$ by
+$Eu := \bigoplus_{j=0}^{J_{\max}} E_j(P_j u)$, whose range is $\bigoplus_j \mathcal{F}_j$.
+We use the following artifact diagnostics (Definition~\ref{def:kappa0-emp}--\ref{def:kfeas}):
+\[
+\kappa^{\mathrm{emp}}_0(j),\qquad
+\alpha_j,\beta_j,\qquad
+\mathrm{cond}(\Gamma_j)=\beta_j/\alpha_j,\qquad
+K^{\mathrm{feas}}_j := \kappa^{\mathrm{emp}}_0(j)\,\mathrm{cond}(\Gamma_j)\,m_j.
+\]
+We will also use a global envelope
+\begin{equation}\label{eq:Kpred-global}
+K^{\mathrm{pred}}_{\mathrm{glob}}
+\;:=\;
+\max_{0\le j\le J_{\max}} K^{\mathrm{feas}}_j.
+\end{equation}
+
+\subsection{Artifact slots (representation constraints)}
+
+\paragraph{\textbf{HL-SPT-DELOC} (cell-delocalized channels).}
+For each depth $j$, every channel $\psi_{j,r}$ is cell-delocalized with constant $\kappa_0(j)$ in the sense of \eqref{eq:deloc-hyp}, and we assume a uniform bound
+\begin{equation}\label{eq:HL-DELOC}
+\kappa^{\mathrm{emp}}_0(j)\le K_{\mathrm{deloc}}
+\qquad \text{for all } j,
+\end{equation}
+for some finite $K_{\mathrm{deloc}}\ge 1$.
+\begin{itemize}
+\item \emph{Intended implication:} no single channel is wavepacket-like at the cell scale.
+\item \emph{Failure modes if dropped:} feasibility can contain a cell-supported direction (FM-DELOC), making $\kappa_j$ achieve its maximum $1/f_j$ even statically.
+\end{itemize}
+
+\paragraph{\textbf{HL-SPT-FRAME} (nondegenerate frame bounds / conditioning).}
+For each depth $j$, $\Gamma_j$ has positive frame lower bound $\alpha_j>0$ and finite condition proxy
+\begin{equation}\label{eq:HL-FRAME}
+\mathrm{cond}(\Gamma_j)=\beta_j/\alpha_j \le K_{\mathrm{cond}}
+\qquad \text{for all } j,
+\end{equation}
+Equivalently, this slot requires stable synthesis (injective $\Gamma_j$); we intentionally separate it from the redundant/high-mode regime treated as a failure mode in FM-MODE.
+for some finite $K_{\mathrm{cond}}\ge 1$.
+\begin{itemize}
+\item \emph{Intended implication:} coefficient energy is comparable to feasible state energy and near-dependence cannot amplify concentration in special coefficient directions.
+\item \emph{Failure modes if dropped:} columns may be delocalized but extreme $\kappa_j(\Gamma_j a)$ events appear in the near-null directions of $\Gamma_j^\top\Gamma_j$ (FM-FRAME).
+\end{itemize}
+
+\paragraph{\textbf{HL-SPT-MODE} (controlled channel count / staged interface growth).}
+The channel counts $m_j$ are controlled across depth, e.g.\ by a uniform mode envelope
+\begin{equation}\label{eq:HL-MODE}
+m_j \le m_{\max}\qquad\text{for all } j,
+\end{equation}
+or more generally by a specified growth law $m_j\le M(j)$ with $M(j)$ at most polynomial in $j$.
+\begin{itemize}
+\item \emph{Intended implication:} interface complexity does not explode with depth, enabling depth-uniform legality thresholds.
+\item \emph{Failure modes if dropped:} when $m_j$ grows toward the full band dimension, feasibility approximates all of $H_j$ and a fixed $K_\kappa$ cannot hold uniformly (FM-MODE).
+\end{itemize}
+
+\subsection{System slots (compatibility of dynamics with feasibility)}
+
+\paragraph{\textbf{HL-SPT-INV} (exact feasibility invariance).}
+The dynamical system is \emph{SPT-compatible} in the strong sense that feasibility is invariant bandwise:
+\begin{equation}\label{eq:HL-INV}
+u_j(0)\in \mathcal{F}_j \;\Rightarrow\; u_j(t)\in \mathcal{F}_j \quad \text{for all } t \text{ in the lifespan and all } j.
+\end{equation}
+Equivalently, if $u_j(0)$ is packaged then $E_j u_j(t)=u_j(t)$ for all later times.
+\begin{itemize}
+\item \emph{Intended implication:} the evolution respects the packaged representation (P5/P2 compatibility).
+\item \emph{Failure modes if dropped:} even tiny leakage out of feasibility can cause deep-band $\kappa_j$ spikes (FM-INV).
+\end{itemize}
+
+\begin{remark}[HL-SPT-INV as an invariance/commutation contract]\label{rem:inv-contract}
+Let $\Phi_t:H\to H$ denote the evolution map (when it exists) so that $u(t)=\Phi_t(u(0))$.
+HL-SPT-INV is equivalently the invariance of the packaged subspace $\Ran(E)$:
+\[
+u(0)=Eu(0)\ \Rightarrow\ u(t)=Eu(t)\quad\text{for all }t,
+\]
+or, in operator form,
+\[
+(I-E)\,\Phi_t\,E = 0 \qquad \text{for all } t \text{ in the lifespan.}
+\]
+In our toy ladder model (Section~\ref{sec:toy-models}) this holds by construction; in general systems it is a nontrivial compatibility slot rather than a generic consequence of accounting.
+\end{remark}
+
+\paragraph{\textbf{HL-SPT-ROBUST$\infty$} (robust feasibility with cellwise defect control).}
+A weaker but more realistic hypothesis allows leakage, provided it is controlled at the cell scale:
+there exists $\varepsilon_\infty\ge 0$ such that for all $j$ and all times $t$,
+\begin{equation}\label{eq:HL-ROBUST}
+\mathrm{def}^{\infty}_j(u_j(t))
+\;=\;
+\max_{c\in\mathcal{C}_j}\frac{\|P_{j,c}(I-E_j)u_j(t)\|^2}{\|u_j(t)\|^2}
+\;\le\;
+\varepsilon_\infty\, f_j.
+\end{equation}
+\begin{itemize}
+\item \emph{Intended implication:} route mismatch between evolution and packaging is locally small in the same partition used to define legality.
+\item \emph{Failure modes if dropped:} global leakage $\|(I-E_j)u_j\|/\|u_j\|$ may be tiny while deep-band $\kappa_j$ approaches $1/f_j$ (NG-DIST).
+\end{itemize}
+
+\begin{remark}[HL-SPT-ROBUST$\infty$ as a cellwise route-mismatch bound]\label{rem:robust-contract}
+If $\Phi_t$ denotes the evolution map, HL-SPT-ROBUST$\infty$ can be viewed as a \emph{cellwise} route-mismatch contract:
+the off-packaged component $(I-E_j)u_j(t)$ is allowed, but its per-cell energy fraction relative to $\|u_j(t)\|^2$ is bounded by $\varepsilon_\infty f_j$.
+This relative (ratio) formulation is intentional: deep bands may carry tiny global norm, so absolute leakage bounds do not control the max-cell audit (NG-DIST).
+\end{remark}
+
+\subsection{Audit hook and interpretation}
+
+The HL slots are designed to be checkable.
+In the accompanying codebase, every experiment run produces an \texttt{audit.json} file recording:
+(i) whether HL-SPT-DELOC and HL-SPT-FRAME pass numerical thresholds (from $\kappa^{\mathrm{emp}}_0$ and conditioning),
+(ii) the realized mode growth profile $m_j$ (HL-SPT-MODE), and
+(iii) evidence for invariance or robust defect control when applicable (HL-SPT-INV / HL-SPT-ROBUST$\infty$).
+The ``FM'' and ``NG'' experiments intentionally violate specific slots; the audit report is part of the regression harness that prevents silent drift while the paper is written.
+ \section{Main Theorems (statements)}\label{sec:main-theorems}
+
+We now state the persistence results in ``Six-Birds theorem'' form: each result explicitly references the hypothesis ledger (HL) slots from Section~\ref{sec:hypotheses}, specifies the constants, and lists sharp failure modes when a slot is dropped.
+Proofs are given in Sections~6--8.
+
+\subsection{T-SPT-00: feasibility geometry implies legality bounds}
+
+\begin{theorem}[T-SPT-00: feasibility legality bound from channel delocalization]\label{thm:t-spt-00}
+Fix a depth $j\le J_{\max}$ and a channel map $\Gamma_j:\mathbb{R}^{m_j}\to H_j$ with feasible set $\mathcal{F}_j=\Ran(\Gamma_j)$ and cell partition $\mathcal{C}_j$.
+Assume the artifact slots:
+\begin{itemize}
+\item \textbf{HL-SPT-DELOC} at depth $j$, with empirical bound $\kappa^{\mathrm{emp}}_0(j)\le K_{\mathrm{deloc}}$,
+\item \textbf{HL-SPT-FRAME} at depth $j$, with frame bounds $0<\alpha_j\le \beta_j$ and $\mathrm{cond}(\Gamma_j)=\beta_j/\alpha_j\le K_{\mathrm{cond}}$.
+\end{itemize}
+Then every nonzero feasible vector $v\in\mathcal{F}_j$ satisfies
+\begin{equation}\label{eq:t-spt-00-bound}
+\kappa_j(v)
+\;\le\;
+K^{\mathrm{feas}}_j
+\;:=\;
+\kappa^{\mathrm{emp}}_0(j)\cdot \mathrm{cond}(\Gamma_j)\cdot m_j
+\;\le\;
+K_{\mathrm{deloc}}\,K_{\mathrm{cond}}\,m_j.
+\end{equation}
+
+\paragraph{Failure modes.}
+If HL-SPT-DELOC is dropped, $\mathcal{F}_j$ may contain cell-supported directions and $\kappa_j$ can reach its maximum $1/f_j$ even statically (FM-DELOC).
+If HL-SPT-FRAME is dropped, channels may be individually delocalized while near-dependence yields coefficient directions $a$ with extreme $\kappa_j(\Gamma_j a)$ tails (FM-FRAME).
+\end{theorem}
+
+\subsection{T-SPT-01: exact invariance implies legality persistence}
+
+\begin{theorem}[T-SPT-01: legality persistence from exact feasibility invariance]\label{thm:t-spt-01}
+Assume the artifact slots \textbf{HL-SPT-DELOC}, \textbf{HL-SPT-FRAME}, and \textbf{HL-SPT-MODE}, so that $K^{\mathrm{pred}}_{\mathrm{glob}}$ in \eqref{eq:Kpred-global} is finite.
+Assume also the system slot \textbf{HL-SPT-INV} (exact feasibility invariance).
+
+Let $u(t)\in H$ be a trajectory on its lifespan such that $u_j(0)\in \mathcal{F}_j$ for all $j$.
+Then for every time $t$ in the lifespan and every depth $j$ with $u_j(t)\neq 0$,
+\begin{equation}\label{eq:t-spt-01-bound}
+\kappa_j(u_j(t)) \;\le\; K^{\mathrm{feas}}_j
+\qquad \text{and hence} \qquad
+\max_{j}\kappa_j(u_j(t)) \;\le\; K^{\mathrm{pred}}_{\mathrm{glob}}.
+\end{equation}
+In particular, the trajectory remains SPT-legal for all time with legality threshold
+\begin{equation}\label{eq:t-spt-01-K}
+K_\kappa := K^{\mathrm{pred}}_{\mathrm{glob}}.
+\end{equation}
+
+\paragraph{Failure modes.}
+If HL-SPT-INV is dropped, even arbitrarily small leakage out of feasibility can induce deep-band $\kappa_j$ spikes and immediate illegality (FM-INV).
+If HL-SPT-MODE is dropped, $K^{\mathrm{pred}}_{\mathrm{glob}}$ may grow without bound with depth (FM-MODE), so a fixed legality threshold is not meaningful.
+
+\paragraph{Interpretation (closure theorem).}
+T-SPT-01 is intentionally conditional: it states that once the system-level invariance slot holds, the legal regime is forward-closed with explicit constants determined by the artifact.
+The theorem does not claim that invariance holds for arbitrary dynamics; verifying HL-SPT-INV (or its robust substitute) is the principal system-side task.
+\end{theorem}
+
+\subsection{T-SPT-02: robust persistence under cellwise defect control}
+
+\begin{theorem}[T-SPT-02: robust legality persistence from cellwise feasibility defect]\label{thm:t-spt-02}
+Assume the artifact slots \textbf{HL-SPT-DELOC}, \textbf{HL-SPT-FRAME}, and \textbf{HL-SPT-MODE}, and let $K^{\mathrm{pred}}_{\mathrm{glob}}$ be as in \eqref{eq:Kpred-global}.
+Assume the robust system slot \textbf{HL-SPT-ROBUST$\infty$}: there exists $\varepsilon_\infty\ge 0$ such that for all depths $j$ and all times $t$ in the lifespan,
+\[
+\mathrm{def}^{\infty}_j(u_j(t)) \;\le\; \varepsilon_\infty f_j.
+\]
+Then the trajectory is SPT-legal for all time with the explicit robust legality threshold
+\begin{equation}\label{eq:t-spt-02-Krob}
+K^{\mathrm{rob}}(\varepsilon_\infty)
+\;:=\;
+\Big(\sqrt{K^{\mathrm{pred}}_{\mathrm{glob}}} + \sqrt{\varepsilon_\infty}\Big)^2.
+\end{equation}
+More precisely, for every time $t$ and every depth $j$ with $u_j(t)\neq 0$,
+\begin{equation}\label{eq:t-spt-02-bound}
+\kappa_j(u_j(t)) \;\le\; K^{\mathrm{rob}}(\varepsilon_\infty).
+\end{equation}
+
+\paragraph{Failure modes.}
+If HL-SPT-ROBUST$\infty$ is replaced by a purely global leakage bound (e.g.\ $\|(I-E_j)u_j\|/\|u_j\|\ll 1$), robust persistence can fail at deep scales because tiny global leakage can concentrate in a single cell (NG-DIST).
+If HL-SPT-DELOC/FRAME/MODE are dropped, the feasibility geometry itself may admit near-maximal concentration or may produce extreme tails (FM-DELOC, FM-FRAME, FM-MODE), and no uniform robust legality threshold exists.
+
+\paragraph{Interpretation (why the defect is formulated at cell resolution).}
+Because legality is defined by a max-cell functional, robust persistence cannot be phrased using only a global distance-to-feasibility.
+HL-SPT-ROBUST$\infty$ is designed to be the minimal natural robustness slot aligned with the audit, and NG-DIST shows that weakening it to a global leakage metric is insufficient.
+\end{theorem}
+
+\paragraph{Remark (interpretation).}
+T-SPT-01 and T-SPT-02 express closure of the P6-defined legal regime (bounded $\kappa_j$) under P5/P2/P4 compatibility hypotheses in the sense of \cite{Tsiokos2026SixBirds}.
+In the Six-Birds language, HL-SPT-INV or HL-SPT-ROBUST$\infty$ is the explicit closure slot (the analogue of a ``macro closure'' requirement), while the artifact slots enforce structural anti-localization rather than relying on accounting alone.
+ \section{Proof of T-SPT-00}\label{sec:proof-t-spt-00}
+
+We prove Theorem~\ref{thm:t-spt-00}.
+Fix a depth $j\le J_{\max}$ and suppress the depth index $j$ in the notation to reduce clutter:
+write $\mathcal{C}=\mathcal{C}_j$, $f=f_j$, $\Gamma=\Gamma_j$, $m=m_j$, and $\psi_r=\psi_{j,r}$.
+Let $P_c:=P_{j,c}$ denote the cell projectors.
+
+If $v=0$ then $\kappa_j(v)=0$ by convention (Definitions~\ref{def:cell-conc}--\ref{def:kappa-def}), so assume $v\neq 0$.
+Since $v\in \mathcal{F}_j=\Ran(\Gamma)$, there exists $a\in\mathbb{R}^m$ such that
+\[
+v=\Gamma a=\sum_{r=1}^m a_r \psi_r.
+\]
+
+\paragraph{Step 1: bound the energy in a fixed cell.}
+Fix a cell $c\in\mathcal{C}$.
+By linearity,
+\[
+P_c v \;=\; \sum_{r=1}^m a_r\,P_c\psi_r.
+\]
+Using Cauchy--Schwarz in $\mathbb{R}^m$,
+\begin{align}
+\|P_c v\|
+&\le \sum_{r=1}^m |a_r|\,\|P_c\psi_r\|
+\le \Big(\sum_{r=1}^m |a_r|^2\Big)^{1/2}
+     \Big(\sum_{r=1}^m \|P_c\psi_r\|^2\Big)^{1/2}
+= \|a\|\Big(\sum_{r=1}^m \|P_c\psi_r\|^2\Big)^{1/2}.
+\end{align}
+Squaring yields
+\begin{equation}\label{eq:proof-cell-bound-1}
+\|P_c v\|^2 \;\le\; \|a\|^2 \sum_{r=1}^m \|P_c\psi_r\|^2.
+\end{equation}
+
+\paragraph{Step 2: use empirical delocalization to control the channel energy per cell.}
+By Definition~\ref{def:kappa0-emp} (empirical delocalization constant), for every $r$ and every cell $c$,
+\[
+\|P_c\psi_r\|^2 \;\le\; \kappa_0^{\mathrm{emp}}(j)\,f\,\|\psi_r\|^2.
+\]
+Summing over $r$ gives
+\begin{equation}\label{eq:proof-cell-bound-2}
+\sum_{r=1}^m \|P_c\psi_r\|^2
+\;\le\;
+\kappa_0^{\mathrm{emp}}(j)\,f\sum_{r=1}^m \|\psi_r\|^2.
+\end{equation}
+
+\paragraph{Step 3: relate $\sum_r\|\psi_r\|^2$ to the frame upper bound.}
+Let $G:=\Gamma^\top\Gamma\in\mathbb{R}^{m\times m}$ be the Gram matrix.
+Then $\mathrm{tr}(G)=\sum_{r=1}^m \|\psi_r\|^2$.
+Under HL-SPT-FRAME at depth $j$ (Definition~\ref{def:frame-bounds}), the eigenvalues of $G$ lie in $[\alpha_j,\beta_j]$, hence
+\begin{equation}\label{eq:proof-trace-bound}
+\sum_{r=1}^m \|\psi_r\|^2 \;=\; \mathrm{tr}(G) \;\le\; m\,\beta_j.
+\end{equation}
+
+\paragraph{Step 4: combine and normalize by $\|v\|^2$.}
+Combining \eqref{eq:proof-cell-bound-1}, \eqref{eq:proof-cell-bound-2}, and \eqref{eq:proof-trace-bound}, we obtain
+\[
+\|P_c v\|^2
+\;\le\;
+\|a\|^2\cdot \kappa_0^{\mathrm{emp}}(j)\,f\cdot m\,\beta_j.
+\]
+On the other hand, by the frame lower bound in \eqref{eq:frame-bounds},
+\[
+\|v\|^2=\|\Gamma a\|^2 \;\ge\; \alpha_j\,\|a\|^2.
+\]
+Therefore the cell energy fraction satisfies
+\[
+\frac{\|P_c v\|^2}{\|v\|^2}
+\;\le\;
+\kappa_0^{\mathrm{emp}}(j)\,f\,m\,\frac{\beta_j}{\alpha_j}
+\;=\;
+\kappa_0^{\mathrm{emp}}(j)\,f\,m\,\mathrm{cond}(\Gamma_j).
+\]
+Taking the maximum over $c\in\mathcal{C}$ yields (Definition~\ref{def:cell-conc})
+\[
+\conc_j(v) \;\le\; \kappa_0^{\mathrm{emp}}(j)\,f_j\,m_j\,\mathrm{cond}(\Gamma_j).
+\]
+Dividing by $f_j$ gives (Definition~\ref{def:kappa-def})
+\[
+\kappa_j(v)
+\;=\;
+\frac{\conc_j(v)}{f_j}
+\;\le\;
+\kappa_0^{\mathrm{emp}}(j)\,\mathrm{cond}(\Gamma_j)\,m_j
+\;=\;
+K^{\mathrm{feas}}_j,
+\]
+which is exactly \eqref{eq:t-spt-00-bound} and completes the proof.
+
+\paragraph{Remark (where $m_j$ enters).}
+The factor $m_j$ arises from the trace bound \eqref{eq:proof-trace-bound}.
+If the channels are orthonormal (or a tight frame), one may replace this step with a sharper identity, but the present proof isolates the two genuinely necessary artifact controls:
+cell-delocalization of columns (HL-SPT-DELOC) and nondegenerate frame bounds (HL-SPT-FRAME).
+ \section{Proof of T-SPT-01}\label{sec:proof-t-spt-01}
+
+We prove Theorem~\ref{thm:t-spt-01}.
+Fix a trajectory $u(t)\in H$ on its lifespan and assume $u_j(0)\in\mathcal{F}_j$ for all depths $j$.
+By the system slot HL-SPT-INV (exact feasibility invariance, \eqref{eq:HL-INV}), it follows that
+\[
+u_j(t)\in \mathcal{F}_j \qquad \text{for all times $t$ in the lifespan and all depths $j$.}
+\]
+For each fixed $t$ and each depth $j$ with $u_j(t)\neq 0$, we may therefore apply the static feasibility bound (Theorem~\ref{thm:t-spt-00}) to the feasible vector $v=u_j(t)\in\mathcal{F}_j$ to obtain
+\[
+\kappa_j(u_j(t)) \;\le\; K^{\mathrm{feas}}_j.
+\]
+Taking the maximum over depths yields
+\[
+\max_{0\le j\le J_{\max}}\kappa_j(u_j(t))
+\;\le\;
+\max_{0\le j\le J_{\max}} K^{\mathrm{feas}}_j
+\;=\;
+K^{\mathrm{pred}}_{\mathrm{glob}},
+\]
+where the last equality is the definition \eqref{eq:Kpred-global}.
+This is exactly \eqref{eq:t-spt-01-bound} and implies SPT-legality with threshold $K_\kappa=K^{\mathrm{pred}}_{\mathrm{glob}}$ as stated in \eqref{eq:t-spt-01-K}.
+ \section{Proof of T-SPT-02}\label{sec:proof-t-spt-02}
+
+We prove Theorem~\ref{thm:t-spt-02}.
+Fix a time $t$ in the lifespan and a depth $j\le J_{\max}$.
+Write $u:=u_j(t)\in H_j$ and decompose it into feasible and off-feasible parts using the packaging projector $E_j$ (Definition~\ref{def:packaging}):
+\[
+u \;=\; E_j u \;+\; (I-E_j)u \;=:\; v \;+\; w,
+\qquad v\in\mathcal{F}_j,\quad w\perp \mathcal{F}_j.
+\]
+If $u=0$ then $\kappa_j(u)=0$ by convention, so assume $u\neq 0$.
+
+\paragraph{Step 1: cellwise control of the off-feasible component.}
+By the robust system slot HL-SPT-ROBUST$\infty$ \eqref{eq:HL-ROBUST} and the definition of $\mathrm{def}^\infty_j$ (Definition~\ref{def:defect-infty}),
+for every cell $c\in\mathcal{C}_j$ we have
+\begin{equation}\label{eq:proof-robust-cellwise}
+\|P_{j,c}w\|^2
+\;=\;
+\|P_{j,c}(I-E_j)u\|^2
+\;\le\;
+\varepsilon_\infty f_j \,\|u\|^2.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:proof-robust-cellwise-sqrt}
+\|P_{j,c}w\|
+\;\le\;
+\sqrt{\varepsilon_\infty f_j}\,\|u\|
+\qquad \text{for all } c.
+\end{equation}
+
+\paragraph{Step 2: control the feasible component using T-SPT-00.}
+Since $v=E_j u\in\mathcal{F}_j$, we may apply T-SPT-00 (Theorem~\ref{thm:t-spt-00}) to obtain
+\[
+\kappa_j(v)\le K^{\mathrm{feas}}_j \le K^{\mathrm{pred}}_{\mathrm{glob}},
+\]
+where the last inequality uses the definition \eqref{eq:Kpred-global}.
+Unpacking the definition of $\kappa_j$ (Definition~\ref{def:kappa-def}), this means that for every cell $c$,
+\begin{equation}\label{eq:proof-feasible-cell}
+\|P_{j,c}v\|^2 \;\le\; f_j\,K^{\mathrm{pred}}_{\mathrm{glob}}\,\|v\|^2
+\qquad\Rightarrow\qquad
+\|P_{j,c}v\|\;\le\;\sqrt{f_j\,K^{\mathrm{pred}}_{\mathrm{glob}}}\,\|v\|.
+\end{equation}
+Finally note that $\|v\|=\|E_j u\|\le \|u\|$ since $E_j$ is an orthogonal projector.
+Hence
+\begin{equation}\label{eq:proof-feasible-cell-2}
+\|P_{j,c}v\|
+\;\le\;
+\sqrt{f_j\,K^{\mathrm{pred}}_{\mathrm{glob}}}\,\|u\|
+\qquad \text{for all } c.
+\end{equation}
+
+\paragraph{Step 3: combine feasible and off-feasible parts.}
+By the triangle inequality in $H_{j,c}$,
+\[
+\|P_{j,c}u\|
+\;=\;
+\|P_{j,c}(v+w)\|
+\;\le\;
+\|P_{j,c}v\|+\|P_{j,c}w\|.
+\]
+Using \eqref{eq:proof-robust-cellwise-sqrt} and \eqref{eq:proof-feasible-cell-2}, we get
+\[
+\|P_{j,c}u\|
+\;\le\;
+\Big(\sqrt{f_j\,K^{\mathrm{pred}}_{\mathrm{glob}}} + \sqrt{\varepsilon_\infty f_j}\Big)\,\|u\|
+\;=\;
+\sqrt{f_j}\Big(\sqrt{K^{\mathrm{pred}}_{\mathrm{glob}}} + \sqrt{\varepsilon_\infty}\Big)\,\|u\|.
+\]
+Squaring and dividing by $\|u\|^2$ yields, for every cell $c$,
+\[
+\frac{\|P_{j,c}u\|^2}{\|u\|^2}
+\;\le\;
+f_j\Big(\sqrt{K^{\mathrm{pred}}_{\mathrm{glob}}} + \sqrt{\varepsilon_\infty}\Big)^2.
+\]
+Taking the maximum over $c$ gives
+\[
+\conc_j(u)\;\le\; f_j\Big(\sqrt{K^{\mathrm{pred}}_{\mathrm{glob}}} + \sqrt{\varepsilon_\infty}\Big)^2.
+\]
+Dividing by $f_j$ (Definition~\ref{def:kappa-def}) yields
+\[
+\kappa_j(u)
+\;\le\;
+\Big(\sqrt{K^{\mathrm{pred}}_{\mathrm{glob}}} + \sqrt{\varepsilon_\infty}\Big)^2
+\;=\;
+K^{\mathrm{rob}}(\varepsilon_\infty),
+\]
+which is exactly \eqref{eq:t-spt-02-bound}--\eqref{eq:t-spt-02-Krob}.
+Since $t$ and $j$ were arbitrary, the bound holds for all times and depths, proving T-SPT-02.
+
+\paragraph{Remark (why defect must be cellwise).}
+The key step is the uniform per-cell bound \eqref{eq:proof-robust-cellwise}.
+A purely global leakage control such as $\|w\|/\|u\|\ll 1$ does \emph{not} imply any nontrivial bound on $\max_c\|P_{j,c}w\|^2/\|u\|^2$ when $f_j$ is small (deep refinement).
+Indeed, it is possible for $\|w\|/\|u\|$ to be tiny while $w$ is supported in a single cell, in which case it can dominate $\conc_j(u)$ and drive $\kappa_j(u)$ close to its maximum $1/f_j$; this is the phenomenon isolated in NG-DIST.
+ \section{Remarks and Non-implications}\label{sec:nonimplications}
+
+This section records several statements that may sound plausible on first reading but are \emph{not} implied by our definitions and theorems.
+The point is not pedantry: each non-implication corresponds to a concrete failure mode demonstrated by a minimal counterexample and a numerical experiment in Section~12.
+In the Six-Birds framing \cite{Tsiokos2026SixBirds}, these are exactly the points where one is tempted to ``smuggle in'' closure using accounting (P6) when what is needed is structural compatibility (P2/P5/P4) or an explicit defect control (P3).
+
+\subsection{Ledger invariants do not imply legality}
+
+\paragraph{Non-implication 1 (energy does not control $\kappa$).}
+Even if a trajectory preserves a global ``ledger'' quantity such as energy $\|u(t)\|^2$, this does not prevent the cell concentration audit $\kappa_j(u_j(t))$ (Definition~\ref{def:kappa-def}) from becoming large.
+The obstruction is simple: if the feasible set $\mathcal{F}_j$ contains a localized direction, then energy-preserving motion \emph{within} $\mathcal{F}_j$ can rotate mass from a delocalized feasible state to a localized feasible state, driving $\kappa_j$ close to its ceiling $1/f_j$ while $\|u\|^2$ remains constant.
+
+\paragraph{What would be needed instead.}
+To prevent this, one needs a structural anti-localization mechanism: either (i) feasibility itself excludes localized directions (HL-SPT-DELOC), or (ii) legality is defined by a different audit that is actually controlled by the ledger.
+Our no-go construction NG-LEDGER (Section~12) makes this explicit: $\|u(t)\|^2$ is flat to numerical precision while $\kappa_j(u_j(t))$ reaches $1/f_j$.
+
+\subsection{Delocalized columns do not protect combinations without frame control}
+
+\paragraph{Non-implication 2 (column delocalization $\not\Rightarrow$ combination delocalization).}
+A common misconception is that if every channel $\psi_{j,r}$ is individually cell-delocalized, then every feasible superposition $v=\Gamma_j a$ must also be cell-delocalized.
+This is false without a quantitative frame lower bound.
+Theorem~\ref{thm:t-spt-00} makes the dependence explicit: the bound scales with $\mathrm{cond}(\Gamma_j)=\beta_j/\alpha_j$ (Definition~\ref{def:frame-bounds}).
+When $\alpha_j$ is small (near-dependence of channels), there exist coefficient directions $a$ that produce superpositions with large localized peaks, despite each column being spread out.
+
+\paragraph{What would be needed instead.}
+One must control both HL-SPT-DELOC and HL-SPT-FRAME.
+The FM-FRAME experiment (Section~12) isolates this phenomenon: $\kappa_0^{\mathrm{emp}}$ remains bounded (columns are delocalized) while the conditioning worsens and the tail events of $\kappa_j(\Gamma_j a)$ explode.
+
+\subsection{Global distance to feasibility is not a robustness notion for $\kappa$}
+
+\paragraph{Non-implication 3 (small global leakage $\not\Rightarrow$ small $\kappa$).}
+In robust settings, it is natural to measure feasibility mismatch by a global ratio
+$\|(I-E_j)u_j\|/\|u_j\|$.
+However, this is not a robustness notion for a \emph{max-cell} audit.
+A small global leakage can still concentrate into a single cell and dominate $\mathrm{conc}_j(u_j)$, especially at deep scales where $f_j=1/|\mathcal{C}_j|$ is small.
+The robust persistence theorem (T-SPT-02) therefore assumes the stronger \emph{cellwise} defect control
+$\mathrm{def}^{\infty}_j(u_j(t))\le \varepsilon_\infty f_j$ (Definition~\ref{def:defect-infty} and HL-SPT-ROBUST$\infty$ \eqref{eq:HL-ROBUST}).
+
+\paragraph{What would be needed instead.}
+If one insists on a global leakage metric, one must supplement it with additional structure that links global leakage to cellwise leakage (for instance, an \emph{a priori} delocalization bound on the off-feasible component).
+Absent such a link, robust legality can fail even when the global leakage is arbitrarily small.
+The NG-DIST experiment (Section~12) demonstrates precisely this gap: leakage ratios below $10^{-3}$ coexist with deep-band $\kappa_j$ near the maximal value $1/f_j$.
+
+\subsection{Summary}
+
+The previous points identify the genuine ``hard slots'' behind legality persistence:
+anti-localization must be enforced structurally in feasibility (HL-SPT-DELOC), feasible superpositions must be stable under coefficients (HL-SPT-FRAME), depth-uniform thresholds require controlled interface growth (HL-SPT-MODE), and robustness requires defect bounds formulated at the same resolution as the audit itself (HL-SPT-ROBUST$\infty$).
+These observations motivate the sharp no-go constructions in Section~10 and the experiment suite in Section~12.
+ \section{No-go results and sharp counterexamples}\label{sec:nogo}
+
+This section sharpens the boundary of legality persistence by giving minimal counterexamples.
+Each counterexample corresponds to dropping (or weakening) one HL slot from Section~\ref{sec:hypotheses}.
+These are not PDE pathologies: all constructions are finite-dimensional, expressed directly in the Hilbert/band/\allowbreak cell model of Section~\ref{sec:definitions}.
+Each item also has a numerical instantiation in Section~12, with a frozen figure in \texttt{paper/figures/}.
+
+\paragraph{Roadmap.}
+FM-DELOC shows why HL-SPT-DELOC is necessary (Prop.~\ref{prop:fm-deloc});
+FM-FRAME shows why HL-SPT-FRAME is necessary even when columns are delocalized (Prop.~\ref{prop:fm-frame});
+FM-MODE shows why depth-uniform thresholds require controlled interface growth (Prop.~\ref{prop:fm-mode});
+NG-LEDGER shows why ledger invariants do not prevent localization blow-up (Prop.~\ref{prop:ng-ledger});
+NG-DIST shows why global distance-to-feasibility is not a robustness notion for $\kappa$ (Prop.~\ref{prop:ng-dist});
+and FM-INV packages NG-DIST into a dynamical ``leakage breaks legality'' mechanism (Prop.~\ref{prop:fm-inv}).
+
+\subsection{FM-DELOC: feasibility contains wavepackets}
+
+\begin{proposition}[FM-DELOC: if feasibility contains a cell-supported direction, legality fails statically]\label{prop:fm-deloc}
+Fix a depth $j$ and cell partition $\mathcal{C}_j$ with baseline fraction $f_j$.
+Assume the feasible set $\mathcal{F}_j\subseteq H_j$ contains a nonzero vector $v$ supported in a single cell, i.e.\ there exists $c_\star\in\mathcal{C}_j$ such that
+\[
+P_{j,c_\star}v=v
+\qquad \text{and hence } P_{j,c}v=0 \text{ for } c\neq c_\star.
+\]
+Then $\conc_j(v)=1$ and therefore
+\[
+\kappa_j(v)=\frac{1}{f_j}.
+\]
+In particular, for any threshold $K_\kappa<0.9/f_j$, the feasible set contains a vector violating SPT-legality by a factor at least $0.9/f_j$ (indeed, by the full factor $1/f_j$).
+\end{proposition}
+
+\paragraph{Proof sketch.}
+All energy lies in one cell, so the maximizing cell fraction in Definition~\ref{def:cell-conc} equals $1$; dividing by $f_j$ gives $\kappa_j(v)=1/f_j$ (Definition~\ref{def:kappa-def}).
+
+\paragraph{HL interpretation.}
+This is exactly what HL-SPT-DELOC rules out: if even one channel is cell-supported, then the feasible set can contain wavepacket-like directions.
+
+\paragraph{Experiment pointer.}
+FM-DELOC is instantiated by a feasible channel that is literally cell-supported; see \nolinkurl{paper/figures/localized_channel_cell_energy.png}.
+
+\subsection{FM-FRAME: delocalized columns without frame control do not protect combinations}
+
+\begin{proposition}[FM-FRAME: bounded per-column delocalization does not prevent extreme concentration without a frame lower bound]\label{prop:fm-frame}
+Fix a depth $j$ and let $f_j=1/|\mathcal{C}_j|$.
+There exist channel maps $\Gamma_j:\mathbb{R}^{m_j}\to H_j$ with the following properties simultaneously:
+\begin{enumerate}
+\item (\emph{Columns delocalized}) $\kappa^{\mathrm{emp}}_0(j)\le 2$ (Definition~\ref{def:kappa0-emp}).
+\item (\emph{Ill-conditioned}) $\mathrm{cond}(\Gamma_j)$ is arbitrarily large (Definition~\ref{def:frame-bounds}).
+\item (\emph{Feasible concentration}) the feasible set $\mathcal{F}_j=\Ran(\Gamma_j)$ contains a nonzero $v$ with
+\[
+\kappa_j(v)=\frac{1}{f_j}\;\ge\; 0.9/f_j.
+\]
+\end{enumerate}
+(See \cite{Christensen2016Frames} for standard conditioning/frame stability notions.)
+\end{proposition}
+
+\paragraph{Proof sketch (explicit two-channel construction).}
+Let $m_j=2$ and choose orthonormal vectors $u,e\in H_j$ such that:
+(i) $u$ is perfectly cell-uniform (so $\kappa_j(u)=1$), and
+(ii) $e$ is supported in a single cell $c_\star$ (so $\kappa_j(e)=1/f_j$),
+with the additional choice that $P_{j,c_\star}u\perp e$ (e.g.\ take $e$ in a different internal coordinate within the same cell when $\dim(H_{j,c_\star})\ge 2$).
+For $\varepsilon>0$, define channels
+\[
+\psi_1 := u + \varepsilon e,
+\qquad
+\psi_2 := u - \varepsilon e,
+\qquad
+\Gamma_j a := a_1\psi_1+a_2\psi_2.
+\]
+Because $P_{j,c_\star}u\perp e$, we have $\|P_{j,c_\star}\psi_r\|^2=\|P_{j,c_\star}u\|^2+\varepsilon^2\|e\|^2=f_j\|u\|^2+\varepsilon^2$ and $\|\psi_r\|^2=\|u\|^2+\varepsilon^2\|e\|^2$.
+If $\|u\|=\|e\|=1$ and $\varepsilon^2\le f_j$, then
+\[
+\max_c\frac{\|P_{j,c}\psi_r\|^2}{f_j\|\psi_r\|^2}
+=
+\frac{f_j+\varepsilon^2}{f_j(1+\varepsilon^2)}
+\le 2,
+\]
+so $\kappa_0^{\mathrm{emp}}(j)\le 2$.
+However, the Gram matrix has eigenvalues $2$ and $2\varepsilon^2$, hence $\mathrm{cond}(\Gamma_j)=1/\varepsilon^2$ is arbitrarily large.
+Finally, choosing coefficients $a=(1,-1)$ gives $\Gamma_j a = 2\varepsilon e$, which is cell-supported and therefore satisfies $\kappa_j(\Gamma_j a)=1/f_j$.
+This shows that delocalized columns alone do not protect feasible superpositions from localization; one needs HL-SPT-FRAME.
+
+\paragraph{Experiment pointer.}
+FM-FRAME is instantiated by constructing delocalized columns with increasingly ill-conditioned Gram matrices and measuring concentration tails; see \nolinkurl{paper/figures/kappa_tail_vs_cond.png}.
+
+\subsection{FM-MODE: mode explosion destroys depth-uniform legality}
+
+\begin{proposition}[FM-MODE: without mode-growth control, no depth-uniform legality threshold exists]\label{prop:fm-mode}
+Consider a family of depths with $|\mathcal{C}_j|\to\infty$ (hence $f_j\to 0$).
+Suppose there exist depths $j$ for which the feasible set is all of the band, $\mathcal{F}_j=H_j$ (e.g.\ $\Gamma_j$ is surjective, which is possible when $m_j\ge \dim(H_j)$).
+Then for each such $j$ there exists a feasible vector $v\in\mathcal{F}_j$ with
+\[
+\kappa_j(v)=\frac{1}{f_j}.
+\]
+Consequently, any fixed legality threshold $K_\kappa$ independent of $j$ fails for sufficiently deep $j$.
+
+More generally, even in the best-case artifact regime where $\kappa^{\mathrm{emp}}_0(j)$ and $\mathrm{cond}(\Gamma_j)$ remain bounded, the feasibility envelope in T-SPT-00 scales linearly in $m_j$:
+\[
+\sup_{v\in\mathcal{F}_j\setminus\{0\}}\kappa_j(v)
+\;\lesssim\;
+\kappa^{\mathrm{emp}}_0(j)\,\mathrm{cond}(\Gamma_j)\,m_j,
+\]
+so if $m_j$ grows without bound with depth then the best available legality bound also grows without bound.
+\end{proposition}
+
+\paragraph{Proof sketch.}
+If $\mathcal{F}_j=H_j$, then $H_j$ contains a cell-supported vector (choose any nonzero element of $H_{j,c_\star}$), which achieves $\kappa_j=1/f_j$ by the same argument as in Prop.~\ref{prop:fm-deloc}.
+The final inequality is just Theorem~\ref{thm:t-spt-00} written as a uniform bound on feasible vectors.
+
+\paragraph{Experiment pointer.}
+FM-MODE is instantiated by running the invariant ladder dynamics under different growth laws $m_j$; see \nolinkurl{paper/figures/max_kappa_vs_depth_by_regime.png}.
+
+\subsection{NG-LEDGER: energy conservation does not prevent concentration blow-up}
+
+\begin{proposition}[NG-LEDGER: an energy-preserving evolution can drive $\kappa_j$ to the ceiling]\label{prop:ng-ledger}
+Fix a depth $j$.
+Assume the feasible set $\mathcal{F}_j$ contains two orthonormal vectors $\psi_{\mathrm{uni}},\psi_{\mathrm{loc}}\in \mathcal{F}_j$ such that
+\[
+\kappa_j(\psi_{\mathrm{uni}})=1,
+\qquad
+\kappa_j(\psi_{\mathrm{loc}})=\frac{1}{f_j}.
+\]
+Define an energy-preserving evolution in the two-dimensional subspace $\mathrm{span}\{\psi_{\mathrm{uni}},\psi_{\mathrm{loc}}\}$ by
+\[
+u(\theta)=\cos\theta\,\psi_{\mathrm{uni}}+\sin\theta\,\psi_{\mathrm{loc}}.
+\]
+Then $\|u(\theta)\|^2\equiv 1$ for all $\theta$, but $\kappa_j(u(\theta))$ can be made arbitrarily close to $1/f_j$.
+In particular, there exists $\theta$ such that
+\[
+\kappa_j(u(\theta)) \ge 0.9/f_j.
+\]
+\end{proposition}
+
+\paragraph{Proof sketch.}
+Energy is constant because the evolution is a rotation in an orthonormal basis.
+As $\theta\to \pi/2$, $u(\theta)\to \psi_{\mathrm{loc}}$ in norm, and $\kappa_j(\cdot)$ is continuous on $H_j\setminus\{0\}$ because it is the maximum of finitely many continuous functions
+$v\mapsto \|P_{j,c}v\|^2/\|v\|^2$.
+Thus $\kappa_j(u(\theta))\to 1/f_j$, and $\kappa_j(u(\theta))\ge 0.9/f_j$ for $\theta$ sufficiently close to $\pi/2$.
+
+\paragraph{HL interpretation.}
+This shows why P6/ledger invariants cannot replace HL-SPT-DELOC (and cannot enforce legality by themselves): if feasibility contains localized directions, energy conservation does not prevent legality loss.
+
+\paragraph{Experiment pointer.}
+NG-LEDGER is instantiated by an orthonormal two-channel feasible basis and a discrete rotation schedule; see \nolinkurl{paper/figures/energy_and_kappa_over_time.png}.
+
+\subsection{NG-DIST: global distance-to-feasibility can be tiny while deep-band $\kappa_j$ is near maximal}
+
+\begin{proposition}[NG-DIST: tiny global leakage can yield near-maximal deep-band concentration]\label{prop:ng-dist}
+Fix a depth $j$.
+For any target leakage ratio $r\in(0,1)$ and any target threshold fraction $\rho\in(0,1)$ (e.g.\ $\rho=0.9$), there exists a multiscale state $u\in H$ and a decomposition
+\[
+u = v + w,
+\]
+with the following properties:
+\begin{enumerate}
+\item (\emph{$v$ is SPT-legal}) for every depth $\ell$, $\kappa_\ell(v_\ell)\le 2$ (in particular $v$ is legal for $K_\kappa=2$).
+\item (\emph{$w$ is globally tiny}) $\|w\|/\|v\| \le r$.
+\item (\emph{$w$ is deep and localized}) $w_\ell=0$ for $\ell\neq j$, and $w_j$ is supported in a single cell of $\mathcal{C}_j$.
+\item (\emph{Deep-band illegality}) the deep component satisfies
+\[
+\kappa_j(u_j)\ge \rho/f_j.
+\]
+\end{enumerate}
+Thus, even when the global leakage ratio $\|w\|/\|v\|$ is arbitrarily small, the deep-band legality audit can be violated by a factor on the order of $1/f_j$.
+\end{proposition}
+
+\paragraph{Proof sketch (explicit scaling).}
+Let $v=v^{\mathrm{coarse}}+v^{\mathrm{deep}}$ with $v^{\mathrm{coarse}}\in H_0$ and $v^{\mathrm{deep}}\in H_j$.
+Choose $\|v^{\mathrm{coarse}}\|=1$ and let $v^{\mathrm{deep}}$ be a cell-uniform vector in $H_j$ of norm $\delta>0$, so $\kappa_j(v^{\mathrm{deep}})=1$ and hence $v$ is legal with threshold $2$ for $\delta$ sufficiently small.
+Let $w$ be supported in a single cell at depth $j$ with $\|w\|=r$ and chosen orthogonal to $v^{\mathrm{deep}}$ (e.g.\ in a distinct internal coordinate of that cell).
+Then $\|w\|/\|v\|\approx r$ because $\|v\|\approx 1$, but the deep band satisfies $u_j=v^{\mathrm{deep}}+w$ with $\|w\|\gg \|v^{\mathrm{deep}}\|$ if $\delta\ll r$.
+In that case the maximizing cell contains almost all the deep-band energy, and one checks from Definitions~\ref{def:cell-conc}--\ref{def:kappa-def} that $\kappa_j(u_j)$ can be made $\ge \rho/f_j$ by choosing $\delta \le r/3$ (or smaller).
+This is exactly the mechanism quantified by the cellwise defect control in HL-SPT-ROBUST$\infty$.
+
+\paragraph{Experiment pointer.}
+NG-DIST is instantiated by constructing a legal multiband baseline with a tiny deep-band component, then adding a cell-localized perturbation to that deep band; see \nolinkurl{paper/figures/leakage_vs_kappa.png}.
+
+\subsection{FM-INV: leakage out of feasibility can cause instant illegality}
+
+\begin{proposition}[FM-INV: without feasibility invariance, legality is not forward-closed]\label{prop:fm-inv}
+Assume the artifact slots HL-SPT-DELOC, HL-SPT-FRAME, HL-SPT-MODE hold, so that $K^{\mathrm{pred}}_{\mathrm{glob}}$ in \eqref{eq:Kpred-global} is finite.
+Suppose a dynamics admits a time $t_\star$ and a depth $j$ such that at time $t_\star$ the band component decomposes as
+\[
+u_j(t_\star)=v+w,
+\qquad v\in\mathcal{F}_j,
+\qquad w\perp \mathcal{F}_j,
+\]
+where $\|w\|/\|u(t_\star)\|\le 10^{-2}$ (small global leakage), but $w$ is supported in a single cell of $\mathcal{C}_j$ and dominates $v$ in that cell.
+Then it is possible that
+\[
+\kappa_j(u_j(t_\star)) \;>\; K^{\mathrm{pred}}_{\mathrm{glob}},
+\]
+so SPT-legality with threshold $K^{\mathrm{pred}}_{\mathrm{glob}}$ fails at time $t_\star$ despite all artifact slots holding.
+In particular, legality is not forward-closed without HL-SPT-INV or the robust substitute HL-SPT-ROBUST$\infty$.
+\end{proposition}
+
+\paragraph{Proof sketch.}
+This is a dynamical packaging of NG-DIST (Prop.~\ref{prop:ng-dist}): choose $v$ feasible and (by T-SPT-00) legal within the predicted envelope, then inject a cell-localized off-feasible component $w$ that is globally tiny but deep-band dominant in one cell, making $\kappa_j(v+w)$ exceed the envelope.
+Such an injection is exactly what HL-SPT-INV forbids, and what HL-SPT-ROBUST$\infty$ controls in a way that is aligned with the legality audit.
+
+\paragraph{Experiment pointer.}
+FM-INV is instantiated by injecting a localized off-feasible component into an otherwise invariant ladder evolution; see \nolinkurl{paper/figures/kappa_and_leakage_highlight.png}.
+ \section{Toy models (non-PDE)}\label{sec:toy-models}
+
+This section records simple toy dynamical systems---purely finite-dimensional---that satisfy (or violate) the HL slots.
+They are designed to illustrate that the persistence theorems are about \emph{representation compatibility} rather than analytic smoothing.
+The corresponding numerical implementations appear in the experiment suite (Section~12).
+
+\subsection{Toy model A: feasible coefficient ladder (exact invariance)}
+
+Fix depths $j=0,\dots,J_{\max}$ and channel maps $\Gamma_j:\mathbb{R}^{m_j}\to H_j$ with synthesis matrices $\Psi_j$ (columns are channels).
+Consider the discrete-time coefficient ladder dynamics
+\begin{equation}\label{eq:toy-ladder}
+a_j(t+1)
+\;=\;
+A_j a_j(t)
+\;+\;
+B_{j\leftarrow j-1}a_{j-1}(t)
+\;+\;
+B_{j\leftarrow j+1}a_{j+1}(t)
+\;+\;
+\xi_j(t),
+\end{equation}
+where $A_j\in\mathbb{R}^{m_j\times m_j}$ is stable, $B_{j\leftarrow k}$ are coupling matrices of compatible sizes, and $\xi_j(t)\in\mathbb{R}^{m_j}$ is a coefficient-space noise/forcing term.
+Define the band states by
+\begin{equation}\label{eq:toy-ladder-state}
+u_j(t) \;:=\; \Gamma_j a_j(t)\in H_j,
+\qquad
+u(t) \;:=\; \bigoplus_{j=0}^{J_{\max}} u_j(t)\in H.
+\end{equation}
+
+\begin{theorem}[Toy model A (invariant ladder) implies legality persistence]\label{thm:toy-ladder-invariant}
+Assume the artifact slots HL-SPT-DELOC, HL-SPT-FRAME, and HL-SPT-MODE hold for the channel maps $\Gamma_j$ (Section~\ref{sec:hypotheses}), and assume the trajectory is initialized in the feasible sets: $u_j(0)\in\mathcal{F}_j$ for all $j$.
+Then the ladder dynamics \eqref{eq:toy-ladder}--\eqref{eq:toy-ladder-state} satisfies exact feasibility invariance HL-SPT-INV:
+\[
+u_j(t)\in\mathcal{F}_j \quad \text{for all } t \text{ and all } j,
+\]
+and therefore SPT-legality persists for all time with threshold
+\[
+K_\kappa = K^{\mathrm{pred}}_{\mathrm{glob}}
+\]
+as in Theorem~\ref{thm:t-spt-01}.
+\end{theorem}
+
+\paragraph{Explanation.}
+The invariance is immediate from the construction $u_j(t)=\Gamma_j a_j(t)$: all evolution occurs in coefficient space and is synthesized into $H_j$ by $\Gamma_j$.
+The theorem then follows by applying T-SPT-01.
+
+\paragraph{Experiment pointer.}
+This model is instantiated in Exp-SPT-01-PERSIST; see \nolinkurl{paper/figures/kappa_heatmap.png} and \nolinkurl{paper/figures/kappa_max_over_time.png}.
+
+\subsection{Toy model B: invariant ladder with localized off-feasible injection (break invariance)}
+
+To isolate FM-INV, we perturb Toy model A by injecting an off-feasible component in a chosen depth $j_\star$ at some time $t_\star$.
+Let $E_{j_\star}$ be the packaging projector onto $\mathcal{F}_{j_\star}$ and fix a vector $w_{\mathrm{inj}}\in H_{j_\star}$ with $(I-E_{j_\star})w_{\mathrm{inj}}=w_{\mathrm{inj}}$ that is supported in a single cell of $\mathcal{C}_{j_\star}$.
+Define the injected dynamics at time $t_\star$ by
+\begin{equation}\label{eq:toy-inj}
+u_{j_\star}(t_\star^+) \;=\; u_{j_\star}(t_\star) + \eta\,w_{\mathrm{inj}},
+\end{equation}
+with injection strength $\eta>0$ and all other depths unchanged.
+
+\begin{proposition}[Toy model B (leakage injection) can cause immediate illegality]\label{prop:toy-ladder-leakage}
+Assume the artifact slots HL-SPT-DELOC, HL-SPT-FRAME, and HL-SPT-MODE hold so that $K^{\mathrm{pred}}_{\mathrm{glob}}$ is finite.
+There exist choices of depth $j_\star$ (with small $f_{j_\star}$), injection time $t_\star$, and off-feasible cell-localized $w_{\mathrm{inj}}$ such that:
+\begin{enumerate}
+\item the global leakage ratio $\|\eta w_{\mathrm{inj}}\|/\|u(t_\star)\|$ can be made arbitrarily small, yet
+\item the post-injection state violates legality:
+\[
+\kappa_{j_\star}(u_{j_\star}(t_\star^+)) \;>\; K^{\mathrm{pred}}_{\mathrm{glob}}.
+\]
+\end{enumerate}
+Thus legality is not forward-closed without HL-SPT-INV (or without a robust substitute such as HL-SPT-ROBUST$\infty$), in agreement with Prop.~\ref{prop:fm-inv}.
+\end{proposition}
+
+\paragraph{Explanation.}
+This is a dynamical realization of the NG-DIST mechanism: the injected component is globally tiny but concentrated in one deep cell, so it can dominate the deep-band max-cell fraction.
+The injection violates HL-SPT-INV by construction.
+
+\paragraph{Experiment pointer.}
+This failure mode is instantiated in FM-INV; see \nolinkurl{paper/figures/kappa_and_leakage_highlight.png}.
+ \section{Numerical experiments and assumption audits}\label{sec:experiments}
+
+This section reports numerical experiments that harden the theorem overlays and, equally importantly, harden the \emph{sharpness boundary}.
+All experiments are performed in the finite-dimensional Hilbert/band/cell model of Section~\ref{sec:definitions}.
+They are not used to ``discover'' the theory; they are used to:
+(i) verify that the happy-path hypotheses are sufficient in a mechanized setting, and
+(ii) demonstrate that dropping any critical HL slot produces the intended failure mode.
+
+\subsection{Protocol: standardized outputs, exports, and audits}
+
+Each experiment run produces a standardized results bundle (metadata, diagnostics, summaries, timeseries, and figures) and an automated assumption audit report (\texttt{audit.json}).
+For the present paper we freeze:
+(i) a manifest-driven ``paper run set'' and
+(ii) machine-readable exports collected across runs.
+
+\paragraph{Frozen exports in the repository.}
+The key quantitative numbers used for later tables are stored in:
+\begin{itemize}
+\item \texttt{paper/artifacts/key\_metrics.csv}: per-run scalar metrics (max observed $\kappa$, predicted envelopes, ratios, and highlight parameters).
+\item \nolinkurl{paper/artifacts/audit_matrix.csv}: per-run HL slot flags (delocalization/\allowbreak frame/\allowbreak mode pass/fail and overall pass).
+\item \texttt{paper/artifacts/figures\_index.csv}: inventory of run figures by run id.
+\end{itemize}
+These exports are produced automatically by the runner and collector scripts (see Appendix~A).
+
+\paragraph{Replicates (not one-seed figures).}
+To reduce the risk of ``one-seed miracles,'' we additionally ran a small replicate batch for the headline invariant persistence experiment (Exp-SPT-01-PERSIST) using five seeds (0--4) under the paper-scale configuration.
+The resulting per-run summaries and aggregate statistics are frozen in \texttt{paper/artifacts/replicates/}, and Figure~\ref{fig:spt01-replicates-hist} shows the distribution of the maximum observed $\kappa$ across seeds.
+
+\paragraph{How to read the plots.}
+All plots are tied to explicit theorem constants.
+In particular:
+\begin{itemize}
+\item The feasibility legality envelope $K^{\mathrm{feas}}_j$ and global envelope $K^{\mathrm{pred}}_{\mathrm{glob}}$ are defined in \eqref{eq:kfeas-def} and \eqref{eq:Kpred-global}.
+\item The robust threshold is $K^{\mathrm{rob}}(\varepsilon_\infty)$ in \eqref{eq:t-spt-02-Krob}.
+\item Failure mode plots are interpreted as intentional violations of specific HL slots (Section~\ref{sec:hypotheses}) and the corresponding no-go propositions in Section~\ref{sec:nogo}.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Key numerical metrics for the frozen paper run set. Predicted bounds are taken from the theorem overlays (Definitions~\ref{def:kfeas} and \eqref{eq:Kpred-global}); pass/fail flags are from \texttt{paper/artifacts/audit\_matrix.csv}.}
+\label{tab:key-metrics}
+\setlength{\tabcolsep}{5pt}\begin{tabular}{@{}lrrrcccc@{}}
+\toprule
+Experiment & Max observed $\kappa$ & Predicted bound & Ratio & DELOC & FRAME & MODE & Overall \\
+\midrule
+\texttt{spt00\_bound} & 3.96 & 110 & 0.0359 & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt01\_persist} & 3.22 & 10.2 & 0.316 & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt02\_robust\_cell} & -- & -- & -- & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt04\_fm\_inv} & 54.8 & 13 & 4.23 & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt04\_fm\_deloc} & 256 & -- & -- & \(\times\) & \(\checkmark\) & \(\checkmark\) & \(\times\) \\
+\texttt{spt04\_ng\_dist} & -- & -- & -- & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt04\_ng\_ledger} & 256 & -- & -- & \(\times\) & \(\checkmark\) & \(\checkmark\) & \(\times\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+ 
+\subsection{Happy path experiments: theorem regime hardening}
+
+\subsubsection{Exp-SPT-00-BOUND: static feasibility $\Rightarrow$ legality}
+
+Exp-SPT-00-BOUND samples coefficients $a\sim N(0,I)$, forms feasible vectors $v=\Gamma_j a$, and records $\kappa_j(v)$ across varying channel counts $m_j$.
+The purpose is to validate the scaling predicted by T-SPT-00 (Theorem~\ref{thm:t-spt-00}): feasible concentration is controlled by a conservative envelope comparable to $K^{\mathrm{feas}}_j$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/kappa\_vs\_m\_violin.png}
+\caption{Exp-SPT-00-BOUND (static feasibility). Distributions of $\kappa_j(\Gamma_j a)$ across sampled coefficients and varying $m_j$, compared against the predicted feasibility envelope (T-SPT-00). Exact numeric maxima and ratios are recorded in \texttt{paper/artifacts/key\_metrics.csv}.}
+\label{fig:exp-spt-00-bound}
+\end{figure}
+
+\subsubsection{Exp-SPT-01-PERSIST: exact invariance $\Rightarrow$ persistence}
+
+Exp-SPT-01-PERSIST instantiates Toy model A (Section~\ref{sec:toy-models}): a coefficient-space ladder evolution $a_j(t)$ coupled across depths, with band states synthesized by $u_j(t)=\Gamma_j a_j(t)$.
+By construction this satisfies HL-SPT-INV (exact feasibility invariance), so T-SPT-01 (Theorem~\ref{thm:t-spt-01}) predicts legality persistence for the global envelope $K^{\mathrm{pred}}_{\mathrm{glob}}$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/kappa\_heatmap.png}
+\caption{Exp-SPT-01-PERSIST (exact invariance). Heatmap of $\kappa_j(u_j(t))$ across time and depth for the invariant ladder system. In the happy-path regime, observed $\kappa$ remains bounded and consistent with the predicted global envelope; see \texttt{paper/artifacts/key\_metrics.csv}.}
+\label{fig:exp-spt-01-persist}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/spt01\_persist\_max\_kappa\_hist.png}
+\caption{Replicate hardening for Exp-SPT-01-PERSIST (five seeds, paper-scale config). Histogram of the maximum observed $\kappa$ per run. Aggregate CSV summaries are frozen under \texttt{paper/artifacts/replicates/}.}
+\label{fig:spt01-replicates-hist}
+\end{figure}
+
+\subsubsection{Exp-SPT-02-ROBUST-CELL: robust persistence under cellwise defect}
+
+Exp-SPT-02-ROBUST-CELL adds a controlled off-feasible perturbation while enforcing a \emph{cellwise} defect constraint of the form
+$\mathrm{def}^\infty_j(u_j(t))\le \varepsilon_\infty f_j$
+(Definition~\ref{def:defect-infty}, HL-SPT-ROBUST$\infty$).
+T-SPT-02 (Theorem~\ref{thm:t-spt-02}) predicts a degraded but explicit envelope $K^{\mathrm{rob}}(\varepsilon_\infty)$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/max\_kappa\_vs\_epsilon.png}
+\caption{Exp-SPT-02-ROBUST-CELL (robust invariance). Max observed $\kappa$ as a function of the imposed cellwise defect level $\varepsilon_\infty$, compared against the robust envelope $K^{\mathrm{rob}}(\varepsilon_\infty)$ from T-SPT-02.}
+\label{fig:exp-spt-02-robust}
+\end{figure}
+
+\subsection{Sharpness experiments: break one HL slot at a time}
+
+The remaining experiments are designed to be \emph{diagnostic counterexamples}.
+Each one violates a specific HL slot and demonstrates the corresponding failure mode from Section~\ref{sec:nogo}.
+
+\subsubsection{FM-INV: tiny leakage can cause a large $\kappa$ spike}
+
+FM-INV injects a localized off-feasible component into an otherwise invariant ladder evolution (Toy model B, Prop.~\ref{prop:toy-ladder-leakage}).
+This violates HL-SPT-INV and demonstrates Prop.~\ref{prop:fm-inv}: global leakage can be tiny while deep-band $\kappa$ immediately violates the predicted envelope.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/kappa\_and\_leakage\_highlight.png}
+\caption{FM-INV (break invariance). A localized off-feasible injection produces an immediate deep-band $\kappa$ blow-up despite small global leakage, illustrating Prop.~\ref{prop:fm-inv} and motivating cellwise defect control (HL-SPT-ROBUST$\infty$).}
+\label{fig:fm-inv}
+\end{figure}
+
+\subsubsection{FM-FRAME: delocalized columns without conditioning do not protect combinations}
+
+FM-FRAME keeps per-column delocalization bounded while worsening the conditioning of $\Gamma_j$.
+This isolates Prop.~\ref{prop:fm-frame}: delocalized columns do not prevent extreme concentration tails without HL-SPT-FRAME.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/kappa\_tail\_vs\_cond.png}
+\caption{FM-FRAME (ill conditioning). Extreme concentration events grow rapidly as $\mathrm{cond}(\Gamma_j)$ worsens, even while per-column delocalization remains bounded. This illustrates Prop.~\ref{prop:fm-frame}.}
+\label{fig:fm-frame}
+\end{figure}
+
+\subsubsection{FM-DELOC and FM-MODE: feasibility can contain or approximate wavepackets}
+
+FM-DELOC includes an explicitly cell-supported channel.
+This demonstrates Prop.~\ref{prop:fm-deloc}: feasibility can contain a wavepacket-like direction achieving $\kappa=1/f_j$.
+FM-MODE, in contrast, illustrates Prop.~\ref{prop:fm-mode}: when $m_j$ grows too fast with depth, depth-uniform legality thresholds disappear even if channels are individually well-behaved.
+
+\begin{figure}[p]
+\centering
+\begin{minipage}{0.49\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figures/localized\_channel\_cell\_energy.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figures/max\_kappa\_vs\_depth\_by\_regime.png}
+\end{minipage}
+\caption{Left: FM-DELOC (localized feasible direction) achieves the ceiling $\kappa=1/f_j$, illustrating Prop.~\ref{prop:fm-deloc}. Right: FM-MODE (mode explosion) shows that a fixed legality threshold fails when interface size grows too fast with depth, illustrating Prop.~\ref{prop:fm-mode}.}
+\label{fig:fm-deloc-mode}
+\end{figure}
+
+\subsection{No-go experiments: why global metrics and ledger invariants do not suffice}
+
+\subsubsection{NG-DIST: global distance to feasibility is misleading}
+
+NG-DIST demonstrates Prop.~\ref{prop:ng-dist}: global leakage ratios can be arbitrarily small while deep-band $\kappa$ becomes near-maximal, because deep bands may carry tiny global norm.
+This is why robust persistence must control a cellwise defect aligned with the max-cell audit.
+
+\subsubsection{NG-LEDGER: energy conservation does not prevent concentration blow-up}
+
+NG-LEDGER demonstrates Prop.~\ref{prop:ng-ledger}: an energy-preserving evolution within a feasible subspace can rotate a state from delocalized to localized while keeping $\|u\|$ constant.
+
+\begin{figure}[p]
+\centering
+\begin{minipage}{0.49\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figures/leakage\_vs\_kappa.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\centering
+\includegraphics[width=\linewidth]{figures/energy\_and\_kappa\_over\_time.png}
+\end{minipage}
+\caption{Left: NG-DIST: tiny global leakage can coincide with near-ceiling deep-band concentration, illustrating Prop.~\ref{prop:ng-dist}. Right: NG-LEDGER: energy remains flat while $\kappa$ rises to the ceiling due to feasible localized directions, illustrating Prop.~\ref{prop:ng-ledger}.}
+\label{fig:ng-dist-ledger}
+\end{figure}
+
+\subsection{Audit interpretation}
+
+Across all experiments, the assumption audit report (\texttt{audit.json}) plays the role of the P6 certificate: it checks whether the artifact slots (HL-SPT-DELOC/FRAME/MODE) pass numerical thresholds and whether invariance/defect evidence is consistent with the intended regime (happy path) or intended failure (FM/NG).
+The matrix export \texttt{paper/artifacts/audit\_matrix.csv} is a convenient summary, and the scalar export \texttt{paper/artifacts/key\_metrics.csv} records the quantitative gaps between observed maxima and predicted envelopes.
+ \section{Assumption audit}\label{sec:assumption-audit}
+
+This section is a meta-level ``assumption audit'' in the sense of the Six-Birds primitives \cite{Tsiokos2026SixBirds}.
+The goal is to clarify which hypotheses are purely structural (representation-level choices), which are the true hard slots needed for closure, and how the numerical audits relate to theorem conditions.
+
+\subsection{Structural vs.\ hard slots}
+
+We organize the HL slots from Section~\ref{sec:hypotheses} into two classes.
+
+\paragraph{Structural representation choices (design slots).}
+These are choices about how the multiscale state is represented and packaged.
+They are not ``forced'' by accounting; they must be built into the representation.
+
+\begin{itemize}
+\item \textbf{Packaging/feasibility geometry (P5/P2):} choosing channel maps $\Gamma_j$ and feasible sets $\mathcal{F}_j=\Ran(\Gamma_j)$, together with packaging projectors $E_j$ (Definition~\ref{def:packaging}).
+\item \textbf{Staging index (P4):} choosing a depth index $j$ and a cell partition $\mathcal{C}_j$ that defines what counts as localization.
+\item \textbf{Mode-growth law (HL-SPT-MODE):} committing to an interface-size budget $m_j$ across depth.
+\end{itemize}
+
+These design slots are where the Six-Birds picture is most concrete: packaged ``objects'' are the fixed points of $E_j$, and gating is the restriction to $\mathcal{F}_j$.
+
+\paragraph{Hard slots (closure-enabling constraints).}
+These are the quantitatively checkable conditions without which legality is not forward-closed.
+
+\begin{itemize}
+\item \textbf{HL-SPT-DELOC:} structural anti-localization in the artifact itself. Without it, feasibility can contain wavepacket-like directions and legality fails even statically (FM-DELOC, Prop.~\ref{prop:fm-deloc}).
+\item \textbf{HL-SPT-FRAME:} nondegenerate frame bounds. Without it, delocalized columns do not protect combinations and concentration tails can explode (FM-FRAME, Prop.~\ref{prop:fm-frame}).
+\item \textbf{HL-SPT-INV / HL-SPT-ROBUST$\infty$:} compatibility between evolution and packaging. Without it, small leakage can cause immediate deep-band illegality (FM-INV, Prop.~\ref{prop:fm-inv}); and robust persistence requires defect control formulated at the same cell resolution as the legality audit (T-SPT-02 and NG-DIST).
+\end{itemize}
+
+The role of accounting/audits (P6) is to \emph{check} these hard slots and detect impending failure, not to replace them.
+
+\subsection{How the automated audit maps to HL slots}
+
+Each experiment run emits a machine-readable audit report (\texttt{audit.json}) and the paper freezes a cross-run audit summary:
+\texttt{paper/artifacts/audit\_matrix.csv}.
+The intent is to make the HL slots executable and regression-testable.
+
+\paragraph{Artifact checks.}
+The audit evaluates:
+\begin{itemize}
+\item \textbf{HL-SPT-DELOC} via the empirical constant $\kappa^{\mathrm{emp}}_0(j)$ (Definition~\ref{def:kappa0-emp}) and a threshold $K_{\mathrm{deloc}}$.
+\item \textbf{HL-SPT-FRAME} via per-depth conditioning estimates (Definition~\ref{def:frame-bounds}) and a threshold $K_{\mathrm{cond}}$.
+\item \textbf{HL-SPT-MODE} by recording $m_j$ and comparing to the configured mode budget.
+\end{itemize}
+These checks are ``artifact audits'' in the sense that they depend only on $\Gamma_j$ and the cell partition, not on the dynamics.
+
+\paragraph{System compatibility checks.}
+For experiments that claim invariance or robustness, the audit also records evidence aligned with the corresponding slot:
+\begin{itemize}
+\item \textbf{HL-SPT-INV} is evidenced in runs where the state is constructed as $u_j(t)=\Gamma_j a_j(t)$, making feasibility exact by construction.
+\item \textbf{HL-SPT-ROBUST$\infty$} is evidenced in runs where the perturbation is engineered to satisfy the bound
+$\mathrm{def}^\infty_j(u_j(t))\le \varepsilon_\infty f_j$
+(Definition~\ref{def:defect-infty}).
+\end{itemize}
+
+\paragraph{Scalar exports for theorem overlays.}
+The paper also freezes per-run scalar summaries in \texttt{paper/artifacts/key\_metrics.csv}, including observed maxima of $\kappa$, predicted envelopes (e.g.\ $K^{\mathrm{pred}}_{\mathrm{glob}}$), and max-to-predicted ratios.
+These are used to tie plots and tables directly to theorem constants rather than to informal descriptions.
+
+\subsection{Upgrading empirical diagnostics into theorem conditions}
+
+A numerical audit is not a proof.
+However, it can be made \emph{theorem-aligned} if the reported quantities correspond directly to explicit hypotheses and constants in the theorems.
+
+\paragraph{What is already theorem-aligned.}
+The key observation is that T-SPT-00--T-SPT-02 are stated entirely in terms of measurable constants:
+$\kappa_0(j)$, $(\alpha_j,\beta_j)$ (or their condition proxy), $m_j$, and (for robustness) $\varepsilon_\infty$.
+The experiment suite computes empirical versions of exactly these quantities and uses them to form predicted envelopes (Definition~\ref{def:kfeas} and \eqref{eq:Kpred-global}).
+
+\paragraph{Where the gap remains.}
+To turn diagnostics into proofs, one would need:
+\begin{itemize}
+\item \textbf{A certified artifact bound:} prove (or mechanize) that the intended construction of channels yields a uniform bound $\kappa^{\mathrm{emp}}_0(j)\le K_{\mathrm{deloc}}$ and a uniform frame lower bound $\alpha_j\ge \alpha_{\min}>0$ across depth.
+\item \textbf{A system-level invariance proof:} for a given dynamics, prove HL-SPT-INV (exact invariance) or prove a bound of the form \eqref{eq:HL-ROBUST} (robust invariance) with an explicit $\varepsilon_\infty$.
+\item \textbf{A link between route mismatch and defect:} when dynamics is only approximately compatible with packaging, one must bound the per-cell mismatch, not just a global norm mismatch, because legality is a max-cell audit.
+\end{itemize}
+
+\paragraph{Six-Birds interpretation.}
+In the Six-Birds framing \cite{Tsiokos2026SixBirds}, the audit layer (P6) is functioning exactly as intended:
+it provides a mechanized certificate that the HL slots are satisfied in the happy-path regime and that the correct slot is violated in each failure-mode regime.
+When a slot fails, the correct response is not to reinterpret the audit as a substitute for structure, but to redesign packaging/gating (P5/P2) or rewrite the operator (P1) until compatibility is restored.
+
+\subsection{Summary}
+
+The persistence theorems show that legality is a forward-closed regime only under explicit structural hypotheses.
+The numerical audits ensure these hypotheses are not treated implicitly: they are executable, testable, and regressible while the paper is being written.
+ \section{Conclusion}\label{sec:conclusion}
+
+We introduced a minimal, mechanizable setting in which a multiscale ``legality'' property can be defined and studied without PDE-specific regularization.
+Legality is quantified by a max-cell concentration audit $\kappa_j$ (Definitions~\ref{def:cell-conc}--\ref{def:kappa-def}), and a state is SPT-legal if $\kappa_j$ is uniformly bounded across depths (Definition~\ref{def:spt-legal}).
+The core question was: when is this legal regime \emph{forward-closed} under time evolution?
+
+\subsection{What we proved}
+
+Our main results are structural closure theorems.
+
+\begin{itemize}
+\item \textbf{Feasibility geometry controls legality (T-SPT-00).}
+If each depth admits a channelized feasibility set $\mathcal{F}_j=\Ran(\Gamma_j)$ whose columns are cell-delocalized and whose frame bounds are nondegenerate, then feasible vectors obey an explicit legality envelope scaling like
+$\kappa^{\mathrm{emp}}_0(j)\,\mathrm{cond}(\Gamma_j)\,m_j$
+(Theorem~\ref{thm:t-spt-00}).
+
+\item \textbf{Exact invariance yields persistence (T-SPT-01).}
+If dynamics preserves feasibility bandwise (HL-SPT-INV), then legality propagates forward in time with threshold given by the predicted global envelope $K^{\mathrm{pred}}_{\mathrm{glob}}$
+(Theorem~\ref{thm:t-spt-01}).
+
+\item \textbf{Robust persistence requires cellwise defect control (T-SPT-02).}
+If feasibility is only approximately preserved, legality can still be forward-closed provided the mismatch is controlled \emph{cellwise} in the same partition used to define legality (HL-SPT-ROBUST$\infty$).
+This yields an explicit degraded envelope $K^{\mathrm{rob}}(\varepsilon_\infty)$
+(Theorem~\ref{thm:t-spt-02}).
+\end{itemize}
+
+\subsection{What we ruled out}
+
+We also proved sharp boundary statements showing why these hypotheses are not optional.
+
+\begin{itemize}
+\item If feasibility contains localized directions, legality can fail even statically (FM-DELOC, Prop.\ \ref{prop:fm-deloc}), and energy/\allowbreak ledger invariants do not prevent blow-up (NG-LEDGER, Prop.~\ref{prop:ng-ledger}).
+\item Delocalized columns do not protect combinations without a frame lower bound (FM-FRAME, Prop.~\ref{prop:fm-frame}).
+\item Global distance-to-feasibility is not a robustness notion for a max-cell audit (NG-DIST, Prop.~\ref{prop:ng-dist}).
+\end{itemize}
+
+These no-go results clarify the nature of ``legal regime closure'': anti-localization must be enforced structurally in the artifact, and compatibility between evolution and packaging must be stated at the resolution of the audit.
+
+\subsection{Six-Birds interpretation}
+
+The paper can be read as an instance of the Six-Birds primitives \cite{Tsiokos2026SixBirds}.
+Packaging (P5) is realized as the bandwise projector $E_j$ onto feasible sets, gating (P2) is the invariance/defect compatibility that keeps evolution within (or near) those fixed points, staged interface growth (P4) is the mode-growth control on $m_j$, and audits (P6) are the explicit legality and artifact diagnostics emitted per run.
+Route mismatch/holonomy (P3) appears not as a certificate but as a measurable defect: the off-feasible component $(I-E_j)u_j(t)$ and, in the robust theorem, its cellwise ratio.
+Finally, when closure fails, the appropriate Six-Birds move is operator rewrite (P1): modify packaging/gating or the effective operator until invariance (or robust invariance) becomes provable and auditable.
+
+\subsection{Future work: SPT on higher-order artifacts}
+
+The present work treats $\Gamma_j$ (and hence $\mathcal{F}_j$ and $E_j$) as fixed artifacts.
+A natural next step is to apply the SPT perspective to the artifact itself: treat the channel maps $\Gamma_j$ as emergent objects produced by repeated packaging and route-stabilization.
+
+One toy direction is to formalize an ``artifact update'' map
+\[
+\Gamma_j \longmapsto \mathcal{U}_j(\Gamma_j; \text{packaged environment data})
+\]
+and to study conditions under which iterated packaging yields an attracting family of artifacts with:
+(i) bounded per-column delocalization, (ii) nondegenerate frame lower bounds, and (iii) slow mode growth.
+In Six-Birds terms, this would express how repeated P5 packaging and P3 route-stabilization can produce a fixed point in which anti-localization is \emph{emergent} rather than assumed.
+Even in finite-dimensional toy models, identifying conditions under which such an artifact-level fixed point exists would connect legality persistence to the formation of the representation itself.
+
+\subsection{Reproducibility}
+
+All figures and tables in this paper are generated by a manifest-driven runner and collected into frozen exports under \texttt{paper/artifacts/} and \texttt{paper/figures/}.
+Appendix~A lists the commands to reproduce the full paper run set and to validate the expected HL slot behavior.
+ 
+\appendix
+\appendix
+\section{Reproducibility checklist and commands}\label{app:repro}
+
+This appendix records the commands used to generate the numerical artifacts referenced in the paper and to validate the expected hypothesis-slot behavior.
+The repository is organized so that the paper can be built without rerunning any experiments: canonical figures and exports are copied into \texttt{paper/figures/} and \texttt{paper/artifacts/} (see \texttt{paper/artifacts/ARTIFACTS.md} for the source-to-destination mapping).
+
+\subsection{Paper build}
+
+From the repository root, build the PDF using \texttt{latexmk}:
+\begin{verbatim}
+latexmk -pdf -interaction=nonstopmode -cd -output-directory=build paper/main.tex
+\end{verbatim}
+
+\subsection{Generate the full paper run set (manifest-driven)}
+
+The ``paper run set'' is generated by running all YAML configs under \texttt{configs/paper/} and writing results into \texttt{results/\_paper/} with a manifest:
+
+\begin{verbatim}
+python -m spt.paper_runall --configs_dir configs/paper --out results/_paper
+\end{verbatim}
+
+The command fails fast if any experiment fails.
+The repository also contains \texttt{configs/ci/} which are reduced-parameter analogues used for fast regression tests; the figures in this paper correspond to \texttt{configs/paper/}.
+
+\subsection{Collect exports (tables and figure index)}
+
+After generating the run set, collect machine-readable exports:
+
+\begin{verbatim}
+python -m spt.paper_collect --paper_dir results/_paper \
+    --out results/_paper/_exports
+\end{verbatim}
+
+This produces, among others:
+\texttt{key\_metrics.csv}, \texttt{audit\_matrix.csv}, and \texttt{figures\_index.csv}.
+The paper freezes copies of these files under \texttt{paper/artifacts/} for self-contained builds.
+Each run directory also stores provenance files including \texttt{resolved\_config.yaml} (the fully resolved configuration), \texttt{env.json} (environment snapshot), and \texttt{run\_metadata.json} (code version hash, timestamps, and seeds), enabling exact reruns from the recorded contract.
+
+\subsection{Validate runs and enforce expected failure modes}
+
+To validate the run set and check that intentional failure-mode experiments violate the correct slots:
+
+\begin{verbatim}
+python -m spt.validate_paper --paper_dir results/_paper
+\end{verbatim}
+
+For a single run directory:
+
+\begin{verbatim}
+python -m spt.validate_run results/_paper/<run_id>
+\end{verbatim}
+
+\subsection{Generate the LaTeX key-metrics table from frozen exports}
+
+The small key-metrics table included in Section~\ref{sec:experiments} is generated from the frozen CSV exports:
+
+\begin{verbatim}
+python scripts/make_paper_tables.py
+\end{verbatim}
+
+This writes \nolinkurl{paper/tables/key_metrics.tex}, which is included by:
+\begin{quote}
+\verb|\begin{table}[t]
+\centering
+\small
+\caption{Key numerical metrics for the frozen paper run set. Predicted bounds are taken from the theorem overlays (Definitions~\ref{def:kfeas} and \eqref{eq:Kpred-global}); pass/fail flags are from \texttt{paper/artifacts/audit\_matrix.csv}.}
+\label{tab:key-metrics}
+\setlength{\tabcolsep}{5pt}\begin{tabular}{@{}lrrrcccc@{}}
+\toprule
+Experiment & Max observed $\kappa$ & Predicted bound & Ratio & DELOC & FRAME & MODE & Overall \\
+\midrule
+\texttt{spt00\_bound} & 3.96 & 110 & 0.0359 & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt01\_persist} & 3.22 & 10.2 & 0.316 & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt02\_robust\_cell} & -- & -- & -- & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt04\_fm\_inv} & 54.8 & 13 & 4.23 & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt04\_fm\_deloc} & 256 & -- & -- & \(\times\) & \(\checkmark\) & \(\checkmark\) & \(\times\) \\
+\texttt{spt04\_ng\_dist} & -- & -- & -- & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) & \(\checkmark\) \\
+\texttt{spt04\_ng\_ledger} & 256 & -- & -- & \(\times\) & \(\checkmark\) & \(\checkmark\) & \(\times\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+ |
+\end{quote}
+
+\subsection{Where the frozen paper artifacts live}
+
+For convenience and to support writing without rerunning experiments, the repository stores canonical paper artifacts in:
+
+\begin{itemize}
+\item \texttt{paper/figures/} (PNG figures referenced by the LaTeX source).
+\item \texttt{paper/artifacts/} (CSV exports and \texttt{ARTIFACTS.md} mapping sources to destinations).
+\item \texttt{paper/tables/} (generated \texttt{.tex} tables such as \texttt{key\_metrics.tex}).
+\end{itemize}
+
+\subsection{Optional: replicate batch for a headline experiment}
+
+\begin{verbatim}
+python -m spt.batch_run --config configs/paper/spt01_persist.yaml --seeds 0..4 \
+  --aggregate_dir results/_aggregate/paper_spt01_persist_seeds0_4
+\end{verbatim}
+
+\subsection{Lean4 mechanization scaffolding (optional)}
+
+A Lean4 + mathlib project is initialized in the repository for mechanization scaffolding.
+The files under \texttt{Lean/SPT/} provide definition stubs (finite cell index sets, concentration, $\kappa$, legality, channel maps, feasible sets) and theorem statement stubs corresponding to the main theorems.
+The Lean statements are currently placeholders (\texttt{sorry}) and are intended as a starting point for future mechanization rather than as part of the present proof.
+
+To build the Lean project (from repo root):
+
+\begin{verbatim}
+lake build
+\end{verbatim}
+ 
+\section*{Acknowledgments}
+Placeholder acknowledgments.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

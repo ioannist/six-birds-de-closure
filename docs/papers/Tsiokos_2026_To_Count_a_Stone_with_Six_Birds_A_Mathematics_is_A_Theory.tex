@@ -1,0 +1,1083 @@
+\documentclass[apajournal,article,submit,moreauthors,pdftex]{Definitions/mdpi}
+\usepackage{mathtools}
+\usepackage[section]{placeins}
+\usepackage{xurl}
+\renewcommand{\ttdefault}{lmtt} \renewcommand\linenumberfont{\normalfont\scriptsize\fontfamily{lmss}\selectfont} 
+
+\graphicspath{{../../figures/}{figures/}}
+
+\newenvironment{theorem}{\begin{Theorem}}{\end{Theorem}}
+\newenvironment{lemma}{\begin{Lemma}}{\end{Lemma}}
+\newenvironment{definition}{\begin{Definition}}{\end{Definition}}
+\newenvironment{corollary}{\begin{Corollary}}{\end{Corollary}}
+\newenvironment{remark}{\begin{Remark}}{\end{Remark}}
+
+\newcommand{\SBT}{\textsc{SBT}}
+\newcommand{\Pone}{\textbf{P1}}
+\newcommand{\Ptwo}{\textbf{P2}}
+\newcommand{\Pthree}{\textbf{P3}}
+\newcommand{\Pfour}{\textbf{P4}}
+\newcommand{\Pfive}{\textbf{P5}}
+\newcommand{\Psix}{\textbf{P6}}
+ 
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{ }
+\daterevised{ }
+\dateaccepted{ }
+\datepublished{ }
+
+\Title{To Count a Stone with Six Birds: A Mathematics is A Theory}
+
+\newcommand{\orcidauthorA}{0009-0009-7659-5964}
+
+\Author{Ioannis Tsiokos $^{1}$\orcidA{}}
+\AuthorNames{Ioannis Tsiokos}
+
+\address{$^{1}$ \quad Automorph Inc., Wilmington, DE 19806, USA}
+
+\corres{Correspondence: ioannis@automorph.io}
+
+\conference{Zenodo preprint v1 (DOI: \href{https://doi.org/10.5281/zenodo.18402004}{10.5281/zenodo.18402004}). v2 adds an integration-as-closure exhibit.}
+
+\abstract{Many ``higher'' mathematical objects are introduced as definitions (limits, completions, analytic continuations), but it is often unclear \emph{when} a large discrete protocol admits a stable continuous closure and \emph{how} to test that stability without overclaiming. This question matters because premature or untested closure claims can propagate errors through dependent results. We instantiate the Six-Birds Theory (\SBT) framework of \cite{SixBirdsFramework}---which provides a general audit methodology for validating compressions of discrete data into continuous or idealized objects---as a closure-and-audit method for mathematics: a discrete substrate is staged by refinement, compressions are assessed by an explicit defect ledger, and a packaged object is accepted only when defects shrink or stabilize under refinement. Operationally, we (i) formalize two anchor statements in Lean/mathlib \cite{moura2021lean4,mathlib2020lean}---the exact finite-difference Leibniz identity with its explicit remainder term and an algebraic uniqueness anchor for derivations on $R[X]$---and (ii) implement falsification-first Python diagnostics that compare competing closure routes under matched controls and an artifact contract (tables and macros are generated from snapshot-visible pointer JSONs). Across four exhibits we observe controlled, checkable separations. First, stability-only stencil filtering selects order-$0$ closures, while adding a Leibniz-defect gate selects derivative-like order-$1$ closures. Second, route mismatch (RM, measuring disagreement between closure paths) under a small coordinate change decays with refinement (power-law fit exponent $p\approx 1.46$). Third, for prime-based closures in a convergence control regime $\Re(s)>1$, route mismatch $\mathrm{RM}_2$ decreases with sample size $N$ (e.g.\ $\mathrm{RM}_2(800)\approx 5\times 10^{-2}$), whereas the same diagnostic in the critical strip exhibits mismatch growth by many orders of magnitude under naive staging (e.g.\ $\mathrm{RM}_2(800)\approx 5\times 10^{12}$). Fourth, in a self-dual toy family, tightening a positivity constraint sharply confines zeros to the symmetry locus (mean radial deviation drops from $\approx 0.87$ to $\approx 3\times 10^{-4}$). These results provide a reproducible methodology to separate feasible closures from protocol artifacts and to compare closure proposals across regimes. We emphasize that this paper does not establish new theorems about $\zeta$ or zero distributions; we report audit-style diagnostics under explicit controls and document the upgrade points required for stronger claims.}
+
+\keyword{emergence calculus; closure; audit; refinement; route mismatch}
+
+\begin{document}
+
+\newcommand{\HolonomyExponent}{\ensuremath{1.46381}}
+\newcommand{\StencilGeneratedTotal}{\ensuremath{1000}}
+\newcommand{\StencilSurvivorsTotal}{\ensuremath{913}}
+\newcommand{\StencilLeibnizSurvivorsTotal}{\ensuremath{50}}
+\newcommand{\StencilNZero}{\ensuremath{64}}
+\newcommand{\StencilMLeibniz}{\ensuremath{3}}
+\newcommand{\StencilGateDTwo}{\ensuremath{0.2}}
+\newcommand{\StencilGateRatio}{\ensuremath{0.85}}
+\newcommand{\PrimeRMConvAtEightHundred}{\ensuremath{0.0523991}}
+\newcommand{\PrimeRMStripAtEightHundred}{\ensuremath{5.00808\times 10^{12}}}
+\newcommand{\HolonomyFitRtwo}{\ensuremath{0.987808}}
+\newcommand{\HolonomyNullRMMax}{\ensuremath{0}}
+\newcommand{\PrimeDPS}{\ensuremath{50}}
+\newcommand{\PassivityN}{\ensuremath{12}}
+\newcommand{\PrimeNList}{\ensuremath{\{50,100,200,400,800\}}}
+\newcommand{\PrimeSigmaConvList}{\ensuremath{\{1.25,1.5\}}}
+\newcommand{\PrimeSigmaStripList}{\ensuremath{\{0.75,0.5\}}}
+\newcommand{\PrimeTList}{\ensuremath{\{0,2,4,6\}}}
+\newcommand{\PassivityMeanDevLamOne}{\ensuremath{0.871694}}
+\newcommand{\PassivityMeanDevLamZero}{\ensuremath{3.0292\times 10^{-4}}}
+\newcommand{\IntegrationRMAtSmallestH}{\ensuremath{0.00177129}}
+\newcommand{\IntegrationRMExponent}{\ensuremath{1.00009}}
+\newcommand{\IntegrationFTExponent}{\ensuremath{0.499955}}
+\newcommand{\IntegrationFitRtwo}{\ensuremath{1}}
+ 
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{From counting to closure}
+A familiar way to ``count a stone'' is to apply a tiny, discrete action many times: tick marks, steps along a line, repeated updates of a running total.
+A familiar way to \emph{do calculus} is to replace that large discrete composition by a compressed law: a differential equation for the limit of many tiny updates, or an integral for the limit of many tiny accumulations.
+This paper takes that replacement seriously as a \emph{closure problem}.
+The central question is not ``how do we define derivatives?'' but:
+\emph{which compressions of discrete protocols remain coherent as we refine the stage parameter toward a continuum limit?}
+
+In the \SBT dictionary (reviewed in Section~2), refinement is \Pfour\ staging; the defect budget carried by a compression is \Psix\ accounting; and the limit object is \Pfive\ packaging.
+On this view, the basic moves of analysis are forced by feasibility: only those operators and equivalence relations whose defects stabilize under refinement become admissible ``laws'' at the packaged layer.
+The same lens applies beyond calculus, whenever one attempts to compress a complicated discrete structure into a continuous or spectral object.
+
+This manuscript is a substantially revised version of the Zenodo preprint (DOI: \href{https://doi.org/10.5281/zenodo.18402004}{10.5281/zenodo.18402004}); see Related Identifiers for version linkage.
+
+\subsection{Paper contract: what this paper is (and is not)}
+This document is a concrete instantiation of the general \SBT framework of \cite{SixBirdsFramework} in the domain of mathematics, and it treats the core toolkit as an \emph{emergence calculus} for stable closure under refinement.
+
+\paragraph{This paper \emph{is}:}
+\begin{itemize}
+  \item a worked translation of the \SBT primitives into standard mathematical practice: limits, completions, renormalizations, and compatibility constraints;
+  \item a validation-first report in which key claims are supported either by machine-checked lemmas (Lean) or by falsification-oriented numerical diagnostics (Python);
+  \item a proposal for how ``higher'' mathematical layers can be treated as \emph{closures} of discrete protocol algebras under refinement, rather than as isolated definitions.
+\end{itemize}
+
+\paragraph{This paper \emph{is not}:}
+\begin{itemize}
+  \item a replacement for standard foundations or a proposal of new axioms;
+  \item a proof of the Riemann Hypothesis or a claim that the diagnostics in Exhibits~B-1/B-2 settle classical conjectures;
+  \item an attempt to reduce all of mathematics to a single mechanism.
+\end{itemize}
+
+The intended reading is pragmatic: \SBT is used here as a \emph{dictionary} for organizing constructions and for designing tests that can fail.
+When the diagnostics fail (as they sometimes do), we treat the failure as information about missing feasibility conditions rather than as a defect to be hidden.
+
+\subsection{Contributions and artifacts}
+The paper contributes a small set of concrete, reusable ``exhibits'':
+
+\begin{itemize}
+  \item \textbf{Exhibit A-1 (calculus closure).} We isolate the exact discrete Leibniz identity for finite differences (with its explicit remainder term) and use it as an accounting ledger: demanding that the remainder vanish in a packaged limit forces the derivation (product rule) structure. We also record an algebraic uniqueness anchor for derivations on polynomial rings in Lean/mathlib \cite{moura2021lean4,mathlib2020lean}.
+  \item \textbf{Exhibit A-2 (protocol holonomy).} We quantify route mismatch between two natural refinement protocols under a small coordinate change, treating the mismatch as a \Pthree\ holonomy-style defect that decays with refinement.
+  \item \textbf{Exhibit B-1 (prime closure diagnostics).} We compare staged additive and multiplicative closures (Dirichlet truncations versus Euler-product truncations) under prototype packaging maps, and we separate a convergence control regime from the critical strip where naive staging is unstable.
+  \item \textbf{Exhibit B-2 (passivity toy).} We show, in a self-dual toy family with a positivity constraint, that tightening feasibility can confine zeros to a symmetry locus---a pattern that motivates (but does not prove) ``passivity ledger'' interpretations of zero confinement.
+\end{itemize}
+
+A key implementation choice is that reported numbers and tables are not hand-copied: the TeX paper inputs generated tables and macros produced from snapshot-visible ``last run'' pointers in \texttt{notes/}.
+This makes the draft internally consistent with the repository state.
+
+\paragraph{Code availability.}
+The math-instantiation repository is available at:
+\begin{itemize}[noitemsep,topsep=2pt]
+\item \url{https://github.com/ioannist/six-birds-mathematics}
+\end{itemize}
+
+\subsection{Roadmap}
+Section~2 recalls the \SBT dictionary in the minimal form needed for this instantiation.
+Section~3 formulates the discrete-to-packaged ``closure engine'' for mathematics.
+Sections~4--7 present the four exhibits: A-1 (calculus closure), A-2 (protocol holonomy), B-1 (prime closure diagnostics), and B-2 (passivity toy).
+Section~8 documents the artifact pipeline and reproduction commands, and Section~9 discusses limitations and next steps.
+ \section{\SBT dictionary for mathematical closures}
+\label{sec:dictionary}
+
+This section adapts the minimal working dictionary from the Six-Birds framework \cite{SixBirdsFramework} into a mathematical setting.
+We use it as a naming convention for the rest of the paper: each ``bird'' names a role that must be handled explicitly when a discrete protocol is compressed into a stable macro-level law.
+
+\subsection{Six primitives as closure mechanics}
+We follow the framework convention that the six primitives are not ``topics'' but \emph{roles} played by concrete objects in an instantiation.
+In mathematics, the relevant objects are typically families indexed by a refinement parameter (meshes, truncations, partitions), defect bounds (error terms, residual norms), quotient/completion maps, and coherence constraints (linearity, locality, invariance, compatibility with algebraic operations).
+
+\begin{remark}[Six primitives (P1--P6), in framework language]\label{rem:six-primitives}
+Fix a space $\mathcal P$ of protocol objects (discrete descriptions) equipped with a refinement chain, modeled as a family of equivalences $\sim_j$ indexed by a stage parameter $j$ (or, in analysis notation, by a step size $h\downarrow 0$).
+Write $\Pi_j:\mathcal P\to \mathcal P/\!\sim_j$ for the quotient/packaging map.
+Then the six primitives may be read as follows:
+\begin{enumerate}
+  \item \Pfive\ (Packaging). Each equivalence $\sim_j$ yields a quotient/packaging map $\Pi_j$ and induces an idempotent saturation on predicates/events via
+  \[
+    \mathrm{cl}_j(A)\;:=\;\Pi_j^{-1}(\Pi_j(A)).
+  \]
+  This is a standard closure-operator construction in order/lattice settings; see e.g.\ \cite{DaveyPriestley2002}.
+  In analytic instantiations, $\Pi_j$ is a limit/identification map (``equal up to $o(1)$ as $h\to 0$''); in algebraic instantiations it is a literal quotient by a congruence.
+
+  \item \Psix\ (Accounting). The refinement order on quotients induces a preorder and monotone defect/audit quantities (e.g.\ $j\mapsto \mathrm{Def}(j)$ or $h\mapsto \mathrm{Err}(h)$).
+  In this mathematics instantiation, ``accounting'' is a feasibility ledger (error control), not a directionality certificate.
+
+  \item \Pfour\ (Staging). The refinement chain generates the stage index $j$ (or $h$).
+  Nontrivial staging corresponds to strict refinement at some scale (a genuine increase in resolution rather than a reparameterization).
+
+  \item \Ptwo\ (Constraints). Feasible macrostates at depth $j$ are those representable as images under $\Pi_j$.
+  Concretely, this is where invariances (translation/rotation/scale), locality, linearity, and algebra-compatibility are imposed as coherence conditions on the packaged layer.
+
+  \item \Pone\ (Operator rewrite). Fix a micro-update or micro-operator $F:\mathcal P\to\mathcal P$.
+  The induced macro-update $F^\sharp([p]) := [F(p)]$ on $\mathcal P/\!\sim_j$ is well-defined iff
+  \[
+    p\sim_j q \ \Rightarrow\ F(p)\sim_j F(q).
+  \]
+  When this fails, one must either refine the lens (change $\sim_j$), modify/extend $F$ (renormalize / rescale / rewrite it), or accept that no closed macro dynamics exists at depth $j$.
+
+  \item \Pthree\ (Protocol / holonomy). When there exist two admissible closure/evolution routes with the same input/output type (e.g.\ ``refine then apply'' versus ``apply then refine''), their discrepancy defines a holonomy-like diagnostic.
+  In normed instantiations we measure this by a route-mismatch quantity $\mathrm{RM}$: a number that should decay under refinement in stable regimes.
+\end{enumerate}
+\end{remark}
+
+\subsection{``A mathematics is A theory'': porting the theory-package schema}
+The framework packages an instantiation as a \emph{theory package}: a carrier (micro) space, a lens of observation, a completion/packaging rule, and an audit/defect principle \cite{SixBirdsFramework}.
+For the mathematics instantiation we use the same shape, with ``audit'' interpreted as a nonnegative defect ledger (error and mismatch diagnostics).
+
+\begin{definition}[Mathematics theory package]\label{def:math-theory-package}
+A \emph{mathematics theory package} is a tuple
+\[
+\mathcal T \;=\; (Z,\ f,\ \Sigma_f,\ E,\ \mathcal D)
+\]
+where:
+\begin{itemize}
+  \item $Z$ is a carrier of discrete protocol objects at a chosen stage (e.g.\ grid functions, truncated sums/products, finite compositions, Cauchy sequences of rationals).
+  \item $f:Z\to X$ is a \emph{lens} (a coarse description map). The induced definability structure $\Sigma_f$ is the family of predicates on $Z$ that are visible through $f$ (equivalently: constant on fibers of $f$).
+  \item $E:\mathcal V\to\mathcal V$ is a \emph{completion/packaging endomap} on a chosen description space $\mathcal V$ associated to $Z$ (often idempotent or approximately idempotent in a specified norm). The fixed points of $E$ are the internally complete objects recognized by the theory at the chosen scale.
+  \item $\mathcal D$ is a \emph{defect ledger}: a designated family of nonnegative diagnostics (error bounds, residual norms, route mismatch statistics) together with a monotonicity principle under refinement/coarsening. In this mathematics instantiation, $\mathcal D$ records feasibility (stability under refinement), not a thermodynamic arrow-of-time.
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Slogan]\label{rem:math-is-theory}
+The title phrase ``A mathematics is A theory'' is used in the following technical sense:
+to introduce a stable mathematical layer is to specify (i) what discrete protocol objects are being staged, (ii) what identifications are permitted under refinement, (iii) what completion/packaging map is being used, and (iv) what defect ledger certifies that the packaged layer is coherent.
+\end{remark}
+
+\subsection{Notation used in this instantiation}
+We use $h>0$ for a refinement parameter (mesh size / step size) and write $h\downarrow 0$ for infinite refinement; equivalently we use a depth index $j\to\infty$.
+Families of discrete objects are written with stage subscripts (e.g.\ $A_h$, $F_h$).
+A generic route mismatch diagnostic takes the form
+\[
+\mathrm{RM}(h)\;=\;\frac{\|R_1(h)-R_2(h)\|}{\|R_1(h)\|+\varepsilon},
+\]
+where $R_1,R_2$ are two admissible routes and $\varepsilon>0$ is a small stabilizer.
+In later exhibits, $\mathrm{RM}$ is instantiated as: (i) a coordinate-change mismatch for discrete derivatives, and (ii) a mismatch between two staged prime closures after prototype packaging.
+ \section{A closure engine for mathematics}
+\label{sec:packaging-engine}
+
+This section states the generic ``closure engine'' used implicitly throughout the exhibits.
+The goal is not to re-found analysis but to make explicit what is usually left tacit when passing from discrete protocols to packaged laws.
+We present the engine as a sequence of design commitments: substrate, staging, ledger, packaging, induced operators, and route diagnostics.
+These correspond directly to the \SBT primitives of Section~\ref{sec:dictionary}.
+
+\subsection{Protocol objects and staging (\Pfour)}
+Fix a family of discrete protocol spaces $\{Z_h\}_{h>0}$ indexed by a refinement parameter $h$ (mesh size, truncation cutoff, partition diameter, discretization step).
+A point $z_h\in Z_h$ is a \emph{micro-description} at stage $h$.
+In typical instantiations there are refinement maps (or comparison maps)
+\[
+\rho_{h\to h'}:Z_h \to Z_{h'}, \qquad h'>0,\ h'<h,
+\]
+that embed coarse objects into finer resolution (e.g.\ interpolation, refinement of partitions, extending a truncation).
+The abstract role of \Pfour\ is: the paper treats $h\downarrow 0$ as the mechanism by which ``infinite composition'' becomes a limit question, and by which closure claims become testable.
+
+\subsection{Defect ledgers and feasibility gates (\Psix)}
+A closure claim is only meaningful relative to an \emph{audit ledger}:
+a family of nonnegative diagnostics that quantify what is lost when compressing a protocol.
+In this mathematics instantiation, the ledger consists of error terms and mismatch quantities rather than thermodynamic arrows.
+
+Concretely, we allow two kinds of \Psix\ diagnostics:
+\begin{enumerate}
+  \item \textbf{Approximation error:} for a candidate macro quantity $Q_h(z_h)$, compare across refinement or against a reference $Q_\star$:
+  $\|Q_h-Q_{h'}\|$ or $\|Q_h-Q_\star\|$.
+  \item \textbf{Coherence defect:} residuals that measure failure of an intended algebraic constraint, such as a Leibniz defect for product structure, or a commutator/route-mismatch defect for two protocols.
+\end{enumerate}
+A feasibility gate is then a monotonicity requirement of the form:
+\[
+\mathrm{Def}(h') \le \theta\,\mathrm{Def}(h)
+\quad\text{for refined }h'<h\text{ and some }\theta<1,
+\]
+or, more weakly, that $\mathrm{Def}(h)\to 0$ as $h\downarrow 0$.
+
+\subsection{Packaging as identification and completion (\Pfive)}
+Packaging turns a staged family into a stable object by identifying distinctions that vanish under refinement.
+There are multiple equivalent ways to express this; the engine uses the following working form.
+
+A \emph{packaging rule} is an equivalence relation $\sim$ on families $\{z_h\}$ (or on a cofinal sequence $h_j\downarrow 0$) such that
+\[
+\{z_h\}\sim \{z'_h\}
+\quad\Longleftrightarrow\quad
+\mathrm{Def}(h;z_h,z'_h)\to 0
+\text{ as }h\downarrow 0,
+\]
+for a designated defect ledger.
+The packaged object is the equivalence class $[\{z_h\}]$.
+This is the same pattern as Cauchy completion (reals from rationals), and the same pattern as identifying two difference quotients that differ by $o(1)$ in the refinement limit.
+
+The point of making \Pfive\ explicit is that many disagreements in ``what is the correct limit object?'' are disagreements about \emph{which defect ledger is permitted to vanish}.
+
+\subsection{Constraints and induced macro-operators (\Ptwo, \Pone)}
+To qualify as a macro-level \emph{law}, an operator must descend to the packaged layer.
+Let $F_h:Z_h\to Z_h$ be a discrete micro-operator (update rule, local stencil, truncation transform).
+A packaged operator $F^\sharp$ is well-defined on equivalence classes only if the following holds:
+\[
+\{z_h\}\sim \{z'_h\}
+\ \Longrightarrow\
+\{F_h(z_h)\}\sim \{F_h(z'_h)\}.
+\]
+When this implication fails, one is forced into \Pone\ operator rewriting:
+modify the operator family (e.g.\ rescale by powers of $h$, add counterterms, change representation, or alter the comparison map) so that it becomes compatible with the packaging relation.
+
+Separately, \Ptwo\ constraints are the coherence requirements imposed at the packaged layer.
+In this paper they appear in three forms:
+\begin{itemize}
+  \item algebraic coherence (e.g.\ Leibniz/product compatibility for derivatives),
+  \item symmetry/invariance constraints (e.g.\ self-dual symmetrization prototypes),
+  \item locality/translation constraints in stencil experiments.
+\end{itemize}
+The closure engine is conservative: it treats these constraints as \emph{requirements for feasibility}, not as axioms of nature.
+
+\subsection{Protocol mismatch and holonomy diagnostics (\Pthree)}
+Whenever there are two reasonable routes that share input/output types, route mismatch is a computable defect.
+Abstractly, suppose two routes produce outputs $R_1(h)$ and $R_2(h)$ on a shared comparison space.
+We measure the protocol defect by a normalized mismatch
+\[
+\mathrm{RM}(h)
+\;=\;
+\frac{\|R_1(h)-R_2(h)\|}{\|R_1(h)\|+\varepsilon_0}.
+\]
+A stable closure regime is indicated by decay of $\mathrm{RM}(h)$ under refinement.
+Exhibit~A-2 uses this to quantify noncommutativity under coordinate change; Exhibit~B-1 uses it to compare additive and multiplicative staged prime closures.
+
+A key guardrail (used throughout) is that route mismatch is a \emph{diagnostic of closure feasibility}, not a certificate of directionality or irreversibility.
+
+\subsection{Closure ladders as repeated packaging}
+Finally, the engine composes: once a packaged layer is stable, it becomes a new substrate for further refinement and packaging.
+This is the \SBT ``closure ladder'' viewpoint:
+reals arise by completion of rationals; calculus arises by completion of discrete difference/sum protocols under coherence constraints; geometric obstructions appear as protocol noncommutativity when patching local descriptions.
+The exhibits should be read as small, auditable instances of this repeated pattern rather than as a claim that one mechanism replaces all mathematical practice.
+ \section{Exhibit A-1: calculus as a stable closure}
+\label{sec:exhibit-calculus}
+
+This exhibit instantiates the \SBT closure lens in the most familiar mathematical setting:
+how the differential and integral calculus appear as the stable closure of discrete protocols under refinement.
+Our emphasis is not on definitions but on \emph{feasibility}:
+which compressions remain coherent as the stage parameter refines.
+
+\subsection{Discrete substrate and staging}
+Fix a step size $h>0$ and consider functions on a one-dimensional grid (or, more generally, any set with a notion of translation by $h$).
+The discrete substrate supplies:
+\begin{itemize}
+  \item a \emph{shift} operator $T_h$ defined by $(T_h f)(x)=f(x+h)$;
+  \item a \emph{difference} operator $\Delta_h := T_h-I$;
+  \item the \emph{scaled difference} (difference quotient)
+  \[
+    \delta_h f(x)\;:=\;\frac{f(x+h)-f(x)}{h},
+  \]
+  which is the simplest instance of \Pone\ operator rewriting: the $h^{-1}$ rescaling that keeps the update comparable across stages.
+\end{itemize}
+
+In \SBT terms, $h\downarrow 0$ is \Pfour\ staging.
+Any proposed macro-law (``derivative'', ``generator'', ``flow'') is a packaged object only if its induced defect ledger remains feasible under refinement (\Psix\ accounting), and only if it respects the coherence constraints imposed at the packaged layer (\Ptwo\ constraints).
+
+\subsection{The accounting ledger: exact discrete Leibniz identity}
+At the discrete level, the difference quotient is not a derivation:
+multiplicative coherence fails by a remainder term that can be written \emph{exactly}.
+This remainder is the canonical \Psix\ ledger term for the passage from differences to derivatives.
+
+\begin{lemma}[Finite-difference Leibniz identity]\label{lem:finite-diff-leibniz}
+Let $F$ be a field, let $h\in F$ with $h\neq 0$, and let $f,g:F\to F$.
+Define $\delta_h f(x):=(f(x+h)-f(x))/h$.
+Then for all $x\in F$,
+\[
+\delta_h(fg)(x)
+\;=\;
+\delta_h f(x)\, g(x)
+\;+
+\;f(x)\, \delta_h g(x)
+\;+
+\;h\,\delta_h f(x)\,\delta_h g(x).
+\]
+\end{lemma}
+
+\begin{remark}[Machine-checked anchor]\label{rem:lean-leibniz}
+Lemma~\ref{lem:finite-diff-leibniz} is formalized in Lean/mathlib in this repository as
+\texttt{Diff.delta\_mul\_leibniz} (file \texttt{lean/Diff/FiniteDifference.lean}) \cite{moura2021lean4,mathlib2020lean}.
+\end{remark}
+
+The key point for closure is not the identity itself but the structure of the ledger term:
+\[
+\underbrace{h\,\delta_h f\,\delta_h g}_{\text{ledger term}}
+\]
+is explicitly proportional to the stage parameter $h$.
+Thus, in any refinement regime where $\delta_h f$ and $\delta_h g$ remain bounded (a feasibility condition measured by \Psix),
+the ledger term vanishes as $h\downarrow 0$ and multiplicative coherence emerges at the packaged layer.
+
+\subsection{Packaging: quotient by vanishing defect yields derivations}
+The previous subsection suggests a general closure template.
+A discrete operator family $L_h$ (or a protocol that composes many micro-steps) is admissible as a ``law'' in the packaged layer only after specifying:
+\begin{enumerate}
+  \item a staging parameter $h$ (\Pfour);
+  \item a ledger that tracks closure defects, such as Leibniz residuals, consistency across refinement, and stability bounds (\Psix);
+  \item an identification rule ``equal up to vanishing defect as $h\downarrow 0$'' that packages families into an equivalence class (\Pfive).
+\end{enumerate}
+
+Demanding multiplicative coherence is a \Ptwo\ constraint.
+For difference quotients it is satisfied only \emph{approximately} at finite $h$ and becomes exact in the packaged limit because the ledger term in Lemma~\ref{lem:finite-diff-leibniz} vanishes.
+The packaged limit of feasible difference-quotient families therefore satisfies the Leibniz rule:
+\[
+D(fg) \;=\; (Df)\,g + f\,(Dg),
+\]
+i.e.\ it is a \emph{derivation}.
+In one dimension, further invariance/normalization choices single out the usual derivative, but the closure point is more general:
+\emph{derivations are what survives after enforcing multiplicative coherence under refinement.}
+
+\subsection{Algebraic uniqueness anchor on polynomials}
+The previous discussion is analytic and asymptotic.
+To anchor the ``derivation as closure fixed point'' motif in a fully algebraic setting, we use polynomial rings where derivations have a clean universal property.
+
+\begin{theorem}[Derivations on $R\lbrack X\rbrack$ are determined by $D(X)$]\label{thm:derivation-determined-by-X}
+Let $R$ be a commutative semiring and let $A:=R[X]$ be the polynomial ring.
+An $R$-derivation $D:\mathrm{Derivation}(R,A,A)$ is uniquely determined by its value on the indeterminate $X\in A$.
+Equivalently, evaluation on $X$ induces an $R$-linear equivalence
+\[
+\mathrm{Derivation}(R,R[X],R[X]) \;\simeq_{\ell[R]}\; R[X],
+\qquad
+D \longmapsto D(X),
+\]
+with inverse given (schematically) by ``multiply the formal derivative by a polynomial''.
+\end{theorem}
+
+\begin{remark}[Machine-checked anchors]\label{rem:lean-derivation-poly}
+Theorem~\ref{thm:derivation-determined-by-X} is formalized in Lean/mathlib in this repository as:
+\path{Derivations.derivation_ext_X} (uniqueness) and
+\path{Derivations.polynomialDerivationEquiv} (explicit $R$-linear equivalence),
+in file \path{lean/Derivations/Polynomial.lean}.
+The Lean type of the equivalence is
+\path{Derivation R (Polynomial R) (Polynomial R)} $\simeq_{\ell[R]}$ \path{Polynomial R}.
+The evaluation-at-$X$ interface is exposed by
+\path{Derivations.polynomialDerivationEquiv_apply_X} and
+\path{Derivations.polynomialDerivationEquiv_symm_apply_X}.
+These are re-exported/instantiated from mathlib with small glue lemmas. \cite{moura2021lean4,mathlib2020lean}
+\end{remark}
+
+Classically, this computation is expressed via Kähler differentials, e.g.\ $\Omega_{R[X]/R} \cong R[X]\cdot dX$; see \cite{StacksProject00RM}.
+
+For the purposes of this paper, the takeaway is structural:
+once the Leibniz rule is imposed as a coherence constraint, the space of admissible operators collapses to a small, rigid family.
+In polynomial land this rigidity is literal and exact (determined by $D(X)$);
+in analytic settings it is mediated by the defect ledger and the chosen packaging rule.
+
+\subsection{Falsification-first diagnostics: stencil selection under feasibility}
+To complement the algebraic anchors, we implemented a numerical experiment that samples a population of candidate operators and filters them by feasibility gates.
+We sample local linear stencil operators and apply gates that instantiate \Pfour--\Psix:
+stability under refinement, decreasing route mismatch, and (optionally) decreasing multiplicative (Leibniz) defect.
+
+\subsection{Numerical protocol details (stencils)}
+We emphasize that the stencil experiments are \emph{diagnostics}, not a uniqueness theorem.
+A candidate local operator is a clipped-boundary stencil of half-width $m$,
+\[
+  (L f)_i := \sum_{j=-m}^{m} c_j\, f_{i+j},
+  \qquad i=m,\dots,N-m-1,
+\]
+evaluated only on interior points to avoid boundary-condition artifacts.
+To compare across refinements $N,2N,4N$ (step sizes $h, h/2, h/4$), we align outputs by restricting the finer-grid interior outputs to even-index centers.
+The refinement-consistency defects $E_{01},E_{12}$ used in the feasibility gate are relative $\ell^2$ mismatches on this aligned interior, maximized over a fixed smooth test family (polynomials plus $\sin$ and $\exp$).
+
+The ``order'' label $k\in\{0,1,2\}$ is chosen by best-fit against analytic templates on the finest grid:
+after the renormalization $h^{-k}$ (an instance of \Pone\ operator rewriting), we select the $k$ whose output is closest (up to an overall scalar) to $f$, $f'$, or $f''$ on the test family.
+
+In the recorded runs, the baseline grid size is $N_0=\StencilNZero$ and the Leibniz-gated experiment uses half-width $m=\StencilMLeibniz$ with gate thresholds $D_2<\StencilGateDTwo$ and ratio gate $\mathrm{gate\_ratio}=\StencilGateRatio$.
+For standard background on finite-difference stencils, consistency, and stability, see \cite{LeVeque2007}.
+
+\paragraph{Disclosure of the \Pone\ step in the Leibniz-gated run.}
+In the Leibniz-gated experiment we additionally apply a moment-normalization step to candidate coefficient vectors $(c_j)$ before auditing them.
+Concretely, we project to a ``first-order'' class by enforcing the discrete moment constraints
+$\sum_j c_j=0$ and $\sum_j j\,c_j = 1$, and we optionally suppress low-order contamination by setting higher moments (e.g.\ $\sum_j j^2 c_j$, $\sum_j j^3 c_j$) near zero.
+In \SBT terms this is not the conclusion but the \emph{operator rewrite} (\Pone) that makes families comparable across scale and avoids trivial $k=0$ closures.
+The empirical point of Table~\ref{tab:stencil-leibniz} is therefore conditional:
+\emph{within the normalized first-order class, imposing a shrinking Leibniz defect selects derivative-like closures.}
+
+Two regimes illustrate the role of constraints.
+
+\paragraph{Stability-only filtering.}
+If we impose only refinement stability/consistency without demanding multiplicative coherence, then the surviving operators overwhelmingly behave as order-$0$ closures (approximately scalar multiplication).
+In the current run, \StencilSurvivorsTotal\ out of \StencilGeneratedTotal\ sampled stencils survive under the stability gate, and the survivors are classified as best-fit order $k=0$
+(Table~\ref{tab:stencil-stability}).
+
+\paragraph{Leibniz-gated filtering.}
+If we additionally demand that the Leibniz defect improves with refinement (a direct numerical analog of Lemma~\ref{lem:finite-diff-leibniz} having a vanishing ledger term), then the surviving operators collapse to derivative-like (order-$1$) closures.
+In the current run, the Leibniz-gated filter produces \StencilLeibnizSurvivorsTotal\ survivors and all survivors are classified as best-fit order $k=1$
+(Table~\ref{tab:stencil-leibniz}).
+Figure~\ref{fig:stencil-leibniz} visualizes the selection outcome for the recorded run.
+
+These experiments do not prove uniqueness of the derivative in full generality.
+They serve as \emph{diagnostics} aligned with the \SBT program:
+when a closure is feasible, defects shrink under refinement; when it is not, defects persist or blow up.
+Here, enforcing multiplicative coherence is the decisive feasibility pressure that selects derivation-like operators from a large population of local discrete rules.
+
+\begin{table}[h]
+\centering
+\caption{Stencil flow stability-only summary}
+\label{tab:stencil-stability}
+\begin{tabular}{l|l|l}
+\hline
+ generated & survivors & best-fit counts \\
+\hline
+ 1000 & 913 & k=0: 913; k=1: 0; k=2: 0 \\
+\hline
+\end{tabular}
+\end{table}
+ \begin{table}[h]
+\centering
+\caption{Leibniz-gated stencil selection}
+\label{tab:stencil-leibniz}
+\begin{tabular}{l|l}
+\hline
+ survivors & best-fit counts \\
+\hline
+ 50 & k=0: 0; k=1: 50; k=2: 0 \\
+\hline
+\end{tabular}
+\end{table}
+ \begin{table}[h]
+\centering
+\caption{Leibniz-gated top survivors (diagnostics)}
+\label{tab:stencil-leibniz-top}
+\begin{tabular}{l|l|l|l}
+\hline
+ rank & D2 & F1 & \ensuremath{E_{12,1}} \\
+\hline
+ 1 & \ensuremath{1.68144\times 10^{-6}} & \ensuremath{7.19072\times 10^{-7}} & \ensuremath{5.92487\times 10^{-6}} \\
+\hline
+ 2 & \ensuremath{1.8767\times 10^{-6}} & \ensuremath{8.04778\times 10^{-7}} & \ensuremath{6.6106\times 10^{-6}} \\
+\hline
+ 3 & \ensuremath{2.05543\times 10^{-6}} & \ensuremath{8.80601\times 10^{-7}} & \ensuremath{7.24186\times 10^{-6}} \\
+\hline
+ 4 & \ensuremath{2.19982\times 10^{-6}} & \ensuremath{9.44249\times 10^{-7}} & \ensuremath{7.74517\times 10^{-6}} \\
+\hline
+ 5 & \ensuremath{2.20896\times 10^{-6}} & \ensuremath{9.45855\times 10^{-7}} & \ensuremath{7.77949\times 10^{-6}} \\
+\hline
+ 6 & \ensuremath{2.24716\times 10^{-6}} & \ensuremath{7.73372\times 10^{-7}} & \ensuremath{6.41209\times 10^{-6}} \\
+\hline
+ 7 & \ensuremath{2.92045\times 10^{-6}} & \ensuremath{1.66745\times 10^{-7}} & \ensuremath{1.404\times 10^{-6}} \\
+\hline
+ 8 & \ensuremath{3.00861\times 10^{-6}} & \ensuremath{1.29407\times 10^{-6}} & \ensuremath{1.05915\times 10^{-5}} \\
+\hline
+ 9 & \ensuremath{3.11535\times 10^{-6}} & \ensuremath{8.37018\times 10^{-7}} & \ensuremath{6.81121\times 10^{-6}} \\
+\hline
+ 10 & \ensuremath{3.8798\times 10^{-6}} & \ensuremath{3.59399\times 10^{-7}} & \ensuremath{3.16225\times 10^{-6}} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{stencil_flow_leibniz_last_run.png}
+  \caption{Leibniz-gated stencil selection under refinement. The gate filters local stencil operators by requiring a shrinking Leibniz defect under refinement, producing a concentrated set of derivative-like closures (see Table~\ref{tab:stencil-leibniz}).}
+  \label{fig:stencil-leibniz}
+\end{figure}
+
+\subsection{Integration as a packaged closure of sums}
+The same closure lens applies to integration: cumulative sums are staged at grid size $h$, audited by differentiation and protocol mismatch defects, and accepted as packaged closures when those defects shrink under refinement.
+In the recorded run, the left-versus-trapezoid route mismatch at the finest grid is $\IntegrationRMAtSmallestH$, with fitted scaling exponent $\IntegrationRMExponent$ and fit quality $\IntegrationFitRtwo$.
+The fundamental-theorem defect for the trapezoid cumulative operator decays with fitted exponent $\IntegrationFTExponent$.
+(Here the reported norms are unweighted discrete $\ell^2$ norms over grid points, so pointwise $O(h)$ defects appear as $O(h^{1/2})$ in $\ell^2$.)
+
+\begin{table}[h]
+\centering
+\caption{Integration closure diagnostics under refinement}
+\label{tab:integration-closure}
+\begin{tabular}{l|l|l|l|l}
+\hline
+ N & $h$ & RM & FT left & FT trap \\
+\hline
+ 128 & \ensuremath{0.0078125} & \ensuremath{0.0141732} & \ensuremath{5.65355\times 10^{-14}} & \ensuremath{0.19633} \\
+\hline
+ 256 & \ensuremath{0.00390625} & \ensuremath{0.00708551} & \ensuremath{1.62236\times 10^{-13}} & \ensuremath{0.138837} \\
+\hline
+ 512 & \ensuremath{0.00195312} & \ensuremath{0.00354262} & \ensuremath{4.75038\times 10^{-13}} & \ensuremath{0.0981742} \\
+\hline
+ 1024 & \ensuremath{0.976562\times 10^{-3}} & \ensuremath{0.00177129} & \ensuremath{1.2982\times 10^{-12}} & \ensuremath{0.0694199} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{integration_closure_last_run.png}
+  \caption{Integration closure diagnostics on staged grids. The route mismatch between left and trapezoid cumulative protocols and the differentiation-based defect both decay under refinement, consistent with stable packaged closure.}
+  \label{fig:integration-closure}
+\end{figure}
+ \section{Exhibit A-2: protocol holonomy and route mismatch}
+\label{sec:exhibit-holonomy}
+
+This exhibit instantiates \Pthree (protocol / holonomy) as a quantitative diagnostic rather than a geometric claim.
+The premise is simple: when there are multiple natural routes for constructing a packaged object from staged data, the routes need not commute at finite stage.
+The discrepancy between routes is a defect; a stable closure should make that defect shrink under refinement.
+
+\subsection{Two routes under coordinate change}
+We consider a small coordinate change (a ``chart'' perturbation)
+\[
+\varphi(x) \;=\; x + \varepsilon x^2,
+\qquad \varepsilon\ \text{small},
+\]
+and study a discrete derivative approximation at step size $h$.
+
+There are (at least) two natural routes:
+\begin{enumerate}
+  \item \textbf{Route A (refine then differentiate then pull back).}
+  Refine the sampled data, apply the discrete derivative in the target coordinate, then interpolate/pull back the result along $\varphi$.
+  \item \textbf{Route B (pull back then refine then differentiate).}
+  Pull back the sampled data along $\varphi$ at coarse scale, refine in the source coordinate, apply the discrete derivative, and convert by the chain rule factor $(\varphi')^{-1}$.
+\end{enumerate}
+At finite $h$, these routes generally disagree because interpolation, refinement, and discrete differentiation do not strictly commute.
+
+\subsection{Route mismatch as a defect ledger}
+In the \SBT dictionary, the existence of multiple admissible routes is \Pthree, while the numerical discrepancy between them is tracked by \Psix\ accounting.
+We quantify the mismatch by a normalized route-mismatch statistic
+\begin{equation}\label{eq:rm-def}
+\mathrm{RM}(h)
+\;:=\;
+\frac{\|R_A(h)-R_B(h)\|}{\|R_A(h)\|+\varepsilon_0},
+\end{equation}
+where $R_A(h),R_B(h)$ are the route outputs on a shared comparison grid, $\|\cdot\|$ is an $\ell^2$ norm over evaluation points, and $\varepsilon_0>0$ is a small stabilizer.
+
+A stable closure regime is indicated by \emph{decay} of $\mathrm{RM}(h)$ as $h\downarrow 0$.
+Conversely, persistent or growing mismatch is evidence that the proposed packaging (or protocol family) is not yet feasible at the tested scales.
+
+\subsection{Observed scaling under refinement}
+In the recorded run, $\mathrm{RM}(h)$ decreases with refinement and is well fit by a power law
+\[
+\mathrm{RM}(h) \approx C\,h^{p}.
+\]
+The fitted exponent is
+\[
+p \;=\; \HolonomyExponent,
+\]
+where $\HolonomyExponent$ is imported from the repository artifacts (generated TeX macros).
+Table~\ref{tab:holonomy} lists the measured values and Figure~\ref{fig:holonomy-rm} shows the decay trend.
+
+As a null calibration, setting $\varepsilon=0$ (identity coordinate map) yields route mismatch at or below \HolonomyNullRMMax\ on the tested grids, confirming that the reported decay is not an interpolation bookkeeping artifact.
+The log--log slope summary is reported together with the fit quality $R^2=\HolonomyFitRtwo$ and should be interpreted as a coarse scaling diagnostic rather than a precise convergence order.
+
+\begin{table}[h]
+\centering
+\caption{Holonomy RM vs h}
+\label{tab:holonomy}
+\begin{tabular}{l|l}
+\hline
+ $h$ & RM \\
+\hline
+ \ensuremath{0.015625} & \ensuremath{0.00476218} \\
+\hline
+ \ensuremath{0.0078125} & \ensuremath{0.00132002} \\
+\hline
+ \ensuremath{0.00390625} & \ensuremath{4.9099\times 10^{-4}} \\
+\hline
+ \ensuremath{0.00195312} & \ensuremath{2.2498\times 10^{-4}} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{holonomy_rm_last_run.png}
+  \caption{Route mismatch under coordinate change: $\mathrm{RM}(h)$ versus step size $h$ for two noncommuting refinement routes (Equation~\ref{eq:rm-def}). The mismatch decays under refinement; the fitted exponent reported in the text is sourced from the generated macro $\HolonomyExponent$.}
+  \label{fig:holonomy-rm}
+\end{figure}
+
+\subsection{Guardrail: holonomy is not directionality}
+A crucial framework guardrail is that \emph{holonomy does not by itself certify directionality}.
+In this instantiation, $\mathrm{RM}(h)$ is a measure of \emph{route dependence} (a \Pthree\ phenomenon) and its decay is a \emph{feasibility signal} (tracked by \Psix).
+None of this implies an ``arrow of time'' or a monotone irreversible ordering on states.
+It only says: given a staged protocol family and a proposed packaging rule, the protocol routes become increasingly compatible as resolution increases.
+
+In later mathematical instantiations (e.g.\ differential geometry), true holonomy is tied to curvature and obstruction-to-patching phenomena.
+Here we remain at the diagnostic level: route mismatch is a computable defect that should shrink in stable regimes, and can therefore be used to stress-test closure claims.
+ \section{Exhibit B-1: prime closure diagnostics}
+\label{sec:exhibit-prime}
+
+This exhibit applies the \SBT closure lens to a canonical ``discrete $\rightarrow$ spectral'' packaging problem:
+compressing the multiplicative micro-structure of the integers (primes) into a continuous analytic object.
+We do \emph{not} attempt to prove theorems about $\zeta$.
+Instead we build falsification-first diagnostics that separate:
+(i) a convergence control regime where the micro-descriptions are valid, from
+(ii) the critical strip where naive staging is unstable and protocol mismatch blows up.
+
+\subsection{Two staged micro-descriptions}
+Fix $s\in\mathbb{C}$.
+The classical zeta function has two micro-descriptions in a common domain (and, in the infinite limit, they agree there):
+\[
+\zeta(s)\;=\;\sum_{n\ge 1} n^{-s}
+\qquad\text{and}\qquad
+\zeta(s)\;=\;\prod_{p}\frac{1}{1-p^{-s}},
+\quad (\Re(s)>1).
+\]
+These classical representations and their domains are standard; see e.g.\ \cite{Titchmarsh1986}.
+At finite stage we replace these by staged truncations.
+In the recorded diagnostics we use a mild exponential smoothing weight $w(u)=e^{-u}$ and define:
+\begin{align*}
+S_N(s) &:= \sum_{n=1}^{N} w(n/N)\,n^{-s},
+\\
+P_N(s) &:= \exp\!\left(\sum_{p\le N} w(p/N)\,\bigl(-\log(1-p^{-s})\bigr)\right),
+\end{align*}
+where the Euler-side expression is computed via a weighted log-sum for numerical stability.
+Note that the smoothing is applied at the level of the log-sum:
+equivalently,
+\[
+P_N(s) \;=\; \prod_{p\le N} (1-p^{-s})^{-w(p/N)}.
+\]
+We use this only to reduce sharp cutoff artifacts; when $w\equiv 1$ this reduces to the usual sharp partial Euler product.
+The key \SBT point is conceptual:
+$S_N$ is an \emph{additive} staging protocol and $P_N$ is a \emph{multiplicative} staging protocol.
+A stable closure would require these protocols to become compatible under refinement \Pfour\ and under the chosen packaging \Pfive, as audited by an accounting ledger \Psix.
+
+\subsection{Prototype packaging maps: raw, completed, symmetrized}
+To compare staged objects across regions, we apply simple prototype packaging maps.
+Let
+\[
+C(s)\;:=\;\tfrac12\,s(s-1)\,\pi^{-s/2}\Gamma(s/2).
+\]
+Given a staged function $F(s)$, define:
+\begin{align*}
+\mathrm{Raw}(F)(s) &:= F(s),
+\\
+\mathrm{Comp}(F)(s) &:= C(s)\,F(s),
+\\
+\mathrm{Sym}(F)(s) &:= \tfrac12\bigl(\mathrm{Comp}(F)(s)+\mathrm{Comp}(F)(1-s)\bigr).
+\end{align*}
+Here $\mathrm{Comp}$ is a one-sided ``completion prototype'', and $\mathrm{Sym}$ enforces the self-dual symmetry $s\leftrightarrow 1-s$ by construction.
+We emphasize that this is a \emph{diagnostic} packaging, not an analytic continuation scheme.
+
+In the recorded run we choose:
+\begin{itemize}
+  \item \textbf{Convergence region:} $\mathrm{Comp}$ (one-sided completion), because it does not force evaluation at $1-s$ far outside the domain where these truncations represent $\zeta$ (for $\Re(s)>1$ one has $\Re(1-s)<0$).
+  \item \textbf{Critical strip:} $\mathrm{Sym}$ (symmetrized completion), as a prototype of ``self-dual packaging''.
+\end{itemize}
+
+\subsection{Diagnostics: route mismatch and error ledger}
+Let $\mathrm{Pack}$ denote the chosen packaging mode in a given regime.
+On a fixed finite test set $K$ (a small grid of points in the region of interest), we evaluate the packaged staged functions.
+In the recorded run, $K$ is a grid with $\sigma\in$ \PrimeSigmaConvList\ and $t\in$ \PrimeTList\ in the convergence regime, and $\sigma\in$ \PrimeSigmaStripList\ and $t\in$ \PrimeTList\ in the strip; refinements use $N\in$ \PrimeNList.
+\[
+A_N(s):=\mathrm{Pack}(S_N)(s),
+\qquad
+B_N(s):=\mathrm{Pack}(P_N)(s).
+\]
+We quantify protocol mismatch by a normalized route mismatch:
+\[
+\mathrm{RM}_2(N)
+\;:=\;
+\frac{\bigl(\sum_{s\in K}|A_N(s)-B_N(s)|^2\bigr)^{1/2}}
+     {\bigl(\sum_{s\in K}|A_N(s)|^2\bigr)^{1/2}+\varepsilon_0},
+\]
+with a small stabilizer $\varepsilon_0>0$.
+
+All reported values in this exhibit are computed at working precision \PrimeDPS\ digits (via \texttt{mpmath}).
+
+Separately, we compute an \Psix\ error ledger by comparing each packaged truncation to a reference value computed by \texttt{mpmath.zeta} under the same packaging mode:
+\[
+\mathrm{Err}_S(N) \sim \frac{\|A_N-\mathrm{Pack}(\zeta)\|}{\|\mathrm{Pack}(\zeta)\|+\varepsilon_0},
+\qquad
+\mathrm{Err}_P(N) \sim \frac{\|B_N-\mathrm{Pack}(\zeta)\|}{\|\mathrm{Pack}(\zeta)\|+\varepsilon_0}.
+\]
+In the convergence control region this is a genuine accuracy test.
+In the critical strip it is a stress test: it measures how badly naive staging fails to track the analytically continued object.
+
+\subsection{Control regime: \texorpdfstring{$\Re(s)>1$}{Re(s)>1}}
+In the convergence control regime (where both series and product are valid in the infinite limit), the diagnostics behave sensibly:
+both the mismatch $\mathrm{RM}_2(N)$ and the errors decrease with $N$ on the recorded test set.
+Table~\ref{tab:prime-rm-conv} shows $\mathrm{RM}_2(N)$ together with the two error ledgers.
+In particular, the route mismatch decreases to $\mathrm{RM}_2(800)=$ \PrimeRMConvAtEightHundred,
+consistent with staged compatibility improving under refinement when the micro-descriptions are valid.
+
+\begin{table}[h]
+\centering
+\caption{Prime RM in convergence region}
+\label{tab:prime-rm-conv}
+\begin{tabular}{l|l|l|l}
+\hline
+ N & RM2 & errS2 & errP2 \\
+\hline
+ 50 & \ensuremath{0.0759745} & \ensuremath{0.209083} & \ensuremath{0.146987} \\
+\hline
+ 100 & \ensuremath{0.0697803} & \ensuremath{0.171755} & \ensuremath{0.111871} \\
+\hline
+ 200 & \ensuremath{0.0667314} & \ensuremath{0.142319} & \ensuremath{0.084813} \\
+\hline
+ 400 & \ensuremath{0.0613035} & \ensuremath{0.118486} & \ensuremath{0.0654121} \\
+\hline
+ 800 & \ensuremath{0.0523991} & \ensuremath{0.0984851} & \ensuremath{0.0505677} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\subsection{Critical strip: protocol mismatch under invalid staging}
+In the critical strip ($0<\Re(s)<1$), the naive truncations $S_N$ and especially $P_N$ are \emph{not} valid micro-descriptions of the analytically continued $\zeta$.
+Accordingly, the diagnostics indicate a non-feasible closure:
+the route mismatch and errors grow rapidly with $N$ on the recorded test set.
+Table~\ref{tab:prime-rm-strip} shows that the mismatch reaches $\mathrm{RM}_2(800)=$ \PrimeRMStripAtEightHundred,
+and the Euler-side error ledger becomes enormous.
+
+\begin{table}[h]
+\centering
+\caption{Prime RM in the critical strip}
+\label{tab:prime-rm-strip}
+\begin{tabular}{l|l|l|l}
+\hline
+ N & RM2 & errS2 & errP2 \\
+\hline
+ 50 & \ensuremath{340.421} & \ensuremath{6.59171} & \ensuremath{2123.75} \\
+\hline
+ 100 & \ensuremath{5996.54} & \ensuremath{10.4329} & \ensuremath{6.02608\times 10^{4}} \\
+\hline
+ 200 & \ensuremath{6.19843\times 10^{5}} & \ensuremath{16.5012} & \ensuremath{0.984885\times 10^{7}} \\
+\hline
+ 400 & \ensuremath{3.14454\times 10^{8}} & \ensuremath{27.1202} & \ensuremath{8.29135\times 10^{9}} \\
+\hline
+ 800 & \ensuremath{5.00808\times 10^{12}} & \ensuremath{43.7077} & \ensuremath{2.16627\times 10^{14}} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\linewidth]{prime_closure_rm_last_run.png}
+  \caption{Prime closure route mismatch diagnostic. The same staged additive and multiplicative protocols behave compatibly in a convergence control regime (Re(s)>1), but mismatch grows by many orders of magnitude in the critical strip under naive staging and prototype self-dual packaging. This is interpreted as a feasibility failure of the staging/packaging pair, not as a theorem about $\zeta$.}
+  \label{fig:prime-rm}
+\end{figure}
+
+\subsection{Interpretation: a diagnostic, not a theorem about \texorpdfstring{$\zeta$}{zeta}}
+This exhibit is deliberately modest.
+It does not claim that $\mathrm{Sym}$ is ``the right'' packaging, nor that the observed blow-up has direct implications for the zero set of $\zeta$.
+Instead it instantiates the \SBT logic:
+
+\begin{itemize}
+  \item \textbf{Multiple routes exist} (additive vs multiplicative staging), hence \Pthree\ applies.
+  \item \textbf{Feasibility must be audited} by a ledger (\Psix): mismatch and error should shrink in stable regimes.
+  \item \textbf{Staging matters} (\Pfour): outside the domain of convergence, naive truncations are not compatible with the packaged object one hopes to define.
+\end{itemize}
+
+The positive outcome is methodological: the same route-mismatch machinery used for discrete derivatives (Exhibits~A-1 and A-2) can be used to stress-test prime-to-spectral closure claims.
+A stable analytic continuation scheme---if expressed as a refinement-fixed packaging with an appropriate positivity/passivity ledger---should manifest as decreasing mismatch under refinement on suitable diagnostics.
+Here we only establish the baseline: without additional feasibility structure, the mismatch blows up exactly where classical analytic number theory says naive micro-descriptions fail.
+ \section{Exhibit B-2: passivity toy (positivity ledger and zero confinement)}
+\label{sec:exhibit-passivity}
+
+A recurring \SBT motif is that the most rigidifying feasibility conditions are often \emph{positivity} conditions.
+In physics, passivity/positivity constraints strongly restrict the analytic structure of response functions \cite{Willems1972II}.
+In mathematics, many ``stability'' and ``no-gain'' requirements appear as nonnegativity of quadratic forms, positive-definite kernels, or positivity of coefficients in generating functions.
+This exhibit provides a deliberately simple toy instantiation of that motif:
+as a positivity constraint is tightened, zeros (defects) are increasingly confined to a symmetry locus.
+
+\subsection{Self-duality and a symmetry locus}
+We consider a family of polynomials
+\[
+Z_\lambda(z) \;=\; \sum_{k=0}^{n} a_k(\lambda)\,z^k
+\]
+constructed from a finite Ising-style partition sum (implemented by direct enumeration for $n=\PassivityN$ in the recorded run).
+A key structural feature is a built-in self-duality symmetry:
+we enforce palindromic coefficients by symmetrization,
+\[
+a_k(\lambda)\leftarrow \tfrac12\bigl(a_k(\lambda)+a_{n-k}(\lambda)\bigr),
+\]
+which makes $Z_\lambda$ invariant (up to the trivial $z^n$ factor) under inversion $z\leftrightarrow 1/z$.
+Consequently, zeros occur in reciprocal pairs.
+The fixed locus of this symmetry is the unit circle $|z|=1$, which we treat as the \emph{symmetry axis} (or symmetry manifold) for the toy.
+
+In \SBT language, inversion symmetry is a \Ptwo\ constraint, while palindromization is a \Pone\ operator rewrite that makes the constraint manifest at the packaged level.
+
+\subsection{Positivity as a feasibility ledger}
+The toy feasibility constraint is a one-parameter ``positivity tightening'' of couplings.
+We sample a set of edge couplings $J_e$ (both signs), and define a clipped family
+\[
+J_e(\lambda) \;=\; \max(J_e,0) + \lambda\,\min(J_e,0),
+\qquad \lambda\in[0,1].
+\]
+Thus $\lambda=1$ is the original mixed-sign instance, while $\lambda=0$ is a purely nonnegative (ferromagnetic) instance.
+This is a minimal model of a passivity/positivity ledger: tightening $\lambda\downarrow 0$ removes ``gain-like'' sign structure.
+
+\subsection{Defects as zeros and a confinement metric}
+We compute all complex zeros of $Z_\lambda$ and quantify confinement to the symmetry locus by the radial deviation
+\[
+d_i(\lambda) := \bigl||z_i(\lambda)|-1\bigr|,
+\]
+summarized by
+\[
+\mathrm{mean\_dev}(\lambda)=\frac1n\sum_i d_i(\lambda),
+\qquad
+\mathrm{max\_dev}(\lambda)=\max_i d_i(\lambda).
+\]
+These play the role of \Psix\ accounting diagnostics: they measure how strongly the defect set (zeros) respects the symmetry locus.
+
+Table~\ref{tab:passivity} reports the confinement metrics across $\lambda$.
+In the recorded run, tightening positivity produces a dramatic confinement effect:
+\[
+\mathrm{mean\_dev}(1) \approx \PassivityMeanDevLamOne,
+\qquad
+\mathrm{mean\_dev}(0) \approx \PassivityMeanDevLamZero,
+\]
+so the feasible ($\lambda\to 0$) regime concentrates zeros extremely close to $|z|=1$.
+
+\begin{table}[H]
+\centering
+\caption{Passivity toy zero-confinement metrics}
+\label{tab:passivity}
+\begin{tabular}{l|l|l}
+\hline
+ $\lambda$ & mean\_dev & max\_dev \\
+\hline
+ \ensuremath{1} & \ensuremath{0.871694} & \ensuremath{7.10509} \\
+\hline
+ \ensuremath{0.7} & \ensuremath{0.580068} & \ensuremath{4.26786} \\
+\hline
+ \ensuremath{0.4} & \ensuremath{0.349525} & \ensuremath{2.26657} \\
+\hline
+ \ensuremath{0.2} & \ensuremath{0.200513} & \ensuremath{1.21606} \\
+\hline
+ \ensuremath{0.1} & \ensuremath{0.0946892} & \ensuremath{0.718256} \\
+\hline
+ 0 & \ensuremath{3.0292\times 10^{-4}} & \ensuremath{9.0919\times 10^{-4}} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\linewidth]{passivity_toy_last_run.png}\caption{Passivity toy: zeros of a self-dual polynomial family under positivity tightening. The symmetry locus is the unit circle $|z|=1$. As the clipping parameter $\lambda$ decreases toward the nonnegative (ferromagnetic) regime, the zeros concentrate near the symmetry locus; Table~\ref{tab:passivity} quantifies this via radial deviation metrics.}
+\label{fig:passivity-toy}
+\end{figure}
+
+\subsection{Interpretation and scope}
+This toy is not a theorem and does not claim to reproduce the full hypotheses of classical zero-confinement results.
+Its role is methodological: it demonstrates a recognizable \SBT pattern in a controlled setting.
+This motif has rigorous instances, most famously the Lee--Yang circle theorem for ferromagnetic Ising models \cite{LeeYang1952}; we do not invoke that theorem here.
+
+\begin{itemize}
+  \item Symmetry (\Ptwo) specifies a distinguished locus (here $|z|=1$).
+  \item Positivity/passivity acts as a feasibility constraint measured by an audit ledger (\Psix).
+  \item Under tighter feasibility, defects (zeros) become increasingly confined to the symmetry locus.
+\end{itemize}
+
+The purpose of including this exhibit in a mathematics instantiation paper is to motivate (without overclaiming) why problems like ``zero confinement to a self-dual manifold'' naturally invite passivity/positivity formulations.
+Exhibit~B-1 on prime closures shows that naive staging and packaging can fail catastrophically in the critical strip; this toy suggests what a successful closure might require in addition: a feasibility ledger strong enough to prevent defect drift away from symmetry.
+ \section{Reproducibility and artifact contract}
+\label{sec:reproducibility}
+
+This draft is designed so that reported numbers are not hand-copied.
+Instead, tables and key numeric macros in the TeX source are generated from snapshot-visible pointer artifacts in \texttt{notes/}.
+This section documents the minimal workflow and the ``artifact contract'' that links the PDF to repository state \cite{clt_repo}.
+
+\subsection{Quickstart: sanity checks}
+From the repository root, the recommended first command is:
+\begin{verbatim}
+bash scripts/check_all.sh
+\end{verbatim}
+This script runs a lightweight pipeline:
+Python import sanity checks, \texttt{pytest}, a Lean build, regeneration of the TeX-label index, regeneration of the results dashboard, and byte-compilation checks for the main experiment scripts.
+It is intended as a ``freeze check'' before edits and before releases.
+
+\subsection{How tables and macros are generated}
+The TeX paper reads generated material from:
+\begin{verbatim}
+tex/math_instantiation/generated/
+\end{verbatim}
+These generated files are produced by:
+\begin{verbatim}
+python scripts/export_results_tex.py
+\end{verbatim}
+The exporter reads snapshot-visible ``last run'' pointers (JSON) in \texttt{notes/} and writes:
+(i) numeric macros (e.g.\ \texttt{HolonomyExponent}) and
+(ii) LaTeX tables for each exhibit.
+This makes the paper ``honest by construction'': if the pointers change, the macros/tables change.
+
+After regenerating, rebuild the PDF with:
+\begin{verbatim}
+bash scripts/build_math_paper.sh
+\end{verbatim}
+
+\subsection{Figures and the ``last run'' pointers}
+Each experiment script writes two kinds of artifacts:
+\begin{enumerate}
+  \item a timestamped run record under \texttt{data/runs/} (not committed by default), and
+  \item a snapshot-visible pointer file under \texttt{notes/} that records the most recent run path and the canonical figure paths.
+\end{enumerate}
+The pointer files used by the TeX exporter in this draft are:
+\begin{verbatim}
+notes/stencil_flow_last_run.json
+notes/stencil_flow_leibniz_last_run.json
+notes/integration_closure_last_run.json
+notes/holonomy_rm_last_run.json
+notes/prime_closure_rm_last_run.json
+notes/passivity_toy_last_run.json
+\end{verbatim}
+and each pointer includes (at minimum) a timestamp, an \texttt{output\_path} into \texttt{data/runs/}, and figure paths under \texttt{figures/}.
+For TeX compatibility, each exhibit figure is committed in both SVG (inspection) and PNG (pdflatex inclusion) form.
+
+To regenerate the committed ``last run'' figures (and refresh the pointers), run the corresponding experiment scripts, e.g.:
+\begin{verbatim}
+python experiments/stencil_flow/leibniz_gate.py
+python experiments/integration_closure/run.py
+python experiments/holonomy_rm/run.py
+python experiments/prime_closure_rm/run.py
+python experiments/passivity_toy/run.py
+\end{verbatim}
+
+\subsection{Dashboard regeneration}
+The file \texttt{notes/results\_dashboard.md} is a snapshot-visible summary of the current pointer state.
+It can be regenerated at any time via:
+\begin{verbatim}
+python scripts/make_dashboard.py
+\end{verbatim}
+The dashboard is intended for writing efficiency: it lists the latest tables, macro values, and figure paths that will appear in the TeX build.
+
+\subsection{Minimal artifact contract}
+The artifact contract for this draft is:
+
+\begin{remark}[Artifact contract for reported numbers]
+All numeric values appearing in (i) the generated tables under \texttt{tex/math\_instantiation/generated/} and (ii) the macros imported from \texttt{generated/macros.tex} are generated from the snapshot-visible pointer JSON files in \texttt{notes/} listed above, by the script \texttt{scripts/export\_results\_tex.py}.
+Thus, the ``meaning'' of a reported number is: ``the value recorded in the latest pointer JSON at the time the TeX build was produced,'' rather than an untracked manual transcription.
+\end{remark}
+
+This contract does not guarantee that the experiments are deterministic across platforms (though seeds are recorded in run artifacts); it guarantees that the paper and repository state are internally consistent.
+ \section{Discussion: scope, limitations, and next steps}
+\label{sec:discussion}
+
+\subsection{What this draft establishes}
+This paper contributes a mathematics instantiation of the \SBT dictionary of \cite{SixBirdsFramework} with three deliverables:
+\begin{itemize}
+  \item a \emph{formal vocabulary} for mathematics-as-closure (Section~\ref{sec:dictionary} and Section~\ref{sec:packaging-engine}),
+  \item \emph{machine-checked anchors} (Lean) and falsification-first diagnostics (Python) that can fail,
+  \item an \emph{artifact contract} that ties reported numbers in the PDF to snapshot-visible pointers in the repository (Section~\ref{sec:reproducibility}).
+\end{itemize}
+The exhibits are intended to be small but sharp: they illustrate how SBT-style feasibility pressure (staging + ledger + packaging + constraints) can be expressed in ordinary mathematical workflows.
+
+\subsection{Limitations and guardrails}
+Several limitations are deliberate and should be understood as guardrails rather than omissions.
+
+\paragraph{Diagnostics are not theorems.}
+The Python experiments are designed as feasibility stress tests, not as proofs of uniqueness.
+For example, the stencil-selection results support the claim that adding a Leibniz-defect gate selects derivative-like operators under the tested conditions, but they do not rule out exotic behaviors outside those conditions.
+
+\paragraph{Prime closure results are baseline, not analytic continuation.}
+Exhibit~B-1 separates a convergence control regime from the critical strip and reports catastrophic mismatch for naive staging in the strip.
+This is consistent with classical domain-of-convergence facts; it does not establish new results about $\zeta$ and should not be read as evidence for conjectures about its zeros.
+
+\paragraph{Positivity toy is a motif demonstration.}
+The passivity toy illustrates a pattern---tightening a positivity constraint can confine zeros to a symmetry locus---but it does not claim generality.
+Its role is motivational: it shows why ``zero confinement to a self-dual manifold'' naturally invites positivity/passivity ledgers.
+
+\paragraph{SBT is used as a dictionary, not a replacement foundation.}
+This paper does not propose new axioms or attempt to subsume all of mathematics under one formalism.
+Instead it makes explicit a set of closure roles that are already present (often implicitly) in mathematical practice.
+
+\subsection{Upgrade points}
+The exhibits suggest concrete upgrade paths if one wishes to strengthen claims.
+
+\paragraph{Stronger analytical closure claims.}
+For calculus, one can replace heuristic feasibility gates with classical stability/consistency hypotheses from numerical analysis, and explicitly state the regularity classes under which the ledger terms vanish.
+For protocol mismatch, one can connect the observed scaling to known truncation-order estimates.
+
+\paragraph{Richer prime closure ledgers.}
+Exhibit~B-1 uses deliberately simple staging and packaging.
+For $\zeta(s)$ in the critical strip, a natural upgrade is to use the approximate functional equation as an additive staged protocol (valid in the strip) and to compare against smoothed prime-sum / log-derivative ledgers in regimes where such representations are controlled \cite{Titchmarsh1986}.
+More informative ledgers could compare additional invariants (e.g.\ log-derivative statistics), incorporate smoothing optimized for convergence acceleration, or restrict to regimes where the protocols admit controlled continuation.
+The present draft should be treated as a baseline diagnostic that clarifies what fails without additional structure.
+
+\paragraph{Formalization interface improvements.}
+The Lean anchors are intentionally minimal.
+Future versions can add small ``glue lemmas'' that align the informal narrative even more tightly with the formal objects (without attempting to formalize all of analysis in a proof assistant).
+
+\subsection{Why the closure lens is still useful}
+Even at this modest level, the closure lens supplies two pragmatic benefits.
+
+First, it separates \emph{definitions} from \emph{feasibility}.
+A packaged object is not merely a symbolic completion; it is a completion that is stable under refinement and compatible with chosen constraints.
+
+Second, it encourages controlled comparisons.
+The same route-mismatch and defect-ledger ideas can be applied to other mathematical packaging problems (measure and integration, functional analysis limits, geometric patching, spectral constructions), where it is otherwise easy to conflate ``a formula exists'' with ``a stable closure exists.''
+
+\subsection{Closing}
+The slogan ``To Count a Stone with Six Birds'' is literal in this instantiation:
+counting is a staged discrete protocol; calculus is the stable compression of that protocol under an accounting ledger; and higher layers arise by repeating packaging with new constraints and new mismatch diagnostics.
+The intent of the paper is to make those roles explicit, auditable, and reusable.
+ 
+\vspace{6pt}
+
+\authorcontributions{I.T.\ conceived the study, implemented experiments and formal verification, and wrote the manuscript.}
+
+\funding{This research received no external funding.}
+
+\institutionalreview{Not applicable.}
+
+\informedconsent{Not applicable.}
+
+\dataavailability{All data, code, and reproducibility artifacts are available in the companion repository at \url{https://github.com/automorph-inc/sixbirds-mathematics}.}
+
+\acknowledgments{The author acknowledges the use of Lean 4/mathlib and standard Python scientific libraries. A prior version of this manuscript was archived on Zenodo (DOI: \href{https://doi.org/10.5281/zenodo.18402004}{10.5281/zenodo.18402004}).}
+
+\conflictsofinterest{The author declares no conflicts of interest.}
+
+\begin{adjustwidth}{-\extralength}{0cm}
+
+\reftitle{References}
+
+\externalbibliography{yes}
+\bibliography{bib/refs}
+
+\PublishersNote{}
+
+\end{adjustwidth}
+
+\end{document}
