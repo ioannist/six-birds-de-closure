@@ -1,0 +1,13 @@
+{
+  "exact_arithmetic_containment_checks": 445,
+  "independently_differentiated_coefficients": 2430,
+  "rejected_false_certificates": [
+    "displaced root",
+    "inadequate radius",
+    "singular Newton inverse",
+    "unstable point relabelled stable",
+    "stable kappa15 relabelled unstable",
+    "changed original coupling"
+  ],
+  "independent_reviewer": false
+}

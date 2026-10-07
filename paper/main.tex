@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{contents/figures/}{figures/}}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[numbers]{natbib}
+\usepackage{doi}
+\usepackage{xurl}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{orcidlink}
+\usepackage{titling}
+
+\input{includes/paper_macros.tex}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
+}
+\newif\ifpaperhascitations
+\paperhascitationstrue
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+
+\urlstyle{same}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+\captionsetup[table]{skip=6pt,position=top}
+\captionsetup[figure]{skip=6pt}
+\captionsetup[algorithm]{skip=6pt,position=top}
+\crefname{algorithm}{algorithm}{algorithms}
+\Crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
+\setlist[enumerate]{leftmargin=*, itemsep=2pt, topsep=4pt}
+\setlength{\droptitle}{-3.2em}
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\par\end{center}\vspace{0.5em}}
+\preauthor{\begin{center}\normalsize}
+\postauthor{\par\end{center}\vspace{-0.4em}}
+\predate{\begin{center}\small}
+\postdate{\par\end{center}\vspace{0.6em}}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\interfootnotelinepenalty=10000
+\allowdisplaybreaks[2]
+\fancypagestyle{firstpage}{\fancyhf{}
+  \fancyfoot[C]{\scriptsize Automorph Inc., Wilmington, DE, USA \quad \texttt{ioannis@automorph.io} \quad \textcopyright\ 2026 \quad CC-BY 4.0 \quad \doi{10.5281/zenodo.23218104}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\title{The Cosmological Constant as a Contingent Modulus:\\ A Six Birds Demarcation of Dark Energy}
+\author{Ioannis Tsiokos\,\orcidlink{0009-0009-7659-5964}}
+\date{Version 1: 17 June 2026\quad$\cdot$\quad Version 2: 7 October 2026}
+\hypersetup{
+  pdftitle={The Cosmological Constant as a Contingent Modulus: A Six Birds Demarcation of Dark Energy},
+  pdfauthor={Ioannis Tsiokos},
+  hidelinks
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpage}
+
+\begin{abstract}
+Dark energy poses several different questions at once: what kind of term
+the cosmological constant is, what fixes its value, why its density is
+comparable to that of matter today, and what current surveys say about
+an evolving equation of state. We study these questions in
+finite-dimensional mathematical models built with the Six Birds closure
+calculus, and for each model we separate what it determines from what it
+leaves as input. First, in a convex closure problem that attains its
+optimum and whose optimal value is finite and differentiable near the
+budget level, a budget whose relaxation strictly lowers the optimal cost
+carries a single positive price; in an allocation model with an
+originally binding budget, a common linear utility term leaves the
+optimizer unchanged and shifts only that price, as long as the shifted
+price stays nonnegative. Second, in a self-consistent lattice model, the
+convergence readouts used to admit background values do not determine
+the background: all eighteen sampled offsets converge, fifteen pass the
+sixty-update test, and neither readout recovers the input. When a global
+density ledger is added, the absolute background becomes a gauge
+coordinate that the invariant record cannot recover, and no
+translation-invariant probability distribution over it exists. Third, in
+a toy universe with structure growth and record erasure, at least ten of
+twelve sampled populations retain distinguishable records exactly for
+\(-1/8000<\lambda\le\lambda_+\), with \(3<\lambda_+<3.4\), but the ratio
+\(|\lambda|/\rho_m\) at the first record is not pinned near unity.
+Whether the present epoch is typical then depends on a declared prior:
+none of five tested priors meets a declared concentration criterion, and
+smoothness near zero is not enough. On DESI DR2, Pantheon+ and
+compressed Planck data, pre-registered audits find a fitted rewrite
+shape compatible with a constant, show that the best-fit evolving
+history has a positive, regular density through its \(w=-1\) crossing,
+and flag structured dependence between supernova and BAO subsets, led by
+high-redshift supernovae. The statements labelled as Lean theorems are
+kernel-checked. None of these results identifies a model price with the
+physical cosmological constant or derives its value.
+\end{abstract}
+
+\medskip
+\noindent\textbf{Keywords.} dark energy; cosmological constant; shadow prices; identifiability; coincidence problem; Lean; emergence calculus; Six Birds Theory.
+
+\input{sections/sec_01_introduction}
+\input{sections/sec_02_the_calculus}
+\input{sections/sec_03_method}
+\input{sections/sec_04_form}
+\input{sections/sec_05_window}
+\input{sections/sec_06_value}
+\input{sections/sec_07_measure}
+\input{sections/sec_08_audits}
+\input{sections/sec_09_mysteries}
+\input{sections/sec_10_related}
+\input{sections/sec_11_scope}
+\input{sections/sec_12_conclusion}
+
+\appendix
+\input{appendices/app_a_carriers}
+\input{appendices/app_b_audits}
+\input{appendices/app_c_reproducibility}
+\input{appendices/app_d_review}
+\input{appendices/app_e_version_history}
+
+\ifpaperhascitations
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+\fi
+
+\end{document}

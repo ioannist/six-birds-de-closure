@@ -1,0 +1,204 @@
+{
+  "module_bindings": {
+    "SbtCosmo.Derivation.GroundSourceNormalizationFailure": {
+      "source": "/tmp/de_source_normalization_failure/lean/SbtCosmo/Derivation/GroundSourceNormalizationFailure.lean",
+      "source_sha256": "2cadb61c7afa031bb7ceaf56bdd4956ba778b831f5e17dee86e3b30fe524df8e",
+      "object": "/tmp/de_source_normalization_failure/GroundSourceNormalizationFailure.olean",
+      "object_sha256": "a1a0b4b007e2a087dca8ca908b8f49085d21408de4891164a0c46cf7046e9f25"
+    },
+    "SbtCosmo.Derivation.GroundSourceNormalization": {
+      "source": "/tmp/de_source_normalization_return/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean",
+      "source_sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+      "object": "/tmp/de_source_normalization_return/overlay/SbtCosmo/Derivation/GroundSourceNormalization.olean",
+      "object_sha256": "a75b480f93e534e309ce134bab59eec92f4a140aadb98a849c2e82643785e451"
+    },
+    "SbtCosmo.Derivation.GroundNativeEscape": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeEscape.lean",
+      "source_sha256": "d14ac5d043b3c9451c3bfb70c2e6d3f6d13fe4e2e663c861d02bf0534f105b2f",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeEscape.olean",
+      "object_sha256": "a1d92aeb6cbe52358c99eb6e202c89f8be49a862cc0ad105908221ba95f68561"
+    },
+    "SbtCosmo.Derivation.GroundNativeLocal": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeLocal.lean",
+      "source_sha256": "113d7cd8da69a5f928e965849def65d31e519dd24251fbb13adebc3d14c2468a",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeLocal.olean",
+      "object_sha256": "d078125915eb41526c43ba2a9e56025bbea4d0ab595e8362a5577eb2a677fe06"
+    },
+    "SbtCosmo.Derivation.GroundNativeJacobian": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeJacobian.lean",
+      "source_sha256": "df2999f946015beae6d6fb02005bc5c2fd55bf28eebdff16490784e4d0290229",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeJacobian.olean",
+      "object_sha256": "66f1d336eb4f98cceaf309c15832fc7b3293cb4d449680e86309dc7850017815"
+    },
+    "SbtCosmo.Derivation.GroundNativeIteration": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeIteration.lean",
+      "source_sha256": "69d207a7910b72b470213e00b5131f4fc78d51ce53fe120b1db7747f82884afb",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeIteration.olean",
+      "object_sha256": "4abc5f1584aca632942d8789a296ad6790f71bb30c679b807398a9db3dd0b92d"
+    },
+    "SbtCosmo.Derivation.GroundNativeDerivative": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeDerivative.lean",
+      "source_sha256": "2f5fd047361fa5203f47327f1941fd7bc9378ff2d701e613c4aa18c7f5cb8cc3",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeDerivative.olean",
+      "object_sha256": "e8650affd2c3f422315a5f1ff07d966eeaf4b136898e7dba281e1e8ef04b5c48"
+    },
+    "SbtCosmo.Derivation.GroundNativePhase": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativePhase.lean",
+      "source_sha256": "ce481562851351d2effadc306cf41e91a18b13ad1ff5b072e0149ae62e79d124",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativePhase.olean",
+      "object_sha256": "3497c2dd8e2f80b8f90cad8db87c857a242e402ce51835ec76ccedeb9a3b841c"
+    },
+    "SbtCosmo.Derivation.GroundComplex": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundComplex.lean",
+      "source_sha256": "cf93c9c70bc0dbb57933032a85022561713a09f1e9d84a7af0178fd9dbe8aeaa",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundComplex.olean",
+      "object_sha256": "3b0b69c122e729f077d4168ab70a3726dfae1ca52e6f3af58d515a51658254e3"
+    },
+    "SbtCosmo.Derivation.GroundFixedPoint": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundFixedPoint.lean",
+      "source_sha256": "fa6aad99c11822ac2d9985346701265d993ad7136e146959f9edcf6c2bb7997c",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundFixedPoint.olean",
+      "object_sha256": "330952fc57ad9a34f5fb25f9ce3805b29b2581212f54a833bb7ba704d87e2a2f"
+    },
+    "SbtCosmo.Derivation.GroundSelector": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundSelector.lean",
+      "source_sha256": "e05437bf53cb2b7583b1402923f00f30279286c0a34b558f76d14c98e76de0c7",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundSelector.olean",
+      "object_sha256": "b75b9a592b4b0c0c5a42d8d9d865c576bae5f34d265e58478c2236a992cbdfaa"
+    },
+    "SbtCosmo.Derivation.GroundState": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundState.lean",
+      "source_sha256": "ed92a6137ea80241947f97a569f3104a9f8d67ee21943c066d4dad7e25ada846",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundState.olean",
+      "object_sha256": "50e7049e5a8b12452d4e6c95ada0f6f725ba649322eb23fcd7cdb608d9a90c7b"
+    },
+    "SbtCosmo.Derivation.BackgroundSelection": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/BackgroundSelection.lean",
+      "source_sha256": "c3384256312d76044dd8762a0e4f1ea22f3987f9f202af19deb9c02c24c93dc3",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/BackgroundSelection.olean",
+      "object_sha256": "bb4eef10fb3e5d5c20ae91b71016e5305970ba50e0420c0a5691b9702e18085b"
+    },
+    "Gametheory.Brouwer": {
+      "source": "/home/repos/six-birds-de-closure/lean/Gametheory/Brouwer.lean",
+      "source_sha256": "27fd5f3677f07ddd8cca744b0da28d0a9b87a7f99ff5c0ca50c190eb1ffa0c84",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/Gametheory/Brouwer.olean",
+      "object_sha256": "85db0263eeaa6ac39a2b8024967bddb05ffbd3d8191d804be3b6a81700348fff"
+    },
+    "Gametheory.Scarf": {
+      "source": "/home/repos/six-birds-de-closure/lean/Gametheory/Scarf.lean",
+      "source_sha256": "2099728d77b06d14ac1c5776b4ecc3258d5093ce156217d97e47f36e78938052",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/Gametheory/Scarf.olean",
+      "object_sha256": "ffa3673e7764413faa45498a2a92ea8652e81b6ce37a5e4093dacc9719a05bb6"
+    },
+    "SbtCosmo.Derivation.GroundSimple": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundSimple.lean",
+      "source_sha256": "8cc6e155df1c68669a02ea7e587a6a37cfc6b75da62aacaa88781e84bc270ab6",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundSimple.olean",
+      "object_sha256": "a3d6f83af1313db4090199827b9e66c12da9f906f7a95347958b98d5a2020a9b"
+    },
+    "SbtCosmo.Derivation.GroundLocalDynamics": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundLocalDynamics.lean",
+      "source_sha256": "a0643c2ca36e2036d9d6ea71cf7064f3a11d585251a915039a62819ed7cd152d",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundLocalDynamics.olean",
+      "object_sha256": "ffea7f0ba3fdb0fa85124f2b1c9b84fb795c4722c15298e92f447f2a15a745c6"
+    },
+    "SbtCosmo.Derivation.GroundRootCertificate": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundRootCertificate.lean",
+      "source_sha256": "411285d337bbf623418956cfce95f41bb6c8791ab31d8cfeffcdf84ff4d75c0a",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundRootCertificate.olean",
+      "object_sha256": "f589f6a212d13d83128a2913d04d36c0409d10388e9f1a19d7da8d217c226b5c"
+    },
+    "SbtCosmo.Derivation.GroundNormalizedJacobian": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNormalizedJacobian.lean",
+      "source_sha256": "e8f9763a2e703f2361a51ea3b49756e02249e0631e17a712c742b9d33f859579",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNormalizedJacobian.olean",
+      "object_sha256": "2f3469e412f7e889b6611e14fefdd0e350f0708bb11dd754126cfca4a656009d"
+    },
+    "SbtCosmo.Derivation.GroundSourceJacobian": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundSourceJacobian.lean",
+      "source_sha256": "4cf8f3853962f49cd06991a3a0ee6742e079c90848a32fcc31199bd99a211048",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundSourceJacobian.olean",
+      "object_sha256": "bbf24eeded62cdc44decbd99906a4e726231df77283e689449a3eef3b52e0a36"
+    },
+    "SbtCosmo.Derivation.GroundSmooth": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundSmooth.lean",
+      "source_sha256": "49e6390b054a040ca929babd0878656cebf61f979a1f3e475ff31cd1c575e902",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundSmooth.olean",
+      "object_sha256": "447b04f92d4e2c1c185d309300170ed1a52d2e7b2f219d6345a482ceaf80a8a0"
+    },
+    "SbtCosmo.Derivation.GroundEquations": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundEquations.lean",
+      "source_sha256": "b099af9bddb488e2b7a98b2af55de7d5b05a94f088c53cfbb9c4a05c0d527b61",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundEquations.olean",
+      "object_sha256": "98264ad14e10db6811d17921b6b82b25a831aa8010b08494b67a45780c5d8cf1"
+    },
+    "SbtCosmo.Derivation.GroundBorder": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundBorder.lean",
+      "source_sha256": "1711f92d9aa6e46a6433ae02555e3830bea60f0113965d245a8933cda7be7c72",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundBorder.olean",
+      "object_sha256": "86045e11b0e9c8cd94962411046b216ad5109b27f5361373763b50580aaf89b5"
+    },
+    "SbtCosmo.Derivation.GroundAlternating": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundAlternating.lean",
+      "source_sha256": "63860a5c752cc4452f9185444fceae875881301c8527ca1afc4fc12d7d527e7a",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundAlternating.olean",
+      "object_sha256": "9ad5f6226ed0d5c748f9007b147093f41f90c286f6c8c78994c24b298c9fc972"
+    },
+    "SbtCosmo.Derivation.GroundNativeControls": {
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeControls.lean",
+      "source_sha256": "0ba4b80fdbd969dc0cd143eea4f0386f5fb8f2dcac65a4993e1c4323eaa1f300",
+      "object": "/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeControls.olean",
+      "object_sha256": "7665c6808fb289a5a2739b4b23354f344ec8f7d35b61c865b721ccabef4abe7f"
+    }
+  },
+  "external_imports": {
+    "Mathlib.Tactic": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Tactic.lean",
+      "source_sha256": "e0d5a7e24a663bc372688d5f70ea552adb33d19f05471da415e6171b6f215226"
+    },
+    "Mathlib.Analysis.SpecialFunctions.Sqrt": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Sqrt.lean",
+      "source_sha256": "e49948eb07de74be176bfe5556a1a661f7f13f1d2690157d03faf5568f8b1652"
+    },
+    "Mathlib.Analysis.Matrix.PosDef": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/Matrix/PosDef.lean",
+      "source_sha256": "26773b617f0cb417100eac80429ef476ab184e51f75dc59915b8cd3868176987"
+    },
+    "Mathlib.Topology.MetricSpace.ProperSpace": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Topology/MetricSpace/ProperSpace.lean",
+      "source_sha256": "980a84ba7154b224786ddf220fd36ccb0e964fff572ba4d2179fc9608b1f153c"
+    },
+    "Mathlib.Topology.Maps.Proper.Basic": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Topology/Maps/Proper/Basic.lean",
+      "source_sha256": "ef338993895d428c71077654b5ce52fd3f7e35bd937edada74db59966e495ef8"
+    },
+    "Mathlib": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib.lean",
+      "source_sha256": "e1ae545a3e70578dd5501e2d0169e3b09d0bba2e96ecad5e58248a450fe90d10"
+    },
+    "Mathlib.Analysis.Calculus.ImplicitContDiff": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/Calculus/ImplicitContDiff.lean",
+      "source_sha256": "731db22a1fcf9f033fc0c4fb1af05747810fb341b6119f1f96ff6f4d05fadd8a"
+    },
+    "Mathlib.Analysis.Calculus.Deriv.Inv": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/Calculus/Deriv/Inv.lean",
+      "source_sha256": "bf74cb1aad372b70f2dd212ba66f7841a0e22bde837ad6515176648f9bc80ab8"
+    },
+    "Mathlib.Analysis.Calculus.MeanValue": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/Calculus/MeanValue.lean",
+      "source_sha256": "8a5d90ae5e65478d399c7c7bea2495df30b8288f5f8b7d4687dfc5e2bc27ff89"
+    },
+    "Mathlib.Topology.MetricSpace.Contracting": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Topology/MetricSpace/Contracting.lean",
+      "source_sha256": "bb620eaf02513b0bbe49e60e93fb6abfd645f5934c7c7dc2ad9c579a1a495b75"
+    },
+    "Mathlib.Analysis.Calculus.ContDiff.RCLike": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/Calculus/ContDiff/RCLike.lean",
+      "source_sha256": "0e9c4170d6565e8a783df2f48adba8094496d253ad38289e748d9e94f7c0f8f3"
+    },
+    "Mathlib.Analysis.SpecialFunctions.Complex.Arg": {
+      "source": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Complex/Arg.lean",
+      "source_sha256": "c9bd233247314b674c13d619eb2af951c38f8fb3605c8ac6e438e9eb5cf56f29"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+'SbtCosmo.Derivation.GroundBorder.dot_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.dot_smul_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.dot_zero_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.dot_zero_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.shifted_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.border_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.border_kernel_trivial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.border_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.border_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.groundBorder_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundBorder.continuous_groundPair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundEquations.derivative_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundEquations.equations_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundEquations.equations_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundEquations.derivative_partial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundEquations.ground_equations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundEquations.actual_implicit_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.actual_selector_local_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.groundPair_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.positiveGround_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.groundEnergy_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.pairDerivative_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.pairDerivative_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.groundPair_hasFDerivAt_fderiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.actual_pair_fderiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.actual_pair_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.positiveGround_hasFDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.selector_derivative_tangent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSmooth.selector_derivative_eigen_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.sourcePotential_smooth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.sourcePotential_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.groundMap_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.groundMap_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.jacobian_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSourceJacobian.jacobian_eigen_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.projection_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.normSq_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.sqrt_normSq_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.inv_sqrt_normSq_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.normalize_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.affine_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.normalized_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.normalized_tangent_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.positive_ground_fixed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.exists_actual_normalized_jacobian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.actual_real_eigenmode_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_groundMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_jacobian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_tangent_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

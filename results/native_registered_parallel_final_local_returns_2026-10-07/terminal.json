@@ -1,0 +1,12 @@
+{
+  "terminal_exit_code": 0,
+  "selected_targets": 10,
+  "selected_objects_checked": 14,
+  "retained_registered_frame_objects_checked": 2,
+  "retained_registered_frame_unchanged": true,
+  "genuinely_reported_built_selected_modules": 14,
+  "proof_objects_copied": 0,
+  "full_registered_build_still_required": true,
+  "full_axiom_and_statement_audits_still_required": true,
+  "goal_complete": false
+}

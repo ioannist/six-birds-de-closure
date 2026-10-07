@@ -1,0 +1,7 @@
+schema_version: 1
+sampler: polychord
+seed:
+  sampler: 1337
+evidence:
+  delta_logz_repeatability: 0.2
+implemented: false

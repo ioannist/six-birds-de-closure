@@ -1,0 +1,25 @@
+{
+  "dataset": "DES_Y6",
+  "release": "arXiv:2601.14559",
+  "access": "official_likelihood",
+  "fetch_url": "https://arxiv.org/abs/2601.14559",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "DES public release; cite DES Collaboration 2026",
+  "citation": "DES Collaboration 2026, arXiv:2601.14559",
+  "raw_files": [{"path": "data/raw/des_y6/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/des_y6/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/des_y6/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "official 3x2pt scale cuts; sweepable in E5"},
+  "route": null,
+  "staging_axis": "scale_cut",
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "Gaussian approximation on published 3x2pt data vector and covariance",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

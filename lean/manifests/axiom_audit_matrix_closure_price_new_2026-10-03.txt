@@ -1,0 +1,72 @@
+'SbtCosmo.Derivation.ConeClosurePrice.value_le_candidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.optimum_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.derivative_nonpositive_on_cone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.derivative_global_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.price_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.strict_sensitivity_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.certificate_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.certificate_dual_isGLB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConeClosurePrice.certificate_strong_duality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize_transpose' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.trace_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.rank_one_pairing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePrice.cone_laws' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePrice.gram_mix_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePrice.residual_mix_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePrice.residual_loewner_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePrice.affine_residual_loewner_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePrice.matrix_price' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.budget_coordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.energy_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.budget_positive_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.feasible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.costs_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.value_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.actual_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.actual_matrix_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixClosurePriceExamples.partial_slack_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

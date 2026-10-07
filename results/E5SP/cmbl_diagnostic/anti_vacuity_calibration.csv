@@ -1,0 +1,2 @@
+shell,target_index,injected_rows,scale_sigma,residualized_direction_norm,target_lambda_over_q,lambda_max,lambda_over_q,Omega,pi,pi_ci_low,pi_ci_high,passes_nonvacuity
+CMB-L-high,-1,7 8 9 27 28 29 30 31 32 33 34,3.794196950874e+00,3.145052529992e+00,5.000000000000e+00,3.683352627490e+01,5.000000000000e+00,1.100000000000e+00,3.900000000000e+00,2.936071058021e+00,1.368670322701e+01,True

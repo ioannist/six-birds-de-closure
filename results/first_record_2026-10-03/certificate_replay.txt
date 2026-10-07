@@ -1,0 +1,1 @@
+Exact 384-cell prefix certificate and false-certificate control passed; artifact byte replay matched.

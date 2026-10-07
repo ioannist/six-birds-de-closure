@@ -1,0 +1,113 @@
+{
+  "utc": "2026-10-05T09:59:50.854404+00:00",
+  "positive_failure_gate": {
+    "declarations": 5,
+    "standard_only": true,
+    "archive_members": 25,
+    "source_bindings": 25,
+    "actual_registered_execution": false
+  },
+  "rejected_controls": [
+    {
+      "control": "missing new module",
+      "rejected": true
+    },
+    {
+      "control": "changed new declaration list",
+      "rejected": true
+    },
+    {
+      "control": "wrong new source hash",
+      "rejected": true
+    },
+    {
+      "control": "wrong normalization parent source",
+      "rejected": true
+    },
+    {
+      "control": "wrong separate production-plan binding",
+      "rejected": true
+    },
+    {
+      "control": "injected audit summary standard_only",
+      "rejected": true,
+      "adapter": "in-memory load return only; no files changed"
+    },
+    {
+      "control": "injected audit summary terminal_exit_code",
+      "rejected": true,
+      "adapter": "in-memory load return only; no files changed"
+    },
+    {
+      "control": "nonstandard transitive axiom",
+      "rejected": true,
+      "scope": "actual inherited axiom parser on modified log text"
+    }
+  ],
+  "inherited_functions_preserved": [
+    "sha",
+    "rawsha",
+    "load",
+    "required",
+    "require_freezes_released",
+    "registered",
+    "main",
+    "proof_gates after removing only new first call"
+  ],
+  "runner_unchanged_except_explicit_verifier_and_receipt_paths": true,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_verify_with_failure_candidate.py",
+        "--mode",
+        "candidate"
+      ],
+      "terminal_exit_code": 0,
+      "result": {
+        "candidate_checked": true,
+        "modules": 1771,
+        "declarations": 20789,
+        "archive_members": 1783,
+        "proof_gates_checked": false,
+        "repository_integrated": false,
+        "goal_complete": false
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_verify_with_failure_candidate.py",
+        "--mode",
+        "registered"
+      ],
+      "terminal_exit_code": 2,
+      "result": {
+        "status": "pending",
+        "reason": "Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json",
+        "repository_integrated": false,
+        "goal_complete": false
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_build_with_failure_candidate.py"
+      ],
+      "terminal_exit_code": 2,
+      "result": {
+        "status": "pending",
+        "reason": "Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json",
+        "registered_commands_started": false,
+        "goal_complete": false
+      }
+    }
+  ],
+  "actual_registered_commands_run": 0,
+  "full_registered_mode_tested": false,
+  "registered_sources_changed": false,
+  "old_candidates_unchanged": true,
+  "review": "adversarial self-review of extension; full inherited registered success path remains pending",
+  "goal_complete": false,
+  "installation_plan_sha256": "538492acf994324adde852341dfe697d986fd9b523da0ac47d707d03df8b1785"
+}

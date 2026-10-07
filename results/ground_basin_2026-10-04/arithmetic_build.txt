@@ -1,0 +1,3 @@
+✔ [8698/8699] Built SbtCosmo.Derivation.GroundBasin.Point002Data (26s)
+✔ [8699/8699] Built SbtCosmo.Derivation.GroundBasin.Point002Arithmetic (353s)
+Build completed successfully (8699 jobs).

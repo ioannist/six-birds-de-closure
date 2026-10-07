@@ -1,0 +1,16 @@
+{
+  "artifact_checksums_sha256": {
+    "M0/chains/M0_dyn.1.txt": "8e901d734285c8e9593b7811e7e5d7ba31e50bd7ceb326cb09d2d006698a8ae4",
+    "M1/chains/M1_dyn.1.txt": "b1fde334c60deb7b28ba599ce0575c468d41cb6999af564ac0dda09a2f4a3bd8",
+    "M2/chains/M2_dyn.1.txt": "4ab670c83e98297b2086373b658c4fe0c156d61dd6700b9f0349b7363d8ee9ab",
+    "M_AM/chains/M_AM_dyn.1.txt": "af7825bab498accf139adef17585e4792fc9122e992bac24d273904a38ff1bf1",
+    "M_mix/chains/M_mix_dyn.1.txt": "9658ff2975fae70f6a9ce65e1f3b9727d6559f6e2827d8ce47795c8aa7227d9b",
+    "summary.json": "ceb162c80e1dfe4110d6825165d0442a1f8b8de341724371053708159fa09021"
+  },
+  "config_sha256": "c4e835cb167094c46f0f68fa7ea9065d36e51b2bcd0cc9603355c69900fa07ac",
+  "experiment": "E2_distance_duality",
+  "package_version": "0.0.0",
+  "run_id": "E2_CDDR_C3",
+  "schema_version": 1,
+  "terminal_state": "Rewrite residual"
+}

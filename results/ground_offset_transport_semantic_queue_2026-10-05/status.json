@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-05T01:28:46.674304+00:00",
+  "status": "Queued existing whole-background semantic verifier; main kernel and semantic gates still pending",
+  "semantic_gate_completed": false,
+  "main_kernel_gate_completed": false,
+  "parent_driver_pid": 2463243,
+  "semantic_driver_pid": 1541224,
+  "semantic_driver_session": 87061,
+  "protected_inputs_revalidated": 5675,
+  "live_driver_commands": {
+    "365637": "/usr/bin/python3 /tmp/de_native_cycle_seed_families_private_build.py",
+    "538092": "/usr/bin/python3 /tmp/de_native_campaign_verification_finish.py",
+    "842683": "/usr/bin/python3 /tmp/de_native_campaign_qualified_build.py",
+    "940127": "/usr/bin/python3 /tmp/de_native_stable_prefix_failures_private_build.py",
+    "1531524": "/usr/bin/python3 scripts/de_ground_offset_transport_resume.py",
+    "1541224": "/usr/bin/python3 /tmp/de_ground_offset_transport_semantic_finish.py",
+    "1553413": "/usr/bin/python3 /tmp/de_native_cycle_seed_private_build.py",
+    "2056100": "/usr/bin/python3 /tmp/de_native_original_sample_results_private_build.py",
+    "2371188": "/usr/bin/python3 /tmp/de_native_seed_real_returns_private_build.py",
+    "2463243": "/usr/bin/python3 /tmp/de_ground_offset_transport_finish.py",
+    "2558747": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py",
+    "2637955": "/usr/bin/python3 /tmp/de_native_stable_seed_pairs_private_build.py",
+    "2854622": "/usr/bin/python3 /tmp/de_native_stable_seed_families_private_build.py",
+    "2975896": "/usr/bin/python3 /tmp/de_native_seed_real_returns_qualified_build.py",
+    "3556612": "/usr/bin/python3 /tmp/de_native_cycle_seed_pairs_private_build.py",
+    "3948875": "/usr/bin/python3 /tmp/de_native_stable_seed_sixty_private_build.py"
+  },
+  "files": {
+    "tools/de_ground_offset_transport_semantic_finish.py": "28ab1ace0851da2d8980a69305ca014ba936b1f601ce0e93a04216fd3f2afe34",
+    "planning/source_freeze.json": "bde93b2938c467443263f17c016315bb92bccf9942bca7489e538938e92e4f64",
+    "receipts/initial_wait_driver.log": "ce4a8b6db2c23dc374c0a73e736b10f8f009773d20ceaf005d596e4502c3bce6"
+  },
+  "archive_sha256": "5b309336759d7473e59b609e2ccdf153628c6d5578335a21317df95221749347",
+  "all_archive_members_hash_verified": true,
+  "disclosure_update_deferred_until_main_kernel_success": true,
+  "registered_lean_modified": false,
+  "paper_runtime_unchanged": true,
+  "goal_complete": false
+}

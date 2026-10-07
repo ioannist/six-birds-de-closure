@@ -1,0 +1,1 @@
+Actual first private Lean threshold-control run failed with an unsolved complexNormalize-zero goal and an unused simp argument. The compiler emitted sorryAx for that incomplete control; this is preserved as failure, not proof success. Other controls printed standard axioms. No registered source changed.

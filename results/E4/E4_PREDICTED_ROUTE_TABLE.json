@@ -1,0 +1,251 @@
+{
+  "role": "EXACT_FORM_NEGATIVE_CONTROL",
+  "superseded": "EXACT_FORM_NEGATIVE_CONTROL / in-sample-only; G-E4-PREDICT-DECISIVE retired 2026-05-31, see plan/REPLAN_SPEC",
+  "blinding_status": "with-values-known",
+  "contains_h0_values": false,
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "exclusion": "excluded_from_blind_G-E4-PREDICT-DECISIVE_due_to_prior_session_value_exposure",
+  "frozen_xi": {
+    "coherence_rows": [
+      {
+        "K_H_max_abs_ratio": "0.38021469270241115",
+        "K_L_max_abs_mpc": "851.8066512055806",
+        "K_M_max_abs_ratio": "0.33126075710595987",
+        "a0": "-0.02055384307717478",
+        "a0_sigma": "0.010678271276762281",
+        "a1": "-0.01432578215639525",
+        "a1_sigma": "0.020871430389063625",
+        "a2": "-0.030108478036172573",
+        "a2_sigma": "0.010688702454119759",
+        "aor_status": "bridged",
+        "experiment": "E1B",
+        "model": "sbt",
+        "run_id": "E1B_C3_sbt"
+      },
+      {
+        "K_H_max_abs_ratio": "0.492946142989124",
+        "K_L_max_abs_mpc": "779.5180781786613",
+        "K_M_max_abs_ratio": "0.4106573286769933",
+        "a0": "-0.026101287559296978",
+        "a0_sigma": "0.0077144400554283715",
+        "a1": "0.0",
+        "a1_sigma": "0.0",
+        "a2": "-0.027973103765766505",
+        "a2_sigma": "0.010486967686318377",
+        "aor_status": "bridged",
+        "experiment": "E2",
+        "model": "M2",
+        "run_id": "E2_CDDR_C3"
+      }
+    ],
+    "combination": "precision_weighted_for_a0_a2; a1_from_E1B_with_E2_inactive",
+    "posterior": {
+      "a0": {
+        "mean": -0.024198864782765114,
+        "sigma": 0.006253281591779172,
+        "source": "precision_weighted_E1B_E2"
+      },
+      "a1": {
+        "mean": -0.01432578215639525,
+        "sigma": 0.020871430389063625,
+        "source": "E1B_only_E2_fixed_inactive"
+      },
+      "a2": {
+        "mean": -0.02902044962551353,
+        "sigma": 0.007485710803925393,
+        "source": "precision_weighted_E1B_E2"
+      }
+    },
+    "sources": {
+      "E1B": "results/_summaries/E1B_C3_sbt.json",
+      "E2": "results/_summaries/E2/summary.json",
+      "coherence": "results/xi_cosmo_coherence.csv"
+    }
+  },
+  "input_hashes": {
+    "E4_KERNEL_FREEZE.json": "5dee088e52f4a17faaf4fef9a379364558c746ed4a9f3104e0641e6b34dba025",
+    "E4_ROUTE_VERSION_MANIFEST.json": "d54862b80342e2c86084c12d81ddb3c55d815b60f915b97adf8aef16ea888be3"
+  },
+  "manager_commit_gate": "STOP_AFTER_PHASE_A; do not write E4_ROUTE_VALUE_MANIFEST before manager commit.",
+  "phase": "A_prediction_no_values",
+  "predicted_ordering_high_to_low": [
+    {
+      "predicted_delta_H0_km_s_Mpc": 3.5347075518800675,
+      "rank_high_to_low": 1,
+      "route_id": "cepheid_sn_sh0es"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 1.9563881714039335,
+      "rank_high_to_low": 2,
+      "route_id": "trgb_sn_cchp"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 1.6322662242512775,
+      "rank_high_to_low": 3,
+      "route_id": "time_delay_tdcosmo_2025"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 1.4335253627365707,
+      "rank_high_to_low": 4,
+      "route_id": "jwst_trgb_sn_cchp"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 0.6418878256208792,
+      "rank_high_to_low": 5,
+      "route_id": "jagb_sn_cchp"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 0.1695941876320529,
+      "rank_high_to_low": 6,
+      "route_id": "siren_gw170817"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": -1.2806690516114299,
+      "rank_high_to_low": 7,
+      "route_id": "inverse_ladder_desi_bbn"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": -2.5580542469005096,
+      "rank_high_to_low": 8,
+      "route_id": "cmb_bao_planck"
+    }
+  ],
+  "predictions": [
+    {
+      "amplitude_band": "moderate",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 35.0,
+        "a1": 7.636363636363637,
+        "a2": 55.19201522549891
+      },
+      "predicted_delta_H0_km_s_Mpc": -2.5580542469005096,
+      "predicted_sigma_from_frozen_xi": 0.4939620696079063,
+      "predicted_sign": "negative",
+      "route_family": "CMB->BAO",
+      "route_id": "cmb_bao_planck"
+    },
+    {
+      "amplitude_band": "moderate",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 21.0,
+        "a1": 3.937499999999999,
+        "a2": 24.675190535401114
+      },
+      "predicted_delta_H0_km_s_Mpc": -1.2806690516114299,
+      "predicted_sigma_from_frozen_xi": 0.2410740452983877,
+      "predicted_sign": "negative",
+      "route_family": "inverse_ladder",
+      "route_id": "inverse_ladder_desi_bbn"
+    },
+    {
+      "amplitude_band": "large",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": -140.0,
+        "a1": -3.333333333333333,
+        "a2": -3.415311491860241
+      },
+      "predicted_delta_H0_km_s_Mpc": 3.5347075518800675,
+      "predicted_sigma_from_frozen_xi": 0.8785914907811633,
+      "predicted_sign": "positive",
+      "route_family": "Cepheid->SN",
+      "route_id": "cepheid_sn_sh0es"
+    },
+    {
+      "amplitude_band": "moderate",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": -77.0,
+        "a1": -1.9999999999999998,
+        "a2": -2.2199524697091566
+      },
+      "predicted_delta_H0_km_s_Mpc": 1.9563881714039335,
+      "predicted_sigma_from_frozen_xi": 0.4835943083649341,
+      "predicted_sign": "positive",
+      "route_family": "TRGB->SN",
+      "route_id": "trgb_sn_cchp"
+    },
+    {
+      "amplitude_band": "moderate",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": -56.0,
+        "a1": -1.6666666666666665,
+        "a2": -1.8784213205231326
+      },
+      "predicted_delta_H0_km_s_Mpc": 1.4335253627365707,
+      "predicted_sigma_from_frozen_xi": 0.3521880733125596,
+      "predicted_sign": "positive",
+      "route_family": "JWST_TRGB->SN",
+      "route_id": "jwst_trgb_sn_cchp"
+    },
+    {
+      "amplitude_band": "small",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": -24.5,
+        "a1": -0.9999999999999999,
+        "a2": -1.1953590221510844
+      },
+      "predicted_delta_H0_km_s_Mpc": 0.6418878256208792,
+      "predicted_sigma_from_frozen_xi": 0.1548792419797212,
+      "predicted_sign": "positive",
+      "route_family": "JAGB->SN",
+      "route_id": "jagb_sn_cchp"
+    },
+    {
+      "amplitude_band": "moderate",
+      "decisive_without_time_delay": false,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": -49.0,
+        "a1": -18.666666666666668,
+        "a2": -6.17175998147225
+      },
+      "predicted_delta_H0_km_s_Mpc": 1.6322662242512775,
+      "predicted_sigma_from_frozen_xi": 0.49780538820438197,
+      "predicted_sign": "positive",
+      "route_family": "time_delay",
+      "route_id": "time_delay_tdcosmo_2025"
+    },
+    {
+      "amplitude_band": "moderate",
+      "decisive_without_time_delay": false,
+      "include": false,
+      "linear_basis_km_s_Mpc": {
+        "a0": -49.0,
+        "a1": -18.666666666666668,
+        "a2": -6.17175998147225
+      },
+      "predicted_delta_H0_km_s_Mpc": 1.6322662242512775,
+      "predicted_sigma_from_frozen_xi": 0.49780538820438197,
+      "predicted_sign": "positive",
+      "route_family": "time_delay",
+      "route_id": "time_delay_tdcosmo_legacy_2110"
+    },
+    {
+      "amplitude_band": "near_zero",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": -7.0,
+        "a1": -0.0,
+        "a2": -0.006965231597217659
+      },
+      "predicted_delta_H0_km_s_Mpc": 0.1695941876320529,
+      "predicted_sigma_from_frozen_xi": 0.043773002195273594,
+      "predicted_sign": "positive",
+      "route_family": "standard_siren",
+      "route_id": "siren_gw170817"
+    }
+  ],
+  "schema_version": 1
+}

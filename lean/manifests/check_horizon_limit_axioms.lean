@@ -1,0 +1,37 @@
+import SbtCosmo.Derivation.GrowthInfiniteTail
+import SbtCosmo.Derivation.GrowthHorizonLimit
+import SbtCosmo.Derivation.WindowEternalBounds
+import SbtCosmo.Derivation.WindowEternalPatchCounts
+
+#print axioms SbtCosmo.Derivation.GrowthInfiniteTail.velocity_upper
+#print axioms SbtCosmo.Derivation.GrowthInfiniteTail.growth_tail_bound
+#print axioms SbtCosmo.Derivation.GrowthInfiniteTail.native_tail_bound
+#print axioms SbtCosmo.Derivation.GrowthHorizonLimit.finite_horizon_admissible
+#print axioms SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_spec
+#print axioms SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_lt_infinite
+#print axioms SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_strictMonoOn
+#print axioms SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_tendsto
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.limiting_growth_at_four_upper
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.infinite_upper_bracket
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.formationUpper_spec
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.finite_horizon_gate_iff
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.formationUpper_at_twenty
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.formationUpper_strictMonoOn
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.formationUpper_tendsto
+#print axioms SbtCosmo.Derivation.WindowEternalBounds.eternal_window_closure
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.upper_spec
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.gate_at_horizon_iff
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.eternal_gate_iff
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.eventual_record_iff
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.endpoint_eventual_count
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.zero_passes
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.endpoint_excluded
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.negative_excluded
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.finite_upper_lt_eternal
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.upper_order
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.gate_inclusions
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.strict_gate_witnesses
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.fixed_deadline_gate_iff
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.rational_starvation_margin
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.amplitude_starvation_margin
+#print axioms SbtCosmo.Derivation.WindowEternalPatchCounts.no_records_ever

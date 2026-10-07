@@ -1,0 +1,13 @@
+{
+  "terminal_exit_code": 0,
+  "installed_source_files": 1786,
+  "native_modules": 1772,
+  "native_declarations": 20798,
+  "cumulative_queries": 32574,
+  "proof_objects_installed": 0,
+  "existing_objects_unchanged": true,
+  "fresh_registered_build_pending": true,
+  "fresh_registered_statements_pending": true,
+  "fresh_registered_cumulative_axioms_pending": true,
+  "goal_complete": false
+}

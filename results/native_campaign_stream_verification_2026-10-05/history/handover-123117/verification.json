@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-05T12:31:17.042779+00:00",
+  "live": {
+    "utc": "2026-10-05T12:31:15.565759+00:00",
+    "live_jobs": 11,
+    "verified_terminal_jobs": [
+      {
+        "pid": 4049651,
+        "script": "de_native_stable15_priority_recovery/build_recovery.py",
+        "actual_terminal_exit_code": 0,
+        "recorded_audited_declarations": 27,
+        "terminal_sha256": "fcd5ae4265c47b01afb384dae86f5e0ad9ce0b658848dc544eba4c6dc2959b86"
+      }
+    ],
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 368,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 289,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 382,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": [
+      "/tmp/de_native_stable15_priority_recovery/summary.json"
+    ]
+  },
+  "priority15_driver_completed": true,
+  "private_cumulative_driver_completed": true,
+  "frozen_inputs_revalidated": 6262,
+  "completed_audit_freeze_inputs_revalidated": 3936,
+  "checked_packet_manifests": {
+    "/home/repos/six-birds-de-closure/results/native_stable15_full_return_checked_2026-10-05/file-manifest.json": "39f9aae603f76bb37c9296646fe15e5ea1246c8a897f7e64df815b2da4a01f2e",
+    "/home/repos/six-birds-de-closure/results/audit_manifest_header_repair_checked_2026-10-05/file-manifest.json": "a7b88afda405d43c1babff796a3fe130713ede513e76364e87574145b0b8c494",
+    "/home/repos/six-birds-de-closure/results/native_original_stable5_return_2026-10-05/file-manifest.json": "c882623c0754c6ea8b4b406f9fa3f9f36360c094ecbbbbe5300c25e93e7c505e"
+  },
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

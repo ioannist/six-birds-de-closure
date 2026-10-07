@@ -1,0 +1,23 @@
+Adversarial self-review, not independent review.
+Current proof/build evidence: all421 production step commands and all18 populated family commands passed; final family,9398-job default build,956 statements and956 fresh standard-only axiom closures passed. Exact witness/generated-source replay and fingerprint gates accompany checkpoint acceptance.
+
+Target: actual original-seed infinite convergence for all eighteen saved rounded offset inputs at original coupling0.3, threshold1e-10, half mixing. Every original iterate must have active phase, legal normalization and unit norm. Limit is the negative actual self-consistent ground. Exact uniform-offset inputs, whole background hull seed entry, sixty-update verdicts and per-operation IEEE execution are separate.
+
+Premises -> construction -> return:
+Immutable roots and basins already earn actual positive unit self-consistent grounds and explicit negative basins using active-only reflection. Numeric grounds and inverse matrices are proposals until the closed arithmetic proofs pass.
+Refined initial reciprocal arithmetic and outward inclusions enclose the same actual normalized seed. Both exact initialization normalizations remain represented through the earned double-normalization identity.
+Every step encloses the actual selector at the current whole sourced-potential box, proves both reciprocal caps and strict original guards, and encloses the full complex output. All421 seams and leaf arithmetic obligations must be populated, not supplied by the final theorem caller.
+Prefix induction returns actual original iteration, phase/normalization guards and unit states. No finite prefix is replaced by a floating trace.
+Coordinate entry bounds are relative to the whole actual-root enclosure and use earned exact two-sided basis inverses, both real/imaginary coordinates and outward intervals. Proposed nearness is not used as membership in an unknown radius: strict bounds are checked against the particular previously proved explicit basin radii.
+Finite guards cover times before entry; basin guards cover the entry iterate and every later iterate. Tail-splicing uses exact iterate addition and translation atTop. All-time unit norm follows from actual normalization with earned legality. No limit of finite traces or unjustified uniformity is used.
+Negative branch return uses previously earned active reflection, not unconditional oddness of the thresholded phase rule. Full complex State coordinates retain the source conjugated phase convention.
+
+Scope controls:
+Final all18 rounded-input return has no numerical/existence/entry hypotheses. Generic prefix, distance and seed-return bridges visibly retain all hard proof-carrying fields. Exact/rounded backgrounds remain distinct. The zero populated entry row budget is rejected; this rejects an actual interval assertion, rather than merely deleting a record field. This does not assert that the actual endpoint distance is nonzero from the interval control alone.
+Infinite convergence does not settle source sixty-update tests. Stored failures at-5/-3/+10 can coexist with eventual convergence. Sourcing residual compares identical expressions in the original source and cannot provide independent sourcing consistency.
+The site density limit uses continuous evaluation and normSq-neg invariance. Eventual endpoint separation uses the strictly separated actual root limits and convergence of their difference; it asserts no finite separation time and no stress-density or physical Lambda interpretation.
+No global nonlinear uniqueness, physical Lambda bridge, first stopping index, IEEE operation emulation or remaining coupling seed return is smuggled into these conclusions.
+
+Evidence requirements:
+All421 production arithmetic step commands compile current sources afresh, with422 dependency sources frozen before/after; eighteen populated family builds and a final closed family build must pass. All956 fresh statements and transitive axiom closures, a current9398-job default build, exact read-only witness replay/generated-source comparison, prior evidence/toolchain identity, exact staging and committed fingerprint gates are required. The immutable3488 raw axiom prefix is historical evidence, not a fresh rerun of that command.
+Paper, original runtime/data and prior proof sources unchanged. Overall goal incomplete.

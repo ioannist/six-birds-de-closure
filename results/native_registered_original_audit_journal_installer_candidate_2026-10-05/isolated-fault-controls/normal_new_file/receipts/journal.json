@@ -1,0 +1,12 @@
+{
+  "installed": [
+    "lean/target.lean"
+  ],
+  "attempted": [
+    "lean/target.lean"
+  ],
+  "pending_target": null,
+  "phase": "write_completed",
+  "fresh_registered_build_pending": true,
+  "goal_complete": false
+}

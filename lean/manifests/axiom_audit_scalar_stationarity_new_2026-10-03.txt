@@ -1,0 +1,55 @@
+'SbtCosmo.Derivation.ScalarPriceStationarity.certificate_real_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarPriceStationarity.certificate_price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarPriceStationarity.certificate_price_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarPriceStationarity.certificate_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarPriceStationarity.positive_price_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarPriceStationarity.positive_price_smooth_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarSchurStationarity.hasFDerivAt_energy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarSchurStationarity.scaled_adjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ScalarSchurStationarity.positive_price_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.extended_relative_interior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.constructed_extended_schur_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.extended_price_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.kink_energy_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.kink_objective_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.kink_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.kink_actual_value' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.kink_actual_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.kink_energy_not_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ScalarStationarityExamples.constructed_nonsmooth_energy_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

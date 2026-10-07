@@ -1,0 +1,662 @@
+Fresh132 arithmetic step builds;133 dependency sources frozen before/after execution.
+Frozen source SHA256: af99aefc58319ce5c566a868ec51e53a9e66092b2f1e8abee07fa942bdca7f69 lean/SbtCosmo/Derivation/GroundCertifiedNativePrefix.lean
+Frozen source SHA256: 1bffac3839376e4edd0db589c98641f51746979286481b8356376275bb4398d7 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step037.lean
+Frozen source SHA256: d2b1fd10ecbfcfb7932dd32793510ada3f47d356bf46a70fb96480adf6fd45bc lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step038.lean
+Frozen source SHA256: c5d3ea3df66a9bb64582829bcef51416536f4d4ce24ef3c523452842969577bd lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step039.lean
+Frozen source SHA256: e0d0e7ffb687de7f67fc328fbf9898a0ad4137fc2753d7150a4ee740248c10bc lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step040.lean
+Frozen source SHA256: 1d8ea78c259f917a21a7e76054a26f2b7da5cc23f4783aa07961e87ec4a21d58 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step041.lean
+Frozen source SHA256: 0969ea193e96b7b12e352241e387c348eab5cfa27ab8b284bcda3c76ef4bac90 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step042.lean
+Frozen source SHA256: 3b9d84bb1e1e9f7a18efe8f1e815e75deded7929b35e2810cf2486853ece0ada lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step043.lean
+Frozen source SHA256: d0d1eb5dc6ad61066ad1194cb936b3255317f4de851935dba46aa85f44066547 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step044.lean
+Frozen source SHA256: 0b7e425eed974587f387d0872e796a9ddadcf27a2fd0ed4e0f451e6efff5c66b lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step045.lean
+Frozen source SHA256: 1e532293e82f704853cbea1769576b20ed9baad7bbc30c6e99ed0551bc217faa lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step046.lean
+Frozen source SHA256: 35677c7afd618d5a8a6658d0c5d039cc5cba9bc0db1ff0b4dbcfa42746773675 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step047.lean
+Frozen source SHA256: bdd2d0234693e0055970a01bb7ae67aff69c3381d2eac2052141abc2cd5f1ef5 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step048.lean
+Frozen source SHA256: 261d20dea4f4392dcddc558be69acd610696ddd9b846891c988175b98163f2ba lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step049.lean
+Frozen source SHA256: bf607236ee1b76f861f6488696a12a6ffd43a8ffb3b01b0ae99b114a3ee88935 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step050.lean
+Frozen source SHA256: f249486329fb03ca22fe6f7c7d2d6001ae4fb3130ae8f58a61428381cbfdc639 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step051.lean
+Frozen source SHA256: 807423ec7bd5af3f5151b665963727ca2f173b849adf2251b0fc0603c1904c34 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step052.lean
+Frozen source SHA256: 3b538c08922a470d1e3196199a716849eff4376e4e689e9822610ed0d1891447 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step053.lean
+Frozen source SHA256: e0f2c90268abb500a19a0c171e3cd33e74cba4f8b27d4e80cc210e3fdd81e346 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step054.lean
+Frozen source SHA256: bdb7f5a39cc619e3a9698ca19db940eed6005abc13309a19bcd964860eba8bf2 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step055.lean
+Frozen source SHA256: b1135d56e156c1ea5c9c787d3e3704749bd1ab0519bafa2d3b9c825b2d6913ce lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step056.lean
+Frozen source SHA256: e0489040592fe983f945bfc93afe26df1f8effcfd803f6854360b982e7122730 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step057.lean
+Frozen source SHA256: 58c9da3bd923cda500d5e76a6a9b28735e5c1344be06e4b55096b86d5f81952b lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step058.lean
+Frozen source SHA256: 49ee3ada0abefd3fbdcf36e44f97ded9883ecbb3ca04c0b4cac767668f50e5a5 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point000/Step059.lean
+Frozen source SHA256: f4d61719c48aa6a442d5f309ccd7cc84fdd50f13febd9bfa093ae95176305c74 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step040.lean
+Frozen source SHA256: eb40c093f6a32c5d794e54eb7c259652330f0ec993ba041318d52cddbb9cbccc lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step041.lean
+Frozen source SHA256: afeffbdcaade322b96068b4cb8251642dab513f58c71642e9d8d71b0613040e6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step042.lean
+Frozen source SHA256: 4dfe024d8985d3f89683c3b22eb28fa2ff4d9dbca84f746a142445a1d52d1fb1 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step043.lean
+Frozen source SHA256: 9a7b19e238db7fd3e02bcdbb6033f9696137b30f02ef31053c5d27d36e3dfa38 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step044.lean
+Frozen source SHA256: 899e227b25dc35de0073ec97bec479934a488d24ff6b8f7c47f21b0597194494 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step045.lean
+Frozen source SHA256: 678a3e1c66046e0249ac1d99d74651d53b3e16b3b1699d033c8b4f70df8748db lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step046.lean
+Frozen source SHA256: b53584faf42446d9fcaf301906212cc4b6f99b57c8cf2186d2bf5bb7218734c3 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step047.lean
+Frozen source SHA256: d1df3024c1491714b24b443acec1a810458b8520a43c4de5acd34aee242db673 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step048.lean
+Frozen source SHA256: 3e2c45e204eccbf603ddb91aaf21c612a7858366a029d02bc589584e4faf7ba1 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step049.lean
+Frozen source SHA256: f9c602601b22d595b1c48880b4b921c1770f39c8212f6e51d39ca2ca2d0fabe7 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step050.lean
+Frozen source SHA256: 8a828832fa1fa511faa6b7dd16d90ac604fe2cdcc804d205a5a589301d79f910 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step051.lean
+Frozen source SHA256: cbf16c83c020097aecbd322f2a70fa78cafdd46a31a34dcd1f76b927f60d1154 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step052.lean
+Frozen source SHA256: c0d89f3e235b437cf40c13167763cb8368356e3f6668698f2a538022315b13c6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step053.lean
+Frozen source SHA256: 9df7c91b2de425a2eb1e5b4e1e255cc9123baec0790b8666d17adf6677f6c5b6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step054.lean
+Frozen source SHA256: 84f75887f7223e3574ddf70a608a41e4b08e8af1d8b62ca9ea6b732c5d704e87 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step055.lean
+Frozen source SHA256: 32748f7f9dab53cb324e6f4c1cb00660700ff95a775b05999451dbca1a938615 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step056.lean
+Frozen source SHA256: b27f85e561be39e0296d2cbe9c1909eea4a5c208d321909a68a3b9eade84f82f lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step057.lean
+Frozen source SHA256: 9d8a70a89c01f957ef01f10f79d4e4da9057fc9fc9c16c5832cf3aa23691a296 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step058.lean
+Frozen source SHA256: d2190f7cb1bae90e7ff13ed1e7f08979abb7b89a6c98d463266f3ed7a0261e23 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point002/Step059.lean
+Frozen source SHA256: d520b9ef42769660896bf88e99934b15d744030af912908df88942ad3ea49c9c lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step023.lean
+Frozen source SHA256: ab93051ec0852da15f40d37b10ecfa70e8dd508f02621e5354262dca198ab8db lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step024.lean
+Frozen source SHA256: 3c3861cfcaa33635c8c8ba6f575c285d3eb7544da62fb3c67fddd78aab521fa9 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step025.lean
+Frozen source SHA256: bbf750e4ff1af6b449be9bcbd06eacc6d0013bb04c3ba6bd3c7b1f2873bc1fc3 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step026.lean
+Frozen source SHA256: d20aaaba95b2f14b370605228b6b30a14cbbd781faa98a80bce6b03885e358d9 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step027.lean
+Frozen source SHA256: 9d8e8484e1be47b907560cae6874bb9fc9b8f650163cf7b68456dffa745f3183 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step028.lean
+Frozen source SHA256: 23509ff02b64e12726ca5b49581cd6b0383f0eea71b3c304697a663730fc74c0 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step029.lean
+Frozen source SHA256: cfb21720d4497e99eae21d7c8f7d5472230fb37da89cb15c89637b8dc2b5f5ec lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step030.lean
+Frozen source SHA256: 9761f721f37d3acdc7a8b0cf11e4b17de49cdfc1462465d18f0a066ba9387d5d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step031.lean
+Frozen source SHA256: 545f8143bbaa2360a7e37d04a613750a9380cc84a3b04f267f46c2815f721683 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step032.lean
+Frozen source SHA256: 9b7e2d23c760250ac7b458cc3ad90cfb48c3f11d356b21995a30251dfb652401 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step033.lean
+Frozen source SHA256: 0f6beda758cc604112e0e2c551c2b0ba23e2aff6ecbc4fe95aaf4fc07b79582a lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step034.lean
+Frozen source SHA256: d34fa285ff8b7d3f1a7f5874c707fb80483f591df8f8530b3d9cadfa71013066 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step035.lean
+Frozen source SHA256: b50fe87d4f483b49b9a9b4e73996d6e5f3b7a2f77816559baaed74040c060d50 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step036.lean
+Frozen source SHA256: f3a6140af569fdfdcd082beb43f9c5986b9b438d73b2b1204df99d8fbdcb66f6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step037.lean
+Frozen source SHA256: 13fdcee10126a8e5deb8f52833f4e178eabbe1454cdce8db4e39dfcfff97ec0a lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step038.lean
+Frozen source SHA256: 247ce1940d4c97f2cfcafdbbacaca7b513f07cc83accad4e0c9f5b909ea5a858 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step039.lean
+Frozen source SHA256: 3e710018b51276994a309093daa6d3082c3627029f4b145b6a66908b6c566e1c lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step040.lean
+Frozen source SHA256: 8dfd66e760cded0f24e6f1a6219629bffd0af1c4a17da1f4367758fb43181620 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step041.lean
+Frozen source SHA256: 53c142908be11149578e4dfde6511128585ad48e029c3114cbfbd4634c2a2449 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step042.lean
+Frozen source SHA256: 01683636dbb0c12aeee3c8fca8d19b164b600b3cc781f7f130ef358ecbb82eb6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step043.lean
+Frozen source SHA256: bfdeed0e78159c5355b551dd1c5f7a8b3238abe6e21a398ddf223fbda6d5da4e lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step044.lean
+Frozen source SHA256: e462e1a20f4c7bd8e7639d2b26998dcc3049f0769bbd1b3e185d24697fc905c9 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step045.lean
+Frozen source SHA256: 964b7187ad4634387be64177dc3420454de96f1b6443ea47383a05f2456b22d3 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step046.lean
+Frozen source SHA256: 373f5162cba01f66f0b7530b7aa045e1174a3e8000d5d697bd7edc5839a10cf5 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step047.lean
+Frozen source SHA256: 895f4e6ab6fa73297a5d0f3515f66fd21c356d7404e91e65cd5548fc505da372 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step048.lean
+Frozen source SHA256: 128148c35e174cfc8db3887547cd9c934ec12eedf7915bbaf8cb23f5dfd51577 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step049.lean
+Frozen source SHA256: c913041466a2f8564db1f3c5989474138237426ba9ed60a20258c4db238d2cc5 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step050.lean
+Frozen source SHA256: 6484ba4d2e82b4c5c7f8805bcacafedff0e419bd3d0bc551646025206969700e lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step051.lean
+Frozen source SHA256: 1084eff1b9d7c34805c719305bba6a8019e4efb85f3d06908f8a039caae22117 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step052.lean
+Frozen source SHA256: d49fa21ad19067f34785cba1cc96983fdb181d5d1eec1a444661ca43f3e5dfb5 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step053.lean
+Frozen source SHA256: cc8138ac4e06fb0713c7f006f26b8250cce3e72a225f87a7128ac07523da3245 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step054.lean
+Frozen source SHA256: 02b8406d7e70f2e363e9f0c4e89c08b83f4725a2234cd4b2365d988e6ad50b15 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step055.lean
+Frozen source SHA256: 99641d35cba79a4c0df5892c9e91329bb190233bd498a0acddd02355539cc1d0 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step056.lean
+Frozen source SHA256: 440a2827a214e2b4fcde82dfafe93b9b557f672466bcb713a705ff8d692f8c71 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step057.lean
+Frozen source SHA256: ca2ad0b34dfc9cde9d4f467f0e93e44e909060a41aab15abc0733915aea3142e lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step058.lean
+Frozen source SHA256: 64162cf7e176bee7922d4f2dc51657cd80f361e1138b5f1660d3a62cb500c228 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point003/Step059.lean
+Frozen source SHA256: 6f37ef92250d97cc7ad4e87d4fcc5e08f694dee950d7c765e7d8f8fa4733c2ba lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step016.lean
+Frozen source SHA256: 491c8cc2461938bff28a74a1b292e5d90a042466d079ecb9c73f2d30b4c82a81 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step017.lean
+Frozen source SHA256: 3730e5cdb2fa7673793db5c0aa81676cbb366b23e297ab0ead39012e43376276 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step018.lean
+Frozen source SHA256: bfa66a1bc5f4ca2bd40a70da70b08003802114769b3cd8b0d3e97adeff8db901 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step019.lean
+Frozen source SHA256: 56c85fef6aee412b66581092f322c1a37c1791a9a9ba6871cce18fb7669d49b3 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step020.lean
+Frozen source SHA256: 87cb0705e3437a911f14020686b00de6ee3b21c74b8eb11fe5710cd2528de17d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step021.lean
+Frozen source SHA256: 22be0b50830b8af0877a7dcdf643d823636e49139f8e55f9b73a708451887227 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step022.lean
+Frozen source SHA256: 2130b4a4dc8357a8e8196f148ce7ff7d2ea1e252e2f9897bf60b0c52e08d34b6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step023.lean
+Frozen source SHA256: 26224f3038db73444275abe31965a202dbe224608d34290842c389e3c52d74a7 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step024.lean
+Frozen source SHA256: 5bdc1cd3b57c13a12e3afcf0e9df561989b8c2d23e73c89b2fe8bb537bf91d21 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step025.lean
+Frozen source SHA256: 8a8a7e913382ca99fbe1389a79cc33a6a5aa110d8fc5fbb808d86b5846cabc5e lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step026.lean
+Frozen source SHA256: 3bffe7f8567794e6cffad308c431bee6a7b6c89fd1225c1fddbd6879c00846e2 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step027.lean
+Frozen source SHA256: 03892c2649361529f1da3e396aa458fa8b9c6d955d1443e7e69cf75be2871a84 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step028.lean
+Frozen source SHA256: 846bab7fbe9a9d1bc5e109e2f70d53830b2376b2068456974857abe4a2466c37 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step029.lean
+Frozen source SHA256: b3a2e426b396f519da10e9f37642e972870973e672771eda5a10a41c532e8279 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step030.lean
+Frozen source SHA256: 9700c51a31f3f852b46a90eb24979c80202ae5119f7f3a572a0a6f6caf2aaaec lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step031.lean
+Frozen source SHA256: 1cd65e448f3d66c84f2f303ccfc8e81ec65296806bc05359a86a3139828bf4b4 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step032.lean
+Frozen source SHA256: 305dc74ff194506d14935914d274141ee37545dc650a3abeed8fd414dad8f0eb lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step033.lean
+Frozen source SHA256: 24b6218cba0c982d67d1912db2ed3be4849f021048243febfd54f0d2310b2380 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step034.lean
+Frozen source SHA256: 525871ea09671d6db69e34112c34744fc5823b3a9125e248f2585d377d80e26d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step035.lean
+Frozen source SHA256: 70f8d2870662ae9bdac14303410590bcab5b2380dd2894efcce0edebea607e50 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step036.lean
+Frozen source SHA256: 61132024da86ec19f7c4c1bf04f224a008924d55025826b1ac553c526a43205a lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step037.lean
+Frozen source SHA256: b8efec9db77673d154230aaf296a180841dc2c7e5043e0285adb1a32856a64c8 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step038.lean
+Frozen source SHA256: ef7e962ad508605eed07ab7871c14c9e800bc14697cc8b599a6edc63a40641bc lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step039.lean
+Frozen source SHA256: b1d5fd2cfe5fd5bc8fae0cde913bf49edb161cb336164f89e7b7217fcd96071d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step040.lean
+Frozen source SHA256: 4426d2709e460a4b6c4c8a29cff19f910d16017549af179a08ff4be8d9772859 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step041.lean
+Frozen source SHA256: cdc090868ed74119d56ed86622fced638d9d9add54c82a8a16fa7ea3c95b3a30 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step042.lean
+Frozen source SHA256: 3ead1872a8082ef9620d0dbfe94d3b0efcb8cba88dca5ed7a352fa5c1845d272 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step043.lean
+Frozen source SHA256: a245181cdca84431d04df51a26ab081d1b7f2f96305c132a1f016b928f055603 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step044.lean
+Frozen source SHA256: ca2e2b8f9b6318a138d96b5e3d71faaccfd09013dad299202aa0ee4d2ddcd43a lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step045.lean
+Frozen source SHA256: ad76f4c1ed76c84be50a36fc51975626bbed84ad755bf83f8c21f2b314e8082c lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step046.lean
+Frozen source SHA256: e66a680d5b2cf73c8b475edf764859ce2ef38ed93c2514f3d086938aeefd484b lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step047.lean
+Frozen source SHA256: 4fdc6f429c7214438f060d6ef3a0a38f1e1e8be90bef4b826882f163e060e42d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step048.lean
+Frozen source SHA256: 18933fac3cfa1970cc0f114a9295f815367fd3a78530cf28e86d2699c4e4021d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step049.lean
+Frozen source SHA256: be2c4d69325187bae7e7c1d5fa56052a944c8708741c484bf30fe9fa28d8d8bb lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step050.lean
+Frozen source SHA256: c324855f23f0fbb9f2e8e8c742ed40a77bb7a3b9ee7809b92a5e5c8991747447 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step051.lean
+Frozen source SHA256: d3eb9777e4431d0f21eb47b6b020097da035e4a5253927b19b74ac69f7bd6bb6 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step052.lean
+Frozen source SHA256: 17a0216152ec65e211a5368728653abd65357d98fbdb1685fbb49723d567c6df lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step053.lean
+Frozen source SHA256: 99e362b921ce761769c12f405c440ef5386f9618165299ded30d2e4460daf78c lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step054.lean
+Frozen source SHA256: d8b4372c1d71acfca82122095e2413bbeb20aecfdefe74c869d06ed722dfc00c lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step055.lean
+Frozen source SHA256: 9f1b1999107278c63d24fe0120bc47be127341c66880eef8c2188966e3c9c283 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step056.lean
+Frozen source SHA256: d44e9bbb76897883b2940a8a393d26f3a68334487e42d4c176e3116e18cd9f83 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step057.lean
+Frozen source SHA256: 188bfb8f1865920bb1eb115a23aafa9ad783bd8d63add3924a50cc1fb43e9f3a lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step058.lean
+Frozen source SHA256: 2735d402ef5e86623b72342f7b7139baebdbc684f81e4dfaceafdd24fc78a967 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point016/Step059.lean
+Frozen source SHA256: a5db031fd7a6c438e6d63a01efc5bc1bf9445c214b76ef238ca3ffb6b9b0eb88 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step052.lean
+Frozen source SHA256: c58889a8e6e7b3991d9c31406d759fa117767d2d98ba7f156f27e1066099b58d lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step053.lean
+Frozen source SHA256: 8705dce52a80e453d28304274829a6108caa51e3b2641342b63de58c39baeca8 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step054.lean
+Frozen source SHA256: 98e0edafa2cb00950bf7251ac245c887809e90f6cde0d27183e2571772f7bfad lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step055.lean
+Frozen source SHA256: 2402fa37bf54cc933179e0a1ef728cf2e42f4d5f8574cc054a1155fd5e649b7e lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step056.lean
+Frozen source SHA256: 00740f5c895292bff563dd459af276e53a50d2788d58769959e595e98271dd98 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step057.lean
+Frozen source SHA256: 84568768cda5e14ff1c068bdb19c9af127393707562d7d2913b9cf23e4bf4546 lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step058.lean
+Frozen source SHA256: 52cdff1dfc922b5c8e505c01c86b1321d549ea9103631b73df472d4740b128ba lean/SbtCosmo/Derivation/GroundOffsetSixtyPrefix/Point017/Step059.lean
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037 (68s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041 (56s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043 (65s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044 (68s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046 (69s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049 (53s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050 (53s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052 (65s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053 (56s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055 (56s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040 (54s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041 (51s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042 (48s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043 (56s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053 (66s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023 (85s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025 (78s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026 (79s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027 (70s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028 (66s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035 (66s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036 (65s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040 (67s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041 (67s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044 (52s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046 (54s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050 (68s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051 (66s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053 (68s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016 (77s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017 (79s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018 (75s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019 (75s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020 (84s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021 (84s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022 (88s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023 (73s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024 (74s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025 (72s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026 (74s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029 (55s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031 (53s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033 (50s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037 (59s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039 (64s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041 (61s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043 (66s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046 (53s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047 (51s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048 (52s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050 (63s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051 (66s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053 (62s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054 (54s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055 (54s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057 (54s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059 (60s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053 (58s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054 (55s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055 (51s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056 (56s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058 (57s)
+Build completed successfully (8668 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059
+✔ [8668/8668] Built SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059 (58s)
+Build completed successfully (8668 jobs).

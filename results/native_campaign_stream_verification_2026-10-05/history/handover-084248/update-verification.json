@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-05T08:42:48.767624+00:00",
+  "live_jobs": {
+    "662901": "de_native_campaign_qualified_stream_build.py",
+    "760297": "de_native_seed_real_returns_qualified_stream_build.py",
+    "853725": "de_native_campaign_verification_stream_finish.py",
+    "853723": "de_native_additional_constructions_stream_qualified_build.py",
+    "853738": "de_source_execution_supplement_stream_qualified_build.py",
+    "4049651": "de_native_stable15_priority_recovery/build_recovery.py",
+    "2558747": "de_native_stable_seed_leaves_private_build.py",
+    "2637955": "de_native_stable_seed_pairs_private_build.py",
+    "2854622": "de_native_stable_seed_families_private_build.py",
+    "3948875": "de_native_stable_seed_sixty_private_build.py",
+    "940127": "de_native_stable_prefix_failures_private_build.py",
+    "2056100": "de_native_original_sample_results_private_build.py"
+  },
+  "progress": {
+    "stable": 217,
+    "priority": 73,
+    "qualified": 64
+  },
+  "source_freeze_inputs_revalidated": 6262,
+  "priority_launch_sha256": "97e50ce04cb2e97f00e11006817ae9a0a3258b22da77c256c3c0a9f2b8a11fc4",
+  "priority_old_session_exit_code": 143,
+  "old_handover_preserved": true,
+  "registered_inputs_unchanged": true,
+  "goal_complete": false
+}

@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundParametricContraction",
+  "terminal_exit_code": 0,
+  "source_sha256": "df532dbb4f6c41057ef7b9a0a1cd13118a2f65b8a8fc58a983ad07f6cf3aed29",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricContraction.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricContraction.lean"
+  ],
+  "object_sha256": "6d858e41671a3ec50ef94eb7a8781673539a242f65def105d5d952a8a0d74274"
+}

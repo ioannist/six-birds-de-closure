@@ -1,0 +1,36 @@
+{
+  "status": "Unapplied postregistered documentation draft; its success assertions must not be published before genuine registered success",
+  "targets": [
+    {
+      "path": "README.md",
+      "before_sha256": "b34fc285575bda78c3adebe9d69a7f1d22f800d432f602cda7dd012fdbe3dc3a",
+      "after_sha256": "0de0bdc2ccb0129fe534b4067932c236b5d5e2b0e2ed028582536b27d99565f7",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_postregistered_documentation_candidate_2026-10-06/README.md"
+    },
+    {
+      "path": "lean/README.md",
+      "before_sha256": "a7c67b8bf6cb4daf5f96bc095308fe544da54d86993fa9f6547f6b6167bac240",
+      "after_sha256": "033bcff8e89c8be1214efa518b66856f487bb83b702e4bb85669d41e81789526",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_postregistered_documentation_candidate_2026-10-06/lean/README.md"
+    },
+    {
+      "path": "lean/manifests/coverage_table.md",
+      "before_sha256": "0e9d6d47357e8d9f3ab2f6eee37a9b0cbf5911cfa62660b4c3535d1fdfdb4e5b",
+      "after_sha256": "0dfd4ebc22ed7c6c36cd34a6c5e057488e6c71787fb4136fbb67695467f9632e",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_postregistered_documentation_candidate_2026-10-06/lean/manifests/coverage_table.md"
+    },
+    {
+      "path": "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md",
+      "before_sha256": "13a3f0cb8c2d78299d813c516e9b1a3db38514bb6d5b567eabf0bd5c8fe5e7ee",
+      "after_sha256": "4fab591ed39598cb6a09964eb3e609d37ec4b68227488ed9b0438cc148fa6588",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_postregistered_documentation_candidate_2026-10-06/math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md"
+    }
+  ],
+  "required_controller_terminal": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/terminal.json",
+  "requires_registered_native_modules": 1772,
+  "requires_registered_statement_queries": 20798,
+  "requires_fresh_cumulative_axiom_queries": 32574,
+  "registered_sources_changed": false,
+  "paper_changed": false,
+  "draft_migration": "Preserved exact target preimages; new controller receipt path and explicit full-audit stack; still unpublished and conditional on actual registered success"
+}

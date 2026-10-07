@@ -1,0 +1,201 @@
+{
+  "datasets": [],
+  "experiment": "E0",
+  "gates": {
+    "G-E0-0.1": {
+      "pass": true,
+      "threshold": "internal rerun arrays bitwise and scalars rel < 1e-12",
+      "value": true
+    },
+    "G-E0-0.2": {
+      "pass": true,
+      "threshold": "manifest.datasets == []",
+      "value": []
+    },
+    "G-E0-0.3": {
+      "pass": true,
+      "threshold": "zero unstatused entries",
+      "value": 0
+    },
+    "G-E0-0.4": {
+      "pass": true,
+      "threshold": "wall time < 2 h and peak memory < 4 GB; observed wall time recorded in manifest",
+      "value": {
+        "peak_memory_estimate_mb": 0.32614898681640625,
+        "wall_time_budget_seconds": 7200
+      }
+    },
+    "G-E0-0.5": {
+      "pass": true,
+      "threshold": "five figures and five tables exist and are non-empty",
+      "value": {
+        "figures": 5,
+        "tables": 5
+      }
+    },
+    "G-E0-1.1": {
+      "pass": true,
+      "threshold": "<= 1e-10",
+      "value": 1.2560739669470201e-15
+    },
+    "G-E0-1.2": {
+      "pass": true,
+      "threshold": "<= 1e-10",
+      "value": 1.2560739669470201e-15
+    },
+    "G-E0-1.3": {
+      "pass": true,
+      "threshold": "strictly increasing for beta > 0",
+      "value": true
+    },
+    "G-E0-1.4": {
+      "pass": true,
+      "threshold": "both > 1e-3",
+      "value": {
+        "beta0p5": 0.008355989428381365,
+        "beta2": 0.03342395771352608
+      }
+    },
+    "G-E0-1.5": {
+      "pass": true,
+      "threshold": "in [2, 8]",
+      "value": 4.000000000000075
+    },
+    "G-E0-2.1": {
+      "pass": true,
+      "threshold": "<= 1e-6",
+      "value": 0.0
+    },
+    "G-E0-2.2": {
+      "pass": true,
+      "threshold": "Q_peak in (1, 2.5]",
+      "value": 1.741870102649917
+    },
+    "G-E0-2.3": {
+      "pass": true,
+      "threshold": ">= 0.95",
+      "value": 1.0
+    },
+    "G-E0-2.4": {
+      "pass": true,
+      "threshold": "Omega_Lambda in [0.4, 0.75] and > 0.2",
+      "value": 0.42506473617903395
+    },
+    "G-E0-2.5": {
+      "pass": true,
+      "threshold": "< 0.1",
+      "value": 0.010000000000000009
+    },
+    "G-E0-2.6": {
+      "pass": true,
+      "threshold": "|chi2_M2 - chi2_M1|/n_z <= 0.1 and k_M2 <= k_M1 + 1",
+      "value": {
+        "chi2_gap_per_z": 0.05084093150515557,
+        "k_M1": 2,
+        "k_M2": 2
+      }
+    },
+    "G-E0-2.7": {
+      "pass": true,
+      "threshold": ">= 10",
+      "value": 15.464542327639727
+    },
+    "G-E0-3.1": {
+      "pass": true,
+      "threshold": "opposite sides of -1 and min < -1 < max",
+      "value": {
+        "max": -0.5698994820209042,
+        "min": -1.1447442605834517,
+        "w_eff_z0": -1.1447442605834517,
+        "w_eff_zmax": -0.5698994820209042
+      }
+    },
+    "G-E0-3.2": {
+      "pass": true,
+      "threshold": "one crossing in (0, z_max)",
+      "value": {
+        "count": 1,
+        "z_cross": 0.6499882089439822
+      }
+    },
+    "G-E0-3.3": {
+      "pass": true,
+      "threshold": "> 0",
+      "value": 0.720002734375
+    },
+    "G-E0-3.4": {
+      "pass": true,
+      "threshold": "<= 1e-10",
+      "value": -0.11
+    },
+    "G-E0-3.5": {
+      "pass": true,
+      "threshold": ">= -1e-8 advisory",
+      "value": 5.907151625283749e-06
+    },
+    "G-E0-3.6": {
+      "pass": true,
+      "threshold": "|Delta z_cross| <= 1e-2 and stable refined grid",
+      "value": {
+        "delta_z_cross": 8.826000974182513e-06,
+        "refined_max_real_eigenvalue": -0.11
+      }
+    },
+    "G-E0-4.1": {
+      "pass": true,
+      "threshold": "each <= 0.15",
+      "value": {
+        "a0": 0.04560474900167002,
+        "a2": 0.008006680113503325,
+        "h_closed": 0.0007897367720799155
+      }
+    },
+    "G-E0-4.2": {
+      "pass": true,
+      "threshold": "BIC_null - BIC_SBT >= 10",
+      "value": 278.2002467430223
+    },
+    "G-E0-4.3": {
+      "pass": true,
+      "threshold": "BIC_nuisance - BIC_SBT >= 6",
+      "value": 109.04551547360369
+    },
+    "G-E0-4.4": {
+      "pass": true,
+      "threshold": "in [0.5, 1.5]",
+      "value": 0.9416307599858385
+    },
+    "G-E0-4.5": {
+      "pass": true,
+      "threshold": "truth > 0.3 and relerr <= 0.25",
+      "value": {
+        "relerr": 0.04723455507582507,
+        "sbt": 1.0304788021946119,
+        "truth": 0.984
+      }
+    },
+    "G-E0-4.6": {
+      "pass": true,
+      "threshold": "<= 0.05",
+      "value": 0.0
+    }
+  },
+  "headline": {
+    "Q_peak": 1.741870102649917,
+    "Q_positive_fraction": 1.0,
+    "apparent_omega_lambda": 0.42506473617903395,
+    "holonomy_sbt": 1.0304788021946119,
+    "holonomy_truth": 0.984,
+    "homogeneous_control_omega_lambda": 0.010000000000000009,
+    "hubble_bic_nuisance_minus_sbt": 109.04551547360369,
+    "hubble_bic_null_minus_sbt": 278.2002467430223,
+    "lcdm_chi2": 6.257141210652079,
+    "max_real_eigenvalue": -0.11,
+    "min_rho_eff": 0.720002734375,
+    "rewrite_chi2": 1.3764117861571437,
+    "rewrite_oos_ratio": 15.464542327639727,
+    "w_eff_crossing_z": 0.6499882089439822
+  },
+  "schema_version": 1,
+  "terminal_state": "PASS"
+}

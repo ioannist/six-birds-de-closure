@@ -1,0 +1,28 @@
+{
+  "modules": 1,
+  "declarations": 9,
+  "module": "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability",
+  "names": [
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.offsets_injective",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.finite_readout_eq_verdict",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.actual_passing_split_pair",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.finite_admitted_offset_count",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.no_finite_readout_decoder",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.all_original_has_limit",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.limit_readout_true",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.infinite_admitted_offset_count",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.no_limit_readout_decoder"
+  ],
+  "source_sha256": "0891df2ad655b9a65e09d4707bac62bdbd41e7891d0340748ebaad4cb78b4f83",
+  "checked_packet_manifest_sha256": "d0c9d9002e3083222fa9473ffff9f9830379fa25486a133ae122d65f47afea01",
+  "installed": false,
+  "parent_plans_unchanged": true,
+  "future_native_totals": {
+    "modules": 1772,
+    "declarations": 20798,
+    "cumulative_queries": 32574,
+    "installation_targets": 1786
+  },
+  "combined_native_candidate_extended": false,
+  "combined_native_checker_extended": false
+}

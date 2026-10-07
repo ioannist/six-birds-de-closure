@@ -1,0 +1,20 @@
+import SbtCosmo.Derivation.GroundNativeEscape
+
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.c2_quadratic_remainder
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking_step
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.eigenmode_tracking
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.finite_eigenmode_escape
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.arbitrarily_close_eigenmode_escape
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape_within
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_output_escape
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.displacement_fixed
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.displacement_smooth
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.displacement_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.displacement_iterate_return
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.native_complex_local_escape

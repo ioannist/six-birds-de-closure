@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-05T18:52:10.641846+00:00",
+  "terminal_exit_code": 0,
+  "terminal_evidence": "Collector completed after actual Lean exit0 markers, exact printed statements, parsed audit exit0 and final driver success footers; separately captured Python driver exit codes are unavailable",
+  "standard_only": true,
+  "names": [
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.previous_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.current_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.previous_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.current_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.current_unit",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.actual_four_source_tests_fail",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.input_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.endpoint_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.boxes_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.all_first_sixty_fail",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.guarded_first_sixty_fail",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.all_first_sixty_update_gaps"
+  ],
+  "checked_declarations": 12,
+  "coupling": "15",
+  "original_sample_index": 9,
+  "finite_horizon_updates": 60,
+  "leaf_certificates": 60,
+  "paired_certificates": 30,
+  "audit_log_sha256": {
+    "/tmp/de-native-stable-seed-sixty-build-NativeStableSeed009SixtyAudit.log": "2f97db3c70e61a2e8bc5983920a8e6bd5c8a46c4de7c8e9aefe3ab2f030f1985",
+    "/tmp/de-native-stable-seed009-prefix-failures-audit.log": "5f1118a6ebe4314b09a4804e4cfbc5100fbc9b0fd9f6c5bec24ee84f11fc562c"
+  },
+  "completed_cohorts": [
+    {
+      "stem": "de-native-stable-seed-sixty-audit",
+      "audit_terminal_exit_code": 0,
+      "checked_declarations": 48,
+      "summary_sha256": "3f6e966a9c220b129732c76fceda45568476ddd34e99f33fa30fd144cbbff5ca",
+      "observed_python_driver_exit_code": null
+    },
+    {
+      "stem": "de-native-stable-seed009-prefix-failures-audit",
+      "audit_terminal_exit_code": 0,
+      "checked_declarations": 6,
+      "summary_sha256": "ad9bfc82dd32101d63312cb3bcab20385b2b1c18e1c54b09f01713fb39b17e76",
+      "observed_python_driver_exit_code": null
+    }
+  ],
+  "private_modules": 112,
+  "repository_modules": 676,
+  "archive_members": 327,
+  "mathlib_revision": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+  "source_freeze_inputs_revalidated": 6262,
+  "all_updates_one_through_sixty_fail": true,
+  "all_four_components_individually_fail_claimed": false,
+  "source_phase_and_normalization_guards_checked": true,
+  "original_seed_infinite_return_in_this_packet": false,
+  "separate_priority_infinite_return_already_checked": true,
+  "repository_registered": false,
+  "qualified_verification_pending": true,
+  "whole_twelve_sample_campaign_complete": false,
+  "ieee_execution": false,
+  "paper_edited": false,
+  "original_runtime_edited": false,
+  "review": "adversarial self-review",
+  "goal_complete": false
+}

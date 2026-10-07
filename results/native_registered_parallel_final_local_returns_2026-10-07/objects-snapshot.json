@@ -1,0 +1,16 @@
+{
+  "SbtCosmo.Derivation.GroundSourceExecutionReturn": "52bfdb061f56aa67d5df6b9cd1e0bd98af9cd1be122d6d1e4a8bba9205988dd1",
+  "SbtCosmo.Derivation.GroundSourceNormalizationFailure": "1fe161a4e50ac365098dfddf4bc62bf22b026cd32cf43c83a0d01d96fa83018c",
+  "SbtCosmo.Derivation.NativeOriginalEventualSourceSuccess": "349e46c586f0aa1fbfce52ca6c0698817e208f485e715d31988fedfd3fe4029c",
+  "SbtCosmo.Derivation.NativeStable008.Arithmetic": "f00d42cd4b7712297cae0d469824cda3824ca5a2e422ba2fd002eec0ea54e810",
+  "SbtCosmo.Derivation.NativeStable008.Return": "3e3941ef387f8f66a784b35eee18038de7c34d4b53a21e5ea1f673d522c1714a",
+  "SbtCosmo.Derivation.NativeStable009.Arithmetic": "e5d4177e3cce711c6a352eb9d1a4e572abca332249fd1c771fd3603441f49d08",
+  "SbtCosmo.Derivation.NativeStable009.Return": "ed391cc3ea2551f1db0e1fea681cd0c9fb8cc3bbd5eea5a5ba344b44e5714694",
+  "SbtCosmo.Derivation.NativeStableSeed008.Geometry": "642ce37e309af5ca6814bfc4fb372fc39765e8952b87f6dd31076610e520a6a0",
+  "SbtCosmo.Derivation.NativeStableSeed008.ReturnBridge": "1b85a5159c29b54869e6c1289ef916b0820b6e96e95a4db8e30e74afc2813a6f",
+  "SbtCosmo.Derivation.NativeStableSeed008.SixtyGeometry": "b5950722b43e8f12c275f5cd7d559395c097613f89335dbb641dcbbd6b6b625e",
+  "SbtCosmo.Derivation.NativeStableSeed009.Geometry": "138b578e270638ed0e3c9c7e099d823a674de8d2f689f33856a9dc827cb9e4fb",
+  "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailureGeometry": "4cc4c404e4d1be03b420a99f095aca1e13cbb1d53d96978e3ab967156568b261",
+  "SbtCosmo.Derivation.NativeStableSeed009.ReturnBridge": "ab4493b4313c62a71f2eb87f1ed9f6a0400932a7fe6f411a55eff46cc4140d78",
+  "SbtCosmo.Derivation.NativeStableSeed009.SixtyGeometry": "9247abbd9a810fad26161fe89a44da4a592f0ab826740ed1a9a769240c9ea42d"
+}

@@ -1,0 +1,77 @@
+{
+  "utc": "2026-10-05T11:32:25.934004+00:00",
+  "terminal_exit_code": 0,
+  "controls": [
+    {
+      "name": "exact_twenty_changes",
+      "expected": "accept",
+      "actual": "accept",
+      "changed": 20
+    },
+    {
+      "name": "missing_header_repair",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "missing_renderer_repair",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "missing_family_repair",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "dropped_query",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "duplicated_query",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "dropped_import",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "extra_nonimport_bytes",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "late_import",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "reordered_queries",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "wrong_original_manifest_digest",
+      "expected": "reject",
+      "actual": "reject"
+    },
+    {
+      "name": "unrelated_leaf_change",
+      "expected": "reject",
+      "actual": "reject"
+    }
+  ],
+  "historical_inputs": 2090,
+  "ast_adapters": {
+    "manifest_path": 1,
+    "p": 1
+  },
+  "scope": "Actual namespace/header exception and unchanged historical-freeze loop only; fresh registered receipt block excluded because evidence remains pending",
+  "fresh_registered_success_path_tested": false,
+  "registered_sources_changed": false,
+  "review": "adversarial self-review, not independent review",
+  "goal_complete": false
+}

@@ -1,0 +1,49 @@
+import SbtCosmo.Derivation.GroundNativeZeroGeometry
+import SbtCosmo.Derivation.GroundNativeZeroScalar
+import SbtCosmo.Derivation.GroundNativeZeroOrbit
+import SbtCosmo.Derivation.GroundOriginalSeed
+
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.affine_norm
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.affine_dot
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.decomposition
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.overlap_bound
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.radius_sq
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.radius_bounds
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.mixed_real
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.mixed_norm
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.step_real
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.step_unit
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.distance_identity
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.state_norm_bound
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.selected_zero
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.mixed_zero
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.native_return
+#print axioms SbtCosmo.Derivation.GroundNativeZeroGeometry.native_guard_return
+#print axioms SbtCosmo.Derivation.GroundNativeZeroScalar.mixed_bounds
+#print axioms SbtCosmo.Derivation.GroundNativeZeroScalar.coefficient_monotone
+#print axioms SbtCosmo.Derivation.GroundNativeZeroScalar.gain_numerator
+#print axioms SbtCosmo.Derivation.GroundNativeZeroScalar.coefficient_square
+#print axioms SbtCosmo.Derivation.GroundNativeZeroScalar.defect_contraction
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.step_estimate
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.rate_bounds
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_unit_overlap
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_defect_bound
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_distance_bound
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_converges
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_native_guards
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_native_return
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.actual_positive_zero_convergence
+#print axioms SbtCosmo.Derivation.GroundNativeZeroOrbit.actual_negative_zero_convergence
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.seed_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.initial_native_normalization
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.raw_norm_return
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.raw_norm_pos
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.first_normalized_unit
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.initialization_guards
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.double_normalization
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.initial_unit
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.ground_identity
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.dot_expression_return
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.initial_overlap_negative
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.positive_overlap_rejected
+#print axioms SbtCosmo.Derivation.GroundOriginalSeed.actual_seed_zero_convergence

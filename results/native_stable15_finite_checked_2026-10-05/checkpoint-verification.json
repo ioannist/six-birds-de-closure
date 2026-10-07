@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-05T09:35:16.668795+00:00",
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "checked_declarations": 18,
+  "finite_dependency_modules": 110,
+  "retained_terminal_zero_modules": 72,
+  "fresh_recovery_modules": 38,
+  "leaves": 60,
+  "pairs": 30,
+  "archive_members_verified": 448,
+  "bound_modules": 786,
+  "every_prefix_one_to_sixty_fails": true,
+  "guards_before_sixty": true,
+  "unit_states_zero_to_sixty": true,
+  "original_seed_infinite_return_checked": false,
+  "registered": false,
+  "goal_complete": false
+}

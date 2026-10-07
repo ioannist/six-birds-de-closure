@@ -1,0 +1,99 @@
+# Appendix B — Audit details
+
+## B.1 Data and likelihood
+
+Planck 2018 compressed distance priors, DESI DR2 compressed BAO and Pantheon+ supernova distances, $n=1604$ points in the
+joint fit. The supernova absolute intercept is profiled analytically and the sound-horizon convention is fixed as in the
+pipeline's validation. The background is computed with a compressed scipy-based pipeline; multi-parameter dark-energy fits
+use nested sampling (dynesty). No Boltzmann solver is used anywhere in the geometry audits.
+
+## B.2 Pre-registration summary
+
+Pre-registered before the audit tables were generated, using existing data products and baseline fits:
+
+- **Models (B1).** $\Lambda$CDM ($k=4$); $w_0w_a$CDM ($k=6$); rewrite
+  $E^2(z)=\Omega_m(1+z)^3+\Omega_r(1+z)^4+A(1+z)^m$ with $A\ge0$ and bounded $m$ ($k=6$). Readouts $\chi^2$, AIC, BIC and the
+  posterior of $m$. Constant-compatibility criterion: $|m|\le\min(2\sigma_m,0.25)$, evaluated at the best-fit $m$.
+- **Chart comparison (B1b).** The best-fit $w_0w_a$ history as $w(z)$ and as $\Delta_H(z)$.
+- **Staging statistic (B2).** $S$ as in Section 8.3 over the splits BAO only, supernovae only, supernovae with $z<0.35$ and
+  with $z\ge0.35$; Planck is excluded because the audit targets supernova and BAO route dependence. Null: mock $\Lambda$CDM
+  realizations through the identical pipeline. All splits reported with bound and convergence flags.
+- **Route residuals (B3).** Unsigned parameter residuals of the supernova-only and BAO-only fits against the joint fit.
+- **Quarantine.** Fitted amplitudes are in-sample parameters, never predictions.
+
+## B.3 Model and chart results
+
+| model | $k$ | $\chi^2$ | AIC | BIC | $\Delta$AIC | $\Delta$BIC |
+|--------|--|--------|--------|--------|------|------|
+| $\Lambda$CDM | 4 | 1455.80 | 1463.80 | 1485.32 | 0 | 0 |
+| $w_0w_a$CDM | 6 | 1442.17 | 1454.17 | 1486.45 | $-9.63$ | $+1.13$ |
+| rewrite | 6 | 1453.66 | 1465.66 | 1497.94 | $+1.85$ | $+12.61$ |
+
+$\Lambda$CDM: $\Omega_m=0.303$. $w_0w_a$CDM: $w_0=-0.795$, $w_a=-0.673$. Rewrite: best fit $A=0.699$, $m=0.068$, with
+$\sigma_m=0.074$; posterior median $m=0.131$ (16th and 84th percentiles $0.057$, $0.204$). Chart comparison: crossing at
+$z_\star\approx0.4388$, the rounded analytic root for the stored best-fit decimals (a grid interpolation gave $0.43885$); $\Delta_H$ between
+$0.4985$ and $0.7596$ on the tabulated range, finite and smooth throughout. All 251 tabulated chart rows agree with the
+analytic density to $10^{-12}$.
+
+## B.4 Staging calibration and amendments
+
+**Original alternatives.** A rewrite $\Delta_H=A(1+z)^m$ injected coherently into all probes, at amplitudes up to $A=5.6$,
+was never detected. The real score also exceeded the threshold at that stage ($9.63$ against $8.67$), and was not
+interpreted, because the audit had not been shown to detect anything.
+
+**Amended alternatives (logged).** A supernova-only tilt $\mu\to\mu+\varepsilon(z/0.5)$ and a BAO-only tilt
+$\alpha\to\alpha(1+\varepsilon(z-0.8))$ with $\varepsilon\in\{0.01,0.02,0.05,0.10,0.20\}$, 20 realizations each, and the same
+statistic and null. Detection counts at the rank-rule cutoff $8.879$:
+
+| $\varepsilon$ | 0.01 | 0.02 | 0.05 | 0.10 | 0.20 |
+|---|---|---|---|---|---|
+| supernova tilt | 1/20 | 0/20 | 1/20 | 2/20 | 17/20 |
+| BAO tilt | 5/20 | 3/20 | 7/20 | 20/20 | 20/20 |
+
+**Threshold rule.** The originally declared threshold was the interpolated empirical 95th percentile of the 20 null scores,
+$8.328$. Interpolated percentiles can exceed their nominal false-alarm rate even for exchangeable scores: for a uniformly
+random permutation of the equally spaced scores $0,\ldots,20$, with twenty used for calibration and one held out, the
+interpolated 95th-percentile rule rejects with probability $2/21>1/20$. The conservative rank rule
+rejects only scores above the $\lceil(n+1)(1-\alpha)\rceil$-th smallest null score (never rejecting if that rank
+exceeds $n$), here the maximum, $8.879$; under
+exchangeability its rejection probability is at most $1/21$. Both the finite counting law and the counterexample are
+mechanized. With either threshold the real score $9.630$ fires, and the detection-grid values remain $0.20$ and $0.10$.
+
+**Split fits.**
+
+| split | data points | $A$ | $m$ | bound flag | split score |
+|---|---|---|---|---|---|
+| joint | 19 | 0.817 | $-0.454$ | none | — |
+| BAO only | 13 | 0.701 | 0.053 | none | 6.35 |
+| supernovae only | 6 | 0.400 | $-6.0$ | $m$ at lower bound | 7.10 |
+| supernovae, $z<0.35$ | 3 | 0.398 | $-6.0$ | $m$ at lower bound | 6.33 |
+| supernovae, $z\ge0.35$ | 3 | 8.0 | 1.530 | $A$ at upper bound | 9.63 |
+
+The reduced vector consists of thirteen BAO points and six compressed supernova summaries, with $\Omega_m$ fixed at
+$0.3027$. Reduced vectors are fragile for shape fits, which is why several fits reach a bound; the $0.05$ term in the
+denominator of $S$ limits the effect of small split variances. An early rewrite fit on this reduced vector
+($\chi^2/{\rm dof}\approx6.7$, with bound hits) was not comparable to the baselines; Section 8.1 reports the refit through the
+full likelihood.
+
+## B.5 Route residuals
+
+| route pair | parameter | unsigned residual |
+|---|---|---|
+| supernovae only vs joint | $\Omega_m$ | 0 (fixed) |
+| supernovae only vs joint | $A$ | 0.417 |
+| BAO only vs joint | $\Omega_m$ | 0 (fixed) |
+| BAO only vs joint | $A$ | 0.116 |
+
+## B.6 Growth audit
+
+Probes: KiDS-Legacy COSEBIs (126 points, S/N 28.61), HSC-Y3 Fourier-space cosmic shear (170 points, S/N 37.39), ACT, SPT and
+Planck CMB lensing (35 bandpowers, S/N 61.35), with BOSS and DESI full-shape clustering for the mild regime. Heterogeneity
+proxy $H=\langle[\log(P_{\rm nl}/P_{\rm lin})]_+\rangle_W$, evaluated in one posterior-mean cosmology. Shell census
+(slack $H\le0.05$ / mild / strong $H\ge0.3$): KiDS $0/3/0$, HSC $0/0/4$, CMB lensing $2/1/0$; full-shape about
+$H\le0.11$ at $k\lesssim0.2$. The within-data-set comparison computed no price because its support condition failed. In
+separate HSC diagnostics with local CCL-based linearizations over posterior draws, linear-model shell prices are
+$8.29$, $8.80$, $16.50$ and $10.57$, and nonlinear models with and without nuisance parameters give zero point prices. The
+nonlinear controls use finite injections and return injected point prices of $3.9$. The linear controls already exceed
+the threshold before injection; their injection search ends at the negligible scale $2^{-80}$, so they do not demonstrate
+incremental sensitivity to an injected signal. The fitted geometry inputs of these diagnostics are not
+independent out-of-sample data.

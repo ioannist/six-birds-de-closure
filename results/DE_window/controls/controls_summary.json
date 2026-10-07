@@ -1,0 +1,99 @@
+{
+  "controls": [
+    {
+      "control": "C1_homogeneous",
+      "passes": true,
+      "rows": 48,
+      "rs_any": false
+    },
+    {
+      "control": "C2_gate_can_fire",
+      "negative_outside_failure": "crunch_erases_records",
+      "passes": true,
+      "positive_outside_failure": "growth_shutoff_or_insufficient_growth"
+    },
+    {
+      "control": "C3_record_irrelevant_tag_sweep",
+      "passes": true,
+      "summaries": [
+        {
+          "rs_lambda_values": [
+            -0.0001,
+            -3e-05,
+            -1e-05,
+            0.0,
+            1e-05,
+            3e-05,
+            0.0001,
+            0.0003,
+            0.001,
+            0.003,
+            0.01,
+            0.03,
+            0.1,
+            0.3,
+            1.0,
+            3.0
+          ],
+          "same_as_reference": true,
+          "tag_probability": 0.45
+        },
+        {
+          "rs_lambda_values": [
+            -0.0001,
+            -3e-05,
+            -1e-05,
+            0.0,
+            1e-05,
+            3e-05,
+            0.0001,
+            0.0003,
+            0.001,
+            0.003,
+            0.01,
+            0.03,
+            0.1,
+            0.3,
+            1.0,
+            3.0
+          ],
+          "same_as_reference": true,
+          "tag_probability": 0.5
+        },
+        {
+          "rs_lambda_values": [
+            -0.0001,
+            -3e-05,
+            -1e-05,
+            0.0,
+            1e-05,
+            3e-05,
+            0.0001,
+            0.0003,
+            0.001,
+            0.003,
+            0.01,
+            0.03,
+            0.1,
+            0.3,
+            1.0,
+            3.0
+          ],
+          "same_as_reference": true,
+          "tag_probability": 0.55
+        }
+      ]
+    },
+    {
+      "control": "C4_robustness",
+      "passes": true,
+      "smooth_positive_edge_with_s": true,
+      "variant_count": 7
+    },
+    {
+      "control": "C5_verdict_rederivation",
+      "passes": true,
+      "returncode": 0
+    }
+  ]
+}

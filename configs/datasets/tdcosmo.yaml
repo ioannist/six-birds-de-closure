@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: TDCOSMO
+manifest: data/manifests/tdcosmo.json
+fallback_policy: moduli_posterior_family

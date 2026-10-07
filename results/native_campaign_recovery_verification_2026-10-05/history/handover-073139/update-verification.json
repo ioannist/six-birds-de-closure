@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-05T07:31:39.569444+00:00",
+  "live_parents": {
+    "2558747": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py",
+    "2637955": "/usr/bin/python3 /tmp/de_native_stable_seed_pairs_private_build.py",
+    "2854622": "/usr/bin/python3 /tmp/de_native_stable_seed_families_private_build.py",
+    "3948875": "/usr/bin/python3 /tmp/de_native_stable_seed_sixty_private_build.py",
+    "940127": "/usr/bin/python3 /tmp/de_native_stable_prefix_failures_private_build.py",
+    "2056100": "/usr/bin/python3 /tmp/de_native_original_sample_results_private_build.py",
+    "3099606": "/usr/bin/python3 /tmp/de_native_campaign_qualified_recovery_build.py",
+    "3222760": "/usr/bin/python3 /tmp/de_native_seed_real_returns_qualified_recovery_build.py",
+    "3390951": "/usr/bin/python3 /tmp/de_native_campaign_verification_recovery_finish.py",
+    "480556": "/usr/bin/python3 /tmp/de_native_additional_constructions_qualified_build.py",
+    "1255480": "/usr/bin/python3 /tmp/de_native_stable15_priority/build_priority.py",
+    "3029588": "/usr/bin/python3 -u /tmp/de_source_execution_supplement_qualified_build.py"
+  },
+  "checked_freezes": [
+    "/tmp/de-native-campaign-qualified-recovery-freeze.json",
+    "/tmp/de-native-campaign-verification-recovery-finish-freeze.json",
+    "/tmp/de-native-seed-real-returns-qualified-recovery-freeze.json",
+    "/tmp/de_native_additional_constructions_qualified/source-freeze.json",
+    "/tmp/de_native_stable15_priority/source-freeze.json",
+    "/tmp/de_source_execution_supplement_qualified/source-freeze.json"
+  ],
+  "stable_scheduled_modules": 189,
+  "priority_modules": 41,
+  "prior_handover_preserved": true,
+  "goal_complete": false
+}

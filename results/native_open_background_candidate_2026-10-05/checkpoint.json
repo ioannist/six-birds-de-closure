@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-05T03:56:16.394897+00:00",
+  "compiled_helper_modules": 7,
+  "compiled_helper_declarations": 40,
+  "freshly_audited_declarations": 15,
+  "concrete_and_readout_declarations_pending": 10,
+  "full_fifty_name_audit_complete": false,
+  "concrete_open_background_return_complete": false,
+  "active_processes": [
+    "1518143       11:34 /usr/bin/python3 /tmp/de_native_open_background/compile_module.py GroundOriginalOpenBackground de-original-open-background-first",
+    "2319520       01:50 /usr/bin/python3 /tmp/de_native_open_background/finish_construction.py"
+  ],
+  "first_compile_session": 93567,
+  "finish_session": 30540,
+  "repository_registered": false,
+  "repository_commit_pending": true,
+  "paper_edited": false,
+  "original_runtime_edited": false,
+  "review": "adversarial self-review",
+  "source_freeze_sha256": "4809fa86ff4db2fb0a874e6a0f5cf1b567242dc28ce8cc85ad2ee15e6c7e4aca"
+}

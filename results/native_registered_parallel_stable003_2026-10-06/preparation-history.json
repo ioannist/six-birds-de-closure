@@ -1,0 +1,9 @@
+{
+  "first_preparation_exit_code": 1,
+  "first_preparation_error": "IndentationError at generated driver line37; AST parse rejected before writing the driver",
+  "following_missing_driver_exec_exit_code": 2,
+  "registered_compile_started_by_failed_preparation": false,
+  "corrected_preparation_exit_code": 0,
+  "driver_sha256": "234962d8ab3a7d3b96de3ddd166a635f67575af4758b07983e496870f6c70bac",
+  "original_family001_label_correction": "Family001 is the original sample labeled0.1, represented by GroundSamples.Point001.a; the earlier commentary label0.001 was mistaken. No proof source change."
+}

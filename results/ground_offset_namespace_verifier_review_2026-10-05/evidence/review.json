@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-05T08:23:09.033256+00:00",
+  "terminal_exit_code": 0,
+  "scope": "Verifier exception self-review and revalidation of existing isolated proof evidence; registered integration still pending",
+  "original_verifier_gates_AST_identical_after_exactly_three_declared_additions": true,
+  "additions": [
+    "historical freeze namespace exception",
+    "repair packet files included in fingerprints",
+    "namespace recovery provenance field"
+  ],
+  "packet_manifest_files": 25,
+  "archive_members": 100,
+  "fresh_historical_statement_receipts": 6909,
+  "historical_standard_only_axiom_receipts": 6909,
+  "bound_modules_revalidated": 1166,
+  "external_import_entries": 16,
+  "review": "adversarial self-review, not independent review",
+  "new_Lean_commands_run": 0,
+  "registered_sources_changed": false,
+  "whole_offset_gate_complete": false,
+  "goal_complete": false,
+  "inputs": {
+    "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_verify.py": "3f63473f3be4edd12fa9e7ecbe66ea901de517d5069b4d33778c090ac86761e0",
+    "/tmp/de_offset_transport_namespace_recovery/de_ground_offset_transport_verify.repaired.py": "345d19b8cb91594d382b29e2f65169d4cf8d8e2258c2ac265446087b7a8f7494",
+    "/home/repos/six-birds-de-closure/results/ground_offset_namespace_recovery_checked_2026-10-05/source-bindings.json": "66741842b4fd3a805b537a339c0ab574ae816f54f1e5914bcd7108c07ee60b92",
+    "/home/repos/six-birds-de-closure/results/ground_offset_namespace_recovery_checked_2026-10-05/file-manifest.json": "0ce4f72c4136a1c74c505cfe1aca61127bea9acb28479de6227e96fbfe3c92bb",
+    "/home/repos/six-birds-de-closure/results/ground_offset_namespace_recovery_checked_2026-10-05/archive-manifest.json": "e11bca6dafaa885306680e8a6d580c6e7b66a55d6f87edfda72efe62dbdc97e6"
+  }
+}

@@ -1,0 +1,218 @@
+\hypertarget{appendix-c-mechanization-and-reproducibility}{%
+\section{Mechanization and
+reproducibility}\label{appendix-c-mechanization-and-reproducibility}}
+
+\hypertarget{c.1-the-lean-development}{%
+\subsection{The Lean development}\label{c.1-the-lean-development}}
+
+The theorems are mechanized in Lean 4 (v4.28.0) with a pinned mathlib,
+in the \texttt{lean/\allowbreak } directory of the repository. The main modules, all
+under \texttt{lean/\allowbreak SbtCosmo/\allowbreak }, are:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.47\columnwidth}\raggedright
+result\strut
+\end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+modules\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+closure price (\Cref{thm:price}) and variants\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak ConvexClosurePrice}, \texttt{ExtendedClosurePrice},
+\texttt{NonsmoothConePrice}, \texttt{ExtendedNonsmoothConePrice},
+\texttt{NonsmoothMatrixPrice}, \texttt{RelativeSchurStationarity}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+adequacy residual (\Cref{prop:schur})\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Adequacy/\allowbreak Support}, \texttt{Adequacy/\allowbreak Reconciliation},
+\texttt{Derivation/\allowbreak SchurDifferential},
+\texttt{SchurAdjointStationarity}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+allocation model (Section 4.3)\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak AllocationPrice}, \texttt{AllocationSensitivity},
+\texttt{AllocationScreening}, \texttt{AllocationSample}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+min-cut comparison and entropy example (Section 4.4)\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak CapacityScale}, \texttt{TensorComposition}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+record window (\Cref{thm:window}) and variants\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak GrowthPopulation}, \texttt{WindowRecords},
+\texttt{WindowSample}, \texttt{WindowErasureWitness},
+\texttt{WindowEternalRecords}, \texttt{WindowPatchCounts},
+\texttt{WindowPatchCountRatio}, \texttt{WindowGlobalStarvation},
+\texttt{WindowSensitivity}, \texttt{GrowthEndpointDerivative}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+first-record ratios (\Cref{prop:nopinch})\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak WindowFirstRecord}, \texttt{WindowSignedRecord},
+\texttt{WindowEndpointRatio}, \texttt{WindowEternalRatioCertified}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+orbit classification (\Cref{thm:orbits})\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak GroundFixedPoint},
+\texttt{GroundOriginalContinuation}, \texttt{GroundOriginalOffsetSeed},
+\texttt{GroundOriginalOffsetSixty},
+\texttt{NativeOriginalSampleResults}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+readout nonidentifiability (\Cref{thm:readout})\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak GroundOriginalAuditNonidentifiability},
+\texttt{BackgroundSelection}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+gauge modulus (\Cref{thm:gauge})\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak GaugeClosure}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+mediator (\Cref{thm:mediator}) and commuting completions\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak AccessFork}, \texttt{FieldAccessBlock}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+measure bounds (Propositions \ref{prop:fixedsupport},
+\ref{prop:smoothprior})\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak PriorObstruction}, \texttt{WindowSmoothPrior}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+CPL identities (Section 8.2)\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak CPLReadout}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.47\columnwidth}\raggedright
+rank rule and interpolation counterexample (Section 8.3)\strut
+\end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+\texttt{Derivation/\allowbreak StagingAudit}\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+\addtocounter{table}{-1}
+
+Brouwer's fixed-point theorem, used in \Cref{thm:orbits}, comes from a
+ported and transitively checked development pinned in
+\texttt{lean/\allowbreak Gametheory/\allowbreak PROVENANCE.json}. Exact certificates for the
+orbit classification and the window brackets are generated by scripts in
+the repository and checked by the Lean kernel; a few auxiliary
+certificates computed outside Lean are marked as exact computations
+where they are used.
+
+\textbf{Verification record.} A full registered build of the development
+completed with 11,775 build jobs. It was followed by 20,798 registered
+declaration and type queries and a cumulative audit of 32,574 queries
+for the axioms the proofs use. The only axioms that occur are
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound};
+there are no \texttt{sorry} placeholders, custom axioms or native-code
+trust extensions. The receipts are in
+\texttt{results/\allowbreak native\_\allowbreak registered\_\allowbreak final\_\allowbreak verification\_\allowbreak 2026-\allowbreak 10-\allowbreak 06/\allowbreak }.
+The recorded full run of the Python test suite passed 127 tests, before
+later corrected-helper and deterministic line-ending integrations; a
+subsequent focused check passed four tests. No full-suite receipt exists
+for the final Python snapshot. These records are in
+\texttt{results/\allowbreak ground\_\allowbreak state\_\allowbreak 2026-\allowbreak 10-\allowbreak 02/\allowbreak verification.json}.
+
+\hypertarget{c.2-computations}{%
+\subsection{Computations}\label{c.2-computations}}
+
+The original model and geometry-audit computations have build scripts,
+independent validators and tests; additional computations have their own
+documented checks:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{allocation model:} build script
+  \texttt{scripts/\allowbreak de\_\allowbreak dual\_\allowbreak carrier.py}, validator
+  \texttt{scripts/\allowbreak de\_\allowbreak dual\_\allowbreak validate.py}, tests
+  \texttt{tests/\allowbreak test\_\allowbreak de\_\allowbreak dual.py}, outputs \texttt{results/\allowbreak DE\_\allowbreak dual/\allowbreak };
+\item
+  \textbf{record window:} \texttt{scripts/\allowbreak de\_\allowbreak window\_\allowbreak carrier.py},
+  \texttt{scripts/\allowbreak de\_\allowbreak window\_\allowbreak validate.py},
+  \texttt{tests/\allowbreak test\_\allowbreak de\_\allowbreak window.py}, \texttt{results/\allowbreak DE\_\allowbreak window/\allowbreak };
+\item
+  \textbf{measure probe:} \texttt{scripts/\allowbreak de\_\allowbreak measure\_\allowbreak probe.py},
+  \texttt{scripts/\allowbreak de\_\allowbreak measure\_\allowbreak validate.py},
+  \texttt{tests/\allowbreak test\_\allowbreak de\_\allowbreak measure.py}; the measure tables of Section 7
+  are in \texttt{results/\allowbreak math\_\allowbreak review\_\allowbreak 2026-\allowbreak 10-\allowbreak 01/\allowbreak };
+\item
+  \textbf{lattice model:} the vendored source with
+  \texttt{scripts/\allowbreak step54\_\allowbreak rederive.py} (an independent classifier),
+  outputs \texttt{external/\allowbreak step54\_\allowbreak repro/\allowbreak } and
+  \texttt{results/\allowbreak DE\_\allowbreak step54\_\allowbreak repro/\allowbreak }; the floating-point traces of
+  Figure \ref{fig:orbits} are produced by
+  \texttt{paper/\allowbreak contents/\allowbreak figures/\allowbreak orbit\_\allowbreak traces.py} from the unchanged
+  source;
+\item
+  \textbf{geometry audits:} \texttt{scripts/\allowbreak de\_\allowbreak audit\_\allowbreak run.py},
+  \texttt{scripts/\allowbreak de\_\allowbreak audit\_\allowbreak b2\_\allowbreak fix.py}, validator
+  \texttt{scripts/\allowbreak de\_\allowbreak audit\_\allowbreak validate.py}, tests
+  \texttt{tests/\allowbreak test\_\allowbreak de\_\allowbreak audit.py}, outputs
+  \texttt{results/\allowbreak DE\_\allowbreak audit/\allowbreak }; the rank-rule recomputation is in
+  \texttt{results/\allowbreak staging\_\allowbreak rank\_\allowbreak 2026-\allowbreak 10-\allowbreak 02/\allowbreak };
+\item
+  \textbf{growth audit:} outputs in \texttt{results/\allowbreak E5SP/\allowbreak };
+\item
+  \textbf{figures:} \texttt{paper/\allowbreak contents/\allowbreak figures/\allowbreak make\_\allowbreak figures.py}.
+\end{itemize}
+
+All sweeps and fits run with single-threaded numerical libraries and
+committed seeds.
+
+\hypertarget{c.3-provenance-of-the-lattice-model}{%
+\subsection{Provenance of the lattice
+model}\label{c.3-provenance-of-the-lattice-model}}
+
+The lattice model originates in another Six Birds repository. Its
+required source files were copied into \texttt{external/\allowbreak step54\_\allowbreak repro/\allowbreak }
+with a manifest recording source paths and SHA-256 hashes, with source
+commits where recorded (the catalog file from the Foundations series has
+none); the hashes match, and one file differs from its source only by a
+disclosed path relocation. The sweep was re-run on this project's
+hardware, and an independently written classifier, sharing no code with
+the source, recomputed pass or fail for every offset and coupling from
+the regenerated residual tables. All rows agree with the source
+artifacts.
+
+\hypertarget{c.4-recomputing-the-geometry-audits}{%
+\subsection{Recomputing the geometry
+audits}\label{c.4-recomputing-the-geometry-audits}}
+
+The geometry audits run without a Boltzmann solver; an optional solver
+import was made lazy, and the acceptance suite was executed with that
+import blocked. With the pinned requirements in
+\texttt{results/\allowbreak DE\_\allowbreak audit\_\allowbreak repro/\allowbreak }:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \texttt{pytest\ tests/\allowbreak test\_\allowbreak de\_\allowbreak audit.py} passes (4 tests);
+\item
+  \texttt{python\ scripts/\allowbreak de\_\allowbreak audit\_\allowbreak validate.py\ -\allowbreak \/\allowbreak -\allowbreak results-\allowbreak dir\ results/\allowbreak DE\_\allowbreak audit}
+  re-derives the verdicts with no mismatch;
+\item
+  \texttt{python\ scripts/\allowbreak de\_\allowbreak audit\_\allowbreak repro\_\allowbreak smoke.py\ -\allowbreak \/\allowbreak -\allowbreak tolerance-\allowbreak chi2\ 5.0}
+  performs a reduced optimizer refit of the B1 likelihood and reproduces
+  the stored best-fit \(\chi^2\) values within tolerance
+  (\(\Delta\chi^2=-0.008\) for \(\Lambda\)CDM and \(-0.63\) for the
+  rewrite).
+\end{enumerate}
+
+These are smoke-level comparisons, not a full replication of the
+posteriors. A skeptical reader can start with the test suites and
+validators (seconds), then the model builds (minutes), the Lean build
+(hours on one machine) and the full audit battery (hours, dominated by
+nested sampling).

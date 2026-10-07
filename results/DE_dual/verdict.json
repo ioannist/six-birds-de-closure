@@ -1,0 +1,13 @@
+{
+  "active_budget_count": 7,
+  "global_dual_constant": 1,
+  "heterogeneous_allocations": 1,
+  "local_budget_control_flips": 1,
+  "max_dual_finite_difference_error": "3.563110917426e-11",
+  "max_kkt_residual": "1.502797886133e-12",
+  "recognition_payoff_passes": 1,
+  "slack_budget_count": 3,
+  "slack_collapse": 1,
+  "source_coupled_control_moves": 1,
+  "vacuum_shift_state_screened_dual_absorbs_offset": 1
+}

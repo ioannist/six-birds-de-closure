@@ -1,0 +1,230 @@
+{
+  "kind": "floating heuristic scout, not exact orbit/basin certificate",
+  "numpy_version": "1.26.4",
+  "source_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd",
+  "initial_data_sha256": "130b8906149be1048a602f27110bbf2c56fea08f800aa237f95d1eceff29e286",
+  "original_phase_bug_and_fallback_retained": true,
+  "source_eigensolver_sign_retained_in_updates": true,
+  "source_initialization_normalization_count": 2,
+  "unused_unitary_diagnostic_omitted": true,
+  "source_updates_per_coupling": 1000,
+  "couplings": [
+    {
+      "coupling_hex": "0x0.0p+0",
+      "mix_hex": "0x1.0000000000000p-1",
+      "checkpoints": [
+        {
+          "iteration": 1,
+          "real_sum": -1.9138873401371366,
+          "imaginary_norm": 0.49589528239770175,
+          "distance_to_positive_previous_candidate": 1.8846073449186818,
+          "distance_to_negative_previous_candidate": 0.6695185998003017
+        },
+        {
+          "iteration": 6,
+          "real_sum": -2.747753988884744,
+          "imaginary_norm": 0.016758918421939963,
+          "distance_to_positive_previous_candidate": 1.999886272426023,
+          "distance_to_negative_previous_candidate": 0.02132832299895156
+        },
+        {
+          "iteration": 60,
+          "real_sum": -2.755969872599369,
+          "imaginary_norm": 4.083216086136032e-17,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 1.2150551009086464e-16
+        },
+        {
+          "iteration": 200,
+          "real_sum": -2.755969872599369,
+          "imaginary_norm": 4.0821559971578444e-17,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 1.2150194805165215e-16
+        },
+        {
+          "iteration": 1000,
+          "real_sum": -2.755969872599369,
+          "imaginary_norm": 4.0821559971578444e-17,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 1.2150194805165215e-16
+        }
+      ],
+      "observed_minimum_overlap": 0.20505502414800927,
+      "observed_minimum_mixed_norm": 0.7760439173119704
+    },
+    {
+      "coupling_hex": "0x1.3333333333333p-2",
+      "mix_hex": "0x1.0000000000000p-1",
+      "checkpoints": [
+        {
+          "iteration": 1,
+          "real_sum": -1.8965736398239084,
+          "imaginary_norm": 0.4945523144153391,
+          "distance_to_positive_previous_candidate": 1.8860707486655315,
+          "distance_to_negative_previous_candidate": 0.6653849495053537
+        },
+        {
+          "iteration": 6,
+          "real_sum": -2.7510137820696525,
+          "imaginary_norm": 0.016726633689551792,
+          "distance_to_positive_previous_candidate": 1.9998886777393468,
+          "distance_to_negative_previous_candidate": 0.021101579323978107
+        },
+        {
+          "iteration": 60,
+          "real_sum": -2.758125375361348,
+          "imaginary_norm": 4.082962906505469e-17,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 1.306694232201545e-16
+        },
+        {
+          "iteration": 200,
+          "real_sum": -2.758125375361348,
+          "imaginary_norm": 4.0821559971578444e-17,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 1.3066690213520432e-16
+        },
+        {
+          "iteration": 1000,
+          "real_sum": -2.758125375361348,
+          "imaginary_norm": 4.0821559971578444e-17,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 1.3066690213520432e-16
+        }
+      ],
+      "observed_minimum_overlap": 0.2156051580494235,
+      "observed_minimum_mixed_norm": 0.7790760793362712
+    },
+    {
+      "coupling_hex": "0x1.e000000000000p+3",
+      "mix_hex": "0x1.0000000000000p-1",
+      "checkpoints": [
+        {
+          "iteration": 1,
+          "real_sum": -1.2005714836126296,
+          "imaginary_norm": 0.5132256521060378,
+          "distance_to_positive_previous_candidate": 1.8918324107827895,
+          "distance_to_negative_previous_candidate": 0.648822109296362
+        },
+        {
+          "iteration": 6,
+          "real_sum": -2.7733754827685346,
+          "imaginary_norm": 0.05264380685092579,
+          "distance_to_positive_previous_candidate": 1.9975110090907444,
+          "distance_to_negative_previous_candidate": 0.09974852661206157
+        },
+        {
+          "iteration": 60,
+          "real_sum": -2.7889343536299185,
+          "imaginary_norm": 4.0918298963672097e-17,
+          "distance_to_positive_previous_candidate": 1.9999999842826486,
+          "distance_to_negative_previous_candidate": 0.00025073772258681217
+        },
+        {
+          "iteration": 200,
+          "real_sum": -2.7889896304259816,
+          "imaginary_norm": 8.10062226780092e-26,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 5.926781983648977e-10
+        },
+        {
+          "iteration": 1000,
+          "real_sum": -2.788989630556628,
+          "imaginary_norm": 3.5210297695500444e-32,
+          "distance_to_positive_previous_candidate": 2.0,
+          "distance_to_negative_previous_candidate": 4.2276033262255756e-16
+        }
+      ],
+      "observed_minimum_overlap": 0.10151678348646363,
+      "observed_minimum_mixed_norm": 0.6758581400042848
+    },
+    {
+      "coupling_hex": "0x1.4000000000000p+4",
+      "mix_hex": "0x1.0000000000000p-1",
+      "checkpoints": [
+        {
+          "iteration": 1,
+          "real_sum": -1.147860754280142,
+          "imaginary_norm": 0.5088467362627411,
+          "distance_to_positive_previous_candidate": 1.8943727187785255,
+          "distance_to_negative_previous_candidate": 0.6413672912985636
+        },
+        {
+          "iteration": 6,
+          "real_sum": 0.8542158297482783,
+          "imaginary_norm": 0.08886211395351588,
+          "distance_to_positive_previous_candidate": 0.5753426194292939,
+          "distance_to_negative_previous_candidate": 1.9154583969035295
+        },
+        {
+          "iteration": 60,
+          "real_sum": 0.8920023059721156,
+          "imaginary_norm": 4.352985629362031e-11,
+          "distance_to_positive_previous_candidate": 0.5529949856426335,
+          "distance_to_negative_previous_candidate": 1.9220292780949262
+        },
+        {
+          "iteration": 200,
+          "real_sum": 0.891044585152001,
+          "imaginary_norm": 3.335715993988636e-17,
+          "distance_to_positive_previous_candidate": 0.5530084461286218,
+          "distance_to_negative_previous_candidate": 1.9220254052718468
+        },
+        {
+          "iteration": 1000,
+          "real_sum": 0.8910440234684187,
+          "imaginary_norm": 3.33571572635693e-17,
+          "distance_to_positive_previous_candidate": 0.5530084325950705,
+          "distance_to_negative_previous_candidate": 1.9220254091657436
+        }
+      ],
+      "observed_minimum_overlap": 0.0733439644134566,
+      "observed_minimum_mixed_norm": 0.7213075241653257
+    },
+    {
+      "coupling_hex": "0x1.e000000000000p+4",
+      "mix_hex": "0x1.0000000000000p-1",
+      "checkpoints": [
+        {
+          "iteration": 1,
+          "real_sum": -1.0837950850486657,
+          "imaginary_norm": 0.5040759886802073,
+          "distance_to_positive_previous_candidate": 1.8968330400629934,
+          "distance_to_negative_previous_candidate": 0.6340539552162602
+        },
+        {
+          "iteration": 6,
+          "real_sum": 0.8238425776158129,
+          "imaginary_norm": 0.07676393466993679,
+          "distance_to_positive_previous_candidate": 0.5588423025526784,
+          "distance_to_negative_previous_candidate": 1.920337283103575
+        },
+        {
+          "iteration": 60,
+          "real_sum": 1.1315545811484315,
+          "imaginary_norm": 1.912143248091303e-12,
+          "distance_to_positive_previous_candidate": 0.5415068140482316,
+          "distance_to_negative_previous_candidate": 1.9252974758045402
+        },
+        {
+          "iteration": 200,
+          "real_sum": 1.1315579963011946,
+          "imaginary_norm": 5.402377464388547e-17,
+          "distance_to_positive_previous_candidate": 0.5415072074754982,
+          "distance_to_negative_previous_candidate": 1.9252973651496246
+        },
+        {
+          "iteration": 1000,
+          "real_sum": 1.1315579963011944,
+          "imaginary_norm": 5.40922053021144e-17,
+          "distance_to_positive_previous_candidate": 0.5415072074754982,
+          "distance_to_negative_previous_candidate": 1.9252973651496248
+        }
+      ],
+      "observed_minimum_overlap": 0.12736144022504262,
+      "observed_minimum_mixed_norm": 0.7398795140212727
+    }
+  ],
+  "formal_initial_seed_basin_claimed": false,
+  "IEEE_per_operation_emulation_proved": false
+}

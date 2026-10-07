@@ -1,0 +1,8 @@
+{
+  "earlier_pointer_refresh_actual_exit_code": 1,
+  "earlier_tool_chunk": "8c74db",
+  "reason": "Read-only checker guessed cmd instead of the actual command receipt key; failed before any write",
+  "registered_sources_or_live_helpers_changed": false,
+  "build_actual_child_exit_code": 0,
+  "producer_complete": false
+}

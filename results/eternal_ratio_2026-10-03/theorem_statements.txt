@@ -1,0 +1,104 @@
+SbtCosmo.Derivation.WindowEternalRatioData.grid_endpoints :
+  SbtCosmo.Derivation.WindowEternalRatioData.grid 0 = 1 / 1000 ∧
+    SbtCosmo.Derivation.WindowEternalRatioData.grid 1024 = 20
+SbtCosmo.Derivation.WindowEternalRatioData.upper_cells (i : Fin 1024) :
+  0 < SbtCosmo.Derivation.WindowEternalRatioData.grid ↑i ∧
+    SbtCosmo.Derivation.WindowEternalRatioData.grid ↑i ≤ SbtCosmo.Derivation.WindowEternalRatioData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.WindowEternalRatioData.upper ↑i ∧
+        (2 * (17 / 5) * SbtCosmo.Derivation.WindowEternalRatioData.grid (↑i + 1) ^ 3 ≤ 1 ∧
+            SbtCosmo.Derivation.WindowEternalRatioData.grid (↑i + 1) ^ 3 ≤
+              SbtCosmo.Derivation.WindowEternalRatioData.upper ↑i ^ 2 *
+                (1 + 17 / 5 * SbtCosmo.Derivation.WindowEternalRatioData.grid (↑i + 1) ^ 3) ^ 3 ∨
+          1 ≤ 2 * (17 / 5) * SbtCosmo.Derivation.WindowEternalRatioData.grid ↑i ^ 3 ∧
+              SbtCosmo.Derivation.WindowEternalRatioData.grid ↑i ^ 3 ≤
+                SbtCosmo.Derivation.WindowEternalRatioData.upper ↑i ^ 2 *
+                  (1 + 17 / 5 * SbtCosmo.Derivation.WindowEternalRatioData.grid ↑i ^ 3) ^ 3 ∨
+            4 ≤ 27 * (17 / 5) * SbtCosmo.Derivation.WindowEternalRatioData.upper ↑i ^ 2)
+SbtCosmo.Derivation.WindowEternalRatioData.upper_sum :
+  ∑ i ∈ Finset.range 1024,
+      (SbtCosmo.Derivation.WindowEternalRatioData.grid (i + 1) - SbtCosmo.Derivation.WindowEternalRatioData.grid i) *
+        SbtCosmo.Derivation.WindowEternalRatioData.upper i ≤
+    4159 / 20000
+SbtCosmo.Derivation.WindowEternalRatioCertified.integral_horizon_upper_sharp :
+  SbtCosmo.Derivation.GrowthQuadrature.integral (17 / 5) (1 / 1000) 20 ≤ 4159 / 20000
+SbtCosmo.Derivation.WindowEternalRatioCertified.horizon_growth_upper_sharp :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (17 / 5) 20 < 959
+SbtCosmo.Derivation.WindowEternalRatioCertified.limiting_growth_upper_sharp :
+  SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000) (17 / 5) < 960
+SbtCosmo.Derivation.WindowEternalRatioCertified.infinite_upper_tight_bounds :
+  3 < SbtCosmo.Derivation.WindowEternalRecords.upper ∧ SbtCosmo.Derivation.WindowEternalRecords.upper < 17 / 5
+SbtCosmo.Derivation.WindowEternalRatio.prefix_above_threshold {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.threshold j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam (5 / 2)
+SbtCosmo.Derivation.WindowEternalRatio.final_above_threshold {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.threshold j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowEternalRatio.time_spec {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowFirstRecord.time j lam) =
+      SbtCosmo.Derivation.WindowFirstRecord.threshold j
+SbtCosmo.Derivation.WindowEternalRatio.time_iff_any_collapse {lam a : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (ha : 1 / 1000 ≤ a) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowFirstRecord.time j lam ≤ a
+SbtCosmo.Derivation.WindowEternalRatio.time_is_first_collapse {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowFirstRecord.time j lam)) ∧
+    ∀ (a : ℝ),
+      1 / 1000 ≤ a →
+        a < SbtCosmo.Derivation.WindowFirstRecord.time j lam →
+          ¬∃ i,
+              SbtCosmo.Derivation.WindowSample.delta ≤
+                SbtCosmo.Derivation.WindowSample.amplitude j i *
+                  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowEternalRatio.time_lower {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  1 / 2 < SbtCosmo.Derivation.WindowFirstRecord.time j lam
+SbtCosmo.Derivation.WindowEternalRatio.time_upper {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j lam ≤ 5 / 2
+SbtCosmo.Derivation.WindowEternalRatio.time_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowFirstRecord.time j) (Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper)
+SbtCosmo.Derivation.WindowEternalRatio.ratio_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowFirstRecord.ratio j)
+    (Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper)
+SbtCosmo.Derivation.WindowEternalRatio.ratio_upper_linear {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ≤ 125 / 8 * lam
+SbtCosmo.Derivation.WindowEternalRatio.ratio_positive {lam : ℝ}
+  (hlam : lam ∈ Set.Ioc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam
+SbtCosmo.Derivation.WindowEternalRatio.ratio_upper {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < 425 / 8
+SbtCosmo.Derivation.WindowEternalRatio.near_edge_ratios {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 3 SbtCosmo.Derivation.WindowEternalRecords.upper) (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧
+    SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < 425 / 8
+SbtCosmo.Derivation.WindowEternalRatio.endpoint_ratios (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowFirstRecord.ratio j SbtCosmo.Derivation.WindowEternalRecords.upper ∧
+    SbtCosmo.Derivation.WindowFirstRecord.ratio j SbtCosmo.Derivation.WindowEternalRecords.upper < 425 / 8
+SbtCosmo.Derivation.WindowEternalRatio.eternal_window_ratios {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧ SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < 425 / 8
+SbtCosmo.Derivation.WindowEternalRatio.time_at_zero (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j 0 = SbtCosmo.Derivation.WindowFirstRecord.threshold j / 1000
+SbtCosmo.Derivation.WindowEternalRatio.ratio_at_zero (j : Fin 12) : SbtCosmo.Derivation.WindowFirstRecord.ratio j 0 = 0
+SbtCosmo.Derivation.WindowEternalRatio.arbitrarily_small_ratios {eps : ℝ} (heps : 0 < eps) :
+  ∃ lam,
+    0 < lam ∧
+      SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam ∧
+        ∀ (j : Fin 12),
+          0 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧
+            SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < eps

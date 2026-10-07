@@ -1,0 +1,94 @@
+'SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_ball_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_orbit_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_orbit_converges' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.c1_fixed_local_attraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.normSq_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.normalize_smooth_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.relaxed_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.relaxed_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.normalized_smooth_at' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.positive_root_groundPair_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.positive_root_jacobian_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.linear_action_entries' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.operator_norm_le_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.coordinate_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.coordinate_smooth_at' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.coordinate_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.coordinate_iterate_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.actual_local_attraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundLocalDynamics.actual_local_attraction_of_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.distance_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.convex_norm_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.convex_norm_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.relaxed_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.relaxed_norm_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.normalize_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.step_unit_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.native_step_unit_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.native_orbit_unit_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_relaxed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap_step_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_unit_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_gap_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.norm_le_sqrt_normSq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_distance_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_converges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.actual_zero_coupling_global_convergence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundZeroCouplingOrbit.actual_zero_coupling_distance_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

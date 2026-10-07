@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DESI_DR2_BAO
+manifest: data/manifests/desi_dr2_bao.json
+fallback_policy: budgeted_compressed_gaussian

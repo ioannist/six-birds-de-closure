@@ -1,0 +1,18 @@
+{
+  "terminal_exit_code": 0,
+  "compiled_modules": 9,
+  "checked_declarations": 50,
+  "standard_only": true,
+  "concrete_original_seed_open_background_return": true,
+  "robust_endpoint_density_separation": true,
+  "explicit_numerical_radii": false,
+  "full_offset_interval_covered": false,
+  "ieee_execution": false,
+  "repository_registered": false,
+  "repository_commit_pending": true,
+  "paper_edited": false,
+  "original_runtime_edited": false,
+  "original_paper_complete": false,
+  "review": "adversarial self-review",
+  "archive_members_verified": 80
+}

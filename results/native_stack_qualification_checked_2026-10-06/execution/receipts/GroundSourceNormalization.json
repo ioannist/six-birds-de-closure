@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundSourceNormalization",
+  "terminal_exit_code": 0,
+  "source_sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/source_execution_production_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_source_execution_supplement_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundSourceNormalization.olean",
+    "/home/repos/six-birds-de-closure/results/source_execution_production_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean"
+  ],
+  "object_sha256": "a75b480f93e534e309ce134bab59eec92f4a140aadb98a849c2e82643785e451"
+}

@@ -1,0 +1,12 @@
+import SbtCosmo.Derivation.WindowSmoothPrior
+
+#check SbtCosmo.Derivation.WindowSmoothPrior.raw_continuous
+#check SbtCosmo.Derivation.WindowSmoothPrior.raw_integral
+#check SbtCosmo.Derivation.WindowSmoothPrior.normalizer_positive
+#check SbtCosmo.Derivation.WindowSmoothPrior.density_positive
+#check SbtCosmo.Derivation.WindowSmoothPrior.density_smooth
+#check SbtCosmo.Derivation.WindowSmoothPrior.density_integral
+#check SbtCosmo.Derivation.WindowSmoothPrior.prefix_integral
+#check SbtCosmo.Derivation.WindowSmoothPrior.concentration
+#check SbtCosmo.Derivation.WindowSmoothPrior.rate_constructed
+#check SbtCosmo.Derivation.WindowSmoothPrior.actual_all_windows_smooth_small_ratio

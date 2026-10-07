@@ -1,0 +1,66 @@
+{
+  "background": {
+    "classification": "bounded_moduli",
+    "degeneracy": 15,
+    "fail_count": 3,
+    "fail_offsets": [
+      -5.0,
+      -3.0,
+      10.0
+    ],
+    "pass_count": 15,
+    "pass_offsets": [
+      -8.0,
+      -2.0,
+      -1.0,
+      -0.5,
+      -0.2,
+      -0.1,
+      0.0,
+      0.1,
+      0.2,
+      0.5,
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      8.0
+    ],
+    "singleton": false,
+    "total": 18,
+    "verdict": "BACKGROUND_IS_F50_BOUNDED_MODULI_NO_INLAYER_VALUE_LAW"
+  },
+  "comparison_ok": true,
+  "kappa": {
+    "boundary_found": true,
+    "fail_values": [
+      15.0,
+      20.0,
+      30.0
+    ],
+    "max_pass": 10.0,
+    "min_fail": 15.0,
+    "pass_values": [
+      0.0,
+      0.1,
+      0.3,
+      0.5,
+      1.0,
+      2.0,
+      3.0,
+      5.0,
+      10.0
+    ]
+  },
+  "source_hashes": {
+    "background_sweep_step54.csv": "66c49068bebb917fa6faa8a5bafc4dfac18b0cd193dac6365087dd313a3e85d7",
+    "kappa_sweep_step54.csv": "7ea420eedc12ba2ffb53b6530390b93c24f73497b855103237649fd7e65c5439",
+    "step54_schema.json": "f1096d1721560de34b941de97d1cb8c8cb51ecea41c0370e37ee36b17fe9fa48"
+  },
+  "validator_ok": true,
+  "vendored_hashes": {
+    "background_sweep_step54.csv": "66c49068bebb917fa6faa8a5bafc4dfac18b0cd193dac6365087dd313a3e85d7",
+    "kappa_sweep_step54.csv": "7ea420eedc12ba2ffb53b6530390b93c24f73497b855103237649fd7e65c5439",
+    "step54_schema.json": "f1096d1721560de34b941de97d1cb8c8cb51ecea41c0370e37ee36b17fe9fa48"
+  }
+}

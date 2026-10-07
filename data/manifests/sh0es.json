@@ -1,0 +1,25 @@
+{
+  "dataset": "SH0ES",
+  "release": "arXiv:2509.01667",
+  "access": "summary_posterior",
+  "fetch_url": "https://arxiv.org/abs/2509.01667",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "Public literature posterior/summary; cite Riess et al. 2025",
+  "citation": "Riess et al. 2025, arXiv:2509.01667",
+  "raw_files": [{"path": "data/raw/sh0es/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/sh0es/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/sh0es/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "route-specific ladder cuts as released"},
+  "route": "r3_cepheid_to_sn",
+  "staging_axis": "anchor|sn_sample|redshift_cut",
+  "model_dependent": false,
+  "recomputability": "summary_only",
+  "aor_status": "zero",
+  "fallback": "Gaussian prior N(73.18, 0.88^2); budgeted if stat/systematic errors are combined naively",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

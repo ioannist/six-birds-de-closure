@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin",
+  "terminal_exit_code": 0,
+  "source_sha256": "5669f8f9f6cda8a21173bf18e38f4b2035c906b675fc8a8ad2638bc87d3337d0",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30TwoPhaseBasin.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30TwoPhaseBasin.lean"
+  ],
+  "object_sha256": "c6e24bb45efc6a21ba23c2f67650beaeb704dafff041d38efcc25f1bf7aa5a87"
+}

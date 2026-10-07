@@ -1,0 +1,9 @@
+{
+  "terminal_exit_code": 0,
+  "script_sha256": "d03ed8bc5b5c179d18af683baa257d3913fff15505def14ae1780f99e65eb417",
+  "log_sha256": "ed9defeae31eb9c6db9a8e67cf7e64dc01f13372bcd7397c08fb5e47dab5a54c",
+  "sample_count": 1,
+  "steps": 152,
+  "pairs": 76,
+  "scope": "Cycle30 exact rational replay and read-only leaf-source regeneration only; no new Lean closure claim."
+}

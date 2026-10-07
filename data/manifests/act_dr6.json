@@ -1,0 +1,25 @@
+{
+  "dataset": "ACT_DR6",
+  "release": "arXiv:2509.02945",
+  "access": "official_likelihood",
+  "fetch_url": "https://lambda.gsfc.nasa.gov/product/act/",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "ACT public release; cite ACT DR6",
+  "citation": "ACT Collaboration 2025, arXiv:2509.02945",
+  "raw_files": [{"path": "data/raw/act_dr6/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/act_dr6/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/act_dr6/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "release multipole cuts"},
+  "route": null,
+  "staging_axis": null,
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "Planck-like compressed distance priors",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

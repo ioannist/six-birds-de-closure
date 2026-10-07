@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DES_Y6_BAO
+manifest: data/manifests/des_y6_bao.json
+fallback_policy: budgeted_compressed_alpha

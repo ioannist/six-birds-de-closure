@@ -1,0 +1,19 @@
+{
+  "statements.lean": "9f1c2f25a1e628d816f673a8efb7c30429ce02274d3549050061860d4a9bfc67",
+  "build.log": "6fd95460265c9f902e4062780e1294f05f4ac46d13a3bee56e90c11b869249cf",
+  "verification.json": "4bd8005b90eca017c65368c7ce9796ab7467ff1f85fe2c9976b02abbdb9c25d9",
+  "archive-readback.json": "83bb9be9ffe1a633d505581012709bc589aedc580e2b6ed27966c219dd5e75b9",
+  "axioms-terminal.json": "7f9b104b2a38016ff1589bab2997b023bf39a2db29371f815f1eeca04f3f956a",
+  "axioms.log": "e91f46f281b029b140a2a5d40efbb3d8f0c591521388aeb68e46bbc405baa68b",
+  "de_collect_final_registered_receipts_2026-10-06.py": "0e97f97a0bf8c2a413c38261b1470d4ea39aa11e6dcacc54911f6b333a5b74ec",
+  "build-terminal.json": "5b9026cba89272e9b1a2f1e89543236f6b1cedf84a1326c082fe72fe7544072a",
+  "source-snapshot.json": "f69f01f3fe15778c86bbf62517beed2a40f2d65dbd72eed0174f6e0bd4b5ba42",
+  "actual-exec-result.json": "978d0edef92e1e82e5cfbfde6b471cfdda802cad7ac10b18bab01b734a5110f6",
+  "statements.log": "82780f5f90994ecaabc99643935dbacb80fc2b7078293b3e464a412e0953f824",
+  "de_native_campaign_parser_stack_recovery.py": "2ac9c5fa7c5075f5f35becf81e5d1163fdbb8d8e03a8be26e1f5b92ae6067036",
+  "terminal.json": "cdd825af5434ee719d658fef432b6a04c62a42da3ece04d52e753513b5fd597c",
+  "de_native_registered_verify_postinstall_recovery.py": "bef7e2ff31066f153be09e39b85e7c379f2fe5cd286627d61b826e2b4ab66777",
+  "statements-terminal.json": "06b4a6530064bc44eb38954dac7c30f663fb99c6366313520d74998914b9ff72",
+  "objects-snapshot.json": "8e79841a9b0f904c32509b2abb14ae51cf96d15667d8e0972a4b99a92870890d",
+  "de_native_registered_build_postinstall_recovery.py": "ef7e201a2e0110cb77c87ee6c05764d9ef7a771bcdc806629786783d5d2d8bb8"
+}

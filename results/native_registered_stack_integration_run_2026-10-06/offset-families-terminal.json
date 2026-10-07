@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-06T14:22:32.767703+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "python3",
+    "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_build.py",
+    "families",
+    "--workers",
+    "2"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "log_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/families_driver.txt",
+  "log_sha256": "16b76b21deb7495e39a790f78ecac69a5587f4cd633444d64f3dc1892f9b1c7e"
+}

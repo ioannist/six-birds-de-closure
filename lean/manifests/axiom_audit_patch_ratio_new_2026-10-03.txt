@@ -1,0 +1,71 @@
+'SbtCosmo.Derivation.WindowPatchCountFirstData.rational_scale_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountFirstData.rational_scale_tight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountFirstData.rational_first_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountFirstData.rational_original_lower_fails' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.scale_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.scale_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.aggregate_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.maximum_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.threshold_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.gate_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.final_above_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_normalized_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_numerical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_gate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_iff_any_collapse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_is_first_collapse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_nonnegative_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.time_nonpositive_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_time_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_density_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_strictMono_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonpositive_small' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonnegative_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_ratios' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.full_window_ratios' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowPatchCountRatio.ratios_uniformly_arbitrarily_small' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,2 @@
+✔ [8820/8820] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001 (39s)
+Build completed successfully (8820 jobs).

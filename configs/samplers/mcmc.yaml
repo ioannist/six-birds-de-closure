@@ -1,0 +1,8 @@
+schema_version: 1
+sampler: mcmc
+seed:
+  sampler: 1337
+convergence:
+  rhat_max: 1.01
+  ess_min_per_chain: 400
+implemented: false

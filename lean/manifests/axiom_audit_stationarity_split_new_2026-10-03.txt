@@ -1,0 +1,58 @@
+'SbtCosmo.Derivation.ConvexSubgradient.restricted_subgradient_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.indicator_subgradient_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.real_subgradient_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.zero_subgradientOn_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.real_subgradient_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.remove_smooth_summand' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.normal_univ_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSubgradient.smooth_real_subgradient_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexSumSplit.split_real_of_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSumSplit.split_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSumSplit.split_extended' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexSumSplit.finite_objective_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.affine_probe_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.schur_energy_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.trace_energy_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.trace_energy_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.matrix_stationarity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.matrix_stationarity_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurStationarity.matrix_restricted_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.actual_nonsmooth_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.actual_schur_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.boundary_no_bottom' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.boundary_epigraph_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.boundary_restricted_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.boundary_no_ambient_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StationarityExamples.missing_qualification_no_split' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

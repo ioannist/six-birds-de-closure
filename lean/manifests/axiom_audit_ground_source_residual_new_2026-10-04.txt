@@ -1,0 +1,101 @@
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_sub_triangle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.overlap_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.overlap_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.distance_unit_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.phase_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.phase_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.l2_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.phase_guard_of_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexEuclidean.double_phase_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.overlap_add_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.overlap_sub_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.overlap_smul_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.overlap_smul_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.overlap_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.hamiltonian_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.shifted_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.shifted_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.l2_shift_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.l2_shift_prev' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.l2_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.shifted_l2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.ground_energy_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.rayleigh_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidual.eigen_residual_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnostics.source_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnostics.sourcing_self_comparison_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnostics.double_phase_real_sign' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.background_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.background_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.tolerance_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.target_ground_data' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.candidate_zero_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.orbit_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.orbit_distance_sixty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.orbit_distance_fifty_nine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.last_update_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.final_fixed_gap_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.final_eigen_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.final_sourcing_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalResiduals.actual_seed_zero_sixty_convergence_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnosticControls.imaginary_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnosticControls.first_alignment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnosticControls.second_alignment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnosticControls.actual_double_gap_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundSourceDiagnosticControls.imaginary_half_update_illegal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

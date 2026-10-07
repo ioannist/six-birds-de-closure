@@ -1,0 +1,9 @@
+{
+  "G-R0-EXACTNESS": {
+    "gate_id": "G-R0-EXACTNESS",
+    "pass": null,
+    "status": "skipped_power_failed"
+  },
+  "reason": "R0-B exactness is evaluated only if G-R0-POWER passes.",
+  "status": "skipped_power_failed"
+}

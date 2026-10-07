@@ -1,0 +1,16 @@
+import SbtCosmo.Derivation.GroundNativeGuardedBounds
+set_option warningAsError true
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound
+#check SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential
+#print axioms SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential

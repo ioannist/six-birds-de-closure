@@ -1,0 +1,1 @@
+Exact 264-cell certificates and false-certificate control passed; artifact byte replay matched.

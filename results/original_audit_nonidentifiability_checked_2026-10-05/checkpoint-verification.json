@@ -1,0 +1,31 @@
+{
+  "checked_modules": 1,
+  "checked_declarations": 9,
+  "names": [
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.offsets_injective",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.finite_readout_eq_verdict",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.actual_passing_split_pair",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.finite_admitted_offset_count",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.no_finite_readout_decoder",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.all_original_has_limit",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.limit_readout_true",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.infinite_admitted_offset_count",
+    "SbtCosmo.Derivation.GroundOriginalAuditNonidentifiability.no_limit_readout_decoder"
+  ],
+  "standard_only": true,
+  "compile_terminal_exit_code": 0,
+  "audit_terminal_exit_code": 0,
+  "registered_integration": false,
+  "production_plans_changed": false,
+  "project_dependency_modules": 1327,
+  "bound_inputs": 2660,
+  "all_bound_inputs_unchanged": true,
+  "own_objects_archived": [
+    "GroundOriginalAuditNonidentifiability.olean"
+  ],
+  "dependency_objects_archived": false,
+  "source_sha256": "0891df2ad655b9a65e09d4707bac62bdbd41e7891d0340748ebaad4cb78b4f83",
+  "audit_log_sha256": "429cf559d91a0cdabf44fe74db47bfd200dfb1187fa690d4bf1a6a798dcde470",
+  "review": "Adversarial self-review; no independent review",
+  "scope": "Original eighteen rounded background controls at original fixed coupling/seed/mix/threshold. Only the Boolean sixty-update diagnostic or limit-existence predicate is used. No unrestricted value-law impossibility, physical Lambda theorem, background blindness or IEEE claim."
+}

@@ -1,0 +1,9 @@
+families GroundOffsetTransport.Point000 terminal 1 completed 1 / 18
+families GroundOffsetTransport.Point001 terminal 1 completed 2 / 18
+Traceback (most recent call last):
+  File "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_build.py", line 67, in <module>
+    run(args.stage,args.workers)
+  File "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_build.py", line 54, in run
+    assert len(done)==len(mods) and all(s==0 for s in done.values()),done
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'GroundOffsetTransport.Point000': 1, 'GroundOffsetTransport.Point001': 1}

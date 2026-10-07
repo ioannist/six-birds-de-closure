@@ -1,0 +1,20 @@
+{
+  "coupling": "5404319552844595/18014398509481984",
+  "source_threshold": "7737125245533627/77371252455336267181195264",
+  "convergence_epsilon": "3022314549036573/302231454903657293676544",
+  "coordinate_rate": "3/5",
+  "coordinate_entry": "1/48000",
+  "basis_norm_budget": "177/50",
+  "euclidean_factor": "4",
+  "selector_coordinate_lipschitz_budget": "1",
+  "distance_budget": "1/10000000000",
+  "orbit_59_proposed_euclidean_cap": "19367161076277687579993/227373675443232059478759765625000000",
+  "orbit_60_proposed_euclidean_cap": "58101483228833062739979/1136868377216160297393798828125000000",
+  "actual_candidate_60_proposed_distance_cap": "74514331598559916621329/1136868377216160297393798828125000000",
+  "last_update_cap": "1/5000000000",
+  "double_phase_cap": "1/2500000000",
+  "sourced_potential_budget": "1/2",
+  "sourced_shifted_hamiltonian_budget": "5/2",
+  "rayleigh_eigen_residual_cap": "10000000001/40000000000000000000",
+  "sourcing_cap": "0"
+}

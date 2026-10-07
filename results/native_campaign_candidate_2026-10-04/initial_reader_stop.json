@@ -1,0 +1,7 @@
+{
+  "pid": 3074577,
+  "session": 78489,
+  "reason": "Original validation repeatedly seeks backward through gzip for interleaved names. The archive is already written and a separate sequential pass checked all3563 files successfully. Stop redundant read-only verification; no source or archive file is deleted.",
+  "verified_archive_sha256": "b1e0dc26b05d4cbef324823cc0aa4137abc393ea9316e0bf245df4c1a8f3428f",
+  "replacement_terminal_exit_code": 0
+}

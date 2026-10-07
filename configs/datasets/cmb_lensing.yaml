@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: CMB_LENSING
+manifest: data/manifests/cmb_lensing.json
+fallback_policy: budgeted_planck_lensing

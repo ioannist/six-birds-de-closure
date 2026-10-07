@@ -1,0 +1,44 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_finite_parameter_verdict",
+    "/tmp/de_native_finite_parameter_verdict/FiniteParameterVerdictsFullAudit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundFiniteParameterContinuity.finite_iterate_parameter_continuous_at",
+    "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.pack_unpack",
+    "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.encode_nativePairMap",
+    "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.native_joint_smooth_at",
+    "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.native_joint_guards_near",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.baseline_return",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.native_return",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.orbit_return",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.open_finite_and_real_cycle",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.l2_continuous",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline_guards",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit_continuous_at",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.stepLength_continuous_at",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.strict_stepLength_baseline",
+    "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.open_first_sixty_fail"
+  ],
+  "sources": {
+    "/tmp/de_native_finite_parameter_verdict/lean/SbtCosmo/Derivation/GroundFiniteParameterContinuity.lean": "99005c76cdd6fb63d4b34c1edca841a31584cd20e865b70119a12c6969987d84",
+    "/tmp/de_native_finite_parameter_verdict/lean/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.lean": "03f908c29ebeb50960e9e0e151a18e0a7b7030f94149607ee76cd017bffa504c",
+    "/tmp/de_native_finite_parameter_verdict/lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.lean": "145308f3933faec58baa57ce3f3827bd63e6a3245892673d91b85cc9cecef40f",
+    "/tmp/de_native_finite_parameter_verdict/lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteVerdicts.lean": "68bbbf329f7fdd114c9d130c8f479fb3f40c159f5b21e520b50be6789553647f"
+  },
+  "objects": {
+    "/tmp/de_native_finite_parameter_verdict/objects/SbtCosmo/Derivation/GroundFiniteParameterContinuity.olean": "445d1d536750a3e4225e4f3e26c6a3d9715d1ee70b2e1c0c13741fa694fcc69a",
+    "/tmp/de_native_finite_parameter_verdict/objects/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.olean": "1a14281ec70cee5fd5ca087badaa25413f603f653ba17c035f589933df7853fb",
+    "/tmp/de_native_finite_parameter_verdict/objects/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.olean": "651ce0f3d4b3b7ff0df746a5137689d119c0e57cba652c6cb55ed3d9c33ad2fd",
+    "/tmp/de_native_finite_parameter_verdict/objects/SbtCosmo/Derivation/GroundOriginalCycle30FiniteVerdicts.olean": "48dfebf39e2a88b26f4a78d76d0660332f03495e23ec07ff87129fac4d250413"
+  },
+  "log_sha256": "8e97631399f7bf17614080896fde3fd32ef18dc5c3e027fe71744afd554961d4",
+  "audit_sha256": "a62cb2a5b417d1f98e1baf8b1c70a7f5e1155036e3a4b7cfbfc5c4a8aaf1ce46",
+  "standard_only": true,
+  "checked_declarations": 15,
+  "repository_registered": false,
+  "scope": "Every exact fixed-length run truncated after updates1..60 has a failed original four-test convergence verdict on a positive joint background/coupling neighborhood of the original coupling-30 input, with all finite guards/unit norms; same neighborhood supports original-seed exactly real two-cycle and full complex basin; no implemented early-exit, universal runaway or IEEE claim."
+}

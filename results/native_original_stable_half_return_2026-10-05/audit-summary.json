@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-05T04:16:00.922306+00:00",
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "names": [
+    "SbtCosmo.Derivation.NativeStableSeed003.initial",
+    "SbtCosmo.Derivation.NativeStableSeed003.source_enclosed_even",
+    "SbtCosmo.Derivation.NativeStableSeed003.guards_before",
+    "SbtCosmo.Derivation.NativeStableSeed003.unit_before",
+    "SbtCosmo.Derivation.NativeStableSeed003.original_seed_entry",
+    "SbtCosmo.Derivation.NativeStableSeed003.original_seed_return",
+    "SbtCosmo.Derivation.NativeStableSeed003.original_seed_density_limit",
+    "SbtCosmo.Derivation.NativeStableSeed003.previous_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed003.current_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed003.Sixty.previous_included",
+    "SbtCosmo.Derivation.NativeStableSeed003.Sixty.current_included",
+    "SbtCosmo.Derivation.NativeStableSeed003.Sixty.previous_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed003.Sixty.current_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed003.Sixty.current_unit",
+    "SbtCosmo.Derivation.NativeStableSeed003.Sixty.actual_four_source_tests"
+  ],
+  "checked_declarations": 15,
+  "coupling": "1/2",
+  "pairs": 30,
+  "actual_entry_update": 60,
+  "leaf_certificates": 60,
+  "paired_certificates": 30,
+  "audit_log_sha256": {
+    "/tmp/de-native-stable-seed-family-build-NativeStableSeed003Audit.log": "a252df822dfe469bc3be9a7a589642c49342f7b130134718e7c43c646a455265",
+    "/tmp/de-native-stable-seed-sixty-build-NativeStableSeed003SixtyAudit.log": "34453a20c2cbd69eb2f732421e28a715fa7d66871e055c120416e3eb971f485e"
+  },
+  "repository_registered": false,
+  "qualified_verification_pending": true,
+  "whole_twelve_sample_campaign_complete": false,
+  "ieee_execution": false,
+  "paper_edited": false,
+  "original_runtime_edited": false,
+  "review": "adversarial self-review"
+}

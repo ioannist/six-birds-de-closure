@@ -1,0 +1,11 @@
+{
+  "aor_status": "zero",
+  "carrier": "sign_free_growth_currency",
+  "decisive_pass": false,
+  "experiment": "E5",
+  "run_id": "E5_minimal_physical_v2",
+  "schema_version": 1,
+  "signed_amplitude_note": "E5 is sign-free; no a0/a1/a2 amplitude is produced.",
+  "status_reason": "Substrate and TATT-capable reproduction passed; Schur carrier is not authorized until Eddy re-review.",
+  "terminal_state": "REPRO_PASSED_AWAITING_REVIEW"
+}

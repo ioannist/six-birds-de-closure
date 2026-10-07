@@ -1,0 +1,30 @@
+Batch targets: ["SbtCosmo.Derivation.GroundCoordinates.Point000", "SbtCosmo.Derivation.GroundCoordinates.Point001"]
+✔ [8666/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point001 (417s)
+✔ [8667/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point000 (470s)
+Build completed successfully (8667 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundCoordinates.Point002", "SbtCosmo.Derivation.GroundCoordinates.Point003"]
+✔ [8666/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point002 (325s)
+✔ [8667/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point003 (365s)
+Build completed successfully (8667 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundCoordinates.Point004", "SbtCosmo.Derivation.GroundCoordinates.Point005"]
+✔ [8666/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point005 (398s)
+✔ [8667/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point004 (423s)
+Build completed successfully (8667 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundCoordinates.Point006", "SbtCosmo.Derivation.GroundCoordinates.Point007"]
+✔ [8666/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point007 (451s)
+✔ [8667/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point006 (464s)
+Build completed successfully (8667 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundCoordinates.Point008", "SbtCosmo.Derivation.GroundCoordinates.Point009"]
+✔ [8666/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point009 (463s)
+✔ [8667/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point008 (474s)
+Build completed successfully (8667 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundCoordinates.Point010", "SbtCosmo.Derivation.GroundCoordinates.Point011"]
+✔ [8666/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point011 (464s)
+✔ [8667/8667] Built SbtCosmo.Derivation.GroundCoordinates.Point010 (549s)
+Build completed successfully (8667 jobs).
+Terminal exit: 0

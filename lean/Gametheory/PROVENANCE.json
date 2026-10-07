@@ -1,0 +1,49 @@
+{
+  "upstream_repository": "https://github.com/LionSR/Brouwer",
+  "revision": "ec93e4daed4ad8b4784a9d760e492832e7711433",
+  "files": {
+    "Scarf.lean": {
+      "upstream_url": "https://raw.githubusercontent.com/LionSR/Brouwer/ec93e4daed4ad8b4784a9d760e492832e7711433/Gametheory/Scarf.lean",
+      "upstream_sha256": "154c85ef639cb1be533bfc3fd32970dd7fd548192b9840aa6a6a159a33b9719c",
+      "ported_sha256": "2099728d77b06d14ac1c5776b4ecc3258d5093ce156217d97e47f36e78938052"
+    },
+    "Brouwer.lean": {
+      "upstream_url": "https://raw.githubusercontent.com/LionSR/Brouwer/ec93e4daed4ad8b4784a9d760e492832e7711433/Gametheory/Brouwer.lean",
+      "upstream_sha256": "73d05839c0e9f3bf9062a08ee169648d219fbf1e793ae3af72b5a432db572bb5",
+      "ported_sha256": "27fd5f3677f07ddd8cca744b0da28d0a9b87a7f99ff5c0ca50c190eb1ffa0c84"
+    }
+  },
+  "license": {
+    "type": "MIT",
+    "copyright": "Copyright (c) 2025 Math_XMUM",
+    "upstream_url": "https://raw.githubusercontent.com/LionSR/Brouwer/ec93e4daed4ad8b4784a9d760e492832e7711433/LICENSE",
+    "sha256": "956bddafa77f8b8ad428bb35cf59424b0ddd0933ebab506037b97a20fab1a5d0",
+    "local_path": "THIRD_PARTY_BROUWER_LICENSE"
+  },
+  "port_toolchain": "leanprover/lean4:v4.28.0",
+  "patch": "port.patch",
+  "port_changes": [
+    "Add copyright and pinned-source header",
+    "Enable upstream autoImplicit and relaxedAutoImplicit in these two modules only",
+    "FunLike.coe_injective renamed coe_injective'",
+    "Set.mem_ofPred_eq and Set.mem_ofPred.mpr renamed to mem_setOf_eq and mem_setOf.mpr",
+    "Set.mem_sdiff renamed mem_diff",
+    "ite_eq_right at erased-index branch replaced by if_neg",
+    "Ambiguous one_le replaced by Nat.succ_le_of_lt (PNat.pos n)",
+    "Remove only commented-out proof drafts containing sorry tokens; no active theorem removed"
+  ],
+  "endpoint": "Brouwer {n : ℕ+} (f : stdSimplex ℝ (Fin n) → stdSimplex ℝ (Fin n)) (hf : Continuous f) : ∃ x, f x = x",
+  "additional_hard_hypotheses": [],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axiom_receipt": "../manifests/axiom_audit_ground_existence_2026-10-03.txt",
+  "notes": [
+    "No QIC, product-simplex, cube or retraction modules are vendored.",
+    "This is a kernel-checked proof import, not a new Brouwer axiom.",
+    "The transitive axiom closure checks the imported Scarf proof too."
+  ],
+  "patch_format": "Unified diff with zero context; apply using patch -p1 to an upstream checkout or git apply --unidiff-zero."
+}

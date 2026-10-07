@@ -1,0 +1,12 @@
+{
+  "terminal_exit_code": 1,
+  "stage": "Preparation before launch",
+  "reason": "Strict resolution of deliberately pending overlay object links",
+  "example": "NativeStableSeed009Pair035.olean",
+  "partial_private_setup": "/tmp/de_native_stable15_priority_recovery_preparation01",
+  "new_driver_launched": false,
+  "old_proof_inputs_changed": false,
+  "cleanup_first_attempt": "Cross-device rename refused; then preserved within /tmp",
+  "second_setup_attempt": "Safely refused existing setup directories before launch",
+  "repair": "Retain73 completed object links; redirect216 pending links to recovery objects"
+}

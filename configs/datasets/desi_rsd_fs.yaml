@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DESI_RSD_FS
+manifest: data/manifests/desi_rsd_fs.json
+fallback_policy: compressed_primary_until_public_dr2_fs

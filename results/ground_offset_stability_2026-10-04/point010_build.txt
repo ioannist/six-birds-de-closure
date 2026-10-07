@@ -1,0 +1,2 @@
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point010 (384s)
+Build completed successfully (8669 jobs).

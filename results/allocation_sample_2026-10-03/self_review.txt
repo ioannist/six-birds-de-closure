@@ -1,0 +1,50 @@
+Adversarial self-review, not independent review
+Baseline5b18121; paper/runtime/frozen results/prior proofs and receipts fixed.
+
+Target: return original section4.2 mechanics and must-flip controls to the
+original32-patch generator, actual budget arithmetic and actual offsets.
+
+1. Inputs: pinned NumPy1.26.4 calls unchanged generator and closed-form response
+arithmetic; all32 coefficients,10 budgets and3 offsets exactly reified. All
+historical formatted fields match; source/CSV hashes and hex representations
+recorded. No optimizer/root-finding solver rerun. Historical rounded CSV does
+not prove bit identity with an unrecorded old machine state; this is disclosed.
+Configured seed unused, coefficients deterministic, no random draw inferred.
+2. Response certificates:160 exact rational marginal brackets on five prices.
+Actual strict marginal order, demand complementarity and positive-response
+stationarity earn bounds, including zero branch. Kernel endpoints/sums/controls
+checked. A false cell is rejected. No fitted response or primal optimum premise.
+3. Price/activity: lower trial mass exceeds B; actual feasibility and response
+ordering earn p>0.46112. Complementarity earns activity; upper response mass
+below B earns p<0.46113. All32 weights exceed p, so all allocations positive and
+share the actual marginal price. Exact w/c ordering earns state heterogeneity.
+KKT strong support returns true global optimum and uniqueness against every
+feasible alternative. Actual value derivative is -actualPrice, not supplied.
+4. Screening: active-offset KKT plus selected intrinsic uniqueness gives exact
+selected-state invariance/price shift. Actual p bound earns p+s>0 throughout
+[-1/4,1/4], containing original IEEE +/-0.2. Exact original cost value changes
+by -s*B. Not a claim for arbitrary offsets after the price becomes inadmissible.
+5. Local control: same objective parameters,32 independent singleton budgets
+B/32, total B. Actual KKT construction and uniqueness earn selected local
+allocations/prices. All prices positive, actual first pair gap>1/20. Selected
+local/global states differ; the control changes the original constraint.
+6. Source control: constraint removed but original linear coupling retained.
+Constructed zero-price KKT support applies to every nonnegative competitor
+without a mass guard, proving unconstrained optimality/uniqueness. Actual
+offset-to-negative-price response identity; certified patch8 movement
+>1/2 at both decimal shifts; actual monotonicity returns to both IEEE shifts.
+No supplied state or merely changed label. Sharper float maxima not certified.
+7. Sweep: exact ten reproduced IEEE budgets. First seven below actual real
+unconstrained mass, positive price/activity. Last three strictly above, zero
+price/strict slack. Existing active-zero-price counterexample stays fixed.
+8. Original coverage: exact-real carrier theory on pinned reproduction of
+original IEEE inputs, computational formatted-data bridge. No formal np/libm
+arithmetic, historical bit recovery, optimizer rounding/error certificate,
+3.6e-11 finite-difference precision, Schur-budget identity or physical Lambda
+identification is smuggled into the conclusions. Broader false/project-sized
+main-claim boundaries unchanged; full original goal incomplete.
+
+Fresh full build8179 jobs. All54 exported statements and standard-only transitive
+closures checked. Cumulative1528=immutable1474+fresh54; full cumulative command
+not rerun. Pinned toolchain/mathlib and prior fingerprints protected.
+No holes/native_decide/nonstandard axioms. No new downgrade of supported claims.

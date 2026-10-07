@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-07T11:26:55.595493+00:00",
+  "candidate_plan_sha256": "20db81784d92c825bba523cccc447f423fbab05726ce5d5211cc04b6257c9513",
+  "final_verification_sha256": "4bd8005b90eca017c65368c7ce9796ab7467ff1f85fe2c9976b02abbdb9c25d9",
+  "actual_producer_exit_code": 0,
+  "receipt_collector_observed_session": 41315,
+  "receipt_collector_observed_exit_code": 0,
+  "completion_review": "Four exact diffs reviewed against surviving model statements, withdrawn dependencies, phase/IEEE boundaries, mediator information interpretation and actual registered command receipts",
+  "targets": [
+    {
+      "path": "README.md",
+      "before_sha256": "b34fc285575bda78c3adebe9d69a7f1d22f800d432f602cda7dd012fdbe3dc3a",
+      "reviewed_candidate_sha256": "4a2f05384d8218a4eefd82fbb59b1446077143f413dca0c3be0c8939a064372e",
+      "applied_sha256": "4a2f05384d8218a4eefd82fbb59b1446077143f413dca0c3be0c8939a064372e",
+      "postreview_amendments": []
+    },
+    {
+      "path": "lean/README.md",
+      "before_sha256": "a7c67b8bf6cb4daf5f96bc095308fe544da54d86993fa9f6547f6b6167bac240",
+      "reviewed_candidate_sha256": "51cd02c57ed7a200ddff0b2dc278282a23b68e25636d2d28b87358297103f08c",
+      "applied_sha256": "51cd02c57ed7a200ddff0b2dc278282a23b68e25636d2d28b87358297103f08c",
+      "postreview_amendments": []
+    },
+    {
+      "path": "lean/manifests/coverage_table.md",
+      "before_sha256": "0e9d6d47357e8d9f3ab2f6eee37a9b0cbf5911cfa62660b4c3535d1fdfdb4e5b",
+      "reviewed_candidate_sha256": "aa539a23d16a771c8207b94481480523d3cfeac4178ca38beabfa1c67e312858",
+      "applied_sha256": "aa539a23d16a771c8207b94481480523d3cfeac4178ca38beabfa1c67e312858",
+      "postreview_amendments": []
+    },
+    {
+      "path": "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md",
+      "before_sha256": "13a3f0cb8c2d78299d813c516e9b1a3db38514bb6d5b567eabf0bd5c8fe5e7ee",
+      "reviewed_candidate_sha256": "9ec9feddd58ae015c4e42dc9435f53106ddd900393f869cdbb11dbf46a0d6ab3",
+      "applied_sha256": "a9154229b938236520221b719cb79f8a1dff34c3079989de321eb80c1303b773",
+      "postreview_amendments": [
+        "Correct completion heading to actual 2026-10-07; integration began 2026-10-06"
+      ]
+    }
+  ],
+  "paper_or_original_runtime_edited": false,
+  "proof_sources_or_live_helpers_edited": false,
+  "unrevised_original_paper_claims_restored": false,
+  "commit_still_required": true,
+  "goal_complete": false
+}

@@ -1,0 +1,13 @@
+{
+  "names": [
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential"
+  ],
+  "source_sha256": "63096289fe5bc3472defc296512abcd8ab29fa74472c71a23d456ab3400a6a5e",
+  "scope": "Fresh qualified unregistered global guarded normalization/source-potential bounds, with all-iterate legality premise explicit; not a global execution or convergence theorem"
+}

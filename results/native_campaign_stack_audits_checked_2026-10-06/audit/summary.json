@@ -1,0 +1,17 @@
+{
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "module_count": 1734,
+  "retained_terminal_zero_modules": 993,
+  "fresh_recovery_modules": 741,
+  "fresh_statement_count": 20628,
+  "fresh_axiom_count": 20628,
+  "preserved_failed_parent": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05",
+  "failed_statement_exit_code": -6,
+  "module_inventory_sha256": "98df9d3eb8d139250ec1ac92537c94ab301a5e268db34f28a9a872ea260530b3",
+  "plan_sha256": "e7b36f12a970f7265d706ad0223c7450d6bfe60c1961f575cae7b0d19759aded",
+  "source_freeze_sha256": "318fa9fa453b47816303e6207dbc244dfa98f7845a803b8efd63b3b91db1d84b",
+  "unchanged_statement_source": true,
+  "proof_sources_changed": false,
+  "registered_integration_pending": true
+}

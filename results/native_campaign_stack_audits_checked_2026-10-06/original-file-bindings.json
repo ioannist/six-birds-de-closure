@@ -1,0 +1,107 @@
+{
+  "audit/run_audits.py": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/run_audits.py",
+    "sha256": "c6f1b27541dec6e113e5eea5b8502551aa1b08e527bae5d3e69394660a82f2c7",
+    "bytes": 6369
+  },
+  "audit/source-object-freeze.json": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/source-object-freeze.json",
+    "sha256": "318fa9fa453b47816303e6207dbc244dfa98f7845a803b8efd63b3b91db1d84b",
+    "bytes": 2009880
+  },
+  "audit/CampaignStatements.lean": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/CampaignStatements.lean",
+    "sha256": "e5cba6975d3776fd8d8ac1e88e6cb286dd3c4fbfdfedc189ab85505f2fd886d8",
+    "bytes": 1509452
+  },
+  "audit/CampaignAxioms.lean": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/CampaignAxioms.lean",
+    "sha256": "419660713b61d5caa2af5edbd64c39c92a36353d81d8cb264921708bdf7a759b",
+    "bytes": 1653848
+  },
+  "audit/statements.log": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/statements.log",
+    "sha256": "84a5076fa0f7cdb005495ea4e9e9f675f27aa9f16a96758a41bc390aa60d645f",
+    "bytes": 9330046
+  },
+  "audit/axioms.log": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/axioms.log",
+    "sha256": "194452a2557c54c03e36586c5f571981d8be4393d0bd449af86de19463a2658c",
+    "bytes": 2557109
+  },
+  "audit/statements-terminal.json": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/statements-terminal.json",
+    "sha256": "f39bd66154efbd8a06dcfefdd53d4801b0ba0a4f26955722edd71fd801395b82",
+    "bytes": 1564
+  },
+  "audit/axioms-terminal.json": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/axioms-terminal.json",
+    "sha256": "db0b0e9bc7b4ef72ed3e9420d16b96352d10ab8068527373eacea1d085cde6eb",
+    "bytes": 1560
+  },
+  "audit/summary.json": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/summary.json",
+    "sha256": "b259dc149fef4050801443291cde6b87d95554fabaf75847f8e95cd156ce438e",
+    "bytes": 729
+  },
+  "audit/terminal.json": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/terminal.json",
+    "sha256": "b259dc149fef4050801443291cde6b87d95554fabaf75847f8e95cd156ce438e",
+    "bytes": 729
+  },
+  "audit/driver.log": {
+    "original_path": "/tmp/de_native_campaign_stack_recovery_2026-10-06/driver.log",
+    "sha256": "dd521cf390dd30644672c618017c2b145ff6a221758373443c452329eefa6601",
+    "bytes": 251
+  },
+  "adoption/adopt.py": {
+    "original_path": "/tmp/de_native_campaign_stack_adoption_2026-10-06/adopt.py",
+    "sha256": "9534afd0cf8fd67da6f1acde11b2c8249675fddb6624fb7b6aa14fc13d452137",
+    "bytes": 5785
+  },
+  "adoption/adoption-input-freeze.json": {
+    "original_path": "/tmp/de_native_campaign_stack_adoption_2026-10-06/adoption-input-freeze.json",
+    "sha256": "3031d3e381937ddebe89496e4cc4de8763210bc7b67cec36eb6a0e2b6111b43a",
+    "bytes": 2010161
+  },
+  "adoption/summary.json": {
+    "original_path": "/tmp/de_native_campaign_stack_adoption_2026-10-06/summary.json",
+    "sha256": "de9474e23fcbf07eec717eae7e073610f038f2787609a2d4a71f3f4ea4b9d12c",
+    "bytes": 2269
+  },
+  "adoption/terminal.json": {
+    "original_path": "/tmp/de_native_campaign_stack_adoption_2026-10-06/terminal.json",
+    "sha256": "de9474e23fcbf07eec717eae7e073610f038f2787609a2d4a71f3f4ea4b9d12c",
+    "bytes": 2269
+  },
+  "adoption/driver.log": {
+    "original_path": "/tmp/de_native_campaign_stack_adoption_2026-10-06/driver.log",
+    "sha256": "af49afb66c73d872a608b206ce2f43c397af5f678b0ab8a4def2ec79017bf62c",
+    "bytes": 387
+  },
+  "prior-campaign/production-plan.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/production-plan.json",
+    "sha256": "e7b36f12a970f7265d706ad0223c7450d6bfe60c1961f575cae7b0d19759aded",
+    "bytes": 2282586
+  },
+  "prior-campaign/integration-review.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/integration-review.json",
+    "sha256": "594310c2dc164eb307e097601726fd2aa5f4f3ff93c28865a26c2fd3b4b495f9",
+    "bytes": 397868
+  },
+  "prior-campaign/receipts/modules.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts/modules.json",
+    "sha256": "98df9d3eb8d139250ec1ac92537c94ab301a5e268db34f28a9a872ea260530b3",
+    "bytes": 2600549
+  },
+  "prior-campaign/source-object-freeze.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/source-object-freeze.json",
+    "sha256": "eadcadf59a0ec1d65ef50c6791af0ab89a76a3b56147dc8c8dfaedc4800c47e8",
+    "bytes": 1744687
+  },
+  "prior-campaign/terminal.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/terminal.json",
+    "sha256": "78bad3c65a823cf910431d99110833e7a19f81c3699cc446b9dec598fd502e67",
+    "bytes": 422
+  }
+}

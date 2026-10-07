@@ -1,0 +1,92 @@
+{
+  "total_targets": 12,
+  "batch_size": 2,
+  "terminal_batches": [
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundCoordinates.Point000",
+        "SbtCosmo.Derivation.GroundCoordinates.Point001"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundCoordinates.Point000",
+        "SbtCosmo.Derivation.GroundCoordinates.Point001"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 482.806
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundCoordinates.Point002",
+        "SbtCosmo.Derivation.GroundCoordinates.Point003"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundCoordinates.Point002",
+        "SbtCosmo.Derivation.GroundCoordinates.Point003"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 371.902
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundCoordinates.Point004",
+        "SbtCosmo.Derivation.GroundCoordinates.Point005"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundCoordinates.Point004",
+        "SbtCosmo.Derivation.GroundCoordinates.Point005"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 429.851
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundCoordinates.Point006",
+        "SbtCosmo.Derivation.GroundCoordinates.Point007"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundCoordinates.Point006",
+        "SbtCosmo.Derivation.GroundCoordinates.Point007"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 478.805
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundCoordinates.Point008",
+        "SbtCosmo.Derivation.GroundCoordinates.Point009"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundCoordinates.Point008",
+        "SbtCosmo.Derivation.GroundCoordinates.Point009"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 489.276
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundCoordinates.Point010",
+        "SbtCosmo.Derivation.GroundCoordinates.Point011"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundCoordinates.Point010",
+        "SbtCosmo.Derivation.GroundCoordinates.Point011"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 560.764
+    }
+  ],
+  "successful_targets": 12,
+  "all_success": true
+}

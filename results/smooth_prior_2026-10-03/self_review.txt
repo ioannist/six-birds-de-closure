@@ -1,0 +1,31 @@
+Adversarial self-review, not independent review
+Baseline cb12a5d; paper/runtime/populations/data/prior proofs/evidence fixed.
+
+Target: test section7's local nonsingularity sufficiency on the ACTUAL toy,
+rather than a surrogate interval, atom or assumed first-time/endpoint family.
+
+1. Prior definition: k*exp(-k*t)/(1-exp(-k*U)); actual positive U and positive k
+earn positive normalization. Smooth, finite and strictly positive at zero;
+strictly positive on the entire positive window; no point mass/truncated prefix.
+2. Integrals: actual antiderivative derivative and raw integrability supplied by
+constructed proofs, then FTC and constant division. Whole positive-window
+normalization1 and exact prefix mass proved, not fields in a recognition record.
+3. Construction: a=min(actual Umin,epsilon/16000)>0 and k=log(2/eta)/a>0.
+Actual exp(-k*a)=eta/2. Prefix numerator and positive denominator earn mass>1-eta.
+Both witnesses precede every knob/population/seed quantifier. The same raw rate
+is normalized separately on every actual full window, not assumed equal windows.
+4. Actual return: unchanged actual aggregate endpoints, earned common corner
+bound and original gate nesting. Every prefix lambda admits all populations.
+Actual first-ANY-patch R<=8000lambda gives all36 R<epsilon on the entire prefix.
+No actual root/derivative/window/normalization/time/rate/cutoff premise supplied.
+5. Boundary: positive windows[0,U], not the signed negative sliver. Interval-mass
+certificate plus actual low-ratio event inclusion; no separately mechanized
+probability measure object or record-abundance pushforward is claimed. Local
+regularity does not control global mass. Corrected finite flat/log priors are
+unchanged; this does not restore a failed numerical collapse or infer a physical
+prior. It formalizes a previously established false-target obstruction.
+
+Fresh full build8175 jobs. All10 exported statements and standard-only transitive
+closures checked. Cumulative1474=immutable1464+fresh10, full cumulative command
+not rerun. Pinned toolchain/mathlib and protected prior hashes checked.
+No holes/native_decide/nonstandard axioms. Full original goal incomplete.

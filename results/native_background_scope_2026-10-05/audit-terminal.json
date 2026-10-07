@@ -1,0 +1,19 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_background_shift",
+    "/tmp/de_native_background_shift/Check.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift",
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference",
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant"
+  ],
+  "source_sha256": "a2a6b829c183101d2a3df6c1275f999a73c42be24d996723a48a07e965b7d830",
+  "object_sha256": "17e31aac6fdef73c28a276807abec95388a03c76f05abb7c037f13f1de50162d",
+  "log_sha256": "3f564872253287780ec48618ce845f5739c3f6a38792be47ee687d738b8f7c65",
+  "audit_sha256": "320113b1174d8b22f32b79ef969036ea1d60864274ca2ea5c3c325168177c569",
+  "LEAN_PATH": "/tmp/de_native_background_shift/overlay:/home/repos/six-birds-de-closure/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean:/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean"
+}

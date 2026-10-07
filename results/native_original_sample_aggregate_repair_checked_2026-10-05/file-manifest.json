@@ -1,0 +1,13 @@
+{
+  "NativeOriginalSampleResults.lean": "cb00ea3b49ff0a5871320c7e2990ab12f231fc9d0da33ec5038ad7104bd8cde3",
+  "NativeOriginalSampleResultsAudit.lean": "cfb3b28a901a686e4f98c55a160bdab9ed9a6dde90560a08dc122cb8d544e6e8",
+  "archive-member-manifest.json": "da05012d3b052c3e5bf7c43596895245ee4526eecda3029bd41210ec8a773a74",
+  "audit-summary.json": "807e6afa3397684f4ac28a76d89de0becee27543e0b6271f59b4a45478cd746a",
+  "dependency-bindings.json": "54a1f17bcb2deb461b7ef60a81cfc420e34152b42f10604493fabc0d76314e51",
+  "metadata-history/initial-audit-summary.json": "3c248362917953b8d50697cbfa520b9dc7bea9cc5e0e43120bd8bb22894e6450",
+  "metadata-history/initial-file-manifest.json": "b35a1f4b4b1227d5bd0e280a6ab8bd2985af26616ac65db39cf02ca8c3e696fb",
+  "proof-and-history.zip": "ac379301b9973549b1cb87c42b8090818ce4541c98138d951a899da5bde7251a",
+  "source-input-freeze.json": "1e43ebe452ac521c0c1807f6cf51a457fd534596e8df6053911c4671e2dd6641",
+  "statements-and-axioms.log": "b9ba140c64b602e03ba47851ad88fa7c9cd0d3a961c12db189e4c253f06222e9",
+  "unchanged-theorem-headers.json": "cc5d6c8f94b0650d5109b9f433761347748da985b1eef3855e1b62dc8286f9d5"
+}

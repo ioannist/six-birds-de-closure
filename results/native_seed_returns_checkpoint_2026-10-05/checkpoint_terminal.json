@@ -1,0 +1,8 @@
+{
+  "terminal_exit_code": 0,
+  "session": 47758,
+  "utc": "2026-10-05T00:57:16.861488+00:00",
+  "driver_log_sha256": "e83bc167c7e8ce984e244762d45ced9f35722160feff6b43c4efa92e4d2cd50a",
+  "archive_round_trip_files": 40,
+  "review": "Adversarial self-review; no independent reviewer"
+}

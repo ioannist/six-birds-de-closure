@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundParametricSeedTargetReturn",
+  "terminal_exit_code": 0,
+  "source_sha256": "c0a4d3f6026e1526ffec8329eb16be7f36a456d1fcd955ea5aaabd724ae0cad2",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.lean"
+  ],
+  "object_sha256": "858b575fe9ade8911180418441ffa666bba8f96cdd805a836b66e386d9f7ed48"
+}

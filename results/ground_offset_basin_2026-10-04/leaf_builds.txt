@@ -1,0 +1,93 @@
+Fresh18 arithmetic leaf builds;20 dependency sources frozen before/after compiler execution.
+Frozen source SHA256: ab676fba5d4a93ea810501abca32c3cf2018841019f72e4242d0fd1ca5331652 lean/SbtCosmo/Derivation/GroundUncertainNativeBox.lean
+Frozen source SHA256: ea7249e25ba8376a89c433a0c5598cc2065096e5108fb74b4ede08d908359449 lean/SbtCosmo/Derivation/GroundUncertainNativeBasin.lean
+Frozen source SHA256: cb02a3cd01d6baa8c2ba163aa9d8c79dd3db8659945884a72abe126bc249dcef lean/SbtCosmo/Derivation/GroundOffsetBasins/Point000.lean
+Frozen source SHA256: 088f06810f98945759b6e8dd3ecd033533dfeeb187e3a80e2054c6686bcc8c15 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point001.lean
+Frozen source SHA256: 21e4a4e788ba336a0929cb3ea00b4342ab89460bb48f2c50490f5fc1fff38cc9 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point002.lean
+Frozen source SHA256: ef0a8d73e3ca6bff0a84e9fd2ff117af3fb22b504850549a65be67f1cc9c2962 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point003.lean
+Frozen source SHA256: 1e67e1ead70d557dcdb283d30b3a5418682f48b199718122ba01c0a0d8ad6204 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point004.lean
+Frozen source SHA256: 189ff64d0a6856e1c32c1133263687758e83c2f82f6f310c3284fc17a37346dd lean/SbtCosmo/Derivation/GroundOffsetBasins/Point005.lean
+Frozen source SHA256: 52205cc369c400af98800708bb97e69c1600c69c80f6771fe88880d071efb0ec lean/SbtCosmo/Derivation/GroundOffsetBasins/Point006.lean
+Frozen source SHA256: 9176c5f9db62f246937a769c3f0ba5eac7dd184b98f60bad9ae8ea5049cd8c7f lean/SbtCosmo/Derivation/GroundOffsetBasins/Point007.lean
+Frozen source SHA256: cd700695683e4260d7ce58aadf2815c1263e2c06b7c340f777c7885842e82bf0 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point008.lean
+Frozen source SHA256: 2607ab6a5203a8f264e5c3db66b32a6b64f596aacc56323c090efe739eab47ac lean/SbtCosmo/Derivation/GroundOffsetBasins/Point009.lean
+Frozen source SHA256: da374774233d1b059bef58ab79f8f545abafc8f68196903b302682b7ad0a2294 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point010.lean
+Frozen source SHA256: 3efeabaea690ff509da66e53275bc5464c2eba7411d0298399ade0f5fab9f686 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point011.lean
+Frozen source SHA256: ad52e1205b569d190769eb04569a4650ada42ec2536471dcb95d401a7cc7ba11 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point012.lean
+Frozen source SHA256: 336504e83d8ebe55ce4b11e427537097dc4ad8439b899d0d35e5a8db2c38f85e lean/SbtCosmo/Derivation/GroundOffsetBasins/Point013.lean
+Frozen source SHA256: 6ada5a39c545c6b3abe60c97318d13f4ac7020d432b017f43c1d529a31836fd5 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point014.lean
+Frozen source SHA256: c3155f68cb7e46e5d7f510a3c87bc2d4992479e31c34053721912a1c1d488f11 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point015.lean
+Frozen source SHA256: f74e516d165c71f11d5212a92188e1907ea70f5ec1013ce8d623c5603ea82e41 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point016.lean
+Frozen source SHA256: 9584b6ad22720688006813579147bde6b47809074f5d7f9d24fee82d748b7134 lean/SbtCosmo/Derivation/GroundOffsetBasins/Point017.lean
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point000
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point000 (257s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point001
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point001 (260s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point002
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point002 (263s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point003
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point003 (277s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point004
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point004 (259s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point005
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point005 (259s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point006
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point006 (255s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point007
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point007 (268s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point008
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point008 (262s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point009
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point009 (263s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point010
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point010 (263s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point011
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point011 (266s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point012
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point012 (267s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point013
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point013 (266s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point014
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point014 (266s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point015
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point015 (265s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point016
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point016 (254s)
+Build completed successfully (8688 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetBasins.Point017
+✔ [8688/8688] Built SbtCosmo.Derivation.GroundOffsetBasins.Point017 (251s)
+Build completed successfully (8688 jobs).

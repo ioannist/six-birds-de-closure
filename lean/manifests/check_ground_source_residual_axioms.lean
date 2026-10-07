@@ -1,0 +1,57 @@
+import SbtCosmo.Derivation.GroundComplexEuclidean
+import SbtCosmo.Derivation.GroundComplexResidual
+import SbtCosmo.Derivation.GroundSourceDiagnostics
+import SbtCosmo.Derivation.GroundOriginalResiduals
+import SbtCosmo.Derivation.GroundSourceDiagnosticControls
+
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_nonneg
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_sq
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_unit
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_neg
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_smul
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_add
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_sub_triangle
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.overlap_inner
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.overlap_bound
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.distance_unit_identity
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.phase_unit
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.phase_distance
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.l2_sub
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.phase_guard_of_distance
+#print axioms SbtCosmo.Derivation.GroundComplexEuclidean.double_phase_gap
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.overlap_add_left
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.overlap_sub_right
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.overlap_smul_right
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.overlap_smul_left
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.overlap_self
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.hamiltonian_symmetric
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.shifted_symmetric
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.shifted_sub
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.l2_shift_next
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.l2_shift_prev
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.l2_diagonal
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.shifted_l2_bound
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.ground_energy_budget
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.rayleigh_error
+#print axioms SbtCosmo.Derivation.GroundComplexResidual.eigen_residual_bound
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnostics.source_zero
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnostics.sourcing_self_comparison_zero
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnostics.double_phase_real_sign
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.background_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.background_budget
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.tolerance_budget
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.target_ground_data
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.candidate_zero_return
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.orbit_unit
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.orbit_distance_sixty
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.orbit_distance_fifty_nine
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.last_update_threshold
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.final_fixed_gap_threshold
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.final_eigen_threshold
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.final_sourcing_threshold
+#print axioms SbtCosmo.Derivation.GroundOriginalResiduals.actual_seed_zero_sixty_convergence_tests
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnosticControls.imaginary_unit
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnosticControls.first_alignment
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnosticControls.second_alignment
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnosticControls.actual_double_gap_control
+#print axioms SbtCosmo.Derivation.GroundSourceDiagnosticControls.imaginary_half_update_illegal

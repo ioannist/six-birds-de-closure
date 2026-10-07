@@ -1,0 +1,15 @@
+{
+  "F4_status": "GloballyExact",
+  "decision_verdict": "Rewrite residual",
+  "definition": "LG_SN_BAO proxy from eta(z)/eta0 shape audit; amplitude eta0 is marginalized/selected and is not counted as CDDR violation.",
+  "epsilon_log1p_significance": 1.3369821768694963,
+  "epsilon_z_significance": 0.14339969510284867,
+  "experiment": "E2_distance_duality",
+  "flat_chi2": 561.1003031649989,
+  "flat_chi2_dof": 28.055015158249944,
+  "flat_dof": 20,
+  "run_id": "E2_CDDR_C3",
+  "schema_version": 1,
+  "spearman_p": 0.0713826211069031,
+  "spearman_r": 0.40129870129870127
+}

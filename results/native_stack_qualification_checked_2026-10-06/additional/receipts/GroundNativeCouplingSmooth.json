@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundNativeCouplingSmooth",
+  "terminal_exit_code": 0,
+  "source_sha256": "c745492db8d08fee80be2e0093ce62ddbd731c783a45d740badd5ef993279843",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeCouplingSmooth.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeCouplingSmooth.lean"
+  ],
+  "object_sha256": "888b53c00534e63b09cd16f045f61dcc806f5353363aa9624cc1b65d85524f99"
+}

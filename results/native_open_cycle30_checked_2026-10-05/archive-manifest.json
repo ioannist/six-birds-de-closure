@@ -1,0 +1,257 @@
+{
+  "archive_sha256": "70ac6b02b51b5b6c9120713fcba48d4449e47fff1ac5c769aed7a087de493edb",
+  "entries": [
+    {
+      "name": "workspace/math/GROUND_NATIVE_OPEN_CYCLE30_CONSTRUCTION_2026-10-05.md",
+      "source": "/home/repos/six-birds-de-closure/math/GROUND_NATIVE_OPEN_CYCLE30_CONSTRUCTION_2026-10-05.md",
+      "sha256": "8d7705a726467801009547572924e77d60ed3689390da5863328651324a0a962",
+      "size": 9782
+    },
+    {
+      "name": "de-native-coupling-continuation-first-terminal.json",
+      "source": "/tmp/de-native-coupling-continuation-first-terminal.json",
+      "sha256": "a802aa46a406d2218b12392e3f4a5a55e32b5bb6175ce2419f6bbe9d23067899",
+      "size": 636
+    },
+    {
+      "name": "de-native-coupling-continuation-first.log",
+      "source": "/tmp/de-native-coupling-continuation-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-native-coupling-smooth-first-terminal.json",
+      "source": "/tmp/de-native-coupling-smooth-first-terminal.json",
+      "sha256": "539d07651a4f3c72e5ce4f1614c49f5217cfd7d1371975b77f5236a0ed792287",
+      "size": 624
+    },
+    {
+      "name": "de-native-coupling-smooth-first.log",
+      "source": "/tmp/de-native-coupling-smooth-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-native-open-cycle-full-audit-summary.json",
+      "source": "/tmp/de-native-open-cycle-full-audit-summary.json",
+      "sha256": "6f32da6c9ca14c1f1c89c28159b0490a71e686b524440ecec0425c668a59ac40",
+      "size": 5572
+    },
+    {
+      "name": "de-native-open-cycle-full-audit-terminal.json",
+      "source": "/tmp/de-native-open-cycle-full-audit-terminal.json",
+      "sha256": "025e8d4b04f2f8b9bdb563e6ecf7fb9144b5a4f39db8f5ecb72e50522b9a515c",
+      "size": 5190
+    },
+    {
+      "name": "de-native-open-cycle-full-audit.log",
+      "source": "/tmp/de-native-open-cycle-full-audit.log",
+      "sha256": "b46edb0e4eb06a616912f9e4412cc0b4d1c10bc02d5b970bb559798a726e3241",
+      "size": 25373
+    },
+    {
+      "name": "de-original-cycle30-baseline-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-baseline-first-terminal.json",
+      "sha256": "ce22b04e392fa01761103657b233ae06917db9b7ad2c79112fdd872ab9978608",
+      "size": 543
+    },
+    {
+      "name": "de-original-cycle30-baseline-first.log",
+      "source": "/tmp/de-original-cycle30-baseline-first.log",
+      "sha256": "32b405b2382f92f09459c68ced7898f80010a7fbe618075eb96fde48eb9f53f9",
+      "size": 3010
+    },
+    {
+      "name": "de-original-cycle30-baseline-retry-terminal.json",
+      "source": "/tmp/de-original-cycle30-baseline-retry-terminal.json",
+      "sha256": "ada688a504f93f0dc9acba37ca0bff97f12b2f58be7049fed682f55c566e152f",
+      "size": 543
+    },
+    {
+      "name": "de-original-cycle30-baseline-retry.log",
+      "source": "/tmp/de-original-cycle30-baseline-retry.log",
+      "sha256": "b18ea5920f1ec6437721563cdd775a57ba14fb94fcd0859f99f63bc38afee389",
+      "size": 3122
+    },
+    {
+      "name": "de-original-cycle30-baseline-retry2-terminal.json",
+      "source": "/tmp/de-original-cycle30-baseline-retry2-terminal.json",
+      "sha256": "45b585f41c1522905c1e2dc5b1679f6612b0a9c2c8ed74363402763196793b01",
+      "size": 630
+    },
+    {
+      "name": "de-original-cycle30-baseline-retry2.log",
+      "source": "/tmp/de-original-cycle30-baseline-retry2.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-open-diagnostics-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-open-diagnostics-first-terminal.json",
+      "sha256": "030d897d6f410f13a33f037e63e1d352239ea51e2dc62534c10d4647ce80b55e",
+      "size": 557
+    },
+    {
+      "name": "de-original-cycle30-open-diagnostics-first.log",
+      "source": "/tmp/de-original-cycle30-open-diagnostics-first.log",
+      "sha256": "057597e2f706609632be96edac7e0bb461bcff2d639fe8c1647c490a23c20439",
+      "size": 166
+    },
+    {
+      "name": "de-original-cycle30-open-diagnostics-retry-terminal.json",
+      "source": "/tmp/de-original-cycle30-open-diagnostics-retry-terminal.json",
+      "sha256": "ccdd0dd2eab33a82ff4286d919e33cbe990262c7dbaf8c92b83d6cd16e70f9f3",
+      "size": 644
+    },
+    {
+      "name": "de-original-cycle30-open-diagnostics-retry.log",
+      "source": "/tmp/de-original-cycle30-open-diagnostics-retry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-open-return-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-open-return-first-terminal.json",
+      "sha256": "558a71ec67a67ca8e669127e15e47b02a19ab105b75a1321efe4dd29c7ae2848",
+      "size": 547
+    },
+    {
+      "name": "de-original-cycle30-open-return-first.log",
+      "source": "/tmp/de-original-cycle30-open-return-first.log",
+      "sha256": "4b522392f9fb4366f16bc4080fc96a96dcf38e7457b5aee7683f2a1621538fdc",
+      "size": 3310
+    },
+    {
+      "name": "de-original-cycle30-open-return-retry-terminal.json",
+      "source": "/tmp/de-original-cycle30-open-return-retry-terminal.json",
+      "sha256": "97c40f4c750ea22e3941376af2b1d7806e0ef76de3b3389d12ff81ede911dda4",
+      "size": 634
+    },
+    {
+      "name": "de-original-cycle30-open-return-retry.log",
+      "source": "/tmp/de-original-cycle30-open-return-retry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-parametric-seed-target-first-terminal.json",
+      "source": "/tmp/de-parametric-seed-target-first-terminal.json",
+      "sha256": "2f1b2f9defc9af8e84893b0cb767709846ca18a2c4cf64af3143aeeed269c012",
+      "size": 549
+    },
+    {
+      "name": "de-parametric-seed-target-first.log",
+      "source": "/tmp/de-parametric-seed-target-first.log",
+      "sha256": "4cb25433c2c86d3b1b8ba1ee861ef0d2f2a7ec1b344a9ea1af1c418de02e99ff",
+      "size": 286
+    },
+    {
+      "name": "de-parametric-seed-target-retry-terminal.json",
+      "source": "/tmp/de-parametric-seed-target-retry-terminal.json",
+      "sha256": "33b9313e11b3158fbfc7dd0cab1f907cf4e24f0d5bd611a46b01e95cfd7c78dd",
+      "size": 636
+    },
+    {
+      "name": "de-parametric-seed-target-retry.log",
+      "source": "/tmp/de-parametric-seed-target-retry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_native_open_cycle/OpenCycleFullAudit.lean",
+      "source": "/tmp/de_native_open_cycle/OpenCycleFullAudit.lean",
+      "sha256": "e195a52b65595f0b53fc219176cc83f6c88727e8577f8d8bdcf79bb44e6314a2",
+      "size": 6145
+    },
+    {
+      "name": "de_native_open_cycle/audit_modules.py",
+      "source": "/tmp/de_native_open_cycle/audit_modules.py",
+      "sha256": "11ce8407991dfd84b429f35ecbd138c9f00276f09fa74de964d8cd5b21a45d7d",
+      "size": 2941
+    },
+    {
+      "name": "de_native_open_cycle/checkpoint_checked.py",
+      "source": "/tmp/de_native_open_cycle/checkpoint_checked.py",
+      "sha256": "94ca7e5532a437062eb6f57a4884b05cebeda105559bc6a5dc7f3434814a7b9a",
+      "size": 11091
+    },
+    {
+      "name": "de_native_open_cycle/compile_module.py",
+      "source": "/tmp/de_native_open_cycle/compile_module.py",
+      "sha256": "717395f3bf74f5e8f17a7ea1315f478a6fd7a6220ac7cfecad2916a7115c2159",
+      "size": 1380
+    },
+    {
+      "name": "de_native_open_cycle/history/GroundOriginalCycle30Baseline-first.lean",
+      "source": "/tmp/de_native_open_cycle/history/GroundOriginalCycle30Baseline-first.lean",
+      "sha256": "ca933ae139e785bc86422a40524cd92042f20fb2718d24c0c0ce7ca5be0241e2",
+      "size": 5337
+    },
+    {
+      "name": "de_native_open_cycle/history/GroundOriginalCycle30Baseline-retry.lean",
+      "source": "/tmp/de_native_open_cycle/history/GroundOriginalCycle30Baseline-retry.lean",
+      "sha256": "4eab6acdc25a1e350a38398076d2b971e4fa98bce6f41d2085ae0d6cc07c3982",
+      "size": 5506
+    },
+    {
+      "name": "de_native_open_cycle/history/GroundOriginalCycle30OpenDiagnostics-first.lean",
+      "source": "/tmp/de_native_open_cycle/history/GroundOriginalCycle30OpenDiagnostics-first.lean",
+      "sha256": "22c791847bec9bbde90960c7e8c2f4b5df0dc5fa56328e32f56f1ed7ed9f39ed",
+      "size": 3391
+    },
+    {
+      "name": "de_native_open_cycle/history/GroundOriginalCycle30OpenReturn-first.lean",
+      "source": "/tmp/de_native_open_cycle/history/GroundOriginalCycle30OpenReturn-first.lean",
+      "sha256": "51bf704ea21599f94ea96c0a40583f9f5853bfaf634400ea92e36010de8015ff",
+      "size": 8630
+    },
+    {
+      "name": "de_native_open_cycle/history/GroundParametricSeedTargetReturn-first.lean",
+      "source": "/tmp/de_native_open_cycle/history/GroundParametricSeedTargetReturn-first.lean",
+      "sha256": "546ed8c1d7033eb8bac10c6c6dc7053fa1fbb4299dc84bb698b3bdb57424681e",
+      "size": 3073
+    },
+    {
+      "name": "de_native_open_cycle/history/audit_modules-first.py",
+      "source": "/tmp/de_native_open_cycle/history/audit_modules-first.py",
+      "sha256": "d973e603f632265fb3c0924780a10254afa7baa435528cf183803961cdb8d372",
+      "size": 2941
+    },
+    {
+      "name": "de_native_open_cycle/lean/SbtCosmo/Derivation/GroundNativeCouplingContinuation.lean",
+      "source": "/tmp/de_native_open_cycle/lean/SbtCosmo/Derivation/GroundNativeCouplingContinuation.lean",
+      "sha256": "3b76bcabbc11c4912e7e0a2ed467e19df01a17e43e932e2fb51846b63e666c83",
+      "size": 4337
+    },
+    {
+      "name": "de_native_open_cycle/lean/SbtCosmo/Derivation/GroundNativeCouplingSmooth.lean",
+      "source": "/tmp/de_native_open_cycle/lean/SbtCosmo/Derivation/GroundNativeCouplingSmooth.lean",
+      "sha256": "c745492db8d08fee80be2e0093ce62ddbd731c783a45d740badd5ef993279843",
+      "size": 5546
+    },
+    {
+      "name": "de_native_open_cycle/lean/SbtCosmo/Derivation/GroundOriginalCycle30Baseline.lean",
+      "source": "/tmp/de_native_open_cycle/lean/SbtCosmo/Derivation/GroundOriginalCycle30Baseline.lean",
+      "sha256": "afccab23dfce92bc91c7477d64c0e461e2ca5434f186b2db9bbc8610fffc17fc",
+      "size": 5657
+    },
+    {
+      "name": "de_native_open_cycle/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.lean",
+      "source": "/tmp/de_native_open_cycle/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.lean",
+      "sha256": "5df6095f51cfd225a24f324805f6512b4bc24b7565cb950f800d1a076f95b0c2",
+      "size": 3390
+    },
+    {
+      "name": "de_native_open_cycle/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenReturn.lean",
+      "source": "/tmp/de_native_open_cycle/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenReturn.lean",
+      "sha256": "04be092be1d4373dd0e6ba0a9c80643a6c810adba8e774123bd10dfad3977fc3",
+      "size": 9614
+    },
+    {
+      "name": "de_native_open_cycle/lean/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.lean",
+      "source": "/tmp/de_native_open_cycle/lean/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.lean",
+      "sha256": "c0a4d3f6026e1526ffec8329eb16be7f36a456d1fcd955ea5aaabd724ae0cad2",
+      "size": 3067
+    }
+  ]
+}

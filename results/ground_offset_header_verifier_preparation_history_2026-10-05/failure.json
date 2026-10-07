@@ -1,0 +1,7 @@
+{
+  "actual_driver_exit_code": 1,
+  "stage": "AST parse before packet creation",
+  "error": "SyntaxError in added expected_objects comprehension: missing closing parenthesis",
+  "registered_sources_changed": false,
+  "proof_commands_started": 0
+}

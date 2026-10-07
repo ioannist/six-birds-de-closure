@@ -1,0 +1,23 @@
+import SbtCosmo.Derivation.WindowStarvationData
+import SbtCosmo.Derivation.GrowthStarvationCertified
+import SbtCosmo.Derivation.WindowGlobalStarvation
+
+#check SbtCosmo.Derivation.WindowStarvationData.grid_endpoints
+#check SbtCosmo.Derivation.WindowStarvationData.upper_cells
+#check SbtCosmo.Derivation.WindowStarvationData.upper_sum
+#check SbtCosmo.Derivation.GrowthStarvationCertified.integral_upper
+#check SbtCosmo.Derivation.GrowthStarvationCertified.finite_growth_upper
+#check SbtCosmo.Derivation.GrowthStarvationCertified.limiting_growth_upper
+#check SbtCosmo.Derivation.GrowthStarvationCertified.global_growth_upper
+#check SbtCosmo.Derivation.GrowthStarvationCertified.patch_never_collapses
+#check SbtCosmo.Derivation.GrowthStarvationCertified.no_native_record
+#check SbtCosmo.Derivation.WindowGlobalStarvation.rational_margin_original
+#check SbtCosmo.Derivation.WindowGlobalStarvation.amplitude_margin_original
+#check SbtCosmo.Derivation.WindowGlobalStarvation.rational_margin_robustness
+#check SbtCosmo.Derivation.WindowGlobalStarvation.amplitude_margin_robustness
+#check SbtCosmo.Derivation.WindowGlobalStarvation.no_original_patch_ever
+#check SbtCosmo.Derivation.WindowGlobalStarvation.no_robustness_patch_ever
+#check SbtCosmo.Derivation.WindowGlobalStarvation.no_original_record
+#check SbtCosmo.Derivation.WindowGlobalStarvation.no_robustness_record
+#check SbtCosmo.Derivation.WindowGlobalStarvation.original_record_count_zero
+#check SbtCosmo.Derivation.WindowGlobalStarvation.robustness_record_count_zero

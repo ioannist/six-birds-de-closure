@@ -1,0 +1,11 @@
+import SbtCosmo.Derivation.GroundComplex
+
+#check Brouwer
+#check SbtCosmo.Derivation.GroundState.exists_positive_ground
+#check SbtCosmo.Derivation.GroundState.continuous_positiveGround
+#check SbtCosmo.Derivation.GroundState.real_lowest_eigen_span
+#check SbtCosmo.Derivation.GroundState.exists_selfConsistent_ground
+#check SbtCosmo.Derivation.GroundState.background_offset_no_forced_value
+#check SbtCosmo.Derivation.GroundState.coupling_no_forced_value
+#check SbtCosmo.Derivation.GroundState.complex_lowest_eigen_span
+#check SbtCosmo.Derivation.GroundState.exists_native_complex_ground

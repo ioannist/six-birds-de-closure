@@ -1,0 +1,25 @@
+{
+  "dataset": "DESI_RSD_FS",
+  "release": "DR2 compressed f_sigma8 summary; method control arXiv:2411.12026",
+  "access": "official_likelihood",
+  "fetch_url": "https://data.desi.lbl.gov/",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "DESI public release; cite DESI DR2 RSD summary and arXiv:2411.12026",
+  "citation": "DESI Collaboration, arXiv:2411.12026 method control",
+  "raw_files": [{"path": "data/raw/desi_rsd_fs/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/desi_rsd_fs/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/desi_rsd_fs/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "compressed primary until public DR2 full-shape likelihood exists"},
+  "route": null,
+  "staging_axis": null,
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "budgeted",
+  "fallback": "DR1 full-shape retained only as method control if DR2 full-shape is unavailable",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

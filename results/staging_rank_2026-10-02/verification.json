@@ -1,0 +1,86 @@
+{
+  "baseline_commit": "ecce4b3",
+  "scope": "exact finite rank counting and finite weighted-law return under balanced index marginals; exchangeability of real-data fitted-anchor scores remains unproved",
+  "lean_build": {
+    "command": "lake build",
+    "success": true,
+    "jobs": 3159,
+    "warning_as_error": true
+  },
+  "axiom_audit": {
+    "command": "lake env lean manifests/check_axioms.lean",
+    "declarations": 208,
+    "new_declarations": 16,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "proof_holes": false,
+    "new_declaration_names": [
+      "SbtCosmo.Derivation.StagingAudit.component_translation",
+      "SbtCosmo.Derivation.StagingAudit.common_shift_can_still_fire",
+      "SbtCosmo.Derivation.StagingAudit.component_denominator_positive",
+      "SbtCosmo.Derivation.StagingAudit.self_in_upperSet",
+      "SbtCosmo.Derivation.StagingAudit.upperCard_positive",
+      "SbtCosmo.Derivation.StagingAudit.tail_card_le",
+      "SbtCosmo.Derivation.StagingAudit.uniform_index_tail_bound",
+      "SbtCosmo.Derivation.StagingAudit.nominal_level_bound",
+      "SbtCosmo.Derivation.StagingAudit.sum_rankMass_le",
+      "SbtCosmo.Derivation.StagingAudit.balanced_rankMass_bound",
+      "SbtCosmo.Derivation.StagingAudit.rank_zero_never_rejects",
+      "SbtCosmo.Derivation.StagingAudit.twenty_null_rank_bound",
+      "SbtCosmo.Derivation.StagingAudit.omission_rejection_iff",
+      "SbtCosmo.Derivation.StagingAudit.omission_rejections_eq",
+      "SbtCosmo.Derivation.StagingAudit.omission_rejections_card",
+      "SbtCosmo.Derivation.StagingAudit.interpolated_counterexample_rate"
+    ]
+  },
+  "python_tests": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /mnt/data-drive/sbt-de/micromamba/envs/sbt-de/bin/python -m pytest -q",
+    "passed": 123,
+    "warnings": 19,
+    "duration_seconds": 48.48,
+    "new_tests": 9
+  },
+  "recomputation": {
+    "command": "python scripts/de_staging_rank_checks.py",
+    "real_fires": true,
+    "rank_cutoff": 8.878869923235262,
+    "empirical_detect_sn": 0.2,
+    "empirical_detect_bao": 0.1
+  },
+  "paper_edited": false,
+  "frozen_artifacts_changed": false,
+  "source_sha256": {
+    "lean/SbtCosmo/AORStatus.lean": "dc8f9cd17000b50498b37a0fff9a4220f7c058e1bec730e325b6e10dd96a7a9b",
+    "lean/SbtCosmo/Adequacy/Reconciliation.lean": "d409529eff20d41a8d5065cc7d8844bceab8139df009adca5c7a55f71d495e6d",
+    "lean/SbtCosmo/Adequacy/Support.lean": "539c5bd1291f94808080817701b814b2d1eab7a70981828a9e1ea17fc84c8dd8",
+    "lean/SbtCosmo/Common.lean": "c6b268fae84ac4e62a20a2e9e1de23dae83a14cfd4210ac46429d8fad26b8cb4",
+    "lean/SbtCosmo/Derivation/AllocationPrice.lean": "9a2e03cc7c36cc84300a890037a234687f73fc558792d85afb6456a425f02105",
+    "lean/SbtCosmo/Derivation/AnalyticReadout.lean": "77010c870eb7bcebb0a32d27a92a6abc47448900a62f8f07e3728c2c11c1ef1b",
+    "lean/SbtCosmo/Derivation/BackgroundSelection.lean": "c3384256312d76044dd8762a0e4f1ea22f3987f9f202af19deb9c02c24c93dc3",
+    "lean/SbtCosmo/Derivation/CPLReadout.lean": "68bf623be18d041afd452b0be7b09d345fe2cb6d6d1217025802b5ff9cf900b2",
+    "lean/SbtCosmo/Derivation/ClosurePrice.lean": "7a23cde6b5922f34f14bcba91343fbc844211eebba3b1d11f9c9e40bfea69a6a",
+    "lean/SbtCosmo/Derivation/GaugeClosure.lean": "fd14cb41499db0d5c76b24f6da352308b3718ef65e33cd0e8f8dd018e59a71d6",
+    "lean/SbtCosmo/Derivation/PriorObstruction.lean": "c6f7b45ab9afaa855e300006def4f7fccd39df0c052d7b5ff39c7342a031f952",
+    "lean/SbtCosmo/Derivation/StagingAudit.lean": "f0725c417642721c076d1b1d0344cc93c3b55a8ea70a62c335be13f5f4b60b94",
+    "lean/SbtCosmo/Derivation/WindowRecords.lean": "e7dd6be860d55a6e1075cf2e645cb46d420e79bafc22103321338d85b46661c1",
+    "lean/SbtCosmo/Holonomy.lean": "9277740425a27be2fbf4626823c3f6b5ea586758292ae6afc2d0a05300cfb43d",
+    "lean/SbtCosmo/Idempotence.lean": "2e9e27d2715739f42a22b3c63c9b8cd375514284ae28b9152d86790864b26cbd",
+    "lean/SbtCosmo/LocalGlobal.lean": "2d704ce1115a3408646765a58a21299a180ffd8baf94a3c0faa9fd4c0a9acea7",
+    "lean/SbtCosmo/PhantomStableReadout.lean": "6b0cdbffe884e6868f10d0711b7337a3b8d1f8d9e9ad0d9894e61ea3bf621a74",
+    "lean/SbtCosmo/RouteMismatch.lean": "2d33d315f87c40ce5d2eb5114e7bc284f51711f97a49a38cacbfdc47e2e75e68",
+    "lean/lakefile.lean": "f27afc1c5c95c07c5c94e27c9b8a4f791d9074772d8e12baa0f6537ebbcd1092",
+    "lean/manifests/check_axioms.lean": "164d3d7bf2d3ed808a380f70119ea6d35f90abe0345534fc947d1678ee0095e8",
+    "lean/manifests/axiom_audit_staging_2026-10-02.txt": "ec574325194725db53c1bf0cf97f1d1cdd5520db680f80e36526040dc21ef59a",
+    "math/STAGING_RANK_PROOFS_2026-10-02.md": "7cc9dfd1613b7a27729d704e097c4cf3cddd2546f4d571c0bd1194b99599beec",
+    "sbt_cosmo/audits/calibration.py": "490bb54c8c05ee06de218181bfa4527a1284fd1aa9415adce1c7ce45537e0ca0",
+    "scripts/de_staging_rank_checks.py": "8fde3c216663a4213e2b7aa23e852b807c623d80b52bbf8809d7cceb7f2b1c9b",
+    "scripts/de_audit_run.py": "27b350d47baeb44e3223e3b81c9a6497981049398b50a35e8af8f1c813732bee",
+    "scripts/de_audit_b2_fix.py": "47aa0587c52abad07eb53ba4bcdb288ccfb42086e66e388163ca091ac896512f",
+    "scripts/de_audit_validate.py": "f9446b41d43e640ee0c28b8d9d9227058a54584d7635db790d8e7b0febd9dbec",
+    "tests/test_audit_calibration.py": "260bcd14c75ca0648707daf691281dc4fe922b261548a7a4b0d7ec5fd0527f12",
+    "results/staging_rank_2026-10-02/receipt.json": "cc708a9e02b7cfdc3de6c693c85b292a7007458030366bd3bf7495c4fddae448"
+  }
+}

@@ -1,0 +1,9 @@
+# Checked open background construction
+
+All nine qualified private modules and fifty declarations compiled and passed fresh printed statement/transitive axiom checks. Only propext, Classical.choice and Quot.sound occur. The original seed converges to the negative actual positive coupled-ground branch throughout a positive open neighborhood of each of eighteen stored rounded backgrounds, with all guards and unit norms. Endpoint site-zero densities remain eventually separated by more than 9/100 on positive neighborhoods.
+
+Radii are positive existence witnesses, not explicit numerical bounds. This proves no full offset interval, infinite IEEE trace or physical Lambda bridge. Repository registration and commit remain pending the existing campaign gates; no immutable earlier plans were changed. The paper and original runtime remain untouched. Review is adversarial self-review, not independent review.
+
+The archive contains all current sources, 13 failed-source histories, compile/audit logs and terminal receipts, and the earlier failed finish-driver history. Every one of its 80 members was byte-verified in a sequential readback. The historical finish driver rejected the first concrete compile; its old source freeze ended with that terminal failure. Later successful retry receipts and the fifty-name audit supply current proof evidence. Candidate checkpoint flags in the separate earlier candidate packet are historical. Objects are pinned by SHA but are not archived.
+
+Source/object bindings cover all repository dependencies, directly imported mathlib sources, actual Lean/mathlib/toolchain identities and the unchanged original source runtime. All 5675 inputs of the existing broad campaign source freeze were freshly revalidated. The independent nine-module/fifty-name registration plan is separate from the frozen 1734+4 production plans. Mathematical construction and self-review are in math/GROUND_NATIVE_OPEN_BACKGROUND_CONSTRUCTION_2026-10-05.md.

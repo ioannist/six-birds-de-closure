@@ -1,0 +1,11 @@
+{
+  "README.md": "c74bd262a6791f0303b2f444d33963172a1078ff893d39b98860578de9502c3a",
+  "archive-manifest.json": "842fe13d3a5bb2b2adcfa9b6f7ceaa12859607f1bc729930d1810ddd712bdfcb",
+  "audit-summary.json": "c6a82ba5bb78915d62cb3a4a889f49b99d554458fa7e4e82db05f207d5ec140f",
+  "checked_artifacts.tar.gz": "73d4dffa44f5eee35b02b245007626647642d909e3f826490ec2c6436071ef5e",
+  "checkpoint-verification.json": "2e4b6566e62344422d7fb02885a90804240ab6ebf516b0346e07af3affebc174",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.lean": "32e1d6a31008207764f3a7c5630e43a368828ede3fa6d556ab5508b4bb8056e8",
+  "math-review.md": "d5e5dc8c6990b9bb90ac0714c6649825fb6a01c9b77cb8999a9a49ec242213af",
+  "registration-plan.json": "eb635e4fccadde1158bf51e4838e8de7cc7174cb770a54046b5e0b559e89094c",
+  "source-bindings.json": "afa19eef2a1ccc8fe1ba334a57550b266033d4abac977ae2a060aacfed27b86c"
+}

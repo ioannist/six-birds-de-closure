@@ -1,0 +1,47 @@
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.mem_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.tube_root_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_spec' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.sample_root_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_continuous_on' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_implicit_germ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_smooth_on' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatch.TubeCover.groundPair_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.closedBall_containment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.certified_sample_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.field_smooth_on' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.field_continuous_on' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.field_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.native_fixed_legal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.minus_one_contact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundParameterPatchReturn.two_distinct_contacts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

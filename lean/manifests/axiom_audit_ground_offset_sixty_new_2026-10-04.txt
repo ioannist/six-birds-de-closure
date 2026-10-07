@@ -1,0 +1,1253 @@
+'SbtCosmo.Derivation.GroundComplexCoordinateBudget.real_component_le_l2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexCoordinateBudget.imag_component_le_l2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexFiniteBudget.box_l2_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexFiniteBudget.tests_of_budgets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexFiniteBudget.fails_of_update' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.response_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.selector_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.selector_lipschitz' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.reflected_tail_in_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.euclidean_tail_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.input_on_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.selector_tail_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSelectorBudget.sourced_potential_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059.arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.seams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.seams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.seams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.seams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.seams' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.distance_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_candidate_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_potential_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.gap_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.difference_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.last_update_fail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.actual_four_source_tests_fail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.gap_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.difference_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.last_update_fail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.actual_four_source_tests_fail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.distance_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_candidate_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_potential_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.selector_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.candidate_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.update_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.ground_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.distance_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.source_bounds_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_candidate_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_update_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_potential_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_four_source_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.previous_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.current_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.gap_arithmetic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.difference_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.last_update_fail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.actual_four_source_tests_fail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalOffsetSixty.original_sixty_verdict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalOffsetSixty.failed_offsets' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalOffsetSixty.passing_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalOffsetSixty.failing_count' depends on axioms: [propext, Classical.choice, Quot.sound]

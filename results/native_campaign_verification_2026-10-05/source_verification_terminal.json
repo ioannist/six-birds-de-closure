@@ -1,0 +1,7 @@
+{
+  "terminal_exit_code": 0,
+  "session": 46517,
+  "verifier_sha256": "de071d4fca3db4cf45441851be5c44816f304e1dd2b3f921008121c6ccdbada4",
+  "log_sha256": "2e5c71879ebdd49385cba0046da9cf8a62ae7a73549cbda0cceb051769505cdf",
+  "scope": "Complete source coverage/replay identity verification; qualified gates remain pending"
+}

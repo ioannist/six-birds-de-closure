@@ -1,0 +1,106 @@
+[install] Installing external packages at '/mnt/data-drive/sbt-de/cobaya-packages'
+
+================================================================================
+planck_2018_highl_plik.TTTEEE
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] Check found no existing installation
+[install] (If you expected this to be already installed, re-run `cobaya-install` with --debug to get more verbose output.)
+[install] Installing...
+[planck_2018_highl_plik.TTTEEE] Installing the clik code.
+[clik] Installing pre-requisites...
+[clik] Downloading...
+[clik] Downloaded filename clik-main.zip
+[clik] Installing from directory /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main
+[clik] Configuring... (and maybe installing dependencies...)
+Setting top to                           : /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main 
+Setting out to                           : /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main/build 
+get clik version                         : clik_16.0b1-12-gcde855c6debd 
+Checking for program 'gcc, cc'           : /mnt/data-drive/sbt-de/micromamba/envs/sbt-de/bin/x86_64-conda-linux-gnu-cc 
+Checking for program 'ar'                : x86_64-conda-linux-gnu-ar 
+Check gcc version                        : 14.3.0 
+Compile a test code with gcc             : failed 
+gcc not found(cause : The configuration failed
+(complete log in /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main/build/config.log)) 
+Checking for program 'icx, icc, ICL'     : /mnt/data-drive/sbt-de/micromamba/envs/sbt-de/bin/x86_64-conda-linux-gnu-cc 
+icc not found (cause : Not icc/icx/icpc/icpx
+(complete log in /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main/build/config.log)) 
+Checking for program 'clang'             : /mnt/data-drive/sbt-de/micromamba/envs/sbt-de/bin/x86_64-conda-linux-gnu-cc 
+No suitable c compiler found (cause: 'Not clang/clang++
+(complete log in /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main/build/config.log)') 
+
+The configuration failed
+(complete log in /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main/build/config.log)
+
+[clik] *ERROR* Configuration failed!
+[planck_2018_highl_plik.TTTEEE] *WARNING* clik code installation failed! Try configuring+compiling by hand at /mnt/data-drive/sbt-de/cobaya-packages/code/planck
+[planck_2018_lensing.native] *ERROR* The given installation path does not exist: '/mnt/data-drive/sbt-de/cobaya-packages/data/planck_supp_data_and_covmats'
+[planck_2018_highl_plik.TTTEEE] Downloading the likelihood data.
+[planck_2018_highl_plik.TTTEEE] Downloaded filename COM_Likelihood_Data-baseline_R3.00.tar.gz
+[planck_2018_lensing.native] *ERROR* The given installation path does not exist: '/mnt/data-drive/sbt-de/cobaya-packages/data/planck_supp_data_and_covmats'
+[planck_2018_lensing.native] Downloading CobayaSampler/planck_supp_data_and_covmats data...
+[planck_2018_lensing.native] Downloaded filename planck_supp_data_and_covmats-2.1.tar.gz
+[planck_2018_lensing.native] planck_supp_data_and_covmats v2.1 downloaded and decompressed correctly.
+[install] *ERROR* Installation failed! Look at the error messages above. Solve them and try again, or, if you are unable to solve them, install the packages required by this component manually.
+
+================================================================================
+planck_2018_lowl.TT
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] Check found no existing installation
+[install] (If you expected this to be already installed, re-run `cobaya-install` with --debug to get more verbose output.)
+[install] Installing...
+[planck_2018_lowl.TT] Downloading CobayaSampler/planck_native_data data...
+[planck_2018_lowl.TT] Downloaded filename planck_2018_lowT.zip
+[planck_2018_lowl.TT] planck_2018_lowT.zip from planck_native_data v1 downloaded and decompressed correctly.
+[install] Successfully installed! Let's check it...
+[install] Installation check successful.
+
+================================================================================
+planck_2018_lowl.EE
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] Check found no existing installation
+[install] (If you expected this to be already installed, re-run `cobaya-install` with --debug to get more verbose output.)
+[install] Installing...
+[planck_2018_lowl.EE] Downloading CobayaSampler/planck_native_data data...
+[planck_2018_lowl.EE] Downloaded filename planck_2018_lowE.zip
+[planck_2018_lowl.EE] planck_2018_lowE.zip from planck_native_data v1 downloaded and decompressed correctly.
+[install] Successfully installed! Let's check it...
+[install] Installation check successful.
+
+================================================================================
+planck_2018_lensing.native
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] External dependencies for this component already installed.
+[install] Doing nothing.
+
+================================================================================
+* Summary * 
+================================================================================
+
+[install] *ERROR* The installation (or installation test) of some component(s) has failed: 
+ - likelihood:planck_2018_highl_plik.TTTEEE
+Check output of the installer of each component above for precise error info.
+
+[exception handler] ---------------------------------------
+
+Traceback (most recent call last):
+  File "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/bin/cobaya-install", line 6, in <module>
+    sys.exit(install_script())
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/lib/python3.11/site-packages/cobaya/install.py", line 648, in install_script
+    install(*infos, path=getattr(arguments, packages_path_arg), logger=logger,
+  File "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/lib/python3.11/site-packages/cobaya/install.py", line 366, in install
+    raise LoggedError(
+cobaya.log.LoggedError: The installation (or installation test) of some component(s) has failed: 
+ - likelihood:planck_2018_highl_plik.TTTEEE
+Check output of the installer of each component above for precise error info.
+
+-------------------------------------------------------------
+

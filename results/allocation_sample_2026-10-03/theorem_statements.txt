@@ -1,0 +1,278 @@
+SbtCosmo.Derivation.AllocationSampleData.parameter_bounds (i : Fin 32) :
+  7 / 10 < SbtCosmo.Derivation.AllocationSampleData.weight i ∧
+    SbtCosmo.Derivation.AllocationSampleData.weight i < 8 / 5 ∧
+      1 / 5 < SbtCosmo.Derivation.AllocationSampleData.curvature i ∧
+        SbtCosmo.Derivation.AllocationSampleData.curvature i < 41 / 100
+SbtCosmo.Derivation.AllocationSampleData.budget_bounds :
+  (∀ (j : Fin 10), 0 < SbtCosmo.Derivation.AllocationSampleData.budgets j) ∧
+    22 < SbtCosmo.Derivation.AllocationSampleData.budget ∧ SbtCosmo.Derivation.AllocationSampleData.budget < 23
+SbtCosmo.Derivation.AllocationSampleData.cells (q : Fin 5) (i : Fin 32) :
+  0 < SbtCosmo.Derivation.AllocationSampleData.lower q i ∧
+    SbtCosmo.Derivation.AllocationSampleData.lower q i ≤ SbtCosmo.Derivation.AllocationSampleData.upper q i ∧
+      SbtCosmo.Derivation.AllocationSampleData.price q ≤
+          SbtCosmo.Derivation.AllocationSampleData.weight i / (1 + SbtCosmo.Derivation.AllocationSampleData.lower q i) -
+            SbtCosmo.Derivation.AllocationSampleData.curvature i * SbtCosmo.Derivation.AllocationSampleData.lower q i ∧
+        SbtCosmo.Derivation.AllocationSampleData.weight i / (1 + SbtCosmo.Derivation.AllocationSampleData.upper q i) -
+            SbtCosmo.Derivation.AllocationSampleData.curvature i * SbtCosmo.Derivation.AllocationSampleData.upper q i ≤
+          SbtCosmo.Derivation.AllocationSampleData.price q
+SbtCosmo.Derivation.AllocationSampleData.price_mass_bounds :
+  SbtCosmo.Derivation.AllocationSampleData.budget < ∑ i, SbtCosmo.Derivation.AllocationSampleData.lower 1 i ∧
+    ∑ i, SbtCosmo.Derivation.AllocationSampleData.upper 2 i < SbtCosmo.Derivation.AllocationSampleData.budget
+SbtCosmo.Derivation.AllocationSampleData.sweep_mass_bounds (j : Fin 10) :
+  if ↑j < 7 then
+    SbtCosmo.Derivation.AllocationSampleData.budgets j < ∑ i, SbtCosmo.Derivation.AllocationSampleData.lower 0 i
+  else ∑ i, SbtCosmo.Derivation.AllocationSampleData.upper 0 i < SbtCosmo.Derivation.AllocationSampleData.budgets j
+SbtCosmo.Derivation.AllocationSampleData.source_shift_gaps :
+  1 / 2 < SbtCosmo.Derivation.AllocationSampleData.lower 0 8 - SbtCosmo.Derivation.AllocationSampleData.upper 3 8 ∧
+    1 / 2 < SbtCosmo.Derivation.AllocationSampleData.lower 4 8 - SbtCosmo.Derivation.AllocationSampleData.upper 0 8
+SbtCosmo.Derivation.AllocationSampleData.local_price_control :
+  (∀ (i : Fin 32),
+      0 <
+        SbtCosmo.Derivation.AllocationSampleData.weight i / (1 + SbtCosmo.Derivation.AllocationSampleData.budget / 32) -
+          SbtCosmo.Derivation.AllocationSampleData.curvature i *
+            (SbtCosmo.Derivation.AllocationSampleData.budget / 32)) ∧
+    1 / 20 <
+      SbtCosmo.Derivation.AllocationSampleData.weight 1 / (1 + SbtCosmo.Derivation.AllocationSampleData.budget / 32) -
+          SbtCosmo.Derivation.AllocationSampleData.curvature 1 *
+            (SbtCosmo.Derivation.AllocationSampleData.budget / 32) -
+        (SbtCosmo.Derivation.AllocationSampleData.weight 0 /
+            (1 + SbtCosmo.Derivation.AllocationSampleData.budget / 32) -
+          SbtCosmo.Derivation.AllocationSampleData.curvature 0 * (SbtCosmo.Derivation.AllocationSampleData.budget / 32))
+SbtCosmo.Derivation.AllocationSampleData.heterogeneity_order :
+  SbtCosmo.Derivation.AllocationSampleData.weight 0 < SbtCosmo.Derivation.AllocationSampleData.weight 1 ∧
+    SbtCosmo.Derivation.AllocationSampleData.curvature 1 < SbtCosmo.Derivation.AllocationSampleData.curvature 0
+SbtCosmo.Derivation.AllocationSampleData.original_offsets :
+  (∀ (j : Fin 3),
+      -(1 / 4) ≤ SbtCosmo.Derivation.AllocationSampleData.offsets j ∧
+        SbtCosmo.Derivation.AllocationSampleData.offsets j ≤ 1 / 4) ∧
+    SbtCosmo.Derivation.AllocationSampleData.offsets 0 < -(1 / 5) ∧
+      1 / 5 < SbtCosmo.Derivation.AllocationSampleData.offsets 2
+SbtCosmo.Derivation.AllocationScreening.demand_margin_bounds {w c b p lo hi : ℝ} (hw : 0 < w) (hc : 0 < c)
+  (hlo : 0 ≤ lo) (hhi : 0 ≤ hi) (hml : p ≤ SbtCosmo.Derivation.AllocationPrice.marginal w c b lo)
+  (hmh : SbtCosmo.Derivation.AllocationPrice.marginal w c b hi ≤ p) :
+  lo ≤ SbtCosmo.Derivation.AllocationPrice.demand w c b p ∧ SbtCosmo.Derivation.AllocationPrice.demand w c b p ≤ hi
+SbtCosmo.Derivation.AllocationScreening.demand_strict_parameter {w c b p q : ℝ} (hw : 0 < w) (hc : 0 < c) (hpq : p < q)
+  (hq : q < w + b) :
+  SbtCosmo.Derivation.AllocationPrice.demand w c b q < SbtCosmo.Derivation.AllocationPrice.demand w c b p
+SbtCosmo.Derivation.AllocationScreening.demand_offset_return (w c s : ℝ) :
+  SbtCosmo.Derivation.AllocationPrice.demand w c s 0 = SbtCosmo.Derivation.AllocationPrice.demand w c 0 (-s)
+SbtCosmo.Derivation.AllocationScreening.selected_price_response_bounds.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B lo hi : ℝ} (hB : 0 < B) (hlo : 0 < lo)
+  (hl :
+    B <
+      SbtCosmo.Derivation.AllocationPrice.mass fun i => SbtCosmo.Derivation.AllocationPrice.demand (w i) (c i) (b i) lo)
+  (hh :
+    (SbtCosmo.Derivation.AllocationPrice.mass fun i =>
+        SbtCosmo.Derivation.AllocationPrice.demand (w i) (c i) (b i) hi) <
+      B) :
+  lo < SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B ∧
+    SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B < hi
+SbtCosmo.Derivation.AllocationScreening.selected_offset_screened.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B s : ℝ} (hB : 0 < B)
+  (ha :
+    SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationPrice.selectedAllocation w c b hw hc B) = B)
+  (hp : 0 ≤ SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B + s) :
+  SbtCosmo.Derivation.AllocationPrice.selectedAllocation w c (fun i => b i + s) hw hc B =
+      SbtCosmo.Derivation.AllocationPrice.selectedAllocation w c b hw hc B ∧
+    SbtCosmo.Derivation.AllocationPrice.selectedPrice w c (fun i => b i + s) hw hc B =
+      SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B + s
+SbtCosmo.Derivation.AllocationScreening.utility_offset_return.{u_1} {ι : Type u_1} [Fintype ι] (w c b x : ι → ℝ)
+  (s : ℝ) :
+  SbtCosmo.Derivation.AllocationPrice.utility w c (fun i => b i + s) x =
+    SbtCosmo.Derivation.AllocationPrice.utility w c b x + s * SbtCosmo.Derivation.AllocationPrice.mass x
+SbtCosmo.Derivation.AllocationScreening.selected_cost_offset_return.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B s : ℝ} (hB : 0 < B)
+  (ha :
+    SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationPrice.selectedAllocation w c b hw hc B) = B)
+  (hp : 0 ≤ SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B + s) :
+  SbtCosmo.Derivation.AllocationPrice.costValue w c (fun i => b i + s) hw hc B =
+    SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc B - s * B
+SbtCosmo.Derivation.AllocationSample.weights_positive (i : Fin 32) : 0 < SbtCosmo.Derivation.AllocationSample.weights i
+SbtCosmo.Derivation.AllocationSample.curvatures_positive (i : Fin 32) :
+  0 < SbtCosmo.Derivation.AllocationSample.curvatures i
+SbtCosmo.Derivation.AllocationSample.budget_bounds :
+  22 < SbtCosmo.Derivation.AllocationSample.budget ∧ SbtCosmo.Derivation.AllocationSample.budget < 23
+SbtCosmo.Derivation.AllocationSample.budgets_positive (j : Fin 10) : 0 < SbtCosmo.Derivation.AllocationSample.budgets j
+SbtCosmo.Derivation.AllocationSample.response_cells (q : Fin 5) (i : Fin 32) :
+  ↑(SbtCosmo.Derivation.AllocationSampleData.lower q i) ≤ SbtCosmo.Derivation.AllocationSample.response q i ∧
+    SbtCosmo.Derivation.AllocationSample.response q i ≤ ↑(SbtCosmo.Derivation.AllocationSampleData.upper q i)
+SbtCosmo.Derivation.AllocationSample.response_mass_bounds (q : Fin 5) :
+  ∑ i, ↑(SbtCosmo.Derivation.AllocationSampleData.lower q i) ≤
+      SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationSample.response q) ∧
+    SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationSample.response q) ≤
+      ∑ i, ↑(SbtCosmo.Derivation.AllocationSampleData.upper q i)
+SbtCosmo.Derivation.AllocationSample.original_price_bounds :
+  46112 / 100000 < SbtCosmo.Derivation.AllocationSample.price 0 ∧
+    SbtCosmo.Derivation.AllocationSample.price 0 < 46113 / 100000
+SbtCosmo.Derivation.AllocationSample.actual_kkt (s : ℝ) :
+  SbtCosmo.Derivation.AllocationPrice.AllocationKKT SbtCosmo.Derivation.AllocationSample.weights
+    SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s) (SbtCosmo.Derivation.AllocationSample.allocation s)
+    SbtCosmo.Derivation.AllocationSample.budget (SbtCosmo.Derivation.AllocationSample.price s)
+SbtCosmo.Derivation.AllocationSample.actual_global_optimal (s : ℝ) {x : Fin 32 → ℝ} (hx : ∀ (i : Fin 32), 0 ≤ x i)
+  (hb : SbtCosmo.Derivation.AllocationPrice.mass x ≤ SbtCosmo.Derivation.AllocationSample.budget) :
+  SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+      SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s) x ≤
+    SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s)
+        (SbtCosmo.Derivation.AllocationSample.allocation s) -
+      SbtCosmo.Derivation.AllocationPrice.penalty SbtCosmo.Derivation.AllocationSample.curvatures
+        (SbtCosmo.Derivation.AllocationSample.allocation s) x
+SbtCosmo.Derivation.AllocationSample.actual_unique_optimizer (s : ℝ) {x : Fin 32 → ℝ} (hx : ∀ (i : Fin 32), 0 ≤ x i)
+  (hb : SbtCosmo.Derivation.AllocationPrice.mass x ≤ SbtCosmo.Derivation.AllocationSample.budget)
+  (hu :
+    SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s)
+        (SbtCosmo.Derivation.AllocationSample.allocation s) ≤
+      SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s) x) :
+  SbtCosmo.Derivation.AllocationSample.allocation s = x
+SbtCosmo.Derivation.AllocationSample.original_active :
+  SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationSample.allocation 0) =
+    SbtCosmo.Derivation.AllocationSample.budget
+SbtCosmo.Derivation.AllocationSample.original_allocations_positive (i : Fin 32) :
+  0 < SbtCosmo.Derivation.AllocationSample.allocation 0 i
+SbtCosmo.Derivation.AllocationSample.original_stationarity (i : Fin 32) :
+  SbtCosmo.Derivation.AllocationPrice.marginal (SbtCosmo.Derivation.AllocationSample.weights i)
+      (SbtCosmo.Derivation.AllocationSample.curvatures i) 0 (SbtCosmo.Derivation.AllocationSample.allocation 0 i) =
+    SbtCosmo.Derivation.AllocationSample.price 0
+SbtCosmo.Derivation.AllocationSample.original_heterogeneity :
+  SbtCosmo.Derivation.AllocationSample.allocation 0 0 < SbtCosmo.Derivation.AllocationSample.allocation 0 1
+SbtCosmo.Derivation.AllocationSample.screening {s : ℝ} (hs : s ∈ Set.Icc (-(1 / 4)) (1 / 4)) :
+  SbtCosmo.Derivation.AllocationSample.allocation s = SbtCosmo.Derivation.AllocationSample.allocation 0 ∧
+    SbtCosmo.Derivation.AllocationSample.price s = SbtCosmo.Derivation.AllocationSample.price 0 + s
+SbtCosmo.Derivation.AllocationSample.screened_positive_price {s : ℝ} (hs : s ∈ Set.Icc (-(1 / 4)) (1 / 4)) :
+  0 < SbtCosmo.Derivation.AllocationSample.price s
+SbtCosmo.Derivation.AllocationSample.screened_active {s : ℝ} (hs : s ∈ Set.Icc (-(1 / 4)) (1 / 4)) :
+  SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationSample.allocation s) =
+    SbtCosmo.Derivation.AllocationSample.budget
+SbtCosmo.Derivation.AllocationSample.screened_stationarity {s : ℝ} (hs : s ∈ Set.Icc (-(1 / 4)) (1 / 4)) (i : Fin 32) :
+  SbtCosmo.Derivation.AllocationPrice.marginal (SbtCosmo.Derivation.AllocationSample.weights i)
+      (SbtCosmo.Derivation.AllocationSample.curvatures i) s (SbtCosmo.Derivation.AllocationSample.allocation s i) =
+    SbtCosmo.Derivation.AllocationSample.price s
+SbtCosmo.Derivation.AllocationSample.screened_value {s : ℝ} (hs : s ∈ Set.Icc (-(1 / 4)) (1 / 4)) :
+  SbtCosmo.Derivation.AllocationSample.value s SbtCosmo.Derivation.AllocationSample.budget =
+    SbtCosmo.Derivation.AllocationSample.value 0 SbtCosmo.Derivation.AllocationSample.budget -
+      s * SbtCosmo.Derivation.AllocationSample.budget
+SbtCosmo.Derivation.AllocationSample.original_offsets_return (j : Fin 3) :
+  SbtCosmo.Derivation.AllocationSample.allocation (SbtCosmo.Derivation.AllocationSample.offsets j) =
+      SbtCosmo.Derivation.AllocationSample.allocation 0 ∧
+    SbtCosmo.Derivation.AllocationSample.price (SbtCosmo.Derivation.AllocationSample.offsets j) =
+      SbtCosmo.Derivation.AllocationSample.price 0 + SbtCosmo.Derivation.AllocationSample.offsets j
+SbtCosmo.Derivation.AllocationSample.actual_value_derivative {B : ℝ} (hB : 0 < B) (s : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.AllocationSample.value s)
+    (-SbtCosmo.Derivation.AllocationPrice.selectedPrice SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s)
+        SbtCosmo.Derivation.AllocationSample.weights_positive SbtCosmo.Derivation.AllocationSample.curvatures_positive
+        B)
+    B
+SbtCosmo.Derivation.AllocationSample.original_negative_value_derivative :
+  deriv (SbtCosmo.Derivation.AllocationSample.value 0) SbtCosmo.Derivation.AllocationSample.budget =
+      -SbtCosmo.Derivation.AllocationSample.price 0 ∧
+    deriv (SbtCosmo.Derivation.AllocationSample.value 0) SbtCosmo.Derivation.AllocationSample.budget < 0
+SbtCosmo.Derivation.AllocationSample.sweep_active {j : Fin 10} (hj : ↑j < 7) :
+  0 <
+      SbtCosmo.Derivation.AllocationPrice.selectedPrice SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => 0)
+        SbtCosmo.Derivation.AllocationSample.weights_positive SbtCosmo.Derivation.AllocationSample.curvatures_positive
+        (SbtCosmo.Derivation.AllocationSample.budgets j) ∧
+    SbtCosmo.Derivation.AllocationPrice.mass
+        (SbtCosmo.Derivation.AllocationPrice.selectedAllocation SbtCosmo.Derivation.AllocationSample.weights
+          SbtCosmo.Derivation.AllocationSample.curvatures (fun x => 0)
+          SbtCosmo.Derivation.AllocationSample.weights_positive SbtCosmo.Derivation.AllocationSample.curvatures_positive
+          (SbtCosmo.Derivation.AllocationSample.budgets j)) =
+      SbtCosmo.Derivation.AllocationSample.budgets j
+SbtCosmo.Derivation.AllocationSample.sweep_slack {j : Fin 10} (hj : 7 ≤ ↑j) :
+  SbtCosmo.Derivation.AllocationPrice.selectedPrice SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => 0)
+        SbtCosmo.Derivation.AllocationSample.weights_positive SbtCosmo.Derivation.AllocationSample.curvatures_positive
+        (SbtCosmo.Derivation.AllocationSample.budgets j) =
+      0 ∧
+    SbtCosmo.Derivation.AllocationPrice.mass
+        (SbtCosmo.Derivation.AllocationPrice.selectedAllocation SbtCosmo.Derivation.AllocationSample.weights
+          SbtCosmo.Derivation.AllocationSample.curvatures (fun x => 0)
+          SbtCosmo.Derivation.AllocationSample.weights_positive SbtCosmo.Derivation.AllocationSample.curvatures_positive
+          (SbtCosmo.Derivation.AllocationSample.budgets j)) <
+      SbtCosmo.Derivation.AllocationSample.budgets j
+SbtCosmo.Derivation.AllocationSampleControls.source_kkt (s : ℝ) :
+  SbtCosmo.Derivation.AllocationPrice.AllocationKKT SbtCosmo.Derivation.AllocationSample.weights
+    SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s)
+    (SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s)
+    (SbtCosmo.Derivation.AllocationPrice.mass (SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s)) 0
+SbtCosmo.Derivation.AllocationSampleControls.source_unconstrained_optimal (s : ℝ) {x : Fin 32 → ℝ}
+  (hx : ∀ (i : Fin 32), 0 ≤ x i) :
+  SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+      SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s) x ≤
+    SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s)
+        (SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s) -
+      SbtCosmo.Derivation.AllocationPrice.penalty SbtCosmo.Derivation.AllocationSample.curvatures
+        (SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s) x
+SbtCosmo.Derivation.AllocationSampleControls.source_unconstrained_unique (s : ℝ) {x : Fin 32 → ℝ}
+  (hx : ∀ (i : Fin 32), 0 ≤ x i)
+  (hu :
+    SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s)
+        (SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s) ≤
+      SbtCosmo.Derivation.AllocationPrice.utility SbtCosmo.Derivation.AllocationSample.weights
+        SbtCosmo.Derivation.AllocationSample.curvatures (fun x => s) x) :
+  SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s = x
+SbtCosmo.Derivation.AllocationSampleControls.local_controls :
+  (∀ (i : Fin 32), 0 < SbtCosmo.Derivation.AllocationSampleControls.localPrice i) ∧
+    1 / 20 <
+      SbtCosmo.Derivation.AllocationSampleControls.localPrice 1 -
+        SbtCosmo.Derivation.AllocationSampleControls.localPrice 0
+SbtCosmo.Derivation.AllocationSampleControls.local_kkt (i : Fin 32) :
+  SbtCosmo.Derivation.AllocationPrice.AllocationKKT (fun x => SbtCosmo.Derivation.AllocationSample.weights i)
+    (fun x => SbtCosmo.Derivation.AllocationSample.curvatures i) (fun x => 0)
+    (fun x => SbtCosmo.Derivation.AllocationSample.budget / 32) (SbtCosmo.Derivation.AllocationSample.budget / 32)
+    (SbtCosmo.Derivation.AllocationSampleControls.localPrice i)
+SbtCosmo.Derivation.AllocationSampleControls.local_selector_return (i : Fin 32) :
+  (SbtCosmo.Derivation.AllocationPrice.selectedAllocation (fun x => SbtCosmo.Derivation.AllocationSample.weights i)
+        (fun x => SbtCosmo.Derivation.AllocationSample.curvatures i) (fun x => 0) ⋯ ⋯
+        (SbtCosmo.Derivation.AllocationSample.budget / 32) =
+      fun x => SbtCosmo.Derivation.AllocationSample.budget / 32) ∧
+    SbtCosmo.Derivation.AllocationPrice.selectedPrice (fun x => SbtCosmo.Derivation.AllocationSample.weights i)
+        (fun x => SbtCosmo.Derivation.AllocationSample.curvatures i) (fun x => 0) ⋯ ⋯
+        (SbtCosmo.Derivation.AllocationSample.budget / 32) =
+      SbtCosmo.Derivation.AllocationSampleControls.localPrice i
+SbtCosmo.Derivation.AllocationSampleControls.local_selected_prices_unequal :
+  SbtCosmo.Derivation.AllocationPrice.selectedPrice (fun x => SbtCosmo.Derivation.AllocationSample.weights 0)
+      (fun x => SbtCosmo.Derivation.AllocationSample.curvatures 0) (fun x => 0) ⋯ ⋯
+      (SbtCosmo.Derivation.AllocationSample.budget / 32) ≠
+    SbtCosmo.Derivation.AllocationPrice.selectedPrice (fun x => SbtCosmo.Derivation.AllocationSample.weights 1)
+      (fun x => SbtCosmo.Derivation.AllocationSample.curvatures 1) (fun x => 0) ⋯ ⋯
+      (SbtCosmo.Derivation.AllocationSample.budget / 32)
+SbtCosmo.Derivation.AllocationSampleControls.local_budget_total :
+  (SbtCosmo.Derivation.AllocationPrice.mass fun x => SbtCosmo.Derivation.AllocationSample.budget / 32) =
+    SbtCosmo.Derivation.AllocationSample.budget
+SbtCosmo.Derivation.AllocationSampleControls.local_allocation_differs :
+  SbtCosmo.Derivation.AllocationSample.allocation 0 ≠ fun x => SbtCosmo.Derivation.AllocationSample.budget / 32
+SbtCosmo.Derivation.AllocationSampleControls.source_profile_return :
+  SbtCosmo.Derivation.AllocationSample.response 0 = SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation 0 ∧
+    SbtCosmo.Derivation.AllocationSample.response 3 =
+        SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation (-(1 / 5)) ∧
+      SbtCosmo.Derivation.AllocationSample.response 4 =
+        SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation (1 / 5)
+SbtCosmo.Derivation.AllocationSampleControls.source_signed_shift_gaps :
+  1 / 2 <
+      SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation 0 8 -
+        SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation (-(1 / 5)) 8 ∧
+    1 / 2 <
+      SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation (1 / 5) 8 -
+        SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation 0 8
+SbtCosmo.Derivation.AllocationSampleControls.source_offset_mono {s t : ℝ} (hst : s ≤ t) (i : Fin 32) :
+  SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s i ≤
+    SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation t i
+SbtCosmo.Derivation.AllocationSampleControls.source_movement_large {s : ℝ} (hs : s ≤ -(1 / 5) ∨ 1 / 5 ≤ s) :
+  1 / 2 <
+    |SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation s 8 -
+        SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation 0 8|
+SbtCosmo.Derivation.AllocationSampleControls.original_source_controls :
+  1 / 2 <
+      |SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation (SbtCosmo.Derivation.AllocationSample.offsets 0)
+            8 -
+          SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation 0 8| ∧
+    1 / 2 <
+      |SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation (SbtCosmo.Derivation.AllocationSample.offsets 2)
+            8 -
+          SbtCosmo.Derivation.AllocationSampleControls.sourceAllocation 0 8|

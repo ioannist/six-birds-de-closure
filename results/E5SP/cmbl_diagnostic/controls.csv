@@ -1,0 +1,9 @@
+control,description,metric,value,passes_vanish
+P_nl_equals_P_lin_synthetic,"Linear-power synthetic residual through the same statistic, budgeted as Omega_linear/synthetic.",max_pi_after_budget,0.000000000000e+00,True
+equal_row_count_gaussian_residuals,Same row-null ensemble used for q; median normalized positive excess should vanish.,median_pi_across_shells,0.000000000000e+00,True
+same_family_saturation,Perfect same-family fit sets residual rows to zero.,max_pi,0.000000000000e+00,True
+shuffled_stage_labels,Proxy labels permuted after pi is frozen; only pi-H relation changes.,spearman_pi_vs_shuffled_H,-5.000000000000e-01,True
+binding_shell_stage_vector_removed_from_L_and_D,High-L shell removed from the diagnostic rows by construction.,CMB-L-high_pi_after_removal,0.000000000000e+00,True
+covariance_preserving_random_rotation,Random orthogonal rotation in whitened space destroys the window/H alignment.,max_pi_rotated,0.000000000000e+00,True
+proxy_ablation_H_true_vs_permuted,All three-point H permutations enumerated.,true_spearman_minus_median_abs_permuted,5.000000000000e-01,True
+proxy_ablation_H_scale_matched_noise,Scale-matched noise proxy uses the same H values in random order.,spearman_pi_vs_scale_matched_noise,-5.000000000000e-01,True

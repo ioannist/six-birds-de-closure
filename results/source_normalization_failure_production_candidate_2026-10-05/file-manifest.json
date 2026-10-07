@@ -1,0 +1,7 @@
+{
+  "README.md": "e2437154830ac2e00656ff60aeeeff5f77f6e8a6d3676d1e1fc7149f03d41032",
+  "lean/SbtCosmo/Derivation/GroundSourceNormalizationFailure.lean": "2cadb61c7afa031bb7ceaf56bdd4956ba778b831f5e17dee86e3b30fe524df8e",
+  "lean/manifests/check_source_normalization_failure_axioms.lean": "a62ffb07339a27d56f77c211e686d0e4b854d81988aa5e1d7825a6469d54e067",
+  "lean/manifests/check_source_normalization_failure_statements.lean": "5d483042e00a60a11c851e60b1485f14dd308d6f1d9825e4d0772baebc5ace58",
+  "production-plan.json": "abf8fca07db236acdfcd2314e249944d7104a25793d2e0055599e16cc166c344"
+}

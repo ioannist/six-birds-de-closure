@@ -1,0 +1,10 @@
+Adversarial self-review, not independent review.
+Target: actual native local attraction at all18 original background offsets, in16 real coordinates, both exact and rounded input models and both signs.
+Inputs: all root, selector-response, inverse-basis, entry-cache and contraction budgets populated by closed kernel/rational proofs. Domain membership is explicit; no hard numerical hypothesis appears in the exact/rounded attraction returns.
+Hinges: selector bordered inverse is distinct from the nonlinear Newton inverse; response error retains1/(1-q); both two-sided basis identities earned; whole-box enclosures include input rounding hull; imaginary block is actual conjugated source phase derivative, not a nearest-phase replacement.
+Native bridge: derivative norms control full complex coordinates; C1 theorem obtains guarded closed-ball contraction; all iterates active/legal; negative return uses earned active-only reflection.
+Controls: zero selector preconditioner fails actual border defect row.
+Quantifiers: every one of18 finite indices; every background in its input box; existential positive local radius for each background; arbitrary nearby complex starting state. No uniform radius or frozen-seed entry inferred.
+Scope: mathematical real/exact source model; no per-operation IEEE execution, global nonlinear uniqueness, sixty-update offset verdict or physical Lambda bridge.
+Evidence: fresh18 leaf compiles with frozen-source checks; full build;162 fresh statements/standard-only axiom closures; prior3065 raw prefix retained via immutable source/toolchain fingerprint checks. No independent review or full cumulative audit rerun claimed.
+Paper and original runtime/data unchanged. Overall goal incomplete.

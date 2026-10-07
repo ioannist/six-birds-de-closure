@@ -1,0 +1,35 @@
+[install] Installing external packages at '/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages'
+
+================================================================================
+planck_2018_highl_plik.TTTEEE
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] External dependencies for this component already installed.
+
+================================================================================
+planck_2018_lowl.TT
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] External dependencies for this component already installed.
+
+================================================================================
+planck_2018_lowl.EE
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] External dependencies for this component already installed.
+
+================================================================================
+planck_2018_lensing.native
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+[install] External dependencies for this component already installed.
+
+================================================================================
+* Summary * 
+================================================================================
+
+[install] All requested components' dependencies correctly installed at /mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages

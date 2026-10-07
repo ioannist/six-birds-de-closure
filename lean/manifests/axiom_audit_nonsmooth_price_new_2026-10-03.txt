@@ -1,0 +1,61 @@
+'SbtCosmo.Derivation.ConvexValueSupport.strict_epigraph_open' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexValueSupport.supporting_functional_of_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexValueSupport.supporting_functional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.value_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.support_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.support_global' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.price_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.slater_local_finiteness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.slater_price_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.certificate_value_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.certificate_strict_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothConePrice.certificate_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixSlaterTopology.quadratic_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSlaterTopology.posdef_mem_interior_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedNonsmoothConePrice.price_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedNonsmoothConePrice.slater_price_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedNonsmoothConePrice.certificate_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedNonsmoothConePrice.slater_strong_duality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothMatrixPrice.matrix_price' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothMatrixPrice.matrix_price_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.objective_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.objective_antitone' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.primal_optimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.actual_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.actual_value_not_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.actual_nonsmooth_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.NonsmoothPriceExamples.actual_extended_matrix_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

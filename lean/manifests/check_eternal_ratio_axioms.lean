@@ -1,0 +1,29 @@
+import SbtCosmo.Derivation.WindowEternalRatioData
+import SbtCosmo.Derivation.WindowEternalRatioCertified
+import SbtCosmo.Derivation.WindowEternalRatio
+
+#print axioms SbtCosmo.Derivation.WindowEternalRatioData.grid_endpoints
+#print axioms SbtCosmo.Derivation.WindowEternalRatioData.upper_cells
+#print axioms SbtCosmo.Derivation.WindowEternalRatioData.upper_sum
+#print axioms SbtCosmo.Derivation.WindowEternalRatioCertified.integral_horizon_upper_sharp
+#print axioms SbtCosmo.Derivation.WindowEternalRatioCertified.horizon_growth_upper_sharp
+#print axioms SbtCosmo.Derivation.WindowEternalRatioCertified.limiting_growth_upper_sharp
+#print axioms SbtCosmo.Derivation.WindowEternalRatioCertified.infinite_upper_tight_bounds
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.prefix_above_threshold
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.final_above_threshold
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_spec
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_iff_any_collapse
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_is_first_collapse
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_lower
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_upper
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_strictMono
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.ratio_strictMono
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.ratio_upper_linear
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.ratio_positive
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.ratio_upper
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.near_edge_ratios
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.endpoint_ratios
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.eternal_window_ratios
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.time_at_zero
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.ratio_at_zero
+#print axioms SbtCosmo.Derivation.WindowEternalRatio.arbitrarily_small_ratios

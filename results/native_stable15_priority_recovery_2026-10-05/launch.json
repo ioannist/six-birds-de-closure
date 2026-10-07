@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-05T08:40:07.017312+00:00",
+  "pid": 4049651,
+  "driver": "/tmp/de_native_stable15_priority_recovery/build_recovery.py",
+  "driver_sha256": "03815c8c5d680bb0c82f606c97cb867053d6bc1079636e7b8ea4c8e0062e535e",
+  "log": "/tmp/de-native-stable15-priority-recovery-driver.log",
+  "start_new_session": true,
+  "completion_requires": "terminal.json exit0, finite18 audit and combined27 fresh standard-only audit",
+  "retained_modules": 73,
+  "remaining_fresh_modules": 216,
+  "archive_members_verified": 519,
+  "old_source_freeze_sha256": "19f4237125068508793a5f81d8e49867b4dd3a3d083115915a33c35e818be75d",
+  "repository_registered": false,
+  "goal_complete": false
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite the Six Birds dark-energy-as-closure corpus and this implementation repository."
+title: "Six Birds - Dark Energy as Closure"
+type: software
+authors:
+  - family-names: Tsiokos
+    given-names: Ioannis
+repository-code: "https://github.com/placeholder/six-birds-de-closure"
+abstract: "Implementation scaffold for the Six Birds dark-energy-as-closure experiment program."
+license: "Proprietary"
+version: "0.0.0"
+date-released: "2026-05-29"
+references:
+  - type: article
+    title: "A Six Birds Eye View of Dark Energy"
+    authors:
+      - family-names: Tsiokos
+        given-names: Ioannis
+    year: 2026
+  - type: article
+    title: "Six Birds for Neutrino Mass"
+    authors:
+      - family-names: Tsiokos
+        given-names: Ioannis
+    year: 2026

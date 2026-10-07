@@ -1,0 +1,45 @@
+Adversarial self-review, not independent review.
+
+Target: explicit matrix Jacobian and trace-dual adjoint return for the original
+fixed-native Schur residual and qualified extended stationarity. This closes
+the derivative-expression gap, not broad paper completion or a physical bridge.
+
+Reconstructed the product/transpose/trace calculus from actual scalar entry
+derivatives, pi returns, fixed linear maps and finite-dimensional continuity.
+The existing elementwise matrix norm is preserved. The original spectral native
+projector and exact residual projection identity are used, including singular
+Gram blocks. No inverse or final residual derivative premise is supplied.
+
+The Jacobian has both product-rule terms. Its symmetry is proved using the
+earned complement symmetry. HasFDerivAt of actual Support.residual precedes the
+fderiv equality. Actual affine linear derivatives are earned from continuous
+affine realization. A general genuinely differentiable probe chain rule is also
+proved; its input is the actual probe derivative, not a Schur derivative. The
+affine stationarity endpoints have no derivative or adjoint output premises.
+
+The adjoint is a linear dual pullback under the actual trace pairing, not an
+invented Hilbert inner product on the general normed primal space. The pairing
+identity is definitional; derivative/adjoint equality and the explicit trace
+formula are substantive constructions. The matrix derivative's range is proved
+symmetric, agreeing with original symmetric budgets. General P needs P+P^T;
+PSD symmetry earns factor two. Fixed budget contributes zero derivative.
+
+Original extended Slater/relative-interior stationarity is returned to literal
+traceAdjoint of fderiv actual_Xi and a pointwise explicit equation for every
+primal direction. Original objective supports and admissibility normals remain
+separate. Strict actual complete-lattice value decrease retains nonzero P,
+including a possible minus-infinity competing value. Primal attainment is
+supplied, not earned. No whole-matrix activity follows from complementarity.
+
+Actual rectangular singular-native example computes 2*x*h and a genuine
+Frechet derivative. Controls use the actual derivative mechanism: dropping the
+second product-rule term fails, and the symmetric shortcut fails for an actual
+nonsymmetric price. The general formula remains valid. No moving L derivative
+is claimed: moving the native projector requires additional terms.
+
+All 28 fresh statements and closures are checked; full build8137. Cumulative1111
+preserves exact immutable earlier1083 plus fresh28; full cumulative command not
+rerun. Prior source/evidence, paper and runtime unchanged. No Python/carrier/
+solver/RNG reruns. No new downgrade. Same-price scalar derivative/stationarity
+assembly and other original-target coverage remain; physical Lambda and parked
+false/project-sized boundaries are unaffected. The goal is not complete.

@@ -1,0 +1,50 @@
+{
+  "utc": "2026-10-05T13:34:32.646838+00:00",
+  "candidate_files": 1786,
+  "rejected_preimage_controls": [
+    "changed_existing_preimage",
+    "unexpected_existing_target",
+    "symlink_target",
+    "outside_root_target"
+  ],
+  "atomic_helper_actual_replacement": true,
+  "atomic_helper_actual_new_nested_file": true,
+  "atomic_helper_unrelated_bytes_preserved": true,
+  "fixture_root": "/tmp/de_native_registered_original_audit_installer_fixture",
+  "symlink_control_target": "/tmp/de_native_registered_original_audit_installer_fixture/lean/linked.lean",
+  "symlink_points_to": "/tmp/de_native_registered_original_audit_installer_fixture/lean/existing.lean",
+  "preflights": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_install_original_audit_candidate.py",
+        "--mode",
+        "candidate"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure",
+      "actual_exit_code": 0,
+      "stdout": "{\"prepared_source_files\": 1786, \"native_modules\": 1772, \"native_declarations\": 20798, \"cumulative_queries\": 32574, \"registered_sources_changed\": false, \"proof_objects_installed\": 0, \"proof_gates_checked\": false, \"goal_complete\": false}\n",
+      "stderr": "",
+      "installer_sha256": "5ffeb6eae68c303ad008c56b8494f274c7320b61a34cafcaa4bdfff13ea9c12e"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_install_original_audit_candidate.py",
+        "--mode",
+        "apply"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure",
+      "actual_exit_code": 2,
+      "stdout": "{\"status\": \"pending\", \"reason\": \"Source freeze owner remains active: PID662901 de_native_campaign_qualified_stream_build.py\", \"registered_sources_changed\": false, \"proof_objects_installed\": 0, \"goal_complete\": false}\n",
+      "stderr": "",
+      "installer_sha256": "5ffeb6eae68c303ad008c56b8494f274c7320b61a34cafcaa4bdfff13ea9c12e"
+    }
+  ],
+  "registered_sources_changed": false,
+  "registered_receipts_created": false,
+  "proof_objects_installed": 0,
+  "full_apply_success_path_tested": false,
+  "review": "Adversarial self-review; no independent review",
+  "goal_complete": false
+}

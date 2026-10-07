@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sbt-cosmo"
+version = "0.0.0"
+description = "Implementation scaffold for Six Birds dark-energy-as-closure experiments."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = {text = "Proprietary"}
+authors = [{name = "Six Birds Project"}]
+dependencies = [
+  "numpy>=1.26,<2.0",  # canonical E5 backend: pyccl 3.1.2 + numpy 1.26.4 + classy v3.2.5
+  "scipy>=1.11,<1.14",
+  "pandas>=2.0,<2.3",
+  "matplotlib>=3.7,<3.10",
+  "h5py>=3.8",
+  "PyYAML>=6.0",
+  "arviz>=0.17,<0.19",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "import-linter"]
+heavy = [
+  "cobaya>=3.5,<3.6",
+  "camb>=1.5.7,<1.6",
+  "getdist>=1.5",
+  "pypolychord>=1.20",
+]
+
+[project.scripts]
+sbt-cosmo = "sbt_cosmo.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sbt_cosmo*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.importlinter]
+root_package = "sbt_cosmo"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "background has no upward imports"
+type = "forbidden"
+source_modules = ["sbt_cosmo.background"]
+forbidden_modules = ["sbt_cosmo.probes", "sbt_cosmo.inference", "sbt_cosmo.xi"]
+
+[[tool.importlinter.contracts]]
+name = "experiments are never imported by package"
+type = "forbidden"
+source_modules = ["sbt_cosmo"]
+forbidden_modules = ["experiments"]

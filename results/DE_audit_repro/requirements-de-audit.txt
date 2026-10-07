@@ -1,0 +1,5 @@
+numpy>=1.26,<2
+scipy>=1.11,<1.14
+matplotlib>=3.7,<3.10
+PyYAML>=6
+h5py>=3.8

@@ -1,0 +1,38 @@
+import SbtCosmo.Derivation.ConvexClosurePrice
+import SbtCosmo.Derivation.SchurClosurePrice
+import SbtCosmo.Derivation.SchurClosurePriceExamples
+
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.feasible_costs_mono
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.value_le_candidate
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.optimum_value
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.value_isGLB
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.derivative_le_of_right_support
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.derivative_global_support
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.strict_sensitivity_forces_activity
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.positive_price_certificate
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.certificate_primal_optimum
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.certificate_lagrangian_minimum
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.certificate_dual_isGLB
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.weak_duality
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.certificate_strong_duality
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.certificate_value_support
+#print axioms SbtCosmo.Derivation.ConvexClosurePrice.certificate_price_identification
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.gram_energy_nonnegative
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.gram_energy_mix
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.gram_energy_convex
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.schur_energy_gram
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.schur_energy_convex
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.positiveDefinite_return
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.original_lagrangian_return
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.affine_schur_energy_convex
+#print axioms SbtCosmo.Derivation.SchurClosurePrice.positive_schur_price
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.energy_eq
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.objective_convex
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.local_finiteness
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.sqrt_primal_optimum
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.actual_value_formula
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.actual_value_derivative
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.actual_positive_schur_certificate
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.actual_slater_and_singular_native
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.varying_native_values
+#print axioms SbtCosmo.Derivation.SchurClosurePriceExamples.varying_native_nonconvex

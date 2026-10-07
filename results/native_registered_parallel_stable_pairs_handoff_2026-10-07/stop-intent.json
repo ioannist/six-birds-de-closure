@@ -1,0 +1,31 @@
+{
+  "utc": "2026-10-07T08:43:26.847479+00:00",
+  "reason": "Main default build entered the same stable-family queue; stop auxiliary before target collision and let main finish all registered sources",
+  "auxiliary_lake_pid": 4115749,
+  "auxiliary_driver_pid": 4115712,
+  "auxiliary_actual_session": 12765,
+  "main_driver_pid": 2203106,
+  "main_lake_pid": 2244141,
+  "main_actual_session": 40823,
+  "auxiliary_active_commands": {
+    "1903011": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair018.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair018.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair018.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair018.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair018.setup.json --json ",
+    "1905029": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair019.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair019.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair019.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair019.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair019.setup.json --json ",
+    "1919206": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair021.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair021.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair021.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair021.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair021.setup.json --json ",
+    "1914351": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair020.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair020.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair020.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair020.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair020.setup.json --json "
+  },
+  "main_active_commands": {
+    "1921594": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair080.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair080.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair080.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair080.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair080.setup.json --json ",
+    "1924173": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair078.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair078.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair078.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair078.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair078.setup.json --json ",
+    "1929501": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair077.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair077.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair077.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair077.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair077.setup.json --json ",
+    "1922670": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair079.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair079.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/NativeStableSeed009/Pair079.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair079.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/NativeStableSeed009/Pair079.setup.json --json "
+  },
+  "active_source_overlap": [],
+  "auxiliary_driver_sha256": "129810c03cc1f05575d5d4dde46d1ad1e0c3da6af0fd52be5bee7fcd261bfcb4",
+  "auxiliary_intent_sha256": "6386a8826a952206357af946da5d43d3e5be1ac8d9dfbef944c26bf6aed4a996",
+  "signals": "SIGSTOP auxiliary Lake to freeze spawning, then SIGTERM its Lean children and Lake, then SIGCONT Lake to deliver termination",
+  "main_signals_sent": false,
+  "registered_source_or_live_helper_changes": false,
+  "successful_auxiliary_completion_claimed": false,
+  "main_full_build_and_audits_still_required": true,
+  "goal_complete": false
+}

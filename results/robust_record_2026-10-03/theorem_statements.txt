@@ -1,0 +1,171 @@
+SbtCosmo.Derivation.WindowRobustRecord.rectangle_positive {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) : 0 < d ∧ 0 < s
+SbtCosmo.Derivation.WindowRobustRecord.factor_positive {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) : 0 < SbtCosmo.Derivation.WindowRobustRecord.factor d s
+SbtCosmo.Derivation.WindowRobustRecord.factor_corner_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  SbtCosmo.Derivation.WindowRobustRecord.factor (6 / 5) 3 ≤ SbtCosmo.Derivation.WindowRobustRecord.factor d s ∧
+    SbtCosmo.Derivation.WindowRobustRecord.factor d s ≤ SbtCosmo.Derivation.WindowRobustRecord.factor 2 (1 / 3)
+SbtCosmo.Derivation.WindowRobustRecord.factor_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  1 / 5 < SbtCosmo.Derivation.WindowRobustRecord.factor d s ∧ SbtCosmo.Derivation.WindowRobustRecord.factor d s < 4
+SbtCosmo.Derivation.WindowRobustRecord.maximum_spec {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowRobustRecord.maximum s j ∧
+    (∀ (i : Fin 64),
+        SbtCosmo.Derivation.WindowSensitivity.scaledAmplitude s j i ≤
+          SbtCosmo.Derivation.WindowRobustRecord.maximum s j) ∧
+      ∃ i,
+        SbtCosmo.Derivation.WindowSensitivity.scaledAmplitude s j i = SbtCosmo.Derivation.WindowRobustRecord.maximum s j
+SbtCosmo.Derivation.WindowRobustRecord.threshold_return (d s : ℝ) (j : Fin 12) :
+  d / SbtCosmo.Derivation.WindowRobustRecord.maximum s j = SbtCosmo.Derivation.WindowRobustRecord.threshold d s j
+SbtCosmo.Derivation.WindowRobustRecord.threshold_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  100 < SbtCosmo.Derivation.WindowRobustRecord.threshold d s j ∧
+    SbtCosmo.Derivation.WindowRobustRecord.threshold d s j < 3588
+SbtCosmo.Derivation.WindowRobustRecord.threshold_below_aggregate {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.threshold d s j < SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s
+SbtCosmo.Derivation.WindowRobustRecord.gate_iff_window {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowRobustRecord.gate d s lam ↔
+    lam ∈ Set.Ioc (-(1 / 8000)) (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s)
+SbtCosmo.Derivation.WindowRobustRecord.endpoint_spec {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  0 < SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000)
+        (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) 20 =
+      SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s
+SbtCosmo.Derivation.WindowRobustRecord.gate_cutoff {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam) : -(1 / 20 ^ 3) < lam
+SbtCosmo.Derivation.WindowRobustRecord.final_above_threshold {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.threshold d s j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowRobustRecord.time_spec {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.time d s j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam) =
+      SbtCosmo.Derivation.WindowRobustRecord.threshold d s j
+SbtCosmo.Derivation.WindowRobustRecord.time_iff_any_collapse {d s lam a : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (ha : a ∈ Set.Icc (1 / 1000) 20) (j : Fin 12) :
+  (∃ i,
+      d ≤
+        SbtCosmo.Derivation.WindowSensitivity.scaledAmplitude s j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowRobustRecord.time d s j lam ≤ a
+SbtCosmo.Derivation.WindowRobustRecord.time_is_first_collapse {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  (∃ i,
+      d ≤
+        SbtCosmo.Derivation.WindowSensitivity.scaledAmplitude s j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam)) ∧
+    ∀ a ∈ Set.Icc (1 / 1000) 20,
+      a < SbtCosmo.Derivation.WindowRobustRecord.time d s j lam →
+        ¬∃ i,
+            d ≤
+              SbtCosmo.Derivation.WindowSensitivity.scaledAmplitude s j i *
+                SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowRobustRecord.gate_zero {d s : ℝ} (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  SbtCosmo.Derivation.WindowRobustRecord.gate d s 0
+SbtCosmo.Derivation.WindowRobustRecord.time_at_zero {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.time d s j 0 = SbtCosmo.Derivation.WindowRobustRecord.threshold d s j / 1000
+SbtCosmo.Derivation.WindowRobustRecord.time_positive {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) : 0 < SbtCosmo.Derivation.WindowRobustRecord.time d s j lam
+SbtCosmo.Derivation.WindowRobustRecord.time_nonpositive_upper {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (hl : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.time d s j lam ≤ SbtCosmo.Derivation.WindowRobustRecord.threshold d s j / 1000
+SbtCosmo.Derivation.WindowRobustRecord.time_nonnegative_lower {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (hl : 0 ≤ lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.threshold d s j / 1000 ≤ SbtCosmo.Derivation.WindowRobustRecord.time d s j lam
+SbtCosmo.Derivation.WindowRobustRecord.time_strictMono {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowRobustRecord.time d s j)
+    (Set.Ioc (-(1 / 8000)) (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s))
+SbtCosmo.Derivation.WindowRobustRecord.original_time_return (j : Fin 12) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowRobustRecord.time SbtCosmo.Derivation.WindowSample.delta 1 j lam =
+    SbtCosmo.Derivation.WindowSignedRecord.time j lam
+SbtCosmo.Derivation.WindowRobustRatio.corner_rectangles :
+  SbtCosmo.Derivation.WindowRobustRecord.Rectangle 2 (1 / 3) ∧
+    SbtCosmo.Derivation.WindowRobustRecord.Rectangle (6 / 5) 3
+SbtCosmo.Derivation.WindowRobustRatio.corner_endpoints_positive :
+  0 < SbtCosmo.Derivation.WindowRobustRatio.minimumEndpoint ∧ 0 < SbtCosmo.Derivation.WindowRobustRatio.maximumEndpoint
+SbtCosmo.Derivation.WindowRobustRatio.endpoint_corner_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  SbtCosmo.Derivation.WindowRobustRatio.minimumEndpoint ≤ SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s ∧
+    SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s ≤ SbtCosmo.Derivation.WindowRobustRatio.maximumEndpoint
+SbtCosmo.Derivation.WindowRobustRatio.common_positive_window {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hl : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowRobustRatio.minimumEndpoint) :
+  SbtCosmo.Derivation.WindowRobustRecord.gate d s lam
+SbtCosmo.Derivation.WindowRobustRatio.ratio_density_readout (d s lam : ℝ) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam =
+    |lam| / (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam ^ 3)⁻¹
+SbtCosmo.Derivation.WindowRobustRatio.ratio_nonnegative {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) : 0 ≤ SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam
+SbtCosmo.Derivation.WindowRobustRatio.ratio_positive {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (hne : lam ≠ 0) (j : Fin 12) : 0 < SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam
+SbtCosmo.Derivation.WindowRobustRatio.ratio_zero (d s : ℝ) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRatio.ratio d s j 0 = 0
+SbtCosmo.Derivation.WindowRobustRatio.ratio_nonnegative_upper {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (hl : 0 ≤ lam) (j : Fin 12) : SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ≤ 8000 * lam
+SbtCosmo.Derivation.WindowRobustRatio.ratio_nonpositive_small {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (hl : lam ≤ 0) (j : Fin 12) : SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam < 1 / 125
+SbtCosmo.Derivation.WindowRobustRatio.full_window_ratios {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ∧
+    SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ≤
+      max (8000 * SbtCosmo.Derivation.WindowRobustRatio.maximumEndpoint) (1 / 125)
+SbtCosmo.Derivation.WindowRobustRatio.endpoint_ratios {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRatio.minimumEndpoint / 1000 <
+      SbtCosmo.Derivation.WindowRobustRatio.ratio d s j (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) ∧
+    SbtCosmo.Derivation.WindowRobustRatio.ratio d s j (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) ≤
+      8000 * SbtCosmo.Derivation.WindowRobustRatio.maximumEndpoint
+SbtCosmo.Derivation.WindowRobustRatio.ratios_uniformly_arbitrarily_small {epsilon : ℝ} (he : 0 < epsilon) :
+  ∃ lam,
+    0 < lam ∧
+      lam ≤ SbtCosmo.Derivation.WindowRobustRatio.minimumEndpoint ∧
+        ∀ (d s : ℝ),
+          SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s →
+            SbtCosmo.Derivation.WindowRobustRecord.gate d s lam ∧
+              ∀ (j : Fin 12),
+                0 < SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ∧
+                  SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam < epsilon
+SbtCosmo.Derivation.WindowRobustRatio.ratio_strictMono_nonnegative {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowRobustRatio.ratio d s j)
+    (Set.Icc 0 (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s))
+SbtCosmo.Derivation.WindowRobustRatio.equal_factor_return {d1 s1 d2 s2 : ℝ}
+  (h : SbtCosmo.Derivation.WindowRobustRecord.factor d1 s1 = SbtCosmo.Derivation.WindowRobustRecord.factor d2 s2)
+  (j : Fin 12) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d1 s1 =
+      SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d2 s2 ∧
+    SbtCosmo.Derivation.WindowRobustRecord.time d1 s1 j lam = SbtCosmo.Derivation.WindowRobustRecord.time d2 s2 j lam ∧
+      SbtCosmo.Derivation.WindowRobustRatio.ratio d1 s1 j lam = SbtCosmo.Derivation.WindowRobustRatio.ratio d2 s2 j lam
+SbtCosmo.Derivation.WindowRobustRatio.original_ratio_return (j : Fin 12) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowRobustRatio.ratio SbtCosmo.Derivation.WindowSample.delta 1 j lam =
+    SbtCosmo.Derivation.WindowSignedRecord.ratio j lam
+SbtCosmo.Derivation.WindowRobustRatio.compensated_original_return :
+  SbtCosmo.Derivation.WindowRobustRecord.Rectangle (3 * SbtCosmo.Derivation.WindowSample.delta / 4) (3 / 4) ∧
+    ∀ (j : Fin 12) (lam : ℝ),
+      SbtCosmo.Derivation.WindowRobustRecord.time (3 * SbtCosmo.Derivation.WindowSample.delta / 4) (3 / 4) j lam =
+          SbtCosmo.Derivation.WindowSignedRecord.time j lam ∧
+        SbtCosmo.Derivation.WindowRobustRatio.ratio (3 * SbtCosmo.Derivation.WindowSample.delta / 4) (3 / 4) j lam =
+          SbtCosmo.Derivation.WindowSignedRecord.ratio j lam

@@ -1,0 +1,19 @@
+{
+  "module": "SbtCosmo.Derivation.GroundSourceNormalization",
+  "source_sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+  "names": [
+    "SbtCosmo.Derivation.GroundSourceNormalization.returned_unit",
+    "SbtCosmo.Derivation.GroundSourceNormalization.rejected_iff",
+    "SbtCosmo.Derivation.GroundSourceNormalization.zero_rejected",
+    "SbtCosmo.Derivation.GroundSourceNormalization.unit_preserved",
+    "SbtCosmo.Derivation.GroundSourceNormalization.failure_persists",
+    "SbtCosmo.Derivation.GroundSourceNormalization.positive_return_unit",
+    "SbtCosmo.Derivation.GroundSourceNormalization.successful_run_unit",
+    "SbtCosmo.Derivation.GroundSourceNormalization.successful_run_density_bound"
+  ],
+  "new_modules": 1,
+  "new_names": 8,
+  "repository_registered": false,
+  "existing_production_plans_unchanged": true,
+  "gate": "Register after all live source-freezing campaigns release; separate supplement to the fixed29-module/132-declaration plan"
+}

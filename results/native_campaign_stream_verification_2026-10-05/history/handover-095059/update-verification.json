@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-05T09:50:59.127194+00:00",
+  "live_jobs": {
+    "662901": "de_native_campaign_qualified_stream_build.py",
+    "760297": "de_native_seed_real_returns_qualified_stream_build.py",
+    "853725": "de_native_campaign_verification_stream_finish.py",
+    "853723": "de_native_additional_constructions_stream_qualified_build.py",
+    "853738": "de_source_execution_supplement_stream_qualified_build.py",
+    "4049651": "de_native_stable15_priority_recovery/build_recovery.py",
+    "2558747": "de_native_stable_seed_leaves_private_build.py",
+    "2637955": "de_native_stable_seed_pairs_private_build.py",
+    "2854622": "de_native_stable_seed_families_private_build.py",
+    "3948875": "de_native_stable_seed_sixty_private_build.py",
+    "940127": "de_native_stable_prefix_failures_private_build.py",
+    "2056100": "de_native_original_sample_results_private_build.py"
+  },
+  "progress": {
+    "stable": 263,
+    "priority": 146,
+    "qualified": 160
+  },
+  "source_freeze_inputs_revalidated": 6262,
+  "packet_manifests": {
+    "source_normalization_failure_checked_2026-10-05": "2acf0f709d57afe13405588030b05e265e8870f842f369301b27b61806c3728f",
+    "native_stable15_finite_checked_2026-10-05": "c02cb9349b6b9ef9b50408a394fce8682229e1a4f66456231153ca000c979706",
+    "source_normalization_failure_production_candidate_2026-10-05": "6414e52ee528a254df2a9d1de3054a53423a313018c0ce3cc0bdff3850fef680"
+  },
+  "old_handover_preserved": true,
+  "registered_inputs_unchanged": true,
+  "finite15_declarations_checked": 18,
+  "execution_failure_declarations_checked": 5,
+  "old_installation_candidate_unchanged": true,
+  "new_integration_obligation": {
+    "modules": 1,
+    "declarations": 5
+  },
+  "goal_complete": false
+}

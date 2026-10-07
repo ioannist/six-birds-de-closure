@@ -1,0 +1,18 @@
+{
+  "Comp_eta_flat": true,
+  "F4_status": "GloballyExact",
+  "OverlapInconsistent_eta_shape": false,
+  "best_FLRW_chi2_dof": 0.9026134810894483,
+  "controversy_leg_supported": "Crossing-Statistics consistency direction",
+  "decision_verdict": "Rewrite residual",
+  "fiber_unique_proxy": true,
+  "image_member_FLRW": true,
+  "thresholds": {
+    "Comp_holds": "epsilon_z and epsilon_log1p both <2 sigma",
+    "GloballyExact": "Comp holds and M0 or M1 chi2/dof <=1.05",
+    "Gluing": "F_collapse >0.5 and F4 OverlapInconsistent/CompatibleNonGlobal",
+    "Mixture": "0.2 <= F_collapse <=0.5 or M_mix beats alternatives by DeltaBIC>5",
+    "OverlapInconsistent": "epsilon_z and epsilon_log1p both >2 sigma",
+    "Rewrite": "F_collapse <0.2 and F4 GloballyExact/CompatibleNonGlobal"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-07T05:56:16.454221+00:00",
+  "review": "adversarial self-review",
+  "source_bindings": {
+    "/home/repos/six-birds-sm-qm-gr/Tsiokos_2026_To_Kill_Three_Stones_with_Six_Birds_A_Common_Grammar_for_the_SM_QM_and_GR.tex": "8b1c91332383727ff40dbe3c6944042d34f6992bb0daf6102928e168142b99f8",
+    "/home/repos/emergencecalculus.com/src/content/papers/cosmological-constant.md": "6e84e19799acfff6707e09c900f468c9584d32e0a1bb82fe77e969ad5ac49a42",
+    "/home/repos/emergencecalculus.com/dist/papers/cosmological-constant/index.html": "60671d878f729df3b8595f98f9cdfc220c62199db4f6101deb355b66ef956709",
+    "/home/repos/six-birds-de-closure/math/THREE_STONES_DEPENDENCY_WITHDRAWALS_2026-10-07.md": "6690b4ffb19d172d767f8efa62e16bdb451f551bb590c5122203030698205f80",
+    "/home/repos/six-birds-de-closure/results/native_dependency_withdrawal_documentation_candidate_2026-10-07/documentation-plan.json": "20db81784d92c825bba523cccc447f423fbab05726ce5d5211cc04b6257c9513"
+  },
+  "upstream_claims_checked": [
+    "generation paragraph and table: no blindness theorem and mixed N dependence",
+    "cosmological subsection: 60/120 budget and no sampled coupling existence boundary",
+    "version history: both original grounds withdrawn"
+  ],
+  "local_website_build_actual_exec_session": 71710,
+  "local_website_build_observed_exit_code": 0,
+  "rendered_page_contains_both_corrections": true,
+  "website_deployed": false,
+  "paper_edited": false,
+  "live_lean_sources_or_helpers_edited": false,
+  "four_conditional_drafts_readback": true,
+  "registered_verification_complete": false,
+  "original_claims_restored": false,
+  "goal_complete": false
+}

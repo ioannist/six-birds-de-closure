@@ -1,0 +1,80 @@
+SbtCosmo.Derivation.WindowStarvationData.grid_endpoints :
+  SbtCosmo.Derivation.WindowStarvationData.grid 0 = 1 / 1000 ∧ SbtCosmo.Derivation.WindowStarvationData.grid 64 = 4
+SbtCosmo.Derivation.WindowStarvationData.upper_cells (i : Fin 64) :
+  0 < SbtCosmo.Derivation.WindowStarvationData.grid ↑i ∧
+    SbtCosmo.Derivation.WindowStarvationData.grid ↑i ≤ SbtCosmo.Derivation.WindowStarvationData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.WindowStarvationData.upper ↑i ∧
+        (2 * 32 * SbtCosmo.Derivation.WindowStarvationData.grid (↑i + 1) ^ 3 ≤ 1 ∧
+            SbtCosmo.Derivation.WindowStarvationData.grid (↑i + 1) ^ 3 ≤
+              SbtCosmo.Derivation.WindowStarvationData.upper ↑i ^ 2 *
+                (1 + 32 * SbtCosmo.Derivation.WindowStarvationData.grid (↑i + 1) ^ 3) ^ 3 ∨
+          1 ≤ 2 * 32 * SbtCosmo.Derivation.WindowStarvationData.grid ↑i ^ 3 ∧
+              SbtCosmo.Derivation.WindowStarvationData.grid ↑i ^ 3 ≤
+                SbtCosmo.Derivation.WindowStarvationData.upper ↑i ^ 2 *
+                  (1 + 32 * SbtCosmo.Derivation.WindowStarvationData.grid ↑i ^ 3) ^ 3 ∨
+            4 ≤ 27 * 32 * SbtCosmo.Derivation.WindowStarvationData.upper ↑i ^ 2)
+SbtCosmo.Derivation.WindowStarvationData.upper_sum :
+  ∑ i ∈ Finset.range 64,
+      (SbtCosmo.Derivation.WindowStarvationData.grid (i + 1) - SbtCosmo.Derivation.WindowStarvationData.grid i) *
+        SbtCosmo.Derivation.WindowStarvationData.upper i ≤
+    341 / 10000
+SbtCosmo.Derivation.GrowthStarvationCertified.integral_upper :
+  SbtCosmo.Derivation.GrowthQuadrature.integral 32 (1 / 1000) 4 ≤ 341 / 10000
+SbtCosmo.Derivation.GrowthStarvationCertified.finite_growth_upper :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) 32 4 < 9651 / 20
+SbtCosmo.Derivation.GrowthStarvationCertified.limiting_growth_upper :
+  SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000) 32 < 485
+SbtCosmo.Derivation.GrowthStarvationCertified.global_growth_upper {lam a : ℝ} (hlam : 32 ≤ lam) (ha : 1 / 1000 ≤ a) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a < 485
+SbtCosmo.Derivation.GrowthStarvationCertified.patch_never_collapses {lam amp delta : ℝ} (hlam : 32 ≤ lam) (hp : 0 ≤ amp)
+  (hmargin : 485 * amp < delta) :
+  ¬∃ a, 1 / 1000 ≤ a ∧ delta ≤ amp * SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.GrowthStarvationCertified.no_native_record.{u_1} {ι : Type u_1} {amp : ι → ℝ} {tag : ι → Bool}
+  {lam A delta : ℝ} (hlam : 32 ≤ lam) (hp : ∀ (i : ι), 0 ≤ amp i) (hmargin : ∀ (i : ι), 485 * amp i < delta) :
+  ¬SbtCosmo.Derivation.GrowthPopulation.nativeRecord amp tag (1 / 1000) A delta lam
+SbtCosmo.Derivation.WindowGlobalStarvation.rational_margin_original (j : Fin 12) :
+  485 *
+      max (SbtCosmo.Derivation.WindowSampleData.maximumFalseRat j)
+        (SbtCosmo.Derivation.WindowSampleData.maximumTrueRat j) <
+    SbtCosmo.Derivation.WindowSampleData.deltaRat
+SbtCosmo.Derivation.WindowGlobalStarvation.amplitude_margin_original (j : Fin 12) (i : Fin 64) :
+  485 * SbtCosmo.Derivation.WindowSample.amplitude j i < SbtCosmo.Derivation.WindowSample.delta
+SbtCosmo.Derivation.WindowGlobalStarvation.rational_margin_robustness (v : Bool) (j : Fin 12) :
+  485 *
+      max (SbtCosmo.Derivation.WindowPatchCountData.maximumFalseRat v j)
+        (SbtCosmo.Derivation.WindowPatchCountData.maximumTrueRat v j) <
+    SbtCosmo.Derivation.WindowSampleData.deltaRat
+SbtCosmo.Derivation.WindowGlobalStarvation.amplitude_margin_robustness (v : Bool) (j : Fin 12)
+  (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)) :
+  485 * SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i < SbtCosmo.Derivation.WindowPatchCounts.delta
+SbtCosmo.Derivation.WindowGlobalStarvation.no_original_patch_ever {lam : ℝ} (hlam : 32 ≤ lam) (j : Fin 12)
+  (i : Fin 64) :
+  ¬∃ a,
+      1 / 1000 ≤ a ∧
+        SbtCosmo.Derivation.WindowSample.delta ≤
+          SbtCosmo.Derivation.WindowSample.amplitude j i *
+            SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowGlobalStarvation.no_robustness_patch_ever (v : Bool) {lam : ℝ} (hlam : 32 ≤ lam) (j : Fin 12)
+  (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)) :
+  ¬∃ a,
+      1 / 1000 ≤ a ∧
+        SbtCosmo.Derivation.WindowPatchCounts.delta ≤
+          SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i *
+            SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowGlobalStarvation.no_original_record {lam A : ℝ} (hlam : 32 ≤ lam) (j : Fin 12) :
+  ¬SbtCosmo.Derivation.GrowthPopulation.nativeRecord (SbtCosmo.Derivation.WindowSample.amplitude j)
+      (SbtCosmo.Derivation.WindowSampleData.tag j) (1 / 1000) A SbtCosmo.Derivation.WindowSample.delta lam
+SbtCosmo.Derivation.WindowGlobalStarvation.no_robustness_record (v : Bool) {lam A : ℝ} (hlam : 32 ≤ lam) (j : Fin 12) :
+  ¬SbtCosmo.Derivation.GrowthPopulation.nativeRecord (SbtCosmo.Derivation.WindowPatchCounts.amplitude v j)
+      (SbtCosmo.Derivation.WindowPatchCountData.tag v j) (1 / 1000) A SbtCosmo.Derivation.WindowPatchCounts.delta lam
+SbtCosmo.Derivation.WindowGlobalStarvation.original_record_count_zero {lam A : ℝ} (hlam : 32 ≤ lam) :
+  {j |
+        SbtCosmo.Derivation.GrowthPopulation.nativeRecord (SbtCosmo.Derivation.WindowSample.amplitude j)
+          (SbtCosmo.Derivation.WindowSampleData.tag j) (1 / 1000) A SbtCosmo.Derivation.WindowSample.delta lam}.card =
+    0
+SbtCosmo.Derivation.WindowGlobalStarvation.robustness_record_count_zero (v : Bool) {lam A : ℝ} (hlam : 32 ≤ lam) :
+  {j |
+        SbtCosmo.Derivation.GrowthPopulation.nativeRecord (SbtCosmo.Derivation.WindowPatchCounts.amplitude v j)
+          (SbtCosmo.Derivation.WindowPatchCountData.tag v j) (1 / 1000) A SbtCosmo.Derivation.WindowPatchCounts.delta
+          lam}.card =
+    0

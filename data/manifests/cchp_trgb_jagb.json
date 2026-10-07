@@ -1,0 +1,25 @@
+{
+  "dataset": "CCHP_TRGB_JAGB",
+  "release": "arXiv:2408.06153",
+  "access": "summary_posterior",
+  "fetch_url": "https://arxiv.org/abs/2408.06153",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "Public literature posterior/summary; cite Freedman et al. 2024",
+  "citation": "Freedman et al. 2024, arXiv:2408.06153",
+  "raw_files": [{"path": "data/raw/cchp_trgb_jagb/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/cchp_trgb_jagb/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/cchp_trgb_jagb/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "calibrator and host cuts as released"},
+  "route": "r4_trgb_to_sn|r5_jagb_to_sn",
+  "staging_axis": "calibrator|host_cut|sn_sample",
+  "model_dependent": false,
+  "recomputability": "summary_only",
+  "aor_status": "budgeted",
+  "fallback": "Gaussian prior per calibrator with quadrature-combined errors",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

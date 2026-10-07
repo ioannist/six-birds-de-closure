@@ -1,0 +1,128 @@
+{
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundNativeBackgroundContinuation",
+      "target": "lean/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.lean",
+      "source_sha256": "9426d6190315c18da9a1ea5049395fe2693ec6b834fa06d6b2d0c12293d57972",
+      "names": [
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.pair_guard_data",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.native_joint_regular_at",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.native_joint_guards_near",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_step_return",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_iterate_return",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_joint_regular_at",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_joint_guards_near",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_eventual_return_at_root",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_root_derivative",
+        "SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_root_fixed"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn",
+      "target": "lean/SbtCosmo/Derivation/GroundNativeBackgroundSeedReturn.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundNativeBackgroundSeedReturn.lean",
+      "source_sha256": "495c53a1e9798a038d4065a695780341def7b9bb22bf81eca5b30a8c17a79ab5",
+      "names": [
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode_decode",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode_encode",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode_center",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode_continuous",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode_continuous",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.reflected_seed_return",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.negative_fixed_guards",
+        "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.nearby_native_seed_branch_return"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundNativeParameterSmooth",
+      "target": "lean/SbtCosmo/Derivation/GroundNativeParameterSmooth.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundNativeParameterSmooth.lean",
+      "source_sha256": "c3727649fd9dc4d87a0ab6256faa64a55f63c5eeba5e1bd855f1bd2a4ceed051",
+      "names": [
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.pairSource_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.selected_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.realOverlap_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.imagOverlap_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.overlapSq_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.overlapNorm_joint_continuous",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.overlapNorm_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.aligned_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.mixed_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.fullMap_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.nativePairMap_joint_eventual_return",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.nativePairMap_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeParameterSmooth.native_guards_joint_near"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalOpenBackground",
+      "target": "lean/SbtCosmo/Derivation/GroundOriginalOpenBackground.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundOriginalOpenBackground.lean",
+      "source_sha256": "237bd1393c52463a7caf4226f2dacb723af8a4f0bc19267f0be34b7c291dbf66",
+      "names": [
+        "SbtCosmo.Derivation.GroundOriginalOpenBackground.rounded_newton_defect",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint_center",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint_smooth_at",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint_ground_eventually",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackground.rounded_coordinate_contraction",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackground.open_background_original_seed_return"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout",
+      "target": "lean/SbtCosmo/Derivation/GroundOriginalOpenBackgroundReadout.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundOriginalOpenBackgroundReadout.lean",
+      "source_sha256": "4772201e6eae1c47a92c03c37947b9f5577d0ff53ee4175a951916a832902efb",
+      "names": [
+        "SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density_continuous_at",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density_center",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.open_background_density_limits",
+        "SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.open_endpoint_density_separation"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundParametricBranchReturn",
+      "target": "lean/SbtCosmo/Derivation/GroundParametricBranchReturn.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundParametricBranchReturn.lean",
+      "source_sha256": "16b1c3fa69195bd8826dc5ae79afb69fb8ecfeb4854820015ab26cd7c8db364a",
+      "names": [
+        "SbtCosmo.Derivation.GroundParametricBranchReturn.nearby_original_seed_branch_returns"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundParametricContraction",
+      "target": "lean/SbtCosmo/Derivation/GroundParametricContraction.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundParametricContraction.lean",
+      "source_sha256": "df532dbb4f6c41057ef7b9a0a1cd13118a2f65b8a8fc58a983ad07f6cf3aed29",
+      "names": [
+        "SbtCosmo.Derivation.GroundParametricContraction.partial_fderiv_continuous_at",
+        "SbtCosmo.Derivation.GroundParametricContraction.uniform_local_lipschitz"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundParametricFixedPoint",
+      "target": "lean/SbtCosmo/Derivation/GroundParametricFixedPoint.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundParametricFixedPoint.lean",
+      "source_sha256": "da6451ab8f4005d8da03938aff9be11df6c9f37c15e303a56f4d9fedce62448d",
+      "names": [
+        "SbtCosmo.Derivation.GroundParametricFixedPoint.invariant_ball",
+        "SbtCosmo.Derivation.GroundParametricFixedPoint.ball_return",
+        "SbtCosmo.Derivation.GroundParametricFixedPoint.nearby_fixed_points"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundParametricSeedReturn",
+      "target": "lean/SbtCosmo/Derivation/GroundParametricSeedReturn.lean",
+      "source": "/tmp/de_native_open_background/lean/SbtCosmo/Derivation/GroundParametricSeedReturn.lean",
+      "source_sha256": "205edb052ceda2431700a26209dfefaf1f2ea3bd9078bbe09a5530d04967ac8b",
+      "names": [
+        "SbtCosmo.Derivation.GroundParametricSeedReturn.iterate_parameter_continuous_at",
+        "SbtCosmo.Derivation.GroundParametricSeedReturn.finite_prefix_guards_near",
+        "SbtCosmo.Derivation.GroundParametricSeedReturn.nearby_original_seed_returns"
+      ]
+    }
+  ],
+  "repository_registered": false,
+  "prior_immutable_campaign_plans_changed": false
+}

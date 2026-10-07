@@ -1,0 +1,90 @@
+SbtCosmo.Derivation.GrowthPopulation.exists_positive_tagMaximum.{u_1} {ι : Type u_1} [Fintype ι] (amplitude : ι → ℝ)
+  (tag : ι → Bool) (b : Bool) (hpatch : ∃ i, tag i = b ∧ 0 < amplitude i) :
+  ∃ m, 0 < m ∧ SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag b m
+SbtCosmo.Derivation.GrowthPopulation.passingCount_iff_rank.{u_1} {ι : Type u_1} [Fintype ι] {thresholds : ι → ℝ} {k : ℕ}
+  {T : ℝ} (hbelow : {j | thresholds j < T}.card < k)
+  (hat : k ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount thresholds T) (x : ℝ) :
+  k ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount thresholds x ↔ T ≤ x
+SbtCosmo.Derivation.GrowthPopulation.exists_count_threshold.{u_1} {ι : Type u_1} [Fintype ι] (thresholds : ι → ℝ)
+  {k : ℕ} (hk : 0 < k) (hkn : k ≤ Fintype.card ι) :
+  ∃ T,
+    (∃ j, thresholds j = T) ∧
+      {j | thresholds j < T}.card < k ∧
+        k ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount thresholds T ∧
+          ∀ (x : ℝ), k ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount thresholds x ↔ T ≤ x
+SbtCosmo.Derivation.GrowthPopulation.native_record_count_eq.{u_1, u_2} {σ : Type u_1} {ι : Type u_2} [Fintype σ]
+  {amplitude : σ → ι → ℝ} {tag : σ → ι → Bool} {m0 m1 : σ → ℝ} {a0 A delta lam : ℝ} (ha : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hp : ∀ (j : σ) (i : ι), 0 ≤ amplitude j i)
+  (h0 : ∀ (j : σ), SbtCosmo.Derivation.WindowRecords.TagMaximum (amplitude j) (tag j) false (m0 j))
+  (h1 : ∀ (j : σ), SbtCosmo.Derivation.WindowRecords.TagMaximum (amplitude j) (tag j) true (m1 j))
+  (hm0 : ∀ (j : σ), 0 < m0 j) (hm1 : ∀ (j : σ), 0 < m1 j) :
+  {j | SbtCosmo.Derivation.GrowthPopulation.nativeRecord (amplitude j) (tag j) a0 A delta lam}.card =
+    SbtCosmo.Derivation.GrowthPopulation.passingCount (fun j => max (delta / m0 j) (delta / m1 j))
+      (SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A)
+SbtCosmo.Derivation.GrowthPopulation.exists_unique_native_aggregate_window.{u_1, u_2} {σ : Type u_1} {ι : Type u_2}
+  [Fintype σ] {amplitude : σ → ι → ℝ} {tag : σ → ι → Bool} {m0 m1 : σ → ℝ} {a0 A delta T : ℝ} {k : ℕ} (ha : 0 < a0)
+  (hA : a0 < A) (hp : ∀ (j : σ) (i : ι), 0 ≤ amplitude j i)
+  (h0 : ∀ (j : σ), SbtCosmo.Derivation.WindowRecords.TagMaximum (amplitude j) (tag j) false (m0 j))
+  (h1 : ∀ (j : σ), SbtCosmo.Derivation.WindowRecords.TagMaximum (amplitude j) (tag j) true (m1 j))
+  (hm0 : ∀ (j : σ), 0 < m0 j) (hm1 : ∀ (j : σ), 0 < m1 j)
+  (hbelow : {j | max (delta / m0 j) (delta / m1 j) < T}.card < k)
+  (hat : k ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount (fun j => max (delta / m0 j) (delta / m1 j)) T)
+  (hTinf : SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log (A / a0)) < T) (hTzero : T < A / a0) :
+  ∃! upper,
+    0 < upper ∧
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 upper A = T ∧
+        ∀ (lam : ℝ),
+          SbtCosmo.Derivation.GrowthPopulation.nativeAggregate amplitude tag a0 A delta k lam ↔
+            -(1 / A ^ 3) < lam ∧ lam ≤ upper
+SbtCosmo.Derivation.WindowSampleData.rational_maxima_certificate (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowSampleData.maximumFalseRat j ∧
+    0 < SbtCosmo.Derivation.WindowSampleData.maximumTrueRat j ∧
+      SbtCosmo.Derivation.WindowSampleData.tag j (SbtCosmo.Derivation.WindowSampleData.falseIndex j) = false ∧
+        SbtCosmo.Derivation.WindowSampleData.amplitudeRat j (SbtCosmo.Derivation.WindowSampleData.falseIndex j) =
+            SbtCosmo.Derivation.WindowSampleData.maximumFalseRat j ∧
+          SbtCosmo.Derivation.WindowSampleData.tag j (SbtCosmo.Derivation.WindowSampleData.trueIndex j) = true ∧
+            SbtCosmo.Derivation.WindowSampleData.amplitudeRat j (SbtCosmo.Derivation.WindowSampleData.trueIndex j) =
+                SbtCosmo.Derivation.WindowSampleData.maximumTrueRat j ∧
+              ∀ (i : Fin 64),
+                0 ≤ SbtCosmo.Derivation.WindowSampleData.amplitudeRat j i ∧
+                  (SbtCosmo.Derivation.WindowSampleData.tag j i = false →
+                      SbtCosmo.Derivation.WindowSampleData.amplitudeRat j i ≤
+                        SbtCosmo.Derivation.WindowSampleData.maximumFalseRat j) ∧
+                    (SbtCosmo.Derivation.WindowSampleData.tag j i = true →
+                      SbtCosmo.Derivation.WindowSampleData.amplitudeRat j i ≤
+                        SbtCosmo.Derivation.WindowSampleData.maximumTrueRat j)
+SbtCosmo.Derivation.WindowSampleData.rational_rank_certificate :
+  {j | SbtCosmo.Derivation.WindowSampleData.thresholdRat j < SbtCosmo.Derivation.WindowSampleData.aggregateRat}.card =
+      9 ∧
+    {j | SbtCosmo.Derivation.WindowSampleData.thresholdRat j ≤ SbtCosmo.Derivation.WindowSampleData.aggregateRat}.card =
+      10
+SbtCosmo.Derivation.WindowSample.sampled_maxima (j : Fin 12) :
+  (∀ (i : Fin 64), 0 ≤ SbtCosmo.Derivation.WindowSample.amplitude j i) ∧
+    0 < SbtCosmo.Derivation.WindowSample.maximumFalse j ∧
+      0 < SbtCosmo.Derivation.WindowSample.maximumTrue j ∧
+        SbtCosmo.Derivation.WindowRecords.TagMaximum (SbtCosmo.Derivation.WindowSample.amplitude j)
+            (SbtCosmo.Derivation.WindowSampleData.tag j) false (SbtCosmo.Derivation.WindowSample.maximumFalse j) ∧
+          SbtCosmo.Derivation.WindowRecords.TagMaximum (SbtCosmo.Derivation.WindowSample.amplitude j)
+            (SbtCosmo.Derivation.WindowSampleData.tag j) true (SbtCosmo.Derivation.WindowSample.maximumTrue j)
+SbtCosmo.Derivation.WindowSample.sampled_threshold_exact :
+  SbtCosmo.Derivation.WindowSample.aggregateThreshold = 971912828383572000768 / 1012057850670495125
+SbtCosmo.Derivation.WindowSample.realized_gate_iff_seed_fraction (lam : ℝ) :
+  SbtCosmo.Derivation.WindowSample.realizedGate lam ↔
+    -(1 / 20 ^ 3) < lam ∧
+      4 / 5 ≤
+        ↑{j |
+                SbtCosmo.Derivation.GrowthPopulation.nativeRecord (SbtCosmo.Derivation.WindowSample.amplitude j)
+                  (SbtCosmo.Derivation.WindowSampleData.tag j) (1 / 1000) 20 SbtCosmo.Derivation.WindowSample.delta
+                  lam}.card /
+          12
+SbtCosmo.Derivation.WindowSample.realized_gate_iff_threshold (lam : ℝ) :
+  SbtCosmo.Derivation.WindowSample.realizedGate lam ↔
+    -(1 / 8000) < lam ∧
+      SbtCosmo.Derivation.WindowSample.aggregateThreshold ≤
+        SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowSample.exists_unique_realized_window :
+  ∃! upper,
+    0 < upper ∧
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) upper 20 =
+          SbtCosmo.Derivation.WindowSample.aggregateThreshold ∧
+        ∀ (lam : ℝ), SbtCosmo.Derivation.WindowSample.realizedGate lam ↔ -(1 / 8000) < lam ∧ lam ≤ upper

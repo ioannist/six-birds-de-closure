@@ -1,0 +1,142 @@
+SbtCosmo.Derivation.GrowthQuadratureSharp.densitySquare_derivative {lam a : ℝ} (hlam : 0 ≤ lam) (ha : 0 ≤ a) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthQuadratureSharp.densitySquare lam)
+    (3 * a ^ 2 * (1 - 2 * lam * a ^ 3) / (1 + lam * a ^ 3) ^ 4) a
+SbtCosmo.Derivation.GrowthQuadratureSharp.densitySquare_monotone {lam a b : ℝ} (hlam : 0 ≤ lam) (ha : 0 ≤ a)
+  (hb : 2 * lam * b ^ 3 ≤ 1) : MonotoneOn (SbtCosmo.Derivation.GrowthQuadratureSharp.densitySquare lam) (Set.Icc a b)
+SbtCosmo.Derivation.GrowthQuadratureSharp.densitySquare_antitone {lam a b : ℝ} (hlam : 0 ≤ lam) (ha : 0 ≤ a)
+  (hb : 1 ≤ 2 * lam * a ^ 3) : AntitoneOn (SbtCosmo.Derivation.GrowthQuadratureSharp.densitySquare lam) (Set.Icc a b)
+SbtCosmo.Derivation.GrowthQuadratureSharp.density_monotone {lam a b : ℝ} (hlam : 0 ≤ lam) (ha : 0 ≤ a)
+  (hb : 2 * lam * b ^ 3 ≤ 1) : MonotoneOn (SbtCosmo.Derivation.GrowthQuadrature.density lam) (Set.Icc a b)
+SbtCosmo.Derivation.GrowthQuadratureSharp.density_antitone {lam a b : ℝ} (hlam : 0 ≤ lam) (ha : 0 ≤ a)
+  (hb : 1 ≤ 2 * lam * a ^ 3) : AntitoneOn (SbtCosmo.Derivation.GrowthQuadrature.density lam) (Set.Icc a b)
+SbtCosmo.Derivation.GrowthQuadratureSharp.density_global_upper {lam x hi : ℝ} (hlam : 0 < lam) (hx : 0 ≤ x)
+  (hhi : 0 ≤ hi) (hcert : 4 ≤ 27 * lam * hi ^ 2) : SbtCosmo.Derivation.GrowthQuadrature.density lam x ≤ hi
+SbtCosmo.Derivation.GrowthQuadratureSharp.density_cell_lower {lam a b x lo : ℝ} (hlam : 0 ≤ lam) (ha : 0 ≤ a)
+  (hx : x ∈ Set.Icc a b) (hlo : 0 ≤ lo) (hleft : lo ^ 2 * (1 + lam * a ^ 3) ^ 3 ≤ a ^ 3)
+  (hright : lo ^ 2 * (1 + lam * b ^ 3) ^ 3 ≤ b ^ 3) : lo ≤ SbtCosmo.Derivation.GrowthQuadrature.density lam x
+SbtCosmo.Derivation.GrowthQuadratureSharp.density_cell_upper {lam a b x hi : ℝ} (hlam : 0 < lam) (ha : 0 ≤ a)
+  (hx : x ∈ Set.Icc a b) (hhi : 0 ≤ hi)
+  (hcert :
+    2 * lam * b ^ 3 ≤ 1 ∧ b ^ 3 ≤ hi ^ 2 * (1 + lam * b ^ 3) ^ 3 ∨
+      1 ≤ 2 * lam * a ^ 3 ∧ a ^ 3 ≤ hi ^ 2 * (1 + lam * a ^ 3) ^ 3 ∨ 4 ≤ 27 * lam * hi ^ 2) :
+  SbtCosmo.Derivation.GrowthQuadrature.density lam x ≤ hi
+SbtCosmo.Derivation.GrowthQuadratureSharp.integral_grid_bounds {lam : ℝ} {n : ℕ} {a lo hi : ℕ → ℝ} (hlam : 0 ≤ lam)
+  (hcell :
+    ∀ i < n,
+      0 < a i ∧
+        a i ≤ a (i + 1) ∧
+          ∀ x ∈ Set.Icc (a i) (a (i + 1)),
+            lo i ≤ SbtCosmo.Derivation.GrowthQuadrature.density lam x ∧
+              SbtCosmo.Derivation.GrowthQuadrature.density lam x ≤ hi i) :
+  ∑ i ∈ Finset.range n, (a (i + 1) - a i) * lo i ≤ SbtCosmo.Derivation.GrowthQuadrature.integral lam (a 0) (a n) ∧
+    SbtCosmo.Derivation.GrowthQuadrature.integral lam (a 0) (a n) ≤ ∑ i ∈ Finset.range n, (a (i + 1) - a i) * hi i
+SbtCosmo.Derivation.WindowEndpointRatioData.grid_endpoints :
+  SbtCosmo.Derivation.WindowEndpointRatioData.grid 0 = 1 / 1000 ∧
+    SbtCosmo.Derivation.WindowEndpointRatioData.grid 512 = 5 / 2 ∧
+      SbtCosmo.Derivation.WindowEndpointRatioData.grid 704 = 20
+SbtCosmo.Derivation.WindowEndpointRatioData.lower_cells (i : Fin 512) :
+  0 < SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ∧
+    SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ≤ SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.WindowEndpointRatioData.lower ↑i ∧
+        SbtCosmo.Derivation.WindowEndpointRatioData.lower ↑i ^ 2 *
+              (1 + 17 / 5 * SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ^ 3 ∧
+          SbtCosmo.Derivation.WindowEndpointRatioData.lower ↑i ^ 2 *
+              (1 + 17 / 5 * SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ^ 3
+SbtCosmo.Derivation.WindowEndpointRatioData.upper_cells (i : Fin 704) :
+  0 < SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ∧
+    SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ≤ SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.WindowEndpointRatioData.upper ↑i ∧
+        (2 * (17 / 5) * SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ^ 3 ≤ 1 ∧
+            SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ^ 3 ≤
+              SbtCosmo.Derivation.WindowEndpointRatioData.upper ↑i ^ 2 *
+                (1 + 17 / 5 * SbtCosmo.Derivation.WindowEndpointRatioData.grid (↑i + 1) ^ 3) ^ 3 ∨
+          1 ≤ 2 * (17 / 5) * SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ^ 3 ∧
+              SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ^ 3 ≤
+                SbtCosmo.Derivation.WindowEndpointRatioData.upper ↑i ^ 2 *
+                  (1 + 17 / 5 * SbtCosmo.Derivation.WindowEndpointRatioData.grid ↑i ^ 3) ^ 3 ∨
+            4 ≤ 27 * (17 / 5) * SbtCosmo.Derivation.WindowEndpointRatioData.upper ↑i ^ 2)
+SbtCosmo.Derivation.WindowEndpointRatioData.lower_sum :
+  1938 / 10000 ≤
+    ∑ i ∈ Finset.range 512,
+      (SbtCosmo.Derivation.WindowEndpointRatioData.grid (i + 1) - SbtCosmo.Derivation.WindowEndpointRatioData.grid i) *
+        SbtCosmo.Derivation.WindowEndpointRatioData.lower i
+SbtCosmo.Derivation.WindowEndpointRatioData.upper_sum :
+  ∑ i ∈ Finset.range 704,
+      (SbtCosmo.Derivation.WindowEndpointRatioData.grid (i + 1) - SbtCosmo.Derivation.WindowEndpointRatioData.grid i) *
+        SbtCosmo.Derivation.WindowEndpointRatioData.upper i ≤
+    2082 / 10000
+SbtCosmo.Derivation.WindowEndpointRatio.integral_prefix_lower :
+  1938 / 10000 ≤ SbtCosmo.Derivation.GrowthQuadrature.integral (17 / 5) (1 / 1000) (5 / 2)
+SbtCosmo.Derivation.WindowEndpointRatio.integral_horizon_upper :
+  SbtCosmo.Derivation.GrowthQuadrature.integral (17 / 5) (1 / 1000) 20 ≤ 2082 / 10000
+SbtCosmo.Derivation.WindowEndpointRatio.prefix_growth_lower :
+  901 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (17 / 5) (5 / 2)
+SbtCosmo.Derivation.WindowEndpointRatio.horizon_growth_upper :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (17 / 5) 20 < 960
+SbtCosmo.Derivation.WindowEndpointRatio.upper_tight_bounds :
+  3 < SbtCosmo.Derivation.WindowEdgeCertified.upper ∧ SbtCosmo.Derivation.WindowEdgeCertified.upper < 17 / 5
+SbtCosmo.Derivation.WindowEndpointRatio.final_above_threshold {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.threshold j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowEndpointRatio.time_spec {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowFirstRecord.time j lam) =
+      SbtCosmo.Derivation.WindowFirstRecord.threshold j
+SbtCosmo.Derivation.WindowEndpointRatio.time_iff_any_collapse {lam a : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (ha : a ∈ Set.Icc (1 / 1000) 20) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowFirstRecord.time j lam ≤ a
+SbtCosmo.Derivation.WindowEndpointRatio.time_is_first_collapse {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowFirstRecord.time j lam)) ∧
+    ∀ a ∈ Set.Icc (1 / 1000) 20,
+      a < SbtCosmo.Derivation.WindowFirstRecord.time j lam →
+        ¬∃ i,
+            SbtCosmo.Derivation.WindowSample.delta ≤
+              SbtCosmo.Derivation.WindowSample.amplitude j i *
+                SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowEndpointRatio.time_lower {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  1 / 2 < SbtCosmo.Derivation.WindowFirstRecord.time j lam
+SbtCosmo.Derivation.WindowEndpointRatio.prefix_above_threshold {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.threshold j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam (5 / 2)
+SbtCosmo.Derivation.WindowEndpointRatio.time_upper {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j lam ≤ 5 / 2
+SbtCosmo.Derivation.WindowEndpointRatio.time_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowFirstRecord.time j) (Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper)
+SbtCosmo.Derivation.WindowEndpointRatio.ratio_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowFirstRecord.ratio j) (Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper)
+SbtCosmo.Derivation.WindowEndpointRatio.ratio_upper_linear {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ≤ 125 / 8 * lam
+SbtCosmo.Derivation.WindowEndpointRatio.ratio_positive {lam : ℝ}
+  (hlam : lam ∈ Set.Ioc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam
+SbtCosmo.Derivation.WindowEndpointRatio.ratio_upper {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < 425 / 8
+SbtCosmo.Derivation.WindowEndpointRatio.near_edge_ratios {lam : ℝ}
+  (hlam : lam ∈ Set.Icc 3 SbtCosmo.Derivation.WindowEdgeCertified.upper) (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧
+    SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < 425 / 8
+SbtCosmo.Derivation.WindowEndpointRatio.endpoint_ratios (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowFirstRecord.ratio j SbtCosmo.Derivation.WindowEdgeCertified.upper ∧
+    SbtCosmo.Derivation.WindowFirstRecord.ratio j SbtCosmo.Derivation.WindowEdgeCertified.upper < 425 / 8
+SbtCosmo.Derivation.WindowEndpointRatio.positive_window_ratios {lam : ℝ} (hlam : 0 ≤ lam)
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧ SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < 425 / 8

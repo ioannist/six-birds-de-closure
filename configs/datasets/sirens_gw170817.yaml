@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: SIRENS_GW170817
+manifest: data/manifests/sirens_gw170817.json
+fallback_policy: budgeted_if_gaussianized

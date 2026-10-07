@@ -1,0 +1,123 @@
+{
+  "manifest": "R0 bridge-affinity input — LOCKED before WP-R0-CODE runs (anti-improvisation / anti-circularity)",
+  "manifest_note": "Pre-run TEMPLATE. Numeric affinity values + several edge_type classifications are 'TODO-on-fetch' (same convention as the other data/manifests/*.json templates). This file enumerates EVERY allowed external Hubble route, EVERY allowed pairwise edge, the LOCKED spanning tree, and the candidate held-out cycles BEFORE the run, so R0-B cannot build whatever graph is available after looking at the data. WP-R0-CODE MUST read + sha256-stamp this file before constructing any route graph, and may use ONLY the routes/edges/cycles listed here with their declared eligibility, edge_type, and shared-anchor exclusions. Validated by tests/test_r0_manifest.py.",
+  "locked_utc": "TODO-on-commit",
+  "edge_type_policy": "Every edge carries edge_type ∈ {direct_cross_calibration, route_readout_difference, TODO-on-fetch-classify}. ONLY edge_type=direct_cross_calibration edges may be DECISIVE held-out edges in R0-B. A 'direct_cross_calibration' is a genuine differential measurement on SHARED data (e.g. two ladders on common host galaxies / common JWST fields) that is NOT reducible to an H0 difference. A 'route_readout_difference' (a(r,r')=Phi(r')-Phi(r), i.e. H0_i - H0_j) is an EXACT 1-form / node-potential difference ⇒ A_gamma==0 by NG_FORCE_NULL ⇒ FORBIDDEN as a decisive held-out edge (R0 §3.2 exact-form no-go). 'TODO-on-fetch-classify' edges MUST be classified at fetch time and, if route_readout_difference, are demoted to non-decisive (R0-A only).",
+  "anti_circularity_rule": "No DECISIVE held-out edge may share a calibration anchor (anchor_family / shares_anchor_with) with any spanning-tree edge that determines its node potentials. The spanning tree is fit on tree edges only; A_gamma is scored on the held-out test edges. A cycle is DECISIVE-eligible iff ALL its held-out edges are (a) edge_type=direct_cross_calibration, (b) eligible_for_test_cycle=true, and (c) anchor-disjoint from every tree_path edge in that cycle.",
+  "orientation_convention": "Pre-register the per-edge i->j orientation BEFORE any cycle is scored. For a cycle, A_gamma = (oriented sum of held-out edge affinities) + (oriented sum of tree_path edge affinities) around the closed loop; equivalently A_gamma = sum_{heldout}(a) - [tree node-potential difference between the held-out edges' endpoints]. Under an exact form A_gamma==0 identically.",
+  "routes": [
+    {"route_id": "cepheid_sn", "role": "dissolving_external_route", "source_arxiv": "2509.01667", "version": "v1", "citation": "Riess et al. 2025 (SH0ES)", "manifest_ref": "data/manifests/sh0es.json", "anchor_family": "cepheid", "in_spanning_tree": true, "note": "Cepheid->SN ladder; SH0ES anchors (NGC4258 maser, MW parallax, LMC DEBs)"},
+    {"route_id": "trgb_sn", "role": "dissolving_external_route", "source_arxiv": "2408.06153", "version": "v1", "citation": "Freedman et al. 2024 (CCHP)", "manifest_ref": "data/manifests/cchp_trgb_jagb.json", "anchor_family": "trgb", "in_spanning_tree": true, "note": "TRGB->SN ladder (CCHP, HST-calibrated tip)"},
+    {"route_id": "jwst_trgb_sn", "role": "dissolving_external_route", "source_arxiv": "2408.06153", "version": "v1", "citation": "Freedman et al. 2024 (CCHP, JWST)", "manifest_ref": "data/manifests/cchp_trgb_jagb.json", "anchor_family": "trgb", "in_spanning_tree": true, "note": "JWST-resolved TRGB->SN ladder (CCHP JWST fields)"},
+    {"route_id": "jagb_sn", "role": "dissolving_external_route", "source_arxiv": "2408.06153", "version": "v1", "citation": "Freedman et al. 2024 (CCHP, JAGB)", "manifest_ref": "data/manifests/cchp_trgb_jagb.json", "anchor_family": "jagb", "in_spanning_tree": true, "note": "JAGB (carbon-star)->SN ladder (CCHP JWST fields)"},
+    {"route_id": "time_delay", "role": "dissolving_external_route", "source_arxiv": "2506.03023", "version": "v1", "citation": "TDCOSMO Collaboration 2025", "manifest_ref": "data/manifests/tdcosmo.json", "anchor_family": "lens_mass_model", "in_spanning_tree": false, "note": "Strong-lens time-delay H0 (TDCOSMO 2025); geometric, model_dependent. Degree-1 leaf — usable in R0-A power only, not in any closed cycle (no second pairwise edge)."},
+    {"route_id": "siren", "role": "dissolving_external_route", "source_arxiv": "1710.05835", "version": "v1", "citation": "LIGO/Virgo Collaboration 2017 (GW170817 standard siren)", "manifest_ref": "data/manifests/sirens_gw170817.json", "anchor_family": "gw_luminosity_distance", "in_spanning_tree": false, "note": "Standard-siren H0 from GW170817; geometric, anchor-independent of the EM ladders. NGC4993 (host) is an early-type galaxy with NO Cepheid/TRGB/JAGB ladder distance, so a siren<->ladder edge is almost certainly an H0 difference (route_readout_difference), NOT a shared-host differential."}
+  ],
+  "spanning_tree": {
+    "note": "LOCKED spanning tree over the 4 local-ladder nodes {cepheid_sn, trgb_sn, jwst_trgb_sn, jagb_sn}; star on trgb_sn. 3 edges, acyclic, connects all 4 tree nodes. All tree edges are direct_cross_calibration but anchor-SHARING (fine for the tree; node potentials Phi are fit here). time_delay + siren are NOT in the tree (geometric leaves).",
+    "edges": ["e_trgb_cepheid_hosts", "e_cchp_trgb_jagb", "e_jwst_trgb_consistency"]
+  },
+  "edges": [
+    {
+      "edge_id": "e_trgb_cepheid_hosts", "i": "trgb_sn", "j": "cepheid_sn",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "TRGB<->Cepheid direct differential on shared host galaxies (common SN-Ia hosts with both Cepheid and TRGB distances)",
+      "version": "v1", "covariance_source": "published shared-host covariance + declared approximation floors",
+      "edge_type": "direct_cross_calibration", "anchor_family": "cepheid+trgb (shared host-galaxy distances)",
+      "role": "tree", "eligible_for_tree": true, "eligible_for_test_cycle": false,
+      "shares_anchor_with": ["e_sh0es_cchp_jwst", "e_cchp_trgb_jagb", "e_jwst_trgb_consistency"]
+    },
+    {
+      "edge_id": "e_cchp_trgb_jagb", "i": "trgb_sn", "j": "jagb_sn",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "CCHP-internal TRGB<->JAGB cross-calibration on the same JWST calibrator set (arXiv:2408.06153)",
+      "version": "v1", "covariance_source": "CCHP-internal joint covariance (TRGB and JAGB on common calibrators)",
+      "edge_type": "direct_cross_calibration", "anchor_family": "trgb+jagb (CCHP common JWST calibrators)",
+      "role": "tree", "eligible_for_tree": true, "eligible_for_test_cycle": false,
+      "shares_anchor_with": ["e_trgb_cepheid_hosts", "e_jwst_trgb_consistency", "e_sh0es_cchp_jwst"]
+    },
+    {
+      "edge_id": "e_jwst_trgb_consistency", "i": "jwst_trgb_sn", "j": "trgb_sn",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "CCHP-internal JWST-TRGB<->HST-TRGB tip-magnitude cross-calibration (arXiv:2408.06153)",
+      "version": "v1", "covariance_source": "CCHP-internal TRGB tip covariance (JWST vs HST resolved tip)",
+      "edge_type": "direct_cross_calibration", "anchor_family": "trgb (JWST/HST tip)",
+      "role": "tree", "eligible_for_tree": true, "eligible_for_test_cycle": false,
+      "shares_anchor_with": ["e_cchp_trgb_jagb", "e_trgb_cepheid_hosts", "e_sh0es_cchp_jwst"]
+    },
+    {
+      "edge_id": "e_sh0es_cchp_jwst", "i": "cepheid_sn", "j": "trgb_sn",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "SH0ES<->CCHP direct cross-calibration on shared JWST fields (arXiv:2509.01667 x 2408.06153) — a SECOND, independent cepheid<->trgb differential",
+      "version": "v1", "covariance_source": "published shared-anchor covariance + declared approximation floors",
+      "edge_type": "direct_cross_calibration", "anchor_family": "cepheid+trgb (shared JWST field photometry)",
+      "role": "chord_candidate", "eligible_for_tree": false, "eligible_for_test_cycle": true,
+      "shares_anchor_with": ["e_trgb_cepheid_hosts", "e_cchp_trgb_jagb", "e_jwst_trgb_consistency"],
+      "decisive_note": "A genuine direct_cross_calibration, BUT shares the cepheid+trgb anchor with the tree's cepheid-trgb leg ⇒ anti-circularity VIOLATED ⇒ NOT decisive-eligible (it is an anchor-coupled consistency check, not a clean held-out test)."
+    },
+    {
+      "edge_id": "e_siren_cepheid", "i": "siren", "j": "cepheid_sn",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "Standard-siren<->Cepheid comparison (GW170817 geometric distance vs the SH0ES ladder)",
+      "version": "v1", "covariance_source": "published siren peculiar-velocity prior covariance; anchor-disjoint from EM ladder anchors",
+      "edge_type": "TODO-on-fetch-classify", "anchor_family": "gw_luminosity_distance",
+      "role": "heldout_candidate", "eligible_for_tree": false, "eligible_for_test_cycle": true, "shares_anchor_with": [],
+      "decisive_note": "Anchor-disjoint from the tree, BUT likely a route_readout_difference (H0_siren - H0_cepheid): NGC4993 is an early-type galaxy with no Cepheid distance, so there is no shared-host differential ⇒ almost certainly an exact-form H0 difference ⇒ NOT decisive-eligible. CONFIRM edge_type at fetch; if route_readout_difference, demote to R0-A only."
+    },
+    {
+      "edge_id": "e_siren_jagb", "i": "jagb_sn", "j": "siren",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "JAGB<->standard-siren comparison (geometric siren distance vs CCHP JAGB ladder)",
+      "version": "v1", "covariance_source": "published siren peculiar-velocity prior covariance; anchor-disjoint from EM ladder anchors",
+      "edge_type": "TODO-on-fetch-classify", "anchor_family": "gw_luminosity_distance",
+      "role": "heldout_candidate", "eligible_for_tree": false, "eligible_for_test_cycle": true, "shares_anchor_with": [],
+      "decisive_note": "Anchor-disjoint, BUT likely a route_readout_difference (NGC4993 has no JAGB ladder distance) ⇒ probably exact-form ⇒ NOT decisive-eligible. CONFIRM edge_type at fetch."
+    },
+    {
+      "edge_id": "e_time_delay_cepheid", "i": "time_delay", "j": "cepheid_sn",
+      "affinity_definition": "log(bridge_i_to_j / bridge_j_to_i)", "value": "TODO-on-fetch",
+      "source": "Time-delay<->Cepheid comparison (TDCOSMO lens-model H0 vs SH0ES ladder)",
+      "version": "v1", "covariance_source": "published TDCOSMO lens-density-prior covariance; anchor-disjoint from EM ladder anchors",
+      "edge_type": "route_readout_difference", "anchor_family": "lens_mass_model",
+      "role": "noncyclic_leaf", "eligible_for_tree": false, "eligible_for_test_cycle": false, "shares_anchor_with": [],
+      "decisive_note": "TDCOSMO yields H0 directly with no shared host vs the ladder ⇒ this is an H0 difference (route_readout_difference / exact-form) ⇒ FORBIDDEN as a held-out edge. time_delay is a degree-1 leaf (no second edge) ⇒ cannot be in any closed cycle ⇒ usable in R0-A power only."
+    }
+  ],
+  "test_cycles": [
+    {
+      "cycle_id": "gamma_siren_cepheid_jagb",
+      "heldout_edges": ["e_siren_cepheid", "e_siren_jagb"],
+      "tree_path_edges": ["e_trgb_cepheid_hosts", "e_cchp_trgb_jagb"],
+      "loop_nodes": ["cepheid_sn", "siren", "jagb_sn", "trgb_sn", "cepheid_sn"],
+      "orientation": "TODO-on-commit (cepheid -> siren -> jagb -> trgb -> cepheid)",
+      "A_gamma_formula": "a(e_siren_cepheid; cepheid->siren) + a(e_siren_jagb; siren->jagb) + a(e_cchp_trgb_jagb; jagb->trgb) + a(e_trgb_cepheid_hosts; trgb->cepheid)",
+      "structurally_closed": true,
+      "decisive_eligible": false,
+      "ineligible_reason": "held-out edges {e_siren_cepheid, e_siren_jagb} are edge_type=TODO-on-fetch-classify and LIKELY route_readout_difference (exact-form); a cycle is decisive-eligible only if ALL held-out edges are confirmed direct_cross_calibration. Anchor-disjointness from the tree IS satisfied. Re-evaluate at fetch time."
+    },
+    {
+      "cycle_id": "gamma_cepheid_trgb_doubleedge",
+      "heldout_edges": ["e_sh0es_cchp_jwst"],
+      "tree_path_edges": ["e_trgb_cepheid_hosts"],
+      "loop_nodes": ["cepheid_sn", "trgb_sn", "cepheid_sn"],
+      "orientation": "TODO-on-commit (cepheid -> trgb via e_sh0es_cchp_jwst, trgb -> cepheid via e_trgb_cepheid_hosts)",
+      "A_gamma_formula": "a(e_sh0es_cchp_jwst; cepheid->trgb) + a(e_trgb_cepheid_hosts; trgb->cepheid)",
+      "structurally_closed": true,
+      "decisive_eligible": false,
+      "ineligible_reason": "held-out edge e_sh0es_cchp_jwst is a genuine direct_cross_calibration BUT SHARES the cepheid+trgb anchor with the tree leg e_trgb_cepheid_hosts ⇒ anti-circularity VIOLATED. This is an anchor-coupled SH0ES-vs-CCHP consistency check (informative for R1 objectivity-not-earned triage), not a clean held-out exactness test."
+    }
+  ],
+  "cycle_availability": {
+    "beta1_structural": 2,
+    "beta1_structural_note": "full edge graph: 6 nodes (time_delay leaf), 7 edges, connected ⇒ β1 = 7-6+1 = 2 (the two cycles above); time_delay's edge is a bridge, in no cycle.",
+    "beta1_decisive_eligible": 0,
+    "beta1_decisive_eligible_note": "Under currently-listed published cross-calibrations NO cycle is decisive-eligible: the genuine direct_cross_calibration edges all SHARE anchors (EM ladder) ⇒ anti-circularity blocks them as held-out; the anchor-disjoint edges (siren/time_delay) are (likely) route_readout_differences ⇒ exact-form ⇒ forbidden. CONFIRM each TODO-on-fetch-classify edge_type at fetch.",
+    "expected_R0B_verdict_if_zero": "If beta1_decisive_eligible stays 0 after fetch-time edge_type confirmation, G-R0-EXACTNESS is EXACT / β1=0 VACUOUS ⇒ retire Hubble holonomy as a decisive pillar (AOR nonclaim; terminal ACCEPTED_NEGATIVE) ⇒ decisive front is E5 (R0 §9.B / plan/07 G-R0-EXACTNESS). This is a VALID, honest R0 outcome — not a failure to paper over.",
+    "reopens_if": "a future published, anchor-disjoint, genuine direct_cross_calibration (a shared-host differential NOT reducible to an H0 difference) would add a decisive-eligible cycle and re-open R0-B."
+  },
+  "excluded": [
+    {"route_or_edge": "cmb_bao", "reason": "in-sample/circular (Xi was fit to this geometry); CMB/r_d + BAO inverse-distance readout is a number the geometry fit was trained on — using it would leak the fit back into its own audit (R0 §4.1 HARD EXCLUSION)"},
+    {"route_or_edge": "inverse_ladder", "reason": "in-sample/circular (Xi was fit to this geometry); the E1 inverse-distance-ladder readout (cmb->bao->sn completion) is derived from the frozen geometry fit and may not enter D_route or any edge affinity a_ij (R0 §2 / §4.1 anti-circularity)"},
+    {"route_or_edge": "any node-potential-difference edge a(r,r')=Phi(r')-Phi(r) (route_readout_difference)", "reason": "exact 1-form by construction (A_gamma == 0 by NG_FORCE_NULL); DECISIVE R0-B held-out edges MUST be direct pairwise cross-calibration log-ratios (edge_type=direct_cross_calibration), not node-potential / H0 differences (R0 §3.2 / EXACT-FORM NO-GO LEMMA)"}
+  ]
+}

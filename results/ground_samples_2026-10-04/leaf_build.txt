@@ -1,0 +1,17 @@
+Command: ["lake", "build", "SbtCosmo.Derivation.GroundSamples.Point000", "SbtCosmo.Derivation.GroundSamples.Point001", "SbtCosmo.Derivation.GroundSamples.Point002", "SbtCosmo.Derivation.GroundSamples.Point003", "SbtCosmo.Derivation.GroundSamples.Point004", "SbtCosmo.Derivation.GroundSamples.Point005", "SbtCosmo.Derivation.GroundSamples.Point006", "SbtCosmo.Derivation.GroundSamples.Point007", "SbtCosmo.Derivation.GroundSamples.Point008", "SbtCosmo.Derivation.GroundSamples.Point009", "SbtCosmo.Derivation.GroundSamples.Point010", "SbtCosmo.Derivation.GroundSamples.Point011", "SbtCosmo.Derivation.GroundSamples.Point012", "SbtCosmo.Derivation.GroundSamples.Point013"]
+✔ [8060/8073] Built SbtCosmo.Derivation.GroundSamples.Point008 (56s)
+✔ [8061/8073] Built SbtCosmo.Derivation.GroundSamples.Point009 (57s)
+✔ [8062/8073] Built SbtCosmo.Derivation.GroundSamples.Point007 (58s)
+✔ [8063/8073] Built SbtCosmo.Derivation.GroundSamples.Point012 (58s)
+✔ [8064/8073] Built SbtCosmo.Derivation.GroundSamples.Point010 (59s)
+✔ [8065/8073] Built SbtCosmo.Derivation.GroundSamples.Point005 (59s)
+✔ [8066/8073] Built SbtCosmo.Derivation.GroundSamples.Point013 (59s)
+✔ [8067/8073] Built SbtCosmo.Derivation.GroundSamples.Point006 (60s)
+✔ [8068/8073] Built SbtCosmo.Derivation.GroundSamples.Point003 (36s)
+✔ [8069/8073] Built SbtCosmo.Derivation.GroundSamples.Point004 (37s)
+✔ [8070/8073] Built SbtCosmo.Derivation.GroundSamples.Point000 (36s)
+✔ [8071/8073] Built SbtCosmo.Derivation.GroundSamples.Point002 (39s)
+✔ [8072/8073] Built SbtCosmo.Derivation.GroundSamples.Point011 (37s)
+✔ [8073/8073] Built SbtCosmo.Derivation.GroundSamples.Point001 (38s)
+Build completed successfully (8073 jobs).
+Terminal exit code: 0

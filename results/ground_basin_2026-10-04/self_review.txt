@@ -1,0 +1,49 @@
+Adversarial self-review; not independent review.
+Target: quantify an actual native basin at original reified coupling0.3 and
+return the original seed to it, preserving the exact source phase and both
+initialization normalizations. The final theorems accept no numerical caps,
+basin premises, unproved inverse identities or generic convergence laws.
+
+Calculus hinge: the selector derivative is the derivative of the actual ground
+selector at the actual sourced potential. The whole state box is used; no
+fixed-point-only derivative is reused as a neighborhood estimate. The actual
+border defect supplies the (1-q) response loss. Source variations include both
+real and imaginary coordinates. The phase imaginary sign is negative, as in
+the unchanged conjugated source rule. Both reciprocals are earned on the entire
+box; explicit original threshold margins justify differentiation of the actual
+thresholded native map.
+
+Norm hinge: State and Field use sup norms. The product norm is a maximum. Each
+of the8 real output rows and8 imaginary output rows includes8 real input and8
+imaginary input columns. Both cross blocks are retained. No isometry of pack
+or Euclidean norm identification is used. Exact two-sided basis identities
+come from immutable earlier kernel certificates. The ball-to-box bridge uses
+the actual basis operator bound177/50.
+
+Numerical hinge: data proposals are not proofs. All near-inverse, reciprocal,
+response and row caps are closed kernel arithmetic. Outward dyadic caches are
+used only after the two endpoint inequalities for interval inclusion have
+been proved. DG caches enclose the error-retaining near-inverse response;
+physical DF caches enclose the full phase/mixing/normalization formula computed
+with those DG caches. Coordinate rows use the physical DF caches. Fraction
+replay additionally validates the complete16-by8 shapes. Sum bodies containing
+addition are explicitly parenthesized; autoImplicit and relaxedAutoImplicit
+are false and warningAsError is true.
+
+Global hinge: convex mean-value gives a Lipschitz constant on exactly the closed
+ball of radius1/40000. The actual unit branch ground is a fixed point. The
+reflected16th iterate is within1/48000 in the same coordinates. The generic
+contraction theorem earns ball invariance, all guards and genuine Tendsto;
+reflection uses only those earned active guards. The prefix covers indices
+0–15; shifted reflected convergence and tail guards cover every later index.
+No nearness-to-unknown-radius argument occurs.
+
+Control: a zero contraction budget is rejected on an actual populated row.
+Immutable previous zero inverse-square-root and selector-preconditioner
+controls remain present. Negation is not applied on the fallback branch.
+
+Limits: convergence is to the negative actual ground, not asserted to the
+positive representative. No IEEE execution, all-coupling seed basin,
+sixty-update0.3 source-test verdict, background-offset instance or original
+physical bridge is claimed. All four sixty-update0.3 diagnostics require their
+actual source expressions to be bounded separately. The goal remains active.

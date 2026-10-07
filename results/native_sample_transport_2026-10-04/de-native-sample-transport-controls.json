@@ -1,0 +1,31 @@
+{
+  "scope": "Four corrupted stable001 proposal controls; altered coupling literal, active-phase inverse, last imaginary derivative response, and paired contraction budget. Original source files unchanged. This tests the rational checker, not a new Lean theorem.",
+  "controls": [
+    {
+      "control": "wrong_coupling",
+      "rejected": true,
+      "last_function": "replay_one",
+      "last_line": 118
+    },
+    {
+      "control": "zero_phase_inverse",
+      "rejected": true,
+      "last_function": "update",
+      "last_line": 85
+    },
+    {
+      "control": "discarded_last_imaginary_response",
+      "rejected": true,
+      "last_function": "contains",
+      "last_line": 52
+    },
+    {
+      "control": "zero_paired_rate",
+      "rejected": true,
+      "last_function": "replay_one",
+      "last_line": 204
+    }
+  ],
+  "script_sha256": "c015c40020c128c4eec31d179d4ee2d47185b94e6f6847199fe2f19cfb698181",
+  "original_payload_sha256": "5c71283ed531c665a9698a9b577d05a037138fc925aad942788a2e64447dde3b"
+}

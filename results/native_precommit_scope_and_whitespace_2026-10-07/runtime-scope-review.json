@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-07T11:38:12.365265+00:00",
+  "review": "Earlier whole-review numerical/audit repairs distinguished from unchanged final integration",
+  "earlier_committed_modified_paths": [
+    "M\tsbt_cosmo/audits/metrics.py",
+    "M\tsbt_cosmo/xi/stability.py",
+    "M\tscripts/de_audit_b2_fix.py",
+    "M\tscripts/de_audit_run.py",
+    "M\tscripts/de_audit_validate.py",
+    "M\tscripts/de_dual_carrier.py",
+    "M\tscripts/de_measure_probe.py",
+    "M\tscripts/de_measure_validate.py",
+    "M\tscripts/de_window_carrier.py",
+    "M\tscripts/r0_hubble_power_exactness.py",
+    "M\tscripts/step54_rederive.py",
+    "M\ttests/test_de_dual.py",
+    "M\ttests/test_de_measure.py",
+    "M\ttests/test_de_window.py",
+    "M\ttests/test_determinism.py"
+  ],
+  "earlier_repairs": "Covariance variance handling and positive-definite checks; KL support/infinite-distance handling; conditional finite-rank calibration; finite-sweep/audit classifications and validators; stability interpretation and tests",
+  "original_step26_step54_iteration_laws_changed": false,
+  "paper_unchanged_since_pre_review_checkpoint": true,
+  "runtime_unchanged_since_final_integration_baseline_b58ad72": true,
+  "documentation_scope_clarifications": [
+    {
+      "path": "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md",
+      "before_sha256": "a9154229b938236520221b719cb79f8a1dff34c3079989de321eb80c1303b773",
+      "after_sha256": "29ae00313dea4ac81996621b8f16a826b00e11e914027fa8599d7f1aca0f7a0b"
+    },
+    {
+      "path": "lean/README.md",
+      "before_sha256": "51cd02c57ed7a200ddff0b2dc278282a23b68e25636d2d28b87358297103f08c",
+      "after_sha256": "8d32979d697767fe7fa2a3e211b7b7af21b7815e548d2586fdb50c3b31a8e16a"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "4a2f05384d8218a4eefd82fbb59b1446077143f413dca0c3be0c8939a064372e",
+      "after_sha256": "f93a4bb93b4f54affd6d8dddbdbbae1f8a57a91cc0aa2d3279533ff9ccd747ae"
+    }
+  ],
+  "lean_proof_source_or_frozen_artifact_bytes_changed": false,
+  "goal_complete": false
+}

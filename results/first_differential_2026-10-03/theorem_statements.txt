@@ -1,0 +1,240 @@
+SbtCosmo.Derivation.GrowthJointContinuity.safeIntegrand_continuous {eps : ℝ} (he : 0 < eps) :
+  Continuous (Function.uncurry (SbtCosmo.Derivation.GrowthJointContinuity.safeIntegrand eps))
+SbtCosmo.Derivation.GrowthJointContinuity.exists_live_extension {c x : ℝ} (hx : 0 ≤ x)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared c x) :
+  ∃ L, x < L ∧ 0 < L ∧ 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared c L
+SbtCosmo.Derivation.GrowthJointContinuity.root_margin_below {c d L t : ℝ}
+  (hd : c - SbtCosmo.Derivation.GrowthExistence.rootSquared c L / 2 ≤ d) (ht : t ≤ L) :
+  SbtCosmo.Derivation.GrowthExistence.rootSquared c L / 2 ≤ SbtCosmo.Derivation.GrowthExistence.rootSquared d t
+SbtCosmo.Derivation.GrowthJointContinuity.moving_interval_margin {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ∃ eps,
+    0 < eps ∧
+      ∀ᶠ (q : ℝ × ℝ) in nhds p, ∀ t ∈ Set.uIcc 0 q.2, eps ≤ SbtCosmo.Derivation.GrowthExistence.rootSquared q.1 t
+SbtCosmo.Derivation.GrowthJointContinuity.primitive_joint_continuousAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthExistence.primitive q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.primitiveParameter_joint_continuousAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthParameter.primitiveParameter q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.root_joint_continuous :
+  Continuous fun q => SbtCosmo.Derivation.GrowthExistence.root q.1 q.2
+SbtCosmo.Derivation.GrowthJointContinuity.growth_joint_continuousAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthExistence.growth q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.velocity_joint_continuousAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthExistence.velocity q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.growthParameter_joint_continuousAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthParameter.growthParameter q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.native_log_chart_continuousAt {a0 : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (ha : 0 < p.2) : ContinuousAt (fun q => (q.1 * a0 ^ 3, SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 q.2)) p
+SbtCosmo.Derivation.GrowthJointContinuity.native_growth_joint_continuousAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.1) (ha : p.2 ∈ Set.Icc a0 A) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.native_velocity_joint_continuousAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.1) (ha : p.2 ∈ Set.Icc a0 A) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointContinuity.native_sensitivity_joint_continuousAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.1) (ha : p.2 ∈ Set.Icc a0 A) :
+  ContinuousAt
+    (fun q =>
+      SbtCosmo.Derivation.GrowthParameter.finalSensitivity a0 (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 q.2)
+        q.1)
+    p
+SbtCosmo.Derivation.GrowthUnitDifferential.safeGradient_continuous {eps : ℝ} (he : 0 < eps) :
+  Continuous (Function.uncurry (SbtCosmo.Derivation.GrowthUnitDifferential.safeGradient eps))
+SbtCosmo.Derivation.GrowthUnitDifferential.safeGradient_eq {eps t : ℝ} {p : ℝ × ℝ}
+  (hm : eps ≤ SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 (p.2 * t)) :
+  SbtCosmo.Derivation.GrowthUnitDifferential.safeGradient eps p t =
+    SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient p t
+SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel_hasFDerivAt {p : ℝ × ℝ} {t : ℝ}
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 (p.2 * t)) :
+  HasFDerivAt (fun q => SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel q t)
+    (SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient p t) p
+SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient_measurable (p : ℝ × ℝ) :
+  Measurable (SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient p)
+SbtCosmo.Derivation.GrowthUnitDifferential.primitive_unit_return (c x : ℝ) :
+  SbtCosmo.Derivation.GrowthExistence.primitive c x =
+    x * ∫ (t : ℝ) in 0..1, SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel (c, x) t
+SbtCosmo.Derivation.GrowthUnitDifferential.unit_live_rectangle {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ∃ eps U K,
+    0 < eps ∧
+      U ∈ nhds p ∧
+        IsCompact K ∧
+          U ⊆ K ∧ ∀ q ∈ K, ∀ t ∈ Set.Icc 0 1, eps ≤ SbtCosmo.Derivation.GrowthExistence.rootSquared q.1 (q.2 * t)
+SbtCosmo.Derivation.GrowthUnitDifferential.unit_uniform_derivative_bound {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ∃ U B,
+    U ∈ nhds p ∧
+      ∀ t ∈ Set.Icc 0 1,
+        ∀ q ∈ U,
+          ‖SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient q t‖ ≤ B ∧
+            HasFDerivAt (fun r => SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel r t)
+              (SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient q t) q
+SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel_measurable (p : ℝ × ℝ) :
+  Measurable (SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel p)
+SbtCosmo.Derivation.GrowthUnitDifferential.unit_integral_hasFDerivAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  HasFDerivAt (fun q => ∫ (t : ℝ) in 0..1, SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel q t)
+    (∫ (t : ℝ) in 0..1, SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient p t) p
+SbtCosmo.Derivation.GrowthUnitDifferential.primitive_joint_hasFDerivAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  HasFDerivAt (fun q => SbtCosmo.Derivation.GrowthExistence.primitive q.1 q.2)
+    (SbtCosmo.Derivation.GrowthUnitDifferential.primitiveGradient p) p
+SbtCosmo.Derivation.GrowthJointDifferential.product_gradient_of_partials {f : ℝ × ℝ → ℝ} {p : ℝ × ℝ} {s v : ℝ}
+  (hf : DifferentiableAt ℝ f p) (hs : HasDerivAt (fun c => f (c, p.2)) s p.1)
+  (hv : HasDerivAt (fun x => f (p.1, x)) v p.2) :
+  HasFDerivAt f (s • ContinuousLinearMap.fst ℝ ℝ ℝ + v • ContinuousLinearMap.snd ℝ ℝ ℝ) p
+SbtCosmo.Derivation.GrowthJointDifferential.root_joint_differentiableAt {p : ℝ × ℝ}
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  DifferentiableAt ℝ (fun q => SbtCosmo.Derivation.GrowthExistence.root q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointDifferential.growth_joint_differentiableAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  DifferentiableAt ℝ (fun q => SbtCosmo.Derivation.GrowthExistence.growth q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointDifferential.growth_joint_hasFDerivAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  HasFDerivAt (fun q => SbtCosmo.Derivation.GrowthExistence.growth q.1 q.2)
+    (SbtCosmo.Derivation.GrowthJointDifferential.growthGradient p) p
+SbtCosmo.Derivation.GrowthJointDifferential.growthGradient_continuousAt {p : ℝ × ℝ} (hx : 0 ≤ p.2)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared p.1 p.2) :
+  ContinuousAt SbtCosmo.Derivation.GrowthJointDifferential.growthGradient p
+SbtCosmo.Derivation.GrowthJointDifferential.native_growth_joint_differentiableAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.1) (ha : p.2 ∈ Set.Icc a0 A) :
+  DifferentiableAt ℝ (fun q => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 q.1 q.2) p
+SbtCosmo.Derivation.GrowthJointDifferential.native_growth_joint_hasFDerivAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.1) (ha : p.2 ∈ Set.Icc a0 A) :
+  HasFDerivAt (fun q => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 q.1 q.2)
+    (SbtCosmo.Derivation.GrowthJointDifferential.nativeGradient a0 p) p
+SbtCosmo.Derivation.GrowthJointDifferential.nativeGradient_continuousAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.1) (ha : p.2 ∈ Set.Icc a0 A) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthJointDifferential.nativeGradient a0) p
+SbtCosmo.Derivation.GrowthJointDifferential.native_growth_joint_c1 {a0 A : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A) :
+  ContDiffOn ℝ 1 (fun q => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 q.1 q.2)
+    (Set.Ioi (-(1 / A ^ 3)) ×ˢ Set.Ioo a0 A)
+SbtCosmo.Derivation.GrowthFirstDifferential.rootInverse_left {s v : ℝ} (hv : v ≠ 0) :
+  Function.LeftInverse ⇑(SbtCosmo.Derivation.GrowthFirstDifferential.rootInverse s v)
+    ⇑(SbtCosmo.Derivation.GrowthFirstDifferential.rootJacobian s v)
+SbtCosmo.Derivation.GrowthFirstDifferential.rootInverse_right {s v : ℝ} (hv : v ≠ 0) :
+  Function.RightInverse ⇑(SbtCosmo.Derivation.GrowthFirstDifferential.rootInverse s v)
+    ⇑(SbtCosmo.Derivation.GrowthFirstDifferential.rootJacobian s v)
+SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_joint_hasFDerivAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.2) (hT : 1 < p.1)
+  (hf : p.1 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 p.2 A) :
+  HasFDerivAt (fun q => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A q.1 q.2)
+    (SbtCosmo.Derivation.GrowthFirstDifferential.firstGradient a0 A p) p
+SbtCosmo.Derivation.GrowthFirstDifferential.firstGradient_continuousAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.2) (hT : 1 < p.1)
+  (hf : p.1 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 p.2 A) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthFirstDifferential.firstGradient a0 A) p
+SbtCosmo.Derivation.GrowthFirstDifferential.interiorDomain_mem_nhds {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < p.2) (hT : 1 < p.1) (hf : p.1 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 p.2 A) :
+  SbtCosmo.Derivation.GrowthFirstDifferential.InteriorDomain a0 A ∈ nhds p
+SbtCosmo.Derivation.GrowthFirstDifferential.interiorDomain_isOpen {a0 A : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A) :
+  IsOpen (SbtCosmo.Derivation.GrowthFirstDifferential.InteriorDomain a0 A)
+SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_joint_c1 {a0 A : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A) :
+  ContDiffOn ℝ 1 (fun q => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A q.1 q.2)
+    (SbtCosmo.Derivation.GrowthFirstDifferential.InteriorDomain a0 A)
+SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_joint_contDiffAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.2) (hT : 1 < p.1)
+  (hf : p.1 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 p.2 A) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A q.1 q.2) p
+SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_parameter_derivative {a0 A T lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) (hT : 1 < T) (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T)
+    (-SbtCosmo.Derivation.GrowthParameter.finalSensitivity a0
+          (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0
+            (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam))
+          lam /
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 lam
+        (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam))
+    lam
+SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_parameter_derivative_positive {a0 A T lam : ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < lam) (hT : 1 < T)
+  (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  0 < deriv (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T) lam
+SbtCosmo.Derivation.WindowFirstDifferential.robust_time_joint_c1 {p : (ℝ × ℝ) × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowRobustRecord.gate p.1.1 p.1.2 p.2) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowRobustRecord.time q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowFirstDifferential.robust_time_parameter_derivative {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  HasDerivAt (SbtCosmo.Derivation.WindowRobustRecord.time d s j)
+    (-SbtCosmo.Derivation.GrowthParameter.finalSensitivity (1 / 1000)
+          (SbtCosmo.Derivation.GrowthScaleReturn.logScale (1 / 1000)
+            (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam))
+          lam /
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam))
+    lam
+SbtCosmo.Derivation.WindowFirstDifferential.robust_time_parameter_derivative_positive {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) : 0 < deriv (SbtCosmo.Derivation.WindowRobustRecord.time d s j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.robust_ratio_joint_c1 {p : (ℝ × ℝ) × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowRobustRecord.gate p.1.1 p.1.2 p.2) (hl : p.2 ≠ 0) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowRobustRatio.ratio q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowFirstDifferential.robust_endpoint_time_c1 {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (j : Fin 12) :
+  ContDiffAt ℝ 1
+    (fun q =>
+      SbtCosmo.Derivation.WindowRobustRecord.time q.1 q.2 j
+        (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2))
+    p
+SbtCosmo.Derivation.WindowFirstDifferential.robust_endpoint_ratio_c1 {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (j : Fin 12) :
+  ContDiffAt ℝ 1
+    (fun q =>
+      SbtCosmo.Derivation.WindowRobustRatio.ratio q.1 q.2 j
+        (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2))
+    p
+SbtCosmo.Derivation.WindowFirstDifferential.original_time_c1 {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  ContDiffAt ℝ 1 (SbtCosmo.Derivation.WindowSignedRecord.time j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.original_time_parameter_derivative {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  HasDerivAt (SbtCosmo.Derivation.WindowSignedRecord.time j)
+    (-SbtCosmo.Derivation.GrowthParameter.finalSensitivity (1 / 1000)
+          (SbtCosmo.Derivation.GrowthScaleReturn.logScale (1 / 1000)
+            (SbtCosmo.Derivation.WindowSignedRecord.time j lam))
+          lam /
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowSignedRecord.time j lam))
+    lam
+SbtCosmo.Derivation.WindowFirstDifferential.original_time_parameter_derivative_positive {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  0 < deriv (SbtCosmo.Derivation.WindowSignedRecord.time j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.original_ratio_c1 {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hl : lam ≠ 0) (j : Fin 12) :
+  ContDiffAt ℝ 1 (SbtCosmo.Derivation.WindowSignedRecord.ratio j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.patch_time_c1 {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  ContDiffAt ℝ 1 (SbtCosmo.Derivation.WindowPatchCountRatio.time v j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.patch_time_parameter_derivative {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  HasDerivAt (SbtCosmo.Derivation.WindowPatchCountRatio.time v j)
+    (-SbtCosmo.Derivation.GrowthParameter.finalSensitivity (1 / 1000)
+          (SbtCosmo.Derivation.GrowthScaleReturn.logScale (1 / 1000)
+            (SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam))
+          lam /
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam))
+    lam
+SbtCosmo.Derivation.WindowFirstDifferential.patch_time_parameter_derivative_positive {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  0 < deriv (SbtCosmo.Derivation.WindowPatchCountRatio.time v j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.patch_ratio_c1 {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (hl : lam ≠ 0) (j : Fin 12) :
+  ContDiffAt ℝ 1 (SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j) lam
+SbtCosmo.Derivation.WindowFirstDifferential.weighted_abs_not_differentiable {f : ℝ → ℝ} (hd : DifferentiableAt ℝ f 0)
+  (hp : 0 < f 0) : ¬DifferentiableAt ℝ (fun lam => |lam| * f lam ^ 3) 0
+SbtCosmo.Derivation.WindowFirstDifferential.robust_ratio_not_differentiable_at_zero {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  ¬DifferentiableAt ℝ (SbtCosmo.Derivation.WindowRobustRatio.ratio d s j) 0
+SbtCosmo.Derivation.WindowFirstDifferential.original_ratio_not_differentiable_at_zero (j : Fin 12) :
+  ¬DifferentiableAt ℝ (SbtCosmo.Derivation.WindowSignedRecord.ratio j) 0
+SbtCosmo.Derivation.WindowFirstDifferential.patch_ratio_not_differentiable_at_zero (v : Bool) (j : Fin 12) :
+  ¬DifferentiableAt ℝ (SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j) 0

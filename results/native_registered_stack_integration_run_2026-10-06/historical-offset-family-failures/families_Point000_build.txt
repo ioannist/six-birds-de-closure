@@ -1,0 +1,12 @@
+✖ [8789/8789] Building SbtCosmo.Derivation.GroundOffsetTransport.Point000 (23s)
+trace: .> LEAN_PATH=/home/repos/six-birds-de-closure/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean /home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean /home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean -o /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.olean -i /home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.ilean -c /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/GroundOffsetTransport/Point000.c --setup /home/repos/six-birds-de-closure/lean/.lake/build/ir/SbtCosmo/Derivation/GroundOffsetTransport/Point000.setup.json --json
+error: SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean:165:13: Unknown identifier `ActivePhase`
+
+Note: It is not possible to treat `ActivePhase` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean:166:6: Unknown identifier `NativeLegal`
+
+Note: It is not possible to treat `NativeLegal` as an implicitly bound variable here because the `autoImplicit` option is set to `false`.
+error: Lean exited with code 1
+Some required targets logged failures:
+- SbtCosmo.Derivation.GroundOffsetTransport.Point000
+error: build failed

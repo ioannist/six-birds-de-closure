@@ -1,0 +1,35 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_source_execution_return",
+    "/tmp/de_source_execution_return/SourceExecutionFullAudit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling20_execution",
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling30_execution",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.attempt_some_iff",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.run_guarded",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_return",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_guards",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.run_iff_guards",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_guarded",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_iff_guards",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.candidate_normalization_preserved"
+  ],
+  "sources": {
+    "/tmp/de_source_execution_return/lean/SbtCosmo/Derivation/GroundOriginalCycleExecution.lean": "4a54c474cf35857182f99a360bb0d1cdb68897a46396c2de6ffde8f589a9e4e3",
+    "/tmp/de_source_execution_return/lean/SbtCosmo/Derivation/GroundSourceExecutionReturn.lean": "ea9ba5f287cb9c485f1a23f3b6b0668aa379cc6c5bf50fe4c9ece27af43f752b"
+  },
+  "objects": {
+    "/tmp/de_source_execution_return/objects/SbtCosmo/Derivation/GroundOriginalCycleExecution.olean": "4a1d46454058b87511f1796207645ae961839aa0394c1ade47c83fad3f5c283a",
+    "/tmp/de_source_execution_return/objects/SbtCosmo/Derivation/GroundSourceExecutionReturn.olean": "6e32bfd6952f096ea1aa8f2a03f33796eca923a273b8305c6d2d58b023097a6b"
+  },
+  "log_sha256": "c3b86f6caa32382a083968b4a4fe6487a24cfeef045935c2a26aa744d04b93a7",
+  "audit_sha256": "6af44151739bc078769219e6330a8f250544fcb77bb290f114cce1237427fd7e",
+  "standard_only": true,
+  "checked_declarations": 10,
+  "repository_registered": false,
+  "scope": "Exact guarded return: finite normalization execution succeeds iff all normalization guards along the total-map prefix hold, successful outputs equal total iterates, normalized ground selector survives its source normalization, and original coupling20/30 runs return their earned guarded unit iterates for every finite count. No arbitrary-seed success or IEEE eigensolver trace."
+}

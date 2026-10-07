@@ -1,0 +1,162 @@
+SbtCosmo.Derivation.RelativeConvexContinuity.continuousOn_intrinsicInterior.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {C : Set E} {f : E → ℝ} (hf : ConvexOn ℝ C f) :
+  ContinuousOn f (intrinsicInterior ℝ C)
+SbtCosmo.Derivation.RelativeConvexContinuity.chart_mem_nhds.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {C : Set E} {x₀ : E} (hx₀ : x₀ ∈ intrinsicInterior ℝ C) : {u | x₀ + ↑u ∈ C} ∈ nhds 0
+SbtCosmo.Derivation.RelativeConvexContinuity.continuousAt_chart.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {C : Set E} {f : E → ℝ} {x₀ : E} (hf : ConvexOn ℝ C f)
+  (hx₀ : x₀ ∈ intrinsicInterior ℝ C) : ContinuousAt (fun u => f (x₀ + ↑u)) 0
+SbtCosmo.Derivation.RelativeConvexContinuity.chart_bounded_above.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {C : Set E} {f : E → ℝ} {x₀ : E} (hf : ConvexOn ℝ C f)
+  (hx₀ : x₀ ∈ intrinsicInterior ℝ C) :
+  ∀ᶠ (u : ↥(affineSpan ℝ C).direction) in nhds 0, x₀ + ↑u ∈ C ∧ f (x₀ + ↑u) ≤ f x₀ + 1
+SbtCosmo.Derivation.RelativeDifference.difference_surjective.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] (P Q : Submodule ℝ E) : Function.Surjective ⇑(SbtCosmo.Derivation.RelativeDifference.difference P Q)
+SbtCosmo.Derivation.RelativeDifference.local_bounded_witnesses.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {C A : Set E} {f : E → ℝ} {x₀ : E} (hf : ConvexOn ℝ C f)
+  (hC : x₀ ∈ intrinsicInterior ℝ C) (hA : x₀ ∈ intrinsicInterior ℝ A) :
+  ∀ᶠ (w : ↥((affineSpan ℝ C).direction ⊔ (affineSpan ℝ A).direction)) in nhds 0,
+    ∃ x ∈ C, ∃ y ∈ A, x - y = ↑w ∧ f x ≤ f x₀ + 1
+SbtCosmo.Derivation.RelativeEqualitySupport.equality_cone_laws.{u_2} {F : Type u_2} [NormedAddCommGroup F]
+  [NormedSpace ℝ F] : SbtCosmo.Derivation.ConeClosurePrice.ConeLaws fun w => w = 0
+SbtCosmo.Derivation.RelativeEqualitySupport.local_finiteness.{u_1, u_2} {X : Type u_1} {F : Type u_2} [AddCommGroup X]
+  [Module ℝ X] [NormedAddCommGroup F] [NormedSpace ℝ F] {T : Set X} {f : X → ℝ} {star : X} {M : ℝ} (hf : ConvexOn ℝ T f)
+  (energy : X →ₗ[ℝ] F) (hmin : ∀ z ∈ T, energy z = 0 → f star ≤ f z)
+  (hupper : ∀ᶠ (w : F) in nhds 0, ∃ z ∈ T, energy z = w ∧ f z ≤ M) :
+  ∀ᶠ (w : F) in nhds 0,
+    (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts T f (⇑energy) (fun w => w = 0) w).Nonempty ∧
+      BddBelow (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts T f (⇑energy) (fun w => w = 0) w)
+SbtCosmo.Derivation.RelativeEqualitySupport.supporting_functional.{u_1, u_2} {X : Type u_1} {F : Type u_2}
+  [AddCommGroup X] [Module ℝ X] [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F] {T : Set X} {f : X → ℝ}
+  {star : X} {M : ℝ} (hf : ConvexOn ℝ T f) (energy : X →ₗ[ℝ] F) (hs : star ∈ T) (he : energy star = 0)
+  (hmin : ∀ z ∈ T, energy z = 0 → f star ≤ f z) (hupper : ∀ᶠ (w : F) in nhds 0, ∃ z ∈ T, energy z = w ∧ f z ≤ M) :
+  ∃ d, ∀ z ∈ T, f star + d (energy z) ≤ f z
+SbtCosmo.Derivation.RelativeSumSplit.split_real_relative.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [FiniteDimensional ℝ E] {C A : Set E} {f : E → ℝ} {star x₀ : E} (hf : ConvexOn ℝ C f) (hA : Convex ℝ A)
+  (hC : x₀ ∈ intrinsicInterior ℝ C) (hAr : x₀ ∈ intrinsicInterior ℝ A) (hsC : star ∈ C) (hsA : star ∈ A)
+  (hmin : ∀ x ∈ C, x ∈ A → f star ≤ f x) :
+  ∃ q, (∀ x ∈ C, f star + q (x - star) ≤ f x) ∧ SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star (-q)
+SbtCosmo.Derivation.RelativeSumSplit.split_real_support_relative.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {C A : Set E} {f : E → ℝ} {star x₀ : E} {p : E →L[ℝ] ℝ}
+  (hf : ConvexOn ℝ C f) (hA : Convex ℝ A) (hC : x₀ ∈ intrinsicInterior ℝ C) (hAr : x₀ ∈ intrinsicInterior ℝ A)
+  (hsC : star ∈ C) (hsA : star ∈ A) (hsupport : ∀ x ∈ C, x ∈ A → f star + p (x - star) ≤ f x) :
+  ∃ q n, (∀ x ∈ C, f star + q (x - star) ≤ f x) ∧ SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n ∧ q + n = p
+SbtCosmo.Derivation.RelativeSumSplit.split_subgradient.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {star x₀ : E} {p : E →L[ℝ] ℝ} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (hC : x₀ ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : x₀ ∈ intrinsicInterior ℝ A) (hp : SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn A J star p) :
+  ∃ q n,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n ∧ q + n = p
+SbtCosmo.Derivation.RelativeSumSplit.join_subgradient.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {A : Set E} {J : E → EReal} {star : E} {p q n : E →L[ℝ] ℝ}
+  (hq : SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q)
+  (hn : SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n) (heq : q + n = p) :
+  SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn A J star p
+SbtCosmo.Derivation.RelativeSumSplit.subgradient_sum_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {star x₀ : E} {p : E →L[ℝ] ℝ} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (hC : x₀ ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : x₀ ∈ intrinsicInterior ℝ A) :
+  SbtCosmo.Derivation.ConvexSubgradient.Subgradient (SbtCosmo.Derivation.ConvexSubgradient.restriction A J) star p ↔
+    ∃ q n,
+      SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n ∧ q + n = p
+SbtCosmo.Derivation.RelativeSumSplit.objective_indicator_eq_restriction.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) :
+  (fun x => J x + SbtCosmo.Derivation.ConvexSubgradient.indicator A x) =
+    SbtCosmo.Derivation.ConvexSubgradient.restriction A J
+SbtCosmo.Derivation.RelativeSumSplit.subgradient_add_indicator_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {star x₀ : E} {p : E →L[ℝ] ℝ}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J))
+  (hA : Convex ℝ A) (hC : x₀ ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : x₀ ∈ intrinsicInterior ℝ A) :
+  SbtCosmo.Derivation.ConvexSubgradient.Subgradient (fun x => J x + SbtCosmo.Derivation.ConvexSubgradient.indicator A x)
+      star p ↔
+    ∃ q n,
+      SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n ∧ q + n = p
+SbtCosmo.Derivation.RelativeSchurStationarity.restricted_epigraph_convex.{u_4} {E : Type u_4} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {A : Set E} {J : E → EReal}
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A) :
+  Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J)
+SbtCosmo.Derivation.RelativeSchurStationarity.matrix_stationarity.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  {A : Set E} {J : E → EReal} {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ xr : E}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J))
+  (hA : Convex ℝ A) (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤)
+  (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef) :
+  ∃ P q n_1,
+    P.PosSemidef ∧
+      SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n_1 ∧
+          q + fderiv ℝ (fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) star +
+                n_1 =
+              0 ∧
+            (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0
+SbtCosmo.Derivation.RelativeSchurStationarity.matrix_stationarity_nonzero.{u_1, u_2, u_3, u_4} {n : Type u_1}
+  {m : Type u_2} {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m]
+  [DecidableEq e] [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ)
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) {A : Set E} {J : E → EReal}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ xr : E} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤)
+  (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef)
+  (hs :
+    ∃ H,
+      SbtCosmo.Derivation.MatrixClosurePrice.positive H ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive (B + H) <
+          SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive B) :
+  ∃ P q n_1,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+          SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n_1 ∧
+            q + fderiv ℝ (fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) star +
+                  n_1 =
+                0 ∧
+              (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0
+SbtCosmo.Derivation.RelativeSplitExamples.intrinsicInterior_affineSubspace.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] (S : AffineSubspace ℝ E) : intrinsicInterior ℝ ↑S = ↑S
+SbtCosmo.Derivation.RelativeSplitExamples.objective_no_bottom (x : ℝ × ℝ) :
+  SbtCosmo.Derivation.RelativeSplitExamples.objective x ≠ ⊥
+SbtCosmo.Derivation.RelativeSplitExamples.objective_epigraph_convex :
+  Convex ℝ
+    (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ SbtCosmo.Derivation.RelativeSplitExamples.objective)
+SbtCosmo.Derivation.RelativeSplitExamples.objective_domain :
+  SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ SbtCosmo.Derivation.RelativeSplitExamples.objective =
+    ↑SbtCosmo.Derivation.RelativeSplitExamples.line
+SbtCosmo.Derivation.RelativeSplitExamples.objective_relative_interior :
+  intrinsicInterior ℝ
+      (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ
+        SbtCosmo.Derivation.RelativeSplitExamples.objective) =
+    ↑SbtCosmo.Derivation.RelativeSplitExamples.line
+SbtCosmo.Derivation.RelativeSplitExamples.objective_ambient_interior_empty :
+  interior
+      (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ
+        SbtCosmo.Derivation.RelativeSplitExamples.objective) =
+    ∅
+SbtCosmo.Derivation.RelativeSplitExamples.objective_restricted_support :
+  SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn {0} SbtCosmo.Derivation.RelativeSplitExamples.objective 0 0
+SbtCosmo.Derivation.RelativeSplitExamples.constructed_lower_dimensional_split :
+  ∃ q n,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.RelativeSplitExamples.objective 0 q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.NormalCone {0} 0 n ∧ q + n = 0 ∧ q ≠ 0

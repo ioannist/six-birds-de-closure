@@ -1,0 +1,668 @@
+'SbtCosmo.AORStatus.no_unstatused_residual' depends on axioms: [propext]
+'SbtCosmo.AORStatus.e0_no_unstatused' depends on axioms: [propext]
+'SbtCosmo.Adequacy.Reconciliation.schur_complement_psd_of_joint_psd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.adequacy_residual_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.p_adeq_iff_xi_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.cInner_symC_eq_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.p_adeq_quadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.projection_identity_packaged' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.joint_gram_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.projection_identity_packaged_psd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.exact_adequacy_easy_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.worked_example_residual_eq_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Adequacy.Reconciliation.worked_example_residual_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AnalyticReadout.rho_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AnalyticReadout.rho_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AnalyticReadout.wEff_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AnalyticReadout.wEff_phantom_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AnalyticReadout.toy3_density_samples_consistent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AnalyticReadout.toy3_w_samples_consistent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.BackgroundSelection.two_admitted_values_not_forced' does not depend on any axioms
+'SbtCosmo.Derivation.BackgroundSelection.same_record_different_value_no_factor' does not depend on any axioms
+'SbtCosmo.Derivation.BackgroundSelection.background_shift_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.BackgroundSelection.background_shift_not_scalar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.active_zero_multiplier_counterexample_optimizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.active_not_implies_positive_multiplier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.strict_sensitivity_positive_optimizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.strict_sensitivity_positive_kkt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.active_kkt_linear_offset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.equality_budget_offset_order_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ClosurePrice.closure_lagrangian_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.ledgerTerm_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.ledgerTerm_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.ledgerTerm_dominates_density' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.quadratic_ledger_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.annihilating_projection_shift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.feedbackForce_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.projected_feedback_blind' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.objective_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.objective_order_on_ledger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.optimizer_shift_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.simplex_projection_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.max_sub_firm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.simplex_projection_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.allocationKKT_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.projected_gradient_state_shift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.full_projected_histories' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.screenedPotential_eq_relative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.screenedPotential_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.record_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.record_eq_iff_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.absolute_price_not_descend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.admitted_absolute_price_not_descend' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.realized_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.realized_admitted_prices_not_descend' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.no_equivariant_absolute_selector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GaugeClosure.history_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.PriorObstruction.weighted_ratio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.PriorObstruction.base_counts_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.PriorObstruction.base_prior_cannot_collapse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Holonomy.hubble_holonomy_nonzero_iff_injected_disagreement_nonzero' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Holonomy.zero_disagreement_zero_holonomy' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Holonomy.e4_nonzero_holonomy_residue' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Holonomy.route_holonomy_nonzero' depends on axioms: [propext]
+'SbtCosmo.Holonomy.holonomy_current_trivial_predictive_nontrivial' depends on axioms: [propext]
+'SbtCosmo.Idempotence.image_eq_fixedSet' does not depend on any axioms
+'SbtCosmo.Idempotence.delta_zero_iff_fixed' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Idempotence.bool_lumping_delta_zero' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.LocalGlobal.globalizes_iff_in_image' does not depend on any axioms
+'SbtCosmo.LocalGlobal.countFiberList_ne_zero_iff_exists' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.LocalGlobal.fiberCard_ne_zero_iff_globalizes' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.LocalGlobal.fiberCard_eq_zero_iff_not_globalizes' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.LocalGlobal.countFiberList_eq_one_iff_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.LocalGlobal.fiberCard_eq_one_iff_unique_global' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.LocalGlobal.nat_one_lt_of_ne_zero_ne_one' depends on axioms: [propext]
+'SbtCosmo.LocalGlobal.four_status_classification' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.LocalGlobal.cddr_eta_ne_one_compatibleNonGlobal' depends on axioms: [propext]
+'SbtCosmo.LocalGlobal.cddr_eta_ne_one_semantics' depends on axioms: [propext]
+'SbtCosmo.PhantomStableReadout.toy3_crossing_count_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.PhantomStableReadout.toy3_p_dens' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.PhantomStableReadout.toy3_no_growing_mode' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.PhantomStableReadout.toy3_has_phantom_sample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.PhantomStableReadout.phantom_stable_readout_witness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.RouteMismatch.route_mismatch_nonneg' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.RouteMismatch.route_mismatch_zero_iff_commutes' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.RouteMismatch.route_mismatch_pos_witness' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.density_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.density_eq_cpl_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.exponent_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.density_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.fluid_is_log_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.density_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.same_history_additive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.expansion_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.crossing_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.exact_crossing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CPLReadout.phantom_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.both_tags_iff' depends on axioms: [propext]
+'SbtCosmo.Derivation.WindowRecords.constant_tags_fail' does not depend on any axioms
+'SbtCosmo.Derivation.WindowRecords.collapse_monotone' does not depend on any axioms
+'SbtCosmo.Derivation.WindowRecords.complement_tags_iff' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.tag_relevance_witness' does not depend on any axioms
+'SbtCosmo.Derivation.WindowRecords.tag_collapse_iff_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.record_iff_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.expanding_horizon_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.negative_horizon_tightens' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.base_negative_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.base_threshold_growth_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.population_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.population_monotone_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.population_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.two_patch_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.population_constant_tags' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRecords.population_tag_dependence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_commutes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_penrose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.spectralInverse_eq_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.gramInverse_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.projector_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.native_projected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.projector_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.complement_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.complement_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.native_complement_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_eq_positiveDefinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_zero_iff_optimal_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_zero_iff_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_zero_iff_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.exact_adequacy_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.error_native_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_error_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.optimal_residual_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.optimal_residual_loewner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_nonzero_iff_blind_witness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Adequacy.Support.projector_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.projector_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.whitened_exact_adequacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.weighted_residual_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.weighted_optimal_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_trace_zero_iff_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.weighted_gram_trace_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.weighted_residual_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.weighted_residual_zero_iff_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.residual_zero_native' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.nonfaithful_weight_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.rankOne_native_singular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.rankOne_gramInverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.rankOne_adequate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Adequacy.Support.rankOne_blind_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.localUtility_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.log_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.local_strong_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_eq_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_rationalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demand_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.marginal_eq_price_at_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.slack_price_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.penalty_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.penalty_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.kkt_strong_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.kkt_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.selected_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.kkt_global_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.kkt_unique_optimizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.price_unique_at_positive_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.kkt_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.below_unconstrained_price_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.below_unconstrained_budget_active' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.above_unconstrained_price_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.cost_value_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.cost_value_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.strictly_sensitive_price_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.price_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.active_offset_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.positive_patch_prices_equal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demo_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.changed_weights_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.demo_unique_optimizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.price_depends_on_weights' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.negative_offset_slack' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationPrice.zero_budget_price_nonunique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.component_translation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.common_shift_can_still_fire' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.component_denominator_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.self_in_upperSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.upperCard_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.tail_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.uniform_index_tail_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.nominal_level_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.sum_rankMass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.balanced_rankMass_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.rank_zero_never_rejects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.twenty_null_rank_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.omission_rejection_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.omission_rejections_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.omission_rejections_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.StagingAudit.interpolated_counterexample_rate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.cutCost_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_le_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_supergradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_scale_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_reparameterized_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.flow_potential_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.terminal_flow_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.flow_cut_weak_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.flow_value_le_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.tight_flow_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_value_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_value_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_value_derivative_active' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_value_derivative_slack' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_kkt_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_kkt_slack' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_kkt_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_kkt_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scale_value_attained_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.unit_scale_price_matches_area' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.scaled_budget_units_change_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.single_edge_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.series_path_area' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_not_individual_price' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_tensor_contraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_reduced_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_trace_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_mass_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_weight_mem_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_normalize_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.pair_normalize_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.input_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.input_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.input_reduced_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.input_self_contraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.contracted_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.contracted_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.normalized_contraction_is_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.normalized_contraction_gram' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.contraction_entropy_strictly_decreases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.entropy_not_minplus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.identical_boundary_minplus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.TensorComposition.entropy_not_boundary_minplus' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.CapacityScale.area_scale_controller_active' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.overlapping_readouts_iff_full_modes' does not depend on any axioms
+'SbtCosmo.Derivation.AccessFork.factorsThrough_iff_fiber_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.joint_access_injective' does not depend on any axioms
+'SbtCosmo.Derivation.AccessFork.recover_access' does not depend on any axioms
+'SbtCosmo.Derivation.AccessFork.joint_mediator_iff_full_state' does not depend on any axioms
+'SbtCosmo.Derivation.AccessFork.joint_mediator_iff_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.joint_mediator_discrete_fibers' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.state_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.mediator_card_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.mediator_range_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.identity_mediator_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.xorMemory_involutive' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.xorMemory_mediator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.qm_not_determine_gr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.gr_not_determine_qm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.redundant_augmentation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.qm_augmented_still_not_determine_gr' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.flipQM_involutive' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.flipGR_involutive' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.flips_commute' does not depend on any axioms
+'SbtCosmo.Derivation.AccessFork.flipQM_ne' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.flipGR_ne' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.qm_fiber_iff' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.gr_fiber_iff' depends on axioms: [propext]
+'SbtCosmo.Derivation.AccessFork.overlap_fiber_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.overlap_fiber_finset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.qm_fiber_finset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.gr_fiber_finset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.qm_completion_is_conditional_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.gr_completion_is_conditional_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.overlap_completion_is_conditional_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.completion_composition_overlap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.qm_completion_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.gr_completion_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.original_completions_commute' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AccessFork.original_conditional_means_commute' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AccessFork.original_defect_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.phase_not_determine_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.geometry_not_determine_phase' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.weights_positive' depends on axioms: [propext, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.weights_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.fiber_mass_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.phase_mean_is_conditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.geometry_mean_is_conditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.qm_block_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.gr_block_conditional' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.phase_mean_idempotent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.geometry_mean_idempotent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.ordered_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.commutator_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.weighted_conditionals_do_not_commute' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FieldAccessBlock.field_block_conditionals_do_not_commute' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.energy_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.kineticEnergy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.constant_potential_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.uniform_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.uniform_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.uniform_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.uniform_gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.constant_source_potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.uniform_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.uniform_ground' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.constant_background_fixed_point' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.all_constant_parameters_admitted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.constant_background_no_forced_value' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.zero_entry_forces_next_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.nonnegative_eigen_zero_forces_all_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.normalized_nonnegative_eigen_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.relaxed_fixed_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.normalizedRelaxed_fixes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.relaxed_real_mode_stable_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.unstable_mode_stabilized_by_damping' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Brouwer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.normSq_abs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.abs_edge_energy_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.energy_abs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.normSq_homogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.energy_homogeneous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.normSq_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.normSq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_normSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.unitFields_compact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.unitFields_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.exists_nonnegative_minimizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.nativeMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.nativeMatrix_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.nativeOperator_selfAdjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.euclidean_normSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.nativeOperator_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.minimizer_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.minimizer_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.exists_positive_ground' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.ground_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.ground_values_equal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.positive_ground_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.positiveGround_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.positiveGround_minimizer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.nonnegativeUnitFields_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.nonnegative_minimizer_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_joint_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_groundSection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_positiveGround' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.ground_abs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.ground_coordinate_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.lowest_eigen_zero_forces_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.real_lowest_eigen_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.sqrtField_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_sqrtField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_sourcePotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.continuous_probabilityMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.exists_selfConsistent_ground' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.every_background_offset_admitted' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.background_offset_no_forced_value' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.coupling_no_forced_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.complexHamiltonian_re' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.complexHamiltonian_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.complexNormSq_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.complexEnergy_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.complex_ground_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.realEmbed_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.realEmbed_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.complexSourcePotential_realEmbed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundState.complex_lowest_eigen_span' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundState.exists_native_complex_ground' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.negativeSquare_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.negativeSquare_eq_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.continuous_negativeSquare' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.hasDerivAt_negativeSquare' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.negative_energy_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.cooperative_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.weighted_velocity_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.cooperative_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.cooperative_strict_forcing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.coefficient_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.coefficient_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.coefficient_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.coefficient_strict_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.growth_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.growth_strict_in_time' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.growth_strict_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.horizon_denominator_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.live_of_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.scale_log_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.scale_acceleration_bridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.hasDerivAt_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.log_growth_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.log_velocity_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.growth_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.matter_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.ever_collapse_iff_final' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.record_history_iff_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthComparison.record_gate_parameter_downward' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.continuous_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.root_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.root_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.hasDerivAt_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.hasDerivAt_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.integrand_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.integrand_measurable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.primitive_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.growth_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.velocity_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.growth_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.velocity_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.rootSquared_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.rootLive_of_live' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.rate_eq_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.constructed_growthSolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.exists_growthSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.exists_growthSolution_of_horizon' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.continuous_safeIntegrand' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.primitive_continuous_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.root_continuous_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.rate_continuous_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.growth_continuous_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.velocity_continuous_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.finalGrowth_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.finalGrowth_strictAntiOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthExistence.finalGrowth_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.hasDerivAt_logScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.logScale_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.horizon_log_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.native_growth_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.native_velocity_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.exists_original_scale_solution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.native_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.native_endpoint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthScaleReturn.native_endpoint_strictAntiOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

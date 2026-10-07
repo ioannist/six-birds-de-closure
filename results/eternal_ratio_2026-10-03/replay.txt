@@ -1,0 +1,1 @@
+Exact 1024-cell infinite-endpoint upper certificate and both false-certificate controls passed; artifact byte replay matched.

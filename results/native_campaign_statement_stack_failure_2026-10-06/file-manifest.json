@@ -1,0 +1,72 @@
+{
+  "campaign-driver.log": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/driver.log",
+    "sha256": "b049526d009d695e4ef00e56b4b11656800ac98842f73a2169f03b6e72c6343f",
+    "bytes": 59781
+  },
+  "campaign-terminal.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/terminal.json",
+    "sha256": "78bad3c65a823cf910431d99110833e7a19f81c3699cc446b9dec598fd502e67",
+    "bytes": 422
+  },
+  "statements.log": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts/statements.log",
+    "sha256": "256df99787873bb5a33294840e0d1c8b882deda1d326fd623c3a97fb64f215c6",
+    "bytes": 12324
+  },
+  "statements-terminal.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts/statements-terminal.json",
+    "sha256": "da6fc9d4e3ce595d1130f1e573e92d3b182f8b228cf84a80882259402a3e017e",
+    "bytes": 1476
+  },
+  "CampaignStatements.lean": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts/CampaignStatements.lean",
+    "sha256": "e5cba6975d3776fd8d8ac1e88e6cb286dd3c4fbfdfedc189ab85505f2fd886d8",
+    "bytes": 1509452
+  },
+  "modules.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts/modules.json",
+    "sha256": "98df9d3eb8d139250ec1ac92537c94ab301a5e268db34f28a9a872ea260530b3",
+    "bytes": 2600549
+  },
+  "production-plan.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/production-plan.json",
+    "sha256": "e7b36f12a970f7265d706ad0223c7450d6bfe60c1961f575cae7b0d19759aded",
+    "bytes": 2282586
+  },
+  "source-object-freeze.json": {
+    "original_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/source-object-freeze.json",
+    "sha256": "eadcadf59a0ec1d65ef50c6791af0ab89a76a3b56147dc8c8dfaedc4800c47e8",
+    "bytes": 1744687
+  },
+  "integration-controller.log": {
+    "original_path": "/tmp/de_registered_integration_after_aggregate_recovery_driver.log",
+    "sha256": "40acaa87b7b516b03b65d171de4f2877c36d3d1d6b094ffff2b6873e43d48532",
+    "bytes": 741
+  },
+  "controller-failure.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_integration_run_2026-10-06/controller-failure.json",
+    "sha256": "3978e41d36a8a6a6eb8437da5b0b4dc2aecc2692b1c59177cc0fc3e8a9c646ef",
+    "bytes": 856
+  },
+  "supplement-driver.log": {
+    "original_path": "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05/driver.log",
+    "sha256": "ad6910b6a2d4c680bef9c4158a23c92955afdd2866deef9458e29f16bc763be1",
+    "bytes": 649
+  },
+  "semantic-finish-driver.log": {
+    "original_path": "/tmp/de_native_campaign_semantic_aggregate_recovery_2026-10-06/finish-driver.log",
+    "sha256": "0bc7119ffaa3f95f1014547f69bc7c42ae3779aa27cfd9d5ad211e2783f5ae8b",
+    "bytes": 633
+  },
+  "additional-driver.log": {
+    "original_path": "/tmp/de_native_additional_constructions_aggregate_recovery_2026-10-06/driver.log",
+    "sha256": "a35b16b3d1e76634ad90c9afe207fd3501cfd105a0fc5f36d6cc4466a0240bd9",
+    "bytes": 701
+  },
+  "execution-driver.log": {
+    "original_path": "/tmp/de_source_execution_supplement_aggregate_recovery_2026-10-06/driver.log",
+    "sha256": "9edd1d9d1609f1532a8b2abdf6b1e3aba521a37afebb64cd5528025eedb5951c",
+    "bytes": 697
+  }
+}

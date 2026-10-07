@@ -1,0 +1,171 @@
+{
+  "C3_KiDS_HSC_shared_stress": {
+    "rho_grid": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "status": "not_evaluated_stop_after_repro_review"
+  },
+  "C5_HSC_pipeline_budget": {
+    "status": "not_evaluated_stop_after_repro_review"
+  },
+  "G-E5-BACKEND": {
+    "pass": true,
+    "uses_recorded_env4": true
+  },
+  "G-E5-COV": {
+    "condition_threshold": 100000000.0,
+    "pass": true
+  },
+  "G-E5-CURRENCY-DECISIVE-3FAM": {
+    "all_3_of_3_rule": true,
+    "majority_rescue_used": false,
+    "pass": false,
+    "status": "not_evaluated"
+  },
+  "G-E5-IA-ENVELOPE": {
+    "certificate_evaluation": "not_run_in_C0b_FIX2",
+    "design_version": "E5-minimal-physical-v2",
+    "marginalization_required_before_D_growth": true,
+    "models": {
+      "NLA": {
+        "implemented": true,
+        "parameters": [
+          "A_IA",
+          "eta_IA",
+          "z_pivot_IA"
+        ],
+        "wide_prior": {
+          "A_IA": [
+            -6.0,
+            6.0
+          ],
+          "eta_IA": [
+            -6.0,
+            6.0
+          ]
+        }
+      },
+      "TATT": {
+        "backend": "pyccl.nl_pt.PTIntrinsicAlignmentTracer + EulerianPTCalculator",
+        "implemented": true,
+        "parameters": [
+          "A1",
+          "eta1",
+          "A2",
+          "eta2",
+          "b_ta",
+          "z_pivot_IA"
+        ],
+        "wide_prior": {
+          "A1": [
+            -6.0,
+            6.0
+          ],
+          "A2": [
+            -6.0,
+            6.0
+          ],
+          "b_ta": [
+            0.0,
+            2.0
+          ],
+          "eta1": [
+            -6.0,
+            6.0
+          ],
+          "eta2": [
+            -6.0,
+            6.0
+          ]
+        }
+      }
+    },
+    "omega_floors_required_for_certificate": [
+      "Omega_WL_shared",
+      "Omega_HSC_pipeline"
+    ],
+    "pass": true,
+    "schema_version": 1,
+    "status": "implemented_not_evaluated_certificate_stop",
+    "zero_controls_required_for_certificate": [
+      "same_family_saturation",
+      "shuffled_stages",
+      "reversed_scale_cut_order",
+      "linear_zero_heterogeneity_synthetic",
+      "held_out_staging_vector_removed_from_L_and_D",
+      "DPI_coarsening_guard"
+    ]
+  },
+  "G-E5-KERNEL": {
+    "pass": null,
+    "status": "not_evaluated_stop_after_repro_review"
+  },
+  "G-E5-NOSURR": {
+    "pass": true,
+    "status": "physical_ccl_no_surrogate_templates"
+  },
+  "G-E5-RANK": {
+    "pass": null,
+    "status": "not_evaluated_stop_after_repro_review"
+  },
+  "G-E5-REPRO": {
+    "pass": true,
+    "rule": "published S8 within quoted 1sigma where locked, plus scaled theory chi2/dof < 2; HSC REPRO uses original n(z), with DESI-recal n(z) reserved for staging",
+    "status": "pass"
+  },
+  "G-ENV-4": {
+    "max_abs_frac_Pk": 1.6478933595687195e-05,
+    "pass": true,
+    "path": "results/E5/E5_env4_pyccl_class.json",
+    "profile": {
+      "n_pk_evals": 96,
+      "pk_eval_seconds": 0.0032379962503910065,
+      "seconds_per_pk_eval": 3.372912760823965e-05,
+      "setup_plus_compute_seconds": 2.150786478072405
+    },
+    "sha256": "15c52c498d9f757acdf1dfbea8b641b42862d1ebc33abb7241d811e8eb030c41",
+    "sigma8_frac_diff": 7.517048787342162e-05,
+    "versions": {
+      "E5_DESIGN_FREEZE_expected_numpy": "1.26.4",
+      "E5_DESIGN_FREEZE_expected_pyccl": "3.1.2",
+      "classy": "v3.2.5",
+      "numpy": "1.26.4",
+      "pyccl": "3.1.2"
+    }
+  },
+  "aor_status": "zero",
+  "design_version": "E5-minimal-physical-v2",
+  "governed_input_hashes": {
+    "carrier": {
+      "path": "plan/E5_CARRIER_REALIZATION.md",
+      "sha256": "c9ca48737e10b61f40cc70c9e53a5b2c62afcb892390c21d8d70dfd4b92dc7dc"
+    },
+    "design_freeze": {
+      "path": "plan/E5_DESIGN_FREEZE.md",
+      "sha256": "fc09d10726b97814d49f96d7fdf2a1432f0ef4eb4a694e38fb459d38b9ff7997"
+    },
+    "e5_manifest": {
+      "path": "data/manifests/e5_growth_currency_inputs.json",
+      "sha256": "e31fbfa0317108caf008bf5999f03885ff6fae16f8d9fa0867dba966ced0973d"
+    },
+    "gates": {
+      "path": "plan/07-pass-fail-gates.md",
+      "sha256": "95018f9388cbc9c6815677e9fcc1896c939ed46e83e4a6966cb46b31d30ed7ee"
+    }
+  },
+  "next_front": "eddy_re_review",
+  "runtime_seconds": 0.013949759304523468,
+  "schema_version": 1,
+  "status_reason": "Substrate and TATT-capable reproduction passed; Schur carrier is not authorized until Eddy re-review.",
+  "terminal_state": "REPRO_PASSED_AWAITING_REVIEW",
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

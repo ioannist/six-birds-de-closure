@@ -1,0 +1,10 @@
+✔ [8179/8182] Built SbtCosmo.Derivation.GroundAlternating (8.5s)
+ℹ [8180/8182] Built SbtCosmo.Derivation.GroundAlternatingRelaxation (9.9s)
+info: SbtCosmo/Derivation/GroundAlternatingRelaxation.lean:52:40: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [8181/8182] Built SbtCosmo.Derivation.GroundAlternatingOrbit (6.4s)
+Build completed successfully (8182 jobs).

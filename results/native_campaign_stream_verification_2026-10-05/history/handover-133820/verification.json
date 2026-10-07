@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-05T13:38:20.620381+00:00",
+  "live": {
+    "utc": "2026-10-05T13:38:20.608138+00:00",
+    "live_jobs": 11,
+    "verified_terminal_jobs": [
+      {
+        "pid": 4049651,
+        "script": "de_native_stable15_priority_recovery/build_recovery.py",
+        "actual_terminal_exit_code": 0,
+        "recorded_audited_declarations": 27,
+        "terminal_sha256": "fcd5ae4265c47b01afb384dae86f5e0ad9ce0b658848dc544eba4c6dc2959b86"
+      }
+    ],
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 387,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 289,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 418,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": [
+      "/tmp/de_native_stable15_priority_recovery/summary.json"
+    ]
+  },
+  "new_packet_manifests": {
+    "/home/repos/six-birds-de-closure/results/original_audit_nonidentifiability_dependency_checkpoint_2026-10-05/file-manifest.json": "9796caef1568dd0f858177a48fbf77941b0198a71ae757c9e85f74b925c70e50",
+    "/home/repos/six-birds-de-closure/results/native_registered_original_audit_installation_candidate_2026-10-05/file-manifest.json": "6f166fa040eb34d20f3cacb0c98d3c0fa3f8be3e451e698beffa9cd03d36217a",
+    "/home/repos/six-birds-de-closure/results/native_registered_original_audit_verification_candidate_2026-10-05/file-manifest.json": "3e07189369790bc7495bcb5d88aa4d813d3b71d3f0ac33cd0e5ef8f137c66ae3",
+    "/home/repos/six-birds-de-closure/results/native_registered_original_audit_installer_candidate_2026-10-05/file-manifest.json": "6df0e367a9b1896287611ce4ea51c599b75e5854b7784faaf1206829e0f4151f"
+  },
+  "frozen_inputs_revalidated": 6262,
+  "completed_private_audit_freeze_revalidated": 3936,
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

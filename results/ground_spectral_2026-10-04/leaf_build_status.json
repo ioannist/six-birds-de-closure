@@ -1,0 +1,62 @@
+{
+  "total_targets": 7,
+  "batch_size": 2,
+  "terminal_batches": [
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundSpectralTests.Test000",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test001"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test000",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test001"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 143.095
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundSpectralTests.Test002",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test003"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test002",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test003"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 46.982
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundSpectralTests.Test004",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test005"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test004",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test005"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 44.355
+    },
+    {
+      "targets": [
+        "SbtCosmo.Derivation.GroundSpectralTests.Test006"
+      ],
+      "command": [
+        "lake",
+        "build",
+        "SbtCosmo.Derivation.GroundSpectralTests.Test006"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 39.317
+    }
+  ],
+  "successful_targets": 7,
+  "all_success": true
+}

@@ -1,0 +1,2 @@
+✔ [8113/8114] Built SbtCosmo.Derivation.MatrixClosurePriceExamples (9.8s)
+Build completed successfully (8114 jobs).

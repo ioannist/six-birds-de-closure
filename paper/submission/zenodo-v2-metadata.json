@@ -1,0 +1,202 @@
+{
+  "title": "The Cosmological Constant as a Contingent Modulus: A Six Birds Demarcation of Dark Energy",
+  "description": "<p>Dark energy poses several different questions at once: what kind of term the cosmological constant is, what fixes its value, why its density is comparable to that of matter today, and what current surveys say about an evolving equation of state. We study these questions in finite-dimensional mathematical models built with the Six Birds closure calculus, and for each model we separate what it determines from what it leaves as input.</p>\n<p>First, in a convex closure problem that attains its optimum and whose optimal value is finite and differentiable near the budget level, a budget whose relaxation strictly lowers the optimal cost carries a single positive price; in an allocation model with an originally binding budget, a common linear utility term leaves the optimizer unchanged and shifts only that price, as long as the shifted price stays nonnegative. Second, in a self-consistent lattice model, the convergence readouts used to admit background values do not determine the background: all eighteen sampled offsets converge, fifteen pass the sixty-update test, and neither readout recovers the input. When a global density ledger is added, the absolute background becomes a gauge coordinate that the invariant record cannot recover, and no translation-invariant probability distribution over it exists. Third, in a toy universe with structure growth and record erasure, at least ten of twelve sampled populations retain distinguishable records exactly for &minus;1/8000 &lt; &lambda; &le; &lambda;<sub>+</sub>, with 3 &lt; &lambda;<sub>+</sub> &lt; 3.4, but the ratio |&lambda;|/&rho;<sub>m</sub> at the first record is not pinned near unity. Whether the present epoch is typical then depends on a declared prior: none of five tested priors meets a declared concentration criterion, and smoothness near zero is not enough.</p>\n<p>On DESI DR2, Pantheon+ and compressed Planck data, pre-registered audits find a fitted rewrite shape compatible with a constant, show that the best-fit evolving history has a positive, regular density through its <em>w</em> = &minus;1 crossing, and flag structured dependence between supernova and BAO subsets, led by high-redshift supernovae. The statements labelled as Lean theorems are kernel-checked. None of these results identifies a model price with the physical cosmological constant or derives its value.</p>",
+  "publication_date": "2026-10-07",
+  "version": "Preprint v2.0",
+  "keywords": [
+    "dark energy",
+    "cosmological constant",
+    "Lambda-CDM",
+    "shadow prices",
+    "identifiability",
+    "coincidence problem",
+    "phantom crossing",
+    "DESI DR2",
+    "Lean",
+    "emergence calculus",
+    "Six Birds Theory"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.20713213",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.20713187",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.5281/zenodo.18494480",
+      "relation": "cites",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "10.1103/RevModPhys.61.1",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/j.crhy.2012.04.008",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1086/300499",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1086/307221",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1142/S021827180600942X",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1142/S0218271801000822",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/PhysRevLett.90.091301",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/tr6y-kpc6",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.3847/1538-4357/ac8e04",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/S0370-2693(02)02589-3",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/PhysRevD.71.023515",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1088/1361-6382/ac086d",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/j.jheap.2022.04.002",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1051/0004-6361/202039063",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1140/epjc/s10052-014-3160-4",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1080/14786443309462220",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/PhysRevD.69.101305",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/j.physrep.2012.01.001",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1146/annurev-nucl-102115-044553",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/PhysRevLett.59.2607",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1086/305016",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1088/1126-6708/2000/06/006",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1016/0370-2693(89)91251-3",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/PhysRevLett.112.091304",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1103/PhysRevLett.96.181602",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1007/s00220-016-2796-3",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1086/151605",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1086/152650",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1088/0004-637X/761/2/152",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1111/j.1745-3933.2007.00306.x",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "10.1007/978-3-030-79876-5_37",
+      "relation": "cites",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "10.1145/3372885.3373824",
+      "relation": "cites",
+      "resource_type": "publication-conferencepaper"
+    },
+    {
+      "identifier": "10.1088/1475-7516/2010/10/026",
+      "relation": "cites",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "Version 2 (7 October 2026) supersedes version 1 (17 June 2026, DOI 10.5281/zenodo.20713255). It follows a mathematical review of the supporting proofs, code and Lean development: the paper was rewritten for readability, its claims were rescoped to the declared models and readouts, and the figures and tables were regenerated from the corrected results. See the version-history appendix in the paper."
+}

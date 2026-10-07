@@ -1,0 +1,14 @@
+{
+  "checks.json": "3130f7b92bd547657c0f21435a06e3f80df8fe91015e2b64db782537bb26e52a",
+  "build_candidate.py": "0e907bb724bd7fd9e082cbd004c629f30d387b69aa0a41c995e7e6b24d272b6e",
+  "runner-stdout.log": "f0d40db4b6284ee9e831f9cf45805b41c335b67244bf77aac5aaebec84cfb7c1",
+  "candidate-stdout.log": "69b4b5256951199aa6704ab61d98c501960daa9425c95d7e3db4ad213904c6f7",
+  "runner-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "review_driver.py": "644e5e629c55c3dacd264c5aa0bf6e19fd0d57e60fd452a42ab767650335b25c",
+  "registered-stdout.log": "34ccfa36d41735d3f2fa434228aab2478e60cddc37ddd75e39c1f6f5bc1c067f",
+  "verifier_candidate.py": "0163b3935372f176d7e38c35728f45d9aaefedbb56fb234598f30c39a1533204",
+  "source_parser_reference.py": "de071d4fca3db4cf45441851be5c44816f304e1dd2b3f921008121c6ccdbada4",
+  "candidate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "README.md": "2e1792d1410ad5ea88b818079aeb4fe484dbefc41c50e1ab2bede59c7fe69264",
+  "registered-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

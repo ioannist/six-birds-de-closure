@@ -1,0 +1,25 @@
+{
+  "dataset": "SIRENS_GW170817",
+  "release": "arXiv:1709.05895",
+  "access": "summary_posterior",
+  "fetch_url": "https://arxiv.org/abs/1709.05895",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "Public LVC posterior/summary; cite LVC 2017",
+  "citation": "LIGO/Virgo Collaboration 2017, arXiv:1709.05895",
+  "raw_files": [{"path": "data/raw/sirens_gw170817/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/sirens_gw170817/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/sirens_gw170817/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "peculiar-velocity prior is a staging axis"},
+  "route": "r7_standard_siren",
+  "staging_axis": "peculiar_velocity_prior|em_redshift_treatment",
+  "model_dependent": false,
+  "recomputability": "summary_only",
+  "aor_status": "budgeted",
+  "fallback": "published asymmetric H0 posterior; Gaussianization is budgeted",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

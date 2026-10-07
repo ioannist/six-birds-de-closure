@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-06T17:02:16.554026+00:00",
+  "actual_registered_command_exits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "namespace_manifest_source_repair_files": 21,
+  "registered_families": 18,
+  "registered_build_jobs": 10003,
+  "new_axiom_queries": 6909,
+  "new_statement_queries": 6909,
+  "fresh_cumulative_axiom_queries": 11776,
+  "standard_only": true,
+  "registered_proof_objects_copied": 0,
+  "snapshots_become_historical_after_native_source_installation": true,
+  "whole_offset_verification_pending": true,
+  "native_integration_pending": true,
+  "goal_complete": false
+}

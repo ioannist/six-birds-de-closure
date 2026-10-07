@@ -1,0 +1,74 @@
+{
+  "dataset": "HSC_Y3",
+  "release": "HSC-SSP PDR3 / S19A; Dalal et al. 2023 (Fourier) + DESI-recal n(z)",
+  "access": "HSC-SSP PDR3 authenticated (account required)",
+  "fetch_url": "https://hsc-release.mtk.nao.ac.jp/archive/filetree/shape_catalog_y3/dalal23/",
+  "fetched_utc": "2026-06-01",
+  "license": "HSC public release; cite HSC Collaboration 2025",
+  "citation": "Dalal et al. 2023; HSC-SSP PDR3; DESI-recalibrated HSC-Y3",
+  "raw_files": [
+    {
+      "path": "data/raw/hsc_y3/hsc_y3_fourier_space_data_vector.sacc",
+      "sha256": "a28f9e2e088e92d96d2d87083a6eeeac4c0c84c6b48e033bd3d1dc1bf0d8958f",
+      "bytes": "~22MB (gitignored)"
+    }
+  ],
+  "processed": {
+    "data_vector": {
+      "path": "data/processed/hsc_y3/data_vector.npy",
+      "sha256": "a9e58a78d0e89a3894b2b4ce93fb4716f93b7946971eea58674229925ab5562a",
+      "shape": [
+        170
+      ],
+      "dtype": "float64"
+    },
+    "covariance": {
+      "path": "data/processed/hsc_y3/covariance.npy",
+      "sha256": "2ec1f7b6d4772c9691a42bc247455bf734c2b1d5cc07d367dcffa8e59fe0f896",
+      "shape": [
+        170,
+        170
+      ],
+      "dtype": "float64"
+    },
+    "nz_original": {
+      "path": "data/processed/hsc_y3/nz_original.npy",
+      "z": "data/processed/hsc_y3/nz_original_z.npy"
+    },
+    "nz_desi_recal": {
+      "path": "data/processed/hsc_y3_desi_recal/nz_recal.npy",
+      "z": "data/processed/hsc_y3_desi_recal/nz_recal_z.npy"
+    }
+  },
+  "bins": {
+    "tomographic_bins": 4,
+    "spectra": 10,
+    "ell_bins": 17,
+    "n_data": 170,
+    "statistic": "cl_ee (Fourier)"
+  },
+  "scale_cuts": {
+    "applied": true,
+    "note": "Dalal23 Fourier-space baseline ell bins; DESI-recal n(z) fiducial scale-cut 0.3_3"
+  },
+  "route": null,
+  "staging_axis": "photo_z",
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "original pre-DESI-recal HSC Y3 prior as comparison leg",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "extracted 2026-06-01 from HSC Fourier SACC + desi-y3-hsc recal n(z)",
+  "staging_pair": {
+    "original": "data/processed/hsc_y3/nz_original.npy",
+    "recalibrated": "data/processed/hsc_y3_desi_recal/nz_recal.npy",
+    "contrast": "ORIGINAL vs DESI-recalibrated n(z), same shear data vector+cov"
+  },
+  "data_available": true,
+  "provenance": "data/processed/hsc_y3/provenance.json",
+  "validation": {
+    "PD": true,
+    "total_SNR": 37.39
+  }
+}

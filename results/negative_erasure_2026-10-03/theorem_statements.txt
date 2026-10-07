@@ -1,0 +1,99 @@
+SbtCosmo.Derivation.GrowthNegativeBounds.integralBarrier_derivative {c L x : ℝ}
+  (hr : SbtCosmo.Derivation.GrowthExistence.RootLive c L) (hx : x ∈ Set.Icc 0 L) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthNegativeBounds.integralBarrier c)
+    (2 / 3 * (Real.exp x / SbtCosmo.Derivation.GrowthExistence.root c x)) x
+SbtCosmo.Derivation.GrowthNegativeBounds.integralBarrier_monotone {c L : ℝ}
+  (hr : SbtCosmo.Derivation.GrowthExistence.RootLive c L) :
+  MonotoneOn (SbtCosmo.Derivation.GrowthNegativeBounds.integralBarrier c) (Set.Icc 0 L)
+SbtCosmo.Derivation.GrowthNegativeBounds.growth_linear_upper {c L x : ℝ} (hL : 0 ≤ L)
+  (hr : SbtCosmo.Derivation.GrowthExistence.RootLive c L) (hc : c ≤ 0) (hx : x ∈ Set.Icc 0 L) :
+  SbtCosmo.Derivation.GrowthExistence.growth c x < 5 / 3 * Real.exp x
+SbtCosmo.Derivation.GrowthNegativeBounds.native_linear_upper {a0 a lam : ℝ} (ha0 : 0 < a0) (ha : a0 ≤ a)
+  (hlam : -(1 / a ^ 3) < lam) (hnonpos : lam ≤ 0) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a < 5 / 3 * (a / a0)
+SbtCosmo.Derivation.GrowthNegativeLower.lowerGrowth_derivative (s x : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthNegativeLower.lowerGrowth s)
+    (SbtCosmo.Derivation.GrowthNegativeLower.lowerVelocity s x) x
+SbtCosmo.Derivation.GrowthNegativeLower.lowerVelocity_derivative (s x : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthNegativeLower.lowerVelocity s)
+    (SbtCosmo.Derivation.GrowthNegativeLower.lowerAcceleration s x) x
+SbtCosmo.Derivation.GrowthNegativeLower.lower_initial (s : ℝ) :
+  SbtCosmo.Derivation.GrowthNegativeLower.lowerGrowth s 0 = 1 ∧
+    SbtCosmo.Derivation.GrowthNegativeLower.lowerVelocity s 0 = 1
+SbtCosmo.Derivation.GrowthNegativeLower.lower_matter_bounds {s x : ℝ} (hs : 0 ≤ s) (hx : 0 ≤ x) :
+  Real.exp x ≤ SbtCosmo.Derivation.GrowthNegativeLower.lowerGrowth s x ∧
+    Real.exp x ≤ SbtCosmo.Derivation.GrowthNegativeLower.lowerVelocity s x
+SbtCosmo.Derivation.GrowthNegativeLower.coefficient_negative_lower {a0 lam L x : ℝ}
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) (hs : 0 ≤ -lam * a0 ^ 3) (hx : x ∈ Set.Icc 0 L) :
+  3 / 2 * (-lam * a0 ^ 3) * Real.exp (3 * x) ≤ SbtCosmo.Derivation.GrowthComparison.coefficient a0 lam x - 3 / 2
+SbtCosmo.Derivation.GrowthNegativeLower.forcing_nonnegative {a0 lam L x : ℝ}
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) (hs : 0 ≤ -lam * a0 ^ 3) (hx : x ∈ Set.Icc 0 L) :
+  0 ≤ SbtCosmo.Derivation.GrowthNegativeLower.forcing a0 lam x
+SbtCosmo.Derivation.GrowthNegativeLower.growth_lower {a0 lam L : ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) (hs : 0 ≤ -lam * a0 ^ 3) (x : ℝ) :
+  x ∈ Set.Icc 0 L →
+    SbtCosmo.Derivation.GrowthNegativeLower.lowerGrowth (-lam * a0 ^ 3) x ≤
+      SbtCosmo.Derivation.GrowthExistence.growth (lam * a0 ^ 3) x
+SbtCosmo.Derivation.GrowthNegativeLower.native_lower {a0 a lam : ℝ} (ha0 : 0 < a0) (ha : a0 ≤ a)
+  (hlam : -(1 / a ^ 3) < lam) (hnonpos : lam ≤ 0) :
+  SbtCosmo.Derivation.GrowthNegativeLower.lowerGrowth (-lam * a0 ^ 3)
+      (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 a) ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a
+SbtCosmo.Derivation.WindowErasureData.count_at_lower :
+  (Finset.filter (SbtCosmo.Derivation.WindowErasureData.collapsedRat 17000) Finset.univ).card = 58
+SbtCosmo.Derivation.WindowErasureData.gap_certificate (i : Fin 64) :
+  SbtCosmo.Derivation.WindowErasureData.collapsedRat 17000 i ↔
+    SbtCosmo.Derivation.WindowErasureData.collapsedRat 26000 i
+SbtCosmo.Derivation.WindowErasureData.tags_at_lower :
+  SbtCosmo.Derivation.WindowSampleData.tag 0 54 = false ∧
+    SbtCosmo.Derivation.WindowErasureData.collapsedRat 17000 54 ∧
+      SbtCosmo.Derivation.WindowSampleData.tag 0 58 = true ∧ SbtCosmo.Derivation.WindowErasureData.collapsedRat 17000 58
+SbtCosmo.Derivation.WindowErasureWitness.exists_unique_turnaround :
+  ∃! t, t ∈ Set.Icc (77 / 5) (31 / 2) ∧ t ^ 3 = 4611686018427387904 / 1245155224975395
+SbtCosmo.Derivation.WindowErasureWitness.turnaround_spec :
+  77 / 5 < SbtCosmo.Derivation.WindowErasureWitness.turnaround ∧
+    SbtCosmo.Derivation.WindowErasureWitness.turnaround < 31 / 2 ∧
+      SbtCosmo.Derivation.WindowErasureWitness.turnaround ^ 3 = 4611686018427387904 / 1245155224975395
+SbtCosmo.Derivation.WindowErasureWitness.live_before_turnaround {a : ℝ} (ha : 0 < a)
+  (ht : a < SbtCosmo.Derivation.WindowErasureWitness.turnaround) :
+  -(1 / a ^ 3) < SbtCosmo.Derivation.WindowErasureWitness.outside
+SbtCosmo.Derivation.WindowErasureWitness.growth_at_fifteen :
+  17000 <
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) SbtCosmo.Derivation.WindowErasureWitness.outside 15
+SbtCosmo.Derivation.WindowErasureWitness.growth_before_turnaround {a : ℝ} (ha : 1 / 1000 ≤ a)
+  (ht : a < SbtCosmo.Derivation.WindowErasureWitness.turnaround) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) SbtCosmo.Derivation.WindowErasureWitness.outside a <
+    26000
+SbtCosmo.Derivation.WindowErasureWitness.collapse_gap (i : Fin 64) :
+  SbtCosmo.Derivation.WindowSample.delta ≤ SbtCosmo.Derivation.WindowSample.amplitude 0 i * 17000 ↔
+    SbtCosmo.Derivation.WindowSample.delta ≤ SbtCosmo.Derivation.WindowSample.amplitude 0 i * 26000
+SbtCosmo.Derivation.WindowErasureWitness.preCollapsed_iff (i : Fin 64) :
+  SbtCosmo.Derivation.WindowErasureWitness.preCollapsed i ↔
+    SbtCosmo.Derivation.WindowSample.delta ≤ SbtCosmo.Derivation.WindowSample.amplitude 0 i * 17000
+SbtCosmo.Derivation.WindowErasureWitness.pre_count :
+  (Finset.filter SbtCosmo.Derivation.WindowErasureWitness.preCollapsed Finset.univ).card = 58
+SbtCosmo.Derivation.WindowErasureWitness.pre_both_tags :
+  SbtCosmo.Derivation.WindowRecords.RecordBearing SbtCosmo.Derivation.WindowErasureWitness.preCollapsed
+    (SbtCosmo.Derivation.WindowSampleData.tag 0)
+SbtCosmo.Derivation.WindowErasureWitness.stopScale_bounds :
+  15 < SbtCosmo.Derivation.WindowErasureWitness.stopScale ∧
+    SbtCosmo.Derivation.WindowErasureWitness.stopScale < SbtCosmo.Derivation.WindowErasureWitness.turnaround
+SbtCosmo.Derivation.WindowErasureWitness.stoppedCollapsed_iff (i : Fin 64) :
+  SbtCosmo.Derivation.WindowErasureWitness.stoppedCollapsed i ↔ SbtCosmo.Derivation.WindowErasureWitness.preCollapsed i
+SbtCosmo.Derivation.WindowErasureWitness.stopped_count :
+  (Finset.filter SbtCosmo.Derivation.WindowErasureWitness.stoppedCollapsed Finset.univ).card = 58
+SbtCosmo.Derivation.WindowErasureWitness.stopped_both_tags :
+  SbtCosmo.Derivation.WindowRecords.RecordBearing SbtCosmo.Derivation.WindowErasureWitness.stoppedCollapsed
+    (SbtCosmo.Derivation.WindowSampleData.tag 0)
+SbtCosmo.Derivation.WindowErasureWitness.turnaround_before_horizon :
+  SbtCosmo.Derivation.WindowErasureWitness.turnaround < 20
+SbtCosmo.Derivation.WindowErasureWitness.turnaround_zero :
+  1 / SbtCosmo.Derivation.WindowErasureWitness.turnaround ^ 3 + SbtCosmo.Derivation.WindowErasureWitness.outside = 0
+SbtCosmo.Derivation.WindowErasureWitness.outside_excluded :
+  ¬SbtCosmo.Derivation.WindowSample.realizedGate SbtCosmo.Derivation.WindowErasureWitness.outside
+SbtCosmo.Derivation.WindowErasureWitness.no_retained (i : Fin 64) : ¬SbtCosmo.Derivation.WindowErasureWitness.retained i
+SbtCosmo.Derivation.WindowErasureWitness.final_count :
+  (Finset.filter SbtCosmo.Derivation.WindowErasureWitness.retained Finset.univ).card = 0
+SbtCosmo.Derivation.WindowErasureWitness.final_not_bearing :
+  ¬SbtCosmo.Derivation.WindowRecords.RecordBearing SbtCosmo.Derivation.WindowErasureWitness.retained
+      (SbtCosmo.Derivation.WindowSampleData.tag 0)

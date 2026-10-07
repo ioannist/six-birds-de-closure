@@ -1,0 +1,122 @@
+SbtCosmo.Derivation.WindowPatchCountData.rational_maxima_certificate (v : Bool) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowPatchCountData.maximumFalseRat v j ∧
+    0 < SbtCosmo.Derivation.WindowPatchCountData.maximumTrueRat v j ∧
+      SbtCosmo.Derivation.WindowPatchCountData.tag v j (SbtCosmo.Derivation.WindowPatchCountData.falseIndex v j) =
+          false ∧
+        SbtCosmo.Derivation.WindowPatchCountData.amplitudeRat v j
+              (SbtCosmo.Derivation.WindowPatchCountData.falseIndex v j) =
+            SbtCosmo.Derivation.WindowPatchCountData.maximumFalseRat v j ∧
+          SbtCosmo.Derivation.WindowPatchCountData.tag v j (SbtCosmo.Derivation.WindowPatchCountData.trueIndex v j) =
+              true ∧
+            SbtCosmo.Derivation.WindowPatchCountData.amplitudeRat v j
+                  (SbtCosmo.Derivation.WindowPatchCountData.trueIndex v j) =
+                SbtCosmo.Derivation.WindowPatchCountData.maximumTrueRat v j ∧
+              ∀ (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)),
+                0 ≤ SbtCosmo.Derivation.WindowPatchCountData.amplitudeRat v j i ∧
+                  (SbtCosmo.Derivation.WindowPatchCountData.tag v j i = false →
+                      SbtCosmo.Derivation.WindowPatchCountData.amplitudeRat v j i ≤
+                        SbtCosmo.Derivation.WindowPatchCountData.maximumFalseRat v j) ∧
+                    (SbtCosmo.Derivation.WindowPatchCountData.tag v j i = true →
+                      SbtCosmo.Derivation.WindowPatchCountData.amplitudeRat v j i ≤
+                        SbtCosmo.Derivation.WindowPatchCountData.maximumTrueRat v j)
+SbtCosmo.Derivation.WindowPatchCountData.rational_threshold_certificate (v : Bool) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountData.thresholdRat v j =
+    max (SbtCosmo.Derivation.WindowSampleData.deltaRat / SbtCosmo.Derivation.WindowPatchCountData.maximumFalseRat v j)
+      (SbtCosmo.Derivation.WindowSampleData.deltaRat / SbtCosmo.Derivation.WindowPatchCountData.maximumTrueRat v j)
+SbtCosmo.Derivation.WindowPatchCountData.rational_rank_certificate (v : Bool) :
+  {j |
+          SbtCosmo.Derivation.WindowPatchCountData.thresholdRat v j <
+            SbtCosmo.Derivation.WindowPatchCountData.aggregateRat v}.card =
+      9 ∧
+    {j |
+          SbtCosmo.Derivation.WindowPatchCountData.thresholdRat v j ≤
+            SbtCosmo.Derivation.WindowPatchCountData.aggregateRat v}.card =
+      10
+SbtCosmo.Derivation.WindowPatchCountData.rational_window_bounds (v : Bool) :
+  3 / 2 < SbtCosmo.Derivation.WindowPatchCountData.aggregateRat v ∧
+    SbtCosmo.Derivation.WindowPatchCountData.aggregateRat v < 20000
+SbtCosmo.Derivation.WindowPatchCountData.rational_tight_bounds :
+  1252 < SbtCosmo.Derivation.WindowPatchCountData.aggregateRat false ∧
+    SbtCosmo.Derivation.WindowPatchCountData.aggregateRat false < 1253 ∧
+      804 < SbtCosmo.Derivation.WindowPatchCountData.aggregateRat true ∧
+        SbtCosmo.Derivation.WindowPatchCountData.aggregateRat true < 805
+SbtCosmo.Derivation.WindowPatchCountData.rational_threshold_order :
+  SbtCosmo.Derivation.WindowPatchCountData.aggregateRat true < SbtCosmo.Derivation.WindowSampleData.aggregateRat ∧
+    SbtCosmo.Derivation.WindowSampleData.aggregateRat < SbtCosmo.Derivation.WindowPatchCountData.aggregateRat false
+SbtCosmo.Derivation.WindowPatchCounts.sampled_maxima (v : Bool) (j : Fin 12) :
+  (∀ (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)),
+      0 ≤ SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i) ∧
+    0 < SbtCosmo.Derivation.WindowPatchCounts.maximumFalse v j ∧
+      0 < SbtCosmo.Derivation.WindowPatchCounts.maximumTrue v j ∧
+        SbtCosmo.Derivation.WindowRecords.TagMaximum (SbtCosmo.Derivation.WindowPatchCounts.amplitude v j)
+            (SbtCosmo.Derivation.WindowPatchCountData.tag v j) false
+            (SbtCosmo.Derivation.WindowPatchCounts.maximumFalse v j) ∧
+          SbtCosmo.Derivation.WindowRecords.TagMaximum (SbtCosmo.Derivation.WindowPatchCounts.amplitude v j)
+            (SbtCosmo.Derivation.WindowPatchCountData.tag v j) true
+            (SbtCosmo.Derivation.WindowPatchCounts.maximumTrue v j)
+SbtCosmo.Derivation.WindowPatchCounts.seedThreshold_eq (v : Bool) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCounts.seedThreshold v j =
+    max (SbtCosmo.Derivation.WindowPatchCounts.delta / SbtCosmo.Derivation.WindowPatchCounts.maximumFalse v j)
+      (SbtCosmo.Derivation.WindowPatchCounts.delta / SbtCosmo.Derivation.WindowPatchCounts.maximumTrue v j)
+SbtCosmo.Derivation.WindowPatchCounts.sampled_rank_counts (v : Bool) :
+  {j |
+          SbtCosmo.Derivation.WindowPatchCounts.seedThreshold v j <
+            SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v}.card =
+      9 ∧
+    SbtCosmo.Derivation.GrowthPopulation.passingCount (SbtCosmo.Derivation.WindowPatchCounts.seedThreshold v)
+        (SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v) =
+      10
+SbtCosmo.Derivation.WindowPatchCounts.sampled_count_iff_threshold (v : Bool) (x : ℝ) :
+  10 ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount (SbtCosmo.Derivation.WindowPatchCounts.seedThreshold v) x ↔
+    SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v ≤ x
+SbtCosmo.Derivation.WindowPatchCounts.sampled_threshold_bounds (v : Bool) :
+  3 / 2 < SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v ∧
+    SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v < 20000
+SbtCosmo.Derivation.WindowPatchCounts.threshold_exact_32 :
+  SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold false = 971912828383572000768 / 776048084276875375
+SbtCosmo.Derivation.WindowPatchCounts.threshold_exact_128 :
+  SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold true = 161985471397262000128 / 201471766463730375
+SbtCosmo.Derivation.WindowPatchCounts.realized_gate_iff_seed_fraction (v : Bool) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam ↔
+    -(1 / 20 ^ 3) < lam ∧
+      4 / 5 ≤
+        ↑{j |
+                SbtCosmo.Derivation.GrowthPopulation.nativeRecord (SbtCosmo.Derivation.WindowPatchCounts.amplitude v j)
+                  (SbtCosmo.Derivation.WindowPatchCountData.tag v j) (1 / 1000) 20
+                  SbtCosmo.Derivation.WindowPatchCounts.delta lam}.card /
+          12
+SbtCosmo.Derivation.WindowPatchCounts.realized_gate_iff_threshold (v : Bool) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam ↔
+    -(1 / 8000) < lam ∧
+      SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v ≤
+        SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowPatchCounts.exists_unique_realized_window (v : Bool) :
+  ∃! upper,
+    0 < upper ∧
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) upper 20 =
+          SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v ∧
+        ∀ (lam : ℝ), SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam ↔ -(1 / 8000) < lam ∧ lam ≤ upper
+SbtCosmo.Derivation.WindowPatchCounts.upper_spec (v : Bool) :
+  0 < SbtCosmo.Derivation.WindowPatchCounts.upper v ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (SbtCosmo.Derivation.WindowPatchCounts.upper v) 20 =
+        SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v ∧
+      ∀ (lam : ℝ),
+        SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam ↔
+          -(1 / 8000) < lam ∧ lam ≤ SbtCosmo.Derivation.WindowPatchCounts.upper v
+SbtCosmo.Derivation.WindowPatchCounts.threshold_order :
+  SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold true < SbtCosmo.Derivation.WindowSample.aggregateThreshold ∧
+    SbtCosmo.Derivation.WindowSample.aggregateThreshold < SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold false
+SbtCosmo.Derivation.WindowPatchCounts.upper_order :
+  SbtCosmo.Derivation.WindowPatchCounts.upper false < SbtCosmo.Derivation.WindowEdgeCertified.upper ∧
+    SbtCosmo.Derivation.WindowEdgeCertified.upper < SbtCosmo.Derivation.WindowPatchCounts.upper true
+SbtCosmo.Derivation.WindowPatchCounts.gate_inclusions (lam : ℝ) :
+  (SbtCosmo.Derivation.WindowPatchCounts.realizedGate false lam → SbtCosmo.Derivation.WindowSample.realizedGate lam) ∧
+    (SbtCosmo.Derivation.WindowSample.realizedGate lam → SbtCosmo.Derivation.WindowPatchCounts.realizedGate true lam)
+SbtCosmo.Derivation.WindowPatchCounts.strict_gate_witnesses :
+  (SbtCosmo.Derivation.WindowSample.realizedGate SbtCosmo.Derivation.WindowEdgeCertified.upper ∧
+      ¬SbtCosmo.Derivation.WindowPatchCounts.realizedGate false SbtCosmo.Derivation.WindowEdgeCertified.upper) ∧
+    SbtCosmo.Derivation.WindowPatchCounts.realizedGate true (SbtCosmo.Derivation.WindowPatchCounts.upper true) ∧
+      ¬SbtCosmo.Derivation.WindowSample.realizedGate (SbtCosmo.Derivation.WindowPatchCounts.upper true)
+SbtCosmo.Derivation.WindowPatchCounts.zero_passes (v : Bool) : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v 0
+SbtCosmo.Derivation.WindowPatchCounts.cutoff_fails (v : Bool) :
+  ¬SbtCosmo.Derivation.WindowPatchCounts.realizedGate v (-(1 / 8000))

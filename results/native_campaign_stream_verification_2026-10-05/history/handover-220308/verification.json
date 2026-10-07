@@ -1,0 +1,79 @@
+{
+  "utc": "2026-10-05T22:03:08.774710+00:00",
+  "live": {
+    "utc": "2026-10-05T22:03:08.766684+00:00",
+    "live_jobs": 9,
+    "verified_terminal_jobs": [
+      {
+        "pid": 4049651,
+        "script": "de_native_stable15_priority_recovery/build_recovery.py",
+        "actual_terminal_exit_code": 0,
+        "recorded_audited_declarations": 27,
+        "terminal_sha256": "fcd5ae4265c47b01afb384dae86f5e0ad9ce0b658848dc544eba4c6dc2959b86"
+      },
+      {
+        "pid": 3948875,
+        "script": "de_native_stable_seed_sixty_private_build.py",
+        "audit_terminal_exit_code": 0,
+        "recorded_audited_declarations": 48,
+        "summary_sha256": "3f6e966a9c220b129732c76fceda45568476ddd34e99f33fa30fd144cbbff5ca",
+        "observed_driver_exit_code": null,
+        "driver_completion_evidence": "Expected handle absent/changed; all required compiler exit0 markers, parsed audit exit0 and final driver success footer verified. No separately captured Python exit code."
+      },
+      {
+        "pid": 940127,
+        "script": "de_native_stable_prefix_failures_private_build.py",
+        "audit_terminal_exit_code": 0,
+        "recorded_audited_declarations": 6,
+        "summary_sha256": "ad9bfc82dd32101d63312cb3bcab20385b2b1c18e1c54b09f01713fb39b17e76",
+        "observed_driver_exit_code": null,
+        "driver_completion_evidence": "Expected handle absent/changed; all required compiler exit0 markers, parsed audit exit0 and final driver success footer verified. No separately captured Python exit code."
+      }
+    ],
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 569,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 289,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 913,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": [
+      "/tmp/de_native_stable15_priority_recovery/summary.json"
+    ]
+  },
+  "offset_plan_sha256": "ace23ef1b355c2208f462561e9d3dc98823e1cc7e660e6ba0b5e3e4f50aa2ce6",
+  "native_plan_sha256": "d359b26de59653a6f61bff44d842334df908113674cd8df5447acf6f17af973a",
+  "entrypoint_sha256": {
+    "/tmp/de_offset_header_install_journal_candidate.py": "b4c76cc262e43cc9845db9d8e1de366ee2634c3c673bdb554497f325532a6333",
+    "/tmp/de_native_registered_install_original_audit_journal_candidate.py": "03d52766a28e85d53b44f58d445e8f0b30e047abbc20c871fe7d14be55abb52c",
+    "/tmp/de_native_registered_verify_original_audit_candidate.py": "825a3d5fcec68bf3beb65ffde15954d6abaad84875c648196a60132c3f4c7ebc",
+    "/tmp/de_native_registered_build_original_audit_candidate.py": "870555e655fe940b2821429f57db01656e39cf090aa83a36c1eb61734763ffef",
+    "/tmp/de_offset_registered_cumulative_audit_candidate.py": "88692a391ac5d55121adfb8d9c498add54ced3d53151e9ebd1f3935a64bf4659"
+  },
+  "frozen_inputs_revalidated": 6262,
+  "completed_private_audit_freeze_revalidated": 3936,
+  "registered_sources_changed": false,
+  "goal_complete": false,
+  "physical_scope_note_sha256": "183713d6d11f2a64ce3832901011cf57f1d37227f5e286b35e698fc0b33206f5",
+  "regular_finite_packet_summary_sha256": "8be6b10f834e21b9c40c7ce3111a9f86118b2c7675294f4d88a1321517bbc112",
+  "live_poll_helper_sha256": "7faf8d5dd8556492279a32341f2650a023325c43fe5f85e934ad1f493760a84d",
+  "physical_frame_transfer_required_for_completion": false
+}

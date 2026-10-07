@@ -1,0 +1,1769 @@
+{
+  "aor_status": "budgeted",
+  "caveat": "Compressed-CMB track substitutes Planck distance priors for the full Planck clik/C_l likelihood; tight reproduction gates should be interpreted with that sanctioned budgeted substitution.",
+  "evidence": {
+    "C2": {
+      "lnB_w0wa_minus_lcdm": -0.9681933709084518,
+      "lnZ_err_lcdm": 0.1797565910345925,
+      "lnZ_err_w0wa": 0.1983111646563036,
+      "lnZ_lcdm": -25.293644867931814,
+      "lnZ_w0wa": -26.261838238840266,
+      "status": "computed"
+    },
+    "C3": {
+      "lnB_w0wa_minus_lcdm": 0.49573904710257466,
+      "lnZ_err_lcdm": 0.21037949499340308,
+      "lnZ_err_w0wa": 0.2301665270210331,
+      "lnZ_lcdm": -752.673343943656,
+      "lnZ_w0wa": -752.1776048965535,
+      "status": "computed"
+    },
+    "C4": {
+      "lnB_w0wa_minus_lcdm": 1.2875179008342528,
+      "lnZ_err_lcdm": 0.19653921649111514,
+      "lnZ_err_w0wa": 0.21509368595822473,
+      "lnZ_lcdm": -43.40463840299764,
+      "lnZ_w0wa": -42.11712050216339,
+      "status": "computed"
+    },
+    "C5": {
+      "lnB_w0wa_minus_lcdm": 7.739305755893724,
+      "lnZ_err_lcdm": 0.2115489726893981,
+      "lnZ_err_w0wa": 0.22879907333656693,
+      "lnZ_lcdm": -870.2920175168065,
+      "lnZ_w0wa": -862.5527117609128,
+      "status": "computed"
+    }
+  },
+  "experiment": "E1",
+  "gates": {
+    "G-E1-REPRO-AOR": {
+      "missing": [],
+      "pass": true,
+      "status": "computed"
+    },
+    "G-E1-REPRO-BACKEND": {
+      "pass": null,
+      "status": "requires_camb_control_runs"
+    },
+    "G-E1-REPRO-CHI2": {
+      "pass": true,
+      "status": "reference_unavailable",
+      "value": {
+        "C2": {
+          "citation": "Not published as an absolute per-combination total in arXiv:2503.14738",
+          "delta_chi2_map": -12.5,
+          "note": "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC).",
+          "sigma_dynamical_de": 3.1,
+          "status": "reference_unavailable"
+        },
+        "C3": {
+          "citation": "Not published as an absolute per-combination total in arXiv:2503.14738",
+          "delta_chi2_map": -10.7,
+          "note": "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC).",
+          "sigma_dynamical_de": 2.8,
+          "status": "reference_unavailable"
+        },
+        "C4": {
+          "citation": "Not published as an absolute per-combination total in arXiv:2503.14738",
+          "delta_chi2_map": -17.4,
+          "note": "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC).",
+          "sigma_dynamical_de": 3.8,
+          "status": "reference_unavailable"
+        },
+        "C5": {
+          "citation": "Not published as an absolute per-combination total in arXiv:2503.14738",
+          "delta_chi2_map": -21.0,
+          "note": "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC).",
+          "sigma_dynamical_de": 4.2,
+          "status": "reference_unavailable"
+        }
+      }
+    },
+    "G-E1-REPRO-CMBONLY": {
+      "pass": true,
+      "status": "computed",
+      "value": {
+        "H0": 67.357738,
+        "citation": "Planck 2018 VI, arXiv:1807.06209, abstract rounds to 67.4 +/- 0.5; Table \\ref{table:default} gives 67.36 +/- 0.54 for TT,TE,EE+lowE+lensing",
+        "delta": -0.042262000000008015,
+        "published_H0_mean": 67.4,
+        "published_H0_sigma": 0.5
+      }
+    },
+    "G-E1-REPRO-CONTOUR": {
+      "missing": [],
+      "pass": false,
+      "status": "computed",
+      "value": {
+        "C2": {
+          "parameters": {
+            "w0": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row",
+              "mean_delta_fraction": 0.05133133895143474,
+              "mean_tolerance_fraction": 0.05,
+              "pass": false,
+              "published_mean": -0.42,
+              "published_sigma": 0.21,
+              "recovered_mean": -0.4415591623596026,
+              "recovered_sigma": 0.21219103604857062,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row",
+              "sigma_delta_fraction": 0.010433504993193463,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            },
+            "wa": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row",
+              "mean_delta_fraction": 0.04331949267416808,
+              "mean_tolerance_fraction": 0.05,
+              "pass": true,
+              "published_mean": -1.75,
+              "published_sigma": 0.58,
+              "recovered_mean": -1.6741908878202059,
+              "recovered_sigma": 0.6182697622124745,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row",
+              "sigma_delta_fraction": 0.06598234864219756,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            }
+          },
+          "status": "computed"
+        },
+        "C3": {
+          "parameters": {
+            "w0": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row",
+              "mean_delta_fraction": 0.05418074111796182,
+              "mean_tolerance_fraction": 0.05,
+              "pass": false,
+              "published_mean": -0.838,
+              "published_sigma": 0.055,
+              "recovered_mean": -0.792596538943148,
+              "recovered_sigma": 0.05687645428588329,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row",
+              "sigma_delta_fraction": 0.03411735065242343,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            },
+            "wa": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row",
+              "mean_delta_fraction": 0.15222208918263286,
+              "mean_tolerance_fraction": 0.05,
+              "pass": false,
+              "published_mean": -0.62,
+              "published_sigma": 0.205,
+              "recovered_mean": -0.7143776952932324,
+              "recovered_sigma": 0.22981778516929824,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row; average of +0.22/-0.19",
+              "sigma_delta_fraction": 0.12106236667950367,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            }
+          },
+          "status": "computed"
+        },
+        "C4": {
+          "parameters": {
+            "w0": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row",
+              "mean_delta_fraction": 0.021417054315939304,
+              "mean_tolerance_fraction": 0.05,
+              "pass": true,
+              "published_mean": -0.667,
+              "published_sigma": 0.088,
+              "recovered_mean": -0.6812851752287316,
+              "recovered_sigma": 0.08944481037611463,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row",
+              "sigma_delta_fraction": 0.016418299728575343,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            },
+            "wa": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row",
+              "mean_delta_fraction": 0.06259268404371876,
+              "mean_tolerance_fraction": 0.05,
+              "pass": false,
+              "published_mean": -1.09,
+              "published_sigma": 0.29,
+              "recovered_mean": -1.0217739743923466,
+              "recovered_sigma": 0.30823570364107855,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row; average of +0.31/-0.27",
+              "sigma_delta_fraction": 0.0628817366933744,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            }
+          },
+          "status": "computed"
+        },
+        "C5": {
+          "parameters": {
+            "w0": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row",
+              "mean_delta_fraction": 0.06358222276539091,
+              "mean_tolerance_fraction": 0.05,
+              "pass": false,
+              "published_mean": -0.752,
+              "published_sigma": 0.057,
+              "recovered_mean": -0.704186168480426,
+              "recovered_sigma": 0.061007268028218375,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row",
+              "sigma_delta_fraction": 0.07030294786348024,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            },
+            "wa": {
+              "mean_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row",
+              "mean_delta_fraction": 0.13516040636115512,
+              "mean_tolerance_fraction": 0.05,
+              "pass": false,
+              "published_mean": -0.86,
+              "published_sigma": 0.215,
+              "recovered_mean": -0.9762379494705934,
+              "recovered_sigma": 0.25755840760688764,
+              "sigma_citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row; average of +0.23/-0.20",
+              "sigma_delta_fraction": 0.19794608189250068,
+              "sigma_tolerance_fraction": 0.15,
+              "stat_source": "chain_files"
+            }
+          },
+          "status": "computed"
+        }
+      }
+    },
+    "G-E1-REPRO-CONV": {
+      "pass": false,
+      "status": "computed"
+    },
+    "G-E1-REPRO-DET": {
+      "pass": false,
+      "status": "computed"
+    },
+    "G-E1-REPRO-NO-SBT": {
+      "pass": true,
+      "status": "lint_enforced_by_tests"
+    },
+    "G-E1-REPRO-PD": {
+      "pass": null,
+      "status": "delegated_to_data_integrity_report"
+    },
+    "G-E1-REPRO-QUAD": {
+      "pass": true,
+      "status": "computed",
+      "value": {
+        "C2": {
+          "H0": 64.09883086541066,
+          "Omega_m": 0.3476238485433398,
+          "omega_b": 0.022372521294255317,
+          "omega_cdm": 0.1198101114345602,
+          "w0_fld": -0.4920674360447106,
+          "wa_fld": -1.4923009832618637
+        },
+        "C3": {
+          "H0": 67.02732787746721,
+          "Omega_m": 0.31624159647164296,
+          "omega_b": 0.022417285437115828,
+          "omega_cdm": 0.11901520493213559,
+          "sn_M": -0.16626792073538965,
+          "w0_fld": -0.7946824224094571,
+          "wa_fld": -0.6731772288179667
+        },
+        "C4": {
+          "H0": 66.08980153981759,
+          "Omega_m": 0.3258740994767254,
+          "omega_b": 0.02239345381838938,
+          "omega_cdm": 0.11929965991538365,
+          "sn_M": -0.1665757589585004,
+          "w0_fld": -0.6901962176048091,
+          "wa_fld": -0.9654828206805912
+        },
+        "C5": {
+          "H0": 66.39158838332808,
+          "Omega_m": 0.32284135084805965,
+          "omega_b": 0.022404735949341743,
+          "omega_cdm": 0.11925447161590778,
+          "sn_M": -0.05892510313660271,
+          "w0_fld": -0.7146356297004206,
+          "wa_fld": -0.9134769067311765
+        }
+      }
+    },
+    "G-E1-REPRO-SIG-BAOCMB": {
+      "pass": false,
+      "status": "computed",
+      "value": {
+        "citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 3.1 sigma for DESI+CMB",
+        "computed": {
+          "delta_chi2": 7.584661911021681,
+          "delta_k": 2,
+          "p_value": 0.022542993845746078,
+          "sigma": 2.281092162088916,
+          "status": "computed"
+        },
+        "delta_sigma": 0.8189078379110839,
+        "evidence": {
+          "lnB_w0wa_minus_lcdm": -0.9681933709084518,
+          "lnZ_err_lcdm": 0.1797565910345925,
+          "lnZ_err_w0wa": 0.1983111646563036,
+          "lnZ_lcdm": -25.293644867931814,
+          "lnZ_w0wa": -26.261838238840266,
+          "status": "computed"
+        },
+        "lnB_positive": false,
+        "published_sigma": 3.1,
+        "tolerance_sigma": 0.4
+      }
+    },
+    "G-E1-REPRO-SIG-SN": {
+      "missing": [],
+      "pass": false,
+      "status": "computed",
+      "value": {
+        "comparisons": {
+          "C3": {
+            "citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 2.8 sigma for DESI+CMB+Pantheon+",
+            "computed_sigma": 3.264923621828024,
+            "delta_sigma": 0.4649236218280244,
+            "evidence": {
+              "lnB_w0wa_minus_lcdm": 0.49573904710257466,
+              "lnZ_err_lcdm": 0.21037949499340308,
+              "lnZ_err_w0wa": 0.2301665270210331,
+              "lnZ_lcdm": -752.673343943656,
+              "lnZ_w0wa": -752.1776048965535,
+              "status": "computed"
+            },
+            "hard_fail_band": [
+              2.5,
+              4.5
+            ],
+            "inside_hard_fail_band": true,
+            "inside_published_band": true,
+            "lnB_positive": true,
+            "published_band": [
+              2.8,
+              4.2
+            ],
+            "published_sigma": 2.8,
+            "status": "computed"
+          },
+          "C4": {
+            "citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 3.8 sigma for DESI+CMB+Union3",
+            "computed_sigma": 3.226433874833542,
+            "delta_sigma": -0.5735661251664577,
+            "evidence": {
+              "lnB_w0wa_minus_lcdm": 1.2875179008342528,
+              "lnZ_err_lcdm": 0.19653921649111514,
+              "lnZ_err_w0wa": 0.21509368595822473,
+              "lnZ_lcdm": -43.40463840299764,
+              "lnZ_w0wa": -42.11712050216339,
+              "status": "computed"
+            },
+            "hard_fail_band": [
+              2.5,
+              4.5
+            ],
+            "inside_hard_fail_band": true,
+            "inside_published_band": true,
+            "lnB_positive": true,
+            "published_band": [
+              2.8,
+              4.2
+            ],
+            "published_sigma": 3.8,
+            "status": "computed"
+          },
+          "C5": {
+            "citation": "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 4.2 sigma for DESI+CMB+DESY5",
+            "computed_sigma": 4.869638412784794,
+            "delta_sigma": 0.6696384127847939,
+            "evidence": {
+              "lnB_w0wa_minus_lcdm": 7.739305755893724,
+              "lnZ_err_lcdm": 0.2115489726893981,
+              "lnZ_err_w0wa": 0.22879907333656693,
+              "lnZ_lcdm": -870.2920175168065,
+              "lnZ_w0wa": -862.5527117609128,
+              "status": "computed"
+            },
+            "hard_fail_band": [
+              2.5,
+              4.5
+            ],
+            "inside_hard_fail_band": false,
+            "inside_published_band": false,
+            "lnB_positive": true,
+            "published_band": [
+              2.8,
+              4.2
+            ],
+            "published_sigma": 4.2,
+            "status": "computed"
+          }
+        },
+        "lnB_values": [
+          0.49573904710257466,
+          1.2875179008342528,
+          7.739305755893724
+        ],
+        "recovered_sigmas": [
+          3.264923621828024,
+          3.226433874833542,
+          4.869638412784794
+        ],
+        "recovered_spread": 1.6432045379512519,
+        "spread_collapse_minimum": 0.5,
+        "spread_ok": true
+      }
+    }
+  },
+  "prefer_dynesty": true,
+  "reference": {
+    "aor_status": "reference",
+    "path": "/home/repos/six-birds-de-closure/configs/references/desi_dr2_published.yaml",
+    "schema_version": 1
+  },
+  "run_glob": "E1C_*",
+  "run_id": "E1C_full",
+  "runs": {
+    "C1": {
+      "lcdm": {
+        "bestfit": {
+          "H0": 67.357738,
+          "Omega_m": 0.31564982,
+          "omega_b": 0.022359837,
+          "omega_cdm": 0.12020834
+        },
+        "chain_files": [
+          "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain1.1.txt",
+          "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain2.1.txt",
+          "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain3.1.txt",
+          "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain4.1.txt"
+        ],
+        "chi2": 2.4380689e-06,
+        "determinism": {
+          "chain_bitwise_determinism_claimed": false,
+          "checked": true,
+          "first_loglike": -2.1045264,
+          "forward_eval_omp_num_threads": 1,
+          "pass": true,
+          "point": {
+            "H0": 67.4,
+            "omega_b": 0.02236,
+            "omega_cdm": 0.12
+          },
+          "relative_difference": 0.0,
+          "second_loglike": -2.1045264
+        },
+        "diagnostics": {
+          "chain_files": [
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain1.1.txt",
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain2.1.txt",
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain3.1.txt",
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain4.1.txt"
+          ],
+          "chain_prefixes": [
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain1",
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain2",
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain3",
+            "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain4"
+          ],
+          "chain_results": [
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain1.1.txt"
+              ],
+              "chain_index": 1,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain1",
+                "--force",
+                "runs/E1/E1C_C1_lcdm/cobaya/mcmc_chain1.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_lcdm/logs/mcmc_chain1.log",
+              "prefix": "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain1",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain2.1.txt"
+              ],
+              "chain_index": 2,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain2",
+                "--force",
+                "runs/E1/E1C_C1_lcdm/cobaya/mcmc_chain2.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_lcdm/logs/mcmc_chain2.log",
+              "prefix": "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain2",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain3.1.txt"
+              ],
+              "chain_index": 3,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain3",
+                "--force",
+                "runs/E1/E1C_C1_lcdm/cobaya/mcmc_chain3.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_lcdm/logs/mcmc_chain3.log",
+              "prefix": "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain3",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain4.1.txt"
+              ],
+              "chain_index": 4,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain4",
+                "--force",
+                "runs/E1/E1C_C1_lcdm/cobaya/mcmc_chain4.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_lcdm/logs/mcmc_chain4.log",
+              "prefix": "runs/E1/E1C_C1_lcdm/chains/C1_lcdm_chain4",
+              "returncode": 0
+            }
+          ],
+          "draws_per_chain_used": 13792,
+          "failed_chains": [],
+          "logs": [
+            "runs/E1/E1C_C1_lcdm/logs/mcmc_chain1.log",
+            "runs/E1/E1C_C1_lcdm/logs/mcmc_chain2.log",
+            "runs/E1/E1C_C1_lcdm/logs/mcmc_chain3.log",
+            "runs/E1/E1C_C1_lcdm/logs/mcmc_chain4.log"
+          ],
+          "max_rhat_minus_one": 0.0016340955089673148,
+          "min_ess": 3615.20723584734,
+          "n_chains": 4,
+          "returncode": 0,
+          "stop_reason": "max_samples_then_rhat",
+          "total_samples": 56919
+        },
+        "logZ": null,
+        "logZ_err": null,
+        "run_id": "E1C_C1_lcdm",
+        "sampler": "mcmc"
+      },
+      "w0wa": {
+        "bestfit": {
+          "H0": 94.82595432321608,
+          "Omega_m": 0.15925823495269276,
+          "omega_b": 0.02236142953917306,
+          "omega_cdm": 0.12019877245099965,
+          "w0_fld": -1.3189936680946512,
+          "wa_fld": -2.7130333057929885
+        },
+        "chain_files": [
+          "runs/E1/E1C_C1_w0wa_dyn/chains/C1_w0wa_dyn.1.txt"
+        ],
+        "chi2": 0.0008156657593919001,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 16848,
+          "logZ": -18.233706019224122,
+          "logZ_err": 0.18137590461678843,
+          "max_rhat_minus_one": null,
+          "min_ess": 3880.3529337428267,
+          "ncall": 367641,
+          "niter": 16048,
+          "nlive": 800
+        },
+        "logZ": -18.233706019224122,
+        "logZ_err": 0.18137590461678843,
+        "run_id": "E1C_C1_w0wa_dyn",
+        "sampler": "dynesty"
+      },
+      "wcdm": {
+        "bestfit": {
+          "H0": 67.399755,
+          "Omega_m": 0.31528501,
+          "omega_b": 0.022358423,
+          "omega_cdm": 0.12022276,
+          "w0_fld": -1.0016439
+        },
+        "chain_files": [
+          "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain1.1.txt",
+          "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain2.1.txt",
+          "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain3.1.txt",
+          "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain4.1.txt"
+        ],
+        "chi2": 0.00017003842,
+        "determinism": {
+          "chain_bitwise_determinism_claimed": false,
+          "checked": true,
+          "first_loglike": -3.4908207,
+          "forward_eval_omp_num_threads": 1,
+          "pass": true,
+          "point": {
+            "H0": 67.4,
+            "omega_b": 0.02236,
+            "omega_cdm": 0.12,
+            "w0_fld": -1.0
+          },
+          "relative_difference": 0.0,
+          "second_loglike": -3.4908207
+        },
+        "diagnostics": {
+          "chain_files": [
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain1.1.txt",
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain2.1.txt",
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain3.1.txt",
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain4.1.txt"
+          ],
+          "chain_prefixes": [
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain1",
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain2",
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain3",
+            "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain4"
+          ],
+          "chain_results": [
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain1.1.txt"
+              ],
+              "chain_index": 1,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain1",
+                "--force",
+                "runs/E1/E1C_C1_wcdm/cobaya/mcmc_chain1.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_wcdm/logs/mcmc_chain1.log",
+              "prefix": "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain1",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain2.1.txt"
+              ],
+              "chain_index": 2,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain2",
+                "--force",
+                "runs/E1/E1C_C1_wcdm/cobaya/mcmc_chain2.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_wcdm/logs/mcmc_chain2.log",
+              "prefix": "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain2",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain3.1.txt"
+              ],
+              "chain_index": 3,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain3",
+                "--force",
+                "runs/E1/E1C_C1_wcdm/cobaya/mcmc_chain3.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_wcdm/logs/mcmc_chain3.log",
+              "prefix": "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain3",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain4.1.txt"
+              ],
+              "chain_index": 4,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain4",
+                "--force",
+                "runs/E1/E1C_C1_wcdm/cobaya/mcmc_chain4.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C1_wcdm/logs/mcmc_chain4.log",
+              "prefix": "runs/E1/E1C_C1_wcdm/chains/C1_wcdm_chain4",
+              "returncode": 0
+            }
+          ],
+          "draws_per_chain_used": 33377,
+          "failed_chains": [],
+          "logs": [
+            "runs/E1/E1C_C1_wcdm/logs/mcmc_chain1.log",
+            "runs/E1/E1C_C1_wcdm/logs/mcmc_chain2.log",
+            "runs/E1/E1C_C1_wcdm/logs/mcmc_chain3.log",
+            "runs/E1/E1C_C1_wcdm/logs/mcmc_chain4.log"
+          ],
+          "max_rhat_minus_one": 0.02015566580409711,
+          "min_ess": 187.89053582111876,
+          "n_chains": 4,
+          "returncode": 0,
+          "stop_reason": "max_samples_then_rhat",
+          "total_samples": 144631
+        },
+        "logZ": null,
+        "logZ_err": null,
+        "run_id": "E1C_C1_wcdm",
+        "sampler": "mcmc"
+      }
+    },
+    "C2": {
+      "lcdm": {
+        "bestfit": {
+          "H0": 68.47861673438562,
+          "Omega_m": 0.3004958487145463,
+          "omega_b": 0.022534424539214427,
+          "omega_cdm": 0.1177335317933222
+        },
+        "chain_files": [
+          "runs/E1/E1C_C2_lcdm_dyn/chains/C2_lcdm_dyn.1.txt"
+        ],
+        "chi2": 14.747574061708988,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 16701,
+          "logZ": -25.293644867931814,
+          "logZ_err": 0.1797565910345925,
+          "max_rhat_minus_one": null,
+          "min_ess": 3727.604883327204,
+          "ncall": 333728,
+          "niter": 15901,
+          "nlive": 800
+        },
+        "logZ": -25.293644867931814,
+        "logZ_err": 0.1797565910345925,
+        "run_id": "E1C_C2_lcdm_dyn",
+        "sampler": "dynesty"
+      },
+      "w0wa": {
+        "bestfit": {
+          "H0": 64.09883086541066,
+          "Omega_m": 0.3476238485433398,
+          "omega_b": 0.022372521294255317,
+          "omega_cdm": 0.1198101114345602,
+          "w0_fld": -0.4920674360447106,
+          "wa_fld": -1.4923009832618637
+        },
+        "chain_files": [
+          "runs/E1/E1C_C2_w0wa_dyn/chains/C2_w0wa_dyn.1.txt"
+        ],
+        "chi2": 7.1629121506873075,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 20000,
+          "logZ": -26.261838238840266,
+          "logZ_err": 0.1983111646563036,
+          "max_rhat_minus_one": null,
+          "min_ess": 4368.934637625613,
+          "ncall": 454091,
+          "niter": 19527,
+          "nlive": 800
+        },
+        "logZ": -26.261838238840266,
+        "logZ_err": 0.1983111646563036,
+        "run_id": "E1C_C2_w0wa_dyn",
+        "sampler": "dynesty"
+      },
+      "wcdm": {
+        "bestfit": {
+          "H0": 68.465241,
+          "Omega_m": 0.30079888,
+          "omega_b": 0.022496301,
+          "omega_cdm": 0.11785866,
+          "w0_fld": -1.0020817
+        },
+        "chain_files": [
+          "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain1.1.txt",
+          "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain2.1.txt",
+          "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain3.1.txt",
+          "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain4.1.txt"
+        ],
+        "chi2": 14.791375,
+        "determinism": {
+          "chain_bitwise_determinism_claimed": false,
+          "checked": true,
+          "first_loglike": -17.853269,
+          "forward_eval_omp_num_threads": 1,
+          "pass": true,
+          "point": {
+            "H0": 67.4,
+            "omega_b": 0.02236,
+            "omega_cdm": 0.12,
+            "w0_fld": -1.0
+          },
+          "relative_difference": 0.0,
+          "second_loglike": -17.853269
+        },
+        "diagnostics": {
+          "chain_files": [
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain1.1.txt",
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain2.1.txt",
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain3.1.txt",
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain4.1.txt"
+          ],
+          "chain_prefixes": [
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain1",
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain2",
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain3",
+            "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain4"
+          ],
+          "chain_results": [
+            {
+              "chain_files": [
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain1.1.txt"
+              ],
+              "chain_index": 1,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain1",
+                "--force",
+                "runs/E1/E1C_C2_wcdm/cobaya/mcmc_chain1.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C2_wcdm/logs/mcmc_chain1.log",
+              "prefix": "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain1",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain2.1.txt"
+              ],
+              "chain_index": 2,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain2",
+                "--force",
+                "runs/E1/E1C_C2_wcdm/cobaya/mcmc_chain2.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C2_wcdm/logs/mcmc_chain2.log",
+              "prefix": "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain2",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain3.1.txt"
+              ],
+              "chain_index": 3,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain3",
+                "--force",
+                "runs/E1/E1C_C2_wcdm/cobaya/mcmc_chain3.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C2_wcdm/logs/mcmc_chain3.log",
+              "prefix": "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain3",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain4.1.txt"
+              ],
+              "chain_index": 4,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain4",
+                "--force",
+                "runs/E1/E1C_C2_wcdm/cobaya/mcmc_chain4.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C2_wcdm/logs/mcmc_chain4.log",
+              "prefix": "runs/E1/E1C_C2_wcdm/chains/C2_wcdm_chain4",
+              "returncode": 0
+            }
+          ],
+          "draws_per_chain_used": 15253,
+          "failed_chains": [],
+          "logs": [
+            "runs/E1/E1C_C2_wcdm/logs/mcmc_chain1.log",
+            "runs/E1/E1C_C2_wcdm/logs/mcmc_chain2.log",
+            "runs/E1/E1C_C2_wcdm/logs/mcmc_chain3.log",
+            "runs/E1/E1C_C2_wcdm/logs/mcmc_chain4.log"
+          ],
+          "max_rhat_minus_one": 0.005866016192662471,
+          "min_ess": 1231.284819170996,
+          "n_chains": 4,
+          "returncode": 0,
+          "stop_reason": "max_samples_then_rhat",
+          "total_samples": 61380
+        },
+        "logZ": null,
+        "logZ_err": null,
+        "run_id": "E1C_C2_wcdm",
+        "sampler": "mcmc"
+      }
+    },
+    "C3": {
+      "lcdm": {
+        "bestfit": {
+          "H0": 68.31211637567156,
+          "Omega_m": 0.3026666725919364,
+          "omega_b": 0.022504598886116268,
+          "omega_cdm": 0.1180919817160116,
+          "sn_M": -0.15290251260826082
+        },
+        "chain_files": [
+          "runs/E1/E1C_C3_lcdm_dyn/chains/C3_lcdm_dyn.1.txt"
+        ],
+        "chi2": 1455.8036842117926,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 20000,
+          "logZ": -752.673343943656,
+          "logZ_err": 0.21037949499340308,
+          "max_rhat_minus_one": null,
+          "min_ess": 4112.394523610178,
+          "ncall": 479018,
+          "niter": 21394,
+          "nlive": 800
+        },
+        "logZ": -752.673343943656,
+        "logZ_err": 0.21037949499340308,
+        "run_id": "E1C_C3_lcdm_dyn",
+        "sampler": "dynesty"
+      },
+      "w0wa": {
+        "bestfit": {
+          "H0": 67.02732787746721,
+          "Omega_m": 0.31624159647164296,
+          "omega_b": 0.022417285437115828,
+          "omega_cdm": 0.11901520493213559,
+          "sn_M": -0.16626792073538965,
+          "w0_fld": -0.7946824224094571,
+          "wa_fld": -0.6731772288179667
+        },
+        "chain_files": [
+          "runs/E1/E1C_C3_w0wa_dyn/chains/C3_w0wa_dyn.1.txt"
+        ],
+        "chi2": 1442.1695654295688,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 20000,
+          "logZ": -752.1776048965535,
+          "logZ_err": 0.2301665270210331,
+          "max_rhat_minus_one": null,
+          "min_ess": 5046.685387980325,
+          "ncall": 649656,
+          "niter": 26342,
+          "nlive": 800
+        },
+        "logZ": -752.1776048965535,
+        "logZ_err": 0.2301665270210331,
+        "run_id": "E1C_C3_w0wa_dyn",
+        "sampler": "dynesty"
+      },
+      "wcdm": {
+        "bestfit": {
+          "H0": 67.527551,
+          "Omega_m": 0.30812789,
+          "omega_b": 0.022562334,
+          "omega_cdm": 0.11729887,
+          "w0_fld": -0.96291583
+        },
+        "chain_files": [
+          "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain1.1.txt",
+          "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain2.1.txt",
+          "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain3.1.txt",
+          "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain4.1.txt"
+        ],
+        "chi2": 1453.0529,
+        "determinism": {
+          "chain_bitwise_determinism_claimed": false,
+          "checked": true,
+          "first_loglike": -1852.443,
+          "forward_eval_omp_num_threads": 1,
+          "pass": true,
+          "point": {
+            "H0": 67.4,
+            "omega_b": 0.02236,
+            "omega_cdm": 0.12,
+            "sn_M": 0.0,
+            "w0_fld": -1.0
+          },
+          "relative_difference": 0.0,
+          "second_loglike": -1852.443
+        },
+        "diagnostics": {
+          "chain_files": [
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain1.1.txt",
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain2.1.txt",
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain3.1.txt",
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain4.1.txt"
+          ],
+          "chain_prefixes": [
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain1",
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain2",
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain3",
+            "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain4"
+          ],
+          "chain_results": [
+            {
+              "chain_files": [
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain1.1.txt"
+              ],
+              "chain_index": 1,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain1",
+                "--force",
+                "runs/E1/E1C_C3_wcdm/cobaya/mcmc_chain1.yaml"
+              ],
+              "error_excerpt": "[mcmc] Progress @ 2026-05-31 07:41:34 : 12238 steps taken, and 4742 accepted.\n[mcmc] Learn + convergence test @ 4750 samples accepted.\n[mcmc]  - Acceptance rate: 0.464\n[mcmc]  - Convergence of means: R-1 = 0.031426 after 3800 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:41:54 : 12261 steps taken, and 4751 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:15 : 12283 steps taken, and 4760 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:36 : 12299 steps taken, and 4768 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:57 : 12319 steps taken, and 4776 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:17 : 12340 steps taken, and 4787 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:38 : 12365 steps taken, and 4797 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:58 : 12396 steps taken, and 4813 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:18 : 12427 steps taken, and 4831 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:39 : 12459 steps taken, and 4849 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:59 : 12490 steps taken, and 4866 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:19 : 12519 steps taken, and 4878 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:40 : 12548 steps taken, and 4891 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:00 : 12580 steps taken, and 4905 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:21 : 12611 steps taken, and 4917 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:42 : 12642 steps taken, and 4931 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:02 : 12671 steps taken, and 4944 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:23 : 12703 steps taken, and 4960 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:43 : 12732 steps taken, and 4972 accepted.\n[mcmc] Progress @ 2026-05-31 07:48:04 : 12763 steps taken, and 4986 accepted.",
+              "log": "runs/E1/E1C_C3_wcdm/logs/mcmc_chain1.log",
+              "prefix": "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain1",
+              "returncode": -9
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain2.1.txt"
+              ],
+              "chain_index": 2,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain2",
+                "--force",
+                "runs/E1/E1C_C3_wcdm/cobaya/mcmc_chain2.yaml"
+              ],
+              "error_excerpt": "[mcmc] Progress @ 2026-05-31 07:41:27 : 12114 steps taken, and 4586 accepted.\n[mcmc] Progress @ 2026-05-31 07:41:47 : 12136 steps taken, and 4600 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:07 : 12159 steps taken, and 4606 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:27 : 12175 steps taken, and 4609 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:48 : 12193 steps taken, and 4615 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:08 : 12208 steps taken, and 4618 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:29 : 12224 steps taken, and 4625 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:49 : 12252 steps taken, and 4636 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:10 : 12281 steps taken, and 4647 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:31 : 12313 steps taken, and 4659 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:51 : 12342 steps taken, and 4675 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:12 : 12372 steps taken, and 4687 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:32 : 12401 steps taken, and 4700 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:53 : 12432 steps taken, and 4716 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:13 : 12459 steps taken, and 4725 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:34 : 12489 steps taken, and 4737 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:54 : 12520 steps taken, and 4750 accepted.\n[mcmc] Learn + convergence test @ 4750 samples accepted.\n[mcmc]  - Acceptance rate: 0.446\n[mcmc]  - Convergence of means: R-1 = 0.043829 after 3800 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:47:15 : 12548 steps taken, and 4760 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:35 : 12579 steps taken, and 4770 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:55 : 12609 steps taken, and 4784 accepted.",
+              "log": "runs/E1/E1C_C3_wcdm/logs/mcmc_chain2.log",
+              "prefix": "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain2",
+              "returncode": -9
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain3.1.txt"
+              ],
+              "chain_index": 3,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain3",
+                "--force",
+                "runs/E1/E1C_C3_wcdm/cobaya/mcmc_chain3.yaml"
+              ],
+              "error_excerpt": "[mcmc] Progress @ 2026-05-31 07:41:31 : 12226 steps taken, and 4894 accepted.\n[mcmc] Progress @ 2026-05-31 07:41:51 : 12247 steps taken, and 4903 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:12 : 12270 steps taken, and 4908 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:33 : 12292 steps taken, and 4916 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:54 : 12316 steps taken, and 4929 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:14 : 12341 steps taken, and 4942 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:34 : 12367 steps taken, and 4953 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:55 : 12396 steps taken, and 4969 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:16 : 12427 steps taken, and 4984 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:36 : 12456 steps taken, and 4998 accepted.\n[mcmc] Learn + convergence test @ 5000 samples accepted.\n[mcmc]  - Acceptance rate: 0.456\n[mcmc]  - Convergence of means: R-1 = 0.031379 after 4000 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:44:56 : 12485 steps taken, and 5010 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:17 : 12515 steps taken, and 5023 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:37 : 12547 steps taken, and 5039 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:58 : 12575 steps taken, and 5045 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:18 : 12606 steps taken, and 5061 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:39 : 12635 steps taken, and 5073 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:59 : 12666 steps taken, and 5091 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:19 : 12695 steps taken, and 5104 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:40 : 12725 steps taken, and 5117 accepted.\n[mcmc] Progress @ 2026-05-31 07:48:00 : 12755 steps taken, and 5126 accepted.",
+              "log": "runs/E1/E1C_C3_wcdm/logs/mcmc_chain3.log",
+              "prefix": "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain3",
+              "returncode": -9
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain4.1.txt"
+              ],
+              "chain_index": 4,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain4",
+                "--force",
+                "runs/E1/E1C_C3_wcdm/cobaya/mcmc_chain4.yaml"
+              ],
+              "error_excerpt": "[mcmc] Progress @ 2026-05-31 07:41:36 : 12166 steps taken, and 4916 accepted.\n[mcmc] Progress @ 2026-05-31 07:41:56 : 12189 steps taken, and 4925 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:17 : 12213 steps taken, and 4941 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:38 : 12230 steps taken, and 4951 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:59 : 12253 steps taken, and 4963 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:20 : 12275 steps taken, and 4972 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:41 : 12301 steps taken, and 4984 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:01 : 12331 steps taken, and 4997 accepted.\n[mcmc] Learn + convergence test @ 5000 samples accepted.\n[mcmc]  - Acceptance rate: 0.463\n[mcmc]  - Convergence of means: R-1 = 0.046023 after 4000 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:44:21 : 12358 steps taken, and 5004 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:41 : 12386 steps taken, and 5015 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:02 : 12415 steps taken, and 5028 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:22 : 12447 steps taken, and 5046 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:43 : 12476 steps taken, and 5057 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:03 : 12508 steps taken, and 5076 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:24 : 12539 steps taken, and 5092 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:44 : 12568 steps taken, and 5106 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:05 : 12599 steps taken, and 5120 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:25 : 12628 steps taken, and 5129 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:46 : 12659 steps taken, and 5146 accepted.\n[mcmc] Progress @ 2026-05-31 07:48:06 : 12688 steps taken, and 5158 accepted.",
+              "log": "runs/E1/E1C_C3_wcdm/logs/mcmc_chain4.log",
+              "prefix": "runs/E1/E1C_C3_wcdm/chains/C3_wcdm_chain4",
+              "returncode": -9
+            }
+          ],
+          "draws_per_chain_used": 12604,
+          "error_excerpt": "[mcmc] Progress @ 2026-05-31 07:41:34 : 12238 steps taken, and 4742 accepted.\n[mcmc] Learn + convergence test @ 4750 samples accepted.\n[mcmc]  - Acceptance rate: 0.464\n[mcmc]  - Convergence of means: R-1 = 0.031426 after 3800 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:41:54 : 12261 steps taken, and 4751 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:15 : 12283 steps taken, and 4760 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:36 : 12299 steps taken, and 4768 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:57 : 12319 steps taken, and 4776 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:17 : 12340 steps taken, and 4787 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:38 : 12365 steps taken, and 4797 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:58 : 12396 steps taken, and 4813 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:18 : 12427 steps taken, and 4831 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:39 : 12459 steps taken, and 4849 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:59 : 12490 steps taken, and 4866 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:19 : 12519 steps taken, and 4878 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:40 : 12548 steps taken, and 4891 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:00 : 12580 steps taken, and 4905 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:21 : 12611 steps taken, and 4917 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:42 : 12642 steps taken, and 4931 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:02 : 12671 steps taken, and 4944 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:23 : 12703 steps taken, and 4960 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:43 : 12732 steps taken, and 4972 accepted.\n[mcmc] Progress @ 2026-05-31 07:48:04 : 12763 steps taken, and 4986 accepted.\n\n[mcmc] Progress @ 2026-05-31 07:41:27 : 12114 steps taken, and 4586 accepted.\n[mcmc] Progress @ 2026-05-31 07:41:47 : 12136 steps taken, and 4600 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:07 : 12159 steps taken, and 4606 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:27 : 12175 steps taken, and 4609 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:48 : 12193 steps taken, and 4615 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:08 : 12208 steps taken, and 4618 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:29 : 12224 steps taken, and 4625 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:49 : 12252 steps taken, and 4636 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:10 : 12281 steps taken, and 4647 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:31 : 12313 steps taken, and 4659 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:51 : 12342 steps taken, and 4675 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:12 : 12372 steps taken, and 4687 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:32 : 12401 steps taken, and 4700 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:53 : 12432 steps taken, and 4716 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:13 : 12459 steps taken, and 4725 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:34 : 12489 steps taken, and 4737 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:54 : 12520 steps taken, and 4750 accepted.\n[mcmc] Learn + convergence test @ 4750 samples accepted.\n[mcmc]  - Acceptance rate: 0.446\n[mcmc]  - Convergence of means: R-1 = 0.043829 after 3800 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:47:15 : 12548 steps taken, and 4760 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:35 : 12579 steps taken, and 4770 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:55 : 12609 steps taken, and 4784 accepted.\n\n[mcmc] Progress @ 2026-05-31 07:41:31 : 12226 steps taken, and 4894 accepted.\n[mcmc] Progress @ 2026-05-31 07:41:51 : 12247 steps taken, and 4903 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:12 : 12270 steps taken, and 4908 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:33 : 12292 steps taken, and 4916 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:54 : 12316 steps taken, and 4929 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:14 : 12341 steps taken, and 4942 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:34 : 12367 steps taken, and 4953 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:55 : 12396 steps taken, and 4969 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:16 : 12427 steps taken, and 4984 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:36 : 12456 steps taken, and 4998 accepted.\n[mcmc] Learn + convergence test @ 5000 samples accepted.\n[mcmc]  - Acceptance rate: 0.456\n[mcmc]  - Convergence of means: R-1 = 0.031379 after 4000 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:44:56 : 12485 steps taken, and 5010 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:17 : 12515 steps taken, and 5023 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:37 : 12547 steps taken, and 5039 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:58 : 12575 steps taken, and 5045 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:18 : 12606 steps taken, and 5061 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:39 : 12635 steps taken, and 5073 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:59 : 12666 steps taken, and 5091 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:19 : 12695 steps taken, and 5104 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:40 : 12725 steps taken, and 5117 accepted.\n[mcmc] Progress @ 2026-05-31 07:48:00 : 12755 steps taken, and 5126 accepted.\n\n[mcmc] Progress @ 2026-05-31 07:41:36 : 12166 steps taken, and 4916 accepted.\n[mcmc] Progress @ 2026-05-31 07:41:56 : 12189 steps taken, and 4925 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:17 : 12213 steps taken, and 4941 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:38 : 12230 steps taken, and 4951 accepted.\n[mcmc] Progress @ 2026-05-31 07:42:59 : 12253 steps taken, and 4963 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:20 : 12275 steps taken, and 4972 accepted.\n[mcmc] Progress @ 2026-05-31 07:43:41 : 12301 steps taken, and 4984 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:01 : 12331 steps taken, and 4997 accepted.\n[mcmc] Learn + convergence test @ 5000 samples accepted.\n[mcmc]  - Acceptance rate: 0.463\n[mcmc]  - Convergence of means: R-1 = 0.046023 after 4000 accepted steps\n[mcmc]  - Updated covariance matrix of proposal pdf.\n[mcmc] Progress @ 2026-05-31 07:44:21 : 12358 steps taken, and 5004 accepted.\n[mcmc] Progress @ 2026-05-31 07:44:41 : 12386 steps taken, and 5015 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:02 : 12415 steps taken, and 5028 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:22 : 12447 steps taken, and 5046 accepted.\n[mcmc] Progress @ 2026-05-31 07:45:43 : 12476 steps taken, and 5057 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:03 : 12508 steps taken, and 5076 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:24 : 12539 steps taken, and 5092 accepted.\n[mcmc] Progress @ 2026-05-31 07:46:44 : 12568 steps taken, and 5106 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:05 : 12599 steps taken, and 5120 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:25 : 12628 steps taken, and 5129 accepted.\n[mcmc] Progress @ 2026-05-31 07:47:46 : 12659 steps taken, and 5146 accepted.\n[mcmc] Progress @ 2026-05-31 07:48:06 : 12688 steps taken, and 5158 accepted.",
+          "failed_chains": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "logs": [
+            "runs/E1/E1C_C3_wcdm/logs/mcmc_chain1.log",
+            "runs/E1/E1C_C3_wcdm/logs/mcmc_chain2.log",
+            "runs/E1/E1C_C3_wcdm/logs/mcmc_chain3.log",
+            "runs/E1/E1C_C3_wcdm/logs/mcmc_chain4.log"
+          ],
+          "max_rhat_minus_one": 0.05025219857853891,
+          "min_ess": 55.12688889549269,
+          "n_chains": 4,
+          "returncode": 1,
+          "stop_reason": "max_samples_then_rhat_partial",
+          "total_samples": 50801
+        },
+        "logZ": null,
+        "logZ_err": null,
+        "run_id": "E1C_C3_wcdm",
+        "sampler": "mcmc"
+      }
+    },
+    "C4": {
+      "lcdm": {
+        "bestfit": {
+          "H0": 68.38916515983485,
+          "Omega_m": 0.3015204757431922,
+          "omega_b": 0.02250961193985767,
+          "omega_cdm": 0.11786967220960853,
+          "sn_M": -0.12264145917982638
+        },
+        "chain_files": [
+          "runs/E1/E1C_C4_lcdm_dyn/chains/C4_lcdm_dyn.1.txt"
+        ],
+        "chi2": 43.241641606885295,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 19845,
+          "logZ": -43.40463840299764,
+          "logZ_err": 0.19653921649111514,
+          "max_rhat_minus_one": null,
+          "min_ess": 4187.258960609887,
+          "ncall": 423686,
+          "niter": 19045,
+          "nlive": 800
+        },
+        "logZ": -43.40463840299764,
+        "logZ_err": 0.19653921649111514,
+        "run_id": "E1C_C4_lcdm_dyn",
+        "sampler": "dynesty"
+      },
+      "w0wa": {
+        "bestfit": {
+          "H0": 66.08980153981759,
+          "Omega_m": 0.3258740994767254,
+          "omega_b": 0.02239345381838938,
+          "omega_cdm": 0.11929965991538365,
+          "sn_M": -0.1665757589585004,
+          "w0_fld": -0.6901962176048091,
+          "wa_fld": -0.9654828206805912
+        },
+        "chain_files": [
+          "runs/E1/E1C_C4_w0wa_dyn/chains/C4_w0wa_dyn.1.txt"
+        ],
+        "chi2": 29.877901684344938,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 20000,
+          "logZ": -42.11712050216339,
+          "logZ_err": 0.21509368595822473,
+          "max_rhat_minus_one": null,
+          "min_ess": 4880.235414953608,
+          "ncall": 572770,
+          "niter": 23272,
+          "nlive": 800
+        },
+        "logZ": -42.11712050216339,
+        "logZ_err": 0.21509368595822473,
+        "run_id": "E1C_C4_w0wa_dyn",
+        "sampler": "dynesty"
+      },
+      "wcdm": {
+        "bestfit": {
+          "H0": 68.083754,
+          "Omega_m": 0.30326794,
+          "omega_b": 0.022584115,
+          "omega_cdm": 0.11734844,
+          "w0_fld": -0.98046944
+        },
+        "chain_files": [
+          "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain1.1.txt",
+          "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain2.1.txt",
+          "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain3.1.txt",
+          "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain4.1.txt"
+        ],
+        "chi2": 43.219449,
+        "determinism": {
+          "chain_bitwise_determinism_claimed": false,
+          "checked": true,
+          "first_loglike": -34.960086,
+          "forward_eval_omp_num_threads": 1,
+          "pass": true,
+          "point": {
+            "H0": 67.4,
+            "omega_b": 0.02236,
+            "omega_cdm": 0.12,
+            "sn_M": 0.0,
+            "w0_fld": -1.0
+          },
+          "relative_difference": 0.0,
+          "second_loglike": -34.960086
+        },
+        "diagnostics": {
+          "chain_files": [
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain1.1.txt",
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain2.1.txt",
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain3.1.txt",
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain4.1.txt"
+          ],
+          "chain_prefixes": [
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain1",
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain2",
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain3",
+            "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain4"
+          ],
+          "chain_results": [
+            {
+              "chain_files": [
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain1.1.txt"
+              ],
+              "chain_index": 1,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain1",
+                "--force",
+                "runs/E1/E1C_C4_wcdm/cobaya/mcmc_chain1.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C4_wcdm/logs/mcmc_chain1.log",
+              "prefix": "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain1",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain2.1.txt"
+              ],
+              "chain_index": 2,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain2",
+                "--force",
+                "runs/E1/E1C_C4_wcdm/cobaya/mcmc_chain2.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C4_wcdm/logs/mcmc_chain2.log",
+              "prefix": "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain2",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain3.1.txt"
+              ],
+              "chain_index": 3,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain3",
+                "--force",
+                "runs/E1/E1C_C4_wcdm/cobaya/mcmc_chain3.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C4_wcdm/logs/mcmc_chain3.log",
+              "prefix": "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain3",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain4.1.txt"
+              ],
+              "chain_index": 4,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain4",
+                "--force",
+                "runs/E1/E1C_C4_wcdm/cobaya/mcmc_chain4.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C4_wcdm/logs/mcmc_chain4.log",
+              "prefix": "runs/E1/E1C_C4_wcdm/chains/C4_wcdm_chain4",
+              "returncode": 0
+            }
+          ],
+          "draws_per_chain_used": 12899,
+          "failed_chains": [],
+          "logs": [
+            "runs/E1/E1C_C4_wcdm/logs/mcmc_chain1.log",
+            "runs/E1/E1C_C4_wcdm/logs/mcmc_chain2.log",
+            "runs/E1/E1C_C4_wcdm/logs/mcmc_chain3.log",
+            "runs/E1/E1C_C4_wcdm/logs/mcmc_chain4.log"
+          ],
+          "max_rhat_minus_one": 0.005139811409948791,
+          "min_ess": 873.223993904736,
+          "n_chains": 4,
+          "returncode": 0,
+          "stop_reason": "max_samples_then_rhat",
+          "total_samples": 52790
+        },
+        "logZ": null,
+        "logZ_err": null,
+        "run_id": "E1C_C4_wcdm",
+        "sampler": "mcmc"
+      }
+    },
+    "C5": {
+      "lcdm": {
+        "bestfit": {
+          "H0": 68.18902865621666,
+          "Omega_m": 0.304418568816897,
+          "omega_b": 0.02247898087737639,
+          "omega_cdm": 0.11842365767595707,
+          "sn_M": -0.060963942459860476
+        },
+        "chain_files": [
+          "runs/E1/E1C_C5_lcdm_dyn/chains/C5_lcdm_dyn.1.txt"
+        ],
+        "chi2": 1690.5421938054267,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 20000,
+          "logZ": -870.2920175168065,
+          "logZ_err": 0.2115489726893981,
+          "max_rhat_minus_one": null,
+          "min_ess": 4289.991026644687,
+          "ncall": 483443,
+          "niter": 21583,
+          "nlive": 800
+        },
+        "logZ": -870.2920175168065,
+        "logZ_err": 0.2115489726893981,
+        "run_id": "E1C_C5_lcdm_dyn",
+        "sampler": "dynesty"
+      },
+      "w0wa": {
+        "bestfit": {
+          "H0": 66.39158838332808,
+          "Omega_m": 0.32284135084805965,
+          "omega_b": 0.022404735949341743,
+          "omega_cdm": 0.11925447161590778,
+          "sn_M": -0.05892510313660271,
+          "w0_fld": -0.7146356297004206,
+          "wa_fld": -0.9134769067311765
+        },
+        "chain_files": [
+          "runs/E1/E1C_C5_w0wa_dyn/chains/C5_w0wa_dyn.1.txt"
+        ],
+        "chi2": 1663.1343027803284,
+        "determinism": {},
+        "diagnostics": {
+          "converged": true,
+          "dlogz": 0.1,
+          "equal_weight_samples": 20000,
+          "logZ": -862.5527117609128,
+          "logZ_err": 0.22879907333656693,
+          "max_rhat_minus_one": null,
+          "min_ess": 5051.611487728815,
+          "ncall": 644860,
+          "niter": 26188,
+          "nlive": 800
+        },
+        "logZ": -862.5527117609128,
+        "logZ_err": 0.22879907333656693,
+        "run_id": "E1C_C5_w0wa_dyn",
+        "sampler": "dynesty"
+      },
+      "wcdm": {
+        "bestfit": {
+          "H0": 66.962364,
+          "Omega_m": 0.31260997,
+          "omega_b": 0.022608808,
+          "omega_cdm": 0.11692,
+          "w0_fld": -0.93883024
+        },
+        "chain_files": [
+          "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain1.1.txt",
+          "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain2.1.txt",
+          "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain3.1.txt",
+          "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain4.1.txt"
+        ],
+        "chi2": 1682.2434,
+        "determinism": {
+          "chain_bitwise_determinism_claimed": false,
+          "checked": true,
+          "first_loglike": -1043.7486,
+          "forward_eval_omp_num_threads": 1,
+          "pass": true,
+          "point": {
+            "H0": 67.4,
+            "omega_b": 0.02236,
+            "omega_cdm": 0.12,
+            "sn_M": 0.0,
+            "w0_fld": -1.0
+          },
+          "relative_difference": 0.0,
+          "second_loglike": -1043.7486
+        },
+        "diagnostics": {
+          "chain_files": [
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain1.1.txt",
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain2.1.txt",
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain3.1.txt",
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain4.1.txt"
+          ],
+          "chain_prefixes": [
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain1",
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain2",
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain3",
+            "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain4"
+          ],
+          "chain_results": [
+            {
+              "chain_files": [
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain1.1.txt"
+              ],
+              "chain_index": 1,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain1",
+                "--force",
+                "runs/E1/E1C_C5_wcdm/cobaya/mcmc_chain1.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C5_wcdm/logs/mcmc_chain1.log",
+              "prefix": "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain1",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain2.1.txt"
+              ],
+              "chain_index": 2,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain2",
+                "--force",
+                "runs/E1/E1C_C5_wcdm/cobaya/mcmc_chain2.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C5_wcdm/logs/mcmc_chain2.log",
+              "prefix": "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain2",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain3.1.txt"
+              ],
+              "chain_index": 3,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain3",
+                "--force",
+                "runs/E1/E1C_C5_wcdm/cobaya/mcmc_chain3.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C5_wcdm/logs/mcmc_chain3.log",
+              "prefix": "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain3",
+              "returncode": 0
+            },
+            {
+              "chain_files": [
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain4.1.txt"
+              ],
+              "chain_index": 4,
+              "command": [
+                "mpirun",
+                "--bind-to",
+                "none",
+                "-n",
+                "1",
+                "-x",
+                "OMP_NUM_THREADS",
+                "cobaya-run",
+                "--packages-path",
+                "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+                "--output",
+                "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain4",
+                "--force",
+                "runs/E1/E1C_C5_wcdm/cobaya/mcmc_chain4.yaml"
+              ],
+              "error_excerpt": "",
+              "log": "runs/E1/E1C_C5_wcdm/logs/mcmc_chain4.log",
+              "prefix": "runs/E1/E1C_C5_wcdm/chains/C5_wcdm_chain4",
+              "returncode": 0
+            }
+          ],
+          "draws_per_chain_used": 14190,
+          "failed_chains": [],
+          "logs": [
+            "runs/E1/E1C_C5_wcdm/logs/mcmc_chain1.log",
+            "runs/E1/E1C_C5_wcdm/logs/mcmc_chain2.log",
+            "runs/E1/E1C_C5_wcdm/logs/mcmc_chain3.log",
+            "runs/E1/E1C_C5_wcdm/logs/mcmc_chain4.log"
+          ],
+          "max_rhat_minus_one": 0.02639890165472014,
+          "min_ess": 85.18843029702744,
+          "n_chains": 4,
+          "returncode": 0,
+          "stop_reason": "max_samples_then_rhat",
+          "total_samples": 58339
+        },
+        "logZ": null,
+        "logZ_err": null,
+        "run_id": "E1C_C5_wcdm",
+        "sampler": "mcmc"
+      }
+    }
+  },
+  "schema_version": 1,
+  "scope": "Compressed-CMB E1 reproduction aggregate from completed production summaries",
+  "significances": {
+    "C2": {
+      "delta_chi2": 7.584661911021681,
+      "delta_k": 2,
+      "p_value": 0.022542993845746078,
+      "sigma": 2.281092162088916,
+      "status": "computed"
+    },
+    "C3": {
+      "delta_chi2": 13.634118782223823,
+      "delta_k": 2,
+      "p_value": 0.0010949359713109987,
+      "sigma": 3.264923621828024,
+      "status": "computed"
+    },
+    "C4": {
+      "delta_chi2": 13.363739922540358,
+      "delta_k": 2,
+      "p_value": 0.0012534319105958743,
+      "sigma": 3.226433874833542,
+      "status": "computed"
+    },
+    "C5": {
+      "delta_chi2": 27.40789102509825,
+      "delta_k": 2,
+      "p_value": 1.118026464135957e-06,
+      "sigma": 4.869638412784794,
+      "status": "computed"
+    }
+  },
+  "terminal_state": "BLOCKED",
+  "track": "compressed"
+}

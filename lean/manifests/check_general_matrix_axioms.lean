@@ -1,0 +1,33 @@
+import SbtCosmo.Derivation.ExtendedSmoothStationarity
+import SbtCosmo.Derivation.GeneralMatrixPrice
+import SbtCosmo.Derivation.GeneralMatrixStationarity
+import SbtCosmo.Derivation.GeneralMatrixExamples
+
+#print axioms SbtCosmo.Derivation.ExtendedSmoothStationarity.restricted_stationarity
+#print axioms SbtCosmo.Derivation.ExtendedSmoothStationarity.qualified_stationarity
+#print axioms SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice_apply
+#print axioms SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice_priceMatrix
+#print axioms SbtCosmo.Derivation.GeneralMatrixPrice.matrix_price
+#print axioms SbtCosmo.Derivation.GeneralMatrixPrice.matrix_price_nonzero
+#print axioms SbtCosmo.Derivation.GeneralMatrixPrice.certificate_trace_energy_convex
+#print axioms SbtCosmo.Derivation.GeneralMatrixStationarity.hasFDerivAt_trace_gap
+#print axioms SbtCosmo.Derivation.GeneralMatrixStationarity.certificate_stationarity
+#print axioms SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_stationarity
+#print axioms SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_stationarity_nonzero
+#print axioms SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_stationarity_fderiv
+#print axioms SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_nonsmooth_stationarity
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.budget_combination
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_actual_schur
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_loewner_convex
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_derivative
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_primal_one
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_primal_sixteen
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_actual_values
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_slater
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_sensitive
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.quartic_not_quadratic
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.constructed_quartic_stationarity
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.kink_matrix_not_differentiable
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.constructed_kink_matrix_stationarity
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.restricted_matrix_loewner_convex
+#print axioms SbtCosmo.Derivation.GeneralMatrixExamples.missing_extension_no_trace_support

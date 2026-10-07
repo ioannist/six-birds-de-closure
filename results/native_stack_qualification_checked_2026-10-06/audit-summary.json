@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-06T14:24:00.195857+00:00",
+  "real_return_driver_actual_exit_code": 0,
+  "semantic_finisher_actual_exit_code": 0,
+  "additional_driver_actual_exit_code": 0,
+  "execution_driver_actual_exit_code": 0,
+  "completed_supplements": {
+    "real-return": {
+      "modules": 4,
+      "statement_queries": 6,
+      "axiom_queries": 6,
+      "standard_only": true
+    },
+    "additional": {
+      "modules": 29,
+      "statement_queries": 132,
+      "axiom_queries": 132,
+      "standard_only": true
+    },
+    "execution": {
+      "modules": 3,
+      "statement_queries": 18,
+      "axiom_queries": 18,
+      "standard_only": true
+    }
+  },
+  "campaign_qualified_modules": 1738,
+  "campaign_queries_per_kind": 20634,
+  "retained_campaign_compiler_checks": 993,
+  "campaign_module_phase_and_supplement_compilations": 745,
+  "frozen_inputs_historical_after_declared_registered_repairs": true,
+  "archived_compiled_objects": 0,
+  "own_supplement_objects_hash_checked": 36,
+  "registered_builds_and_full_audits_pending": true,
+  "goal_complete": false
+}

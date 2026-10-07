@@ -1,0 +1,170 @@
+SbtCosmo.Derivation.ConvexSubgradient.restricted_subgradient_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {A : Set E} {J : E → EReal} {star : E} {p : E →L[ℝ] ℝ} :
+  SbtCosmo.Derivation.ConvexSubgradient.Subgradient (SbtCosmo.Derivation.ConvexSubgradient.restriction A J) star p ↔
+    SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn A J star p
+SbtCosmo.Derivation.ConvexSubgradient.indicator_subgradient_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {A : Set E} {star : E} {p : E →L[ℝ] ℝ} :
+  SbtCosmo.Derivation.ConvexSubgradient.Subgradient (SbtCosmo.Derivation.ConvexSubgradient.indicator A) star p ↔
+    SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star p
+SbtCosmo.Derivation.ConvexSubgradient.real_subgradient_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {f : E → ℝ} {star : E} {p : E →L[ℝ] ℝ} :
+  SbtCosmo.Derivation.ConvexSubgradient.Subgradient (fun x => ↑(f x)) star p ↔
+    SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient f star p
+SbtCosmo.Derivation.ConvexSubgradient.zero_subgradientOn_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {A : Set E} {J : E → EReal} {star : E} :
+  SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn A J star 0 ↔
+    star ∈ A ∧ J star ≠ ⊤ ∧ J star ≠ ⊥ ∧ ∀ x ∈ A, J star ≤ J x
+SbtCosmo.Derivation.ConvexSubgradient.real_subgradient_add.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {f g : E → ℝ} {star : E} {p q : E →L[ℝ] ℝ} (hp : SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient f star p)
+  (hq : SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient g star q) :
+  SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient (fun x => f x + g x) star (p + q)
+SbtCosmo.Derivation.ConvexSubgradient.remove_smooth_summand.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {A : Set E} {J g : E → ℝ} {star : E} {p d : E →L[ℝ] ℝ} (hJ : ConvexOn ℝ A J) (hs : star ∈ A)
+  (h : ∀ x ∈ A, J star + g star + p (x - star) ≤ J x + g x) (hd : HasFDerivAt g d star) (x : E) :
+  x ∈ A → J star + (p - d) (x - star) ≤ J x
+SbtCosmo.Derivation.ConvexSubgradient.normal_univ_iff.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {star : E} {p : E →L[ℝ] ℝ} : SbtCosmo.Derivation.ConvexSubgradient.NormalCone Set.univ star p ↔ p = 0
+SbtCosmo.Derivation.ConvexSubgradient.smooth_real_subgradient_eq.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {g : E → ℝ} {star : E} {p d : E →L[ℝ] ℝ}
+  (hp : SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient g star p) (hd : HasFDerivAt g d star) : p = d
+SbtCosmo.Derivation.ConvexSumSplit.split_real_of_continuous.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {A : Set E} {J g : E → ℝ} {star : E} (hJ : ConvexOn ℝ A J) (hg : ConvexOn ℝ Set.univ g)
+  (hcont : Continuous g) (hs : star ∈ A) (hmin : ∀ x ∈ A, J star + g star ≤ J x + g x) :
+  ∃ d, (∀ x ∈ A, J star - d (x - star) ≤ J x) ∧ SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient g star d
+SbtCosmo.Derivation.ConvexSumSplit.split_real.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [FiniteDimensional ℝ E] {A : Set E} {J g : E → ℝ} {star : E} (hJ : ConvexOn ℝ A J) (hg : ConvexOn ℝ Set.univ g)
+  (hs : star ∈ A) (hmin : ∀ x ∈ A, J star + g star ≤ J x + g x) :
+  ∃ d, (∀ x ∈ A, J star - d (x - star) ≤ J x) ∧ SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient g star d
+SbtCosmo.Derivation.ConvexSumSplit.split_extended.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {g : E → ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J)) (hg : ConvexOn ℝ Set.univ g) (hs : star ∈ A)
+  (hfinite : J star ≠ ⊤) (hmin : ∀ x ∈ A, J star + ↑(g star) ≤ J x + ↑(g x)) :
+  ∃ d,
+    SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn A J star (-d) ∧
+      SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient g star d
+SbtCosmo.Derivation.ConvexSumSplit.finite_objective_stationarity.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E} {J g : E → ℝ} {star : E} {k : E →L[ℝ] ℝ} (hA : Convex ℝ A)
+  (hJ : ConvexOn ℝ Set.univ J) (hg : ConvexOn ℝ Set.univ g) (hs : star ∈ A)
+  (hmin : ∀ x ∈ A, J star + g star ≤ J x + g x) (hk : HasFDerivAt g k star) :
+  ∃ q n,
+    SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient J star q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n ∧ q + k + n = 0
+SbtCosmo.Derivation.SchurStationarity.affine_probe_differentiable.{u_2, u_3, u_4} {m : Type u_2} {e : Type u_3}
+  {E : Type u_4} [Fintype m] [Fintype e] [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) : Differentiable ℝ ⇑D
+SbtCosmo.Derivation.SchurStationarity.schur_energy_differentiable.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (W : Matrix m m ℝ) (L : Matrix n e ℝ)
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) : Differentiable ℝ fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)
+SbtCosmo.Derivation.SchurStationarity.trace_energy_convex.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] {P : Matrix m m ℝ} (hP : P.PosSemidef) (L : Matrix n e ℝ)
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)) :
+  ConvexOn ℝ Set.univ fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace
+SbtCosmo.Derivation.SchurStationarity.trace_energy_differentiable.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (P : Matrix m m ℝ) (L : Matrix n e ℝ)
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)) :
+  Differentiable ℝ fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace
+SbtCosmo.Derivation.SchurStationarity.matrix_stationarity.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  {A : Set E} {J : E → ℝ} {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ : E}
+  (hA : Convex ℝ A) (hJ : ConvexOn ℝ Set.univ J)
+  (hstar :
+    SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef) :
+  ∃ P q n_1,
+    P.PosSemidef ∧
+      SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient J star q ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n_1 ∧
+          q + fderiv ℝ (fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) star +
+                n_1 =
+              0 ∧
+            (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0 ∧
+              ∀ x ∈ A, J star ≤ J x + (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace
+SbtCosmo.Derivation.SchurStationarity.matrix_stationarity_nonzero.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  {A : Set E} {J : E → ℝ} {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ : E}
+  (hA : Convex ℝ A) (hJ : ConvexOn ℝ Set.univ J)
+  (hstar :
+    SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef)
+  (hs :
+    ∃ H,
+      SbtCosmo.Derivation.MatrixClosurePrice.positive H ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A (fun x => ↑(J x))
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive (B + H) <
+          SbtCosmo.Derivation.ExtendedConeClosurePrice.value A (fun x => ↑(J x))
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive B) :
+  ∃ P q n_1,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient J star q ∧
+          SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star n_1 ∧
+            q + fderiv ℝ (fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) star +
+                  n_1 =
+                0 ∧
+              (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0
+SbtCosmo.Derivation.SchurStationarity.matrix_restricted_stationarity.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  {A : Set E} {J : E → EReal} {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ : E}
+  (hbottom : ∀ x ∈ A, J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J))
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤)
+  (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef) :
+  ∃ P,
+    P.PosSemidef ∧
+      SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn A J star
+          (-fderiv ℝ (fun x => (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) star) ∧
+        (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0
+SbtCosmo.Derivation.StationarityExamples.actual_nonsmooth_stationarity :
+  ∃ price q,
+    price ≠ 0 ∧
+      SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient SbtCosmo.Derivation.NonsmoothPriceExamples.objective 0 q ∧
+        q + price = 0
+SbtCosmo.Derivation.StationarityExamples.actual_schur_stationarity :
+  ∃ P q n,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient SbtCosmo.Derivation.SchurClosurePriceExamples.objective 1
+            q ∧
+          SbtCosmo.Derivation.ConvexSubgradient.NormalCone Set.univ 1 n ∧
+            q +
+                    fderiv ℝ
+                      (fun x =>
+                        (P *
+                            (↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.energy x) -
+                              ↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1))).trace)
+                      1 +
+                  n =
+                0 ∧
+              (P *
+                    (↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.energy 1) -
+                      ↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1))).trace =
+                0
+SbtCosmo.Derivation.StationarityExamples.boundary_no_bottom (x : ℝ) :
+  SbtCosmo.Derivation.StationarityExamples.boundaryObjective x ≠ ⊥
+SbtCosmo.Derivation.StationarityExamples.boundary_epigraph_convex :
+  Convex ℝ
+    (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ
+      SbtCosmo.Derivation.StationarityExamples.boundaryObjective)
+SbtCosmo.Derivation.StationarityExamples.boundary_restricted_support :
+  SbtCosmo.Derivation.ConvexSubgradient.SubgradientOn {0} SbtCosmo.Derivation.StationarityExamples.boundaryObjective 0 0
+SbtCosmo.Derivation.StationarityExamples.boundary_no_ambient_support :
+  ¬∃ p, SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.StationarityExamples.boundaryObjective 0 p
+SbtCosmo.Derivation.StationarityExamples.missing_qualification_no_split :
+  ¬∃ q n,
+      SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.StationarityExamples.boundaryObjective 0 q ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone {0} 0 n ∧ q + n = 0

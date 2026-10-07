@@ -1,0 +1,51 @@
+schema_version: 1
+experiment: E2_distance_duality
+description: Distance-duality local-global gluing test on DESI DR2 BAO + Pantheon+ + compressed CMB.
+seeds:
+  numpy: 4242
+  dynesty: 27337
+eta_reconstruction:
+  z_min: 0.51
+  z_max: 1.50
+  dz: 0.05
+  sn_kernel_width: 0.08
+priors:
+  omega_b: {prior: {min: 0.005, max: 0.1}}
+  omega_cdm: {prior: {min: 0.001, max: 0.99}}
+  H0: {prior: {min: 20.0, max: 100.0}}
+  sn_M: {prior: {min: -5.0, max: 5.0}}
+  w0_fld: {prior: {min: -3.0, max: 1.0}}
+  wa_fld: {prior: {min: -3.0, max: 2.0}}
+  a0: {prior: {min: -0.05, max: 0.05}}
+  a2: {prior: {min: -0.05, max: 0.05}}
+  epsilon0: {prior: {min: -0.5, max: 0.5}}
+models:
+  M0:
+    label: LCDM_eta1
+    sampled: [omega_b, omega_cdm, H0, sn_M]
+    fixed: {w0_fld: -1.0, wa_fld: 0.0}
+  M1:
+    label: w0wa_eta1
+    sampled: [omega_b, omega_cdm, H0, w0_fld, wa_fld, sn_M]
+    fixed: {}
+  M2:
+    label: LCDM_Xi_gluing
+    sampled: [omega_b, omega_cdm, H0, a0, a2, sn_M]
+    fixed: {w0_fld: -1.0, wa_fld: 0.0, a1: 0.0}
+  M_mix:
+    label: w0wa_Xi_gluing
+    sampled: [omega_b, omega_cdm, H0, w0_fld, wa_fld, a0, a2, sn_M]
+    fixed: {a1: 0.0}
+  M_AM:
+    label: w0wa_eta_linear
+    sampled: [omega_b, omega_cdm, H0, w0_fld, wa_fld, epsilon0, sn_M]
+    fixed: {}
+dynesty:
+  nlive: 500
+  dlogz: 0.15
+  bound: multi
+  sample: rwalk
+  max_equal_samples: 16000
+outputs:
+  run_root: runs/E2
+  results_root: results/E2

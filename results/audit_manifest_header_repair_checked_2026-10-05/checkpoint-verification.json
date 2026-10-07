@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-05T12:20:55.112020+00:00",
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "checked_declarations": 11776,
+  "archive_members_verified": 1997,
+  "direct_source_object_bindings": 1965,
+  "private_namespace_objects_archived": 19,
+  "registered_direct_objects_hash_bound_not_archived": 1946,
+  "frozen_inputs_revalidated": 3936,
+  "registered_command": false,
+  "registered_build_pending": true,
+  "repository_integrated": false,
+  "goal_complete": false
+}

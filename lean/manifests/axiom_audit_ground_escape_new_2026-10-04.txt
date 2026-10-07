@@ -1,0 +1,38 @@
+'SbtCosmo.Derivation.GroundNativeEscape.c2_quadratic_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking_step' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.eigenmode_tracking' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.finite_eigenmode_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.arbitrarily_close_eigenmode_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape_within' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_output_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.displacement_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.displacement_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.displacement_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.displacement_iterate_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundNativeEscape.native_complex_local_escape' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

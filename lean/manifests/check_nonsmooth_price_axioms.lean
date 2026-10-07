@@ -1,0 +1,34 @@
+import SbtCosmo.Derivation.ConvexValueSupport
+import SbtCosmo.Derivation.NonsmoothConePrice
+import SbtCosmo.Derivation.MatrixSlaterTopology
+import SbtCosmo.Derivation.ExtendedNonsmoothConePrice
+import SbtCosmo.Derivation.NonsmoothMatrixPrice
+import SbtCosmo.Derivation.NonsmoothPriceExamples
+
+#print axioms SbtCosmo.Derivation.ConvexValueSupport.strict_epigraph_open
+#print axioms SbtCosmo.Derivation.ConvexValueSupport.supporting_functional_of_continuous
+#print axioms SbtCosmo.Derivation.ConvexValueSupport.supporting_functional
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.value_convex
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.support_nonpositive
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.support_global
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.price_certificate
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.slater_local_finiteness
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.slater_price_certificate
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.certificate_value_support
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.certificate_strict_price
+#print axioms SbtCosmo.Derivation.NonsmoothConePrice.certificate_nonzero
+#print axioms SbtCosmo.Derivation.MatrixSlaterTopology.quadratic_continuous
+#print axioms SbtCosmo.Derivation.MatrixSlaterTopology.posdef_mem_interior_positive
+#print axioms SbtCosmo.Derivation.ExtendedNonsmoothConePrice.price_certificate
+#print axioms SbtCosmo.Derivation.ExtendedNonsmoothConePrice.slater_price_certificate
+#print axioms SbtCosmo.Derivation.ExtendedNonsmoothConePrice.certificate_nonzero
+#print axioms SbtCosmo.Derivation.ExtendedNonsmoothConePrice.slater_strong_duality
+#print axioms SbtCosmo.Derivation.NonsmoothMatrixPrice.matrix_price
+#print axioms SbtCosmo.Derivation.NonsmoothMatrixPrice.matrix_price_nonzero
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.objective_convex
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.objective_antitone
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.primal_optimum
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.actual_value
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.actual_value_not_differentiable
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.actual_nonsmooth_price
+#print axioms SbtCosmo.Derivation.NonsmoothPriceExamples.actual_extended_matrix_price

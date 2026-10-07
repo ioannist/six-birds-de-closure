@@ -1,0 +1,6 @@
+✔ [8054/8059] Built SbtCosmo.Derivation.GroundState (3.8s)
+✔ [8055/8059] Built SbtCosmo.Derivation.GroundSelector (6.1s)
+✔ [8056/8059] Built SbtCosmo.Derivation.GroundSimple (2.8s)
+✔ [8057/8059] Built SbtCosmo.Derivation.GroundFixedPoint (5.2s)
+✔ [8058/8059] Built SbtCosmo.Derivation.GroundComplex (5.4s)
+Build completed successfully (8059 jobs).

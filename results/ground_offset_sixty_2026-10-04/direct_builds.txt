@@ -1,0 +1,16 @@
+Fresh3 direct candidate source verdict builds;3 sources frozen before/after execution.
+Frozen source SHA256: 8e37e85814d1dd49b6b5f0763db5974e356499f01f16ed74dcb1b665d04ac09c lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point000.lean
+Frozen source SHA256: 2ef99d25d56437cc4aa997058b9080e0d21ef57b71422be8f90318ca33c0756f lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point003.lean
+Frozen source SHA256: 132289f1a988baa4d8d328954bb2c0aa5a658bb27bb952fefe0a519f720f66f6 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point016.lean
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000
+✔ [9220/9220] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000 (44s)
+Build completed successfully (9220 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003
+✔ [9234/9234] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003 (43s)
+Build completed successfully (9234 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016
+✔ [9241/9241] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016 (38s)
+Build completed successfully (9241 jobs).

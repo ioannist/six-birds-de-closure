@@ -1,0 +1,30 @@
+{
+  "rejected_controls": [
+    {
+      "control": "other_module_hash",
+      "rejected": true
+    },
+    {
+      "control": "aggregate_statement",
+      "rejected": true
+    },
+    {
+      "control": "alternate_gate",
+      "rejected": true
+    }
+  ],
+  "unchanged_function_asts": [
+    "sha",
+    "read_json",
+    "uncomment",
+    "declarations",
+    "imports",
+    "declaration_types",
+    "require_parts",
+    "verify_replay",
+    "axiom_entries",
+    "statement_entries"
+  ],
+  "qualified_success_path_pending": true,
+  "verifier_sha256": "b48e90cb8b1616399442d81bf81ea853c2cfc38c514d0b61fda9e1a6a85e34fa"
+}

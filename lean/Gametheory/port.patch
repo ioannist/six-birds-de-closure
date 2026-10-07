@@ -1,0 +1,84 @@
+--- upstream/Gametheory/Scarf.lean
++++ lean/Gametheory/Scarf.lean
+@@ -0,0 +1,5 @@
++/-
++Copyright (c) 2025 Math_XMUM. MIT license: see THIRD_PARTY_BROUWER_LICENSE.
++Ported from LionSR/Brouwer ec93e4daed4ad8b4784a9d760e492832e7711433.
++API adjustments and omitted commented drafts are recorded in the provenance manifest.
++-/
+@@ -1,0 +7,4 @@
++
++set_option autoImplicit true
++set_option relaxedAutoImplicit true
++
+@@ -92 +101 @@
+-  coe_injective := fun f g h => by cases f; cases g; congr
++  coe_injective' := fun f g h => by cases f; cases g; congr
+@@ -225,7 +234 @@
+-/-def door_para : Sum σ C.toSet.compl ≃ {(τ,D): (Finset T)× (Finset I) | IST.isDoorof τ D σ C} where
+-  toFun := fun x => match x with
+-    | .inl y => ⟨(Finset.erase σ y.1, C), by sorry⟩
+-    | .inr y => ⟨(σ, insert y.1 C), by sorry⟩
+-  invFun := sorry
+-  left_inv := sorry
+-  right_inv := sorry-/
++/- Upstream commented-out draft omitted. -/
+@@ -380 +383 @@
+-    simp only [Set.mem_ofPred_eq, Set.eq_empty_iff_forall_notMem] at h_Mi_empty
++    simp only [Set.mem_setOf_eq, Set.eq_empty_iff_forall_notMem] at h_Mi_empty
+@@ -514 +517 @@
+-        apply Set.mem_ofPred.mpr
++        apply Set.mem_setOf.mpr
+@@ -521 +524 @@
+-        apply Set.mem_ofPred.mpr
++        apply Set.mem_setOf.mpr
+@@ -1196,17 +1199 @@
+---Useless lemma, remain sorry first.
+-/-section useless_lemma
+-lemma door_of_Croom (h1 : isColorful c σ C) (h2 : isDoorof τ D σ C) : isNearlyColorful c τ D := by sorry
+-
+-lemma unique_type_door_of_Croom (h1 : isColorful c σ C) (i :I) :
+-∃! x : Finset T × Finset I , isDoorof x.1 x.2 σ C ∧ isTypedNC c i σ C:= by sorry
+-
+-lemma type_aux (h : isNearlyColorful c σ C) : ∃! i : I, i ∉ σ.image c ∧ C = insert i (σ.image c) := by
+-  sorry
+-
+-def NCtype (h : isNearlyColorful c σ C) : I :=
+-  Classical.choose (type_aux h).exists
+-
+-structure TypedNC (i : I) (σ : Finset T) (C : Finset I): Prop where
+-  nc : isNearlyColorful c σ C
+-  t : NCtype nc = i
+-end useless_lemma-/
++/- Upstream commented-out draft omitted. -/
+@@ -1258,2 +1245 @@
+-/-variable {c σ C} in
+-lemma type_unique_of_outsidedoor (h : isOutsideDoor σ C) : ∃! i,  i = isNCtype (NC_of_outsidedoor (c:=c) h)  := sorry-/
++/- Upstream commented-out draft omitted. -/
+@@ -1791 +1777 @@
+-            rw [Set.mem_sdiff]
++            rw [Set.mem_diff]
+@@ -1794 +1780 @@
+-            rw [Set.mem_sdiff]
++            rw [Set.mem_diff]
+--- upstream/Gametheory/Brouwer.lean
++++ lean/Gametheory/Brouwer.lean
+@@ -0,0 +1,5 @@
++/-
++Copyright (c) 2025 Math_XMUM. MIT license: see THIRD_PARTY_BROUWER_LICENSE.
++Ported from LionSR/Brouwer ec93e4daed4ad8b4784a9d760e492832e7711433.
++API adjustments and omitted commented drafts are recorded in the provenance manifest.
++-/
+@@ -2,0 +8,3 @@
++set_option autoImplicit true
++set_option relaxedAutoImplicit true
++
+@@ -36 +44 @@
+-  coe_injective := fun _ _ h => Subtype.ext h
++  coe_injective' := fun _ _ h => Subtype.ext h
+@@ -123 +131 @@
+-        simp only [ite_eq_right (Finset.ne_of_mem_erase hk)]
++        simp only [if_neg (Finset.ne_of_mem_erase hk)]
+@@ -607 +615 @@
+-            exact one_le
++            exact Nat.succ_le_of_lt (PNat.pos n)

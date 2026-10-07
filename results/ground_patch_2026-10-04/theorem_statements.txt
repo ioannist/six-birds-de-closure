@@ -1,0 +1,95 @@
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.mem_domain.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {k : ℝ} :
+  k ∈ v.domain ↔ ∃ i, k ∈ (v.tube i).interval
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.tube_root_eq.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {i j : ι} {k : ℝ}
+  (hi : k ∈ (v.tube i).interval) (hj : k ∈ (v.tube j).interval) : (v.tube i).root k = (v.tube j).root k
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_eq.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {i : ι} {k : ℝ}
+  (hi : k ∈ (v.tube i).interval) : v.root k = (v.tube i).root k
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_spec.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {k : ℝ} (hk : k ∈ v.domain) :
+  SbtCosmo.Derivation.GroundRootCertificate.residual b k (v.root k) = 0 ∧
+    (∀ (i : Fin 8), 0 < (v.root k).1 i) ∧
+      SbtCosmo.Derivation.GroundState.IsGround (SbtCosmo.Derivation.GroundState.sourcePotential b k (v.root k).1)
+          (v.root k).1 (v.root k).2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b k (v.root k).1 = (v.root k).1
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.sample_root_return.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {i : ι} {k : ℝ}
+  (hi : k ∈ (v.tube i).interval) {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual b k x = 0)
+  (hx : x ∈ Metric.closedBall (v.tube i).center (v.tube i).radius) : x = v.root k
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_continuous_on.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) : ContinuousOn v.root v.domain
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_implicit_germ.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {k : ℝ} (hk : k ∈ v.domain) :
+  ∃ g, ContDiffAt ℝ (↑⊤) g k ∧ g k = v.root k ∧ v.root =ᶠ[nhdsWithin k v.domain] g
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_smooth_on.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) :
+  ContDiffOn ℝ (↑⊤) v.root v.domain
+SbtCosmo.Derivation.GroundParameterPatch.TubeCover.groundPair_return.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {k : ℝ} (hk : k ∈ v.domain) :
+  SbtCosmo.Derivation.GroundState.normSq (v.root k).1 = 1 ∧
+    SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b k (v.root k).1) =
+      v.root k
+SbtCosmo.Derivation.GroundParameterPatchReturn.closedBall_containment {x y : SbtCosmo.Derivation.GroundBorder.Point}
+  {r s : ℝ} (h : dist x y + r ≤ s) : Metric.closedBall x r ⊆ Metric.closedBall y s
+SbtCosmo.Derivation.GroundParameterPatchReturn.certified_sample_return.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι)
+  (a : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {i : ι} {k : ℝ} (hi : k ∈ (v.tube i).interval)
+  (ha : k ∈ a.interval) (hbox : dist a.center (v.tube i).center + a.radius ≤ (v.tube i).radius) : a.root k = v.root k
+SbtCosmo.Derivation.GroundParameterPatchReturn.field_smooth_on.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) :
+  ContDiffOn ℝ (↑⊤) (SbtCosmo.Derivation.GroundParameterPatchReturn.field v) v.domain
+SbtCosmo.Derivation.GroundParameterPatchReturn.field_continuous_on.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) :
+  ContinuousOn (SbtCosmo.Derivation.GroundParameterPatchReturn.field v) v.domain
+SbtCosmo.Derivation.GroundParameterPatchReturn.field_fixed.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {k : ℝ} (hk : k ∈ v.domain) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k) = 1 ∧
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap b k (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k) =
+      SbtCosmo.Derivation.GroundParameterPatchReturn.field v k
+SbtCosmo.Derivation.GroundParameterPatchReturn.native_fixed_legal.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {k τ m : ℝ} (hk : k ∈ v.domain)
+  (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b k m
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k)) =
+      SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b k
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k)) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b k m
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k))
+SbtCosmo.Derivation.GroundParameterPatchReturn.minus_one_contact.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {a c τ : ℝ} (hac : a < c)
+  (hcover : Set.Icc a c ⊆ v.domain) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1)
+  (hsign :
+    SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+          ((b, a), SbtCosmo.Derivation.GroundParameterPatchReturn.field v a) *
+        SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+          ((b, c), SbtCosmo.Derivation.GroundParameterPatchReturn.field v c) <
+      0) :
+  ∃ k ∈ Set.Ioo a c,
+    SbtCosmo.Derivation.GroundParameterPatchReturn.ModeContact b
+      (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k) τ k
+SbtCosmo.Derivation.GroundParameterPatchReturn.two_distinct_contacts.{u_1} {b : SbtCosmo.Derivation.GroundState.Field}
+  {ι : Type u_1} [Finite ι] (v : SbtCosmo.Derivation.GroundParameterPatch.TubeCover b ι) {a d c τ : ℝ} (had : a < d)
+  (hdc : d < c) (hcover : Set.Icc a c ⊆ v.domain) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1)
+  (hsign₁ :
+    SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+          ((b, a), SbtCosmo.Derivation.GroundParameterPatchReturn.field v a) *
+        SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+          ((b, d), SbtCosmo.Derivation.GroundParameterPatchReturn.field v d) <
+      0)
+  (hsign₂ :
+    SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+          ((b, d), SbtCosmo.Derivation.GroundParameterPatchReturn.field v d) *
+        SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+          ((b, c), SbtCosmo.Derivation.GroundParameterPatchReturn.field v c) <
+      0) :
+  ∃ k₁ ∈ Set.Ioo a d,
+    ∃ k₂ ∈ Set.Ioo d c,
+      k₁ < k₂ ∧
+        SbtCosmo.Derivation.GroundParameterPatchReturn.ModeContact b
+            (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k₁) τ k₁ ∧
+          SbtCosmo.Derivation.GroundParameterPatchReturn.ModeContact b
+            (SbtCosmo.Derivation.GroundParameterPatchReturn.field v k₂) τ k₂

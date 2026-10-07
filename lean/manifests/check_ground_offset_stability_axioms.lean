@@ -1,0 +1,183 @@
+import SbtCosmo.Derivation.GroundUncertainBorderResponse
+import SbtCosmo.Derivation.GroundOffsetStability.Point000
+import SbtCosmo.Derivation.GroundOffsetStability.Point001
+import SbtCosmo.Derivation.GroundOffsetStability.Point002
+import SbtCosmo.Derivation.GroundOffsetStability.Point003
+import SbtCosmo.Derivation.GroundOffsetStability.Point004
+import SbtCosmo.Derivation.GroundOffsetStability.Point005
+import SbtCosmo.Derivation.GroundOffsetStability.Point006
+import SbtCosmo.Derivation.GroundOffsetStability.Point007
+import SbtCosmo.Derivation.GroundOffsetStability.Point008
+import SbtCosmo.Derivation.GroundOffsetStability.Point009
+import SbtCosmo.Derivation.GroundOffsetStability.Point010
+import SbtCosmo.Derivation.GroundOffsetStability.Point011
+import SbtCosmo.Derivation.GroundOffsetStability.Point012
+import SbtCosmo.Derivation.GroundOffsetStability.Point013
+import SbtCosmo.Derivation.GroundOffsetStability.Point014
+import SbtCosmo.Derivation.GroundOffsetStability.Point015
+import SbtCosmo.Derivation.GroundOffsetStability.Point016
+import SbtCosmo.Derivation.GroundOffsetStability.Point017
+import SbtCosmo.Derivation.GroundOriginalOffsetStability
+
+#print axioms SbtCosmo.Derivation.GroundUncertainBorderResponse.arithmetic_response_error
+#print axioms SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval_sound
+#print axioms SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals_sound
+#print axioms SbtCosmo.Derivation.GroundUncertainBorderResponse.included_sound
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point000.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point001.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point002.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point003.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point004.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point005.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point006.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point007.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point008.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point009.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point010.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point011.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point012.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point013.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point014.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point015.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point016.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.response_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.real_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.imag_inverse
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.realBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.imagBox_included
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.real_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.imag_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetStability.Point017.stable_rate
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_real_entries
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_imag_entries
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_real_norm
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_imag_norm
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_full_norm
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_stable_full_norm
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.whole_root_return
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.whole_background_box_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_exact_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_rounded_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.whole_background_box_negative_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_exact_negative_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_rounded_negative_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetStability.zero_selector_preconditioner_rejected

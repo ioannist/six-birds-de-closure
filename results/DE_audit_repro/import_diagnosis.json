@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "audit_path": {
+    "load_bearing_backend": "scipy compressed background",
+    "classy_required": false,
+    "clik_required": false,
+    "notes": [
+      "scripts/de_audit_run.py imports sbt_cosmo.theory.background_compressed, but uses evaluate_background with the default backend='scipy'.",
+      "sbt_cosmo.theory.background_compressed previously imported classy at module import time. That was vestigial for the audit path and is now lazy-imported only inside backend='classy'.",
+      "No Planck clik path is reachable from tests/test_de_audit.py, scripts/de_audit_run.py, scripts/de_audit_b2_fix.py, or scripts/de_audit_validate.py."
+    ]
+  },
+  "optional_paths": {
+    "backend_classy_oracle_validation": {
+      "requires": "classy",
+      "load_bearing_for_de_audit": false
+    },
+    "full_planck_clik_rigor_track": {
+      "requires": "clik/native Planck packages",
+      "load_bearing_for_de_audit": false
+    }
+  },
+  "proof_method": {
+    "import_blocker": "PYTHONPATH prepended with /tmp/de_audit_no_classy containing classy.py and clik.py that raise ImportError",
+    "commands_recorded": [
+      "pytest -q tests/test_de_audit.py",
+      "python scripts/de_audit_validate.py --results-dir results/DE_audit",
+      "python scripts/de_audit_repro_smoke.py --tolerance-chi2 5.0"
+    ]
+  }
+}

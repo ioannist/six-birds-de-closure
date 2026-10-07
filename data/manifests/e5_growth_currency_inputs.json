@@ -1,0 +1,316 @@
+{
+  "manifest": "E5 growth/staging closure-currency INPUT manifest \u2014 E5-minimal-physical-v2 (3-family available-data decisive certificate). LOCKED before WP-E5-CODE build.",
+  "design_version": "E5-minimal-physical-v3A",
+  "design_label": "E5-minimal-physical-v3A: 3-family ALL-3-of-3 SCALE-CUT-decisive certificate. Decisive staging axis = scale_cut (the unique axis non-vacuous + legal for all 3 families per the G-E5-NONVAC pre-mortem; external reviewer approved 2026-06-01). HSC photo-z = diagnostic/nonvacuity_fail (does NOT count). redshift-tomographic = secondary diagnostic. baryon = Omega_theory/method-control only. NOT a full 3x2pt promotion. Tests a SCALE-STAGING closure currency (not all-axis).",
+  "manifest_note": "Freezes EVERY probe, fold, staging axis, nuisance model, and Omega input BEFORE the build. WP-E5-CODE MUST read + sha256-stamp this file and may use ONLY what is listed here. Validated by tests/test_e5_manifest.py. Governs with plan/E5_CARRIER_REALIZATION.md and plan/E5_DESIGN_FREEZE.md.",
+  "locked_utc": "2026-06-01",
+  "reviewer_rebless": {
+    "verdict": "READY-WITH-CONDITIONS (external reviewer, 2026-06-01)",
+    "source": "plan/REVIEW_REQUEST_E5_3FAMILY_2026-06-01.md (request) + reviewer response 2026-06-01",
+    "conditions_locked": [
+      "C1: 4-fold LOFO -> 3-fold LOFO (DES Y6 dropped: no buildable official vector/covariance).",
+      "C2: G-E5-CURRENCY-DECISIVE -> ALL-3-of-3 (not >=2-of-3). Prefer false negatives over false positives; E5 is the sole decisive front after R0.",
+      "C3: add KiDS<->HSC shared-systematics floor Omega_WL_shared to Omega_nuisance_systematics + a pre-registered conservative shared-WL correlation stress.",
+      "C4: DES Y3 = method-control / pipeline-rehearsal ONLY, NEVER decisive, NEVER a fold.",
+      "C5: HSC Fourier C_ell + DESI-recal n(z) is valid, but the Fourier/real-space pipeline mismatch must be controlled or budgeted (Omega_HSC_pipeline)."
+    ]
+  },
+  "decisive_requirement": "G-E5-CURRENCY-DECISIVE-3FAM requires ALL 3 independent growth families (KiDS-Legacy shear-cal, HSC-Y3 photo-z, ACT+SPT+Planck CMB-lensing) to pass their held-out LOFO fold; judged on staging localization (NOT a scalar S8 shift).",
+  "split_discipline": "ROTATING leave-one-family-out (LOFO). The 3 decisive growth families form 3 folds; in each fold ONE family is the held-out WITNESS and the other 2 are the DECLARE/BUILD set (they fix L_geom, C, Omega, the staging grids, the certificate). lambda_max(Xi_C - Omega) is evaluated on the held-out witness family ONLY. Omega is re-frozen per fold on that fold's declare set, pre-witness. RSD and DES Y3 are method-controls (never decisive, never a fold).",
+  "probes": [
+    {
+      "probe_id": "des_y6_3x2pt",
+      "family": "WL_3x2pt_lowz",
+      "role": "ideal_unavailable_low_z_3x2pt",
+      "decisive": false,
+      "in_decisive_battery": false,
+      "source_arxiv": "2601.14559",
+      "data_vector": "UNAVAILABLE \u2014 no official executable DES Y6 3x2pt data vector + covariance released (Jan 2026 paper only). Scientifically the ideal low-z 3x2pt substrate; excluded from the buildable certificate until an official vector/covariance product exists.",
+      "covariance": "UNAVAILABLE",
+      "backend_tier": "physical_CCL",
+      "staging_role": "ideal prime low-z 3x2pt substrate (NOT exercised in v2)"
+    },
+    {
+      "probe_id": "des_y3_3x2pt",
+      "family": "WL_3x2pt_rehearsal",
+      "role": "method_control_rehearsal",
+      "decisive": false,
+      "in_decisive_battery": false,
+      "source_arxiv": "2105.13549",
+      "data_vector": "data/manifests/des_y3_3x2pt.json (public DES Y3 3x2pt)",
+      "covariance": "see data/manifests/des_y3_3x2pt.json",
+      "backend_tier": "physical_CCL",
+      "staging_role": "PIPELINE REHEARSAL / METHOD-CONTROL ONLY (reviewer C4, 2026-06-01): NEVER decisive, NEVER a fold. A DES-Y3-inclusive 4-family alternative, if ever desired, must be a SEPARATE pre-registered auxiliary analysis defined before looking at E5 outcomes."
+    },
+    {
+      "probe_id": "kids_legacy_shear",
+      "family": "WL_shear_cal",
+      "role": "decisive_family",
+      "decisive": true,
+      "in_decisive_battery": true,
+      "source_arxiv": "2503.19441",
+      "data_vector": "data/processed/kids_legacy/data_vector.npy",
+      "covariance": "data/processed/kids_legacy/covariance.npy",
+      "dataset_manifest": "data/manifests/kids_legacy.json",
+      "data_available": true,
+      "total_SNR": 28.61,
+      "backend_tier": "physical_CCL",
+      "staging_role": "independent shear-calibration / redshift-calibration contrast (COSEBIs E-mode, modes 1-6). NOT 'low S8 evidence'.",
+      "decisive_staging_axis": "scale_cut"
+    },
+    {
+      "probe_id": "hsc_y3_origVSrecal",
+      "family": "WL_photoz_stage",
+      "role": "decisive_family",
+      "decisive": true,
+      "in_decisive_battery": true,
+      "source_arxiv": "2304.00701 (Dalal+23 Fourier) + DESI-recal n(z)",
+      "data_vector": "data/processed/hsc_y3/data_vector.npy",
+      "covariance": "data/processed/hsc_y3/covariance.npy",
+      "dataset_manifest": "data/manifests/hsc_y3.json",
+      "data_available": true,
+      "total_SNR": 37.39,
+      "backend_tier": "physical_CCL_Fourier_cl_ee",
+      "staging_pair": {
+        "original_nz": "data/processed/hsc_y3/nz_original.npy",
+        "recalibrated_nz": "data/processed/hsc_y3_desi_recal/nz_recal.npy",
+        "contrast": "ORIGINAL HSC n(z) vs DESI-DR1/2-recalibrated n(z), SAME Fourier C_ell data vector+cov, propagated per tomographic bin."
+      },
+      "staging_role": "SCALE-CUT decisive (high-ell increments); photo-z is DIAGNOSTIC-only (absorbed by HSC dz); redshift secondary.",
+      "decisive_staging_axis": "scale_cut",
+      "photo_z_status": "diagnostic/nonvacuity_fail (G-E5-NONVAC photo-z FAIL post 0.618)"
+    },
+    {
+      "probe_id": "cmblensing_act_spt_planck",
+      "family": "CMB_lensing_highz",
+      "role": "decisive_family",
+      "decisive": true,
+      "in_decisive_battery": true,
+      "source_arxiv": "ACT DR6 + SPT-3G + Planck PR4 joint lensing (LAMBDA act_spt_joint)",
+      "data_vector": "data/processed/cmb_lensing/data_vector.npy",
+      "covariance": "data/processed/cmb_lensing/covariance.npy",
+      "dataset_manifest": "data/manifests/cmb_lensing.json",
+      "data_available": true,
+      "total_SNR": 61.35,
+      "backend_tier": "physical_CCL",
+      "staging_role": "SCALE-CUT decisive (high-L increments); MODEST eligibility (post 2.8-5.5), single-axis fold.",
+      "decisive_staging_axis": "scale_cut"
+    },
+    {
+      "probe_id": "desi_rsd_fsigma8",
+      "family": "RSD_growth",
+      "role": "method_control",
+      "decisive": false,
+      "in_decisive_battery": false,
+      "source_arxiv": "2411.12026 (DR1 full-shape)",
+      "data_vector": "TODO-on-fetch (method-control only)",
+      "covariance": "TODO-on-fetch",
+      "backend_tier": "physical_CCL",
+      "rsd_status": "method-control ONLY; DESI DR2 has no public fsigma8 product.",
+      "staging_role": "RSD probe-family staging control"
+    }
+  ],
+  "evaluation_design": "rotating_leave_one_family_out_3fold",
+  "decisive_battery_families": [
+    "WL_shear_cal",
+    "WL_photoz_stage",
+    "CMB_lensing_highz"
+  ],
+  "rotating_lofo_folds": [
+    {
+      "fold_id": "fold_kids_legacy_shear",
+      "witness_family": "WL_shear_cal",
+      "witness_probe": "kids_legacy_shear",
+      "declare_families": [
+        "WL_photoz_stage",
+        "CMB_lensing_highz"
+      ]
+    },
+    {
+      "fold_id": "fold_hsc_y3_origVSrecal",
+      "witness_family": "WL_photoz_stage",
+      "witness_probe": "hsc_y3_origVSrecal",
+      "declare_families": [
+        "WL_shear_cal",
+        "CMB_lensing_highz"
+      ]
+    },
+    {
+      "fold_id": "fold_cmblensing_act_spt_planck",
+      "witness_family": "CMB_lensing_highz",
+      "witness_probe": "cmblensing_act_spt_planck",
+      "declare_families": [
+        "WL_shear_cal",
+        "WL_photoz_stage"
+      ]
+    }
+  ],
+  "decisive_rule": "G-E5-CURRENCY-DECISIVE-v3A passes iff: (1) G-E5-NONVAC(scale_cut) passes for KiDS, HSC, AND CMB-lensing (eligibility only); (2) the KiDS-heldout, HSC-heldout, and CMB-lensing-heldout LOFO folds EACH pass G-E5-PSD AND G-E5-STAGING AND G-E5-HETERO AND G-E5-ZERO (ALL-3-of-3, NO >=2-of-3 rescue); (3) G-E5-STAGING evaluated on the PRE-REGISTERED scale-cut ordering (KiDS high COSEBIs modes; HSC high-ell; CMB high-L); (4) reversed/randomized scale-cut-order AND shuffled-stage-label zero controls both below budget; (5) Omega includes Omega_WL_shared and survives the conservative KiDS<->HSC shared-systematics stress (rho_KH in {0.25,0.5,0.75}); (6) Omega_HSC_pipeline included for the HSC Fourier/real-space mismatch; (7) the baryon/nonlinear proxy is NOT a decisive axis; (8) G-ENV-4, G-E5-BACKEND, G-E5-REPRO, G-E5-NOSURR, G-E5-COV, G-E5-RANK, G-E5-KERNEL, G-E5-SYS all pass. Any scientific fold fail => ACCEPTED_NEGATIVE/non-promoted; data/backend/kernel fail => BLOCKED.",
+  "method_control": [
+    "desi_rsd_fsigma8",
+    "des_y3_3x2pt"
+  ],
+  "staging_axes": [
+    {
+      "axis": "scale_cut_severity",
+      "var": "nested scale cuts per probe",
+      "grid": "LOCKED E5-v3 grid: HSC/CMB nested ell_max/L_max in {1000,1500,2000,3000,5000}; KiDS nested COSEBIs modes {1-3,1-4,1-5,1-6}. Adjacent-cut perturbations are theta(cut_upper)-theta(cut_lower), zero outside newly admitted scale rows.",
+      "priority": 1
+    },
+    {
+      "axis": "redshift_tomographic_stage",
+      "var": "low-z vs high-z bins; drop-lowest / drop-highest",
+      "grid": "per-probe tomographic drop sequence (HSC 4 bins, KiDS 6 bins, CMB-lensing L-as-z proxy)",
+      "priority": 2
+    },
+    {
+      "axis": "nonlinear_baryon_stage",
+      "var": "Halofit vs HMCode; baryon-feedback amplitude; k_max",
+      "grid": "{Halofit, HMCode} x {no-baryon, baryon-feedback}",
+      "priority": 3
+    },
+    {
+      "axis": "photoz_calibration_stage",
+      "var": "HSC original vs DESI-recalibrated n(z)",
+      "grid": "{original, DESI-recal} (the HSC staging PAIR)",
+      "priority": 4
+    },
+    {
+      "axis": "IA_model_stage",
+      "var": "NLA vs TATT; IA prior width",
+      "grid": "{NLA, TATT} x {fiducial, wide} IA prior",
+      "priority": 5
+    },
+    {
+      "axis": "probe_family_stage",
+      "var": "shear / CMB-lensing",
+      "grid": "enumerated by probe",
+      "priority": 6
+    }
+  ],
+  "scale_cut_grid": {
+    "locked_utc": "2026-06-01",
+    "source": "WP-NONVAC-FIX, implementing plan/experiments/E5-growth-staging-currency.md scale-cut grid",
+    "construction": "For NONVAC and G-E5-STAGING use adjacent nested-cut perturbations theta(cut_upper)-theta(cut_lower), represented in the native full data vector with zeros outside newly admitted rows. Do not use signed whole-vector contrasts.",
+    "hsc_y3_origVSrecal": {
+      "observable": "Fourier C_ell^EE",
+      "ell_max": [
+        1000,
+        1500,
+        2000,
+        3000,
+        5000
+      ]
+    },
+    "cmblensing_act_spt_planck": {
+      "observable": "C_L^{kappakappa} bandpowers",
+      "L_max": [
+        1000,
+        1500,
+        2000,
+        3000,
+        5000
+      ]
+    },
+    "kids_legacy_shear": {
+      "observable": "COSEBIs E-modes",
+      "nested_modes": [
+        "1-3",
+        "1-4",
+        "1-5",
+        "1-6"
+      ]
+    }
+  },
+  "forbidden_staging_axis": "survey_label (a confounder; G-E5-HETERO requires correlation with an INDEPENDENT heterogeneity proxy, not survey labels)",
+  "nuisance_model": {
+    "marginalized_before_D_growth_rows_are_formed": true,
+    "components": [
+      "intrinsic_alignment (NLA/TATT)",
+      "baryon_feedback",
+      "photo_z_shifts_and_widths",
+      "shear_multiplicative_calibration_m",
+      "redshift_calibration",
+      "nonlinear_power_prescription",
+      "KiDS_HSC_shared_WL_systematics (IA/baryon/photo-z/shear-cal/common-theory)"
+    ],
+    "priors": "published per-survey priors (KiDS Wright+25, HSC Dalal+23, ACT/SPT/Planck lensing)",
+    "high_correlation_stress_variant": "REQUIRED for photo_z, shear_calibration, common theory error, AND the KiDS<->HSC shared-WL correlation (do NOT default cross-survey covariance to zero)"
+  },
+  "omega_budget": {
+    "policy": "Omega = max(Omega_same_family, Omega_synthetic_null, Omega_nuisance_systematics, Omega_theory) + Delta_margin",
+    "computed_on": "declare_build split ONLY, before the witness split is evaluated",
+    "Omega_same_family": "null residual from rows already explainable by L_geom (same-family saturation)",
+    "Omega_synthetic_null": "linear / zero-heterogeneity synthetic control residual",
+    "Omega_nuisance_systematics": "IA + baryon + photo-z + shear-cal + redshift-cal + covariance-uncertainty propagated through the Schur pipeline, INCLUDING Omega_WL_shared",
+    "Omega_WL_shared": {
+      "desc": "KiDS<->HSC shared cosmic-shear systematics floor (reviewer C3): IA model, baryon/nonlinear-power, photo-z calibration, shear calibration, common theory/covariance approximation.",
+      "shared_correlation_stress_grid": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "rule": "the all-3-of-3 headline MUST survive the BASELINE shared-systematics model AND at least one CONSERVATIVE high-correlation stress (rho_KH^sys in {0.25,0.50,0.75}). If the signal only passes under diagonal KiDS/HSC independence, it is NOT decisive."
+    },
+    "Omega_HSC_pipeline": {
+      "desc": "HSC Fourier-vs-real-space pipeline-mismatch floor (reviewer C5): the original-vs-recal n(z) contrast is applied through the HSC Fourier C_ell pipeline; budget the Fourier/real-space discrepancy.",
+      "rule": "the HSC fold is decisive only if the n(z) contrast is propagated through the HSC Fourier pipeline with a declared Omega_HSC_pipeline floor AND either a real-space Li+23 method-control agrees qualitatively OR the Fourier/real-space mismatch is explicitly budgeted. If Fourier and real-space controls disagree in sign/localization/staging, downgrade the HSC fold to diagnostic => all-3-of-3 fails."
+    },
+    "Omega_theory": "pyccl<->CLASS mismatch + nonlinear-power-prescription spread + Gaussian-compressed-likelihood approximation floor",
+    "Delta_margin": "declared per fold on the declare set, pre-witness (>=0)",
+    "frozen": "provenance-stamped + sha256-frozen before unblinding; NEVER tuned on the witness split"
+  },
+  "localization_threshold": {
+    "eigenvector_mass_high_stage_min": 0.6,
+    "shuffled_stage_null_factor_min": 2.0,
+    "spearman_rho_min": 0.6,
+    "rule": "PASS G-E5-STAGING iff (m_high(v_max) >= 0.60 AND m_high >= 2x median shuffled-stage null) OR (Spearman |rho| >= 0.6 with bootstrap CI excluding 0)"
+  },
+  "zero_controls": [
+    "(1) same-family saturation: D_growth replaced by rows already explained by L_geom -> below budget",
+    "(2) shuffled stage labels -> below budget",
+    "(3) reversed/randomized scale-cut order -> below budget",
+    "(4) linear / zero-heterogeneity synthetic control -> below budget",
+    "(5) held-out survey's staging vector removed from BOTH L and D -> below budget",
+    "DPI/coarsening guard: coarsening native probes must NOT artificially increase the audit"
+  ],
+  "excluded": [
+    {
+      "item": "DES Y6 3x2pt as a decisive family in v2",
+      "reason": "no official executable data vector + covariance released (Jan 2026 paper only); ideal but not buildable."
+    },
+    {
+      "item": ">=2-of-3 majority decisive rule",
+      "reason": "reviewer C2: with 3 families a 2-of-3 could pass on the two correlated cosmic-shear legs alone; use ALL-3-of-3."
+    },
+    {
+      "item": "DES Y3 as decisive",
+      "reason": "reviewer C4: rehearsal/method-control ONLY; a DES-Y3 4-family alternative must be a separate pre-registered auxiliary analysis."
+    },
+    {
+      "item": "scalar S8-shift as the decisive observable",
+      "reason": "primary observable is the sign-free lambda_max(Xi_C - Omega); S8 tension softened 2025-26."
+    },
+    {
+      "item": "fitted per-probe Xi_p / signed closure amplitudes",
+      "reason": "Xi_C is COMPUTED from locked (L_geom,D_growth,C), not shaped (G-E5-RANK)."
+    },
+    {
+      "item": "DESI DR2 fsigma8 as decisive without a manifest-verified public product",
+      "reason": "DR2 is BAO-focused."
+    }
+  ],
+  "decisive_axis": "scale_cut",
+  "decisive_axis_note": "G-E5-NONVAC(scale_cut) is an ELIGIBILITY gate ONLY -- it cannot contribute directly to G-E5-CURRENCY-DECISIVE except by allowing the family/axis to be tested. The decisive claim requires G-E5-PSD AND G-E5-STAGING AND G-E5-HETERO AND G-E5-ZERO on the pre-registered scale-cut ordering across all 3 LOFO folds. High ||t||_post (S/N) alone is NOT a detection.",
+  "nonvac_eligibility": {
+    "scale_cut": {
+      "KiDS": "PASS (post 28.6/8.4 on COSEBIs increments)",
+      "HSC": "PASS (post 14.8-20.1 on ell_max increments)",
+      "CMB_lensing": "PASS (post 2.8-5.5 on L increments; MODEST, single-axis fold -> do not relax STAGING/ZERO)"
+    },
+    "HSC_photo_z": "FAIL (post 0.618, retained 0.146) -> diagnostic/nonvacuity_fail",
+    "redshift_tomographic": "secondary diagnostic (HSC fails retained 0.173 in the legal metric; KiDS passes but secondary)",
+    "baryon": "NOT eligible-as-decisive (vanDaalen19 proxy, not faithful HMCode2016)",
+    "frozen_grid": "scale_cut_severity in staging_axes: HSC/CMB ell_max{1000,1500,2000,3000,5000}, KiDS COSEBIs modes{1-3,1-4,1-5,1-6}"
+  }
+}

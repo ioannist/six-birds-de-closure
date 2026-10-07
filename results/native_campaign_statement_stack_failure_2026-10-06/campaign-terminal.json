@@ -1,0 +1,5 @@
+{
+  "terminal_exit_code": 1,
+  "error": "AssertionError('statements')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py\", line 129, in <module>\n    assert result.returncode == 0 and not re.search(r'error:|warning:', s), stage\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: statements\n"
+}

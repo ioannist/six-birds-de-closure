@@ -1,0 +1,63 @@
+Adversarial self-review, not independent review. Baseline999d7ae.
+
+Target: actual first-ANY-patch readout regularity under original robust threshold
+and amplitude changes, with continuum signed parameter dependence. Preserve
+original growth IVP, original a0/horizon/initialD1, exact coupled N64 inputs and
+separately realized N32/N128 data/tags. Paper/runtime/prior proofs fixed.
+
+Generic domainD is EXACT actual firstTime guard in(T,lambda), with fixed legal
+positivea0,horizonA>=a0,live cutoff,threshold>1 andthreshold<=nativehorizongrowth.
+Selector firstTime is unchanged. Root specification and strict scale monotonicity
+were actually constructed earlier, not supplied as recognition hypotheses.
+Joint relative continuity onD is proved by order bracketing: lower testb<a0 and
+upper testb>A use actual interval bounds; remaining fixed testsb lie in[a0,A].
+Original parameter differentiability atfixedb yields actual continuity ofG_lambda(b).
+Strict comparison persists against varyingT; actual nearby root equalities and
+scale monotonicity return actualtime inequalities. Domain membership is available
+only in the within-filter. This covers horizon equality honestly.
+
+Strict final margin plusactualfixedhorizonlambda continuity earnsD asambient
+neighborhood. Relative continuity then earns full joint ambient continuity.
+At fixedlambda, actual native scale derivative atselectedroot ispositive. Nearby
+thresholds haveactualroot equalities, supplying the LOCALLEFTINVERSE in the exact
+direction required bymathlibof_local_left_inverse. No continuity or inverse root
+assumed. The returned threshold derivative is actual reciprocal nativevelocity.
+Actualvelocity continuity composedwithselectorcontinuity earnsderivativecontinuity
+andC1 ontheopenactualthresholdinterval. JointC1 includinglambda not claimed.
+
+Generic finite maximum uses previous actual attained finite construction with
+constant AUXILIARY labels only to get untagged ANY-patch maximum. Original tags
+are NOTchanged. Actualmaximum is1-Lipschitz withouta fixed maximizingindex.
+Nonzero maximum yieldscontinuousactualthresholddelta/maximum; actualdomainmargins
+and inputcontinuity yieldcontinuousactualtime. ANY-patch collapseiff time<=a
+returnsit totheoriginalreadout, ratherthana two-tag epoch.
+
+Original N64 rectangle andN32/N128 guards independently EARNstrictfirstthreshold
+slack: actual first thresholds<actualaggregate<=actualnativehorizongrowth. Thus
+alladmittedreadouts, includingpositiveaggregate endpoints, arestrictlyinside the
+first-time domain. ActualN64time/ratiojointcontinuity in(d,s,lambda), fixedlambda
+jointknobC1, exactthreshold/amplitude partialderivatives and theirpositive/negative
+signs follow. ExistingearnedaggregateendpointC1 gives actualendpointtime/ratio
+continuity. Alloriginalpopulation signedreadouts arecontinuousinlambda. No need
+assume nearbypoints remaininaggregategate: earned first-time margin isenough.
+R usesabs(lambda)*actualtime^3 andiscontinuousatlambda0; noabsdifferentiability
+or jointC1includinglambda asserted.
+
+Controls exerciseactualmathfactors. MatterhorizonequalityT=A/a0 selectsA buthigher
+T fallbackselectsa0; rightfilterlimituniqueness disprovesambientcontinuitywhenA>a0.
+RelativecontinuityonD remainsvalid. Actualfinitepositivepatches1+t,1-t switch at0;
+maximum1+abs(t) isnotdifferentiable. Actualoriginalnativea0=1/1000,horizon20,
+lambda0, genericdeclaredthreshold500 giveactualfirsttime(1/2)/(1+abs(t)) for|t|<1.
+Thisactualtime isnotdifferentiable: otherwisereciprocalreadoutreconstructsan
+impossible differentiablemaximum. The500 control isexplicitlygeneric, not the
+original rectangle's threshold. Itdoesnotrefutecoupled-knobC1, where common
+positive rescalingdoesnotswitchmaximizers. No universal smoothnesssmuggledin.
+
+Freshfullbuild8161 andall38exportedstatements/standard-onlyclosures exit0;
+noholes/native_decide. Cumulative1322isimmutableprior1284rawprefix plusfresh38,
+NOTa rerunfullcumulativecommand. Toolchain/mathlibdirectdependencies/sourceidentity
+checked. Priorpaper/runtime/data/proof/evidenceprotected. PureLean mathematical
+controls; no Pythonruntime/RNG/ODEsuite rerun. Jointcontinuity andknobC1obligations
+closed; jointC1includinglambda anditsimplicitderivative, additionalpopulation/knob
+sweeps andbroaderoriginaltargetauditremainseparate. Priorfalse/project-sized
+boundariesunchanged. No new supportedoriginalclaimdowngrade; fullgoalincomplete.

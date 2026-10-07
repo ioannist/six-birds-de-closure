@@ -1,0 +1,526 @@
+{
+  "design_version": "E5-v3-NONVAC-premortem",
+  "gate": "G-E5-NONVAC(family,axis): norm_post>=2.0 and retained>=0.25",
+  "honest_branch": {
+    "bottom_line": "HSC has at least one eligible non-vacuous axis for manager/reviewer confirmation.",
+    "cmblensing_has_axis": true,
+    "hsc_candidate_axes": [
+      "photo_z_lowz_bins_1_2",
+      "scale_cut_lmax_1500_minus_1000",
+      "scale_cut_lmax_2000_minus_1500",
+      "scale_cut_lmax_3000_minus_2000",
+      "scale_cut_lmax_5000_minus_3000"
+    ],
+    "hsc_has_candidate_axis": true,
+    "kids_has_axis": true
+  },
+  "load_average_end": [
+    78.94189453125,
+    49.16943359375,
+    39.20703125
+  ],
+  "metadata": {
+    "CMB-lensing": {
+      "note": "No m/dz/IA nuisance subspace exists for the compressed CMB-lensing bandpower adapter; published covariance is used directly.",
+      "scale_cut_grid": [
+        1000,
+        1500,
+        2000,
+        3000,
+        5000
+      ],
+      "scale_order_control": {
+        "interpretation": "NONVAC uses norms, so reversing one cut increment sends t -> -t and cannot change eligibility. This diagnostic is recorded for later G-E5-ZERO, not used to fail NONVAC.",
+        "n_adjacent_cuts": 3,
+        "ordered_spearman_rho": -0.9999999999999998,
+        "randomized_median_abs_rho": 0.4999999999999999,
+        "reversed_spearman_rho": 0.9999999999999998,
+        "zero_control_killed": false
+      }
+    },
+    "HSC-Y3": {
+      "Omega_HSC_pipeline": "reused results/E5/Omega_HSC_pipeline.npy from legal settle2",
+      "Sigma_marg": "reused results/E5/HSC_Sigma_marg.npy from legal settle2",
+      "omega_trace": 1.60578729795493e-16,
+      "scale_cut_grid": [
+        1000,
+        1500,
+        2000,
+        3000,
+        5000
+      ],
+      "scale_order_control": {
+        "interpretation": "NONVAC uses norms, so reversing one cut increment sends t -> -t and cannot change eligibility. This diagnostic is recorded for later G-E5-ZERO, not used to fail NONVAC.",
+        "n_adjacent_cuts": 4,
+        "ordered_spearman_rho": -0.7999999999999998,
+        "randomized_median_abs_rho": 0.3999999999999999,
+        "reversed_spearman_rho": 0.7999999999999998,
+        "zero_control_killed": false
+      }
+    },
+    "KiDS-Legacy": {
+      "Sigma_nuis_trace": 6.99098544175425e-20,
+      "baryon": "vanDaalen19 fbar proxy with logT_AGN U(7.3,8.3) width from KiDS values.ini; baryon axes are non-decisive.",
+      "dz_covariance": "Official KiDS-Legacy Nz_covariance.txt",
+      "ia": "Official KiDS mass-dependent IA prior covariance propagated through per-bin NLA amplitudes.",
+      "ia_massdep": {
+        "covariance_path": "data/raw/kids_massdep_ia/massdep_cov.txt",
+        "effective_A_IA_bins_at_mean": [
+          0.1452637378320559,
+          0.3953286296731805,
+          0.5602915856507745,
+          0.8349285079980432,
+          0.779915332417396,
+          0.11201047681338805
+        ],
+        "means": [
+          5.74,
+          0.44,
+          11.69224599,
+          12.45768451,
+          12.76280679,
+          12.93435839,
+          13.08446641,
+          13.21675774
+        ],
+        "means_path": "data/raw/kids_massdep_ia/massdep_means.txt",
+        "model_path": "data/raw/kids_massdep_ia/mass_dependent_ia_model.py",
+        "parameter_order": [
+          "A_IA",
+          "beta",
+          "log10_M_mean_1",
+          "log10_M_mean_2",
+          "log10_M_mean_3",
+          "log10_M_mean_4",
+          "log10_M_mean_5",
+          "log10_M_mean_6"
+        ]
+      },
+      "nuisance_legality": "legal_official_massdep_ia",
+      "scale_cut_grid": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "scale_order_control": {
+        "interpretation": "NONVAC uses norms, so reversing one cut increment sends t -> -t and cannot change eligibility. This diagnostic is recorded for later G-E5-ZERO, not used to fail NONVAC.",
+        "n_adjacent_cuts": 3,
+        "ordered_spearman_rho": -0.9999999999999998,
+        "randomized_median_abs_rho": 0.4999999999999999,
+        "reversed_spearman_rho": 0.9999999999999998,
+        "zero_control_killed": false
+      },
+      "shear_calibration_m": "No explicit shear-m prior appears in the released KiDS-Legacy COSEBIs pipeline config inspected here; no widened m prior was invented."
+    }
+  },
+  "outputs": {
+    "csv": {
+      "path": "results/E5/E5_v3_nonvac.csv",
+      "sha256": "8d558ba56a9bf710c8b07dc42dc311c1da0aee7088900260947b14e842ef0098"
+    }
+  },
+  "rows": [
+    {
+      "NONVAC_pass": false,
+      "axis": "photo_z_original_minus_desi_recal",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 0.6180579391527151,
+      "norm_pre": 4.227569884342967,
+      "note": "Reviewer expected FAIL.",
+      "nuisance_legality": "legal",
+      "retained": 0.146196977474394
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "photo_z_lowz_bins_1_2",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 2.019299658881166,
+      "norm_pre": 2.3703002840295024,
+      "note": "",
+      "nuisance_legality": "legal",
+      "retained": 0.851917232802404
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_lmax_1500_minus_1000",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 18.42815568370716,
+      "norm_pre": 18.57437007315048,
+      "note": "Genuine adjacent lmax cut increment; zeros outside newly admitted ell range.",
+      "nuisance_legality": "legal",
+      "retained": 0.9921281643001895
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_lmax_2000_minus_1500",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 20.113597253760577,
+      "norm_pre": 21.00196145192705,
+      "note": "Genuine adjacent lmax cut increment; zeros outside newly admitted ell range.",
+      "nuisance_legality": "legal",
+      "retained": 0.9577008937855679
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_lmax_3000_minus_2000",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 15.586981099044532,
+      "norm_pre": 16.260793946436035,
+      "note": "Genuine adjacent lmax cut increment; zeros outside newly admitted ell range.",
+      "nuisance_legality": "legal",
+      "retained": 0.9585621188232826
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_lmax_5000_minus_3000",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 14.814671275893852,
+      "norm_pre": 15.796818455744143,
+      "note": "Genuine adjacent lmax cut increment; zeros outside newly admitted ell range.",
+      "nuisance_legality": "legal",
+      "retained": 0.93782626656109
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "redshift_tomographic_orthogonalized_to_dz",
+      "diagnostics": {
+        "metric_projection": {
+          "projection_fraction": 0.7830308206982091,
+          "residual_max_abs_cosine": 3.129114221248154e-13
+        }
+      },
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 11.698454696338718,
+      "norm_pre": 67.49364647820273,
+      "note": "Orthogonalized against dz span in the Sigma_marg^-1 metric.",
+      "nuisance_legality": "legal",
+      "retained": 0.173326754542989
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "IA_model_TATT_minus_NLA",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": true,
+      "family": "HSC-Y3",
+      "norm_post": 0.9550113566620921,
+      "norm_pre": 2.8085116090749165,
+      "note": "",
+      "nuisance_legality": "legal",
+      "retained": 0.34004180491055874
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "baryon_vanDaalen19_minus_no_baryon",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": false,
+      "family": "HSC-Y3",
+      "norm_post": 0.5719544202280524,
+      "norm_pre": 1.3125740224448472,
+      "note": "Baryon proxy is not eligible as decisive.",
+      "nuisance_legality": "legal",
+      "retained": 0.4357502209000828
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_modes_1-4_minus_1-3",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "KiDS-Legacy",
+      "norm_post": 28.628467915088976,
+      "norm_pre": 29.454626132104632,
+      "note": "Genuine adjacent COSEBIs mode-grid increment with official mass-dependent IA covariance in Sigma_nuis.",
+      "nuisance_legality": "legal_official_massdep_ia",
+      "retained": 0.9719514953844494
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_modes_1-5_minus_1-4",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "KiDS-Legacy",
+      "norm_post": 8.415474752378147,
+      "norm_pre": 8.451686800154905,
+      "note": "Genuine adjacent COSEBIs mode-grid increment with official mass-dependent IA covariance in Sigma_nuis.",
+      "nuisance_legality": "legal_official_massdep_ia",
+      "retained": 0.9957154058553029
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "scale_cut_modes_1-6_minus_1-5",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": true,
+      "family": "KiDS-Legacy",
+      "norm_post": 0.8777758135251292,
+      "norm_pre": 0.8782478672701126,
+      "note": "Genuine adjacent COSEBIs mode-grid increment with official mass-dependent IA covariance in Sigma_nuis.",
+      "nuisance_legality": "legal_official_massdep_ia",
+      "retained": 0.9994625051052493
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "redshift_tomographic_orthogonalized_to_dz",
+      "diagnostics": {
+        "metric_projection": {
+          "projection_fraction": 0.9604180801938267,
+          "residual_max_abs_cosine": 2.174253528226193e-15
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "KiDS-Legacy",
+      "norm_post": 8.857639796873347,
+      "norm_pre": 9.133097447538551,
+      "note": "Orthogonalized against dz span in Sigma_marg^-1 with official mass-dependent IA covariance in Sigma_nuis.",
+      "nuisance_legality": "legal_official_massdep_ia",
+      "retained": 0.9698396242624737
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "photo_z_dz_principal_direction",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": true,
+      "family": "KiDS-Legacy",
+      "norm_post": 0.44496260959716505,
+      "norm_pre": 0.5562115050296844,
+      "note": "Principal propagated dz-covariance direction; no external recalibrated-n(z) pair is in the manifest.",
+      "nuisance_legality": "legal_official_massdep_ia",
+      "retained": 0.7999881440306019
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "IA_model_TATT_minus_NLA",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "KiDS-Legacy",
+      "norm_post": 3.2424522638406184,
+      "norm_pre": 3.8314779320859875,
+      "note": "Adapter-level TATT-vs-NLA contrast; official KiDS IA nuisance covariance is the mass-dependent NLA covariance, not TATT.",
+      "nuisance_legality": "legal_official_massdep_ia",
+      "retained": 0.8462667203919707
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "baryon_vanDaalen19_minus_no_baryon",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": false,
+      "family": "KiDS-Legacy",
+      "norm_post": 0.4634970813551192,
+      "norm_pre": 0.6189126164442593,
+      "note": "Baryon proxy is not eligible as decisive.",
+      "nuisance_legality": "legal",
+      "retained": 0.7488893731363494
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_Lmax_1500_minus_1000",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "CMB-lensing",
+      "norm_post": 5.4602958537989545,
+      "norm_pre": 5.4602958537989545,
+      "note": "Genuine adjacent Lmax cut increment; zeros outside newly admitted L range.",
+      "nuisance_legality": "legal",
+      "retained": 1.0
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_Lmax_2000_minus_1500",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "CMB-lensing",
+      "norm_post": 3.4333620657366195,
+      "norm_pre": 3.4333620657366195,
+      "note": "Genuine adjacent Lmax cut increment; zeros outside newly admitted L range.",
+      "nuisance_legality": "legal",
+      "retained": 1.0
+    },
+    {
+      "NONVAC_pass": true,
+      "axis": "scale_cut_Lmax_3000_minus_2000",
+      "diagnostics": {
+        "amplitude_rescale": {
+          "data_amplitude_factor": 10.0,
+          "max_relative_change": 0.0
+        }
+      },
+      "eligible_NONVAC_pass": true,
+      "eligible_as_decisive": true,
+      "family": "CMB-lensing",
+      "norm_post": 2.7523490645578472,
+      "norm_pre": 2.7523490645578472,
+      "note": "Genuine adjacent Lmax cut increment; zeros outside newly admitted L range.",
+      "nuisance_legality": "legal",
+      "retained": 1.0
+    },
+    {
+      "NONVAC_pass": false,
+      "axis": "baryon_vanDaalen19_minus_no_baryon",
+      "diagnostics": {},
+      "eligible_NONVAC_pass": false,
+      "eligible_as_decisive": false,
+      "family": "CMB-lensing",
+      "norm_post": 0.11050245297228453,
+      "norm_pre": 0.11050245297228453,
+      "note": "Baryon proxy is not eligible as decisive.",
+      "nuisance_legality": "legal",
+      "retained": 1.0
+    }
+  ],
+  "runtime_seconds": 1254.2389825619757,
+  "schema_version": 1,
+  "stopped_before_certificate": true,
+  "summary_by_family": {
+    "CMB-lensing": {
+      "eligible_axes": [
+        "scale_cut_Lmax_1500_minus_1000",
+        "scale_cut_Lmax_2000_minus_1500",
+        "scale_cut_Lmax_3000_minus_2000"
+      ],
+      "eligible_nonvac_axes": [
+        "scale_cut_Lmax_1500_minus_1000",
+        "scale_cut_Lmax_2000_minus_1500",
+        "scale_cut_Lmax_3000_minus_2000"
+      ],
+      "has_eligible_nonvac_axis": true,
+      "nonvac_axes_all": [
+        "scale_cut_Lmax_1500_minus_1000",
+        "scale_cut_Lmax_2000_minus_1500",
+        "scale_cut_Lmax_3000_minus_2000"
+      ]
+    },
+    "HSC-Y3": {
+      "eligible_axes": [
+        "photo_z_original_minus_desi_recal",
+        "photo_z_lowz_bins_1_2",
+        "scale_cut_lmax_1500_minus_1000",
+        "scale_cut_lmax_2000_minus_1500",
+        "scale_cut_lmax_3000_minus_2000",
+        "scale_cut_lmax_5000_minus_3000",
+        "redshift_tomographic_orthogonalized_to_dz",
+        "IA_model_TATT_minus_NLA"
+      ],
+      "eligible_nonvac_axes": [
+        "photo_z_lowz_bins_1_2",
+        "scale_cut_lmax_1500_minus_1000",
+        "scale_cut_lmax_2000_minus_1500",
+        "scale_cut_lmax_3000_minus_2000",
+        "scale_cut_lmax_5000_minus_3000"
+      ],
+      "has_eligible_nonvac_axis": true,
+      "nonvac_axes_all": [
+        "photo_z_lowz_bins_1_2",
+        "scale_cut_lmax_1500_minus_1000",
+        "scale_cut_lmax_2000_minus_1500",
+        "scale_cut_lmax_3000_minus_2000",
+        "scale_cut_lmax_5000_minus_3000"
+      ]
+    },
+    "KiDS-Legacy": {
+      "eligible_axes": [
+        "scale_cut_modes_1-4_minus_1-3",
+        "scale_cut_modes_1-5_minus_1-4",
+        "scale_cut_modes_1-6_minus_1-5",
+        "redshift_tomographic_orthogonalized_to_dz",
+        "photo_z_dz_principal_direction",
+        "IA_model_TATT_minus_NLA"
+      ],
+      "eligible_nonvac_axes": [
+        "scale_cut_modes_1-4_minus_1-3",
+        "scale_cut_modes_1-5_minus_1-4",
+        "redshift_tomographic_orthogonalized_to_dz",
+        "IA_model_TATT_minus_NLA"
+      ],
+      "has_eligible_nonvac_axis": true,
+      "nonvac_axes_all": [
+        "scale_cut_modes_1-4_minus_1-3",
+        "scale_cut_modes_1-5_minus_1-4",
+        "redshift_tomographic_orthogonalized_to_dz",
+        "IA_model_TATT_minus_NLA"
+      ]
+    }
+  },
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

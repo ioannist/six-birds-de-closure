@@ -1,0 +1,312 @@
+{
+  "Omega_HSC_pipeline": {
+    "frobenius_norm": 1.0138697988197764e-16,
+    "max_eigenvalue": 8.224377357448422e-17,
+    "min_eigenvalue": -2.3840204847557142e-32,
+    "path": "results/E5/Omega_HSC_pipeline.npy",
+    "rank_tol_1e_minus_12": 0,
+    "sha256": "cfa0e593e0d751e134e5f17ef6b53cca12da521c46dca152fe1a95ca00f4d1e5",
+    "shape": [
+      170,
+      170
+    ],
+    "trace": 1.60578729795493e-16
+  },
+  "Sigma_marg": {
+    "frobenius_norm": 1.0254969670499118e-16,
+    "max_eigenvalue": 8.337015382521099e-17,
+    "min_eigenvalue": 2.98019386478953e-24,
+    "path": "results/E5/HSC_Sigma_marg.npy",
+    "rank_tol_1e_minus_12": 0,
+    "sha256": "17cf946dad0aa06a68697a68c6b479eeed71690d09f1f9749218930588a9a3b5",
+    "shape": [
+      170,
+      170
+    ],
+    "trace": 1.6408549877401188e-16
+  },
+  "base_evaluation": {
+    "chi2_data": 293.9208361836942,
+    "chi2_data_per_dof": 1.728946095198201,
+    "chi2_marg": 197.06456100804027,
+    "chi2_marg_per_dof": 1.1592033000472957,
+    "dof": 170,
+    "seconds_desi_recal": 63.151267629116774,
+    "seconds_original": 81.72152020409703
+  },
+  "coherence_test": {
+    "alignment_abs_cosine": 0.022871450619391626,
+    "decision_rule": "staging-coherent if alignment exceeds marginalized random-direction p95 and p_random<0.05",
+    "metric": "Sigma_marg^{-1/2}; random/shuffled nulls generated in the nuisance-marginalized whitened space",
+    "random_direction_null": {
+      "mean": 0.060930958114400274,
+      "median": 0.05167028457506881,
+      "n": 50000,
+      "p95": 0.14881045778549087,
+      "p99": 0.19616597265424898,
+      "p_value_ge_observed": 0.7665246695066099
+    },
+    "residual_norm_whitened": 14.037968549901851,
+    "residual_variance_fraction_along_staging": 0.0005231032534352696,
+    "shuffled_staging_null": {
+      "mean": 0.06105826756468277,
+      "median": 0.05203240251881283,
+      "n": 20000,
+      "p95": 0.14821361772711217,
+      "p99": 0.1936780696264255,
+      "p_value_ge_observed": 0.768811559422029
+    },
+    "staging_coherent": false,
+    "staging_norm_whitened": 0.6180579391527148
+  },
+  "dalal23_map_parameters_used": {
+    "A1": 0.07,
+    "A2": 0.78,
+    "A_bary_hmcode2016": 2.97,
+    "Omega_m": 0.226,
+    "S8": 0.792,
+    "b_ta": 0.38,
+    "baryonic_effects": {
+      "fbar": 0.7,
+      "model": "vandaalen19"
+    },
+    "dz": [
+      0.01,
+      0.005,
+      -0.046,
+      -0.144
+    ],
+    "eta1": -2.4,
+    "eta2": -2.6,
+    "h": 0.652,
+    "ia_model": "tatt",
+    "m": [
+      -0.007,
+      0.009,
+      0.004,
+      -0.003
+    ],
+    "m_nu": 0.06,
+    "n_s": 0.92,
+    "nz_variant": "original",
+    "omega_b": 0.0245,
+    "z_pivot_IA": 0.62
+  },
+  "design_version": "E5-minimal-physical-v2",
+  "load_average_end": [
+    20.111328125,
+    22.724609375,
+    20.68017578125
+  ],
+  "method": {
+    "baryon_limitation": "HSC used HMCode2016 A_bary; pyccl 3.1.2 lacks that parameter, so baryon response is a stamped CCL vanDaalen19 fbar proxy carrying the published A_bary prior width.",
+    "formula": "Sigma_marg = Sigma_data + Sigma_nuis; Sigma_nuis = sum_k sigma_k^2 g_k g_k^T",
+    "g_k": "central finite difference of the HSC cl_ee theory vector at the Dalal+23 MAP",
+    "no_free_fit": true,
+    "no_prior_widening": true,
+    "uniform_priors": "converted to Gaussian-equivalent sigma=(hi-lo)/sqrt(12) for analytic covariance marginalization"
+  },
+  "nuisance_priors": [
+    {
+      "center": -0.007,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta m^(1) ~ N(0, 0.01); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "derivative": "analytic multiplicative shear-calibration response at MAP",
+      "finite_difference_step": null,
+      "name": "m1",
+      "prior": "Gaussian N(0,0.01)",
+      "response_norm": 3.5745722998452617e-09,
+      "seconds": 0.0,
+      "sigma": 0.01,
+      "sigma_response_norm": 3.5745722998452615e-11
+    },
+    {
+      "center": 0.009,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta m^(2) ~ N(0, 0.01); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "derivative": "analytic multiplicative shear-calibration response at MAP",
+      "finite_difference_step": null,
+      "name": "m2",
+      "prior": "Gaussian N(0,0.01)",
+      "response_norm": 9.270889576412315e-09,
+      "seconds": 0.0,
+      "sigma": 0.01,
+      "sigma_response_norm": 9.270889576412315e-11
+    },
+    {
+      "center": 0.004,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta m^(3) ~ N(0, 0.01); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "derivative": "analytic multiplicative shear-calibration response at MAP",
+      "finite_difference_step": null,
+      "name": "m3",
+      "prior": "Gaussian N(0,0.01)",
+      "response_norm": 1.4454413894676103e-08,
+      "seconds": 0.0,
+      "sigma": 0.01,
+      "sigma_response_norm": 1.4454413894676104e-10
+    },
+    {
+      "center": -0.003,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta m^(4) ~ N(0, 0.01); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "derivative": "analytic multiplicative shear-calibration response at MAP",
+      "finite_difference_step": null,
+      "name": "m4",
+      "prior": "Gaussian N(0,0.01)",
+      "response_norm": 1.77554751706514e-08,
+      "seconds": 0.0,
+      "sigma": 0.01,
+      "sigma_response_norm": 1.77554751706514e-10
+    },
+    {
+      "center": 0.01,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta z^(1) ~ N(0,0.024); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "finite_difference_step": 0.012,
+      "name": "dz1",
+      "prior": "Gaussian N(0,0.024)",
+      "response_norm": 1.4257868013001534e-08,
+      "seconds": 165.98124446719885,
+      "sigma": 0.024,
+      "sigma_response_norm": 3.421888323120368e-10
+    },
+    {
+      "center": 0.005,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta z^(2) ~ N(0,0.022); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "finite_difference_step": 0.011,
+      "name": "dz2",
+      "prior": "Gaussian N(0,0.022)",
+      "response_norm": 1.5536487687246383e-08,
+      "seconds": 161.09227030351758,
+      "sigma": 0.022,
+      "sigma_response_norm": 3.418027291194204e-10
+    },
+    {
+      "center": -0.046,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta z^(3) ~ U(-1,1); Gaussian-equivalent sigma used for analytic covariance",
+      "finite_difference_step": 0.02,
+      "name": "dz3",
+      "prior": "Uniform U(-1,1), converted to sigma=(2/sqrt(12))",
+      "response_norm": 1.4570813029528697e-08,
+      "seconds": 156.5093637034297,
+      "sigma": 0.5773502691896258,
+      "sigma_response_norm": 8.4124628249101e-09
+    },
+    {
+      "center": -0.144,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: Delta z^(4) ~ U(-1,1); Gaussian-equivalent sigma used for analytic covariance",
+      "finite_difference_step": 0.02,
+      "name": "dz4",
+      "prior": "Uniform U(-1,1), converted to sigma=(2/sqrt(12))",
+      "response_norm": 1.3791502745664228e-08,
+      "seconds": 162.73897639662027,
+      "sigma": 0.5773502691896258,
+      "sigma_response_norm": 7.962527822738707e-09
+    },
+    {
+      "center": 0.07,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: A1 ~ U(-6,6); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "finite_difference_step": 0.25,
+      "name": "A1",
+      "prior": "Uniform U(-6,6), converted to sigma=(12/sqrt(12))",
+      "response_norm": 1.3960311323318904e-09,
+      "seconds": 161.95832614600658,
+      "sigma": 3.464101615137755,
+      "sigma_response_norm": 4.83599370029349e-09
+    },
+    {
+      "center": 0.78,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: A2 ~ U(-6,6); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "finite_difference_step": 0.25,
+      "name": "A2",
+      "prior": "Uniform U(-6,6), converted to sigma=(12/sqrt(12))",
+      "response_norm": 4.750141058246489e-10,
+      "seconds": 167.42089434713125,
+      "sigma": 3.464101615137755,
+      "sigma_response_norm": 1.6454971312003826e-09
+    },
+    {
+      "center": 0.38,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: b_ta ~ U(0,2); MAP from Dalal+23 arXiv:2304.00701 fiducial-constraints/MAP table",
+      "finite_difference_step": 0.1,
+      "name": "b_ta",
+      "prior": "Uniform U(0,2), converted to sigma=(2/sqrt(12))",
+      "response_norm": 4.139319160312445e-11,
+      "seconds": 162.66097059100866,
+      "sigma": 0.5773502691896258,
+      "sigma_response_norm": 2.389837031468166e-11
+    },
+    {
+      "center": 0.7,
+      "citation": "Dalal+23 arXiv:2304.00701 fiducial-prior table: HMCode2016 A_bary ~ U(2,3.13); pyccl 3.1.2 lacks this parameter, so this is stamped as a CCL vanDaalen19 fbar response proxy with the published A_bary prior width",
+      "finite_difference_step": 0.05,
+      "name": "baryon_proxy_fbar",
+      "prior": "Proxy for HMCode2016 A_bary U(2,3.13), converted to sigma=(1.13/sqrt(12))",
+      "response_norm": 3.8860317001439877e-10,
+      "seconds": 164.2945470288396,
+      "sigma": 0.32620290209213854,
+      "sigma_response_norm": 1.2676348182090158e-10
+    }
+  ],
+  "outputs": {
+    "nuisance_response_csv": {
+      "path": "results/E5/HSC_settle_nuisance_responses.csv",
+      "sha256": "fe763aa406771e576e1635dcaa1f96de1125ee1f9135c3cb83cee20f71065f11"
+    },
+    "status_update": {
+      "path": "results/E5/E5_status.json",
+      "sha256": "14be8f6c4e24b8e1499b4b3fb16b6d28a4bd6cc9e08a49a9356f8536251762d2"
+    }
+  },
+  "purpose": "Legal HSC residual-settling diagnostic; no free nuisance fit; no E5 certificate run",
+  "runtime_seconds": 1447.9329763762653,
+  "schema_version": 2,
+  "source": {
+    "arxiv": "2304.00701",
+    "map_values": "Table labelled fiducial constraints; lines in arXiv source tab:fid_parameters_values",
+    "paper": "Dalal et al. 2023, Hyper Suprime-Cam Year 3 Results: Cosmology from Cosmic Shear Power Spectra",
+    "priors": "Table labelled fiducial parameters and priors; lines in arXiv source tab:fid_parameters"
+  },
+  "stopped_before_certificate": true,
+  "supersedes": {
+    "invalidated_fields_from_schema_v1": [
+      "candidate_profile",
+      "best_tatt_profile",
+      "best_overall_profile",
+      "post_baryon_hsc_chi2_per_data_dof_after_profile",
+      "coherence_test computed after free-m absorption",
+      "Omega_HSC_pipeline_floor_excess_chi2_per_dof scalar"
+    ],
+    "previous_wp": "WP-HSC-SETTLE",
+    "reason": "Previous diagnostic optimized shear calibration over +/-0.10 without prior penalty; invalid for HSC ~1% m priors."
+  },
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "verdict": {
+    "chi2_acceptable": true,
+    "chi2_acceptable_rule": "chi2_marg/dof < 1.3 for this diagnostic; reported rather than hidden",
+    "hsc_remains_decisive": false,
+    "hsc_residual_status": "benign_budgeted",
+    "interpretation": "Legal nuisance covariance absorbs the residual and the marginalized residual is not staging-aligned.",
+    "staging_coherent": false,
+    "hsc_photoz_decisive": false,
+    "hsc_photoz_status": "diagnostic_nonvacuity_fail",
+    "reason": "legal dz marginalization absorbs the DESI-recal staging direction; post-marginalized staging norm ~0.618 (pre 4.77; retained ~0.13 < 0.25; <2.0sigma). G-E5-NONVAC(HSC,photo-z)=FAIL per external reviewer ruling 2026-06-01.",
+    "G_E5_NONVAC": {
+      "axis": "photo_z",
+      "t_post_nuisance": 0.618,
+      "t_pre_nuisance": 4.77,
+      "retained_fraction": 0.13,
+      "threshold_post": 2.0,
+      "threshold_retained": 0.25,
+      "pass": false
+    },
+    "allowed_next": [
+      "E5-v3 axis-power premortem (scale-cut / tomographic / IA / low-z photo-z)",
+      "low-z photo-z diagnostic (bins 1-2, same NONVAC gate)",
+      "battery redesign (4th family or report diagnostic)"
+    ]
+  }
+}

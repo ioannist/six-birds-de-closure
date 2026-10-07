@@ -1,0 +1,7 @@
+{
+  "best_non_saturated_or_null_penalized_score": 8.020633761818294,
+  "chi2_zero": true,
+  "saturated_chi2": 1.1831110026612205e-27,
+  "saturated_loses_on_penalized_score": true,
+  "saturated_penalized_score": 10.75055681536833
+}

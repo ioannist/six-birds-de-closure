@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-05T09:32:40.620537+00:00",
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "checked_declarations": 5,
+  "archive_members_verified": 25,
+  "bound_modules": 25,
+  "registered": false,
+  "original_seed_claim": false,
+  "IEEE_theorem": false,
+  "existing_production_plans_changed": false,
+  "new_integration_obligation": {
+    "modules": 1,
+    "declarations": 5
+  },
+  "goal_complete": false
+}

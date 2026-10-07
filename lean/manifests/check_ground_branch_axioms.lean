@@ -1,0 +1,36 @@
+import SbtCosmo.Derivation.GroundParameterEquations
+import SbtCosmo.Derivation.GroundParameterBranch
+import SbtCosmo.Derivation.GroundParameterTube
+import SbtCosmo.Derivation.GroundParameterSpectrum
+
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.jointSource_smooth
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.jointResidual_smooth
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.jointResidual_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.jointResidual_partial
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.defect_kernel_trivial
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.defect_bijective
+#print axioms SbtCosmo.Derivation.GroundParameterEquations.defect_preconditioner_bijective
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.branch_center
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.branch_smooth_at
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.branch_root_eventually
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.branch_positive_eventually
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.branch_ground_eventually
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.branch_unique_neighborhoods
+#print axioms SbtCosmo.Derivation.GroundParameterBranch.certified_local_positive_branch
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.preconditioner_injective
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.positive_root_exists
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_spec
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_distance_lt
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_implicit_germ
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_smooth_within
+#print axioms SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_continuous_on
+#print axioms SbtCosmo.Derivation.GroundParameterTube.common_root_glues
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.jointGround_smooth
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.jointGround_partial
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.jacobian_column_continuous
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.halfMatrix_continuous
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet_continuous
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.determinant_zero_mode
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.projection_tangent
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.strict_sign_crossing
+#print axioms SbtCosmo.Derivation.GroundParameterSpectrum.actual_minus_one_crossing

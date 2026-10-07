@@ -1,0 +1,15 @@
+{
+  "archive_sha256": "cd74fa50f5cc9aea4ab0e3c455823c4dd50e50ed71cd905a12812c889d65007d",
+  "entries": [
+    {
+      "path": "lean/lakefile.lean",
+      "size": 76424,
+      "sha256": "cf167d4244914ef16ec3c8dc418b3b49832809ed5bb8ade97aef1d45a9a1c7e8"
+    },
+    {
+      "path": "lean/manifests/check_axioms.lean",
+      "size": 1102586,
+      "sha256": "b4e01f02aab47d289b45211bdd9c8fcbe781faa13900f03a010e5567103c18ee"
+    }
+  ]
+}

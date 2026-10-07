@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: SPT_3G
+manifest: data/manifests/spt_3g.json
+fallback_policy: budgeted_rebinned_subset

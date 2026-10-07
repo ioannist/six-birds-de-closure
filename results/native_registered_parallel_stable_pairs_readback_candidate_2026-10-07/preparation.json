@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-07T07:01:07.149863+00:00",
+  "script_sha256": "331df350b4e2fd046f1cf9b0da73eb9f329402352b7bbce49e1acdbb9f76b6ec",
+  "syntax_checked": true,
+  "executed": false,
+  "required_actual_session": 12765,
+  "requires_observed_exit_code": 0,
+  "registered_lean_sources_changed": false,
+  "live_build_helpers_changed": false,
+  "proof_objects_copied": 0,
+  "goal_complete": false
+}

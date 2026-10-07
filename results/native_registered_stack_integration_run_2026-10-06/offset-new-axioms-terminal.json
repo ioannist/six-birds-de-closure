@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-06T15:02:02.613621+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-s",
+    "65536",
+    "manifests/check_ground_offset_transport_axioms.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "log_path": "/home/repos/six-birds-de-closure/lean/manifests/axiom_audit_ground_offset_transport_new_2026-10-04.txt",
+  "log_sha256": "d322d2f38af207254b1250b5e573d01f6a04812fd535f48cf9960fd0573a5c9b"
+}

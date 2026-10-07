@@ -1,0 +1,78 @@
+'SbtCosmo.Derivation.GroundComplexNormBridge.stateNormSq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexNormBridge.l2_pack_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexNormBridge.l2_realEmbed_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidualBudget.shifted_l2_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundComplexResidualBudget.ground_energy_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.real_response_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.imag_response_enclosed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.selector_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.selector_lipschitz' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.tail_in_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.physical_tail_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.euclidean_tail_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.selector_tail_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.native_candidate_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.actual_candidate_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalBasinEstimates.sourced_potential_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.tolerance_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit_distance_fifty_nine' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit_distance_sixty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.actual_candidate_distance_sixty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.potential_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.actual_candidate_ground_data' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.last_update_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.final_fixed_gap_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.final_eigen_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.final_sourcing_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GroundOriginalPositiveResiduals.actual_seed_positive_sixty_convergence_tests' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

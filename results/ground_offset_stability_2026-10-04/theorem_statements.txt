@@ -1,0 +1,1025 @@
+SbtCosmo.Derivation.GroundUncertainBorderResponse.arithmetic_response_error
+  {B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {a : ℚ} {z : Fin 9 → ℚ} {r q : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} {y e : Fin 8 → ℚ}
+  (h : SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic B a z r C q y e)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i))
+  {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (hg : SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b (↑a) x.1) = x)
+  (j : Fin 8) :
+  ‖SbtCosmo.Derivation.GroundBorderResponse.response b (↑a) x j -
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+          (SbtCosmo.Derivation.GroundBorderResponse.rhs b (↑a) x j)‖ ≤
+    ↑(e j)
+SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval_sound
+  {B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {a : ℚ} {z : Fin 9 → ℚ} {r q : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} {y e : Fin 8 → ℚ}
+  (h : SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic B a z r C q y e)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i))
+  {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (hg : SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b (↑a) x.1) = x)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b (↑a) x.1 = x.1) (i j : Fin 8) :
+  (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval B a z r C e i j).Contains
+    ((SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b (↑a) (1 / 2) x.1)
+      (SbtCosmo.Derivation.GroundLocalDynamics.column j) i)
+SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals_sound
+  (B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval) (a : ℚ) (z : Fin 9 → ℚ) (r : ℚ)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i))
+  {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r) (i j : Fin 8) :
+  (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals B a z r i j).Contains
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative (1 / 2) x.1) i j)
+SbtCosmo.Derivation.GroundUncertainBorderResponse.included_sound
+  {A D : Matrix (Fin 8) (Fin 8) SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  (h : SbtCosmo.Derivation.GroundUncertainBorderResponse.Included A D) {i j : Fin 8} {x : ℝ} (hx : (A i j).Contains x) :
+  (D i j).Contains x
+SbtCosmo.Derivation.GroundOffsetStability.Point000.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point000.B
+    SbtCosmo.Derivation.GroundOffsets.Point000.κ SbtCosmo.Derivation.GroundOffsets.Point000.z
+    SbtCosmo.Derivation.GroundOffsets.Point000.r SbtCosmo.Derivation.GroundOffsetStability.Point000.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.q SbtCosmo.Derivation.GroundOffsetStability.Point000.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.error
+SbtCosmo.Derivation.GroundOffsetStability.Point000.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point000.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.P
+SbtCosmo.Derivation.GroundOffsetStability.Point000.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point000.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point000.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point000.B
+      SbtCosmo.Derivation.GroundOffsets.Point000.κ SbtCosmo.Derivation.GroundOffsets.Point000.z
+      SbtCosmo.Derivation.GroundOffsets.Point000.r SbtCosmo.Derivation.GroundOffsetStability.Point000.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point000.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point000.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point000.B
+      SbtCosmo.Derivation.GroundOffsets.Point000.κ SbtCosmo.Derivation.GroundOffsets.Point000.z
+      SbtCosmo.Derivation.GroundOffsets.Point000.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point000.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point000.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.P SbtCosmo.Derivation.GroundOffsetStability.Point000.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point000.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point000.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point000.Q SbtCosmo.Derivation.GroundOffsetStability.Point000.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point000.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point000.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point001.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point001.B
+    SbtCosmo.Derivation.GroundOffsets.Point001.κ SbtCosmo.Derivation.GroundOffsets.Point001.z
+    SbtCosmo.Derivation.GroundOffsets.Point001.r SbtCosmo.Derivation.GroundOffsetStability.Point001.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.q SbtCosmo.Derivation.GroundOffsetStability.Point001.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.error
+SbtCosmo.Derivation.GroundOffsetStability.Point001.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point001.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.P
+SbtCosmo.Derivation.GroundOffsetStability.Point001.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point001.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point001.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point001.B
+      SbtCosmo.Derivation.GroundOffsets.Point001.κ SbtCosmo.Derivation.GroundOffsets.Point001.z
+      SbtCosmo.Derivation.GroundOffsets.Point001.r SbtCosmo.Derivation.GroundOffsetStability.Point001.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point001.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point001.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point001.B
+      SbtCosmo.Derivation.GroundOffsets.Point001.κ SbtCosmo.Derivation.GroundOffsets.Point001.z
+      SbtCosmo.Derivation.GroundOffsets.Point001.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point001.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point001.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.P SbtCosmo.Derivation.GroundOffsetStability.Point001.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point001.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point001.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point001.Q SbtCosmo.Derivation.GroundOffsetStability.Point001.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point001.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point001.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point002.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point002.B
+    SbtCosmo.Derivation.GroundOffsets.Point002.κ SbtCosmo.Derivation.GroundOffsets.Point002.z
+    SbtCosmo.Derivation.GroundOffsets.Point002.r SbtCosmo.Derivation.GroundOffsetStability.Point002.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.q SbtCosmo.Derivation.GroundOffsetStability.Point002.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.error
+SbtCosmo.Derivation.GroundOffsetStability.Point002.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point002.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.P
+SbtCosmo.Derivation.GroundOffsetStability.Point002.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point002.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point002.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point002.B
+      SbtCosmo.Derivation.GroundOffsets.Point002.κ SbtCosmo.Derivation.GroundOffsets.Point002.z
+      SbtCosmo.Derivation.GroundOffsets.Point002.r SbtCosmo.Derivation.GroundOffsetStability.Point002.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point002.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point002.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point002.B
+      SbtCosmo.Derivation.GroundOffsets.Point002.κ SbtCosmo.Derivation.GroundOffsets.Point002.z
+      SbtCosmo.Derivation.GroundOffsets.Point002.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point002.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point002.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.P SbtCosmo.Derivation.GroundOffsetStability.Point002.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point002.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point002.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point002.Q SbtCosmo.Derivation.GroundOffsetStability.Point002.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point002.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point002.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point003.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point003.B
+    SbtCosmo.Derivation.GroundOffsets.Point003.κ SbtCosmo.Derivation.GroundOffsets.Point003.z
+    SbtCosmo.Derivation.GroundOffsets.Point003.r SbtCosmo.Derivation.GroundOffsetStability.Point003.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.q SbtCosmo.Derivation.GroundOffsetStability.Point003.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.error
+SbtCosmo.Derivation.GroundOffsetStability.Point003.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point003.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.P
+SbtCosmo.Derivation.GroundOffsetStability.Point003.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point003.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point003.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point003.B
+      SbtCosmo.Derivation.GroundOffsets.Point003.κ SbtCosmo.Derivation.GroundOffsets.Point003.z
+      SbtCosmo.Derivation.GroundOffsets.Point003.r SbtCosmo.Derivation.GroundOffsetStability.Point003.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point003.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point003.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point003.B
+      SbtCosmo.Derivation.GroundOffsets.Point003.κ SbtCosmo.Derivation.GroundOffsets.Point003.z
+      SbtCosmo.Derivation.GroundOffsets.Point003.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point003.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point003.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.P SbtCosmo.Derivation.GroundOffsetStability.Point003.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point003.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point003.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point003.Q SbtCosmo.Derivation.GroundOffsetStability.Point003.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point003.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point003.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point004.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point004.B
+    SbtCosmo.Derivation.GroundOffsets.Point004.κ SbtCosmo.Derivation.GroundOffsets.Point004.z
+    SbtCosmo.Derivation.GroundOffsets.Point004.r SbtCosmo.Derivation.GroundOffsetStability.Point004.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.q SbtCosmo.Derivation.GroundOffsetStability.Point004.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.error
+SbtCosmo.Derivation.GroundOffsetStability.Point004.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point004.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.P
+SbtCosmo.Derivation.GroundOffsetStability.Point004.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point004.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point004.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point004.B
+      SbtCosmo.Derivation.GroundOffsets.Point004.κ SbtCosmo.Derivation.GroundOffsets.Point004.z
+      SbtCosmo.Derivation.GroundOffsets.Point004.r SbtCosmo.Derivation.GroundOffsetStability.Point004.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point004.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point004.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point004.B
+      SbtCosmo.Derivation.GroundOffsets.Point004.κ SbtCosmo.Derivation.GroundOffsets.Point004.z
+      SbtCosmo.Derivation.GroundOffsets.Point004.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point004.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point004.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.P SbtCosmo.Derivation.GroundOffsetStability.Point004.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point004.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point004.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point004.Q SbtCosmo.Derivation.GroundOffsetStability.Point004.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point004.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point004.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point005.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point005.B
+    SbtCosmo.Derivation.GroundOffsets.Point005.κ SbtCosmo.Derivation.GroundOffsets.Point005.z
+    SbtCosmo.Derivation.GroundOffsets.Point005.r SbtCosmo.Derivation.GroundOffsetStability.Point005.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.q SbtCosmo.Derivation.GroundOffsetStability.Point005.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.error
+SbtCosmo.Derivation.GroundOffsetStability.Point005.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point005.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.P
+SbtCosmo.Derivation.GroundOffsetStability.Point005.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point005.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point005.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point005.B
+      SbtCosmo.Derivation.GroundOffsets.Point005.κ SbtCosmo.Derivation.GroundOffsets.Point005.z
+      SbtCosmo.Derivation.GroundOffsets.Point005.r SbtCosmo.Derivation.GroundOffsetStability.Point005.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point005.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point005.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point005.B
+      SbtCosmo.Derivation.GroundOffsets.Point005.κ SbtCosmo.Derivation.GroundOffsets.Point005.z
+      SbtCosmo.Derivation.GroundOffsets.Point005.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point005.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point005.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.P SbtCosmo.Derivation.GroundOffsetStability.Point005.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point005.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point005.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point005.Q SbtCosmo.Derivation.GroundOffsetStability.Point005.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point005.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point005.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point006.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point006.B
+    SbtCosmo.Derivation.GroundOffsets.Point006.κ SbtCosmo.Derivation.GroundOffsets.Point006.z
+    SbtCosmo.Derivation.GroundOffsets.Point006.r SbtCosmo.Derivation.GroundOffsetStability.Point006.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.q SbtCosmo.Derivation.GroundOffsetStability.Point006.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.error
+SbtCosmo.Derivation.GroundOffsetStability.Point006.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point006.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.P
+SbtCosmo.Derivation.GroundOffsetStability.Point006.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point006.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point006.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point006.B
+      SbtCosmo.Derivation.GroundOffsets.Point006.κ SbtCosmo.Derivation.GroundOffsets.Point006.z
+      SbtCosmo.Derivation.GroundOffsets.Point006.r SbtCosmo.Derivation.GroundOffsetStability.Point006.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point006.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point006.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point006.B
+      SbtCosmo.Derivation.GroundOffsets.Point006.κ SbtCosmo.Derivation.GroundOffsets.Point006.z
+      SbtCosmo.Derivation.GroundOffsets.Point006.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point006.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point006.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.P SbtCosmo.Derivation.GroundOffsetStability.Point006.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point006.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point006.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point006.Q SbtCosmo.Derivation.GroundOffsetStability.Point006.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point006.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point006.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point007.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point007.B
+    SbtCosmo.Derivation.GroundOffsets.Point007.κ SbtCosmo.Derivation.GroundOffsets.Point007.z
+    SbtCosmo.Derivation.GroundOffsets.Point007.r SbtCosmo.Derivation.GroundOffsetStability.Point007.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.q SbtCosmo.Derivation.GroundOffsetStability.Point007.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.error
+SbtCosmo.Derivation.GroundOffsetStability.Point007.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point007.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.P
+SbtCosmo.Derivation.GroundOffsetStability.Point007.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point007.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point007.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point007.B
+      SbtCosmo.Derivation.GroundOffsets.Point007.κ SbtCosmo.Derivation.GroundOffsets.Point007.z
+      SbtCosmo.Derivation.GroundOffsets.Point007.r SbtCosmo.Derivation.GroundOffsetStability.Point007.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point007.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point007.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point007.B
+      SbtCosmo.Derivation.GroundOffsets.Point007.κ SbtCosmo.Derivation.GroundOffsets.Point007.z
+      SbtCosmo.Derivation.GroundOffsets.Point007.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point007.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point007.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.P SbtCosmo.Derivation.GroundOffsetStability.Point007.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point007.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point007.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point007.Q SbtCosmo.Derivation.GroundOffsetStability.Point007.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point007.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point007.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point008.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point008.B
+    SbtCosmo.Derivation.GroundOffsets.Point008.κ SbtCosmo.Derivation.GroundOffsets.Point008.z
+    SbtCosmo.Derivation.GroundOffsets.Point008.r SbtCosmo.Derivation.GroundOffsetStability.Point008.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.q SbtCosmo.Derivation.GroundOffsetStability.Point008.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.error
+SbtCosmo.Derivation.GroundOffsetStability.Point008.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point008.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.P
+SbtCosmo.Derivation.GroundOffsetStability.Point008.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point008.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point008.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point008.B
+      SbtCosmo.Derivation.GroundOffsets.Point008.κ SbtCosmo.Derivation.GroundOffsets.Point008.z
+      SbtCosmo.Derivation.GroundOffsets.Point008.r SbtCosmo.Derivation.GroundOffsetStability.Point008.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point008.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point008.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point008.B
+      SbtCosmo.Derivation.GroundOffsets.Point008.κ SbtCosmo.Derivation.GroundOffsets.Point008.z
+      SbtCosmo.Derivation.GroundOffsets.Point008.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point008.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point008.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.P SbtCosmo.Derivation.GroundOffsetStability.Point008.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point008.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point008.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point008.Q SbtCosmo.Derivation.GroundOffsetStability.Point008.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point008.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point008.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point009.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point009.B
+    SbtCosmo.Derivation.GroundOffsets.Point009.κ SbtCosmo.Derivation.GroundOffsets.Point009.z
+    SbtCosmo.Derivation.GroundOffsets.Point009.r SbtCosmo.Derivation.GroundOffsetStability.Point009.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.q SbtCosmo.Derivation.GroundOffsetStability.Point009.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.error
+SbtCosmo.Derivation.GroundOffsetStability.Point009.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point009.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.P
+SbtCosmo.Derivation.GroundOffsetStability.Point009.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point009.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point009.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point009.B
+      SbtCosmo.Derivation.GroundOffsets.Point009.κ SbtCosmo.Derivation.GroundOffsets.Point009.z
+      SbtCosmo.Derivation.GroundOffsets.Point009.r SbtCosmo.Derivation.GroundOffsetStability.Point009.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point009.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point009.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point009.B
+      SbtCosmo.Derivation.GroundOffsets.Point009.κ SbtCosmo.Derivation.GroundOffsets.Point009.z
+      SbtCosmo.Derivation.GroundOffsets.Point009.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point009.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point009.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.P SbtCosmo.Derivation.GroundOffsetStability.Point009.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point009.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point009.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point009.Q SbtCosmo.Derivation.GroundOffsetStability.Point009.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point009.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point009.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point010.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point010.B
+    SbtCosmo.Derivation.GroundOffsets.Point010.κ SbtCosmo.Derivation.GroundOffsets.Point010.z
+    SbtCosmo.Derivation.GroundOffsets.Point010.r SbtCosmo.Derivation.GroundOffsetStability.Point010.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.q SbtCosmo.Derivation.GroundOffsetStability.Point010.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.error
+SbtCosmo.Derivation.GroundOffsetStability.Point010.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point010.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.P
+SbtCosmo.Derivation.GroundOffsetStability.Point010.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point010.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point010.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point010.B
+      SbtCosmo.Derivation.GroundOffsets.Point010.κ SbtCosmo.Derivation.GroundOffsets.Point010.z
+      SbtCosmo.Derivation.GroundOffsets.Point010.r SbtCosmo.Derivation.GroundOffsetStability.Point010.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point010.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point010.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point010.B
+      SbtCosmo.Derivation.GroundOffsets.Point010.κ SbtCosmo.Derivation.GroundOffsets.Point010.z
+      SbtCosmo.Derivation.GroundOffsets.Point010.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point010.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point010.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.P SbtCosmo.Derivation.GroundOffsetStability.Point010.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point010.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point010.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point010.Q SbtCosmo.Derivation.GroundOffsetStability.Point010.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point010.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point010.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point011.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point011.B
+    SbtCosmo.Derivation.GroundOffsets.Point011.κ SbtCosmo.Derivation.GroundOffsets.Point011.z
+    SbtCosmo.Derivation.GroundOffsets.Point011.r SbtCosmo.Derivation.GroundOffsetStability.Point011.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.q SbtCosmo.Derivation.GroundOffsetStability.Point011.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.error
+SbtCosmo.Derivation.GroundOffsetStability.Point011.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point011.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.P
+SbtCosmo.Derivation.GroundOffsetStability.Point011.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point011.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point011.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point011.B
+      SbtCosmo.Derivation.GroundOffsets.Point011.κ SbtCosmo.Derivation.GroundOffsets.Point011.z
+      SbtCosmo.Derivation.GroundOffsets.Point011.r SbtCosmo.Derivation.GroundOffsetStability.Point011.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point011.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point011.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point011.B
+      SbtCosmo.Derivation.GroundOffsets.Point011.κ SbtCosmo.Derivation.GroundOffsets.Point011.z
+      SbtCosmo.Derivation.GroundOffsets.Point011.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point011.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point011.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.P SbtCosmo.Derivation.GroundOffsetStability.Point011.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point011.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point011.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point011.Q SbtCosmo.Derivation.GroundOffsetStability.Point011.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point011.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point011.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point012.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point012.B
+    SbtCosmo.Derivation.GroundOffsets.Point012.κ SbtCosmo.Derivation.GroundOffsets.Point012.z
+    SbtCosmo.Derivation.GroundOffsets.Point012.r SbtCosmo.Derivation.GroundOffsetStability.Point012.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.q SbtCosmo.Derivation.GroundOffsetStability.Point012.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.error
+SbtCosmo.Derivation.GroundOffsetStability.Point012.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point012.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.P
+SbtCosmo.Derivation.GroundOffsetStability.Point012.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point012.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point012.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point012.B
+      SbtCosmo.Derivation.GroundOffsets.Point012.κ SbtCosmo.Derivation.GroundOffsets.Point012.z
+      SbtCosmo.Derivation.GroundOffsets.Point012.r SbtCosmo.Derivation.GroundOffsetStability.Point012.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point012.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point012.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point012.B
+      SbtCosmo.Derivation.GroundOffsets.Point012.κ SbtCosmo.Derivation.GroundOffsets.Point012.z
+      SbtCosmo.Derivation.GroundOffsets.Point012.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point012.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point012.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.P SbtCosmo.Derivation.GroundOffsetStability.Point012.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point012.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point012.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point012.Q SbtCosmo.Derivation.GroundOffsetStability.Point012.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point012.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point012.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point013.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point013.B
+    SbtCosmo.Derivation.GroundOffsets.Point013.κ SbtCosmo.Derivation.GroundOffsets.Point013.z
+    SbtCosmo.Derivation.GroundOffsets.Point013.r SbtCosmo.Derivation.GroundOffsetStability.Point013.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.q SbtCosmo.Derivation.GroundOffsetStability.Point013.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.error
+SbtCosmo.Derivation.GroundOffsetStability.Point013.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point013.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.P
+SbtCosmo.Derivation.GroundOffsetStability.Point013.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point013.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point013.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point013.B
+      SbtCosmo.Derivation.GroundOffsets.Point013.κ SbtCosmo.Derivation.GroundOffsets.Point013.z
+      SbtCosmo.Derivation.GroundOffsets.Point013.r SbtCosmo.Derivation.GroundOffsetStability.Point013.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point013.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point013.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point013.B
+      SbtCosmo.Derivation.GroundOffsets.Point013.κ SbtCosmo.Derivation.GroundOffsets.Point013.z
+      SbtCosmo.Derivation.GroundOffsets.Point013.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point013.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point013.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.P SbtCosmo.Derivation.GroundOffsetStability.Point013.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point013.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point013.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point013.Q SbtCosmo.Derivation.GroundOffsetStability.Point013.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point013.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point013.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point014.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point014.B
+    SbtCosmo.Derivation.GroundOffsets.Point014.κ SbtCosmo.Derivation.GroundOffsets.Point014.z
+    SbtCosmo.Derivation.GroundOffsets.Point014.r SbtCosmo.Derivation.GroundOffsetStability.Point014.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.q SbtCosmo.Derivation.GroundOffsetStability.Point014.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.error
+SbtCosmo.Derivation.GroundOffsetStability.Point014.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point014.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.P
+SbtCosmo.Derivation.GroundOffsetStability.Point014.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point014.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point014.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point014.B
+      SbtCosmo.Derivation.GroundOffsets.Point014.κ SbtCosmo.Derivation.GroundOffsets.Point014.z
+      SbtCosmo.Derivation.GroundOffsets.Point014.r SbtCosmo.Derivation.GroundOffsetStability.Point014.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point014.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point014.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point014.B
+      SbtCosmo.Derivation.GroundOffsets.Point014.κ SbtCosmo.Derivation.GroundOffsets.Point014.z
+      SbtCosmo.Derivation.GroundOffsets.Point014.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point014.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point014.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.P SbtCosmo.Derivation.GroundOffsetStability.Point014.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point014.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point014.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point014.Q SbtCosmo.Derivation.GroundOffsetStability.Point014.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point014.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point014.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point015.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point015.B
+    SbtCosmo.Derivation.GroundOffsets.Point015.κ SbtCosmo.Derivation.GroundOffsets.Point015.z
+    SbtCosmo.Derivation.GroundOffsets.Point015.r SbtCosmo.Derivation.GroundOffsetStability.Point015.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.q SbtCosmo.Derivation.GroundOffsetStability.Point015.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.error
+SbtCosmo.Derivation.GroundOffsetStability.Point015.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point015.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.P
+SbtCosmo.Derivation.GroundOffsetStability.Point015.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point015.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point015.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point015.B
+      SbtCosmo.Derivation.GroundOffsets.Point015.κ SbtCosmo.Derivation.GroundOffsets.Point015.z
+      SbtCosmo.Derivation.GroundOffsets.Point015.r SbtCosmo.Derivation.GroundOffsetStability.Point015.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point015.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point015.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point015.B
+      SbtCosmo.Derivation.GroundOffsets.Point015.κ SbtCosmo.Derivation.GroundOffsets.Point015.z
+      SbtCosmo.Derivation.GroundOffsets.Point015.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point015.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point015.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.P SbtCosmo.Derivation.GroundOffsetStability.Point015.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point015.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point015.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point015.Q SbtCosmo.Derivation.GroundOffsetStability.Point015.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point015.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point015.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point016.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point016.B
+    SbtCosmo.Derivation.GroundOffsets.Point016.κ SbtCosmo.Derivation.GroundOffsets.Point016.z
+    SbtCosmo.Derivation.GroundOffsets.Point016.r SbtCosmo.Derivation.GroundOffsetStability.Point016.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.q SbtCosmo.Derivation.GroundOffsetStability.Point016.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.error
+SbtCosmo.Derivation.GroundOffsetStability.Point016.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point016.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.P
+SbtCosmo.Derivation.GroundOffsetStability.Point016.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point016.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point016.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point016.B
+      SbtCosmo.Derivation.GroundOffsets.Point016.κ SbtCosmo.Derivation.GroundOffsets.Point016.z
+      SbtCosmo.Derivation.GroundOffsets.Point016.r SbtCosmo.Derivation.GroundOffsetStability.Point016.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point016.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point016.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point016.B
+      SbtCosmo.Derivation.GroundOffsets.Point016.κ SbtCosmo.Derivation.GroundOffsets.Point016.z
+      SbtCosmo.Derivation.GroundOffsets.Point016.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point016.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point016.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.P SbtCosmo.Derivation.GroundOffsetStability.Point016.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point016.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point016.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point016.Q SbtCosmo.Derivation.GroundOffsetStability.Point016.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point016.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point016.rate < 1
+SbtCosmo.Derivation.GroundOffsetStability.Point017.response_arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point017.B
+    SbtCosmo.Derivation.GroundOffsets.Point017.κ SbtCosmo.Derivation.GroundOffsets.Point017.z
+    SbtCosmo.Derivation.GroundOffsets.Point017.r SbtCosmo.Derivation.GroundOffsetStability.Point017.C
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.q SbtCosmo.Derivation.GroundOffsetStability.Point017.y
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.error
+SbtCosmo.Derivation.GroundOffsetStability.Point017.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point017.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.P
+SbtCosmo.Derivation.GroundOffsetStability.Point017.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point017.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.Q
+SbtCosmo.Derivation.GroundOffsetStability.Point017.realBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.halfInterval SbtCosmo.Derivation.GroundOffsets.Point017.B
+      SbtCosmo.Derivation.GroundOffsets.Point017.κ SbtCosmo.Derivation.GroundOffsets.Point017.z
+      SbtCosmo.Derivation.GroundOffsets.Point017.r SbtCosmo.Derivation.GroundOffsetStability.Point017.C
+      SbtCosmo.Derivation.GroundOffsetStability.Point017.error)
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.realBox
+SbtCosmo.Derivation.GroundOffsetStability.Point017.imagBox_included :
+  SbtCosmo.Derivation.GroundUncertainBorderResponse.Included
+    (SbtCosmo.Derivation.GroundUncertainBorderResponse.imaginaryIntervals SbtCosmo.Derivation.GroundOffsets.Point017.B
+      SbtCosmo.Derivation.GroundOffsets.Point017.κ SbtCosmo.Derivation.GroundOffsets.Point017.z
+      SbtCosmo.Derivation.GroundOffsets.Point017.r)
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.imagBox
+SbtCosmo.Derivation.GroundOffsetStability.Point017.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point017.S
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.P SbtCosmo.Derivation.GroundOffsetStability.Point017.realBox
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.rate
+SbtCosmo.Derivation.GroundOffsetStability.Point017.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundOffsetStability.Point017.R
+    SbtCosmo.Derivation.GroundOffsetStability.Point017.Q SbtCosmo.Derivation.GroundOffsetStability.Point017.imagBox
+    (501 / 1000)
+SbtCosmo.Derivation.GroundOffsetStability.Point017.stable_rate :
+  SbtCosmo.Derivation.GroundOffsetStability.Point017.rate < 1
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_real_entries (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j))
+  (hx :
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r)
+  (hg :
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential β
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x.1) =
+      x)
+  (hf :
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap β (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        x.1 =
+      x.1)
+  (a b : Fin 8) :
+  ((SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates i).realBox a b).Contains
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian β
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2) x.1)
+      a b)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_imag_entries (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j))
+  (hx :
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r)
+  (a b : Fin 8) :
+  ((SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates i).imagBox a b).Contains
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative (1 / 2) x.1) a b)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_real_norm (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j))
+  (hx :
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r)
+  (hg :
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential β
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x.1) =
+      x)
+  (hf :
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap β (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        x.1 =
+      x.1) :
+  ‖SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian
+        (SbtCosmo.Derivation.GroundOriginalOffsetStability.realBasis i) β
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2) x.1‖ ≤
+    ↑(SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates i).rate
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_imag_norm (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j))
+  (hx :
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.imaginaryCoordinate
+        (SbtCosmo.Derivation.GroundOriginalOffsetStability.imagBasis i) (1 / 2) x.1‖ ≤
+    501 / 1000
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_full_norm (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j))
+  (hx :
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r)
+  (hg :
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential β
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x.1) =
+      x)
+  (hf :
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap β (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        x.1 =
+      x.1) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i) β
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2) x.1‖ ≤
+    max (↑(SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates i).rate) (501 / 1000)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_stable_full_norm (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j))
+  (hx :
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r)
+  (hg :
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential β
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x.1) =
+      x)
+  (hf :
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap β (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        x.1 =
+      x.1) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i) β
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2) x.1‖ <
+    1
+SbtCosmo.Derivation.GroundOriginalOffsetStability.whole_root_return (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j)) :
+  SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r ∧
+    SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1 = 1 ∧
+      SbtCosmo.Derivation.GroundBorder.groundPair
+            (SbtCosmo.Derivation.GroundState.sourcePotential β
+              (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+              (SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1) =
+          SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap β
+            (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+            (SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1 =
+          (SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1
+SbtCosmo.Derivation.GroundOriginalOffsetStability.whole_background_box_native_attraction (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j)) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+              ((SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1, 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds
+              (SbtCosmo.Derivation.GroundState.realEmbed
+                (SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1)) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_exact_native_attraction (i : Fin 18) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+              ((SbtCosmo.Derivation.GroundOriginalOffsets.root i).1, 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1)) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_rounded_native_attraction (i : Fin 18) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+              ((SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1, 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds
+              (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1)) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.whole_background_box_negative_native_attraction (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j)) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+              (-(SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1, 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds
+              (SbtCosmo.Derivation.GroundState.realEmbed
+                (-(SbtCosmo.Derivation.GroundOriginalOffsetStability.wholeRoot i hβ).1))) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance β
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_exact_negative_native_attraction (i : Fin 18) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+              (-(SbtCosmo.Derivation.GroundOriginalOffsets.root i).1, 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds (SbtCosmo.Derivation.GroundState.realEmbed (-(SbtCosmo.Derivation.GroundOriginalOffsets.root i).1))) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.actual_rounded_negative_native_attraction (i : Fin 18) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i).symm
+              (-(SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1, 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds
+              (SbtCosmo.Derivation.GroundState.realEmbed
+                (-(SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1))) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                      (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalOffsetStability.zero_selector_preconditioner_rejected :
+  ¬SbtCosmo.Derivation.GroundUncertainBorderResponse.Arithmetic
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).B
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).κ
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).z
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).r (fun x x_1 => 0)
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates 0).q
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates 0).y
+      (SbtCosmo.Derivation.GroundOriginalOffsetStability.certificates 0).error

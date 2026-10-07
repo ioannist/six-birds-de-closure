@@ -1,0 +1,35 @@
+import SbtCosmo.Derivation.RobustEdgeLowerData
+import SbtCosmo.Derivation.RobustEdgePrefixData
+import SbtCosmo.Derivation.RobustEdgeUpperData
+import SbtCosmo.Derivation.RobustEdgeQuadrature
+import SbtCosmo.Derivation.GrowthRescaledCertificate
+import SbtCosmo.Derivation.WindowRobustEdge
+
+#print axioms SbtCosmo.Derivation.RobustEdgeLowerData.grid_endpoints
+#print axioms SbtCosmo.Derivation.RobustEdgeLowerData.cells
+#print axioms SbtCosmo.Derivation.RobustEdgeLowerData.integral_sum
+#print axioms SbtCosmo.Derivation.RobustEdgePrefixData.grid_endpoints
+#print axioms SbtCosmo.Derivation.RobustEdgePrefixData.cells
+#print axioms SbtCosmo.Derivation.RobustEdgePrefixData.integral_sum
+#print axioms SbtCosmo.Derivation.RobustEdgeUpperData.grid_endpoints
+#print axioms SbtCosmo.Derivation.RobustEdgeUpperData.cells
+#print axioms SbtCosmo.Derivation.RobustEdgeUpperData.integral_sum
+#print axioms SbtCosmo.Derivation.RobustEdgeQuadrature.lower_grid
+#print axioms SbtCosmo.Derivation.RobustEdgeQuadrature.upper_grid
+#print axioms SbtCosmo.Derivation.RobustEdgeQuadrature.lower_integral
+#print axioms SbtCosmo.Derivation.RobustEdgeQuadrature.prefix_integral
+#print axioms SbtCosmo.Derivation.RobustEdgeQuadrature.upper_integral
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.native_scale_covariance
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.rescaled_start_bounds
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.integral_interval_mono
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.prefactor_lower
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.prefactor_upper
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.initial_term_upper
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.lower_prefix_growth
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.upper_prefix_growth
+#print axioms SbtCosmo.Derivation.GrowthRescaledCertificate.upper_horizon_growth
+#print axioms SbtCosmo.Derivation.WindowRobustEdge.original_aggregate_tight
+#print axioms SbtCosmo.Derivation.WindowRobustEdge.endpoint_normalized_bounds
+#print axioms SbtCosmo.Derivation.WindowRobustEdge.endpoint_time_bounds
+#print axioms SbtCosmo.Derivation.WindowRobustEdge.endpoint_ratios
+#print axioms SbtCosmo.Derivation.WindowRobustEdge.full_window_ratios

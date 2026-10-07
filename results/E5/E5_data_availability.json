@@ -1,0 +1,232 @@
+{
+  "can_proceed_to_phase1": true,
+  "decisive_families_available": 3,
+  "decisive_families_required_min": 3,
+  "families": [
+    {
+      "aor_status": "method_control_blocked",
+      "blocked_reason": "No real processed data_vector.npy + covariance.npy pair exists at the manifest paths. The E5 input manifest still has TODO-on-fetch fields, and the dataset fetch_url is not a verified concrete vector/covariance download.",
+      "concrete_download_path_pinned": false,
+      "dataset_manifest": "data/manifests/des_y6.json",
+      "dataset_manifest_sha256": "9c93a9a118503a0762638dee1ba3f1761039a1af7dd334afc4438879f24ab6b7",
+      "decisive": false,
+      "e5_manifest_covariance_field": "UNAVAILABLE",
+      "e5_manifest_data_vector_field": "UNAVAILABLE \u2014 no official executable DES Y6 3x2pt data vector + covariance released (Jan 2026 paper only). Scientifically the ideal low-z 3x2pt substrate; excluded from the buildable certificate until an official vector/covariance product exists.",
+      "family": "WL_3x2pt_lowz",
+      "fetch_url_probe": {
+        "content_type": "text/html; charset=utf-8",
+        "http_status": 200,
+        "note": "Reachability only; this is not proof of a concrete data-vector/covariance download.",
+        "reachable": true,
+        "url": "https://arxiv.org/abs/2601.14559"
+      },
+      "probe_id": "des_y6_3x2pt",
+      "processed_covariance": {
+        "exists": false,
+        "path": "data/processed/des_y6/covariance.npy"
+      },
+      "processed_data_vector": {
+        "exists": false,
+        "path": "data/processed/des_y6/data_vector.npy"
+      },
+      "raw_payloads": [
+        {
+          "exists": false,
+          "path": "data/raw/des_y6/"
+        }
+      ],
+      "real_published_vector_and_covariance_available": false,
+      "role": "ideal_unavailable_low_z_3x2pt",
+      "source_arxiv": "2601.14559"
+    },
+    {
+      "aor_status": "method_control_blocked",
+      "blocked_reason": "No real processed data_vector.npy + covariance.npy pair exists at the manifest paths. The E5 input manifest still has TODO-on-fetch fields, and the dataset fetch_url is not a verified concrete vector/covariance download.",
+      "concrete_download_path_pinned": false,
+      "dataset_manifest": null,
+      "dataset_manifest_sha256": null,
+      "decisive": false,
+      "e5_manifest_covariance_field": "see data/manifests/des_y3_3x2pt.json",
+      "e5_manifest_data_vector_field": "data/manifests/des_y3_3x2pt.json (public DES Y3 3x2pt)",
+      "family": "WL_3x2pt_rehearsal",
+      "fetch_url_probe": {
+        "reachable": false,
+        "reason": "missing_or_todo_url",
+        "url": null
+      },
+      "probe_id": "des_y3_3x2pt",
+      "processed_covariance": {
+        "exists": false,
+        "reason": "no_path"
+      },
+      "processed_data_vector": {
+        "exists": false,
+        "reason": "no_path"
+      },
+      "raw_payloads": [],
+      "real_published_vector_and_covariance_available": false,
+      "role": "method_control_rehearsal",
+      "source_arxiv": "2105.13549"
+    },
+    {
+      "aor_status": "available",
+      "blocked_reason": null,
+      "concrete_download_path_pinned": true,
+      "dataset_manifest": "data/manifests/kids_legacy.json",
+      "dataset_manifest_sha256": "6d1223227f9d4b912eb2332779ad918bb7ba8ef9b9d20493d37eadce628da892",
+      "decisive": true,
+      "e5_manifest_covariance_field": "data/processed/kids_legacy/covariance.npy",
+      "e5_manifest_data_vector_field": "data/processed/kids_legacy/data_vector.npy",
+      "family": "WL_shear_cal",
+      "fetch_url_probe": {
+        "content_type": "application/x-gzip",
+        "http_status": 200,
+        "note": "Reachability only; this is not proof of a concrete data-vector/covariance download.",
+        "reachable": true,
+        "url": "https://kids.strw.leidenuniv.nl/sci_data/KiDS_Legacy_cosmic_shear_data_release.tar.gz"
+      },
+      "probe_id": "kids_legacy_shear",
+      "processed_covariance": {
+        "bytes": 127136,
+        "exists": true,
+        "path": "data/processed/kids_legacy/covariance.npy",
+        "sha256": "c52ef5fe6ee82862b5497756c082e46ee3c8f5d0adc5d13cc789efd6325943d1"
+      },
+      "processed_data_vector": {
+        "bytes": 1136,
+        "exists": true,
+        "path": "data/processed/kids_legacy/data_vector.npy",
+        "sha256": "a81febeae7848d072d79bca3499e3d5bccb54d2fda1847c9e6149884ec039054"
+      },
+      "raw_payloads": [
+        {
+          "bytes": 131095396,
+          "exists": true,
+          "path": "data/raw/kids_legacy/KiDS_Legacy_cosmic_shear_data_release.tar.gz",
+          "sha256": "7fdf214cbb54e51d5ca385d79a4590750d3c5dc9fe6803460bab8ed841c57f77"
+        }
+      ],
+      "real_published_vector_and_covariance_available": true,
+      "role": "decisive_family",
+      "source_arxiv": "2503.19441"
+    },
+    {
+      "aor_status": "available",
+      "blocked_reason": null,
+      "concrete_download_path_pinned": false,
+      "dataset_manifest": "data/manifests/hsc_y3.json",
+      "dataset_manifest_sha256": "89d1ef4572b2e0984a47ad6210abadc1c7a682da5f20a21635d01b4401374e42",
+      "decisive": true,
+      "e5_manifest_covariance_field": "data/processed/hsc_y3/covariance.npy",
+      "e5_manifest_data_vector_field": "data/processed/hsc_y3/data_vector.npy",
+      "family": "WL_photoz_stage",
+      "fetch_url_probe": {
+        "error": "<HTTPError 401: 'Unauthorized'>",
+        "http_status": 401,
+        "reachable": false,
+        "url": "https://hsc-release.mtk.nao.ac.jp/archive/filetree/shape_catalog_y3/dalal23/"
+      },
+      "probe_id": "hsc_y3_origVSrecal",
+      "processed_covariance": {
+        "bytes": 231328,
+        "exists": true,
+        "path": "data/processed/hsc_y3/covariance.npy",
+        "sha256": "2ec1f7b6d4772c9691a42bc247455bf734c2b1d5cc07d367dcffa8e59fe0f896"
+      },
+      "processed_data_vector": {
+        "bytes": 1488,
+        "exists": true,
+        "path": "data/processed/hsc_y3/data_vector.npy",
+        "sha256": "a9e58a78d0e89a3894b2b4ce93fb4716f93b7946971eea58674229925ab5562a"
+      },
+      "raw_payloads": [
+        {
+          "bytes": 22340160,
+          "exists": true,
+          "path": "data/raw/hsc_y3/hsc_y3_fourier_space_data_vector.sacc",
+          "sha256": "a28f9e2e088e92d96d2d87083a6eeeac4c0c84c6b48e033bd3d1dc1bf0d8958f"
+        }
+      ],
+      "real_published_vector_and_covariance_available": true,
+      "role": "decisive_family",
+      "source_arxiv": "2304.00701 (Dalal+23 Fourier) + DESI-recal n(z)"
+    },
+    {
+      "aor_status": "available",
+      "blocked_reason": null,
+      "concrete_download_path_pinned": false,
+      "dataset_manifest": "data/manifests/cmb_lensing.json",
+      "dataset_manifest_sha256": "085a6db868db1fd2f6e13403332ecf692ad3f96407fa5905cac688e7570c7785",
+      "decisive": true,
+      "e5_manifest_covariance_field": "data/processed/cmb_lensing/covariance.npy",
+      "e5_manifest_data_vector_field": "data/processed/cmb_lensing/data_vector.npy",
+      "family": "CMB_lensing_highz",
+      "fetch_url_probe": {
+        "error": "<HTTPError 403: 'Forbidden'>",
+        "http_status": 403,
+        "reachable": false,
+        "url": "https://lambda.gsfc.nasa.gov/data/suborbital/act_spt_joint/"
+      },
+      "probe_id": "cmblensing_act_spt_planck",
+      "processed_covariance": {
+        "bytes": 9928,
+        "exists": true,
+        "path": "data/processed/cmb_lensing/covariance.npy",
+        "sha256": "b898381374fc1b57ed3c5d8278863d0d7a629c40e6627641ad616c4e0342cbbe"
+      },
+      "processed_data_vector": {
+        "bytes": 408,
+        "exists": true,
+        "path": "data/processed/cmb_lensing/data_vector.npy",
+        "sha256": "95c6f629680a3cf38bcfe2fad02d48dfcdcf0ce2dab40ab6b86f5a56dbadf602"
+      },
+      "raw_payloads": [
+        {
+          "exists": false,
+          "path": "data/raw/cmb_lensing/ (github.com/qujia7/spt_act_likelihood + LAMBDA tarballs)"
+        }
+      ],
+      "real_published_vector_and_covariance_available": true,
+      "role": "decisive_family",
+      "source_arxiv": "ACT DR6 + SPT-3G + Planck PR4 joint lensing (LAMBDA act_spt_joint)"
+    },
+    {
+      "aor_status": "method_control_blocked",
+      "blocked_reason": "No real processed data_vector.npy + covariance.npy pair exists at the manifest paths. The E5 input manifest still has TODO-on-fetch fields, and the dataset fetch_url is not a verified concrete vector/covariance download.",
+      "concrete_download_path_pinned": false,
+      "dataset_manifest": "data/manifests/desi_rsd_fs.json",
+      "dataset_manifest_sha256": "286d9271b8c9f240fabf2e24b60a9a8b71beb82c1fe1eea5298324584c1b6156",
+      "decisive": false,
+      "e5_manifest_covariance_field": "TODO-on-fetch",
+      "e5_manifest_data_vector_field": "TODO-on-fetch (method-control only)",
+      "family": "RSD_growth",
+      "fetch_url_probe": {
+        "content_type": "text/html",
+        "http_status": 200,
+        "note": "Reachability only; this is not proof of a concrete data-vector/covariance download.",
+        "reachable": true,
+        "url": "https://data.desi.lbl.gov/"
+      },
+      "probe_id": "desi_rsd_fsigma8",
+      "processed_covariance": {
+        "exists": false,
+        "path": "data/processed/desi_rsd_fs/covariance.npy"
+      },
+      "processed_data_vector": {
+        "exists": false,
+        "path": "data/processed/desi_rsd_fs/data_vector.npy"
+      },
+      "raw_payloads": [
+        {
+          "exists": false,
+          "path": "data/raw/desi_rsd_fs/"
+        }
+      ],
+      "real_published_vector_and_covariance_available": false,
+      "role": "method_control",
+      "source_arxiv": "2411.12026 (DR1 full-shape)"
+    }
+  ],
+  "generated_utc": "2026-06-01T09:09:08Z",
+  "schema_version": 1
+}

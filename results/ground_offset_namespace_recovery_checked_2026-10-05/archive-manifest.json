@@ -1,0 +1,605 @@
+{
+  "archive_sha256": "c727a5c466d5766e6091aab43bb5429164c1ce9dde3288a85f4c00a10b54758f",
+  "entries": [
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean",
+      "sha256": "11d408752655e591ba0c4092054b2bb1660da1dcdc15ee675d8e6ab2ae758eff",
+      "size": 49938
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point001.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point001.lean",
+      "sha256": "4dda5e6e0a62d677c14575c224791dd7bfeca2e6040302b2e3c3a21ed7b5ab5b",
+      "size": 81298
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point002.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point002.lean",
+      "sha256": "64c27fe490ad71cafa75fc7b4f49be705775d602376984acfcb2fe5bfb7502b5",
+      "size": 53484
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point003.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point003.lean",
+      "sha256": "6b29cc180f16c59c49f1f6151ed278865f231f2b3744bd160851f5c8aef7711b",
+      "size": 33711
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point004.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point004.lean",
+      "sha256": "ac412a2c2bd352100857bfe63183345e66c24f06fa5f1c15b3cf6459b46d3364",
+      "size": 27743
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point005.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point005.lean",
+      "sha256": "7d031a785e265c1a7405edbf3f63472909777e56a389527b4f992ac2032b8c63",
+      "size": 26579
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point006.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point006.lean",
+      "sha256": "641c6ae41c56b38c7c38a88ae2bed495cf54811c651552b70dfe2c428e60be3b",
+      "size": 25119
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point007.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point007.lean",
+      "sha256": "fc742547027997bdbefc7322ff060ba7c742cf86b321e1bd7a7eb595479c0c0f",
+      "size": 25145
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point008.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point008.lean",
+      "sha256": "08c5e022201bf2a0af07f369d0d44b73020e1048d1d103042b896852dace29bd",
+      "size": 25141
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point009.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point009.lean",
+      "sha256": "71701717ee32b7a60927bc76a3a1ece6ff1ad837bab84a8f0081400efb5465c3",
+      "size": 24173
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point010.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point010.lean",
+      "sha256": "49ab364d175c07ddc7ce08b11fbf0b8fc1c8dab1fbc5857708d3c82da850852c",
+      "size": 24192
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point011.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point011.lean",
+      "sha256": "e67e20db1e2c86fcc5cc298dfff83fb0cfd39f7ccf476cf381bddc5b3550e4fd",
+      "size": 24218
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point012.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point012.lean",
+      "sha256": "de059e2edfd25724c6df0d5cf8da412449de4714f4bac630c94817514c84a36b",
+      "size": 24211
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point013.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point013.lean",
+      "sha256": "7a202b0f399cd54437c08f7e7bf3586eebd8ada4f075fb06ed0354ba72e64d50",
+      "size": 24190
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point014.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point014.lean",
+      "sha256": "268a81d97d41816362bf95b345e5b305c8db0553c91ecffe05fbb6c6905eb456",
+      "size": 24216
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point015.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point015.lean",
+      "sha256": "073ca1c5ff6b1e895601e72b0a28b92b5079b8f9fca13c45206ede728d455328",
+      "size": 24235
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point016.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point016.lean",
+      "sha256": "d98dc463104e8d69ce7a803a919e0935e362f674a80e84691a2b0d1235c209c4",
+      "size": 25439
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point017.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point017.lean",
+      "sha256": "49d49c93f9695c289d2010288fc941939b2100f53538330bad99065bd644e007",
+      "size": 67326
+    },
+    {
+      "name": "workspace/lean/SbtCosmo/Derivation/GroundOriginalOffsetHullSeed.lean",
+      "source": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOriginalOffsetHullSeed.lean",
+      "sha256": "fbc4d92683ac90841bd413d580159ddfa01e0c46bacbbed28cef49e2aaa1ef32",
+      "size": 11936
+    },
+    {
+      "name": "workspace/math/GROUND_OFFSET_HULL_NAMESPACE_RECOVERY_2026-10-05.md",
+      "source": "/home/repos/six-birds-de-closure/math/GROUND_OFFSET_HULL_NAMESPACE_RECOVERY_2026-10-05.md",
+      "sha256": "8df1a72966439d1127c259f92985dc1093dea4b925e5e973345660f9848b3566",
+      "size": 3405
+    },
+    {
+      "name": "workspace/results/ground_offset_transport_2026-10-04/families_Point000_build.txt",
+      "source": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/families_Point000_build.txt",
+      "sha256": "8f67e2ca2d9dbbcb7eede707e662dbc6ce3412e496d539db05486dec880e32fd",
+      "size": 2177
+    },
+    {
+      "name": "workspace/results/ground_offset_transport_2026-10-04/families_Point001_build.txt",
+      "source": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/families_Point001_build.txt",
+      "sha256": "d3cb4bc0bcdad65e05ff6edb936196cdde4913f9e168f8a92dbf30c0f1b170a2",
+      "size": 2177
+    },
+    {
+      "name": "workspace/results/ground_offset_transport_2026-10-04/families_driver.txt",
+      "source": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/families_driver.txt",
+      "sha256": "bef0f781be60bb43b3867ab7f847a5d4acdeb2c4de5dacdee8e8eac738f49270",
+      "size": 649
+    },
+    {
+      "name": "workspace/results/ground_offset_transport_2026-10-04/leaves_builds.txt",
+      "source": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/leaves_builds.txt",
+      "sha256": "685629772f376285435aa7177f32f71e31dacaf284c1fe1cce41a43482c68dac",
+      "size": 404495
+    },
+    {
+      "name": "workspace/results/ground_offset_transport_2026-10-04/leaves_recovery.json",
+      "source": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/leaves_recovery.json",
+      "sha256": "d4cdb862f88a8c04ae06f0c3fb70c6b99978d9b3653069b1b5f434b725d9fd05",
+      "size": 285603
+    },
+    {
+      "name": "workspace/scripts/de_ground_offset_transport_render.py",
+      "source": "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_render.py",
+      "sha256": "e1ff79be89b3c21573306f92bb4683765eed2ba3bc68100995af53303351918e",
+      "size": 25829
+    },
+    {
+      "name": "de-native-campaign-qualified-driver.log",
+      "source": "/tmp/de-native-campaign-qualified-driver.log",
+      "sha256": "e726e7b1b637ab391355368d468f48fe8c0ded524681bc5deaad2287616a5d81",
+      "size": 610
+    },
+    {
+      "name": "de-offset-transport-finish-driver.log",
+      "source": "/tmp/de-offset-transport-finish-driver.log",
+      "sha256": "28c15f4197e102a6ec4e997967184bbe12f07eccb67aaceee13a7d2981143449",
+      "size": 714
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/GroundOriginalOffsetHullSeed-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/GroundOriginalOffsetHullSeed-build.json",
+      "sha256": "fc8a77bb9cd28b031310732f3f3bafdba4a3af74386b6a44aff67e24c62410e8",
+      "size": 791
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/GroundOriginalOffsetHullSeed-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/GroundOriginalOffsetHullSeed-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point000-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point000-build.json",
+      "sha256": "162e9c8d4239b643e728fef5661653df70c134c08dcd6266eb6977928ae41a39",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point000-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point000-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point001-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point001-build.json",
+      "sha256": "c4625286c355caba66c7d552e257a51dfcdbce98e1707eefafd820dc89d864fd",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point001-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point001-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point002-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point002-build.json",
+      "sha256": "1c6a205b62477e9d59a652ebbf70381a4f4bdb2813686dbed3a7d71efdbcbaff",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point002-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point002-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point003-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point003-build.json",
+      "sha256": "0de40e946a732472ae92756cf78008e81413995fa86cbee2753f8af764088064",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point003-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point003-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point004-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point004-build.json",
+      "sha256": "8c69734c7e16abe5299c28eca01f0d67a4e945e7ab43e5168bd87943bae9aad1",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point004-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point004-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point005-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point005-build.json",
+      "sha256": "136ddce418ad5eede5564296bb463ba0eb908f1ec14f7e186d8c32f50d5a8dbf",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point005-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point005-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point006-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point006-build.json",
+      "sha256": "30478197a8dfa353f7eec0393f4d0fe0666bff53146cf162a2beae10c100c999",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point006-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point006-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point007-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point007-build.json",
+      "sha256": "3fdf5e5a305a75235620502a347ffce3819ca33a4adb056a4be6cb6856a0fe39",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point007-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point007-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point008-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point008-build.json",
+      "sha256": "0085bb42b495c416995389dde9ce29b8ce481877eb23d83c24ac1942850b9884",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point008-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point008-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point009-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point009-build.json",
+      "sha256": "5fe6fe1ee4bde8127cc3f9b438b1950c30e00c3765e537fd958c39d59f3bbe36",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point009-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point009-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point010-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point010-build.json",
+      "sha256": "7c882b4ed292b436c87b96462c4d7964de8f0aa807a0eac501bae743b6871325",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point010-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point010-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point011-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point011-build.json",
+      "sha256": "8fbb89d9af8ff2e688e736ea520b89118ee4a658f64b016f072f8056a60594d1",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point011-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point011-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point012-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point012-build.json",
+      "sha256": "802c6391a436d89eacb1a02a0441428abd9efc474a35f0a821005c48ede18cc7",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point012-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point012-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point013-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point013-build.json",
+      "sha256": "f423eeac266dae2a3388caa13779e5e1fde89b5cc7621a1256f8680cdd80b078",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point013-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point013-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point014-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point014-build.json",
+      "sha256": "a9f564d2f351b24fcbcfbb75d54b51ceeddaabee33703a9eeab874b255d906ff",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point014-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point014-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point015-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point015-build.json",
+      "sha256": "70d0de4d242deb9bd5a83211760b553725e3ac2d4899dbb08510fd33d21488dc",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point015-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point015-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point016-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point016-build.json",
+      "sha256": "a56877c43b49e23bb28819fcdb713f70a17f0e0aa66caf79c726fbcf9637f4b4",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point016-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point016-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point017-build.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point017-build.json",
+      "sha256": "8ec2a25e3536bcd4d3fa914ffbc7e7ef4cab47edc0717449b45af7b6eb5e7381",
+      "size": 797
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/Point017-build.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/Point017-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/axiom-audit-summary.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/axiom-audit-summary.json",
+      "sha256": "021fb045dc2ebd584c1f0b426dbe07d05c9974edb25904b69da1954f2a782b40",
+      "size": 555853
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/build_recovery.py",
+      "source": "/tmp/de_offset_transport_namespace_recovery/build_recovery.py",
+      "sha256": "5492a7413a6978da726413c1ea9845304c9017955c0bed2e486843debabf0e3f",
+      "size": 3915
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/check_ground_offset_transport_axioms-terminal.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/check_ground_offset_transport_axioms-terminal.json",
+      "sha256": "c6953b5a52b34f852185ca2624fc87d7eb13035b0791478e313fddd53ee4be14",
+      "size": 388
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/check_ground_offset_transport_axioms.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/check_ground_offset_transport_axioms.lean",
+      "sha256": "ea74ce6f6f5178932cc5205cb8eef002ec2612ee0284fed685509820360dd63b",
+      "size": 633255
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/check_ground_offset_transport_axioms.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/check_ground_offset_transport_axioms.log",
+      "sha256": "d322d2f38af207254b1250b5e573d01f6a04812fd535f48cf9960fd0573a5c9b",
+      "size": 942493
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/check_ground_offset_transport_statements-terminal.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/check_ground_offset_transport_statements-terminal.json",
+      "sha256": "d567c074c33bd17b65c073e009817c44259090d3f7c2600ffb432b867ab3cba6",
+      "size": 392
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/check_ground_offset_transport_statements.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/check_ground_offset_transport_statements.lean",
+      "sha256": "126514d726095028e3bc96aae27b8206f184d48a4bd1e5cca623692dd6f27662",
+      "size": 584892
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/check_ground_offset_transport_statements.log",
+      "source": "/tmp/de_offset_transport_namespace_recovery/check_ground_offset_transport_statements.log",
+      "sha256": "c917d335d05b617b8aa871f0098dd09a743972076f893e8103afa6e552022dd7",
+      "size": 3591130
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/checkpoint_checked.py",
+      "source": "/tmp/de_offset_transport_namespace_recovery/checkpoint_checked.py",
+      "sha256": "5d4c5f2f0c2bc673e89ac82ca52bfda125ff9d5c80aed5509855ba2c8378fa4f",
+      "size": 8978
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/de_ground_offset_transport_render.repaired.py",
+      "source": "/tmp/de_offset_transport_namespace_recovery/de_ground_offset_transport_render.repaired.py",
+      "sha256": "02d6ddc9838301cb480e98db5ad5f4e6a84c9592c4069176f0b4918e134ea7c5",
+      "size": 25851
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/de_ground_offset_transport_verify.repaired.py",
+      "source": "/tmp/de_offset_transport_namespace_recovery/de_ground_offset_transport_verify.repaired.py",
+      "sha256": "345d19b8cb91594d382b29e2f65169d4cf8d8e2258c2ac265446087b7a8f7494",
+      "size": 14507
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/historical-source-freeze.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/historical-source-freeze.json",
+      "sha256": "bde93b2938c467443263f17c016315bb92bccf9942bca7489e538938e92e4f64",
+      "size": 891916
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean",
+      "sha256": "a36161a5490dca5588f505534a043107c6e1ad8e5f6c6b15c73b834b185c4080",
+      "size": 49960
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point001.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point001.lean",
+      "sha256": "97272d921974573deacbc20919305eb78c11f0321b65e33e3149071105db5954",
+      "size": 81320
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point002.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point002.lean",
+      "sha256": "071e891f371a35621169116d2efee07f76db9c986cab42b6206a9223c60780af",
+      "size": 53506
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point003.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point003.lean",
+      "sha256": "f06d5816afb059df3278cf699cbaad3da3004e87a7645349bdc424a87e305eb6",
+      "size": 33733
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point004.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point004.lean",
+      "sha256": "88c82419a15721735cd24353d4c0caf369c650debfdf00194f5c3e72b64e6355",
+      "size": 27765
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point005.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point005.lean",
+      "sha256": "0dd880609527f4fbcdde60e0ad40e53a145d1319f00b273c97730723314c48be",
+      "size": 26601
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point006.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point006.lean",
+      "sha256": "7dfe0a3e83adffcd3c20afffae38da59f99bbf7de0564cd062c01c8893b610c1",
+      "size": 25141
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point007.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point007.lean",
+      "sha256": "2f5619563eb8f6aca9f7f18a868e42e0e6565021c52104e6143eaed75d860d51",
+      "size": 25167
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point008.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point008.lean",
+      "sha256": "0a096ff46a25c4745d47bf0a90d77964f3ae2b1f0366e3e9d5310b6f70a489a5",
+      "size": 25163
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point009.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point009.lean",
+      "sha256": "6a00c5e8448f089e039c0fb38e9a6415778d0a4051751340e2326fdaed4a6b36",
+      "size": 24195
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point010.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point010.lean",
+      "sha256": "756b913e69653b705d9ab5d99be818190cca6fba8460e9a533e3ea3dbf9c6e3c",
+      "size": 24214
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point011.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point011.lean",
+      "sha256": "bc9bc8535fb04d0dbc46e232245b7bc026713ce229bbe02eff447d58987835b4",
+      "size": 24240
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point012.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point012.lean",
+      "sha256": "dfb260bfc2d888040bb34c00ca255225e347193102228875a5f789a9a26b1948",
+      "size": 24233
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point013.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point013.lean",
+      "sha256": "1bd118f897ac5420bb03c805ff3849c700fee301ad5c247493dfa1aa1a94fa99",
+      "size": 24212
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point014.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point014.lean",
+      "sha256": "d66c0b146f151c7df43256fa96f872514a9e4750d010a55246bf0f266e00f0fe",
+      "size": 24238
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point015.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point015.lean",
+      "sha256": "7d9498b226c1251760e673a467ba4b1540ca3590946c8a66d968ad3304819803",
+      "size": 24257
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point016.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point016.lean",
+      "sha256": "0fdfc5df5e192ccc919c29fa5e6229d18fd712fe03c5bf46b90fe013b20f4774",
+      "size": 25461
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point017.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOffsetTransport/Point017.lean",
+      "sha256": "2407a49c2bcab74a44dd1a22bb7bb91a7f610bcc73ae3563a7e34d2015085f98",
+      "size": 67348
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOriginalOffsetHullSeed.lean",
+      "source": "/tmp/de_offset_transport_namespace_recovery/lean/SbtCosmo/Derivation/GroundOriginalOffsetHullSeed.lean",
+      "sha256": "fbc4d92683ac90841bd413d580159ddfa01e0c46bacbbed28cef49e2aaa1ef32",
+      "size": 11936
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/registered-integration-plan.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/registered-integration-plan.json",
+      "sha256": "8d05e811ca1fa6f52fa1a9ee03a7be6da013fb1c9568c8056221863dd9d0a1c1",
+      "size": 31023
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/repair-plan.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/repair-plan.json",
+      "sha256": "8959e45eca92c0c61b52c16be574ce2a141e93cf3562634be957cafa429ef816",
+      "size": 14203
+    },
+    {
+      "name": "de_offset_transport_namespace_recovery/terminal.json",
+      "source": "/tmp/de_offset_transport_namespace_recovery/terminal.json",
+      "sha256": "b9e3b989b04d57da46d66357bb02393b98bb2aeb328c8cbfa93f4517ca48ca2d",
+      "size": 218
+    }
+  ]
+}

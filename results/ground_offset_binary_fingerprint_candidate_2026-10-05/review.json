@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-05T11:39:59.712136+00:00",
+  "old_proposal_sha256": "f70b9fd8f7cc1b8f8a5f319c9ea721ca6ef1170ed5f2552ec2520eb9d2499075",
+  "new_proposal_sha256": "a350e68a232519652dfbf7b11c574cc1ca818c638d06cabd8245a969f5fe8627",
+  "old_archive_handling_actual_failure": true,
+  "new_archive_exact_bytes_verified": true,
+  "preserved_prior_file_comparisons": 2858,
+  "inherited_verify_AST_identical_except_one_final_fingerprint_call": true,
+  "registered_commands_started": 0,
+  "full_success_path_tested": false,
+  "goal_complete": false
+}

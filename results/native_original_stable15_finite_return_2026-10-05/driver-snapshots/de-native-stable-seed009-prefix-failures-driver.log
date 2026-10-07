@@ -1,0 +1,5 @@
+Waiting for authoritative coupling15 Prefix060 terminal0; frozen inputs 2082
+NativeStableSeed009PrefixFailures terminal 0
+NativeStableSeed009PrefixFailuresAudit terminal 0
+6 checks/transitive axiom closures parsed; all standard-only.
+Coupling15 actual first60 failures and update-gap bounds passed;6 standard-only audits

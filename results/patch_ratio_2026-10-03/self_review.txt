@@ -1,0 +1,58 @@
+Adversarial self-review, not independent review. Baseline0e29ce6.
+
+Target: original section5 N in{32,64,128} endpoint/first-record robustness and
+upper-edge coincidence-ratio scale; here separately realized N32/N128 numerical
+edge-ratio obligations. Prior actual windows/ranks/ordering unchanged. No paper
+or runtime edit, data resampling, population inclusion, tag coupling, ODE solver,
+float estimate or identification of grid endpoints with continuum roots.
+
+Premises -> original data maxima -> actual first threshold -> actual native gate
+-> unique first-time IVP root -> ANY-patch equivalence/minimality -> ratio return.
+Both actual tag maxima supply attained global maximum, bounding every patch.
+First threshold delta/globalmaximum is min of tag thresholds; aggregate is10th
+rank of max tag thresholds. These different readouts are not conflated.
+Kernel certifies every first threshold below the actual aggregate for all12seeds
+of both populations. Aggregate normalization c=T/965 is analytic only; original
+samples/tags/growth/initialD1/a0=1/1000/horizon20 remain fixed.
+
+Original native quadrature/covariance previously certified retains actual initial
+inverse root and lambda-dependent prefactor. Exact c bounds earn applicability
+c in(1/5,4). Earned growth>970c at3/c^3,scale5c and horizon growth<960c at
+(7/2)/c^3 straddle actual aggregate965c. 5c<=20 and original scale monotonicity
+transfer the lower certificate to horizon. Actual strict lambda ordering and
+actual endpoint equality earn3<u*c^3<7/2. Actual tight rational c values and
+positivity earn N32 endpoint(13/10,17/10),N128(5,25/4). No endpoint bracket
+supplied as a final hypothesis.
+
+First thresholds earned in(450c,897c). The tempting original500c lower bound
+is explicitly false for an N32 seed, detected by Fraction report AND kernel
+existential theorem. No original N64 theorem weakened. Nonnegative matter
+comparison earns time>(9/20)c; actual growth>897c at(7/2)/c^3,scale(8/3)c and
+earned endpoint lambda upper bound earn time<=(8/3)c via actual root threshold
+equivalence. Scale belongs to original interval, and all live cutoffs earned.
+Actual R=abs(lambda)*time^3=abs(lambda)/rho_m(time),rho_m=a^-3, yields
+2187/8000<R_endpoint<1792/27. All24seeds quantified, no typicality/median claim.
+
+Actual time strict monotonicity holds throughout each signed window. Ratio
+strict monotonicity used only on nonnegative window. Negative/nonpositive actual
+time<2 plus abs(lambda)<1/8000 yieldsR<1/1000. This separate branch avoids an
+invalid signed ratio ordering. Full signed window thus0<=R<1792/27.
+One lambda=min(u32,u128,epsilon/16000)>0 works for both actual populations and
+all24seeds. Time<=20 earnsR<=8000lambda<epsilon; time positivity earnsR>0.
+No positive global lower floor/pinch introduced. DiscreteN not treated as smooth.
+
+Exported all33 declarations reviewed for actual v:Bool/j:Fin12 quantifiers,
+actual native functions and gates, fixed original a0/horizon, no extra supplied
+root/time/growth/rank/max/certificate bound. Proof closure imports previous actual
+analytic and kernel-cell constructions. Fresh full build8158; all33 exported
+statements and standard-only closures exit0; no holes/native_decide. Cumulative
+1284 is immutable prior1251 plus fresh33, not rerun full cumulative command.
+Exact Fraction-only data report replay passes; wrong500 transfer and changed
+readout controls discriminate actual math factors. Toolchain and prior proof,
+paper/runtime/data/external/evidence identities protected by verifier.
+
+Scope: explicit broad numerical other-population edge/first-record certificates
+closed. Combined population-and-knob sweeps, first-time joint regularity, sharp
+ratio typicality and broader original-target audit remain separate. Previous
+physical/project-sized and false-claim boundaries unchanged. No new downgrade.
+The full user goal remains incomplete.

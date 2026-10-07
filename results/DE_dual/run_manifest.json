@@ -1,0 +1,24 @@
+{
+  "carrier_units": "dimensionless finite closure-budget units",
+  "config": {
+    "active_budget_fraction": "4.500000000000e-01",
+    "curvature_spread": "2.200000000000e-01",
+    "finite_diff_step_fraction": "2.500000000000e-05",
+    "n_patches": 32,
+    "seed": 26011,
+    "slack_budget_factor": "1.350000000000e+00",
+    "tolerance": "1.000000000000e-08",
+    "weight_spread": "3.500000000000e-01"
+  },
+  "outputs": {
+    "VERDICT.md": "8636624bfc1a58b04ec4091cfcf65e2be7fead53a57fb65dd6fd5850ace68567",
+    "constancy.csv": "9401f46fe7a16045ee545ef7e6e456bbce6186f731e65eead74f81a21835b0a6",
+    "dual_sweep.csv": "645520c406ae1d018d237d52343682399950599657f95462331d8a70ead2ccbc",
+    "vacuum_shift.csv": "290cf43d681461a9701e79f287b89e9aba8d87d931bc709806bbb5c52e492e58"
+  },
+  "sources": {
+    "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/ClosurePrice.lean": "54026d65ac8cae02b3c63946a741b2b10f98b1f1a828af212a55064b7b9e71f5",
+    "/home/repos/six-birds-de-closure/results/DE_DEMARCATION_RELANDING_2026-06-11.md": "2f86cc619d1ba5a619d4c656dd7a1850e2f22482b067cbadbef5838deeed9000",
+    "/home/repos/six-birds-sm-qm-gr/paper/sections/sec_05_result_qmgr.tex": "d2f542d3e318987bb5bee51c842584c0143c321d9622bdc417f0c07a2ad456fb"
+  }
+}

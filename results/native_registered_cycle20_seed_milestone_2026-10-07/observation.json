@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-07T06:50:07.686210+00:00",
+  "main_actual_exec_session": 40823,
+  "main_producer_confirmed_live": true,
+  "selected_registered_source_leaves": 320,
+  "all_source_pins_matched": true,
+  "all_selected_objects_present": true,
+  "all_selected_modules_reported_built": true,
+  "compiled_proof_objects_copied": 0,
+  "full_build_complete": false,
+  "final_axiom_and_statement_audits_complete": false,
+  "safe_independent_root_count": 0,
+  "goal_complete": false
+}

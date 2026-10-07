@@ -1,0 +1,177 @@
+{
+  "entries": [
+    {
+      "note": "vendored copy path-relocated: REPO_ROOT points to external/step54_repro/six-birds-papers",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/f50_background_moduli_step54.py",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "f7b75e86f3aa68c3190a6176258ebf8a1e9300e53d75b07edfc81237b73f8bed",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/f50_background_moduli_step54.py",
+      "vendored_sha256": "7e1ce80383b68cdd48fd6382c5cc2e7c4b033689a4129e64a0c2951eb18bac59"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/run_step54.py",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "beeb7a9de541e9c93c88d1521b7d9a4d7f3dd4c37af6bb974ec150f4fcdc014b",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/run_step54.py",
+      "vendored_sha256": "beeb7a9de541e9c93c88d1521b7d9a4d7f3dd4c37af6bb974ec150f4fcdc014b"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/background_sweep_step54.csv",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "66c49068bebb917fa6faa8a5bafc4dfac18b0cd193dac6365087dd313a3e85d7",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/background_sweep_step54.csv",
+      "vendored_sha256": "66c49068bebb917fa6faa8a5bafc4dfac18b0cd193dac6365087dd313a3e85d7"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/kappa_sweep_step54.csv",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "7ea420eedc12ba2ffb53b6530390b93c24f73497b855103237649fd7e65c5439",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/kappa_sweep_step54.csv",
+      "vendored_sha256": "7ea420eedc12ba2ffb53b6530390b93c24f73497b855103237649fd7e65c5439"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/step54_schema.json",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "f1096d1721560de34b941de97d1cb8c8cb51ecea41c0370e37ee36b17fe9fa48",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/step54_schema.json",
+      "vendored_sha256": "f1096d1721560de34b941de97d1cb8c8cb51ecea41c0370e37ee36b17fe9fa48"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/derived_classification_step54.csv",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "11cd08477dae07db0d6203effb36d099c63a9836f97e20aece3eae7377f8d26e",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/derived_classification_step54.csv",
+      "vendored_sha256": "11cd08477dae07db0d6203effb36d099c63a9836f97e20aece3eae7377f8d26e"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/structural_note_step54.csv",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "ef02b86cd3b7484a89db32ee49bf309926f0bb4993c6f92d4193cf0ad8d57d19",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/structural_note_step54.csv",
+      "vendored_sha256": "ef02b86cd3b7484a89db32ee49bf309926f0bb4993c6f92d4193cf0ad8d57d19"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/frozen_machinery_step54.csv",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "374d28efd6ff6c1971d13f358189bade4d257bb065561195301d82db6f4d901a",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/frozen_machinery_step54.csv",
+      "vendored_sha256": "374d28efd6ff6c1971d13f358189bade4d257bb065561195301d82db6f4d901a"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/content_classification_step54.csv",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "1c8dd1b539a271a39d1ae1de43e7dd05983c229007f1d014c1d5ddcea26eb116",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/content_classification_step54.csv",
+      "vendored_sha256": "1c8dd1b539a271a39d1ae1de43e7dd05983c229007f1d014c1d5ddcea26eb116"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/f50_background_demarcation_statement_step54.tex",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "3f76b785006667a132ef29b566b861d3bb2be83d30065afda44fa64206e29c99",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/f50_background_demarcation_statement_step54.tex",
+      "vendored_sha256": "3f76b785006667a132ef29b566b861d3bb2be83d30065afda44fa64206e29c99"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/nonclaim_boundary_step54.md",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "85c219b1cba4a2191413e8f4a21b531215c8c0c14b00b28d1a4ae58a05c5a10e",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/nonclaim_boundary_step54.md",
+      "vendored_sha256": "85c219b1cba4a2191413e8f4a21b531215c8c0c14b00b28d1a4ae58a05c5a10e"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/step54_results_summary.md",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "8dee36bb78245817aadedf8b7d8c22b1c7c574336c00652ee68d0b89a4cb2b39",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/step54_results_summary.md",
+      "vendored_sha256": "8dee36bb78245817aadedf8b7d8c22b1c7c574336c00652ee68d0b89a4cb2b39"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/semiclassical_dynamics_step26.py",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/semiclassical_dynamics_step26.py",
+      "vendored_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/step26_schema.json",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "075f3280028df256e008235e71deea43b91dfdf30902086caa21e50b6d722b91",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/step26_schema.json",
+      "vendored_sha256": "075f3280028df256e008235e71deea43b91dfdf30902086caa21e50b6d722b91"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/dynamics_parameters_step26.json",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "c4273acc0af8a3532b1072d110f0ef4f4126582e68d424d05c5d9d244ffb77e8",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/dynamics_parameters_step26.json",
+      "vendored_sha256": "c4273acc0af8a3532b1072d110f0ef4f4126582e68d424d05c5d9d244ffb77e8"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step25_sourcing_unification_artifacts/field_carrier_step25.json",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "deff633cecf85e9640713951f99f8463844861672c0a79c3ab6832297d8f9a04",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step25_sourcing_unification_artifacts/field_carrier_step25.json",
+      "vendored_sha256": "deff633cecf85e9640713951f99f8463844861672c0a79c3ab6832297d8f9a04"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step25_sourcing_unification_artifacts/step25_schema.json",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "8e76b86b76b9bbee38d1b5e22cbeaa02e3a2ed189eefcfc60b658441945a7545",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step25_sourcing_unification_artifacts/step25_schema.json",
+      "vendored_sha256": "8e76b86b76b9bbee38d1b5e22cbeaa02e3a2ed189eefcfc60b658441945a7545"
+    },
+    {
+      "note": "",
+      "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step24_derived_physical_audits_artifacts/toy_field_samples_step24.json",
+      "source_repo": "/home/repos/six-birds-sm-qm-gr",
+      "source_repo_commit": "43b614669725e33cbc419f54799a0b07387ef6e0",
+      "source_sha256": "130b8906149be1048a602f27110bbf2c56fea08f800aa237f95d1eceff29e286",
+      "vendored_path": "external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step24_derived_physical_audits_artifacts/toy_field_samples_step24.json",
+      "vendored_sha256": "130b8906149be1048a602f27110bbf2c56fea08f800aa237f95d1eceff29e286"
+    },
+    {
+      "note": "paper source used by step54 frozen machinery manifest",
+      "source_path": "/home/repos/six-birds-papers/Tsiokos_2026_Six_Birds_Foundations_IV_A_Catalog_of_Layer_Agnostic_Structural_Laws.tex",
+      "source_repo": "/home/repos/six-birds-papers",
+      "source_repo_commit": null,
+      "source_sha256": "d9151589a19e15374175191e84af1a1c1b61a167c89aa8dceef785f069a0a744",
+      "vendored_path": "external/step54_repro/six-birds-papers/Tsiokos_2026_Six_Birds_Foundations_IV_A_Catalog_of_Layer_Agnostic_Structural_Laws.tex",
+      "vendored_sha256": "d9151589a19e15374175191e84af1a1c1b61a167c89aa8dceef785f069a0a744"
+    }
+  ],
+  "purpose": "Minimal vendored inputs for local step54 F50 reproduction",
+  "schema_version": 1
+}

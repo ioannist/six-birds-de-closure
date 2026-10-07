@@ -1,0 +1,112 @@
+SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold_spec.{u_1} {ι : Type u_1} [Fintype ι] (thresholds : ι → ℝ)
+  {k : ℕ} (hk : 0 < k) (hkn : k ≤ Fintype.card ι) :
+  (∃ j, thresholds j = SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold thresholds k) ∧
+    {j | thresholds j < SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold thresholds k}.card < k ∧
+      k ≤
+          SbtCosmo.Derivation.GrowthPopulation.passingCount thresholds
+            (SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold thresholds k) ∧
+        ∀ (x : ℝ),
+          k ≤ SbtCosmo.Derivation.GrowthPopulation.passingCount thresholds x ↔
+            SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold thresholds k ≤ x
+SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold_lipschitz.{u_1} {ι : Type u_1} [Fintype ι] {k : ℕ} (hk : 0 < k)
+  (hkn : k ≤ Fintype.card ι) :
+  LipschitzWith 1 fun thresholds => SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold thresholds k
+SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold_mul_pos.{u_1} {ι : Type u_1} [Fintype ι] (f : ι → ℝ) {k : ℕ}
+  {c : ℝ} (hk : 0 < k) (hkn : k ≤ Fintype.card ι) (hc : 0 < c) :
+  SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold (fun i => c * f i) k =
+    c * SbtCosmo.Derivation.GrowthRankSensitivity.rankThreshold f k
+SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint_spec {a0 L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hT : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L)) :
+  0 < SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L T ∧
+    SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L
+        (SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L T) =
+      T
+SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint_continuousAt {a0 L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hT : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L)) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L) T
+SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint_strictAntiOn {a0 L : ℝ} (ha : 0 < a0) (hL : 0 < L) :
+  StrictAntiOn (SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L)
+    (Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L))
+SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint_strict_horizon {a0 L1 L2 T : ℝ} (ha : 0 < a0) (hL1 : 0 < L1)
+  (h12 : L1 < L2) (hT1 : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L1) (Real.exp L1))
+  (hT2 : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L2) (Real.exp L2)) :
+  SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L1 T <
+    SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L2 T
+SbtCosmo.Derivation.GrowthPopulationSensitivity.tagMaximumValue_lipschitz.{u_1} {ι : Type u_1} [Fintype ι]
+  (tag : ι → Bool) (b : Bool) :
+  LipschitzWith 1 fun amplitude => SbtCosmo.Derivation.GrowthPopulationSensitivity.tagMaximumValue amplitude tag b
+SbtCosmo.Derivation.GrowthPopulationSensitivity.populationEndpoint_continuousAt.{u_1, u_2, u_3} {α : Type u_1}
+  {σ : Type u_2} {ι : Type u_3} [TopologicalSpace α] [Fintype σ] [Fintype ι] {amplitude : α → σ → ι → ℝ} {delta : α → ℝ}
+  (tag : σ → ι → Bool) {p : α} {k : ℕ} {a0 L : ℝ} (ha0 : 0 < a0) (hL : 0 < L) (hk : 0 < k) (hkn : k ≤ Fintype.card σ)
+  (ha : ∀ (j : σ) (i : ι), ContinuousAt (fun q => amplitude q j i) p) (hd : ContinuousAt delta p)
+  (hm :
+    ∀ (j : σ) (b : Bool), SbtCosmo.Derivation.GrowthPopulationSensitivity.tagMaximumValue (amplitude p j) (tag j) b ≠ 0)
+  (hT :
+    SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold (amplitude p) tag (delta p) k ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L)) :
+  ContinuousAt
+    (fun q => SbtCosmo.Derivation.GrowthPopulationSensitivity.populationEndpoint a0 L (amplitude q) tag (delta q) k) p
+SbtCosmo.Derivation.GrowthPopulationSensitivity.populationEndpoint_native_window.{u_1, u_2} {σ : Type u_1}
+  {ι : Type u_2} [Fintype σ] [Fintype ι] (amplitude : σ → ι → ℝ) (tag : σ → ι → Bool) {a0 A delta : ℝ} {k : ℕ}
+  (ha : 0 < a0) (hA : a0 < A) (hk : 0 < k) (hkn : k ≤ Fintype.card σ) (hp : ∀ (j : σ) (i : ι), 0 ≤ amplitude j i)
+  (hpatch : ∀ (j : σ) (b : Bool), ∃ i, tag j i = b ∧ 0 < amplitude j i)
+  (hT :
+    SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold amplitude tag delta k ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log (A / a0))) (A / a0)) :
+  0 < SbtCosmo.Derivation.GrowthPopulationSensitivity.populationEndpoint a0 (Real.log (A / a0)) amplitude tag delta k ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0
+          (SbtCosmo.Derivation.GrowthPopulationSensitivity.populationEndpoint a0 (Real.log (A / a0)) amplitude tag delta
+            k)
+          A =
+        SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold amplitude tag delta k ∧
+      ∀ (lam : ℝ),
+        SbtCosmo.Derivation.GrowthPopulation.nativeAggregate amplitude tag a0 A delta k lam ↔
+          -(1 / A ^ 3) < lam ∧
+            lam ≤
+              SbtCosmo.Derivation.GrowthPopulationSensitivity.populationEndpoint a0 (Real.log (A / a0)) amplitude tag
+                delta k
+SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold_amplitude_mul_pos.{u_1, u_2} {σ : Type u_1}
+  {ι : Type u_2} [Fintype σ] [Fintype ι] (amplitude : σ → ι → ℝ) (tag : σ → ι → Bool) (delta : ℝ) {k : ℕ} {c : ℝ}
+  (hk : 0 < k) (hkn : k ≤ Fintype.card σ) (hc : 0 < c) :
+  SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold (fun j i => c * amplitude j i) tag delta k =
+    c⁻¹ * SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold amplitude tag delta k
+SbtCosmo.Derivation.WindowSensitivity.original_aggregate_threshold :
+  SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold SbtCosmo.Derivation.WindowSample.amplitude
+      SbtCosmo.Derivation.WindowSampleData.tag SbtCosmo.Derivation.WindowSample.delta 10 =
+    SbtCosmo.Derivation.WindowSample.aggregateThreshold
+SbtCosmo.Derivation.WindowSensitivity.scaled_endpoint_continuousAt {p : ℝ × ℝ} (hs : 0 < p.2)
+  (hT :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold p.1 p.2 ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2) p
+SbtCosmo.Derivation.WindowSensitivity.robustness_rectangle_admissible {d s : ℝ} (hd : d ∈ Set.Icc (6 / 5) 2)
+  (hs : s ∈ Set.Icc (1 / 3) 3) :
+  SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s ∈
+    Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000
+SbtCosmo.Derivation.WindowSensitivity.robustness_rectangle_native_window {d s : ℝ} (hd : d ∈ Set.Icc (6 / 5) 2)
+  (hs : s ∈ Set.Icc (1 / 3) 3) :
+  0 < SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000)
+          (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) 20 =
+        SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s ∧
+      ∀ (lam : ℝ),
+        SbtCosmo.Derivation.GrowthPopulation.nativeAggregate (SbtCosmo.Derivation.WindowSensitivity.scaledAmplitude s)
+            SbtCosmo.Derivation.WindowSampleData.tag (1 / 1000) 20 d 10 lam ↔
+          -(1 / 8000) < lam ∧ lam ≤ SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s
+SbtCosmo.Derivation.WindowSensitivity.scaled_endpoint_strict_delta {d1 d2 s : ℝ} (hs : 0 < s) (h12 : d1 < d2)
+  (hT1 :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d1 s ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000)
+  (hT2 :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d2 s ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d2 s < SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d1 s
+SbtCosmo.Derivation.WindowSensitivity.scaled_endpoint_strict_amplitude {d s1 s2 : ℝ} (hd : 0 < d) (hs1 : 0 < s1)
+  (h12 : s1 < s2)
+  (hT1 :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s1 ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000)
+  (hT2 :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s2 ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s1 < SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s2

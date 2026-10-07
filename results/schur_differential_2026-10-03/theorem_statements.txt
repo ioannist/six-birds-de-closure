@@ -1,0 +1,211 @@
+SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_mul.{u_1, u_2, u_3, u_4} {i : Type u_1} {j : Type u_2} {k : Type u_3}
+  {E : Type u_4} [Fintype i] [Fintype j] [Fintype k] [NormedAddCommGroup E] [NormedSpace ℝ E] {f : E → Matrix i j ℝ}
+  {g : E → Matrix j k ℝ} {f' : E →L[ℝ] Matrix i j ℝ} {g' : E →L[ℝ] Matrix j k ℝ} {x : E} (hf : HasFDerivAt f f' x)
+  (hg : HasFDerivAt g g' x) :
+  HasFDerivAt (fun z => f z * g z)
+    ((LinearMap.toContinuousLinearMap (SbtCosmo.Derivation.MatrixDifferential.mulRight (g x))).comp f' +
+      (LinearMap.toContinuousLinearMap (SbtCosmo.Derivation.MatrixDifferential.mulLeft (f x))).comp g')
+    x
+SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_transpose.{u_1, u_2, u_4} {i : Type u_1} {j : Type u_2}
+  {E : Type u_4} [Fintype i] [Fintype j] [NormedAddCommGroup E] [NormedSpace ℝ E] {f : E → Matrix i j ℝ}
+  {f' : E →L[ℝ] Matrix i j ℝ} {x : E} (hf : HasFDerivAt f f' x) :
+  HasFDerivAt (fun z => (f z).transpose)
+    ((LinearMap.toContinuousLinearMap SbtCosmo.Derivation.MatrixDifferential.transposeMap).comp f') x
+SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_tracePair.{u_1, u_4} {i : Type u_1} {E : Type u_4} [Fintype i]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] {f : E → Matrix i i ℝ} {f' : E →L[ℝ] Matrix i i ℝ} {x : E} (P : Matrix i i ℝ)
+  (hf : HasFDerivAt f f' x) :
+  HasFDerivAt (fun z => (P * f z).trace)
+    ((LinearMap.toContinuousLinearMap (SbtCosmo.Derivation.MatrixDifferential.tracePair P)).comp f') x
+SbtCosmo.Derivation.SchurDifferential.jacobian_apply.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ) (Z H : Matrix m e ℝ) :
+  (SbtCosmo.Derivation.SchurDifferential.jacobian L Z) H =
+    H * SbtCosmo.Derivation.SchurDifferential.complement L * Z.transpose +
+      Z * SbtCosmo.Derivation.SchurDifferential.complement L * H.transpose
+SbtCosmo.Derivation.SchurDifferential.complement_transpose.{u_1, u_3} {n : Type u_1} {e : Type u_3} [Fintype n]
+  [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ) :
+  (SbtCosmo.Derivation.SchurDifferential.complement L).transpose = SbtCosmo.Derivation.SchurDifferential.complement L
+SbtCosmo.Derivation.SchurDifferential.jacobian_symmetric.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ) (Z H : Matrix m e ℝ) :
+  ((SbtCosmo.Derivation.SchurDifferential.jacobian L Z) H).transpose =
+    (SbtCosmo.Derivation.SchurDifferential.jacobian L Z) H
+SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_residual.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ) (Z : Matrix m e ℝ) :
+  HasFDerivAt (SbtCosmo.Adequacy.Support.residual L) (SbtCosmo.Derivation.SchurDifferential.jacobian L Z) Z
+SbtCosmo.Derivation.SchurDifferential.fderiv_residual.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ) (Z : Matrix m e ℝ) :
+  fderiv ℝ (SbtCosmo.Adequacy.Support.residual L) Z = SbtCosmo.Derivation.SchurDifferential.jacobian L Z
+SbtCosmo.Derivation.SchurDifferential.traceAdjoint_pairing.{u_2, u_4} {m : Type u_2} {E : Type u_4} [Fintype m]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] (J : E →L[ℝ] Matrix m m ℝ) (P : Matrix m m ℝ) (h : E) :
+  ((SbtCosmo.Derivation.SchurDifferential.traceAdjoint J) P) h = (P * J h).trace
+SbtCosmo.Derivation.SchurDifferential.trace_jacobian_formula.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ)
+  (Z H : Matrix m e ℝ) (P : Matrix m m ℝ) :
+  (P * (SbtCosmo.Derivation.SchurDifferential.jacobian L Z) H).trace =
+    ((P + P.transpose) * Z * SbtCosmo.Derivation.SchurDifferential.complement L * H.transpose).trace
+SbtCosmo.Derivation.SchurDifferential.trace_jacobian_psd.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] {P : Matrix m m ℝ} (hP : P.PosSemidef)
+  (L : Matrix n e ℝ) (Z H : Matrix m e ℝ) :
+  (P * (SbtCosmo.Derivation.SchurDifferential.jacobian L Z) H).trace =
+    2 * (P * Z * SbtCosmo.Derivation.SchurDifferential.complement L * H.transpose).trace
+SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_composed_residual.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] (L : Matrix n e ℝ) {D : E → Matrix m e ℝ} {D' : E →L[ℝ] Matrix m e ℝ} {x : E}
+  (hD : HasFDerivAt D D' x) :
+  HasFDerivAt (fun z => SbtCosmo.Adequacy.Support.residual L (D z))
+    ((SbtCosmo.Derivation.SchurDifferential.jacobian L (D x)).comp D') x
+SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_composed_trace_gap.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] (L : Matrix n e ℝ) {D : E → Matrix m e ℝ} {D' : E →L[ℝ] Matrix m e ℝ} {x : E}
+  (hD : HasFDerivAt D D' x) (P B : Matrix m m ℝ) :
+  HasFDerivAt (fun z => (P * (SbtCosmo.Adequacy.Support.residual L (D z) - B)).trace)
+    ((SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+        ((SbtCosmo.Derivation.SchurDifferential.jacobian L (D x)).comp D'))
+      P)
+    x
+SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_probe.{u_2, u_3, u_4} {m : Type u_2} {e : Type u_3} {E : Type u_4}
+  [Fintype m] [Fintype e] [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  (x : E) : HasFDerivAt (⇑D) (SbtCosmo.Derivation.SchurDifferential.affineLinear D) x
+SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_affine_residual.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  (x : E) :
+  HasFDerivAt (fun z => SbtCosmo.Adequacy.Support.residual L (D z))
+    ((SbtCosmo.Derivation.SchurDifferential.jacobian L (D x)).comp
+      (SbtCosmo.Derivation.SchurDifferential.affineLinear D))
+    x
+SbtCosmo.Derivation.SchurDifferential.fderiv_affine_residual.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  (x : E) :
+  fderiv ℝ (fun z => SbtCosmo.Adequacy.Support.residual L (D z)) x =
+    (SbtCosmo.Derivation.SchurDifferential.jacobian L (D x)).comp (SbtCosmo.Derivation.SchurDifferential.affineLinear D)
+SbtCosmo.Derivation.SchurDifferential.pricePullback_eq_adjoint_fderiv.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) (x : E)
+  (P : Matrix m m ℝ) :
+  SbtCosmo.Derivation.SchurDifferential.pricePullback L D x P =
+    (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+        (fderiv ℝ (fun z => SbtCosmo.Adequacy.Support.residual L (D z)) x))
+      P
+SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_trace_gap.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) (x : E)
+  (P B : Matrix m m ℝ) :
+  HasFDerivAt (fun z => (P * (SbtCosmo.Adequacy.Support.residual L (D z) - B)).trace)
+    (SbtCosmo.Derivation.SchurDifferential.pricePullback L D x P) x
+SbtCosmo.Derivation.SchurDifferential.fderiv_trace_gap.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) (x : E) (P B : Matrix m m ℝ) :
+  fderiv ℝ (fun z => (P * (SbtCosmo.Adequacy.Support.residual L (D z) - B)).trace) x =
+    SbtCosmo.Derivation.SchurDifferential.pricePullback L D x P
+SbtCosmo.Derivation.SchurDifferential.pricePullback_psd.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] {P : Matrix m m ℝ} (hP : P.PosSemidef)
+  (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) (x h : E) :
+  (SbtCosmo.Derivation.SchurDifferential.pricePullback L D x P) h =
+    2 * (P * D x * SbtCosmo.Derivation.SchurDifferential.complement L * (D.linear h).transpose).trace
+SbtCosmo.Derivation.SchurAdjointStationarity.matrix_stationarity.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ)
+  {A : Set E} {J : E → EReal} {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ xr : E}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J))
+  (hA : Convex ℝ A) (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤)
+  (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef) :
+  ∃ P q η,
+    P.PosSemidef ∧
+      SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧
+          q +
+                  (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+                      (fderiv ℝ (fun x => SbtCosmo.Adequacy.Support.residual L (D x)) star))
+                    P +
+                η =
+              0 ∧
+            (∀ (h : E),
+                q h +
+                      2 *
+                        (P * D star * SbtCosmo.Derivation.SchurDifferential.complement L *
+                            (D.linear h).transpose).trace +
+                    η h =
+                  0) ∧
+              (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0
+SbtCosmo.Derivation.SchurAdjointStationarity.matrix_stationarity_nonzero.{u_1, u_2, u_3, u_4} {n : Type u_1}
+  {m : Type u_2} {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq m]
+  [DecidableEq e] [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ)
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) {A : Set E} {J : E → EReal}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ xr : E} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤)
+  (hslater : (↑B - ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x₀))).PosDef)
+  (hsensitive :
+    ∃ H,
+      SbtCosmo.Derivation.MatrixClosurePrice.positive H ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive (B + H) <
+          SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive B) :
+  ∃ P q η,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+          SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧
+            q +
+                    (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+                        (fderiv ℝ (fun x => SbtCosmo.Adequacy.Support.residual L (D x)) star))
+                      P +
+                  η =
+                0 ∧
+              (∀ (h : E),
+                  q h +
+                        2 *
+                          (P * D star * SbtCosmo.Derivation.SchurDifferential.complement L *
+                              (D.linear h).transpose).trace +
+                      η h =
+                    0) ∧
+                (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0
+SbtCosmo.Derivation.SchurDifferentialExamples.singular_native_complement :
+  SbtCosmo.Derivation.SchurDifferential.complement SbtCosmo.Adequacy.Support.rankOneNative =
+    SbtCosmo.Derivation.SchurDifferentialExamples.nativeComplement
+SbtCosmo.Derivation.SchurDifferentialExamples.singular_pricePullback (x h : ℝ) :
+  (SbtCosmo.Derivation.SchurDifferential.pricePullback SbtCosmo.Adequacy.Support.rankOneNative
+        SbtCosmo.Derivation.SchurDifferentialExamples.singularProbe x 1)
+      h =
+    2 * x * h
+SbtCosmo.Derivation.SchurDifferentialExamples.singular_trace_derivative (x : ℝ) :
+  HasFDerivAt
+    (fun z =>
+      (SbtCosmo.Adequacy.Support.residual SbtCosmo.Adequacy.Support.rankOneNative
+          (SbtCosmo.Derivation.SchurDifferentialExamples.singularProbe z)).trace)
+    ((2 * x) • ContinuousLinearMap.id ℝ ℝ) x
+SbtCosmo.Derivation.SchurDifferentialExamples.missing_second_term_control :
+  (SbtCosmo.Derivation.SchurDifferential.pricePullback SbtCosmo.Adequacy.Support.rankOneNative
+        SbtCosmo.Derivation.SchurDifferentialExamples.singularProbe 1 1)
+      1 ≠
+    (SbtCosmo.Derivation.SchurDifferentialExamples.singularProbe 1 *
+          SbtCosmo.Derivation.SchurDifferential.complement SbtCosmo.Adequacy.Support.rankOneNative *
+        (SbtCosmo.Derivation.SchurDifferentialExamples.singularProbe.linear 1).transpose).trace
+SbtCosmo.Derivation.SchurDifferentialExamples.price_not_hermitian :
+  ¬SbtCosmo.Derivation.SchurDifferentialExamples.nonsymmetricPrice.IsHermitian
+SbtCosmo.Derivation.SchurDifferentialExamples.nonsymmetric_price_control :
+  (SbtCosmo.Derivation.SchurDifferentialExamples.nonsymmetricPrice *
+        (SbtCosmo.Derivation.SchurDifferential.jacobian 0 SbtCosmo.Derivation.SchurDifferentialExamples.baseProbe)
+          SbtCosmo.Derivation.SchurDifferentialExamples.directionProbe).trace ≠
+    2 *
+      (SbtCosmo.Derivation.SchurDifferentialExamples.nonsymmetricPrice *
+              SbtCosmo.Derivation.SchurDifferentialExamples.baseProbe *
+            SbtCosmo.Derivation.SchurDifferential.complement 0 *
+          SbtCosmo.Derivation.SchurDifferentialExamples.directionProbe.transpose).trace

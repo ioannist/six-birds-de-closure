@@ -1,0 +1,14 @@
+{
+  "receipt": "E4-PREDICT blind Phase A ordering receipt — prediction COMMITTED before any route H0 value was unlocked",
+  "committed_utc": "2026-05-31T13:33:09Z",
+  "agent": "ralph-FRESH-BOOTSTRAP-thread-019e7e31",
+  "blinding_status": "blind",
+  "attestation": "ever_seen_route_H0_value=false",
+  "hash_chain": {
+    "1_version_manifest": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41",
+    "2_kernel_freeze":    "c54b570bef8d69e8319a797158b3ee0d1498338e280a9bbd6c266cc94880f0af",
+    "3_predicted_table":  "07bea7248c2121375c124346f32a4a4db1bd7b3f6fbb03eb0f34667c58fea10c",
+    "4_attestation":      "7cf11df070ce5621f55444403e7327000b629ed1d7ba7fc819b109d0da1e77bd"
+  },
+  "next": "Phase B (value-unlock + compare) is a SEPARATE dispatch; it must compare measured route H0 against THIS committed predicted table and may not alter these files (any edit breaks the hashes)."
+}

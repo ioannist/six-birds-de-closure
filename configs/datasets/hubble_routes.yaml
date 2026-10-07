@@ -1,0 +1,14 @@
+schema_version: 1
+datasets:
+  - SH0ES
+  - CCHP_TRGB_JAGB
+  - TDCOSMO
+  - SIRENS_GW170817
+  - INVERSE_LADDER
+manifests:
+  SH0ES: data/manifests/sh0es.json
+  CCHP_TRGB_JAGB: data/manifests/cchp_trgb_jagb.json
+  TDCOSMO: data/manifests/tdcosmo.json
+  SIRENS_GW170817: data/manifests/sirens_gw170817.json
+  INVERSE_LADDER: data/manifests/inverse_ladder.json
+fallback_policy: route_tagged_summary_only_where_needed

@@ -1,0 +1,59 @@
+'SbtCosmo.Derivation.AllocationSensitivity.marginal_sub_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.marginal_sub_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.marginal_strictAntiOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.demand_stationary_of_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.demand_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.priceModulus_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.selected_price_antitoneOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.price_difference_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.price_abs_difference_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.selected_price_lipschitzOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.selected_price_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.cost_remainder_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.cost_value_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.cost_value_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.cost_value_deriv_lipschitzOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.cost_value_contDiffOn_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.actual_strict_sensitivity_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.central_difference_price_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.demo_actual_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.changed_weights_actual_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSensitivity.active_zero_derivative_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

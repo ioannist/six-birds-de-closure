@@ -1,0 +1,420 @@
+SbtCosmo.Derivation.GroundBorderResponse.linear_response_error_mul.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] (L C : E →L[ℝ] E) {y r : E} {q : ℝ} (hy : L y = r) (hq : 0 ≤ q)
+  (hdefect : ‖ContinuousLinearMap.id ℝ E - C.comp L‖ ≤ q) : (1 - q) * ‖y - C r‖ ≤ q * ‖C r‖
+SbtCosmo.Derivation.GroundBorderResponse.linear_response_error.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] (L C : E →L[ℝ] E) {y r : E} {q : ℝ} (hy : L y = r) (hq : 0 ≤ q) (hq1 : q < 1)
+  (hdefect : ‖ContinuousLinearMap.id ℝ E - C.comp L‖ ≤ q) : ‖y - C r‖ ≤ q / (1 - q) * ‖C r‖
+SbtCosmo.Derivation.GroundBorderResponse.borderExpr_return (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (j i : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundBorderResponse.borderExpr j i) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord
+      ((SbtCosmo.Derivation.GroundBorderResponse.borderOperator b κ x)
+        (SbtCosmo.Derivation.GroundPointCoordinates.column j))
+      i
+SbtCosmo.Derivation.GroundBorderResponse.field_column_return (j : Fin 8) :
+  (SbtCosmo.Derivation.GroundPointCoordinates.column j.castSucc).1 = SbtCosmo.Derivation.GroundLocalDynamics.column j
+SbtCosmo.Derivation.GroundBorderResponse.rhsExpr_return (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 8) (i : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundBorderResponse.rhsExpr j i) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord (SbtCosmo.Derivation.GroundBorderResponse.rhs b κ x j) i
+SbtCosmo.Derivation.GroundBorderResponse.correctedRhsExpr_return (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 8)
+  (i : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundBorderResponse.correctedRhsExpr C j i) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord
+      ((SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+        (SbtCosmo.Derivation.GroundBorderResponse.rhs b κ x j))
+      i
+SbtCosmo.Derivation.GroundBorderResponse.borderDefectExpr_return (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (i j : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundBorderResponse.borderDefectExpr C i j) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord
+      ((ContinuousLinearMap.id ℝ SbtCosmo.Derivation.GroundBorder.Point -
+          (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C).comp
+            (SbtCosmo.Derivation.GroundBorderResponse.borderOperator b κ x))
+        (SbtCosmo.Derivation.GroundPointCoordinates.column j))
+      i
+SbtCosmo.Derivation.GroundBorderResponse.response_equation (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 8)
+  (hg : SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) = x) :
+  (SbtCosmo.Derivation.GroundBorderResponse.borderOperator b κ x)
+      (SbtCosmo.Derivation.GroundBorderResponse.response b κ x j) =
+    SbtCosmo.Derivation.GroundBorderResponse.rhs b κ x j
+SbtCosmo.Derivation.GroundBorderResponse.response_field (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 8) :
+  (SbtCosmo.Derivation.GroundBorderResponse.response b κ x j).1 =
+    (SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ x.1) (SbtCosmo.Derivation.GroundLocalDynamics.column j)
+SbtCosmo.Derivation.GroundBorderResponse.border_defect_norm (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (B : SbtCosmo.Derivation.GroundResidualEnclosure.Variable → SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) {q : ℚ} (hq : 0 ≤ q)
+  (hB :
+    ∀ (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable),
+      (B v).Contains (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x v))
+  (hrows :
+    ∀ (i : Fin 9),
+      ∑ j,
+          (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B
+              (SbtCosmo.Derivation.GroundBorderResponse.borderDefectExpr C i j)).bound ≤
+        q) :
+  ‖ContinuousLinearMap.id ℝ SbtCosmo.Derivation.GroundBorder.Point -
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C).comp
+          (SbtCosmo.Derivation.GroundBorderResponse.borderOperator b κ x)‖ ≤
+    ↑q
+SbtCosmo.Derivation.GroundBorderResponse.corrected_rhs_norm (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (B : SbtCosmo.Derivation.GroundResidualEnclosure.Variable → SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 8) {y : ℚ}
+  (hy : 0 ≤ y)
+  (hB :
+    ∀ (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable),
+      (B v).Contains (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x v))
+  (hrows :
+    ∀ (i : Fin 9),
+      (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B
+            (SbtCosmo.Derivation.GroundBorderResponse.correctedRhsExpr C j i)).bound ≤
+        y) :
+  ‖(SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+        (SbtCosmo.Derivation.GroundBorderResponse.rhs b κ x j)‖ ≤
+    ↑y
+SbtCosmo.Derivation.GroundBorderResponse.response_error (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (B : SbtCosmo.Derivation.GroundResidualEnclosure.Variable → SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 8)
+  {q y e : ℚ} (hq : 0 ≤ q) (hq1 : q < 1) (hy : 0 ≤ y) (hbudget : q * y ≤ e * (1 - q))
+  (hg : SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) = x)
+  (hB :
+    ∀ (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable),
+      (B v).Contains (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x v))
+  (hdefect :
+    ∀ (i : Fin 9),
+      ∑ k,
+          (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B
+              (SbtCosmo.Derivation.GroundBorderResponse.borderDefectExpr C i k)).bound ≤
+        q)
+  (hrows :
+    ∀ (i : Fin 9),
+      (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B
+            (SbtCosmo.Derivation.GroundBorderResponse.correctedRhsExpr C j i)).bound ≤
+        y) :
+  ‖SbtCosmo.Derivation.GroundBorderResponse.response b κ x j -
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+          (SbtCosmo.Derivation.GroundBorderResponse.rhs b κ x j)‖ ≤
+    ↑e
+SbtCosmo.Derivation.GroundBorderResponse.arithmetic_response_error {β : Fin 8 → ℚ} {a : ℚ} {z : Fin 9 → ℚ} {r q : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} {y e : Fin 8 → ℚ}
+  (h : SbtCosmo.Derivation.GroundBorderResponse.Arithmetic β a z r C q y e) {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (hg :
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundKernelTube.background β) (↑a) x.1) =
+      x)
+  (j : Fin 8) :
+  ‖SbtCosmo.Derivation.GroundBorderResponse.response (SbtCosmo.Derivation.GroundKernelTube.background β) (↑a) x j -
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+          (SbtCosmo.Derivation.GroundBorderResponse.rhs (SbtCosmo.Derivation.GroundKernelTube.background β) (↑a) x j)‖ ≤
+    ↑(e j)
+SbtCosmo.Derivation.GroundBorderResponse.halfNominalExpr_return (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundBorderResponse.halfNominalExpr C i j) =
+    ((if i = j then 1 else 0) - x.1 i * x.1 j +
+        SbtCosmo.Derivation.GroundPointCoordinates.coord
+          ((SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+            (SbtCosmo.Derivation.GroundBorderResponse.rhs b κ x j))
+          i.castSucc) /
+      2
+SbtCosmo.Derivation.GroundBorderResponse.halfInterval_sound {β : Fin 8 → ℚ} {a : ℚ} {z : Fin 9 → ℚ} {r q : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} {y e : Fin 8 → ℚ}
+  (h : SbtCosmo.Derivation.GroundBorderResponse.Arithmetic β a z r C q y e) {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (hg :
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundKernelTube.background β) (↑a) x.1) =
+      x)
+  (hf :
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap (SbtCosmo.Derivation.GroundKernelTube.background β) (↑a) x.1 =
+      x.1)
+  (i j : Fin 8) :
+  (SbtCosmo.Derivation.GroundBorderResponse.halfInterval β a z r C e i j).Contains
+    ((SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian
+        (SbtCosmo.Derivation.GroundKernelTube.background β) (↑a) (1 / 2) x.1)
+      (SbtCosmo.Derivation.GroundLocalDynamics.column j) i)
+SbtCosmo.Derivation.GroundSamples.Point000.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point000.a SbtCosmo.Derivation.GroundSamples.Point000.c
+    SbtCosmo.Derivation.GroundSamples.Point000.z SbtCosmo.Derivation.GroundSamples.Point000.r
+    SbtCosmo.Derivation.GroundSamples.Point000.q SbtCosmo.Derivation.GroundSamples.Point000.y
+    SbtCosmo.Derivation.GroundSamples.Point000.C
+SbtCosmo.Derivation.GroundSamples.Point001.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point001.a SbtCosmo.Derivation.GroundSamples.Point001.c
+    SbtCosmo.Derivation.GroundSamples.Point001.z SbtCosmo.Derivation.GroundSamples.Point001.r
+    SbtCosmo.Derivation.GroundSamples.Point001.q SbtCosmo.Derivation.GroundSamples.Point001.y
+    SbtCosmo.Derivation.GroundSamples.Point001.C
+SbtCosmo.Derivation.GroundSamples.Point002.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point002.a SbtCosmo.Derivation.GroundSamples.Point002.c
+    SbtCosmo.Derivation.GroundSamples.Point002.z SbtCosmo.Derivation.GroundSamples.Point002.r
+    SbtCosmo.Derivation.GroundSamples.Point002.q SbtCosmo.Derivation.GroundSamples.Point002.y
+    SbtCosmo.Derivation.GroundSamples.Point002.C
+SbtCosmo.Derivation.GroundSamples.Point003.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point003.a SbtCosmo.Derivation.GroundSamples.Point003.c
+    SbtCosmo.Derivation.GroundSamples.Point003.z SbtCosmo.Derivation.GroundSamples.Point003.r
+    SbtCosmo.Derivation.GroundSamples.Point003.q SbtCosmo.Derivation.GroundSamples.Point003.y
+    SbtCosmo.Derivation.GroundSamples.Point003.C
+SbtCosmo.Derivation.GroundSamples.Point004.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point004.a SbtCosmo.Derivation.GroundSamples.Point004.c
+    SbtCosmo.Derivation.GroundSamples.Point004.z SbtCosmo.Derivation.GroundSamples.Point004.r
+    SbtCosmo.Derivation.GroundSamples.Point004.q SbtCosmo.Derivation.GroundSamples.Point004.y
+    SbtCosmo.Derivation.GroundSamples.Point004.C
+SbtCosmo.Derivation.GroundSamples.Point005.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point005.a SbtCosmo.Derivation.GroundSamples.Point005.c
+    SbtCosmo.Derivation.GroundSamples.Point005.z SbtCosmo.Derivation.GroundSamples.Point005.r
+    SbtCosmo.Derivation.GroundSamples.Point005.q SbtCosmo.Derivation.GroundSamples.Point005.y
+    SbtCosmo.Derivation.GroundSamples.Point005.C
+SbtCosmo.Derivation.GroundSamples.Point006.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point006.a SbtCosmo.Derivation.GroundSamples.Point006.c
+    SbtCosmo.Derivation.GroundSamples.Point006.z SbtCosmo.Derivation.GroundSamples.Point006.r
+    SbtCosmo.Derivation.GroundSamples.Point006.q SbtCosmo.Derivation.GroundSamples.Point006.y
+    SbtCosmo.Derivation.GroundSamples.Point006.C
+SbtCosmo.Derivation.GroundSamples.Point007.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point007.a SbtCosmo.Derivation.GroundSamples.Point007.c
+    SbtCosmo.Derivation.GroundSamples.Point007.z SbtCosmo.Derivation.GroundSamples.Point007.r
+    SbtCosmo.Derivation.GroundSamples.Point007.q SbtCosmo.Derivation.GroundSamples.Point007.y
+    SbtCosmo.Derivation.GroundSamples.Point007.C
+SbtCosmo.Derivation.GroundSamples.Point008.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point008.a SbtCosmo.Derivation.GroundSamples.Point008.c
+    SbtCosmo.Derivation.GroundSamples.Point008.z SbtCosmo.Derivation.GroundSamples.Point008.r
+    SbtCosmo.Derivation.GroundSamples.Point008.q SbtCosmo.Derivation.GroundSamples.Point008.y
+    SbtCosmo.Derivation.GroundSamples.Point008.C
+SbtCosmo.Derivation.GroundSamples.Point009.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point009.a SbtCosmo.Derivation.GroundSamples.Point009.c
+    SbtCosmo.Derivation.GroundSamples.Point009.z SbtCosmo.Derivation.GroundSamples.Point009.r
+    SbtCosmo.Derivation.GroundSamples.Point009.q SbtCosmo.Derivation.GroundSamples.Point009.y
+    SbtCosmo.Derivation.GroundSamples.Point009.C
+SbtCosmo.Derivation.GroundSamples.Point010.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point010.a SbtCosmo.Derivation.GroundSamples.Point010.c
+    SbtCosmo.Derivation.GroundSamples.Point010.z SbtCosmo.Derivation.GroundSamples.Point010.r
+    SbtCosmo.Derivation.GroundSamples.Point010.q SbtCosmo.Derivation.GroundSamples.Point010.y
+    SbtCosmo.Derivation.GroundSamples.Point010.C
+SbtCosmo.Derivation.GroundSamples.Point011.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point011.a SbtCosmo.Derivation.GroundSamples.Point011.c
+    SbtCosmo.Derivation.GroundSamples.Point011.z SbtCosmo.Derivation.GroundSamples.Point011.r
+    SbtCosmo.Derivation.GroundSamples.Point011.q SbtCosmo.Derivation.GroundSamples.Point011.y
+    SbtCosmo.Derivation.GroundSamples.Point011.C
+SbtCosmo.Derivation.GroundSamples.Point012.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point012.a SbtCosmo.Derivation.GroundSamples.Point012.c
+    SbtCosmo.Derivation.GroundSamples.Point012.z SbtCosmo.Derivation.GroundSamples.Point012.r
+    SbtCosmo.Derivation.GroundSamples.Point012.q SbtCosmo.Derivation.GroundSamples.Point012.y
+    SbtCosmo.Derivation.GroundSamples.Point012.C
+SbtCosmo.Derivation.GroundSamples.Point013.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point013.a SbtCosmo.Derivation.GroundSamples.Point013.c
+    SbtCosmo.Derivation.GroundSamples.Point013.z SbtCosmo.Derivation.GroundSamples.Point013.r
+    SbtCosmo.Derivation.GroundSamples.Point013.q SbtCosmo.Derivation.GroundSamples.Point013.y
+    SbtCosmo.Derivation.GroundSamples.Point013.C
+SbtCosmo.Derivation.GroundOriginalSamples.point_bounds (i : Fin 14) :
+  (SbtCosmo.Derivation.GroundOriginalSamples.points i).a = SbtCosmo.Derivation.GroundOriginalSamples.couplings i ∧
+    (SbtCosmo.Derivation.GroundOriginalSamples.points i).c = SbtCosmo.Derivation.GroundOriginalSamples.couplings i
+SbtCosmo.Derivation.GroundOriginalSamples.owner_bounds (i : Fin 14) :
+  (SbtCosmo.Derivation.GroundOriginalContinuation.pieces (SbtCosmo.Derivation.GroundOriginalSamples.owners i)).a ≤
+      SbtCosmo.Derivation.GroundOriginalSamples.couplings i ∧
+    SbtCosmo.Derivation.GroundOriginalSamples.couplings i ≤
+      (SbtCosmo.Derivation.GroundOriginalContinuation.pieces (SbtCosmo.Derivation.GroundOriginalSamples.owners i)).c
+SbtCosmo.Derivation.GroundOriginalSamples.containment (i : Fin 14) (j : Fin 9) :
+  |(SbtCosmo.Derivation.GroundOriginalSamples.points i).z j -
+          (SbtCosmo.Derivation.GroundOriginalContinuation.pieces (SbtCosmo.Derivation.GroundOriginalSamples.owners i)).z
+            j| +
+      (SbtCosmo.Derivation.GroundOriginalSamples.points i).r ≤
+    (SbtCosmo.Derivation.GroundOriginalContinuation.pieces (SbtCosmo.Derivation.GroundOriginalSamples.owners i)).r
+SbtCosmo.Derivation.GroundOriginalSamples.sample_interval (i : Fin 14) :
+  ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i) ∈
+    (SbtCosmo.Derivation.GroundOriginalSamples.points i).toTube.interval
+SbtCosmo.Derivation.GroundOriginalSamples.owner_interval (i : Fin 14) :
+  ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i) ∈
+    (SbtCosmo.Derivation.GroundOriginalContinuation.cover.tube
+        (SbtCosmo.Derivation.GroundOriginalSamples.owners i)).interval
+SbtCosmo.Derivation.GroundOriginalSamples.coupling_range (i : Fin 14) :
+  ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i) ∈ Set.Icc 0 30
+SbtCosmo.Derivation.GroundOriginalSamples.root_eq_branch (i : Fin 14) :
+  (SbtCosmo.Derivation.GroundOriginalSamples.points i).toTube.root
+      ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i) =
+    SbtCosmo.Derivation.GroundOriginalContinuation.branch ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)
+SbtCosmo.Derivation.GroundOriginalSamples.branch_in_sample_ball (i : Fin 14) :
+  SbtCosmo.Derivation.GroundOriginalContinuation.branch ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i) ∈
+    Metric.closedBall
+      (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalSamples.points i).z)
+      ↑(SbtCosmo.Derivation.GroundOriginalSamples.points i).r
+SbtCosmo.Derivation.GroundOriginalSamples.sample_ground_return (i : Fin 14) :
+  SbtCosmo.Derivation.GroundRootCertificate.residual
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+        (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+          ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)) =
+      0 ∧
+    (∀ (j : Fin 8),
+        0 <
+          (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+                ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)).1
+            j) ∧
+      SbtCosmo.Derivation.GroundState.normSq
+            (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+                ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)).1 =
+          1 ∧
+        SbtCosmo.Derivation.GroundBorder.groundPair
+              (SbtCosmo.Derivation.GroundState.sourcePotential
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+                (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+                    ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)).1) =
+            SbtCosmo.Derivation.GroundOriginalContinuation.branch
+              ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i) ∧
+          SbtCosmo.Derivation.GroundSourceJacobian.groundMap
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+              (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+                  ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)).1 =
+            (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+                ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)).1
+SbtCosmo.Derivation.GroundResponses.Point000.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point000.a SbtCosmo.Derivation.GroundSamples.Point000.z
+    SbtCosmo.Derivation.GroundSamples.Point000.r SbtCosmo.Derivation.GroundResponses.Point000.C
+    SbtCosmo.Derivation.GroundResponses.Point000.q SbtCosmo.Derivation.GroundResponses.Point000.y
+    SbtCosmo.Derivation.GroundResponses.Point000.error
+SbtCosmo.Derivation.GroundResponses.Point001.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point001.a SbtCosmo.Derivation.GroundSamples.Point001.z
+    SbtCosmo.Derivation.GroundSamples.Point001.r SbtCosmo.Derivation.GroundResponses.Point001.C
+    SbtCosmo.Derivation.GroundResponses.Point001.q SbtCosmo.Derivation.GroundResponses.Point001.y
+    SbtCosmo.Derivation.GroundResponses.Point001.error
+SbtCosmo.Derivation.GroundResponses.Point002.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point002.a SbtCosmo.Derivation.GroundSamples.Point002.z
+    SbtCosmo.Derivation.GroundSamples.Point002.r SbtCosmo.Derivation.GroundResponses.Point002.C
+    SbtCosmo.Derivation.GroundResponses.Point002.q SbtCosmo.Derivation.GroundResponses.Point002.y
+    SbtCosmo.Derivation.GroundResponses.Point002.error
+SbtCosmo.Derivation.GroundResponses.Point003.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point003.a SbtCosmo.Derivation.GroundSamples.Point003.z
+    SbtCosmo.Derivation.GroundSamples.Point003.r SbtCosmo.Derivation.GroundResponses.Point003.C
+    SbtCosmo.Derivation.GroundResponses.Point003.q SbtCosmo.Derivation.GroundResponses.Point003.y
+    SbtCosmo.Derivation.GroundResponses.Point003.error
+SbtCosmo.Derivation.GroundResponses.Point004.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point004.a SbtCosmo.Derivation.GroundSamples.Point004.z
+    SbtCosmo.Derivation.GroundSamples.Point004.r SbtCosmo.Derivation.GroundResponses.Point004.C
+    SbtCosmo.Derivation.GroundResponses.Point004.q SbtCosmo.Derivation.GroundResponses.Point004.y
+    SbtCosmo.Derivation.GroundResponses.Point004.error
+SbtCosmo.Derivation.GroundResponses.Point005.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point005.a SbtCosmo.Derivation.GroundSamples.Point005.z
+    SbtCosmo.Derivation.GroundSamples.Point005.r SbtCosmo.Derivation.GroundResponses.Point005.C
+    SbtCosmo.Derivation.GroundResponses.Point005.q SbtCosmo.Derivation.GroundResponses.Point005.y
+    SbtCosmo.Derivation.GroundResponses.Point005.error
+SbtCosmo.Derivation.GroundResponses.Point006.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point006.a SbtCosmo.Derivation.GroundSamples.Point006.z
+    SbtCosmo.Derivation.GroundSamples.Point006.r SbtCosmo.Derivation.GroundResponses.Point006.C
+    SbtCosmo.Derivation.GroundResponses.Point006.q SbtCosmo.Derivation.GroundResponses.Point006.y
+    SbtCosmo.Derivation.GroundResponses.Point006.error
+SbtCosmo.Derivation.GroundResponses.Point007.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point007.a SbtCosmo.Derivation.GroundSamples.Point007.z
+    SbtCosmo.Derivation.GroundSamples.Point007.r SbtCosmo.Derivation.GroundResponses.Point007.C
+    SbtCosmo.Derivation.GroundResponses.Point007.q SbtCosmo.Derivation.GroundResponses.Point007.y
+    SbtCosmo.Derivation.GroundResponses.Point007.error
+SbtCosmo.Derivation.GroundResponses.Point008.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point008.a SbtCosmo.Derivation.GroundSamples.Point008.z
+    SbtCosmo.Derivation.GroundSamples.Point008.r SbtCosmo.Derivation.GroundResponses.Point008.C
+    SbtCosmo.Derivation.GroundResponses.Point008.q SbtCosmo.Derivation.GroundResponses.Point008.y
+    SbtCosmo.Derivation.GroundResponses.Point008.error
+SbtCosmo.Derivation.GroundResponses.Point009.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point009.a SbtCosmo.Derivation.GroundSamples.Point009.z
+    SbtCosmo.Derivation.GroundSamples.Point009.r SbtCosmo.Derivation.GroundResponses.Point009.C
+    SbtCosmo.Derivation.GroundResponses.Point009.q SbtCosmo.Derivation.GroundResponses.Point009.y
+    SbtCosmo.Derivation.GroundResponses.Point009.error
+SbtCosmo.Derivation.GroundResponses.Point010.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point010.a SbtCosmo.Derivation.GroundSamples.Point010.z
+    SbtCosmo.Derivation.GroundSamples.Point010.r SbtCosmo.Derivation.GroundResponses.Point010.C
+    SbtCosmo.Derivation.GroundResponses.Point010.q SbtCosmo.Derivation.GroundResponses.Point010.y
+    SbtCosmo.Derivation.GroundResponses.Point010.error
+SbtCosmo.Derivation.GroundResponses.Point011.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point011.a SbtCosmo.Derivation.GroundSamples.Point011.z
+    SbtCosmo.Derivation.GroundSamples.Point011.r SbtCosmo.Derivation.GroundResponses.Point011.C
+    SbtCosmo.Derivation.GroundResponses.Point011.q SbtCosmo.Derivation.GroundResponses.Point011.y
+    SbtCosmo.Derivation.GroundResponses.Point011.error
+SbtCosmo.Derivation.GroundResponses.Point012.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point012.a SbtCosmo.Derivation.GroundSamples.Point012.z
+    SbtCosmo.Derivation.GroundSamples.Point012.r SbtCosmo.Derivation.GroundResponses.Point012.C
+    SbtCosmo.Derivation.GroundResponses.Point012.q SbtCosmo.Derivation.GroundResponses.Point012.y
+    SbtCosmo.Derivation.GroundResponses.Point012.error
+SbtCosmo.Derivation.GroundResponses.Point013.arithmetic :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundSamples.Point013.a SbtCosmo.Derivation.GroundSamples.Point013.z
+    SbtCosmo.Derivation.GroundSamples.Point013.r SbtCosmo.Derivation.GroundResponses.Point013.C
+    SbtCosmo.Derivation.GroundResponses.Point013.q SbtCosmo.Derivation.GroundResponses.Point013.y
+    SbtCosmo.Derivation.GroundResponses.Point013.error
+SbtCosmo.Derivation.GroundOriginalResponses.sample_arithmetic (i : Fin 14) :
+  SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    (SbtCosmo.Derivation.GroundOriginalSamples.couplings i) (SbtCosmo.Derivation.GroundOriginalSamples.points i).z
+    (SbtCosmo.Derivation.GroundOriginalSamples.points i).r
+    (SbtCosmo.Derivation.GroundOriginalResponses.certificates i).C
+    (SbtCosmo.Derivation.GroundOriginalResponses.certificates i).q
+    (SbtCosmo.Derivation.GroundOriginalResponses.certificates i).y
+    (SbtCosmo.Derivation.GroundOriginalResponses.certificates i).error
+SbtCosmo.Derivation.GroundOriginalResponses.actual_response_error (i : Fin 14) (j : Fin 8) :
+  ‖SbtCosmo.Derivation.GroundBorderResponse.response
+          (SbtCosmo.Derivation.GroundKernelTube.background
+            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+          (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+          (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+            ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+          j -
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner
+            (SbtCosmo.Derivation.GroundOriginalResponses.certificates i).C)
+          (SbtCosmo.Derivation.GroundBorderResponse.rhs
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+            (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+              ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i))
+            j)‖ ≤
+    ↑((SbtCosmo.Derivation.GroundOriginalResponses.certificates i).error j)
+SbtCosmo.Derivation.GroundOriginalResponses.actual_half_entries (i : Fin 14) (a j : Fin 8) :
+  (SbtCosmo.Derivation.GroundOriginalResponses.enclosures i a j).Contains
+    ((SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)) (1 / 2)
+        (SbtCosmo.Derivation.GroundOriginalContinuation.branch
+            ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings i)).1)
+      (SbtCosmo.Derivation.GroundLocalDynamics.column j) a)
+SbtCosmo.Derivation.GroundResponseControls.zero_border_preconditioner_rejected :
+  ¬SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundSamples.Point010.a SbtCosmo.Derivation.GroundSamples.Point010.z
+      SbtCosmo.Derivation.GroundSamples.Point010.r (fun x x_1 => 0) SbtCosmo.Derivation.GroundResponses.Point010.q
+      SbtCosmo.Derivation.GroundResponses.Point010.y SbtCosmo.Derivation.GroundResponses.Point010.error
+SbtCosmo.Derivation.GroundResponseControls.zero_error_budget_rejected :
+  ¬SbtCosmo.Derivation.GroundBorderResponse.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundSamples.Point010.a SbtCosmo.Derivation.GroundSamples.Point010.z
+      SbtCosmo.Derivation.GroundSamples.Point010.r SbtCosmo.Derivation.GroundResponses.Point010.C
+      SbtCosmo.Derivation.GroundResponses.Point010.q SbtCosmo.Derivation.GroundResponses.Point010.y fun x => 0

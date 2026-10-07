@@ -1,0 +1,7 @@
+{
+  "actual_exit_code": 1,
+  "stage": "pre-output source validation",
+  "error": "KeyError: repaired; renderer row defines a replacement but no private repaired-file path",
+  "registered_sources_changed": false,
+  "proof_commands_started": 0
+}

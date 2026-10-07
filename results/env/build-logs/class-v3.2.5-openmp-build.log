@@ -1,0 +1,117 @@
+CLASS OpenMP rebuild commit 22b49c0af22458a1d8fdf0dd85b5f0840202551b
+CLASS tag v3.2.5
+gcc gcc (conda-forge gcc 14.3.0-19) 14.3.0
+gfortran GNU Fortran (conda-forge gcc 14.3.0-19) 14.3.0
+rm -rf /mnt/data-drive/sbt-de/src/class_public/build;
+rm -f libclass.a
+rm -f /mnt/data-drive/sbt-de/src/class_public/python/classy.c
+rm -rf /mnt/data-drive/sbt-de/src/class_public/python/build
+if ! [ -e /mnt/data-drive/sbt-de/src/class_public/build ]; then mkdir /mnt/data-drive/sbt-de/src/class_public/build ; mkdir /mnt/data-drive/sbt-de/src/class_public/build/lib; fi;
+touch build/.base
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/growTable.c -o growTable.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/dei_rkck.c -o dei_rkck.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/sparse.c -o sparse.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/evolver_rkck.c -o evolver_rkck.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/evolver_ndf15.c -o evolver_ndf15.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/arrays.c -o arrays.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/parser.c -o parser.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/quadrature.c -o quadrature.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/hyperspherical.c -o hyperspherical.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/common.c -o common.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../tools/trigonometric_integrals.c -o trigonometric_integrals.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/input.c -o input.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/background.c -o background.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/thermodynamics.c -o thermodynamics.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/perturbations.c -o perturbations.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/primordial.c -o primordial.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/fourier.c -o fourier.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/transfer.c -o transfer.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/harmonic.c -o harmonic.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/lensing.c -o lensing.opp
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/distortions.c -o distortions.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/RecfastCLASS/wrap_recfast.c -o wrap_recfast.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/heating/injection.c -o injection.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/heating/noninjection.c -o noninjection.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/HyRec2020/hyrectools.c -o hyrectools.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/HyRec2020/helium.c -o helium.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/HyRec2020/hydrogen.c -o hydrogen.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/HyRec2020/history.c -o history.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/HyRec2020/wrap_hyrec.c -o wrap_hyrec.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../external/HyRec2020/energy_injection.c -o energy_injection.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../source/output.c -o output.o
+cd /mnt/data-drive/sbt-de/src/class_public/build;gcc -O3 -fopenmp -g -fPIC -D__CLASSDIR__='"/mnt/data-drive/sbt-de/src/class_public"' -DHYREC -I../include -I../external/RecfastCLASS -I../external/heating -I../external/HyRec2020 -c ../main/class.c -o class.o
+g++ --std=c++11 -fpermissive -Wno-write-strings -O3 -fopenmp -g -fPIC -o class build/growTable.o build/dei_rkck.o build/sparse.o build/evolver_rkck.o build/evolver_ndf15.o build/arrays.opp build/parser.o build/quadrature.o build/hyperspherical.opp build/common.o build/trigonometric_integrals.o build/input.o build/background.o build/thermodynamics.o build/perturbations.opp build/primordial.opp build/fourier.o build/transfer.opp build/harmonic.opp build/lensing.opp build/distortions.o build/wrap_recfast.o build/injection.o build/noninjection.o build/hyrectools.o build/helium.o build/hydrogen.o build/history.o build/wrap_hyrec.o build/energy_injection.o build/output.o build/class.o -lm
+ar rv  libclass.a build/growTable.o build/dei_rkck.o build/sparse.o build/evolver_rkck.o build/evolver_ndf15.o build/arrays.opp build/parser.o build/quadrature.o build/hyperspherical.opp build/common.o build/trigonometric_integrals.o build/input.o build/background.o build/thermodynamics.o build/perturbations.opp build/primordial.opp build/fourier.o build/transfer.opp build/harmonic.opp build/lensing.opp build/distortions.o build/wrap_recfast.o build/injection.o build/noninjection.o build/hyrectools.o build/helium.o build/hydrogen.o build/history.o build/wrap_hyrec.o build/energy_injection.o
+ar: creating libclass.a
+a - build/growTable.o
+a - build/dei_rkck.o
+a - build/sparse.o
+a - build/evolver_rkck.o
+a - build/evolver_ndf15.o
+a - build/arrays.opp
+a - build/parser.o
+a - build/quadrature.o
+a - build/hyperspherical.opp
+a - build/common.o
+a - build/trigonometric_integrals.o
+a - build/input.o
+a - build/background.o
+a - build/thermodynamics.o
+a - build/perturbations.opp
+a - build/primordial.opp
+a - build/fourier.o
+a - build/transfer.opp
+a - build/harmonic.opp
+a - build/lensing.opp
+a - build/distortions.o
+a - build/wrap_recfast.o
+a - build/injection.o
+a - build/noninjection.o
+a - build/hyrectools.o
+a - build/helium.o
+a - build/hydrogen.o
+a - build/history.o
+a - build/wrap_hyrec.o
+a - build/energy_injection.o
+cd python; export CC=gcc; output=$(python -m pip install . 2>&1); \
+    echo "$output"; \
+    if echo "$output" | grep -q "ERROR: Cannot uninstall"; then \
+        site_packages=$(python -c "import distutils.sysconfig; print(distutils.sysconfig.get_python_lib())" || python -c "import site; print(site.getsitepackages()[0])") && \
+	echo "Cleaning up previous installation in: $site_packages" && \
+        rm -rf $site_packages/classy* && \
+        python -m pip install .; \
+    fi
+Processing ./.
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      Traceback (most recent call last):
+        File "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 143, in get_requires_for_build_wheel
+          return hook(config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^
+        File "/mnt/data-drive/sbt-de/tmp/pip-build-env-dqezg3b1/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/mnt/data-drive/sbt-de/tmp/pip-build-env-dqezg3b1/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/mnt/data-drive/sbt-de/tmp/pip-build-env-dqezg3b1/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 520, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/mnt/data-drive/sbt-de/tmp/pip-build-env-dqezg3b1/overlay/lib/python3.11/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 3, in <module>
+      ModuleNotFoundError: No module named 'Cython'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'file:///mnt/data-drive/sbt-de/src/class_public/python' when getting requirements to build wheel

@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: INVERSE_LADDER
+manifest: data/manifests/inverse_ladder.json
+fallback_policy: inherits_upstream_status

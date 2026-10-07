@@ -1,0 +1,8 @@
+{
+  "terminal_exit_code": 143,
+  "session": 78489,
+  "pid": 3074577,
+  "replacement_session": 67195,
+  "replacement_terminal_exit_code": 0,
+  "reason": "Redundant random-access gzip verification intentionally terminated after the complete sequential pass passed; no source/ archive was deleted."
+}

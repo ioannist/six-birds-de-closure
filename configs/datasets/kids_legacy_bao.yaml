@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: KIDS_LEGACY_BAO
+manifest: data/manifests/kids_legacy_bao.json
+fallback_policy: budgeted_gaussian_ratio

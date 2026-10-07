@@ -1,0 +1,19 @@
+{
+  "modules": [
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential"
+  ],
+  "source": "lean/SbtCosmo/Derivation/GroundNativeGuardedBounds.lean",
+  "new_modules": 1,
+  "new_names": 7,
+  "registered": false,
+  "gate": "Register only after all source-freezing main and qualified campaign gates are terminal success; this supplement does not mutate their immutable 1734+4-module plans."
+}

@@ -1,0 +1,27 @@
+{
+  "entries": [
+    {
+      "id": "E0-data-free",
+      "note": "No external datasets used.",
+      "status": "zero"
+    },
+    {
+      "id": "E0-XiToy-scope",
+      "note": "Synthetic XiToy is not the real Xi_cosmo.",
+      "status": "nonclaim"
+    },
+    {
+      "id": "E0-Q-diagnostic",
+      "note": "Q is a synthetic closure diagnostic, not a GR backreaction claim.",
+      "status": "nonclaim"
+    },
+    {
+      "id": "E0-skeleton-paths",
+      "note": "Followed the locked sbt_cosmo/background skeleton path rather than the older plan prose path.",
+      "status": "approved_other"
+    }
+  ],
+  "experiment": "E0",
+  "schema_version": 1,
+  "unstatused": 0
+}

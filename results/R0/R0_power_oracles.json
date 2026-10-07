@@ -1,0 +1,516 @@
+{
+  "covariance": {
+    "assumptions": {
+      "approximation_floor_sigma_external_routes": 0.0,
+      "external_routes_only": [
+        "cepheid_sn",
+        "trgb_sn",
+        "jwst_trgb_sn",
+        "jagb_sn",
+        "time_delay",
+        "siren"
+      ],
+      "hard_excluded_in_sample_routes": [
+        "cmb_bao",
+        "inverse_ladder"
+      ],
+      "pd_jitter_added": 0.0,
+      "shared_SN_zero_point_M_B_covariance": 0.48999999999999994,
+      "shared_SN_zero_point_M_B_sigma": 0.7,
+      "shared_TRGB_anchor_covariance": 1.0,
+      "shared_TRGB_anchor_sigma_between_trgb_and_jwst_trgb": 1.0,
+      "source": "results/E4/E4_ROUTE_VALUE_MANIFEST.json"
+    },
+    "matrix": [
+      [
+        0.8649000000000001,
+        0.48999999999999994,
+        0.48999999999999994,
+        0.48999999999999994,
+        0.0,
+        0.0
+      ],
+      [
+        0.48999999999999994,
+        3.747299999999999,
+        1.49,
+        0.48999999999999994,
+        0.0,
+        0.0
+      ],
+      [
+        0.48999999999999994,
+        1.49,
+        4.9465,
+        0.48999999999999994,
+        0.0,
+        0.0
+      ],
+      [
+        0.48999999999999994,
+        0.48999999999999994,
+        0.48999999999999994,
+        7.3985,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        12.959999999999997,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        100.0
+      ]
+    ],
+    "route_order": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "gate": {
+    "conjuncts": {
+      "N_eff_ge_5": {
+        "N_eff": 5.450057588671821,
+        "N_routes": 6,
+        "correlation_eigenvalues": [
+          0.6495759151723571,
+          0.7331003015924297,
+          0.9763533193486632,
+          1.0,
+          1.0,
+          1.6409704638865492
+        ],
+        "definition": "(sum eigenvalues of route correlation matrix)^2 / sum eigenvalues^2",
+        "pass": true,
+        "threshold": 5.0
+      },
+      "covariance_stress_survives": {
+        "pass": false,
+        "rows": [
+          {
+            "SE_delta_elpd_LOO": 25.867425216261562,
+            "delta_AIC_proxy_null_minus_model": 2.7206826887229614,
+            "delta_BIC_null_minus_model": 3.5536448118107415,
+            "delta_elpd_LOO_model_minus_null": -25.18905757428543,
+            "model": "M_bridge",
+            "passes_any": false
+          },
+          {
+            "SE_delta_elpd_LOO": 2.3795080691981116,
+            "delta_AIC_proxy_null_minus_model": 4.235387202444212,
+            "delta_BIC_null_minus_model": 4.8601087947600465,
+            "delta_elpd_LOO_model_minus_null": 2.574800853402241,
+            "model": "M_family",
+            "passes_any": false
+          }
+        ],
+        "stress_assumptions": {
+          "approximation_floor_sigma_external_routes": 0.0,
+          "external_routes_only": [
+            "cepheid_sn",
+            "trgb_sn",
+            "jwst_trgb_sn",
+            "jagb_sn",
+            "time_delay",
+            "siren"
+          ],
+          "hard_excluded_in_sample_routes": [
+            "cmb_bao",
+            "inverse_ladder"
+          ],
+          "pd_jitter_added": 0.0,
+          "shared_SN_zero_point_M_B_covariance": 0.9025,
+          "shared_SN_zero_point_M_B_sigma": 0.95,
+          "shared_TRGB_anchor_covariance": 1.8225000000000002,
+          "shared_TRGB_anchor_sigma_between_trgb_and_jwst_trgb": 1.35,
+          "source": "results/E4/E4_ROUTE_VALUE_MANIFEST.json"
+        }
+      },
+      "leave_one_family_out_beats_null": {
+        "pass": false,
+        "rows": [
+          {
+            "beats_null": false,
+            "best_non_saturated_elpd": -10.342239096754437,
+            "best_non_saturated_model": "M_bridge",
+            "delta_elpd_best_minus_null": -0.2799964921635123,
+            "heldout_family": "CCHP",
+            "n_heldout": 3,
+            "null_elpd": -10.062242604590924
+          },
+          {
+            "beats_null": true,
+            "best_non_saturated_elpd": -3.9338625739312496,
+            "best_non_saturated_model": "M_bridge",
+            "delta_elpd_best_minus_null": 0.21947848970572092,
+            "heldout_family": "cepheid",
+            "n_heldout": 1,
+            "null_elpd": -4.1533410636369705
+          },
+          {
+            "beats_null": true,
+            "best_non_saturated_elpd": -3.235305507227922,
+            "best_non_saturated_model": "M_family",
+            "delta_elpd_best_minus_null": 0.025664264117007285,
+            "heldout_family": "siren",
+            "n_heldout": 1,
+            "null_elpd": -3.2609697713449295
+          },
+          {
+            "beats_null": false,
+            "best_non_saturated_elpd": -2.361364998149373,
+            "best_non_saturated_model": "M_bridge",
+            "delta_elpd_best_minus_null": -0.08563522106064214,
+            "heldout_family": "time_delay",
+            "n_heldout": 1,
+            "null_elpd": -2.275729777088731
+          }
+        ]
+      },
+      "non_saturated_oracle_beats_M0": {
+        "oracle_wins": [
+          {
+            "BIC_rule_pass": false,
+            "SE_delta_elpd_LOO": 25.170133523033677,
+            "delta_AIC_proxy_null_minus_model": 0.939331310389262,
+            "delta_BIC_null_minus_model": 1.7722934334770422,
+            "delta_elpd_LOO_model_minus_null": -24.827927980156844,
+            "elpd_rule_pass": false,
+            "model": "M_bridge",
+            "passes_any": false
+          },
+          {
+            "BIC_rule_pass": false,
+            "SE_delta_elpd_LOO": 1.8277309225319573,
+            "delta_AIC_proxy_null_minus_model": 2.522642562589839,
+            "delta_BIC_null_minus_model": 3.1473641549056737,
+            "delta_elpd_LOO_model_minus_null": 2.065042332067236,
+            "elpd_rule_pass": false,
+            "model": "M_family",
+            "passes_any": false
+          }
+        ],
+        "pass": false
+      },
+      "saturated_zero_control": {
+        "best_non_saturated_or_null_penalized_score": 8.020633761818294,
+        "chi2_zero": true,
+        "saturated_chi2": 1.1831110026612205e-27,
+        "saturated_loses_on_penalized_score": true,
+        "saturated_penalized_score": 10.75055681536833
+      }
+    },
+    "gate_id": "G-R0-POWER",
+    "pass": false,
+    "route_partition": {
+      "external_routes_used": [
+        "cepheid_sn",
+        "trgb_sn",
+        "jwst_trgb_sn",
+        "jagb_sn",
+        "time_delay",
+        "siren"
+      ],
+      "hard_excluded_in_sample_routes": [
+        "cmb_bao",
+        "inverse_ladder"
+      ]
+    }
+  },
+  "models": [
+    {
+      "AIC": 11.376238447495913,
+      "AIC_proxy": 11.376238447495913,
+      "BIC": 11.167997916723968,
+      "SE_elpd_LOO": 2.998205003552216,
+      "SE_elpd_LOO_plugin": 1.7857684487698087,
+      "chi2": 9.376238447495913,
+      "delta_vs_M0": {
+        "AIC_proxy_report_only": "AIC_proxy = chi2 + 2k; not a WAIC and not used for G-R0-POWER",
+        "BIC_rule_pass": false,
+        "SE_delta_elpd_LOO": 0.0,
+        "delta_AIC_proxy_null_minus_model": 0.0,
+        "delta_BIC_null_minus_model": 0.0,
+        "delta_elpd_LOO_model_minus_null": 0.0,
+        "elpd_rule_pass": false
+      },
+      "elpd_LOO": -19.38882973898751,
+      "elpd_LOO_plugin": -18.74152498617187,
+      "elpd_LOO_type": "conditional_correlated_gaussian",
+      "k": 1,
+      "loo_pointwise_plugin": [
+        -4.1533410636369705,
+        -2.3030970332387555,
+        -3.200220098847728,
+        -3.548167242014757,
+        -2.275729777088731,
+        -3.2609697713449295
+      ],
+      "model": "M_0",
+      "param_names": [
+        "H0"
+      ],
+      "params": [
+        72.66195268218742
+      ],
+      "penalized_score": 11.167997916723968,
+      "predicted_H0": {
+        "cepheid_sn": 72.66195268218742,
+        "jagb_sn": 72.66195268218742,
+        "jwst_trgb_sn": 72.66195268218742,
+        "siren": 72.66195268218742,
+        "time_delay": 72.66195268218742,
+        "trgb_sn": 72.66195268218742
+      },
+      "residuals": {
+        "cepheid_sn": 0.828047317812576,
+        "jagb_sn": -4.861952682187422,
+        "jwst_trgb_sn": -3.8519526821874166,
+        "siren": -2.661952682187419,
+        "time_delay": -1.0619526821874246,
+        "trgb_sn": -2.2719526821874183
+      }
+    },
+    {
+      "AIC": 10.436907137106651,
+      "AIC_proxy": 10.436907137106651,
+      "BIC": 9.395704483246925,
+      "SE_elpd_LOO": 27.73207961766282,
+      "SE_elpd_LOO_plugin": 25.812425707576246,
+      "chi2": 0.43690713710665174,
+      "delta_vs_M0": {
+        "AIC_proxy_report_only": "AIC_proxy = chi2 + 2k; not a WAIC and not used for G-R0-POWER",
+        "BIC_rule_pass": false,
+        "SE_delta_elpd_LOO": 25.170133523033677,
+        "delta_AIC_proxy_null_minus_model": 0.939331310389262,
+        "delta_BIC_null_minus_model": 1.7722934334770422,
+        "delta_elpd_LOO_model_minus_null": -24.827927980156844,
+        "elpd_rule_pass": false
+      },
+      "elpd_LOO": -44.216757719144354,
+      "elpd_LOO_plugin": -42.39545097586314,
+      "elpd_LOO_type": "conditional_correlated_gaussian",
+      "k": 5,
+      "loo_pointwise_plugin": [
+        -28.52638122687535,
+        -2.1438171783430446,
+        -2.143817178343042,
+        -3.9338625739313455,
+        -2.361364998149373,
+        -3.286207820220977
+      ],
+      "model": "M_bridge",
+      "param_names": [
+        "H0",
+        "bridge[JAGB]_minus_Cepheid",
+        "bridge[TRGB]_minus_Cepheid",
+        "bridge[siren]_minus_Cepheid",
+        "bridge[time_delay]_minus_Cepheid"
+      ],
+      "params": [
+        73.49,
+        -5.689999999999998,
+        -3.724196506703065,
+        -3.489999999999985,
+        -1.889999999999972
+      ],
+      "penalized_score": 9.395704483246925,
+      "predicted_H0": {
+        "cepheid_sn": 73.49,
+        "jagb_sn": 67.8,
+        "jwst_trgb_sn": 69.76580349329693,
+        "siren": 70.00000000000001,
+        "time_delay": 71.60000000000002,
+        "trgb_sn": 69.76580349329693
+      },
+      "residuals": {
+        "cepheid_sn": 0.0,
+        "jagb_sn": 0.0,
+        "jwst_trgb_sn": -0.9558034932969264,
+        "siren": -1.4210854715202004e-14,
+        "time_delay": -2.842170943040401e-14,
+        "trgb_sn": 0.6241965067030719
+      }
+    },
+    {
+      "AIC": 8.853595884906074,
+      "AIC_proxy": 8.853595884906074,
+      "BIC": 8.020633761818294,
+      "SE_elpd_LOO": 3.3201517926261284,
+      "SE_elpd_LOO_plugin": 2.205946809203441,
+      "chi2": 0.8535958849060736,
+      "delta_vs_M0": {
+        "AIC_proxy_report_only": "AIC_proxy = chi2 + 2k; not a WAIC and not used for G-R0-POWER",
+        "BIC_rule_pass": false,
+        "SE_delta_elpd_LOO": 1.8277309225319573,
+        "delta_AIC_proxy_null_minus_model": 2.522642562589839,
+        "delta_BIC_null_minus_model": 3.1473641549056737,
+        "delta_elpd_LOO_model_minus_null": 2.065042332067236,
+        "elpd_rule_pass": false
+      },
+      "elpd_LOO": -17.323787406920275,
+      "elpd_LOO_plugin": -16.45958009043064,
+      "elpd_LOO_type": "conditional_correlated_gaussian",
+      "k": 4,
+      "loo_pointwise_plugin": [
+        -4.35159738942246,
+        -2.1691104684961613,
+        -1.9730740106194486,
+        -2.271206310856752,
+        -2.4592864038078974,
+        -3.235305507227922
+      ],
+      "model": "M_family",
+      "param_names": [
+        "H0",
+        "family[cepheid]_minus_CCHP",
+        "family[siren]_minus_CCHP",
+        "family[time_delay]_minus_CCHP"
+      ],
+      "params": [
+        69.26438554208906,
+        4.225614457910979,
+        0.7356144579108559,
+        2.3356144579108786
+      ],
+      "penalized_score": 8.020633761818294,
+      "predicted_H0": {
+        "cepheid_sn": 73.49000000000004,
+        "jagb_sn": 69.26438554208906,
+        "jwst_trgb_sn": 69.26438554208906,
+        "siren": 69.99999999999991,
+        "time_delay": 71.59999999999994,
+        "trgb_sn": 69.26438554208906
+      },
+      "residuals": {
+        "cepheid_sn": -4.263256414560601e-14,
+        "jagb_sn": -1.4643855420890617,
+        "jwst_trgb_sn": -0.45438554208905657,
+        "siren": 8.526512829121202e-14,
+        "time_delay": 5.684341886080802e-14,
+        "trgb_sn": 1.1256144579109417
+      }
+    },
+    {
+      "AIC": 12.0,
+      "AIC_proxy": 12.0,
+      "BIC": 10.75055681536833,
+      "SE_elpd_LOO": 27.25031060335082,
+      "SE_elpd_LOO_plugin": 24.342995954042728,
+      "chi2": 1.1831110026612205e-27,
+      "delta_vs_M0": {
+        "AIC_proxy_report_only": "AIC_proxy = chi2 + 2k; not a WAIC and not used for G-R0-POWER",
+        "BIC_rule_pass": false,
+        "SE_delta_elpd_LOO": 24.714607261104664,
+        "delta_AIC_proxy_null_minus_model": -0.6237615525040869,
+        "delta_BIC_null_minus_model": 0.41744110135563695,
+        "delta_elpd_LOO_model_minus_null": -27.783256525353778,
+        "elpd_rule_pass": false
+      },
+      "elpd_LOO": -47.17208626434129,
+      "elpd_LOO_plugin": -43.488626220449554,
+      "elpd_LOO_type": "conditional_correlated_gaussian",
+      "k": 6,
+      "loo_pointwise_plugin": [
+        -27.498814305324753,
+        -2.7250931933405305,
+        -3.6832833294826104,
+        -3.9338625739313073,
+        -2.361364998149375,
+        -3.2862078202209757
+      ],
+      "model": "M_saturated",
+      "param_names": [
+        "H0",
+        "route[trgb_sn]_minus_cepheid_sn",
+        "route[jwst_trgb_sn]_minus_cepheid_sn",
+        "route[jagb_sn]_minus_cepheid_sn",
+        "route[time_delay]_minus_cepheid_sn",
+        "route[siren]_minus_cepheid_sn"
+      ],
+      "params": [
+        73.48999999999997,
+        -3.099999999999965,
+        -4.679999999999955,
+        -5.689999999999973,
+        -1.8899999999999721,
+        -3.4899999999999523
+      ],
+      "penalized_score": 10.75055681536833,
+      "predicted_H0": {
+        "cepheid_sn": 73.48999999999997,
+        "jagb_sn": 67.8,
+        "jwst_trgb_sn": 68.81000000000002,
+        "siren": 70.00000000000001,
+        "time_delay": 71.6,
+        "trgb_sn": 70.39
+      },
+      "residuals": {
+        "cepheid_sn": 2.842170943040401e-14,
+        "jagb_sn": 0.0,
+        "jwst_trgb_sn": -1.4210854715202004e-14,
+        "siren": -1.4210854715202004e-14,
+        "time_delay": 0.0,
+        "trgb_sn": 0.0
+      }
+    }
+  ],
+  "routes": [
+    {
+      "H0": 73.49,
+      "bridge_family": "Cepheid",
+      "route_family": "cepheid",
+      "route_id": "cepheid_sn",
+      "sigma": 0.93
+    },
+    {
+      "H0": 70.39,
+      "bridge_family": "TRGB",
+      "route_family": "CCHP",
+      "route_id": "trgb_sn",
+      "sigma": 1.9357944105715357
+    },
+    {
+      "H0": 68.81,
+      "bridge_family": "TRGB",
+      "route_family": "CCHP",
+      "route_id": "jwst_trgb_sn",
+      "sigma": 2.224072840533781
+    },
+    {
+      "H0": 67.8,
+      "bridge_family": "JAGB",
+      "route_family": "CCHP",
+      "route_id": "jagb_sn",
+      "sigma": 2.7200183822908257
+    },
+    {
+      "H0": 71.6,
+      "bridge_family": "time_delay",
+      "route_family": "time_delay",
+      "route_id": "time_delay",
+      "sigma": 3.5999999999999996
+    },
+    {
+      "H0": 70.0,
+      "bridge_family": "siren",
+      "route_family": "siren",
+      "route_id": "siren",
+      "sigma": 10.0
+    }
+  ],
+  "schema_version": 1
+}

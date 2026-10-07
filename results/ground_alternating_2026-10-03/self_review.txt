@@ -1,0 +1,42 @@
+Adversarial self-review, not independent review. Baseline0912889.
+Target: an actual local stability/instability mechanism within unchanged Step26,
+not certification of the frozen nonconstant-background coupling crossing.
+
+Earned inputs and exact return:
+- Alternating unit fields are actual Fin8 fields; original central gradient=0.
+- Source potential returned to original BackgroundSelection.potential.
+- Constructed positive eigenvector obeys every original Hamiltonian coordinate.
+- Lowest-eigenvalue identification uses symmetry and nonzero positive overlap
+  with the already constructed ground, then actual ground uniqueness.
+- All square-root positivity and normalization denominators earned.
+- Actual selectedMap uses intrinsic positiveGround, not a supplied matrix mode.
+- Actual normalizedRelaxed returns to scalar readout and whole field state.
+- Convex mixing positivity earns nonzero normalization at every finite iterate.
+- Derivative of actual response/mixing/normalization is calculated, not assumed.
+- Local gain bounds follow from derivative limits, including zero in contraction
+  and excluding zero exactly where needed for strict expansion.
+- Contraction estimates prove invariance and geometric decay of actual iterates;
+  state continuity returns convergence of actual fields.
+- Expansion estimates force finite escape via a geometric lower bound under
+  the false hypothesis that all iterates stay in the fixed neighborhood.
+- All controls use actual parameter changes and the unchanged dynamics.
+
+False-target and boundary controls:
+- Coupling30/background1 and background100/coupling3/10 have multiplier<-1;
+  finite escape uses the full iteration, not deletion of a record field.
+- Coupling10/background1 and background0/coupling3/10 have |mode|<1 on this slice.
+- Half-mixing linear threshold is -8<kb<24. No claim at kb=-8 or24.
+- m=0 preserves every field; strict |mode|<1 and >1 both fail there.
+- Attraction is only on the positive alternating slice; no all-mode stability.
+- Finite escape is not unbounded growth/nonexistence or permanent nonconvergence.
+- Original nonconstant template, frozen initial fields and spectral crossing
+  not inferred; background100 is outside the frozen offset sweep.
+- Real positive ground representative only; no complex phase-bug correction
+  attributed to frozen runs. No floating source precision or solver error proof.
+- Constant-sector control does not restore background blindness or coupling
+  nonexistence. No physical Lambda bridge or full original-target completion.
+
+All proof modules were inspected after implementation in a distinct self-review.
+
+Build receipt normalizes trailing whitespace only. Lean informational tactic
+message retained; no diagnostic content removed.

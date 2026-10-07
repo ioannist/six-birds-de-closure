@@ -1,0 +1,24 @@
+{
+  "modules": [
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn",
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution"
+  ],
+  "new_modules": 2,
+  "new_names": 10,
+  "names": [
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling20_execution",
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling30_execution",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.attempt_some_iff",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.run_guarded",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_return",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_guards",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.run_iff_guards",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_guarded",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_iff_guards",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn.candidate_normalization_preserved"
+  ],
+  "private_import_translation_required": true,
+  "original_production_plans_unchanged": true,
+  "repository_registered": false,
+  "gate": "Separate supplement after frozen29-module qualification and all source freezes release; translate import lines using original immutable production mapping before registered build/audit"
+}

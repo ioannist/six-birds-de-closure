@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-05T13:40:38.097846+00:00",
+  "fixture": "/tmp/de_native_installer_postreplace_original_failure",
+  "injected_failure": "Injected directory flush failure after successful replacement",
+  "fsync_calls": 2,
+  "target_replaced_before_failure": true,
+  "original_completed_list": [],
+  "original_completed_list_omits_attempted_write": true,
+  "registered_sources_changed": false,
+  "actual_registered_installation_claimed": false
+}

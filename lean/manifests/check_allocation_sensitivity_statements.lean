@@ -1,0 +1,23 @@
+import SbtCosmo.Derivation.AllocationSensitivity
+
+#check SbtCosmo.Derivation.AllocationSensitivity.marginal_sub_identity
+#check SbtCosmo.Derivation.AllocationSensitivity.marginal_sub_bounds
+#check SbtCosmo.Derivation.AllocationSensitivity.marginal_strictAntiOn
+#check SbtCosmo.Derivation.AllocationSensitivity.demand_stationary_of_positive
+#check SbtCosmo.Derivation.AllocationSensitivity.demand_antitone
+#check SbtCosmo.Derivation.AllocationSensitivity.priceModulus_nonnegative
+#check SbtCosmo.Derivation.AllocationSensitivity.selected_price_antitoneOn
+#check SbtCosmo.Derivation.AllocationSensitivity.price_difference_bound
+#check SbtCosmo.Derivation.AllocationSensitivity.price_abs_difference_bound
+#check SbtCosmo.Derivation.AllocationSensitivity.selected_price_lipschitzOn
+#check SbtCosmo.Derivation.AllocationSensitivity.selected_price_continuousOn
+#check SbtCosmo.Derivation.AllocationSensitivity.cost_remainder_bounds
+#check SbtCosmo.Derivation.AllocationSensitivity.cost_value_hasDerivAt
+#check SbtCosmo.Derivation.AllocationSensitivity.cost_value_deriv
+#check SbtCosmo.Derivation.AllocationSensitivity.cost_value_deriv_lipschitzOn
+#check SbtCosmo.Derivation.AllocationSensitivity.cost_value_contDiffOn_one
+#check SbtCosmo.Derivation.AllocationSensitivity.actual_strict_sensitivity_iff
+#check SbtCosmo.Derivation.AllocationSensitivity.central_difference_price_error
+#check SbtCosmo.Derivation.AllocationSensitivity.demo_actual_derivative
+#check SbtCosmo.Derivation.AllocationSensitivity.changed_weights_actual_derivative
+#check SbtCosmo.Derivation.AllocationSensitivity.active_zero_derivative_control

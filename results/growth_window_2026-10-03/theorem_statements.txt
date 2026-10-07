@@ -1,0 +1,66 @@
+SbtCosmo.Derivation.GrowthLimit.forced_free_bound {D v q : ℝ → ℝ} {L ε : ℝ} (hε : 0 ≤ ε)
+  (hDc : ContinuousOn D (Set.Icc 0 L)) (hvc : ContinuousOn v (Set.Icc 0 L))
+  (hD : ∀ x ∈ Set.Icc 0 L, HasDerivAt D (v x) x) (hv : ∀ x ∈ Set.Icc 0 L, HasDerivAt v (-2 * v x + q x) x)
+  (hq : ∀ x ∈ Set.Icc 0 L, 0 ≤ q x ∧ q x ≤ ε) (hD0 : D 0 = 0) (hv0 : v 0 = 0) (x : ℝ) :
+  x ∈ Set.Icc 0 L → 0 ≤ D x ∧ D x ≤ ε / 2 * x
+SbtCosmo.Derivation.GrowthLimit.growth_matter_bound {a0 lam L : ℝ} (ha : 0 < a0) (hL : 0 ≤ L) (hlam : 0 ≤ lam) (x : ℝ) :
+  x ∈ Set.Icc 0 L →
+    SbtCosmo.Derivation.GrowthExistence.growth (lam * a0 ^ 3) x ≤ Real.exp L ∧
+      SbtCosmo.Derivation.GrowthExistence.velocity (lam * a0 ^ 3) x ≤ Real.exp L
+SbtCosmo.Derivation.GrowthLimit.finalGrowth_free_bound {a0 lam L : ℝ} (ha : 0 < a0) (hL : 0 ≤ L) (hlam : 0 ≤ lam) :
+  0 ≤ SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L lam - SbtCosmo.Derivation.GrowthLimit.freeGrowth L ∧
+    SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L lam - SbtCosmo.Derivation.GrowthLimit.freeGrowth L ≤
+      3 / 2 * Real.exp L * L / (1 + lam * a0 ^ 3)
+SbtCosmo.Derivation.GrowthLimit.finalGrowth_tendsto_atTop {a0 L : ℝ} (ha : 0 < a0) (hL : 0 ≤ L) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L) Filter.atTop
+    (nhds (SbtCosmo.Derivation.GrowthLimit.freeGrowth L))
+SbtCosmo.Derivation.GrowthWindow.exists_unique_positive_endpoint {a0 L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hTinf : SbtCosmo.Derivation.GrowthLimit.freeGrowth L < T) (hTzero : T < Real.exp L) :
+  ∃! upper, 0 < upper ∧ SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L upper = T
+SbtCosmo.Derivation.GrowthWindow.live_iff_horizon {a0 A lam L : ℝ} (ha : 0 < a0) (hL : 0 ≤ L)
+  (hA : SbtCosmo.Derivation.GrowthComparison.scale a0 L = A) :
+  SbtCosmo.Derivation.GrowthComparison.Live a0 lam L ↔ -(1 / A ^ 3) < lam
+SbtCosmo.Derivation.GrowthWindow.exists_unique_threshold_window {a0 A L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hA : SbtCosmo.Derivation.GrowthComparison.scale a0 L = A) (hTinf : SbtCosmo.Derivation.GrowthLimit.freeGrowth L < T)
+  (hTzero : T < Real.exp L) :
+  ∃! upper,
+    0 < upper ∧
+      SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L upper = T ∧
+        ∀ (lam : ℝ),
+          SbtCosmo.Derivation.GrowthComparison.Live a0 lam L ∧
+              T ≤ SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L lam ↔
+            -(1 / A ^ 3) < lam ∧ lam ≤ upper
+SbtCosmo.Derivation.GrowthWindow.exists_unique_native_threshold_window {a0 A T : ℝ} (ha : 0 < a0) (hA : a0 < A)
+  (hTinf : SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log (A / a0)) < T) (hTzero : T < A / a0) :
+  ∃! upper,
+    0 < upper ∧
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 upper A = T ∧
+        ∀ (lam : ℝ),
+          -(1 / A ^ 3) < lam ∧ T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A ↔
+            -(1 / A ^ 3) < lam ∧ lam ≤ upper
+SbtCosmo.Derivation.GrowthWindow.native_record_history_iff_threshold.{u_1} {ι : Type u_1} {amplitude : ι → ℝ}
+  {tag : ι → Bool} {a0 A lam m0 m1 threshold : ℝ} (ha : 0 < a0) (hA : a0 ≤ A) (hlam : -(1 / A ^ 3) < lam)
+  (hp : ∀ (i : ι), 0 ≤ amplitude i) (h0 : SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag false m0)
+  (h1 : SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag true m1) (hm0 : 0 < m0) (hm1 : 0 < m1) :
+  SbtCosmo.Derivation.WindowRecords.RecordBearing
+      (fun i =>
+        ∃ a ∈ Set.Icc a0 A, threshold ≤ amplitude i * SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a)
+      tag ↔
+    max (threshold / m0) (threshold / m1) ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A
+SbtCosmo.Derivation.GrowthWindow.exists_unique_native_record_window.{u_1} {ι : Type u_1} {amplitude : ι → ℝ}
+  {tag : ι → Bool} {a0 A m0 m1 threshold : ℝ} (ha : 0 < a0) (hA : a0 < A) (hp : ∀ (i : ι), 0 ≤ amplitude i)
+  (h0 : SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag false m0)
+  (h1 : SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag true m1) (hm0 : 0 < m0) (hm1 : 0 < m1)
+  (hTinf : SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log (A / a0)) < max (threshold / m0) (threshold / m1))
+  (hTzero : max (threshold / m0) (threshold / m1) < A / a0) :
+  ∃! upper,
+    0 < upper ∧
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 upper A = max (threshold / m0) (threshold / m1) ∧
+        ∀ (lam : ℝ),
+          -(1 / A ^ 3) < lam ∧
+              SbtCosmo.Derivation.WindowRecords.RecordBearing
+                (fun i =>
+                  ∃ a ∈ Set.Icc a0 A,
+                    threshold ≤ amplitude i * SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a)
+                tag ↔
+            -(1 / A ^ 3) < lam ∧ lam ≤ upper

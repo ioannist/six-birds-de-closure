@@ -1,0 +1,386 @@
+{
+  "H_closed_anchoring": {
+    "common_mode_handling": "route-common a0 is absorbed into H_closed(0); Phase-A offsets use the a1/a2 route-contrast terms",
+    "h_unit_km_s_Mpc": 70.0,
+    "h_unit_note": "unit conversion scale only; not a route H0 value",
+    "mode": "free"
+  },
+  "blinding_status": "blind",
+  "bridge_terms": {
+    "Cepheid": {
+      "active_routes": [
+        "cepheid_sn"
+      ],
+      "basis": "unit_calibration",
+      "c_p": 1.0,
+      "probe": "SN"
+    },
+    "JAGB": {
+      "active_routes": [
+        "jagb_sn"
+      ],
+      "basis": "unit_calibration",
+      "c_p": 1.0,
+      "probe": "SN"
+    },
+    "M_B": {
+      "active_routes": [],
+      "basis": "unit_calibration",
+      "c_p": 1.0,
+      "note": "declared shared SN zero-point bridge; not added as a second Phase-A bridge to avoid double counting the stellar-calibrator bridge",
+      "probe": "SN"
+    },
+    "TRGB": {
+      "active_routes": [
+        "trgb_sn",
+        "jwst_trgb_sn"
+      ],
+      "basis": "unit_calibration",
+      "c_p": 1.0,
+      "probe": "SN"
+    },
+    "r_d": {
+      "active_routes": [
+        "cmb_bao",
+        "inverse_ladder"
+      ],
+      "basis": "unit_calibration",
+      "c_p": -1.0,
+      "probe": "BAO"
+    },
+    "siren": {
+      "active_routes": [
+        "siren"
+      ],
+      "basis": "unit_calibration",
+      "c_p": 0.0,
+      "probe": "siren"
+    },
+    "time_delay": {
+      "active_routes": [
+        "time_delay"
+      ],
+      "basis": "unit_calibration",
+      "c_p": 0.0,
+      "probe": "time_delay"
+    }
+  },
+  "contains_h0_values": false,
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "frozen_xi": {
+    "coherence_rows": [
+      {
+        "a0": "-0.02055384307717478",
+        "a0_sigma": "0.010678271276762281",
+        "a1": "-0.01432578215639525",
+        "a1_sigma": "0.020871430389063625",
+        "a2": "-0.030108478036172573",
+        "a2_sigma": "0.010688702454119759",
+        "aor_status": "bridged",
+        "experiment": "E1B",
+        "model": "sbt",
+        "run_id": "E1B_C3_sbt"
+      },
+      {
+        "a0": "-0.026101287559296978",
+        "a0_sigma": "0.0077144400554283715",
+        "a1": "0.0",
+        "a1_sigma": "0.0",
+        "a2": "-0.027973103765766505",
+        "a2_sigma": "0.010486967686318377",
+        "aor_status": "bridged",
+        "experiment": "E2",
+        "model": "M2",
+        "run_id": "E2_CDDR_C3"
+      }
+    ],
+    "combination": "precision_weighted_for_a0_a2; a1_from_E1B_with_E2_inactive",
+    "posterior": {
+      "a0": {
+        "mean": -0.024198864782765114,
+        "sigma": 0.006253281591779172,
+        "source": "precision_weighted_E1B_E2"
+      },
+      "a1": {
+        "mean": -0.01432578215639525,
+        "sigma": 0.020871430389063625,
+        "source": "E1B_only_E2_fixed_inactive"
+      },
+      "a2": {
+        "mean": -0.02902044962551353,
+        "sigma": 0.007485710803925393,
+        "source": "precision_weighted_E1B_E2"
+      }
+    },
+    "sources": {
+      "E1B": "results/_summaries/E1B_C3_sbt.json",
+      "E2": "results/_summaries/E2/summary.json",
+      "coherence": "results/xi_cosmo_coherence.csv"
+    }
+  },
+  "input_version_manifest_sha256": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41",
+  "kernel_status": "reimplemented_cleanly_from_plan_04_section_5",
+  "phase": "A_kernel_freeze_no_values",
+  "primary_holonomy_loop": [
+    "cmb_bao",
+    "inverse_ladder",
+    "cepheid_sn",
+    "cmb_bao"
+  ],
+  "route_kernels": [
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "r_d",
+          "probe": "BAO",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "BAO high-z inverse-distance response",
+          "normalization": "unit_area",
+          "probe": "BAO",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 1.2,
+          "z_max": 2.3,
+          "z_min": 0.5
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -39.337769319167265,
+        "a2": 129.5679188143195
+      },
+      "response": 1.0,
+      "route_id": "cmb_bao"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "r_d",
+          "probe": "BAO",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "BAO-to-low-z inverse-ladder response",
+          "normalization": "unit_area",
+          "probe": "BAO",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.6,
+          "z_max": 1.5,
+          "z_min": 0.01
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -27.420249616463696,
+        "a2": 107.14589911856253
+      },
+      "response": 1.0,
+      "route_id": "inverse_ladder"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "Cepheid",
+          "probe": "SN",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "Cepheid low-z SN response",
+          "normalization": "unit_area",
+          "probe": "SN",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.05,
+          "z_max": 0.15,
+          "z_min": 0.01
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "response": 1.0,
+      "route_id": "cepheid_sn"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "TRGB",
+          "probe": "SN",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "TRGB low-z SN response",
+          "normalization": "unit_area",
+          "probe": "SN",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.05,
+          "z_max": 0.15,
+          "z_min": 0.01
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "response": 1.0,
+      "route_id": "trgb_sn"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "TRGB",
+          "probe": "SN",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "JWST-only TRGB low-z SN response",
+          "normalization": "unit_area",
+          "probe": "SN",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.05,
+          "z_max": 0.15,
+          "z_min": 0.01
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "response": 1.0,
+      "route_id": "jwst_trgb_sn"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "JAGB",
+          "probe": "SN",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "JAGB low-z SN response",
+          "normalization": "unit_area",
+          "probe": "SN",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.05,
+          "z_max": 0.15,
+          "z_min": 0.01
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "response": 1.0,
+      "route_id": "jagb_sn"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "time_delay",
+          "probe": "time_delay",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "lens-source time-delay distance response",
+          "normalization": "unit_area",
+          "probe": "time_delay",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.8,
+          "z_max": 2.0,
+          "z_min": 0.3
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -35.56625782703335,
+        "a2": 0.0
+      },
+      "response": 1.0,
+      "route_id": "time_delay"
+    },
+    {
+      "B_b": [
+        {
+          "basis": "unit_calibration",
+          "bridge": "siren",
+          "probe": "siren",
+          "weight": 1.0
+        }
+      ],
+      "W_r": [
+        {
+          "name": "near-local GW luminosity-distance response",
+          "normalization": "unit_area",
+          "probe": "siren",
+          "type": "top_hat",
+          "weight": 1.0,
+          "z_eff": 0.01,
+          "z_max": 0.02,
+          "z_min": 0.0
+        }
+      ],
+      "absorb_a0_into_H_closed": true,
+      "distance_to_h0_sign": -1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -0.690804463371008,
+        "a2": 0.0
+      },
+      "response": 1.0,
+      "route_id": "siren"
+    }
+  ],
+  "schema_version": 1,
+  "sign_convention": {
+    "a2_to_delta_H0": "SN/stellar bridges have c_p=+1, so frozen negative a2 predicts positive local-ladder offsets; r_d/BAO has c_p=-1, so frozen negative a2 predicts negative early/inverse offsets",
+    "distance_response": "delta_H0/H_unit = - delta_distance/distance",
+    "positive_delta_H0": "route reads above H_closed(0)"
+  }
+}

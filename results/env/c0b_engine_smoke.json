@@ -1,0 +1,35 @@
+{
+  "G-ENV-2": {
+    "max_rel_DH_over_rd": 3.837419896344668e-05,
+    "max_rel_DM_over_rd": 3.837640955454024e-05,
+    "max_rel_TT_ell_30_2000": 0.0013559974221870929,
+    "pass": true,
+    "rd_camb_Mpc": 147.0982499712567,
+    "rd_class_Mpc": 147.10389464229812
+  },
+  "G-ENV-4": {
+    "max_rel_Pk_k_h_1e-3_1_z0": 2.440603313386862e-06,
+    "pass": true,
+    "rel_sigma8": 4.5888909546571474e-05,
+    "sigma8_class": 0.8228210029971141,
+    "sigma8_pyccl": 0.8227832446385346
+  },
+  "T0": {
+    "pass": true,
+    "versions": {
+      "arviz": "0.18.0",
+      "camb": "1.5.9",
+      "classy": "v3.2.5",
+      "classy_openmp_linked": true,
+      "classy_so": "/mnt/data-drive/sbt-de/micromamba/envs/sbt-de/lib/python3.11/site-packages/classy.cpython-311-x86_64-linux-gnu.so",
+      "cobaya": "3.5.7",
+      "getdist": "1.7.7",
+      "numpy": "1.26.4",
+      "pyccl": "3.1.2",
+      "pyccl_boltzmann_class_enum": 3,
+      "pyccl_class_backend_version": "v3.2.5",
+      "pyccl_openmp_version": 201511,
+      "scipy": "1.13.1"
+    }
+  }
+}

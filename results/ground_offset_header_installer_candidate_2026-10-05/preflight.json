@@ -1,0 +1,22 @@
+{
+  "evidence_origin": "Actual exec_command outputs observed in this turn; these are installer preflights, not compiler receipts",
+  "candidate_command": [
+    "/usr/bin/python3",
+    "/tmp/de_offset_header_install_candidate.py",
+    "--mode",
+    "candidate"
+  ],
+  "candidate_actual_exit_code": 0,
+  "apply_command": [
+    "/usr/bin/python3",
+    "/tmp/de_offset_header_install_candidate.py",
+    "--mode",
+    "apply"
+  ],
+  "apply_actual_exit_code": 2,
+  "apply_reason": "Source freeze owner remains active: PID662901 de_native_campaign_qualified_stream_build.py",
+  "registered_sources_changed": false,
+  "proof_objects_installed": 0,
+  "full_apply_success_path_tested": false,
+  "goal_complete": false
+}

@@ -1,0 +1,61 @@
+schema_version: 1
+experiment: E0
+plan: plan/experiments/E0-synthetic-demos.md
+datasets: []
+seed:
+  numpy: 4242
+  python: 4242
+  sampler: 1337
+execution:
+  max_cores: 57
+  omp_num_threads: 1
+toy1:
+  n: 128
+  alpha: 1.0
+  dt: 0.05
+  beta_grid: [0.0, 0.5, 1.0, 2.0]
+  completion_scale: 0.03
+toy2:
+  n_patches: 128
+  z_min: 0.02
+  z_max: 1.5
+  n_z: 96
+  amplitudes: [0.0, 0.3, 0.6]
+  headline_amplitude: 0.6
+  response: 1.62
+  exponent: 0.5
+  q_scale: 6.0
+  fractional_error: 0.05
+  sigma_floor: 0.001
+  noise_scale: 0.1
+  noise_seed_offset: 999
+  train_z_max: 0.8
+toy3:
+  z_max: 1.5
+  n_z: 161
+  rho_min: 0.72
+  curvature: 0.28
+  crossing_z: 0.65
+  jacobian_primary_decay: 0.18
+  jacobian_secondary_decay: 0.11
+toy4:
+  routes:
+    - r1_cmb_to_bao
+    - r2_bao_to_sn
+    - r3_cepheid_to_sn
+    - r4_trgb_to_sn
+    - r5_jagb_to_sn
+    - r6_time_delay
+    - r7_standard_siren
+  stages: [baseline, low_z_cut, high_z_cut, sn_alt, bao_alt, anchor_alt]
+  h_closed: 70.0
+  a0: 1.8
+  a2: 2.4
+  sigma: 0.55
+  route_loading: [-1.0, -0.55, -0.15, 0.25, 0.55, 0.85, 1.15]
+  stage_loading: [-0.8, -0.42, -0.08, 0.25, 0.58, 0.92]
+  calibration_loading: [0.9, 0.5, -0.2, 0.1, 0.4, -0.5, 0.8]
+  noise_seed_offset: 202406
+  holonomy_route_indices: [0, 3, 5]
+  holonomy_bridge_weights: [1.2, -0.8, 0.9]
+  holonomy_signs: [1.0, -1.0, 1.0]

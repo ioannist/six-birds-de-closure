@@ -1,0 +1,11 @@
+{
+  "review": "adversarial self-review",
+  "live_parent_wait_verified": true,
+  "actual_isolated_terminal_zero": true,
+  "actual_terminal_seven_rejected": true,
+  "actual_warning_terminal_zero_rejected": true,
+  "three_historical_logs_preserved_and_read_back": true,
+  "registered_source_mutations": 0,
+  "actual_lean_commands_started": 0,
+  "registered_success": false
+}

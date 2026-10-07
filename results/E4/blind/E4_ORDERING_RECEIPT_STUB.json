@@ -1,0 +1,12 @@
+{
+  "blinding_status": "blind",
+  "contains_h0_values": false,
+  "hashes": {
+    "E4_KERNEL_FREEZE.json": "c54b570bef8d69e8319a797158b3ee0d1498338e280a9bbd6c266cc94880f0af",
+    "E4_PREDICTED_ROUTE_TABLE.json": "07bea7248c2121375c124346f32a4a4db1bd7b3f6fbb03eb0f34667c58fea10c",
+    "E4_ROUTE_VERSION_MANIFEST.json": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41"
+  },
+  "next_step": "manager_commit_gate_before_any_E4_ROUTE_VALUE_MANIFEST_is_written",
+  "phase": "A_ordering_receipt_stub_no_values",
+  "schema_version": 1
+}

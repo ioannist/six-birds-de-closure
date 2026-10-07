@@ -1,0 +1,11 @@
+{
+  "status": "Actual installed-byte and complete private proof-gate preflight passed; registered Lean commands pending",
+  "native_modules": 1772,
+  "installed_target_files": 1786,
+  "statement_queries": 20798,
+  "full_cumulative_axiom_queries": 32574,
+  "new_verifier_sha256": "bef7e2ff31066f153be09e39b85e7c379f2fe5cd286627d61b826e2b4ab66777",
+  "proof_objects_copied": 0,
+  "registered_build_passed": false,
+  "goal_complete": false
+}

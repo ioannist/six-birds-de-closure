@@ -1,0 +1,17 @@
+{
+  "terminal_exit_code": 1,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_original_audit_nonidentifiability/lean",
+    "-o",
+    "/tmp/de_original_audit_nonidentifiability/GroundOriginalAuditNonidentifiability.olean",
+    "/tmp/de_original_audit_nonidentifiability/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "source_sha256": "34e0a585fe5a351488ce7d397607e021fe5b7a6b95b8f65426f07eb85ce1fab3",
+  "log_sha256": "fb7d27b2d85b24b242fbe8cfc2c855db14435c90d894389da6f37cd4ae30c19e",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  }
+}

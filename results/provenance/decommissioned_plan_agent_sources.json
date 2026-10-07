@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "purpose": "Compact provenance for decommissioned planning and agent-process sources. The original plan/ and ops/ workspaces are ignored for future additions; this manifest preserves the hashes needed by active final artifacts without making those workspaces part of the paper-support surface.",
+  "entries": {
+    "e5sp_pivot_ruling": {
+      "archival_path": "plan/EXTERNAL_RULING_E5SP_2026-06-01.md",
+      "role": "E5-SP pivot ruling",
+      "sha256": "628a18110fe4a965a09493a77e33c36cc1ea6a3bbb613f1c605b99b896c73a7f"
+    },
+    "e5sp_freeze_ruling": {
+      "archival_path": "plan/EXTERNAL_RULING_E5SP_FREEZE_2026-06-02.md",
+      "role": "E5-SP freeze patch ruling, sections 2.1-2.5",
+      "sha256": "449b4b58743c685a9bf967ca44d8bf38f27bc9a26671613aa7dc5654b4a3ce08"
+    },
+    "e5sp_shadow_price_spec": {
+      "archival_path": "plan/experiments/E5SP-shadow-price-obstruction.md",
+      "role": "E5-SP shadow-price obstruction specification",
+      "sha256": "95116b2b1d02bfc08a2c088f191c3a49a86934b2c74eb8cccb1b2bcde0ce08eb"
+    },
+    "e5sp_pass_fail_gates": {
+      "archival_path": "plan/07-pass-fail-gates.md",
+      "role": "E5-SP gate definitions G-E5SP-0..6",
+      "sha256": "4468b0205e4b0580d1b520607cb85689b107828efe7302d07ac4891a2aa37cfd"
+    },
+    "e5sp_dispatch_ruling": {
+      "archival_path": "plan/EXTERNAL_RULING_E5SP_DISPATCH_2026-06-02.md",
+      "role": "E5-SP Phase B dispatch and characterization ruling",
+      "sha256": "908d1791d13344ab27731dfc999c521f694c42c05434702217dbf041ba754df9"
+    },
+    "e5sp_pathc_ruling": {
+      "archival_path": "plan/EXTERNAL_RULING_E5SP_PATHC_2026-06-02.md",
+      "role": "E5-SP Path C follow-up routing ruling",
+      "sha256": "628d9e8307a28420f51c73ed68de104f8a06d12fb7af8ff60a0101f47063bcc1"
+    },
+    "de_avenues_map": {
+      "archival_path": "plan/SIXBIRDS_DE_AVENUES_MAP_2026-06-02.md",
+      "role": "Dark-energy avenues map used by Avenue-B feasibility scan",
+      "sha256": "0f84b5e81a896c0a54956c1ff73f9b9c4f687df02f29158775dda7a2e1bab3f0"
+    },
+    "e5sp_phaseb_dispatch_manifest": {
+      "archival_path": "ops/dispatches/cody/20260602-062735-959448588-3911671.md",
+      "role": "Phase B dispatch manifest recording H-proxy table provenance",
+      "sha256": "f56fe044fa821f6218aea35d2ae819cf3372c3d27399a5d5e956531a8d52817e"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+'SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_transpose' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_tracePair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.jacobian_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.complement_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.jacobian_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.fderiv_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.traceAdjoint_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.trace_jacobian_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.trace_jacobian_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_composed_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_composed_trace_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_probe' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_affine_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.fderiv_affine_residual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.pricePullback_eq_adjoint_fderiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_trace_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.fderiv_trace_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurDifferential.pricePullback_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurAdjointStationarity.matrix_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurAdjointStationarity.matrix_stationarity_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferentialExamples.singular_native_complement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferentialExamples.singular_pricePullback' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferentialExamples.singular_trace_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferentialExamples.missing_second_term_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferentialExamples.price_not_hermitian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurDifferentialExamples.nonsymmetric_price_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

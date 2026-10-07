@@ -1,0 +1,29 @@
+import SbtCosmo.Derivation.GroundNativeReflection
+import SbtCosmo.Derivation.GroundOriginalReflection
+import SbtCosmo.Derivation.GroundReflectionControls
+
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.complexNormSq_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.complexSourcePotential_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.nativeCandidate_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.overlap_neg_right
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.unpack_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.realEmbed_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.activePhase_neg_iff
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.nativePhase_neg_reference
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.complexNormalize_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.nativeMixed_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.nativeUpdate_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.nativeLegal_neg_iff
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.native_iterate_neg
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.native_negative_local_attraction
+#print axioms SbtCosmo.Derivation.GroundNativeReflection.native_negative_local_escape
+#print axioms SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_native_fixed
+#print axioms SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_native_attraction
+#print axioms SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_twenty_native_escape
+#print axioms SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_thirty_native_escape
+#print axioms SbtCosmo.Derivation.GroundReflectionControls.fallback_reference_unit
+#print axioms SbtCosmo.Derivation.GroundReflectionControls.fallback_overlap_zero
+#print axioms SbtCosmo.Derivation.GroundReflectionControls.zero_native_candidate_uniform
+#print axioms SbtCosmo.Derivation.GroundReflectionControls.fallback_native_outputs
+#print axioms SbtCosmo.Derivation.GroundReflectionControls.fallback_legal_inactive
+#print axioms SbtCosmo.Derivation.GroundReflectionControls.unconditional_unit_reflection_rejected

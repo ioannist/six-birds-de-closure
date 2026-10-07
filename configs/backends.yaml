@@ -1,0 +1,13 @@
+schema_version: 1
+seed:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+boltzmann:
+  primary: CLASS
+  comparison: CAMB
+  one_backend_per_run: true
+  installed_in_packet: C0b
+lss:
+  backend: pyccl
+  installed_in_packet: C0b

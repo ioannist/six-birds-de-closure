@@ -1,0 +1,46 @@
+{
+  "repository_registered": false,
+  "production_integration_pending": true,
+  "old_frozen_plans_unchanged": true,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundFiniteParameterContinuity",
+      "source_sha256": "99005c76cdd6fb63d4b34c1edca841a31584cd20e865b70119a12c6969987d84",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundFiniteParameterContinuity.finite_iterate_parameter_continuous_at"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth",
+      "source_sha256": "03f908c29ebeb50960e9e0e151a18e0a7b7030f94149607ee76cd017bffa504c",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.pack_unpack",
+        "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.encode_nativePairMap",
+        "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.native_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.native_joint_guards_near"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding",
+      "source_sha256": "145308f3933faec58baa57ce3f3827bd63e6a3245892673d91b85cc9cecef40f",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.baseline_return",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.native_return",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.orbit_return",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.open_finite_and_real_cycle"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts",
+      "source_sha256": "68bbbf329f7fdd114c9d130c8f479fb3f40c159f5b21e520b50be6789553647f",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.l2_continuous",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline_guards",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit_continuous_at",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.stepLength_continuous_at",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.strict_stepLength_baseline",
+        "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.open_first_sixty_fail"
+      ]
+    }
+  ]
+}

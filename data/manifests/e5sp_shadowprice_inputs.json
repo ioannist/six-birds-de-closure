@@ -1,0 +1,248 @@
+{
+  "manifest": "E5-SP Growth Shadow-Price / Obstruction Test \u2014 LOCKED inputs (anti-improvisation). Builder may use ONLY what is frozen here.",
+  "design_version": "E5-SP-v1",
+  "governed_by": [
+    "results/provenance/decommissioned_plan_agent_sources.json#e5sp_pivot_ruling (pivot ruling -- original source of truth)",
+    "results/provenance/decommissioned_plan_agent_sources.json#e5sp_freeze_ruling (freeze patch 2.1-2.5 -- resolves the 5 open items; OPERATIVE for the locked design)",
+    "results/provenance/decommissioned_plan_agent_sources.json#e5sp_shadow_price_spec (spec)",
+    "results/provenance/decommissioned_plan_agent_sources.json#e5sp_pass_fail_gates (G-E5SP-0..6)"
+  ],
+  "status": "DESIGN-FROZEN (design unchanged). PHASE B EXECUTED 2026-06-02 -> characterization-only / not-decisive, NO pi computed: the Phase B H-table (results/E5SP/H_proxy_table.csv) per-family slack stop-gate FAILED (KiDS 0 slack, HSC 0 slack; weak lensing is nonlinear-only; only CMB-lensing spans slack->binding) -> reviewer-ruled a PRECONDITION/SUPPORT failure of the current data vector, NOT a pi-negative result and NOT a refutation/confirmation of the shadow-price hypothesis. A DECISIVE run needs a linear-spanning growth family (E5SP2-fullshape-salvage: add BOSS DR12 / DESI DR1 full-shape; require >=2 families with >=1 slack & >=1 binding shell, >=9 rows, before any pi). E5SP-CMBL-diagnostic is allowed as a NON-PROMOTABLE single-family diagnostic. See results/E5SP/E5SP_PhaseB_characterization_status.md + results/provenance/decommissioned_plan_agent_sources.json#e5sp_dispatch_ruling.",
+  "supersedes": "E5-minimal-physical-v3A (scale-cut ALL-3-of-3 certificate) is NOT decisive; cumulative-lambda_max emergence DISCARDED.",
+  "manifest_note": "Pre-run FROZEN design. Freezes the disjoint shells (KiDS/HSC bands + CMB-lensing L_eff-tertiles), the row-count-null normalization N=Xi/q_row_0.95, the slack-anchored excess-price models + power rule, the C+Omega floor LISTS + per-floor Sigma recipe, Delta_margin=0.10, the M_sys regressors, and the model/LOFO design BEFORE any residual price. Builder is FORBIDDEN from changing shells/budgets/thresholds after inspecting pi. Validated by tests/test_e5sp_manifest.py.",
+  "decisive_observable": {
+    "name": "budgeted obstruction-price field pi_{f,s}",
+    "formula": "pi_{f,s} = [ lambda_max( Xi_{f,s} / q_row_0.95(f,s) ) - Omega_{f,s} ]_+   (N_{f,s}(Xi) = Xi / q_row_0.95)",
+    "Xi_C": "Xi_{f,s} = K_DD - K_DL K_LL_dagger K_LD on the DISJOINT shell s (Schur adequacy residual; computed not shaped)",
+    "N_normalization": "ROW-COUNT-NULL normalized spectral statistic (reviewer freeze 2.1): N_{f,s}(Xi) = Xi / q_row_0.95(f,s). NOT a fixed-rank projection (which can hide real shell structure or make the top eigenvalue arbitrary), and H' is NOT added as extra points.",
+    "row_count_null": {
+      "q_row_0.95": "q_row_0.95(f,s) = Q_0.95[ lambda_max(Xi_rownull_{f,s}) ] -- the 95th percentile of the top eigenvalue over equal-row-count, covariance-respecting row-null surrogate shells; this is the normalizer denominator",
+      "rownull_matches": [
+        "same shell row count / effective row count",
+        "same whitening convention",
+        "same nuisance projection",
+        "same L_geom projector rank",
+        "same covariance-conditioning treatment",
+        "NO physical W_{f,s}/H alignment"
+      ],
+      "draws_B": "B >= 2000 row-null draws per shell (B = 1000 acceptable if runtime becomes painful)",
+      "uncertainty_reporting": "report SE / bootstrap uncertainty on q_row_0.95 per shell; if the 95th-percentile uncertainty would change a pass/fail boundary, rerun that shell at B=5000 (reviewer freeze 2026-06-02, non-blocking)",
+      "seed_and_generator_committed_before_pi": true
+    },
+    "positive_part": "[ . ]_+ = positive budget-violation part",
+    "NOT": [
+      "raw Schur residual",
+      "cumulative-row lambda_max (the discarded degenerate observable)",
+      "signed S8 shift",
+      "monotone scale-cut curve"
+    ],
+    "non_degeneracy_guarantees": [
+      "disjoint (not cumulative) shells",
+      "row-count-null normalization (Xi/q_row_0.95; the row-count floor maps to a unit threshold)",
+      "shell-specific pre-declared Omega",
+      "mandatory row-count controls (Omega_row-count + Gate 4)",
+      "scrambled shell order must NOT reproduce the heterogeneity relation"
+    ]
+  },
+  "heterogeneity_proxy": {
+    "primary_H": "H_{f,s} = < [ log( P_nl(k,z)/P_lin(k,z) ) ]_+ >_{W_{f,s}}",
+    "secondary_Hprime": "H'_{f,s} = < ( P_nl/P_lin - 1 )_+^2 >_{W_{f,s}}  (robustness only)",
+    "window_W": "survey/window/stage kernel per shell (KiDS COSEBIs filter support; HSC ell-band window; CMB-lensing L-band window)",
+    "backend": "physical CCL P_nl/P_lin at the shell effective (k,z) weighted by W_{f,s}; from the frozen geometry posterior",
+    "blinding": "compute + FREEZE the full H table (results/E5SP/H_proxy_table.csv) BEFORE any pi is evaluated; proxy independent of residual outcome",
+    "proxy_is_candidate_not_currency": true,
+    "proxy_ablation_required": [
+      "H_true",
+      "H_permuted",
+      "H_scale_matched_noise"
+    ]
+  },
+  "stage_shells_DISJOINT": {
+    "rule": "DISJOINT incremental shells; NOT cumulative. Builder cannot change after inspecting pi.",
+    "KiDS-Legacy": {
+      "type": "COSEBIs mode bands",
+      "shells": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    },
+    "HSC-Y3": {
+      "type": "Fourier ell bands",
+      "shells": [
+        [
+          300,
+          600
+        ],
+        [
+          600,
+          1000
+        ],
+        [
+          1000,
+          1500
+        ],
+        [
+          1500,
+          1800
+        ]
+      ],
+      "note": "public binning"
+    },
+    "CMB-lensing": {
+      "type": "lensing L bands -- three EQUAL-COUNT contiguous groups ordered by bandpower effective multipole L_eff (reviewer 2.4)",
+      "shells": "CMB-L-low = first floor(n_L/3) bandpowers by L_eff; CMB-L-mid = next floor(n_L/3); CMB-L-high = remaining bandpowers. (For n_L=35: 12/12/11.) Membership FROZEN before H is computed; record actual (L_min, L_max, L_eff) per shell in the H table.",
+      "ordering": "ascending bandpower effective multipole L_eff (NOT hand-picked physical boundaries, NOT chosen after seeing H or pi)",
+      "lofo_role": "HELD-OUT family for the LOFO model comparison; the three L_eff-tertile shells give a within-family slope test (>=2 disjoint shells satisfied)"
+    },
+    "too_few_shells_rule": "a family with <2 disjoint shells may be a HELD-OUT family but NOT a within-family slope test (Gate 0)"
+  },
+  "L_geom": {
+    "definition": "growth-prediction tangent/subspace induced by the frozen E1/E2 w0wa geometry posterior (runs/E1/E1C_C3_w0wa)",
+    "raw_distance_rows_are_NOT_schur_rows": true,
+    "N_posterior_min": 256,
+    "construction": "for each theta_i: y_{f,s}(theta_i,nu) via pyccl -> project/marginalize legal nu -> whiten Sigma_total^{-1/2} -> SVD/PCA keep sigma_k/sigma_1>=tau_L=1e-3 -> P_L (C-orthogonal) -> Xi_C=T_D(I-P_L)T_D*",
+    "tau_L": 0.001,
+    "single_whitening": true,
+    "rank_check": "L_geom rank must RESOLVE the ~5-7 geometry dof (the old N=4 -> rank 3 was the under-resolution bug); record the rank"
+  },
+  "audit_metric_C_and_covariance_floors": {
+    "C": "C_{f,s} = Sigma_{f,s,total}^{-1}",
+    "Sigma_total": "Sigma_published + Sigma_nuisance + Sigma_theory + Sigma_approximation",
+    "must_include_floors": [
+      "IA/TATT uncertainty",
+      "photo-z nuisance",
+      "shear calibration (where applicable)",
+      "baryon/theory floor",
+      "pyccl/CLASS backend floor",
+      "covariance-conditioning floor",
+      "HSC Fourier/real-space pipeline floor",
+      "KiDS<->HSC shared-WL systematics floor"
+    ],
+    "shared_WL_rule": "result may NOT pass under diagonal-only cross-family covariance if it fails under conservative shared-WL covariance (rho_KH stress)",
+    "Sigma_estimation": "per shell: Sigma_nuisance = J_nu Pi_nu J_nu^T (nu = legal nuisance params for that family); KiDS/HSC include IA + photo-z + shear-cal + baryon/theory + KiDS<->HSC shared-WL, and HSC adds Omega_HSC-pipeline (Fourier/real-space transfer); CMB-lensing includes published bandpower covariance + lensing-cal + foreground/response + approximation floors from the release (if a floor is unavailable, use a DECLARED diagonal fractional theory floor and MARK it); Sigma_theory = nonlinear-power model-spread envelope (baryon proxies are theory floors, not decisive physics); Sigma_approximation = pyccl/CLASS mismatch (G-ENV-4) + interpolation/integration + covariance-conditioning floor. Every Sigma_total must be PD with condition number within the gate; else the shell is BLOCKED or regularized by a pre-declared jitter floor."
+  },
+  "Omega_budget": {
+    "formula": "Omega_{f,s} = max(Omega_same-family, Omega_linear/synthetic, Omega_nuisance/systematics, Omega_theory, Omega_row-count, Omega_proxy) + Delta_margin",
+    "Omega_same_family": "same-family saturation control residual",
+    "Omega_linear_synthetic": "synthetic data with P_nl = P_lin (no-obstruction control)",
+    "Omega_nuisance_systematics": "legal nuisance priors + covariance floors",
+    "Omega_theory": "nonlinear-power model spread + backend mismatch",
+    "Omega_row_count": "= 1 in the N_{f,s}-normalized spectral units (reviewer 2.1): q_row_0.95 absorbs the row-count floor into a unit threshold, kept as an explicit audit term. Optional 2nd row-count stress: Q_0.95[ lambda_max(Xi_rownull)/q_row_0.95 ] which should be ~1 -- report deviations. (equal-row-count covariance-respecting Gaussian/surrogate null)",
+    "Omega_proxy": "scale-matched proxy / permutation floor",
+    "Delta_margin": "= 0.10 in the N_{f,s}-normalized spectral units (reviewer 2.4); report sensitivity at {0.05, 0.10, 0.20}; PRIMARY status uses 0.10; do not change after seeing pi",
+    "frozen": "estimated on the DECLARATION split and frozen BEFORE witness evaluation"
+  },
+  "models": {
+    "dependent_variable": "y_{f,s} = pi_{f,s} - pi_bar_{f,slack}, where pi_bar_{f,slack} = median{ pi_{f,s} : H_{f,s} <= H_slack } -- the SLACK-ANCHORED EXCESS price (reviewer 2.2). Removes the per-family offset so intercepts cannot carry the result; do NOT fit a held-out family intercept under LOFO.",
+    "M_Lambda": "y = 0 (smooth geometry / Lambda / w0wa chart; no excess price)",
+    "M_U": "y = lambda_U + eps (universal new layer; NO H dependence; roughly stage/family-invariant after legal normalization; F18 lawhood required, Gate 6). CANDIDATE only if it does NOT reduce to heterogeneity (H), row count, or nuisance floors",
+    "M_F4_SP": "y = A*[H_{f,s} - H_slack]_+ + eps, A>0 (shadow-price of obstruction; PRIMARY; slack-anchored so no per-family intercept carries it)",
+    "M_sys": "y = Z_{f,s} beta + eps with pre-registered Z = [1, I_WL, log10 kappa(Sigma_{f,s}), log r_eff(f,s), U_{f,s}, P_{f,s}] (see M_sys_regressors); ridge / Bayesian shrinkage fixed BEFORE comparison; same BIC/LOO penalty. EXCLUDE H, H', k_eff, L_eff from the primary M_sys (else it collapses into the heterogeneity model). If M_sys beats M_F4/SP under LOFO -> status systematics-proxy (NOT shadow-price)",
+    "M_row": "y = beta0 + beta1 * log(r_eff(f,s)) + eps (explicit row-count-artifact diagnosis; r_eff = shell effective rank / whitened DOF)",
+    "M_sys_regressors": {
+      "Z": "[ 1, I_WL, log10 kappa(Sigma_{f,s}), log r_eff(f,s), U_{f,s}, P_{f,s} ]",
+      "I_WL": "1 for KiDS/HSC, 0 for CMB-lensing",
+      "kappa": "covariance condition number kappa(Sigma_{f,s}) after regularization",
+      "r_eff": "shell effective rank / whitened DOF",
+      "U": "U_{f,s} = (Omega_nuisance/systematics + Omega_theory) / Omega_total",
+      "P": "pipeline flag: KiDS COSEBIs / HSC Fourier / CMB-lensing bandpower",
+      "fit": "ridge or Bayesian shrinkage fixed before comparison; penalized by the same BIC/LOO rules; H/H'/k_eff/L_eff are NOT primary regressors (sensitivity diagnostics only)"
+    },
+    "comparison": "LOFO over families: train on 2, predict held-out 3rd, rotate over all three; Delta_elpd>=2*SE OR Delta_BIC>=6, all-family-consistent",
+    "H_prime_not_extra_points": "H' is robustness only -- NEVER added as independent observations to gain power",
+    "no_finer_shells_after_pi": "do not create finer shells after seeing pi; finer shells allowed ONLY if declared before Phase B and each passes nonvacuity + covariance conditioning"
+  },
+  "power_rule": {
+    "note": "low power by construction (3 families, ~10-13 shell rows); the result is ALLOWED to become underpowered-nonvacuous-fail / characterization (reviewer 2.2)",
+    "decisive_requires_all": [
+      ">= 3 families each with >= 2 disjoint shells after nuisance projection",
+      "each family has >= 1 slack shell (H<=H_slack) AND >= 1 binding shell (H>H_slack)",
+      ">= 9 decisive shell rows after filtering"
+    ],
+    "else_status": "underpowered-nonvacuous-fail / characterization-only (NOT decisive)"
+  },
+  "slack": {
+    "H_slack_primary": 0.05,
+    "H_slack_units": "window-averaged log(P_nl/P_lin)",
+    "robustness": "bottom-quartile of H -- ROBUSTNESS / CHARACTERIZATION variant ONLY, never the decisive threshold (reviewer 2.3)",
+    "choose_before_running": true,
+    "per_family_anchor": "decisive continuation requires, for EACH family f: count(H_{f,s}<=0.05)>=1 (a slack shell) AND count(H_{f,s}>0.05)>=1 (a binding shell). A family lacking a slack shell can characterize pi-vs-H but CANNOT claim slack-to-binding emergence.",
+    "phase_B_stop": "Phase B computes results/E5SP/H_proxy_table.csv FIRST and STOPS (no pi computed) if the per-family slack/binding/nonvacuity condition fails.",
+    "no_slack_set_rule": "if no slack set exists on available data, the experiment becomes CHARACTERIZATION, not a decisive test"
+  },
+  "gates": {
+    "G-E5SP-0_support_nonvacuity": "reuse G-E5-NONVAC: ||t_{f,s}||_post >= 2.0 AND retained >= 0.25; each family >=2 disjoint shells after nuisance projection; fail -> diagnostic not decisive",
+    "G-E5SP-1_budgeted_obstruction": "pi_{f,s}>0 with bootstrap CI excluding 0 on >=1 held-out shell per held-out family (NECESSARY not sufficient)",
+    "G-E5SP-2_slack_regime": "S_slack={(f,s):H<=H_slack=0.05 in window-averaged log(P_nl/P_lin)} has pi=0 within uncertainty AND below Omega; REQUIRES each family to have >=1 slack shell AND >=1 binding shell (reviewer 2.3); bottom-quartile-of-H is robustness/characterization ONLY; no slack set, or any family lacking a slack shell -> characterization, not decisive",
+    "G-E5SP-3_binding_heterogeneity": "on the SLACK-ANCHORED excess price y=pi-pi_bar_{f,slack} (reviewer 2.2), y increases with H on non-slack shells; M_F4/SP beats M_Lambda AND M_U AND M_sys on held-out LOFO by Delta_elpd>=2*SE OR Delta_BIC>=6, all-family-consistent, A>0 CI!=0; decisive ONLY if the power_rule holds (>=3 families x >=2 shells, >=1 slack & >=1 binding per family, >=9 rows)",
+    "G-E5SP-4_proxy_failure_no_manufacture": "H beats ALL of: shuffled-H, reversed-stage-order, scale-matched-noise, row-count, survey-label, cumulative-row",
+    "G-E5SP-5_zero_controls": "signal vanishes under: (1) P_nl=P_lin synthetic; (2) shuffled stage labels; (3) equal-row-count Gaussian residuals; (4) same-family saturation; (5) held-out family's stage vector removed from BOTH L and D; (6) random orthogonal rotations that PRESERVE the covariance but DESTROY the window/heterogeneity (W_{f,s}/H) alignment",
+    "G-E5SP-6_F18_discriminator": "if M_U beats M_F4/SP -> candidate universal layer + F18 lawhood (factor through access quotient, fixed support, stable across family/probe, not survey-label, survives H-scramble); fail F18 -> systematics/proxy"
+  },
+  "outcome_statuses": [
+    "F4-shadow-price-promoted",
+    "F18-universal-layer-candidate",
+    "plain-geometry-Lambda-w(z)",
+    "systematics-proxy",
+    "underpowered-nonvacuous-fail"
+  ],
+  "phases": {
+    "A": "design freeze (this manifest + spec)",
+    "B": "compute + FREEZE H proxy table FIRST (results/E5SP/H_proxy_table.csv; columns: family, shell, H, H_prime, window, z_eff, k_eff, L_min, L_max, L_eff [CMB-lensing -- records the frozen L_eff-ordering provenance per reviewer 2.4], slack/binding label), before any pi",
+    "C": "build price field results/E5SP/price_field.csv (columns: f, s, lambda_max, Omega, pi, L_geom_rank [resolution check - must NOT be 3], shell_effective_rank [per-shell rank used by N_{f,s} - the row-count-invariance check], null floors, bootstrap CI; fixed Schur carrier, frozen Omega)",
+    "D": "model comparison M_Lambda/M_U/M_F4_SP/M_sys/M_row, LOFO over families",
+    "E": "controls (Gate 4/5 no-manufacture); require the real H-based model to survive"
+  },
+  "inputs_trust": {
+    "forward_model": "sbt_cosmo/ (physical CCL; reproduces published KiDS/HSC/CMB-lensing)",
+    "data": [
+      "data/manifests/kids_legacy.json",
+      "data/manifests/hsc_y3.json",
+      "data/manifests/cmb_lensing.json"
+    ],
+    "geometry_posterior": "runs/E1/E1C_C3_w0wa",
+    "substrate_audits": [
+      "G-ENV-4",
+      "G-E5-REPRO",
+      "G-E5-KERNEL",
+      "G-E5-RANK",
+      "G-E5-NOSURR"
+    ]
+  },
+  "inputs_discard": [
+    "results/E5/E5_v3a_currency_certificate.json",
+    "results/E5/E5_v3a_lofo_folds.json",
+    "results/E5/E5_status.json (v3A terminal run record: design_version=v3A, cumulative lambda_max folds, N=4/rank-3 carrier)",
+    "results/E5/E5_shadowprice.json",
+    "results/E5/E5_shadowprice_lambda_curve.csv",
+    "results/E5/E5_shadowprice_lambda_curve.png",
+    "results/E5/xi_C_growth.hdf5",
+    "results/E5/xi_C_growth.json",
+    "ANY results/E5 file with design_version in {E5-minimal-physical-v2, v3A} or the cumulative-lambda_max observable"
+  ],
+  "naming_discipline": [
+    "call pi a CANDIDATE obstruction price until it passes budgeted-positivity ^ slack ^ heterogeneity ^ held-out ^ proxy/scramble-failure",
+    "call the test F4-COMPATIBLE/inspired, NOT a proven Local-Global Obstruction (no F4 claim without the local-family/global-package map)",
+    "the test must NOT reduce to 'does Xi beat w0wa on geometry'"
+  ],
+  "resolved_freeze_patch": {
+    "note": "The five formerly-open items were RESOLVED by the reviewer's exact freeze patch (results/provenance/decommissioned_plan_agent_sources.json#e5sp_freeze_ruling, sections 2.1-2.5), applied 2026-06-02. No item remains provisional.",
+    "items": {
+      "N_normalization": "RESOLVED 2.1 -> N_{f,s}(Xi)=Xi/q_row_0.95(f,s), the row-count-null normalized spectral statistic (decisive_observable.row_count_null). NOT fixed-rank projection.",
+      "statistical_power": "RESOLVED 2.2 -> slack-anchored excess price y=pi-pi_bar_{f,slack} (no family intercept); power_rule: >=3 families x >=2 shells, >=1 slack & >=1 binding per family, >=9 rows, else underpowered-nonvacuous-fail; H' NOT added as extra points.",
+      "slack_existence": "RESOLVED 2.3 -> H_slack=0.05 kept; per-family >=1 slack & >=1 binding shell required; bottom-quartile = robustness only; Phase B STOPS if it fails.",
+      "CMB_and_floors": "RESOLVED 2.4 -> CMB-lensing = three equal-count L_eff-ordered tertile shells; per-floor Sigma recipe (audit_metric_C_and_covariance_floors.Sigma_estimation); Delta_margin=0.10 normalized units (sensitivity {0.05,0.10,0.20}).",
+      "M_sys": "RESOLVED 2.5 -> Z=[1,I_WL,log10 kappa(Sigma),log r_eff,U,P] with ridge/shrinkage fixed before comparison; H/H'/k_eff/L_eff excluded; M_row=beta0+beta1 log r_eff."
+    }
+  }
+}

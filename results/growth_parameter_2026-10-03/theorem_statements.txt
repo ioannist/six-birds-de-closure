@@ -1,0 +1,117 @@
+SbtCosmo.Derivation.GrowthParameter.primitive_parameter_differentiation {c L : ℝ} (hL : 0 ≤ L)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared c L) :
+  IntervalIntegrable (SbtCosmo.Derivation.GrowthParameter.integrandParameter c) MeasureTheory.volume 0 L ∧
+    HasDerivAt (fun d => SbtCosmo.Derivation.GrowthExistence.primitive d L)
+      (SbtCosmo.Derivation.GrowthParameter.primitiveParameter c L) c
+SbtCosmo.Derivation.GrowthParameter.primitiveParameter_time_derivative {c L x : ℝ}
+  (hl : SbtCosmo.Derivation.GrowthExistence.RootLive c L) (hx : x ∈ Set.Icc 0 L) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthParameter.primitiveParameter c)
+    (SbtCosmo.Derivation.GrowthParameter.integrandParameter c x) x
+SbtCosmo.Derivation.GrowthParameter.growth_parameter_derivative {c x : ℝ} (hx : 0 ≤ x)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared c x) :
+  HasDerivAt (fun d => SbtCosmo.Derivation.GrowthExistence.growth d x)
+    (SbtCosmo.Derivation.GrowthParameter.growthParameter c x) c
+SbtCosmo.Derivation.GrowthParameter.velocity_parameter_derivative {c x : ℝ} (hx : 0 ≤ x)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared c x) :
+  HasDerivAt (fun d => SbtCosmo.Derivation.GrowthExistence.velocity d x)
+    (SbtCosmo.Derivation.GrowthParameter.velocityParameter c x) c
+SbtCosmo.Derivation.GrowthParameter.growthParameter_time_derivative {c L x : ℝ}
+  (hl : SbtCosmo.Derivation.GrowthExistence.RootLive c L) (hx : x ∈ Set.Icc 0 L) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthParameter.growthParameter c)
+    (SbtCosmo.Derivation.GrowthParameter.velocityParameter c x) x
+SbtCosmo.Derivation.GrowthParameter.velocityParameter_time_derivative {c L x : ℝ}
+  (hl : SbtCosmo.Derivation.GrowthExistence.RootLive c L) (hx : x ∈ Set.Icc 0 L) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthParameter.velocityParameter c)
+    (SbtCosmo.Derivation.GrowthExistence.rate c x * SbtCosmo.Derivation.GrowthParameter.growthParameter c x +
+        (SbtCosmo.Derivation.GrowthExistence.rate c x - 2) * SbtCosmo.Derivation.GrowthParameter.velocityParameter c x +
+      SbtCosmo.Derivation.GrowthParameter.rateParameter c x *
+        (SbtCosmo.Derivation.GrowthExistence.growth c x + SbtCosmo.Derivation.GrowthExistence.velocity c x))
+    x
+SbtCosmo.Derivation.GrowthParameter.sensitivity_strict_negative {a0 lam L : ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) (x : ℝ) :
+  x ∈ Set.Icc 0 L →
+    0 < x →
+      SbtCosmo.Derivation.GrowthParameter.growthParameter (lam * a0 ^ 3) x < 0 ∧
+        SbtCosmo.Derivation.GrowthParameter.velocityParameter (lam * a0 ^ 3) x < 0
+SbtCosmo.Derivation.GrowthParameter.finalGrowth_parameter_derivative {a0 lam L : ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L)
+    (SbtCosmo.Derivation.GrowthParameter.finalSensitivity a0 L lam) lam
+SbtCosmo.Derivation.GrowthParameter.finalSensitivity_negative {a0 lam L : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) :
+  SbtCosmo.Derivation.GrowthParameter.finalSensitivity a0 L lam < 0
+SbtCosmo.Derivation.GrowthParameter.native_parameter_derivative {a0 A lam a : ℝ} (ha : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hx : a ∈ Set.Icc a0 A) :
+  HasDerivAt (fun d => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 d a)
+    (SbtCosmo.Derivation.GrowthParameter.finalSensitivity a0 (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 a) lam)
+    lam
+SbtCosmo.Derivation.GrowthParameter.native_parameter_derivative_negative {a0 A lam a : ℝ} (ha : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hx : a ∈ Set.Ioc a0 A) :
+  deriv (fun d => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 d a) lam < 0
+SbtCosmo.Derivation.GrowthParameter.native_velocity_parameter_derivative {a0 A lam a : ℝ} (ha : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hx : a ∈ Set.Icc a0 A) :
+  HasDerivAt (fun d => SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 d a)
+    (a0 ^ 3 *
+        SbtCosmo.Derivation.GrowthParameter.velocityParameter (lam * a0 ^ 3)
+          (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 a) /
+      a)
+    lam
+SbtCosmo.Derivation.GrowthParameter.native_velocity_parameter_derivative_negative {a0 A lam a : ℝ} (ha : 0 < a0)
+  (hA : a0 ≤ A) (hlam : -(1 / A ^ 3) < lam) (hx : a ∈ Set.Ioc a0 A) :
+  deriv (fun d => SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 d a) lam < 0
+SbtCosmo.Derivation.GrowthParameter.finalSensitivity_continuousAt {a0 lam L : ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthParameter.finalSensitivity a0 L) lam
+SbtCosmo.Derivation.GrowthEndpointDerivative.finalGrowth_c1 {a0 L : ℝ} (ha : 0 < a0) (hL : 0 ≤ L) :
+  ContDiffOn ℝ 1 (SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L)
+    (Set.Ioi (-(1 / SbtCosmo.Derivation.GrowthComparison.scale a0 L ^ 3)))
+SbtCosmo.Derivation.GrowthEndpointDerivative.endpoint_parameter_derivative {a0 L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hT : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L)) :
+  HasDerivAt (SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L)
+    (SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity a0 L T) T
+SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity_negative {a0 L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hT : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L)) :
+  SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity a0 L T < 0
+SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity_continuousAt {a0 L T : ℝ} (ha : 0 < a0) (hL : 0 < L)
+  (hT : T ∈ Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L)) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity a0 L) T
+SbtCosmo.Derivation.GrowthEndpointDerivative.endpoint_c1 {a0 L : ℝ} (ha : 0 < a0) (hL : 0 < L) :
+  ContDiffOn ℝ 1 (SbtCosmo.Derivation.GrowthEndpointSensitivity.endpoint a0 L)
+    (Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth L) (Real.exp L))
+SbtCosmo.Derivation.GrowthEndpointDerivative.scaled_endpoint_delta_derivative {d s : ℝ} (hs : 0 < s)
+  (hT :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  HasDerivAt (fun u => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint u s)
+    (SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity (1 / 1000) (Real.log 20000)
+        (SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s) *
+      (SbtCosmo.Derivation.WindowSample.aggregateThreshold / (SbtCosmo.Derivation.WindowSample.delta * s)))
+    d
+SbtCosmo.Derivation.GrowthEndpointDerivative.scaled_endpoint_amplitude_derivative {d s : ℝ} (hs : 0 < s)
+  (hT :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  HasDerivAt (fun u => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d u)
+    (SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity (1 / 1000) (Real.log 20000)
+        (SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s) *
+      (-d * SbtCosmo.Derivation.WindowSample.aggregateThreshold / (SbtCosmo.Derivation.WindowSample.delta * s ^ 2)))
+    s
+SbtCosmo.Derivation.GrowthEndpointDerivative.scaled_endpoint_c1 {p : ℝ × ℝ} (hs : 0 < p.2)
+  (hT :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold p.1 p.2 ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2) p
+SbtCosmo.Derivation.GrowthEndpointDerivative.robustness_rectangle_c1 {d s : ℝ} (hd : d ∈ Set.Icc (6 / 5) 2)
+  (hs : s ∈ Set.Icc (1 / 3) 3) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2) (d, s)
+SbtCosmo.Derivation.GrowthEndpointDerivative.scaled_endpoint_delta_derivative_negative {d s : ℝ} (hs : 0 < s)
+  (hT :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  deriv (fun u => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint u s) d < 0
+SbtCosmo.Derivation.GrowthEndpointDerivative.scaled_endpoint_amplitude_derivative_positive {d s : ℝ} (hd : 0 < d)
+  (hs : 0 < s)
+  (hT :
+    SbtCosmo.Derivation.WindowSensitivity.scaledThreshold d s ∈
+      Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000) :
+  0 < deriv (fun u => SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d u) s

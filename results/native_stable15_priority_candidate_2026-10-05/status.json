@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-05T07:16:51.635408+00:00",
+  "candidate_modules": 289,
+  "source_freeze_inputs_revalidated": 2554,
+  "fresh_module_successes_at_snapshot": 34,
+  "completed_proof_packet": false,
+  "final_27_declaration_audit_passed": false,
+  "finite_18_declaration_audit_passed": false,
+  "driver_pid": 1255480,
+  "driver_confirmed_live": true,
+  "archive_members_sequentially_verified": 361,
+  "original_queues_unchanged": true,
+  "original_production_plans_unchanged": true,
+  "overlaps_original_plan": true,
+  "new_declarations_added_to_campaign_count": 0,
+  "goal_complete": false
+}

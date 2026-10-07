@@ -1,0 +1,117 @@
+{
+  "G-E4-COV": {
+    "conservative_survivals": [
+      false,
+      false,
+      false
+    ],
+    "criterion": "survives at least one conservative covariance variant",
+    "pass": false
+  },
+  "best": {
+    "G-E4-2-STEELMAN": false,
+    "N_eff": 5.450057588671821,
+    "assumptions": [
+      {
+        "component": "shared_SN_zero_point_M_B",
+        "covariance_added": 0.48999999999999994,
+        "justification": "Cepheid/TRGB/JWST-TRGB/JAGB ladders share the SN Ia second rung / zero-point calibration.",
+        "routes": [
+          "cepheid_sn",
+          "trgb_sn",
+          "jwst_trgb_sn",
+          "jagb_sn"
+        ],
+        "sigma_km_s_Mpc": 0.7
+      },
+      {
+        "component": "shared_TRGB_anchor_systematic",
+        "covariance_added": 1.0,
+        "justification": "CCHP full-TRGB and JWST-only TRGB determinations share the TRGB calibration family.",
+        "routes": [
+          "trgb_sn",
+          "jwst_trgb_sn"
+        ],
+        "sigma_km_s_Mpc": 1.0
+      }
+    ],
+    "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+    "prediction_chi2_per_dof": 1.8473628467222134
+  },
+  "block_bootstrap": {
+    "families": [
+      "siren",
+      "stellar_ladder",
+      "time_delay"
+    ],
+    "survival_count": 0,
+    "survival_fraction": 0.0,
+    "trials": 200
+  },
+  "diagonal": {
+    "G-E4-2-STEELMAN": false,
+    "N_eff": 6.0,
+    "assumptions": [
+      {
+        "note": "All shared-calibration covariance terms suppressed for diagnostic only.",
+        "type": "diagonal_only"
+      }
+    ],
+    "delta_BIC_steelman_minus_Xi": -0.361741156149348,
+    "prediction_chi2_per_dof": 1.5631852390814291
+  },
+  "high_corr": {
+    "G-E4-2-STEELMAN": false,
+    "N_eff": 4.476251744318836,
+    "assumptions": [
+      {
+        "component": "shared_SN_zero_point_M_B",
+        "covariance_added": 0.9025,
+        "justification": "Cepheid/TRGB/JWST-TRGB/JAGB ladders share the SN Ia second rung / zero-point calibration.",
+        "routes": [
+          "cepheid_sn",
+          "trgb_sn",
+          "jwst_trgb_sn",
+          "jagb_sn"
+        ],
+        "sigma_km_s_Mpc": 0.95
+      },
+      {
+        "component": "shared_TRGB_anchor_systematic",
+        "covariance_added": 1.8225000000000002,
+        "justification": "CCHP full-TRGB and JWST-only TRGB determinations share the TRGB calibration family.",
+        "routes": [
+          "trgb_sn",
+          "jwst_trgb_sn"
+        ],
+        "sigma_km_s_Mpc": 1.35
+      }
+    ],
+    "delta_BIC_steelman_minus_Xi": -3.1727205937193705,
+    "prediction_chi2_per_dof": 2.221869938161091
+  },
+  "leave_one_family_out": {
+    "siren": {
+      "G-E4-2-STEELMAN": false,
+      "delta_BIC_steelman_minus_Xi": -3.968673067913774,
+      "kept_routes": [
+        "cepheid_sn",
+        "trgb_sn",
+        "jwst_trgb_sn",
+        "jagb_sn",
+        "time_delay"
+      ]
+    },
+    "time_delay": {
+      "G-E4-2-STEELMAN": false,
+      "delta_BIC_steelman_minus_Xi": -3.94618738476023,
+      "kept_routes": [
+        "cepheid_sn",
+        "trgb_sn",
+        "jwst_trgb_sn",
+        "jagb_sn",
+        "siren"
+      ]
+    }
+  }
+}

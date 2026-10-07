@@ -1,0 +1,306 @@
+{
+  "G-E5-NOSURR": {
+    "pass": true,
+    "status": "physical_ccl_no_surrogate_templates"
+  },
+  "G-E5-REPRO": {
+    "pass": true,
+    "rule": "published S8 within quoted 1sigma where locked, plus scaled theory chi2/dof < 2; HSC REPRO uses original n(z), with DESI-recal n(z) reserved for staging",
+    "status": "pass"
+  },
+  "bottom_line": "physical forward model passed all three E5-v2 reproduction substrates",
+  "design_version": "E5-minimal-physical-v2",
+  "families": [
+    {
+      "data_shape": [
+        126
+      ],
+      "ia_model_comparison": null,
+      "limitations": [
+        "Uses the official 2pt_stats COSEBIs root/normalization tables and pyccl shear C_ell.",
+        "Does not reproduce the KiDS mass-dependent IA module; pyccl single-amplitude NLA is left at A_IA=0 for this substrate check."
+      ],
+      "metadata": {
+        "S8": 0.8217435599355226,
+        "cosebis_path": "official maricool/2pt_stats TLogsRootsAndNorms tables",
+        "n_modes": 6,
+        "omega_m": 0.3136536012550006,
+        "sigma8": 0.8036589717533703,
+        "statistic": "COSEBIs_Emode",
+        "theta_max_arcmin": 300.0,
+        "theta_min_arcmin": 2.0
+      },
+      "native_chi2": 136.0120491693712,
+      "native_chi2_per_dof": 1.0794607076934224,
+      "native_dof": 126,
+      "pass": true,
+      "prediction_shape": [
+        126
+      ],
+      "probe_id": "kids_legacy_shear",
+      "recovered_S8_from_scalar_amplitude": 0.8031154662552664,
+      "recovered_S8_sigma_from_scalar_amplitude": 0.01535651484240478,
+      "reference_S8": 0.8217435599355226,
+      "reference_parameters": {
+        "A_IA": 0.0,
+        "h": 0.7576293916845687,
+        "m_nu": 0.06,
+        "n_s": 1.0030959525314076,
+        "omega_b": 0.024054728386330965,
+        "omega_cdm": 0.15533896707470593,
+        "sigma8": 0.8036589717533703
+      },
+      "scalar_amplitude": {
+        "amplitude": 0.9551759099165495,
+        "chi2": 134.50625052060224,
+        "sigma_amplitude": 0.036528179705304725
+      },
+      "scaled_chi2": 134.50625052060224,
+      "scaled_chi2_per_dof": 1.076050004164818,
+      "scaled_dof": 125,
+      "seconds_per_eval": 6.144393648952246,
+      "target": {
+        "published_S8": 0.815,
+        "published_sigma_minus": 0.021,
+        "published_sigma_plus": 0.016,
+        "reference": "KiDS-Legacy arXiv:2503.19441; plan/03 records S8=0.815^{+0.016}_{-0.021}"
+      },
+      "theory_shape_pass_chi2_per_dof_lt_2": true,
+      "within_published_1sigma": true
+    },
+    {
+      "data_shape": [
+        170
+      ],
+      "ia_model_comparison": {
+        "nla_unit_baseline": {
+          "metadata": {
+            "S8": 0.776,
+            "ia": {
+              "A1": 1.0,
+              "A2": 0.0,
+              "A_IA": 1.0,
+              "b_ta": 0.0,
+              "eta1": 0.0,
+              "eta2": 0.0,
+              "eta_IA": 0.0,
+              "ia_model": "nla",
+              "z_pivot_IA": 0.62
+            },
+            "nz_variant": "original",
+            "omega_m": 0.3013146766114648,
+            "sigma8": 0.7743052529967652,
+            "statistic": "cl_ee"
+          },
+          "native_chi2_per_dof": 1.5683284640091582,
+          "recovered_S8_from_scalar_amplitude": 0.7752693918109074,
+          "recovered_S8_sigma_from_scalar_amplitude": 0.011525107336426175,
+          "reference_parameters": {
+            "A1": 1.0,
+            "A2": 0.0,
+            "A_IA": 1.0,
+            "Omega_b": 0.049,
+            "Omega_c": 0.251,
+            "S8": 0.776,
+            "b_ta": 0.0,
+            "eta1": 0.0,
+            "eta2": 0.0,
+            "eta_IA": 0.0,
+            "h": 0.7,
+            "ia_model": "nla",
+            "m_nu": 0.06,
+            "n_s": 0.965,
+            "nz_variant": "original",
+            "z_pivot_IA": 0.62
+          },
+          "scalar_amplitude": {
+            "amplitude": 0.9981178756357846,
+            "chi2": 266.61181645342367,
+            "sigma_amplitude": 0.029675918519723628
+          },
+          "scaled_chi2_per_dof": 1.5775847127421518
+        },
+        "tatt_dalal23_table_vi_map": {
+          "metadata": {
+            "S8": 0.776,
+            "ia": {
+              "A1": 0.07,
+              "A2": 0.78,
+              "A_IA": 0.07,
+              "b_ta": 0.38,
+              "eta1": -2.4,
+              "eta2": -2.6,
+              "eta_IA": 0.0,
+              "ia_model": "tatt",
+              "z_pivot_IA": 0.62
+            },
+            "nz_variant": "original",
+            "omega_m": 0.3013146766114648,
+            "sigma8": 0.7743052529967652,
+            "statistic": "cl_ee"
+          },
+          "native_chi2_per_dof": 1.5918587670434226,
+          "recovered_S8_from_scalar_amplitude": 0.76387450156448,
+          "recovered_S8_sigma_from_scalar_amplitude": 0.01137003691328284,
+          "reference_parameters": {
+            "A1": 0.07,
+            "A2": 0.78,
+            "Omega_b": 0.049,
+            "Omega_c": 0.251,
+            "S8": 0.776,
+            "b_ta": 0.38,
+            "eta1": -2.4,
+            "eta2": -2.6,
+            "h": 0.7,
+            "ia_model": "tatt",
+            "m_nu": 0.06,
+            "n_s": 0.965,
+            "nz_variant": "original",
+            "z_pivot_IA": 0.62
+          },
+          "scalar_amplitude": {
+            "amplitude": 0.9689928760700903,
+            "chi2": 269.4605645255993,
+            "sigma_amplitude": 0.0288463216066521
+          },
+          "scaled_chi2_per_dof": 1.5944412102106467
+        }
+      },
+      "limitations": [
+        "Uses HSC Fourier SACC bandpower windows and ORIGINAL HSC n(z) for REPRO; DESI-recalibrated n(z) is staging-only.",
+        "IA is wired through real pyccl nl_pt TATT for the REPRO baseline; NLA remains available as the IA staging comparison.",
+        "Does not sample the full HSC nuisance posterior; only a scalar amplitude readout is fitted for the substrate check."
+      ],
+      "metadata": {
+        "S8": 0.776,
+        "ia": {
+          "A1": 0.07,
+          "A2": 0.78,
+          "A_IA": 0.07,
+          "b_ta": 0.38,
+          "eta1": -2.4,
+          "eta2": -2.6,
+          "eta_IA": 0.0,
+          "ia_model": "tatt",
+          "z_pivot_IA": 0.62
+        },
+        "nz_variant": "original",
+        "omega_m": 0.3013146766114648,
+        "sigma8": 0.7743052529967652,
+        "statistic": "cl_ee"
+      },
+      "native_chi2": 270.61599039738184,
+      "native_chi2_per_dof": 1.5918587670434226,
+      "native_dof": 170,
+      "pass": true,
+      "prediction_shape": [
+        170
+      ],
+      "probe_id": "hsc_y3_origVSrecal",
+      "recovered_S8_from_scalar_amplitude": 0.76387450156448,
+      "recovered_S8_sigma_from_scalar_amplitude": 0.01137003691328284,
+      "reference_S8": 0.776,
+      "reference_parameters": {
+        "A1": 0.07,
+        "A2": 0.78,
+        "Omega_b": 0.049,
+        "Omega_c": 0.251,
+        "S8": 0.776,
+        "b_ta": 0.38,
+        "eta1": -2.4,
+        "eta2": -2.6,
+        "h": 0.7,
+        "ia_model": "tatt",
+        "m_nu": 0.06,
+        "n_s": 0.965,
+        "nz_variant": "original",
+        "z_pivot_IA": 0.62
+      },
+      "scalar_amplitude": {
+        "amplitude": 0.9689928760700903,
+        "chi2": 269.4605645255993,
+        "sigma_amplitude": 0.0288463216066521
+      },
+      "scaled_chi2": 269.4605645255993,
+      "scaled_chi2_per_dof": 1.5944412102106467,
+      "scaled_dof": 169,
+      "seconds_per_eval": 85.89807533845305,
+      "target": {
+        "published_S8": 0.776,
+        "published_sigma_minus": 0.033,
+        "published_sigma_plus": 0.032,
+        "reference": "HSC-Y3 Fourier own-published REPRO target, Dalal+23 arXiv:2304.00701 Table IV / HSC release: S8=0.776^{+0.032}_{-0.033}; ORIGINAL HSC n(z). DESI-recal S8\u22480.805 is staging-only."
+      },
+      "theory_shape_pass_chi2_per_dof_lt_2": true,
+      "within_published_1sigma": true
+    },
+    {
+      "data_shape": [
+        35
+      ],
+      "ia_model_comparison": null,
+      "limitations": [
+        "Uses the official ACT+SPT+Planck binning matrices with lens_only=True and no CMB correction matrices.",
+        "No scalar S8 target is locked for this family; pass is based on finite physical curve and chi2/dof."
+      ],
+      "metadata": {
+        "S8": 0.8316013728478387,
+        "omega_m": 0.3154350446416079,
+        "sigma8": 0.811,
+        "statistic": "binned_C_L_kappakappa",
+        "variant": "actplanckspt3g_baseline"
+      },
+      "native_chi2": 40.68274610107711,
+      "native_chi2_per_dof": 1.1623641743164888,
+      "native_dof": 35,
+      "pass": true,
+      "prediction_shape": [
+        35
+      ],
+      "probe_id": "cmblensing_act_spt_planck",
+      "recovered_S8_from_scalar_amplitude": 0.8362291446857487,
+      "recovered_S8_sigma_from_scalar_amplitude": 0.006852173554360345,
+      "reference_S8": 0.8316013728478387,
+      "reference_parameters": {
+        "Omega_b": 0.049,
+        "Omega_c": 0.265,
+        "h": 0.67,
+        "m_nu": 0.06,
+        "n_s": 0.965,
+        "sigma8": 0.811
+      },
+      "scalar_amplitude": {
+        "amplitude": 1.0111607520494774,
+        "chi2": 40.22913840900066,
+        "sigma_amplitude": 0.016571173125051273
+      },
+      "scaled_chi2": 40.22913840900066,
+      "scaled_chi2_per_dof": 1.1832099532059017,
+      "scaled_dof": 34,
+      "seconds_per_eval": 6.097701229155064,
+      "target": {
+        "published_S8": null,
+        "published_sigma_minus": null,
+        "published_sigma_plus": null,
+        "reference": "ACT+SPT+Planck CMB-lensing release; no scalar S8 target is locked in the E5 manifest"
+      },
+      "theory_shape_pass_chi2_per_dof_lt_2": true,
+      "within_published_1sigma": null
+    }
+  ],
+  "load_average": [
+    12.4931640625,
+    10.57177734375,
+    8.91796875
+  ],
+  "runtime_seconds": 125.55288241058588,
+  "schema_version": 1,
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

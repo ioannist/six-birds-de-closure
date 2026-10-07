@@ -1,0 +1,2 @@
+✔ [8792/8792] Built SbtCosmo.Derivation.GroundOffsetTransport.Point002 (26s)
+Build completed successfully (8792 jobs).

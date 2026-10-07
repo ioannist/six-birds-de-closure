@@ -1,0 +1,39 @@
+{
+  "scope": "Source protocol checks plus adversarial self-review of the aggregate construction; no new Lean compile or aggregate theorem completion.",
+  "aggregate_compiled": false,
+  "standard_only_aggregate_audit_complete": false,
+  "no_early_stop": true,
+  "fixed_budget": "range(steps)",
+  "convergence_conjuncts": [
+    "final_update_residual <= CONVERGENCE_TOL",
+    "final_fixed_point_residual <= CONVERGENCE_TOL",
+    "final_eigen_residual <= CONVERGENCE_TOL",
+    "final_sourcing_residual <= CONVERGENCE_TOL"
+  ],
+  "final_fixed_gap_phase_calls": 2,
+  "unitary_step_is_diagnostic": true,
+  "original_phase_convention_retained": true,
+  "sourcing_same_input_comparison": true,
+  "source_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd",
+  "sources": {
+    "/home/repos/six-birds-de-closure/external/step54_repro/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/semiclassical_dynamics_step26.py": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd",
+    "/tmp/de_native_cycle_lean/NativeOriginalSampleInterface.lean": "fa9639b2c75b23bf8793ac152b7290a2303ecbc31f5a18d6cc4a438e26fa3b89",
+    "/tmp/de_native_cycle_lean/NativeOriginalSampleResults.lean": "f1ee998a65d124e7c227665bbaf44d2f6b261413079bff4fd8ca2a673f4d3d89",
+    "/tmp/de_native_cycle_lean/NativeOriginalEventualSourceSuccess.lean": "d4e14627b6bc5b7f80849b485b7e44d9efe4a067f29f5bb35c5bb44aa41585e1",
+    "/tmp/de_native_cycle_lean/NativeEventualSourceSuccess.lean": "1bee7af92c09653a3b7b706335df2c79fe40dbf9a3fdf85c844c4a0e396a9a14",
+    "/tmp/de_native_cycle_lean/NativeCycleSeed20Return.lean": "050f91c7472f8508910d34fd3e7b3f28230d28917189ebfef7883882391c2189",
+    "/tmp/de_native_cycle_lean/NativeCycleSeed30Return.lean": "cc8c1ad4e4b80c3a2496ca80ffed7fb19925a94b3915680356ddfc63179514b0",
+    "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundSourceDiagnostics.lean": "729d5bf871fe3eca26612dd11fa43b74c5ea6afd1b0fe3dd43f2e22592f3bdab",
+    "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundComplexFiniteBudget.lean": "b9ee6712a6028056413c3c963db48b23f95f5dcd6de8edb1fc393885ab135a21",
+    "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativePhase.lean": "ce481562851351d2effadc306cf41e91a18b13ad1ff5b072e0149ae62e79d124",
+    "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeIteration.lean": "69d207a7910b72b470213e00b5131f4fc78d51ce53fe120b1db7747f82884afb"
+  },
+  "finite_sample_cutoffs": {
+    "sixty_tests": "i.val < 9",
+    "infinite_limit": "i.val < 10",
+    "eventual_tests": "i.val < 10",
+    "successful_prefix_updates_1_to_60": "i.val < 9"
+  },
+  "all_parameter_interpretation": false,
+  "IEEE_interpretation": false
+}

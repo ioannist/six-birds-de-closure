@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-05T03:08:22.027036+00:00",
+  "source_review_hashes_match": true,
+  "dependency_hashes_match": true,
+  "protected_inputs_reverified": 5675,
+  "math_note_sha256": "42ab0ba195f0b693565b2e1c6cb5bca680048c379336ce6d68f3fe8ffdd0d478",
+  "live_progress": {
+    "de-offset-transport-leaves-resume-driver-retry": {
+      "pid": 1531524,
+      "live_command": "/usr/bin/python3 scripts/de_ground_offset_transport_resume.py",
+      "last_line": "resumed leaves GroundOffsetTransport.Point014.Step014 terminal 0 completed 338 /421"
+    },
+    "de-native-cycle-seed-leaves-driver": {
+      "pid": 1553413,
+      "live_command": "/usr/bin/python3 /tmp/de_native_cycle_seed_private_build.py",
+      "last_line": "NativeCycleSeed20Step171 terminal 0 completed 324 /472"
+    },
+    "de-native-stable-seed-leaves-driver": {
+      "pid": 2558747,
+      "live_command": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py",
+      "last_line": "NativeStableSeed003Step044 terminal 0 scheduled completed 104 /597"
+    }
+  },
+  "scope": "Source/receipt integrity and live-handle verification; wider robustness and campaign completion remain unproved."
+}

@@ -1,0 +1,36 @@
+import SbtCosmo.Derivation.WindowPatchCountFirstData
+import SbtCosmo.Derivation.WindowPatchCountRatio
+
+#print axioms SbtCosmo.Derivation.WindowPatchCountFirstData.rational_scale_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchCountFirstData.rational_scale_tight
+#print axioms SbtCosmo.Derivation.WindowPatchCountFirstData.rational_first_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchCountFirstData.rational_original_lower_fails
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.scale_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.scale_tight
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.aggregate_normalized
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.maximum_spec
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.threshold_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.gate_cutoff
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.final_above_threshold
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_normalized_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_numerical
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_gate
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_spec
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_positive
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_iff_any_collapse
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_is_first_collapse
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_at_zero
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_strictMono
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_nonnegative_lower
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.time_nonpositive_upper
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_time_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_density_readout
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonnegative
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_positive
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_zero
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_strictMono_nonnegative
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonpositive_small
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonnegative_upper
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_ratios
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.full_window_ratios
+#print axioms SbtCosmo.Derivation.WindowPatchCountRatio.ratios_uniformly_arbitrarily_small

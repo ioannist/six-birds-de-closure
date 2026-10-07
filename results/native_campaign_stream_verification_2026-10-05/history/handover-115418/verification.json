@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-05T11:54:18.653400+00:00",
+  "live": {
+    "utc": "2026-10-05T11:54:18.647651+00:00",
+    "live_jobs": 12,
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 346,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 275,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 334,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": []
+  },
+  "additional_private_cumulative_driver_pid": 1509758,
+  "frozen_inputs_revalidated": 6262,
+  "additional_freeze_inputs_revalidated": 3936,
+  "candidate_manifests": {
+    "/home/repos/six-birds-de-closure/results/ground_offset_header_installation_candidate_2026-10-05/file-manifest.json": "c3db2089cb599a50f09281f82a1822126e342664daddff90ea3dcdf87951cf9c",
+    "/home/repos/six-birds-de-closure/results/ground_offset_header_installer_candidate_2026-10-05/file-manifest.json": "b362f8f22885588b83af2574bea80d6e2095763174b0837efc7f5262b45b7a07"
+  },
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

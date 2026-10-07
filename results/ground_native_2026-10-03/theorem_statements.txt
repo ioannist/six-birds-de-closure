@@ -1,0 +1,421 @@
+SbtCosmo.Derivation.GroundNativePhase.packCLE_apply (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.packCLE x = SbtCosmo.Derivation.GroundNativePhase.pack x
+SbtCosmo.Derivation.GroundNativePhase.packCLE_symm_apply (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.packCLE.symm z = SbtCosmo.Derivation.GroundNativePhase.unpack z
+SbtCosmo.Derivation.GroundNativePhase.norm_pack (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativePhase.pack x) =
+    SbtCosmo.Derivation.GroundNativePhase.stateNormSq x
+SbtCosmo.Derivation.GroundNativePhase.source_pack (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential b κ (SbtCosmo.Derivation.GroundNativePhase.pack x) =
+    SbtCosmo.Derivation.GroundNativePhase.pairSource b κ x
+SbtCosmo.Derivation.GroundNativePhase.pairSource_real (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativePhase.pairSource b κ (u, 0) = SbtCosmo.Derivation.GroundState.sourcePotential b κ u
+SbtCosmo.Derivation.GroundNativePhase.selected_real (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativePhase.selected b κ (u, 0) = SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u
+SbtCosmo.Derivation.GroundNativePhase.pairSource_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.pairSource b κ)
+SbtCosmo.Derivation.GroundNativePhase.selected_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.selected b κ)
+SbtCosmo.Derivation.GroundNativePhase.native_factor (z : ℂ) (hz : z ≠ 0) :
+  Complex.exp (↑(-z.arg) * Complex.I) = star z / ↑‖z‖
+SbtCosmo.Derivation.GroundNativePhase.nativePhase_ratio {τ : ℝ}
+  {candidate reference : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (ho : τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference‖) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ candidate reference = fun i =>
+    star (SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference) /
+        ↑‖SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference‖ *
+      candidate i
+SbtCosmo.Derivation.GroundNativePhase.overlap_neg_left
+  (candidate reference : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap (-candidate) reference =
+    -SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference
+SbtCosmo.Derivation.GroundNativePhase.nativePhase_real_sign_invariant {τ : ℝ}
+  {candidate reference : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (ho : τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference‖) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ (-candidate) reference =
+    SbtCosmo.Derivation.GroundNativePhase.nativePhase τ candidate reference
+SbtCosmo.Derivation.GroundNativePhase.overlap_pair (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap
+      (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundNativePhase.selected b κ x))
+      (SbtCosmo.Derivation.GroundNativePhase.pack x) =
+    { re := SbtCosmo.Derivation.GroundNativePhase.realOverlap b κ x,
+      im := SbtCosmo.Derivation.GroundNativePhase.imagOverlap b κ x }
+SbtCosmo.Derivation.GroundNativePhase.overlap_norm_pair (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  ‖SbtCosmo.Derivation.GroundNativePhase.overlap
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundNativePhase.selected b κ x))
+        (SbtCosmo.Derivation.GroundNativePhase.pack x)‖ =
+    SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x
+SbtCosmo.Derivation.GroundNativePhase.aligned_native_return (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) {τ : ℝ} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x) :
+  SbtCosmo.Derivation.GroundNativePhase.pack (SbtCosmo.Derivation.GroundNativePhase.aligned b κ x) =
+    SbtCosmo.Derivation.GroundNativePhase.nativePhase τ
+      (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundNativePhase.selected b κ x))
+      (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativePhase.overlap_at_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativePhase.realOverlap b κ (u, 0) = 1 ∧
+    SbtCosmo.Derivation.GroundNativePhase.imagOverlap b κ (u, 0) = 0 ∧
+      SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ (u, 0) = 1
+SbtCosmo.Derivation.GroundNativeDerivative.sourceDerivative_zero_field (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) : SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ 0 = 0
+SbtCosmo.Derivation.GroundNativeDerivative.pairSource_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.pairSource b κ)
+    (SbtCosmo.Derivation.GroundNativeDerivative.pairSourceDerivative b κ x) x
+SbtCosmo.Derivation.GroundNativeDerivative.selected_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.selected b κ)
+    (SbtCosmo.Derivation.GroundNativeDerivative.selectedDerivative b κ x) x
+SbtCosmo.Derivation.GroundNativeDerivative.selected_hasFDerivAt_real (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.selected b κ)
+    ((SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u).comp
+      (ContinuousLinearMap.fst ℝ SbtCosmo.Derivation.GroundState.Field SbtCosmo.Derivation.GroundState.Field))
+    (u, 0)
+SbtCosmo.Derivation.GroundNativeDerivative.realDot_apply (u : SbtCosmo.Derivation.GroundState.Field)
+  (h : SbtCosmo.Derivation.GroundNativePhase.State) :
+  (SbtCosmo.Derivation.GroundNativeDerivative.realDot u) h = SbtCosmo.Derivation.GroundBorder.dot u h.1
+SbtCosmo.Derivation.GroundNativeDerivative.imagDot_apply (u : SbtCosmo.Derivation.GroundState.Field)
+  (h : SbtCosmo.Derivation.GroundNativePhase.State) :
+  (SbtCosmo.Derivation.GroundNativeDerivative.imagDot u) h = SbtCosmo.Derivation.GroundBorder.dot u h.2
+SbtCosmo.Derivation.GroundNativeDerivative.realOverlap_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.realOverlap b κ)
+    (SbtCosmo.Derivation.GroundNativeDerivative.realDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeDerivative.imagOverlap_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.imagOverlap b κ)
+    (SbtCosmo.Derivation.GroundNativeDerivative.imagDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeDerivative.overlapNorm_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ)
+    (SbtCosmo.Derivation.GroundNativeDerivative.realDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeDerivative.realFactor_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt
+    (fun x =>
+      SbtCosmo.Derivation.GroundNativePhase.realOverlap b κ x / SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)
+    0 (u, 0)
+SbtCosmo.Derivation.GroundNativeDerivative.imagFactor_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt
+    (fun x =>
+      -SbtCosmo.Derivation.GroundNativePhase.imagOverlap b κ x /
+        SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)
+    (-SbtCosmo.Derivation.GroundNativeDerivative.imagDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeDerivative.alignedDerivative_apply (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) (h : SbtCosmo.Derivation.GroundNativePhase.State) :
+  (SbtCosmo.Derivation.GroundNativeDerivative.alignedDerivative b κ u) h =
+    ((SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) h.1, fun i =>
+      -SbtCosmo.Derivation.GroundBorder.dot u h.2 * u i)
+SbtCosmo.Derivation.GroundNativeDerivative.aligned_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativePhase.aligned b κ)
+    (SbtCosmo.Derivation.GroundNativeDerivative.alignedDerivative b κ u) (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.pack_normalizeState (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.pack (SbtCosmo.Derivation.GroundNativeIteration.normalizeState x) =
+    SbtCosmo.Derivation.GroundNativeIteration.complexNormalize (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate_pack (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate b κ (SbtCosmo.Derivation.GroundNativePhase.pack x) =
+    SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundNativePhase.selected b κ x)
+SbtCosmo.Derivation.GroundNativeIteration.pack_mixed_native {τ : ℝ} (hτ : 0 ≤ τ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x) :
+  SbtCosmo.Derivation.GroundNativePhase.pack (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeMixed τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeIteration.fullMap_native_return {τ : ℝ} (hτ : 0 ≤ τ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x) :
+  SbtCosmo.Derivation.GroundNativePhase.pack (SbtCosmo.Derivation.GroundNativeIteration.fullMap b κ m x) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeIteration.realOverlap_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.realOverlap b κ)
+SbtCosmo.Derivation.GroundNativeIteration.imagOverlap_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.imagOverlap b κ)
+SbtCosmo.Derivation.GroundNativeIteration.overlapSq_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ)
+SbtCosmo.Derivation.GroundNativeIteration.overlapNorm_smooth_at {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ) (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.aligned_smooth_at {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativePhase.aligned b κ) (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.aligned_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativePhase.aligned b κ (u, 0) = (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.mixed_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m (u, 0) = (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.stateNormSq_smooth :
+  ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundNativePhase.stateNormSq
+SbtCosmo.Derivation.GroundNativeIteration.normalizeState_smooth_at {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : 0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq x) :
+  ContDiffAt ℝ (↑⊤) SbtCosmo.Derivation.GroundNativeIteration.normalizeState x
+SbtCosmo.Derivation.GroundNativeIteration.stateNormSq_real {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) : SbtCosmo.Derivation.GroundNativePhase.stateNormSq (u, 0) = 1
+SbtCosmo.Derivation.GroundNativeIteration.normalizeState_real_fixed {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  SbtCosmo.Derivation.GroundNativeIteration.normalizeState (u, 0) = (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.fullMap_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativeIteration.fullMap b κ m (u, 0) = (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.mixed_smooth_at {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m) (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.fullMap_smooth_at {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativeIteration.fullMap b κ m) (u, 0)
+SbtCosmo.Derivation.GroundNativeIteration.phase_guard_near_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ τ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ : τ < 1) :
+  ∀ᶠ (x : SbtCosmo.Derivation.GroundNativePhase.State) in nhds (u, 0),
+    τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x
+SbtCosmo.Derivation.GroundNativeIteration.normalization_guard_near_fixed {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ : τ < 1) :
+  ∀ᶠ (x : SbtCosmo.Derivation.GroundNativePhase.State) in nhds (u, 0),
+    τ < √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x))
+SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate_near_fixed {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  ∀ᶠ (x : SbtCosmo.Derivation.GroundNativePhase.State) in nhds (u, 0),
+    SbtCosmo.Derivation.GroundNativePhase.pack (SbtCosmo.Derivation.GroundNativeIteration.fullMap b κ m x) =
+        SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeJacobian.stateNormSq_hasFDerivAt_real (u : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt SbtCosmo.Derivation.GroundNativePhase.stateNormSq
+    (2 • SbtCosmo.Derivation.GroundNativeDerivative.realDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.stateSqrt_hasFDerivAt_real {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  HasFDerivAt (fun x => √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq x))
+    (SbtCosmo.Derivation.GroundNativeDerivative.realDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.stateInvSqrt_hasFDerivAt_real {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  HasFDerivAt (fun x => (√(SbtCosmo.Derivation.GroundNativePhase.stateNormSq x))⁻¹)
+    (-SbtCosmo.Derivation.GroundNativeDerivative.realDot u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.normalizeState_hasFDerivAt_real {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  HasFDerivAt SbtCosmo.Derivation.GroundNativeIteration.normalizeState
+    (SbtCosmo.Derivation.GroundNativeJacobian.stateProjection u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.mixed_hasFDerivAt_real {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m)
+    (SbtCosmo.Derivation.GroundNativeJacobian.mixedDerivative b κ m u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative_apply (m : ℝ) (u h : SbtCosmo.Derivation.GroundState.Field)
+  (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative m u) h i =
+    (1 - m) * h i - m * SbtCosmo.Derivation.GroundBorder.dot u h * u i
+SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative_apply (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) (h : SbtCosmo.Derivation.GroundNativePhase.State) :
+  (SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative b κ m u) h =
+    ((SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) h.1,
+      (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative m u) h.2)
+SbtCosmo.Derivation.GroundNativeJacobian.fullMap_hasFDerivAt_real {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativeIteration.fullMap b κ m)
+    (SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative b κ m u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.imaginary_tangent_mode {u h : SbtCosmo.Derivation.GroundState.Field} (m : ℝ)
+  (ht : SbtCosmo.Derivation.GroundBorder.dot u h = 0) :
+  (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative m u) h = (1 - m) • h
+SbtCosmo.Derivation.GroundNativeJacobian.imaginary_phase_mode {u : SbtCosmo.Derivation.GroundState.Field} (m : ℝ)
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative m u) u = (1 - 2 * m) • u
+SbtCosmo.Derivation.GroundNativeJacobian.half_mixing_imaginary_projection (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative (1 / 2) u =
+    (1 / 2) • SbtCosmo.Derivation.GroundNormalizedJacobian.projection u
+SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap_eventual_return {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m =ᶠ[nhds (u, 0)]
+    SbtCosmo.Derivation.GroundNativeIteration.fullMap b κ m
+SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap_smooth_at {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap_hasFDerivAt {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m)
+    (SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative b κ m u) (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m (u, 0) = (u, 0)
+SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap_iterate_return (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State) (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativePhase.pack ((SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m)^[n] x) =
+    (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeLocal.c1_local_attraction_inside.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {u : E} {s : Set E} (hc : ContDiffAt ℝ 1 f u) (hf : f u = u) (hd : ‖fderiv ℝ f u‖ < 1)
+  (hs : s ∈ nhds u) :
+  ∃ r > 0,
+    ∃ q < 1,
+      Metric.closedBall u r ⊆ s ∧
+        ∀ y ∈ Metric.closedBall u r,
+          Filter.Tendsto (fun n => f^[n] y) Filter.atTop (nhds u) ∧
+            ∀ (n : ℕ), f^[n] y ∈ s ∧ dist (f^[n] y) u ≤ ↑q ^ n * dist y u
+SbtCosmo.Derivation.GroundNativeLocal.native_region_near_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeLocal.NativeRegion τ b κ m ∈ nhds (u, 0)
+SbtCosmo.Derivation.GroundNativeLocal.coordinate_hasFDerivAt
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativeLocal.coordinateMap T τ b κ m)
+    (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u) (T.symm (u, 0))
+SbtCosmo.Derivation.GroundNativeLocal.coordinate_smooth_at
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativeLocal.coordinateMap T τ b κ m) (T.symm (u, 0))
+SbtCosmo.Derivation.GroundNativeLocal.coordinate_fixed
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeLocal.coordinateMap T τ b κ m (T.symm (u, 0)) = T.symm (u, 0)
+SbtCosmo.Derivation.GroundNativeLocal.coordinate_iterate_return
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State) (n : ℕ) :
+  T ((SbtCosmo.Derivation.GroundNativeLocal.coordinateMap T τ b κ m)^[n] x) =
+    (SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m)^[n] (T x)
+SbtCosmo.Derivation.GroundNativeLocal.native_complex_local_attraction
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1)
+  (hd : ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u‖ < 1) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      T.symm (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈ Metric.closedBall (T.symm (u, 0)) r →
+        Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) Filter.atTop
+            (nhds (SbtCosmo.Derivation.GroundState.realEmbed u)) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z)
+SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative_blocks
+  (S R : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative (S.prodCongr R) b κ m u =
+    (SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian S b κ m u).prodMap
+      (SbtCosmo.Derivation.GroundNativeLocal.imaginaryCoordinate R m u)
+SbtCosmo.Derivation.GroundNativeLocal.product_operator_norm_bound
+  (L K : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) :
+  ‖L.prodMap K‖ ≤ max ‖L‖ ‖K‖
+SbtCosmo.Derivation.GroundNativeLocal.native_complex_local_attraction_of_rows
+  (S R : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ a c : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) (ha : 0 ≤ a)
+  (ha1 : a < 1) (hc : 0 ≤ c) (hc1 : c < 1)
+  (hreal :
+    ∀ (i : Fin 8),
+      ∑ j,
+          |(SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian S b κ m u)
+              (SbtCosmo.Derivation.GroundLocalDynamics.column j) i| ≤
+        a)
+  (himag :
+    ∀ (i : Fin 8),
+      ∑ j,
+          |(SbtCosmo.Derivation.GroundNativeLocal.imaginaryCoordinate R m u)
+              (SbtCosmo.Derivation.GroundLocalDynamics.column j) i| ≤
+        c) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (S.prodCongr R).symm (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall ((S.prodCongr R).symm (u, 0)) r →
+        Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) Filter.atTop
+            (nhds (SbtCosmo.Derivation.GroundState.realEmbed u)) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z)
+SbtCosmo.Derivation.GroundNativeControls.originalTolerance_guard :
+  0 ≤ SbtCosmo.Derivation.GroundNativeControls.originalTolerance ∧
+    SbtCosmo.Derivation.GroundNativeControls.originalTolerance < 1
+SbtCosmo.Derivation.GroundNativeControls.unit_real_lowest_sign {v w : SbtCosmo.Derivation.GroundState.Field}
+  (hw : SbtCosmo.Derivation.GroundState.normSq w = 1)
+  (he :
+    ∀ (i : Fin 8),
+      SbtCosmo.Derivation.GroundState.hamiltonian v w i =
+        SbtCosmo.Derivation.GroundState.energy v (SbtCosmo.Derivation.GroundState.positiveGround v) * w i) :
+  w = SbtCosmo.Derivation.GroundState.positiveGround v ∨ w = -SbtCosmo.Derivation.GroundState.positiveGround v
+SbtCosmo.Derivation.GroundNativeControls.real_eigensolver_phase_return {v w : SbtCosmo.Derivation.GroundState.Field}
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ : ℝ} (hw : SbtCosmo.Derivation.GroundState.normSq w = 1)
+  (he :
+    ∀ (i : Fin 8),
+      SbtCosmo.Derivation.GroundState.hamiltonian v w i =
+        SbtCosmo.Derivation.GroundState.energy v (SbtCosmo.Derivation.GroundState.positiveGround v) * w i)
+  (hτ : 0 ≤ τ)
+  (ho :
+    τ <
+      ‖SbtCosmo.Derivation.GroundNativePhase.overlap
+          (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundState.positiveGround v)) z‖) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ (SbtCosmo.Derivation.GroundState.realEmbed w) z =
+    SbtCosmo.Derivation.GroundNativePhase.nativePhase τ
+      (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundState.positiveGround v)) z
+SbtCosmo.Derivation.GroundNativeControls.real_mode_full_return {b u h : SbtCosmo.Derivation.GroundState.Field}
+  {κ m ℓ : ℝ} (he : (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) h = ℓ • h) :
+  (SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative b κ m u) (h, 0) = ℓ • (h, 0)
+SbtCosmo.Derivation.GroundNativeControls.exists_legal_native_fixed (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ)
+  {τ : ℝ} (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  ∃ u,
+    (∀ (i : Fin 8), 0 < u i) ∧
+      SbtCosmo.Derivation.GroundState.normSq u = 1 ∧
+        SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m (SbtCosmo.Derivation.GroundState.realEmbed u) =
+            SbtCosmo.Derivation.GroundState.realEmbed u ∧
+          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundState.realEmbed u) ∧
+            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (SbtCosmo.Derivation.GroundState.realEmbed u)
+SbtCosmo.Derivation.GroundNativeControls.pairSource_imaginary (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativePhase.pairSource b κ (0, u) = SbtCosmo.Derivation.GroundState.sourcePotential b κ u
+SbtCosmo.Derivation.GroundNativeControls.selected_imaginary (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativePhase.selected b κ (0, u) = SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u
+SbtCosmo.Derivation.GroundNativeControls.overlap_imaginary_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativePhase.realOverlap b κ (0, u) = 0 ∧
+    SbtCosmo.Derivation.GroundNativePhase.imagOverlap b κ (0, u) = 1 ∧
+      SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ (0, u) = 1
+SbtCosmo.Derivation.GroundNativeControls.aligned_imaginary_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativePhase.aligned b κ (0, u) = (0, -u)
+SbtCosmo.Derivation.GroundNativeControls.half_mixed_imaginary_cancellation {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundNativeIteration.mixed b κ (1 / 2) (0, u) = 0
+SbtCosmo.Derivation.GroundNativeControls.native_half_imaginary_illegal {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativePhase.pack (0, u)) = 1 ∧
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack (0, u)) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.nativeMixed τ b κ (1 / 2)
+            (SbtCosmo.Derivation.GroundNativePhase.pack (0, u)) =
+          0 ∧
+        ¬SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ (1 / 2)
+            (SbtCosmo.Derivation.GroundNativePhase.pack (0, u))

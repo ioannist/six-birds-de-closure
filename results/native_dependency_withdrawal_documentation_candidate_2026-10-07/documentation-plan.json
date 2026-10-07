@@ -1,0 +1,53 @@
+{
+  "status": "UNAPPLIED DRAFT: completion assertions remain conditional on successful final registered commands and completion review",
+  "targets": [
+    {
+      "path": "README.md",
+      "before_sha256": "b34fc285575bda78c3adebe9d69a7f1d22f800d432f602cda7dd012fdbe3dc3a",
+      "prior_candidate_sha256": "b475c419cf87f97381581fb739307b85d722fc0c7529aafc279319aa041bdf9a",
+      "after_sha256": "4a2f05384d8218a4eefd82fbb59b1446077143f413dca0c3be0c8939a064372e",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_dependency_withdrawal_documentation_candidate_2026-10-07/README.md"
+    },
+    {
+      "path": "lean/README.md",
+      "before_sha256": "a7c67b8bf6cb4daf5f96bc095308fe544da54d86993fa9f6547f6b6167bac240",
+      "prior_candidate_sha256": "76350b6d2bfdf70a19cc4fd97040601e624df1dd5b1cb7d2a72c6b12a5ef4801",
+      "after_sha256": "51cd02c57ed7a200ddff0b2dc278282a23b68e25636d2d28b87358297103f08c",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_dependency_withdrawal_documentation_candidate_2026-10-07/lean/README.md"
+    },
+    {
+      "path": "lean/manifests/coverage_table.md",
+      "before_sha256": "0e9d6d47357e8d9f3ab2f6eee37a9b0cbf5911cfa62660b4c3535d1fdfdb4e5b",
+      "prior_candidate_sha256": "0f53688af049f22591db39a1bcb7f939bd12b279dce6f3a868562eb6470d297b",
+      "after_sha256": "aa539a23d16a771c8207b94481480523d3cfeac4178ca38beabfa1c67e312858",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_dependency_withdrawal_documentation_candidate_2026-10-07/lean/manifests/coverage_table.md"
+    },
+    {
+      "path": "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md",
+      "before_sha256": "13a3f0cb8c2d78299d813c516e9b1a3db38514bb6d5b567eabf0bd5c8fe5e7ee",
+      "prior_candidate_sha256": "b04352386fd9a42e737c4acaf49b672c1072c70fb2439fce63dbf96c7f16fb59",
+      "after_sha256": "9ec9feddd58ae015c4e42dc9435f53106ddd900393f869cdbb11dbf46a0d6ab3",
+      "candidate_path": "/home/repos/six-birds-de-closure/results/native_dependency_withdrawal_documentation_candidate_2026-10-07/math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md"
+    }
+  ],
+  "prior_plan_sha256": "5536a1c573b503d56924fa870db97d0aa9878fc514a261cf95c6018b84bec9b0",
+  "required_native_live_terminal": "/tmp/de_native_registered_original_audit_receipts/terminal.json",
+  "required_native_archived_terminal": "/home/repos/six-birds-de-closure/results/native_registered_final_verification_2026-10-06/terminal.json",
+  "required_offset_verification": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/verification.json",
+  "requires_registered_native_modules": 1772,
+  "requires_registered_statement_queries": 20798,
+  "requires_fresh_cumulative_axiom_queries": 32574,
+  "requires_current_source_and_object_snapshots": true,
+  "requires_actual_build_and_both_audit_exit_codes_zero": true,
+  "requires_standard_axioms_only": true,
+  "requires_completion_review": true,
+  "registered_sources_changed": false,
+  "paper_changed": false,
+  "authoritative_documentation_changed": false,
+  "prepared_receipt_archiver": "/home/repos/six-birds-de-closure/results/native_dependency_withdrawal_documentation_candidate_2026-10-07/de_collect_final_registered_receipts_2026-10-06.py",
+  "receipt_archiver_execution_status": "Not executed: actual native producer success required",
+  "supersedes_documentation_candidate": "/home/repos/six-birds-de-closure/results/native_postinstall_documentation_candidate_2026-10-06",
+  "superseded_plan_sha256": "3d6cfdb4a47edff379634581220160d76463f78dd91ef5d57d2749298701d2f0",
+  "withdrawal_review_sha256": "6690b4ffb19d172d767f8efa62e16bdb451f551bb590c5122203030698205f80",
+  "withdrawn_dependencies_restored": false
+}

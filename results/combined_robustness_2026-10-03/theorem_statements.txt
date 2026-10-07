@@ -1,0 +1,385 @@
+SbtCosmo.Derivation.CombinedEdgeLowerData.grid_endpoints :
+  SbtCosmo.Derivation.CombinedEdgeLowerData.grid 0 = 3 / 500 ∧
+    SbtCosmo.Derivation.CombinedEdgeLowerData.grid 607 = 4 / 1
+SbtCosmo.Derivation.CombinedEdgeLowerData.cells (i : Fin 607) :
+  0 < SbtCosmo.Derivation.CombinedEdgeLowerData.grid ↑i ∧
+    SbtCosmo.Derivation.CombinedEdgeLowerData.grid ↑i ≤ SbtCosmo.Derivation.CombinedEdgeLowerData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.CombinedEdgeLowerData.bound ↑i ∧
+        SbtCosmo.Derivation.CombinedEdgeLowerData.bound ↑i ^ 2 *
+              (1 + 5 / 2 * SbtCosmo.Derivation.CombinedEdgeLowerData.grid ↑i ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.CombinedEdgeLowerData.grid ↑i ^ 3 ∧
+          SbtCosmo.Derivation.CombinedEdgeLowerData.bound ↑i ^ 2 *
+              (1 + 5 / 2 * SbtCosmo.Derivation.CombinedEdgeLowerData.grid (↑i + 1) ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.CombinedEdgeLowerData.grid (↑i + 1) ^ 3
+SbtCosmo.Derivation.CombinedEdgeLowerData.integral_sum :
+  49 / 200 ≤
+    ∑ i ∈ Finset.range 607,
+      (SbtCosmo.Derivation.CombinedEdgeLowerData.grid (i + 1) - SbtCosmo.Derivation.CombinedEdgeLowerData.grid i) *
+        SbtCosmo.Derivation.CombinedEdgeLowerData.bound i
+SbtCosmo.Derivation.CombinedEdgePrefixData.grid_endpoints :
+  SbtCosmo.Derivation.CombinedEdgePrefixData.grid 0 = 3 / 500 ∧
+    SbtCosmo.Derivation.CombinedEdgePrefixData.grid 522 = 8 / 3
+SbtCosmo.Derivation.CombinedEdgePrefixData.cells (i : Fin 522) :
+  0 < SbtCosmo.Derivation.CombinedEdgePrefixData.grid ↑i ∧
+    SbtCosmo.Derivation.CombinedEdgePrefixData.grid ↑i ≤ SbtCosmo.Derivation.CombinedEdgePrefixData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.CombinedEdgePrefixData.bound ↑i ∧
+        SbtCosmo.Derivation.CombinedEdgePrefixData.bound ↑i ^ 2 *
+              (1 + 7 / 2 * SbtCosmo.Derivation.CombinedEdgePrefixData.grid ↑i ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.CombinedEdgePrefixData.grid ↑i ^ 3 ∧
+          SbtCosmo.Derivation.CombinedEdgePrefixData.bound ↑i ^ 2 *
+              (1 + 7 / 2 * SbtCosmo.Derivation.CombinedEdgePrefixData.grid (↑i + 1) ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.CombinedEdgePrefixData.grid (↑i + 1) ^ 3
+SbtCosmo.Derivation.CombinedEdgePrefixData.integral_sum :
+  477 / 2500 ≤
+    ∑ i ∈ Finset.range 522,
+      (SbtCosmo.Derivation.CombinedEdgePrefixData.grid (i + 1) - SbtCosmo.Derivation.CombinedEdgePrefixData.grid i) *
+        SbtCosmo.Derivation.CombinedEdgePrefixData.bound i
+SbtCosmo.Derivation.CombinedEdgeUpperData.grid_endpoints :
+  SbtCosmo.Derivation.CombinedEdgeUpperData.grid 0 = 1 / 5000 ∧
+    SbtCosmo.Derivation.CombinedEdgeUpperData.grid 785 = 120 / 1
+SbtCosmo.Derivation.CombinedEdgeUpperData.cells (i : Fin 785) :
+  0 < SbtCosmo.Derivation.CombinedEdgeUpperData.grid ↑i ∧
+    SbtCosmo.Derivation.CombinedEdgeUpperData.grid ↑i ≤ SbtCosmo.Derivation.CombinedEdgeUpperData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.CombinedEdgeUpperData.bound ↑i ∧
+        (2 * (7 / 2) * SbtCosmo.Derivation.CombinedEdgeUpperData.grid (↑i + 1) ^ 3 ≤ 1 ∧
+            SbtCosmo.Derivation.CombinedEdgeUpperData.grid (↑i + 1) ^ 3 ≤
+              SbtCosmo.Derivation.CombinedEdgeUpperData.bound ↑i ^ 2 *
+                (1 + 7 / 2 * SbtCosmo.Derivation.CombinedEdgeUpperData.grid (↑i + 1) ^ 3) ^ 3 ∨
+          1 ≤ 2 * (7 / 2) * SbtCosmo.Derivation.CombinedEdgeUpperData.grid ↑i ^ 3 ∧
+              SbtCosmo.Derivation.CombinedEdgeUpperData.grid ↑i ^ 3 ≤
+                SbtCosmo.Derivation.CombinedEdgeUpperData.bound ↑i ^ 2 *
+                  (1 + 7 / 2 * SbtCosmo.Derivation.CombinedEdgeUpperData.grid ↑i ^ 3) ^ 3 ∨
+            4 ≤ 27 * (7 / 2) * SbtCosmo.Derivation.CombinedEdgeUpperData.bound ↑i ^ 2)
+SbtCosmo.Derivation.CombinedEdgeUpperData.integral_sum :
+  ∑ i ∈ Finset.range 785,
+      (SbtCosmo.Derivation.CombinedEdgeUpperData.grid (i + 1) - SbtCosmo.Derivation.CombinedEdgeUpperData.grid i) *
+        SbtCosmo.Derivation.CombinedEdgeUpperData.bound i ≤
+    509 / 2500
+SbtCosmo.Derivation.CombinedEdgeQuadrature.lower_integral :
+  245 / 1000 ≤ SbtCosmo.Derivation.GrowthQuadrature.integral (5 / 2) (3 / 500) 4
+SbtCosmo.Derivation.CombinedEdgeQuadrature.prefix_integral :
+  1908 / 10000 ≤ SbtCosmo.Derivation.GrowthQuadrature.integral (7 / 2) (3 / 500) (8 / 3)
+SbtCosmo.Derivation.CombinedEdgeQuadrature.upper_integral :
+  SbtCosmo.Derivation.GrowthQuadrature.integral (7 / 2) (1 / 5000) 120 ≤ 2036 / 10000
+SbtCosmo.Derivation.GrowthCombinedCertificate.rescaled_start_bounds {c : ℝ} (hc : c ∈ Set.Ioo (1 / 6) 5) :
+  1 / 1000 / c ∈ Set.Icc (1 / 5000) (3 / 500)
+SbtCosmo.Derivation.GrowthCombinedCertificate.prefactor_upper {c : ℝ} (hc : c ∈ Set.Ioo (1 / 6) 5) :
+  SbtCosmo.Derivation.GrowthQuadrature.nativePrefactor (7 / 2) (1 / 1000 / c) ≤ (2500 + 1 / 1000) * c
+SbtCosmo.Derivation.GrowthCombinedCertificate.initial_term_upper {c : ℝ} (hc : c ∈ Set.Ioo (1 / 6) 5) :
+  (SbtCosmo.Derivation.GrowthQuadrature.nativeRoot (7 / 2) (1 / 1000 / c))⁻¹ ≤ c / 300
+SbtCosmo.Derivation.GrowthCombinedCertificate.lower_prefix_growth {c : ℝ} (hc : c ∈ Set.Ioo (1 / 6) 5) :
+  970 * c < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (5 / 2 / c ^ 3) (4 * c)
+SbtCosmo.Derivation.GrowthCombinedCertificate.upper_prefix_growth {c : ℝ} (hc : c ∈ Set.Ioo (1 / 6) 5) :
+  897 * c < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (7 / 2 / c ^ 3) (8 / 3 * c)
+SbtCosmo.Derivation.GrowthCombinedCertificate.upper_horizon_growth {c : ℝ} (hc : c ∈ Set.Ioo (1 / 6) 5) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (7 / 2 / c ^ 3) 20 < 960 * c
+SbtCosmo.Derivation.WindowPatchRobust.original_aggregate_return (v : Bool) :
+  SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold (SbtCosmo.Derivation.WindowPatchCounts.amplitude v)
+      (SbtCosmo.Derivation.WindowPatchCountData.tag v) SbtCosmo.Derivation.WindowSample.delta 10 =
+    SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v
+SbtCosmo.Derivation.WindowPatchRobust.scaled_aggregate_return {d s : ℝ} (hd : 0 < d) (hs : 0 < s) (v : Bool) :
+  SbtCosmo.Derivation.GrowthPopulationSensitivity.aggregateThreshold
+      (SbtCosmo.Derivation.WindowPatchRobust.scaledAmplitude v s) (SbtCosmo.Derivation.WindowPatchCountData.tag v) d
+      10 =
+    SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s
+SbtCosmo.Derivation.WindowPatchRobust.original_scale_bounds (v : Bool) :
+  83 / 100 < SbtCosmo.Derivation.WindowPatchCountRatio.scale v ∧
+    SbtCosmo.Derivation.WindowPatchCountRatio.scale v < 131 / 100
+SbtCosmo.Derivation.WindowPatchRobust.normalization_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobust.normalization v d s ∈ Set.Ioo (1 / 6) 5
+SbtCosmo.Derivation.WindowPatchRobust.normalization_outside_old_range :
+  4 < SbtCosmo.Derivation.WindowPatchRobust.normalization false 2 (1 / 3) ∧
+    SbtCosmo.Derivation.WindowPatchRobust.normalization true (6 / 5) 3 < 1 / 5
+SbtCosmo.Derivation.WindowPatchRobust.aggregate_normalized (v : Bool) (d s : ℝ) :
+  SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s =
+    965 * SbtCosmo.Derivation.WindowPatchRobust.normalization v d s
+SbtCosmo.Derivation.WindowPatchRobust.aggregate_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  160 < SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s ∧
+    SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s < 4825
+SbtCosmo.Derivation.WindowPatchRobust.aggregate_admissible {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s ∈
+    Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (Real.log 20000)) 20000
+SbtCosmo.Derivation.WindowPatchRobust.endpoint_native_window {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  0 < SbtCosmo.Derivation.WindowPatchRobust.upper v d s ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (SbtCosmo.Derivation.WindowPatchRobust.upper v d s)
+          20 =
+        SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s ∧
+      ∀ (lam : ℝ),
+        SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam ↔
+          -(1 / 8000) < lam ∧ lam ≤ SbtCosmo.Derivation.WindowPatchRobust.upper v d s
+SbtCosmo.Derivation.WindowPatchRobust.endpoint_spec {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  0 < SbtCosmo.Derivation.WindowPatchRobust.upper v d s ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (SbtCosmo.Derivation.WindowPatchRobust.upper v d s)
+        20 =
+      SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s
+SbtCosmo.Derivation.WindowPatchRobust.gate_iff_window {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam ↔
+    lam ∈ Set.Ioc (-(1 / 8000)) (SbtCosmo.Derivation.WindowPatchRobust.upper v d s)
+SbtCosmo.Derivation.WindowPatchRobust.gate_cutoff {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) : -(1 / 20 ^ 3) < lam
+SbtCosmo.Derivation.WindowPatchRobust.gate_zero {d s : ℝ} (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (v : Bool) : SbtCosmo.Derivation.WindowPatchRobust.gate v d s 0
+SbtCosmo.Derivation.WindowPatchRobust.threshold_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  450 * SbtCosmo.Derivation.WindowPatchRobust.normalization v d s <
+      SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j ∧
+    SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j <
+      897 * SbtCosmo.Derivation.WindowPatchRobust.normalization v d s
+SbtCosmo.Derivation.WindowPatchRobust.threshold_interior_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  1 < SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j ∧
+    SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j < SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s
+SbtCosmo.Derivation.WindowPatchRobust.strict_final {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j <
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowPatchRobust.time_spec {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam) =
+      SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j
+SbtCosmo.Derivation.WindowPatchRobust.maximum_spec {d s : ℝ} (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (v : Bool) (j : Fin 12) :
+  0 < s * SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j ∧
+    (∀ (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)),
+        SbtCosmo.Derivation.WindowPatchRobust.scaledAmplitude v s j i ≤
+          s * SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j) ∧
+      ∃ i,
+        SbtCosmo.Derivation.WindowPatchRobust.scaledAmplitude v s j i =
+          s * SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j
+SbtCosmo.Derivation.WindowPatchRobust.threshold_return (v : Bool) (d s : ℝ) (j : Fin 12) :
+  d / (s * SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j) =
+    SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j
+SbtCosmo.Derivation.WindowPatchRobust.time_iff_any_collapse {v : Bool} {d s lam a : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (ha : a ∈ Set.Icc (1 / 1000) 20) (j : Fin 12) :
+  (∃ i,
+      d ≤
+        SbtCosmo.Derivation.WindowPatchRobust.scaledAmplitude v s j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam ≤ a
+SbtCosmo.Derivation.WindowPatchRobust.time_is_first_collapse {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  (∃ i,
+      d ≤
+        SbtCosmo.Derivation.WindowPatchRobust.scaledAmplitude v s j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam)) ∧
+    ∀ a ∈ Set.Icc (1 / 1000) 20,
+      a < SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam →
+        ¬∃ i,
+            d ≤
+              SbtCosmo.Derivation.WindowPatchRobust.scaledAmplitude v s j i *
+                SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowPatchRobust.time_positive {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam
+SbtCosmo.Derivation.WindowPatchRobust.original_gate_return (v : Bool) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchRobust.gate v SbtCosmo.Derivation.WindowSample.delta 1 lam ↔
+    SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam
+SbtCosmo.Derivation.WindowPatchRobust.original_time_return (v : Bool) (j : Fin 12) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchRobust.time v SbtCosmo.Derivation.WindowSample.delta 1 j lam =
+    SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam
+SbtCosmo.Derivation.WindowPatchRobust.original_ratio_return (v : Bool) (j : Fin 12) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchRobust.ratio v SbtCosmo.Derivation.WindowSample.delta 1 j lam =
+    SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam
+SbtCosmo.Derivation.WindowPatchRobust.endpoint_order {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  SbtCosmo.Derivation.WindowPatchRobust.upper false d s < SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s ∧
+    SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s < SbtCosmo.Derivation.WindowPatchRobust.upper true d s
+SbtCosmo.Derivation.WindowPatchRobust.gate_inclusions {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (lam : ℝ) :
+  (SbtCosmo.Derivation.WindowPatchRobust.gate false d s lam → SbtCosmo.Derivation.WindowRobustRecord.gate d s lam) ∧
+    (SbtCosmo.Derivation.WindowRobustRecord.gate d s lam → SbtCosmo.Derivation.WindowPatchRobust.gate true d s lam)
+SbtCosmo.Derivation.WindowPatchRobust.strict_gate_witnesses {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  (SbtCosmo.Derivation.WindowRobustRecord.gate d s (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) ∧
+      ¬SbtCosmo.Derivation.WindowPatchRobust.gate false d s
+          (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s)) ∧
+    SbtCosmo.Derivation.WindowPatchRobust.gate true d s (SbtCosmo.Derivation.WindowPatchRobust.upper true d s) ∧
+      ¬SbtCosmo.Derivation.WindowRobustRecord.gate d s (SbtCosmo.Derivation.WindowPatchRobust.upper true d s)
+SbtCosmo.Derivation.WindowPatchRobustRegularity.aggregate_c1 {p : ℝ × ℝ} (hs : 0 < p.2) (v : Bool) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowPatchRobust.aggregate v q.1 q.2) p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.threshold_c1 {p : ℝ × ℝ} (hs : 0 < p.2) (v : Bool) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowPatchRobust.threshold v q.1 q.2 j) p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_c1 {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (v : Bool) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowPatchRobust.upper v q.1 q.2) p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_delta_derivative {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  HasDerivAt (fun u => SbtCosmo.Derivation.WindowPatchRobust.upper v u s)
+    (SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity (1 / 1000) (Real.log 20000)
+        (SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s) *
+      (SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v / (SbtCosmo.Derivation.WindowSample.delta * s)))
+    d
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_delta_derivative_negative {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  deriv (fun u => SbtCosmo.Derivation.WindowPatchRobust.upper v u s) d < 0
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_amplitude_derivative {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  HasDerivAt (fun u => SbtCosmo.Derivation.WindowPatchRobust.upper v d u)
+    (SbtCosmo.Derivation.GrowthEndpointDerivative.endpointSensitivity (1 / 1000) (Real.log 20000)
+        (SbtCosmo.Derivation.WindowPatchRobust.aggregate v d s) *
+      (-d * SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v /
+        (SbtCosmo.Derivation.WindowSample.delta * s ^ 2)))
+    s
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_amplitude_derivative_positive {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  0 < deriv (fun u => SbtCosmo.Derivation.WindowPatchRobust.upper v d u) s
+SbtCosmo.Derivation.WindowPatchRobustRegularity.time_joint_c1 {p : (ℝ × ℝ) × ℝ} (v : Bool)
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v p.1.1 p.1.2 p.2) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowPatchRobust.time v q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.time_parameter_derivative {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  HasDerivAt (SbtCosmo.Derivation.WindowPatchRobust.time v d s j)
+    (-SbtCosmo.Derivation.GrowthParameter.finalSensitivity (1 / 1000)
+          (SbtCosmo.Derivation.GrowthScaleReturn.logScale (1 / 1000)
+            (SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam))
+          lam /
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam))
+    lam
+SbtCosmo.Derivation.WindowPatchRobustRegularity.time_parameter_derivative_positive {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  0 < deriv (SbtCosmo.Derivation.WindowPatchRobust.time v d s j) lam
+SbtCosmo.Derivation.WindowPatchRobustRegularity.ratio_joint_c1 {p : (ℝ × ℝ) × ℝ} (v : Bool)
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v p.1.1 p.1.2 p.2) (hl : p.2 ≠ 0) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowPatchRobust.ratio v q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.ratio_joint_continuousAt {p : (ℝ × ℝ) × ℝ} (v : Bool)
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v p.1.1 p.1.2 p.2) (j : Fin 12) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.WindowPatchRobust.ratio v q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_time_c1 {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (v : Bool) (j : Fin 12) :
+  ContDiffAt ℝ 1
+    (fun q =>
+      SbtCosmo.Derivation.WindowPatchRobust.time v q.1 q.2 j (SbtCosmo.Derivation.WindowPatchRobust.upper v q.1 q.2))
+    p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_ratio_c1 {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (v : Bool) (j : Fin 12) :
+  ContDiffAt ℝ 1
+    (fun q =>
+      SbtCosmo.Derivation.WindowPatchRobust.ratio v q.1 q.2 j (SbtCosmo.Derivation.WindowPatchRobust.upper v q.1 q.2))
+    p
+SbtCosmo.Derivation.WindowPatchRobustRegularity.ratio_not_differentiable_at_zero {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  ¬DifferentiableAt ℝ (SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j) 0
+SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_normalized_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  5 / 2 <
+      SbtCosmo.Derivation.WindowPatchRobust.upper v d s *
+        SbtCosmo.Derivation.WindowPatchRobust.normalization v d s ^ 3 ∧
+    SbtCosmo.Derivation.WindowPatchRobust.upper v d s * SbtCosmo.Derivation.WindowPatchRobust.normalization v d s ^ 3 <
+      7 / 2
+SbtCosmo.Derivation.WindowPatchRobustEdge.original_endpoint_return (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobust.upper v SbtCosmo.Derivation.WindowSample.delta 1 =
+    SbtCosmo.Derivation.WindowPatchCounts.upper v
+SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_gate {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobust.gate v d s (SbtCosmo.Derivation.WindowPatchRobust.upper v d s)
+SbtCosmo.Derivation.WindowPatchRobustEdge.time_nonnegative_lower {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (hl : 0 ≤ lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j / 1000 ≤
+    SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam
+SbtCosmo.Derivation.WindowPatchRobustEdge.time_nonpositive_upper {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (hl : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchRobust.time v d s j lam ≤
+    SbtCosmo.Derivation.WindowPatchRobust.threshold v d s j / 1000
+SbtCosmo.Derivation.WindowPatchRobustEdge.time_strictMono {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowPatchRobust.time v d s j)
+    (Set.Ioc (-(1 / 8000)) (SbtCosmo.Derivation.WindowPatchRobust.upper v d s))
+SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_time_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  9 / 20 * SbtCosmo.Derivation.WindowPatchRobust.normalization v d s <
+      SbtCosmo.Derivation.WindowPatchRobust.time v d s j (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) ∧
+    SbtCosmo.Derivation.WindowPatchRobust.time v d s j (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) ≤
+      8 / 3 * SbtCosmo.Derivation.WindowPatchRobust.normalization v d s
+SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_ratios {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  3645 / 16000 <
+      SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) ∧
+    SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) < 1792 / 27
+SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_nonnegative {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam
+SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_positive {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (hl : lam ≠ 0) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam
+SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_nonnegative_upper {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (hl : 0 ≤ lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam ≤ 8000 * lam
+SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_nonpositive_small {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (hl : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam < 1 / 64
+SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_strictMono_nonnegative {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j)
+    (Set.Icc 0 (SbtCosmo.Derivation.WindowPatchRobust.upper v d s))
+SbtCosmo.Derivation.WindowPatchRobustEdge.full_window_ratios {v : Bool} {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hg : SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam ∧
+    SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam < 1792 / 27
+SbtCosmo.Derivation.WindowPatchRobustEdge.corner_rectangles :
+  SbtCosmo.Derivation.WindowRobustRecord.Rectangle 2 (1 / 3) ∧
+    SbtCosmo.Derivation.WindowRobustRecord.Rectangle (6 / 5) 3
+SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_corner_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobust.upper v 2 (1 / 3) ≤ SbtCosmo.Derivation.WindowPatchRobust.upper v d s ∧
+    SbtCosmo.Derivation.WindowPatchRobust.upper v d s ≤ SbtCosmo.Derivation.WindowPatchRobust.upper v (6 / 5) 3
+SbtCosmo.Derivation.WindowPatchRobustEdge.common_corner_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobustEdge.minimumEndpoint ≤ SbtCosmo.Derivation.WindowPatchRobust.upper v d s ∧
+    SbtCosmo.Derivation.WindowPatchRobust.upper v d s ≤ SbtCosmo.Derivation.WindowPatchRobustEdge.maximumEndpoint
+SbtCosmo.Derivation.WindowPatchRobustEdge.common_positive_window {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s)
+  (hl : lam ∈ Set.Icc 0 SbtCosmo.Derivation.WindowPatchRobustEdge.minimumEndpoint) (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam
+SbtCosmo.Derivation.WindowPatchRobustEdge.ratios_uniformly_arbitrarily_small {epsilon : ℝ} (he : 0 < epsilon) :
+  ∃ lam,
+    0 < lam ∧
+      lam ≤ SbtCosmo.Derivation.WindowPatchRobustEdge.minimumEndpoint ∧
+        ∀ (d s : ℝ),
+          SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s →
+            ∀ (v : Bool),
+              SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam ∧
+                ∀ (j : Fin 12),
+                  0 < SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam ∧
+                    SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam < epsilon
+SbtCosmo.Derivation.WindowPatchRobustEdge.all_populations_uniformly_arbitrarily_small {epsilon : ℝ} (he : 0 < epsilon) :
+  ∃ lam,
+    0 < lam ∧
+      ∀ (d s : ℝ),
+        SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s →
+          (∀ (v : Bool),
+              SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam ∧
+                ∀ (j : Fin 12),
+                  0 < SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam ∧
+                    SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam < epsilon) ∧
+            SbtCosmo.Derivation.WindowRobustRecord.gate d s lam ∧
+              ∀ (j : Fin 12),
+                0 < SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ∧
+                  SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam < epsilon

@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-05T03:01:45.319137+00:00",
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "names": [
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift",
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference",
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant"
+  ],
+  "source_sha256": "a2a6b829c183101d2a3df6c1275f999a73c42be24d996723a48a07e965b7d830",
+  "object_sha256": "17e31aac6fdef73c28a276807abec95388a03c76f05abb7c037f13f1de50162d",
+  "audit_log_sha256": "3f564872253287780ec48618ce845f5739c3f6a38792be47ee687d738b8f7c65",
+  "dependency_modules": 8,
+  "repository_registered": false,
+  "background_hull_scope_clarified": true,
+  "all_existing_hulls_have_empty_ambient_interior": true,
+  "each_exact_uniform_offset_intersection_is_a_singleton": true,
+  "wider_neighborhood_proved": false,
+  "whole_offset_interval_proved": false,
+  "IEEE_claim": false,
+  "original_paper_complete": false,
+  "self_review": true
+}

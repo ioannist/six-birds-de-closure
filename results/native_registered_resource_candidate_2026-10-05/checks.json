@@ -1,0 +1,138 @@
+{
+  "utc": "2026-10-05T10:35:55.494835+00:00",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_verify_resource_candidate.py",
+        "--mode",
+        "candidate"
+      ],
+      "terminal_exit_code": 0,
+      "result": {
+        "candidate_checked": true,
+        "modules": 1771,
+        "declarations": 20789,
+        "archive_members": 1783,
+        "proof_gates_checked": false,
+        "repository_integrated": false,
+        "goal_complete": false
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_verify_resource_candidate.py",
+        "--mode",
+        "registered"
+      ],
+      "terminal_exit_code": 2,
+      "result": {
+        "status": "pending",
+        "reason": "Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json",
+        "repository_integrated": false,
+        "goal_complete": false
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_build_resource_candidate.py"
+      ],
+      "terminal_exit_code": 2,
+      "result": {
+        "status": "pending",
+        "reason": "Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json",
+        "registered_commands_started": false,
+        "goal_complete": false
+      }
+    }
+  ],
+  "preserved_verifier_functions": [
+    "sha",
+    "rawsha",
+    "load",
+    "required",
+    "candidate",
+    "failure_proof_gate",
+    "proof_gates",
+    "require_freezes_released",
+    "registered",
+    "main"
+  ],
+  "rejected_environment_receipt_controls": [
+    {
+      "value": null,
+      "rejected": true
+    },
+    {
+      "value": {},
+      "rejected": true
+    },
+    {
+      "value": {
+        "LEAN_NUM_THREADS": "128"
+      },
+      "rejected": true
+    },
+    {
+      "value": {
+        "LEAN_NUM_THREADS": "0"
+      },
+      "rejected": true
+    }
+  ],
+  "isolated_fixture_builds": {
+    "utc": "2026-10-05T10:33:05.590285+00:00",
+    "results": [
+      {
+        "limit": 2,
+        "command": [
+          "lake",
+          "build"
+        ],
+        "environment": {
+          "LEAN_NUM_THREADS": "2"
+        },
+        "terminal_exit_code": 0,
+        "peak_observed_lean_compilers": 2,
+        "modules": 12,
+        "elapsed_seconds": 17.23140854295343,
+        "log_sha256": "6921c1cd80276ff690b1e31ddbfed1345e7d430809c27b24253f2ce78eda0b81",
+        "fixture_only": true,
+        "repository_build": false
+      },
+      {
+        "limit": 4,
+        "command": [
+          "lake",
+          "build"
+        ],
+        "environment": {
+          "LEAN_NUM_THREADS": "4"
+        },
+        "terminal_exit_code": 0,
+        "peak_observed_lean_compilers": 4,
+        "modules": 12,
+        "elapsed_seconds": 10.165134483017027,
+        "log_sha256": "8be4dd928536fe963d4e2b865510391fd24b0a648b11f4ec34a17ed70156d4c6",
+        "fixture_only": true,
+        "repository_build": false
+      }
+    ],
+    "repository_inputs_changed": false,
+    "goal_complete": false
+  },
+  "fixture_archive_members": 235,
+  "runtime_source_url": "https://raw.githubusercontent.com/leanprover/lean4/7e01a1bf5c70fc6167d49c345d3bf80596e9a79b/src/runtime/object.cpp",
+  "runtime_source_sha256": "d59c7fcda9a0ba6b34f67f94cb7bd1328d4ac99315fa2c55b5db22fba2c1ba6d",
+  "actual_registered_commands_run": 0,
+  "full_registered_success_path_tested": false,
+  "registered_sources_changed": false,
+  "hard_universal_process_cap_proved": false,
+  "review": "adversarial self-review; actual isolated scheduler tests, not repository proof completion",
+  "goal_complete": false
+}

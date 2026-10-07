@@ -1,0 +1,16 @@
+{
+  "historical_verifier_sha256": "127e466b13276f012307af5b069715c56e83ddfad33b8def4d28442e39255892",
+  "new_verifier_sha256": "bef7e2ff31066f153be09e39b85e7c379f2fe5cd286627d61b826e2b4ab66777",
+  "changed_function_asts": [
+    "check_aggregate_historical_inputs"
+  ],
+  "build_driver_function_asts_unchanged": true,
+  "exact_historical_source_transitions": 19,
+  "previous_namespace_transitions": 18,
+  "new_transition": "Exact native lakefile preimage/archive to reviewed installed candidate bytes",
+  "all_other_3705_freeze_bindings_strict": true,
+  "current_real_postinstall_inputs_accepted": true,
+  "three_corrupted_controls_rejected": 3,
+  "registered_commands_started": false,
+  "proof_and_theorem_sources_changed_by_guard_fix": false
+}

@@ -1,0 +1,16 @@
+Fresh3 last-update failure verdict builds;3 sources frozen before/after execution.
+Frozen source SHA256: 7f3178ae2547e0d885a1025d8f01ceedf8d71e8b1c390ca30de51867e113e2d8 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point001.lean
+Frozen source SHA256: 454479a621ed4596822acaa7984b407531c6a62456feed8b3906ab33b2750563 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point002.lean
+Frozen source SHA256: 1084967d3171c76bd7d8f7a6c556eb355781fe1b6f4bc714fb9604169bae0eec lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point017.lean
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001
+✔ [8820/8820] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001 (39s)
+Build completed successfully (8820 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002
+✔ [8816/8816] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002 (12s)
+Build completed successfully (8816 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017
+✔ [8816/8816] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017 (12s)
+Build completed successfully (8816 jobs).

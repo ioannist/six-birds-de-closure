@@ -1,0 +1,8 @@
+{
+  "original_verifier_sha256": "de071d4fca3db4cf45441851be5c44816f304e1dd2b3f921008121c6ccdbada4",
+  "recovery_verifier_sha256": "721f391288b96d4857560214376b656e46fb3e544ecd2fb9aa302a8e0317e1ad",
+  "change_scope": "Only qualified gate/receipt/object paths redirected to explicit recovery packets; semantic source, replay, declaration coverage, axiom and negative-control checks retained",
+  "original_failed_gates_and_receipts_preserved": true,
+  "production_plans_unchanged": true,
+  "goal_complete": false
+}

@@ -1,0 +1,21 @@
+{
+  "README.md": "19934c0def1af048cb8ac49a49fa56283f36234f1e55a2f0701026526a555641",
+  "archive-manifest.json": "b014610f88673da8db0d37b98b29e7be0acaf881d1c9d4d04b808c948ef3dc59",
+  "audit-summary.json": "c56af25b8ef11dfa81079b7deab971531de329d65524bacaabbb5dfdd67be764",
+  "checked_artifacts.tar.gz": "d667863f2daed709f8f29fda4f94959c26a12a95c66c5ad08e42c7fc2a506a09",
+  "checkpoint-verification.json": "963922ef097b0cd4276306df58273f82f283570f8ebae1172c05b8f7d355c9e5",
+  "handover.md": "eab053f23e5630d2e8ad40545e365ebf4b13084aefbf8db3ed0b955464bac57b",
+  "lean/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.lean": "9426d6190315c18da9a1ea5049395fe2693ec6b834fa06d6b2d0c12293d57972",
+  "lean/SbtCosmo/Derivation/GroundNativeBackgroundSeedReturn.lean": "495c53a1e9798a038d4065a695780341def7b9bb22bf81eca5b30a8c17a79ab5",
+  "lean/SbtCosmo/Derivation/GroundNativeParameterSmooth.lean": "c3727649fd9dc4d87a0ab6256faa64a55f63c5eeba5e1bd855f1bd2a4ceed051",
+  "lean/SbtCosmo/Derivation/GroundOriginalOpenBackground.lean": "237bd1393c52463a7caf4226f2dacb723af8a4f0bc19267f0be34b7c291dbf66",
+  "lean/SbtCosmo/Derivation/GroundOriginalOpenBackgroundReadout.lean": "4772201e6eae1c47a92c03c37947b9f5577d0ff53ee4175a951916a832902efb",
+  "lean/SbtCosmo/Derivation/GroundParametricBranchReturn.lean": "16b1c3fa69195bd8826dc5ae79afb69fb8ecfeb4854820015ab26cd7c8db364a",
+  "lean/SbtCosmo/Derivation/GroundParametricContraction.lean": "df532dbb4f6c41057ef7b9a0a1cd13118a2f65b8a8fc58a983ad07f6cf3aed29",
+  "lean/SbtCosmo/Derivation/GroundParametricFixedPoint.lean": "da6451ab8f4005d8da03938aff9be11df6c9f37c15e303a56f4d9fedce62448d",
+  "lean/SbtCosmo/Derivation/GroundParametricSeedReturn.lean": "205edb052ceda2431700a26209dfefaf1f2ea3bd9078bbe09a5530d04967ac8b",
+  "math-review.md": "43a800257a3eec6c52424bd7ca1610053f52be2b28ee42b174a3a7dca12fb096",
+  "registration-plan.json": "f2c25e9ae19bd0d7701cfe885eca10c3074c81dcd0eb73ca6b222de96c0a1aec",
+  "source-bindings-before-vendored-import-expansion.json": "b1f6529e1e5287332c697cfde611422114ff622a0ab1ee0041409e953fd59b8b",
+  "source-bindings.json": "80b349e299270dc8d2f09ea2fb41a2992e67c5fdff144bc1d25604315ce18fde"
+}

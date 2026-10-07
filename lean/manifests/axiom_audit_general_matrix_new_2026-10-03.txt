@@ -1,0 +1,74 @@
+'SbtCosmo.Derivation.ExtendedSmoothStationarity.restricted_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedSmoothStationarity.qualified_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice_priceMatrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixPrice.matrix_price' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixPrice.matrix_price_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixPrice.certificate_trace_energy_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixStationarity.hasFDerivAt_trace_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixStationarity.certificate_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_stationarity_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_stationarity_fderiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixStationarity.matrix_nonsmooth_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.budget_combination' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_actual_schur' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_loewner_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_primal_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_primal_sixteen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_actual_values' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_slater' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_sensitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.quartic_not_quadratic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.constructed_quartic_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.kink_matrix_not_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.constructed_kink_matrix_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.restricted_matrix_loewner_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GeneralMatrixExamples.missing_extension_no_trace_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

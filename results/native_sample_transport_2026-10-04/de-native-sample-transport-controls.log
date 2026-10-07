@@ -1,0 +1,5 @@
+wrong_coupling rejected by replay_one line 118
+zero_phase_inverse rejected by update line 85
+discarded_last_imaginary_response rejected by contains line 52
+zero_paired_rate rejected by replay_one line 204
+All4 corrupted mathematical inputs rejected

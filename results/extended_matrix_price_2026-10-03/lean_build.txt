@@ -1,0 +1,4 @@
+✔ [8114/8117] Built SbtCosmo.Derivation.ExtendedConeClosurePrice (9.8s)
+✔ [8115/8117] Built SbtCosmo.Derivation.ExtendedMatrixClosurePrice (13s)
+✔ [8116/8117] Built SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples (9.3s)
+Build completed successfully (8117 jobs).

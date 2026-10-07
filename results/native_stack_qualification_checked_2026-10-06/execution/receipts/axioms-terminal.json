@@ -1,0 +1,11 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "/home/repos/six-birds-de-closure/results/source_execution_production_candidate_2026-10-05/lean/manifests/check_source_execution_supplement_axioms.lean"
+  ],
+  "source_sha256": "41b48b6ac8e4259b3b73b1392a933c71833f171e796fc5bee74617135487ddb2",
+  "log_sha256": "a1cd096f60976445bf3995e1d8f3ee9348c6fc53192fa651308c98f7f61f00fa"
+}

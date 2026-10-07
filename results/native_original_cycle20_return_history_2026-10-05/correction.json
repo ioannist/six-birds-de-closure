@@ -1,0 +1,6 @@
+{
+  "utc": "2026-10-05T07:11:53.556514+00:00",
+  "reason": "Self-review found coupling30 constants inadvertently copied into coupling20 prose: the checked exported statements give density gap >1/4 and eventual update gap >1/8, not >9/20 and >9/40. Proof statements and all11 checks are unchanged.",
+  "proof_failure": false,
+  "original_paper_downgrade": false
+}

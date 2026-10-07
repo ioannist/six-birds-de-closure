@@ -1,0 +1,236 @@
+{
+  "blinding_status": "blind",
+  "contains_h0_values": false,
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "frozen_xi": {
+    "coherence_rows": [
+      {
+        "a0": "-0.02055384307717478",
+        "a0_sigma": "0.010678271276762281",
+        "a1": "-0.01432578215639525",
+        "a1_sigma": "0.020871430389063625",
+        "a2": "-0.030108478036172573",
+        "a2_sigma": "0.010688702454119759",
+        "aor_status": "bridged",
+        "experiment": "E1B",
+        "model": "sbt",
+        "run_id": "E1B_C3_sbt"
+      },
+      {
+        "a0": "-0.026101287559296978",
+        "a0_sigma": "0.0077144400554283715",
+        "a1": "0.0",
+        "a1_sigma": "0.0",
+        "a2": "-0.027973103765766505",
+        "a2_sigma": "0.010486967686318377",
+        "aor_status": "bridged",
+        "experiment": "E2",
+        "model": "M2",
+        "run_id": "E2_CDDR_C3"
+      }
+    ],
+    "combination": "precision_weighted_for_a0_a2; a1_from_E1B_with_E2_inactive",
+    "posterior": {
+      "a0": {
+        "mean": -0.024198864782765114,
+        "sigma": 0.006253281591779172,
+        "source": "precision_weighted_E1B_E2"
+      },
+      "a1": {
+        "mean": -0.01432578215639525,
+        "sigma": 0.020871430389063625,
+        "source": "E1B_only_E2_fixed_inactive"
+      },
+      "a2": {
+        "mean": -0.02902044962551353,
+        "sigma": 0.007485710803925393,
+        "source": "precision_weighted_E1B_E2"
+      }
+    },
+    "sources": {
+      "E1B": "results/_summaries/E1B_C3_sbt.json",
+      "E2": "results/_summaries/E2/summary.json",
+      "coherence": "results/xi_cosmo_coherence.csv"
+    }
+  },
+  "input_hashes": {
+    "E4_KERNEL_FREEZE.json": "c54b570bef8d69e8319a797158b3ee0d1498338e280a9bbd6c266cc94880f0af",
+    "E4_ROUTE_VERSION_MANIFEST.json": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41"
+  },
+  "manager_commit_gate": "STOP_AFTER_PHASE_A; do not write E4_ROUTE_VALUE_MANIFEST before manager commit.",
+  "ordering_note": "stellar-ladder routes are tied by construction because the sealed route structure gives no value-free basis for ranking Cepheid, TRGB, JWST-TRGB, and JAGB bridges separately",
+  "phase": "A_prediction_no_values",
+  "predicted_ordering_high_to_low": [
+    {
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "rank_high_to_low": 1,
+      "route_id": "cepheid_sn"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "rank_high_to_low": 1,
+      "route_id": "jagb_sn"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "rank_high_to_low": 1,
+      "route_id": "jwst_trgb_sn"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "rank_high_to_low": 1,
+      "route_id": "trgb_sn"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 0.5095144617482672,
+      "rank_high_to_low": 5,
+      "route_id": "time_delay"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": 0.009896314254918583,
+      "rank_high_to_low": 6,
+      "route_id": "siren"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": -2.716605645271159,
+      "rank_high_to_low": 7,
+      "route_id": "inverse_ladder"
+    },
+    {
+      "predicted_delta_H0_km_s_Mpc": -3.1965749472486675,
+      "rank_high_to_low": 8,
+      "route_id": "cmb_bao"
+    }
+  ],
+  "predictions": [
+    {
+      "amplitude_band": "large",
+      "approx_amplitude_km_s_Mpc": -3.2,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -39.337769319167265,
+        "a2": 129.5679188143195
+      },
+      "predicted_delta_H0_km_s_Mpc": -3.1965749472486675,
+      "predicted_sigma_from_frozen_xi": 1.2707559895460148,
+      "predicted_sign": "negative",
+      "route_family": "CMB->BAO",
+      "route_id": "cmb_bao"
+    },
+    {
+      "amplitude_band": "moderate",
+      "approx_amplitude_km_s_Mpc": -2.72,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -27.420249616463696,
+        "a2": 107.14589911856253
+      },
+      "predicted_delta_H0_km_s_Mpc": -2.716605645271159,
+      "predicted_sigma_from_frozen_xi": 0.985308325835351,
+      "predicted_sign": "negative",
+      "route_family": "inverse_ladder",
+      "route_id": "inverse_ladder"
+    },
+    {
+      "amplitude_band": "moderate",
+      "approx_amplitude_km_s_Mpc": 2.26,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "predicted_sigma_from_frozen_xi": 0.5738949908820362,
+      "predicted_sign": "positive",
+      "route_family": "Cepheid->SN",
+      "route_id": "cepheid_sn"
+    },
+    {
+      "amplitude_band": "moderate",
+      "approx_amplitude_km_s_Mpc": 2.26,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "predicted_sigma_from_frozen_xi": 0.5738949908820362,
+      "predicted_sign": "positive",
+      "route_family": "TRGB->SN",
+      "route_id": "trgb_sn"
+    },
+    {
+      "amplitude_band": "moderate",
+      "approx_amplitude_km_s_Mpc": 2.26,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "predicted_sigma_from_frozen_xi": 0.5738949908820362,
+      "predicted_sign": "positive",
+      "route_family": "JWST_TRGB->SN",
+      "route_id": "jwst_trgb_sn"
+    },
+    {
+      "amplitude_band": "moderate",
+      "approx_amplitude_km_s_Mpc": 2.26,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -5.094194239004699,
+        "a2": -75.33819978486633
+      },
+      "predicted_delta_H0_km_s_Mpc": 2.259326748663933,
+      "predicted_sigma_from_frozen_xi": 0.5738949908820362,
+      "predicted_sign": "positive",
+      "route_family": "JAGB->SN",
+      "route_id": "jagb_sn"
+    },
+    {
+      "amplitude_band": "small",
+      "approx_amplitude_km_s_Mpc": 0.51,
+      "decisive_without_time_delay": false,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -35.56625782703335,
+        "a2": 0.0
+      },
+      "predicted_delta_H0_km_s_Mpc": 0.5095144617482672,
+      "predicted_sigma_from_frozen_xi": 0.7423186744364157,
+      "predicted_sign": "positive",
+      "route_family": "time_delay",
+      "route_id": "time_delay"
+    },
+    {
+      "amplitude_band": "near_zero",
+      "approx_amplitude_km_s_Mpc": 0.01,
+      "decisive_without_time_delay": true,
+      "include": true,
+      "linear_basis_km_s_Mpc": {
+        "a0": 0.0,
+        "a1": -0.690804463371008,
+        "a2": 0.0
+      },
+      "predicted_delta_H0_km_s_Mpc": 0.009896314254918583,
+      "predicted_sigma_from_frozen_xi": 0.014418077269702446,
+      "predicted_sign": "positive",
+      "route_family": "standard_siren",
+      "route_id": "siren"
+    }
+  ],
+  "schema_version": 1
+}

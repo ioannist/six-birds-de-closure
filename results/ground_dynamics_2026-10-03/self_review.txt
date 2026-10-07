@@ -1,0 +1,14 @@
+Adversarial self-review, not independent review.
+Both final modules reread after successful final direct Lean checks.
+Generic local convergence constructs q and positive-radius closed ball; fixed-center invariance and geometric orbit estimate are earned, not supplied.
+All-direction actual derivative/normalization smoothness and exact coordinate iteration conjugacy are proved; fixed S changes coordinates, not the iteration.
+Actual normalized operator norm is explicitly bounded from finite-field matrix row sums; no approximate eigenvalue is used.
+Positive root entire groundPair return identifies energy too, and sourced border solution returns to actual J.
+Zero-coupling native source is actually deleted via unchanged zero_coupling_groundMap theorem; constant-map surrogate is returned by equality, not assumed.
+Global zero-coupling guard is every background, nonnegative real unit initial field and0<m<=1; m=1 included, m=0 excluded.
+Mixture positive and norm at most1 are derived; overlap gap bound is geometric; distance bound uses its square root. No iteration budget or spectral premise.
+All-coupling invariant is checked one step at a time at each actual source field; it does not pretend the nonlinear map is constant.
+Original28 local returns use exact Python root/basis/induced-norm certificates; concrete Lean instantiations are still missing and disclosed.
+Original frozen complex initialization, complex phase bug, continuous branch/crossing and unstable nonlinear escape remain outside the theorem.
+Full build and all40 fresh statements/closures are checked; immutable1655 raw prefix reused, full cumulative command not rerun.
+Only trailing receipt whitespace normalized; diagnostic content retained.

@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-07T11:20:32.627162+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-s",
+    "65536",
+    "/tmp/de_native_registered_original_audit_receipts/statements.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "installation_plan_sha256": "58609c0886d8cf65102f8244a815d60a4d5a882500041a0e65be933e69cef237",
+  "source_snapshot_sha256": "f69f01f3fe15778c86bbf62517beed2a40f2d65dbd72eed0174f6e0bd4b5ba42",
+  "log_sha256": "82780f5f90994ecaabc99643935dbacb80fc2b7078293b3e464a412e0953f824",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "objects_snapshot_sha256": "8e79841a9b0f904c32509b2abb14ae51cf96d15667d8e0972a4b99a92870890d"
+}

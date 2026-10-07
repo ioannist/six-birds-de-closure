@@ -1,0 +1,19 @@
+SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul (a : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (a • x) =
+    a ^ 2 * SbtCosmo.Derivation.GroundNativePhase.stateNormSq x
+'SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : 0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq x) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.normalizeState x) = 1
+'SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : 0 < SbtCosmo.Derivation.GroundState.complexNormSq z) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativeIteration.complexNormalize z) = 1
+'SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ κ m : ℝ}
+  {b : SbtCosmo.Derivation.GroundState.Field} (hτ : 0 ≤ τ)
+  (hz : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m z) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m z) = 1
+'SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit' depends on axioms: [propext, Classical.choice, Quot.sound]

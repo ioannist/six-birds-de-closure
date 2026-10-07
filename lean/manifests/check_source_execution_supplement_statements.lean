@@ -1,0 +1,22 @@
+import SbtCosmo.Derivation.GroundSourceNormalization
+import SbtCosmo.Derivation.GroundSourceExecutionReturn
+import SbtCosmo.Derivation.GroundOriginalCycleExecution
+set_option warningAsError true
+#check SbtCosmo.Derivation.GroundSourceNormalization.returned_unit
+#check SbtCosmo.Derivation.GroundSourceNormalization.rejected_iff
+#check SbtCosmo.Derivation.GroundSourceNormalization.zero_rejected
+#check SbtCosmo.Derivation.GroundSourceNormalization.unit_preserved
+#check SbtCosmo.Derivation.GroundSourceNormalization.failure_persists
+#check SbtCosmo.Derivation.GroundSourceNormalization.positive_return_unit
+#check SbtCosmo.Derivation.GroundSourceNormalization.successful_run_unit
+#check SbtCosmo.Derivation.GroundSourceNormalization.successful_run_density_bound
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.attempt_some_iff
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.run_guarded
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_return
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_guards
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.run_iff_guards
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_guarded
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_iff_guards
+#check SbtCosmo.Derivation.GroundSourceExecutionReturn.candidate_normalization_preserved
+#check SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling20_execution
+#check SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling30_execution

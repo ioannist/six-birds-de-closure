@@ -1,0 +1,167 @@
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_eq_of_root {a0 A T lam a : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) (hT : 1 < T) (hf : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A)
+  (ha : a ∈ Set.Icc a0 A) (he : SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a = T) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam = a
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_interior {a0 A T lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) (hT : 1 < T) (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam ∈ Set.Ioo a0 A
+SbtCosmo.Derivation.GrowthFirstContinuity.domain_mem_nhds {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < p.2) (hT : 1 < p.1) (hf : p.1 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 p.2 A) :
+  SbtCosmo.Derivation.GrowthFirstContinuity.Domain a0 A ∈ nhds p
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_joint_continuousOn {a0 A : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A) :
+  ContinuousOn (fun p => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A p.1 p.2)
+    (SbtCosmo.Derivation.GrowthFirstContinuity.Domain a0 A)
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_joint_continuousAt {a0 A : ℝ} {p : ℝ × ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < p.2) (hT : 1 < p.1)
+  (hf : p.1 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 p.2 A) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A q.1 q.2) p
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_continuousAt {a0 A T lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) (hT : 1 < T) (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  ContinuousAt (fun d => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A d lam) T
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_parameter_continuousAt {a0 A T lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) (hT : 1 < T) (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T) lam
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_derivative {a0 A T lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) (hT : 1 < T) (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  HasDerivAt (fun d => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A d lam)
+    (SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 lam
+        (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam))⁻¹
+    T
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_derivative_positive {a0 A T lam : ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < lam) (hT : 1 < T)
+  (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  0 < deriv (fun d => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A d lam) T
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_sensitivity_continuousAt {a0 A T lam : ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (hl : -(1 / A ^ 3) < lam) (hT : 1 < T)
+  (hf : T < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  ContinuousAt
+    (fun d =>
+      (SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 lam
+          (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A d lam))⁻¹)
+    T
+SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_c1 {a0 A lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hl : -(1 / A ^ 3) < lam) :
+  ContDiffOn ℝ 1 (fun d => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A d lam)
+    (Set.Ioo 1 (SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A))
+SbtCosmo.Derivation.GrowthFirstContinuity.horizon_equality_not_continuous {a0 A : ℝ} (ha0 : 0 < a0) (hA : a0 < A) :
+  ¬ContinuousAt (fun d => SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A d 0) (A / a0)
+SbtCosmo.Derivation.FirstPopulationContinuity.maximum_spec.{u_1} {ι : Type u_1} [Fintype ι] [Nonempty ι]
+  (amplitude : ι → ℝ) :
+  (∀ (i : ι), amplitude i ≤ SbtCosmo.Derivation.FirstPopulationContinuity.maximum amplitude) ∧
+    ∃ i, amplitude i = SbtCosmo.Derivation.FirstPopulationContinuity.maximum amplitude
+SbtCosmo.Derivation.FirstPopulationContinuity.maximum_lipschitz.{u_1} {ι : Type u_1} [Fintype ι] :
+  LipschitzWith 1 SbtCosmo.Derivation.FirstPopulationContinuity.maximum
+SbtCosmo.Derivation.FirstPopulationContinuity.maximum_eq_of_attained.{u_1} {ι : Type u_1} [Fintype ι] [Nonempty ι]
+  {amplitude : ι → ℝ} {m : ℝ} (hb : ∀ (i : ι), amplitude i ≤ m) (he : ∃ i, amplitude i = m) :
+  SbtCosmo.Derivation.FirstPopulationContinuity.maximum amplitude = m
+SbtCosmo.Derivation.FirstPopulationContinuity.threshold_continuousAt.{u_1, u_2} {α : Type u_1} {ι : Type u_2}
+  [TopologicalSpace α] [Fintype ι] {amplitude : α → ι → ℝ} {delta : α → ℝ} {p : α}
+  (ha : ∀ (i : ι), ContinuousAt (fun q => amplitude q i) p) (hd : ContinuousAt delta p)
+  (hm : SbtCosmo.Derivation.FirstPopulationContinuity.maximum (amplitude p) ≠ 0) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.FirstPopulationContinuity.threshold (amplitude q) (delta q)) p
+SbtCosmo.Derivation.FirstPopulationContinuity.time_continuousAt.{u_1, u_2} {α : Type u_1} {ι : Type u_2}
+  [TopologicalSpace α] [Fintype ι] {amplitude : α → ι → ℝ} {delta lam : α → ℝ} {p : α} {a0 A : ℝ} (ha0 : 0 < a0)
+  (hA : a0 ≤ A) (ha : ∀ (i : ι), ContinuousAt (fun q => amplitude q i) p) (hd : ContinuousAt delta p)
+  (hlc : ContinuousAt lam p) (hm : 0 < SbtCosmo.Derivation.FirstPopulationContinuity.maximum (amplitude p))
+  (hl : -(1 / A ^ 3) < lam p) (hT : 1 < SbtCosmo.Derivation.FirstPopulationContinuity.threshold (amplitude p) (delta p))
+  (hf :
+    SbtCosmo.Derivation.FirstPopulationContinuity.threshold (amplitude p) (delta p) <
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 (lam p) A) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.FirstPopulationContinuity.time a0 A (amplitude q) (delta q) (lam q)) p
+SbtCosmo.Derivation.FirstPopulationContinuity.time_iff_any_collapse.{u_1} {ι : Type u_1} [Fintype ι] [Nonempty ι]
+  {a0 A delta lam a : ℝ} {amplitude : ι → ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hm : 0 < SbtCosmo.Derivation.FirstPopulationContinuity.maximum amplitude) (hl : -(1 / A ^ 3) < lam)
+  (hT : 1 < SbtCosmo.Derivation.FirstPopulationContinuity.threshold amplitude delta)
+  (hf :
+    SbtCosmo.Derivation.FirstPopulationContinuity.threshold amplitude delta ≤
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A)
+  (ha : a ∈ Set.Icc a0 A) :
+  (∃ i, delta ≤ amplitude i * SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a) ↔
+    SbtCosmo.Derivation.FirstPopulationContinuity.time a0 A amplitude delta lam ≤ a
+SbtCosmo.Derivation.FirstPopulationContinuity.tied_maximum :
+  (fun t => SbtCosmo.Derivation.FirstPopulationContinuity.maximum fun b => if b = true then 1 + t else 1 - t) = fun t =>
+    1 + |t|
+SbtCosmo.Derivation.FirstPopulationContinuity.tied_maximum_not_differentiable :
+  ¬DifferentiableAt ℝ
+      (fun t => SbtCosmo.Derivation.FirstPopulationContinuity.maximum fun b => if b = true then 1 + t else 1 - t) 0
+SbtCosmo.Derivation.FirstPopulationContinuity.tied_time_eq {t : ℝ} (ht : t ∈ Set.Ioo (-1) 1) :
+  SbtCosmo.Derivation.FirstPopulationContinuity.time (1 / 1000) 20 (fun b => if b = true then 1 + t else 1 - t) 500 0 =
+    1 / 2 / (1 + |t|)
+SbtCosmo.Derivation.FirstPopulationContinuity.tied_time_not_differentiable :
+  ¬DifferentiableAt ℝ
+      (fun t =>
+        SbtCosmo.Derivation.FirstPopulationContinuity.time (1 / 1000) 20 (fun b => if b = true then 1 + t else 1 - t)
+          500 0)
+      0
+SbtCosmo.Derivation.WindowFirstRegularity.robust_strict_final {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.threshold d s j <
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowFirstRegularity.robust_threshold_c1 {p : ℝ × ℝ} (hs : 0 < p.2) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowRobustRecord.threshold q.1 q.2 j) p
+SbtCosmo.Derivation.WindowFirstRegularity.robust_time_joint_continuousAt {p : (ℝ × ℝ) × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowRobustRecord.gate p.1.1 p.1.2 p.2) (j : Fin 12) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.WindowRobustRecord.time q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowFirstRegularity.robust_ratio_joint_continuousAt {p : (ℝ × ℝ) × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1.1 p.1.2)
+  (hg : SbtCosmo.Derivation.WindowRobustRecord.gate p.1.1 p.1.2 p.2) (j : Fin 12) :
+  ContinuousAt (fun q => SbtCosmo.Derivation.WindowRobustRatio.ratio q.1.1 q.1.2 j q.2) p
+SbtCosmo.Derivation.WindowFirstRegularity.robust_time_knobs_c1 {p : ℝ × ℝ} {lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2)
+  (hg : SbtCosmo.Derivation.WindowRobustRecord.gate p.1 p.2 lam) (j : Fin 12) :
+  ContDiffAt ℝ 1 (fun q => SbtCosmo.Derivation.WindowRobustRecord.time q.1 q.2 j lam) p
+SbtCosmo.Derivation.WindowFirstRegularity.robust_time_delta_derivative {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  HasDerivAt (fun u => SbtCosmo.Derivation.WindowRobustRecord.time u s j lam)
+    (SbtCosmo.Derivation.WindowFirstRecord.threshold j / (SbtCosmo.Derivation.WindowSample.delta * s) *
+      (SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative (1 / 1000) lam
+          (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam))⁻¹)
+    d
+SbtCosmo.Derivation.WindowFirstRegularity.robust_time_delta_derivative_positive {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) : 0 < deriv (fun u => SbtCosmo.Derivation.WindowRobustRecord.time u s j lam) d
+SbtCosmo.Derivation.WindowFirstRegularity.robust_time_amplitude_derivative {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  HasDerivAt (fun u => SbtCosmo.Derivation.WindowRobustRecord.time d u j lam)
+    (-(d * SbtCosmo.Derivation.WindowSample.delta * SbtCosmo.Derivation.WindowFirstRecord.threshold j) /
+        (SbtCosmo.Derivation.WindowSample.delta * s) ^ 2 *
+      (SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative (1 / 1000) lam
+          (SbtCosmo.Derivation.WindowRobustRecord.time d s j lam))⁻¹)
+    s
+SbtCosmo.Derivation.WindowFirstRegularity.robust_time_amplitude_derivative_negative {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) : deriv (fun u => SbtCosmo.Derivation.WindowRobustRecord.time d u j lam) s < 0
+SbtCosmo.Derivation.WindowFirstRegularity.robust_endpoint_time_continuousAt {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (j : Fin 12) :
+  ContinuousAt
+    (fun q =>
+      SbtCosmo.Derivation.WindowRobustRecord.time q.1 q.2 j
+        (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2))
+    p
+SbtCosmo.Derivation.WindowFirstRegularity.robust_endpoint_ratio_continuousAt {p : ℝ × ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle p.1 p.2) (j : Fin 12) :
+  ContinuousAt
+    (fun q =>
+      SbtCosmo.Derivation.WindowRobustRatio.ratio q.1 q.2 j
+        (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint q.1 q.2))
+    p
+SbtCosmo.Derivation.WindowFirstRegularity.original_time_continuousAt {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  ContinuousAt (SbtCosmo.Derivation.WindowSignedRecord.time j) lam
+SbtCosmo.Derivation.WindowFirstRegularity.original_ratio_continuousAt {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  ContinuousAt (SbtCosmo.Derivation.WindowSignedRecord.ratio j) lam
+SbtCosmo.Derivation.WindowFirstRegularity.patch_strict_final {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j <
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowFirstRegularity.patch_time_continuousAt {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  ContinuousAt (SbtCosmo.Derivation.WindowPatchCountRatio.time v j) lam
+SbtCosmo.Derivation.WindowFirstRegularity.patch_ratio_continuousAt {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  ContinuousAt (SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j) lam

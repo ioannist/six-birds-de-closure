@@ -1,0 +1,12 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "/tmp/de_audit_manifest_header_repair/late-import.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "terminal_exit_code": 1,
+  "source_sha256": "f6f95e77269e3184b379225c1b7c36a47006d0f37ed0abea605c69402f0d47d1",
+  "log_sha256": "d38a06cb2c6936715c8a84bcded46f72df162e9ceb15f633bb4d530e72aa0722"
+}

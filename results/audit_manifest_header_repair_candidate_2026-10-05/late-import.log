@@ -1,0 +1,2 @@
+True : Prop
+/tmp/de_audit_manifest_header_repair/late-import.lean:3:0: error: invalid 'import' command, it must be used in the beginning of the file

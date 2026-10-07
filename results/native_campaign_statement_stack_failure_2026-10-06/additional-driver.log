@@ -1,0 +1,9 @@
+Additional29-module /132-theorem qualified driver PID 4054594 waiting for checked parent recovery; frozen inputs 2017
+Traceback (most recent call last):
+  File "/tmp/de_native_additional_constructions_aggregate_recovery_2026-10-06/build_recovery.py", line 31, in <module>
+    while not ready():time.sleep(10)
+              ^^^^^^^
+  File "/tmp/de_native_additional_constructions_aggregate_recovery_2026-10-06/build_recovery.py", line 20, in ready
+    s=parentlog.read_text();assert not re.search(r'terminal [1-9]|Traceback|exception ',s),'Supplemental parent failed'
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Supplemental parent failed

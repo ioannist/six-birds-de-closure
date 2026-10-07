@@ -1,0 +1,10 @@
+{
+  "recovery_verifier_sha256": "0c9b7f5d7dfb9ba88b49d3c73818b653dc90d5528bf3c3570d4ac0cff2c7b31b",
+  "original_verifier_sha256": "742d2600cac31a8b809d981033f46dfcb90dd7cb6902c687b76cb907a86a0e9a",
+  "original_source_stage_exit_code": 0,
+  "original_source_stage_exec_session": 77209,
+  "source_and_replay_gates_preserved": true,
+  "source_override_modules": 1,
+  "supplement_source_mutations_allowed": false,
+  "qualified_success_path_pending": true
+}

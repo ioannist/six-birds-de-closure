@@ -1,0 +1,31 @@
+/tmp/de_original_audit_nonidentifiability_corrected/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean:40:29: error: This simp argument is unused:
+  hv
+
+Hint: Omit it from the simp argument list.
+  simp [finiteReadout, hn,̵ ̵h̵v̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/tmp/de_original_audit_nonidentifiability_corrected/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean:43:29: error: This simp argument is unused:
+  hv
+
+Hint: Omit it from the simp argument list.
+  simp [finiteReadout, hp,̵ ̵h̵v̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/tmp/de_original_audit_nonidentifiability_corrected/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean:53:2: error: unsolved goals
+case refine_2
+⊢ ¬-8 =
+      ![-8, -5, -3, -2, -1, -(1 / 2), -(3602879701896397 / 18014398509481984), -(3602879701896397 / 36028797018963968),
+          0, 3602879701896397 / 36028797018963968, 3602879701896397 / 18014398509481984, 1 / 2, 1, 2, 3, 5, 8, 10]
+        3
+/tmp/de_original_audit_nonidentifiability_corrected/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean:72:2: error: Type mismatch: After simplification, term
+  (GroundOriginalOffsetSeed.rounded_original_seed_return i).left
+ has type
+  Tendsto
+    (fun n =>
+      (GroundNativeIteration.nativeUpdate GroundNativeControls.originalTolerance (GroundOriginalOffsets.rounded_b i)
+            (↑(GroundOriginalOffsets.certificates i).κ) 2⁻¹)^[n]
+        GroundOriginalSeed.initial)
+    atTop (𝓝 (realEmbed (-(GroundOriginalOffsets.roundedRoot i).1)))
+but is expected to have type
+  Tendsto (GroundOffsetSeedReturn.orbit i) atTop (𝓝 (realEmbed (-(GroundOriginalOffsets.roundedRoot i).1)))

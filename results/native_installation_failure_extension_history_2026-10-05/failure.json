@@ -1,0 +1,6 @@
+{
+  "terminal_exit_code": 1,
+  "phase": "before output creation or registered mutation",
+  "reason": "GroundNativeControls is a registered transitive parent, absent from the previous candidate direct external-import list",
+  "proof_failure": false
+}

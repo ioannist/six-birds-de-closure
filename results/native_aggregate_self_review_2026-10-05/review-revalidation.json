@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-05T02:32:21.896868+00:00",
+  "reviewed_sources_still_identical": true,
+  "aggregate_audit_pending": true,
+  "math_note_sha256": "f2b4fc4b0296102ddb85d6102cda6813d30ea2b9f27a4c7e3afd4a8086b207e0",
+  "driver_snapshot": {
+    "de-offset-transport-leaves-resume-driver-retry": {
+      "pid": 1531524,
+      "live_command": "/usr/bin/python3 scripts/de_ground_offset_transport_resume.py",
+      "last_log_lines": [
+        "resumed leaves GroundOffsetTransport.Point013.Step005 terminal 0 completed 314 /421",
+        "resumed leaves GroundOffsetTransport.Point013.Step006 terminal 0 completed 315 /421",
+        "resumed leaves GroundOffsetTransport.Point013.Step007 terminal 0 completed 316 /421"
+      ]
+    },
+    "de-native-cycle-seed-leaves-driver": {
+      "pid": 1553413,
+      "live_command": "/usr/bin/python3 /tmp/de_native_cycle_seed_private_build.py",
+      "last_log_lines": [
+        "NativeCycleSeed30Step148 terminal 0 completed 298 /472",
+        "NativeCycleSeed20Step148 terminal 0 completed 299 /472",
+        "NativeCycleSeed30Step149 terminal 0 completed 300 /472"
+      ]
+    },
+    "de-native-cycle-seed-pairs-driver": {
+      "pid": 3556612,
+      "live_command": "/usr/bin/python3 /tmp/de_native_cycle_seed_pairs_private_build.py",
+      "last_log_lines": [
+        "NativeCycleSeed30Pair072 terminal 0 completed 146 /236",
+        "NativeCycleSeed20Pair073 terminal 0 completed 147 /236",
+        "NativeCycleSeed30Pair073 terminal 0 completed 148 /236"
+      ]
+    },
+    "de-native-cycle-seed-families-driver": {
+      "pid": 365637,
+      "live_command": "/usr/bin/python3 /tmp/de_native_cycle_seed_families_private_build.py",
+      "last_log_lines": [
+        "Waiting for authoritative paired-certificate completions; frozen inputs 2722 pair_driver_pid 3556612"
+      ]
+    },
+    "de-native-stable-seed-leaves-driver": {
+      "pid": 2558747,
+      "live_command": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py",
+      "last_log_lines": [
+        "NativeStableSeed003Step031 terminal 0 scheduled completed 91 /597",
+        "NativeStableSeed003Step032 terminal 0 scheduled completed 92 /597",
+        "NativeStableSeed003Step033 terminal 0 scheduled completed 93 /597"
+      ]
+    },
+    "de-native-original-sample-results-driver": {
+      "pid": 2056100,
+      "live_command": "/usr/bin/python3 /tmp/de_native_original_sample_results_private_build.py",
+      "last_log_lines": [
+        "Waiting for authoritative original-sample seed/final audits; frozen inputs 3700"
+      ]
+    }
+  }
+}

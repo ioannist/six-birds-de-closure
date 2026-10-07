@@ -1,0 +1,66 @@
+'SbtCosmo.Derivation.ExtendedClosurePrice.finite_cost_guards' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.value_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.finite_value_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.primal_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.optimum_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.certificate_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.certificate_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.certificate_strong_duality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.weak_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.certificate_dual_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.epigraph_domain_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.epigraph_objective_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePrice.positive_price_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedSchurClosurePrice.positive_schur_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_no_bottom' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_domain' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.epigraph_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_epigraph_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.sqrt_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_value_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.local_finiteness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_positive_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedClosurePriceExamples.unrestricted_toReal_false_value' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

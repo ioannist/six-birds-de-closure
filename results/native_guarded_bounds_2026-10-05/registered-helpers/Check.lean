@@ -1,0 +1,10 @@
+import SbtCosmo.Derivation.GroundNativeEscape
+set_option warningAsError true
+#check SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul
+#check SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit
+#check SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit
+#check SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit
+#print axioms SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit

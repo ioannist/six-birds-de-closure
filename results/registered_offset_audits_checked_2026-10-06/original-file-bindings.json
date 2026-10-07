@@ -1,0 +1,122 @@
+{
+  "commands/offset-install-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-install-terminal.json",
+    "sha256": "c15d2fd912c34dc0bda1932754914666c930ece6bb4ad18a714b3819cb7acfea",
+    "bytes": 510
+  },
+  "command-logs/offset-install.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-install.log",
+    "sha256": "1a7c48800e7ee201b67251363674745d303c34dd396e857c29c97f13d6ca0646",
+    "bytes": 83
+  },
+  "commands/offset-families-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-families-terminal.json",
+    "sha256": "9221c9c49b194bd7866d6d4f095f3523b236d425ed925204e343fb8188ca29cc",
+    "bytes": 539
+  },
+  "command-logs/offset-families.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/families_driver.txt",
+    "sha256": "16b76b21deb7495e39a790f78ecac69a5587f4cd633444d64f3dc1892f9b1c7e",
+    "bytes": 1285
+  },
+  "commands/offset-return-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-return-terminal.json",
+    "sha256": "b328e2988afebe3e2fd8f58a2c399f728aa09e65f2e589bb810fc86a285ebc6c",
+    "bytes": 535
+  },
+  "command-logs/offset-return.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/return_driver.txt",
+    "sha256": "fc7f429bcd91ab2852cff572bce712cc95febf4084687beeedc82163e1f8ced4",
+    "bytes": 112
+  },
+  "commands/offset-default-build-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-default-build-terminal.json",
+    "sha256": "f723c1bf41831bf76a802a8fd6d39e046be28cb984e1a3dc8f3fcf29f3558e6c",
+    "bytes": 423
+  },
+  "command-logs/offset-default-build.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/lean_build.txt",
+    "sha256": "5ae9af76347628feaa57025cc4dad6102ddb35a27fd4679bede4d6f977c2ceac",
+    "bytes": 475
+  },
+  "commands/offset-new-axioms-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-new-axioms-terminal.json",
+    "sha256": "aa2bfd54a799a94f2d212ebe5c3df7915b5f745a1f05e66d251e92c174acbc1e",
+    "bytes": 527
+  },
+  "command-logs/offset-new-axioms.log": {
+    "original_path": "/home/repos/six-birds-de-closure/lean/manifests/axiom_audit_ground_offset_transport_new_2026-10-04.txt",
+    "sha256": "d322d2f38af207254b1250b5e573d01f6a04812fd535f48cf9960fd0573a5c9b",
+    "bytes": 942493
+  },
+  "commands/offset-statements-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-statements-terminal.json",
+    "sha256": "436bcb95a15b58a83d6218af430cea9da8a60b7e25d8dc99126184aa8c060f03",
+    "bytes": 527
+  },
+  "command-logs/offset-statements.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/theorem_statements.txt",
+    "sha256": "c917d335d05b617b8aa871f0098dd09a743972076f893e8103afa6e552022dd7",
+    "bytes": 3591130
+  },
+  "commands/offset-cumulative-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-cumulative-terminal.json",
+    "sha256": "b6d3cf8ab7fefacd7c82bb07008e30b9f492870bfe846f9420cff40dfc940066",
+    "bytes": 499
+  },
+  "command-logs/offset-cumulative.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-cumulative.log",
+    "sha256": "c48db6e216f916b5dff71733784373c89743adbb831f2c130a0c40b9aa22ea7a",
+    "bytes": 57
+  },
+  "cumulative/axioms-terminal.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/axioms-terminal.json",
+    "sha256": "6996d78791a23dfd8e815ab49f341c7c79913c5d082463536d5f3679e71ca247",
+    "bytes": 873
+  },
+  "cumulative/axioms.log": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/axioms.log",
+    "sha256": "924c22dc54cec11a413e165b4feaf60764d071a07203a189b5d764fb644c5001",
+    "bytes": 1557184
+  },
+  "cumulative/source-snapshot.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/source-snapshot.json",
+    "sha256": "fda14af89724bdb88be49e6cc9c8c8beac8cf6e7e7a1cafa90e4d4ae8192fa24",
+    "bytes": 350002
+  },
+  "cumulative/summary.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/summary.json",
+    "sha256": "56e3d2826972dac96d72abcd646c9e4508a352e3c3292274fa3eebe4b3226e95",
+    "bytes": 189
+  },
+  "cumulative/helper-snapshot.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/helper-snapshot.json",
+    "sha256": "63abdebb23ef014b222de1f5fd6bfc24bb10fa969090fedf598f042e73249de5",
+    "bytes": 383
+  },
+  "cumulative/objects-snapshot.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/objects-snapshot.json",
+    "sha256": "e76e24d5011dd1fa846f70c0dbf0eddb6df853023610379ddb4406c11a7818fe",
+    "bytes": 245992
+  },
+  "cumulative/all-registered-objects-snapshot.json": {
+    "original_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/cumulative-registered-receipts/all-registered-objects-snapshot.json",
+    "sha256": "b81f598122315c3046b163642bcfd9cbd2d276e6d8f737a65d8c40b4fc578f18",
+    "bytes": 375332
+  },
+  "audit-sources/check_axioms.lean": {
+    "original_path": "/home/repos/six-birds-de-closure/lean/manifests/check_axioms.lean",
+    "sha256": "b4e01f02aab47d289b45211bdd9c8fcbe781faa13900f03a010e5567103c18ee",
+    "bytes": 1102586
+  },
+  "audit-sources/check_ground_offset_transport_axioms.lean": {
+    "original_path": "/home/repos/six-birds-de-closure/lean/manifests/check_ground_offset_transport_axioms.lean",
+    "sha256": "ea74ce6f6f5178932cc5205cb8eef002ec2612ee0284fed685509820360dd63b",
+    "bytes": 633255
+  },
+  "audit-sources/check_ground_offset_transport_statements.lean": {
+    "original_path": "/home/repos/six-birds-de-closure/lean/manifests/check_ground_offset_transport_statements.lean",
+    "sha256": "126514d726095028e3bc96aae27b8206f184d48a4bd1e5cca623692dd6f27662",
+    "bytes": 584892
+  }
+}

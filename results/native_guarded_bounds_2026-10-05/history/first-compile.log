@@ -1,0 +1,16 @@
+/tmp/de_native_guarded_bounds/lean/SbtCosmo/Derivation/GroundNativeGuardedBounds.lean:21:14: error: Invalid `←` modifier: `complexNormSq` is a declaration name to be unfolded
+
+Hint: The simplifier cannot "refold" definitions by name. Use `rw` for this instead,
+                      or use the `←` simp modifier with an equational lemma for `complexNormSq`.
+/tmp/de_native_guarded_bounds/lean/SbtCosmo/Derivation/GroundNativeGuardedBounds.lean:21:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  Complex.normSq (z i) ≤ ∑ x, Complex.normSq (z x)
+but is expected to have type
+  Complex.normSq (z i) ≤ 1
+/tmp/de_native_guarded_bounds/lean/SbtCosmo/Derivation/GroundNativeGuardedBounds.lean:62:6: error: Type mismatch
+  add_le_add_left (mul_le_mul_of_nonneg_left hinner (abs_nonneg κ)) ?m.265
+has type
+  |κ| * |Complex.normSq (complexGradient z i) + b i * Complex.normSq (z i)| + ?m.265 ≤ |κ| * (1 + |b i|) + ?m.265
+but is expected to have type
+  |b i| + |κ| * |Complex.normSq (complexGradient z i) + b i * Complex.normSq (z i)| ≤ |b i| + |κ| * (1 + |b i|)

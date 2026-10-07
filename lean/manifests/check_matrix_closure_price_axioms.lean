@@ -1,0 +1,37 @@
+import SbtCosmo.Derivation.ConeClosurePrice
+import SbtCosmo.Derivation.MatrixPriceRepresentation
+import SbtCosmo.Derivation.MatrixClosurePrice
+import SbtCosmo.Derivation.MatrixClosurePriceExamples
+
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.value_le_candidate
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.optimum_value
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.derivative_nonpositive_on_cone
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.derivative_global_support
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.price_certificate
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.strict_sensitivity_nonzero
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.certificate_primal_optimum
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.certificate_dual_isGLB
+#print axioms SbtCosmo.Derivation.ConeClosurePrice.certificate_strong_duality
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize_symmetric
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize_transpose
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_symmetric
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.trace_representation
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.rank_one_pairing
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_positive
+#print axioms SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_nonzero
+#print axioms SbtCosmo.Derivation.MatrixClosurePrice.cone_laws
+#print axioms SbtCosmo.Derivation.MatrixClosurePrice.gram_mix_gap
+#print axioms SbtCosmo.Derivation.MatrixClosurePrice.residual_mix_gap
+#print axioms SbtCosmo.Derivation.MatrixClosurePrice.residual_loewner_convex
+#print axioms SbtCosmo.Derivation.MatrixClosurePrice.affine_residual_loewner_convex
+#print axioms SbtCosmo.Derivation.MatrixClosurePrice.matrix_price
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate_budget
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.budget_coordinate
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.energy_eq
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.budget_positive_iff
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.feasible_iff
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.costs_return
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.value_return
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.actual_value_derivative
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.actual_matrix_price
+#print axioms SbtCosmo.Derivation.MatrixClosurePriceExamples.partial_slack_control

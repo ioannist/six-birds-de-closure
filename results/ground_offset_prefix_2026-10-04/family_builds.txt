@@ -1,0 +1,91 @@
+Fresh18 prefix/entry family builds;18 family sources frozen before/after execution.
+Frozen source SHA256: 8ae47d75f5efb0285c98ff0d70bdc84c53469ee7b586d040a832359a3509a8b7 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point000.lean
+Frozen source SHA256: d877189401aceba044cc68f65a4362de699ed8f207fc46aafd623ed86d40ed9a lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point001.lean
+Frozen source SHA256: 78d3bf056ba71e89e6c902e3b14f65f4889dbcea06f7c16e470904f2b174e8d2 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point002.lean
+Frozen source SHA256: 9f7e9f3828396259a0aa505992b322cf22047b500da9e41660b4a0b8fda6e619 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point003.lean
+Frozen source SHA256: 6fa9e557625e5b46904b7575d1b483d2143d24c4d4326fbffb45078e7c866df9 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point004.lean
+Frozen source SHA256: 9e433b374828dfd3f81447382aaff4a53fb46cc3bb230f70e758465666772638 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point005.lean
+Frozen source SHA256: fa99da4a2e42099833d1c5e72ebf039853d037ea7a810046a319d4b8edf0cacb lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point006.lean
+Frozen source SHA256: 2c88c79583cb8b25a42283244f654f98e8aa7252fb23eb7ee85a372482f50adc lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point007.lean
+Frozen source SHA256: ce39459039f5207ac9f9441c0cbec03f96a9214cbdc73f3ac1f6517bcde99456 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point008.lean
+Frozen source SHA256: cb931f0bbc192a5a3ccb76927095204def1095c369a10c2d59d917f78caf67ec lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point009.lean
+Frozen source SHA256: b71126c4081175a283638ea2441ca04022be5e8ca65ae94e9346cadd75520b53 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point010.lean
+Frozen source SHA256: 44548016eec3918c8e84b1e015be36825e91c1ca6087c38673b97ff7734bdccc lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point011.lean
+Frozen source SHA256: ae48253cce1c2d2b499615d9ae29b5ba46105a78ab5be9f0f2811f52840dc9c1 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point012.lean
+Frozen source SHA256: a310fce333d37720de7505a18673748c6c21ad32efebe654787d64f00e3a239a lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point013.lean
+Frozen source SHA256: d82d3717bcefe485eedc8368a261466eab7b9afaca4c605bd946ee1e2859a085 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point014.lean
+Frozen source SHA256: ad1e183f5c5e12708a2c9797daf4ee7cea665384063e87b17a648cf5c43434b0 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point015.lean
+Frozen source SHA256: 913fa343ceb542784c9d4c183abaa990732654240e4f0acbb7b16441d86eaf24 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point016.lean
+Frozen source SHA256: 99884fb0a2874be238bcc5fcf385b7322d81789059e092fe58e99cb3c2cb6828 lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point017.lean
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point000
+✔ [8784/8784] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point000 (30s)
+Build completed successfully (8784 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point001
+✔ [8812/8812] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point001 (19s)
+Build completed successfully (8812 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point002
+✔ [8787/8787] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point002 (24s)
+Build completed successfully (8787 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point003
+✔ [8770/8770] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point003 (24s)
+Build completed successfully (8770 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point004
+✔ [8765/8765] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point004 (25s)
+Build completed successfully (8765 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point005
+✔ [8764/8764] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point005 (19s)
+Build completed successfully (8764 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point006
+✔ [8763/8763] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point006 (25s)
+Build completed successfully (8763 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point007
+✔ [8763/8763] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point007 (21s)
+Build completed successfully (8763 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point008
+✔ [8763/8763] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point008 (21s)
+Build completed successfully (8763 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point009
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point009 (24s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point010
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point010 (21s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point011
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point011 (24s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point012
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point012 (21s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point013
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point013 (19s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point014
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point014 (23s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point015
+✔ [8762/8762] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point015 (25s)
+Build completed successfully (8762 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point016
+✔ [8763/8763] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point016 (23s)
+Build completed successfully (8763 jobs).
+
+Fresh family command: lake build SbtCosmo.Derivation.GroundOffsetPrefix.Point017
+✔ [8799/8799] Built SbtCosmo.Derivation.GroundOffsetPrefix.Point017 (27s)
+Build completed successfully (8799 jobs).

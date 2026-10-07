@@ -1,0 +1,67 @@
+'SbtCosmo.Derivation.WindowRobustRecord.rectangle_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.factor_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.factor_corner_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.factor_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.maximum_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.threshold_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.threshold_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.threshold_below_aggregate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.gate_iff_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.endpoint_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.gate_cutoff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.final_above_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_iff_any_collapse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_is_first_collapse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.gate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_nonpositive_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_nonnegative_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.time_strictMono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRecord.original_time_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.corner_rectangles' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.corner_endpoints_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.endpoint_corner_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.common_positive_window' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_density_readout' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_nonnegative_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_nonpositive_small' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.full_window_ratios' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.endpoint_ratios' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratios_uniformly_arbitrarily_small' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.ratio_strictMono_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.equal_factor_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.original_ratio_return' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowRobustRatio.compensated_original_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

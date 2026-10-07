@@ -1,0 +1,495 @@
+[
+  {
+    "module": "SbtCosmo.Derivation.GroundFiniteParameterContinuity",
+    "terminal_exit_code": 0,
+    "source_sha256": "99005c76cdd6fb63d4b34c1edca841a31584cd20e865b70119a12c6969987d84",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundFiniteParameterContinuity.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundFiniteParameterContinuity.lean"
+    ],
+    "object_sha256": "445d1d536750a3e4225e4f3e26c6a3d9715d1ee70b2e1c0c13741fa694fcc69a"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeBackgroundShift",
+    "terminal_exit_code": 0,
+    "source_sha256": "a2a6b829c183101d2a3df6c1275f999a73c42be24d996723a48a07e965b7d830",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeBackgroundShift.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeBackgroundShift.lean"
+    ],
+    "object_sha256": "17e31aac6fdef73c28a276807abec95388a03c76f05abb7c037f13f1de50162d"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeCouplingSmooth",
+    "terminal_exit_code": 0,
+    "source_sha256": "c745492db8d08fee80be2e0093ce62ddbd731c783a45d740badd5ef993279843",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeCouplingSmooth.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeCouplingSmooth.lean"
+    ],
+    "object_sha256": "888b53c00534e63b09cd16f045f61dcc806f5353363aa9624cc1b65d85524f99"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeGuardedBounds",
+    "terminal_exit_code": 0,
+    "source_sha256": "63096289fe5bc3472defc296512abcd8ab29fa74472c71a23d456ab3400a6a5e",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeGuardedBounds.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeGuardedBounds.lean"
+    ],
+    "object_sha256": "7b23c61900a9d784c5c82428e9da1f0011e83d72cf4f5f7bd36451d134552f15"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeParameterSmooth",
+    "terminal_exit_code": 0,
+    "source_sha256": "c3727649fd9dc4d87a0ab6256faa64a55f63c5eeba5e1bd855f1bd2a4ceed051",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeParameterSmooth.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeParameterSmooth.lean"
+    ],
+    "object_sha256": "7ae2f39759444554fa5084efbb0cdf9ff8a6c899c5009b48a921824427645174"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundParametricContraction",
+    "terminal_exit_code": 0,
+    "source_sha256": "df532dbb4f6c41057ef7b9a0a1cd13118a2f65b8a8fc58a983ad07f6cf3aed29",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricContraction.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricContraction.lean"
+    ],
+    "object_sha256": "6d858e41671a3ec50ef94eb7a8781673539a242f65def105d5d952a8a0d74274"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundParametricFixedPoint",
+    "terminal_exit_code": 0,
+    "source_sha256": "da6451ab8f4005d8da03938aff9be11df6c9f37c15e303a56f4d9fedce62448d",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricFixedPoint.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricFixedPoint.lean"
+    ],
+    "object_sha256": "e9d38e186fb27f657e5b5a576d3f56f7ca4df04447284b26636bebe80bd1c54f"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundParametricSeedReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "205edb052ceda2431700a26209dfefaf1f2ea3bd9078bbe09a5530d04967ac8b",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricSeedReturn.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricSeedReturn.lean"
+    ],
+    "object_sha256": "8bcd686d82cf12013bb1b046370163cf89447336c918b8f0bcfca143de091952"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundParametricBranchReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "16b1c3fa69195bd8826dc5ae79afb69fb8ecfeb4854820015ab26cd7c8db364a",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricBranchReturn.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricBranchReturn.lean"
+    ],
+    "object_sha256": "e984a82b5784a392ad01e267fa23f53099989d66bf2e2e7d15182bd006767743"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundParametricSeedBasinReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "ffe635cebc261b3e21dd1246a9c6abd7b0e055c98da2595bf13a7787e4185915",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.lean"
+    ],
+    "object_sha256": "864682f23bb3e8f6033340e3dadf716a7a47f6a6e3ef5d505f99463678f90f47"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundParametricSeedTargetReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "c0a4d3f6026e1526ffec8329eb16be7f36a456d1fcd955ea5aaabd724ae0cad2",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.lean"
+    ],
+    "object_sha256": "858b575fe9ade8911180418441ffa666bba8f96cdd805a836b66e386d9f7ed48"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeBackgroundContinuation",
+    "terminal_exit_code": 0,
+    "source_sha256": "9426d6190315c18da9a1ea5049395fe2693ec6b834fa06d6b2d0c12293d57972",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.lean"
+    ],
+    "object_sha256": "cb209bee1206673fc7bd9ea5121e8076317e1bd95318c42978b60d2ba5e9a0fa"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeCouplingContinuation",
+    "terminal_exit_code": 0,
+    "source_sha256": "3b76bcabbc11c4912e7e0a2ed467e19df01a17e43e932e2fb51846b63e666c83",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeCouplingContinuation.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeCouplingContinuation.lean"
+    ],
+    "object_sha256": "3f0bdc1b76c035e44f3615f32d0cedd06456005eb8c68ac0540215c8b7ccc96f"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "495c53a1e9798a038d4065a695780341def7b9bb22bf81eca5b30a8c17a79ab5",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeBackgroundSeedReturn.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeBackgroundSeedReturn.lean"
+    ],
+    "object_sha256": "cf8d62adf42e2e6119007ce29647fd5dc3c6c81e5758e0a74580583e6592a69c"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth",
+    "terminal_exit_code": 0,
+    "source_sha256": "03f908c29ebeb50960e9e0e151a18e0a7b7030f94149607ee76cd017bffa504c",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.lean"
+    ],
+    "object_sha256": "1a14281ec70cee5fd5ca087badaa25413f603f653ba17c035f589933df7853fb"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30Baseline",
+    "terminal_exit_code": 0,
+    "source_sha256": "d0ce27ad1b83b16fdbfa807470e05e798e3f9faf949f07c258f3cfb4919f7a41",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30Baseline.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30Baseline.lean"
+    ],
+    "object_sha256": "d8c3939e9ce53157767fb0802433f348f408f8427eca5872c182b58c13514bab"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalOpenBackground",
+    "terminal_exit_code": 0,
+    "source_sha256": "237bd1393c52463a7caf4226f2dacb723af8a4f0bc19267f0be34b7c291dbf66",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalOpenBackground.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalOpenBackground.lean"
+    ],
+    "object_sha256": "b8aaa350167b431a21c7b7d2c92ddfd3d557a1e58b3cc63f7090db55813e9021"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts",
+    "terminal_exit_code": 0,
+    "source_sha256": "373fe047ca0dfbe33e3a6d9b56876bdcc25c579d1dd2d3af1775d468230d6dca",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.lean"
+    ],
+    "object_sha256": "df3a6e5a511eade57657dd171de85760123f3520b2f98749c47213c5d239961d"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts",
+    "terminal_exit_code": 0,
+    "source_sha256": "862408a2d3733e18cbc81c4a74f3ac65facc1c59065d8d2b497c0db9904f62f3",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30FiniteVerdicts.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteVerdicts.lean"
+    ],
+    "object_sha256": "270a4723eb9b1d7fd10b1761cd74e09cef668ba89f7618a67b14e70e4e66ddfc"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "04be092be1d4373dd0e6ba0a9c80643a6c810adba8e774123bd10dfad3977fc3",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30OpenReturn.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenReturn.lean"
+    ],
+    "object_sha256": "fe203c95489c14e0cbd16a7bcd53d031cd5e9a7ddd81b6939451d942d86729d7"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30RealBaseline",
+    "terminal_exit_code": 0,
+    "source_sha256": "0e3f4c950925fd7808eb951814f81388bac787bf00a85f412bd356d3b6b5acbf",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.lean"
+    ],
+    "object_sha256": "0478fdaa4f33663727002dc82daee8f32aa06b8d5d8f1392900efb5311227c6c"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout",
+    "terminal_exit_code": 0,
+    "source_sha256": "4772201e6eae1c47a92c03c37947b9f5577d0ff53ee4175a951916a832902efb",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalOpenBackgroundReadout.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalOpenBackgroundReadout.lean"
+    ],
+    "object_sha256": "e6dff3364b6a54300016066cb22cb04ebd8ac629a0b0d8129bfd68574945958b"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge",
+    "terminal_exit_code": 0,
+    "source_sha256": "39368b775b7d0e6b81d03facdd1145329765af6750471b5f320b629457f47b6e",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.lean"
+    ],
+    "object_sha256": "d9edc121195a788410732ef40992fd690cd13b5a90e751d0fa87c0e0c54514b7"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics",
+    "terminal_exit_code": 0,
+    "source_sha256": "5df6095f51cfd225a24f324805f6512b4bc24b7565cb950f800d1a076f95b0c2",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.lean"
+    ],
+    "object_sha256": "0af2290e2ce72bfac8c2ff52e2cdb5f668d4e0bf38d92c64031048b3c853cd91"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin",
+    "terminal_exit_code": 0,
+    "source_sha256": "bf04bd0913cc5cb151fa17e5a5891377222f2d24b310bdb4574d427c55ce6409",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.lean"
+    ],
+    "object_sha256": "e6637d5116b26a5bec4d4d282e504d0415d89520e6affed9972a9eab09273980"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30RealBasin",
+    "terminal_exit_code": 0,
+    "source_sha256": "7fd0fc572eb2042f1261cf931de3eef54bf89c7a4c1dd046097954e78107c2a0",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.lean"
+    ],
+    "object_sha256": "4d2fc410a69df92285f5045d6d09d8f3166cb6bcdcc20b40557eda87ba3c5c8c"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding",
+    "terminal_exit_code": 0,
+    "source_sha256": "3e8b191f175e62c07f2c0210a12d08d79d48cdb483b8db8b745998452d1befd9",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.lean"
+    ],
+    "object_sha256": "76e9a52b01b2f5a2a1148251eb530b6cbb6b74b8e383fbd4ee7937d865686c9b"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin",
+    "terminal_exit_code": 0,
+    "source_sha256": "5669f8f9f6cda8a21173bf18e38f4b2035c906b675fc8a8ad2638bc87d3337d0",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30TwoPhaseBasin.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30TwoPhaseBasin.lean"
+    ],
+    "object_sha256": "c6e24bb45efc6a21ba23c2f67650beaeb704dafff041d38efcc25f1bf7aa5a87"
+  },
+  {
+    "module": "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding",
+    "terminal_exit_code": 0,
+    "source_sha256": "145308f3933faec58baa57ce3f3827bd63e6a3245892673d91b85cc9cecef40f",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+      "-s",
+      "65536",
+      "-R",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+      "-o",
+      "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.olean",
+      "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.lean"
+    ],
+    "object_sha256": "651ce0f3d4b3b7ff0df746a5137689d119c0e57cba652c6cb55ed3d9c33ad2fd"
+  }
+]

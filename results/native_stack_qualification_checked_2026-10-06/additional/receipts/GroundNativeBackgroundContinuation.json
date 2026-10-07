@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundNativeBackgroundContinuation",
+  "terminal_exit_code": 0,
+  "source_sha256": "9426d6190315c18da9a1ea5049395fe2693ec6b834fa06d6b2d0c12293d57972",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeBackgroundContinuation.lean"
+  ],
+  "object_sha256": "cb209bee1206673fc7bd9ea5121e8076317e1bd95318c42978b60d2ba5e9a0fa"
+}

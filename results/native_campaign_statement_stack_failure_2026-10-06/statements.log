@@ -1,0 +1,143 @@
+StateBoxComposition.applyBox_sound {A : StateBoxComposition.MatrixBox}
+  {L : SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (hA : StateBoxComposition.Contains A L) {H : SbtCosmo.Derivation.GroundNativeBox.StateBox}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hx : H.Contains x) :
+  (StateBoxComposition.applyBox A H).Contains (L x)
+StateBoxComposition.compose_sound {A B : StateBoxComposition.MatrixBox}
+  {L M : SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (hA : StateBoxComposition.Contains A L) (hB : StateBoxComposition.Contains B M) :
+  StateBoxComposition.Contains (StateBoxComposition.compose A B) (L.comp M)
+StateBoxComposition.included_sound {A B : StateBoxComposition.MatrixBox}
+  {L : SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (h : StateBoxComposition.Included A B) (hA : StateBoxComposition.Contains A L) : StateBoxComposition.Contains B L
+StateBoxComposition.identity_sound :
+  StateBoxComposition.Contains StateBoxComposition.identityBox
+    (ContinuousLinearMap.id ℝ SbtCosmo.Derivation.GroundNativePhase.State)
+StateBoxComposition.derivativePower_return
+  (f : SbtCosmo.Derivation.GroundNativePhase.State → SbtCosmo.Derivation.GroundNativePhase.State)
+  (D :
+    SbtCosmo.Derivation.GroundNativePhase.State →
+      SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  (N : ℕ) (x : SbtCosmo.Derivation.GroundNativePhase.State)
+  (hD : ∀ (j : Fin N), HasFDerivAt f (D (f^[↑j] x)) (f^[↑j] x)) :
+  HasFDerivAt f^[N] (StateBoxComposition.derivativePower f D N x) x
+StateBoxComposition.derivativePower_enclosed
+  (f : SbtCosmo.Derivation.GroundNativePhase.State → SbtCosmo.Derivation.GroundNativePhase.State)
+  (D :
+    SbtCosmo.Derivation.GroundNativePhase.State →
+      SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  (N : ℕ) (x : SbtCosmo.Derivation.GroundNativePhase.State) (steps : Fin N → StateBoxComposition.MatrixBox)
+  (products : Fin (N + 1) → StateBoxComposition.MatrixBox)
+  (hzero : StateBoxComposition.Included StateBoxComposition.identityBox (products 0))
+  (hsteps : ∀ (j : Fin N), StateBoxComposition.Contains (steps j) (D (f^[↑j] x)))
+  (hproducts :
+    ∀ (j : Fin N),
+      StateBoxComposition.Included (StateBoxComposition.compose (steps j) (products j.castSucc)) (products j.succ)) :
+  StateBoxComposition.Contains (products (Fin.last N)) (StateBoxComposition.derivativePower f D N x)
+StateBoxComposition.coordinateBox_sound {S P R Q : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (hS : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (hR : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic R Q)
+  {B : SbtCosmo.Derivation.GroundNativeBox.StateBox} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : B.Contains x) : (StateBoxComposition.coordinateBox P Q B).Contains ((StateBoxComposition.frame hS hR).symm x)
+StateBoxComposition.directionBox_sound {S P R Q : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (hS : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (hR : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic R Q) (j : Fin 16) :
+  (StateBoxComposition.directionBox S R j).Contains
+    ((StateBoxComposition.frame hS hR) (SbtCosmo.Derivation.GroundUncertainNativeBasin.Certificate.column j))
+StateBoxComposition.conjugate_enclosed {S P R Q : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (hS : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (hR : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic R Q)
+  {A leftCache finalCache : StateBoxComposition.MatrixBox}
+  {L : SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (hA : StateBoxComposition.Contains A L)
+  (hleft : StateBoxComposition.Included (fun j => StateBoxComposition.coordinateBox P Q (A j)) leftCache)
+  (hright :
+    StateBoxComposition.Included
+      (fun j => StateBoxComposition.applyBox leftCache (StateBoxComposition.directionBox S R j)) finalCache) :
+  StateBoxComposition.Contains finalCache (StateBoxComposition.conjugate (StateBoxComposition.frame hS hR) L)
+StateBoxComposition.norm_le_rows {A : StateBoxComposition.MatrixBox}
+  {L : SbtCosmo.Derivation.GroundNativePhase.State →L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (hA : StateBoxComposition.Contains A L) {q : ℚ} (hq : 0 ≤ q)
+  (hR : ∀ (i : Fin 8), ∑ j, (((A (Fin.castAdd 8 j)).R i).bound + ((A (Fin.natAdd 8 j)).R i).bound) ≤ q)
+  (hI : ∀ (i : Fin 8), ∑ j, (((A (Fin.castAdd 8 j)).I i).bound + ((A (Fin.natAdd 8 j)).I i).bound) ≤ q) : ‖L‖ ≤ ↑q
+NativeTransportPowers.native_derivative {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T) {b : SbtCosmo.Derivation.GroundState.Field}
+  (hb : ∀ (i : Fin 8), (β i).Contains (b i)) {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : x ∈ Metric.closedBall d.center ↑d.radius) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b)
+    (SbtCosmo.Derivation.GroundNativeQuantitativeBall.derivative T b (↑κ) (1 / 2) x) x
+NativeTransportPowers.native_matrix {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T) {b : SbtCosmo.Derivation.GroundState.Field}
+  (hb : ∀ (i : Fin 8), (β i).Contains (b i)) {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : x ∈ Metric.closedBall d.center ↑d.radius) :
+  StateBoxComposition.Contains d.jet.derivativeBox
+    (SbtCosmo.Derivation.GroundNativeQuantitativeBall.derivative T b (↑κ) (1 / 2) x)
+NativeTransportPowers.advance_smaller {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T) {b : SbtCosmo.Derivation.GroundState.Field}
+  (hb : ∀ (i : Fin 8), (β i).Contains (b i)) {E nextE : ℚ} (hE : 0 ≤ E) (hER : E ≤ d.radius)
+  (hbudget : d.jet.rate * E + d.defect ≤ nextE) {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : x ∈ Metric.closedBall d.center ↑E) :
+  SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b x ∈ Metric.closedBall d.nextCenter ↑nextE
+NativeTransportPowers.next_on_ball {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d₀ d₁ : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (β i).Contains (b i))
+  (hseam : d₀.nextCenter = d₁.center) (hR : d₀.next_radius ≤ d₁.radius)
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hx : x ∈ Metric.closedBall d₀.center ↑d₀.radius) :
+  SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b x ∈ Metric.closedBall d₁.center ↑d₁.radius
+NativeTransportPowers.pair_lipschitz {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d₀ d₁ : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (β i).Contains (b i))
+  (hseam : d₀.nextCenter = d₁.center) (hR : d₀.next_radius ≤ d₁.radius) {A₀ A₁ B : StateBoxComposition.MatrixBox}
+  {q : ℚ} (hq : 0 ≤ q) (hA₀ : StateBoxComposition.Included d₀.jet.derivativeBox A₀)
+  (hA₁ : StateBoxComposition.Included d₁.jet.derivativeBox A₁)
+  (hB : StateBoxComposition.Included (StateBoxComposition.compose A₁ A₀) B)
+  (hrowsR : ∀ (i : Fin 8), ∑ j, (((B (Fin.castAdd 8 j)).R i).bound + ((B (Fin.natAdd 8 j)).R i).bound) ≤ q)
+  (hrowsI : ∀ (i : Fin 8), ∑ j, (((B (Fin.castAdd 8 j)).I i).bound + ((B (Fin.natAdd 8 j)).I i).bound) ≤ q) :
+  LipschitzOnWith ⟨↑q, ⋯⟩ (SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b)^[2]
+    (Metric.closedBall d₀.center ↑d₀.radius)
+NativeTransportPowers.pair_center_defect {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d₀ d₁ : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (β i).Contains (b i))
+  (hseam : d₀.nextCenter = d₁.center) (hsmall : d₀.defect ≤ d₁.radius) {d : ℚ}
+  (hbudget : d₁.jet.rate * d₀.defect + d₁.defect ≤ d) :
+  dist ((SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b)^[2] d₀.center) d₁.nextCenter ≤ ↑d
+NativeTransportPowers.pair_advance {β : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {κ τ : ℚ}
+  {T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State}
+  (d₀ d₁ : SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data β κ τ T)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (β i).Contains (b i))
+  (hseam : d₀.nextCenter = d₁.center) (hsmall : d₀.defect ≤ d₁.radius) {d nextR : ℚ} {q : NNReal}
+  (hdefect : d₁.jet.rate * d₀.defect + d₁.defect ≤ d)
+  (hL :
+    LipschitzOnWith q (SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b)^[2]
+      (Metric.closedBall d₀.center ↑d₀.radius))
+  (hbudget : ↑q * ↑d₀.radius + ↑d ≤ ↑nextR) {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : x ∈ Metric.closedBall d₀.center ↑d₀.radius) :
+  (SbtCosmo.Derivation.GroundCertifiedNativeTransportStep.Data.f b)^[2] x ∈ Metric.closedBall d₁.nextCenter ↑nextR
+NativeApproximateCenterBanach.approximate_center_return.{u_1} {α : Type u_1} [MetricSpace α] [CompleteSpace α]
+  (f : α → α) {c : α} {R d : ℝ} {q : NNReal} (hR : 0 ≤ R) (hq : q < 1)
+  (hL : LipschitzOnWith q f (Metric.closedBall c R)) (hd : dist (f c) c ≤ d) (hbudget : ↑q * R + d ≤ R) :
+  ∃ a ∈ Metric.closedBall c R,
+    f a = a ∧
+      dist a c ≤ d / (1 - ↑q) ∧
+        (∀ x ∈ Metric.closedBall c R, f x = x → x = a) ∧
+          ∀ y ∈ Metric.closedBall c R,
+            Filter.Tendsto (fun n => f^[n] y) Filter.atTop (nhds a) ∧ ∀ (n : ℕ), dist (f^[n] y) a ≤ ↑q ^ n * dist y a
+NativeCycleCommutationBridge.power_fixed_of_mem_unique.{u_1} {α : Type u_1} (f : α → α) {k j : ℕ} {a : α} {S : Set α}
+  (hfix : f^[k] a = a) (hmem : f^[j] a ∈ S) (huniq : ∀ x ∈ S, f^[k] x = x → x = a) : f^[j] a = a
+NativeCycleCommutationBridge.power_mem_of_inner_radius.{u_1} {α : Type u_1} [PseudoMetricSpace α] (f : α → α) {j : ℕ}
+  {a c : α} {R r d : ℝ} {M : NNReal} (hR : 0 ≤ R) (ha : a ∈ Metric.closedBall c R) (hinner : dist a c ≤ r)
+  (hLip : LipschitzOnWith M f^[j] (Metric.closedBall c R)) (hdefect : dist (f^[j] c) c ≤ d) (hbudget : ↑M * r + d ≤ R) :
+  f^[j] a ∈ Metric.closedBall c R
+NativeCycleCommutationBridge.period_two_from_power_and_inner_radius.{u_1} {α : Type u_1} [PseudoMetricSpace α]
+  (f : α → α) {k : ℕ} {a c : α} {R r d : ℝ} {M : NNReal} (hfix : f^[k] a = a) (hR : 0 ≤ R)
+  (ha : a ∈ Metric.closedBall c R) (huniq : ∀ x ∈ Metric.closedBall c R, f^[k] x = x → x = a) (hinner : dist a c ≤ r)
+  (hLip : LipschitzOnWith M f^[2] (Metric.closedBall c R)) (hdefect : dist (f^[2] c) c ≤ d) (hbudget : ↑M * r + d ≤ R) :
+  f^[2] a = a
+NativeCycleSubsequences.tendsto_of_finite_residues.{u_1} {α : Type u_1} [TopologicalSpac
+Stack overflow detected. Aborting.

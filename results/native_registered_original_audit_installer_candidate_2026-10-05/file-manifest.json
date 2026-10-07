@@ -1,0 +1,11 @@
+{
+  "README.md": "23255b6b0587c8018fa03153aad9423d95acb28eb4bca2914329f160b2d0ebe0",
+  "checks.json": "c214b278780924ff6d0419888df5b018f610c26eb815e62cadc0b8ca7ac829b1",
+  "installer_candidate.py": "5ffeb6eae68c303ad008c56b8494f274c7320b61a34cafcaa4bdfff13ea9c12e",
+  "isolated-helper-fixture/lean/existing.lean": "48976d36863b77d98f45fde4cca6f10153e35f95c516176292d4a28b0e9c8ffd",
+  "isolated-helper-fixture/lean/new/added.lean": "db2f18553bf3ea34eee59ac57e1b96caa76534bc9842b432df534e6d57063dc0",
+  "isolated-helper-fixture/lean/unexpected.lean": "965ed51636ebd634e1594dc3545cc49880a505466cb089a2488f729735c0377f",
+  "isolated-helper-fixture/original-existing.lean": "35d0df4977f68b37022189a7b783880d647937ee57587e6c07f2bab0bff3a2a7",
+  "isolated-helper-fixture/unrelated.txt": "2ba25c88d3948a856dad619673766a15920feb710de77ed37d8c9619c5924e06",
+  "review_driver.py": "19da3453ca65f0d8ed99b47933742e0efed586ad3645624aee44b503adc107fe"
+}

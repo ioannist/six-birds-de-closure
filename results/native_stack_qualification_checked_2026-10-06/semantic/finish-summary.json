@@ -1,0 +1,12 @@
+{
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "module_count": 1738,
+  "retained_compile_checks": 993,
+  "fresh_recovery_compile_checks": 745,
+  "fresh_statement_count": 20634,
+  "fresh_axiom_count": 20634,
+  "verification_sha256": "f887e7d745853395f991789b908bb86395ba20ecec95498d2fa9d81e6316a54f",
+  "source_freeze_sha256": "502ebd2736923b1967318d2c7124d1969d68e492c24a23f1e951dbc2abcec46c",
+  "scope": "Exact native campaign source/replay and full fresh qualified semantic/statement/axiom verification passed; repository installation, registration, build, cumulative audit provenance and commit remain pending."
+}

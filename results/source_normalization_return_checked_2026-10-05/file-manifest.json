@@ -1,0 +1,10 @@
+{
+  "README.md": "e0a7a91a7a25f9d36b24866e9cbed34ed3208e4c7e6afc1db5ead89cf295f6c6",
+  "archive-manifest.json": "90f26963e0bf9e0d8cc13e7c9b1b2b48f618b6b83098540b26f28bd29c13305b",
+  "audit-summary.json": "409df24a1ba1cb56a079ce737d7d25455e4b41fde8f76db5d3729004511cc471",
+  "checked_artifacts.tar.gz": "717838d9ac68db7a2261a461f2d8c802b8d5d10b972d71b119ca212fdf89f523",
+  "checkpoint-verification.json": "61f453d956dc5765d736010996fbdb9b979a9f7555deabe1cb76c2cd16fd1cec",
+  "lean/SbtCosmo/Derivation/GroundSourceNormalization.lean": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+  "registration-plan.json": "b596e36a106bd6b201ba2aee8b1e26d59a9b91db950429d03cb0f63c9d1fb0f0",
+  "source-bindings.json": "e9808de4a0519938476c69587c063cf17bf917250f0e425605f7b9066a4b332d"
+}

@@ -1,0 +1,3 @@
+The complete source/import/export/replay identity gate passes for1738 modules and20634 declarations. Full fresh qualified proof checking and repository integration are pending.
+
+This archive preserves the verifier, source-pass receipt, first failed checker receipt, controls, plans, and explicit completion boundaries. Every archive member was hash verified. The queued final verifier checks both completed qualified campaigns before recording any qualified-gate success. The prospective cumulative32410 declaration count includes pending proofs. No IEEE execution or complete original-paper restoration is asserted.

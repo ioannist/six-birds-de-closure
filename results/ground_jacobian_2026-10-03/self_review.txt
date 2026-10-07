@@ -1,0 +1,42 @@
+Adversarial self-review, not independent review. Baseline0dc7f85.
+All five proof modules inspected in a distinct pass after final implementation.
+
+Target: earned actual nonconstant-selector and nonlinear-source Jacobians,
+then actual normalization/tangent return. Spectral crossing remains a separate
+numerical/exact-error construction; no stability verdict is claimed.
+
+- Normalized eigen equations use the actual Fin8 periodic Hamiltonian.
+- Border kernel proof uses actual symmetry, normalization and lowest-eigenspace
+  simplicity. Positivity is not a fabricated inverse hypothesis.
+- Finite-dimensional injective->surjective law earns the border inverse.
+- Full polynomial equation derivative is computed explicitly, not assumed.
+- Implicit-function regularity hypotheses are earned from that polynomial.
+- Existing selector continuity gives a graph return to local implicit uniqueness;
+  proving a different implicit selector would not have completed this obligation.
+- Actual pair derivative is obtained by differentiating the actual zero equations
+  and uniqueness of the border solution. No supplied derivative/Jacobian/gap.
+- Ground/source smoothness covers all nonconstant real potentials/backgrounds.
+- Actual quadratic sourcing, original gradient and all coefficient factors return.
+- Tangency follows from differentiated normalization; radial projection retained
+  before its legitimate removal on tangent fields at actual fixed points.
+- Square-root and reciprocal derivatives use earned normSq=1 at actual unit
+  fixed points; no cancellation at zero or global normalization regularity claim.
+- Fixed-point and tangent hypotheses in the damping return are explicit.
+- Brouwer and original ground construction supply actual positive fixed points
+  for every b,k,m; no numerical branch/unique nonlinear fixed point is inferred.
+- Real eigenmode return assumes an eigenmode of the earned actual J, not an
+  arbitrary numerical label. No sampled spectral eigenvalue promoted to proof.
+- Zero-coupling control changes actual sourcing; constant ground map and zero J
+  are proved for the original nonconstant backgrounds as well.
+- Positive real representative is the declared map. No arbitrary signed/complex
+  phase-rule equality or frozen complex initialization trajectory is claimed.
+- Old half-mixing diagnostics at k15/k20 are historical, not freshly rerun or
+  interval-certified; they do not restore the original k>=15 runaway wording.
+- Linear-selector C-infinity does not imply a unique/smooth nonlinear branch,
+  global uniform spectral gap, or all-mode stability/convergence.
+- Paper, original runtime, frozen records, earlier proofs and receipts unchanged.
+- No physical Lambda bridge, universal blindness or full goal completion.
+
+Only trailing whitespace in the build receipt will be normalized; all diagnostic
+content retained. Imported implicit-function theorem and direct derivative sources
+are fingerprinted alongside the unchanged toolchain and previous proof sources.

@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin",
+  "terminal_exit_code": 0,
+  "source_sha256": "bf04bd0913cc5cb151fa17e5a5891377222f2d24b310bdb4574d427c55ce6409",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.lean"
+  ],
+  "object_sha256": "e6637d5116b26a5bec4d4d282e504d0415d89520e6affed9972a9eab09273980"
+}

@@ -1,0 +1,24 @@
+{
+  "build_logs_sha256": {
+    "results/env/build-logs/class-v3.2.5-openmp-build.log": "ba66694398fd12d6f7bb483ad9f1fe8680ae6c52986198462b69ca046c768ce2",
+    "results/env/build-logs/classy-v3.2.5-openmp-ldd.log": "29ae8d1e5fccdb493c8d996c2d4ecf7264b16f28af72637e1af31b4f8369f340",
+    "results/env/build-logs/classy-v3.2.5-openmp-pip-install.log": "01dd3d8d0096b8274b614b7ae0c8fcb794294c92379d36e23dabd1fed0b78410"
+  },
+  "class": {
+    "classy_version": "3.2.5",
+    "commit": "22b49c0af22458a1d8fdf0dd85b5f0840202551b",
+    "openmp_linked": true,
+    "source_path": "/mnt/data-drive/sbt-de/src/class_public",
+    "tag": "v3.2.5"
+  },
+  "compiler": {
+    "gcc": "gcc (conda-forge gcc 14.3.0-19) 14.3.0",
+    "gfortran": "GNU Fortran (conda-forge gcc 14.3.0-19) 14.3.0"
+  },
+  "pypolychord": {
+    "failure": "PyPI has no pypolychord>=1.20 distribution compatible with Python 3.11 in this env; dynesty==2.1.5 installed as fallback.",
+    "installed": false
+  },
+  "schema_version": 1,
+  "smoke_results": "results/env/c0b_engine_smoke.json"
+}

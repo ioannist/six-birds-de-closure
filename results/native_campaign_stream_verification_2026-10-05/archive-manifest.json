@@ -1,0 +1,260 @@
+{
+  "archive_sha256": "0c2a4cb93bbf91512411eea6eda154869337d88652a512eca369d410ecc215dc",
+  "entries": [
+    {
+      "name": "workspace/results/native_campaign_stream_verification_2026-10-05/history/superseded-waiting-queues/file-manifest.json",
+      "sha256": "0dd0a9f6d45177bd5336d15d316e18946f61addd249aaae265dbf32e2c0dcf2c",
+      "size": 303
+    },
+    {
+      "name": "workspace/results/native_campaign_stream_verification_2026-10-05/history/superseded-waiting-queues/transition-receipt.json",
+      "sha256": "957d8266851835aa665d743710d4aa281fbf28313402fe91258854fd7795368a",
+      "size": 5364
+    },
+    {
+      "name": "workspace/results/native_campaign_stream_verification_2026-10-05/source_verification.json",
+      "sha256": "efde90fa96aee6553c372eb49800598bacab6e994b0266f4d80055e0237de53b",
+      "size": 305763
+    },
+    {
+      "name": "workspace/results/native_campaign_stream_verification_2026-10-05/transition-plan.json",
+      "sha256": "52a631441935612fe8a59f8157864b9e7b808337160d5e3f6ff03547aac50b0e",
+      "size": 1608
+    },
+    {
+      "name": "de-native-campaign-qualified-stream-freeze.json",
+      "sha256": "ab9e2c9a924cab728725e8988de0bf407a0c54e8e4f57433846c6732713a65ca",
+      "size": 880444
+    },
+    {
+      "name": "de-native-campaign-verification-stream-finish-freeze.json",
+      "sha256": "5fa041b105c98fc16fb1d740c364f3ee6ff49c37369d29dae53eaa7ccca2f6c0",
+      "size": 895184
+    },
+    {
+      "name": "de-native-seed-real-returns-qualified-stream-freeze.json",
+      "sha256": "b5efbcff43b352336275d480045a8ebd8168617f1160d92a3812ea82fc986f1b",
+      "size": 882928
+    },
+    {
+      "name": "de_checkpoint_stream_qualification.py",
+      "sha256": "093de8e0af80728dfa264a6a5b460d8ce63cec7d0a34d33fe0b644e2fc1f03d7",
+      "size": 8492
+    },
+    {
+      "name": "de_native_additional_constructions_stream_qualified/source-freeze.json",
+      "sha256": "6a5b87a751af702eb9c28608022e39a72ebb1204ff2c55ae7133704b2a9f8382",
+      "size": 340929
+    },
+    {
+      "name": "de_native_additional_constructions_stream_qualified_build.py",
+      "sha256": "ca93ad402e17729ab2bf4d29d805239dfef707e7940e0925714921f74acb99fa",
+      "size": 6898
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_build.py",
+      "sha256": "974c57261fa68a8a928d17b303b1750605b6adafa48b69ff8241d3c6d6f37468",
+      "size": 10137
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeActualCycleConstruction-terminal.json",
+      "sha256": "9437f69f4243702f3575b9d324dd09d3a3843c0c85b80281ad6cd109a3c343af",
+      "size": 352
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeActualCycleConstruction.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step000-terminal.json",
+      "sha256": "45419e82b6d109c6c0482423049f18350d4c7fc028ab55dda9d210a909ed0503",
+      "size": 344
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step000.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step001-terminal.json",
+      "sha256": "1b5e7b46f6df719aa581a70d910905da319116254d43ab68801b8784387d6f1f",
+      "size": 344
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step001.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step002-terminal.json",
+      "sha256": "445b40f15a46d8d6b8cd9f8b3e39c8c0faaf96f882dd6b1e60e8694ccf4cfa4a",
+      "size": 344
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step002.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step003-terminal.json",
+      "sha256": "27ea5ff2bc9087d9038a8fe4a6fa7e89018bfd0ae88bcabdfaa7d36bce420e1f",
+      "size": 344
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycle20Step003.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycleFrame20-terminal.json",
+      "sha256": "dd65c126af506c538b1930d7192a166835e83d21cbde53bddd8b6af1c736bb4b",
+      "size": 341
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycleFrame20.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycleFrame30-terminal.json",
+      "sha256": "bf3f6f456d5465a9d0cf3d4ad504d7134c348fe27487c0cd13490e9fa05a02f8",
+      "size": 341
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycleFrame30.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycleSourceFailure-terminal.json",
+      "sha256": "6b502a71b27e2cb5cc8fbe0307a1325eece2d24724855d23056234e517acc2f2",
+      "size": 347
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeCycleSourceFailure.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeEventualSourceSuccess-terminal.json",
+      "sha256": "5f422552072d8c585900dade6507846bf125612140b47abcb7814c851180109b",
+      "size": 350
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeEventualSourceSuccess.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeFinitePairJets-terminal.json",
+      "sha256": "83a818329c70b993c6dabf96d8fdae5af12a74d5b387309658a743869b38e2c2",
+      "size": 343
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeFinitePairJets.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeFinitePairOrbit-terminal.json",
+      "sha256": "a4a41f32fd291eb02a0ae196db79993acb3d79235e2405489f48d4509d201d50",
+      "size": 344
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeFinitePairOrbit.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeFiniteSourceBoxes-terminal.json",
+      "sha256": "3dd84250ad6846493c6340a1078cf97e1522858f5eb1a09119652ea4fc70c98b",
+      "size": 346
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeFiniteSourceBoxes.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeOriginalSeedCycleReturn-terminal.json",
+      "sha256": "343690894d7a3848c5fa8fe1060ee8a11cad9ab2489553c218ef3cec51857ffe",
+      "size": 352
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativeOriginalSeedCycleReturn.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairCertificates-terminal.json",
+      "sha256": "2da4a8530fa85332cb583dddadd575216d2b3f091425fda88b1aff763551a339",
+      "size": 345
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairCertificates.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairDensity-terminal.json",
+      "sha256": "23f584084d21a07b56a9a27dca324d9480a6fa596c7e19095dd34766e4a4d4ad",
+      "size": 340
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairDensity.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairOrbit-terminal.json",
+      "sha256": "0eeaf151053cf76e26141549ebb976c4c70ffc92c6d2ab2c6087c9e39e6fde8a",
+      "size": 338
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairOrbit.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairedTransport-terminal.json",
+      "sha256": "09b8a036d93d486495216a3b63035c2ebab25ed132fdafa004b29ee52c4c9572",
+      "size": 344
+    },
+    {
+      "name": "de_native_campaign_qualified_stream_receipts/NativePairedTransport.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "name": "de_native_campaign_stream_verify.py",
+      "sha256": "742d2600cac31a8b809d981033f46dfcb90dd7cb6902c687b76cb907a86a0e9a",
+      "size": 23916
+    },
+    {
+      "name": "de_native_campaign_verification_stream_finish.py",
+      "sha256": "44bebc6f2f04f2fc265384ed1f3d22eb12d22f9f88a65c335f99ac8143427822",
+      "size": 5967
+    },
+    {
+      "name": "de_native_seed_real_returns_qualified_stream_build.py",
+      "sha256": "b4b590d9691cd44edd52b598d7c016b84c27029ac185cb2f7473e6902e1b84f1",
+      "size": 9401
+    },
+    {
+      "name": "de_prepare_stream_qualification.py",
+      "sha256": "6fb96a73059ad2a04d6c9f2f9bfbe977cde89f831b9c0a0a95cc19fe791ac153",
+      "size": 4772
+    },
+    {
+      "name": "de_source_execution_supplement_stream_qualified/source-freeze.json",
+      "sha256": "e240bace4c0d5a849adae44581a37e197b2eca0ba28109d3d0cd2c2aab8a7cfa",
+      "size": 333847
+    },
+    {
+      "name": "de_source_execution_supplement_stream_qualified_build.py",
+      "sha256": "6dc9ba7a37c8232d591f81cf299a90670aec1877330a4fea00e3fd461d48bd1c",
+      "size": 6887
+    }
+  ]
+}

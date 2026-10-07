@@ -1,0 +1,9 @@
+Final verification driver PID 4046958 waiting for both qualified proof campaigns; frozen inputs 10666
+Traceback (most recent call last):
+  File "/tmp/de_native_campaign_semantic_aggregate_recovery_2026-10-06/finish_recovery.py", line 73, in <module>
+    while not ready():
+              ^^^^^^^
+  File "/tmp/de_native_campaign_semantic_aggregate_recovery_2026-10-06/finish_recovery.py", line 57, in ready
+    assert not re.search(r'terminal [1-9]|Traceback|exception ', text), log
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /tmp/de_native_campaign_aggregate_recovery_2026-10-05/driver.log

@@ -1,0 +1,57 @@
+Adversarial self-review, not independent review.
+Baseline 29acb05. Five actual calculus/readout roots, 61 theorem statements.
+
+Target: actual first-ANY-patch time joint C1 in threshold and signed lambda,
+positive actual implicit lambda sensitivity, and original coupled-knob returns.
+Coverage was checked against unchanged paper section 5 and original readout
+functions, not only against successful compilation.
+
+Hinge 1: separate partial derivatives do not prove joint differentiability.
+The primitive's actual joint derivative is earned by exact unit-interval
+transport and differentiation under the original integral. Only afterward do
+coordinate restrictions identify actual growth/native derivative coefficients.
+The generic identification helper explicitly requires joint differentiability.
+
+Hinge 2: no supplied under-integral hypotheses. A later actual live L produces
+one positive root margin on a compact neighborhood times the whole unit interval.
+The actual joint kernel derivative is computed; clipped globally continuous
+operator fields bound its norm uniformly and agree with it over that rectangle.
+Actual base integrability and measurability are proved. This also covers x=0
+with nearby negative x, since root monotonicity only needs x*t<=L.
+
+Hinge 3: clipping is local proof transport, not a replacement IVP. Eventual
+agreement on each whole integration interval transfers continuity, and exact
+change of variables returns the derivative to the original primitive. Native
+finite-start root term, prefactor and D(a0)=1 are retained throughout.
+
+Hinge 4: the inverse is not supplied. Actual firstTime root existence/uniqueness,
+strict guards and earlier joint continuity give a continuous actual g with
+F(g(q))=q locally. Actual native joint derivative has positive scale velocity;
+the triangular continuous linear inverse is explicitly constructed with both
+inverse identities. The inverse theorem returns the actual selector derivative.
+
+Hinge 5: strict final slack remains substantive; prior horizon-equality fallback
+counterexample is preserved. All original N32/N64/N128 and N64 rectangle gates
+already earn first-threshold strict slack, including positive aggregate endpoints.
+Final original theorems have actual gate/rectangle hypotheses, no supplied
+selector/inverse/differentiation hypotheses. Original ANY-patch return and
+minimality are unchanged; no tag-dependent first-record surrogate is used.
+
+Hinge 6: actual parameter sensitivity is strictly negative at the earned
+interior root and native velocity positive, hence time derivative -S/V>0.
+Joint field continuity gives C1 including lambda, not only pointwise partials.
+N is discrete; separately sampled populations are not continuously varied or
+assumed nested in amplitudes/tags.
+
+Control: R=abs(lambda)*time^3 is C1 only away from lambda=0. Division by a
+nonzero differentiable time^3 would recover abs and contradict its known cusp.
+This proves actual nondifferentiability at zero for all three original sampled
+populations and the whole N64 coupled rectangle. Continuity and positive
+endpoint C1 survive; previous tied-max and horizon controls remain fixed.
+
+No physical Lambda bridge, sharp typicality, infinite-order regularity,
+floating solver error certificate, resampling identity or broad completion
+claim is inferred. Paper/runtime/data/earlier proofs and receipts unchanged.
+Fresh full build and all new statement/closure checks are retained separately.
+Cumulative evidence is exact immutable 1322 prefix plus fresh 61, not a rerun
+of the full cumulative axiom command. Full user goal remains incomplete.

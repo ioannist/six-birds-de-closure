@@ -1,0 +1,109 @@
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_guards_unit (i : Fin 12) (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ i))
+      (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ i))
+        (1 / 2) (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n) ∧
+      SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n) = 1
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_guards_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_stable_return (i : Fin 12) (hi : ↑i < 10) :
+  Filter.Tendsto (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i) Filter.atTop
+    (nhds (SbtCosmo.Derivation.NativeOriginalSampleInterface.target i))
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_stable_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_cyclic_return (i : Fin 12) (hi : 10 ≤ ↑i) :
+  ∃ a c,
+    SbtCosmo.Derivation.NativeOriginalSampleInterface.g i a = c ∧
+      SbtCosmo.Derivation.NativeOriginalSampleInterface.g i c = a ∧
+        c ≠ a ∧
+          SbtCosmo.Derivation.GroundState.complexNormSq a = 1 ∧
+            SbtCosmo.Derivation.GroundState.complexNormSq c = 1 ∧
+              SbtCosmo.Derivation.NativeOriginalSampleResults.densityGap i <
+                  Complex.normSq (c 4) - Complex.normSq (a 4) ∧
+                Filter.Tendsto (fun n => SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i (2 * n)) Filter.atTop
+                    (nhds a) ∧
+                  Filter.Tendsto (fun n => SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i (2 * n + 1))
+                      Filter.atTop (nhds c) ∧
+                    (¬∃ l,
+                          Filter.Tendsto (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i) Filter.atTop
+                            (nhds l)) ∧
+                      ¬∃ l,
+                          Filter.Tendsto
+                            (fun n => Complex.normSq (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n 4))
+                            Filter.atTop (nhds l)
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_cyclic_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_has_limit_iff (i : Fin 12) :
+  (∃ l, Filter.Tendsto (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i) Filter.atTop (nhds l)) ↔ ↑i < 10
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_has_limit_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_stable_density_limit (i : Fin 12) (hi : ↑i < 10)
+  (j : Fin 8) :
+  Filter.Tendsto (fun n => Complex.normSq (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n j)) Filter.atTop
+    (nhds (Complex.normSq (SbtCosmo.Derivation.NativeOriginalSampleInterface.target i j)))
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_stable_density_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_sixty_tests_iff (i : Fin 12) :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+      SbtCosmo.Derivation.GroundNativeControls.originalTolerance SbtCosmo.Derivation.GroundOriginalResiduals.ε
+      SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ i))
+      (1 / 2) (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i 59)
+      (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i 60) ↔
+    ↑i < 9
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_sixty_tests_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.coupling_fifteen_finite_failure_with_limit :
+  (∃ l, Filter.Tendsto (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit 9) Filter.atTop (nhds l)) ∧
+    ¬SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+        SbtCosmo.Derivation.GroundNativeControls.originalTolerance SbtCosmo.Derivation.GroundOriginalResiduals.ε
+        SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ 9))
+        (1 / 2) (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit 9 59)
+        (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit 9 60)
+'SbtCosmo.Derivation.NativeOriginalSampleResults.coupling_fifteen_finite_failure_with_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_euclidean_norm (i : Fin 12) (n : ℕ) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n) = 1
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_euclidean_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_eventual_tests_iff (i : Fin 12) :
+  (∀ᶠ (n : ℕ) in Filter.atTop,
+      SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+        SbtCosmo.Derivation.GroundNativeControls.originalTolerance SbtCosmo.Derivation.GroundOriginalResiduals.ε
+        SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ i))
+        (1 / 2) (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n)
+        (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i (n + 1))) ↔
+    ↑i < 10
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_eventual_tests_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.coupling_fifteen_eventual_success :
+  ∀ᶠ (n : ℕ) in Filter.atTop,
+    SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+      SbtCosmo.Derivation.GroundNativeControls.originalTolerance SbtCosmo.Derivation.GroundOriginalResiduals.ε
+      SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ 9))
+      (1 / 2) (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit 9 n)
+      (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit 9 (n + 1))
+'SbtCosmo.Derivation.NativeOriginalSampleResults.coupling_fifteen_eventual_success' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_successful_prefix_iff (i : Fin 12) :
+  (∃ n < 60,
+      SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+        SbtCosmo.Derivation.GroundNativeControls.originalTolerance SbtCosmo.Derivation.GroundOriginalResiduals.ε
+        SbtCosmo.Derivation.NativeOriginalSampleInterface.b (↑(SbtCosmo.Derivation.NativeOriginalSampleInterface.κ i))
+        (1 / 2) (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i n)
+        (SbtCosmo.Derivation.NativeOriginalSampleInterface.orbit i (n + 1))) ↔
+    ↑i < 9
+'SbtCosmo.Derivation.NativeOriginalSampleResults.original_sample_successful_prefix_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

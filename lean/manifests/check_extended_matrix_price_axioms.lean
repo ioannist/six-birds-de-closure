@@ -1,0 +1,22 @@
+import SbtCosmo.Derivation.ExtendedConeClosurePrice
+import SbtCosmo.Derivation.ExtendedMatrixClosurePrice
+import SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples
+
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.finite_cost_guards
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.value_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.finite_value_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.primal_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.optimum_value
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_primal_optimum
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_strong_duality
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.weak_duality
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_dual_finite
+#print axioms SbtCosmo.Derivation.ExtendedConeClosurePrice.price_certificate
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePrice.matrix_price
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.costs_return
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.value_return
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.actual_value_derivative
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.actual_matrix_price
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.converted_value_return
+#print axioms SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.unrestricted_toReal_false_value

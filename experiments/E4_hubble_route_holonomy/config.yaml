@@ -1,0 +1,14 @@
+schema_version: 1
+experiment: E4
+plan: plan/experiments/E4-hubble-route-matrix.md
+seed:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+datasets:
+  - SH0ES
+  - CCHP_TRGB_JAGB
+  - TDCOSMO
+  - SIRENS_GW170817
+  - INVERSE_LADDER
+status: skeleton_only_c0a

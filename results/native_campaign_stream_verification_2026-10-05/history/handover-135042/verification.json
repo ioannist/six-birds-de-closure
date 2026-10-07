@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-05T13:50:42.063753+00:00",
+  "live": {
+    "utc": "2026-10-05T13:50:42.057491+00:00",
+    "live_jobs": 11,
+    "verified_terminal_jobs": [
+      {
+        "pid": 4049651,
+        "script": "de_native_stable15_priority_recovery/build_recovery.py",
+        "actual_terminal_exit_code": 0,
+        "recorded_audited_declarations": 27,
+        "terminal_sha256": "fcd5ae4265c47b01afb384dae86f5e0ad9ce0b658848dc544eba4c6dc2959b86"
+      }
+    ],
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 393,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 289,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 433,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": [
+      "/tmp/de_native_stable15_priority_recovery/summary.json"
+    ]
+  },
+  "new_packet_manifests": {
+    "/home/repos/six-birds-de-closure/results/native_installer_postreplace_failure_history_2026-10-05/file-manifest.json": "d7fd13f348c14ad12b243a687b42a9e202a8a4c7cac71e17f0cdb346fae8c495",
+    "/home/repos/six-birds-de-closure/results/native_registered_original_audit_journal_installer_candidate_2026-10-05/file-manifest.json": "a5d0486ed088254c4abdf5f6e5be7868e1d887138864d7e261b89e0f2a8ea97a",
+    "/home/repos/six-birds-de-closure/results/ground_offset_header_journal_installer_candidate_2026-10-05/file-manifest.json": "4eb581bae2a4bd31015a5475bc8db7a53e5d8021dbde04b32a8f876484a7d1ee",
+    "/home/repos/six-birds-de-closure/results/offset_header_journal_review_preparation_history_2026-10-05/file-manifest.json": "456a05f2b3c07df90a21821135d718c80fbda990fcf38453e4a87b222449d954"
+  },
+  "frozen_inputs_revalidated": 6262,
+  "completed_private_audit_freeze_revalidated": 3936,
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

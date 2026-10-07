@@ -1,0 +1,10 @@
+{
+  "actual_exec_session": 1986,
+  "actual_exec_exit_code": 1,
+  "actual_chunk_id": "b4d436",
+  "stage": "preflight before OUT creation or Lake invocation",
+  "reason": "Active compiler was NativeCycleSeed20.Pair000, omitted by the literal active-path whitelist. Graph-disjointness and source pins had passed.",
+  "registered_source_changed": false,
+  "proof_objects_copied": 0,
+  "first_driver_sha256": "f69604c7ae7bcd056addad1e9370692087c6ef9afbfa54654ef74b18f8791751"
+}

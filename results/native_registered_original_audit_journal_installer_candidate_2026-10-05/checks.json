@@ -1,0 +1,112 @@
+{
+  "utc": "2026-10-05T13:43:56.160129+00:00",
+  "unchanged_inherited_functions": [
+    "sha",
+    "write",
+    "current_hash",
+    "check_preimages",
+    "snapshot_sources",
+    "snapshot_objects",
+    "atomically_install"
+  ],
+  "actual_file_operation_cases": [
+    {
+      "label": "replacement_directory_flush_failure",
+      "original_target_existed": true,
+      "injected_fsync_call": 2,
+      "fsync_calls": 2,
+      "attempted": [
+        "lean/target.lean"
+      ],
+      "completed": [],
+      "journal_correct": true,
+      "registered_installation_claimed": false
+    },
+    {
+      "label": "new_file_directory_flush_failure",
+      "original_target_existed": false,
+      "injected_fsync_call": 2,
+      "fsync_calls": 2,
+      "attempted": [
+        "lean/target.lean"
+      ],
+      "completed": [],
+      "journal_correct": true,
+      "registered_installation_claimed": false
+    },
+    {
+      "label": "before_replacement_file_flush_failure",
+      "original_target_existed": true,
+      "injected_fsync_call": 1,
+      "fsync_calls": 1,
+      "attempted": [
+        "lean/target.lean"
+      ],
+      "completed": [],
+      "journal_correct": true,
+      "registered_installation_claimed": false
+    },
+    {
+      "label": "normal_replacement",
+      "original_target_existed": true,
+      "injected_fsync_call": null,
+      "fsync_calls": 2,
+      "attempted": [
+        "lean/target.lean"
+      ],
+      "completed": [
+        "lean/target.lean"
+      ],
+      "journal_correct": true,
+      "registered_installation_claimed": false
+    },
+    {
+      "label": "normal_new_file",
+      "original_target_existed": false,
+      "injected_fsync_call": null,
+      "fsync_calls": 2,
+      "attempted": [
+        "lean/target.lean"
+      ],
+      "completed": [
+        "lean/target.lean"
+      ],
+      "journal_correct": true,
+      "registered_installation_claimed": false
+    }
+  ],
+  "preflights": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_install_original_audit_journal_candidate.py",
+        "--mode",
+        "candidate"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure",
+      "actual_exit_code": 0,
+      "stdout": "{\"prepared_source_files\": 1786, \"native_modules\": 1772, \"native_declarations\": 20798, \"cumulative_queries\": 32574, \"registered_sources_changed\": false, \"proof_objects_installed\": 0, \"proof_gates_checked\": false, \"goal_complete\": false}\n",
+      "stderr": "",
+      "installer_sha256": "03d52766a28e85d53b44f58d445e8f0b30e047abbc20c871fe7d14be55abb52c"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_install_original_audit_journal_candidate.py",
+        "--mode",
+        "apply"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure",
+      "actual_exit_code": 2,
+      "stdout": "{\"status\": \"pending\", \"reason\": \"Source freeze owner remains active: PID662901 de_native_campaign_qualified_stream_build.py\", \"registered_sources_changed\": false, \"proof_objects_installed\": 0, \"goal_complete\": false}\n",
+      "stderr": "",
+      "installer_sha256": "03d52766a28e85d53b44f58d445e8f0b30e047abbc20c871fe7d14be55abb52c"
+    }
+  ],
+  "registered_sources_changed": false,
+  "proof_objects_installed": 0,
+  "registered_receipts_created": false,
+  "full_apply_success_path_tested": false,
+  "review": "Adversarial self-review; no independent review",
+  "goal_complete": false
+}

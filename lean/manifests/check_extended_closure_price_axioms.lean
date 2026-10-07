@@ -1,0 +1,28 @@
+import SbtCosmo.Derivation.ExtendedClosurePrice
+import SbtCosmo.Derivation.ExtendedSchurClosurePrice
+import SbtCosmo.Derivation.ExtendedClosurePriceExamples
+
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.finite_cost_guards
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.value_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.finite_value_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.primal_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.optimum_value
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.certificate_domain_return
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.certificate_primal_optimum
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.certificate_strong_duality
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.weak_duality
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.certificate_dual_finite
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.epigraph_domain_convex
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.epigraph_objective_convex
+#print axioms SbtCosmo.Derivation.ExtendedClosurePrice.positive_price_certificate
+#print axioms SbtCosmo.Derivation.ExtendedSchurClosurePrice.positive_schur_price
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_no_bottom
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_domain
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.epigraph_eq
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_epigraph_convex
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.sqrt_primal_optimum
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_value_formula
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.local_finiteness
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_value_derivative
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_positive_certificate
+#print axioms SbtCosmo.Derivation.ExtendedClosurePriceExamples.unrestricted_toReal_false_value

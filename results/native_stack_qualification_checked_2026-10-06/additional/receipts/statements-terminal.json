@@ -1,0 +1,11 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/manifests/check_native_additional_constructions_statements.lean"
+  ],
+  "source_sha256": "d325301f377a9443221a1733790f9c73a44cccf1c320cd8947b53d2f9c4a7567",
+  "log_sha256": "05052bc8b5b0cc7c6051e5fad22286ea2d1c1458d5ad85ddf8ca3a67056b3308"
+}

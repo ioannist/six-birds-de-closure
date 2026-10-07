@@ -1,0 +1,34 @@
+SbtCosmo.Derivation.GrowthExistence.constructed_growthSolution {a0 lam L : ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) :
+  SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam L
+    (SbtCosmo.Derivation.GrowthExistence.growth (lam * a0 ^ 3))
+    (SbtCosmo.Derivation.GrowthExistence.velocity (lam * a0 ^ 3))
+SbtCosmo.Derivation.GrowthExistence.exists_growthSolution_of_horizon {a0 A lam L : ℝ} (ha : 0 < a0) (hL : 0 ≤ L)
+  (hA : SbtCosmo.Derivation.GrowthComparison.scale a0 L = A) (hlam : -(1 / A ^ 3) < lam) :
+  ∃ D v, SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam L D v
+SbtCosmo.Derivation.GrowthExistence.primitive_continuous_parameter {c L : ℝ} (hL : 0 ≤ L)
+  (hp : 0 < SbtCosmo.Derivation.GrowthExistence.rootSquared c L) :
+  ContinuousAt (fun d => SbtCosmo.Derivation.GrowthExistence.primitive d L) c
+SbtCosmo.Derivation.GrowthExistence.finalGrowth_continuousAt {a0 lam L : ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L) lam
+SbtCosmo.Derivation.GrowthExistence.finalGrowth_strictAntiOn {a0 L : ℝ} (ha : 0 < a0) (hL : 0 < L) :
+  StrictAntiOn (SbtCosmo.Derivation.GrowthExistence.finalGrowth a0 L)
+    {lam | SbtCosmo.Derivation.GrowthComparison.Live a0 lam L}
+SbtCosmo.Derivation.GrowthScaleReturn.exists_original_scale_solution {a0 A lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) :
+  ∃ D p,
+    D a0 = 1 ∧
+      p a0 = 1 / a0 ∧
+        ∀ a ∈ Set.Icc a0 A,
+          HasDerivAt D (p a) a ∧
+            HasDerivAt p (SbtCosmo.Derivation.GrowthComparison.scaleAcceleration a lam (D a) (p a)) a
+SbtCosmo.Derivation.GrowthScaleReturn.native_positive {a0 A lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (a : ℝ) :
+  a ∈ Set.Icc a0 A →
+    0 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a ∧
+      0 < SbtCosmo.Derivation.GrowthScaleReturn.nativeDerivative a0 lam a
+SbtCosmo.Derivation.GrowthScaleReturn.native_endpoint_continuousAt {a0 A lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) : ContinuousAt (fun k => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 k A) lam
+SbtCosmo.Derivation.GrowthScaleReturn.native_endpoint_strictAntiOn {a0 A : ℝ} (ha0 : 0 < a0) (hA : a0 < A) :
+  StrictAntiOn (fun lam => SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) (Set.Ioi (-(1 / A ^ 3)))

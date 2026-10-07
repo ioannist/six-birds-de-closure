@@ -1,0 +1,22 @@
+{
+  "installed": [],
+  "attempted": [
+    "lean/target.lean"
+  ],
+  "pending_targets": [
+    "lean/target.lean"
+  ],
+  "phase": "failed",
+  "observed_targets": {
+    "lean/target.lean": {
+      "original_sha256": "ffabbcb679e5f7053ef87f3dce191465fe8b6c92f62b99a7033629e5a56e4738",
+      "proposed_sha256": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+      "observed_sha256": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+      "matches_original": false,
+      "matches_proposed": true,
+      "absent": false
+    }
+  },
+  "fresh_registered_build_pending": true,
+  "goal_complete": false
+}

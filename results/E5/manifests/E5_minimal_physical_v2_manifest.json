@@ -1,0 +1,57 @@
+{
+  "design_version": "E5-minimal-physical-v2",
+  "generated_utc": "2026-06-01T09:12:05Z",
+  "inputs": {
+    "carrier": {
+      "path": "plan/E5_CARRIER_REALIZATION.md",
+      "sha256": "c9ca48737e10b61f40cc70c9e53a5b2c62afcb892390c21d8d70dfd4b92dc7dc"
+    },
+    "design_freeze": {
+      "path": "plan/E5_DESIGN_FREEZE.md",
+      "sha256": "fc09d10726b97814d49f96d7fdf2a1432f0ef4eb4a694e38fb459d38b9ff7997"
+    },
+    "e5_manifest": {
+      "path": "data/manifests/e5_growth_currency_inputs.json",
+      "sha256": "e31fbfa0317108caf008bf5999f03885ff6fae16f8d9fa0867dba966ced0973d"
+    },
+    "gates": {
+      "path": "plan/07-pass-fail-gates.md",
+      "sha256": "95018f9388cbc9c6815677e9fcc1896c939ed46e83e4a6966cb46b31d30ed7ee"
+    }
+  },
+  "outputs": {
+    "coherence": {
+      "path": "results/coherence_ledger/E5.json",
+      "sha256": "3d57204b99da4ab35b775d8cdecff5ff3eb8f6038ee4dc99c72c6bc484f8c294"
+    },
+    "freeze": {
+      "path": "results/E5/E5_v2_freeze.json",
+      "sha256": "d945635f2a415ee7fdcd59f21362cef59ce0ad439a5f64161ec1af255b2e7146"
+    },
+    "ia_nuisance_envelope": {
+      "path": "results/E5/E5_ia_nuisance_envelope.json",
+      "sha256": "fe7abcf78ee48be4e0ddf8c99ee82806361aa048d5b43e29beede14f96da11c5"
+    },
+    "repro_growth_csv": {
+      "path": "results/E5/repro_growth.csv",
+      "sha256": "b6bb77a907d1b2fc5864aa53d43a3ccaf163dc06a5ef9ff4029e4cb01f731b30"
+    },
+    "status": {
+      "path": "results/E5/E5_status.json",
+      "sha256": "38f6a5dce05349ae9aef8e5325a01849c03ae05d1ef9253d3301d9d6800c0bc5"
+    },
+    "substrate": {
+      "path": "results/E5/E5_v2_substrate.json",
+      "sha256": "ec9eec681c36d22e41ff730ffb39f7c0c4eb05d7e042ff72efcfc9f5d8cf66ce"
+    }
+  },
+  "schema_version": 1,
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

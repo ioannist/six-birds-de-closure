@@ -1,0 +1,212 @@
+SbtCosmo.Derivation.ScalarPriceStationarity.certificate_real_domain_return.{u_1} {E : Type u_1} {A : Set E}
+  {J : E → EReal} {energy : E → ℝ} {B p : ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star) :
+  SbtCosmo.Derivation.ConvexClosurePrice.DualCertificate (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+    (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B p star
+SbtCosmo.Derivation.ScalarPriceStationarity.certificate_price_identification.{u_1} {E : Type u_1} {A : Set E}
+  {J : E → EReal} {energy : E → ℝ} {B p d lo hi : ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star) (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊥)
+  (hd : HasDerivAt (fun T => (SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T).toReal) d B) : p = -d
+SbtCosmo.Derivation.ScalarPriceStationarity.certificate_price_unique.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B p q d lo hi : ℝ} {star other : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hp : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star)
+  (hq : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B q other) (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊥)
+  (hd : HasDerivAt (fun T => (SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T).toReal) d B) : p = q
+SbtCosmo.Derivation.ScalarPriceStationarity.certificate_stationarity.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {energy : E → ℝ} {B p : ℝ} {star xr : E}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J))
+  (hA : Convex ℝ A) (he : ConvexOn ℝ Set.univ energy)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A) (hc : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star)
+  (hp : 0 < p) :
+  ∃ q r η,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient energy star r ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧ q + p • r + η = 0
+SbtCosmo.Derivation.ScalarPriceStationarity.positive_price_stationarity.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {energy : E → ℝ} {B d lo hi : ℝ} {star xr : E}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J))
+  (hA : Convex ℝ A) (he : ConvexOn ℝ Set.univ energy)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A) (hstar : SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star)
+  (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊥)
+  (hd : HasDerivAt (fun T => (SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T).toReal) d B) (hs : d < 0) :
+  ∃ p q r η,
+    p = -d ∧
+      0 < p ∧
+        energy star = B ∧
+          SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B p =
+                SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B ∧
+              SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+                SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient energy star r ∧
+                  SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧ q + p • r + η = 0
+SbtCosmo.Derivation.ScalarPriceStationarity.positive_price_smooth_stationarity.{u_1} {E : Type u_1}
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E} {J : E → EReal} {energy : E → ℝ}
+  {B d lo hi : ℝ} {star xr : E} {k : E →L[ℝ] ℝ} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (he : ConvexOn ℝ Set.univ energy)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A) (hstar : SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star)
+  (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊥)
+  (hd : HasDerivAt (fun T => (SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T).toReal) d B) (hs : d < 0)
+  (hk : HasFDerivAt energy k star) :
+  ∃ p q η,
+    p = -d ∧
+      0 < p ∧
+        energy star = B ∧
+          SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B p =
+                SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B ∧
+              SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+                SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧ q + p • k + η = 0
+SbtCosmo.Derivation.ScalarSchurStationarity.hasFDerivAt_energy.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (W : Matrix m m ℝ) (L : Matrix n e ℝ)
+  (D : E →ᵃ[ℝ] Matrix m e ℝ) (x : E) :
+  HasFDerivAt (fun z => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D z))
+    (SbtCosmo.Derivation.SchurDifferential.pricePullback L D x W) x
+SbtCosmo.Derivation.ScalarSchurStationarity.scaled_adjoint.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) (x : E)
+  (W : Matrix m m ℝ) (p : ℝ) :
+  p • SbtCosmo.Derivation.SchurDifferential.pricePullback L D x W =
+    (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+        (fderiv ℝ (fun z => SbtCosmo.Adequacy.Support.residual L (D z)) x))
+      (p • W)
+SbtCosmo.Derivation.ScalarSchurStationarity.positive_price_stationarity.{u_1, u_2, u_3, u_4} {n : Type u_1}
+  {m : Type u_2} {e : Type u_3} {E : Type u_4} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e]
+  [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] {W : Matrix m m ℝ} (hW : W.PosSemidef)
+  (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) {A : Set E} {J : E → EReal} {B d lo hi : ℝ} {star xr : E}
+  (hbottom : ∀ (x : E), J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J))
+  (hA : Convex ℝ A) (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B star)
+  (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) T ≠
+          ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) T ≠
+          ⊥)
+  (hd :
+    HasDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) T).toReal)
+      d B)
+  (hs : d < 0) :
+  ∃ p q η,
+    p = -d ∧
+      0 < p ∧
+        SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D star) = B ∧
+          SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J
+              (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B p star ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J
+                  (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B p =
+                SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+                  (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B ∧
+              SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+                SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧
+                  q +
+                          (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+                              (fderiv ℝ (fun x => SbtCosmo.Adequacy.Support.residual L (D x)) star))
+                            (p • W) +
+                        η =
+                      0 ∧
+                    ∀ (h : E),
+                      q h +
+                            2 * p *
+                              (W * D star * SbtCosmo.Derivation.SchurDifferential.complement L *
+                                  (D.linear h).transpose).trace +
+                          η h =
+                        0
+SbtCosmo.Derivation.ScalarStationarityExamples.extended_relative_interior :
+  1 ∈
+    intrinsicInterior ℝ
+      (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ
+        SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective)
+SbtCosmo.Derivation.ScalarStationarityExamples.constructed_extended_schur_stationarity :
+  ∃ q η,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective 1 q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.NormalCone Set.univ 1 η ∧
+        q +
+                (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+                    (fderiv ℝ
+                      (fun x =>
+                        SbtCosmo.Adequacy.Support.residual 0 (SbtCosmo.Derivation.SchurClosurePriceExamples.probe x))
+                      1))
+                  1 +
+              η =
+            0 ∧
+          SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate Set.univ
+              SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+              SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 1 1 ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.dualValue Set.univ
+                SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+                SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 1 =
+              1
+SbtCosmo.Derivation.ScalarStationarityExamples.extended_price_unique {p star : ℝ}
+  (hc :
+    SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate Set.univ
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1
+      p star) :
+  p = 1
+SbtCosmo.Derivation.ScalarStationarityExamples.kink_energy_convex :
+  ConvexOn ℝ Set.univ SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy
+SbtCosmo.Derivation.ScalarStationarityExamples.kink_objective_convex :
+  Convex ℝ
+    (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ
+      SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective)
+SbtCosmo.Derivation.ScalarStationarityExamples.kink_primal_optimum (B : ℝ) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum Set.univ
+    SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+    SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy B (B, 0)
+SbtCosmo.Derivation.ScalarStationarityExamples.kink_actual_value (B : ℝ) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+      SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy B =
+    ↑(-B)
+SbtCosmo.Derivation.ScalarStationarityExamples.kink_actual_derivative (B : ℝ) :
+  HasDerivAt
+    (fun T =>
+      (SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ
+          SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+          SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy T).toReal)
+    (-1) B
+SbtCosmo.Derivation.ScalarStationarityExamples.kink_energy_not_differentiable :
+  ¬DifferentiableAt ℝ SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy (0, 0)
+SbtCosmo.Derivation.ScalarStationarityExamples.constructed_nonsmooth_energy_stationarity :
+  ∃ q r η,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+        (0, 0) q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy
+          (0, 0) r ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone Set.univ (0, 0) η ∧
+          q + r + η = 0 ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate Set.univ
+                SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+                SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy 0 1 (0, 0) ∧
+              SbtCosmo.Derivation.ExtendedClosurePrice.dualValue Set.univ
+                  SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+                  SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy 0 1 =
+                0

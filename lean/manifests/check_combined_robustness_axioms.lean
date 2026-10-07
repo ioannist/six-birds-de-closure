@@ -1,0 +1,90 @@
+import SbtCosmo.Derivation.CombinedEdgeLowerData
+import SbtCosmo.Derivation.CombinedEdgePrefixData
+import SbtCosmo.Derivation.CombinedEdgeUpperData
+import SbtCosmo.Derivation.CombinedEdgeQuadrature
+import SbtCosmo.Derivation.GrowthCombinedCertificate
+import SbtCosmo.Derivation.WindowPatchRobust
+import SbtCosmo.Derivation.WindowPatchRobustRegularity
+import SbtCosmo.Derivation.WindowPatchRobustEdge
+
+#print axioms SbtCosmo.Derivation.CombinedEdgeLowerData.grid_endpoints
+#print axioms SbtCosmo.Derivation.CombinedEdgeLowerData.cells
+#print axioms SbtCosmo.Derivation.CombinedEdgeLowerData.integral_sum
+#print axioms SbtCosmo.Derivation.CombinedEdgePrefixData.grid_endpoints
+#print axioms SbtCosmo.Derivation.CombinedEdgePrefixData.cells
+#print axioms SbtCosmo.Derivation.CombinedEdgePrefixData.integral_sum
+#print axioms SbtCosmo.Derivation.CombinedEdgeUpperData.grid_endpoints
+#print axioms SbtCosmo.Derivation.CombinedEdgeUpperData.cells
+#print axioms SbtCosmo.Derivation.CombinedEdgeUpperData.integral_sum
+#print axioms SbtCosmo.Derivation.CombinedEdgeQuadrature.lower_integral
+#print axioms SbtCosmo.Derivation.CombinedEdgeQuadrature.prefix_integral
+#print axioms SbtCosmo.Derivation.CombinedEdgeQuadrature.upper_integral
+#print axioms SbtCosmo.Derivation.GrowthCombinedCertificate.rescaled_start_bounds
+#print axioms SbtCosmo.Derivation.GrowthCombinedCertificate.prefactor_upper
+#print axioms SbtCosmo.Derivation.GrowthCombinedCertificate.initial_term_upper
+#print axioms SbtCosmo.Derivation.GrowthCombinedCertificate.lower_prefix_growth
+#print axioms SbtCosmo.Derivation.GrowthCombinedCertificate.upper_prefix_growth
+#print axioms SbtCosmo.Derivation.GrowthCombinedCertificate.upper_horizon_growth
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.original_aggregate_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.scaled_aggregate_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.original_scale_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.normalization_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.normalization_outside_old_range
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.aggregate_normalized
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.aggregate_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.aggregate_admissible
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.endpoint_native_window
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.endpoint_spec
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.gate_iff_window
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.gate_cutoff
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.gate_zero
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.threshold_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.threshold_interior_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.strict_final
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.time_spec
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.maximum_spec
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.threshold_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.time_iff_any_collapse
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.time_is_first_collapse
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.time_positive
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.original_gate_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.original_time_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.original_ratio_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.endpoint_order
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.gate_inclusions
+#print axioms SbtCosmo.Derivation.WindowPatchRobust.strict_gate_witnesses
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.aggregate_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.threshold_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_delta_derivative
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_delta_derivative_negative
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_amplitude_derivative
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_amplitude_derivative_positive
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.time_joint_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.time_parameter_derivative
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.time_parameter_derivative_positive
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.ratio_joint_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.ratio_joint_continuousAt
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_time_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.endpoint_ratio_c1
+#print axioms SbtCosmo.Derivation.WindowPatchRobustRegularity.ratio_not_differentiable_at_zero
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_normalized_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.original_endpoint_return
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_gate
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.time_nonnegative_lower
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.time_nonpositive_upper
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.time_strictMono
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_time_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_ratios
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_nonnegative
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_positive
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_nonnegative_upper
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_nonpositive_small
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.ratio_strictMono_nonnegative
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.full_window_ratios
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.corner_rectangles
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.endpoint_corner_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.common_corner_bounds
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.common_positive_window
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.ratios_uniformly_arbitrarily_small
+#print axioms SbtCosmo.Derivation.WindowPatchRobustEdge.all_populations_uniformly_arbitrarily_small

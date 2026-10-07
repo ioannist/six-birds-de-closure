@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DES_Y3_BAO
+manifest: data/manifests/des_y3_bao.json
+fallback_policy: approved_other_if_substituting_y6

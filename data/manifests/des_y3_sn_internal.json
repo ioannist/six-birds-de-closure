@@ -1,0 +1,25 @@
+{
+  "dataset": "DES_Y3_SN_INTERNAL",
+  "release": "arXiv:2212.00091",
+  "access": "summary_posterior",
+  "fetch_url": "https://arxiv.org/abs/2212.00091",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "DES public release; standalone SN not primary",
+  "citation": "DES Collaboration, arXiv:2212.00091",
+  "raw_files": [{"path": "data/raw/des_y3_sn_internal/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/des_y3_sn_internal/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/des_y3_sn_internal/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "embedded in DESLikelihood only"},
+  "route": null,
+  "staging_axis": "sn_sample",
+  "model_dependent": false,
+  "recomputability": "summary_only",
+  "aor_status": "out_of_scope",
+  "fallback": "use Pantheon+ or Union3 as external SN standard",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

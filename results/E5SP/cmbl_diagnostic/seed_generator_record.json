@@ -1,0 +1,54 @@
+{
+  "L_geom_backend": "linearized_ccl_tangent",
+  "Omega_row_count": 1.0,
+  "Omega_row_count_unit_floor": 1.0,
+  "bootstrap_seed": 202606023,
+  "cmb_lensing_declared_fractional_covariance_floor": 0.02,
+  "delta_margin": 0.1,
+  "generator_frozen_before_pi": true,
+  "governing_hashes": {
+    "data/manifests/e5sp_shadowprice_inputs.json": "a8c98e9fde5254999db8a8e8346785f983bc141668cb3c99d870a0e6906f4992",
+    "results/provenance/decommissioned_plan_agent_sources.json": "ce2f274086e19bea57145980bbf4afd4112fbcd10a4f1d135832e18ada6a6d19",
+    "provenance:e5sp_freeze_ruling": "449b4b58743c685a9bf967ca44d8bf38f27bc9a26671613aa7dc5654b4a3ce08",
+    "provenance:e5sp_shadow_price_spec": "95116b2b1d02bfc08a2c088f191c3a49a86934b2c74eb8cccb1b2bcde0ce08eb",
+    "results/E5SP/H_proxy_table.csv": "7c067dde9fbc5f4f6132ea6b6da7a216dc94060fa2eccf5217721d5259e2e660"
+  },
+  "n_bootstrap": 1000,
+  "n_post": 256,
+  "n_row_null": 2000,
+  "posterior_seed": 202606021,
+  "rotation_seed": 202606024,
+  "row_null_generator": "draw full r_null ~ N(0, Sigma_total), then apply the identical statistic pipeline as real residual: whitened_coordinate_rows(shell.indices, r_null, invsqrt) -> residualize against L_geom -> lambda_max",
+  "row_null_seed": 202606022,
+  "shells": [
+    {
+      "H": 0.0,
+      "L_eff": 86.56667461070782,
+      "L_max": 150.43808889660187,
+      "L_min": 28.06508999349029,
+      "row_count": 12,
+      "shell": "CMB-L-low",
+      "slack_label": "slack"
+    },
+    {
+      "H": 0.004357472463519748,
+      "L_eff": 274.48321037185536,
+      "L_max": 382.5,
+      "L_min": 172.0,
+      "row_count": 12,
+      "shell": "CMB-L-mid",
+      "slack_label": "slack"
+    },
+    {
+      "H": 0.1440945126876228,
+      "L_eff": 1075.2592636973925,
+      "L_max": 2636.7487751247095,
+      "L_min": 430.1136276186705,
+      "row_count": 11,
+      "shell": "CMB-L-high",
+      "slack_label": "binding"
+    }
+  ],
+  "status": "single-family demonstration / diagnostic -- NOT promotable",
+  "tau_L": 0.001
+}

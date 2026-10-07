@@ -1,0 +1,12 @@
+'SbtCosmo.Derivation.WindowSmoothPrior.raw_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.raw_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.normalizer_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.density_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.density_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.density_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.prefix_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.concentration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.rate_constructed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowSmoothPrior.actual_all_windows_smooth_small_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,55 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_stable15_priority_recovery",
+    "/tmp/de_native_stable15_priority_recovery/CombinedReturnAudit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.NativeStableSeed009.initial",
+    "SbtCosmo.Derivation.NativeStableSeed009.source_enclosed_even",
+    "SbtCosmo.Derivation.NativeStableSeed009.guards_before",
+    "SbtCosmo.Derivation.NativeStableSeed009.unit_before",
+    "SbtCosmo.Derivation.NativeStableSeed009.original_seed_entry",
+    "SbtCosmo.Derivation.NativeStableSeed009.original_seed_return",
+    "SbtCosmo.Derivation.NativeStableSeed009.original_seed_density_limit",
+    "SbtCosmo.Derivation.NativeStableSeed009.previous_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.current_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Prefix060.initial",
+    "SbtCosmo.Derivation.NativeStableSeed009.Prefix060.source_enclosed_even",
+    "SbtCosmo.Derivation.NativeStableSeed009.Prefix060.guards_before",
+    "SbtCosmo.Derivation.NativeStableSeed009.Prefix060.unit_before",
+    "SbtCosmo.Derivation.NativeStableSeed009.Prefix060.previous_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Prefix060.current_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.previous_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.current_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.previous_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.current_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.current_unit",
+    "SbtCosmo.Derivation.NativeStableSeed009.Sixty.actual_four_source_tests_fail",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.input_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.endpoint_included",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.boxes_enclosed",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.all_first_sixty_fail",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.guarded_first_sixty_fail",
+    "SbtCosmo.Derivation.NativeStableSeed009.PrefixFailures.all_first_sixty_update_gaps"
+  ],
+  "audit_source_sha256": "4f6000bd317aacb9faa64e19caab89cdabc7079113b9149b4a2e2805d149a67e",
+  "log_sha256": "fb00cb76d4e63d600e6a7ba77be45276b21d0da0c351c145d4d06b735a8f68ff",
+  "standard_only": true,
+  "checked_declarations": 27,
+  "sources": {
+    "NativeStableSeed009Transport": "307eb85c2814ad369cc3bc66b061f397287056c9a47ef7e2e5db70a4d062b530",
+    "NativeStableSeed009Prefix060": "003bce5acb7d38f21277676934451a39dafa83d3070b7d13c83befd78363df4d",
+    "NativeStableSeed009Sixty": "9ab871033be1735154270a096557d4473c5f87de63d507bb7a98f97d5418c3dd",
+    "NativeStableSeed009PrefixFailures": "5b87e4cc0f926448c822337fcc7cb12264054aa89220043f79ced1bcd2f870dd"
+  },
+  "objects": {
+    "NativeStableSeed009Transport": "9ef9e9b73dd6ad2732d1d68e467fbd93d5e6bb56d839f934052b71ae27af6e30",
+    "NativeStableSeed009Prefix060": "9c442d0211119920773932710121c9e18f26aee2cd955f1f582b4c625fa84ad1",
+    "NativeStableSeed009Sixty": "a24680a2db98ec6d7b0b98d168ffa5d73bfa0e928efbd9318ad178ce905918c2",
+    "NativeStableSeed009PrefixFailures": "02a619be459d01ae8a140bb4ffd0322ea50c2b292abea068ea699353e108569d"
+  },
+  "scope": "Exact original coupling15 source: populated finite guards, norms and failed verdicts; infinite seed entry/convergence only if Transport is included; no IEEE or whole-paper claim"
+}

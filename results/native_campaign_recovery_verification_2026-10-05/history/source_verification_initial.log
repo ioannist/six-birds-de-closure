@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/tmp/de_native_campaign_recovery_verify.py", line 451, in <module>
+    main()
+  File "/tmp/de_native_campaign_recovery_verify.py", line 434, in main
+    result, plans = verify_sources(args)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/de_native_campaign_recovery_verify.py", line 320, in verify_sources
+    replay = verify_replay(args.private, args.replay_root, by_private)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/de_native_campaign_recovery_verify.py", line 208, in verify_replay
+    receipt = read_json(replay_root / "replay.json")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/de_native_campaign_recovery_verify.py", line 35, in read_json
+    return json.loads(Path(path).read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/results/native_sample_transport_2026-10-04/replay.json'

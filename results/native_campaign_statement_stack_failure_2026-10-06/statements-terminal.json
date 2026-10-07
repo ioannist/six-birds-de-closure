@@ -1,0 +1,13 @@
+{
+  "terminal_exit_code": -6,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts",
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/receipts/CampaignStatements.lean"
+  ],
+  "source_sha256": "e5cba6975d3776fd8d8ac1e88e6cb286dd3c4fbfdfedc189ab85505f2fd886d8",
+  "log_sha256": "256df99787873bb5a33294840e0d1c8b882deda1d326fd623c3a97fb64f215c6",
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "lean_path": "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/overlay:/home/repos/six-birds-de-closure/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean:/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean"
+}

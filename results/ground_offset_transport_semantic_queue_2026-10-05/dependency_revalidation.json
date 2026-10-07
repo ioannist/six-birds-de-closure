@@ -1,0 +1,219 @@
+{
+  "utc": "2026-10-05T01:40:30.039766+00:00",
+  "observed_actual_lean_version": "Lean (version 4.28.0, x86_64-unknown-linux-gnu, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b, Release)",
+  "observed_mathlib_revision": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+  "observed_mathlib_worktree_clean": true,
+  "direct_mathlib_proof_sources_revalidated": 114,
+  "current_external_native_imports_revalidated": 23,
+  "mathlib_direct_source_sha256": {
+    "Mathlib/MeasureTheory/Integral/IntervalIntegral/IntegrationByParts.lean": "4a4b82819e43cdac488f642a4e5331126af831ee19875dbb342890bf73582d3f",
+    "Mathlib/MeasureTheory/Integral/IntervalIntegral/Basic.lean": "da8691a220ea32de0a7573bcf2fa121306e27d0798e141b61c6525674d8b6cb5",
+    "Mathlib/Data/Real/Sqrt.lean": "b8b93e7e9351184afeb7fd3e6dcfb6f9ccb1e062ee5077f6b2b929871bfa4022",
+    "Mathlib/Analysis/SpecialFunctions/Log/Deriv.lean": "62f6d3abc171e7ddb17dcb07f22ec0d96440614cb02470b6dd516d89412bd5ce",
+    "Mathlib/Algebra/Order/Ring/Unbundled/Basic.lean": "20fcf923a9bdebd4781cc65885e5fff5bd1f5f9178388a9ec9381d2fc073fd62",
+    "Mathlib/Analysis/Calculus/Deriv/MeanValue.lean": "d8f87e3ffe1b75c9cce46e49a9eeafb488145727b11d73c182c2ddca611e8074",
+    "Mathlib/Algebra/Order/GroupWithZero/Unbundled/Basic.lean": "9a72e0fb3238ec26a45d1a6e2f1fcb6741ea06af914153f9ae919496d61b1cf9",
+    "Mathlib/Topology/Order/IntermediateValue.lean": "71ccf5ee13afea7c5a8ef32de569fb0eec3b1f9e1e8f8c47d1664eb24f286490",
+    "Mathlib/Analysis/SpecialFunctions/Exp.lean": "ad577a7b8f2955600f26e5feb21f53bd564c63af0b5998142a4dc822847451f2",
+    "Mathlib/Analysis/SpecialFunctions/Log/Basic.lean": "d446ba8bf6115a0d57fc1765f5f6a53694fd99d2100f2f94bbd01fe1e3edcc8c",
+    "Mathlib/Analysis/SpecialFunctions/ImproperIntegrals.lean": "7909136286eafea2e0f6acf101c91eb42d228a5f690cd8e4bb6d00ab51dc0bd7",
+    "Mathlib/MeasureTheory/Integral/DominatedConvergence.lean": "e1c1d06511b3beebfdac7d465dc972e825fe8a50ab6fe6c6dc7f0add52eebf7a",
+    "Mathlib/Topology/Order/DenselyOrdered.lean": "0c49d8488019c1ff076e92121e331d4bfeff137ca3fb50aa3f6bb1b31ab412c4",
+    "Mathlib/Analysis/Calculus/ContDiff/Deriv.lean": "aff5f883b544a179ee3641dc3a3176c7c12cb1785448573119554e3ebdf57733",
+    "Mathlib/Analysis/Calculus/Deriv/Basic.lean": "f48468a384ae7f900c21e5ac58492c809d7499987e478aca94ada6ac9879c5cb",
+    "Mathlib/Analysis/Asymptotics/Lemmas.lean": "c6e3ad9481d9f793b97c40a0a4e3e0e622b78a6dbf22ecac9b083a563aa414fd",
+    "Mathlib/Analysis/Asymptotics/Defs.lean": "198f3b25127aa6fc0a09cdb6ea230ad157962a3887fc039ebd3041f789ce82b8",
+    "Mathlib/Topology/MetricSpace/Lipschitz.lean": "8526347ac3d5443d6c26edee0da750d68eda573720193cd86367066249129793",
+    "Mathlib/Analysis/Convex/Function.lean": "28554836e064867e88cde6f75ef1a9936cbb494bc198ba4ab42fb8db5d9a3030",
+    "Mathlib/Analysis/Calculus/Deriv/Slope.lean": "f029d0b03d71f40eae4d759020b0fa64dad5686dcdb39d9a3ca320f45c02f4f8",
+    "Mathlib/Analysis/Calculus/LocalExtr/Basic.lean": "6a5f3b0d2094139ff22dcebec9dbc0428513d5b2c69a9a19b372ded981999ad8",
+    "Mathlib/Order/ConditionallyCompleteLattice/Basic.lean": "077008978b4325365a03a1d15fc4f0d9a9f08c433a0b61a5c0af3caea4fbc48d",
+    "Mathlib/LinearAlgebra/Matrix/Trace.lean": "8053b04dc1c67b3a7d14262acc43b574e521940085e031726947f3c2241b7a73",
+    "Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean": "e6a13a0eefe2c3bf663ffc36b911820a7f288a57f03fdb663f46676fb8fd3d44",
+    "Mathlib/Analysis/SpecialFunctions/Pow/Deriv.lean": "61b936744570b56fc3ad2e645d5e7e3015669e8d6b11a087554dae0c499da7b8",
+    "Mathlib/Data/EReal/Basic.lean": "ba18b8a0da93fa3a19106951ee77705e2f85ca14d0084a5abecc1929f37bd775",
+    "Mathlib/Data/EReal/Operations.lean": "a098e2a383dda6ddf45ef3fe557e3af1fbf5b06696998a5a0a9b211d8be532d1",
+    "Mathlib/Order/CompleteLattice/Basic.lean": "00e6806adbb549810b89a4afdadb8bd7d1881fcbbdcf4c69cb1299941d29fa44",
+    "Mathlib/Data/Matrix/Basis.lean": "88abd482d8dcc0d2a67cdc05eee736f215fc471cb10849dc019d8b7ef8f12d22",
+    "Mathlib/Analysis/Calculus/LineDeriv/Basic.lean": "9342602ad4c71f54f54d0225a8a63e98e47e4c35ec2a6d6c859576db5bbd0be3",
+    "Mathlib/Analysis/Matrix/Normed.lean": "7cb584cab4dadb0532239e73593dcd86c003cbd889db1306e526881881c3bb49",
+    "Mathlib/LinearAlgebra/Matrix/PosDef.lean": "1cacbd8be084246e22537c32defd0e8325a104c02c970c4c7ed49769dbdcaa05",
+    "Mathlib/Analysis/Calculus/FDeriv/Basic.lean": "f2d807a3c72653db931817c231b1832934a9a011f50803f7040285f22a32a1e4",
+    "Mathlib/Analysis/Calculus/FDeriv/Congr.lean": "12a030ef76d76813c758ab05444aa52f41dbfc3c01a809633dd865a4ade237f5",
+    "Mathlib/Analysis/Calculus/FDeriv/Comp.lean": "4b5d0e397d0548629f96b75fdcceb8e4e8cb145167ffbf8e8daef1ce0dc89338",
+    "Mathlib/Analysis/Convex/Continuous.lean": "15b9678e0952e8caf91276c3c668533533622da9526ee42fe89e3d3c1133996b",
+    "Mathlib/Analysis/LocallyConvex/Separation.lean": "496dd5b00b08ad7f1df84b33fdeb465985590f471e9b7c15cbd0fd0dc0ebc478",
+    "Mathlib/Topology/Compactness/Compact.lean": "c1798845c4da38e14afd013df14a56568b3bb4723ae9301123065c1a3317d822",
+    "Mathlib/Analysis/Calculus/Deriv/Abs.lean": "f0e474a710577194238afe02f698ac12464c5a53dff4e3a9f732ca38b7eedff0",
+    "Mathlib/Order/CompleteLattice/Defs.lean": "7cf0f2c6a23ed167588c62fc04915734982f385da62a95a9aeb7e80621e33e7c",
+    "Mathlib/Analysis/Calculus/FDeriv/Affine.lean": "5d8ca8aaa1c0b97bb7948c78bd04f7b69648c7d724988db1f704ed244b9bd848",
+    "Mathlib/Analysis/Calculus/FDeriv/Mul.lean": "102eca013a83c1616ebb77c1bfef72e50f45e222b5488e86ff22816e9ab6ecb1",
+    "Mathlib/Analysis/Calculus/FDeriv/Pi.lean": "a5c9e54b4f728afb6ac3ce53059761bdec2afeb74947ea71e8756fb17f499847",
+    "Mathlib/Analysis/Normed/Module/FiniteDimension.lean": "a82145c13511924c760ea0fd65373ac3e340940962da06cf40fce6d86a1825a1",
+    "Mathlib/Analysis/Convex/SpecificFunctions/Pow.lean": "ca7c9e47b724c401383b2668c2c2ace8aba5c8f97012f5dd047033e1a5430bda",
+    "Mathlib/Analysis/SpecialFunctions/Pow/Real.lean": "66c261bd2101ec89c7b7cb16e8930dcbff8423deb94db52589c154d8952e2d34",
+    "Mathlib/Analysis/Convex/Intrinsic.lean": "fdcc02319837b6c994048ded3449bec3abb7f03ac3bdb0e41b761e86b1f9093b",
+    "Mathlib/Analysis/Normed/Module/HahnBanach.lean": "c0a04181f7ec71f262a7e91dd5b1168f5e2ebfdc25c1a335a18ff70a072cf4e9",
+    "Mathlib/Analysis/Normed/Affine/Isometry.lean": "1ff6fae0d194dabd0d34a0455de8200f6bb6c41c108739fad2db4f87d699fa1d",
+    "Mathlib/Topology/Algebra/Module/ModuleTopology.lean": "e1cd48aab68dbdd1888158b4d4487cffeb47950dedbd5fb68264f8b777ffba1f",
+    "Mathlib/Topology/Algebra/Module/FiniteDimension.lean": "e4215ea24c48b82a7c08f904c4852d72129599b8540dd39eda71f44738fb6faf",
+    "Mathlib/LinearAlgebra/AffineSpace/AffineSubspace/Basic.lean": "09a05d930ac8ded08fc998812ea2508b5726ff088d0836bd3ad5aa686155df6c",
+    "Mathlib/LinearAlgebra/AffineSpace/AffineSubspace/Defs.lean": "8329133cb6f5783bbbd15e2b4b7c96491c1e75860040bcde4ce668bd2b0471c5",
+    "Mathlib/Topology/ContinuousOn.lean": "5d6cbbbd45ae01b5942de7718906011e1199478ad3eeed3f0f98ea91afabd718",
+    "Mathlib/Topology/Homeomorph/Defs.lean": "fa07e3709be98fd676277ae1cfd8585d6f3e145246589b123ea5dedaee2b4ffb",
+    "Mathlib/Algebra/Module/Submodule/Lattice.lean": "ec8177cfbdff58420de92fed8f63aff8e308322f6ef56fe5c3440f966e205f8a",
+    "Mathlib/Analysis/Calculus/FDeriv/Prod.lean": "0264a65d9b4bcea1de8bf3b03fbfbe7fbea83a361523eb1fd44997059c79d26a",
+    "Mathlib/Analysis/Calculus/FDeriv/Add.lean": "4b3c735d9732bc2459e33b3a389640ba6f7e9e3570e7d4786b383642ca49970b",
+    "Mathlib/Analysis/Calculus/FDeriv/Linear.lean": "c14daf99c6fc3930d3a159db14477a484f429df78f83d8781fcd8d1b02f304c5",
+    "Mathlib/Analysis/Calculus/FDeriv/Const.lean": "859cd0739df09b493b88e0cdb254e63d61b208a766721d4430ff2a715b9ef890",
+    "Mathlib/Data/Matrix/Basic.lean": "92536d5c741cfb07428a52a063622374a3c6171ec700554d59486b28f7afd252",
+    "Mathlib/Topology/Algebra/Module/LinearMapPiProd.lean": "c050bdd389e07f4007e43c1c03bc01c6a432fcf3385203c216c9202725cc11de",
+    "Mathlib/Analysis/Convex/Mul.lean": "be829deed0984c7df87bd879cb093b607c3132648687bcf1bf25755b65de3cf1",
+    "Mathlib/Topology/Order/Basic.lean": "8e61229d354991664f3eddd05127100ae1eb94da8f2f4041252b6f798931db70",
+    "Mathlib/Topology/Order/OrderClosed.lean": "6240a5c8871b5e1cbb5fc165f5408e83df3b6457c5507c13a59be527e6025a15",
+    "Mathlib/Analysis/Calculus/Deriv/Inverse.lean": "c714b6306963ba7419e2689d224501471a779e80ed56bd99fdb74d5d2f9e9563",
+    "Mathlib/Analysis/Calculus/ParametricIntervalIntegral.lean": "67f55a565f3bcda00a0e5840b2d90b51290b3bea01e7861254cf58da95e0bc35",
+    "Mathlib/Topology/Order/Compact.lean": "c6ba49ca7c223da761b40ae6fc2ddf5de28707842d28ca31dd7b06151f2fa6f8",
+    "Mathlib/Topology/Algebra/Module/Equiv.lean": "7c02e5b62ab7398cdd382d46052de855843c2ebcf3938614a1ec2df39faab77e",
+    "Mathlib/Analysis/Calculus/FDeriv/Equiv.lean": "4407e73c7f331a26846bb6339b4bd3cdb53f23d38ddac4fe81d9cf7b8e62ea9a",
+    "Mathlib/Analysis/Calculus/Deriv/Inv.lean": "bf74cb1aad372b70f2dd212ba66f7841a0e22bde837ad6515176648f9bc80ab8",
+    "Mathlib/Analysis/SpecialFunctions/Sqrt.lean": "e49948eb07de74be176bfe5556a1a661f7f13f1d2690157d03faf5568f8b1652",
+    "Mathlib/Analysis/Calculus/ContDiff/Defs.lean": "ef3d309d75c2b249e76667f9e9ecba45d84ea588c73f40ba37e7aa06b5038563",
+    "Mathlib/MeasureTheory/Integral/IntervalIntegral/FundThmCalculus.lean": "e613841200803e848d423e6a2f07d01caaef86170283cbf7cfca14d0d27da17f",
+    "Mathlib/Analysis/SpecialFunctions/ExpDeriv.lean": "7678c4712458f4129eb9b29ea7eb332467501cc8a6688547d1ed1b25f8849722",
+    "Mathlib/Analysis/Calculus/ContDiff/Operations.lean": "5769085df0ca5aba9aae0de6e64180e9d9175e14780d8bfa9e42924c47df4217",
+    "Mathlib/Data/Rat/Cast/Order.lean": "5691711f9f242e15166cb757f634048b333783e577eb5d89a0115113c0d4bc37",
+    "Mathlib/LinearAlgebra/AffineSpace/Slope.lean": "abe88ae72830c6cc6446fd09a08df55b978759ce8fa1aee63a6f1bc353558e70",
+    "Mathlib/Analysis/SpecificLimits/Basic.lean": "2351c56f7491df61392d0f6d6b0d6bcb028fad86ba9ace2854f94055eca55c14",
+    "Mathlib/Topology/NhdsWithin.lean": "fd3335408361c10e161fa3122dfff0fa5914a75a31a955816be33bfea9879a5a",
+    "Mathlib/Topology/MetricSpace/Pseudo/Defs.lean": "7f4531e249269d6b91cd05184d5f320a8ba6b634e8281335427b3a65661e60ac",
+    "Mathlib/Logic/Function/Iterate.lean": "bf42e948bbf3fae276cd05b8e53d1d143feec96f95d81675bee103010e210339",
+    "Mathlib/Analysis/Calculus/Deriv/Add.lean": "f68841b8cdda702b29fa18787e8afec466a3b1310f65053a0193d9e3a4bc1754",
+    "Mathlib/Analysis/Calculus/Deriv/Mul.lean": "cb93f2d61c10c59cef48df896d7f2a3d609d0106e2ac19d3193ef60fea2d2705",
+    "Mathlib/Analysis/Calculus/Deriv/Pow.lean": "089395d79aaacee57b7f6de037df8e0492f9be5d896b4db3eed5bbd897159d60",
+    "Mathlib/Analysis/Calculus/ImplicitContDiff.lean": "731db22a1fcf9f033fc0c4fb1af05747810fb341b6119f1f96ff6f4d05fadd8a",
+    "Mathlib/Analysis/Calculus/Implicit.lean": "b5fb2091649706880d3492684cbfcd48e19f72b073d841c0a0401e220ceb0a32",
+    "Mathlib/Analysis/Calculus/InverseFunctionTheorem/ContDiff.lean": "1193b81b565711de38372ae90c14b82ece542057fb622108cf70b97e043d086e",
+    "Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.lean": "63f729e83201b184c7e1cd7d3eb53314f0b01f55a19c4904204d6726365c58ef",
+    "Mathlib/LinearAlgebra/FiniteDimensional/Basic.lean": "ce03b8f125c36ee2992f4c844c475b942d835b8e5e8ed1c9a6b0329441cb8212",
+    "Mathlib/Analysis/Normed/Operator/Banach.lean": "cc6144ffb8159d4430d8416a9be8c96646ad89f9ed0fa550288d11ce3ea0f7ec",
+    "Mathlib/Analysis/Calculus/FDeriv/Pow.lean": "a7b87a75a53e9c4c8e40582849b7e118060be94599d65444bc4774b2bc005102",
+    "Mathlib/Analysis/Calculus/MeanValue.lean": "8a5d90ae5e65478d399c7c7bea2495df30b8288f5f8b7d4687dfc5e2bc27ff89",
+    "Mathlib/Topology/MetricSpace/Contracting.lean": "bb620eaf02513b0bbe49e60e93fb6abfd645f5934c7c7dc2ad9c579a1a495b75",
+    "Mathlib/Topology/EMetricSpace/Lipschitz.lean": "b5a52e304d2846e2137ebbf5eb986b1272994b666ede7cb1bf8239c174bcbb53",
+    "Mathlib/Analysis/Calculus/ContDiff/RCLike.lean": "0e9c4170d6565e8a783df2f48adba8094496d253ad38289e748d9e94f7c0f8f3",
+    "Mathlib/Analysis/Normed/Operator/Basic.lean": "cdfdca3ea38d021f21398287705fbe5ffbf5762dcc1330b7422e89612853a11e",
+    "Mathlib/Analysis/Normed/Group/Constructions.lean": "7943f273c08767160be6e519b44c72ff9b89e90c0f8362a61f8bce26427313ab",
+    "Mathlib/Algebra/BigOperators/Pi.lean": "0a9e69acf07470f6a6d54a56030337eec2ed2e8d81c0bdac4a54ec1315e8e392",
+    "Mathlib/Analysis/SpecialFunctions/Complex/Arg.lean": "c9bd233247314b674c13d619eb2af951c38f8fb3605c8ac6e438e9eb5cf56f29",
+    "Mathlib/Analysis/Normed/Operator/Prod.lean": "dd293587c1cc0511a057515671e608ce1712f898c2a14d4d757f81b751d70fc7",
+    "Mathlib/Topology/Instances/Matrix.lean": "cda6af033556b606e654635d6cf6a45fc832d7d8f9986783133b1a9affe8638a",
+    "Mathlib/LinearAlgebra/Matrix/ToLinearEquiv.lean": "820e54d46ce0fabf11615f441afd4415021093755b7c9a2a347dc99d444e52ef",
+    "Mathlib/Order/Filter/Prod.lean": "59b7a3020bddb2d73a00d392b32233eb3cf45f962225c92c2af501b488e27a6c",
+    "Mathlib/Topology/LocallyFinite.lean": "de8589b851e5109da980dacd0ca48d3e2d2f566f43547209358443abd2a93503",
+    "Mathlib/Order/Fin/Basic.lean": "65c5e36b026649b5d273a750bf860e20c864b93e2d07189bdf94d5d519bd528a",
+    "Mathlib/Analysis/Calculus/ContDiff/Comp.lean": "be6222fed49a4d82ea5f14fed34ebe5a8307ebecb7380c1d8bb8bfbad4157a89",
+    "Mathlib/LinearAlgebra/Matrix/ToLin.lean": "05382203fea2d5bfd9ff0b33537b1dfa7a7daebecdbc6f843529acd5a1f3ac6c",
+    "Mathlib/LinearAlgebra/Matrix/Block.lean": "5b45c42cc2431306308472aaeeb25a328b4f7b0fc38ea75b18692933064c53a2",
+    "Mathlib/Analysis/InnerProductSpace/PiL2.lean": "a3e5205f38fdf8ede1bfd97c6434431a6ae148e609b0ad607806cecdcc9c09c2",
+    "Mathlib/Analysis/InnerProductSpace/Basic.lean": "31c755ea1b283e5a6eb5f0578cc6a722e29d5fcf1480bc38711f5b1248e8a13d",
+    "Mathlib/Analysis/Normed/Lp/WithLp.lean": "0ca27dfaeff414ea2ca2fb48c933585f40ab00345e8fb94bc3cff61c94b65d4e",
+    "Mathlib/Data/Complex/Basic.lean": "87f99ff404fc3e3457a6457290e2d2c9c91be0620f5574e7790387db2bcefd8c",
+    "Mathlib/Analysis/Complex/Basic.lean": "8a73ce09f207c11213e89e237aa5dc938ddd4c68126ca7b16c283c7654c8aa46"
+  },
+  "native_external_sources": {
+    "SbtCosmo.Derivation.GroundCertifiedNativeTransportStep": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCertifiedNativeTransportStep.lean",
+      "sha256": "ccd64bf75b3416eea68b824485ff9ba85db8a64419f54e17e45b708305c1c23d"
+    },
+    "SbtCosmo.Derivation.GroundLocalDynamics": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundLocalDynamics.lean",
+      "sha256": "a0643c2ca36e2036d9d6ea71cf7064f3a11d585251a915039a62819ed7cd152d"
+    },
+    "SbtCosmo.Derivation.GroundSourceDiagnostics": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundSourceDiagnostics.lean",
+      "sha256": "729d5bf871fe3eca26612dd11fa43b74c5ea6afd1b0fe3dd43f2e22592f3bdab"
+    },
+    "SbtCosmo.Derivation.GroundOriginalResiduals": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOriginalResiduals.lean",
+      "sha256": "959f06e3580ef81bc82f1c6eb114d0606ea6cec8ed3b6fdd7822e0e5ddeffa96"
+    },
+    "SbtCosmo.Derivation.GroundUncertainNativeBasin": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundUncertainNativeBasin.lean",
+      "sha256": "ea7249e25ba8376a89c433a0c5598cc2065096e5108fb74b4ede08d908359449"
+    },
+    "SbtCosmo.Derivation.GroundNativePrefixInitial": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativePrefixInitial.lean",
+      "sha256": "ea701245813ea5d73733bbb8dc3569a59ddcb445609ace8e78dab38837614440"
+    },
+    "SbtCosmo.Derivation.GroundOffsetPrefixInitial": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOffsetPrefixInitial.lean",
+      "sha256": "9896ca6fbe8b325025ba1a5a26900b037b4e13f5f567bed34a0438d28cc12efa"
+    },
+    "SbtCosmo.Derivation.GroundComplexCoordinateBudget": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundComplexCoordinateBudget.lean",
+      "sha256": "7ea6e07ff9527994e8a145de4ad4a97961a52ee744dfd2e9930127d4ccc1ade7"
+    },
+    "SbtCosmo.Derivation.GroundOriginalSamples": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOriginalSamples.lean",
+      "sha256": "ad41a3d8818b3a0391298c99fd2399b6860e5b2babdccf226c2c8a2fe00243fb"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point001": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point001.lean",
+      "sha256": "d0a8425fe2e9ea2a0f2addb686b03ae7f1d35024c3aa740eb7f50955d6cf2d29"
+    },
+    "SbtCosmo.Derivation.GroundFiniteNativeTransport": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundFiniteNativeTransport.lean",
+      "sha256": "428d3e430ecf0764d689374e018b00b0fe705589b6780da8cb940b12bbacc6cf"
+    },
+    "SbtCosmo.Derivation.GroundCertifiedNativeEntry": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCertifiedNativeEntry.lean",
+      "sha256": "fe6ba302d9383a84ae6d87de2fe8471567f0bd6253b58d1c0723e7201b280872"
+    },
+    "SbtCosmo.Derivation.GroundComplexFiniteBudget": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundComplexFiniteBudget.lean",
+      "sha256": "b9ee6712a6028056413c3c963db48b23f95f5dcd6de8edb1fc393885ab135a21"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point003": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point003.lean",
+      "sha256": "735caf31f51983791a3e5a3a50dcfbf14798f93caaa6502561fee39b57122591"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point004": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point004.lean",
+      "sha256": "9928c8753ea757dfbcfd2e6792779db1c4b3fbc31690e20fdcdacb55dd2d6a00"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point005": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point005.lean",
+      "sha256": "6c57d84b55bafb2de75310e2528998567033ebed3d8ab45fa390dda481a28da2"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point006": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point006.lean",
+      "sha256": "5e7e8695a3a512b8231f5d56b79fcb77029096dc4e9c0af646a2b36ddf7ae8d0"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point007": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point007.lean",
+      "sha256": "aaa1507310780c4edadc1d4797cbad6748b4abdfc3049acb0019345a77245a33"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point008": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point008.lean",
+      "sha256": "f8c6a8a6eeb48f2d6f2c97f971de8846a5ed6e97ea9db999b351c92efe72a067"
+    },
+    "SbtCosmo.Derivation.GroundCoordinates.Point009": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundCoordinates/Point009.lean",
+      "sha256": "f64418a644f2622532d9d8f30f2288d4e5cc2b2b5516ad9cec3510fc428491f3"
+    },
+    "Mathlib.Topology.Order.LeftRight": {
+      "path": "/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/Mathlib/Topology/Order/LeftRight.lean",
+      "sha256": "83641285189f48f9b1ad73f109455967ca0d7cbd2d33676847d7845c7919a2eb"
+    },
+    "SbtCosmo.Derivation.GroundOriginalPositiveResiduals": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundOriginalPositiveResiduals.lean",
+      "sha256": "5d084a2f020a8425a580c50d6476690a503ec8a1fe102425efee924c691a509d"
+    },
+    "SbtCosmo.Derivation.GroundNativeIteration": {
+      "path": "/home/repos/six-birds-de-closure/lean/SbtCosmo/Derivation/GroundNativeIteration.lean",
+      "sha256": "69d207a7910b72b470213e00b5131f4fc78d51ce53fe120b1db7747f82884afb"
+    }
+  },
+  "scope": "Observed current toolchain/dependency checkout and source-byte identity; not final qualified campaign completion"
+}

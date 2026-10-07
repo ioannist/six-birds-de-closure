@@ -1,0 +1,295 @@
+schema_version: 1
+experiment: E1
+description: Standard DESI DR2 reproduction pipeline; no project-specific extensions.
+packages:
+  cobaya: /mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages
+seeds:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+  dynesty: 2718
+theory:
+  class:
+    version: v3.2.5
+    extra_args:
+      N_ncdm: 1
+      N_ur: 2.0328
+      m_ncdm: 0.06
+      T_cmb: 2.7255
+      lensing: "yes"
+      non linear: none
+      l_max_scalars: 2700
+priors:
+  cosmology:
+    omega_b:
+      prior: {min: 0.005, max: 0.1}
+      ref: {dist: norm, loc: 0.02237, scale: 0.00015}
+      proposal: 0.00015
+      latex: \omega_b
+    omega_cdm:
+      prior: {min: 0.001, max: 0.99}
+      ref: {dist: norm, loc: 0.1200, scale: 0.0012}
+      proposal: 0.0012
+      latex: \omega_c
+    theta_s_100:
+      prior: {min: 0.5, max: 10.0}
+      ref: {dist: norm, loc: 1.0416, scale: 0.0004}
+      proposal: 0.0002
+      latex: 100\theta_s
+    tau_reio:
+      prior: {min: 0.01, max: 0.8}
+      ref: {dist: norm, loc: 0.0544, scale: 0.007}
+      proposal: 0.007
+      latex: \tau
+      renames: tau
+    logA:
+      prior: {min: 1.61, max: 3.91}
+      ref: {dist: norm, loc: 3.044, scale: 0.014}
+      proposal: 0.014
+      latex: \log(10^{10} A_s)
+    n_s:
+      prior: {min: 0.8, max: 1.2}
+      ref: {dist: norm, loc: 0.9649, scale: 0.004}
+      proposal: 0.004
+      latex: n_s
+    H0:
+      latex: H_0
+    Omega_m:
+      latex: \Omega_m
+    sigma8:
+      latex: \sigma_8
+    S8:
+      derived: "lambda sigma8, Omega_m: sigma8*(Omega_m/0.3)**0.5"
+      latex: S_8
+    rs_drag:
+      latex: r_d
+  supernova:
+    sn_M:
+      prior: {min: -5.0, max: 5.0}
+      ref: {dist: norm, loc: 0.0, scale: 0.05}
+      proposal: 0.02
+      latex: \Delta\mu
+  planck_nuisance:
+    A_planck:
+      prior: {dist: norm, loc: 1.0, scale: 0.0025}
+      ref: {dist: norm, loc: 1.0, scale: 0.002}
+      proposal: 0.0005
+    calib_100T:
+      prior: {dist: norm, loc: 1.0002, scale: 0.0007}
+      ref: {dist: norm, loc: 1.0002, scale: 0.001}
+      proposal: 0.0005
+    calib_217T:
+      prior: {dist: norm, loc: 0.99805, scale: 0.00065}
+      ref: {dist: norm, loc: 0.99805, scale: 0.001}
+      proposal: 0.0005
+    A_cib_217:
+      prior: {min: 0.0, max: 200.0}
+      ref: {dist: norm, loc: 67.0, scale: 10.0}
+      proposal: 1.2
+    xi_sz_cib:
+      prior: {min: 0.0, max: 1.0}
+      ref: {dist: halfnorm, loc: 0.0, scale: 0.1}
+      proposal: 0.1
+    A_sz:
+      prior: {min: 0.0, max: 10.0}
+      ref: {dist: norm, loc: 7.0, scale: 2.0}
+      proposal: 0.6
+    ksz_norm:
+      prior: {min: 0.0, max: 10.0}
+      ref: {dist: halfnorm, loc: 0.0, scale: 3.0}
+      proposal: 1.0
+    gal545_A_100:
+      prior: {dist: norm, loc: 8.6, scale: 2.0}
+      ref: {dist: norm, loc: 7.0, scale: 2.0}
+      proposal: 1.0
+    gal545_A_143:
+      prior: {dist: norm, loc: 10.6, scale: 2.0}
+      ref: {dist: norm, loc: 9.0, scale: 2.0}
+      proposal: 1.0
+    gal545_A_143_217:
+      prior: {dist: norm, loc: 23.5, scale: 8.5}
+      ref: {dist: norm, loc: 21.0, scale: 4.0}
+      proposal: 1.5
+    gal545_A_217:
+      prior: {dist: norm, loc: 91.9, scale: 20.0}
+      ref: {dist: norm, loc: 80.0, scale: 15.0}
+      proposal: 2.0
+    ps_A_100_100:
+      prior: {min: 0.0, max: 400.0}
+      ref: {dist: norm, loc: 257.0, scale: 24.0}
+      proposal: 17.0
+    ps_A_143_143:
+      prior: {min: 0.0, max: 400.0}
+      ref: {dist: norm, loc: 47.0, scale: 10.0}
+      proposal: 3.0
+    ps_A_143_217:
+      prior: {min: 0.0, max: 400.0}
+      ref: {dist: norm, loc: 40.0, scale: 12.0}
+      proposal: 2.0
+    ps_A_217_217:
+      prior: {min: 0.0, max: 400.0}
+      ref: {dist: norm, loc: 104.0, scale: 13.0}
+      proposal: 2.5
+    galf_TE_A_100:
+      prior: {dist: norm, loc: 0.130, scale: 0.042}
+      ref: {dist: norm, loc: 0.130, scale: 0.1}
+      proposal: 0.1
+    galf_TE_A_100_143:
+      prior: {dist: norm, loc: 0.130, scale: 0.036}
+      ref: {dist: norm, loc: 0.130, scale: 0.1}
+      proposal: 0.1
+    galf_TE_A_100_217:
+      prior: {dist: norm, loc: 0.46, scale: 0.09}
+      ref: {dist: norm, loc: 0.46, scale: 0.1}
+      proposal: 0.1
+    galf_TE_A_143:
+      prior: {dist: norm, loc: 0.207, scale: 0.072}
+      ref: {dist: norm, loc: 0.207, scale: 0.1}
+      proposal: 0.1
+    galf_TE_A_143_217:
+      prior: {dist: norm, loc: 0.69, scale: 0.09}
+      ref: {dist: norm, loc: 0.69, scale: 0.1}
+      proposal: 0.1
+    galf_TE_A_217:
+      prior: {dist: norm, loc: 1.938, scale: 0.54}
+      ref: {dist: norm, loc: 1.938, scale: 0.2}
+      proposal: 0.2
+fixed_planck_nuisance:
+  A_planck: 1.0
+  calib_100T: 1.0002
+  calib_217T: 0.99805
+  A_cib_217: 67.0
+  xi_sz_cib: 0.1
+  A_sz: 7.0
+  ksz_norm: 0.0
+  gal545_A_100: 7.0
+  gal545_A_143: 9.0
+  gal545_A_143_217: 21.0
+  gal545_A_217: 80.0
+  ps_A_100_100: 257.0
+  ps_A_143_143: 47.0
+  ps_A_143_217: 40.0
+  ps_A_217_217: 104.0
+  galf_TE_A_100: 0.130
+  galf_TE_A_100_143: 0.130
+  galf_TE_A_100_217: 0.46
+  galf_TE_A_143: 0.207
+  galf_TE_A_143_217: 0.69
+  galf_TE_A_217: 1.938
+fixed_cosmology:
+  N_ncdm: 1
+  m_ncdm: 0.06
+  N_ur: 2.0328
+models:
+  lcdm:
+    label: lcdm
+    fixed: {}
+    sampled: {}
+  wcdm:
+    label: wcdm
+    fixed:
+      wa_fld: 0.0
+    sampled:
+      w0_fld:
+        prior: {min: -3.0, max: 1.0}
+        ref: {dist: norm, loc: -1.0, scale: 0.05}
+        proposal: 0.05
+        latex: w_0
+  w0wa:
+    label: w0wa
+    fixed: {}
+    sampled:
+      w0_fld:
+        prior: {min: -3.0, max: 1.0}
+        ref: {dist: norm, loc: -0.9, scale: 0.08}
+        proposal: 0.08
+        latex: w_0
+      wa_fld:
+        prior: {min: -3.0, max: 2.0}
+        ref: {dist: norm, loc: -0.4, scale: 0.2}
+        proposal: 0.2
+        latex: w_a
+combinations:
+  C1:
+    label: Planck 2018
+    datasets: [PLANCK_2018]
+  C2:
+    label: DESI DR2 BAO + Planck 2018
+    datasets: [PLANCK_2018, DESI_DR2_BAO]
+  C3:
+    label: DESI DR2 BAO + Planck 2018 + Pantheon+
+    datasets: [PLANCK_2018, DESI_DR2_BAO, PANTHEON_PLUS]
+  C4:
+    label: DESI DR2 BAO + Planck 2018 + Union3
+    datasets: [PLANCK_2018, DESI_DR2_BAO, UNION3]
+  C5:
+    label: DESI DR2 BAO + Planck 2018 + DES-SN5YR
+    datasets: [PLANCK_2018, DESI_DR2_BAO, DES_SN5YR]
+samplers:
+  minimize:
+    method: bobyqa
+    ignore_prior: false
+    max_evals: 1000000
+    best_of: 2
+    override_bobyqa:
+      rhoend: 0.05
+  mcmc:
+    burn_in: 0
+    max_samples: 40000
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.2
+    learn_every: 20d
+    learn_proposal: true
+    output_every: 60s
+    proposal_scale: 2.4
+    max_tries: 80d
+  dynesty:
+    nlive: 800
+    dlogz: 0.2
+run_modes:
+  smoke:
+    sample_planck_nuisance: false
+    mcmc_max_samples: 8
+    seed_offset: 1000
+    sampler_overrides:
+      minimize:
+        max_evals: 220
+        best_of: 1
+        override_bobyqa:
+          rhoend: 0.1
+      mcmc:
+        max_samples: 8
+        learn_every: 1000
+        learn_proposal: false
+        output_every: 1
+        proposal_scale: 0.05
+        Rminus1_stop: 999.0
+        Rminus1_cl_stop: 999.0
+  production:
+    sample_planck_nuisance: true
+    mcmc_max_samples: 40000
+    seed_offset: 0
+  validation:
+    sample_planck_nuisance: false
+    mcmc_max_samples: 64
+    seed_offset: 3000
+    sampler_overrides:
+      minimize:
+        max_evals: 220
+        best_of: 1
+        override_bobyqa:
+          rhoend: 0.1
+      mcmc:
+        max_samples: 64
+        learn_every: 20d
+        learn_proposal: true
+        output_every: 30s
+        proposal_scale: 1.0
+        Rminus1_stop: 999.0
+        Rminus1_cl_stop: 999.0
+  evidence:
+    sample_planck_nuisance: true
+    seed_offset: 2000
+gates:
+  reproduction_summary_required: runs/E1/E1A_full/summary.json
+  max_total_cores: 57

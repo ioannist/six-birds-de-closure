@@ -1,0 +1,6 @@
+{
+  "utc": "2026-10-06T12:28:47.140263+00:00",
+  "error": "AssertionError('Parent vanished without success: /tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/de_registered_integration_after_aggregate_recovery.py\", line 119, in <module>\n    try:main()\n        ^^^^^^\n  File \"/tmp/de_registered_integration_after_aggregate_recovery.py\", line 90, in main\n    while not parent_ready():time.sleep(10)\n              ^^^^^^^^^^^^^^\n  File \"/tmp/de_registered_integration_after_aggregate_recovery.py\", line 52, in parent_ready\n    assert active,'Parent vanished without success: '+script\n           ^^^^^^\nAssertionError: Parent vanished without success: /tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py\n",
+  "goal_complete": false
+}

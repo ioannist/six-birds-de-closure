@@ -1,0 +1,8 @@
+{
+  "first_readback_actual_exec_exit_code": 1,
+  "first_readback_chunk_id": "6c5a70",
+  "reason": "Receipt checker expected ascending target order; genuine pinned driver enqueued Step177 through Step000 in descending order.",
+  "lean_build_failure": false,
+  "source_or_driver_changed": false,
+  "repair": "Check the exact descending command and all original receipt/source/object bindings."
+}

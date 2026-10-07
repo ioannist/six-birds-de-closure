@@ -1,0 +1,222 @@
+SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_ball_invariant.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  {f : E → E} {u : E} {r : ℝ} {q : NNReal} (hr : 0 ≤ r) (hq : q ≤ 1) (hf : f u = u)
+  (hl : LipschitzOnWith q f (Metric.closedBall u r)) : Set.MapsTo f (Metric.closedBall u r) (Metric.closedBall u r)
+SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_orbit_bound.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  {f : E → E} {u y : E} {r : ℝ} {q : NNReal} (hr : 0 ≤ r) (hq : q ≤ 1) (hf : f u = u)
+  (hl : LipschitzOnWith q f (Metric.closedBall u r)) (hy : y ∈ Metric.closedBall u r) (n : ℕ) :
+  f^[n] y ∈ Metric.closedBall u r ∧ dist (f^[n] y) u ≤ ↑q ^ n * dist y u
+SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_orbit_converges.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  {f : E → E} {u y : E} {r : ℝ} {q : NNReal} (hr : 0 ≤ r) (hq : q < 1) (hf : f u = u)
+  (hl : LipschitzOnWith q f (Metric.closedBall u r)) (hy : y ∈ Metric.closedBall u r) :
+  Filter.Tendsto (fun n => f^[n] y) Filter.atTop (nhds u)
+SbtCosmo.Derivation.GroundLocalDynamics.c1_fixed_local_attraction.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {u : E} (hc : ContDiffAt ℝ 1 f u) (hf : f u = u) (hd : ‖fderiv ℝ f u‖ < 1) :
+  ∃ r > 0,
+    ∃ q < 1,
+      Set.MapsTo f (Metric.closedBall u r) (Metric.closedBall u r) ∧
+        ∀ y ∈ Metric.closedBall u r,
+          Filter.Tendsto (fun n => f^[n] y) Filter.atTop (nhds u) ∧ ∀ (n : ℕ), dist (f^[n] y) u ≤ ↑q ^ n * dist y u
+SbtCosmo.Derivation.GroundLocalDynamics.normSq_smooth : ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundState.normSq
+SbtCosmo.Derivation.GroundLocalDynamics.normalize_smooth_at {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : 0 < SbtCosmo.Derivation.GroundState.normSq u) :
+  ContDiffAt ℝ (↑⊤) SbtCosmo.Derivation.GroundNormalizedJacobian.normalize u
+SbtCosmo.Derivation.GroundLocalDynamics.relaxed_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundState.relaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m)
+SbtCosmo.Derivation.GroundLocalDynamics.relaxed_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundState.relaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m u = u
+SbtCosmo.Derivation.GroundLocalDynamics.normalized_smooth_at {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  ContDiffAt ℝ (↑⊤)
+    (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m) u
+SbtCosmo.Derivation.GroundLocalDynamics.positive_root_groundPair_return {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0) (hp : ∀ (i : Fin 8), 0 < x.1 i) :
+  SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) = x
+SbtCosmo.Derivation.GroundLocalDynamics.positive_root_jacobian_return {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0) (hp : ∀ (i : Fin 8), 0 < x.1 i)
+  (h : SbtCosmo.Derivation.GroundState.Field) {y : SbtCosmo.Derivation.GroundBorder.Point}
+  (hy :
+    (SbtCosmo.Derivation.GroundBorder.border (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) x.1 x.2) y =
+      (fun i => -(SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ x.1) h i * x.1 i, 0)) :
+  y.1 = (SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ x.1) h
+SbtCosmo.Derivation.GroundLocalDynamics.linear_action_entries
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (h : SbtCosmo.Derivation.GroundState.Field) (i : Fin 8) :
+  L h i = ∑ j, L (SbtCosmo.Derivation.GroundLocalDynamics.column j) i * h j
+SbtCosmo.Derivation.GroundLocalDynamics.operator_norm_le_rows
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) {q : ℝ} (hq : 0 ≤ q)
+  (hb : ∀ (i : Fin 8), ∑ j, |L (SbtCosmo.Derivation.GroundLocalDynamics.column j) i| ≤ q) : ‖L‖ ≤ q
+SbtCosmo.Derivation.GroundLocalDynamics.coordinate_fixed
+  (S : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  SbtCosmo.Derivation.GroundLocalDynamics.coordinateMap S b κ m (S.symm u) = S.symm u
+SbtCosmo.Derivation.GroundLocalDynamics.coordinate_smooth_at
+  (S : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundLocalDynamics.coordinateMap S b κ m) (S.symm u)
+SbtCosmo.Derivation.GroundLocalDynamics.coordinate_hasFDerivAt
+  (S : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundLocalDynamics.coordinateMap S b κ m)
+    (SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian S b κ m u) (S.symm u)
+SbtCosmo.Derivation.GroundLocalDynamics.coordinate_iterate_return
+  (S : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundState.Field) (n : ℕ) :
+  S ((SbtCosmo.Derivation.GroundLocalDynamics.coordinateMap S b κ m)^[n] x) =
+    (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m)^[n]
+      (S x)
+SbtCosmo.Derivation.GroundLocalDynamics.actual_local_attraction
+  (S : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u)
+  (hd : ‖SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian S b κ m u‖ < 1) :
+  ∃ r > 0,
+    ∃ q < 1,
+      ∀ (y : SbtCosmo.Derivation.GroundState.Field),
+        S.symm y ∈ Metric.closedBall (S.symm u) r →
+          Filter.Tendsto
+              (fun n =>
+                (SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                      (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m)^[n]
+                  y)
+              Filter.atTop (nhds u) ∧
+            ∀ (n : ℕ),
+              dist
+                  (S.symm
+                    ((SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                          (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m)^[n]
+                      y))
+                  (S.symm u) ≤
+                ↑q ^ n * dist (S.symm y) (S.symm u)
+SbtCosmo.Derivation.GroundLocalDynamics.actual_local_attraction_of_rows
+  (S : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m q : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hq : 0 ≤ q) (hq1 : q < 1)
+  (hb :
+    ∀ (i : Fin 8),
+      ∑ j,
+          |(SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian S b κ m u)
+              (SbtCosmo.Derivation.GroundLocalDynamics.column j) i| ≤
+        q) :
+  ∃ r > 0,
+    ∀ (y : SbtCosmo.Derivation.GroundState.Field),
+      S.symm y ∈ Metric.closedBall (S.symm u) r →
+        Filter.Tendsto
+          (fun n =>
+            (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ)
+                  m)^[n]
+              y)
+          Filter.atTop (nhds u)
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.distance_identity {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  SbtCosmo.Derivation.GroundState.normSq (u - g) = 2 * SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g u
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap_nonnegative {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  0 ≤ SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g u
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_nonnegative {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : ∀ (i : Fin 8), 0 ≤ g i) (hu : ∀ (i : Fin 8), 0 ≤ u i) : 0 ≤ SbtCosmo.Derivation.GroundBorder.dot g u
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.convex_norm_identity {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (m : ℝ) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundState.relaxed (fun x => g) m u) =
+    1 - m * (1 - m) * SbtCosmo.Derivation.GroundState.normSq (u - g)
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.convex_norm_le_one {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) {m : ℝ}
+  (hm : m ∈ Set.Icc 0 1) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundState.relaxed (fun x => g) m u) ≤ 1
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.relaxed_positive {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : ∀ (i : Fin 8), 0 < g i) (hu : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1) (i : Fin 8) :
+  0 < SbtCosmo.Derivation.GroundState.relaxed (fun x => g) m u i
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.relaxed_norm_positive {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : ∀ (i : Fin 8), 0 < g i) (hu : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1) :
+  0 < SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundState.relaxed (fun x => g) m u)
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.normalize_unit {w : SbtCosmo.Derivation.GroundState.Field}
+  (hw : 0 < SbtCosmo.Derivation.GroundState.normSq w) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundNormalizedJacobian.normalize w) = 1
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.step_unit_positive {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : ∀ (i : Fin 8), 0 < g i) (hu : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m u) = 1 ∧
+    ∀ (i : Fin 8), 0 < SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m u i
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.native_step_unit_positive (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) {u : SbtCosmo.Derivation.GroundState.Field} {m : ℝ} (hu : ∀ (i : Fin 8), 0 ≤ u i) (hm : m ∈ Set.Ioc 0 1) :
+  SbtCosmo.Derivation.GroundState.normSq
+        (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m
+          u) =
+      1 ∧
+    ∀ (i : Fin 8),
+      0 <
+        SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m u i
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.native_orbit_unit_nonnegative (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) {u : SbtCosmo.Derivation.GroundState.Field} {m : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hup : ∀ (i : Fin 8), 0 ≤ u i) (hm : m ∈ Set.Ioc 0 1) (n : ℕ) :
+  SbtCosmo.Derivation.GroundState.normSq
+        ((SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ)
+              m)^[n]
+          u) =
+      1 ∧
+    ∀ (i : Fin 8),
+      0 ≤
+        (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ)
+              m)^[n]
+          u i
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_relaxed {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (m : ℝ) :
+  SbtCosmo.Derivation.GroundBorder.dot g (SbtCosmo.Derivation.GroundState.relaxed (fun x => g) m u) =
+    (1 - m) * SbtCosmo.Derivation.GroundBorder.dot g u + m
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_step {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (m : ℝ) :
+  SbtCosmo.Derivation.GroundBorder.dot g (SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m u) =
+    ((1 - m) * SbtCosmo.Derivation.GroundBorder.dot g u + m) /
+      √(SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundState.relaxed (fun x => g) m u))
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap_step_bound {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hgp : ∀ (i : Fin 8), 0 < g i) (hup : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1) :
+  0 ≤ SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g (SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m u) ∧
+    SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g (SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m u) ≤
+      (1 - m) * SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g u
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_unit_nonnegative {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : ∀ (i : Fin 8), 0 < g i) (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (hup : ∀ (i : Fin 8), 0 ≤ u i)
+  {m : ℝ} (hm : m ∈ Set.Ioc 0 1) (n : ℕ) :
+  SbtCosmo.Derivation.GroundState.normSq ((SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m)^[n] u) = 1 ∧
+    ∀ (i : Fin 8), 0 ≤ (SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m)^[n] u i
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_gap_bound {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hgp : ∀ (i : Fin 8), 0 < g i)
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (hup : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1)
+  (n : ℕ) :
+  0 ≤ SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g ((SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m)^[n] u) ∧
+    SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g ((SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m)^[n] u) ≤
+      (1 - m) ^ n * SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g u
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.norm_le_sqrt_normSq (w : SbtCosmo.Derivation.GroundState.Field) :
+  ‖w‖ ≤ √(SbtCosmo.Derivation.GroundState.normSq w)
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_distance_bound {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hgp : ∀ (i : Fin 8), 0 < g i)
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (hup : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1)
+  (n : ℕ) :
+  ‖(SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m)^[n] u - g‖ ≤
+    √(2 * ((1 - m) ^ n * SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap g u))
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_converges {g u : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (hgp : ∀ (i : Fin 8), 0 < g i)
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (hup : ∀ (i : Fin 8), 0 ≤ u i) {m : ℝ} (hm : m ∈ Set.Ioc 0 1) :
+  Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundZeroCouplingOrbit.step g m)^[n] u) Filter.atTop (nhds g)
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.actual_zero_coupling_global_convergence
+  (b : SbtCosmo.Derivation.GroundState.Field) {u : SbtCosmo.Derivation.GroundState.Field} {m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (hup : ∀ (i : Fin 8), 0 ≤ u i) (hm : m ∈ Set.Ioc 0 1) :
+  Filter.Tendsto
+    (fun n =>
+      (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b 0) m)^[n]
+        u)
+    Filter.atTop (nhds (SbtCosmo.Derivation.GroundState.positiveGround b))
+SbtCosmo.Derivation.GroundZeroCouplingOrbit.actual_zero_coupling_distance_bound
+  (b : SbtCosmo.Derivation.GroundState.Field) {u : SbtCosmo.Derivation.GroundState.Field} {m : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (hup : ∀ (i : Fin 8), 0 ≤ u i) (hm : m ∈ Set.Ioc 0 1) (n : ℕ) :
+  ‖(SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b 0) m)^[n]
+          u -
+        SbtCosmo.Derivation.GroundState.positiveGround b‖ ≤
+    √(2 *
+        ((1 - m) ^ n *
+          SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap (SbtCosmo.Derivation.GroundState.positiveGround b) u))

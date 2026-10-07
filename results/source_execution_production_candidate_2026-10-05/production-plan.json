@@ -1,0 +1,96 @@
+{
+  "status": "Candidate; exact import-only translation of checked sources, fresh translated production compilation pending",
+  "module_count": 3,
+  "fresh_theorem_count": 18,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundSourceNormalization",
+      "checked_packet": "source_normalization_return_checked_2026-10-05",
+      "checked_source": "/home/repos/six-birds-de-closure/results/source_normalization_return_checked_2026-10-05/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean",
+      "checked_source_sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+      "production_path": "lean/SbtCosmo/Derivation/GroundSourceNormalization.lean",
+      "production_sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.GroundSourceNormalization.returned_unit",
+        "SbtCosmo.Derivation.GroundSourceNormalization.rejected_iff",
+        "SbtCosmo.Derivation.GroundSourceNormalization.zero_rejected",
+        "SbtCosmo.Derivation.GroundSourceNormalization.unit_preserved",
+        "SbtCosmo.Derivation.GroundSourceNormalization.failure_persists",
+        "SbtCosmo.Derivation.GroundSourceNormalization.positive_return_unit",
+        "SbtCosmo.Derivation.GroundSourceNormalization.successful_run_unit",
+        "SbtCosmo.Derivation.GroundSourceNormalization.successful_run_density_bound"
+      ],
+      "imports": [
+        "SbtCosmo.Derivation.GroundNativeEscape"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundSourceExecutionReturn",
+      "checked_packet": "source_execution_return_checked_2026-10-05",
+      "checked_source": "/home/repos/six-birds-de-closure/results/source_execution_return_checked_2026-10-05/lean/SbtCosmo/Derivation/GroundSourceExecutionReturn.lean",
+      "checked_source_sha256": "ea9ba5f287cb9c485f1a23f3b6b0668aa379cc6c5bf50fe4c9ece27af43f752b",
+      "production_path": "lean/SbtCosmo/Derivation/GroundSourceExecutionReturn.lean",
+      "production_sha256": "ea9ba5f287cb9c485f1a23f3b6b0668aa379cc6c5bf50fe4c9ece27af43f752b",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.attempt_some_iff",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.run_guarded",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_return",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_guards",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.run_iff_guards",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_guarded",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_iff_guards",
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn.candidate_normalization_preserved"
+      ],
+      "imports": [
+        "SbtCosmo.Derivation.GroundSourceNormalization"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycleExecution",
+      "checked_packet": "source_execution_return_checked_2026-10-05",
+      "checked_source": "/home/repos/six-birds-de-closure/results/source_execution_return_checked_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycleExecution.lean",
+      "checked_source_sha256": "4a54c474cf35857182f99a360bb0d1cdb68897a46396c2de6ffde8f589a9e4e3",
+      "production_path": "lean/SbtCosmo/Derivation/GroundOriginalCycleExecution.lean",
+      "production_sha256": "971c3cfa3a05f0fc76c0efb4186bfa18af0c8c862dafd30c9ea75a5b9de56403",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling20_execution",
+        "SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling30_execution"
+      ],
+      "imports": [
+        "SbtCosmo.Derivation.GroundSourceExecutionReturn",
+        "SbtCosmo.Derivation.NativeCycleSeed20.Return",
+        "SbtCosmo.Derivation.NativeCycleSeed30.Return"
+      ]
+    }
+  ],
+  "topological_order": [
+    "SbtCosmo.Derivation.GroundSourceNormalization",
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn",
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution"
+  ],
+  "dependencies": {
+    "SbtCosmo.Derivation.GroundSourceNormalization": [],
+    "SbtCosmo.Derivation.GroundOriginalCycleExecution": [
+      "SbtCosmo.Derivation.GroundSourceExecutionReturn"
+    ],
+    "SbtCosmo.Derivation.GroundSourceExecutionReturn": [
+      "SbtCosmo.Derivation.GroundSourceNormalization"
+    ]
+  },
+  "prior_packet_bindings": {
+    "source_normalization_return_checked_2026-10-05": {
+      "file_manifest_sha256": "9c2264df72f32fda3a8071b99f8012cf3f8fd96224c4ed16d8ab72520575396d",
+      "audit_summary_sha256": "409df24a1ba1cb56a079ce737d7d25455e4b41fde8f76db5d3729004511cc471"
+    },
+    "source_execution_return_checked_2026-10-05": {
+      "file_manifest_sha256": "5376dd485834b55022a4e17228653ecdba0016f57e9dde3a2c39d7a87b789a79",
+      "audit_summary_sha256": "2a37bf0c669850f36bbc9a1a4ca6f44dd292308433abde7a418af5cf12e6adfd"
+    }
+  },
+  "parent_plan_sha256": "f7c886daeef5d8ef01c35a276988c199c0ddf8b7aff9d42df436e944e49e5b63",
+  "supplement_plan_sha256": "a20d5507dd50cd75895aaaca2be593bcf9c42374aacd7327ab31907c4f185ac4",
+  "fixed29_plan_sha256": "b49d9258b3d9b07b5963c8ba76d28e7ebcd5dd03df10edf280b455372aacd5b0",
+  "only_import_lines_translated": true,
+  "repository_registered": false,
+  "goal_complete": false
+}

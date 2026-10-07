@@ -1,0 +1,17 @@
+{
+  "README.md": "4f6724531aa2d7ba58eae6a92feb0c1c8b4baf87e68a93b6549e814bfc8f8d5a",
+  "archive-manifest.json": "e0d1167d74330a267ad240ff9dcb3f6ebdc9bc03365383498996de8d6afefc14",
+  "audit-summary.json": "be8cc8977f82da384dc1d0171a78052e63779445c95b354d66900e794e66029a",
+  "checked_artifacts.tar.gz": "c6da0ee3e1e28df93de6b30b55b5d5a4383fe53ed73dc6c11f9efd3aba4cb00a",
+  "checkpoint-verification.json": "618527fdd9592c8e716b98033de7de8af760c398f193cb8c3c0e56f4641baeb5",
+  "handover.md": "4cccfb7f46d44bfd91a05dd5735cb2449e778d77a98faf6f05e11a44b4444427",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.lean": "3e8b191f175e62c07f2c0210a12d08d79d48cdb483b8db8b745998452d1befd9",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.lean": "39368b775b7d0e6b81d03facdd1145329765af6750471b5f320b629457f47b6e",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.lean": "bf04bd0913cc5cb151fa17e5a5891377222f2d24b310bdb4574d427c55ce6409",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.lean": "e4625d18010180c68304ff39cd540050ad743983e5776d0e97408c8eee97d3bb",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.lean": "7fd0fc572eb2042f1261cf931de3eef54bf89c7a4c1dd046097954e78107c2a0",
+  "lean/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.lean": "ffe635cebc261b3e21dd1246a9c6abd7b0e055c98da2595bf13a7787e4185915",
+  "math-review.md": "798a854402c07fa4c533e0faa2a84e8f22e58f80da5ad2696b1456abd1f7560c",
+  "registration-plan.json": "bf8fc3e193e9817c07dc5ae5a9f47817433747b2c98959cda9a71686f7facdfb",
+  "source-bindings.json": "e5f15160fa62928bd4456e63280f81fbe93deb5be6cf2e5a0d5eafa7ae87ac5b"
+}

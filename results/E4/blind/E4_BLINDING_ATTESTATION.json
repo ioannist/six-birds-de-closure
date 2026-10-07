@@ -1,0 +1,5 @@
+{
+  "agent": "ralph",
+  "ever_seen_route_H0_value": false,
+  "note": "No route-attached numerical H0 values have been seen in this workspace/session before this attestation; proceeding under the packet's session-scoped blind criterion."
+}

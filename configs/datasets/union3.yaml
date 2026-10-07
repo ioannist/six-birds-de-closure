@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: UNION3
+manifest: data/manifests/union3.json
+fallback_policy: budgeted_compressed_bins

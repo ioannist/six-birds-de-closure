@@ -1,0 +1,82 @@
+{
+  "access": "official_mirror",
+  "aor_status": "zero",
+  "bins": {
+    "columns": [
+      "CID",
+      "zCMB",
+      "zHD",
+      "MU",
+      "MUERR_FINAL"
+    ],
+    "n": 1829
+  },
+  "citation": "DES Collaboration 2024, Zenodo:13827844 / arXiv:2401.02929; CobayaSampler/sn_data commit 61d96434cafc2770928322c38e5a750e686368ae",
+  "dataset": "DES_SN5YR",
+  "fallback": "published fitted mu(z) polynomial plus covariance summary",
+  "fallback_invoked": false,
+  "fetch_url": "https://github.com/CobayaSampler/sn_data/tree/master/DESY5",
+  "fetched_utc": "2026-05-29T22:46:28Z",
+  "license": "DES-SN5YR public data mirrored by CobayaSampler/sn_data; cite DES Collaboration 2024",
+  "model_dependent": false,
+  "processed": {
+    "covariance": {
+      "bytes": 26762056,
+      "dtype": "float64",
+      "path": "data/processed/des_sn5yr/covariance.npy",
+      "sha256": "00b1bf1371e5fcee80579d06cea9cfda1d1e187747d58b084b43304668c6d713",
+      "shape": [
+        1829,
+        1829
+      ]
+    },
+    "data_vector": {
+      "bytes": 14760,
+      "dtype": "float64",
+      "path": "data/processed/des_sn5yr/data_vector.npy",
+      "sha256": "1ff274f4bb409bd23e00022f07d037de0de13600e74832d42bba2ddbd47ae18a",
+      "shape": [
+        1829
+      ]
+    },
+    "metadata": {
+      "bytes": 104596,
+      "dtype": "json",
+      "path": "data/processed/des_sn5yr/metadata.json",
+      "sha256": "0427dbc3d7202f655623c1547d92306d74168018cf70e826f1f65c837b59d335",
+      "shape": "json"
+    }
+  },
+  "processing_commit": "2250a9ba1dea000830960dcce41ae581e5cd22ed",
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "raw_files": [
+    {
+      "bytes": 91860,
+      "path": "data/raw/sn_data_repos/sn_data/DESY5/DES-SN5YR_HD.csv",
+      "sha256": "95ab1e9f5460a056de37d2b4e28df73ce0c7fd471baba9fb37f1667f41b7901c"
+    },
+    {
+      "bytes": 53523861,
+      "path": "data/raw/sn_data_repos/sn_data/DESY5/covsys_000.txt",
+      "sha256": "a9e8deeb219375dcb507eaff261eede8314175729be41dae18235a817f68a474"
+    },
+    {
+      "bytes": 87,
+      "path": "data/raw/sn_data_repos/sn_data/DESY5/config.dataset",
+      "sha256": "1b022e39fdf948e649f24bfd862c00c954ebe97a3ab2ac25b450b44ac60f580e"
+    },
+    {
+      "bytes": 1193,
+      "path": "data/raw/sn_data_repos/sn_data/README.md",
+      "sha256": "9e42b3929b2117c9a43576871e0c1dd787ecda59fbea639ff44b8144ec31e0fb"
+    }
+  ],
+  "recomputability": "recomputable",
+  "release": "Zenodo:13827844; arXiv:2401.02929",
+  "route": null,
+  "scale_cuts": {
+    "applied": true,
+    "note": "DES-SN5YR released Hubble diagram"
+  },
+  "staging_axis": "sn_sample"
+}

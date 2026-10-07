@@ -1,0 +1,204 @@
+SbtCosmo.Derivation.ConeClosurePrice.value_le_candidate.{u_1, u_2} {E : Type u_1} {F : Type u_2} [NormedAddCommGroup F]
+  {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  (hbb : BddBelow (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive B)) {x : E} (hx : x ∈ A)
+  (he : positive (B - energy x)) : SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive B ≤ J x
+SbtCosmo.Derivation.ConeClosurePrice.optimum_value.{u_1, u_2} {E : Type u_1} {F : Type u_2} [NormedAddCommGroup F]
+  {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F} {star : E}
+  (h : SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J energy positive B star) :
+  SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive B = J star
+SbtCosmo.Derivation.ConeClosurePrice.derivative_nonpositive_on_cone.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  {star : E} {d : F →L[ℝ] ℝ} (hc : SbtCosmo.Derivation.ConeClosurePrice.ConeLaws positive)
+  (hstar : SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J energy positive B star)
+  (hfinite :
+    ∀ᶠ (T : F) in nhds B,
+      (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T).Nonempty ∧
+        BddBelow (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T))
+  (hd : HasFDerivAt (SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive) d B) (H : F) : positive H → d H ≤ 0
+SbtCosmo.Derivation.ConeClosurePrice.derivative_global_support.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] [AddCommGroup E] [Module ℝ E] {A : Set E} {J : E → ℝ} {energy : E → F}
+  {positive : F → Prop} {B : F} {star : E} {d : F →L[ℝ] ℝ} (hc : SbtCosmo.Derivation.ConeClosurePrice.ConeLaws positive)
+  (hJ : ConvexOn ℝ A J)
+  (he :
+    ∀ x ∈ A,
+      ∀ y ∈ A, ∀ (a b : ℝ), 0 ≤ a → 0 ≤ b → a + b = 1 → positive (a • energy x + b • energy y - energy (a • x + b • y)))
+  (hstar : SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J energy positive B star)
+  (hfinite :
+    ∀ᶠ (T : F) in nhds B,
+      (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T).Nonempty ∧
+        BddBelow (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T))
+  (hd : HasFDerivAt (SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive) d B) (x : E) :
+  x ∈ A → J star + d (energy x - B) ≤ J x
+SbtCosmo.Derivation.ConeClosurePrice.price_certificate.{u_1, u_2} {E : Type u_1} {F : Type u_2} [NormedAddCommGroup F]
+  [NormedSpace ℝ F] [AddCommGroup E] [Module ℝ E] {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  {star : E} {d : F →L[ℝ] ℝ} (hc : SbtCosmo.Derivation.ConeClosurePrice.ConeLaws positive) (hJ : ConvexOn ℝ A J)
+  (he :
+    ∀ x ∈ A,
+      ∀ y ∈ A, ∀ (a b : ℝ), 0 ≤ a → 0 ≤ b → a + b = 1 → positive (a • energy x + b • energy y - energy (a • x + b • y)))
+  (hstar : SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J energy positive B star)
+  (hfinite :
+    ∀ᶠ (T : F) in nhds B,
+      (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T).Nonempty ∧
+        BddBelow (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T))
+  (hd : HasFDerivAt (SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive) d B) :
+  SbtCosmo.Derivation.ConeClosurePrice.DualCertificate A J energy positive B (-d) star
+SbtCosmo.Derivation.ConeClosurePrice.strict_sensitivity_nonzero.{u_2} {F : Type u_2} [NormedAddCommGroup F]
+  [NormedSpace ℝ F] {d : F →L[ℝ] ℝ} {H : F} (hs : d H < 0) : -d ≠ 0
+SbtCosmo.Derivation.ConeClosurePrice.certificate_primal_optimum.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  {price : F →L[ℝ] ℝ} {star : E}
+  (h : SbtCosmo.Derivation.ConeClosurePrice.DualCertificate A J energy positive B price star) :
+  SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J energy positive B star
+SbtCosmo.Derivation.ConeClosurePrice.certificate_dual_isGLB.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  {price : F →L[ℝ] ℝ} {star : E}
+  (h : SbtCosmo.Derivation.ConeClosurePrice.DualCertificate A J energy positive B price star) :
+  IsGLB (SbtCosmo.Derivation.ConeClosurePrice.lagrangian J energy B price '' A)
+    (SbtCosmo.Derivation.ConeClosurePrice.dualValue A J energy B price)
+SbtCosmo.Derivation.ConeClosurePrice.certificate_strong_duality.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  {price : F →L[ℝ] ℝ} {star : E}
+  (h : SbtCosmo.Derivation.ConeClosurePrice.DualCertificate A J energy positive B price star) :
+  SbtCosmo.Derivation.ConeClosurePrice.dualValue A J energy B price =
+    SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive B
+SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize_symmetric.{u_1} {n : Type u_1}
+  (M : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n)) :
+  SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize ↑M = M
+SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize_transpose.{u_1} {n : Type u_1} (M : Matrix n n ℝ) :
+  SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize M.transpose =
+    SbtCosmo.Derivation.MatrixPriceRepresentation.symmetrize M
+SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_symmetric.{u_1} {n : Type u_1} [DecidableEq n]
+  (p : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n) →ₗ[ℝ] ℝ) :
+  (SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix p).IsHermitian
+SbtCosmo.Derivation.MatrixPriceRepresentation.trace_representation.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n]
+  (p : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n) →ₗ[ℝ] ℝ)
+  (M : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n)) :
+  (SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix p * ↑M).trace = p M
+SbtCosmo.Derivation.MatrixPriceRepresentation.rank_one_pairing.{u_1} {n : Type u_1} [Fintype n] (P : Matrix n n ℝ)
+  (v : n → ℝ) : (P * Matrix.vecMulVec v v).trace = v ⬝ᵥ P.mulVec v
+SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_positive.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n]
+  (p : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n) →ₗ[ℝ] ℝ)
+  (hpositive : ∀ (M : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n)), (↑M).PosSemidef → 0 ≤ p M) :
+  (SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix p).PosSemidef
+SbtCosmo.Derivation.MatrixPriceRepresentation.price_matrix_nonzero.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n]
+  (p : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n) →ₗ[ℝ] ℝ)
+  {M : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric n)} (hM : 0 < p M) :
+  SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix p ≠ 0
+SbtCosmo.Derivation.MatrixClosurePrice.cone_laws.{u_2} {m : Type u_2} [Fintype m] :
+  SbtCosmo.Derivation.ConeClosurePrice.ConeLaws SbtCosmo.Derivation.MatrixClosurePrice.positive
+SbtCosmo.Derivation.MatrixClosurePrice.gram_mix_gap.{u_2, u_3} {m : Type u_2} {e : Type u_3} [Fintype e]
+  (X Y : Matrix m e ℝ) {a b : ℝ} (hab : a + b = 1) :
+  a • (X * X.conjTranspose) + b • (Y * Y.conjTranspose) - (a • X + b • Y) * (a • X + b • Y).conjTranspose =
+    (a * b) • ((X - Y) * (X - Y).conjTranspose)
+SbtCosmo.Derivation.MatrixClosurePrice.residual_mix_gap.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ) (X Y : Matrix m e ℝ) {a b : ℝ}
+  (hab : a + b = 1) :
+  a • ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L X) +
+        b • ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L Y) -
+      ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (a • X + b • Y)) =
+    (a * b) • ↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (X - Y))
+SbtCosmo.Derivation.MatrixClosurePrice.residual_loewner_convex.{u_1, u_2, u_3} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] (L : Matrix n e ℝ)
+  (X Y : Matrix m e ℝ) {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1) :
+  SbtCosmo.Derivation.MatrixClosurePrice.positive
+    (a • SbtCosmo.Derivation.MatrixClosurePrice.residual L X + b • SbtCosmo.Derivation.MatrixClosurePrice.residual L Y -
+      SbtCosmo.Derivation.MatrixClosurePrice.residual L (a • X + b • Y))
+SbtCosmo.Derivation.MatrixClosurePrice.affine_residual_loewner_convex.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] {E : Type u_4} [AddCommGroup E]
+  [Module ℝ E] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) (x y : E) {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b)
+  (hab : a + b = 1) :
+  SbtCosmo.Derivation.MatrixClosurePrice.positive
+    (a • SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x) +
+        b • SbtCosmo.Derivation.MatrixClosurePrice.residual L (D y) -
+      SbtCosmo.Derivation.MatrixClosurePrice.residual L (D (a • x + b • y)))
+SbtCosmo.Derivation.MatrixClosurePrice.matrix_price.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2} {e : Type u_3}
+  [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] {E : Type u_4} [AddCommGroup E] [Module ℝ E]
+  [DecidableEq m] (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) {A : Set E} {J : E → ℝ}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star : E}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hJ : ConvexOn ℝ A J)
+  (hstar :
+    SbtCosmo.Derivation.ConeClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B star)
+  (hfinite :
+    ∀ᶠ (T : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)) in nhds B,
+      (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive T).Nonempty ∧
+        BddBelow
+          (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J
+            (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+            SbtCosmo.Derivation.MatrixClosurePrice.positive T))
+  (hd :
+    HasFDerivAt
+      (SbtCosmo.Derivation.ConeClosurePrice.value A J (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+        SbtCosmo.Derivation.MatrixClosurePrice.positive)
+      d B)
+  (hs : ∃ H, SbtCosmo.Derivation.MatrixClosurePrice.positive H ∧ d H < 0) :
+  ∃ P,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        (∀ (H : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)), (P * ↑H).trace = -d H) ∧
+          (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D star)) - ↑B)).trace = 0 ∧
+            (∀ x ∈ A, J star ≤ J x + (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) ∧
+              sInf
+                  ((fun x => J x + (P * (↑(SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x)) - ↑B)).trace) ''
+                    A) =
+                SbtCosmo.Derivation.ConeClosurePrice.value A J
+                  (fun x => SbtCosmo.Derivation.MatrixClosurePrice.residual L (D x))
+                  SbtCosmo.Derivation.MatrixClosurePrice.positive B
+SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate_budget (r : ℝ) :
+  SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget r) =
+    r
+SbtCosmo.Derivation.MatrixClosurePriceExamples.budget_coordinate
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) :
+  SbtCosmo.Derivation.MatrixClosurePriceExamples.budget (SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate B) =
+    B
+SbtCosmo.Derivation.MatrixClosurePriceExamples.energy_eq (x : ℝ) :
+  SbtCosmo.Derivation.MatrixClosurePriceExamples.energy x =
+    SbtCosmo.Derivation.MatrixClosurePriceExamples.budget (x ^ 2)
+SbtCosmo.Derivation.MatrixClosurePriceExamples.budget_positive_iff (r : ℝ) :
+  SbtCosmo.Derivation.MatrixClosurePrice.positive (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget r) ↔ 0 ≤ r
+SbtCosmo.Derivation.MatrixClosurePriceExamples.feasible_iff
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) (x : ℝ) :
+  SbtCosmo.Derivation.MatrixClosurePrice.positive (B - SbtCosmo.Derivation.MatrixClosurePriceExamples.energy x) ↔
+    SbtCosmo.Derivation.SchurClosurePriceExamples.energy x ≤ SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate B
+SbtCosmo.Derivation.MatrixClosurePriceExamples.costs_return
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) :
+  SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts Set.univ SbtCosmo.Derivation.SchurClosurePriceExamples.objective
+      SbtCosmo.Derivation.MatrixClosurePriceExamples.energy SbtCosmo.Derivation.MatrixClosurePrice.positive B =
+    SbtCosmo.Derivation.ConvexClosurePrice.feasibleCosts Set.univ
+      SbtCosmo.Derivation.SchurClosurePriceExamples.objective SbtCosmo.Derivation.SchurClosurePriceExamples.energy
+      (SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate B)
+SbtCosmo.Derivation.MatrixClosurePriceExamples.value_return
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) :
+  SbtCosmo.Derivation.ConeClosurePrice.value Set.univ SbtCosmo.Derivation.SchurClosurePriceExamples.objective
+      SbtCosmo.Derivation.MatrixClosurePriceExamples.energy SbtCosmo.Derivation.MatrixClosurePrice.positive B =
+    SbtCosmo.Derivation.ConvexClosurePrice.budgetValue Set.univ SbtCosmo.Derivation.SchurClosurePriceExamples.objective
+      SbtCosmo.Derivation.SchurClosurePriceExamples.energy (SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate B)
+SbtCosmo.Derivation.MatrixClosurePriceExamples.actual_value_derivative :
+  HasFDerivAt
+    (SbtCosmo.Derivation.ConeClosurePrice.value Set.univ SbtCosmo.Derivation.SchurClosurePriceExamples.objective
+      SbtCosmo.Derivation.MatrixClosurePriceExamples.energy SbtCosmo.Derivation.MatrixClosurePrice.positive)
+    (-SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate)
+    (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1)
+SbtCosmo.Derivation.MatrixClosurePriceExamples.actual_matrix_price :
+  ∃ P,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        (∀ (H : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))),
+            (P * ↑H).trace = SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate H) ∧
+          (P *
+                  (↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.energy 1) -
+                    ↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1))).trace =
+              0 ∧
+            ∀ (x : ℝ),
+              SbtCosmo.Derivation.SchurClosurePriceExamples.objective 1 ≤
+                SbtCosmo.Derivation.SchurClosurePriceExamples.objective x +
+                  (P *
+                      (↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.energy x) -
+                        ↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1))).trace
+SbtCosmo.Derivation.MatrixClosurePriceExamples.partial_slack_control :
+  have P := Matrix.diagonal ![1, 0];
+  have S := Matrix.diagonal ![0, 1];
+  P.PosSemidef ∧ S.PosSemidef ∧ P ≠ 0 ∧ S ≠ 0 ∧ (P * S).trace = 0

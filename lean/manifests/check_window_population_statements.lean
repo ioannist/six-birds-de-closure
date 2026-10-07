@@ -1,0 +1,14 @@
+import SbtCosmo.Derivation.WindowSample
+
+#check SbtCosmo.Derivation.GrowthPopulation.exists_positive_tagMaximum
+#check SbtCosmo.Derivation.GrowthPopulation.passingCount_iff_rank
+#check SbtCosmo.Derivation.GrowthPopulation.exists_count_threshold
+#check SbtCosmo.Derivation.GrowthPopulation.native_record_count_eq
+#check SbtCosmo.Derivation.GrowthPopulation.exists_unique_native_aggregate_window
+#check SbtCosmo.Derivation.WindowSampleData.rational_maxima_certificate
+#check SbtCosmo.Derivation.WindowSampleData.rational_rank_certificate
+#check SbtCosmo.Derivation.WindowSample.sampled_maxima
+#check SbtCosmo.Derivation.WindowSample.sampled_threshold_exact
+#check SbtCosmo.Derivation.WindowSample.realized_gate_iff_seed_fraction
+#check SbtCosmo.Derivation.WindowSample.realized_gate_iff_threshold
+#check SbtCosmo.Derivation.WindowSample.exists_unique_realized_window

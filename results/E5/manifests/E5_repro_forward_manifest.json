@@ -1,0 +1,15 @@
+{
+  "design_version": "E5-minimal-physical-v2",
+  "outputs": {
+    "repro": {
+      "path": "results/E5/E5_repro.json",
+      "sha256": "e0f4b38f7b32b1ef77493c9353e4b659900367e2087fe1296744badeb7e23071"
+    },
+    "repro_csv": {
+      "path": "results/E5/repro_growth.csv",
+      "sha256": "b6bb77a907d1b2fc5864aa53d43a3ccaf163dc06a5ef9ff4029e4cb01f731b30"
+    }
+  },
+  "schema_version": 1,
+  "stopped_before_certificate": true
+}

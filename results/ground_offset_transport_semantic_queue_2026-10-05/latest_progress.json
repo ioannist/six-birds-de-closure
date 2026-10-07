@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-05T01:40:30.047911+00:00",
+  "latest_log_lines": {
+    "de-offset-transport-leaves-resume-driver-retry": [
+      "resumed leaves GroundOffsetTransport.Point011.Step006 terminal 0 completed 285 /421",
+      "resumed leaves GroundOffsetTransport.Point011.Step007 terminal 0 completed 286 /421"
+    ],
+    "de-native-cycle-seed-leaves-driver": [
+      "NativeCycleSeed30Step131 terminal 0 completed 263 /472",
+      "NativeCycleSeed20Step131 terminal 0 completed 264 /472"
+    ],
+    "de-native-cycle-seed-pairs-driver": [
+      "NativeCycleSeed30Pair064 terminal 0 completed 129 /236",
+      "NativeCycleSeed20Pair064 terminal 0 completed 130 /236"
+    ],
+    "de-native-stable-seed-leaves-driver": [
+      "NativeStableSeed003Step016 terminal 0 scheduled completed 76 /597",
+      "NativeStableSeed003Step017 terminal 0 scheduled completed 77 /597"
+    ],
+    "de-native-stable-seed-pairs-driver": [
+      "NativeStableSeed003Pair006 terminal 0",
+      "NativeStableSeed003Pair007 terminal 0"
+    ],
+    "de-native-stable-seed-families-driver": [
+      "NativeStableSeed001Transport terminal 0",
+      "NativeStableSeed001Audit terminal 0"
+    ],
+    "de-native-stable-seed-sixty-driver": [
+      "NativeStableSeed001Sixty terminal 0",
+      "NativeStableSeed001SixtyAudit terminal 0"
+    ],
+    "de-offset-transport-semantic-finish-driver": [
+      "Whole-background semantic driver PID 1541224 waiting for main build/audits; frozen inputs 5675"
+    ]
+  },
+  "main_semantic_completed": false,
+  "native_qualified_completed": false,
+  "registered_campaign": false,
+  "goal_complete": false,
+  "new_semantic_driver_pid": 1541224,
+  "new_semantic_driver_session": 87061
+}

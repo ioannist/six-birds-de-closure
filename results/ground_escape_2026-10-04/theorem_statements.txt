@@ -1,0 +1,99 @@
+SbtCosmo.Derivation.GroundNativeEscape.c2_quadratic_remainder.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {u : E} (hc : ContDiffAt ℝ 2 f u) :
+  ∃ r > 0, ∃ K, ∀ x ∈ Metric.closedBall u r, ‖f x - f u - (fderiv ℝ f u) (x - u)‖ ≤ ↑K * ‖x - u‖ ^ 2
+SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking_step.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {L : E →L[ℝ] E} {x y : E} {α K A M R : ℝ} (hα : 0 ≤ α) (hK : 0 ≤ K) (hM : 0 ≤ M)
+  (hsmall : A * α ≤ 1) (hrate : 4 * K + M * A ≤ A * R ^ 2) (hL : ‖L‖ ≤ M) (hy : ‖y‖ ≤ α) (he : ‖x - y‖ ≤ A * α ^ 2)
+  (hrem : ‖f x - L x‖ ≤ K * ‖x‖ ^ 2) : ‖x‖ ≤ 2 * α ∧ ‖f x - L y‖ ≤ A * (α * R) ^ 2
+SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {f : E → E} {L : E →L[ℝ] E} {y : ℕ → E} {δ K A M R r : ℝ} {N : ℕ} (hδ : 0 ≤ δ) (hK : 0 ≤ K) (hA : 0 ≤ A) (hM : 0 ≤ M)
+  (hR : 1 ≤ R) (hsmall : A * r ≤ 1) (hend : δ * R ^ N ≤ r) (hrate : 4 * K + M * A ≤ A * R ^ 2) (hL : ‖L‖ ≤ M)
+  (hy : ∀ (k : ℕ), ‖y k‖ ≤ δ * R ^ k) (hynext : ∀ (k : ℕ), y (k + 1) = L (y k))
+  (hrem : ∀ (x : E), ‖x‖ ≤ 2 * r → ‖f x - L x‖ ≤ K * ‖x‖ ^ 2) (k : ℕ) :
+  k ≤ N → ‖f^[k] (y 0) - y k‖ ≤ A * (δ * R ^ k) ^ 2 ∧ ‖f^[k] (y 0)‖ ≤ 2 * (δ * R ^ k)
+SbtCosmo.Derivation.GroundNativeEscape.eigenmode_tracking.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {f : E → E} {L : E →L[ℝ] E} {h : E} {ℓ δ K A M r : ℝ} {N : ℕ} (hδ : 0 ≤ δ) (hK : 0 ≤ K) (hA : 0 ≤ A) (hM : 0 ≤ M)
+  (hℓ : 1 ≤ |ℓ|) (hsmall : A * r ≤ 1) (hend : δ * |ℓ| ^ N ≤ r) (hrate : 4 * K + M * A ≤ A * |ℓ| ^ 2) (hL : ‖L‖ ≤ M)
+  (hh : ‖h‖ = 1) (heigen : L h = ℓ • h) (hrem : ∀ (x : E), ‖x‖ ≤ 2 * r → ‖f x - L x‖ ≤ K * ‖x‖ ^ 2) :
+  (∀ k ≤ N, ‖f^[k] (δ • h) - (δ * ℓ ^ k) • h‖ ≤ A * (δ * |ℓ| ^ k) ^ 2 ∧ ‖f^[k] (δ • h)‖ ≤ 2 * (δ * |ℓ| ^ k)) ∧
+    δ * |ℓ| ^ N - A * (δ * |ℓ| ^ N) ^ 2 ≤ ‖f^[N] (δ • h)‖
+SbtCosmo.Derivation.GroundNativeEscape.finite_eigenmode_escape.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {L : E →L[ℝ] E} {h : E} {ℓ K A M s : ℝ} (hK : 0 ≤ K) (hA : 0 ≤ A) (hM : 0 ≤ M)
+  (hℓ : 1 < |ℓ|) (hs : 0 < s) (hsmall : A * s ≤ 1 / 2) (hrate : 4 * K + M * A ≤ A * |ℓ| ^ 2) (hL : ‖L‖ ≤ M)
+  (hh : ‖h‖ = 1) (heigen : L h = ℓ • h) (hrem : ∀ (x : E), ‖x‖ ≤ 2 * s → ‖f x - L x‖ ≤ K * ‖x‖ ^ 2) (N : ℕ) :
+  s / 2 ≤ ‖f^[N] ((s / |ℓ| ^ N) • h)‖ ∧ ∀ k ≤ N, ‖f^[k] ((s / |ℓ| ^ N) • h)‖ ≤ 2 * s
+SbtCosmo.Derivation.GroundNativeEscape.arbitrarily_close_eigenmode_escape.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {L : E →L[ℝ] E} {h : E} {ℓ K A M s : ℝ} (hK : 0 ≤ K) (hA : 0 ≤ A) (hM : 0 ≤ M)
+  (hℓ : 1 < |ℓ|) (hs : 0 < s) (hsmall : A * s ≤ 1 / 2) (hrate : 4 * K + M * A ≤ A * |ℓ| ^ 2) (hL : ‖L‖ ≤ M)
+  (hh : ‖h‖ = 1) (heigen : L h = ℓ • h) (hrem : ∀ (x : E), ‖x‖ ≤ 2 * s → ‖f x - L x‖ ≤ K * ‖x‖ ^ 2) (ε : ℝ) :
+  ε > 0 → ∃ x N, 1 ≤ N ∧ ‖x‖ < ε ∧ s / 2 ≤ ‖f^[N] x‖ ∧ ∀ k ≤ N, ‖f^[k] x‖ ≤ 2 * s
+SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {f : E → E} {L : E →L[ℝ] E} {h : E} {ℓ : ℝ} (hc : ContDiffAt ℝ 2 f 0) (hf : f 0 = 0) (hd : HasFDerivAt f L 0)
+  (hh : ‖h‖ = 1) (heigen : L h = ℓ • h) (hℓ : 1 < |ℓ|) (hgap : ‖L‖ < |ℓ| ^ 2) :
+  ∃ s > 0, ∀ ε > 0, ∃ x N, 1 ≤ N ∧ ‖x‖ < ε ∧ s / 2 ≤ ‖f^[N] x‖ ∧ ∀ k ≤ N, ‖f^[k] x‖ ≤ 2 * s
+SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape_within.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {L : E →L[ℝ] E} {h : E} {ℓ B : ℝ} (hc : ContDiffAt ℝ 2 f 0) (hf : f 0 = 0)
+  (hd : HasFDerivAt f L 0) (hh : ‖h‖ = 1) (heigen : L h = ℓ • h) (hℓ : 1 < |ℓ|) (hgap : ‖L‖ < |ℓ| ^ 2) (hB : 0 < B) :
+  ∃ s > 0, 2 * s ≤ B ∧ ∀ ε > 0, ∃ x N, 1 ≤ N ∧ ‖x‖ < ε ∧ s / 2 ≤ ‖f^[N] x‖ ∧ ∀ k ≤ N, ‖f^[k] x‖ ≤ 2 * s
+SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_output_escape.{u_1} {E : Type u_1} [NormedAddCommGroup E]
+  [NormedSpace ℝ E] {f : E → E} {L : E →L[ℝ] E} {h : E} {ℓ B : ℝ} {P : E → Prop} (hc : ContDiffAt ℝ 2 f 0)
+  (hf : f 0 = 0) (hd : HasFDerivAt f L 0) (hh : ‖h‖ = 1) (heigen : L h = ℓ • h) (hℓ : 1 < |ℓ|) (hgap : ‖L‖ < |ℓ| ^ 2)
+  (hB : 0 < B) (hP : ∀ (x : E), ‖x‖ ≤ B → P (f x)) :
+  ∃ s > 0, ∀ ε > 0, ∃ z N, ‖z‖ < ε ∧ P z ∧ s / 2 ≤ ‖f^[N] z‖ ∧ ∀ k ≤ N, ‖f^[k] z‖ ≤ B
+SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul (a : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (a • x) =
+    a ^ 2 * SbtCosmo.Derivation.GroundNativePhase.stateNormSq x
+SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : 0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq x) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.normalizeState x) = 1
+SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : 0 < SbtCosmo.Derivation.GroundState.complexNormSq z) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativeIteration.complexNormalize z) = 1
+SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ κ m : ℝ}
+  {b : SbtCosmo.Derivation.GroundState.Field} (hτ : 0 ≤ τ)
+  (hz : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m z) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m z) = 1
+SbtCosmo.Derivation.GroundNativeEscape.displacement_fixed
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeEscape.displacementMap T τ b κ m u 0 = 0
+SbtCosmo.Derivation.GroundNativeEscape.displacement_smooth
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundNativeEscape.displacementMap T τ b κ m u) 0
+SbtCosmo.Derivation.GroundNativeEscape.displacement_hasFDerivAt
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativeEscape.displacementMap T τ b κ m u)
+    (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u) 0
+SbtCosmo.Derivation.GroundNativeEscape.displacement_iterate_return
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (u : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) (n : ℕ) :
+  T (T.symm (u, 0) + (SbtCosmo.Derivation.GroundNativeEscape.displacementMap T τ b κ m u)^[n] x) =
+    (SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b κ m)^[n] (T (T.symm (u, 0) + x))
+SbtCosmo.Derivation.GroundNativeEscape.native_complex_local_escape
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ ℓ : ℝ} {v : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) (hv : ‖v‖ = 1)
+  (heigen : (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u) v = ℓ • v) (hℓ : 1 < |ℓ|)
+  (hgap : ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u‖ < |ℓ| ^ 2) :
+  ∃ s > 0,
+    ∀ ε > 0,
+      ∃ z N,
+        SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+          ‖T.symm (SbtCosmo.Derivation.GroundNativePhase.unpack z) - T.symm (u, 0)‖ < ε ∧
+            s / 2 ≤
+                ‖T.symm
+                      (SbtCosmo.Derivation.GroundNativePhase.unpack
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[N] z)) -
+                    T.symm (u, 0)‖ ∧
+              ∀ k ≤ N,
+                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[k] z) ∧
+                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[k] z)

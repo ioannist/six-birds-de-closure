@@ -1,0 +1,20 @@
+import SbtCosmo.Derivation.GroundNativeZeroFinite
+import SbtCosmo.Derivation.GroundOriginalSeedFinite
+
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.half_hinge
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.half_contraction
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.step_half_contraction
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.orbit_half_defect
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.orbit_half_distance_sq
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.first_overlap_half
+#print axioms SbtCosmo.Derivation.GroundNativeZeroFinite.radius_normalize_sq
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.finite_seed_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.imag_expression_return
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.raw_radius_budget
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.initial_radius_bound
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.reflected_conditions
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.initial_half_region_rejected
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.first_reflected_overlap
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.actual_seed_distance_sq
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.actual_seed_sixty_distance_sq
+#print axioms SbtCosmo.Derivation.GroundOriginalSeedFinite.actual_seed_fifty_nine_distance_sq

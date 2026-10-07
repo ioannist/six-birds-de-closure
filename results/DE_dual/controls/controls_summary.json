@@ -1,0 +1,21 @@
+{
+  "controls": [
+    {
+      "control": "local_budget_control",
+      "passes": 1
+    },
+    {
+      "control": "source_coupled_control",
+      "passes": 1
+    },
+    {
+      "control": "slack_collapse",
+      "passes": 1
+    },
+    {
+      "control": "C5_verdict_rederivation",
+      "passes": 1,
+      "returncode": 0
+    }
+  ]
+}

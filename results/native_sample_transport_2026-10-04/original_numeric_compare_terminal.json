@@ -1,0 +1,7 @@
+{
+  "terminal_exit_code": 0,
+  "numpy_version": "1.26.4",
+  "original_runtime_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd",
+  "log_sha256": "0e9c6d1921a5cf042cbe18b094a5848dc011cc4e1291a382207d1df4868e1272",
+  "scope": "Observed execution of the unchanged NumPy1.26.4 routine at the twelve original sample inputs. All finite sixty-update verdicts agree with the mathematical classification. This is not an IEEE-operation certificate, infinite-trajectory proof or first-success-index theorem."
+}

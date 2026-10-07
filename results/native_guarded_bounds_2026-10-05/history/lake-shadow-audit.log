@@ -1,0 +1,1 @@
+/tmp/de_native_guarded_bounds/Check.lean:1:0: error: object file '/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean/SbtCosmo/Derivation/GroundNativeGuardedBounds.olean' of module SbtCosmo.Derivation.GroundNativeGuardedBounds does not exist

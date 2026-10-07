@@ -1,0 +1,15 @@
+{
+  "N_eff": 5.450057588671821,
+  "N_routes": 6,
+  "correlation_eigenvalues": [
+    0.6495759151723571,
+    0.7331003015924297,
+    0.9763533193486632,
+    1.0,
+    1.0,
+    1.6409704638865492
+  ],
+  "definition": "(sum eigenvalues of route correlation matrix)^2 / sum eigenvalues^2",
+  "pass": true,
+  "threshold": 5.0
+}

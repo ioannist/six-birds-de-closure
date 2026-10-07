@@ -1,0 +1,47 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_open_cycle_basin",
+    "/tmp/de_native_open_cycle_basin/OpenCycleBasinFullAudit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.decode_continuous",
+    "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.basin_near_cycle",
+    "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.open_real_attracting_cycle",
+    "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.nearby_original_limits_real",
+    "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.open_real_original_seed_readouts",
+    "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_decode",
+    "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode_source",
+    "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_returns_of_squared_limit",
+    "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.all_guards_of_pair_guards",
+    "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_guards_of_all_guards",
+    "SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin.open_coordinate_basin",
+    "SbtCosmo.Derivation.GroundOriginalCycle30RealBaseline.actual_real_baseline",
+    "SbtCosmo.Derivation.GroundOriginalCycle30RealBasin.open_real_source_basin",
+    "SbtCosmo.Derivation.GroundParametricSeedBasinReturn.nearby_original_seed_target_basin_returns"
+  ],
+  "sources": {
+    "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.lean": "3e8b191f175e62c07f2c0210a12d08d79d48cdb483b8db8b745998452d1befd9",
+    "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.lean": "39368b775b7d0e6b81d03facdd1145329765af6750471b5f320b629457f47b6e",
+    "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.lean": "bf04bd0913cc5cb151fa17e5a5891377222f2d24b310bdb4574d427c55ce6409",
+    "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.lean": "e4625d18010180c68304ff39cd540050ad743983e5776d0e97408c8eee97d3bb",
+    "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.lean": "7fd0fc572eb2042f1261cf931de3eef54bf89c7a4c1dd046097954e78107c2a0",
+    "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.lean": "ffe635cebc261b3e21dd1246a9c6abd7b0e055c98da2595bf13a7787e4185915"
+  },
+  "objects": {
+    "/tmp/de_native_open_cycle_basin/objects/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.olean": "76e9a52b01b2f5a2a1148251eb530b6cbb6b74b8e383fbd4ee7937d865686c9b",
+    "/tmp/de_native_open_cycle_basin/objects/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.olean": "d9edc121195a788410732ef40992fd690cd13b5a90e751d0fa87c0e0c54514b7",
+    "/tmp/de_native_open_cycle_basin/objects/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.olean": "e6637d5116b26a5bec4d4d282e504d0415d89520e6affed9972a9eab09273980",
+    "/tmp/de_native_open_cycle_basin/objects/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.olean": "1910680819a71142162c6627e7c32353f69f2aac5ca3228e5ae8a31478032cbe",
+    "/tmp/de_native_open_cycle_basin/objects/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.olean": "4d2fc410a69df92285f5045d6d09d8f3166cb6bcdcc20b40557eda87ba3c5c8c",
+    "/tmp/de_native_open_cycle_basin/objects/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.olean": "864682f23bb3e8f6033340e3dadf716a7a47f6a6e3ef5d505f99463678f90f47"
+  },
+  "log_sha256": "f9282e076d54b4b6f39d0d5a068cfd8071aaa1a8d4ad6dc06c7ad69f6bb600af",
+  "audit_sha256": "c297050b2b9228d88f2de887bd7c26bf9629209c84d618ca3f8b384c6e549037",
+  "standard_only": true,
+  "checked_declarations": 14,
+  "repository_registered": false,
+  "scope": "Exactly real nearby original-seed two-cycles with a common full sixteen-coordinate complex attraction basin, proved source-topological attraction neighborhoods, all guards, original-seed unit norms and arbitrary-basin norm-one updates after the first update; persistent density gap and original-seed nonconvergence/stopping failure; no universal runaway or IEEE claim."
+}

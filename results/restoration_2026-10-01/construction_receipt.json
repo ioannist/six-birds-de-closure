@@ -1,0 +1,4042 @@
+{
+  "base_count_premise_matches_lean": true,
+  "baseline_commit": "2a8a33a",
+  "gauge_ledger": {
+    "background": [
+      0.0,
+      0.1174990364441225,
+      0.14607714463172927,
+      0.06410698203507446,
+      -0.06637806649422787,
+      -0.14662951764976453,
+      -0.11591467313339807,
+      0.002522085072652457
+    ],
+    "budget": 6.11687272063633,
+    "curvatures": [
+      0.3921850384062856,
+      0.37735335548471355,
+      0.3561452321298555,
+      0.3303318064196066,
+      0.30206881558876847,
+      0.27371656556437324,
+      0.2476428165094484,
+      0.2260250458467702
+    ],
+    "iterative_optimizer_error": 6.661338147750939e-16,
+    "kappa": 0.3,
+    "ledger_residual": 0.0,
+    "n_patches": 8,
+    "price_sign": "equality multiplier may have either sign; absolute sign is gauge dependent",
+    "reference_density": [
+      0.5757936937814565,
+      0.7468806579569365,
+      0.8017642623950332,
+      0.7536459994133291,
+      0.6806868111797,
+      0.643757056787849,
+      0.6505256379724825,
+      0.6835622146559555
+    ],
+    "reference_price": 0.5541340484796897,
+    "scope": "new finite equality-ledger allocation; not unchanged Step26 or continuum gravity",
+    "shift_comparisons": [
+      {
+        "history_difference": 1.9984014443252818e-15,
+        "history_price_shift_error": 2.6645352591003757e-15,
+        "kkt_residual": 1.142197447734361e-12,
+        "price": -7.445865951520202,
+        "price_shift_error": 1.0835776720341528e-13,
+        "screened_potential_difference": 1.2045919817182948e-13,
+        "shift": -8.0,
+        "state_difference": 1.411093464298574e-13
+      },
+      {
+        "history_difference": 1.3322676295501878e-15,
+        "history_price_shift_error": 8.881784197001252e-16,
+        "kkt_residual": 1.1448619829934614e-12,
+        "price": -4.445865951520202,
+        "price_shift_error": 1.0835776720341528e-13,
+        "screened_potential_difference": 1.2045919817182948e-13,
+        "shift": -5.0,
+        "state_difference": 1.411093464298574e-13
+      },
+      {
+        "history_difference": 8.881784197001252e-16,
+        "history_price_shift_error": 8.881784197001252e-16,
+        "kkt_residual": 6.705747068735946e-13,
+        "price": -2.445865951520374,
+        "price_shift_error": 6.394884621840902e-14,
+        "screened_potential_difference": 7.09432512735475e-14,
+        "shift": -3.0,
+        "state_difference": 8.282263763703668e-14
+      },
+      {
+        "history_difference": 0.0,
+        "history_price_shift_error": 0.0,
+        "kkt_residual": 1.1102230246251565e-16,
+        "price": 0.5541340484796897,
+        "price_shift_error": 0.0,
+        "screened_potential_difference": 0.0,
+        "shift": 0.0,
+        "state_difference": 0.0
+      },
+      {
+        "history_difference": 4.440892098500626e-16,
+        "history_price_shift_error": 8.049116928532385e-16,
+        "kkt_residual": 1.1102230246251565e-16,
+        "price": 0.6541340484796897,
+        "price_shift_error": 2.7755575615628914e-17,
+        "screened_potential_difference": 1.1102230246251565e-16,
+        "shift": 0.1,
+        "state_difference": 0.0
+      },
+      {
+        "history_difference": 6.661338147750939e-16,
+        "history_price_shift_error": 1.2212453270876722e-15,
+        "kkt_residual": 2.007283228522283e-13,
+        "price": 1.5541340484796706,
+        "price_shift_error": 1.9095836023552692e-14,
+        "screened_potential_difference": 2.120525977034049e-14,
+        "shift": 1.0,
+        "state_difference": 2.453592884421596e-14
+      },
+      {
+        "history_difference": 3.552713678800501e-15,
+        "history_price_shift_error": 3.552713678800501e-15,
+        "kkt_residual": 1.1528555887707626e-12,
+        "price": 10.5541340484798,
+        "price_shift_error": 1.1013412404281553e-13,
+        "screened_potential_difference": 1.2223555501122974e-13,
+        "shift": 10.0,
+        "state_difference": 1.432187701766452e-13
+      }
+    ],
+    "unconstrained_control_state_difference": 4.291200096420724,
+    "weights": [
+      1.2995342657782714,
+      1.3730040016913017,
+      1.3817715098142695,
+      1.4106203153442198,
+      1.4826187733557024,
+      1.5250685734428584,
+      1.4515318384369849,
+      1.2660585877419221
+    ]
+  },
+  "prior_obstructions": {
+    "results/DE_measure/record_observables.csv": {
+      "N_rec": {
+        "classification_margin_exact": "3293942823/100000000000",
+        "groups": [
+          {
+            "admitted_mass": "721",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "718",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "715",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "715",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "714",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "712",
+            "conditional_top_fraction": "0",
+            "lambda": "144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "711",
+            "conditional_top_fraction": "0",
+            "lambda": "410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "710",
+            "conditional_top_fraction": "0",
+            "lambda": "584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "708",
+            "conditional_top_fraction": "0",
+            "lambda": "104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "707",
+            "conditional_top_fraction": "0",
+            "lambda": "59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "705",
+            "conditional_top_fraction": "0",
+            "lambda": "42152490103/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "698",
+            "conditional_top_fraction": "0",
+            "lambda": "48003579789/200000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "695",
+            "conditional_top_fraction": "0",
+            "lambda": "341667785659/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "691",
+            "conditional_top_fraction": "0",
+            "lambda": "243183688113/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "687",
+            "conditional_top_fraction": "0",
+            "lambda": "27693945357/40000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "683",
+            "conditional_top_fraction": "0",
+            "lambda": "492782466843/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "672",
+            "conditional_top_fraction": "0",
+            "lambda": "140296115413/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "661",
+            "conditional_top_fraction": "0",
+            "lambda": "199712868501/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "648",
+            "conditional_top_fraction": "0",
+            "lambda": "4548691/1600000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "636",
+            "conditional_top_fraction": "0",
+            "lambda": "50586760549/12500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "625",
+            "conditional_top_fraction": "0",
+            "lambda": "576085918139/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "609",
+            "conditional_top_fraction": "0",
+            "lambda": "82006384051/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "589",
+            "conditional_top_fraction": "0",
+            "lambda": "116736875757/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "574",
+            "conditional_top_fraction": "0",
+            "lambda": "41544016113/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "554",
+            "conditional_top_fraction": "0",
+            "lambda": "236553224657/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "530",
+            "conditional_top_fraction": "0",
+            "lambda": "84183947129/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "506",
+            "conditional_top_fraction": "0",
+            "lambda": "239673315449/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "465",
+            "conditional_top_fraction": "0",
+            "lambda": "341177267741/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "430",
+            "conditional_top_fraction": "0",
+            "lambda": "60708639907/625000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "385",
+            "conditional_top_fraction": "0",
+            "lambda": "34567732921/250000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "348",
+            "conditional_top_fraction": "0",
+            "lambda": "19683/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "319",
+            "conditional_top_fraction": "0",
+            "lambda": "140094698243/500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "279",
+            "conditional_top_fraction": "0",
+            "lambda": "398852298447/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "235",
+            "conditional_top_fraction": "0",
+            "lambda": "567770079709/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "190",
+            "conditional_top_fraction": "16/95",
+            "lambda": "808226164591/1000000000000",
+            "seed_count": 12,
+            "top_mass": "32"
+          },
+          {
+            "admitted_mass": "143",
+            "conditional_top_fraction": "41/143",
+            "lambda": "57525885607/50000000000",
+            "seed_count": 12,
+            "top_mass": "41"
+          },
+          {
+            "admitted_mass": "109",
+            "conditional_top_fraction": "63/109",
+            "lambda": "81888650971/50000000000",
+            "seed_count": 12,
+            "top_mass": "63"
+          },
+          {
+            "admitted_mass": "80",
+            "conditional_top_fraction": "57/80",
+            "lambda": "58284640793/25000000000",
+            "seed_count": 12,
+            "top_mass": "57"
+          }
+        ],
+        "mode": "N_rec",
+        "probability_gate_impossible": true,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "57/80",
+        "threshold_R_exact": "642599004699/1000000000000",
+        "top_R_exact": "642599004699/100000000000",
+        "upper_bound_float": 0.7125
+      },
+      "f_coll": {
+        "classification_margin_exact": "3293942823/100000000000",
+        "groups": [
+          {
+            "admitted_mass": "721/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "359/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "715/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "715/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "357/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "89/8",
+            "conditional_top_fraction": "0",
+            "lambda": "144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "711/64",
+            "conditional_top_fraction": "0",
+            "lambda": "410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "177/16",
+            "conditional_top_fraction": "0",
+            "lambda": "104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "707/64",
+            "conditional_top_fraction": "0",
+            "lambda": "59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "705/64",
+            "conditional_top_fraction": "0",
+            "lambda": "42152490103/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "349/32",
+            "conditional_top_fraction": "0",
+            "lambda": "48003579789/200000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "695/64",
+            "conditional_top_fraction": "0",
+            "lambda": "341667785659/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "691/64",
+            "conditional_top_fraction": "0",
+            "lambda": "243183688113/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "687/64",
+            "conditional_top_fraction": "0",
+            "lambda": "27693945357/40000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "683/64",
+            "conditional_top_fraction": "0",
+            "lambda": "492782466843/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "21/2",
+            "conditional_top_fraction": "0",
+            "lambda": "140296115413/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "661/64",
+            "conditional_top_fraction": "0",
+            "lambda": "199712868501/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "81/8",
+            "conditional_top_fraction": "0",
+            "lambda": "4548691/1600000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "159/16",
+            "conditional_top_fraction": "0",
+            "lambda": "50586760549/12500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "625/64",
+            "conditional_top_fraction": "0",
+            "lambda": "576085918139/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "609/64",
+            "conditional_top_fraction": "0",
+            "lambda": "82006384051/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "589/64",
+            "conditional_top_fraction": "0",
+            "lambda": "116736875757/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "287/32",
+            "conditional_top_fraction": "0",
+            "lambda": "41544016113/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "277/32",
+            "conditional_top_fraction": "0",
+            "lambda": "236553224657/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "265/32",
+            "conditional_top_fraction": "0",
+            "lambda": "84183947129/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "253/32",
+            "conditional_top_fraction": "0",
+            "lambda": "239673315449/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "465/64",
+            "conditional_top_fraction": "0",
+            "lambda": "341177267741/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "215/32",
+            "conditional_top_fraction": "0",
+            "lambda": "60708639907/625000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "385/64",
+            "conditional_top_fraction": "0",
+            "lambda": "34567732921/250000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "87/16",
+            "conditional_top_fraction": "0",
+            "lambda": "19683/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "319/64",
+            "conditional_top_fraction": "0",
+            "lambda": "140094698243/500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "279/64",
+            "conditional_top_fraction": "0",
+            "lambda": "398852298447/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "235/64",
+            "conditional_top_fraction": "0",
+            "lambda": "567770079709/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "95/32",
+            "conditional_top_fraction": "16/95",
+            "lambda": "808226164591/1000000000000",
+            "seed_count": 12,
+            "top_mass": "1/2"
+          },
+          {
+            "admitted_mass": "143/64",
+            "conditional_top_fraction": "41/143",
+            "lambda": "57525885607/50000000000",
+            "seed_count": 12,
+            "top_mass": "41/64"
+          },
+          {
+            "admitted_mass": "109/64",
+            "conditional_top_fraction": "63/109",
+            "lambda": "81888650971/50000000000",
+            "seed_count": 12,
+            "top_mass": "63/64"
+          },
+          {
+            "admitted_mass": "5/4",
+            "conditional_top_fraction": "57/80",
+            "lambda": "58284640793/25000000000",
+            "seed_count": 12,
+            "top_mass": "57/64"
+          }
+        ],
+        "mode": "f_coll",
+        "probability_gate_impossible": true,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "57/80",
+        "threshold_R_exact": "642599004699/1000000000000",
+        "top_R_exact": "642599004699/100000000000",
+        "upper_bound_float": 0.7125
+      },
+      "input_sha256": "dd0116560c8949b710d5ef0bb4311a20d17a0e471a2ba2571ed5113be2067ddd",
+      "none": {
+        "classification_margin_exact": "3293942823/100000000000",
+        "groups": [
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "42152490103/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "48003579789/200000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "341667785659/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "243183688113/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "27693945357/40000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "492782466843/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "140296115413/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "199712868501/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "4548691/1600000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "50586760549/12500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "576085918139/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "82006384051/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "116736875757/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "41544016113/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "236553224657/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "84183947129/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "239673315449/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "341177267741/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "60708639907/625000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "34567732921/250000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "19683/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "140094698243/500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "398852298447/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "567770079709/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/6",
+            "lambda": "808226164591/1000000000000",
+            "seed_count": 12,
+            "top_mass": "2"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/3",
+            "lambda": "57525885607/50000000000",
+            "seed_count": 12,
+            "top_mass": "4"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "7/12",
+            "lambda": "81888650971/50000000000",
+            "seed_count": 12,
+            "top_mass": "7"
+          },
+          {
+            "admitted_mass": "11",
+            "conditional_top_fraction": "8/11",
+            "lambda": "58284640793/25000000000",
+            "seed_count": 12,
+            "top_mass": "8"
+          }
+        ],
+        "mode": "none",
+        "probability_gate_impossible": true,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "8/11",
+        "threshold_R_exact": "642599004699/1000000000000",
+        "top_R_exact": "642599004699/100000000000",
+        "upper_bound_float": 0.7272727272727273
+      }
+    },
+    "results/DE_measure/robustness/N128_record_observables.csv": {
+      "N_rec": {
+        "classification_margin_exact": "2739340013/50000000000",
+        "groups": [
+          {
+            "admitted_mass": "1455",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1448",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1439",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1439",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1436",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1434",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1434",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1434",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1433",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1433",
+            "conditional_top_fraction": "0",
+            "lambda": "142910588549/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1433",
+            "conditional_top_fraction": "0",
+            "lambda": "40846872639/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1432",
+            "conditional_top_fraction": "0",
+            "lambda": "291872530461/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1431",
+            "conditional_top_fraction": "0",
+            "lambda": "83423350219/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1430",
+            "conditional_top_fraction": "0",
+            "lambda": "298052001963/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1427",
+            "conditional_top_fraction": "0",
+            "lambda": "106486967547/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1424",
+            "conditional_top_fraction": "0",
+            "lambda": "3043623041/25000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1418",
+            "conditional_top_fraction": "0",
+            "lambda": "43496596011/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1410",
+            "conditional_top_fraction": "0",
+            "lambda": "31080620679/125000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1398",
+            "conditional_top_fraction": "0",
+            "lambda": "355339983497/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1393",
+            "conditional_top_fraction": "0",
+            "lambda": "253909230883/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1380",
+            "conditional_top_fraction": "0",
+            "lambda": "725726352471/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1372",
+            "conditional_top_fraction": "0",
+            "lambda": "103713980157/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1353",
+            "conditional_top_fraction": "0",
+            "lambda": "2964365189/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1340",
+            "conditional_top_fraction": "0",
+            "lambda": "105909793459/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1314",
+            "conditional_top_fraction": "0",
+            "lambda": "302712618327/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1283",
+            "conditional_top_fraction": "0",
+            "lambda": "432608384463/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1256",
+            "conditional_top_fraction": "0",
+            "lambda": "618243188349/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1227",
+            "conditional_top_fraction": "0",
+            "lambda": "441767489567/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1185",
+            "conditional_top_fraction": "0",
+            "lambda": "1972914123/156250000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1147",
+            "conditional_top_fraction": "0",
+            "lambda": "11278012739/625000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1104",
+            "conditional_top_fraction": "0",
+            "lambda": "257879590111/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1054",
+            "conditional_top_fraction": "0",
+            "lambda": "14741489599/400000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1004",
+            "conditional_top_fraction": "0",
+            "lambda": "526678738671/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "925",
+            "conditional_top_fraction": "0",
+            "lambda": "376339842599/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "847",
+            "conditional_top_fraction": "0",
+            "lambda": "107565896801/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "757",
+            "conditional_top_fraction": "0",
+            "lambda": "38430764049/250000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "688",
+            "conditional_top_fraction": "0",
+            "lambda": "43937304869/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "613",
+            "conditional_top_fraction": "0",
+            "lambda": "62791060981/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "530",
+            "conditional_top_fraction": "0",
+            "lambda": "22433768701/50000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "450",
+            "conditional_top_fraction": "26/75",
+            "lambda": "641204617687/1000000000000",
+            "seed_count": 12,
+            "top_mass": "156"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "46/71",
+            "lambda": "916349292941/1000000000000",
+            "seed_count": 12,
+            "top_mass": "230"
+          },
+          {
+            "admitted_mass": "279",
+            "conditional_top_fraction": "28/31",
+            "lambda": "130956016771/100000000000",
+            "seed_count": 12,
+            "top_mass": "252"
+          },
+          {
+            "admitted_mass": "212",
+            "conditional_top_fraction": "1",
+            "lambda": "46787503577/25000000000",
+            "seed_count": 12,
+            "top_mass": "212"
+          },
+          {
+            "admitted_mass": "159",
+            "conditional_top_fraction": "1",
+            "lambda": "267457186917/100000000000",
+            "seed_count": 12,
+            "top_mass": "159"
+          }
+        ],
+        "mode": "N_rec",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "1",
+        "threshold_R_exact": "91906653997/500000000000",
+        "top_R_exact": "91906653997/50000000000",
+        "upper_bound_float": 1.0
+      },
+      "f_coll": {
+        "classification_margin_exact": "2739340013/50000000000",
+        "groups": [
+          {
+            "admitted_mass": "1455/128",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "181/16",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1439/128",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1439/128",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "359/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "717/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "717/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "717/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1433/128",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1433/128",
+            "conditional_top_fraction": "0",
+            "lambda": "142910588549/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1433/128",
+            "conditional_top_fraction": "0",
+            "lambda": "40846872639/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "179/16",
+            "conditional_top_fraction": "0",
+            "lambda": "291872530461/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1431/128",
+            "conditional_top_fraction": "0",
+            "lambda": "83423350219/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "715/64",
+            "conditional_top_fraction": "0",
+            "lambda": "298052001963/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1427/128",
+            "conditional_top_fraction": "0",
+            "lambda": "106486967547/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "89/8",
+            "conditional_top_fraction": "0",
+            "lambda": "3043623041/25000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "709/64",
+            "conditional_top_fraction": "0",
+            "lambda": "43496596011/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "705/64",
+            "conditional_top_fraction": "0",
+            "lambda": "31080620679/125000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "699/64",
+            "conditional_top_fraction": "0",
+            "lambda": "355339983497/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1393/128",
+            "conditional_top_fraction": "0",
+            "lambda": "253909230883/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "345/32",
+            "conditional_top_fraction": "0",
+            "lambda": "725726352471/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "343/32",
+            "conditional_top_fraction": "0",
+            "lambda": "103713980157/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1353/128",
+            "conditional_top_fraction": "0",
+            "lambda": "2964365189/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "335/32",
+            "conditional_top_fraction": "0",
+            "lambda": "105909793459/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "657/64",
+            "conditional_top_fraction": "0",
+            "lambda": "302712618327/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1283/128",
+            "conditional_top_fraction": "0",
+            "lambda": "432608384463/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "157/16",
+            "conditional_top_fraction": "0",
+            "lambda": "618243188349/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1227/128",
+            "conditional_top_fraction": "0",
+            "lambda": "441767489567/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1185/128",
+            "conditional_top_fraction": "0",
+            "lambda": "1972914123/156250000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "1147/128",
+            "conditional_top_fraction": "0",
+            "lambda": "11278012739/625000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "69/8",
+            "conditional_top_fraction": "0",
+            "lambda": "257879590111/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "527/64",
+            "conditional_top_fraction": "0",
+            "lambda": "14741489599/400000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "251/32",
+            "conditional_top_fraction": "0",
+            "lambda": "526678738671/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "925/128",
+            "conditional_top_fraction": "0",
+            "lambda": "376339842599/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "847/128",
+            "conditional_top_fraction": "0",
+            "lambda": "107565896801/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "757/128",
+            "conditional_top_fraction": "0",
+            "lambda": "38430764049/250000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "43/8",
+            "conditional_top_fraction": "0",
+            "lambda": "43937304869/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "613/128",
+            "conditional_top_fraction": "0",
+            "lambda": "62791060981/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "265/64",
+            "conditional_top_fraction": "0",
+            "lambda": "22433768701/50000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "225/64",
+            "conditional_top_fraction": "26/75",
+            "lambda": "641204617687/1000000000000",
+            "seed_count": 12,
+            "top_mass": "39/32"
+          },
+          {
+            "admitted_mass": "355/128",
+            "conditional_top_fraction": "46/71",
+            "lambda": "916349292941/1000000000000",
+            "seed_count": 12,
+            "top_mass": "115/64"
+          },
+          {
+            "admitted_mass": "279/128",
+            "conditional_top_fraction": "28/31",
+            "lambda": "130956016771/100000000000",
+            "seed_count": 12,
+            "top_mass": "63/32"
+          },
+          {
+            "admitted_mass": "53/32",
+            "conditional_top_fraction": "1",
+            "lambda": "46787503577/25000000000",
+            "seed_count": 12,
+            "top_mass": "53/32"
+          },
+          {
+            "admitted_mass": "159/128",
+            "conditional_top_fraction": "1",
+            "lambda": "267457186917/100000000000",
+            "seed_count": 12,
+            "top_mass": "159/128"
+          }
+        ],
+        "mode": "f_coll",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "1",
+        "threshold_R_exact": "91906653997/500000000000",
+        "top_R_exact": "91906653997/50000000000",
+        "upper_bound_float": 1.0
+      },
+      "input_sha256": "6600ce6c4b502837412f14001ef24cd9b9f648b97e28bd7e7feaa1032c937bd7",
+      "none": {
+        "classification_margin_exact": "2739340013/50000000000",
+        "groups": [
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "142910588549/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "40846872639/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "291872530461/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "83423350219/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "298052001963/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "106486967547/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "3043623041/25000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "43496596011/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "31080620679/125000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "355339983497/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "253909230883/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "725726352471/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "103713980157/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "2964365189/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "105909793459/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "302712618327/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "432608384463/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "618243188349/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "441767489567/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "1972914123/156250000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "11278012739/625000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "257879590111/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "14741489599/400000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "526678738671/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "376339842599/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "107565896801/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "38430764049/250000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "43937304869/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "62791060981/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "22433768701/50000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/3",
+            "lambda": "641204617687/1000000000000",
+            "seed_count": 12,
+            "top_mass": "4"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "2/3",
+            "lambda": "916349292941/1000000000000",
+            "seed_count": 12,
+            "top_mass": "8"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "11/12",
+            "lambda": "130956016771/100000000000",
+            "seed_count": 12,
+            "top_mass": "11"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1",
+            "lambda": "46787503577/25000000000",
+            "seed_count": 12,
+            "top_mass": "12"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1",
+            "lambda": "267457186917/100000000000",
+            "seed_count": 12,
+            "top_mass": "12"
+          }
+        ],
+        "mode": "none",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "1",
+        "threshold_R_exact": "91906653997/500000000000",
+        "top_R_exact": "91906653997/50000000000",
+        "upper_bound_float": 1.0
+      }
+    },
+    "results/DE_measure/robustness/N32_record_observables.csv": {
+      "N_rec": {
+        "classification_margin_exact": "93330963/6250000000",
+        "groups": [
+          {
+            "admitted_mass": "359",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "358",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "356",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "356",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "138223017507/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355",
+            "conditional_top_fraction": "0",
+            "lambda": "191056025687/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "354",
+            "conditional_top_fraction": "0",
+            "lambda": "264083403833/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "353",
+            "conditional_top_fraction": "0",
+            "lambda": "365024049513/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "353",
+            "conditional_top_fraction": "0",
+            "lambda": "504547255863/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "352",
+            "conditional_top_fraction": "0",
+            "lambda": "348700220901/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "351",
+            "conditional_top_fraction": "0",
+            "lambda": "481983967383/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "350",
+            "conditional_top_fraction": "0",
+            "lambda": "133242556723/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "349",
+            "conditional_top_fraction": "0",
+            "lambda": "92085941253/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "345",
+            "conditional_top_fraction": "0",
+            "lambda": "254567933399/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "343",
+            "conditional_top_fraction": "0",
+            "lambda": "351871479149/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "342",
+            "conditional_top_fraction": "0",
+            "lambda": "243183688113/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "339",
+            "conditional_top_fraction": "0",
+            "lambda": "672271663589/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "337",
+            "conditional_top_fraction": "0",
+            "lambda": "116154272407/125000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "334",
+            "conditional_top_fraction": "0",
+            "lambda": "128441552227/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "324",
+            "conditional_top_fraction": "0",
+            "lambda": "177535789221/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "316",
+            "conditional_top_fraction": "0",
+            "lambda": "30674415627/12500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "313",
+            "conditional_top_fraction": "0",
+            "lambda": "169596411529/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "304",
+            "conditional_top_fraction": "0",
+            "lambda": "234421277599/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "300",
+            "conditional_top_fraction": "0",
+            "lambda": "648048327151/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "292",
+            "conditional_top_fraction": "0",
+            "lambda": "895751952691/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "282",
+            "conditional_top_fraction": "0",
+            "lambda": "123813537839/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "274",
+            "conditional_top_fraction": "0",
+            "lambda": "171138808083/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "267",
+            "conditional_top_fraction": "0",
+            "lambda": "236553224657/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "258",
+            "conditional_top_fraction": "0",
+            "lambda": "326971005131/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "252",
+            "conditional_top_fraction": "0",
+            "lambda": "90389837933/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "236",
+            "conditional_top_fraction": "0",
+            "lambda": "9760903243/156250000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "217",
+            "conditional_top_fraction": "0",
+            "lambda": "431738079949/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "205",
+            "conditional_top_fraction": "0",
+            "lambda": "59676140183/500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "188",
+            "conditional_top_fraction": "3/47",
+            "lambda": "82486161693/500000000000",
+            "seed_count": 12,
+            "top_mass": "12"
+          },
+          {
+            "admitted_mass": "172",
+            "conditional_top_fraction": "11/172",
+            "lambda": "45605944687/200000000000",
+            "seed_count": 12,
+            "top_mass": "11"
+          },
+          {
+            "admitted_mass": "154",
+            "conditional_top_fraction": "9/77",
+            "lambda": "2462418473/7812500000",
+            "seed_count": 12,
+            "top_mass": "18"
+          },
+          {
+            "admitted_mass": "138",
+            "conditional_top_fraction": "11/23",
+            "lambda": "21783226349/50000000000",
+            "seed_count": 12,
+            "top_mass": "66"
+          },
+          {
+            "admitted_mass": "107",
+            "conditional_top_fraction": "86/107",
+            "lambda": "602188655399/1000000000000",
+            "seed_count": 12,
+            "top_mass": "86"
+          },
+          {
+            "admitted_mass": "85",
+            "conditional_top_fraction": "76/85",
+            "lambda": "52022708161/62500000000",
+            "seed_count": 12,
+            "top_mass": "76"
+          }
+        ],
+        "mode": "N_rec",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "76/85",
+        "threshold_R_exact": "63413635669/250000000000",
+        "top_R_exact": "63413635669/25000000000",
+        "upper_bound_float": 0.8941176470588236
+      },
+      "f_coll": {
+        "classification_margin_exact": "93330963/6250000000",
+        "groups": [
+          {
+            "admitted_mass": "359/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "179/16",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "89/8",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "89/8",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "138223017507/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "355/32",
+            "conditional_top_fraction": "0",
+            "lambda": "191056025687/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "177/16",
+            "conditional_top_fraction": "0",
+            "lambda": "264083403833/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "353/32",
+            "conditional_top_fraction": "0",
+            "lambda": "365024049513/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "353/32",
+            "conditional_top_fraction": "0",
+            "lambda": "504547255863/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "11",
+            "conditional_top_fraction": "0",
+            "lambda": "348700220901/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "351/32",
+            "conditional_top_fraction": "0",
+            "lambda": "481983967383/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "175/16",
+            "conditional_top_fraction": "0",
+            "lambda": "133242556723/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "349/32",
+            "conditional_top_fraction": "0",
+            "lambda": "92085941253/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "345/32",
+            "conditional_top_fraction": "0",
+            "lambda": "254567933399/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "343/32",
+            "conditional_top_fraction": "0",
+            "lambda": "351871479149/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "171/16",
+            "conditional_top_fraction": "0",
+            "lambda": "243183688113/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "339/32",
+            "conditional_top_fraction": "0",
+            "lambda": "672271663589/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "337/32",
+            "conditional_top_fraction": "0",
+            "lambda": "116154272407/125000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "167/16",
+            "conditional_top_fraction": "0",
+            "lambda": "128441552227/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "81/8",
+            "conditional_top_fraction": "0",
+            "lambda": "177535789221/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "79/8",
+            "conditional_top_fraction": "0",
+            "lambda": "30674415627/12500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "313/32",
+            "conditional_top_fraction": "0",
+            "lambda": "169596411529/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "19/2",
+            "conditional_top_fraction": "0",
+            "lambda": "234421277599/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "75/8",
+            "conditional_top_fraction": "0",
+            "lambda": "648048327151/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "73/8",
+            "conditional_top_fraction": "0",
+            "lambda": "895751952691/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "141/16",
+            "conditional_top_fraction": "0",
+            "lambda": "123813537839/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "137/16",
+            "conditional_top_fraction": "0",
+            "lambda": "171138808083/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "267/32",
+            "conditional_top_fraction": "0",
+            "lambda": "236553224657/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "129/16",
+            "conditional_top_fraction": "0",
+            "lambda": "326971005131/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "63/8",
+            "conditional_top_fraction": "0",
+            "lambda": "90389837933/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "59/8",
+            "conditional_top_fraction": "0",
+            "lambda": "9760903243/156250000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "217/32",
+            "conditional_top_fraction": "0",
+            "lambda": "431738079949/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "205/32",
+            "conditional_top_fraction": "0",
+            "lambda": "59676140183/500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "47/8",
+            "conditional_top_fraction": "3/47",
+            "lambda": "82486161693/500000000000",
+            "seed_count": 12,
+            "top_mass": "3/8"
+          },
+          {
+            "admitted_mass": "43/8",
+            "conditional_top_fraction": "11/172",
+            "lambda": "45605944687/200000000000",
+            "seed_count": 12,
+            "top_mass": "11/32"
+          },
+          {
+            "admitted_mass": "77/16",
+            "conditional_top_fraction": "9/77",
+            "lambda": "2462418473/7812500000",
+            "seed_count": 12,
+            "top_mass": "9/16"
+          },
+          {
+            "admitted_mass": "69/16",
+            "conditional_top_fraction": "11/23",
+            "lambda": "21783226349/50000000000",
+            "seed_count": 12,
+            "top_mass": "33/16"
+          },
+          {
+            "admitted_mass": "107/32",
+            "conditional_top_fraction": "86/107",
+            "lambda": "602188655399/1000000000000",
+            "seed_count": 12,
+            "top_mass": "43/16"
+          },
+          {
+            "admitted_mass": "85/32",
+            "conditional_top_fraction": "76/85",
+            "lambda": "52022708161/62500000000",
+            "seed_count": 12,
+            "top_mass": "19/8"
+          }
+        ],
+        "mode": "f_coll",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "76/85",
+        "threshold_R_exact": "63413635669/250000000000",
+        "top_R_exact": "63413635669/25000000000",
+        "upper_bound_float": 0.8941176470588236
+      },
+      "input_sha256": "ec3bfc16dd2cd44203aa3488dcfa7e68785773edcfb0f51382c2b47eb264afcd",
+      "none": {
+        "classification_margin_exact": "93330963/6250000000",
+        "groups": [
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "138223017507/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "191056025687/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "264083403833/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "365024049513/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "504547255863/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "348700220901/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "481983967383/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "133242556723/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "92085941253/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "254567933399/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "351871479149/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "243183688113/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "672271663589/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "116154272407/125000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "128441552227/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "177535789221/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "30674415627/12500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "169596411529/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "234421277599/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "648048327151/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "895751952691/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "123813537839/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "171138808083/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "236553224657/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "326971005131/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "90389837933/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "9760903243/156250000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "431738079949/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "59676140183/500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/12",
+            "lambda": "82486161693/500000000000",
+            "seed_count": 12,
+            "top_mass": "1"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/12",
+            "lambda": "45605944687/200000000000",
+            "seed_count": 12,
+            "top_mass": "1"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/6",
+            "lambda": "2462418473/7812500000",
+            "seed_count": 12,
+            "top_mass": "2"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/2",
+            "lambda": "21783226349/50000000000",
+            "seed_count": 12,
+            "top_mass": "6"
+          },
+          {
+            "admitted_mass": "11",
+            "conditional_top_fraction": "9/11",
+            "lambda": "602188655399/1000000000000",
+            "seed_count": 12,
+            "top_mass": "9"
+          },
+          {
+            "admitted_mass": "11",
+            "conditional_top_fraction": "10/11",
+            "lambda": "52022708161/62500000000",
+            "seed_count": 12,
+            "top_mass": "10"
+          }
+        ],
+        "mode": "none",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "10/11",
+        "threshold_R_exact": "63413635669/250000000000",
+        "top_R_exact": "63413635669/25000000000",
+        "upper_bound_float": 0.9090909090909091
+      }
+    },
+    "results/DE_measure/robustness/delta_c_2p0_record_observables.csv": {
+      "N_rec": {
+        "classification_margin_exact": "5168175853/100000000000",
+        "groups": [
+          {
+            "admitted_mass": "718",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "711",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "708",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "708",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "707",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "707",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "706",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "702",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "701",
+            "conditional_top_fraction": "0",
+            "lambda": "17379864629/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "700",
+            "conditional_top_fraction": "0",
+            "lambda": "193318204493/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "699",
+            "conditional_top_fraction": "0",
+            "lambda": "8399610561/312500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "698",
+            "conditional_top_fraction": "0",
+            "lambda": "74743856377/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "697",
+            "conditional_top_fraction": "0",
+            "lambda": "519615242271/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "695",
+            "conditional_top_fraction": "0",
+            "lambda": "45154212849/625000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "694",
+            "conditional_top_fraction": "0",
+            "lambda": "100451085663/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "692",
+            "conditional_top_fraction": "0",
+            "lambda": "34916525413/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "690",
+            "conditional_top_fraction": "0",
+            "lambda": "97095117599/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "687",
+            "conditional_top_fraction": "0",
+            "lambda": "27/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "685",
+            "conditional_top_fraction": "0",
+            "lambda": "75081015197/200000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "682",
+            "conditional_top_fraction": "0",
+            "lambda": "130489788033/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "669",
+            "conditional_top_fraction": "0",
+            "lambda": "725726352471/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "662",
+            "conditional_top_fraction": "0",
+            "lambda": "100904206109/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "648",
+            "conditional_top_fraction": "0",
+            "lambda": "140296115413/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "642",
+            "conditional_top_fraction": "0",
+            "lambda": "48766549877/25000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "629",
+            "conditional_top_fraction": "0",
+            "lambda": "27121793129/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "618",
+            "conditional_top_fraction": "0",
+            "lambda": "377098474461/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "606",
+            "conditional_top_fraction": "0",
+            "lambda": "262156817517/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "587",
+            "conditional_top_fraction": "0",
+            "lambda": "729/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "571",
+            "conditional_top_fraction": "0",
+            "lambda": "25339842629/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "553",
+            "conditional_top_fraction": "0",
+            "lambda": "35232242769/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "530",
+            "conditional_top_fraction": "0",
+            "lambda": "195946115167/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "507",
+            "conditional_top_fraction": "0",
+            "lambda": "136220678247/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "473",
+            "conditional_top_fraction": "0",
+            "lambda": "75759902323/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "441",
+            "conditional_top_fraction": "0",
+            "lambda": "526678738671/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "401",
+            "conditional_top_fraction": "0",
+            "lambda": "183072103621/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "360",
+            "conditional_top_fraction": "0",
+            "lambda": "20363317621/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "335",
+            "conditional_top_fraction": "0",
+            "lambda": "141564681459/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "299",
+            "conditional_top_fraction": "0",
+            "lambda": "19683/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "263",
+            "conditional_top_fraction": "64/263",
+            "lambda": "273670300393/1000000000000",
+            "seed_count": 12,
+            "top_mass": "64"
+          },
+          {
+            "admitted_mass": "223",
+            "conditional_top_fraction": "77/223",
+            "lambda": "23781763869/62500000000",
+            "seed_count": 12,
+            "top_mass": "77"
+          },
+          {
+            "admitted_mass": "174",
+            "conditional_top_fraction": "33/58",
+            "lambda": "529054510951/1000000000000",
+            "seed_count": 12,
+            "top_mass": "99"
+          },
+          {
+            "admitted_mass": "136",
+            "conditional_top_fraction": "49/68",
+            "lambda": "367795831267/500000000000",
+            "seed_count": 12,
+            "top_mass": "98"
+          },
+          {
+            "admitted_mass": "106",
+            "conditional_top_fraction": "95/106",
+            "lambda": "12784483517/12500000000",
+            "seed_count": 12,
+            "top_mass": "95"
+          }
+        ],
+        "mode": "N_rec",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "95/106",
+        "threshold_R_exact": "291412986469/1000000000000",
+        "top_R_exact": "291412986469/100000000000",
+        "upper_bound_float": 0.8962264150943396
+      },
+      "f_coll": {
+        "classification_margin_exact": "5168175853/100000000000",
+        "groups": [
+          {
+            "admitted_mass": "359/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "713/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "711/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "177/16",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "177/16",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "707/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "707/64",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "353/32",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "351/32",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "701/64",
+            "conditional_top_fraction": "0",
+            "lambda": "17379864629/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "175/16",
+            "conditional_top_fraction": "0",
+            "lambda": "193318204493/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "699/64",
+            "conditional_top_fraction": "0",
+            "lambda": "8399610561/312500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "349/32",
+            "conditional_top_fraction": "0",
+            "lambda": "74743856377/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "697/64",
+            "conditional_top_fraction": "0",
+            "lambda": "519615242271/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "695/64",
+            "conditional_top_fraction": "0",
+            "lambda": "45154212849/625000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "347/32",
+            "conditional_top_fraction": "0",
+            "lambda": "100451085663/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "173/16",
+            "conditional_top_fraction": "0",
+            "lambda": "34916525413/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "345/32",
+            "conditional_top_fraction": "0",
+            "lambda": "97095117599/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "687/64",
+            "conditional_top_fraction": "0",
+            "lambda": "27/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "685/64",
+            "conditional_top_fraction": "0",
+            "lambda": "75081015197/200000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "341/32",
+            "conditional_top_fraction": "0",
+            "lambda": "130489788033/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "669/64",
+            "conditional_top_fraction": "0",
+            "lambda": "725726352471/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "331/32",
+            "conditional_top_fraction": "0",
+            "lambda": "100904206109/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "81/8",
+            "conditional_top_fraction": "0",
+            "lambda": "140296115413/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "321/32",
+            "conditional_top_fraction": "0",
+            "lambda": "48766549877/25000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "629/64",
+            "conditional_top_fraction": "0",
+            "lambda": "27121793129/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "309/32",
+            "conditional_top_fraction": "0",
+            "lambda": "377098474461/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "303/32",
+            "conditional_top_fraction": "0",
+            "lambda": "262156817517/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "587/64",
+            "conditional_top_fraction": "0",
+            "lambda": "729/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "571/64",
+            "conditional_top_fraction": "0",
+            "lambda": "25339842629/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "553/64",
+            "conditional_top_fraction": "0",
+            "lambda": "35232242769/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "265/32",
+            "conditional_top_fraction": "0",
+            "lambda": "195946115167/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "507/64",
+            "conditional_top_fraction": "0",
+            "lambda": "136220678247/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "473/64",
+            "conditional_top_fraction": "0",
+            "lambda": "75759902323/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "441/64",
+            "conditional_top_fraction": "0",
+            "lambda": "526678738671/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "401/64",
+            "conditional_top_fraction": "0",
+            "lambda": "183072103621/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "45/8",
+            "conditional_top_fraction": "0",
+            "lambda": "20363317621/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "335/64",
+            "conditional_top_fraction": "0",
+            "lambda": "141564681459/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "299/64",
+            "conditional_top_fraction": "0",
+            "lambda": "19683/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "263/64",
+            "conditional_top_fraction": "64/263",
+            "lambda": "273670300393/1000000000000",
+            "seed_count": 12,
+            "top_mass": "1"
+          },
+          {
+            "admitted_mass": "223/64",
+            "conditional_top_fraction": "77/223",
+            "lambda": "23781763869/62500000000",
+            "seed_count": 12,
+            "top_mass": "77/64"
+          },
+          {
+            "admitted_mass": "87/32",
+            "conditional_top_fraction": "33/58",
+            "lambda": "529054510951/1000000000000",
+            "seed_count": 12,
+            "top_mass": "99/64"
+          },
+          {
+            "admitted_mass": "17/8",
+            "conditional_top_fraction": "49/68",
+            "lambda": "367795831267/500000000000",
+            "seed_count": 12,
+            "top_mass": "49/32"
+          },
+          {
+            "admitted_mass": "53/32",
+            "conditional_top_fraction": "95/106",
+            "lambda": "12784483517/12500000000",
+            "seed_count": 12,
+            "top_mass": "95/64"
+          }
+        ],
+        "mode": "f_coll",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "95/106",
+        "threshold_R_exact": "291412986469/1000000000000",
+        "top_R_exact": "291412986469/100000000000",
+        "upper_bound_float": 0.8962264150943396
+      },
+      "input_sha256": "95b3aab11cb54076e778c29b2c61d51b792f526f36434d3c53f6a0cd80b9c570",
+      "none": {
+        "classification_margin_exact": "5168175853/100000000000",
+        "groups": [
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-59223330583/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-104009362103/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-584523554409/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-410621431993/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-144228542323/5000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-25329745113/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-5694038439/400000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "-1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "1/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "17379864629/1250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "193318204493/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "8399610561/312500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "74743856377/2000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "519615242271/10000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "45154212849/625000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "100451085663/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "34916525413/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "97095117599/500000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "27/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "75081015197/200000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "130489788033/250000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "725726352471/1000000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "100904206109/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "140296115413/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "48766549877/25000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "27121793129/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "377098474461/100000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "262156817517/50000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "729/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "25339842629/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "35232242769/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "195946115167/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "136220678247/5000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "75759902323/2000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "526678738671/10000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "183072103621/2500000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "20363317621/200000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "141564681459/1000000000000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "0",
+            "lambda": "19683/100000",
+            "seed_count": 12,
+            "top_mass": "0"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/4",
+            "lambda": "273670300393/1000000000000",
+            "seed_count": 12,
+            "top_mass": "3"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "1/3",
+            "lambda": "23781763869/62500000000",
+            "seed_count": 12,
+            "top_mass": "4"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "7/12",
+            "lambda": "529054510951/1000000000000",
+            "seed_count": 12,
+            "top_mass": "7"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "3/4",
+            "lambda": "367795831267/500000000000",
+            "seed_count": 12,
+            "top_mass": "9"
+          },
+          {
+            "admitted_mass": "12",
+            "conditional_top_fraction": "11/12",
+            "lambda": "12784483517/12500000000",
+            "seed_count": 12,
+            "top_mass": "11"
+          }
+        ],
+        "mode": "none",
+        "probability_gate_impossible": false,
+        "scope": "any nonnegative lambda weights for this fixed band; strictly positive priors retain the band",
+        "sharp_upper_bound": "11/12",
+        "threshold_R_exact": "291412986469/1000000000000",
+        "top_R_exact": "291412986469/100000000000",
+        "upper_bound_float": 0.9166666666666666
+      }
+    }
+  },
+  "projected_sourcing": {
+    "comparisons": [
+      {
+        "field_history_difference": 4.9042617708973855e-15,
+        "ipr_drift": 1.028269136504889e-11,
+        "ledger_price_shift_error": 9.032774528350274e-13,
+        "norm2_drift": 5.525135904349554e-12,
+        "norm_price_difference": 9.47353306912646e-13,
+        "shift": -8.0
+      },
+      {
+        "field_history_difference": 2.8305244335018383e-16,
+        "ipr_drift": 1.0283385254439281e-11,
+        "ledger_price_shift_error": 1.4238610290817633e-14,
+        "norm2_drift": 5.525357948954479e-12,
+        "norm_price_difference": 1.4988010832439613e-14,
+        "shift": 0.1
+      },
+      {
+        "field_history_difference": 1.8061225069315978e-14,
+        "ipr_drift": 1.0282746876200122e-11,
+        "ledger_price_shift_error": 1.3802292642139946e-12,
+        "norm2_drift": 5.525135904349554e-12,
+        "norm_price_difference": 1.446620601086579e-12,
+        "shift": 10.0
+      }
+    ],
+    "convergence_theorem": false,
+    "coupling_control_force_difference": 0.002165042474191812,
+    "inhomogeneous_background_control_force_difference": 0.1518711525110038,
+    "initial_ipr_exact": "17/108",
+    "initial_norm2": 1,
+    "kappa": 0.3,
+    "max_normal_residual": 4.220764384040162e-17,
+    "min_gram_eigenvalue_sampled": 0.002747381456479344,
+    "noncritical_ipr": true,
+    "norm_only_control_shift_difference": 0.016433554953054486,
+    "norm_only_control_variance_exact": "35/11664",
+    "numerical_interval_certificate": false,
+    "reference_final_tangent_force": 0.00011737853848138179,
+    "scope": "projected extension retaining the original kinetic and local sourcing force",
+    "tmax": 20
+  },
+  "software": {
+    "numpy": "1.26.4",
+    "python": "3.11.9",
+    "scipy": "1.13.1"
+  },
+  "source_hashes": {
+    "lean/SbtCosmo/Derivation/GaugeClosure.lean": "fd14cb41499db0d5c76b24f6da352308b3718ef65e33cd0e8f8dd018e59a71d6",
+    "lean/SbtCosmo/Derivation/PriorObstruction.lean": "c6f7b45ab9afaa855e300006def4f7fccd39df0c052d7b5ff39c7342a031f952",
+    "scripts/de_dual_carrier.py": "6f5c2c11f611b6919f8f1fa073254e764ad76212df8bd07ebbb552291f536129",
+    "scripts/de_projected_sourcing.py": "9e5e661f0fb768c295da4298f76befa4cbfa335f842f8c33f1ed737f77069f15",
+    "scripts/de_restoration_constructions.py": "3383354870da8a5c81403cf97d01441e2a4b687668e163cdcc4f1665731fb592"
+  },
+  "step26_local_force_check": {
+    "local_force_difference": 0.0,
+    "scope": "source formula at the constructed initial field; update law intentionally differs",
+    "source_path": "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step26_semiclassical_dynamics_artifacts/semiclassical_dynamics_step26.py",
+    "source_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd"
+  }
+}

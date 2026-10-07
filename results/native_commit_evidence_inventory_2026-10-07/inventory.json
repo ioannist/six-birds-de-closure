@@ -1,0 +1,108 @@
+{
+  "utc": "2026-10-07T07:04:49.671107+00:00",
+  "review": "Commit preparation inventory, not a mathematical verification",
+  "selected_files": [
+    {
+      "path": "results/audit_manifest_header_repair_checked_2026-10-05/checked_artifacts.tar.gz",
+      "bytes": 27618321,
+      "sha256": "582f1dcfe65ca12a8979f717b5b4a96cf745199e5464322c09d54f52a346a1d2"
+    },
+    {
+      "path": "results/ground_offset_transport_2026-10-04/witnesses.json",
+      "bytes": 45035479,
+      "sha256": "368d465d7044970f2c5c71215f7faf2b2862ae2d03d74061262f375ac056c641"
+    },
+    {
+      "path": "results/native_campaign_candidate_2026-10-04/sources.tar.gz",
+      "bytes": 75539262,
+      "sha256": "b1e0dc26b05d4cbef324823cc0aa4137abc393ea9316e0bf245df4c1a8f3428f"
+    },
+    {
+      "path": "results/native_original_stable10_return_2026-10-05/completed_artifacts.tar.gz",
+      "bytes": 133357485,
+      "sha256": "cdd006827fe610975899052f7eff91286fdf4b9f38018266679ea8c7a2daba64"
+    },
+    {
+      "path": "results/native_original_stable15_finite_return_2026-10-05/completed_artifacts.tar.gz",
+      "bytes": 141432636,
+      "sha256": "f952164e50fa08322a46f8af6456e3324c56530de48b91fd1c8192c997875f38"
+    },
+    {
+      "path": "results/native_original_stable2_return_2026-10-05/completed_artifacts.tar.gz",
+      "bytes": 132781452,
+      "sha256": "a553372fe2bc9f02e2857d32cbc1fbbfec4a0e8cf1f40cd17739a345ca2965db"
+    },
+    {
+      "path": "results/native_original_stable3_return_2026-10-05/completed_artifacts.tar.gz",
+      "bytes": 132631369,
+      "sha256": "c6f26e22bcb1f09cfcb5a35041cd133fd47aa63746dca8c5e3ad868143edc378"
+    },
+    {
+      "path": "results/native_original_stable5_return_2026-10-05/completed_artifacts.tar.gz",
+      "bytes": 133348153,
+      "sha256": "0cf01333c8017ed1fa54a9071414a1b3779fcfa941a6b4b68958880b9a2eabbb"
+    },
+    {
+      "path": "results/native_registered_aggregate_installation_candidate_2026-10-06/proposed_registered_files.tar.gz",
+      "bytes": 25769082,
+      "sha256": "51c41d6130f1b98dc95920810663e2eabdbbf4b3f6711cf3e6b4e8310a769796"
+    },
+    {
+      "path": "results/native_registered_header_installation_candidate_2026-10-05/proposed_registered_files.tar.gz",
+      "bytes": 25768018,
+      "sha256": "14abfa84ffb2faa212d5edb390a979f99dda3d6369727dd7a191f7ace04bd0eb"
+    },
+    {
+      "path": "results/native_registered_installation_candidate_2026-10-05/proposed_registered_files.tar.gz",
+      "bytes": 25766809,
+      "sha256": "77f62bfee92b2ff8b9d5daeb0e3d784acf52794b0bd6b82c15a319565236b89e"
+    },
+    {
+      "path": "results/native_registered_installation_with_failure_candidate_2026-10-05/proposed_registered_files.tar.gz",
+      "bytes": 25768203,
+      "sha256": "b5fb92d4f99668d98407d4663a66a8926e8814a606de11c5d84b9b195dd9321e"
+    },
+    {
+      "path": "results/native_registered_original_audit_installation_candidate_2026-10-05/proposed_registered_files.tar.gz",
+      "bytes": 25768998,
+      "sha256": "b936531e5ed3feb73c4c252df214f696135baa27ce5721dbf28c898ace92f63c"
+    },
+    {
+      "path": "results/native_stable15_finite_checked_2026-10-05/checked_artifacts.tar.gz",
+      "bytes": 140982152,
+      "sha256": "fd63f36ca03468d02b45aa4587c638c5378704660e6aa11db18d25c410f32a7e"
+    },
+    {
+      "path": "results/native_stable15_full_return_checked_2026-10-05/checked_artifacts.tar.gz",
+      "bytes": 336755512,
+      "sha256": "0f5f46c06c26ef3d91ba06f92f5dbdd7faf47057ee5b555246e2b15ad628fa74"
+    },
+    {
+      "path": "results/native_stable15_priority_recovery_2026-10-05/interrupted_build_and_recovery_inputs.tar.gz",
+      "bytes": 90649682,
+      "sha256": "0b28ce190c2259eb43d0f9333d4913208061f6e8acda237fcde216df77ab9fd1"
+    },
+    {
+      "path": "results/original_audit_nonidentifiability_checked_2026-10-05/GroundOriginalAuditNonidentifiability.olean",
+      "bytes": 102304,
+      "sha256": "16c7559212fd9cc4f927af4356d83259402395b814b6f9eec3af86ec2ad2743e"
+    },
+    {
+      "path": "results/original_audit_nonidentifiability_dependency_checkpoint_2026-10-05/checked_sources_objects_receipts.tar.gz",
+      "bytes": 390116478,
+      "sha256": "2de7e6760b4c45967eb671970fe1b75af5d242f42ee00ebe26570d18f0c415fd"
+    }
+  ],
+  "selection": "Untracked files at least 20MB and loose historical Lean proof objects",
+  "observed_untracked_count": 4068,
+  "observed_untracked_bytes": 2191180092,
+  "repository_policy": "Preserve frozen result artifacts and provenance; no historical evidence deleted or ignored by this inventory",
+  "gitignore_changed": false,
+  "gitattributes_changed": false,
+  "git_index_changed": false,
+  "proof_objects_installed_or_copied": 0,
+  "large_assets_may_require_separate_hosting_before_any_future_remote_push": true,
+  "remote_push_requested": false,
+  "native_full_verification_still_pending": true,
+  "goal_complete": false
+}

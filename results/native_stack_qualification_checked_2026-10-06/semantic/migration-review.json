@@ -1,0 +1,27 @@
+{
+  "historical_verifier_sha256": "b48e90cb8b1616399442d81bf81ea853c2cfc38c514d0b61fda9e1a6a85e34fa",
+  "new_verifier_sha256": "505898b180f96b13c17145ea43978201acf8339e01a5ef7ccc8ec6c66cf81531",
+  "controlled_replacements": {
+    "SROOT = Path('/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05')": 1,
+    "QROOT / \"driver.log\"": 1,
+    "\"qualified-summary\": str(QROOT / \"summary.json\")": 1,
+    "r\"^([\\w.]+)(?=\\s|:|\\()\"": 1
+  },
+  "unchanged_function_asts": 12,
+  "changed_functions": [
+    "statement_entries",
+    "verify_qualified",
+    "main"
+  ],
+  "new_function": "verify_stack_adoption",
+  "unchanged_full_statement_headers_checked": 20628,
+  "corrupted_header_controls_rejected": 2,
+  "preparation_history": [
+    {
+      "actual_exit_code": 1,
+      "reason": "AST review expected two changed functions; main defaults also change as authorized"
+    }
+  ],
+  "proof_sources_changed": false,
+  "registered_sources_changed": false
+}

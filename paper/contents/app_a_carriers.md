@@ -1,0 +1,95 @@
+# Appendix A — Model specifications
+
+All models are finite and deterministic given their seeds, run with single-threaded numerical libraries, and reported in
+model units. A *validator* is an independently written script that re-derives a verdict from the raw output tables; a
+nonzero mismatch count fails the run.
+
+## A.1 The allocation model (Section 4)
+
+**Inputs.** $N=32$ patches indexed $i=0,\ldots,31$, with fixed heterogeneous coefficients
+$$w_i=1.15+0.35\sin(0.37\,i+0.2)+0.08\cos(1.13\,i),\qquad c_i=0.18+0.22\,\bigl(0.55+0.45\cos(0.29\,i+0.4)\bigr).$$
+No random numbers are used. These formulas generate the coefficients in floating point; the saved binary values are reified
+as exact rational inputs in Lean.
+
+**Problem.** Maximize $\sum_i\bigl[w_i\log(1+x_i)-\tfrac12c_ix_i^2+b\,x_i\bigr]$ over $x_i\ge0$ with $\sum_ix_i\le B$. The
+optimality conditions are $u_i'(x_i)=p$ for $x_i>0$, $u_i'(0)\le p$ for $x_i=0$, $p\ge0$ and $p(B-\sum_ix_i)=0$. The
+solver finds the price by a bracketed scalar root of the allocation equation, decides activity from the optimizer of the
+shifted, unconstrained problem, and treats the zero budget separately.
+
+**Sweep and readouts.** Ten budgets from $8.90$ to $66.73$; the three largest exceed the unconstrained total and are
+slack. The price is read from the optimality conditions and, independently, as minus a central finite difference of the
+optimal cost $V(B)=-\max\sum_iu_i(x_i)$. The largest optimality residual in the recorded sweep is $1.50\times10^{-12}$ ($1.11\times10^{-12}$ in a later
+replay), and the largest price–derivative discrepancy is $3.56\times10^{-11}$.
+
+**Offset leg.** The same offset $b\,x_i$ with $b=\pm0.2$ is applied with the global budget at $B\approx22.24$ and without
+any budget. Floating results: with the budget, allocation shift at most $5.7\times10^{-14}$ and price shift $b$ to within
+$3.3\times10^{-14}$; without it, allocation shifts of $0.56$ and $0.67$.
+
+**Controls.** Per-patch budgets of equal total give unequal prices ($0.494,\,0.548,\,0.568,\ldots$); slack budgets give
+price zero; a closed-form instance is unit-tested. The exact theory (unique optimizer, price monotonicity, $C^1$ value
+with $V'=-p$, offset screening on $[-\tfrac14,\tfrac14]$, the original inputs and both controls) is mechanized
+(Appendix C).
+
+## A.2 The record-window model (Section 5)
+
+**Background.** $H^2=a^{-3}+\lambda$; integration from $a_0=10^{-3}$ to $A=20$. For $\lambda<0$ the expansion turns around
+at $a=|\lambda|^{-1/3}$; turnaround at or before $A$ triggers erasure.
+
+**Patches.** $N=64$ per seed; growth $\ddot D+2H\dot D=\tfrac32a^{-3}D$ with $D(a_0)=1$, $dD/da(a_0)=1/a_0$; amplitudes
+$m_i=s\,|z_i|$ with $z_i$ standard normal and $s=10^{-3}$; independent tags with probability $1/2$. Unit test: in the
+matter era the growing mode $D\propto a$ is recovered.
+
+**Records and predicate.** Patch $i$ collapses when $m_iD(a)\ge\delta_c=1.686$, freezing its tag. A seed passes if
+collapsed patches with both tags exist at $a=A$ and no erasure occurred; a value of $\lambda$ passes if at least 10 of 12
+seeds pass. In the exact theory the decimal threshold is $\delta_c=843/500$ and all 768 realized amplitudes and tags are
+reified.
+
+**Sweep.** A signed grid over eight decades in $|\lambda|$, twelve seeds per point, with edges refined by bisection to a
+factor $2.28$. Sampled results: lower edge between $-1.18\times10^{-4}$ (inside) and $-2.7\times10^{-4}$ (outside), upper
+edge between $2.33$ and $5.31$; inside witnesses for $N=32$, $64$ and $128$ at $0.83$, $2.33$ and $2.67$. Across positive admitted grid
+values, the median coincidence ratio over seeds ranges from about $3.5\times10^{-6}$ to $2.1$, spanning about 5.8 decades.
+
+**Exact results.** Window $(-1/8000,\lambda_+]$ with $3<\lambda_+<17/5$; eternal window $[0,u_\infty)$ with
+$3<u_\infty<3.4$; population brackets $(1.3,1.7)$, $(3,3.4)$, $(5,6.25)$; starvation for $\lambda\ge32$; first-record
+bounds of Proposition \ref{prop:nopinch}; regularity in threshold and amplitude scale on $[1.2,2]\times[\tfrac13,3]$.
+
+**Controls.** Zero amplitudes give no collapses; constant tags fail the both-tag seed predicate; the outside witnesses
+fail for the stated reasons; the validator re-derives every sampled verdict.
+
+## A.3 The measure probe (Section 7)
+
+**Inputs.** The A.2 model, with 36 logarithmically spaced positive values inside the window, eight negative values and
+zero. Per seed and value: pass flag, $N_{\rm rec}$, $f_{\rm coll}$, $a_{\rm rec}$, $a_\lambda/a_{\rm rec}$ and $R$.
+
+**Classes and weights.** M1 to M5 as in Section 7.1, with cell masses from trapezoid widths in $\lambda$ or $\log\lambda$.
+Each cell mass is divided equally among the twelve seeds, each passing seed contributes its own readout with its own
+record weight, and quantiles are left inverses of the weighted empirical distribution function. Logarithmic classes use the
+cutoff $10^{-5}$.
+
+**Criterion.** A class concentrates $R$ if $P(\log_{10}R\ge\max-1)\ge0.8$ and the central 90% width of $\log_{10}R$ is at
+most $1.5$ decades. Results are in Section 7.2; robustness variants $N=32$, $N=128$ and $\delta_c=2$ give no
+concentrating class.
+
+## A.4 The lattice model (Section 6)
+
+**State and dynamics.** A complex field $\psi\in\mathbb C^8$ on a ring, with kinetic operator
+$(Ku)_i=u_i-\tfrac12(u_{i-1}+u_{i+1})$ and gradient $(\nabla\psi)_i=\tfrac12(\psi_{i+1}-\psi_{i-1})$. The energy density
+and potential are $T_{00,i}=|(\nabla\psi)_i|^2+V_{{\rm bg},i}|\psi_i|^2$ and $V_i=V_{{\rm bg},i}+\kappa T_{00,i}$. One update
+computes the normalized lowest eigenvector $\phi$ of $H=K+\operatorname{diag}(V[\psi])$, replaces it by $\phi e^{-i\arg z}$ with
+$z=\langle\phi,\psi\rangle$ unless $|z|\le10^{-10}$, mixes with weight $1/2$ and normalizes. The initial field and the base background profile, whose values lie in
+$[0.15,0.35]$, are those of the source.
+
+**Test.** After 60 updates, four diagnostics must all be at most $10^{-8}$: the last update size; the fixed-point gap
+$\|\phi'-\psi\|$, where $\phi'$ is the lowest eigenvector of the final Hamiltonian after the source's realignment, which is
+applied twice in this diagnostic; the eigen-equation residual $\|H\psi-\langle\psi,H\psi\rangle\psi\|$; and a sourcing
+residual that, as implemented, compares the potential with itself and is identically zero.
+
+**Sweeps.** Offsets $c\in\{-8,-5,-3,-2,-1,-0.5,-0.2,-0.1,0,0.1,0.2,0.5,1,2,3,5,8,10\}$ at $\kappa=0.3$; couplings
+$\kappa\in\{0,0.1,0.3,0.5,1,2,3,5,10,15,20,30\}$ at $c=0$. Sixty-update outcomes: offsets $-5$, $-3$ and $+10$ fail;
+couplings $15$, $20$ and $30$ fail. The exact long-run classification is \Cref{thm:orbits}. In the exact theory the
+decimal parameters $0.1$ and $0.3$ are the rational values of their binary floating-point representations.
+
+**Ledger-closed extension.** Adds $Q_\kappa=\sum_i(\rho_i+\tfrac\kappa2\rho_i^2)$ and its multiplier; see Section 6.4.
+The allocation form maximizes a strictly concave utility on the simplex $\sum_ix_i=B$ in ledger coordinates
+$x_i=\rho_i+\tfrac\kappa2\rho_i^2$, and its explicit admitted pair has $\kappa=2$, densities $(1/2,1)$, ledger amounts
+$(3/4,2)$, budget $11/4$, and backgrounds $(0,1/2)$ and $(1,3/2)$ with prices $3/2$ and $5/2$.

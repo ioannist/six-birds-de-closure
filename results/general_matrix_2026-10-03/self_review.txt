@@ -1,0 +1,68 @@
+Adversarial self-review, not independent review.
+
+Target: corrected LT1 section2.3 general smooth matrix/Loewner Theorem S beyond
+the earlier fixed-native affine-probe subclass. Reconstructed statement and
+proof from actual source/types/dependencies. Broad paper still incomplete.
+
+Price: actual symmetric PSD cone and inherited elementwise matrix norm, arbitrary
+Loewner-convex matrix map on A, original no-bottom EReal objective and restricted
+convex epigraph, ordinary finite primal optimizer and finite PD Slater witness.
+Earlier earned local finite costs/value separation construct cone-positive dual;
+whole-budget trace representation constructs PSD P and equality of continuous
+tracePrice with actual dual on every symmetric H. Original certificate, finite
+original EReal primal/dual equality follow; no value derivative or local guards
+supplied. Strict complete-lattice value decrease gives nonzero P, allowing a
+minus-infinity competing value. No whole-matrix activity/price uniqueness claim.
+
+Extended smooth removal: real-domain conversion guards Jstar/Jx against top and
+bottom, convex objective mixing and actual local derivative give restricted J
+support -k. Smooth summand need not be convex outside A. Return includes every
+original infinite-cost point. Actual common RI then earns ambient J/normal split.
+Restricted removal needs no finite primal dimension; qualified split does.
+
+General smooth matrix endpoint assumes actual HasFDerivAt Xi at star, a legitimate
+input of the general LT1 theorem; it derives scalar trace-Lagrangian derivative
+and fixed-budget zero term. Price, derivative of Lagrangian, objective support,
+normal, split/dual/statement outputs not supplied. Dual price and stationarity
+use the same earned certificate. Loewner convexity only on A suffices, no
+ambient extension/smoothness-away-from-star premise. Literal fderiv theorem
+uses actual DifferentiableAt first, no nonsmooth fallback. No invented inner
+product/Hilbert adjoint. Ordinary primal attainment remains a hypothesis.
+
+Nonsmooth endpoint has full finite ambient Loewner-convex extension explicitly.
+Earned actual price positivity makes trace energy convex/continuous; actual
+separation earns trace-energy support and restricted J support, then actual RI
+splits ambient objective/normal. No fictitious Xi derivative/value derivative.
+Convexity only on A cannot be relabeled as ambient support; this conditional
+nonsmooth scope is not an unqualified restoration of every informal remark.
+
+Quartic example is actual repository Schur residual with native0/nonlinear
+probe x^2, identity proved. Actual Xi=x^4 has independently proved Loewner
+convexity/derivative, original infinite-cost objective, actual finite optima/
+values1 and0 at budgets1 and16, PD Slater at0, RI at1 and PSD increment15.
+Full generic endpoint returns nonzero PSD price, actual-adjoint stationarity,
+original certificate and dual1 with zero final premises. Entry cannot be any
+quadratic scalar polynomial, proved by four evaluations; no unproved universal
+classification of Schur presentations asserted.
+
+Kink matrix map [x+abs(y)] is actually nondifferentiable at optimizer0; projection
+returns the already refuted actual energy derivative. Its full ambient Loewner
+convexity, optimizer, PD Slater and RI are proved before applying generic
+nonsmooth theorem. Returns actual trace-energy support and qualified split.
+This general-map test can be indefinite; it is not relabeled adequacy-PSD content.
+The quartic identity supplies the actual Schur application.
+
+Off-A control e=x on x>=0 and e=-1 otherwise is Loewner-convex on A=[0,infinity).
+For every p>0, trace-price p*e lacks an ambient support at1: at0/2 force slope p,
+at-1/2 contradict support. This proves restricted convexity does not supply
+ambient support. It is not a false refutation of the smooth theorem or every
+qualified nonsmooth alternative. Only meaningful p>0 premise is supplied.
+
+Full build8144 passes. All28 fresh theorem statements/closures exit0, standard
+axioms only, no holes/native_decide. Cumulative1158 preserves exact immutable
+1130 raw prefix plus fresh28; full cumulative command not rerun. Paper, external,
+runtime and prior proof/evidence fixed. No Python/carrier/solver/RNG reruns needed
+for pure Lean changes. No new downgrade to the corrected smooth structural
+matrix theorem. Physical Lambda, moving native calculus, primal attainment and
+parked false/project-sized boundaries unaffected. Remaining scope audit and
+matrix sensitivity/price identification are separate; full goal not complete.

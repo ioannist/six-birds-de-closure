@@ -1,0 +1,29 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_cycle20_finite_verdict",
+    "/tmp/de_native_cycle20_finite_verdict/Cycle20FiniteVerdictsFullAudit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.l2_continuous",
+    "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline_guards",
+    "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit_continuous_at",
+    "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.stepLength_continuous_at",
+    "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.strict_stepLength_baseline",
+    "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.open_first_sixty_fail"
+  ],
+  "sources": {
+    "/tmp/de_native_cycle20_finite_verdict/lean/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.lean": "32e1d6a31008207764f3a7c5630e43a368828ede3fa6d556ab5508b4bb8056e8"
+  },
+  "objects": {
+    "/tmp/de_native_cycle20_finite_verdict/objects/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.olean": "91b481b25ac81fbf59ae395acc18b4e047b13c2c3d6bbe2504cb3ec857373242"
+  },
+  "log_sha256": "153f153a6616327e57949ea93e46578ab59baa93e7cc878361d76b56fa76b794",
+  "audit_sha256": "385fd144c2779ca6e34fcf14cd452501e7df1939c27bc8b15dd0b86b3089dd17",
+  "standard_only": true,
+  "checked_declarations": 6,
+  "repository_registered": false,
+  "scope": "Every exact fixed-length run truncated after updates1..60 has a failed original four-test convergence verdict on a positive joint background/coupling neighborhood of the original coupling-20 input, with all finite guards/unit norms; no infinite orbit or basin claim is used or asserted; no implemented early-exit, universal runaway or IEEE claim."
+}

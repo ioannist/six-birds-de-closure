@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-06T17:11:52.852922+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "python3",
+    "/tmp/de_ground_offset_transport_verify_stack_recovery.py"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "log_path": "/home/repos/six-birds-de-closure/results/native_registered_stack_integration_run_2026-10-06/offset-verify.log",
+  "log_sha256": "62fe5acf2a0ccbe93e39cf0c62398d1af7d9576143b4c898a63415b0a071c5bf"
+}

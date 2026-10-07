@@ -1,0 +1,15 @@
+Adversarial self-review, not independent review.
+Final GroundRootCertificate source reread after successful direct Lean check.
+Actual source/kinetic/gradient formulas checked against frozen Step26; original source and JSON are pinned.
+Root correction fixed point earns zero residual using explicit injective C; uniqueness restricted to closed ball.
+Positive overlap and symmetry return the polynomial root to the actual ground selector; excited eigenvectors are excluded.
+Border Neumann error is an operator norm bound that bounds each entry; both source feedback and normalization are retained.
+Full ambient normalized derivative has tangent range; radial input can feed tangent output. An earlier comment describing a radial eigenvalue was corrected to avoid implying u is a kernel vector.
+Stable spectrum uses an earned rational basis inverse and induced infinity norm; no numerical eigenvalue enters replay.
+Unstable mode uses exact determinant signs below -1, continuity and the real intermediate-value theorem, then tangent range.
+Original carrier uses exact reification of IEEE backgrounds/couplings; mathematical decimal literals are not substituted.
+Concrete numerical certificates are exact Python checks, not Lean kernel instantiations.
+Independent exact forward automatic differentiation and signed interval arithmetic controls check implementation; six false-certificate controls must reject.
+No continuous branch, nonlinear global escape, frozen complex orbit or physical Lambda conclusion.
+Full build and all11 fresh declarations checked; immutable earlier1644 raw prefix reused, not rerun.
+Only receipt trailing whitespace normalized; diagnostic content retained.

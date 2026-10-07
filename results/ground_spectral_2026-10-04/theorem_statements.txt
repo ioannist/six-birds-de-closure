@@ -1,0 +1,334 @@
+SbtCosmo.Derivation.GroundDeterminantDefect.small_norm_det_ne_zero
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) (hn : ‖L‖ < 1) :
+  Matrix.det (1 - SbtCosmo.Derivation.GroundMatrixCoordinates.entries L) ≠ 0
+SbtCosmo.Derivation.GroundDeterminantDefect.entries_smul (t : ℝ)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.entries (t • L) =
+    t • SbtCosmo.Derivation.GroundMatrixCoordinates.entries L
+SbtCosmo.Derivation.GroundDeterminantDefect.small_norm_det_positive
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) (hn : ‖L‖ < 1) :
+  0 < Matrix.det (1 - SbtCosmo.Derivation.GroundMatrixCoordinates.entries L)
+SbtCosmo.Derivation.GroundDeterminantDefect.fieldMap_entries (A : SbtCosmo.Derivation.GroundMatrixCoordinates.RMatrix) :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.entries (SbtCosmo.Derivation.GroundDeterminantDefect.fieldMap A) = A
+SbtCosmo.Derivation.GroundDeterminantDefect.preconditioned_det_product
+  (C B : SbtCosmo.Derivation.GroundMatrixCoordinates.RMatrix)
+  (h : ‖SbtCosmo.Derivation.GroundDeterminantDefect.fieldMap (1 - C * B)‖ < 1) : 0 < Matrix.det C * Matrix.det B
+SbtCosmo.Derivation.GroundTriangularSign.determinant_return
+  {C L U : SbtCosmo.Derivation.GroundMatrixCoordinates.RMatrix}
+  (h : SbtCosmo.Derivation.GroundTriangularSign.Arithmetic C L U) : Matrix.det C = ∏ i, U i i
+SbtCosmo.Derivation.GroundRealModeNormalize.real_mode_full_unit
+  (S R : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (b u : SbtCosmo.Derivation.GroundState.Field) (κ m ℓ : ℝ) {h : SbtCosmo.Derivation.GroundState.Field} (hh : h ≠ 0)
+  (he : (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) h = ℓ • h) :
+  ∃ v, ‖v‖ = 1 ∧ (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative (S.prodCongr R) b κ m u) v = ℓ • v
+SbtCosmo.Derivation.GroundRealModeNormalize.determinant_zero_eigenmode
+  {L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field} {ℓ : ℝ}
+  (hd : Matrix.det (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L - ℓ • 1) = 0) : ∃ h, h ≠ 0 ∧ L h = ℓ • h
+SbtCosmo.Derivation.GroundRealModeNormalize.bracket_full_mode
+  (S R : SbtCosmo.Derivation.GroundState.Field ≃L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (b u : SbtCosmo.Derivation.GroundState.Field) (κ m a c : ℝ) (hac : a < c)
+  (hs :
+    Matrix.det
+          (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+              (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) -
+            a • 1) *
+        Matrix.det
+          (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+              (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) -
+            c • 1) <
+      0) :
+  ∃ ell ∈ Set.Ioo a c,
+    ∃ v, ‖v‖ = 1 ∧ (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative (S.prodCongr R) b κ m u) v = ell • v
+SbtCosmo.Derivation.GroundTriangularArithmetic.scaled_product
+  {C L U : SbtCosmo.Derivation.GroundTriangularArithmetic.ZMatrix} {dC dL dU s : ℤ}
+  (h : SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic C L U dC dL dU s) :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.scaled L dL *
+      SbtCosmo.Derivation.GroundTriangularArithmetic.scaled U dU =
+    SbtCosmo.Derivation.GroundTriangularArithmetic.scaled C dC
+SbtCosmo.Derivation.GroundTriangularArithmetic.triangular_return
+  {C L U : SbtCosmo.Derivation.GroundTriangularArithmetic.ZMatrix} {dC dL dU s : ℤ}
+  (h : SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic C L U dC dL dU s) :
+  SbtCosmo.Derivation.GroundTriangularSign.Arithmetic
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix
+      (SbtCosmo.Derivation.GroundTriangularArithmetic.scaled C dC))
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix
+      (SbtCosmo.Derivation.GroundTriangularArithmetic.scaled L dL))
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix
+      (SbtCosmo.Derivation.GroundTriangularArithmetic.scaled U dU))
+SbtCosmo.Derivation.GroundTriangularArithmetic.determinant_sign
+  {C L U : SbtCosmo.Derivation.GroundTriangularArithmetic.ZMatrix} {dC dL dU s : ℤ}
+  (h : SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic C L U dC dL dU s) :
+  0 <
+    ↑s *
+      Matrix.det
+        (SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix
+          (SbtCosmo.Derivation.GroundTriangularArithmetic.scaled C dC))
+SbtCosmo.Derivation.GroundSpectralEnclosure.shifted_sound (B : SbtCosmo.Derivation.GroundSpectralEnclosure.Box)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) (ell : ℚ)
+  (hB : ∀ (i j : Fin 8), (B i j).Contains (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L i j)) (i j : Fin 8) :
+  (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted B ell i j).Contains
+    ((SbtCosmo.Derivation.GroundMatrixCoordinates.entries L - ↑ell • 1) i j)
+SbtCosmo.Derivation.GroundSpectralEnclosure.defectExpr_return (C : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix)
+  (A : SbtCosmo.Derivation.GroundMatrixCoordinates.RMatrix) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (fun k => A k.1 k.2)
+      (SbtCosmo.Derivation.GroundSpectralEnclosure.defectExpr C i j) =
+    (1 - SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix C * A) i j
+SbtCosmo.Derivation.GroundSpectralEnclosure.defect_norm {C : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  {B : SbtCosmo.Derivation.GroundSpectralEnclosure.Box} {q : ℚ}
+  (h : SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic C B q)
+  (A : SbtCosmo.Derivation.GroundMatrixCoordinates.RMatrix) (hB : ∀ (i j : Fin 8), (B i j).Contains (A i j)) :
+  ‖SbtCosmo.Derivation.GroundDeterminantDefect.fieldMap
+        (1 - SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix C * A)‖ ≤
+    ↑q
+SbtCosmo.Derivation.GroundSpectralEnclosure.determinant_product
+  {C : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix} {B : SbtCosmo.Derivation.GroundSpectralEnclosure.Box}
+  {q : ℚ} (h : SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic C B q)
+  (A : SbtCosmo.Derivation.GroundMatrixCoordinates.RMatrix) (hB : ∀ (i j : Fin 8), (B i j).Contains (A i j)) :
+  0 < Matrix.det (SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix C) * Matrix.det A
+SbtCosmo.Derivation.GroundSpectralEnclosure.product_sign_return {s a b : ℝ} (hc : 0 < s * a) (hp : 0 < a * b) :
+  0 < s * b
+SbtCosmo.Derivation.GroundSpectralEnclosure.actual_shifted_sign
+  {C : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix} {B : SbtCosmo.Derivation.GroundSpectralEnclosure.Box}
+  {q ell : ℚ} {s : ℤ}
+  (h :
+    SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic C (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted B ell)
+      q)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (hB : ∀ (i j : Fin 8), (B i j).Contains (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L i j))
+  (hc : 0 < ↑s * Matrix.det (SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix C)) :
+  0 < ↑s * Matrix.det (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L - ↑ell • 1)
+SbtCosmo.Derivation.GroundSpectralTests.Test000.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test000.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test000.LI SbtCosmo.Derivation.GroundSpectralTests.Test000.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test000.dc SbtCosmo.Derivation.GroundSpectralTests.Test000.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test000.du SbtCosmo.Derivation.GroundSpectralTests.Test000.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test000.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test000.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 12
+SbtCosmo.Derivation.GroundSpectralTests.Test000.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test000.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test000.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test000.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralTests.Test001.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test001.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test001.LI SbtCosmo.Derivation.GroundSpectralTests.Test001.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test001.dc SbtCosmo.Derivation.GroundSpectralTests.Test001.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test001.du SbtCosmo.Derivation.GroundSpectralTests.Test001.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test001.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test001.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 13
+SbtCosmo.Derivation.GroundSpectralTests.Test001.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test001.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test001.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test001.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralTests.Test002.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test002.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test002.LI SbtCosmo.Derivation.GroundSpectralTests.Test002.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test002.dc SbtCosmo.Derivation.GroundSpectralTests.Test002.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test002.du SbtCosmo.Derivation.GroundSpectralTests.Test002.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test002.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test002.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 10
+SbtCosmo.Derivation.GroundSpectralTests.Test002.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test002.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test002.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test002.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralTests.Test003.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test003.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test003.LI SbtCosmo.Derivation.GroundSpectralTests.Test003.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test003.dc SbtCosmo.Derivation.GroundSpectralTests.Test003.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test003.du SbtCosmo.Derivation.GroundSpectralTests.Test003.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test003.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test003.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 10
+SbtCosmo.Derivation.GroundSpectralTests.Test003.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test003.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test003.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test003.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralTests.Test004.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test004.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test004.LI SbtCosmo.Derivation.GroundSpectralTests.Test004.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test004.dc SbtCosmo.Derivation.GroundSpectralTests.Test004.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test004.du SbtCosmo.Derivation.GroundSpectralTests.Test004.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test004.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test004.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 10
+SbtCosmo.Derivation.GroundSpectralTests.Test004.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test004.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test004.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test004.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralTests.Test005.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test005.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test005.LI SbtCosmo.Derivation.GroundSpectralTests.Test005.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test005.dc SbtCosmo.Derivation.GroundSpectralTests.Test005.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test005.du SbtCosmo.Derivation.GroundSpectralTests.Test005.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test005.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test005.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 11
+SbtCosmo.Derivation.GroundSpectralTests.Test005.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test005.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test005.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test005.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralTests.Test006.factor_arithmetic :
+  SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test006.CI
+    SbtCosmo.Derivation.GroundSpectralTests.Test006.LI SbtCosmo.Derivation.GroundSpectralTests.Test006.UI
+    SbtCosmo.Derivation.GroundSpectralTests.Test006.dc SbtCosmo.Derivation.GroundSpectralTests.Test006.dl
+    SbtCosmo.Derivation.GroundSpectralTests.Test006.du SbtCosmo.Derivation.GroundSpectralTests.Test006.sign
+SbtCosmo.Derivation.GroundSpectralTests.Test006.box_return :
+  SbtCosmo.Derivation.GroundSpectralTests.Test006.B = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 11
+SbtCosmo.Derivation.GroundSpectralTests.Test006.defect_arithmetic :
+  SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test006.C
+    (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test006.B
+      SbtCosmo.Derivation.GroundSpectralTests.Test006.ell)
+    (1 / 1000)
+SbtCosmo.Derivation.GroundOriginalSpectrum.actual_signed_test (i : Fin 7) :
+  0 <
+    ↑(SbtCosmo.Derivation.GroundOriginalSpectrum.tests i).sign *
+      SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet (SbtCosmo.Derivation.GroundOriginalSpectrum.tests i).sample
+        ↑(SbtCosmo.Derivation.GroundOriginalSpectrum.tests i).ell
+SbtCosmo.Derivation.GroundOriginalSpectrum.concrete_signs :
+  0 < SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 12 (-1) ∧
+    SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 13 (-1) < 0 ∧
+      0 < SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 10 (-1) ∧
+        0 < SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 10 (-36 / 25) ∧
+          SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 10 (-71 / 50) < 0 ∧
+            0 < SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 11 (-249 / 100) ∧
+              SbtCosmo.Derivation.GroundOriginalSpectrum.shiftedDet 11 (-247 / 100) < 0
+SbtCosmo.Derivation.GroundOriginalSpectrum.crossing_signs :
+  0 < SbtCosmo.Derivation.GroundOriginalSpectrum.contactDet (79 / 5) ∧
+    SbtCosmo.Derivation.GroundOriginalSpectrum.contactDet (159 / 10) < 0 ∧
+      0 < SbtCosmo.Derivation.GroundOriginalSpectrum.contactDet 20
+SbtCosmo.Derivation.GroundOriginalSpectrum.actual_two_contacts :
+  ∃ k₁ ∈ Set.Ioo (79 / 5) (159 / 10),
+    ∃ k₂ ∈ Set.Ioo (159 / 10) 20,
+      k₁ < k₂ ∧
+        SbtCosmo.Derivation.GroundParameterPatchReturn.ModeContact
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (SbtCosmo.Derivation.GroundOriginalContinuation.branch k₁).1
+            SbtCosmo.Derivation.GroundNativeControls.originalTolerance k₁ ∧
+          SbtCosmo.Derivation.GroundParameterPatchReturn.ModeContact
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (SbtCosmo.Derivation.GroundOriginalContinuation.branch k₂).1
+            SbtCosmo.Derivation.GroundNativeControls.originalTolerance k₂
+SbtCosmo.Derivation.GroundOriginalSpectrum.actual_twenty_mode :
+  ∃ ell ∈ Set.Ioo (-36 / 25) (-71 / 50),
+    ∃ v,
+      ‖v‖ = 1 ∧
+        (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+              (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10)
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              20 (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root 10))
+            v =
+          ell • v
+SbtCosmo.Derivation.GroundOriginalSpectrum.actual_thirty_mode :
+  ∃ ell ∈ Set.Ioo (-249 / 100) (-247 / 100),
+    ∃ v,
+      ‖v‖ = 1 ∧
+        (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+              (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11)
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              30 (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root 11))
+            v =
+          ell • v
+SbtCosmo.Derivation.GroundOriginalSpectrum.actual_twenty_native_escape :
+  ∃ s > 0,
+    ∀ ε > 0,
+      ∃ z N,
+        SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+          ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                    (SbtCosmo.Derivation.GroundNativePhase.unpack z) -
+                  (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.root 10, 0)‖ <
+              ε ∧
+            s / 2 ≤
+                ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                      (SbtCosmo.Derivation.GroundNativePhase.unpack
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                              SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                              (SbtCosmo.Derivation.GroundKernelTube.background
+                                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                              20 (1 / 2))^[N]
+                          z)) -
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                      (SbtCosmo.Derivation.GroundOriginalCoordinates.root 10, 0)‖ ∧
+              ∀ j ≤ N,
+                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    20
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          20 (1 / 2))^[j]
+                      z) ∧
+                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    20 (1 / 2)
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          20 (1 / 2))^[j]
+                      z)
+SbtCosmo.Derivation.GroundOriginalSpectrum.actual_thirty_native_escape :
+  ∃ s > 0,
+    ∀ ε > 0,
+      ∃ z N,
+        SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+          ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                    (SbtCosmo.Derivation.GroundNativePhase.unpack z) -
+                  (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.root 11, 0)‖ <
+              ε ∧
+            s / 2 ≤
+                ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                      (SbtCosmo.Derivation.GroundNativePhase.unpack
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                              SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                              (SbtCosmo.Derivation.GroundKernelTube.background
+                                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                              30 (1 / 2))^[N]
+                          z)) -
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                      (SbtCosmo.Derivation.GroundOriginalCoordinates.root 11, 0)‖ ∧
+              ∀ j ≤ N,
+                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    30
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          30 (1 / 2))^[j]
+                      z) ∧
+                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    30 (1 / 2)
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          30 (1 / 2))^[j]
+                      z)
+SbtCosmo.Derivation.GroundSpectralControls.zero_preconditioner_rejected :
+  ¬SbtCosmo.Derivation.GroundSpectralEnclosure.Arithmetic 0
+      (SbtCosmo.Derivation.GroundSpectralEnclosure.shifted SbtCosmo.Derivation.GroundSpectralTests.Test003.B
+        SbtCosmo.Derivation.GroundSpectralTests.Test003.ell)
+      (1 / 1000)
+SbtCosmo.Derivation.GroundSpectralControls.reversed_sign_rejected :
+  ¬SbtCosmo.Derivation.GroundTriangularArithmetic.Arithmetic SbtCosmo.Derivation.GroundSpectralTests.Test003.CI
+      SbtCosmo.Derivation.GroundSpectralTests.Test003.LI SbtCosmo.Derivation.GroundSpectralTests.Test003.UI
+      SbtCosmo.Derivation.GroundSpectralTests.Test003.dc SbtCosmo.Derivation.GroundSpectralTests.Test003.dl
+      SbtCosmo.Derivation.GroundSpectralTests.Test003.du (-SbtCosmo.Derivation.GroundSpectralTests.Test003.sign)

@@ -1,0 +1,46 @@
+family,tracer,z_eff,k_min,k_max,k_eff,H,H_prime,window,label,within_realistic_kmax,source
+BOSS_DR12_full_shape,LOWZ_z0.38,0.380000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,LOWZ_z0.38,0.380000,0.050000,0.100000,0.075000,1.350856603499e-03,1.136054404621e-05,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,LOWZ_z0.38,0.380000,0.100000,0.150000,0.125000,3.444224925933e-02,1.422677287210e-03,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,LOWZ_z0.38,0.380000,0.150000,0.200000,0.175000,1.052607800559e-01,1.286897866739e-02,flat_k_hmpc,mild,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,LOWZ_z0.38,0.380000,0.200000,0.300000,0.250000,2.372188012417e-01,7.790471863132e-02,flat_k_hmpc,mild,False,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_mid_z0.51,0.510000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_mid_z0.51,0.510000,0.050000,0.100000,0.075000,1.345615664878e-03,1.083896038421e-05,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_mid_z0.51,0.510000,0.100000,0.150000,0.125000,3.110084446177e-02,1.143404651408e-03,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_mid_z0.51,0.510000,0.150000,0.200000,0.175000,9.475001991011e-02,1.030069461302e-02,flat_k_hmpc,mild,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_mid_z0.51,0.510000,0.200000,0.300000,0.250000,2.146338362122e-01,6.224371108504e-02,flat_k_hmpc,mild,False,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_high_z0.61,0.610000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_high_z0.61,0.610000,0.050000,0.100000,0.075000,1.395186705983e-03,1.107661210493e-05,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_high_z0.61,0.610000,0.100000,0.150000,0.125000,2.912955388720e-02,9.916063180358e-04,flat_k_hmpc,slack,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_high_z0.61,0.610000,0.150000,0.200000,0.175000,8.785956315058e-02,8.783503603408e-03,flat_k_hmpc,mild,True,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_high_z0.61,0.610000,0.200000,0.300000,0.250000,1.992019239113e-01,5.271391661851e-02,flat_k_hmpc,mild,False,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+DESI_DR1_full_shape,BGS,0.295000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,BGS,0.295000,0.050000,0.100000,0.075000,1.413210314884e-03,1.247701734927e-05,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,BGS,0.295000,0.100000,0.150000,0.125000,3.722868866869e-02,1.676502068012e-03,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,BGS,0.295000,0.150000,0.200000,0.175000,1.132244235371e-01,1.502339200007e-02,flat_k_hmpc,mild,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,BGS,0.295000,0.200000,0.300000,0.250000,2.536479594844e-01,9.063615880192e-02,flat_k_hmpc,mild,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG1,0.510000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG1,0.510000,0.050000,0.100000,0.075000,1.345615664878e-03,1.083896038421e-05,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG1,0.510000,0.100000,0.150000,0.125000,3.110084446177e-02,1.143404651408e-03,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG1,0.510000,0.150000,0.200000,0.175000,9.475001991011e-02,1.030069461302e-02,flat_k_hmpc,mild,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG1,0.510000,0.200000,0.300000,0.250000,2.146338362122e-01,6.224371108504e-02,flat_k_hmpc,mild,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG2,0.706000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG2,0.706000,0.050000,0.100000,0.075000,1.474290422503e-03,1.165235725692e-05,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG2,0.706000,0.100000,0.150000,0.125000,2.761226563084e-02,8.814699881220e-04,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG2,0.706000,0.150000,0.200000,0.175000,8.207786510810e-02,7.610343788062e-03,flat_k_hmpc,mild,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG2,0.706000,0.200000,0.300000,0.250000,1.858337534436e-01,4.519495059541e-02,flat_k_hmpc,mild,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG3,0.930000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG3,0.930000,0.050000,0.100000,0.075000,1.734959839553e-03,1.375705057366e-05,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG3,0.930000,0.100000,0.150000,0.125000,2.505598136070e-02,7.099514003140e-04,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG3,0.930000,0.150000,0.200000,0.175000,7.112331728502e-02,5.633230864496e-03,flat_k_hmpc,mild,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG3,0.930000,0.200000,0.300000,0.250000,1.594175181490e-01,3.225846955848e-02,flat_k_hmpc,mild,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,ELG2,1.317000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,ELG2,1.317000,0.050000,0.100000,0.075000,2.269591673295e-03,1.771274949705e-05,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,ELG2,1.317000,0.100000,0.150000,0.125000,2.226882429996e-02,5.468414970085e-04,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,ELG2,1.317000,0.150000,0.200000,0.175000,5.780600619202e-02,3.653861982191e-03,flat_k_hmpc,mild,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,ELG2,1.317000,0.200000,0.300000,0.250000,1.257591698438e-01,1.926041678989e-02,flat_k_hmpc,mild,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,QSO,1.491000,0.010000,0.050000,0.030000,0.000000000000e+00,0.000000000000e+00,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,QSO,1.491000,0.050000,0.100000,0.075000,2.498350445696e-03,1.897348433000e-05,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,QSO,1.491000,0.100000,0.150000,0.125000,2.126982507655e-02,4.955313172900e-04,flat_k_hmpc,slack,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,QSO,1.491000,0.150000,0.200000,0.175000,5.325176550378e-02,3.081538501256e-03,flat_k_hmpc,mild,True,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,QSO,1.491000,0.200000,0.300000,0.250000,1.141484216917e-01,1.563166800213e-02,flat_k_hmpc,mild,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page

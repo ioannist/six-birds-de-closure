@@ -1,0 +1,55 @@
+SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) : Complex.normSq (z i) ≤ 1
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) : ‖z i‖ ≤ 1
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) :
+  ‖SbtCosmo.Derivation.GroundState.complexGradient z i‖ ≤ 1
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) :
+  Complex.normSq (SbtCosmo.Derivation.GroundState.complexGradient z i) ≤ 1
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (i : Fin 8) : |SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i| ≤ |b i| + |κ| * (1 + |b i|)
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ κ m : ℝ} {b : SbtCosmo.Derivation.GroundState.Field}
+  (hτ : 0 ≤ τ) (hg : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m z) (i : Fin 8) :
+  |SbtCosmo.Derivation.GroundState.complexSourcePotential b κ
+        (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m z) i| ≤
+    |b i| + |κ| * (1 + |b i|)
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ κ m : ℝ} {b : SbtCosmo.Derivation.GroundState.Field}
+  (hτ : 0 ≤ τ) (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hg :
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z))
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundState.complexNormSq
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) =
+      1 ∧
+    ∀ (i : Fin 8),
+      |SbtCosmo.Derivation.GroundState.complexSourcePotential b κ
+            ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) i| ≤
+        |b i| + |κ| * (1 + |b i|)
+'SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

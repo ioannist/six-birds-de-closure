@@ -1,0 +1,27 @@
+{
+  "dataset": "TDCOSMO",
+  "release": "arXiv:2506.03023",
+  "release_note": "TDCOSMO 2025 (arXiv:2506.03023) is the current headline route; arXiv:2110.00517 is historical-control only (2026-05-31 pivot / E4_PREDICT_CONTRACT §F).",
+  "release_historical_control": "arXiv:2110.00517",
+  "access": "summary_posterior",
+  "fetch_url": "https://arxiv.org/abs/2506.03023",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "Public literature posterior family; cite TDCOSMO 2025",
+  "citation": "TDCOSMO Collaboration 2025, arXiv:2506.03023 (historical: 2110.00517)",
+  "raw_files": [{"path": "data/raw/tdcosmo/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/tdcosmo/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/tdcosmo/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "lens-sample and model-family cuts as released"},
+  "route": "r6_time_delay",
+  "staging_axis": "lens_density_prior|lens_sample_cut",
+  "model_dependent": true,
+  "recomputability": "summary_only",
+  "aor_status": "moduli",
+  "fallback": "published per-variant H0 posterior family; E4 runs with and without this route",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

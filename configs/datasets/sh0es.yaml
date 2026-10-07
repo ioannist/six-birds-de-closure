@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: SH0ES
+manifest: data/manifests/sh0es.json
+fallback_policy: budgeted_if_sys_combined_naively

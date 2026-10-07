@@ -1,0 +1,17 @@
+Command: ["lake", "build", "SbtCosmo.Derivation.GroundResponses.Point000", "SbtCosmo.Derivation.GroundResponses.Point001", "SbtCosmo.Derivation.GroundResponses.Point002", "SbtCosmo.Derivation.GroundResponses.Point003", "SbtCosmo.Derivation.GroundResponses.Point004", "SbtCosmo.Derivation.GroundResponses.Point005", "SbtCosmo.Derivation.GroundResponses.Point006", "SbtCosmo.Derivation.GroundResponses.Point007", "SbtCosmo.Derivation.GroundResponses.Point008", "SbtCosmo.Derivation.GroundResponses.Point009", "SbtCosmo.Derivation.GroundResponses.Point010", "SbtCosmo.Derivation.GroundResponses.Point011", "SbtCosmo.Derivation.GroundResponses.Point012", "SbtCosmo.Derivation.GroundResponses.Point013"]
+✔ [8075/8088] Built SbtCosmo.Derivation.GroundResponses.Point010 (45s)
+✔ [8076/8088] Built SbtCosmo.Derivation.GroundResponses.Point008 (50s)
+✔ [8077/8088] Built SbtCosmo.Derivation.GroundResponses.Point009 (51s)
+✔ [8078/8088] Built SbtCosmo.Derivation.GroundResponses.Point013 (51s)
+✔ [8079/8088] Built SbtCosmo.Derivation.GroundResponses.Point007 (52s)
+✔ [8080/8088] Built SbtCosmo.Derivation.GroundResponses.Point011 (52s)
+✔ [8081/8088] Built SbtCosmo.Derivation.GroundResponses.Point012 (53s)
+✔ [8082/8088] Built SbtCosmo.Derivation.GroundResponses.Point006 (46s)
+✔ [8083/8088] Built SbtCosmo.Derivation.GroundResponses.Point005 (50s)
+✔ [8084/8088] Built SbtCosmo.Derivation.GroundResponses.Point000 (53s)
+✔ [8085/8088] Built SbtCosmo.Derivation.GroundResponses.Point003 (55s)
+✔ [8086/8088] Built SbtCosmo.Derivation.GroundResponses.Point004 (56s)
+✔ [8087/8088] Built SbtCosmo.Derivation.GroundResponses.Point002 (56s)
+✔ [8088/8088] Built SbtCosmo.Derivation.GroundResponses.Point001 (57s)
+Build completed successfully (8088 jobs).
+Terminal exit code: 0

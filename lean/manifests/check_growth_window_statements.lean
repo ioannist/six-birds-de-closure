@@ -1,0 +1,12 @@
+import SbtCosmo.Derivation.GrowthWindow
+
+#check SbtCosmo.Derivation.GrowthLimit.forced_free_bound
+#check SbtCosmo.Derivation.GrowthLimit.growth_matter_bound
+#check SbtCosmo.Derivation.GrowthLimit.finalGrowth_free_bound
+#check SbtCosmo.Derivation.GrowthLimit.finalGrowth_tendsto_atTop
+#check SbtCosmo.Derivation.GrowthWindow.exists_unique_positive_endpoint
+#check SbtCosmo.Derivation.GrowthWindow.live_iff_horizon
+#check SbtCosmo.Derivation.GrowthWindow.exists_unique_threshold_window
+#check SbtCosmo.Derivation.GrowthWindow.exists_unique_native_threshold_window
+#check SbtCosmo.Derivation.GrowthWindow.native_record_history_iff_threshold
+#check SbtCosmo.Derivation.GrowthWindow.exists_unique_native_record_window

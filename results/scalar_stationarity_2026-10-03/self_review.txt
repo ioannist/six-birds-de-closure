@@ -1,0 +1,59 @@
+Adversarial self-review, not independent review.
+
+Target: corrected generic scalar Theorem S (DERIVATION_LT1 sections2.1-2.2),
+with one price satisfying actual sensitivity, duality, activity and qualified
+separate objective/energy/normal stationarity. Inspected actual source statement,
+proof, exported types and transitive closures. Broad paper not complete.
+
+General scope retained: original no-bottom EReal objective/ambient convex real
+epigraph, actual common RI point, finite convex ambient energy extension that
+may be nonsmooth, ordinary finite optimum and locally finite actual negative
+value derivative. No affine-probe or energy-derivative premise in generic full
+endpoint. Closedness and a separate Slater/activity premise are unnecessary
+for the derivative-based route; they are not conclusions. Primal attainment,
+value differentiability and common RI qualification remain actual hypotheses.
+
+One certificate constructed via exact guarded domain reduction and convex
+primal mixing. The stationarity helper accepts an earned positive certificate;
+the full endpoint constructs it before applying that helper. Finite convex
+p*(energy-B) earns continuity/separation. Restricted J support -k then earns
+ambient J/normal split from actual common RI. Positive p legitimizes k/p;
+its energy support proved by scalar inequality. Joining gives q+p*r+eta=0.
+No support, normal, sum-rule, split or stationarity conclusion is an endpoint
+premise. Infinite objective points remain in original support/certificate.
+
+Reverse certificate return guards both toReal operands against top/bottom.
+Price identification uses actual EReal value's locally exact real-domain
+return and certificate support/local minimum. Every price=-d, including another
+optimizer's certificate. No optimizer, support or matrix-price uniqueness.
+
+Smooth specialization identifies support with actual energy derivative; that
+premise is legitimate only there. Schur endpoint earns derivative itself from
+actual fixed-native residual calculus and affine-probe continuity. PSD W earns
+energy convexity. Scaling the trace-dual adjoint gives the literal actual matrix
+derivative pullback with price p*W. Explicit direction formula uses actual PSD
+symmetry/two product terms. Existing matrix norm/native spectral support kept,
+including singular native blocks; no nonsymmetric shortcut. Scalar constraint
+is not full matrix activity or a separately constructed matrix-budget price.
+
+Original infinite-cost Schur example independently proves optimizer, local
+finiteness/value derivative and qualification, then returns price1/certificate/
+original strong duality/full actual-adjoint stationarity. Every certificate's
+price1 is proved. Prior unrestricted-toReal false-value control preserved.
+
+Concrete energy x+abs(y), objective -x, full ambient A: actual optimizer(B,0),
+actual EReal value=-B, actual derivative=-1; energy convexity proved. Vertical
+line composition refutes actual energy differentiability at optimizer0 via
+not_differentiableAt_abs_zero. Full generic theorem returns price1, separate
+supports/normal and dual0 without final premises. This checks nonsmooth scope
+is substantive and is not lost during the generic scalar assembly.
+
+Full build8140 passed. All19 fresh statement/closure commands exit0; standard
+Lean axioms only, no holes/native_decide. Cumulative1130 uses exact immutable
+1111 raw prefix plus fresh19, not a rerun full cumulative command. Prior proof,
+paper, runtime, external and result artifacts fixed. No Python test suite,
+original carrier, solver or RNG reruns; none required for this pure Lean packet.
+No new downgrade. Corrected generic scalar Theorem S assembly now closed.
+General matrix-map coverage versus actual affine Schur instance and remaining
+original-target audit still pending. Physical Lambda, moving native calculus,
+primal attainment and earlier false/project-sized boundaries remain separate.

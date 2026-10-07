@@ -1,0 +1,81 @@
+{
+  "access": "fallback_compressed_gaussian",
+  "aor_status": "budgeted",
+  "bins": {
+    "columns": [
+      "z",
+      "value",
+      "quantity"
+    ],
+    "n": 13,
+    "observables": [
+      "DH_over_rs",
+      "DM_over_rs",
+      "DV_over_rs"
+    ]
+  },
+  "citation": "DESI Collaboration 2025, arXiv:2503.14738; CobayaSampler/bao_data commit bb0c1c9009dc76d1391300e169e8df38fd1096db",
+  "dataset": "DESI_DR2_BAO",
+  "fallback": "compressed BAO-only Gaussian likelihood",
+  "fallback_invoked": true,
+  "fallback_justification": "Official native/desilike likelihood was not provisioned in this data-only packet; CobayaSampler DESI DR2 compressed Gaussian is the documented plan/03 fallback.",
+  "fetch_url": "https://github.com/CobayaSampler/bao_data/tree/master/desi_bao_dr2",
+  "fetched_utc": "2026-05-29T22:46:28Z",
+  "license": "DESI public release mirrored by CobayaSampler/bao_data; cite DESI Collaboration 2025",
+  "model_dependent": false,
+  "processed": {
+    "covariance": {
+      "bytes": 1480,
+      "dtype": "float64",
+      "path": "data/processed/desi_dr2_bao/covariance.npy",
+      "sha256": "5a077f28a773a20475dd6a170dd55b90cb48a7e0fd09f20dc15b15129c9ab7b5",
+      "shape": [
+        13,
+        13
+      ]
+    },
+    "data_vector": {
+      "bytes": 232,
+      "dtype": "float64",
+      "path": "data/processed/desi_dr2_bao/data_vector.npy",
+      "sha256": "8547f5001b659d07cc02ac1a4539f6e8867f6b8af1377f3e67e5fd92555b1fea",
+      "shape": [
+        13
+      ]
+    },
+    "metadata": {
+      "bytes": 719,
+      "dtype": "json",
+      "path": "data/processed/desi_dr2_bao/metadata.json",
+      "sha256": "6b3f37f49e3780cc85d58912b2f32e59d6d72ddc7abbd2aa6aeb76febb05199d",
+      "shape": "json"
+    }
+  },
+  "processing_commit": "2250a9ba1dea000830960dcce41ae581e5cd22ed",
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "raw_files": [
+    {
+      "bytes": 472,
+      "path": "data/raw/desi_dr2_bao/bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_mean.txt",
+      "sha256": "9ac154ab583ce759c0f7eef3c978c7c70a6ead2d18774caceadf1a350a640585"
+    },
+    {
+      "bytes": 2547,
+      "path": "data/raw/desi_dr2_bao/bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_cov.txt",
+      "sha256": "252a143274c8a07c78694c119617d36594f6d7965d00319ca611c6ffb886e509"
+    },
+    {
+      "bytes": 630,
+      "path": "data/raw/desi_dr2_bao/bao_data/README.md",
+      "sha256": "87444c7e5303c4fb8c4a8d1026c8f5e3bfaf9a8b54af512b9e81a7231ddca2ae"
+    }
+  ],
+  "recomputability": "recomputable",
+  "release": "arXiv:2503.14738",
+  "route": null,
+  "scale_cuts": {
+    "applied": true,
+    "note": "DESI DR2 ALL_GCcomb compressed BAO release"
+  },
+  "staging_axis": null
+}

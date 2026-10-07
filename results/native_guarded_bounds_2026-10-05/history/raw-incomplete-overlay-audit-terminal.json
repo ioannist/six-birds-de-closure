@@ -1,0 +1,14 @@
+{
+  "terminal_exit_code": 1,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_native_guarded_bounds",
+    "/tmp/de_native_guarded_bounds/Check.lean"
+  ],
+  "LEAN_PATH": "/tmp/de_native_guarded_bounds/objects:/home/repos/six-birds-de-closure/lean/.lake/packages/Cli/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/batteries/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/Qq/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/aesop/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/importGraph/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/plausible/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/packages/mathlib/.lake/build/lib/lean:/home/repos/six-birds-de-closure/lean/.lake/build/lib/lean:/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean",
+  "source_sha256": "63096289fe5bc3472defc296512abcd8ab29fa74472c71a23d456ab3400a6a5e",
+  "object_sha256": "7b23c61900a9d784c5c82428e9da1f0011e83d72cf4f5f7bd36451d134552f15",
+  "audit_sha256": "a1f7787db6f39eef2f176f8f43c45b8c625f390c8b6ad664dfcd5f42d28eb138",
+  "log_sha256": "b2ef51a3ddef2110bd2f5d3d76ee97d6819f353799a733902a027c9e17674942"
+}

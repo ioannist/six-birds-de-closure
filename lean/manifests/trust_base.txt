@@ -1,0 +1,353 @@
+Current cumulative audit (2026-10-03): axiom_audit_eternal_ratio_2026-10-03.txt
+(855 declarations: the exact immutable previously audited 830-declaration prefix
+plus 25 freshly audited transitive closures; source/toolchain identity checked).
+Recompute with
+`lake env lean manifests/check_axioms.lean` from lean/. Only propext,
+Classical.choice and Quot.sound are permitted. Earlier dated raw receipts
+and the grouped baseline below remain historical evidence.
+
+The Scarf/Brouwer import is a checked proof, pinned and MIT-licensed, not a
+new axiom. See Gametheory/PROVENANCE.json and Gametheory/port.patch for the
+upstream hashes and complete 4.28.0 port. Its transitive closure is exactly
+{propext, Classical.choice, Quot.sound}; the native construction assumes no
+ground-existence, continuity or nonlinear fixed-point witness.
+
+GrowthComparison derives positivity and strict ordering from the original
+growth IVP. Its GrowthSolution record supplies differential equations, initial
+values and continuity; it does not supply signs, monotonicity or uniqueness.
+GrowthExistence now constructs that record for every live lambda using the
+original square-root/integral formula; GrowthScaleReturn verifies the inverse
+coordinate return to both native equations and initial values. Parameter
+continuity is also proved. GrowthLimit derives the infinity limit from a
+quantitative ODE error bound; GrowthWindow constructs the unique positive
+threshold endpoint and returns its exact half-open window to native record
+histories. GrowthPopulation constructs finite attained maxima and rank-count
+equivalence with ties; WindowSampleData checks all 768 reified amplitudes/tags,
+the 24 maxima and the rank using `decide +kernel`. WindowSample discharges all
+population/rank premises of the original aggregate continuum window. No
+`native_decide` is used. The NumPy-to-input provenance bridge is reproducibly
+checked outside Lean; numerical edge accuracy and the physical bridge remain
+separate obligations. See math/GROWTH_EXISTENCE_LEAN_2026-10-03.md,
+math/GROWTH_WINDOW_LEAN_2026-10-03.md and
+math/WINDOW_POPULATION_LEAN_2026-10-03.md.
+
+The sensitivity extension constructs actual tagged-maximum and rank functions,
+proves both maps 1-Lipschitz, and constructs the continuous strictly decreasing
+threshold-to-endpoint map from the proved unique roots. It returns population
+continuity and the full original delta/scale rectangle to the native record
+window. Fixed tags, admissible threshold range, positive tagged patches and
+nonzero denominators are explicit where needed. No solution, monotonicity,
+continuity or desired sensitivity property is supplied as a hypothesis.
+Differentiability in lambda was outside that continuity packet. See
+math/WINDOW_SENSITIVITY_LEAN_2026-10-03.md.
+
+GrowthParameter now derives actual quadrature parameter derivatives from
+measurability, integrability, a uniform positive root margin and compact
+derivative domination. Its explicit sensitivities satisfy the variational
+ODE by direct time differentiation; the cone theorem proves strict negativity.
+GrowthEndpointDerivative applies the local inverse derivative theorem to the
+previously constructed continuous endpoint, with a derived nonzero derivative
+and a locally proved inverse identity. It proves C1 growth and endpoint maps
+and the original two-variable coupled-rescaling C1 return throughout the
+rectangle. No mixed-derivative interchange, derivative sign, smoothness or
+inverse law is supplied as a theorem hypothesis. Only first-order C1 regularity
+is asserted. See math/GROWTH_PARAMETER_LEAN_2026-10-03.md.
+
+GrowthQuadrature returns the original log quadrature to the exact native
+scale interval with the log Jacobian and finite-start term retained. Its
+whole-cell bounds and adjacent-interval sum return construct rigorous integral
+enclosures. GrowthQuadratureData checks 264 rational cells and their finite
+sums with decide +kernel. WindowEdgeCertified derives D(3)>964, D(4)<936,
+960<T*<961 and 3<upper<4, identifies the same earlier endpoint, and returns
+both original decimal witnesses to the original aggregate continuum gate.
+No bracket, quadrature error bound or solver-convergence law is supplied as a
+theorem hypothesis. Python Fraction/isqrt generation is replayable; its
+arithmetic output is separately checked in the Lean kernel. Floating solver
+error and the physical bridge remain separate. See
+math/GROWTH_QUADRATURE_LEAN_2026-10-03.md.
+
+GrowthFirstRecord constructs unique threshold roots from actual native growth
+continuity and positivity. WindowFirstRecord uses the attained all-patch maximum
+to return the first collapse, with every original-population premise derived
+for 0<=lambda<=3. WindowFirstRecordData checks all first-threshold bounds and
+384 prefix cells via decide +kernel. These imply R<=8*lambda on [0,3],
+1/8<R<=24 on [1,3] and 3/8<R(3)<=24. Simultaneously arbitrarily small positive
+ratios are constructed while the original aggregate gate passes. The original
+readout uses the first collapse of any patch, not the both-tag gate time.
+Choice defaults are excluded in all certified first-time claims. No solver,
+first-record witness, quadrature-error or no-pinching law is assumed. That packet scoped its ratio return to [0,3]. The extension below now covers
+the actual positive endpoint; additional populations remain separate. See
+math/FIRST_RECORD_LEAN_2026-10-03.md.
+
+GrowthQuadratureSharp derives the actual integrand's squared derivative,
+monotonicity/antitonicity and global peak bound. WindowEndpointRatioData checks
+704 sharp cells and their 512-cell prefix, with no native_decide or disabled
+lint/build checks. WindowEndpointRatio returns D(17/5,20)<960 and
+D(17/5,5/2)>901 to the SAME original endpoint and first-time functions:
+3<upper<17/5, firstTime in (1/2,5/2] throughout [0,upper],
+R<425/8 throughout the nonnegative admitted window and 3/8<R<425/8 at the
+actual endpoint. Collapse attainment/absence before first time and strict
+first-time/ratio ordering are proved throughout that domain. No unimodality,
+first-time or numerical solver law is supplied as a premise. The native-unit
+fixed-population bounds support the qualitative upper-edge claim; sampled
+statistics and other populations keep their stated scope; the extension below
+now constructs the admitted negative first times.
+See math/ENDPOINT_RATIO_LEAN_2026-10-03.md.
+
+GrowthFirstRecordLive constructs first-threshold roots throughout the entire
+live native domain. Native initial value, continuity and strict growth in time
+are derived from the same actual IVP. It proves equality with the older positive
+choice on the certified overlap by uniqueness, and derives the nonpositive
+matter comparison and firstTime<=a0*T. WindowSignedRecord derives every
+original reachability premise from the original aggregate gate and checked
+thresholds, returns actual earliest patch collapse throughout (-1/8000,upper],
+and gives 0<R<1/8000 for admitted negative lambda and 0<=R<425/8 throughout
+the full signed window. Zero time is exactly T_first/1000. The endpoint and
+no-pinching returns are identified with earlier proofs. No default is used as
+a certified negative record time, and no signed ratio ordering is inferred
+from the proved signed first-time ordering. See
+math/SIGNED_RECORD_LEAN_2026-10-03.md.
+
+GrowthNegativeBounds derives the generic strict upper bound from the actual
+finite-start quadrature. GrowthNegativeLower constructs a subsolution with a
+derived nonnegative forcing and compares it to the actual IVP using the cone
+theorem. WindowErasureData kernel-checks the unchanged original seed-1100 count
+and threshold gap. WindowErasureWitness constructs the actual cubic turnaround,
+derives exact growth bounds, and returns exactly 58 collapsed original patches
+with both tags before turnaround and buffer. Zero retained records follows
+under the explicitly defined original toy erasure policy. No erasure dynamics,
+physical crunch, or floating solver correctness is claimed. The negative
+parameter is the exact original binary float; initialization and threshold
+remain the declared exact decimal mathematical model scalars. See
+math/NEGATIVE_ERASURE_LEAN_2026-10-03.md.
+
+WindowPatchCountData now checks the actual separately realized N=32/N=128
+populations with decide +kernel. Its attained maxima, seed thresholds, rank
+counts, admissibility bounds and threshold ordering supply every population
+premise of WindowPatchCounts. That module returns the actual native collapse
+histories and 80% seed gate to unique continuum windows and proves strict
+ordering/nesting against the unchanged N=64 endpoint. No population inclusion,
+retained-tag coupling, endpoint ordering or solver law is a supplied premise.
+Pinned NumPy realization/byte replay is computational provenance, not an RNG
+proof. Exact decimal mathematical model scalars are retained. No discrete-N
+derivative or universal reseeding monotonicity is claimed. See
+math/PATCH_COUNT_WINDOWS_LEAN_2026-10-03.md.
+
+# Lean Trust-Base Disclosure
+
+Generated with `#print axioms` under Lean `v4.28.0`.
+
+Allowed closure family for delivered receipts:
+`{propext, Classical.choice, Quot.sound}`.
+
+## T1 — Idempotence
+
+- `SbtCosmo.Idempotence.image_eq_fixedSet`
+  - closure: `{}`
+- `SbtCosmo.Idempotence.delta_zero_iff_fixed`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.Idempotence.bool_lumping_delta_zero`
+  - closure: `{propext, Quot.sound}`
+
+## T2 — Route Mismatch
+
+- `SbtCosmo.RouteMismatch.route_mismatch_nonneg`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.RouteMismatch.route_mismatch_zero_iff_commutes`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.RouteMismatch.route_mismatch_pos_witness`
+  - closure: `{propext, Quot.sound}`
+
+## T3 — Adequacy / Reconciliation
+
+- `SbtCosmo.Adequacy.Reconciliation.schur_complement_psd_of_joint_psd`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.adequacy_residual_psd`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.p_adeq_iff_xi_psd`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.projection_identity_packaged`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.projection_identity_packaged_psd`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.exact_adequacy_easy_chain`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.worked_example_residual_eq_one`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Adequacy.Reconciliation.worked_example_residual_nonzero`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+
+## T4 — Local Global
+
+- `SbtCosmo.LocalGlobal.globalizes_iff_in_image`
+  - closure: `{}`
+- `SbtCosmo.LocalGlobal.fiberCard_ne_zero_iff_globalizes`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.LocalGlobal.fiberCard_eq_zero_iff_not_globalizes`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.LocalGlobal.four_status_classification`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.LocalGlobal.cddr_eta_ne_one_compatibleNonGlobal`
+  - closure: `{propext}`
+- `SbtCosmo.LocalGlobal.cddr_eta_ne_one_semantics`
+  - closure: `{propext}`
+
+## T5 — Phantom Stable Readout
+
+- `SbtCosmo.PhantomStableReadout.toy3_crossing_count_one`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.PhantomStableReadout.toy3_p_dens`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.PhantomStableReadout.toy3_no_growing_mode`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.PhantomStableReadout.toy3_has_phantom_sample`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.PhantomStableReadout.phantom_stable_readout_witness`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+
+## T6 — Hubble Holonomy
+
+- `SbtCosmo.Holonomy.hubble_holonomy_nonzero_iff_injected_disagreement_nonzero`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.Holonomy.zero_disagreement_zero_holonomy`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.Holonomy.e4_nonzero_holonomy_residue`
+  - closure: `{propext, Quot.sound}`
+- `SbtCosmo.Holonomy.route_holonomy_nonzero`
+  - closure: `{propext}`
+- `SbtCosmo.Holonomy.holonomy_current_trivial_predictive_nontrivial`
+  - closure: `{propext}`
+
+## T7 — AOR Status
+
+- `SbtCosmo.AORStatus.no_unstatused_residual`
+  - closure: `{propext}`
+- `SbtCosmo.AORStatus.e0_no_unstatused`
+  - closure: `{propext}`
+
+## LT1 — Derivation / Closure Price
+
+- `SbtCosmo.Derivation.ClosurePrice.active_zero_multiplier_counterexample_optimizer`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Derivation.ClosurePrice.active_not_implies_positive_multiplier`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Derivation.ClosurePrice.strict_sensitivity_positive_optimizer`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Derivation.ClosurePrice.strict_sensitivity_positive_kkt`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+- `SbtCosmo.Derivation.ClosurePrice.closure_lagrangian_pairing`
+  - closure: `{propext, Classical.choice, Quot.sound}`
+
+Raw command shape:
+
+```lean
+#print axioms SbtCosmo.Idempotence.image_eq_fixedSet
+#print axioms SbtCosmo.Idempotence.delta_zero_iff_fixed
+#print axioms SbtCosmo.Idempotence.bool_lumping_delta_zero
+#print axioms SbtCosmo.RouteMismatch.route_mismatch_nonneg
+#print axioms SbtCosmo.RouteMismatch.route_mismatch_zero_iff_commutes
+#print axioms SbtCosmo.RouteMismatch.route_mismatch_pos_witness
+#print axioms SbtCosmo.Adequacy.Reconciliation.schur_complement_psd_of_joint_psd
+#print axioms SbtCosmo.Adequacy.Reconciliation.adequacy_residual_psd
+#print axioms SbtCosmo.Adequacy.Reconciliation.p_adeq_iff_xi_psd
+#print axioms SbtCosmo.Adequacy.Reconciliation.projection_identity_packaged
+#print axioms SbtCosmo.Adequacy.Reconciliation.projection_identity_packaged_psd
+#print axioms SbtCosmo.Adequacy.Reconciliation.exact_adequacy_easy_chain
+#print axioms SbtCosmo.Adequacy.Reconciliation.worked_example_residual_eq_one
+#print axioms SbtCosmo.Adequacy.Reconciliation.worked_example_residual_nonzero
+#print axioms SbtCosmo.LocalGlobal.globalizes_iff_in_image
+#print axioms SbtCosmo.LocalGlobal.fiberCard_ne_zero_iff_globalizes
+#print axioms SbtCosmo.LocalGlobal.fiberCard_eq_zero_iff_not_globalizes
+#print axioms SbtCosmo.LocalGlobal.four_status_classification
+#print axioms SbtCosmo.LocalGlobal.cddr_eta_ne_one_compatibleNonGlobal
+#print axioms SbtCosmo.LocalGlobal.cddr_eta_ne_one_semantics
+#print axioms SbtCosmo.PhantomStableReadout.toy3_crossing_count_one
+#print axioms SbtCosmo.PhantomStableReadout.toy3_p_dens
+#print axioms SbtCosmo.PhantomStableReadout.toy3_no_growing_mode
+#print axioms SbtCosmo.PhantomStableReadout.toy3_has_phantom_sample
+#print axioms SbtCosmo.PhantomStableReadout.phantom_stable_readout_witness
+#print axioms SbtCosmo.Holonomy.hubble_holonomy_nonzero_iff_injected_disagreement_nonzero
+#print axioms SbtCosmo.Holonomy.zero_disagreement_zero_holonomy
+#print axioms SbtCosmo.Holonomy.e4_nonzero_holonomy_residue
+#print axioms SbtCosmo.Holonomy.route_holonomy_nonzero
+#print axioms SbtCosmo.Holonomy.holonomy_current_trivial_predictive_nontrivial
+#print axioms SbtCosmo.AORStatus.no_unstatused_residual
+#print axioms SbtCosmo.AORStatus.e0_no_unstatused
+#print axioms SbtCosmo.Derivation.ClosurePrice.active_zero_multiplier_counterexample_optimizer
+#print axioms SbtCosmo.Derivation.ClosurePrice.active_not_implies_positive_multiplier
+#print axioms SbtCosmo.Derivation.ClosurePrice.strict_sensitivity_positive_optimizer
+#print axioms SbtCosmo.Derivation.ClosurePrice.strict_sensitivity_positive_kkt
+#print axioms SbtCosmo.Derivation.ClosurePrice.closure_lagrangian_pairing
+```
+Restoration extension, 2026-10-01: the expanded current raw axiom audit is
+axiom_audit_restoration_2026-10-01.txt, generated by check_axioms.lean.
+The earlier axiom_audit_2026-10-01.txt remains the 56-theorem review baseline.
+See math/RESTORATION_CONSTRUCTIONS_2026-10-01.md for explicit carrier additions
+and the boundary between pointwise proofs, analytic arguments, and numerics.
+
+Original-carrier extension, 2026-10-02: the current 113-declaration axiom audit
+is axiom_audit_original_claims_2026-10-02.txt, generated by check_axioms.lean.
+CPL chart identities and window predicate/threshold/population-expression
+lemmas are included. ODE comparison, sensitivity and interval existence are
+mathematical arguments in math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md, not local
+Lean theorems. Earlier raw axiom audits are preserved.
+
+Singular-support extension, 2026-10-02: the current 155-declaration axiom audit
+is axiom_audit_support_2026-10-02.txt, generated by check_axioms.lean.
+Adequacy.Support constructs the finite real Moore-Penrose inverse and proves
+singular-support projection/positivity, optimal-residual identity, the full
+exact-adequacy cycle, and invertible whitening return. Legal quotient and
+empirical/physical realization are separate obligations. Previous raw audits
+are historical evidence.
+
+Original-allocation extension, 2026-10-02: the current 192-declaration raw
+audit includes actual finite-family KKT existence, global optimality and
+uniqueness, price support, conditional value sensitivity, valid offset return
+and exact boundary controls. See math/ALLOCATION_PRICE_PROOFS_2026-10-02.md.
+No unrestricted convex-duality or physical Lambda theorem is supplied.
+
+Staging extension, 2026-10-02: all 208 transitive axiom closures are disclosed
+in axiom_audit_staging_2026-10-02.txt. Exact finite rank counting, finite
+weighted-law probability return under equal index marginals, common-shift
+identities, and the interpolation failure control are included. No real-data
+exchangeability or nuisance-valid significance premise is constructed.
+
+
+Infinite-time extension, 2026-10-03: GrowthInfinite proves integrability,
+time convergence, locally uniform dominated parameter continuity, and strict
+limiting ordering from an increasing actual IVP growth gap. GrowthEternalWindow
+constructs roots by the IVT and proves the strict finite-attainment condition.
+WindowEternalRecords applies the unchanged actual population and rank return at
+every finite horizon. Eventual formation with perpetual retention gives an open
+upper endpoint; nine actual eventual seed passes there refute a closed endpoint
+for this predicate. A fixed formation deadline gives a distinct closed window.
+The global starvation cutoff is derived analytically and a small exact kernel
+margin check; no asymptotic law or global growth bound is a supplied premise.
+The current audit has 798 ordered standard-only closures. Earlier raw receipts
+remain immutable. See math/ETERNAL_WINDOW_LEAN_2026-10-03.md.
+
+
+Horizon-limit extension, 2026-10-03: the new raw audit suffix is
+axiom_audit_horizon_limit_new_2026-10-03.txt, generated by
+check_horizon_limit_axioms.lean. All 32 new declarations permit only standard
+axioms. The combined 830-declaration audit retains the exact historical 798
+prefix; this is not a fresh rerun of the entire cumulative command. The packet
+verifier checks the prior manifest prefix, old proof bytes and pinned mathlib.
+GrowthInfiniteTail derives decay from the actual IVP velocity; GrowthHorizonLimit
+earns the finite selector guards and proves root convergence. WindowEternalBounds
+certifies 3<u_infinity<4 and the closed envelope as a closure statement, distinct
+from actual endpoint records. WindowEternalPatchCounts derives all eternal
+returns from the actual separately realized robustness populations. See
+math/HORIZON_LIMIT_LEAN_2026-10-03.md. No physical bridge is asserted.
+
+
+Infinite-endpoint ratio extension, 2026-10-03: all 25 new closures are freshly
+checked by check_eternal_ratio_axioms.lean, with raw receipt
+axiom_audit_eternal_ratio_new_2026-10-03.txt. The cumulative 855-declaration
+receipt preserves the exact previously audited 830 prefix; the full command
+was not rerun. Kernel rational cell certificates, actual native quadrature
+and the derived tail prove 3<u_infinity<17/5. Existing prefix reachability earns
+all original first-time selector guards on [0,u_infinity]. Actual finite-epoch
+earliestness, bounded upper-edge ratios and positive arbitrary-small-ratio
+eternal gates are constructed. First-any-patch and aggregate both-tag records
+are kept distinct. See math/ETERNAL_RATIO_LEAN_2026-10-03.md.

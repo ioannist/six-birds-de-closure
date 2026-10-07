@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-05T10:51:07.876919+00:00",
+  "field": "original_sample_index",
+  "previous": 5,
+  "corrected": 6,
+  "reason": "Literal metadata field copied from preceding coupling2 packet; executed collector index and all checked sources/names are006/coupling3",
+  "frame_sha256": "4b9483c52353e927b1ca32261fa37c80f65ccaf73ffea25d5a6ba522981975fd",
+  "sample_sha256": "5ebc0d97db67a5da5f7d2f1d4d4d30eac7b424e507ce4add6b47a98d086ea773",
+  "executed_collector_sha256": "221803dcc9276b024d7b960b083763827467f4782cb8db645516000558829981",
+  "archive_unchanged": true,
+  "proof_sources_unchanged": true,
+  "compiled_objects_unchanged": true,
+  "audit_logs_unchanged": true,
+  "review": "adversarial self-review",
+  "goal_complete": false
+}

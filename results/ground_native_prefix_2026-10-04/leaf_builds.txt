@@ -1,0 +1,63 @@
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step000
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step000 (116s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step001
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step001 (114s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step002
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step002 (108s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step003
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step003 (115s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step004
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step004 (98s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step005
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step005 (104s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step006
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step006 (85s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step007
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step007 (105s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step008
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step008 (89s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step009
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step009 (92s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step010
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step010 (90s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step011
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step011 (86s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step012
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step012 (112s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step013
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step013 (123s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step014
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step014 (131s)
+Build completed successfully (8660 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundNativePrefix.Step015
+✔ [8660/8660] Built SbtCosmo.Derivation.GroundNativePrefix.Step015 (112s)
+Build completed successfully (8660 jobs).

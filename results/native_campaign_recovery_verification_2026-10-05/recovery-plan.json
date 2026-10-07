@@ -1,0 +1,32 @@
+{
+  "original_verifier_sha256": "de071d4fca3db4cf45441851be5c44816f304e1dd2b3f921008121c6ccdbada4",
+  "recovery_verifier_sha256": "80769d9eba8d53d5730a12a1d4e9297b34cfffa947b5a6fd059dc092b7a4a40f",
+  "change_scope": "Only qualified gate/receipt/object paths redirected to explicit recovery packets; semantic source, replay, declaration coverage, axiom and negative-control checks retained; repository root pinned explicitly because this isolated verifier lives outside the scripts directory",
+  "original_failed_gates_and_receipts_preserved": true,
+  "production_plans_unchanged": true,
+  "goal_complete": false,
+  "initial_source_attempt": {
+    "terminal_exit_code": 1,
+    "failure": "isolated script inherited relative ROOT=/ and could not locate replay.json",
+    "history_preserved": true,
+    "mathematical_check_failure": false
+  },
+  "finish_driver": "/tmp/de_native_campaign_verification_recovery_finish.py",
+  "finish_driver_sha256": "4112a5e0f475cedc0370dc3e83124d7d12c2e0444ea4a8184bbd2ad676d26c0c",
+  "proof_parents": [
+    3099606,
+    3222760
+  ],
+  "source_stage_passed": true,
+  "qualified_stage_passed": false,
+  "handover_sha256": "4285b1e470c84fdf4fad84a25d150b18d0f830361b919205f7723c6500671965",
+  "additional_production_plan_sha256": "b49d9258b3d9b07b5963c8ba76d28e7ebcd5dd03df10edf280b455372aacd5b0",
+  "additional_production_driver_pid": 480556,
+  "registered_installation_pending": true,
+  "handover_updated_utc": "2026-10-05T07:31:39.569444+00:00",
+  "source_execution_supplement_plan_sha256": "c7a798e995ce61cea1c727eb25aa4de1a8755925267bc5e118e5c2740879461b",
+  "source_execution_supplement_driver_pid": 3029588,
+  "all_private_cycle_seed_and_real_returns_complete": true,
+  "offset_isolated_axiom_audit_complete": true,
+  "original_stable_aggregate_complete": false
+}

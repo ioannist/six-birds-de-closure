@@ -1,0 +1,16 @@
+{
+  "README.md": "1ceccbd5d5e868fe5cb6f49a4894aefd50f9f0ae5c0af5700878af2c936ecd5a",
+  "archive-manifest.json": "b76b844196177209567ab5c34eeedbd148c4853420ef1baede84db6bb9645fe0",
+  "audit-summary.json": "839a63af5204585716d43d4abdc55158c0a63e8c3effab7074e912148707ef45",
+  "completed_artifacts.tar.gz": "c6f26e22bcb1f09cfcb5a35041cd133fd47aa63746dca8c5e3ad868143edc378",
+  "correction_driver.py": "8f1f2d92450a8020817f0f9509f2acaa69a5654d54a8ddd41f414108cb6fcb77",
+  "driver-snapshots/de-native-stable-seed-families-driver.log": "7829f2346d0ebc0c07d5cc7bd98ed1aa1bc632644789ea3d67b4ce72b712c7f7",
+  "driver-snapshots/de-native-stable-seed-leaves-driver.log": "0a1e77c253ded1b3244b8e891ca2505233b5fe0bafb874b0c78fe8c256529b77",
+  "driver-snapshots/de-native-stable-seed-pairs-driver.log": "821da0e1766068bc097f96541e2bd500e25f349ba6c84203559ebac3e845e203",
+  "driver-snapshots/de-native-stable-seed-sixty-driver.log": "b7766b34dce1eb0154d09ea409ed01111d8100f8782e5ae5f67cc26cdf9aa392",
+  "history/initial-copied-index/audit-summary.json": "26ee33de6a46d727814bb3819258361d39998e02aa8d49cf423ee0d2a4f8a6f0",
+  "history/initial-copied-index/executed_collector.py": "221803dcc9276b024d7b960b083763827467f4782cb8db645516000558829981",
+  "history/initial-copied-index/file-manifest.json": "3d55617a43e3665e3395ca9dc515f0204fad1f4e30aa9e6c19a992890a5877ae",
+  "metadata-correction.json": "a323b2881a61edea18d0e6931db5a22ae690fa21da93be8b9f05700550655226",
+  "source-bindings.json": "3482103eb77147cddb17e56ed171c58f43c4635ca1fc7965b960dd348d7b60df"
+}

@@ -1,0 +1,183 @@
+SbtCosmo.Derivation.GroundBorder.dot_self (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.dot u u = SbtCosmo.Derivation.GroundState.normSq u
+SbtCosmo.Derivation.GroundBorder.dot_smul_right (u w : SbtCosmo.Derivation.GroundState.Field) (c : ℝ) :
+  (SbtCosmo.Derivation.GroundBorder.dot u fun i => c * w i) = c * SbtCosmo.Derivation.GroundBorder.dot u w
+SbtCosmo.Derivation.GroundBorder.dot_zero_right (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.dot u 0 = 0
+SbtCosmo.Derivation.GroundBorder.dot_zero_left (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.dot 0 u = 0
+SbtCosmo.Derivation.GroundBorder.shifted_symmetric (v u w : SbtCosmo.Derivation.GroundState.Field) (e : ℝ) :
+  SbtCosmo.Derivation.GroundBorder.dot u (SbtCosmo.Derivation.GroundBorder.shifted v e w) =
+    SbtCosmo.Derivation.GroundBorder.dot (SbtCosmo.Derivation.GroundBorder.shifted v e u) w
+SbtCosmo.Derivation.GroundBorder.border_apply (v u : SbtCosmo.Derivation.GroundState.Field) (e : ℝ)
+  (y : SbtCosmo.Derivation.GroundBorder.Point) :
+  (SbtCosmo.Derivation.GroundBorder.border v u e) y =
+    (fun i => SbtCosmo.Derivation.GroundBorder.shifted v e y.1 i - y.2 * u i,
+      SbtCosmo.Derivation.GroundBorder.dot u y.1)
+SbtCosmo.Derivation.GroundBorder.border_kernel_trivial {v u : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hg : SbtCosmo.Derivation.GroundState.IsGround v u e) {y : SbtCosmo.Derivation.GroundBorder.Point}
+  (hy : (SbtCosmo.Derivation.GroundBorder.border v u e) y = 0) : y = 0
+SbtCosmo.Derivation.GroundBorder.border_injective {v u : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hg : SbtCosmo.Derivation.GroundState.IsGround v u e) :
+  Function.Injective ⇑(SbtCosmo.Derivation.GroundBorder.border v u e)
+SbtCosmo.Derivation.GroundBorder.border_bijective {v u : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hg : SbtCosmo.Derivation.GroundState.IsGround v u e) :
+  Function.Bijective ⇑(SbtCosmo.Derivation.GroundBorder.border v u e)
+SbtCosmo.Derivation.GroundBorder.groundBorder_apply (v : SbtCosmo.Derivation.GroundState.Field)
+  (y : SbtCosmo.Derivation.GroundBorder.Point) :
+  (SbtCosmo.Derivation.GroundBorder.groundBorder v) y =
+    (SbtCosmo.Derivation.GroundBorder.border v (SbtCosmo.Derivation.GroundBorder.groundPair v).1
+        (SbtCosmo.Derivation.GroundBorder.groundPair v).2)
+      y
+SbtCosmo.Derivation.GroundBorder.continuous_groundPair : Continuous SbtCosmo.Derivation.GroundBorder.groundPair
+SbtCosmo.Derivation.GroundEquations.derivative_apply (p h : SbtCosmo.Derivation.GroundEquations.Domain) :
+  (SbtCosmo.Derivation.GroundEquations.derivative p) h =
+    (fun i => h.1 i * p.2.1 i + SbtCosmo.Derivation.GroundBorder.shifted p.1 p.2.2 h.2.1 i - h.2.2 * p.2.1 i,
+      SbtCosmo.Derivation.GroundBorder.dot p.2.1 h.2.1)
+SbtCosmo.Derivation.GroundEquations.equations_smooth : ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundEquations.equations
+SbtCosmo.Derivation.GroundEquations.equations_hasFDerivAt (p : SbtCosmo.Derivation.GroundEquations.Domain) :
+  HasFDerivAt SbtCosmo.Derivation.GroundEquations.equations (SbtCosmo.Derivation.GroundEquations.derivative p) p
+SbtCosmo.Derivation.GroundEquations.derivative_partial (p : SbtCosmo.Derivation.GroundEquations.Domain) :
+  (SbtCosmo.Derivation.GroundEquations.derivative p).comp
+      (ContinuousLinearMap.inr ℝ SbtCosmo.Derivation.GroundState.Field SbtCosmo.Derivation.GroundBorder.Point) =
+    SbtCosmo.Derivation.GroundBorder.border p.1 p.2.1 p.2.2
+SbtCosmo.Derivation.GroundEquations.ground_equations (v : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundEquations.equations (v, SbtCosmo.Derivation.GroundBorder.groundPair v) = 0
+SbtCosmo.Derivation.GroundEquations.actual_implicit_data (v : SbtCosmo.Derivation.GroundState.Field) :
+  IsContDiffImplicitAt (↑⊤) SbtCosmo.Derivation.GroundEquations.equations
+    (SbtCosmo.Derivation.GroundEquations.derivative (v, SbtCosmo.Derivation.GroundBorder.groundPair v))
+    (v, SbtCosmo.Derivation.GroundBorder.groundPair v)
+SbtCosmo.Derivation.GroundSmooth.actual_selector_local_return (v : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.groundPair =ᶠ[nhds v] ⋯.implicitFunction
+SbtCosmo.Derivation.GroundSmooth.groundPair_smooth : ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundBorder.groundPair
+SbtCosmo.Derivation.GroundSmooth.positiveGround_smooth : ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundState.positiveGround
+SbtCosmo.Derivation.GroundSmooth.groundEnergy_smooth :
+  ContDiff ℝ ↑⊤ fun v => SbtCosmo.Derivation.GroundState.energy v (SbtCosmo.Derivation.GroundState.positiveGround v)
+SbtCosmo.Derivation.GroundSmooth.pairDerivative_equation (v h : SbtCosmo.Derivation.GroundState.Field) :
+  (SbtCosmo.Derivation.GroundBorder.border v (SbtCosmo.Derivation.GroundBorder.groundPair v).1
+        (SbtCosmo.Derivation.GroundBorder.groundPair v).2)
+      ((SbtCosmo.Derivation.GroundSmooth.pairDerivative v) h) =
+    (fun i => -h i * SbtCosmo.Derivation.GroundState.positiveGround v i, 0)
+SbtCosmo.Derivation.GroundSmooth.pairDerivative_unique (v h : SbtCosmo.Derivation.GroundState.Field)
+  {y : SbtCosmo.Derivation.GroundBorder.Point}
+  (hy :
+    (SbtCosmo.Derivation.GroundBorder.border v (SbtCosmo.Derivation.GroundBorder.groundPair v).1
+          (SbtCosmo.Derivation.GroundBorder.groundPair v).2)
+        y =
+      (fun i => -h i * SbtCosmo.Derivation.GroundState.positiveGround v i, 0)) :
+  y = (SbtCosmo.Derivation.GroundSmooth.pairDerivative v) h
+SbtCosmo.Derivation.GroundSmooth.groundPair_hasFDerivAt_fderiv (v : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt SbtCosmo.Derivation.GroundBorder.groundPair (fderiv ℝ SbtCosmo.Derivation.GroundBorder.groundPair v) v
+SbtCosmo.Derivation.GroundSmooth.actual_pair_fderiv (v : SbtCosmo.Derivation.GroundState.Field) :
+  fderiv ℝ SbtCosmo.Derivation.GroundBorder.groundPair v = SbtCosmo.Derivation.GroundSmooth.pairDerivative v
+SbtCosmo.Derivation.GroundSmooth.actual_pair_hasFDerivAt (v : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundSmooth.pairDerivative v) v
+SbtCosmo.Derivation.GroundSmooth.positiveGround_hasFDerivAt (v : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt SbtCosmo.Derivation.GroundState.positiveGround (SbtCosmo.Derivation.GroundSmooth.selectorDerivative v) v
+SbtCosmo.Derivation.GroundSmooth.selector_derivative_tangent (v h : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.dot (SbtCosmo.Derivation.GroundState.positiveGround v)
+      ((SbtCosmo.Derivation.GroundSmooth.selectorDerivative v) h) =
+    0
+SbtCosmo.Derivation.GroundSmooth.selector_derivative_eigen_equation (v h : SbtCosmo.Derivation.GroundState.Field)
+  (i : Fin 8) :
+  SbtCosmo.Derivation.GroundBorder.shifted v (SbtCosmo.Derivation.GroundBorder.groundPair v).2
+        ((SbtCosmo.Derivation.GroundSmooth.selectorDerivative v) h) i -
+      ((SbtCosmo.Derivation.GroundSmooth.pairDerivative v) h).2 * SbtCosmo.Derivation.GroundState.positiveGround v i =
+    -h i * SbtCosmo.Derivation.GroundState.positiveGround v i
+SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative_apply (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u h : SbtCosmo.Derivation.GroundState.Field) (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ u) h i =
+    2 * κ *
+      (SbtCosmo.Derivation.GroundState.gradient u i * SbtCosmo.Derivation.GroundState.gradient h i + b i * u i * h i)
+SbtCosmo.Derivation.GroundSourceJacobian.sourcePotential_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundState.sourcePotential b κ)
+SbtCosmo.Derivation.GroundSourceJacobian.sourcePotential_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundState.sourcePotential b κ)
+    (SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ u) u
+SbtCosmo.Derivation.GroundSourceJacobian.groundMap_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ)
+SbtCosmo.Derivation.GroundSourceJacobian.groundMap_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ)
+    (SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) u
+SbtCosmo.Derivation.GroundSourceJacobian.jacobian_tangent (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u h : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.dot (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u)
+      ((SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) h) =
+    0
+SbtCosmo.Derivation.GroundSourceJacobian.jacobian_eigen_equation (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (u h : SbtCosmo.Derivation.GroundState.Field) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundBorder.shifted (SbtCosmo.Derivation.GroundState.sourcePotential b κ u)
+        (SbtCosmo.Derivation.GroundBorder.groundPair (SbtCosmo.Derivation.GroundState.sourcePotential b κ u)).2
+        ((SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) h) i -
+      ((SbtCosmo.Derivation.GroundSmooth.pairDerivative (SbtCosmo.Derivation.GroundState.sourcePotential b κ u))
+            ((SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ u) h)).2 *
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u i =
+    -(SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ u) h i *
+      SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u i
+SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap_apply (u h : SbtCosmo.Derivation.GroundState.Field) :
+  (SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap u) h = SbtCosmo.Derivation.GroundBorder.dot u h
+SbtCosmo.Derivation.GroundNormalizedJacobian.projection_apply (u h : SbtCosmo.Derivation.GroundState.Field)
+  (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundNormalizedJacobian.projection u) h i = h i - SbtCosmo.Derivation.GroundBorder.dot u h * u i
+SbtCosmo.Derivation.GroundNormalizedJacobian.normSq_hasFDerivAt (u : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt SbtCosmo.Derivation.GroundState.normSq (2 • SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.sqrt_normSq_hasFDerivAt {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  HasFDerivAt (fun w => √(SbtCosmo.Derivation.GroundState.normSq w))
+    (SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.inv_sqrt_normSq_hasFDerivAt {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  HasFDerivAt (fun w => (√(SbtCosmo.Derivation.GroundState.normSq w))⁻¹)
+    (-SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.normalize_hasFDerivAt {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) :
+  HasFDerivAt SbtCosmo.Derivation.GroundNormalizedJacobian.normalize
+    (SbtCosmo.Derivation.GroundNormalizedJacobian.projection u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.affine_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundState.relaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m)
+    (SbtCosmo.Derivation.GroundNormalizedJacobian.affineJacobian b κ m u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.normalized_hasFDerivAt {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} {u : SbtCosmo.Derivation.GroundState.Field} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) :
+  HasFDerivAt
+    (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) m)
+    (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.normalized_tangent_return {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} {u h : SbtCosmo.Derivation.GroundState.Field}
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u)
+  (ht : SbtCosmo.Derivation.GroundBorder.dot u h = 0) :
+  (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) h =
+    (1 - m) • h + m • (SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) h
+SbtCosmo.Derivation.GroundNormalizedJacobian.positive_ground_fixed {b u : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  (hp : ∀ (i : Fin 8), 0 < u i) (hg : SbtCosmo.Derivation.GroundState.IsSelfConsistentGround b κ u) :
+  SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u
+SbtCosmo.Derivation.GroundNormalizedJacobian.exists_actual_normalized_jacobian
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) :
+  ∃ u,
+    (∀ (i : Fin 8), 0 < u i) ∧
+      SbtCosmo.Derivation.GroundState.normSq u = 1 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u ∧
+          HasFDerivAt
+            (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ)
+              m)
+            (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) u
+SbtCosmo.Derivation.GroundNormalizedJacobian.actual_real_eigenmode_return {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m t : ℝ} {u h : SbtCosmo.Derivation.GroundState.Field}
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u)
+  (ht : SbtCosmo.Derivation.GroundBorder.dot u h = 0)
+  (he : (SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) h = t • h) :
+  (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ m u) h = (1 - m + m * t) • h
+SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_groundMap (b u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundSourceJacobian.groundMap b 0 u = SbtCosmo.Derivation.GroundState.positiveGround b
+SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_jacobian (b u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundSourceJacobian.jacobian b 0 u = 0
+SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_tangent_return (b : SbtCosmo.Derivation.GroundState.Field)
+  (m : ℝ) {h : SbtCosmo.Derivation.GroundState.Field}
+  (ht : SbtCosmo.Derivation.GroundBorder.dot (SbtCosmo.Derivation.GroundState.positiveGround b) h = 0) :
+  (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b 0 m
+        (SbtCosmo.Derivation.GroundState.positiveGround b))
+      h =
+    (1 - m) • h

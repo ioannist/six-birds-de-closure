@@ -1,0 +1,30 @@
+[
+  {
+    "module": "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "1b138c805e09e4b30739fda1d1b901e01e0eeb9cd51bb362c449ecbef4722500",
+    "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "olean_sha256": "f641c5cedd96036debc1d335a16c86bc64adccf908f9afa453cecbf52a54a4d3"
+  },
+  {
+    "module": "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "6b3560c000f0088d8894024ef2fcf5e2150959496903da76ad4599558851acd9",
+    "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "olean_sha256": "424845c06de6778081ffa9c3b2d108f1a86c1783c869a519549a0671314c11ea"
+  },
+  {
+    "module": "SbtCosmo.Derivation.NativeCycleSeed20.RealReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "08d8cc57103954f6a60f8fca493f1ebbbbc7fef976b7ba0ff6a10dc69ddca812",
+    "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "olean_sha256": "25f08297741b453049e09e96eafa846ca7604cee7b4f23f91f0310be08721473"
+  },
+  {
+    "module": "SbtCosmo.Derivation.NativeCycleSeed30.RealReturn",
+    "terminal_exit_code": 0,
+    "source_sha256": "ce02d6a9da612464e2545b1914bb8afa4c3060fe776c76fdd4d3541d51192cbb",
+    "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "olean_sha256": "3da5bfd1b14073308c6fd89e8ccdda9c224543c6abca3bd5dc4e9cb665e76cc9"
+  }
+]

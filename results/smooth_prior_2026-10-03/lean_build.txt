@@ -1,0 +1,2 @@
+✔ [8174/8175] Built SbtCosmo.Derivation.WindowSmoothPrior (7.5s)
+Build completed successfully (8175 jobs).

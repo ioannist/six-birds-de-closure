@@ -1,0 +1,18 @@
+{
+  "failed_review_driver.py": "648006a20722532f30cea0fe3014a6c7b61226a965a52e901bd91a32889a5e70",
+  "observed_tool_terminal.json": "f63836051a057d128f1aa921433f5e6d6d7b917222016940bed4df26815c20e9",
+  "README.md": "aee4749ee950aaddc08af2b9ac795f6fbed87a4f23fe190856e3522223091de2",
+  "completed_file_operation_fixtures/before_replacement_file_flush_failure/receipts/journal.json": "e510a1c2dadfd39378b3b426091e3cfa747d61969a7afd08aa26043e5fe9c0dd",
+  "completed_file_operation_fixtures/before_replacement_file_flush_failure/receipts/terminal.json": "526742c37b47ae4fab310e7413b5405e36ed8e5d16bd32f2e443c52cf83c1374",
+  "completed_file_operation_fixtures/before_replacement_file_flush_failure/lean/target.lean": "ffabbcb679e5f7053ef87f3dce191465fe8b6c92f62b99a7033629e5a56e4738",
+  "completed_file_operation_fixtures/normal_replacement/receipts/journal.json": "eee3d5eba59334ae8b1b0b43649d54625fb8b258db98dedcfce55be58bd28269",
+  "completed_file_operation_fixtures/normal_replacement/lean/target.lean": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+  "completed_file_operation_fixtures/new_file_directory_flush_failure/receipts/journal.json": "2a04d32bc510a3b6a0679ad21ea8ca417f118346c682ac1f5d63c3bbd58b44bf",
+  "completed_file_operation_fixtures/new_file_directory_flush_failure/receipts/terminal.json": "2a477d8efdd5244cac0a7f3fe943c2566f3cc952200cad86981a28e701fb6184",
+  "completed_file_operation_fixtures/new_file_directory_flush_failure/lean/target.lean": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+  "completed_file_operation_fixtures/normal_new_file/receipts/journal.json": "eee3d5eba59334ae8b1b0b43649d54625fb8b258db98dedcfce55be58bd28269",
+  "completed_file_operation_fixtures/normal_new_file/lean/target.lean": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+  "completed_file_operation_fixtures/replacement_directory_flush_failure/receipts/journal.json": "3bf75c2b0f0bf6b2b54b86e6859fcd655202dac1d1d9fe2327adf18ff96bfa14",
+  "completed_file_operation_fixtures/replacement_directory_flush_failure/receipts/terminal.json": "096e0f3007563cc4e84150d5c86e35eba712d968f66d15ecd3a7797073204808",
+  "completed_file_operation_fixtures/replacement_directory_flush_failure/lean/target.lean": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d"
+}

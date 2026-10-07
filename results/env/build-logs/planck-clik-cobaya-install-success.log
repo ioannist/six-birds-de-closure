@@ -1,0 +1,31 @@
+[install] Installing external packages at '/mnt/data-drive/sbt-de/cobaya-packages'
+
+================================================================================
+planck_2018_highl_plik.TTTEEE
+================================================================================
+
+[install] Checking if dependencies have already been installed...
+Cannot use clik wrapper (cause = 'No module named 'clik.lkl'')
+Cannot use clik_lensing wrapper (cause = 'No module named 'clik.lkl_lensing'')
+[install] External dependencies for this component already installed.
+[install] Forcing re-installation, as requested.
+[install] Installing...
+[clik] `clik` module loaded successfully from /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main/lib/python/site-packages/clik
+[planck_2018_highl_plik.TTTEEE] Installing the clik code.
+[clik] Installing pre-requisites...
+[clik] Downloading...
+[clik] Downloaded filename clik-main.zip
+[clik] Installing from directory /mnt/data-drive/sbt-de/cobaya-packages/code/planck/clik-main
+[clik] Configuring... (and maybe installing dependencies...)
+[clik] Compiling...
+[clik] Finished!
+[planck_2018_highl_plik.TTTEEE] Downloading the likelihood data.
+[planck_2018_highl_plik.TTTEEE] Downloaded filename COM_Likelihood_Data-baseline_R3.00.tar.gz
+[install] Successfully installed! Let's check it...
+[install] Installation check successful.
+
+================================================================================
+* Summary * 
+================================================================================
+
+[install] All requested components' dependencies correctly installed at /mnt/data-drive/sbt-de/cobaya-packages

@@ -1,0 +1,513 @@
+{
+  "role": "EXACT_FORM_NEGATIVE_CONTROL",
+  "superseded": "EXACT_FORM_NEGATIVE_CONTROL / in-sample-only; G-E4-PREDICT-DECISIVE retired 2026-05-31, see plan/REPLAN_SPEC",
+  "covariance_battery": {
+    "G-E4-COV": {
+      "conservative_survivals": [
+        false,
+        false,
+        false
+      ],
+      "criterion": "survives at least one conservative covariance variant",
+      "pass": false
+    },
+    "best": {
+      "G-E4-2-STEELMAN": false,
+      "N_eff": 5.450057588671821,
+      "assumptions": [
+        {
+          "component": "shared_SN_zero_point_M_B",
+          "covariance_added": 0.48999999999999994,
+          "justification": "Cepheid/TRGB/JWST-TRGB/JAGB ladders share the SN Ia second rung / zero-point calibration.",
+          "routes": [
+            "cepheid_sn",
+            "trgb_sn",
+            "jwst_trgb_sn",
+            "jagb_sn"
+          ],
+          "sigma_km_s_Mpc": 0.7
+        },
+        {
+          "component": "shared_TRGB_anchor_systematic",
+          "covariance_added": 1.0,
+          "justification": "CCHP full-TRGB and JWST-only TRGB determinations share the TRGB calibration family.",
+          "routes": [
+            "trgb_sn",
+            "jwst_trgb_sn"
+          ],
+          "sigma_km_s_Mpc": 1.0
+        }
+      ],
+      "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+      "prediction_chi2_per_dof": 1.8473628467222134
+    },
+    "block_bootstrap": {
+      "families": [
+        "siren",
+        "stellar_ladder",
+        "time_delay"
+      ],
+      "survival_count": 0,
+      "survival_fraction": 0.0,
+      "trials": 200
+    },
+    "diagonal": {
+      "G-E4-2-STEELMAN": false,
+      "N_eff": 6.0,
+      "assumptions": [
+        {
+          "note": "All shared-calibration covariance terms suppressed for diagnostic only.",
+          "type": "diagonal_only"
+        }
+      ],
+      "delta_BIC_steelman_minus_Xi": -0.361741156149348,
+      "prediction_chi2_per_dof": 1.5631852390814291
+    },
+    "high_corr": {
+      "G-E4-2-STEELMAN": false,
+      "N_eff": 4.476251744318836,
+      "assumptions": [
+        {
+          "component": "shared_SN_zero_point_M_B",
+          "covariance_added": 0.9025,
+          "justification": "Cepheid/TRGB/JWST-TRGB/JAGB ladders share the SN Ia second rung / zero-point calibration.",
+          "routes": [
+            "cepheid_sn",
+            "trgb_sn",
+            "jwst_trgb_sn",
+            "jagb_sn"
+          ],
+          "sigma_km_s_Mpc": 0.95
+        },
+        {
+          "component": "shared_TRGB_anchor_systematic",
+          "covariance_added": 1.8225000000000002,
+          "justification": "CCHP full-TRGB and JWST-only TRGB determinations share the TRGB calibration family.",
+          "routes": [
+            "trgb_sn",
+            "jwst_trgb_sn"
+          ],
+          "sigma_km_s_Mpc": 1.35
+        }
+      ],
+      "delta_BIC_steelman_minus_Xi": -3.1727205937193705,
+      "prediction_chi2_per_dof": 2.221869938161091
+    },
+    "leave_one_family_out": {
+      "siren": {
+        "G-E4-2-STEELMAN": false,
+        "delta_BIC_steelman_minus_Xi": -3.968673067913774,
+        "kept_routes": [
+          "cepheid_sn",
+          "trgb_sn",
+          "jwst_trgb_sn",
+          "jagb_sn",
+          "time_delay"
+        ]
+      },
+      "time_delay": {
+        "G-E4-2-STEELMAN": false,
+        "delta_BIC_steelman_minus_Xi": -3.94618738476023,
+        "kept_routes": [
+          "cepheid_sn",
+          "trgb_sn",
+          "jwst_trgb_sn",
+          "jagb_sn",
+          "siren"
+        ]
+      }
+    }
+  },
+  "gates": {
+    "G-E4-PREDICT-DECISIVE": {
+      "evaluated_on": "out_of_sample_external_routes",
+      "pass": false,
+      "requires": [
+        "G-E4-FROZEN",
+        "G-E4-PREREG",
+        "G-E4-1",
+        "LP1",
+        "LP2",
+        "LP3",
+        "LP4",
+        "LP5",
+        "G-E4-2-STEELMAN",
+        "G-E4-2-permutation"
+      ],
+      "requires_status": {
+        "G-E4-1": {
+          "note": "Route value manifest and shared-calibration covariance built.",
+          "pass": true,
+          "status": "computed"
+        },
+        "G-E4-2-STEELMAN": {
+          "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+          "delta_WAIC_steelman_minus_Xi": -0.7999070965044162,
+          "lnB_Xi_minus_stronger": 0.5215785887406881,
+          "locked_thresholds": {
+            "WAIC_must_favor_Xi": true,
+            "delta_BIC_steelman_minus_Xi_required": 6.0,
+            "lnB_Xi_minus_stronger_required": 5.0
+          },
+          "pass": false,
+          "status": "computed"
+        },
+        "G-E4-2-permutation": {
+          "criterion": "route-label permutation p<0.05 for Xi-vs-steelman BIC advantage",
+          "observed_delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+          "p_value": 0.6384723055388922,
+          "pass": false,
+          "permutation_trials": 5000,
+          "status": "computed"
+        },
+        "G-E4-FROZEN": {
+          "note": "Read Xi/kernel only from results/E4/blind; no Hubble refit.",
+          "pass": true,
+          "status": "computed"
+        },
+        "G-E4-PREREG": {
+          "note": "Blind hashes verified before value unlock.",
+          "pass": true,
+          "status": "computed"
+        },
+        "LP1": {
+          "pass": false,
+          "status": "computed"
+        },
+        "LP2": {
+          "pass": false,
+          "status": "computed"
+        },
+        "LP3": {
+          "pass": false,
+          "status": "computed"
+        },
+        "LP4": {
+          "pass": true,
+          "status": "computed"
+        },
+        "LP5": {
+          "pass": false,
+          "status": "computed"
+        }
+      },
+      "status": "computed"
+    },
+    "G-E4-ROUTEREUSE": {
+      "criterion": "weaker partial: sign/staging + residual reuse + Xi beats null",
+      "pass": false,
+      "status": "computed"
+    },
+    "G-E4-T4a": {
+      "note": "Frozen Xi and kernel read only from results/E4/blind; Phase B does not refit Xi.",
+      "pass": true,
+      "status": "computed"
+    },
+    "LP1_route_structure": {
+      "criterion": "structural predicate: frozen Xi directionally beats null and strongest steelman, with pairwise ordering hit-rate >= 0.65",
+      "directional_Xi_beats_stronger_steelman_by_lnZ": true,
+      "distinction": "LP1 structural predicate passes even though the locked thresholded G-E4-2-STEELMAN gate may fail.",
+      "pairwise_order_hit_rate": 0.4444444444444444,
+      "pass": false,
+      "thresholded_G-E4-2-STEELMAN_pass": false
+    },
+    "LP2_staging_structure": {
+      "criterion": "sign hit-rate >= 0.70 on decisive routes",
+      "pass": false,
+      "sign_hit_rate": 0.4
+    },
+    "LP3_holonomy": {
+      "criterion": "primary loop z>=2 OR global permutation p<0.05, plus flat-control holonomy approximately zero",
+      "flat_control": {
+        "description": "OOS-only flat route configuration has no closed loop to test.",
+        "loops": [],
+        "max_holonomy_abs_km_s_Mpc": 0.0,
+        "max_z_score": 0.0,
+        "pass": true
+      },
+      "global_p_disjunct_pass": false,
+      "note": "No meaningful closed Hubble-holonomy loop exists using only out-of-sample local routes; the pre-registered high-power loop requires in-sample early anchors.",
+      "p_global": null,
+      "pass": false,
+      "primary_z": null,
+      "primary_z_disjunct_pass": false,
+      "status": "downgraded_no_closed_external_loop"
+    },
+    "LP4_residual_reuse": {
+      "criterion": "kernel and Xi frozen from committed E1/E2 blind Phase A artifacts; no Hubble refit",
+      "pass": true
+    },
+    "LP5_source_refinement": {
+      "G-E4-COV": {
+        "conservative_survivals": [
+          false,
+          false,
+          false
+        ],
+        "criterion": "survives at least one conservative covariance variant",
+        "pass": false
+      },
+      "criterion": "prediction survives at least one conservative covariance variant",
+      "pass": false
+    },
+    "all_routes_sensitivity_including_insample": {
+      "G-E4-2-STEELMAN": false,
+      "holonomy_p_global": 0.04099180163967207,
+      "holonomy_primary_z": 2.940193836435923,
+      "prediction_chi2_per_dof": 1.4094350857536075,
+      "status": "consistency/sensitivity only; in-sample early routes excluded from decisive gate"
+    }
+  },
+  "holonomy": {
+    "G-E4-T3-MULTIPLICITY": false,
+    "flat_control": {
+      "description": "OOS-only flat route configuration has no closed loop to test.",
+      "loops": [],
+      "max_holonomy_abs_km_s_Mpc": 0.0,
+      "max_z_score": 0.0,
+      "pass": true
+    },
+    "global_p_disjunct_pass": false,
+    "include_time_delay": true,
+    "locked_rule": "primary loop z>=2 OR global permutation p<0.05; downgraded because no OOS-only loop is available",
+    "note": "No meaningful closed Hubble-holonomy loop exists using only out-of-sample local routes; the pre-registered high-power loop requires in-sample early anchors.",
+    "p_global": null,
+    "primary_loop": {
+      "holonomy_abs_km_s_Mpc": null,
+      "loop": null,
+      "sigma_km_s_Mpc": null,
+      "z_score": null
+    },
+    "primary_z_disjunct_pass": false,
+    "status": "downgraded_no_closed_external_loop"
+  },
+  "model_comparison": {
+    "G-E4-2-permutation": {
+      "criterion": "route-label permutation p<0.05 for Xi-vs-steelman BIC advantage",
+      "observed_delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+      "p_value": 0.6384723055388922,
+      "pass": false,
+      "permutation_trials": 5000
+    },
+    "gates": {
+      "G-E4-2-STEELMAN": false,
+      "WAIC_favors_Xi": false,
+      "Xi_beats_bridge_offset_by_lnZ": true,
+      "Xi_beats_null_by_lnZ": false,
+      "Xi_beats_route_offset_by_lnZ": true,
+      "Xi_beats_stronger_steelman_by_lnZ": true,
+      "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+      "delta_WAIC_steelman_minus_Xi": -0.7999070965044162,
+      "label": "out_of_sample",
+      "lnB_Xi_minus_stronger": 0.5215785887406881,
+      "locked_thresholds": {
+        "WAIC_must_favor_Xi": true,
+        "delta_BIC_steelman_minus_Xi_required": 6.0,
+        "lnB_Xi_minus_stronger_required": 5.0
+      },
+      "stronger_steelman": "M_bridge_offset",
+      "xi_evidence_signal": "no out-of-sample evidence win: Xi loses to null in lnZ; BIC and WAIC favor the M_bridge_offset steelman; the only positive is a tiny lnZ edge of +0.522 over M_bridge_offset, contradicted by BIC/WAIC and by the null lnZ."
+    },
+    "label": "out_of_sample",
+    "models": {
+      "M_XiFrozen": {
+        "AIC": 11.236814233611069,
+        "BIC": 11.028573702839124,
+        "WAIC_proxy": 11.236814233611069,
+        "bestfit": {
+          "H_closed": 70.52729931107201,
+          "H_closed_sigma": 1.0205414698206372
+        },
+        "chi2": 9.236814233611069,
+        "covariance": "measurement_plus_frozen_Xi_prediction_covariance",
+        "delta_BIC_vs_null": -0.13942421388484938,
+        "delta_WAIC_proxy_vs_null": -0.13942421388484938,
+        "delta_lnZ_vs_null": -0.015240017186737731,
+        "elapsed_seconds": 0.33655866980552673,
+        "k": 1,
+        "lnZ": -18.810203737169378,
+        "lnZ_err": 0.13864893858279642,
+        "model": "M_XiFrozen",
+        "nlive": 220
+      },
+      "M_bridge_offset": {
+        "AIC": 10.436907137106653,
+        "BIC": 9.395704483246927,
+        "WAIC_proxy": 10.436907137106653,
+        "bestfit": {
+          "H0": 73.48999999999995,
+          "fixed_bridge": "Cepheid",
+          "offsets": {
+            "JAGB": -5.689999999999985,
+            "TRGB": -3.724196506703067,
+            "siren": -3.489999999999951,
+            "time_delay": -1.8899999999999872
+          }
+        },
+        "chi2": 0.4369071371066531,
+        "delta_BIC_vs_null": -1.7722934334770457,
+        "delta_WAIC_proxy_vs_null": -0.9393313103892655,
+        "delta_lnZ_vs_null": -0.5368186059274258,
+        "elapsed_seconds": 1.0502073429524899,
+        "k": 5,
+        "lnZ": -19.331782325910066,
+        "lnZ_err": 0.22318437501353042,
+        "model": "M_bridge_offset",
+        "nlive": 220
+      },
+      "M_null": {
+        "AIC": 11.376238447495918,
+        "BIC": 11.167997916723973,
+        "WAIC_proxy": 11.376238447495918,
+        "bestfit": {
+          "H0": 72.6619526821874
+        },
+        "chi2": 9.376238447495918,
+        "delta_BIC_vs_null": 0.0,
+        "delta_WAIC_proxy_vs_null": 0.0,
+        "delta_lnZ_vs_null": 0.0,
+        "elapsed_seconds": 0.4051089622080326,
+        "k": 1,
+        "lnZ": -18.79496371998264,
+        "lnZ_err": 0.14198469572778907,
+        "model": "M_null",
+        "nlive": 220
+      },
+      "M_route_offset": {
+        "AIC": 12.0,
+        "BIC": 10.75055681536833,
+        "WAIC_proxy": 12.0,
+        "bestfit": {
+          "H0": 73.49,
+          "offsets": {
+            "jagb_sn": -5.68999999999998,
+            "jwst_trgb_sn": -4.679999999999978,
+            "siren": -3.4899999999999807,
+            "time_delay": -1.8900000000000006,
+            "trgb_sn": -3.099999999999983
+          }
+        },
+        "chi2": 1.0429522326373197e-28,
+        "delta_BIC_vs_null": -0.4174411013556423,
+        "delta_WAIC_proxy_vs_null": 0.6237615525040816,
+        "delta_lnZ_vs_null": -1.870494276900807,
+        "elapsed_seconds": 1.4052279144525528,
+        "identifiability": "cepheid_sn offset fixed to 0",
+        "k": 6,
+        "lnZ": -20.665457996883447,
+        "lnZ_err": 0.23737395983448545,
+        "model": "M_route_offset",
+        "nlive": 220
+      }
+    },
+    "route_ids": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "prediction_quality": {
+    "H_closed_fit": 70.52729931107201,
+    "H_closed_sigma": 1.0205414698206372,
+    "chi2": 9.236814233611067,
+    "chi2_per_dof": 1.8473628467222134,
+    "dof": 5,
+    "label": "out_of_sample",
+    "pairwise_order_hit_rate": 0.4444444444444444,
+    "routes": [
+      {
+        "H0_measured": 73.49,
+        "H0_sigma": 0.93,
+        "measured_offset_vs_H_closed": 2.962700688927981,
+        "measured_sign": "positive",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": 0.7033739402640484,
+        "route_id": "cepheid_sn",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 70.39,
+        "H0_sigma": 1.9357944105715357,
+        "measured_offset_vs_H_closed": -0.1372993110720131,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -2.396626059735946,
+        "route_id": "trgb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 68.81,
+        "H0_sigma": 2.224072840533781,
+        "measured_offset_vs_H_closed": -1.7172993110720114,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -3.976626059735944,
+        "route_id": "jwst_trgb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 67.8,
+        "H0_sigma": 2.7200183822908257,
+        "measured_offset_vs_H_closed": -2.7272993110720165,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -4.986626059735949,
+        "route_id": "jagb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 71.6,
+        "H0_sigma": 3.5999999999999996,
+        "measured_offset_vs_H_closed": 1.0727006889279807,
+        "measured_sign": "positive",
+        "predicted_offset_blind": 0.5095144617482672,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.7423186744364157,
+        "residual_measured_minus_predicted": 0.5631862271797135,
+        "route_id": "time_delay",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 70.0,
+        "H0_sigma": 10.0,
+        "measured_offset_vs_H_closed": -0.5272993110720137,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 0.009896314254918583,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.014418077269702446,
+        "residual_measured_minus_predicted": -0.5371956253269322,
+        "route_id": "siren",
+        "sign_hit": null
+      }
+    ],
+    "sign_hit_rate": 0.4,
+    "sign_hits": 2,
+    "sign_total": 5,
+    "spearman_rho": -0.13522468075656266
+  },
+  "route_partition": {
+    "in_sample_consistency_only": [
+      "cmb_bao",
+      "inverse_ladder"
+    ],
+    "out_of_sample": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  }
+}

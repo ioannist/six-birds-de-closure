@@ -1,0 +1,141 @@
+{
+  "all_background_existence": {
+    "Brouwer_lean_axiom_added": false,
+    "convergence_guarantee": false,
+    "locally_lean_mechanized": false,
+    "mathematical_proof": true,
+    "original_nonconstant_template_covered_mathematically": true,
+    "physical_Lambda_bridge": false,
+    "unique_self_consistent_solution": false
+  },
+  "axiom_audit": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "command": "lake env lean manifests/check_axioms.lean",
+    "declarations": 327,
+    "native_decide": false,
+    "new_declarations": [
+      "SbtCosmo.Derivation.GroundState.energy_identity",
+      "SbtCosmo.Derivation.GroundState.kineticEnergy_nonneg",
+      "SbtCosmo.Derivation.GroundState.constant_potential_lower_bound",
+      "SbtCosmo.Derivation.GroundState.uniform_positive",
+      "SbtCosmo.Derivation.GroundState.uniform_sq",
+      "SbtCosmo.Derivation.GroundState.uniform_normalized",
+      "SbtCosmo.Derivation.GroundState.uniform_gradient",
+      "SbtCosmo.Derivation.GroundState.constant_source_potential",
+      "SbtCosmo.Derivation.GroundState.uniform_eigen",
+      "SbtCosmo.Derivation.GroundState.uniform_ground",
+      "SbtCosmo.Derivation.GroundState.constant_background_fixed_point",
+      "SbtCosmo.Derivation.GroundState.all_constant_parameters_admitted",
+      "SbtCosmo.Derivation.GroundState.constant_background_no_forced_value",
+      "SbtCosmo.Derivation.GroundState.zero_entry_forces_next_zero",
+      "SbtCosmo.Derivation.GroundState.nonnegative_eigen_zero_forces_all_zero",
+      "SbtCosmo.Derivation.GroundState.normalized_nonnegative_eigen_positive",
+      "SbtCosmo.Derivation.GroundState.relaxed_fixed_iff",
+      "SbtCosmo.Derivation.GroundState.normalizedRelaxed_fixes",
+      "SbtCosmo.Derivation.GroundState.relaxed_real_mode_stable_iff",
+      "SbtCosmo.Derivation.GroundState.unstable_mode_stabilized_by_damping"
+    ],
+    "proof_holes": false,
+    "success": true
+  },
+  "baseline_commit": "5b228e9",
+  "frozen_artifacts_changed_in_packet": false,
+  "lean_build": {
+    "command": "lake build",
+    "jobs": 3167,
+    "success": true,
+    "warnings_as_errors": true
+  },
+  "native_checks": {
+    "approximate_ground_points": 30,
+    "background_120_passes": 18,
+    "background_60_passes": 15,
+    "background_raw_map_unstable_offsets": [
+      5,
+      8,
+      10
+    ],
+    "interval_certified": false,
+    "kappa_raw_map_unstable_samples": [
+      10,
+      15,
+      20,
+      30
+    ],
+    "max_analytic_fd_error": 3.3897858964238026e-09
+  },
+  "original_return": {
+    "existence_does_not_select_background": true,
+    "existential_coupling_boundary": "refuted for this finite model; every real coupling has a ground-state fixed point",
+    "sampled_spectral_crossings_interval_certified": false,
+    "unchanged_dynamics_background_blind": false,
+    "unrestricted_selector_impossibility": false
+  },
+  "paper_edited": false,
+  "pause_requested": true,
+  "phase_control": {
+    "candidate": "uniform",
+    "correct_multiplier": "vdot(candidate,reference)/abs(vdot(candidate,reference))",
+    "corrected_aligned_gap": 0.0,
+    "native_aligned_gap": 1.9999999999999998,
+    "pinned_source_edited": false,
+    "reference": "i*uniform",
+    "same_ray": true,
+    "wrong_source_multiplier": "exp(-i arg(vdot(candidate,reference)))"
+  },
+  "python_tests": {
+    "command": "python -m pytest -q",
+    "passed": 127,
+    "scope": "full suite before the subsequent corrected-helper and deterministic LF-output integrations in math_review_recompute; all other substantive changes included",
+    "subsequent_focused_check": {
+      "command": "python -m pytest tests/test_ground_state_math.py -q",
+      "passed": 4
+    },
+    "warnings": 19
+  },
+  "review": "adversarial self-review, no independent reviewer",
+  "review_recomputation": {
+    "audit_match": true,
+    "command": "python scripts/math_review_recompute.py --check-sibling --outdir results/ground_state_2026-10-02/review_recomputation",
+    "dual": {
+      "max_dual_fd_error": 3.56251052963108e-11,
+      "max_kkt_residual": 1.1084466677857563e-12
+    },
+    "generated_csv_line_endings": "LF; matches Git text normalization",
+    "phase_distance_helper": "local corrected align_ray; frozen source has the opposite phase sign",
+    "success": true,
+    "window_match": true
+  },
+  "scope": "native exact constant-sector Lean construction; all-background written proof; separate floating budget and Jacobian audits",
+  "source_sha256": {
+    "README.md": "7cde91b1c3da0346d7c6406c2b8f23dd75eb64eaf18b1fa29b689436bd0e7e12",
+    "lean/README.md": "cb9f779af840b59dc3077cba389142995d30a7200167fbcf3c3576e82694c157",
+    "lean/SbtCosmo/Derivation/BackgroundSelection.lean": "c3384256312d76044dd8762a0e4f1ea22f3987f9f202af19deb9c02c24c93dc3",
+    "lean/SbtCosmo/Derivation/GroundState.lean": "028d1726e5f5aa535fa6517a7e19a14a11eae83eb5852a7277ba3de8c4aa4e3d",
+    "lean/lake-manifest.json": "5b408cb7b3ce9541bd70428d687331dab487f8952bbc3c5623252100b14ad3d8",
+    "lean/lakefile.lean": "784b0139bbe83aea009d08de325a30129c0e9601ec54d29ba7e245adb1f0160d",
+    "lean/lean-toolchain": "db7bb24b756d745bbde83fe92718b51bd3625dae3701ba0f598d0eedcd3f3028",
+    "lean/manifests/axiom_audit_ground_state_2026-10-02.txt": "0267423176c3ed00db859ddb4a48930de4556a3cfb2ffc032ae3d642d0959a9a",
+    "lean/manifests/check_axioms.lean": "9156e77e3ea1baa68b393140a9eae6cfae729fdd591fd79793d33447cf4d7f37",
+    "lean/manifests/coverage_table.md": "6f2f8fce73f67bf5292ddb46266d5faba40bf2dd81cbecfe7d55c8af0e8c3cb1",
+    "lean/manifests/trust_base.txt": "b7e9ebfa422e1f9d3ec5c39f6afcbcef3113f67378e514edf81fba1f1be05258",
+    "math/GROUND_STATE_PROOFS_2026-10-02.md": "bee10d3abc107970f4c5d5bd384003be48ebfb19eb399e3e065d59c5838a2895",
+    "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md": "44af60d582a98f32ece78fe538f8e7cedd0a5872c0b0abfdec0fad4b296a0489",
+    "paper/sections/sec_06_value.tex": "f2600f5f95bc48ccf3bda10c8944e7d7c0ccd864245209b59bc4206e9dcbdac3",
+    "results/ground_state_2026-10-02/receipt.json": "21312d7655a8371f55bd18afafb285aa86d45065a9780f318b03dfb12761dd65",
+    "results/ground_state_2026-10-02/review_recomputation/N128_measure_verdicts.csv": "612ce9a17a990d6b52091abbb9f72170ff14f7baf89410d6f03a18d023796fd2",
+    "results/ground_state_2026-10-02/review_recomputation/N32_measure_verdicts.csv": "b5b1cd4e4992cf5567faaec2ac8d07109b627adc9abe741607cb593555068389",
+    "results/ground_state_2026-10-02/review_recomputation/base_measure_verdicts.csv": "485458188caa0fb8d368eb885d75c6ec8b860d8037a7ea3b764ba4e9b6ef2652",
+    "results/ground_state_2026-10-02/review_recomputation/delta_c_2p0_measure_verdicts.csv": "b3af086ad7a5da751d3b83f6eee5ce955098f48c55ef2a7e048356fe625c1c0a",
+    "results/ground_state_2026-10-02/review_recomputation/dual_sweep.csv": "dc23be8d9f2601658b84dd7e28185e12de463ab86c141759ac946f77cfb47f99",
+    "results/ground_state_2026-10-02/review_recomputation/recomputation.json": "dcae3c78dd46f9433d2c87e9b709e46e29d901f1b0323d74f3aea8a3fe81594b",
+    "scripts/de_ground_state_checks.py": "99ee5a96bc1e72cec5da3bcf3fecb393fd9e7a75c7cb1ff232db128ed61240c8",
+    "scripts/math_review_recompute.py": "018d7e7ec6f7c72298ab03e4ccc159fa83e444d84d0ea1bcd3954b3fa1f6a319",
+    "scripts/step54_rederive.py": "8f48e757e287e515418ce99e75144d4ed7503af34d12e6d11991aa17ffc75103",
+    "tests/test_ground_state_math.py": "dfbabb2c43ae374b5232d4f72f89ac1ed3a523767a552d3d2c212a8ff3f5ce21"
+  }
+}

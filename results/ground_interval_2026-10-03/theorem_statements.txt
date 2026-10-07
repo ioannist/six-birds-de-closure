@@ -1,0 +1,68 @@
+SbtCosmo.Derivation.GroundRootCertificate.residual_smooth (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.GroundRootCertificate.residual b κ)
+SbtCosmo.Derivation.GroundRootCertificate.residual_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundRootCertificate.residual b κ)
+    (SbtCosmo.Derivation.GroundRootCertificate.residualDerivative b κ x) x
+SbtCosmo.Derivation.GroundRootCertificate.residualDerivative_apply (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x h : SbtCosmo.Derivation.GroundBorder.Point) :
+  (SbtCosmo.Derivation.GroundRootCertificate.residualDerivative b κ x) h =
+    (fun i =>
+      (SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative b κ x.1) h.1 i * x.1 i +
+          SbtCosmo.Derivation.GroundBorder.shifted (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) x.2 h.1 i -
+        h.2 * x.1 i,
+      SbtCosmo.Derivation.GroundBorder.dot x.1 h.1)
+SbtCosmo.Derivation.GroundRootCertificate.residual_zero_iff (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0 ↔
+    SbtCosmo.Derivation.GroundState.normSq x.1 = 1 ∧
+      ∀ (i : Fin 8),
+        SbtCosmo.Derivation.GroundState.hamiltonian (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) x.1 i =
+          x.2 * x.1 i
+SbtCosmo.Derivation.GroundRootCertificate.positive_root_return {b : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  {x : SbtCosmo.Derivation.GroundBorder.Point} (hz : SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0)
+  (hp : ∀ (i : Fin 8), 0 < x.1 i) :
+  SbtCosmo.Derivation.GroundState.IsGround (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) x.1 x.2 ∧
+    SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ x.1 = x.1
+SbtCosmo.Derivation.GroundRootCertificate.root_half_mixing_derivative {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0) (hp : ∀ (i : Fin 8), 0 < x.1 i) :
+  HasFDerivAt
+    (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ) (1 / 2))
+    (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ (1 / 2) x.1) x.1
+SbtCosmo.Derivation.GroundRootCertificate.half_mixing_jacobian_apply {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u)
+  (h : SbtCosmo.Derivation.GroundState.Field) (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b κ (1 / 2) u) h i =
+    (h i - SbtCosmo.Derivation.GroundBorder.dot u h * u i +
+        (SbtCosmo.Derivation.GroundSourceJacobian.jacobian b κ u) h i) /
+      2
+SbtCosmo.Derivation.GroundRootCertificate.correction_hasFDerivAt (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundRootCertificate.correction b κ C)
+    (SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative b κ C x) x
+SbtCosmo.Derivation.GroundRootCertificate.correction_lipschitz (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (center : SbtCosmo.Derivation.GroundBorder.Point) (r : ℝ) (q : NNReal)
+  (hd :
+    ∀ x ∈ Metric.closedBall center r, ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative b κ C x‖ ≤ ↑q) :
+  LipschitzOnWith q (SbtCosmo.Derivation.GroundRootCertificate.correction b κ C) (Metric.closedBall center r)
+SbtCosmo.Derivation.GroundRootCertificate.correction_invariant (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (center : SbtCosmo.Derivation.GroundBorder.Point) (r : ℝ) (q : NNReal) (hr : 0 ≤ r)
+  (hl : LipschitzOnWith q (SbtCosmo.Derivation.GroundRootCertificate.correction b κ C) (Metric.closedBall center r))
+  (hy : ‖C (SbtCosmo.Derivation.GroundRootCertificate.residual b κ center)‖ + ↑q * r ≤ r) :
+  Set.MapsTo (SbtCosmo.Derivation.GroundRootCertificate.correction b κ C) (Metric.closedBall center r)
+    (Metric.closedBall center r)
+SbtCosmo.Derivation.GroundRootCertificate.certified_positive_root (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point) (hC : Function.Injective ⇑C)
+  (center : SbtCosmo.Derivation.GroundBorder.Point) (r : ℝ) (q : NNReal) (hr : 0 ≤ r) (hq : q < 1)
+  (hd : ∀ x ∈ Metric.closedBall center r, ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative b κ C x‖ ≤ ↑q)
+  (hy : ‖C (SbtCosmo.Derivation.GroundRootCertificate.residual b κ center)‖ + ↑q * r ≤ r)
+  (hp : ∀ x ∈ Metric.closedBall center r, ∀ (i : Fin 8), 0 < x.1 i) :
+  ∃ x ∈ Metric.closedBall center r,
+    SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) x.1 x.2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ x.1 = x.1 ∧
+          ∀ y ∈ Metric.closedBall center r, SbtCosmo.Derivation.GroundRootCertificate.residual b κ y = 0 → y = x

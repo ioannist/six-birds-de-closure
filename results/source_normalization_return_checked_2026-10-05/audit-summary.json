@@ -1,0 +1,31 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_source_normalization_return",
+    "/tmp/de_source_normalization_return/SourceNormalizationFullAudit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundSourceNormalization.returned_unit",
+    "SbtCosmo.Derivation.GroundSourceNormalization.rejected_iff",
+    "SbtCosmo.Derivation.GroundSourceNormalization.zero_rejected",
+    "SbtCosmo.Derivation.GroundSourceNormalization.unit_preserved",
+    "SbtCosmo.Derivation.GroundSourceNormalization.failure_persists",
+    "SbtCosmo.Derivation.GroundSourceNormalization.positive_return_unit",
+    "SbtCosmo.Derivation.GroundSourceNormalization.successful_run_unit",
+    "SbtCosmo.Derivation.GroundSourceNormalization.successful_run_density_bound"
+  ],
+  "sources": {
+    "/tmp/de_source_normalization_return/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad"
+  },
+  "objects": {
+    "/tmp/de_source_normalization_return/objects/SbtCosmo/Derivation/GroundSourceNormalization.olean": "a75b480f93e534e309ce134bab59eec92f4a140aadb98a849c2e82643785e451"
+  },
+  "log_sha256": "6c8fb22ed5702bcd1cce6cab8665c6fc9daee4fed0c24780dbac7481ea008ea2",
+  "audit_sha256": "5f5c78ff901c83755ae7f509ee7f73b07c510e6842b5070f09fe36a4adcb8a37",
+  "standard_only": true,
+  "checked_declarations": 8,
+  "repository_registered": false,
+  "scope": "Exception-aware exact normalization: rejected small norms and zero have no returned state, failure persists, and every successfully normalized return/truncation has unit norm and density at most one; no claim that arbitrary runs succeed, no zero-division execution, eigenvector-selector model or IEEE trace."
+}

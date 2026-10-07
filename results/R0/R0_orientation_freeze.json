@@ -1,0 +1,93 @@
+{
+  "anti_posthoc_note": "This file records route/edge/cycle orientation only. Numeric bridge-affinity values are not scored before this orientation payload is written.",
+  "cycle_orientations": [
+    {
+      "cycle_id": "gamma_siren_cepheid_jagb",
+      "heldout_edges": [
+        "e_siren_cepheid",
+        "e_siren_jagb"
+      ],
+      "orientation": {
+        "edge_order": [
+          "e_siren_cepheid",
+          "e_siren_jagb",
+          "e_trgb_cepheid_hosts",
+          "e_cchp_trgb_jagb"
+        ],
+        "edge_sign_rule": "use manifest i->j as +1; reverse traversal would be -1",
+        "rule": "heldout_edges_then_tree_path_edges"
+      },
+      "tree_path_edges": [
+        "e_trgb_cepheid_hosts",
+        "e_cchp_trgb_jagb"
+      ]
+    },
+    {
+      "cycle_id": "gamma_cepheid_trgb_doubleedge",
+      "heldout_edges": [
+        "e_sh0es_cchp_jwst"
+      ],
+      "orientation": {
+        "edge_order": [
+          "e_sh0es_cchp_jwst",
+          "e_trgb_cepheid_hosts"
+        ],
+        "edge_sign_rule": "use manifest i->j as +1; reverse traversal would be -1",
+        "rule": "heldout_edges_then_tree_path_edges"
+      },
+      "tree_path_edges": [
+        "e_trgb_cepheid_hosts"
+      ]
+    }
+  ],
+  "edge_orientations": [
+    {
+      "edge_id": "e_trgb_cepheid_hosts",
+      "i": "trgb_sn",
+      "j": "cepheid_sn",
+      "orientation": "trgb_sn->cepheid_sn"
+    },
+    {
+      "edge_id": "e_cchp_trgb_jagb",
+      "i": "trgb_sn",
+      "j": "jagb_sn",
+      "orientation": "trgb_sn->jagb_sn"
+    },
+    {
+      "edge_id": "e_jwst_trgb_consistency",
+      "i": "jwst_trgb_sn",
+      "j": "trgb_sn",
+      "orientation": "jwst_trgb_sn->trgb_sn"
+    },
+    {
+      "edge_id": "e_sh0es_cchp_jwst",
+      "i": "cepheid_sn",
+      "j": "trgb_sn",
+      "orientation": "cepheid_sn->trgb_sn"
+    },
+    {
+      "edge_id": "e_siren_cepheid",
+      "i": "siren",
+      "j": "cepheid_sn",
+      "orientation": "siren->cepheid_sn"
+    },
+    {
+      "edge_id": "e_siren_jagb",
+      "i": "jagb_sn",
+      "j": "siren",
+      "orientation": "jagb_sn->siren"
+    },
+    {
+      "edge_id": "e_time_delay_cepheid",
+      "i": "time_delay",
+      "j": "cepheid_sn",
+      "orientation": "time_delay->cepheid_sn"
+    }
+  ],
+  "generated_utc": "2026-05-31T20:14:19Z",
+  "orientation_convention": "Pre-register the per-edge i->j orientation BEFORE any cycle is scored. For a cycle, A_gamma = (oriented sum of held-out edge affinities) + (oriented sum of tree_path edge affinities) around the closed loop; equivalently A_gamma = sum_{heldout}(a) - [tree node-potential difference between the held-out edges' endpoints]. Under an exact form A_gamma==0 identically.",
+  "orientation_payload_sha256": "387f3ff8f535fce96f15c0d9409871c1acf259bf4bdae0cb0795a0f2c182f6e9",
+  "schema_version": 1,
+  "source_manifest": "data/manifests/r0_bridge_affinities.json",
+  "source_manifest_sha256": "eabf6e9a647452e32490f2633274379d346ee71985d9e4999186475069a875c3"
+}

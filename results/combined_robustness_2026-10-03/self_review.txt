@@ -1,0 +1,44 @@
+Adversarial self-review, not independent review
+Baseline a5b1dd9; paper/runtime/reified populations/tags/prior proofs fixed.
+
+Target: original N32/N128 populations throughout the original coupled d/s
+rectangle, actual aggregate windows, first-ANY-patch times, endpoint ratios,
+smooth movement, and uniform no-pinching including unchanged N64.
+
+1. Actual population return: original finite tagged maxima and nine/ten rank
+counts establish the generic aggregate. Scaling laws require positive factors,
+earned from the rectangle. Actual original definitions are recovered at delta0,1.
+N is discrete; no nested sampling or population inclusion is assumed.
+2. Guards: 1/6<c<5 and actual T=965c are earned. Both actual out-of-old-domain
+corners are proved as controls. No (1/5,4) certificate is applied out of domain.
+3. Quadrature: 607+522+785 exact whole cells; rational endpoints and sums;
+integer-square-root enclosure, byte replay and rejected false cells. Finite
+initial scale, inverse-root term and prefactor are retained by native covariance.
+The last upper cell[100,120] is bounded throughout, not a sampled tail estimate.
+4. Endpoint return: actual strict parameter anti-monotonicity and time growth
+turn wider certified growth inequalities into actual normalized endpoint bounds.
+The lower prefix lies inside the real horizon because c<5. No assumed root or
+ODE solver output is used. Original endpoint identity follows by injectivity.
+5. First-record return: attained GLOBAL maximum gives the first ANY-patch
+threshold and exact collapse iff firstTime<=a. Tagged pair thresholds are used
+only for the aggregate gate. Strict first-threshold slack is earned for every
+admitted seed, even at the aggregate endpoint. Actual formation and minimality
+are explicit; default selector behavior is not used as evidence of formation.
+6. Regularity: actual endpoint/threshold rational formulas compose with earned
+endpoint and first-time C1 theorems. Derivative signs follow actual sensitivity
+and positive velocity. No supplied differentiability/inverse/continuity premise.
+The absolute-value ratio cusp at zero is retained and formally proved.
+7. Uniformity: one lambda=min(actual positive common corner root,epsilon/16000)
+precedes every d,s,population,seed quantifier; the horizon bound gives R<=8000lambda.
+The same lambda works for original N64 through actual strict gate inclusions.
+This covers all36 seed readouts over the uncountable rectangle simultaneously.
+8. Coverage: full original C4 combined exact-real rectangle extends the runtime's
+separate one-input variants. No identity with independently rounded/resampled
+NumPy arrays, smooth dependence on discrete N, sharp clustering, measure
+typicality or physical Lambda identification is claimed. Prior stronger estimates
+remain immutable; wider-domain normalized lower bound2.5 is scoped explicitly.
+
+Fresh full build8174 jobs. All81 exported statements and transitive standard-only
+closures checked. Cumulative1464=immutable1383+fresh81; full cumulative command
+not rerun. Prior hashes/toolchain/proof sources protected. No holes/native_decide.
+Combined exact toy robustness obligation closed; full original goal incomplete.

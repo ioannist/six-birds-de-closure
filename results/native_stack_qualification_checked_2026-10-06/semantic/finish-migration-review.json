@@ -1,0 +1,19 @@
+{
+  "historical_driver_sha256": "fd0b750c442af7a799d2d1ae5ce8479b8528bf95cb0241f09c5fe52a5e430b9e",
+  "new_driver_sha256": "a730472c1d80049dfa1a44b76852adea8da4a86f54b71e0d8a53789aa18989eb",
+  "controlled_replacements": {
+    "/tmp/de_native_campaign_semantic_aggregate_recovery_2026-10-06": 5,
+    "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05": 4,
+    "native_aggregate_semantic_verification_2026-10-06": 1,
+    "3164894": 1,
+    "3241065": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/driver.log": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/summary.json": 1
+  },
+  "source_stage_actual_exit_code": 0,
+  "source_stage_verifier_sha256": "505898b180f96b13c17145ea43978201acf8339e01a5ef7ccc8ec6c66cf81531",
+  "required_modules": 1738,
+  "required_statement_and_axiom_counts": 20634,
+  "registered_integration_pending": true
+}

@@ -1,0 +1,4 @@
+/tmp/de_original_audit_nonidentifiability/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean:1:0: error: unknown module prefix 'SbtCosmo'
+
+No directory 'SbtCosmo' or file 'SbtCosmo.olean' in the search path entries:
+/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/lib/lean

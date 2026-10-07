@@ -1,0 +1,64 @@
+schema_version: 1
+experiment: E1B_sbt_geometry
+description: First real-data Xi_cosmo geometry fit on the accepted compressed E1-A pipeline.
+seeds:
+  numpy: 4242
+  dynesty: 17337
+  oos_holdout: 9317
+background:
+  backend: scipy
+  fixed:
+    w0_fld: -1.0
+    wa_fld: 0.0
+xi:
+  rank: 3
+  staging_weights:
+    SN: 1.0
+    BAO: 1.0
+    CMB: 0.0
+  calibration_weights:
+    SN: 1.0
+    BAO: -1.0
+    CMB: 0.0
+  basis: [phi0_1, phi1_z_over_1_plus_z, phi2_log1p_z]
+combinations:
+  C3:
+    label: DESI DR2 BAO + Planck 2018 compressed + Pantheon+
+    datasets: [PLANCK_2018_COMPRESSED, DESI_DR2_BAO, PANTHEON_PLUS]
+priors:
+  omega_b:
+    prior: {min: 0.005, max: 0.1}
+    ref: {dist: norm, loc: 0.02236, scale: 0.00015}
+  omega_cdm:
+    prior: {min: 0.001, max: 0.99}
+    ref: {dist: norm, loc: 0.1200, scale: 0.0012}
+  H0:
+    prior: {min: 20.0, max: 100.0}
+    ref: {dist: norm, loc: 67.4, scale: 0.4}
+  sn_M:
+    prior: {min: -5.0, max: 5.0}
+    ref: {dist: norm, loc: 0.0, scale: 0.05}
+  w0_fld:
+    prior: {min: -3.0, max: 1.0}
+    ref: {dist: norm, loc: -0.9, scale: 0.08}
+  wa_fld:
+    prior: {min: -3.0, max: 2.0}
+    ref: {dist: norm, loc: -0.4, scale: 0.2}
+  a0:
+    prior: {min: -0.05, max: 0.05}
+    ref: {dist: norm, loc: 0.0, scale: 0.001}
+  a1:
+    prior: {min: -0.05, max: 0.05}
+    ref: {dist: norm, loc: 0.0, scale: 0.001}
+  a2:
+    prior: {min: -0.05, max: 0.05}
+    ref: {dist: norm, loc: 0.0, scale: 0.001}
+dynesty:
+  nlive: 600
+  dlogz: 0.1
+  bound: multi
+  sample: rwalk
+  max_equal_samples: 20000
+oos:
+  holdout_fraction: 0.2
+  seed: 9317

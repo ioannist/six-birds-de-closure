@@ -1,0 +1,38 @@
+{
+  "backend": "scipy_compressed",
+  "classy_required": false,
+  "passes": true,
+  "purpose": "Reduced optimizer smoke of B1 compressed likelihood without classy/class/clik imports",
+  "rows": [
+    {
+      "delta_chi2": -0.007656138122683842,
+      "frozen_chi2": 1455.8036842117926,
+      "model": "lcdm",
+      "params": {
+        "H0": 68.32779005741223,
+        "omega_b": 0.022503597941570364,
+        "omega_cdm": 0.1180623420289476,
+        "sn_M_profiled": -0.1524083671480467
+      },
+      "smoke_chi2": 1455.79602807367,
+      "tolerance_chi2": 5.0,
+      "within_tolerance": true
+    },
+    {
+      "delta_chi2": -0.6307298338158489,
+      "frozen_chi2": 1453.656518313084,
+      "model": "rewrite_power",
+      "params": {
+        "A": 1.0313891494778538,
+        "H0": 55.27543076057905,
+        "m": 0.1193444760725165,
+        "omega_b": 0.022573469950991215,
+        "omega_cdm": 0.11715036568326914,
+        "sn_M_profiled": -0.17078845613970217
+      },
+      "smoke_chi2": 1453.0257884792682,
+      "tolerance_chi2": 5.0,
+      "within_tolerance": true
+    }
+  ]
+}

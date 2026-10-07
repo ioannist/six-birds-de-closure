@@ -1,0 +1,2 @@
+✔ [8078/8079] Built SbtCosmo.Derivation.WindowFirstRecord (3.7s)
+Build completed successfully (8079 jobs).

@@ -1,0 +1,12 @@
+{
+  "registered_source_files": 1786,
+  "registered_native_modules": 1772,
+  "registered_native_statement_checks": 20798,
+  "fresh_registered_cumulative_axiom_checks": 32574,
+  "standard_only": true,
+  "registered_build_passed": true,
+  "source_snapshot_sha256": "f69f01f3fe15778c86bbf62517beed2a40f2d65dbd72eed0174f6e0bd4b5ba42",
+  "objects_snapshot_sha256": "8e79841a9b0f904c32509b2abb14ae51cf96d15667d8e0972a4b99a92870890d",
+  "original_paper_restoration_complete": false,
+  "goal_complete": false
+}

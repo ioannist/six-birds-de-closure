@@ -1,0 +1,44 @@
+Adversarial self-review; not independent review.
+
+Target: instantiate all18 original offset root samples at original binary64 .3,
+return actual positive self-consistent ground/energy pairs, and demonstrate
+actual background-dependent readouts. Exact uniform shifts and saved rounded
+background vectors are distinct. Their componentwise hull is certified as a
+whole background box; input membership is proved in closed rational arithmetic
+and returned to real values. Both models are covered, not identified.
+
+Every root certificate contains positivity, actual nonlinear Newton defect and
+actual corrected residual budgets. The preconditioner is never assumed to be
+an inverse. Near-identity defect plus finite-dimensional injectivity earns the
+return from the Newton fixed point to the actual equation. Norms are actual
+Point sup norms on8 field coordinates plus energy. Strict invariance gives
+root existence, positivity and uniqueness in the certified ball. No global
+uniqueness of the nonlinear fixed point is claimed.
+
+Positivity and the actual eigen equation identify each field with the actual
+selected linear ground at its own sourced potential. Energy is returned via
+the actual ground energy identity. The native fixed-point theorem uses the
+actual unit real embedding and the unchanged conjugate phase, with earned
+original threshold guards; it asserts neither attraction nor frozen-seed entry.
+The Newton contraction rate is not a native-map contraction rate.
+
+Root coordinate and density differences at offsets-8 and+10 are derived from
+actual root membership in disjoint intervals, not proposed-center comparisons.
+The density readout is actual Complex.normSq of the unit real embedding; its
+strict9/100 gap follows from positivity and the strict3/10 field-coordinate gap.
+Both exact and rounded models are returned. Offset0 in both models equals the
+actual earlier coupling.3 branch root by local uniqueness and kernel-checked
+ball identity. Other models' roots are only bounded within2r of each other.
+
+The actual zero preconditioner fails the populated Newton defect row. Previous
+phase, reciprocal and border-preconditioner controls remain immutable. All18
+fresh leaf commands terminated successfully on frozen generated source files.
+The generator replay validates original parameters, rounded input coefficients,
+whole-box root budgets and source identity without a new floating solver.
+
+Limits: all18 local native stability and frozen-seed60-step verdicts still need
+separate constructions. Existence/local uniqueness does not establish a finite
+solver verdict or physical Lambda. No IEEE iteration, first stopping index,
+global background blindness/boundary or continuum-offset classification is
+claimed. No paper, original runtime/data or earlier proof module is edited.
+Goal remains active and incomplete.

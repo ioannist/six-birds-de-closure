@@ -1,0 +1,18 @@
+schema_version: 1
+seed:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+runtime:
+  max_cores_env: SBT_MAX_CORES
+  max_cores: 57
+  omp_num_threads: 1
+  float_dtype: float64
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  runs: runs
+  results: results
+artifacts:
+  require_committed_summaries: true
+  raw_chains_are_gate_authority: false

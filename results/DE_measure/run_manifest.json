@@ -1,0 +1,53 @@
+{
+  "base_meta": {
+    "delta_c": 1.686,
+    "heterogeneity_s": 0.001,
+    "lambda_grid_count": 45,
+    "n_patches": 64,
+    "negative_inside": -0.00011844666116572434,
+    "positive_inside": 2.331385631724953,
+    "variant": "base"
+  },
+  "carrier_units": "rho_m(a=1)=1; 8*pi*G/3=1",
+  "frozen_sources": {
+    "results/DE_DEMARCATION_2026-06-12.md": "036aacaf51cf093af150ec7eaee90151926f0842194e6649b83c14fc00586874",
+    "results/DE_window/coincidence_readout.json": "02f6989813791e8f29ed08ce514d8a5625863328fa4b327406aa3d7c6aad2afc",
+    "results/DE_window/run_manifest.json": "887734fd0ef0aa8bef91e9b5b214f6ddeab922712cb02c35a3d2c59e9f2e6478"
+  },
+  "outputs": {
+    "PREREG.md": "e9d27c9cab6bc87c8aad37505bb597aaebfea4318483100f69767d82fb85bca0",
+    "VERDICT.md": "b510719ceac1e23d03597ec853e0fd7e66394abe1a72a85951c25417e1e307ae",
+    "epoch_typicality.csv": "a10a375263c95ce5ccd99f67f940bad3549ff1e4eff537dc79a0d9126897905a",
+    "measure_verdicts.csv": "12c5f641e0ef5ac922ad401b142becae3bc2def3d5ff731d183c4f0f010f6bd9",
+    "record_observables.csv": "dd0116560c8949b710d5ef0bb4311a20d17a0e471a2ba2571ed5113be2067ddd"
+  },
+  "robustness_meta": [
+    {
+      "delta_c": 1.686,
+      "heterogeneity_s": 0.001,
+      "lambda_grid_count": 45,
+      "n_patches": 32,
+      "negative_inside": -0.00011844666116572434,
+      "positive_inside": 0.8323633305763519,
+      "variant": "N32"
+    },
+    {
+      "delta_c": 1.686,
+      "heterogeneity_s": 0.001,
+      "lambda_grid_count": 45,
+      "n_patches": 128,
+      "negative_inside": -0.00011844666116572434,
+      "positive_inside": 2.674571869167738,
+      "variant": "N128"
+    },
+    {
+      "delta_c": 2.0,
+      "heterogeneity_s": 0.001,
+      "lambda_grid_count": 45,
+      "n_patches": 64,
+      "negative_inside": -0.00011844666116572434,
+      "positive_inside": 1.0227586813613467,
+      "variant": "delta_c_2p0"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "access": "official_mirror",
+  "aor_status": "zero",
+  "bins": {
+    "columns": [
+      "name",
+      "zcmb",
+      "zhel",
+      "mb"
+    ],
+    "n": 22
+  },
+  "citation": "Rubin et al. 2024, arXiv:2401.06956; CobayaSampler/sn_data commit 61d96434cafc2770928322c38e5a750e686368ae",
+  "dataset": "UNION3",
+  "fallback": "compressed five-bin distance-redshift likelihood",
+  "fallback_invoked": false,
+  "fetch_url": "https://github.com/CobayaSampler/sn_data/tree/master/Union3",
+  "fetched_utc": "2026-05-29T22:46:28Z",
+  "license": "Public Union3 data release mirrored by CobayaSampler/sn_data; cite Rubin et al. 2024",
+  "model_dependent": false,
+  "processed": {
+    "covariance": {
+      "bytes": 4000,
+      "dtype": "float64",
+      "path": "data/processed/union3/covariance.npy",
+      "sha256": "aa44b5fddd0cf41d9d2935b75da17391dd7b26eb91b6b3e81ee8021ae8d01b60",
+      "shape": [
+        22,
+        22
+      ]
+    },
+    "data_vector": {
+      "bytes": 304,
+      "dtype": "float64",
+      "path": "data/processed/union3/data_vector.npy",
+      "sha256": "afec579a6517de3ac477f6c7f32b15da13b05ef96037fc05a1535d401383a027",
+      "shape": [
+        22
+      ]
+    },
+    "metadata": {
+      "bytes": 1187,
+      "dtype": "json",
+      "path": "data/processed/union3/metadata.json",
+      "sha256": "2e72dca76242e28b2063b62f250a4eb05e2f7492e6bae0d74fe74b46224e0836",
+      "shape": "json"
+    }
+  },
+  "processing_commit": "2250a9ba1dea000830960dcce41ae581e5cd22ed",
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "raw_files": [
+    {
+      "bytes": 1556,
+      "path": "data/raw/sn_data_repos/sn_data/Union3/lcparam_full.txt",
+      "sha256": "a840fe71c606bda11b869dbfcacc21c0199a5dc393f3790d10a7b58de97deae7"
+    },
+    {
+      "bytes": 9199,
+      "path": "data/raw/sn_data_repos/sn_data/Union3/mag_covmat.txt",
+      "sha256": "64c79abd24bf5154bc1e38ad0c031e31dd6247cdcc5ca930829698169809a146"
+    },
+    {
+      "bytes": 334,
+      "path": "data/raw/sn_data_repos/sn_data/Union3/full_long.dataset",
+      "sha256": "f114d65692615d6bc89274c9d4e755d2a522f1545c439950966cec0d71f7cc1d"
+    },
+    {
+      "bytes": 1193,
+      "path": "data/raw/sn_data_repos/sn_data/README.md",
+      "sha256": "9e42b3929b2117c9a43576871e0c1dd787ecda59fbea639ff44b8144ec31e0fb"
+    }
+  ],
+  "recomputability": "recomputable",
+  "release": "arXiv:2401.06956",
+  "route": null,
+  "scale_cuts": {
+    "applied": true,
+    "note": "Union3 released binned sample"
+  },
+  "staging_axis": "sn_sample"
+}

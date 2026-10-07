@@ -1,0 +1,20 @@
+import SbtCosmo.Derivation.GroundNativeEscape
+
+#check SbtCosmo.Derivation.GroundNativeEscape.c2_quadratic_remainder
+#check SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking_step
+#check SbtCosmo.Derivation.GroundNativeEscape.quadratic_tracking
+#check SbtCosmo.Derivation.GroundNativeEscape.eigenmode_tracking
+#check SbtCosmo.Derivation.GroundNativeEscape.finite_eigenmode_escape
+#check SbtCosmo.Derivation.GroundNativeEscape.arbitrarily_close_eigenmode_escape
+#check SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape
+#check SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_escape_within
+#check SbtCosmo.Derivation.GroundNativeEscape.c2_eigenmode_output_escape
+#check SbtCosmo.Derivation.GroundNativeEscape.stateNormSq_smul
+#check SbtCosmo.Derivation.GroundNativeEscape.normalizeState_unit
+#check SbtCosmo.Derivation.GroundNativeEscape.complexNormalize_unit
+#check SbtCosmo.Derivation.GroundNativeEscape.nativeUpdate_unit
+#check SbtCosmo.Derivation.GroundNativeEscape.displacement_fixed
+#check SbtCosmo.Derivation.GroundNativeEscape.displacement_smooth
+#check SbtCosmo.Derivation.GroundNativeEscape.displacement_hasFDerivAt
+#check SbtCosmo.Derivation.GroundNativeEscape.displacement_iterate_return
+#check SbtCosmo.Derivation.GroundNativeEscape.native_complex_local_escape

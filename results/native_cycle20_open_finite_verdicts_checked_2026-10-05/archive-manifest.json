@@ -1,0 +1,119 @@
+{
+  "archive_sha256": "73d4dffa44f5eee35b02b245007626647642d909e3f826490ec2c6436071ef5e",
+  "entries": [
+    {
+      "name": "workspace/math/GROUND_NATIVE_CYCLE20_OPEN_FINITE_VERDICTS_2026-10-05.md",
+      "source": "/home/repos/six-birds-de-closure/math/GROUND_NATIVE_CYCLE20_OPEN_FINITE_VERDICTS_2026-10-05.md",
+      "sha256": "d5e5dc8c6990b9bb90ac0714c6649825fb6a01c9b77cb8999a9a49ec242213af",
+      "size": 3749
+    },
+    {
+      "name": "de-native-cycle-seed-sixty-build-NativeCycleSeed20SixtyAudit.log",
+      "source": "/tmp/de-native-cycle-seed-sixty-build-NativeCycleSeed20SixtyAudit.log",
+      "sha256": "0379b05f225dcc42352c69fed9c2e418860e7e6d46a091b96fa373a885e73854",
+      "size": 5803
+    },
+    {
+      "name": "de-native-cycle-seed20-prefix-failures-audit-summary.json",
+      "source": "/tmp/de-native-cycle-seed20-prefix-failures-audit-summary.json",
+      "sha256": "7f03c4efcd8f6edbe489230fa2dc9dffe129ad0dc2e5eda63d3824d05f076151",
+      "size": 12817
+    },
+    {
+      "name": "de-native-cycle-seed20-prefix-failures-audit.log",
+      "source": "/tmp/de-native-cycle-seed20-prefix-failures-audit.log",
+      "sha256": "1217a5b2bec92d9c233e391291cbfa37bf2fb569b7d92481b3d844f1b0654c82",
+      "size": 3672
+    },
+    {
+      "name": "de-native-cycle-seed20-sixty-audit-summary.json",
+      "source": "/tmp/de-native-cycle-seed20-sixty-audit-summary.json",
+      "sha256": "7caa5782b25e6d638def7d7ed788c46f9f9cd865871f4305bc6187a493bc0c0a",
+      "size": 996
+    },
+    {
+      "name": "de-native-cycle20-finite-verdict-full-audit-summary.json",
+      "source": "/tmp/de-native-cycle20-finite-verdict-full-audit-summary.json",
+      "sha256": "c6a82ba5bb78915d62cb3a4a889f49b99d554458fa7e4e82db05f207d5ec140f",
+      "size": 1798
+    },
+    {
+      "name": "de-native-cycle20-finite-verdict-full-audit-terminal.json",
+      "source": "/tmp/de-native-cycle20-finite-verdict-full-audit-terminal.json",
+      "sha256": "6f7b0ec236d31494d556b641d4a8454acd2b1b2636e80cb893df76e3bbb72a23",
+      "size": 1349
+    },
+    {
+      "name": "de-native-cycle20-finite-verdict-full-audit.log",
+      "source": "/tmp/de-native-cycle20-finite-verdict-full-audit.log",
+      "sha256": "153f153a6616327e57949ea93e46578ab59baa93e7cc878361d76b56fa76b794",
+      "size": 4185
+    },
+    {
+      "name": "de-original-cycle20-finite-verdicts-compile-driver.log",
+      "source": "/tmp/de-original-cycle20-finite-verdicts-compile-driver.log",
+      "sha256": "c1489d8a7272d4a20d7ba391cf83fd270993f5db55a783b687478419aea8a80b",
+      "size": 639
+    },
+    {
+      "name": "de-original-cycle20-finite-verdicts-first-terminal.json",
+      "source": "/tmp/de-original-cycle20-finite-verdicts-first-terminal.json",
+      "sha256": "29186c38079b2bf0a168cd5a1461786a9846fa0307eaec6f9554d5f01ea9f6ce",
+      "size": 678
+    },
+    {
+      "name": "de-original-cycle20-finite-verdicts-first.log",
+      "source": "/tmp/de-original-cycle20-finite-verdicts-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_native_cycle20_finite_verdict/Cycle20FiniteVerdictsFullAudit.lean",
+      "source": "/tmp/de_native_cycle20_finite_verdict/Cycle20FiniteVerdictsFullAudit.lean",
+      "sha256": "385fd144c2779ca6e34fcf14cd452501e7df1939c27bc8b15dd0b86b3089dd17",
+      "size": 1140
+    },
+    {
+      "name": "de_native_cycle20_finite_verdict/audit_modules.py",
+      "source": "/tmp/de_native_cycle20_finite_verdict/audit_modules.py",
+      "sha256": "e394c5be47644c622517268111fee8a4281ea642917be3595ca7497f6a395be4",
+      "size": 3054
+    },
+    {
+      "name": "de_native_cycle20_finite_verdict/checkpoint_checked.py",
+      "source": "/tmp/de_native_cycle20_finite_verdict/checkpoint_checked.py",
+      "sha256": "b39ef37d0c99473435e0580704c7f499f326561ea34cd46ddb147bfb41e178f8",
+      "size": 14548
+    },
+    {
+      "name": "de_native_cycle20_finite_verdict/compile_module.py",
+      "source": "/tmp/de_native_cycle20_finite_verdict/compile_module.py",
+      "sha256": "cb1db89dff12c9692686dac820f61ebee973ffc9e1c55724159a6ea11ccc6ef7",
+      "size": 1392
+    },
+    {
+      "name": "de_native_cycle20_finite_verdict/construction-plan.json",
+      "source": "/tmp/de_native_cycle20_finite_verdict/construction-plan.json",
+      "sha256": "28021ebb3f8ac980a9769626b8cfdd72ba2bb2baa64bda96de9e969d4a5e1b33",
+      "size": 603
+    },
+    {
+      "name": "de_native_cycle20_finite_verdict/lean/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.lean",
+      "source": "/tmp/de_native_cycle20_finite_verdict/lean/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.lean",
+      "sha256": "32e1d6a31008207764f3a7c5630e43a368828ede3fa6d556ab5508b4bb8056e8",
+      "size": 7104
+    },
+    {
+      "name": "de_native_cycle_lean/NativeCycleSeed20PrefixFailuresAudit.lean",
+      "source": "/tmp/de_native_cycle_lean/NativeCycleSeed20PrefixFailuresAudit.lean",
+      "sha256": "0821ec3a74019f6c89ba839dfa9042f7d26fe025b18c39096585b58c20872d83",
+      "size": 897
+    },
+    {
+      "name": "de_native_cycle_lean/NativeCycleSeed20SixtyAudit.lean",
+      "source": "/tmp/de_native_cycle_lean/NativeCycleSeed20SixtyAudit.lean",
+      "sha256": "06f64eb02c133a3ea84736e11957dc5e8eb81fe309f5deacccbcadc9d68aeb60",
+      "size": 1507
+    }
+  ]
+}

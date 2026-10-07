@@ -1,0 +1,2 @@
+✔ [8109/8110] Built SbtCosmo.Derivation.ExtendedClosurePriceExamples (5.2s)
+Build completed successfully (8110 jobs).

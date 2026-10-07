@@ -1,0 +1,29 @@
+Adversarial self-review, baseline b4d57fc; no independent reviewer.
+
+Exact target: actual original N=64 first-any-patch readout at the infinite
+limiting edge and on the enlarged nonnegative domain, with unchanged IVP/inputs.
+
+Reviewed hinges:
+- Refined certificate covers every native cell from a0 to twenty; endpoint,
+  monotone/peak branch, exact rational sum and byte replay all checked.
+- Native initial term is retained in the finite growth upper estimate.
+- Actual derived tail bridges the finite growth bound to limiting growth;
+  no fixed-time bound alone is used for an infinite endpoint.
+- Original first thresholds and actual prefix growth earn all finite first-time
+  guards throughout [0,u_infinity]. No default selector value is used.
+- The same original first-any-patch time/ratio functions are reused after
+  their enlarged domain is proved; no new readout or hidden redefinition.
+- Global finite-epoch earliestness uses a common live horizon max(20,a), with
+  actual attained amplitude maximum, positive growth and strict time ordering.
+- First-any-patch and both-tag aggregate records are distinct: first collapse
+  at the limiting parameter does not undo the nine-pass aggregate exclusion.
+- Positive time, strict parameter order and actual equation support all ratio
+  bounds; the historical grid maximum is not presented as a continuum statistic.
+- The arbitrary-small-ratio witness has a proved actual eternal gate and
+  positive ratios for every original seed; zero ratio alone is not the control.
+- Cumulative audit retains exact immutable baseline prefix plus new fresh
+  closures, with original proof/toolchain fingerprints; no full-rerun claim.
+
+Surviving judgment: the actual infinite edge retains finite first-record
+ratio bounds and still admits no coincidence pinch without a measure.
+The whole original paper remains incomplete at earlier documented boundaries.

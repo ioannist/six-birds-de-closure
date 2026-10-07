@@ -1,0 +1,428 @@
+SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix_mul (A B : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix) :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix (A * B) =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix A * SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix B
+SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix_one :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.realMatrix 1 = 1
+SbtCosmo.Derivation.GroundMatrixCoordinates.basis_apply {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P) (x : SbtCosmo.Derivation.GroundState.Field)
+  (i : Fin 8) : (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h) x i = ∑ j, ↑(S i j) * x j
+SbtCosmo.Derivation.GroundMatrixCoordinates.basis_symm_apply {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P) (x : SbtCosmo.Derivation.GroundState.Field)
+  (i : Fin 8) : (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h).symm x i = ∑ j, ↑(P i j) * x j
+SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate_entries
+  {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h) L) i
+      j =
+    ∑ a, ∑ b, ↑(P i a) * SbtCosmo.Derivation.GroundMatrixCoordinates.entries L a b * ↑(S b j)
+SbtCosmo.Derivation.GroundMatrixCoordinates.transformExpr_return
+  {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval
+      (fun k => SbtCosmo.Derivation.GroundMatrixCoordinates.entries L k.1 k.2)
+      (SbtCosmo.Derivation.GroundMatrixCoordinates.transformExpr S P i j) =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h) L) i
+      j
+SbtCosmo.Derivation.GroundMatrixCoordinates.transformed_sound
+  {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (B : Matrix (Fin 8) (Fin 8) SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (hB : ∀ (a b : Fin 8), (B a b).Contains (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L a b)) (i j : Fin 8) :
+  (SbtCosmo.Derivation.GroundMatrixCoordinates.transformed S P B i j).Contains
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h) L) i
+      j)
+SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate_rows {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (B : Matrix (Fin 8) (Fin 8) SbtCosmo.Derivation.GroundRationalInterval.Interval) {q : ℚ}
+  (hq : SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic S P B q)
+  (hB : ∀ (a b : Fin 8), (B a b).Contains (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L a b)) (i : Fin 8) :
+  ∑ j,
+      |SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+          (SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h)
+            L)
+          i j| ≤
+    ↑q
+SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate_norm {S P : SbtCosmo.Derivation.GroundMatrixCoordinates.QMatrix}
+  (h : SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic S P)
+  (L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field)
+  (B : Matrix (Fin 8) (Fin 8) SbtCosmo.Derivation.GroundRationalInterval.Interval) {q : ℚ}
+  (hq : SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic S P B q)
+  (hB : ∀ (a b : Fin 8), (B a b).Contains (SbtCosmo.Derivation.GroundMatrixCoordinates.entries L a b)) :
+  ‖SbtCosmo.Derivation.GroundMatrixCoordinates.conjugate (SbtCosmo.Derivation.GroundMatrixCoordinates.basis h) L‖ ≤ ↑q
+SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryExpr_return (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryExpr i j) =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative (1 / 2) x.1) i j
+SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals_sound (β : Fin 8 → ℚ) (a : ℚ) (z : Fin 9 → ℚ) (r : ℚ)
+  {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r) (i j : Fin 8) :
+  (SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals β a z r i j).Contains
+    (SbtCosmo.Derivation.GroundMatrixCoordinates.entries
+      (SbtCosmo.Derivation.GroundNativeJacobian.imaginaryDerivative (1 / 2) x.1) i j)
+SbtCosmo.Derivation.GroundCoordinates.Point000.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point000.S
+    SbtCosmo.Derivation.GroundCoordinates.Point000.P
+SbtCosmo.Derivation.GroundCoordinates.Point000.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point000.R
+    SbtCosmo.Derivation.GroundCoordinates.Point000.Q
+SbtCosmo.Derivation.GroundCoordinates.Point000.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point000.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 0
+SbtCosmo.Derivation.GroundCoordinates.Point000.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point000.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point000.a
+      SbtCosmo.Derivation.GroundSamples.Point000.z SbtCosmo.Derivation.GroundSamples.Point000.r
+SbtCosmo.Derivation.GroundCoordinates.Point000.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point000.S
+    SbtCosmo.Derivation.GroundCoordinates.Point000.P SbtCosmo.Derivation.GroundCoordinates.Point000.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point000.rate
+SbtCosmo.Derivation.GroundCoordinates.Point000.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point000.R
+    SbtCosmo.Derivation.GroundCoordinates.Point000.Q SbtCosmo.Derivation.GroundCoordinates.Point000.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point001.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point001.S
+    SbtCosmo.Derivation.GroundCoordinates.Point001.P
+SbtCosmo.Derivation.GroundCoordinates.Point001.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point001.R
+    SbtCosmo.Derivation.GroundCoordinates.Point001.Q
+SbtCosmo.Derivation.GroundCoordinates.Point001.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point001.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 1
+SbtCosmo.Derivation.GroundCoordinates.Point001.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point001.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point001.a
+      SbtCosmo.Derivation.GroundSamples.Point001.z SbtCosmo.Derivation.GroundSamples.Point001.r
+SbtCosmo.Derivation.GroundCoordinates.Point001.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point001.S
+    SbtCosmo.Derivation.GroundCoordinates.Point001.P SbtCosmo.Derivation.GroundCoordinates.Point001.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point001.rate
+SbtCosmo.Derivation.GroundCoordinates.Point001.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point001.R
+    SbtCosmo.Derivation.GroundCoordinates.Point001.Q SbtCosmo.Derivation.GroundCoordinates.Point001.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point002.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point002.S
+    SbtCosmo.Derivation.GroundCoordinates.Point002.P
+SbtCosmo.Derivation.GroundCoordinates.Point002.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point002.R
+    SbtCosmo.Derivation.GroundCoordinates.Point002.Q
+SbtCosmo.Derivation.GroundCoordinates.Point002.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point002.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 2
+SbtCosmo.Derivation.GroundCoordinates.Point002.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point002.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point002.a
+      SbtCosmo.Derivation.GroundSamples.Point002.z SbtCosmo.Derivation.GroundSamples.Point002.r
+SbtCosmo.Derivation.GroundCoordinates.Point002.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point002.S
+    SbtCosmo.Derivation.GroundCoordinates.Point002.P SbtCosmo.Derivation.GroundCoordinates.Point002.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point002.rate
+SbtCosmo.Derivation.GroundCoordinates.Point002.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point002.R
+    SbtCosmo.Derivation.GroundCoordinates.Point002.Q SbtCosmo.Derivation.GroundCoordinates.Point002.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point003.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point003.S
+    SbtCosmo.Derivation.GroundCoordinates.Point003.P
+SbtCosmo.Derivation.GroundCoordinates.Point003.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point003.R
+    SbtCosmo.Derivation.GroundCoordinates.Point003.Q
+SbtCosmo.Derivation.GroundCoordinates.Point003.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point003.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 3
+SbtCosmo.Derivation.GroundCoordinates.Point003.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point003.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point003.a
+      SbtCosmo.Derivation.GroundSamples.Point003.z SbtCosmo.Derivation.GroundSamples.Point003.r
+SbtCosmo.Derivation.GroundCoordinates.Point003.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point003.S
+    SbtCosmo.Derivation.GroundCoordinates.Point003.P SbtCosmo.Derivation.GroundCoordinates.Point003.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point003.rate
+SbtCosmo.Derivation.GroundCoordinates.Point003.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point003.R
+    SbtCosmo.Derivation.GroundCoordinates.Point003.Q SbtCosmo.Derivation.GroundCoordinates.Point003.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point004.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point004.S
+    SbtCosmo.Derivation.GroundCoordinates.Point004.P
+SbtCosmo.Derivation.GroundCoordinates.Point004.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point004.R
+    SbtCosmo.Derivation.GroundCoordinates.Point004.Q
+SbtCosmo.Derivation.GroundCoordinates.Point004.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point004.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 4
+SbtCosmo.Derivation.GroundCoordinates.Point004.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point004.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point004.a
+      SbtCosmo.Derivation.GroundSamples.Point004.z SbtCosmo.Derivation.GroundSamples.Point004.r
+SbtCosmo.Derivation.GroundCoordinates.Point004.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point004.S
+    SbtCosmo.Derivation.GroundCoordinates.Point004.P SbtCosmo.Derivation.GroundCoordinates.Point004.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point004.rate
+SbtCosmo.Derivation.GroundCoordinates.Point004.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point004.R
+    SbtCosmo.Derivation.GroundCoordinates.Point004.Q SbtCosmo.Derivation.GroundCoordinates.Point004.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point005.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point005.S
+    SbtCosmo.Derivation.GroundCoordinates.Point005.P
+SbtCosmo.Derivation.GroundCoordinates.Point005.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point005.R
+    SbtCosmo.Derivation.GroundCoordinates.Point005.Q
+SbtCosmo.Derivation.GroundCoordinates.Point005.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point005.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 5
+SbtCosmo.Derivation.GroundCoordinates.Point005.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point005.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point005.a
+      SbtCosmo.Derivation.GroundSamples.Point005.z SbtCosmo.Derivation.GroundSamples.Point005.r
+SbtCosmo.Derivation.GroundCoordinates.Point005.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point005.S
+    SbtCosmo.Derivation.GroundCoordinates.Point005.P SbtCosmo.Derivation.GroundCoordinates.Point005.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point005.rate
+SbtCosmo.Derivation.GroundCoordinates.Point005.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point005.R
+    SbtCosmo.Derivation.GroundCoordinates.Point005.Q SbtCosmo.Derivation.GroundCoordinates.Point005.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point006.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point006.S
+    SbtCosmo.Derivation.GroundCoordinates.Point006.P
+SbtCosmo.Derivation.GroundCoordinates.Point006.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point006.R
+    SbtCosmo.Derivation.GroundCoordinates.Point006.Q
+SbtCosmo.Derivation.GroundCoordinates.Point006.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point006.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 6
+SbtCosmo.Derivation.GroundCoordinates.Point006.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point006.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point006.a
+      SbtCosmo.Derivation.GroundSamples.Point006.z SbtCosmo.Derivation.GroundSamples.Point006.r
+SbtCosmo.Derivation.GroundCoordinates.Point006.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point006.S
+    SbtCosmo.Derivation.GroundCoordinates.Point006.P SbtCosmo.Derivation.GroundCoordinates.Point006.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point006.rate
+SbtCosmo.Derivation.GroundCoordinates.Point006.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point006.R
+    SbtCosmo.Derivation.GroundCoordinates.Point006.Q SbtCosmo.Derivation.GroundCoordinates.Point006.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point007.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point007.S
+    SbtCosmo.Derivation.GroundCoordinates.Point007.P
+SbtCosmo.Derivation.GroundCoordinates.Point007.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point007.R
+    SbtCosmo.Derivation.GroundCoordinates.Point007.Q
+SbtCosmo.Derivation.GroundCoordinates.Point007.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point007.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 7
+SbtCosmo.Derivation.GroundCoordinates.Point007.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point007.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point007.a
+      SbtCosmo.Derivation.GroundSamples.Point007.z SbtCosmo.Derivation.GroundSamples.Point007.r
+SbtCosmo.Derivation.GroundCoordinates.Point007.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point007.S
+    SbtCosmo.Derivation.GroundCoordinates.Point007.P SbtCosmo.Derivation.GroundCoordinates.Point007.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point007.rate
+SbtCosmo.Derivation.GroundCoordinates.Point007.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point007.R
+    SbtCosmo.Derivation.GroundCoordinates.Point007.Q SbtCosmo.Derivation.GroundCoordinates.Point007.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point008.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point008.S
+    SbtCosmo.Derivation.GroundCoordinates.Point008.P
+SbtCosmo.Derivation.GroundCoordinates.Point008.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point008.R
+    SbtCosmo.Derivation.GroundCoordinates.Point008.Q
+SbtCosmo.Derivation.GroundCoordinates.Point008.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point008.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 8
+SbtCosmo.Derivation.GroundCoordinates.Point008.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point008.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point008.a
+      SbtCosmo.Derivation.GroundSamples.Point008.z SbtCosmo.Derivation.GroundSamples.Point008.r
+SbtCosmo.Derivation.GroundCoordinates.Point008.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point008.S
+    SbtCosmo.Derivation.GroundCoordinates.Point008.P SbtCosmo.Derivation.GroundCoordinates.Point008.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point008.rate
+SbtCosmo.Derivation.GroundCoordinates.Point008.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point008.R
+    SbtCosmo.Derivation.GroundCoordinates.Point008.Q SbtCosmo.Derivation.GroundCoordinates.Point008.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point009.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point009.S
+    SbtCosmo.Derivation.GroundCoordinates.Point009.P
+SbtCosmo.Derivation.GroundCoordinates.Point009.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point009.R
+    SbtCosmo.Derivation.GroundCoordinates.Point009.Q
+SbtCosmo.Derivation.GroundCoordinates.Point009.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point009.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 9
+SbtCosmo.Derivation.GroundCoordinates.Point009.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point009.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point009.a
+      SbtCosmo.Derivation.GroundSamples.Point009.z SbtCosmo.Derivation.GroundSamples.Point009.r
+SbtCosmo.Derivation.GroundCoordinates.Point009.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point009.S
+    SbtCosmo.Derivation.GroundCoordinates.Point009.P SbtCosmo.Derivation.GroundCoordinates.Point009.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point009.rate
+SbtCosmo.Derivation.GroundCoordinates.Point009.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point009.R
+    SbtCosmo.Derivation.GroundCoordinates.Point009.Q SbtCosmo.Derivation.GroundCoordinates.Point009.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point010.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point010.S
+    SbtCosmo.Derivation.GroundCoordinates.Point010.P
+SbtCosmo.Derivation.GroundCoordinates.Point010.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point010.R
+    SbtCosmo.Derivation.GroundCoordinates.Point010.Q
+SbtCosmo.Derivation.GroundCoordinates.Point010.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point010.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 10
+SbtCosmo.Derivation.GroundCoordinates.Point010.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point010.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point010.a
+      SbtCosmo.Derivation.GroundSamples.Point010.z SbtCosmo.Derivation.GroundSamples.Point010.r
+SbtCosmo.Derivation.GroundCoordinates.Point010.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point010.S
+    SbtCosmo.Derivation.GroundCoordinates.Point010.P SbtCosmo.Derivation.GroundCoordinates.Point010.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point010.rate
+SbtCosmo.Derivation.GroundCoordinates.Point010.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point010.R
+    SbtCosmo.Derivation.GroundCoordinates.Point010.Q SbtCosmo.Derivation.GroundCoordinates.Point010.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundCoordinates.Point011.real_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point011.S
+    SbtCosmo.Derivation.GroundCoordinates.Point011.P
+SbtCosmo.Derivation.GroundCoordinates.Point011.imag_inverse :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point011.R
+    SbtCosmo.Derivation.GroundCoordinates.Point011.Q
+SbtCosmo.Derivation.GroundCoordinates.Point011.realBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point011.realBox = SbtCosmo.Derivation.GroundOriginalResponses.enclosures 11
+SbtCosmo.Derivation.GroundCoordinates.Point011.imagBox_return :
+  SbtCosmo.Derivation.GroundCoordinates.Point011.imagBox =
+    SbtCosmo.Derivation.GroundMatrixCoordinates.imaginaryIntervals
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground SbtCosmo.Derivation.GroundSamples.Point011.a
+      SbtCosmo.Derivation.GroundSamples.Point011.z SbtCosmo.Derivation.GroundSamples.Point011.r
+SbtCosmo.Derivation.GroundCoordinates.Point011.real_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point011.S
+    SbtCosmo.Derivation.GroundCoordinates.Point011.P SbtCosmo.Derivation.GroundCoordinates.Point011.realBox
+    SbtCosmo.Derivation.GroundCoordinates.Point011.rate
+SbtCosmo.Derivation.GroundCoordinates.Point011.imag_rows :
+  SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point011.R
+    SbtCosmo.Derivation.GroundCoordinates.Point011.Q SbtCosmo.Derivation.GroundCoordinates.Point011.imagBox (501 / 1000)
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_real_rows (i : Fin 12) (a : Fin 8) :
+  ∑ j,
+      |(SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian
+            (SbtCosmo.Derivation.GroundOriginalCoordinates.realBasis i)
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex i)))
+            (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root i))
+          (SbtCosmo.Derivation.GroundLocalDynamics.column j) a| ≤
+    ↑(SbtCosmo.Derivation.GroundOriginalCoordinates.certificates i).rate
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_real_norm (i : Fin 12) :
+  ‖SbtCosmo.Derivation.GroundLocalDynamics.coordinateJacobian
+        (SbtCosmo.Derivation.GroundOriginalCoordinates.realBasis i)
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+            (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex i)))
+        (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root i)‖ ≤
+    ↑(SbtCosmo.Derivation.GroundOriginalCoordinates.certificates i).rate
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_imag_rows (i : Fin 12) (a : Fin 8) :
+  ∑ j,
+      |(SbtCosmo.Derivation.GroundNativeLocal.imaginaryCoordinate
+            (SbtCosmo.Derivation.GroundOriginalCoordinates.imagBasis i) (1 / 2)
+            (SbtCosmo.Derivation.GroundOriginalCoordinates.root i))
+          (SbtCosmo.Derivation.GroundLocalDynamics.column j) a| ≤
+    501 / 1000
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_imag_norm (i : Fin 12) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.imaginaryCoordinate (SbtCosmo.Derivation.GroundOriginalCoordinates.imagBasis i)
+        (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root i)‖ ≤
+    501 / 1000
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_full_norm (i : Fin 12) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis i)
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+            (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex i)))
+        (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root i)‖ ≤
+    max (↑(SbtCosmo.Derivation.GroundOriginalCoordinates.certificates i).rate) (501 / 1000)
+SbtCosmo.Derivation.GroundOriginalCoordinates.stable_rates (i : Fin 10) :
+  (SbtCosmo.Derivation.GroundOriginalCoordinates.certificates (Fin.castLE ⋯ i)).rate < 1
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_stable_full_norm (i : Fin 10) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis (Fin.castLE ⋯ i))
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+            (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+        (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root (Fin.castLE ⋯ i))‖ <
+    1
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_native_attraction (i : Fin 10) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis (Fin.castLE ⋯ i)).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis (Fin.castLE ⋯ i)).symm
+              (SbtCosmo.Derivation.GroundOriginalCoordinates.root (Fin.castLE ⋯ i), 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                        (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                    (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds
+              (SbtCosmo.Derivation.GroundState.realEmbed
+                (SbtCosmo.Derivation.GroundOriginalCoordinates.root (Fin.castLE ⋯ i)))) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundKernelTube.background
+                        SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                      (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                          (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                      (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundKernelTube.background
+                        SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                      (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                          (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                      (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_twenty_norm :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10)
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        20 (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root 10)‖ ≤
+    3 / 2
+SbtCosmo.Derivation.GroundOriginalCoordinates.actual_thirty_norm :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11)
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        30 (1 / 2) (SbtCosmo.Derivation.GroundOriginalCoordinates.root 11)‖ ≤
+    3
+SbtCosmo.Derivation.GroundCoordinateControls.zero_inverse_rejected :
+  ¬SbtCosmo.Derivation.GroundMatrixCoordinates.InverseArithmetic SbtCosmo.Derivation.GroundCoordinates.Point009.S 0
+SbtCosmo.Derivation.GroundCoordinateControls.zero_row_budget_rejected :
+  ¬SbtCosmo.Derivation.GroundMatrixCoordinates.RowArithmetic SbtCosmo.Derivation.GroundCoordinates.Point009.S
+      SbtCosmo.Derivation.GroundCoordinates.Point009.P SbtCosmo.Derivation.GroundCoordinates.Point009.realBox 0

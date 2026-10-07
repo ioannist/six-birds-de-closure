@@ -1,0 +1,22 @@
+import SbtCosmo.Derivation.GroundSourceNormalization
+import SbtCosmo.Derivation.GroundSourceExecutionReturn
+import SbtCosmo.Derivation.GroundOriginalCycleExecution
+set_option warningAsError true
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.returned_unit
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.rejected_iff
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.zero_rejected
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.unit_preserved
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.failure_persists
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.positive_return_unit
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.successful_run_unit
+#print axioms SbtCosmo.Derivation.GroundSourceNormalization.successful_run_density_bound
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.attempt_some_iff
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.run_guarded
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_return
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_guards
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.run_iff_guards
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_guarded
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_iff_guards
+#print axioms SbtCosmo.Derivation.GroundSourceExecutionReturn.candidate_normalization_preserved
+#print axioms SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling20_execution
+#print axioms SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling30_execution

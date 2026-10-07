@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-05T11:29:02.819982+00:00",
+  "verified_archive_files": 1783,
+  "native_declarations": 20789,
+  "cumulative_declarations": 32565,
+  "unchanged_inherited_functions": [
+    "sha",
+    "rawsha",
+    "load",
+    "required",
+    "failure_proof_gate",
+    "proof_gates",
+    "require_freezes_released"
+  ],
+  "rejected_controls": [
+    "dropped_query",
+    "duplicated_query",
+    "changed_body",
+    "dropped_import",
+    "late_import",
+    "reordered_queries"
+  ],
+  "registered_commands_started": 0,
+  "full_success_path_tested": false,
+  "goal_complete": false
+}

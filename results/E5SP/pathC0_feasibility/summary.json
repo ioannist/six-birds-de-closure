@@ -1,0 +1,55 @@
+{
+  "citations": {
+    "BOSS_DR12": "Beutler et al. 2017 / BOSS DR12 Fourier-space analysis, effective redshifts 0.38, 0.51, 0.61.",
+    "DESI_DR1": "DESI 2024 V Full-Shape Table 1 and DESI DR1 public full-shape page, effective redshifts BGS 0.295, LRG1 0.510, LRG2 0.706, LRG3/LRG+ELG 0.930, ELG2 1.317, QSO 1.491."
+  },
+  "families_passing": [],
+  "family_verdicts": {
+    "BOSS_DR12_full_shape": {
+      "has_mild": true,
+      "has_slack": true,
+      "has_strong_binding": false,
+      "realistic_kmax_rule": "only shells with k_max <= realistic_kmax enter this verdict",
+      "verdict": "MILD-ONLY"
+    },
+    "DESI_DR1_full_shape": {
+      "has_mild": true,
+      "has_slack": true,
+      "has_strong_binding": false,
+      "realistic_kmax_rule": "only shells with k_max <= realistic_kmax enter this verdict",
+      "verdict": "MILD-ONLY"
+    }
+  },
+  "geometry_context": "posterior_mean",
+  "hard_coded_growth_params": {
+    "m_nu": 0.06,
+    "n_s": 0.965,
+    "sigma8": 0.811
+  },
+  "outputs": {
+    "H_crossings_csv": "results/E5SP/pathC0_feasibility/H_crossings.csv",
+    "H_fullshape_feasibility_csv": "results/E5SP/pathC0_feasibility/H_fullshape_feasibility.csv"
+  },
+  "overall_C0_H_verdict": "NO_FULLSHAPE_FAMILY_REACHES_STRONG_BINDING_WITHIN_ASSUMED_KMAX",
+  "source_hashes": {
+    "provenance:e5sp_pathc_ruling": "628d9e8307a28420f51c73ed68de104f8a06d12fb7af8ff60a0101f47063bcc1",
+    "results/provenance/decommissioned_plan_agent_sources.json": "ce2f274086e19bea57145980bbf4afd4112fbcd10a4f1d135832e18ada6a6d19",
+    "script": "65bf4b351afd3d299b4a1a7e8d35636a6f00dd80bcd4a0d302872bc8e5d68e1f"
+  },
+  "status": "Path C0 H-only feasibility / power preflight -- NOT pi, NOT decisive, NOT promotable",
+  "theta_posterior_mean": {
+    "H0": 67.14341836020635,
+    "m_nu": 0.06,
+    "n_s": 0.965,
+    "omega_b": 0.022420192362176905,
+    "omega_cdm": 0.11927632118122601,
+    "sigma8": 0.811,
+    "w0_fld": -0.7925965389431481,
+    "wa_fld": -0.7143776952932324
+  },
+  "thresholds": {
+    "slack_H_le": 0.05,
+    "strong_binding_H_ge": 0.3
+  },
+  "window": "flat_over_k_hmpc"
+}

@@ -1,0 +1,121 @@
+SbtCosmo.Derivation.GrowthInfiniteTail.velocity_upper {c x : ℝ} (hc : 0 < c) (hx : 0 ≤ x) :
+  SbtCosmo.Derivation.GrowthExistence.velocity c x ≤
+    SbtCosmo.Derivation.GrowthExistence.prefactor c * Real.exp (-2 * x) / c
+SbtCosmo.Derivation.GrowthInfiniteTail.growth_tail_bound {c x : ℝ} (hc : 0 < c) (hx : 0 ≤ x) :
+  SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c - SbtCosmo.Derivation.GrowthExistence.growth c x ≤
+    SbtCosmo.Derivation.GrowthExistence.prefactor c * Real.exp (-2 * x) / (2 * c)
+SbtCosmo.Derivation.GrowthInfiniteTail.native_tail_bound {a0 lam A : ℝ} (ha0 : 0 < a0) (hlam : 0 < lam) (hA : a0 ≤ A) :
+  SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 lam -
+      SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A ≤
+    (lam * a0 ^ 2 + 5 / (2 * a0)) / (2 * lam * A ^ 2)
+SbtCosmo.Derivation.GrowthHorizonLimit.finite_horizon_admissible {a0 T A : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T)
+  (hA : a0 * T < A) :
+  a0 < A ∧
+    0 < SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 A ∧
+      T ∈
+        Set.Ioo (SbtCosmo.Derivation.GrowthLimit.freeGrowth (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 A))
+          (Real.exp (SbtCosmo.Derivation.GrowthScaleReturn.logScale a0 A))
+SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_spec {a0 T A : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T)
+  (hA : a0 * T < A) :
+  0 < SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint a0 T A ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 (SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint a0 T A)
+        A =
+      T
+SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_lt_infinite {a0 T A : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T)
+  (hA : a0 * T < A) :
+  SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint a0 T A <
+    SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T
+SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_strictMonoOn {a0 T : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T) :
+  StrictMonoOn (SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint a0 T) (Set.Ioi (a0 * T))
+SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint_tendsto {a0 T : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthHorizonLimit.finiteEndpoint a0 T) Filter.atTop
+    (nhds (SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T))
+SbtCosmo.Derivation.WindowEternalBounds.limiting_growth_at_four_upper :
+  SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000) 4 < 937
+SbtCosmo.Derivation.WindowEternalBounds.infinite_upper_bracket :
+  3 < SbtCosmo.Derivation.WindowEternalRecords.upper ∧ SbtCosmo.Derivation.WindowEternalRecords.upper < 4
+SbtCosmo.Derivation.WindowEternalBounds.formationUpper_spec {A : ℝ}
+  (hA : SbtCosmo.Derivation.WindowSample.aggregateThreshold / 1000 < A) :
+  0 < SbtCosmo.Derivation.WindowEternalBounds.formationUpper A ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000)
+        (SbtCosmo.Derivation.WindowEternalBounds.formationUpper A) A =
+      SbtCosmo.Derivation.WindowSample.aggregateThreshold
+SbtCosmo.Derivation.WindowEternalBounds.finite_horizon_gate_iff {A : ℝ}
+  (hA : SbtCosmo.Derivation.WindowSample.aggregateThreshold / 1000 < A) (lam : ℝ) :
+  SbtCosmo.Derivation.GrowthPopulation.nativeAggregate SbtCosmo.Derivation.WindowSample.amplitude
+      SbtCosmo.Derivation.WindowSampleData.tag (1 / 1000) A SbtCosmo.Derivation.WindowSample.delta 10 lam ↔
+    -(1 / A ^ 3) < lam ∧ lam ≤ SbtCosmo.Derivation.WindowEternalBounds.formationUpper A
+SbtCosmo.Derivation.WindowEternalBounds.formationUpper_at_twenty :
+  SbtCosmo.Derivation.WindowEternalBounds.formationUpper 20 = SbtCosmo.Derivation.WindowEdgeCertified.upper
+SbtCosmo.Derivation.WindowEternalBounds.formationUpper_strictMonoOn :
+  StrictMonoOn SbtCosmo.Derivation.WindowEternalBounds.formationUpper
+    (Set.Ioi (SbtCosmo.Derivation.WindowSample.aggregateThreshold / 1000))
+SbtCosmo.Derivation.WindowEternalBounds.formationUpper_tendsto :
+  Filter.Tendsto SbtCosmo.Derivation.WindowEternalBounds.formationUpper Filter.atTop
+    (nhds SbtCosmo.Derivation.WindowEternalRecords.upper)
+SbtCosmo.Derivation.WindowEternalBounds.eternal_window_closure :
+  closure {lam | SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam} =
+    Set.Icc 0 SbtCosmo.Derivation.WindowEternalRecords.upper
+SbtCosmo.Derivation.WindowEternalPatchCounts.upper_spec (v : Bool) :
+  0 < SbtCosmo.Derivation.WindowEternalPatchCounts.upper v ∧
+    SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000)
+        (SbtCosmo.Derivation.WindowEternalPatchCounts.upper v) =
+      SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v
+SbtCosmo.Derivation.WindowEternalPatchCounts.gate_at_horizon_iff (v : Bool) {A : ℝ} (hA : 1 / 1000 ≤ A) (lam : ℝ) :
+  SbtCosmo.Derivation.GrowthPopulation.nativeAggregate (SbtCosmo.Derivation.WindowPatchCounts.amplitude v)
+      (SbtCosmo.Derivation.WindowPatchCountData.tag v) (1 / 1000) A SbtCosmo.Derivation.WindowPatchCounts.delta 10 lam ↔
+    -(1 / A ^ 3) < lam ∧
+      SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v ≤
+        SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam A
+SbtCosmo.Derivation.WindowEternalPatchCounts.eternal_gate_iff (v : Bool) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate v lam ↔
+    0 ≤ lam ∧ lam < SbtCosmo.Derivation.WindowEternalPatchCounts.upper v
+SbtCosmo.Derivation.WindowEternalPatchCounts.eventual_record_iff (v : Bool) {lam : ℝ} (hlam : 0 < lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowEternalPatchCounts.eventualRecord v j lam ↔
+    SbtCosmo.Derivation.WindowPatchCounts.seedThreshold v j <
+      SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000) lam
+SbtCosmo.Derivation.WindowEternalPatchCounts.endpoint_eventual_count (v : Bool) :
+  {j |
+        SbtCosmo.Derivation.WindowEternalPatchCounts.eventualRecord v j
+          (SbtCosmo.Derivation.WindowEternalPatchCounts.upper v)}.card =
+    9
+SbtCosmo.Derivation.WindowEternalPatchCounts.zero_passes (v : Bool) :
+  SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate v 0
+SbtCosmo.Derivation.WindowEternalPatchCounts.endpoint_excluded (v : Bool) :
+  ¬SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate v (SbtCosmo.Derivation.WindowEternalPatchCounts.upper v)
+SbtCosmo.Derivation.WindowEternalPatchCounts.negative_excluded (v : Bool) {lam : ℝ} (hlam : lam < 0) :
+  ¬SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate v lam
+SbtCosmo.Derivation.WindowEternalPatchCounts.finite_upper_lt_eternal (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchCounts.upper v < SbtCosmo.Derivation.WindowEternalPatchCounts.upper v
+SbtCosmo.Derivation.WindowEternalPatchCounts.upper_order :
+  SbtCosmo.Derivation.WindowEternalPatchCounts.upper false < SbtCosmo.Derivation.WindowEternalRecords.upper ∧
+    SbtCosmo.Derivation.WindowEternalRecords.upper < SbtCosmo.Derivation.WindowEternalPatchCounts.upper true
+SbtCosmo.Derivation.WindowEternalPatchCounts.gate_inclusions (lam : ℝ) :
+  (SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate false lam →
+      SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam) ∧
+    (SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam →
+      SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate true lam)
+SbtCosmo.Derivation.WindowEternalPatchCounts.strict_gate_witnesses :
+  (SbtCosmo.Derivation.WindowEternalRecords.eternalGate (SbtCosmo.Derivation.WindowEternalPatchCounts.upper false) ∧
+      ¬SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate false
+          (SbtCosmo.Derivation.WindowEternalPatchCounts.upper false)) ∧
+    SbtCosmo.Derivation.WindowEternalPatchCounts.eternalGate true SbtCosmo.Derivation.WindowEternalRecords.upper ∧
+      ¬SbtCosmo.Derivation.WindowEternalRecords.eternalGate SbtCosmo.Derivation.WindowEternalRecords.upper
+SbtCosmo.Derivation.WindowEternalPatchCounts.fixed_deadline_gate_iff (v : Bool) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowEternalPatchCounts.fixedDeadlineGate v lam ↔
+    0 ≤ lam ∧ lam ≤ SbtCosmo.Derivation.WindowPatchCounts.upper v
+SbtCosmo.Derivation.WindowEternalPatchCounts.rational_starvation_margin (v : Bool) (j : Fin 12) :
+  3 *
+      max (SbtCosmo.Derivation.WindowPatchCountData.maximumFalseRat v j)
+        (SbtCosmo.Derivation.WindowPatchCountData.maximumTrueRat v j) <
+    SbtCosmo.Derivation.WindowSampleData.deltaRat
+SbtCosmo.Derivation.WindowEternalPatchCounts.amplitude_starvation_margin (v : Bool) (j : Fin 12)
+  (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)) :
+  3 * SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i < SbtCosmo.Derivation.WindowPatchCounts.delta
+SbtCosmo.Derivation.WindowEternalPatchCounts.no_records_ever (v : Bool) {lam : ℝ} (hlam : 1000000000 ≤ lam) (j : Fin 12)
+  (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)) :
+  ¬∃ a,
+      1 / 1000 ≤ a ∧
+        SbtCosmo.Derivation.WindowPatchCounts.delta ≤
+          SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i *
+            SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a

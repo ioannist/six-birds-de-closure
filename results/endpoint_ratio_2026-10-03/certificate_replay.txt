@@ -1,0 +1,1 @@
+Exact 704-cell endpoint / 512-cell prefix certificates and both false-certificate controls passed; artifact byte replay matched.

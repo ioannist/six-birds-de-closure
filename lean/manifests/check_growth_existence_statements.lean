@@ -1,0 +1,11 @@
+import SbtCosmo.Derivation.GrowthScaleReturn
+
+#check SbtCosmo.Derivation.GrowthExistence.constructed_growthSolution
+#check SbtCosmo.Derivation.GrowthExistence.exists_growthSolution_of_horizon
+#check SbtCosmo.Derivation.GrowthExistence.primitive_continuous_parameter
+#check SbtCosmo.Derivation.GrowthExistence.finalGrowth_continuousAt
+#check SbtCosmo.Derivation.GrowthExistence.finalGrowth_strictAntiOn
+#check SbtCosmo.Derivation.GrowthScaleReturn.exists_original_scale_solution
+#check SbtCosmo.Derivation.GrowthScaleReturn.native_positive
+#check SbtCosmo.Derivation.GrowthScaleReturn.native_endpoint_continuousAt
+#check SbtCosmo.Derivation.GrowthScaleReturn.native_endpoint_strictAntiOn

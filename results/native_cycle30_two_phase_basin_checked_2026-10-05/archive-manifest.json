@@ -1,0 +1,137 @@
+{
+  "archive_sha256": "a1232f2d6781b3d6a054b3ed4ef17a6352701e3e8c3dc98f4fd0000ba00c977c",
+  "entries": [
+    {
+      "name": "workspace/math/GROUND_NATIVE_CYCLE30_TWO_PHASE_BASIN_2026-10-05.md",
+      "source": "/home/repos/six-birds-de-closure/math/GROUND_NATIVE_CYCLE30_TWO_PHASE_BASIN_2026-10-05.md",
+      "sha256": "d9857c012353d5c69fb142a52f22c1134c4ae63518c6cc445e1c03a46e7f4f0a",
+      "size": 3151
+    },
+    {
+      "name": "de-native-cycle30-two-phase-basin-full-audit-summary.json",
+      "source": "/tmp/de-native-cycle30-two-phase-basin-full-audit-summary.json",
+      "sha256": "5f34561cac67426cd3f164043ae9f7758e9ce0d070c90d3f2c774f893f550e11",
+      "size": 1649
+    },
+    {
+      "name": "de-native-cycle30-two-phase-basin-full-audit-terminal.json",
+      "source": "/tmp/de-native-cycle30-two-phase-basin-full-audit-terminal.json",
+      "sha256": "73c537a46ddc3a67b5de7982a4cfc356c5f48faa77cd868c673433bf43a61093",
+      "size": 1112
+    },
+    {
+      "name": "de-native-cycle30-two-phase-basin-full-audit.log",
+      "source": "/tmp/de-native-cycle30-two-phase-basin-full-audit.log",
+      "sha256": "c5b7070886dec7a38923769075414848823c14c3f6fe8c9f419d5acf58b526e4",
+      "size": 3317
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-compile-driver.log",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-compile-driver.log",
+      "sha256": "8f8edc01abe6fff37c658e98145e88c25e5645a88bbc84e95aa15089a69874c8",
+      "size": 694
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-direct-driver.log",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-direct-driver.log",
+      "sha256": "7da5546b005387ee71b019659721e104c9fe0415b092a4bcbeadfbe4d982482d",
+      "size": 640
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-direct-terminal.json",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-direct-terminal.json",
+      "sha256": "55cdc9f9053c11453e002beb0d49fa2316b67a3a6d1ccc1f8a20e2169555ec7b",
+      "size": 679
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-direct.log",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-direct.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-first-terminal.json",
+      "sha256": "e0b33dcd84cfe1ca7961f1b68e657c5c2eab48cfac5079e8924e35c310acd561",
+      "size": 592
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-first.log",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-first.log",
+      "sha256": "d39f120c9e1fc2ac750a5186a42d33f6facb52610e01dea88e4aff6727965363",
+      "size": 139
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-retry-driver.log",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-retry-driver.log",
+      "sha256": "1224ba9ffd5f28f3394bb8f8fac3de3493cf5e7bad3db49f382753a4d6e4c0b8",
+      "size": 694
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-retry-terminal.json",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-retry-terminal.json",
+      "sha256": "4351c9b3128b412a3a5457fc7e5cf4d4f6fe639e9e6d4e4c8eefa2b7ac262053",
+      "size": 592
+    },
+    {
+      "name": "de-original-cycle30-two-phase-basin-retry.log",
+      "source": "/tmp/de-original-cycle30-two-phase-basin-retry.log",
+      "sha256": "d39f120c9e1fc2ac750a5186a42d33f6facb52610e01dea88e4aff6727965363",
+      "size": 139
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/Cycle30TwoPhaseBasinFullAudit.lean",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/Cycle30TwoPhaseBasinFullAudit.lean",
+      "sha256": "36b0f399ec3519b9eb221aa9b610e886caaa4bb7fed4bd9a943146003c80ecd2",
+      "size": 642
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/audit_modules.py",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/audit_modules.py",
+      "sha256": "97a807f331dedab7f56f9b50e6b91176f6dfa0b05626f304ae8f060ee5a60a9b",
+      "size": 3147
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/checkpoint_checked.py",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/checkpoint_checked.py",
+      "sha256": "b9ffbd371ceb2b201635367abf31a557ad7d0d57a0d507b49a60779b53c262fa",
+      "size": 13014
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/compile_module.py",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/compile_module.py",
+      "sha256": "c5abc967b48e18f7d72c3db24cab1a5dad88e7329415864d97d5aa90b2d1d11c",
+      "size": 1393
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/history/GroundOriginalCycle30TwoPhaseBasin.first.lean",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/history/GroundOriginalCycle30TwoPhaseBasin.first.lean",
+      "sha256": "55e4dded52a92a3aa02729eeb54ebe6abb011b69c5788bd9ce53e861154b630f",
+      "size": 5104
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/history/GroundOriginalCycle30TwoPhaseBasin.retry.lean",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/history/GroundOriginalCycle30TwoPhaseBasin.retry.lean",
+      "sha256": "c993677283bfab1ac980ea3c73791f242798858bf30516aa83aea696078a9a35",
+      "size": 5082
+    },
+    {
+      "name": "de_native_cycle30_two_phase_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30TwoPhaseBasin.lean",
+      "source": "/tmp/de_native_cycle30_two_phase_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30TwoPhaseBasin.lean",
+      "sha256": "5669f8f9f6cda8a21173bf18e38f4b2035c906b675fc8a8ad2638bc87d3337d0",
+      "size": 5018
+    },
+    {
+      "name": "de_native_cycle_lean/NativeCycle30RealOriginalReturn.lean",
+      "source": "/tmp/de_native_cycle_lean/NativeCycle30RealOriginalReturn.lean",
+      "sha256": "2fa579660ef528a686c5282e99304876b2b34c1b5084a2f9dd44fa134633b9d1",
+      "size": 2355
+    },
+    {
+      "name": "de_native_cycle_lean/NativeCycleSeed30RealReturn.lean",
+      "source": "/tmp/de_native_cycle_lean/NativeCycleSeed30RealReturn.lean",
+      "sha256": "5a4a3820c0f9690c94ede78d5802d1cb0141992e666cb1eea40d06ab1c85fd5e",
+      "size": 2607
+    }
+  ]
+}

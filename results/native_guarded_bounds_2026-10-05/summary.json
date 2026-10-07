@@ -1,0 +1,64 @@
+{
+  "terminal_exit_code": 0,
+  "new_declarations": 7,
+  "names": [
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound",
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential"
+  ],
+  "standard_only": true,
+  "axioms": {
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": "63096289fe5bc3472defc296512abcd8ab29fa74472c71a23d456ab3400a6a5e",
+  "object_sha256": "7b23c61900a9d784c5c82428e9da1f0011e83d72cf4f5f7bd36451d134552f15",
+  "audit_log_sha256": "ed079c08cb928f88eab8fd7bf0c24465786bf84811e61891a429daa9ea449996",
+  "registered_helper_checks": 4,
+  "registered_helper_checks_counted_as_new": false,
+  "repository_registered": false,
+  "main_campaign_plans_changed": false,
+  "guards_earned_for_arbitrary_parameters": false,
+  "IEEE_execution_claim": false,
+  "original_paper_complete": false,
+  "scope": "Fresh qualified unregistered global guarded normalization/source-potential bounds, with all-iterate legality premise explicit; not a global execution or convergence theorem",
+  "dependency_modules": 633,
+  "self_review": true
+}

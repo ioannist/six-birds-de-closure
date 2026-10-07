@@ -1,0 +1,57 @@
+{
+  "repository_registered": false,
+  "production_integration_pending": true,
+  "old_frozen_plans_unchanged": true,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding",
+      "source_sha256": "3e8b191f175e62c07f2c0210a12d08d79d48cdb483b8db8b745998452d1befd9",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.decode_continuous",
+        "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.basin_near_cycle",
+        "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.open_real_attracting_cycle",
+        "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.nearby_original_limits_real",
+        "SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.open_real_original_seed_readouts"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge",
+      "source_sha256": "39368b775b7d0e6b81d03facdd1145329765af6750471b5f320b629457f47b6e",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_decode",
+        "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode_source",
+        "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_returns_of_squared_limit",
+        "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.all_guards_of_pair_guards",
+        "SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_guards_of_all_guards"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin",
+      "source_sha256": "bf04bd0913cc5cb151fa17e5a5891377222f2d24b310bdb4574d427c55ce6409",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin.open_coordinate_basin"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30RealBaseline",
+      "source_sha256": "e4625d18010180c68304ff39cd540050ad743983e5776d0e97408c8eee97d3bb",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30RealBaseline.actual_real_baseline"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30RealBasin",
+      "source_sha256": "7fd0fc572eb2042f1261cf931de3eef54bf89c7a4c1dd046097954e78107c2a0",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30RealBasin.open_real_source_basin"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundParametricSeedBasinReturn",
+      "source_sha256": "ffe635cebc261b3e21dd1246a9c6abd7b0e055c98da2595bf13a7787e4185915",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundParametricSeedBasinReturn.nearby_original_seed_target_basin_returns"
+      ]
+    }
+  ]
+}

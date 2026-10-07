@@ -1,0 +1,25 @@
+import SbtCosmo.Derivation.WindowEdgeCertified
+
+#check SbtCosmo.Derivation.GrowthQuadrature.log_integrand_bridge
+#check SbtCosmo.Derivation.GrowthQuadrature.primitive_native_bridge
+#check SbtCosmo.Derivation.GrowthQuadrature.native_growth_quadrature
+#check SbtCosmo.Derivation.GrowthQuadrature.density_sq
+#check SbtCosmo.Derivation.GrowthQuadrature.density_cell_bounds
+#check SbtCosmo.Derivation.GrowthQuadrature.integral_grid_bounds
+#check SbtCosmo.Derivation.GrowthQuadratureData.grid_endpoints
+#check SbtCosmo.Derivation.GrowthQuadratureData.lower_cells
+#check SbtCosmo.Derivation.GrowthQuadratureData.upper_cells
+#check SbtCosmo.Derivation.GrowthQuadratureData.lower_sum
+#check SbtCosmo.Derivation.GrowthQuadratureData.upper_sum
+#check SbtCosmo.Derivation.WindowEdgeCertified.integral_lower_at_three
+#check SbtCosmo.Derivation.WindowEdgeCertified.integral_upper_at_four
+#check SbtCosmo.Derivation.WindowEdgeCertified.native_growth_at_three_lower
+#check SbtCosmo.Derivation.WindowEdgeCertified.native_growth_at_four_upper
+#check SbtCosmo.Derivation.WindowEdgeCertified.sampled_threshold_tight_bounds
+#check SbtCosmo.Derivation.WindowEdgeCertified.upper_spec
+#check SbtCosmo.Derivation.WindowEdgeCertified.upper_certified_bounds
+#check SbtCosmo.Derivation.WindowEdgeCertified.paper_bracket_certified
+#check SbtCosmo.Derivation.WindowEdgeCertified.inside_three_outside_four
+#check SbtCosmo.Derivation.WindowEdgeCertified.upper_eq_scaled_endpoint
+#check SbtCosmo.Derivation.WindowEdgeCertified.paper_inside_outside
+#check SbtCosmo.Derivation.WindowEdgeCertified.exists_unique_certified_window

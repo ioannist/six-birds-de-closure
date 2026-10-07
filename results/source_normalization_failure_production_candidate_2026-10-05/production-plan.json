@@ -1,0 +1,36 @@
+{
+  "status": "Separate one-module/five-declaration source candidate; canonical Lean proof checked against the checked normalization parent; final registered compilation pending",
+  "module_count": 1,
+  "fresh_theorem_count": 5,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundSourceNormalizationFailure",
+      "production_path": "lean/SbtCosmo/Derivation/GroundSourceNormalizationFailure.lean",
+      "production_sha256": "2cadb61c7afa031bb7ceaf56bdd4956ba778b831f5e17dee86e3b30fe524df8e",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.GroundSourceNormalizationFailure.imaginary_ground_execution",
+        "SbtCosmo.Derivation.GroundSourceNormalizationFailure.imaginary_ground_no_continuation",
+        "SbtCosmo.Derivation.GroundSourceNormalizationFailure.exists_unit_execution_failure",
+        "SbtCosmo.Derivation.GroundSourceNormalizationFailure.original_tolerance_unit_execution_failure",
+        "SbtCosmo.Derivation.GroundSourceNormalizationFailure.exists_phase_execution_split"
+      ],
+      "imports": [
+        "SbtCosmo.Derivation.GroundSourceNormalization",
+        "SbtCosmo.Derivation.GroundNativeControls"
+      ]
+    }
+  ],
+  "checked_packet_file_manifest_sha256": "2acf0f709d57afe13405588030b05e265e8870f842f369301b27b61806c3728f",
+  "checked_audit_summary_sha256": "17c714ff898136b232aefbeb0317a4876098db29dff98ce11569b6c7edfcb064",
+  "checked_object_sha256": "a1a0b4b007e2a087dca8ca908b8f49085d21408de4891164a0c46cf7046e9f25",
+  "normalization_parent_source_sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+  "fixed_three_module_plan_sha256": "c7a798e995ce61cea1c727eb25aa4de1a8755925267bc5e118e5c2740879461b",
+  "source_translation_required": false,
+  "existing_plans_changed": false,
+  "new_registered_modules": 1,
+  "new_registered_declarations": 5,
+  "prior_prospective_cumulative_declarations": 32560,
+  "prospective_cumulative_declarations_with_this_packet": 32565,
+  "registered": false,
+  "goal_complete": false
+}

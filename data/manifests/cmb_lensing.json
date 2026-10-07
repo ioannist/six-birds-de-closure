@@ -1,0 +1,63 @@
+{
+  "dataset": "CMB_LENSING",
+  "release": "ACT DR6 + SPT-3G + Planck PR4 joint CMB lensing (LAMBDA act_spt_joint, 2025-12-09)",
+  "access": "official_likelihood",
+  "fetch_url": "https://lambda.gsfc.nasa.gov/data/suborbital/act_spt_joint/",
+  "fetched_utc": "2026-06-01",
+  "license": "ACT/SPT public releases; cite source likelihoods",
+  "citation": "Qu et al. 2024 (ACT DR6); SPT-3G lensing; Planck PR4 lensing; ACT+SPT joint LAMBDA release",
+  "raw_files": [
+    {
+      "path": "data/raw/cmb_lensing/ (github.com/qujia7/spt_act_likelihood + LAMBDA tarballs)",
+      "sha256": "see provenance.json",
+      "bytes": "~330MB raw+chains (gitignored)"
+    }
+  ],
+  "processed": {
+    "data_vector": {
+      "path": "data/processed/cmb_lensing/data_vector.npy",
+      "sha256": "95c6f629680a3cf38bcfe2fad02d48dfcdcf0ce2dab40ab6b86f5a56dbadf602",
+      "shape": [
+        35
+      ],
+      "dtype": "float64"
+    },
+    "covariance": {
+      "path": "data/processed/cmb_lensing/covariance.npy",
+      "sha256": "b898381374fc1b57ed3c5d8278863d0d7a629c40e6627641ad616c4e0342cbbe",
+      "shape": [
+        35,
+        35
+      ],
+      "dtype": "float64"
+    }
+  },
+  "bins": {
+    "n_data": 35,
+    "ACT": 10,
+    "Planck": 9,
+    "SPT": 16,
+    "variant": "actplanckspt3g_baseline",
+    "statistic": "binned C_L^kk"
+  },
+  "scale_cuts": {
+    "applied": true,
+    "note": "actplanckspt3g_baseline multipole range; lens_only=True, like_corrections=False",
+    "sweepable_in_E5": true
+  },
+  "route": null,
+  "staging_axis": "cmb_lensing_source",
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "Planck-only lensing lower-S/N fallback",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "extracted 2026-06-01 via act_dr6_spt_lenslike.load_data(actplanckspt3g_baseline, lens_only=True)",
+  "provenance": "data/processed/cmb_lensing/provenance.json",
+  "validation": {
+    "PD": true,
+    "total_SNR": 61.35
+  },
+  "data_available": true
+}

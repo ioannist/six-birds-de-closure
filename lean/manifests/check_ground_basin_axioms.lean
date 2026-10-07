@@ -1,0 +1,96 @@
+import SbtCosmo.Derivation.GroundNativeGeneralDerivative
+import SbtCosmo.Derivation.GroundBackgroundResponse
+import SbtCosmo.Derivation.GroundNativeQuantitativeBall
+import SbtCosmo.Derivation.GroundNativeDerivativeBox
+import SbtCosmo.Derivation.GroundStateRows
+import SbtCosmo.Derivation.GroundBasin.Point002Data
+import SbtCosmo.Derivation.GroundBasin.Point002Arithmetic
+import SbtCosmo.Derivation.GroundBasin.Point002Bridge
+import SbtCosmo.Derivation.GroundOriginalBasin
+
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.stateNormSq_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.realOverlap_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.imagOverlap_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.overlapInverse_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.realFactor_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.imagFactor_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.aligned_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.stateInverse_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.normalizeState_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.mixed_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.fullMap_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.realOverlapDerivative_apply
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.imagOverlapDerivative_apply
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.overlapInverseDerivative_apply
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.alignedDerivative_real_apply
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.alignedDerivative_imag_apply
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.normalizationDerivative_apply
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.overlapNorm_continuous
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.nativePairMap_eventual_return
+#print axioms SbtCosmo.Derivation.GroundNativeGeneralDerivative.nativePairMap_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundBackgroundResponse.residualDerivative_zero
+#print axioms SbtCosmo.Derivation.GroundBackgroundResponse.actual_border_defect
+#print axioms SbtCosmo.Derivation.GroundBackgroundResponse.rhsBox_sound
+#print axioms SbtCosmo.Derivation.GroundBackgroundResponse.correctedBox_sound
+#print axioms SbtCosmo.Derivation.GroundBackgroundResponse.actual_response_error
+#print axioms SbtCosmo.Derivation.GroundBackgroundResponse.actual_selector_response_enclosed
+#print axioms SbtCosmo.Derivation.GroundNativeQuantitativeBall.coordinate_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNativeQuantitativeBall.native_guards
+#print axioms SbtCosmo.Derivation.GroundNativeQuantitativeBall.coordinate_lipschitz
+#print axioms SbtCosmo.Derivation.GroundNativeQuantitativeBall.explicit_native_ball_convergence
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.sourceDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.selectedDerivative_enclosed
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.realOverlapDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.imagOverlapDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.negativeCube_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.overlapInverseDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.alignedDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.mixedDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.normalizedDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeDerivativeBox.fullDerivativeBox_sound
+#print axioms SbtCosmo.Derivation.GroundStateRows.real_action_entries
+#print axioms SbtCosmo.Derivation.GroundStateRows.imag_action_entries
+#print axioms SbtCosmo.Derivation.GroundStateRows.scalar_row_bound
+#print axioms SbtCosmo.Derivation.GroundStateRows.operator_norm_le_rows
+#print axioms SbtCosmo.Derivation.GroundStateRows.field_operator_norm_le_rows
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.radius_pos
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.rate_budget
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.basis_rows
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.phase_inverse
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.normalization_inverse
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.native_arithmetic
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.real_response
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.imag_response
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.real_response_cache
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.imag_response_cache
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.real_jet_cache
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.imag_jet_cache
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.real_rows
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.imag_rows
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.selector_rows
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.endpoint_rows
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.source_bounds
+#print axioms SbtCosmo.Derivation.GroundBasin.Point002Arithmetic.zero_contraction_budget_rejected
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.ground_data
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.old_positive_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.coordinateBox_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.basis_rows
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.basis_norm
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.input_box_on_ball
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.real_direction_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.imag_direction_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.core_real_jet_enclosed
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.core_imag_jet_enclosed
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.core_guards
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.core_derivative_norm
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.core_endpoint_entry
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.whole_ball_guards
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.whole_ball_derivative
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.original_endpoint_entry
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.positive_future
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.reflected_tail
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.original_seed_converges_negative_ground
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.original_seed_all_guards
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.original_seed_all_unit
+#print axioms SbtCosmo.Derivation.GroundOriginalBasin.reflected_tail_rate

@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-05T08:38:30.657600+00:00",
+  "old_pid": 1255480,
+  "old_process_missing": true,
+  "old_session_id": 9016,
+  "old_session_exit_code": 143,
+  "original_terminal_receipt_missing": true,
+  "old_final_audits_complete": false,
+  "checked_terminal_zero_modules": 73,
+  "remaining_modules": 216,
+  "unfinished_modules": [
+    "NativeStableSeed009Step037",
+    "NativeStableSeed009Step038"
+  ],
+  "orphan_compilers_absent": true,
+  "signal_sender_or_reason": "Not established; exit143 is interruption evidence, not a mathematical counterexample",
+  "historical_source_freeze_revalidated": 2554,
+  "old_sources_or_receipts_changed": false,
+  "goal_complete": false
+}

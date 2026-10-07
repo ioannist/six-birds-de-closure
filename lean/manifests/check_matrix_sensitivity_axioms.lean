@@ -1,0 +1,31 @@
+import SbtCosmo.Derivation.ConePriceSensitivity
+import SbtCosmo.Derivation.MatrixPriceSensitivity
+import SbtCosmo.Derivation.MatrixSensitivityStationarity
+import SbtCosmo.Derivation.MatrixSensitivityExamples
+
+#print axioms SbtCosmo.Derivation.ConePriceSensitivity.real_price_identification
+#print axioms SbtCosmo.Derivation.ConePriceSensitivity.certificate_real_domain_return
+#print axioms SbtCosmo.Derivation.ConePriceSensitivity.price_identification
+#print axioms SbtCosmo.Derivation.ConePriceSensitivity.price_unique
+#print axioms SbtCosmo.Derivation.ConePriceSensitivity.slater_local_finiteness
+#print axioms SbtCosmo.Derivation.ConePriceSensitivity.slater_price_identification
+#print axioms SbtCosmo.Derivation.MatrixPriceSensitivity.priceMatrix_tracePrice
+#print axioms SbtCosmo.Derivation.MatrixPriceSensitivity.tracePrice_injective
+#print axioms SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_price_identification
+#print axioms SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_matrix_identification
+#print axioms SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_matrix_unique
+#print axioms SbtCosmo.Derivation.MatrixPriceSensitivity.slater_price_identification
+#print axioms SbtCosmo.Derivation.MatrixSensitivityStationarity.matrix_stationarity
+#print axioms SbtCosmo.Derivation.MatrixSensitivityStationarity.matrix_nonsmooth_stationarity
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.actual_optimizer
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.actual_slater
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.actual_schur_derivative
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.tracePrice_one
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.actual_price_identified
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.actual_same_price_stationarity
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.antisymmetric_price_control
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.one_direction_control
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.kink_matrix_feasible
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.kink_actual_value
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.kink_value_derivative
+#print axioms SbtCosmo.Derivation.MatrixSensitivityExamples.actual_nonsmooth_same_price_stationarity

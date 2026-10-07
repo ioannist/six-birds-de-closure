@@ -1,0 +1,70 @@
+{
+  "status": "Generated supplementary qualification packet; pending parent seed and full qualified campaign proofs, not repository registration",
+  "module_count": 4,
+  "fresh_theorem_count": 6,
+  "parent_module_count": 1734,
+  "parent_fresh_theorem_count": 20628,
+  "parent_plan_sha256": "e7b36f12a970f7265d706ad0223c7450d6bfe60c1961f575cae7b0d19759aded",
+  "modules": [
+    {
+      "private_module": "NativeCycle20RealOriginalReturn",
+      "production_module": "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn",
+      "production_path": "lean/SbtCosmo/Derivation/NativeCycle20/RealOriginalReturn.lean",
+      "private_sha256": "485753be1c50317b71e89b7699827b037665f267943cba1758a3ddb4d3041bdf",
+      "production_sha256": "1b138c805e09e4b30739fda1d1b901e01e0eeb9cd51bb362c449ecbef4722500",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.real_even_odd_limits_of_entry",
+        "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.limits_real_of_entry"
+      ],
+      "qualified_imports": [
+        "SbtCosmo.Derivation.NativeCycle20.RealProfiles",
+        "SbtCosmo.Derivation.NativeCycle20.OriginalReturn"
+      ]
+    },
+    {
+      "private_module": "NativeCycle30RealOriginalReturn",
+      "production_module": "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn",
+      "production_path": "lean/SbtCosmo/Derivation/NativeCycle30/RealOriginalReturn.lean",
+      "private_sha256": "2fa579660ef528a686c5282e99304876b2b34c1b5084a2f9dd44fa134633b9d1",
+      "production_sha256": "6b3560c000f0088d8894024ef2fcf5e2150959496903da76ad4599558851acd9",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.real_even_odd_limits_of_entry",
+        "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.limits_real_of_entry"
+      ],
+      "qualified_imports": [
+        "SbtCosmo.Derivation.NativeCycle30.RealProfiles",
+        "SbtCosmo.Derivation.NativeCycle30.OriginalReturn"
+      ]
+    },
+    {
+      "private_module": "NativeCycleSeed20RealReturn",
+      "production_module": "SbtCosmo.Derivation.NativeCycleSeed20.RealReturn",
+      "production_path": "lean/SbtCosmo/Derivation/NativeCycleSeed20/RealReturn.lean",
+      "private_sha256": "7c7656e02e9800ba9a3250a70358e283f942d9d48a3cd098ec50631b7ed9d518",
+      "production_sha256": "08d8cc57103954f6a60f8fca493f1ebbbbc7fef976b7ba0ff6a10dc69ddca812",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.NativeCycleSeed20.RealReturn.original_seed_cycle_real"
+      ],
+      "qualified_imports": [
+        "SbtCosmo.Derivation.NativeCycleSeed20.Return",
+        "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn"
+      ]
+    },
+    {
+      "private_module": "NativeCycleSeed30RealReturn",
+      "production_module": "SbtCosmo.Derivation.NativeCycleSeed30.RealReturn",
+      "production_path": "lean/SbtCosmo/Derivation/NativeCycleSeed30/RealReturn.lean",
+      "private_sha256": "5a4a3820c0f9690c94ede78d5802d1cb0141992e666cb1eea40d06ab1c85fd5e",
+      "production_sha256": "ce02d6a9da612464e2545b1914bb8afa4c3060fe776c76fdd4d3541d51192cbb",
+      "declared_theorems": [
+        "SbtCosmo.Derivation.NativeCycleSeed30.RealReturn.original_seed_cycle_real"
+      ],
+      "qualified_imports": [
+        "SbtCosmo.Derivation.NativeCycleSeed30.Return",
+        "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn"
+      ]
+    }
+  ],
+  "scope": "Exactly-real original-seed period-two profiles at20/30, preserving all existing return statements. Four conditional entry declarations already privately checked; two unconditional seed bindings awaiting full finite transport. Main1734 plan unchanged.",
+  "historical_parent_plan_sha256": "f7c886daeef5d8ef01c35a276988c199c0ddf8b7aff9d42df436e944e49e5b63"
+}

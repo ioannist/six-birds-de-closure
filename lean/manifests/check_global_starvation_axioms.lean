@@ -1,0 +1,23 @@
+import SbtCosmo.Derivation.WindowStarvationData
+import SbtCosmo.Derivation.GrowthStarvationCertified
+import SbtCosmo.Derivation.WindowGlobalStarvation
+
+#print axioms SbtCosmo.Derivation.WindowStarvationData.grid_endpoints
+#print axioms SbtCosmo.Derivation.WindowStarvationData.upper_cells
+#print axioms SbtCosmo.Derivation.WindowStarvationData.upper_sum
+#print axioms SbtCosmo.Derivation.GrowthStarvationCertified.integral_upper
+#print axioms SbtCosmo.Derivation.GrowthStarvationCertified.finite_growth_upper
+#print axioms SbtCosmo.Derivation.GrowthStarvationCertified.limiting_growth_upper
+#print axioms SbtCosmo.Derivation.GrowthStarvationCertified.global_growth_upper
+#print axioms SbtCosmo.Derivation.GrowthStarvationCertified.patch_never_collapses
+#print axioms SbtCosmo.Derivation.GrowthStarvationCertified.no_native_record
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.rational_margin_original
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.amplitude_margin_original
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.rational_margin_robustness
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.amplitude_margin_robustness
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.no_original_patch_ever
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.no_robustness_patch_ever
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.no_original_record
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.no_robustness_record
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.original_record_count_zero
+#print axioms SbtCosmo.Derivation.WindowGlobalStarvation.robustness_record_count_zero

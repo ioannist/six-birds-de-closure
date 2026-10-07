@@ -1,0 +1,9 @@
+{
+  "lean_binary": "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+  "lean_version": "Lean (version 4.28.0, x86_64-unknown-linux-gnu, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b, Release)",
+  "mathlib_head": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+  "mathlib_worktree_clean": true,
+  "original_runtime_sha256": "391907fae6fdee8c4e4de1c12ee67d72fdfea4928cad1f148cc30e31584898fd",
+  "math_note": "math/GROUND_NATIVE_GUARDED_BOUNDS_2026-10-05.md",
+  "math_note_sha256": "c1c625e78342544ead308b8d273cc366e8ea10fd78847b3202b46ffdf0b8d12f"
+}

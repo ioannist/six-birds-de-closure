@@ -1,0 +1,173 @@
+{
+  "archive_sha256": "c6da0ee3e1e28df93de6b30b55b5d5a4383fe53ed73dc6c11f9efd3aba4cb00a",
+  "entries": [
+    {
+      "name": "workspace/math/GROUND_NATIVE_OPEN_CYCLE30_REAL_BASIN_2026-10-05.md",
+      "source": "/home/repos/six-birds-de-closure/math/GROUND_NATIVE_OPEN_CYCLE30_REAL_BASIN_2026-10-05.md",
+      "sha256": "798a854402c07fa4c533e0faa2a84e8f22e58f80da5ad2696b1456abd1f7560c",
+      "size": 9683
+    },
+    {
+      "name": "de-native-open-cycle-basin-full-audit-summary.json",
+      "source": "/tmp/de-native-open-cycle-basin-full-audit-summary.json",
+      "sha256": "be8cc8977f82da384dc1d0171a78052e63779445c95b354d66900e794e66029a",
+      "size": 4228
+    },
+    {
+      "name": "de-native-open-cycle-basin-full-audit-terminal.json",
+      "source": "/tmp/de-native-open-cycle-basin-full-audit-terminal.json",
+      "sha256": "c768b2cfbad6f068dc221ed7c51ebd95fa0068ab0b2b7b8fa62d0912fc68b87b",
+      "size": 3756
+    },
+    {
+      "name": "de-native-open-cycle-basin-full-audit.log",
+      "source": "/tmp/de-native-open-cycle-basin-full-audit.log",
+      "sha256": "f9282e076d54b4b6f39d0d5a068cfd8071aaa1a8d4ad6dc06c7ad69f6bb600af",
+      "size": 22919
+    },
+    {
+      "name": "de-original-cycle30-attractor-landing-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-attractor-landing-first-terminal.json",
+      "sha256": "df63deabfee53fe73940ec3610c85069faf513d4911772f4d13cac2569fda196",
+      "size": 664
+    },
+    {
+      "name": "de-original-cycle30-attractor-landing-first.log",
+      "source": "/tmp/de-original-cycle30-attractor-landing-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-basin-bridge-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-basin-bridge-first-terminal.json",
+      "sha256": "c0ee7ea373db523506deee1d09f541a379699becc97fea26883547a2f2a120d4",
+      "size": 654
+    },
+    {
+      "name": "de-original-cycle30-basin-bridge-first.log",
+      "source": "/tmp/de-original-cycle30-basin-bridge-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-coordinate-basin-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-coordinate-basin-first-terminal.json",
+      "sha256": "ff39bf226be93441eae7ccd793bbc4c387315703b1a12a143aa46abe68eccb4b",
+      "size": 662
+    },
+    {
+      "name": "de-original-cycle30-coordinate-basin-first.log",
+      "source": "/tmp/de-original-cycle30-coordinate-basin-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-real-baseline-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-real-baseline-first-terminal.json",
+      "sha256": "2d477e7068b2fcf787cd28dcb65b677c5a7e47079e46ac61ed5910f2e9ff8636",
+      "size": 656
+    },
+    {
+      "name": "de-original-cycle30-real-baseline-first.log",
+      "source": "/tmp/de-original-cycle30-real-baseline-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-original-cycle30-real-basin-first-terminal.json",
+      "source": "/tmp/de-original-cycle30-real-basin-first-terminal.json",
+      "sha256": "e8858fb2f9a657646ea07614895a80bc30bce81fdadd69c3e2a8d83dfa62dc81",
+      "size": 650
+    },
+    {
+      "name": "de-original-cycle30-real-basin-first.log",
+      "source": "/tmp/de-original-cycle30-real-basin-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de-parametric-seed-basin-first-terminal.json",
+      "source": "/tmp/de-parametric-seed-basin-first-terminal.json",
+      "sha256": "9d03b335ad93554a5c632e55fc890d72c77f6a8d3c88026459d1264fe273a466",
+      "size": 652
+    },
+    {
+      "name": "de-parametric-seed-basin-first.log",
+      "source": "/tmp/de-parametric-seed-basin-first.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_native_cycle_lean/NativeCycle30RealOriginalReturn.lean",
+      "source": "/tmp/de_native_cycle_lean/NativeCycle30RealOriginalReturn.lean",
+      "sha256": "2fa579660ef528a686c5282e99304876b2b34c1b5084a2f9dd44fa134633b9d1",
+      "size": 2355
+    },
+    {
+      "name": "de_native_cycle_lean/NativeCycleSeed30RealReturn.lean",
+      "source": "/tmp/de_native_cycle_lean/NativeCycleSeed30RealReturn.lean",
+      "sha256": "5a4a3820c0f9690c94ede78d5802d1cb0141992e666cb1eea40d06ab1c85fd5e",
+      "size": 2607
+    },
+    {
+      "name": "de_native_open_cycle_basin/OpenCycleBasinFullAudit.lean",
+      "source": "/tmp/de_native_open_cycle_basin/OpenCycleBasinFullAudit.lean",
+      "sha256": "c297050b2b9228d88f2de887bd7c26bf9629209c84d618ca3f8b384c6e549037",
+      "size": 2920
+    },
+    {
+      "name": "de_native_open_cycle_basin/audit_modules.py",
+      "source": "/tmp/de_native_open_cycle_basin/audit_modules.py",
+      "sha256": "7e1a8746ad91bd79dad32742344881e86cb5b6b835f7be98bfb84f280b666ed6",
+      "size": 3057
+    },
+    {
+      "name": "de_native_open_cycle_basin/checkpoint_checked.py",
+      "source": "/tmp/de_native_open_cycle_basin/checkpoint_checked.py",
+      "sha256": "812aadcf5740ebc3a8072d7e5da331de854814b8e4e6fee4c0b4d0163e84b3a8",
+      "size": 12895
+    },
+    {
+      "name": "de_native_open_cycle_basin/compile_module.py",
+      "source": "/tmp/de_native_open_cycle_basin/compile_module.py",
+      "sha256": "8f3f104d8baca026a4a0beddfc74ef617b3c4508ac7681927f876b639511d35e",
+      "size": 1386
+    },
+    {
+      "name": "de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.lean",
+      "source": "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30AttractorLanding.lean",
+      "sha256": "3e8b191f175e62c07f2c0210a12d08d79d48cdb483b8db8b745998452d1befd9",
+      "size": 6335
+    },
+    {
+      "name": "de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.lean",
+      "source": "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30BasinBridge.lean",
+      "sha256": "39368b775b7d0e6b81d03facdd1145329765af6750471b5f320b629457f47b6e",
+      "size": 3406
+    },
+    {
+      "name": "de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.lean",
+      "source": "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30CoordinateBasin.lean",
+      "sha256": "bf04bd0913cc5cb151fa17e5a5891377222f2d24b310bdb4574d427c55ce6409",
+      "size": 3905
+    },
+    {
+      "name": "de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.lean",
+      "source": "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBaseline.lean",
+      "sha256": "e4625d18010180c68304ff39cd540050ad743983e5776d0e97408c8eee97d3bb",
+      "size": 1884
+    },
+    {
+      "name": "de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.lean",
+      "source": "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundOriginalCycle30RealBasin.lean",
+      "sha256": "7fd0fc572eb2042f1261cf931de3eef54bf89c7a4c1dd046097954e78107c2a0",
+      "size": 6340
+    },
+    {
+      "name": "de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.lean",
+      "source": "/tmp/de_native_open_cycle_basin/lean/SbtCosmo/Derivation/GroundParametricSeedBasinReturn.lean",
+      "sha256": "ffe635cebc261b3e21dd1246a9c6abd7b0e055c98da2595bf13a7787e4185915",
+      "size": 3297
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+import SbtCosmo.Derivation.WindowRobustRecord
+import SbtCosmo.Derivation.WindowRobustRatio
+
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.rectangle_positive
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.factor_positive
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.factor_corner_bounds
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.factor_bounds
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.maximum_spec
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.threshold_return
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.threshold_bounds
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.threshold_below_aggregate
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.gate_iff_window
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.endpoint_spec
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.gate_cutoff
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.final_above_threshold
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_spec
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_iff_any_collapse
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_is_first_collapse
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.gate_zero
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_at_zero
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_positive
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_nonpositive_upper
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_nonnegative_lower
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.time_strictMono
+#print axioms SbtCosmo.Derivation.WindowRobustRecord.original_time_return
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.corner_rectangles
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.corner_endpoints_positive
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.endpoint_corner_bounds
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.common_positive_window
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_density_readout
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_nonnegative
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_positive
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_zero
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_nonnegative_upper
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_nonpositive_small
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.full_window_ratios
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.endpoint_ratios
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratios_uniformly_arbitrarily_small
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.ratio_strictMono_nonnegative
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.equal_factor_return
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.original_ratio_return
+#print axioms SbtCosmo.Derivation.WindowRobustRatio.compensated_original_return

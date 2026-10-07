@@ -1,0 +1,20 @@
+import SbtCosmo.Derivation.GroundParameterPatch
+import SbtCosmo.Derivation.GroundParameterPatchReturn
+
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.mem_domain
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.tube_root_eq
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_eq
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_spec
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.sample_root_return
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_continuous_on
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_implicit_germ
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.root_smooth_on
+#print axioms SbtCosmo.Derivation.GroundParameterPatch.TubeCover.groundPair_return
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.closedBall_containment
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.certified_sample_return
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.field_smooth_on
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.field_continuous_on
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.field_fixed
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.native_fixed_legal
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.minus_one_contact
+#print axioms SbtCosmo.Derivation.GroundParameterPatchReturn.two_distinct_contacts

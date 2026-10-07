@@ -1,0 +1,48 @@
+{
+  "G-R0-EXACTNESS": {
+    "gate_id": "G-R0-EXACTNESS",
+    "pass": null,
+    "status": "skipped_power_failed"
+  },
+  "beta1_decisive_eligible": 0,
+  "beta1_structural": 2,
+  "cycles": [
+    {
+      "cycle_id": "gamma_siren_cepheid_jagb",
+      "decisive_eligible": false,
+      "heldout_edge_types": [
+        "TODO-on-fetch-classify",
+        "TODO-on-fetch-classify"
+      ],
+      "heldout_edges": [
+        "e_siren_cepheid",
+        "e_siren_jagb"
+      ],
+      "structurally_closed": true,
+      "tree_path_edges": [
+        "e_trgb_cepheid_hosts",
+        "e_cchp_trgb_jagb"
+      ]
+    },
+    {
+      "cycle_id": "gamma_cepheid_trgb_doubleedge",
+      "decisive_eligible": false,
+      "heldout_edge_types": [
+        "direct_cross_calibration"
+      ],
+      "heldout_edges": [
+        "e_sh0es_cchp_jwst"
+      ],
+      "structurally_closed": true,
+      "tree_path_edges": [
+        "e_trgb_cepheid_hosts"
+      ]
+    }
+  ],
+  "edge_type_counts": {
+    "TODO-on-fetch-classify": 2,
+    "direct_cross_calibration": 4,
+    "route_readout_difference": 1
+  },
+  "status": "skipped_power_failed"
+}

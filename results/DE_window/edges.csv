@@ -1,0 +1,3 @@
+edge,inside_lambda,outside_lambda,factor_width,inside_passes,outside_passes
+negative_crunch,-0.000118446661166,-0.00027,2.27950705695,True,False
+positive_no_collapse,2.33138563172,5.31441,2.27950705695,True,False

@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: HSC_Y3
+manifest: data/manifests/hsc_y3.json
+fallback_policy: budgeted_original_photoz

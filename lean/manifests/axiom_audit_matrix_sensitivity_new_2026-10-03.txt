@@ -1,0 +1,74 @@
+'SbtCosmo.Derivation.ConePriceSensitivity.real_price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConePriceSensitivity.certificate_real_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConePriceSensitivity.price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConePriceSensitivity.price_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConePriceSensitivity.slater_local_finiteness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConePriceSensitivity.slater_price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceSensitivity.priceMatrix_tracePrice' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceSensitivity.tracePrice_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_matrix_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_matrix_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixPriceSensitivity.slater_price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityStationarity.matrix_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityStationarity.matrix_nonsmooth_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.actual_optimizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.actual_slater' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.actual_schur_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.tracePrice_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.actual_price_identified' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.actual_same_price_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.antisymmetric_price_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.one_direction_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.kink_matrix_feasible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.kink_actual_value' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.kink_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.MatrixSensitivityExamples.actual_nonsmooth_same_price_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

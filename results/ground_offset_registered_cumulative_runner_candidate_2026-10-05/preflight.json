@@ -1,0 +1,11 @@
+{
+  "actual_command": [
+    "/usr/bin/python3",
+    "/tmp/de_offset_registered_cumulative_audit_candidate.py"
+  ],
+  "actual_exit_code": 2,
+  "reason": "Source freeze owner remains active: PID662901 de_native_campaign_qualified_stream_build.py",
+  "registered_commands_started": 0,
+  "full_success_path_tested": false,
+  "goal_complete": false
+}

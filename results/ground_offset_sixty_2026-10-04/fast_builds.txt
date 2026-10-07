@@ -1,0 +1,64 @@
+Fresh12 tail-based source verdict builds;15 sources frozen before/after execution.
+Frozen source SHA256: a8dd8dd5a6c2cd17b0943430303cef236aeb82e854526af786402b18ebdfa351 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point004.lean
+Frozen source SHA256: f6863f1fd6b620829e04840f8926a870905e375678aec9e74578791f75b4efe0 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point005.lean
+Frozen source SHA256: 2aa576fb5333f0faf16c32cd9366bb3b02146976e92d525e2555bf679d9aaf6d lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point006.lean
+Frozen source SHA256: 009f342447f7b1511e8918f31743fe659c61ab5383786496cb17932bedb9c090 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point007.lean
+Frozen source SHA256: 94be704dd9b1d5e7d12a85edf4201cb6efe8c109652c1ab9777451659e547498 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point008.lean
+Frozen source SHA256: 1a3fa3bc7ddbb65469ddc142de2979be681693e8a19701104626583687cd6092 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point009.lean
+Frozen source SHA256: 6f64ca8fd930499959f8a3150ce44ceb11a8e00252cf297f36ff9111ae13b5d1 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point010.lean
+Frozen source SHA256: 93ca9af9d649b704cb776a143fe60ac581f2986f6e7821528bbff030466f1175 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point011.lean
+Frozen source SHA256: c8e6bcafacd4d4683825961d2947084df62d6ae99f120355901e06cf8ace9840 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point012.lean
+Frozen source SHA256: 07921e8fa2c41f483fc36dd75fea90682fc79fcad0c815cfdf14eed19cc9ae80 lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point013.lean
+Frozen source SHA256: 492f57b15ffbecb1151656aa83c32be0489f402753dba6b7aa88bd98417cc7cb lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point014.lean
+Frozen source SHA256: 4cbe6449328bcb833cecfc15ac1cd552ca365ae4ba00a4dc5ce8eeccb460b20d lean/SbtCosmo/Derivation/GroundOffsetSixtyTests/Point015.lean
+Frozen source SHA256: 7ea6e07ff9527994e8a145de4ad4a97961a52ee744dfd2e9930127d4ccc1ade7 lean/SbtCosmo/Derivation/GroundComplexCoordinateBudget.lean
+Frozen source SHA256: b9ee6712a6028056413c3c963db48b23f95f5dcd6de8edb1fc393885ab135a21 lean/SbtCosmo/Derivation/GroundComplexFiniteBudget.lean
+Frozen source SHA256: 5b08030c53dd74f98e20e255afc6eb56b6326a65539339ff9c26871e23b77d48 lean/SbtCosmo/Derivation/GroundOffsetSelectorBudget.lean
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004 (19s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005 (16s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006 (18s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007 (15s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008 (20s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009 (18s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010 (20s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011 (20s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012 (16s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013 (23s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014 (12s)
+Build completed successfully (9197 jobs).
+
+Fresh tests command: lake build SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015
+✔ [9197/9197] Built SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015 (19s)
+Build completed successfully (9197 jobs).

@@ -1,0 +1,46 @@
+import SbtCosmo.Derivation.GroundRationalInterval
+import SbtCosmo.Derivation.GroundPointCoordinates
+import SbtCosmo.Derivation.GroundResidualEnclosure
+import SbtCosmo.Derivation.GroundKernelTube
+import SbtCosmo.Derivation.GroundOriginalFirstTube
+
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Interval.point_sound
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Interval.add_sound
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Interval.neg_sound
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.mul_rectangle_bounds
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Interval.mul_sound
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Interval.abs_le_bound
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose_sound
+#print axioms SbtCosmo.Derivation.GroundRationalInterval.Expr.eval_sum
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_fromCoord
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.fromCoord_coord
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_norm_le
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.norm_le_coordinates
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_column
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_sum
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_smul
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_add
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.coord_sub
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.point_expansion
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.linear_action_entries
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.operator_norm_le_rows
+#print axioms SbtCosmo.Derivation.GroundPointCoordinates.matrixMap_apply
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.eval_uExpr
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.eval_energyExpr
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.eval_gradExpr
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.eval_sourceExpr
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.residualExpr_return
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.basisField_return
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.basisEnergy_return
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.derivativeExpr_return
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.correctedResidualExpr_return
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.defectExpr_return
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.defect_norm_bound
+#print axioms SbtCosmo.Derivation.GroundResidualEnclosure.corrected_residual_norm_bound
+#print axioms SbtCosmo.Derivation.GroundKernelTube.box_sound
+#print axioms SbtCosmo.Derivation.GroundKernelTube.certified_actual_root
+#print axioms SbtCosmo.Derivation.GroundOriginalFirstTube.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalFirstTube.original_positive_root
+#print axioms SbtCosmo.Derivation.GroundOriginalFirstTube.original_smooth_branch
+#print axioms SbtCosmo.Derivation.GroundOriginalFirstTube.zero_preconditioner_rejected
+#print axioms SbtCosmo.Derivation.GroundOriginalFirstTube.false_residual_budget_rejected

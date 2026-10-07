@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts",
+  "terminal_exit_code": 0,
+  "source_sha256": "373fe047ca0dfbe33e3a6d9b56876bdcc25c579d1dd2d3af1775d468230d6dca",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle20FiniteVerdicts.lean"
+  ],
+  "object_sha256": "df3a6e5a511eade57657dd171de85760123f3520b2f98749c47213c5d239961d"
+}

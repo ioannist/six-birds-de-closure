@@ -1,0 +1,19 @@
+Batch targets: ["SbtCosmo.Derivation.GroundSpectralTests.Test000", "SbtCosmo.Derivation.GroundSpectralTests.Test001"]
+✔ [8670/8671] Built SbtCosmo.Derivation.GroundSpectralTests.Test000 (101s)
+✔ [8671/8671] Built SbtCosmo.Derivation.GroundSpectralTests.Test001 (103s)
+Build completed successfully (8671 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundSpectralTests.Test002", "SbtCosmo.Derivation.GroundSpectralTests.Test003"]
+✔ [8671/8672] Built SbtCosmo.Derivation.GroundSpectralTests.Test002 (35s)
+✔ [8672/8672] Built SbtCosmo.Derivation.GroundSpectralTests.Test003 (36s)
+Build completed successfully (8672 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundSpectralTests.Test004", "SbtCosmo.Derivation.GroundSpectralTests.Test005"]
+✔ [8672/8673] Built SbtCosmo.Derivation.GroundSpectralTests.Test004 (32s)
+✔ [8673/8673] Built SbtCosmo.Derivation.GroundSpectralTests.Test005 (33s)
+Build completed successfully (8673 jobs).
+Terminal exit: 0
+Batch targets: ["SbtCosmo.Derivation.GroundSpectralTests.Test006"]
+✔ [8671/8671] Built SbtCosmo.Derivation.GroundSpectralTests.Test006 (26s)
+Build completed successfully (8671 jobs).
+Terminal exit: 0

@@ -1,0 +1,13 @@
+schema_version: 1
+experiment: E6
+plan: plan/experiments/E6-ide-accounting.md
+seed:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+datasets:
+  - DESI_DR2_BAO
+  - PLANCK_2018
+  - PANTHEON_PLUS
+  - DESI_RSD_FS
+status: skeleton_only_c0a

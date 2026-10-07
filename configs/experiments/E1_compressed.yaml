@@ -1,0 +1,119 @@
+schema_version: 1
+experiment: E1_compressed
+description: Fast E1 reproduction track using Planck 2018 compressed distance priors, DESI BAO, and SN Gaussian likelihoods.
+seeds:
+  numpy: 4242
+  python: 7
+  sampler: 7337
+priors:
+  cosmology:
+    omega_b:
+      prior: {min: 0.005, max: 0.1}
+      ref: {dist: norm, loc: 0.02236, scale: 0.00015}
+      proposal: 0.00012
+      latex: \omega_b
+    omega_cdm:
+      prior: {min: 0.001, max: 0.99}
+      ref: {dist: norm, loc: 0.1200, scale: 0.0012}
+      proposal: 0.001
+      latex: \omega_c
+    H0:
+      prior: {min: 20.0, max: 100.0}
+      ref: {dist: norm, loc: 67.4, scale: 0.4}
+      proposal: 0.25
+      latex: H_0
+    Omega_m:
+      derived: "lambda omega_b, omega_cdm, H0: (omega_b + omega_cdm + 0.06/93.14)/(H0/100.0)**2"
+      latex: \Omega_m
+  supernova:
+    sn_M:
+      prior: {min: -5.0, max: 5.0}
+      ref: {dist: norm, loc: 0.0, scale: 0.05}
+      proposal: 0.02
+      latex: \Delta\mu
+models:
+  lcdm:
+    label: lcdm
+    fixed:
+      w0_fld: -1.0
+      wa_fld: 0.0
+    sampled: {}
+  wcdm:
+    label: wcdm
+    fixed:
+      wa_fld: 0.0
+    sampled:
+      w0_fld:
+        prior: {min: -3.0, max: 1.0}
+        ref: {dist: norm, loc: -1.0, scale: 0.05}
+        proposal: 0.05
+        latex: w_0
+  w0wa:
+    label: w0wa
+    fixed: {}
+    sampled:
+      w0_fld:
+        prior: {min: -3.0, max: 1.0}
+        ref: {dist: norm, loc: -0.9, scale: 0.08}
+        proposal: 0.08
+        latex: w_0
+      wa_fld:
+        prior: {min: -3.0, max: 2.0}
+        ref: {dist: norm, loc: -0.4, scale: 0.2}
+        proposal: 0.2
+        latex: w_a
+combinations:
+  C1:
+    label: Planck 2018 compressed
+    datasets: [PLANCK_2018_COMPRESSED]
+  C2:
+    label: DESI DR2 BAO + Planck 2018 compressed
+    datasets: [PLANCK_2018_COMPRESSED, DESI_DR2_BAO]
+  C3:
+    label: DESI DR2 BAO + Planck 2018 compressed + Pantheon+
+    datasets: [PLANCK_2018_COMPRESSED, DESI_DR2_BAO, PANTHEON_PLUS]
+  C4:
+    label: DESI DR2 BAO + Planck 2018 compressed + Union3
+    datasets: [PLANCK_2018_COMPRESSED, DESI_DR2_BAO, UNION3]
+  C5:
+    label: DESI DR2 BAO + Planck 2018 compressed + DES-SN5YR
+    datasets: [PLANCK_2018_COMPRESSED, DESI_DR2_BAO, DES_SN5YR]
+samplers:
+  minimize:
+    method: bobyqa
+    ignore_prior: false
+    max_evals: 10000
+    best_of: 1
+    override_bobyqa:
+      rhoend: 0.01
+  mcmc:
+    burn_in: 0
+    max_samples: 3000
+    Rminus1_stop: 999.0
+    Rminus1_cl_stop: 999.0
+    learn_every: 50d
+    learn_proposal: true
+    output_every: 20s
+    proposal_scale: 1.6
+    max_tries: 200d
+run_modes:
+  validation:
+    mcmc_max_samples: 1200
+    seed_offset: 3000
+    sampler_overrides:
+      minimize:
+        max_evals: 2500
+        best_of: 1
+        override_bobyqa:
+          rhoend: 0.02
+      mcmc:
+        max_samples: 1200
+        learn_every: 30d
+        learn_proposal: true
+        output_every: 10s
+        proposal_scale: 1.2
+        Rminus1_stop: 999.0
+        Rminus1_cl_stop: 999.0
+  production:
+    mcmc_max_samples: 6000
+    seed_offset: 0

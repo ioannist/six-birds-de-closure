@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DES_SN5YR
+manifest: data/manifests/des_sn5yr.json
+fallback_policy: budgeted_published_summary

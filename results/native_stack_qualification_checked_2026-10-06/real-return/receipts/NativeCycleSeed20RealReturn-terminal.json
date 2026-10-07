@@ -1,0 +1,7 @@
+{
+  "module": "SbtCosmo.Derivation.NativeCycleSeed20.RealReturn",
+  "terminal_exit_code": 0,
+  "source_sha256": "08d8cc57103954f6a60f8fca493f1ebbbbc7fef976b7ba0ff6a10dc69ddca812",
+  "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "olean_sha256": "25f08297741b453049e09e96eafa846ca7604cee7b4f23f91f0310be08721473"
+}

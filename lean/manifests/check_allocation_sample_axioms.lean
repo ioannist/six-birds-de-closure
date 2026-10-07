@@ -1,0 +1,59 @@
+import SbtCosmo.Derivation.AllocationSampleData
+import SbtCosmo.Derivation.AllocationScreening
+import SbtCosmo.Derivation.AllocationSample
+import SbtCosmo.Derivation.AllocationSampleControls
+
+#print axioms SbtCosmo.Derivation.AllocationSampleData.parameter_bounds
+#print axioms SbtCosmo.Derivation.AllocationSampleData.budget_bounds
+#print axioms SbtCosmo.Derivation.AllocationSampleData.cells
+#print axioms SbtCosmo.Derivation.AllocationSampleData.price_mass_bounds
+#print axioms SbtCosmo.Derivation.AllocationSampleData.sweep_mass_bounds
+#print axioms SbtCosmo.Derivation.AllocationSampleData.source_shift_gaps
+#print axioms SbtCosmo.Derivation.AllocationSampleData.local_price_control
+#print axioms SbtCosmo.Derivation.AllocationSampleData.heterogeneity_order
+#print axioms SbtCosmo.Derivation.AllocationSampleData.original_offsets
+#print axioms SbtCosmo.Derivation.AllocationScreening.demand_margin_bounds
+#print axioms SbtCosmo.Derivation.AllocationScreening.demand_strict_parameter
+#print axioms SbtCosmo.Derivation.AllocationScreening.demand_offset_return
+#print axioms SbtCosmo.Derivation.AllocationScreening.selected_price_response_bounds
+#print axioms SbtCosmo.Derivation.AllocationScreening.selected_offset_screened
+#print axioms SbtCosmo.Derivation.AllocationScreening.utility_offset_return
+#print axioms SbtCosmo.Derivation.AllocationScreening.selected_cost_offset_return
+#print axioms SbtCosmo.Derivation.AllocationSample.weights_positive
+#print axioms SbtCosmo.Derivation.AllocationSample.curvatures_positive
+#print axioms SbtCosmo.Derivation.AllocationSample.budget_bounds
+#print axioms SbtCosmo.Derivation.AllocationSample.budgets_positive
+#print axioms SbtCosmo.Derivation.AllocationSample.response_cells
+#print axioms SbtCosmo.Derivation.AllocationSample.response_mass_bounds
+#print axioms SbtCosmo.Derivation.AllocationSample.original_price_bounds
+#print axioms SbtCosmo.Derivation.AllocationSample.actual_kkt
+#print axioms SbtCosmo.Derivation.AllocationSample.actual_global_optimal
+#print axioms SbtCosmo.Derivation.AllocationSample.actual_unique_optimizer
+#print axioms SbtCosmo.Derivation.AllocationSample.original_active
+#print axioms SbtCosmo.Derivation.AllocationSample.original_allocations_positive
+#print axioms SbtCosmo.Derivation.AllocationSample.original_stationarity
+#print axioms SbtCosmo.Derivation.AllocationSample.original_heterogeneity
+#print axioms SbtCosmo.Derivation.AllocationSample.screening
+#print axioms SbtCosmo.Derivation.AllocationSample.screened_positive_price
+#print axioms SbtCosmo.Derivation.AllocationSample.screened_active
+#print axioms SbtCosmo.Derivation.AllocationSample.screened_stationarity
+#print axioms SbtCosmo.Derivation.AllocationSample.screened_value
+#print axioms SbtCosmo.Derivation.AllocationSample.original_offsets_return
+#print axioms SbtCosmo.Derivation.AllocationSample.actual_value_derivative
+#print axioms SbtCosmo.Derivation.AllocationSample.original_negative_value_derivative
+#print axioms SbtCosmo.Derivation.AllocationSample.sweep_active
+#print axioms SbtCosmo.Derivation.AllocationSample.sweep_slack
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_kkt
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_unconstrained_optimal
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_unconstrained_unique
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.local_controls
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.local_kkt
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.local_selector_return
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.local_selected_prices_unequal
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.local_budget_total
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.local_allocation_differs
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_profile_return
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_signed_shift_gaps
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_offset_mono
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.source_movement_large
+#print axioms SbtCosmo.Derivation.AllocationSampleControls.original_source_controls

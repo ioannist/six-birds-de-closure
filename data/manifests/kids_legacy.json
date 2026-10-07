@@ -1,0 +1,99 @@
+{
+  "dataset": "KIDS_LEGACY",
+  "release": "arXiv:2503.19441",
+  "access": "official_likelihood",
+  "fetch_url": "https://kids.strw.leidenuniv.nl/sci_data/KiDS_Legacy_cosmic_shear_data_release.tar.gz",
+  "fetched_utc": "2026-06-01",
+  "license": "KiDS public release; cite Wright et al. 2025",
+  "citation": "Wright et al. 2025, arXiv:2503.19441",
+  "raw_files": [
+    {
+      "path": "data/raw/kids_legacy/KiDS_Legacy_cosmic_shear_data_release.tar.gz",
+      "sha256": "7fdf214cbb54e51d5ca385d79a4590750d3c5dc9fe6803460bab8ed841c57f77",
+      "bytes": 131095396
+    }
+  ],
+  "processed": {
+    "data_vector": {
+      "path": "data/processed/kids_legacy/data_vector.npy",
+      "sha256": "a81febeae7848d072d79bca3499e3d5bccb54d2fda1847c9e6149884ec039054",
+      "shape": [
+        126
+      ],
+      "dtype": "float64"
+    },
+    "covariance": {
+      "path": "data/processed/kids_legacy/covariance.npy",
+      "sha256": "c52ef5fe6ee82862b5497756c082e46ee3c8f5d0adc5d13cc789efd6325943d1",
+      "shape": [
+        126,
+        126
+      ],
+      "dtype": "float64"
+    }
+  },
+  "bins": {
+    "tomographic_bins": 6,
+    "bin_pairs": 21,
+    "statistic": "COSEBIs E-mode",
+    "modes": "1-6"
+  },
+  "scale_cuts": {
+    "applied": true,
+    "note": "fiducial COSEBIs E-mode, nmax_cosebis=6, keep_ang_en 0.5 6.5 (modes 1-6, all 21 pairs)",
+    "sweepable_in_E5": true
+  },
+  "nuisance_inputs": {
+    "mass_dependent_ia": {
+      "status": "official",
+      "source": "CosmoPipe ia_models/mass_dependent_ia used by the KiDS-Legacy COSEBIs pipeline",
+      "parameter_order": [
+        "A_IA",
+        "beta",
+        "log10_M_mean_1",
+        "log10_M_mean_2",
+        "log10_M_mean_3",
+        "log10_M_mean_4",
+        "log10_M_mean_5",
+        "log10_M_mean_6"
+      ],
+      "files": [
+        {
+          "path": "data/raw/kids_massdep_ia/massdep_cov.txt",
+          "sha256": "7c47b9b3051a7772e58086f78ec7e136b32a8c9a5bedbd31e8b44580468ab328",
+          "shape": [
+            8,
+            8
+          ]
+        },
+        {
+          "path": "data/raw/kids_massdep_ia/massdep_means.txt",
+          "sha256": "34ea01d1ea1658f2e89e2a55a350662a52f5433718b26cc93b7fe81ec8933e9b"
+        },
+        {
+          "path": "data/raw/kids_massdep_ia/mass_dependent_ia_model.py",
+          "sha256": "3c1052ee6508a2ddb2b9d367323e664b872a77feaa61b2a875d2941999c9694e"
+        },
+        {
+          "path": "data/raw/kids_massdep_ia/module.yaml",
+          "sha256": "df4950741ef1bf363f93e5b845bc2f0992f81d9759357b7c014744a33234fb59"
+        }
+      ]
+    }
+  },
+  "route": null,
+  "staging_axis": "scale_cut",
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "shear-only Gaussian likelihood without RSD coupling",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "extracted 2026-06-01 from KiDS_Legacy_cosebis.fits (En + COVMAT En-block 0:420)",
+  "provenance": "data/processed/kids_legacy/provenance.json",
+  "validation": {
+    "PD": true,
+    "total_SNR": 28.61
+  },
+  "data_available": true
+}

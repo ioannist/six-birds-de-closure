@@ -1,0 +1,10 @@
+family,tracer,z_eff,k_cross_H_0.05,k_cross_H_0.30,realistic_kmax,reaches_strong_by_realistic_kmax,source
+BOSS_DR12_full_shape,LOWZ_z0.38,0.380000,0.142133,0.282567,0.200000,False,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_mid_z0.51,0.510000,0.145690,0.295155,0.200000,False,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+BOSS_DR12_full_shape,CMASS_high_z0.61,0.610000,0.148029,0.307519,0.200000,False,"BOSS DR12 Fourier-space analysis / Beutler et al. 2017, zeff={0.38,0.51,0.61}"
+DESI_DR1_full_shape,BGS,0.295000,0.139348,0.274805,0.200000,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG1,0.510000,0.145690,0.295155,0.200000,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG2,0.706000,0.150057,0.321786,0.200000,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,LRG3,0.930000,0.154345,0.348739,0.200000,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,ELG2,1.317000,0.161952,,0.200000,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page
+DESI_DR1_full_shape,QSO,1.491000,0.166368,,0.200000,False,DESI 2024 V Full-Shape Table 1 / DESI DR1 full-shape public page

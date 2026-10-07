@@ -1,0 +1,90 @@
+{
+  "helpers": {
+    "de_native_campaign_parser_stack_recovery.py": {
+      "original_path": "/home/repos/six-birds-de-closure/scripts/de_native_campaign_verify.py",
+      "new_path": "/tmp/de_native_campaign_parser_stack_recovery.py",
+      "historical_sha256": "de071d4fca3db4cf45441851be5c44816f304e1dd2b3f921008121c6ccdbada4",
+      "new_sha256": "2ac9c5fa7c5075f5f35becf81e5d1163fdbb8d8e03a8be26e1f5b92ae6067036",
+      "changed_functions": [
+        "statement_entries"
+      ],
+      "new_functions": [],
+      "unchanged_function_asts": 13
+    },
+    "de_native_registered_verify_stack_recovery.py": {
+      "original_path": "/tmp/de_native_registered_verify_aggregate_recovery.py",
+      "new_path": "/tmp/de_native_registered_verify_stack_recovery.py",
+      "historical_sha256": "9fa72ceaae452557e38bb8000238290aa0b06dbe9c61a6fc0d4ae202de5254ed",
+      "new_sha256": "127e466b13276f012307af5b069715c56e83ddfad33b8def4d28442e39255892",
+      "changed_functions": [
+        "proof_gates",
+        "require_freezes_released",
+        "registered"
+      ],
+      "new_functions": [
+        "stack_audit_gate"
+      ],
+      "unchanged_function_asts": 13
+    },
+    "de_native_registered_install_stack_recovery.py": {
+      "original_path": "/tmp/de_native_registered_install_aggregate_recovery.py",
+      "new_path": "/tmp/de_native_registered_install_stack_recovery.py",
+      "historical_sha256": "fcbe92d31244f2c3a10e30e1dd5911ff86540cb42e9034740a79f22ecc5d95ab",
+      "new_sha256": "7d2d5a5b57122692a7f7e417f36c0101c38becf0c036bd140b11c7e69f6ab92c",
+      "changed_functions": [],
+      "new_functions": [],
+      "unchanged_function_asts": 11
+    },
+    "de_native_registered_build_stack_recovery.py": {
+      "original_path": "/tmp/de_native_registered_build_aggregate_recovery.py",
+      "new_path": "/tmp/de_native_registered_build_stack_recovery.py",
+      "historical_sha256": "5d02998fdf50f3a481dfe7f8d3645d4e37f2d0433e8cb29b418a7ebe28d6692b",
+      "new_sha256": "9b5652b7927efe522de26d404e788d069e45c6265aab6410b08985095365996a",
+      "changed_functions": [
+        "main"
+      ],
+      "new_functions": [],
+      "unchanged_function_asts": 1
+    },
+    "de_offset_header_install_stack_recovery.py": {
+      "original_path": "/tmp/de_offset_header_install_aggregate_recovery.py",
+      "new_path": "/tmp/de_offset_header_install_stack_recovery.py",
+      "historical_sha256": "0a207bcae43a20e8080edd735e75280b6c0db44e23eff242d7cb9588587d7c35",
+      "new_sha256": "7abfb38d5b5bd84d274a2e23ad3d011fa571f1385976aad9c5885e67f7851eff",
+      "changed_functions": [
+        "main"
+      ],
+      "new_functions": [],
+      "unchanged_function_asts": 9
+    },
+    "de_offset_registered_cumulative_audit_stack_recovery.py": {
+      "original_path": "/tmp/de_offset_registered_cumulative_audit_aggregate_recovery.py",
+      "new_path": "/tmp/de_offset_registered_cumulative_audit_stack_recovery.py",
+      "historical_sha256": "c4cbf7288ce6ae17be922e3f1d80280ae4d51ec0d10fa417c5b289ccf90dd080",
+      "new_sha256": "13e96dc21acc11d795b56cd0bbb4cedac797e7511c24234532ed26485d3ecb57",
+      "changed_functions": [
+        "main"
+      ],
+      "new_functions": [],
+      "unchanged_function_asts": 1
+    },
+    "de_ground_offset_transport_verify_stack_recovery.py": {
+      "original_path": "/tmp/de_ground_offset_transport_verify_registered_recovery.py",
+      "new_path": "/tmp/de_ground_offset_transport_verify_stack_recovery.py",
+      "historical_sha256": "f3bb9acd6233a189bf4ab67ee93dc41b5819a53512efb6dc134e4a6b5916234a",
+      "new_sha256": "495f2316792c8dfe46b54ecdce1fbe8c0d375b6f2ac8d6ac32dbc33648e18248",
+      "changed_functions": [
+        "verify"
+      ],
+      "new_functions": [],
+      "unchanged_function_asts": 6
+    }
+  },
+  "registered_source_candidate_unchanged": true,
+  "native_modules": 1772,
+  "statement_queries": 20798,
+  "full_cumulative_axiom_queries": 32574,
+  "parser_actual_statement_headings_checked": 20628,
+  "corrupted_heading_rejected": true,
+  "scope": "Prepared isolated helper migration; proof and registered success remain pending"
+}

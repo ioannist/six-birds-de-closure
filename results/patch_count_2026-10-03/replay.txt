@@ -1,0 +1,1 @@
+Reified 12×32 and 12×128 original populations; 12×64 baseline replay and false-rank controls pass.

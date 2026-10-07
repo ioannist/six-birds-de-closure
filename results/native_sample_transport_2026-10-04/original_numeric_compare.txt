@@ -1,0 +1,13 @@
+sample 0 coupling 0.0 sixty verdict True
+sample 1 coupling 0.1 sixty verdict True
+sample 2 coupling 0.3 sixty verdict True
+sample 3 coupling 0.5 sixty verdict True
+sample 4 coupling 1.0 sixty verdict True
+sample 5 coupling 2.0 sixty verdict True
+sample 6 coupling 3.0 sixty verdict True
+sample 7 coupling 5.0 sixty verdict True
+sample 8 coupling 10.0 sixty verdict True
+sample 9 coupling 15.0 sixty verdict False
+sample 10 coupling 20.0 sixty verdict False
+sample 11 coupling 30.0 sixty verdict False
+All12 original numerical sixty-update verdicts agree with the exact native-source classification.

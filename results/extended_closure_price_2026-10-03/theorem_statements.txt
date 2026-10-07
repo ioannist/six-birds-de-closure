@@ -1,0 +1,179 @@
+SbtCosmo.Derivation.ExtendedClosurePrice.finite_cost_guards.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B : ℝ}
+  (hfinite :
+    SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B ≠ ⊤ ∧
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B ≠ ⊥) :
+  (SbtCosmo.Derivation.ConvexClosurePrice.feasibleCosts (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+        (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B).Nonempty ∧
+    BddBelow
+      (SbtCosmo.Derivation.ConvexClosurePrice.feasibleCosts (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+        (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B)
+SbtCosmo.Derivation.ExtendedClosurePrice.value_domain_return.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B : ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hne :
+    (SbtCosmo.Derivation.ConvexClosurePrice.feasibleCosts (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+        (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B).Nonempty)
+  (hbb :
+    BddBelow
+      (SbtCosmo.Derivation.ConvexClosurePrice.feasibleCosts (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+        (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B)) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B =
+    ↑(SbtCosmo.Derivation.ConvexClosurePrice.budgetValue (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+        (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B)
+SbtCosmo.Derivation.ExtendedClosurePrice.finite_value_domain_return.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B : ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hfinite :
+    SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B ≠ ⊤ ∧
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B ≠ ⊥) :
+  (SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B).toReal =
+    SbtCosmo.Derivation.ConvexClosurePrice.budgetValue (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+      (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B
+SbtCosmo.Derivation.ExtendedClosurePrice.primal_domain_return.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B : ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (h : SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star) :
+  SbtCosmo.Derivation.ConvexClosurePrice.PrimalOptimum (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+    (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B star
+SbtCosmo.Derivation.ExtendedClosurePrice.optimum_value.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal} {energy : E → ℝ}
+  {B : ℝ} {star : E} (h : SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B = J star
+SbtCosmo.Derivation.ExtendedClosurePrice.certificate_domain_return.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B p : ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (h :
+    SbtCosmo.Derivation.ConvexClosurePrice.DualCertificate (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+      (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy B p star) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star
+SbtCosmo.Derivation.ExtendedClosurePrice.certificate_primal_optimum.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B p : ℝ} {star : E}
+  (h : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star
+SbtCosmo.Derivation.ExtendedClosurePrice.certificate_strong_duality.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B p : ℝ} {star : E}
+  (h : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B p =
+    SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B
+SbtCosmo.Derivation.ExtendedClosurePrice.weak_duality.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal} {energy : E → ℝ}
+  {B q : ℝ} {star : E} (h : SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star) (hq : 0 ≤ q) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B q ≤
+    SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B
+SbtCosmo.Derivation.ExtendedClosurePrice.certificate_dual_finite.{u_1} {E : Type u_1} {A : Set E} {J : E → EReal}
+  {energy : E → ℝ} {B p : ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (h : SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B p star) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B p ≠ ⊤ ∧
+    SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B p ≠ ⊥
+SbtCosmo.Derivation.ExtendedClosurePrice.epigraph_domain_convex.{u_1} {E : Type u_1} [AddCommGroup E] [Module ℝ E]
+  {A : Set E} {J : E → EReal} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (h : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J)) :
+  Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+SbtCosmo.Derivation.ExtendedClosurePrice.epigraph_objective_convex.{u_1} {E : Type u_1} [AddCommGroup E] [Module ℝ E]
+  {A : Set E} {J : E → EReal} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (h : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J)) :
+  ConvexOn ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+    (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J)
+SbtCosmo.Derivation.ExtendedClosurePrice.positive_price_certificate.{u_1} {E : Type u_1} [AddCommGroup E] [Module ℝ E]
+  {A : Set E} {J : E → EReal} {energy : E → ℝ} {B d lo hi : ℝ} {star : E} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J)) (he : ConvexOn ℝ A energy)
+  (hstar : SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J energy B star) (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T ≠ ⊥)
+  (hd : HasDerivAt (fun T => (SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy T).toReal) d B) (hs : d < 0) :
+  ∃ price,
+    price = -d ∧
+      0 < price ∧
+        energy star = B ∧
+          SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J energy B price star ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J energy B price =
+              SbtCosmo.Derivation.ExtendedClosurePrice.value A J energy B
+SbtCosmo.Derivation.ExtendedSchurClosurePrice.positive_schur_price.{u_1, u_2, u_3, u_4} {n : Type u_1} {m : Type u_2}
+  {e : Type u_3} [Fintype n] [Fintype m] [Fintype e] [DecidableEq n] [DecidableEq e] {E : Type u_4} [AddCommGroup E]
+  [Module ℝ E] {W : Matrix m m ℝ} (hW : W.PosSemidef) (L : Matrix n e ℝ) (D : E →ᵃ[ℝ] Matrix m e ℝ) {A : Set E}
+  {J : E → EReal} {B d lo hi : ℝ} {star : E} (hA : Convex ℝ A) (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J))
+  (hstar :
+    SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum A J
+      (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B star)
+  (hB : B ∈ Set.Ioo lo hi)
+  (hfinite :
+    ∀ T ∈ Set.Ioo lo hi,
+      SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) T ≠
+          ⊤ ∧
+        SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) T ≠
+          ⊥)
+  (hd :
+    HasDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+            (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) T).toReal)
+      d B)
+  (hs : d < 0) :
+  ∃ price,
+    price = -d ∧
+      0 < price ∧
+        SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D star) = B ∧
+          SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate A J
+              (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B price star ∧
+            SbtCosmo.Derivation.ExtendedClosurePrice.dualValue A J
+                (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B price =
+              SbtCosmo.Derivation.ExtendedClosurePrice.value A J
+                (fun x => SbtCosmo.Derivation.SchurClosurePrice.schurEnergy W L (D x)) B
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_no_bottom (x : ℝ) :
+  SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective x ≠ ⊥
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_domain :
+  SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective =
+    Set.Ici 0
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.epigraph_eq :
+  SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective =
+    {p | 0 ≤ p.1 ∧ SbtCosmo.Derivation.SchurClosurePriceExamples.objective p.1 ≤ p.2}
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective_epigraph_convex :
+  Convex ℝ
+    (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective)
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.sqrt_primal_optimum {B : ℝ} (hB : 0 < B) (hu : B < 4) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.PrimalOptimum Set.univ
+    SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective SbtCosmo.Derivation.SchurClosurePriceExamples.energy B √B
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_value_formula {B : ℝ} (hB : 0 < B) (hu : B < 4) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+      SbtCosmo.Derivation.SchurClosurePriceExamples.energy B =
+    ↑((√B - 2) ^ 2)
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.local_finiteness {B : ℝ} (hB : 0 < B) (hu : B < 4) :
+  SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+        SbtCosmo.Derivation.SchurClosurePriceExamples.energy B ≠
+      ⊤ ∧
+    SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+        SbtCosmo.Derivation.SchurClosurePriceExamples.energy B ≠
+      ⊥
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_value_derivative :
+  HasDerivAt
+    (fun B =>
+      (SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ
+          SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+          SbtCosmo.Derivation.SchurClosurePriceExamples.energy B).toReal)
+    (-1) 1
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.actual_positive_certificate :
+  SbtCosmo.Derivation.ExtendedClosurePrice.DualCertificate Set.univ
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1
+      1 1 ∧
+    SbtCosmo.Derivation.ExtendedClosurePrice.dualValue Set.univ
+          SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+          SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 1 =
+        SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ
+          SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+          SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 ∧
+      SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+          SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 =
+        1
+SbtCosmo.Derivation.ExtendedClosurePriceExamples.unrestricted_toReal_false_value :
+  SbtCosmo.Derivation.ConvexClosurePrice.budgetValue Set.univ
+        (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective
+          SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective)
+        SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 =
+      0 ∧
+    SbtCosmo.Derivation.ExtendedClosurePrice.value Set.univ SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+          SbtCosmo.Derivation.SchurClosurePriceExamples.energy 1 =
+        1 ∧
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective (-1) = ⊤

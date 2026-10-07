@@ -1,0 +1,5 @@
+route_a,route_b,parameter,unsigned_residual,calibration_statistic,null_threshold_p95,status
+sn_only,joint,Omega_m,0.0,9.629761049875103,8.327825973219865,powered_probe_localized_dataset_tension_audit
+sn_only,joint,A,0.4167916463884698,9.629761049875103,8.327825973219865,powered_probe_localized_dataset_tension_audit
+bao_only,joint,Omega_m,0.0,9.629761049875103,8.327825973219865,powered_probe_localized_dataset_tension_audit
+bao_only,joint,A,0.11599354065496803,9.629761049875103,8.327825973219865,powered_probe_localized_dataset_tension_audit

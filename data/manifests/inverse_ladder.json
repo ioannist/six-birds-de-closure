@@ -1,0 +1,25 @@
+{
+  "dataset": "INVERSE_LADDER",
+  "release": "derived from E1 committed posterior summaries",
+  "access": "summary_posterior",
+  "fetch_url": "derived-no-download",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "Derived product; inherits DESI/Planck/SN citations",
+  "citation": "Derived from DESI DR2, Planck 2018, and SN inputs",
+  "raw_files": [{"path": "results/E1/posteriors/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/inverse_ladder/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/inverse_ladder/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "BAO/SN compression and completion choices are staging axes"},
+  "route": "r1_cmb_to_bao|r2_bao_to_sn",
+  "staging_axis": "bao_compression|sn_sample|completion",
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "inherits upstream fallback status from E1 data choices",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

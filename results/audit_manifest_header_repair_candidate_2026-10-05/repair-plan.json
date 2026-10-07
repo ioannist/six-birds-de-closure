@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-05T11:12:04.165470+00:00",
+  "manifests": {
+    "committed": {
+      "before_sha256": "3e6ec8fbbf79a40210b690afe444893c3f79b0106dafeed910134bd4d5ec657d",
+      "repaired_sha256": "6dabee65767396d24ab85a9b232845dbe9085503e960bca12124db99a03a7d92",
+      "queries": 4867,
+      "imports": 1519,
+      "import_occurrences_preserved": true,
+      "nonimport_bytes_preserved": true,
+      "query_order_preserved": true
+    },
+    "current": {
+      "before_sha256": "084036c9beb6dee377c7504cef2c45eecf89682b40717764f4af8121472770c4",
+      "repaired_sha256": "b4e01f02aab47d289b45211bdd9c8fcbe781faa13900f03a010e5567103c18ee",
+      "queries": 11776,
+      "imports": 1965,
+      "import_occurrences_preserved": true,
+      "nonimport_bytes_preserved": true,
+      "query_order_preserved": true
+    },
+    "native": {
+      "before_sha256": "cd110eb6e72ec8a24b303bf6596909937d6652ae657f77a4821f6dcfe7330d58",
+      "repaired_sha256": "7476e63d229ff43253db1b08a200b4e4aeb1edb30d1402e731ba3ae47785a8d2",
+      "queries": 32565,
+      "imports": 3736,
+      "import_occurrences_preserved": true,
+      "nonimport_bytes_preserved": true,
+      "query_order_preserved": true
+    }
+  },
+  "registered_target": "lean/manifests/check_axioms.lean",
+  "current_registered_source_sha256": "084036c9beb6dee377c7504cef2c45eecf89682b40717764f4af8121472770c4",
+  "historical_committed_manifest_layout_also_invalid": true,
+  "committed_query_prefix_preserved": 4867,
+  "current_query_prefix_preserved": 11776,
+  "prospective_native_query_count": 32565,
+  "raw_byte_prefix_preservation_replaced_by_import_vector_and_nonimport_body_preservation": true,
+  "control_commands": [
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/de_audit_manifest_header_repair/late-import.lean"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure/lean",
+      "terminal_exit_code": 1,
+      "source_sha256": "f6f95e77269e3184b379225c1b7c36a47006d0f37ed0abea605c69402f0d47d1",
+      "log_sha256": "d38a06cb2c6936715c8a84bcded46f72df162e9ceb15f633bb4d530e72aa0722"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "/tmp/de_audit_manifest_header_repair/header-imports.lean"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure/lean",
+      "terminal_exit_code": 0,
+      "source_sha256": "619f42eb4748e19e86c1639d2e9f086ca5132657516bce6a91253b249ca39cd6",
+      "log_sha256": "81e91c265c6a47df073e1ada6a37402d3a31961ab4a0dc7117348a3394fa7800"
+    }
+  ],
+  "native_installation_plan_sha256": "538492acf994324adde852341dfe697d986fd9b523da0ac47d707d03df8b1785",
+  "fresh_private_11776_audit_pending": true,
+  "registered_sources_changed": false,
+  "live_frozen_sources_changed": false,
+  "proofs_changed": false,
+  "paper_edited": false,
+  "goal_complete": false
+}

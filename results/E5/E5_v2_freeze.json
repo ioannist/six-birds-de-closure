@@ -1,0 +1,18 @@
+{
+  "carrier": {
+    "path": "plan/E5_CARRIER_REALIZATION.md",
+    "sha256": "c9ca48737e10b61f40cc70c9e53a5b2c62afcb892390c21d8d70dfd4b92dc7dc"
+  },
+  "design_freeze": {
+    "path": "plan/E5_DESIGN_FREEZE.md",
+    "sha256": "fc09d10726b97814d49f96d7fdf2a1432f0ef4eb4a694e38fb459d38b9ff7997"
+  },
+  "e5_manifest": {
+    "path": "data/manifests/e5_growth_currency_inputs.json",
+    "sha256": "e31fbfa0317108caf008bf5999f03885ff6fae16f8d9fa0867dba966ced0973d"
+  },
+  "gates": {
+    "path": "plan/07-pass-fail-gates.md",
+    "sha256": "95018f9388cbc9c6815677e9fcc1896c939ed46e83e4a6966cb46b31d30ed7ee"
+  }
+}

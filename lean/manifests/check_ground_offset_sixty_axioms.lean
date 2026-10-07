@@ -1,0 +1,583 @@
+import SbtCosmo.Derivation.GroundComplexCoordinateBudget
+import SbtCosmo.Derivation.GroundComplexFiniteBudget
+import SbtCosmo.Derivation.GroundOffsetSelectorBudget
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016
+import SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016
+import SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017
+import SbtCosmo.Derivation.GroundOriginalOffsetSixty
+
+#print axioms SbtCosmo.Derivation.GroundComplexCoordinateBudget.real_component_le_l2
+#print axioms SbtCosmo.Derivation.GroundComplexCoordinateBudget.imag_component_le_l2
+#print axioms SbtCosmo.Derivation.GroundComplexFiniteBudget.box_l2_bound
+#print axioms SbtCosmo.Derivation.GroundComplexFiniteBudget.tests_of_budgets
+#print axioms SbtCosmo.Derivation.GroundComplexFiniteBudget.fails_of_update
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.response_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.selector_derivative_bound
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.selector_lipschitz
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.reflected_tail_in_ball
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.euclidean_tail_bound
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.input_on_ball
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.selector_tail_bound
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSelectorBudget.sourced_potential_bounds
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step037.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step038.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step039.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step040.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step041.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step042.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step043.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step044.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step045.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step046.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step047.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step048.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step049.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step050.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step051.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step052.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step053.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step054.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step055.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step056.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step057.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step058.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.Step059.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step040.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step041.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step042.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step043.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step044.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step045.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step046.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step047.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step048.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step049.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step050.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step051.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step052.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step053.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step054.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step055.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step056.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step057.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step058.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.Step059.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step023.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step024.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step025.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step026.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step027.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step028.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step029.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step030.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step031.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step032.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step033.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step034.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step035.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step036.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step037.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step038.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step039.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step040.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step041.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step042.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step043.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step044.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step045.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step046.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step047.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step048.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step049.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step050.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step051.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step052.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step053.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step054.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step055.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step056.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step057.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step058.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.Step059.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step016.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step017.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step018.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step019.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step020.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step021.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step022.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step023.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step024.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step025.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step026.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step027.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step028.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step029.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step030.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step031.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step032.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step033.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step034.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step035.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step036.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step037.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step038.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step039.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step040.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step041.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step042.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step043.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step044.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step045.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step046.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step047.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step048.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step049.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step050.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step051.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step052.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step053.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step054.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step055.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step056.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step057.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step058.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.Step059.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step052.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step053.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step054.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step055.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step056.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step057.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step058.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.Step059.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.seams
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point000.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.seams
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point002.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.seams
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point003.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.seams
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point016.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.seams
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyPrefix.Point017.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.distance_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_candidate_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_potential_bounds
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point000.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.gap_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.difference_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.last_update_fail
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point001.actual_four_source_tests_fail
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.gap_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.difference_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.last_update_fail
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point002.actual_four_source_tests_fail
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.distance_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_candidate_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_potential_bounds
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point003.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point004.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point005.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point006.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point007.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point008.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point009.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point010.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point011.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point012.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point013.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point014.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.selector_rows
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.candidate_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.update_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point015.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.distance_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.source_bounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_candidate_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_candidate_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_update_distance
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_potential_bounds
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point016.actual_four_source_tests
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.previous_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.current_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.gap_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.difference_enclosed
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.last_update_fail
+#print axioms SbtCosmo.Derivation.GroundOffsetSixtyTests.Point017.actual_four_source_tests_fail
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetSixty.original_sixty_verdict
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetSixty.failed_offsets
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetSixty.passing_count
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsetSixty.failing_count

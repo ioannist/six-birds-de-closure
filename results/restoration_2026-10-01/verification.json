@@ -1,0 +1,54 @@
+{
+  "axioms": {
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "check_script_sha256": "f0859c9101626a74dc455813429810285489069f4ffd2ef627a0999a90919529",
+    "checked_theorems": 85,
+    "command": "lake env lean manifests/check_axioms.lean",
+    "raw_audit_sha256": "0756da9e12b90716ccea2efc0cca4f35a56b56e616c1fbc037f69febf6641c16",
+    "working_directory": "lean"
+  },
+  "baseline_commit": "2a8a33a",
+  "construction_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python scripts/de_restoration_constructions.py --check-sibling",
+  "construction_receipt_sha256": "db6e39740fe6c54a5179947abfacf26a4641212d5adbd0ecef84278f9f0e631a",
+  "date": "2026-10-01",
+  "lean": {
+    "command": "lake build",
+    "mathlib_revision": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "result": "Build completed successfully (3154 jobs).",
+    "toolchain": "leanprover/lean4:v4.28.0",
+    "working_directory": "lean"
+  },
+  "python": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python -m pytest -q",
+    "environment": "sbt-de",
+    "result": "107 passed, 19 warnings in 47.56s"
+  },
+  "scope": "Additional equality-ledger and projected-force carriers, not unchanged Step26 or a physical bridge. Frozen-base prior obstruction uses rational decimal inputs and a fixed band.",
+  "test_source_hashes": {
+    "tests/test_audits_contract.py": "a562bc1e4af76c763856199730f677e904aa1c4f166c3dbd0bb4cb2026227a2b",
+    "tests/test_de_audit.py": "beb3f1d77214dbc949caba5b772b3cd93b213de701aaf92345274a65f0b86b0e",
+    "tests/test_de_dual.py": "b2c5e6a236eb7f53500e35f45ddf0f499b9b840bb815c06a87ed58246192eb36",
+    "tests/test_de_measure.py": "4835026992439b246595e99568f034a8416f174e1a1555d228cea47ff66c03ea",
+    "tests/test_de_window.py": "247af5a570bb0b7d2d5a5fa41fff5ac5e4b82b853e1ce3ab163b0cc1ef8ee165",
+    "tests/test_determinism.py": "4bf19de7140e179fc2e2e01b72eb70cb18b902fbe89c6a65375bb972a7c17b0e",
+    "tests/test_e5_manifest.py": "c997485eec5356edf09bd6c384b7c80c2527a1ca1a6251058399396de0995d0d",
+    "tests/test_e5_nonvac.py": "6d3dadff6fb2ff3bcacc637a58985ffdcf4ce14b4da522a07ad17eefbbe24509",
+    "tests/test_e5sp_manifest.py": "d0a46fabf343197a33b398b6e47f1744e32d3cce85f38c8e0b220a51c2495f98",
+    "tests/test_forward_model.py": "6cd531553598abcfa050b4e0ac1a321ec354286353de985d22f74ed4bbfed550",
+    "tests/test_gates.py": "cb526068bdd2edfb995b1043493de0142d98827912b68a9b10b8bddbeceafcc9",
+    "tests/test_hubble_prediction_math.py": "94782dda8a967e91ec2b8988eb586036968483c3e9ba564bea2cbc2f66adf014",
+    "tests/test_imports_layering.py": "b58f0c61c7457c300eaa5d31103e3137202c922ff108da016479a07871727732",
+    "tests/test_manifest_schema.py": "0523dde9e5e7f811145a6d3d3b5374a336e6166138c15b305522cd62e3d69aaf",
+    "tests/test_math_review.py": "db29f8b660483605aa53ca63cbd9b2110ac56b9ef24b141df9afd114d57fa78d",
+    "tests/test_naming.py": "f0f6667e6f33e1f631937239a378837b6e1cf29570698da2306436ad216d9f32",
+    "tests/test_r0_manifest.py": "b30660a8eade453211ef4f31651c760388ef21876287a6dadb8e25b38cd700df",
+    "tests/test_registry.py": "14e4470a621f840869929461cb8a6342bf3f9b3229928273cc10f4442e288171",
+    "tests/test_restoration_constructions.py": "51c7afa0bf3a48eac6a0dfb364e0e26c90b50d58294cef71ba6569b39018442b",
+    "tests/test_seeding.py": "aac9a3e75a3d86ea151124f78aa3f8a63c4175509d40b2c8855bd7489adca76e",
+    "tests/test_xi_single_source.py": "f795a16777279fe450e85c6e50ed6b9d848b15acd509e56a69ba4b97cc45951e"
+  }
+}

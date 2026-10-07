@@ -1,0 +1,274 @@
+{
+  "H_closed_anchoring": "free",
+  "blinding_status": "with-values-known",
+  "bridge_terms": {
+    "Cepheid": "positive SN/M_B ladder bridge; a2<0 predicts positive local-ladder delta_H0",
+    "JAGB": "positive SN/M_B ladder bridge with smaller bridge weight than TRGB",
+    "M_B": "shared SN zero-point bridge, represented through Cepheid/TRGB/JAGB route weights",
+    "TRGB": "positive SN/M_B ladder bridge with smaller bridge weight than Cepheid",
+    "r_d": "negative early/inverse bridge; a2<0 predicts negative early-route delta_H0",
+    "siren": "near-local independent distance bridge with weak Xi coupling",
+    "time_delay": "model-dependent lens bridge; included only in with-time-delay sensitivity"
+  },
+  "contains_h0_values": false,
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "frozen_xi": {
+    "coherence_rows": [
+      {
+        "K_H_max_abs_ratio": "0.38021469270241115",
+        "K_L_max_abs_mpc": "851.8066512055806",
+        "K_M_max_abs_ratio": "0.33126075710595987",
+        "a0": "-0.02055384307717478",
+        "a0_sigma": "0.010678271276762281",
+        "a1": "-0.01432578215639525",
+        "a1_sigma": "0.020871430389063625",
+        "a2": "-0.030108478036172573",
+        "a2_sigma": "0.010688702454119759",
+        "aor_status": "bridged",
+        "experiment": "E1B",
+        "model": "sbt",
+        "run_id": "E1B_C3_sbt"
+      },
+      {
+        "K_H_max_abs_ratio": "0.492946142989124",
+        "K_L_max_abs_mpc": "779.5180781786613",
+        "K_M_max_abs_ratio": "0.4106573286769933",
+        "a0": "-0.026101287559296978",
+        "a0_sigma": "0.0077144400554283715",
+        "a1": "0.0",
+        "a1_sigma": "0.0",
+        "a2": "-0.027973103765766505",
+        "a2_sigma": "0.010486967686318377",
+        "aor_status": "bridged",
+        "experiment": "E2",
+        "model": "M2",
+        "run_id": "E2_CDDR_C3"
+      }
+    ],
+    "combination": "precision_weighted_for_a0_a2; a1_from_E1B_with_E2_inactive",
+    "posterior": {
+      "a0": {
+        "mean": -0.024198864782765114,
+        "sigma": 0.006253281591779172,
+        "source": "precision_weighted_E1B_E2"
+      },
+      "a1": {
+        "mean": -0.01432578215639525,
+        "sigma": 0.020871430389063625,
+        "source": "E1B_only_E2_fixed_inactive"
+      },
+      "a2": {
+        "mean": -0.02902044962551353,
+        "sigma": 0.007485710803925393,
+        "source": "precision_weighted_E1B_E2"
+      }
+    },
+    "sources": {
+      "E1B": "results/_summaries/E1B_C3_sbt.json",
+      "E2": "results/_summaries/E2/summary.json",
+      "coherence": "results/xi_cosmo_coherence.csv"
+    }
+  },
+  "h_unit_km_s_Mpc": 70.0,
+  "input_version_manifest_sha256": "d54862b80342e2c86084c12d81ddb3c55d815b60f915b97adf8aef16ea888be3",
+  "phase": "A_kernel_freeze_no_values",
+  "primary_holonomy_loop": [
+    "cmb_bao_planck",
+    "inverse_ladder_desi_bbn",
+    "cepheid_sn_sh0es",
+    "cmb_bao_planck"
+  ],
+  "route_kernels": [
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 1.2,
+        "z_max": 2.3,
+        "z_min": 0.5
+      },
+      "bridge": "r_d",
+      "bridge_sign": -1.0,
+      "bridge_weight": 1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": 35.0,
+        "a1": 7.636363636363637,
+        "a2": 55.19201522549891
+      },
+      "response": 1.0,
+      "route_depth": -0.5,
+      "route_id": "cmb_bao_planck",
+      "staging_weight": -0.2
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.6,
+        "z_max": 1.5,
+        "z_min": 0.01
+      },
+      "bridge": "r_d_to_SN",
+      "bridge_sign": -1.0,
+      "bridge_weight": 0.75,
+      "linear_basis_km_s_Mpc": {
+        "a0": 21.0,
+        "a1": 3.937499999999999,
+        "a2": 24.675190535401114
+      },
+      "response": 1.0,
+      "route_depth": -0.3,
+      "route_id": "inverse_ladder_desi_bbn",
+      "staging_weight": -0.15
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.05,
+        "z_max": 0.15,
+        "z_min": 0.01
+      },
+      "bridge": "Cepheid",
+      "bridge_sign": 1.0,
+      "bridge_weight": 1.0,
+      "linear_basis_km_s_Mpc": {
+        "a0": -140.0,
+        "a1": -3.333333333333333,
+        "a2": -3.415311491860241
+      },
+      "response": 1.0,
+      "route_depth": 2.0,
+      "route_id": "cepheid_sn_sh0es",
+      "staging_weight": 1.0
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.05,
+        "z_max": 0.15,
+        "z_min": 0.01
+      },
+      "bridge": "TRGB",
+      "bridge_sign": 1.0,
+      "bridge_weight": 0.65,
+      "linear_basis_km_s_Mpc": {
+        "a0": -77.0,
+        "a1": -1.9999999999999998,
+        "a2": -2.2199524697091566
+      },
+      "response": 1.0,
+      "route_depth": 1.1,
+      "route_id": "trgb_sn_cchp",
+      "staging_weight": 0.6
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.05,
+        "z_max": 0.15,
+        "z_min": 0.01
+      },
+      "bridge": "TRGB",
+      "bridge_sign": 1.0,
+      "bridge_weight": 0.55,
+      "linear_basis_km_s_Mpc": {
+        "a0": -56.0,
+        "a1": -1.6666666666666665,
+        "a2": -1.8784213205231326
+      },
+      "response": 1.0,
+      "route_depth": 0.8,
+      "route_id": "jwst_trgb_sn_cchp",
+      "staging_weight": 0.5
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.05,
+        "z_max": 0.15,
+        "z_min": 0.01
+      },
+      "bridge": "JAGB",
+      "bridge_sign": 1.0,
+      "bridge_weight": 0.35,
+      "linear_basis_km_s_Mpc": {
+        "a0": -24.5,
+        "a1": -0.9999999999999999,
+        "a2": -1.1953590221510844
+      },
+      "response": 1.0,
+      "route_depth": 0.35,
+      "route_id": "jagb_sn_cchp",
+      "staging_weight": 0.3
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.8,
+        "z_max": 2.0,
+        "z_min": 0.3
+      },
+      "bridge": "time_delay",
+      "bridge_sign": 0.3,
+      "bridge_weight": 0.5,
+      "linear_basis_km_s_Mpc": {
+        "a0": -49.0,
+        "a1": -18.666666666666668,
+        "a2": -6.17175998147225
+      },
+      "response": 1.0,
+      "route_depth": 0.7,
+      "route_id": "time_delay_tdcosmo_2025",
+      "staging_weight": 0.6
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.8,
+        "z_max": 2.0,
+        "z_min": 0.3
+      },
+      "bridge": "time_delay",
+      "bridge_sign": 0.3,
+      "bridge_weight": 0.5,
+      "linear_basis_km_s_Mpc": {
+        "a0": -49.0,
+        "a1": -18.666666666666668,
+        "a2": -6.17175998147225
+      },
+      "response": 1.0,
+      "route_depth": 0.7,
+      "route_id": "time_delay_tdcosmo_legacy_2110",
+      "staging_weight": 0.6
+    },
+    {
+      "W_r": {
+        "normalization": "unit_area",
+        "type": "top_hat",
+        "z_eff": 0.01,
+        "z_max": 0.02,
+        "z_min": 0.0
+      },
+      "bridge": "siren",
+      "bridge_sign": 0.1,
+      "bridge_weight": 0.1,
+      "linear_basis_km_s_Mpc": {
+        "a0": -7.0,
+        "a1": -0.0,
+        "a2": -0.006965231597217659
+      },
+      "response": 1.0,
+      "route_depth": 0.1,
+      "route_id": "siren_gw170817",
+      "staging_weight": 0.0
+    }
+  ],
+  "schema_version": 1,
+  "sign_convention": "positive_delta_H0_means_route_reads_above_H_closed; distance-like Xi uses delta_H0/H0=-deltaD/D"
+}

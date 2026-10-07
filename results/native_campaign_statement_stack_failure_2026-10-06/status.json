@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-06T12:30:25.688331+00:00",
+  "status": "Preserved real statement-printer stack failure; no qualification success",
+  "module_terminal_zero_checks": 1734,
+  "retained_checks": 993,
+  "fresh_compilations": 741,
+  "statement_exit_code": -6,
+  "driver_exit_code": 1,
+  "registered_installation_started": false,
+  "original_files_unchanged": true
+}

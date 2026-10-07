@@ -1,0 +1,73 @@
+{
+  "aggregate_rule": "rs_lambda_pass iff seed pass fraction >= 0.8",
+  "carrier_units": "rho_m(a=1)=1; 8*pi*G/3=1",
+  "config": {
+    "a_init": 0.001,
+    "a_max": 20.0,
+    "delta_c": 1.686,
+    "heterogeneity_s": 0.001,
+    "n_patches": 64,
+    "n_seeds": 12,
+    "seed_pass_fraction": 0.8
+  },
+  "lambda_grid": [
+    -30.0,
+    -10.0,
+    -3.0,
+    -1.0,
+    -0.3,
+    -0.1,
+    -0.03,
+    -0.01,
+    -0.003,
+    -0.001,
+    -0.0003,
+    -0.0001,
+    -3e-05,
+    -1e-05,
+    0.0,
+    1e-05,
+    3e-05,
+    0.0001,
+    0.0003,
+    0.001,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0,
+    30.0,
+    100.0,
+    300.0,
+    1000.0
+  ],
+  "outputs": {
+    "VERDICT.md": "c73990f07c816b85c8fbdb00839a0b4276783ce78934928c6a80349e5b0f8572",
+    "coincidence_readout.json": "02f6989813791e8f29ed08ce514d8a5625863328fa4b327406aa3d7c6aad2afc",
+    "edges.csv": "1a918aca0a6e1b9d1eb59caa8e96f0ee38d0123dd3ac1f74cf251cfb08928849",
+    "lambda_summary.csv": "07d1e0ef6b91037847db9df40b09b4d1801df5491d203ace549fe25e80b5c505",
+    "window_sweep.csv": "f7fcb3f317b56a977b28cb471db145af78597dd2a2c28165783895bede573a4f"
+  },
+  "seeds": [
+    1100,
+    1101,
+    1102,
+    1103,
+    1104,
+    1105,
+    1106,
+    1107,
+    1108,
+    1109,
+    1110,
+    1111
+  ],
+  "sources": {
+    "/home/repos/six-birds-de-closure/results/DE_DEMARCATION_RELANDING_2026-06-11.md": "2f86cc619d1ba5a619d4c656dd7a1850e2f22482b067cbadbef5838deeed9000",
+    "/home/repos/six-birds-sm-qm-gr/paper/sections/sec_06_predictions.tex": "63055629382f2e6081d844bc3221c27b25709fb5a9546f4cb494eb60c704e199",
+    "/home/repos/six-birds-sm-qm-gr/physics_atlas/thread_qm_gr/steps/step54_f50_background_moduli_demarcation_artifacts/f50_background_moduli_step54.py": "f7b75e86f3aa68c3190a6176258ebf8a1e9300e53d75b07edfc81237b73f8bed"
+  }
+}

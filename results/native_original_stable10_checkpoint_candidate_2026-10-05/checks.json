@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-05T13:55:48.397541+00:00",
+  "coupling": "10",
+  "original_sample_index": 8,
+  "paired_entry": 30,
+  "entry_updates": 60,
+  "parent_executed_collector_sha256": "ce10a9cbb21175302caab884f7a5ff7f4ae654bfbc922ff88782ac108843e129",
+  "unchanged_dependency_collector_ast": true,
+  "preflights": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_checkpoint_stable10_return.py",
+        "--mode",
+        "preflight"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure",
+      "actual_exit_code": 0,
+      "stdout": "{\"mode\": \"preflight\", \"coupling\": \"10\", \"original_sample_index\": 8, \"paired_entry\": 30, \"entry_updates\": 60, \"ready_for_checkpoint\": false, \"family_markers_present\": [], \"sixty_markers_present\": [], \"proof_success_claimed\": false, \"checkpoint_created\": false, \"goal_complete\": false}\n",
+      "stderr": "",
+      "collector_sha256": "7c670a086a6376550cddc58b193c5b61ad73954a5a7e5e9dae4f2f259d6f1cc6"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_checkpoint_stable10_return.py",
+        "--mode",
+        "checkpoint"
+      ],
+      "cwd": "/home/repos/six-birds-de-closure",
+      "actual_exit_code": 2,
+      "stdout": "{\"mode\": \"checkpoint\", \"coupling\": \"10\", \"original_sample_index\": 8, \"paired_entry\": 30, \"entry_updates\": 60, \"ready_for_checkpoint\": false, \"family_markers_present\": [], \"sixty_markers_present\": [], \"proof_success_claimed\": false, \"checkpoint_created\": false, \"goal_complete\": false}\n",
+      "stderr": "",
+      "collector_sha256": "7c670a086a6376550cddc58b193c5b61ad73954a5a7e5e9dae4f2f259d6f1cc6"
+    }
+  ],
+  "checkpoint_created": false,
+  "math_proof_success_claimed": false,
+  "new_lean_command_started": false,
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

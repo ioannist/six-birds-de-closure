@@ -1,0 +1,15 @@
+Processing ./python
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: classy
+  Building wheel for classy (pyproject.toml): started
+  Building wheel for classy (pyproject.toml): finished with status 'done'
+  Created wheel for classy: filename=classy-3.2.5-cp311-cp311-linux_x86_64.whl size=3511471 sha256=e241afd8bc6f13bf9b94baafcf9793feca2ab41c8f4202860fb7cfa930f666ba
+  Stored in directory: /mnt/data-drive/sbt-de/tmp/pip-ephem-wheel-cache-a7cs1etu/wheels/48/6c/f3/c36271d11d67a5c5e1d6520e3515050d3c86cc60e409630970
+Successfully built classy
+Installing collected packages: classy
+  Attempting uninstall: classy
+    Found existing installation: classy 3.2.5
+    Uninstalling classy-3.2.5:
+      Successfully uninstalled classy-3.2.5
+Successfully installed classy-3.2.5

@@ -1,0 +1,7 @@
+stable001 exact steps 10 / 60
+stable001 exact steps 20 / 60
+stable001 exact steps 30 / 60
+stable001 exact steps 40 / 60
+stable001 exact steps 50 / 60
+stable001 exact steps 60 / 60
+Exact native transport replay passed: 1 samples; 60 steps; 30 pairs.

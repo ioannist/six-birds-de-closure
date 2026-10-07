@@ -1,0 +1,9 @@
+Supplemental qualified driver PID 3241065 waiting for checked seed returns and1734-module campaign; frozen inputs 10576
+Traceback (most recent call last):
+  File "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05/build_recovery.py", line 88, in <module>
+    while not ready():
+              ^^^^^^^
+  File "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05/build_recovery.py", line 65, in ready
+    assert not re.search(r'terminal [1-9]|Traceback|exception ', text), log
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /tmp/de_native_campaign_aggregate_recovery_2026-10-05/driver.log

@@ -1,0 +1,61 @@
+SbtCosmo.Derivation.GrowthComparison.GrowthSolution (a0 lam L : ℝ) (D v : ℝ → ℝ) : Prop
+SbtCosmo.Derivation.GrowthComparison.cooperative_nonnegative {D v f q : ℝ → ℝ} {L K : ℝ}
+  (hDc : ContinuousOn D (Set.Icc 0 L)) (hvc : ContinuousOn v (Set.Icc 0 L))
+  (hD : ∀ x ∈ Set.Icc 0 L, HasDerivAt D (v x) x)
+  (hv : ∀ x ∈ Set.Icc 0 L, HasDerivAt v (f x * D x + (f x - 2) * v x + q x) x)
+  (hf : ∀ x ∈ Set.Icc 0 L, 0 ≤ f x ∧ f x ≤ K) (hq : ∀ x ∈ Set.Icc 0 L, 0 ≤ q x) (hD0 : 0 ≤ D 0) (hv0 : 0 ≤ v 0)
+  (x : ℝ) : x ∈ Set.Icc 0 L → 0 ≤ D x ∧ 0 ≤ v x
+SbtCosmo.Derivation.GrowthComparison.growth_positive {a0 lam L : ℝ} {D v : ℝ → ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L)
+  (hs : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam L D v) (x : ℝ) : x ∈ Set.Icc 0 L → 0 < D x ∧ 0 < v x
+SbtCosmo.Derivation.GrowthComparison.growth_strict_parameter {a0 lam1 lam2 L : ℝ} {D1 v1 D2 v2 : ℝ → ℝ} (ha : 0 < a0)
+  (hL : 0 ≤ L) (h1 : SbtCosmo.Derivation.GrowthComparison.Live a0 lam1 L)
+  (h2 : SbtCosmo.Derivation.GrowthComparison.Live a0 lam2 L) (hlam : lam1 < lam2)
+  (hs1 : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam1 L D1 v1)
+  (hs2 : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam2 L D2 v2) (x : ℝ) :
+  x ∈ Set.Icc 0 L → 0 < x → D2 x < D1 x ∧ v2 x < v1 x
+SbtCosmo.Derivation.GrowthComparison.growth_unique {a0 lam L : ℝ} {D1 v1 D2 v2 : ℝ → ℝ}
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L)
+  (hs1 : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam L D1 v1)
+  (hs2 : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam L D2 v2) (x : ℝ) :
+  x ∈ Set.Icc 0 L → D1 x = D2 x ∧ v1 x = v2 x
+SbtCosmo.Derivation.GrowthComparison.live_of_horizon {a0 A lam L : ℝ} (ha : 0 < a0)
+  (hA : SbtCosmo.Derivation.GrowthComparison.scale a0 L = A) (hlam : -(1 / A ^ 3) < lam) :
+  SbtCosmo.Derivation.GrowthComparison.Live a0 lam L
+SbtCosmo.Derivation.GrowthComparison.log_growth_derivative {a0 x : ℝ} {D p : ℝ → ℝ}
+  (hD :
+    HasDerivAt D (p (SbtCosmo.Derivation.GrowthComparison.scale a0 x))
+      (SbtCosmo.Derivation.GrowthComparison.scale a0 x)) :
+  HasDerivAt (fun t => D (SbtCosmo.Derivation.GrowthComparison.scale a0 t))
+    (SbtCosmo.Derivation.GrowthComparison.scale a0 x * p (SbtCosmo.Derivation.GrowthComparison.scale a0 x)) x
+SbtCosmo.Derivation.GrowthComparison.log_velocity_derivative {a0 lam x : ℝ} {D p : ℝ → ℝ}
+  (ha : SbtCosmo.Derivation.GrowthComparison.scale a0 x ≠ 0)
+  (hh : SbtCosmo.Derivation.WindowRecords.hubbleSquared (SbtCosmo.Derivation.GrowthComparison.scale a0 x) lam ≠ 0)
+  (hp :
+    HasDerivAt p
+      (SbtCosmo.Derivation.GrowthComparison.scaleAcceleration (SbtCosmo.Derivation.GrowthComparison.scale a0 x) lam
+        (D (SbtCosmo.Derivation.GrowthComparison.scale a0 x)) (p (SbtCosmo.Derivation.GrowthComparison.scale a0 x)))
+      (SbtCosmo.Derivation.GrowthComparison.scale a0 x)) :
+  HasDerivAt
+    (fun t => SbtCosmo.Derivation.GrowthComparison.scale a0 t * p (SbtCosmo.Derivation.GrowthComparison.scale a0 t))
+    (SbtCosmo.Derivation.GrowthComparison.coefficient a0 lam x * D (SbtCosmo.Derivation.GrowthComparison.scale a0 x) +
+      (SbtCosmo.Derivation.GrowthComparison.coefficient a0 lam x - 2) *
+        (SbtCosmo.Derivation.GrowthComparison.scale a0 x * p (SbtCosmo.Derivation.GrowthComparison.scale a0 x)))
+    x
+SbtCosmo.Derivation.GrowthComparison.record_history_iff_threshold.{u_1} {ι : Type u_1} {amplitude : ι → ℝ}
+  {tag : ι → Bool} {a0 lam L m0 m1 threshold : ℝ} {D v : ℝ → ℝ} (hL : 0 ≤ L)
+  (hl : SbtCosmo.Derivation.GrowthComparison.Live a0 lam L)
+  (hs : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam L D v) (ha : ∀ (i : ι), 0 ≤ amplitude i)
+  (h0 : SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag false m0)
+  (h1 : SbtCosmo.Derivation.WindowRecords.TagMaximum amplitude tag true m1) (hm0 : 0 < m0) (hm1 : 0 < m1) :
+  SbtCosmo.Derivation.WindowRecords.RecordBearing (fun i => ∃ x ∈ Set.Icc 0 L, threshold ≤ amplitude i * D x) tag ↔
+    max (threshold / m0) (threshold / m1) ≤ D L
+SbtCosmo.Derivation.GrowthComparison.record_gate_parameter_downward.{u_1} {ι : Type u_1} {amplitude : ι → ℝ}
+  {tag : ι → Bool} {a0 lam1 lam2 L threshold : ℝ} {D1 v1 D2 v2 : ℝ → ℝ} (ha0 : 0 < a0) (hL : 0 < L)
+  (h1 : SbtCosmo.Derivation.GrowthComparison.Live a0 lam1 L) (h2 : SbtCosmo.Derivation.GrowthComparison.Live a0 lam2 L)
+  (hlam : lam1 < lam2) (hs1 : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam1 L D1 v1)
+  (hs2 : SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 lam2 L D2 v2) (ha : ∀ (i : ι), 0 ≤ amplitude i)
+  (hc : SbtCosmo.Derivation.WindowRecords.RecordBearing (fun i => threshold ≤ amplitude i * D2 L) tag) :
+  SbtCosmo.Derivation.WindowRecords.RecordBearing (fun i => threshold ≤ amplitude i * D1 L) tag
+SbtCosmo.Derivation.GrowthComparison.matter_solution (a0 L : ℝ) :
+  SbtCosmo.Derivation.GrowthComparison.GrowthSolution a0 0 L Real.exp Real.exp

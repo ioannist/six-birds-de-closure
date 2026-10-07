@@ -1,0 +1,3 @@
+Command: /usr/bin/python3 scripts/de_ground_offset_transport_render.py --replay --check
+Exact replay passed for all18 input hulls and421 transport steps
+Read-only generation comparison passed for 440 populated transport modules

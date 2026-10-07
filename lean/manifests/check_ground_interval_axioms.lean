@@ -1,0 +1,13 @@
+import SbtCosmo.Derivation.GroundRootCertificate
+
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.residual_smooth
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.residual_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.residualDerivative_apply
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.residual_zero_iff
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.positive_root_return
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.root_half_mixing_derivative
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.half_mixing_jacobian_apply
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.correction_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.correction_lipschitz
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.correction_invariant
+#print axioms SbtCosmo.Derivation.GroundRootCertificate.certified_positive_root

@@ -1,0 +1,13 @@
+{
+  "terminal_exit_code": 1,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "/tmp/de_source_normalization_threshold_controls.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "source_sha256": "1e54a1db45fbcc37b1f42aceb2bf006b9e5a323172fb3b2d4dce709c4b4949b7",
+  "log_sha256": "b265976ee1ab724bd4ce49a80203e2846de15dbbe06c96dfa6565a8517aebc2f"
+}

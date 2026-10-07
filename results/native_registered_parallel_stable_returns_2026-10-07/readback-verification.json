@@ -1,0 +1,15 @@
+{
+  "actual_producer_session": 67660,
+  "actual_producer_exit_code": 0,
+  "actual_lake_exit_code": 0,
+  "fresh_registered_arithmetic_return_geometry_modules": 30,
+  "explicit_target_roots": 18,
+  "retained_registered_frames": 6,
+  "retained_frames_not_recompiled_or_copied": true,
+  "all_selected_objects_current": true,
+  "all_local_source_bindings_current": true,
+  "log_and_code_readback": true,
+  "archived_proof_objects": 0,
+  "full_registered_build_and_both_audits_still_required": true,
+  "goal_complete": false
+}

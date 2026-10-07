@@ -1,0 +1,1 @@
+Exact 64-cell all-time starvation upper certificate and both false-certificate controls passed; artifact byte replay matched.

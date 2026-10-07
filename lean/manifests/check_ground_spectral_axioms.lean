@@ -1,0 +1,64 @@
+import SbtCosmo.Derivation.GroundDeterminantDefect
+import SbtCosmo.Derivation.GroundTriangularSign
+import SbtCosmo.Derivation.GroundRealModeNormalize
+import SbtCosmo.Derivation.GroundTriangularArithmetic
+import SbtCosmo.Derivation.GroundSpectralEnclosure
+import SbtCosmo.Derivation.GroundSpectralTests.Test000
+import SbtCosmo.Derivation.GroundSpectralTests.Test001
+import SbtCosmo.Derivation.GroundSpectralTests.Test002
+import SbtCosmo.Derivation.GroundSpectralTests.Test003
+import SbtCosmo.Derivation.GroundSpectralTests.Test004
+import SbtCosmo.Derivation.GroundSpectralTests.Test005
+import SbtCosmo.Derivation.GroundSpectralTests.Test006
+import SbtCosmo.Derivation.GroundOriginalSpectrum
+import SbtCosmo.Derivation.GroundSpectralControls
+
+#print axioms SbtCosmo.Derivation.GroundDeterminantDefect.small_norm_det_ne_zero
+#print axioms SbtCosmo.Derivation.GroundDeterminantDefect.entries_smul
+#print axioms SbtCosmo.Derivation.GroundDeterminantDefect.small_norm_det_positive
+#print axioms SbtCosmo.Derivation.GroundDeterminantDefect.fieldMap_entries
+#print axioms SbtCosmo.Derivation.GroundDeterminantDefect.preconditioned_det_product
+#print axioms SbtCosmo.Derivation.GroundTriangularSign.determinant_return
+#print axioms SbtCosmo.Derivation.GroundRealModeNormalize.real_mode_full_unit
+#print axioms SbtCosmo.Derivation.GroundRealModeNormalize.determinant_zero_eigenmode
+#print axioms SbtCosmo.Derivation.GroundRealModeNormalize.bracket_full_mode
+#print axioms SbtCosmo.Derivation.GroundTriangularArithmetic.scaled_product
+#print axioms SbtCosmo.Derivation.GroundTriangularArithmetic.triangular_return
+#print axioms SbtCosmo.Derivation.GroundTriangularArithmetic.determinant_sign
+#print axioms SbtCosmo.Derivation.GroundSpectralEnclosure.shifted_sound
+#print axioms SbtCosmo.Derivation.GroundSpectralEnclosure.defectExpr_return
+#print axioms SbtCosmo.Derivation.GroundSpectralEnclosure.defect_norm
+#print axioms SbtCosmo.Derivation.GroundSpectralEnclosure.determinant_product
+#print axioms SbtCosmo.Derivation.GroundSpectralEnclosure.product_sign_return
+#print axioms SbtCosmo.Derivation.GroundSpectralEnclosure.actual_shifted_sign
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test000.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test000.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test000.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test001.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test001.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test001.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test002.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test002.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test002.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test003.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test003.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test003.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test004.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test004.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test004.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test005.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test005.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test005.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test006.factor_arithmetic
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test006.box_return
+#print axioms SbtCosmo.Derivation.GroundSpectralTests.Test006.defect_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.actual_signed_test
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.concrete_signs
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.crossing_signs
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.actual_two_contacts
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.actual_twenty_mode
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.actual_thirty_mode
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.actual_twenty_native_escape
+#print axioms SbtCosmo.Derivation.GroundOriginalSpectrum.actual_thirty_native_escape
+#print axioms SbtCosmo.Derivation.GroundSpectralControls.zero_preconditioner_rejected
+#print axioms SbtCosmo.Derivation.GroundSpectralControls.reversed_sign_rejected

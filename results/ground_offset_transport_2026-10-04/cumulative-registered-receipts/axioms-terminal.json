@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-06T16:51:22.091358+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-s",
+    "65536",
+    "manifests/check_axioms.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "manifest_sha256": "b4e01f02aab47d289b45211bdd9c8fcbe781faa13900f03a010e5567103c18ee",
+  "source_snapshot_sha256": "fda14af89724bdb88be49e6cc9c8c8beac8cf6e7e7a1cafa90e4d4ae8192fa24",
+  "objects_snapshot_sha256": "e76e24d5011dd1fa846f70c0dbf0eddb6df853023610379ddb4406c11a7818fe",
+  "all_registered_objects_snapshot_sha256": "b81f598122315c3046b163642bcfd9cbd2d276e6d8f737a65d8c40b4fc578f18",
+  "helper_snapshot_sha256": "63abdebb23ef014b222de1f5fd6bfc24bb10fa969090fedf598f042e73249de5",
+  "log_sha256": "924c22dc54cec11a413e165b4feaf60764d071a07203a189b5d764fb644c5001"
+}

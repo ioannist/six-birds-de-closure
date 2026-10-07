@@ -1,0 +1,92 @@
+import SbtCosmo.Derivation.GroundUncertainBackgroundTube
+import SbtCosmo.Derivation.GroundOffsets.Point000
+import SbtCosmo.Derivation.GroundOffsets.Point001
+import SbtCosmo.Derivation.GroundOffsets.Point002
+import SbtCosmo.Derivation.GroundOffsets.Point003
+import SbtCosmo.Derivation.GroundOffsets.Point004
+import SbtCosmo.Derivation.GroundOffsets.Point005
+import SbtCosmo.Derivation.GroundOffsets.Point006
+import SbtCosmo.Derivation.GroundOffsets.Point007
+import SbtCosmo.Derivation.GroundOffsets.Point008
+import SbtCosmo.Derivation.GroundOffsets.Point009
+import SbtCosmo.Derivation.GroundOffsets.Point010
+import SbtCosmo.Derivation.GroundOffsets.Point011
+import SbtCosmo.Derivation.GroundOffsets.Point012
+import SbtCosmo.Derivation.GroundOffsets.Point013
+import SbtCosmo.Derivation.GroundOffsets.Point014
+import SbtCosmo.Derivation.GroundOffsets.Point015
+import SbtCosmo.Derivation.GroundOffsets.Point016
+import SbtCosmo.Derivation.GroundOffsets.Point017
+import SbtCosmo.Derivation.GroundOriginalOffsets
+
+#print axioms SbtCosmo.Derivation.GroundUncertainBackgroundTube.box_sound
+#print axioms SbtCosmo.Derivation.GroundUncertainBackgroundTube.certified_actual_root
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point000.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point000.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point001.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point001.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point002.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point002.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point003.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point003.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point004.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point004.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point005.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point005.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point006.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point006.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point007.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point007.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point008.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point008.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point009.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point009.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point010.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point010.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point011.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point011.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point012.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point012.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point013.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point013.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point014.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point014.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point015.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point015.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point016.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point016.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point017.backgrounds_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOffsets.Point017.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_inputs_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_inputs_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_interval
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_interval
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_root_spec
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_root_spec
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_root_positive
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_root_positive
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.ground_pair_return
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_ground_return
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_ground_return
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_point_box
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_point_box
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.parameters_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.uniform_background_return
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.model_root_proximity
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.native_fixed_return
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.exact_native_fixed
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.rounded_native_fixed
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.separation_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.field_coordinate_separation
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.actual_exact_fields_separated
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.actual_rounded_fields_separated
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.zero_preconditioner_rejected
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.whole_background_box_root
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.zero_offset_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.zero_exact_background
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.zero_rounded_background
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.zero_exact_root_eq_original
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.zero_rounded_root_eq_original
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.density_separation_of_positive
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.actual_exact_densities_separated
+#print axioms SbtCosmo.Derivation.GroundOriginalOffsets.actual_rounded_densities_separated

@@ -1,0 +1,13 @@
+import SbtCosmo.Derivation.GrowthComparison
+
+#check SbtCosmo.Derivation.GrowthComparison.GrowthSolution
+#check SbtCosmo.Derivation.GrowthComparison.cooperative_nonnegative
+#check SbtCosmo.Derivation.GrowthComparison.growth_positive
+#check SbtCosmo.Derivation.GrowthComparison.growth_strict_parameter
+#check SbtCosmo.Derivation.GrowthComparison.growth_unique
+#check SbtCosmo.Derivation.GrowthComparison.live_of_horizon
+#check SbtCosmo.Derivation.GrowthComparison.log_growth_derivative
+#check SbtCosmo.Derivation.GrowthComparison.log_velocity_derivative
+#check SbtCosmo.Derivation.GrowthComparison.record_history_iff_threshold
+#check SbtCosmo.Derivation.GrowthComparison.record_gate_parameter_downward
+#check SbtCosmo.Derivation.GrowthComparison.matter_solution

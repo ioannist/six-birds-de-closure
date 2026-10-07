@@ -1,0 +1,22 @@
+{
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "checked_controls": 4,
+  "names": [
+    "SourceNormalizationThresholdReview.negative_threshold_accepts_zero",
+    "SourceNormalizationThresholdReview.accepted_zero_is_not_unit",
+    "SourceNormalizationThresholdReview.zero_threshold_rejects_zero",
+    "SourceNormalizationThresholdReview.unit_at_threshold_one_is_rejected"
+  ],
+  "model": "Exact normalization component; negative threshold is a mathematical extension outside the original program configuration",
+  "original_threshold_positive_and_below_one": true,
+  "unit_bounds_require_nonnegative_threshold": true,
+  "unit_preservation_requires_threshold_below_one": true,
+  "NativeLegal_uses_same_square_root_guard": true,
+  "production_theorems_changed": false,
+  "registered_sources_changed": false,
+  "production_module_or_declaration_inventory_changed": false,
+  "review": "adversarial self-review, not independent review",
+  "initial_failure_preserved": "results/source_normalization_threshold_review_history_2026-10-05",
+  "goal_complete": false
+}

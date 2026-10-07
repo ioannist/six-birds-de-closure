@@ -1,0 +1,81 @@
+{
+  "utc": "2026-10-05T00:58:47.491296+00:00",
+  "head": "b58ad72d038896946db08aac6000e280df77d587",
+  "frozen_inputs_revalidated": 5579,
+  "live_drivers": {
+    "365637": "/usr/bin/python3 /tmp/de_native_cycle_seed_families_private_build.py",
+    "842683": "/usr/bin/python3 /tmp/de_native_campaign_qualified_build.py",
+    "940127": "/usr/bin/python3 /tmp/de_native_stable_prefix_failures_private_build.py",
+    "1531524": "/usr/bin/python3 scripts/de_ground_offset_transport_resume.py",
+    "1553413": "/usr/bin/python3 /tmp/de_native_cycle_seed_private_build.py",
+    "2056100": "/usr/bin/python3 /tmp/de_native_original_sample_results_private_build.py",
+    "2371188": "/usr/bin/python3 /tmp/de_native_seed_real_returns_private_build.py",
+    "2463243": "/usr/bin/python3 /tmp/de_ground_offset_transport_finish.py",
+    "2558747": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py",
+    "2637955": "/usr/bin/python3 /tmp/de_native_stable_seed_pairs_private_build.py",
+    "2854622": "/usr/bin/python3 /tmp/de_native_stable_seed_families_private_build.py",
+    "2975896": "/usr/bin/python3 /tmp/de_native_seed_real_returns_qualified_build.py",
+    "3556612": "/usr/bin/python3 /tmp/de_native_cycle_seed_pairs_private_build.py",
+    "3948875": "/usr/bin/python3 /tmp/de_native_stable_seed_sixty_private_build.py"
+  },
+  "latest_log_lines": {
+    "de-offset-transport-leaves-resume-driver-retry": [
+      "resumed leaves GroundOffsetTransport.Point009.Step011 terminal 0 completed 260 /421",
+      "resumed leaves GroundOffsetTransport.Point009.Step012 terminal 0 completed 261 /421",
+      "resumed leaves GroundOffsetTransport.Point009.Step013 terminal 0 completed 262 /421"
+    ],
+    "de-native-cycle-seed-leaves-driver": [
+      "NativeCycleSeed20Step117 terminal 0 completed 234 /472",
+      "NativeCycleSeed30Step116 terminal 0 completed 235 /472",
+      "NativeCycleSeed20Step116 terminal 0 completed 236 /472"
+    ],
+    "de-native-cycle-seed-pairs-driver": [
+      "NativeCycleSeed30Pair057 terminal 0 completed 115 /236",
+      "NativeCycleSeed20Pair057 terminal 0 completed 116 /236",
+      "NativeCycleSeed30Pair058 terminal 0 completed 117 /236"
+    ],
+    "de-native-stable-seed-leaves-driver": [
+      "NativeStableSeed003Step002 terminal 0 scheduled completed 62 /597",
+      "NativeStableSeed003Step003 terminal 0 scheduled completed 63 /597",
+      "NativeStableSeed003Step004 terminal 0 scheduled completed 64 /597"
+    ],
+    "de-native-stable-seed-pairs-driver": [
+      "NativeStableSeed001Pair029 terminal 0",
+      "NativeStableSeed003Pair000 terminal 0",
+      "NativeStableSeed003Pair001 terminal 0"
+    ],
+    "de-native-stable-seed-families-driver": [
+      "Waiting for paired stable-seed certificates and64 bridge audits; pair PID 2637955 frozen inputs 2934",
+      "NativeStableSeed001Transport terminal 0",
+      "NativeStableSeed001Audit terminal 0"
+    ],
+    "de-native-stable-seed-sixty-driver": [
+      "Waiting for actual stable-seed finite families;15 needs first30 pairs; pair PID 2637955 frozen inputs 2772",
+      "NativeStableSeed001Sixty terminal 0",
+      "NativeStableSeed001SixtyAudit terminal 0"
+    ],
+    "de-native-seed-real-returns-driver": [
+      "Supplemental real-seed returns PID 2371188 waiting for checked original-seed families; frozen inputs 2846"
+    ],
+    "de-native-seed-real-returns-qualified-driver": [
+      "Supplemental qualified driver PID 2975896 waiting for checked seed returns and1734-module campaign; frozen inputs 5579"
+    ]
+  },
+  "completed_private_coupling001_declarations": 15,
+  "completed_conditional_real_original_return_declarations": 4,
+  "supplement_qualified_modules": 4,
+  "supplement_qualified_declarations": 6,
+  "supplement_qualified_completed": false,
+  "conditional_entry_premise": "Explicit until actual original-seed full entry certificate is checked",
+  "self_review": [
+    "Even finite-entry shift preserves even/odd phase ordering by cofinality",
+    "Realness transfers to any chosen subsequence limit by Hausdorff uniqueness",
+    "Seed g and target are definitionally the original-return g and local-cycle center",
+    "Final generated wrapper imports actual finite-entry/all-guard proofs instead of assuming them",
+    "Negative stable branch state limit and sign-invariant density limit distinguished",
+    "Qualification will not reuse unqualified object files"
+  ],
+  "main_plan_unchanged": true,
+  "paper_runtime_unchanged": true,
+  "goal_complete": false
+}

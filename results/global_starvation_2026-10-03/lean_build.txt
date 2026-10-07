@@ -1,0 +1,2 @@
+✔ [8102/8103] Built SbtCosmo.Derivation.WindowGlobalStarvation (6.3s)
+Build completed successfully (8103 jobs).

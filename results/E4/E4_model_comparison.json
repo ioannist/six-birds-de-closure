@@ -1,0 +1,277 @@
+{
+  "all_routes_sensitivity_including_insample": {
+    "gates": {
+      "G-E4-2-STEELMAN": false,
+      "WAIC_favors_Xi": true,
+      "Xi_beats_bridge_offset_by_lnZ": true,
+      "Xi_beats_null_by_lnZ": true,
+      "Xi_beats_route_offset_by_lnZ": true,
+      "Xi_beats_stronger_steelman_by_lnZ": true,
+      "delta_BIC_steelman_minus_Xi": 2.5014336925273177,
+      "delta_WAIC_steelman_minus_Xi": 2.1042259841281403,
+      "label": "all_routes_sensitivity",
+      "lnB_Xi_minus_stronger": 3.293653487055714,
+      "locked_thresholds": {
+        "WAIC_must_favor_Xi": true,
+        "delta_BIC_steelman_minus_Xi_required": 6.0,
+        "lnB_Xi_minus_stronger_required": 5.0
+      },
+      "stronger_steelman": "M_bridge_offset",
+      "xi_evidence_signal": "in-sample-CONTAMINATED sensitivity only (includes cmb_bao + inverse_ladder, which Xi was fit to); NOT an independent result -- see out_of_sample branch for the decisive (negative) verdict"
+    },
+    "label": "all_routes_sensitivity",
+    "models": {
+      "M_XiFrozen": {
+        "AIC": 11.866045600275264,
+        "BIC": 11.9454871419551,
+        "WAIC_proxy": 11.866045600275264,
+        "bestfit": {
+          "H_closed": 70.80251013161129,
+          "H_closed_sigma": 0.6375534723756754
+        },
+        "chi2": 9.866045600275264,
+        "covariance": "measurement_plus_frozen_Xi_prediction_covariance",
+        "delta_BIC_vs_null": -21.823477800235125,
+        "delta_WAIC_proxy_vs_null": -21.823477800235118,
+        "delta_lnZ_vs_null": 10.234443768123775,
+        "elapsed_seconds": 0.4803411029279232,
+        "k": 1,
+        "lnZ": -21.317447681004325,
+        "lnZ_err": 0.14820059187418624,
+        "model": "M_XiFrozen",
+        "nlive": 220
+      },
+      "M_bridge_offset": {
+        "AIC": 13.970271584403404,
+        "BIC": 14.446920834482418,
+        "WAIC_proxy": 13.970271584403404,
+        "bestfit": {
+          "H0": 68.11487336263,
+          "fixed_bridge": "r_d",
+          "offsets": {
+            "Cepheid": 5.375126637370016,
+            "JAGB": -0.3148733626299385,
+            "TRGB": 1.6509301306669524,
+            "siren": 1.8851266373700355,
+            "time_delay": 3.485126637369987
+          }
+        },
+        "chi2": 1.9702715844034047,
+        "delta_BIC_vs_null": -19.322044107707804,
+        "delta_WAIC_proxy_vs_null": -19.719251816106976,
+        "delta_lnZ_vs_null": 6.940790281068061,
+        "elapsed_seconds": 1.4915126599371433,
+        "k": 6,
+        "lnZ": -24.61110116806004,
+        "lnZ_err": 0.2696172461376931,
+        "model": "M_bridge_offset",
+        "nlive": 220
+      },
+      "M_null": {
+        "AIC": 33.68952340051038,
+        "BIC": 33.76896494219022,
+        "WAIC_proxy": 33.68952340051038,
+        "bestfit": {
+          "H0": 69.24776817454799
+        },
+        "chi2": 31.689523400510385,
+        "delta_BIC_vs_null": 0.0,
+        "delta_WAIC_proxy_vs_null": 0.0,
+        "delta_lnZ_vs_null": 0.0,
+        "elapsed_seconds": 0.5989319086074829,
+        "k": 1,
+        "lnZ": -31.5518914491281,
+        "lnZ_err": 0.15700210383882088,
+        "model": "M_null",
+        "nlive": 220
+      },
+      "M_route_offset": {
+        "AIC": 16.0,
+        "BIC": 16.635532333438686,
+        "WAIC_proxy": 16.0,
+        "bestfit": {
+          "H0": 67.35723410080998,
+          "offsets": {
+            "cepheid_sn": 6.132765899190005,
+            "inverse_ladder": 1.1328669976552987,
+            "jagb_sn": 0.44276589919002163,
+            "jwst_trgb_sn": 1.4527658991900267,
+            "siren": 2.642765899190124,
+            "time_delay": 4.2427658991901325,
+            "trgb_sn": 3.032765899190025
+          }
+        },
+        "chi2": 6.653017956058225e-27,
+        "delta_BIC_vs_null": -17.133432608751537,
+        "delta_WAIC_proxy_vs_null": -17.68952340051038,
+        "delta_lnZ_vs_null": 3.9934930816538206,
+        "elapsed_seconds": 2.2657103165984154,
+        "identifiability": "cmb_bao offset fixed to 0",
+        "k": 8,
+        "lnZ": -27.55839836747428,
+        "lnZ_err": 0.3059923303639235,
+        "model": "M_route_offset",
+        "nlive": 220
+      }
+    },
+    "route_ids": [
+      "cmb_bao",
+      "inverse_ladder",
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "elapsed_seconds": 8.06128615885973,
+  "notes": {
+    "M_XiFrozen": "H_closed plus blind frozen-Xi route offsets; Xi posterior uncertainty included in covariance.",
+    "M_bridge_offset": "H0 plus bridge offsets with r_d bridge fixed to zero when present.",
+    "M_route_offset": "Identifiable saturated steelman: H0 plus N-1 route offsets; first route offset fixed to zero."
+  },
+  "out_of_sample": {
+    "G-E4-2-permutation": {
+      "criterion": "route-label permutation p<0.05 for Xi-vs-steelman BIC advantage",
+      "observed_delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+      "p_value": 0.6384723055388922,
+      "pass": false,
+      "permutation_trials": 5000
+    },
+    "gates": {
+      "G-E4-2-STEELMAN": false,
+      "WAIC_favors_Xi": false,
+      "Xi_beats_bridge_offset_by_lnZ": true,
+      "Xi_beats_null_by_lnZ": false,
+      "Xi_beats_route_offset_by_lnZ": true,
+      "Xi_beats_stronger_steelman_by_lnZ": true,
+      "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+      "delta_WAIC_steelman_minus_Xi": -0.7999070965044162,
+      "label": "out_of_sample",
+      "lnB_Xi_minus_stronger": 0.5215785887406881,
+      "locked_thresholds": {
+        "WAIC_must_favor_Xi": true,
+        "delta_BIC_steelman_minus_Xi_required": 6.0,
+        "lnB_Xi_minus_stronger_required": 5.0
+      },
+      "stronger_steelman": "M_bridge_offset",
+      "xi_evidence_signal": "no out-of-sample evidence win: Xi loses to null in lnZ; BIC and WAIC favor the M_bridge_offset steelman; the only positive is a tiny lnZ edge of +0.522 over M_bridge_offset, contradicted by BIC/WAIC and by the null lnZ."
+    },
+    "label": "out_of_sample",
+    "models": {
+      "M_XiFrozen": {
+        "AIC": 11.236814233611069,
+        "BIC": 11.028573702839124,
+        "WAIC_proxy": 11.236814233611069,
+        "bestfit": {
+          "H_closed": 70.52729931107201,
+          "H_closed_sigma": 1.0205414698206372
+        },
+        "chi2": 9.236814233611069,
+        "covariance": "measurement_plus_frozen_Xi_prediction_covariance",
+        "delta_BIC_vs_null": -0.13942421388484938,
+        "delta_WAIC_proxy_vs_null": -0.13942421388484938,
+        "delta_lnZ_vs_null": -0.015240017186737731,
+        "elapsed_seconds": 0.33655866980552673,
+        "k": 1,
+        "lnZ": -18.810203737169378,
+        "lnZ_err": 0.13864893858279642,
+        "model": "M_XiFrozen",
+        "nlive": 220
+      },
+      "M_bridge_offset": {
+        "AIC": 10.436907137106653,
+        "BIC": 9.395704483246927,
+        "WAIC_proxy": 10.436907137106653,
+        "bestfit": {
+          "H0": 73.48999999999995,
+          "fixed_bridge": "Cepheid",
+          "offsets": {
+            "JAGB": -5.689999999999985,
+            "TRGB": -3.724196506703067,
+            "siren": -3.489999999999951,
+            "time_delay": -1.8899999999999872
+          }
+        },
+        "chi2": 0.4369071371066531,
+        "delta_BIC_vs_null": -1.7722934334770457,
+        "delta_WAIC_proxy_vs_null": -0.9393313103892655,
+        "delta_lnZ_vs_null": -0.5368186059274258,
+        "elapsed_seconds": 1.0502073429524899,
+        "k": 5,
+        "lnZ": -19.331782325910066,
+        "lnZ_err": 0.22318437501353042,
+        "model": "M_bridge_offset",
+        "nlive": 220
+      },
+      "M_null": {
+        "AIC": 11.376238447495918,
+        "BIC": 11.167997916723973,
+        "WAIC_proxy": 11.376238447495918,
+        "bestfit": {
+          "H0": 72.6619526821874
+        },
+        "chi2": 9.376238447495918,
+        "delta_BIC_vs_null": 0.0,
+        "delta_WAIC_proxy_vs_null": 0.0,
+        "delta_lnZ_vs_null": 0.0,
+        "elapsed_seconds": 0.4051089622080326,
+        "k": 1,
+        "lnZ": -18.79496371998264,
+        "lnZ_err": 0.14198469572778907,
+        "model": "M_null",
+        "nlive": 220
+      },
+      "M_route_offset": {
+        "AIC": 12.0,
+        "BIC": 10.75055681536833,
+        "WAIC_proxy": 12.0,
+        "bestfit": {
+          "H0": 73.49,
+          "offsets": {
+            "jagb_sn": -5.68999999999998,
+            "jwst_trgb_sn": -4.679999999999978,
+            "siren": -3.4899999999999807,
+            "time_delay": -1.8900000000000006,
+            "trgb_sn": -3.099999999999983
+          }
+        },
+        "chi2": 1.0429522326373197e-28,
+        "delta_BIC_vs_null": -0.4174411013556423,
+        "delta_WAIC_proxy_vs_null": 0.6237615525040816,
+        "delta_lnZ_vs_null": -1.870494276900807,
+        "elapsed_seconds": 1.4052279144525528,
+        "identifiability": "cepheid_sn offset fixed to 0",
+        "k": 6,
+        "lnZ": -20.665457996883447,
+        "lnZ_err": 0.23737395983448545,
+        "model": "M_route_offset",
+        "nlive": 220
+      }
+    },
+    "route_ids": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "route_partition": {
+    "in_sample_consistency_only": [
+      "cmb_bao",
+      "inverse_ladder"
+    ],
+    "out_of_sample": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "sampler": "dynesty"
+}

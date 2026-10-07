@@ -1,0 +1,26 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-R",
+    "/tmp/de_source_normalization_failure",
+    "/tmp/de_source_normalization_failure/Audit.lean"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundSourceNormalizationFailure.imaginary_ground_execution",
+    "SbtCosmo.Derivation.GroundSourceNormalizationFailure.imaginary_ground_no_continuation",
+    "SbtCosmo.Derivation.GroundSourceNormalizationFailure.exists_unit_execution_failure",
+    "SbtCosmo.Derivation.GroundSourceNormalizationFailure.original_tolerance_unit_execution_failure",
+    "SbtCosmo.Derivation.GroundSourceNormalizationFailure.exists_phase_execution_split"
+  ],
+  "log_sha256": "790426f94ce3fb8c1db8ae35956b9ca9ba160d86f8e2af5cac9361316fb722cf",
+  "source_freeze_sha256": "e0cc122843b5e88e0fd9b0d3bf29a8409982e17d160ad1cdaf69b94d86609569",
+  "standard_only": true,
+  "checked_declarations": 5,
+  "source_sha256": "2cadb61c7afa031bb7ceaf56bdd4956ba778b831f5e17dee86e3b30fe524df8e",
+  "object_sha256": "a1a0b4b007e2a087dca8ca908b8f49085d21408de4891164a0c46cf7046e9f25",
+  "actual_original_seed": false,
+  "IEEE_execution": false,
+  "repository_registered": false,
+  "goal_complete": false
+}

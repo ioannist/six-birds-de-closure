@@ -1,0 +1,92 @@
+{
+  "manifest_files": 18,
+  "archive_bytes_match": true,
+  "dependency_modules_revalidated": 633,
+  "new_names": 7,
+  "all_seven_standard_only": true,
+  "protected_freezes": [
+    {
+      "path": "/tmp/de-native-campaign-qualified-freeze.json",
+      "inputs": 5562,
+      "all_match": true
+    },
+    {
+      "path": "/tmp/de-offset-transport-semantic-finish-freeze.json",
+      "inputs": 5675,
+      "all_match": true
+    }
+  ],
+  "drivers_live": [
+    {
+      "pid": 1531524,
+      "command": "/usr/bin/python3 scripts/de_ground_offset_transport_resume.py"
+    },
+    {
+      "pid": 1553413,
+      "command": "/usr/bin/python3 /tmp/de_native_cycle_seed_private_build.py"
+    },
+    {
+      "pid": 3556612,
+      "command": "/usr/bin/python3 /tmp/de_native_cycle_seed_pairs_private_build.py"
+    },
+    {
+      "pid": 365637,
+      "command": "/usr/bin/python3 /tmp/de_native_cycle_seed_families_private_build.py"
+    },
+    {
+      "pid": 2558747,
+      "command": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py"
+    },
+    {
+      "pid": 2637955,
+      "command": "/usr/bin/python3 /tmp/de_native_stable_seed_pairs_private_build.py"
+    },
+    {
+      "pid": 2854622,
+      "command": "/usr/bin/python3 /tmp/de_native_stable_seed_families_private_build.py"
+    },
+    {
+      "pid": 3948875,
+      "command": "/usr/bin/python3 /tmp/de_native_stable_seed_sixty_private_build.py"
+    },
+    {
+      "pid": 940127,
+      "command": "/usr/bin/python3 /tmp/de_native_stable_prefix_failures_private_build.py"
+    },
+    {
+      "pid": 2056100,
+      "command": "/usr/bin/python3 /tmp/de_native_original_sample_results_private_build.py"
+    },
+    {
+      "pid": 2463243,
+      "command": "/usr/bin/python3 /tmp/de_ground_offset_transport_finish.py"
+    },
+    {
+      "pid": 842683,
+      "command": "/usr/bin/python3 /tmp/de_native_campaign_qualified_build.py"
+    },
+    {
+      "pid": 2371188,
+      "command": "/usr/bin/python3 /tmp/de_native_seed_real_returns_private_build.py"
+    },
+    {
+      "pid": 2975896,
+      "command": "/usr/bin/python3 /tmp/de_native_seed_real_returns_qualified_build.py"
+    },
+    {
+      "pid": 538092,
+      "command": "/usr/bin/python3 /tmp/de_native_campaign_verification_finish.py"
+    },
+    {
+      "pid": 1541224,
+      "command": "/usr/bin/python3 /tmp/de_ground_offset_transport_semantic_finish.py"
+    }
+  ],
+  "progress": {
+    "de-offset-transport-leaves-resume-driver-retry": "resumed leaves GroundOffsetTransport.Point013.Step005 terminal 0 completed 314 /421",
+    "de-native-cycle-seed-leaves-driver": "NativeCycleSeed30Step147 terminal 0 completed 296 /472",
+    "de-native-stable-seed-leaves-driver": "NativeStableSeed003Step032 terminal 0 scheduled completed 92 /597"
+  },
+  "repository_registered": false,
+  "scope": "Stored receipt integrity and current source/object/live-handle check; original build/audit terminal receipts are separately preserved."
+}

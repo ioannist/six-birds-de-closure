@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DES_Y3_3X2PT
+manifest: data/manifests/des_y3_3x2pt.json
+fallback_policy: approved_other_if_substituting_y6

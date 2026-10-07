@@ -1,0 +1,76 @@
+{
+  "scope": "exact decimal crossing and finite IID law; floating-point chart/ODE bridge checks",
+  "software": {
+    "python": "3.11.9",
+    "numpy": "1.26.4"
+  },
+  "sha256": {
+    "results/DE_audit/B1_model_table.csv": "7af970389067306af2c2803efa958a3b46f74db4f0a5ac9bf11f038f1424f81c",
+    "results/DE_audit/B1b_chart_comparison.csv": "24b47bb28b188089dc0b6b5bbcd3b417eb1bc3c15b711bb1f9b30e80f191ba5c",
+    "scripts/de_original_claim_checks.py": "d6f3bcf429cf4ffa938914cddad0dbd4f7352b0ab0d291e5e7eb06b4d8be3fe1",
+    "scripts/de_window_carrier.py": "e1b388418b2e68f4f9e3dc5d0daa459a481a3015dd86a92d634e29b315a78d4f",
+    "sbt_cosmo/theory/background_compressed.py": "f87e9445dd030dd2881435e16d8b9fbd5863da0eb0141825a876dd44dec26c6b",
+    "lean/SbtCosmo/Derivation/CPLReadout.lean": "68bf623be18d041afd452b0be7b09d345fe2cb6d6d1217025802b5ff9cf900b2",
+    "lean/SbtCosmo/Derivation/WindowRecords.lean": "e7dd6be860d55a6e1075cf2e645cb46d420e79bafc22103321338d85b46661c1"
+  },
+  "cpl": {
+    "w0": "-7946824224094571/10000000000000000",
+    "wa": "-6731772288179667/10000000000000000",
+    "exact_crossing": "2053175775905429/4678596512274238",
+    "crossing_float": 0.4388443779066967,
+    "amplitude": 0.6836654302142292,
+    "grid_points": 251,
+    "same_history_max_error": 2.220446049250313e-15,
+    "frozen_density_max_error": 2.220446049250313e-15,
+    "frozen_fluid_max_error": 0.0
+  },
+  "tag_counterexample": [
+    {
+      "lambda": "0",
+      "seed": 1100,
+      "tag_probability": "0",
+      "record_count_final": 58,
+      "distinct_tags_final": 1,
+      "RS": false
+    },
+    {
+      "lambda": "0",
+      "seed": 1100,
+      "tag_probability": "0.5",
+      "record_count_final": 58,
+      "distinct_tags_final": 2,
+      "RS": true
+    },
+    {
+      "lambda": "0",
+      "seed": 1100,
+      "tag_probability": "1",
+      "record_count_final": 58,
+      "distinct_tags_final": 1,
+      "RS": false
+    }
+  ],
+  "window_threshold": {
+    "required_seeds": 10,
+    "seed_thresholds_exact": [
+      "971912828383572000768/1005618992928291875",
+      "20248183924657750016/27664812723672625",
+      "971912828383572000768/1012057850670495125",
+      "80992735698631000064/106575801768217125",
+      "485956414191786000384/514817962436907875",
+      "161985471397262000128/147733260076197125",
+      "80992735698631000064/110762489828652875",
+      "242978207095893000192/393833992622757875",
+      "242978207095893000192/322252330423334875",
+      "15186137943493312512/16291519789439125",
+      "323970942794524000256/348197195905147875",
+      "40496367849315500032/59008297353563375"
+    ],
+    "aggregate_threshold_exact": "971912828383572000768/1012057850670495125",
+    "aggregate_threshold_float": 960.33327318164,
+    "vacuum_growth_limit": 1.49999999875,
+    "matter_growth": 20000.0,
+    "original_carrier_threshold_checks": 60
+  },
+  "population_law_exact_enumeration_checks": 96
+}

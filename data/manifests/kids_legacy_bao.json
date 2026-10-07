@@ -1,0 +1,25 @@
+{
+  "dataset": "KIDS_LEGACY_BAO",
+  "release": "arXiv:2503.19441",
+  "access": "official_likelihood",
+  "fetch_url": "https://arxiv.org/abs/2503.19441",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "KiDS public data; cite Wright et al. 2025",
+  "citation": "Wright et al. 2025, arXiv:2503.19441",
+  "raw_files": [{"path": "data/raw/kids_legacy_bao/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/kids_legacy_bao/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/kids_legacy_bao/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "as released"},
+  "route": null,
+  "staging_axis": null,
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "Gaussian approximation on published BAO ratio and covariance",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

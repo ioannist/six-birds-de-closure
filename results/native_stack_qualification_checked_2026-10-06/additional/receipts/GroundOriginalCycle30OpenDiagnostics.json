@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics",
+  "terminal_exit_code": 0,
+  "source_sha256": "5df6095f51cfd225a24f324805f6512b4bc24b7565cb950f800d1a076f95b0c2",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.lean"
+  ],
+  "object_sha256": "0af2290e2ce72bfac8c2ff52e2cdb5f668d4e0bf38d92c64031048b3c853cd91"
+}

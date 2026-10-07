@@ -1,0 +1,8 @@
+{
+  "controlled_replacements": 24,
+  "original_verifier_sha256": "742d2600cac31a8b809d981033f46dfcb90dd7cb6902c687b76cb907a86a0e9a",
+  "recovery_verifier_sha256": "2802a5e044c8de5c764e91c6a3dac7689aabc653b452c05469c4aef826a93c38",
+  "source_and_replay_gates_preserved": true,
+  "modified_public_modules": 1,
+  "qualified_success_path_pending": true
+}

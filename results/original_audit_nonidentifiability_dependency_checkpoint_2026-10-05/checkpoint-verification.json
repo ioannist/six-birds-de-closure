@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-05T13:19:33.097331+00:00",
+  "archive_members_verified": 2674,
+  "project_dependency_modules": 1327,
+  "bound_inputs": 2660,
+  "checked_declarations": 9,
+  "standard_only": true,
+  "new_compilation_claimed": false,
+  "registered_execution_claimed": false,
+  "parent_packet_manifest_sha256": "d0c9d9002e3083222fa9473ffff9f9830379fa25486a133ae122d65f47afea01",
+  "parent_audit_log_sha256": "429cf559d91a0cdabf44fe74db47bfd200dfb1187fa690d4bf1a6a798dcde470",
+  "preserved_lakefile_sha256": "cf167d4244914ef16ec3c8dc418b3b49832809ed5bb8ade97aef1d45a9a1c7e8",
+  "all_original_bound_inputs_unchanged": true,
+  "registered_inputs_changed": false
+}

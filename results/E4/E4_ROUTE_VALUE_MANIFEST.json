@@ -1,0 +1,185 @@
+{
+  "blind_hash_verification": {
+    "E4_BLINDING_ATTESTATION.json": "7cf11df070ce5621f55444403e7327000b629ed1d7ba7fc819b109d0da1e77bd",
+    "E4_KERNEL_FREEZE.json": "c54b570bef8d69e8319a797158b3ee0d1498338e280a9bbd6c266cc94880f0af",
+    "E4_PREDICTED_ROUTE_TABLE.json": "07bea7248c2121375c124346f32a4a4db1bd7b3f6fbb03eb0f34667c58fea10c",
+    "E4_ROUTE_VERSION_MANIFEST.json": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41"
+  },
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "phase": "B_value_unlock",
+  "predicted_offsets_attached_after_unlock": {
+    "cepheid_sn": {
+      "predicted_delta_H0": 2.259326748663933,
+      "prediction_sigma": 0.5738949908820362
+    },
+    "cmb_bao": {
+      "predicted_delta_H0": -3.1965749472486675,
+      "prediction_sigma": 1.2707559895460148
+    },
+    "inverse_ladder": {
+      "predicted_delta_H0": -2.716605645271159,
+      "prediction_sigma": 0.985308325835351
+    },
+    "jagb_sn": {
+      "predicted_delta_H0": 2.259326748663933,
+      "prediction_sigma": 0.5738949908820362
+    },
+    "jwst_trgb_sn": {
+      "predicted_delta_H0": 2.259326748663933,
+      "prediction_sigma": 0.5738949908820362
+    },
+    "siren": {
+      "predicted_delta_H0": 0.009896314254918583,
+      "prediction_sigma": 0.014418077269702446
+    },
+    "time_delay": {
+      "predicted_delta_H0": 0.5095144617482672,
+      "prediction_sigma": 0.7423186744364157
+    },
+    "trgb_sn": {
+      "predicted_delta_H0": 2.259326748663933,
+      "prediction_sigma": 0.5738949908820362
+    }
+  },
+  "routes": [
+    {
+      "aor_status": "budgeted",
+      "citation": "Planck 2018 VI, arXiv:1807.06209; committed E1 compressed CMB-only posterior",
+      "h0": 67.35723410080992,
+      "notes": "Derived from 24000 E1 compressed C1 LCDM chain rows; sigma includes compression systematic 0.5 km/s/Mpc in quadrature.",
+      "recomputability": "recomputable",
+      "route_id": "cmb_bao",
+      "sigma": 0.7888298018858959,
+      "source": "E1 compressed C1 LCDM chain posterior"
+    },
+    {
+      "aor_status": "budgeted",
+      "citation": "DESI DR2 BAO cosmology, arXiv:2503.14738; committed E1 CMB+BAO posterior",
+      "h0": 68.49010109846527,
+      "notes": "Derived from 24000 E1 compressed C2 LCDM chain rows; sigma includes compression systematic 0.5 km/s/Mpc in quadrature.",
+      "recomputability": "recomputable",
+      "route_id": "inverse_ladder",
+      "sigma": 0.5828571827320005,
+      "source": "E1 compressed C2 LCDM chain posterior"
+    },
+    {
+      "aor_status": "zero",
+      "citation": "Riess et al. 2025, arXiv:2509.01667; Cepheid-only JWST+HST result H0=73.49+/-0.93",
+      "h0": 73.49,
+      "notes": "Cepheid-only route; not the combined 55-SN / mixed-calibrator value.",
+      "recomputability": "summary_only",
+      "route_id": "cepheid_sn",
+      "sigma": 0.93,
+      "source": "SH0ES JWST+HST Cepheid-only Gaussian summary"
+    },
+    {
+      "aor_status": "budgeted",
+      "citation": "Freedman et al. 2024, arXiv:2408.06153; plan/03 data-layer row",
+      "h0": 70.39,
+      "notes": "Stat, sys, and SN terms combined in quadrature.",
+      "recomputability": "summary_only",
+      "route_id": "trgb_sn",
+      "sigma": 1.9357944105715357,
+      "source": "CCHP JWST TRGB Gaussian summary"
+    },
+    {
+      "aor_status": "budgeted",
+      "citation": "Freedman et al. 2024, arXiv:2408.06153; plan/03 data-layer row",
+      "h0": 68.81,
+      "notes": "Published stat and sys terms combined in quadrature.",
+      "recomputability": "summary_only",
+      "route_id": "jwst_trgb_sn",
+      "sigma": 2.224072840533781,
+      "source": "CCHP JWST-only TRGB Gaussian summary"
+    },
+    {
+      "aor_status": "budgeted",
+      "citation": "Freedman et al. 2024, arXiv:2408.06153; plan/03 data-layer row",
+      "h0": 67.8,
+      "notes": "Published stat and sys terms combined in quadrature.",
+      "recomputability": "summary_only",
+      "route_id": "jagb_sn",
+      "sigma": 2.7200183822908257,
+      "source": "CCHP JWST JAGB Gaussian summary"
+    },
+    {
+      "aor_status": "selected",
+      "citation": "TDCOSMO Collaboration 2025, arXiv:2506.03023, flat-LambdaCDM headline H0=71.6^{+3.9}_{-3.3}",
+      "h0": 71.6,
+      "notes": "Asymmetric posterior Gaussianized with sigma=(3.9+3.3)/2; model-dependent external route, INCLUDED in the corrected OOS decisive gate.",
+      "recomputability": "summary_only",
+      "route_id": "time_delay",
+      "sigma": 3.5999999999999996,
+      "source": "TDCOSMO 2025 flat-LambdaCDM headline Gaussianized summary"
+    },
+    {
+      "aor_status": "budgeted",
+      "citation": "LIGO/Virgo et al. 2017, arXiv:1710.05835; H0=70.0^{+12}_{-8}",
+      "h0": 70.0,
+      "notes": "Asymmetric posterior Gaussianized with sigma=(12+8)/2.",
+      "recomputability": "summary_only",
+      "route_id": "siren",
+      "sigma": 10.0,
+      "source": "GW170817 standard-siren Gaussianized summary"
+    }
+  ],
+  "schema_version": 1,
+  "shared_calibration_covariance": {
+    "assumptions": [
+      {
+        "component": "shared_SN_zero_point_M_B",
+        "covariance_added": 0.48999999999999994,
+        "justification": "Cepheid/TRGB/JWST-TRGB/JAGB ladders share the SN Ia second rung / zero-point calibration.",
+        "routes": [
+          "cepheid_sn",
+          "trgb_sn",
+          "jwst_trgb_sn",
+          "jagb_sn"
+        ],
+        "sigma_km_s_Mpc": 0.7
+      },
+      {
+        "component": "shared_TRGB_anchor_systematic",
+        "covariance_added": 1.0,
+        "justification": "CCHP full-TRGB and JWST-only TRGB determinations share the TRGB calibration family.",
+        "routes": [
+          "trgb_sn",
+          "jwst_trgb_sn"
+        ],
+        "sigma_km_s_Mpc": 1.0
+      },
+      {
+        "component": "shared_CMB_BAO_sound_horizon",
+        "covariance_added": 0.0625,
+        "justification": "CMB/BAO and inverse-ladder routes share the early-Universe sound-horizon calibration.",
+        "routes": [
+          "cmb_bao",
+          "inverse_ladder"
+        ],
+        "sigma_km_s_Mpc": 0.25
+      }
+    ],
+    "condition_number": 306.26555072268076,
+    "lambda_min": 0.32651403255780675,
+    "matrix_route_order": [
+      "cmb_bao",
+      "inverse_ladder",
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "value_provenance": {
+    "compression_systematic_justification": "Budgeted compressed-background/full-likelihood systematic from the E1 playbook (<1% background validation, about 0.5-0.7 km/s/Mpc on H0); decisive OOS gates exclude these routes.",
+    "compression_systematic_km_s_Mpc": 0.5,
+    "e1_chain_rows": {
+      "cmb_bao": 24000,
+      "inverse_ladder": 24000
+    },
+    "e1_summary": "results/_summaries/E1A_compressed_gates.json",
+    "route_value_unlock_utc": "2026-05-31T14:53:01Z"
+  }
+}

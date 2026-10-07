@@ -1,0 +1,74 @@
+{
+  "certificate_evaluation": "not_run_in_C0b_FIX2",
+  "design_version": "E5-minimal-physical-v2",
+  "marginalization_required_before_D_growth": true,
+  "models": {
+    "NLA": {
+      "implemented": true,
+      "parameters": [
+        "A_IA",
+        "eta_IA",
+        "z_pivot_IA"
+      ],
+      "wide_prior": {
+        "A_IA": [
+          -6.0,
+          6.0
+        ],
+        "eta_IA": [
+          -6.0,
+          6.0
+        ]
+      }
+    },
+    "TATT": {
+      "backend": "pyccl.nl_pt.PTIntrinsicAlignmentTracer + EulerianPTCalculator",
+      "implemented": true,
+      "parameters": [
+        "A1",
+        "eta1",
+        "A2",
+        "eta2",
+        "b_ta",
+        "z_pivot_IA"
+      ],
+      "wide_prior": {
+        "A1": [
+          -6.0,
+          6.0
+        ],
+        "A2": [
+          -6.0,
+          6.0
+        ],
+        "b_ta": [
+          0.0,
+          2.0
+        ],
+        "eta1": [
+          -6.0,
+          6.0
+        ],
+        "eta2": [
+          -6.0,
+          6.0
+        ]
+      }
+    }
+  },
+  "omega_floors_required_for_certificate": [
+    "Omega_WL_shared",
+    "Omega_HSC_pipeline"
+  ],
+  "pass": true,
+  "schema_version": 1,
+  "status": "implemented_not_evaluated_certificate_stop",
+  "zero_controls_required_for_certificate": [
+    "same_family_saturation",
+    "shuffled_stages",
+    "reversed_scale_cut_order",
+    "linear_zero_heterogeneity_synthetic",
+    "held_out_staging_vector_removed_from_L_and_D",
+    "DPI_coarsening_guard"
+  ]
+}

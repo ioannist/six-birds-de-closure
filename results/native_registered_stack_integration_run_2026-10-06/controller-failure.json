@@ -1,0 +1,6 @@
+{
+  "utc": "2026-10-06T17:13:21.356169+00:00",
+  "error": "AssertionError('native-build-and-full-audits')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/de_registered_integration_after_stack_recovery.py\", line 123, in <module>\n    try:main()\n        ^^^^^^\n  File \"/tmp/de_registered_integration_after_stack_recovery.py\", line 115, in main\n    execute('native-build-and-full-audits',['python3',str(HELPERS['native_build'])],ROOT)\n  File \"/tmp/de_registered_integration_after_stack_recovery.py\", line 73, in execute\n    assert result.returncode==0 and not re.search(r'error:|warning:|Traceback|build failed',raw),label\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: native-build-and-full-audits\n",
+  "goal_complete": false
+}

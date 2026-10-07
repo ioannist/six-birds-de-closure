@@ -1,0 +1,243 @@
+{
+  "L_geom": {
+    "N_posterior": 4,
+    "rank": 3,
+    "singular_values": [
+      0.8419755295371333,
+      0.22521137323231985,
+      0.042216874205091064,
+      1.706187880087048e-14
+    ],
+    "tau_L": 0.001
+  },
+  "basis": "whitened, single-whitening",
+  "folds": [
+    {
+      "G-E5-HETERO": {
+        "diagnostic_scale_rho": -0.9999999999999998,
+        "pass": false,
+        "proxy": null,
+        "reason": "No independent heterogeneity proxy is available in the locked v3A inputs; scale-cut ordering is not an independent heterogeneity variable."
+      },
+      "G-E5-PSD": {
+        "pass": true
+      },
+      "G-E5-STAGING": {
+        "m_high": 0.08059007049168901,
+        "median_shuffled_m_high": 0.9202777094852167,
+        "pass": true,
+        "row_power": [
+          816.6238643328973,
+          70.80968223659336,
+          0.770765917777781
+        ],
+        "spearman_rho": -0.9999999999999998
+      },
+      "G-E5-ZERO": {
+        "DPI_coarsening_guard": {
+          "pass": true
+        },
+        "all_pass": false,
+        "held_out_staging_vector_removed": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "linear_zero_heterogeneity_synthetic": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "note": "Rows are permuted/reversed before the Schur readout; if lambda is invariant, the fold fails G-E5-ZERO rather than being rescued.",
+        "reversed_scale_cut_order": {
+          "lambda": 874.7889088376575,
+          "pass": false
+        },
+        "same_family_saturation": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "shuffled_stage_labels": {
+          "lambda_median": 874.7889088376576,
+          "pass": false
+        }
+      },
+      "bootstrap_CI": [
+        25.101092797879012,
+        1643.839438919846
+      ],
+      "fold_pass": false,
+      "heldout_family": "KiDS-Legacy",
+      "lambda_max_Xi": 874.7889088376576,
+      "lambda_max_Xi_minus_Omega": 827.968670798478,
+      "omega": {
+        "Delta_margin": 0.1,
+        "Omega_nuisance_systematics": 46.72023803917952,
+        "Omega_same_family": 0.0,
+        "Omega_scalar": 46.82023803917952,
+        "Omega_synthetic_null": 4.0,
+        "Omega_theory": 23.36011901958976,
+        "declare_lambdas": [
+          467.2023803917952,
+          29.227595674148432
+        ]
+      },
+      "scale_labels": [
+        "modes_1-4_minus_1-3",
+        "modes_1-5_minus_1-4",
+        "modes_1-6_minus_1-5"
+      ],
+      "xi_min_eig": 0.12564393594212434
+    },
+    {
+      "G-E5-HETERO": {
+        "diagnostic_scale_rho": -0.7999999999999998,
+        "pass": false,
+        "proxy": null,
+        "reason": "No independent heterogeneity proxy is available in the locked v3A inputs; scale-cut ordering is not an independent heterogeneity variable."
+      },
+      "G-E5-PSD": {
+        "pass": true
+      },
+      "G-E5-STAGING": {
+        "m_high": 0.37918103502743333,
+        "median_shuffled_m_high": 0.514622515861634,
+        "pass": true,
+        "row_power": [
+          339.22228763430735,
+          404.04982361234124,
+          241.893251262047,
+          212.07916960622305
+        ],
+        "spearman_rho": -0.7999999999999998
+      },
+      "G-E5-ZERO": {
+        "DPI_coarsening_guard": {
+          "pass": true
+        },
+        "all_pass": false,
+        "held_out_staging_vector_removed": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "linear_zero_heterogeneity_synthetic": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "note": "Rows are permuted/reversed before the Schur readout; if lambda is invariant, the fold fails G-E5-ZERO rather than being rescued.",
+        "reversed_scale_cut_order": {
+          "lambda": 467.20238039179526,
+          "pass": false
+        },
+        "same_family_saturation": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "shuffled_stage_labels": {
+          "lambda_median": 467.2023803917953,
+          "pass": false
+        }
+      },
+      "bootstrap_CI": [
+        359.28351226324537,
+        1147.1255663190002
+      ],
+      "fold_pass": false,
+      "heldout_family": "HSC-Y3",
+      "lambda_max_Xi": 467.2023803917952,
+      "lambda_max_Xi_minus_Omega": 379.6234895080295,
+      "omega": {
+        "Delta_margin": 0.1,
+        "Omega_nuisance_systematics": 87.47889088376576,
+        "Omega_same_family": 0.0,
+        "Omega_scalar": 87.57889088376575,
+        "Omega_synthetic_null": 4.0,
+        "Omega_theory": 43.73944544188288,
+        "declare_lambdas": [
+          874.7889088376576,
+          29.227595674148432
+        ]
+      },
+      "scale_labels": [
+        "lmax_1500_minus_1000",
+        "lmax_2000_minus_1500",
+        "lmax_3000_minus_2000",
+        "lmax_5000_minus_3000"
+      ],
+      "xi_min_eig": 119.22760620988772
+    },
+    {
+      "G-E5-HETERO": {
+        "diagnostic_scale_rho": -0.9999999999999998,
+        "pass": false,
+        "proxy": null,
+        "reason": "No independent heterogeneity proxy is available in the locked v3A inputs; scale-cut ordering is not an independent heterogeneity variable."
+      },
+      "G-E5-PSD": {
+        "pass": false
+      },
+      "G-E5-STAGING": {
+        "m_high": 0.3969265438343768,
+        "median_shuffled_m_high": 0.7590148377712976,
+        "pass": true,
+        "row_power": [
+          28.835717347224243,
+          11.522609645405163,
+          7.456275113328705
+        ],
+        "spearman_rho": -0.9999999999999998
+      },
+      "G-E5-ZERO": {
+        "DPI_coarsening_guard": {
+          "pass": true
+        },
+        "all_pass": true,
+        "held_out_staging_vector_removed": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "linear_zero_heterogeneity_synthetic": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "note": "Rows are permuted/reversed before the Schur readout; if lambda is invariant, the fold fails G-E5-ZERO rather than being rescued.",
+        "reversed_scale_cut_order": {
+          "lambda": 29.227595674148425,
+          "pass": true
+        },
+        "same_family_saturation": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "shuffled_stage_labels": {
+          "lambda_median": 29.227595674148425,
+          "pass": true
+        }
+      },
+      "bootstrap_CI": [
+        -72.31994094318276,
+        -29.670781360117644
+      ],
+      "fold_pass": false,
+      "heldout_family": "CMB-lensing",
+      "lambda_max_Xi": 29.227595674148432,
+      "lambda_max_Xi_minus_Omega": -58.35129520961732,
+      "omega": {
+        "Delta_margin": 0.1,
+        "Omega_nuisance_systematics": 87.47889088376576,
+        "Omega_same_family": 0.0,
+        "Omega_scalar": 87.57889088376575,
+        "Omega_synthetic_null": 4.0,
+        "Omega_theory": 43.73944544188288,
+        "declare_lambdas": [
+          874.7889088376576,
+          467.2023803917952
+        ]
+      },
+      "scale_labels": [
+        "Lmax_1500_minus_1000",
+        "Lmax_2000_minus_1500",
+        "Lmax_3000_minus_2000"
+      ],
+      "xi_min_eig": 7.273669112491362
+    }
+  ]
+}

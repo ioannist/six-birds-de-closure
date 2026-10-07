@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: CCHP_TRGB_JAGB
+manifest: data/manifests/cchp_trgb_jagb.json
+fallback_policy: budgeted_quadrature_gaussian

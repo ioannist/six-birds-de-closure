@@ -1,0 +1,175 @@
+'SbtCosmo.Derivation.GrowthJointContinuity.safeIntegrand_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.exists_live_extension' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.root_margin_below' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.moving_interval_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.primitive_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.primitiveParameter_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.root_joint_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.growth_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.velocity_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.growthParameter_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.native_log_chart_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.native_growth_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.native_velocity_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointContinuity.native_sensitivity_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.safeGradient_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.safeGradient_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.unitGradient_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.primitive_unit_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.unit_live_rectangle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.unit_uniform_derivative_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.unitKernel_measurable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.unit_integral_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthUnitDifferential.primitive_joint_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.product_gradient_of_partials' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.root_joint_differentiableAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.growth_joint_differentiableAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.growth_joint_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.growthGradient_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.native_growth_joint_differentiableAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.native_growth_joint_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.nativeGradient_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthJointDifferential.native_growth_joint_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.rootInverse_left' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.rootInverse_right' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_joint_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.firstGradient_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.interiorDomain_mem_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.interiorDomain_isOpen' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_joint_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_joint_contDiffAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_parameter_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstDifferential.firstTime_parameter_derivative_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_time_joint_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_time_parameter_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_time_parameter_derivative_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_ratio_joint_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_endpoint_time_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_endpoint_ratio_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.original_time_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.original_time_parameter_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.original_time_parameter_derivative_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.original_ratio_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.patch_time_c1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.patch_time_parameter_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.patch_time_parameter_derivative_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.patch_ratio_c1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.weighted_abs_not_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.robust_ratio_not_differentiable_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.original_ratio_not_differentiable_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstDifferential.patch_ratio_not_differentiable_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,223 @@
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_nonneg (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  0 ≤ SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_sq (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 z ^ 2 = SbtCosmo.Derivation.GroundState.complexNormSq z
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_unit {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) : SbtCosmo.Derivation.GroundComplexEuclidean.l2 z = 1
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_neg (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (-z) = SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_smul (c : ℂ) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (c • z) = ‖c‖ * SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_add (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z + w) ≤
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 z + SbtCosmo.Derivation.GroundComplexEuclidean.l2 w
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_sub_triangle (z w q : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - q) ≤
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - w) + SbtCosmo.Derivation.GroundComplexEuclidean.l2 (w - q)
+SbtCosmo.Derivation.GroundComplexEuclidean.overlap_inner (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap z w = inner ℂ (WithLp.toLp 2 z) (WithLp.toLp 2 w)
+SbtCosmo.Derivation.GroundComplexEuclidean.overlap_bound (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  ‖SbtCosmo.Derivation.GroundNativePhase.overlap z w‖ ≤
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 z * SbtCosmo.Derivation.GroundComplexEuclidean.l2 w
+SbtCosmo.Derivation.GroundComplexEuclidean.distance_unit_identity {z w : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hw : SbtCosmo.Derivation.GroundState.complexNormSq w = 1) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - w) ^ 2 =
+    2 - 2 * (SbtCosmo.Derivation.GroundNativePhase.overlap w z).re
+SbtCosmo.Derivation.GroundComplexEuclidean.phase_unit {τ : ℝ} {g z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hg : SbtCosmo.Derivation.GroundState.complexNormSq g = 1) (hτ : 0 ≤ τ)
+  (ho : τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap g z‖) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ g z) = 1
+SbtCosmo.Derivation.GroundComplexEuclidean.phase_distance {τ : ℝ} {g z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hg : SbtCosmo.Derivation.GroundState.complexNormSq g = 1) (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hτ : 0 ≤ τ) (ho : τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap g z‖)
+  (ha : 0 ≤ (SbtCosmo.Derivation.GroundNativePhase.overlap g z).re) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ g z - g) ≤
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - g)
+SbtCosmo.Derivation.GroundComplexEuclidean.l2_sub (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - w) ≤
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 z + SbtCosmo.Derivation.GroundComplexEuclidean.l2 w
+SbtCosmo.Derivation.GroundComplexEuclidean.phase_guard_of_distance {τ d : ℝ}
+  {g z : SbtCosmo.Derivation.GroundState.ComplexField} (hg : SbtCosmo.Derivation.GroundState.complexNormSq g = 1)
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hd : SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - g) ≤ d) (hd0 : 0 ≤ d) (hτ : τ < 1 - d ^ 2 / 2) :
+  τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap g z‖
+SbtCosmo.Derivation.GroundComplexEuclidean.double_phase_gap {τ d : ℝ}
+  {g z : SbtCosmo.Derivation.GroundState.ComplexField} (hg : SbtCosmo.Derivation.GroundState.complexNormSq g = 1)
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hd : SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - g) ≤ d) (hd0 : 0 ≤ d) (hd1 : 2 * d ^ 2 ≤ 1) (hτ0 : 0 ≤ τ)
+  (hτ1 : τ < 1 - 2 * d ^ 2) :
+  τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap g z‖ ∧
+    τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ g z) z‖ ∧
+      SbtCosmo.Derivation.GroundComplexEuclidean.l2
+          (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ g z)
+              z -
+            z) ≤
+        4 * d
+SbtCosmo.Derivation.GroundComplexResidual.overlap_add_left (z w q : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap (z + w) q =
+    SbtCosmo.Derivation.GroundNativePhase.overlap z q + SbtCosmo.Derivation.GroundNativePhase.overlap w q
+SbtCosmo.Derivation.GroundComplexResidual.overlap_sub_right (z w q : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap z (w - q) =
+    SbtCosmo.Derivation.GroundNativePhase.overlap z w - SbtCosmo.Derivation.GroundNativePhase.overlap z q
+SbtCosmo.Derivation.GroundComplexResidual.overlap_smul_right (z w : SbtCosmo.Derivation.GroundState.ComplexField)
+  (c : ℂ) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap z (c • w) = c * SbtCosmo.Derivation.GroundNativePhase.overlap z w
+SbtCosmo.Derivation.GroundComplexResidual.overlap_smul_left (z w : SbtCosmo.Derivation.GroundState.ComplexField)
+  (c : ℂ) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap (c • z) w = star c * SbtCosmo.Derivation.GroundNativePhase.overlap z w
+SbtCosmo.Derivation.GroundComplexResidual.overlap_self (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap z z = ↑(SbtCosmo.Derivation.GroundState.complexNormSq z)
+SbtCosmo.Derivation.GroundComplexResidual.hamiltonian_symmetric (b : SbtCosmo.Derivation.GroundState.Field)
+  (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap z (SbtCosmo.Derivation.GroundState.complexHamiltonian b w) =
+    SbtCosmo.Derivation.GroundNativePhase.overlap (SbtCosmo.Derivation.GroundState.complexHamiltonian b z) w
+SbtCosmo.Derivation.GroundComplexResidual.shifted_symmetric (b : SbtCosmo.Derivation.GroundState.Field) (e : ℝ)
+  (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap z (SbtCosmo.Derivation.GroundComplexResidual.shifted b e w) =
+    SbtCosmo.Derivation.GroundNativePhase.overlap (SbtCosmo.Derivation.GroundComplexResidual.shifted b e z) w
+SbtCosmo.Derivation.GroundComplexResidual.shifted_sub (b : SbtCosmo.Derivation.GroundState.Field) (e : ℝ)
+  (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexResidual.shifted b e (z - w) =
+    SbtCosmo.Derivation.GroundComplexResidual.shifted b e z - SbtCosmo.Derivation.GroundComplexResidual.shifted b e w
+SbtCosmo.Derivation.GroundComplexResidual.l2_shift_next (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  (SbtCosmo.Derivation.GroundComplexEuclidean.l2 fun i => z (SbtCosmo.Derivation.GroundState.next i)) =
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexResidual.l2_shift_prev (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  (SbtCosmo.Derivation.GroundComplexEuclidean.l2 fun i => z (SbtCosmo.Derivation.GroundState.prev i)) =
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexResidual.l2_diagonal {c : SbtCosmo.Derivation.GroundState.Field} {B : ℝ} (hB : 0 ≤ B)
+  (hc : ∀ (i : Fin 8), |c i| ≤ B) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  (SbtCosmo.Derivation.GroundComplexEuclidean.l2 fun i => ↑(c i) * z i) ≤
+    B * SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexResidual.shifted_l2_bound {b : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hb : ∀ (i : Fin 8), 0 ≤ b i ∧ b i ≤ 2 / 5) (he : 0 ≤ e ∧ e ≤ 2 / 5)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundComplexResidual.shifted b e z) ≤
+    12 / 5 * SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexResidual.ground_energy_budget {b g : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hg : SbtCosmo.Derivation.GroundState.IsGround b g e) (hb : ∀ (i : Fin 8), 0 ≤ b i ∧ b i ≤ 2 / 5) : 0 ≤ e ∧ e ≤ 2 / 5
+SbtCosmo.Derivation.GroundComplexResidual.rayleigh_error {b : SbtCosmo.Derivation.GroundState.Field} {e M : ℝ}
+  {g z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hg : ∀ (i : Fin 8), SbtCosmo.Derivation.GroundState.complexHamiltonian b g i = ↑e * g i)
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hM :
+    ∀ (w : SbtCosmo.Derivation.GroundState.ComplexField),
+      SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundComplexResidual.shifted b e w) ≤
+        M * SbtCosmo.Derivation.GroundComplexEuclidean.l2 w) :
+  |SbtCosmo.Derivation.GroundState.complexEnergy b z - e| ≤
+    M * SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - g) ^ 2
+SbtCosmo.Derivation.GroundComplexResidual.eigen_residual_bound {b : SbtCosmo.Derivation.GroundState.Field} {e M : ℝ}
+  {g z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hg : ∀ (i : Fin 8), SbtCosmo.Derivation.GroundState.complexHamiltonian b g i = ↑e * g i)
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hM :
+    ∀ (w : SbtCosmo.Derivation.GroundState.ComplexField),
+      SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundComplexResidual.shifted b e w) ≤
+        M * SbtCosmo.Derivation.GroundComplexEuclidean.l2 w) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundComplexResidual.shifted b (SbtCosmo.Derivation.GroundState.complexEnergy b z) z) ≤
+    M * SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - g) +
+      M * SbtCosmo.Derivation.GroundComplexEuclidean.l2 (z - g) ^ 2
+SbtCosmo.Derivation.GroundSourceDiagnostics.source_zero (b : SbtCosmo.Derivation.GroundState.Field)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) : SbtCosmo.Derivation.GroundState.complexSourcePotential b 0 z = b
+SbtCosmo.Derivation.GroundSourceDiagnostics.sourcing_self_comparison_zero (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalSourcingResidual b κ z = 0
+SbtCosmo.Derivation.GroundSourceDiagnostics.double_phase_real_sign {τ : ℝ}
+  {g z : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (ho : τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap g z‖) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ (-g) z) z =
+    SbtCosmo.Derivation.GroundNativePhase.nativePhase τ (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ g z) z
+SbtCosmo.Derivation.GroundOriginalResiduals.background_arithmetic (i : Fin 8) :
+  0 ≤ SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground i ∧
+    SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground i ≤ 2 / 5
+SbtCosmo.Derivation.GroundOriginalResiduals.background_budget (i : Fin 8) :
+  0 ≤ SbtCosmo.Derivation.GroundOriginalResiduals.b i ∧ SbtCosmo.Derivation.GroundOriginalResiduals.b i ≤ 2 / 5
+SbtCosmo.Derivation.GroundOriginalResiduals.tolerance_budget :
+  0 ≤ SbtCosmo.Derivation.GroundOriginalResiduals.τ ∧
+    SbtCosmo.Derivation.GroundOriginalResiduals.τ < 1 / 2 ∧
+      1 / 100000000 < SbtCosmo.Derivation.GroundOriginalResiduals.ε
+SbtCosmo.Derivation.GroundOriginalResiduals.target_ground_data :
+  SbtCosmo.Derivation.GroundState.complexNormSq SbtCosmo.Derivation.GroundOriginalResiduals.target = 1 ∧
+    (∀ (i : Fin 8),
+        SbtCosmo.Derivation.GroundState.complexHamiltonian SbtCosmo.Derivation.GroundOriginalResiduals.b
+            SbtCosmo.Derivation.GroundOriginalResiduals.target i =
+          ↑SbtCosmo.Derivation.GroundOriginalResiduals.eigenvalue *
+            SbtCosmo.Derivation.GroundOriginalResiduals.target i) ∧
+      0 ≤ SbtCosmo.Derivation.GroundOriginalResiduals.eigenvalue ∧
+        SbtCosmo.Derivation.GroundOriginalResiduals.eigenvalue ≤ 2 / 5
+SbtCosmo.Derivation.GroundOriginalResiduals.candidate_zero_return (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate SbtCosmo.Derivation.GroundOriginalResiduals.b 0 z =
+    -SbtCosmo.Derivation.GroundOriginalResiduals.target
+SbtCosmo.Derivation.GroundOriginalResiduals.orbit_unit (n : ℕ) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundOriginalResiduals.orbit n) = 1
+SbtCosmo.Derivation.GroundOriginalResiduals.orbit_distance_sixty :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60 - SbtCosmo.Derivation.GroundOriginalResiduals.target) <
+    1 / 500000000
+SbtCosmo.Derivation.GroundOriginalResiduals.orbit_distance_fifty_nine :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 59 - SbtCosmo.Derivation.GroundOriginalResiduals.target) <
+    3 / 1000000000
+SbtCosmo.Derivation.GroundOriginalResiduals.last_update_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.lastUpdateResidual SbtCosmo.Derivation.GroundOriginalResiduals.τ
+      SbtCosmo.Derivation.GroundOriginalResiduals.b 0 (1 / 2) (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 59) <
+    SbtCosmo.Derivation.GroundOriginalResiduals.ε
+SbtCosmo.Derivation.GroundOriginalResiduals.final_fixed_gap_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalFixedGap SbtCosmo.Derivation.GroundOriginalResiduals.τ
+        SbtCosmo.Derivation.GroundOriginalResiduals.b 0 (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60) <
+      SbtCosmo.Derivation.GroundOriginalResiduals.ε ∧
+    SbtCosmo.Derivation.GroundOriginalResiduals.τ <
+      ‖SbtCosmo.Derivation.GroundNativePhase.overlap
+          (SbtCosmo.Derivation.GroundNativePhase.nativePhase SbtCosmo.Derivation.GroundOriginalResiduals.τ
+            (SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate SbtCosmo.Derivation.GroundOriginalResiduals.b 0
+              (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60))
+            (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60))
+          (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60)‖
+SbtCosmo.Derivation.GroundOriginalResiduals.final_eigen_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalEigenResidual SbtCosmo.Derivation.GroundOriginalResiduals.b 0
+      (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60) <
+    SbtCosmo.Derivation.GroundOriginalResiduals.ε
+SbtCosmo.Derivation.GroundOriginalResiduals.final_sourcing_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalSourcingResidual SbtCosmo.Derivation.GroundOriginalResiduals.b 0
+        (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60) =
+      0 ∧
+    SbtCosmo.Derivation.GroundSourceDiagnostics.finalSourcingResidual SbtCosmo.Derivation.GroundOriginalResiduals.b 0
+        (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60) <
+      SbtCosmo.Derivation.GroundOriginalResiduals.ε
+SbtCosmo.Derivation.GroundOriginalResiduals.actual_seed_zero_sixty_convergence_tests :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence SbtCosmo.Derivation.GroundOriginalResiduals.τ
+      SbtCosmo.Derivation.GroundOriginalResiduals.ε SbtCosmo.Derivation.GroundOriginalResiduals.b 0 (1 / 2)
+      (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 59) (SbtCosmo.Derivation.GroundOriginalResiduals.orbit 60) ∧
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundOriginalResiduals.τ
+          SbtCosmo.Derivation.GroundOriginalResiduals.b 0 (SbtCosmo.Derivation.GroundOriginalResiduals.orbit n) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundOriginalResiduals.τ
+          SbtCosmo.Derivation.GroundOriginalResiduals.b 0 (1 / 2) (SbtCosmo.Derivation.GroundOriginalResiduals.orbit n)
+SbtCosmo.Derivation.GroundSourceDiagnosticControls.imaginary_unit :
+  SbtCosmo.Derivation.GroundState.complexNormSq SbtCosmo.Derivation.GroundSourceDiagnosticControls.z = 1
+SbtCosmo.Derivation.GroundSourceDiagnosticControls.first_alignment {τ : ℝ} (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ SbtCosmo.Derivation.GroundSourceDiagnosticControls.g
+      SbtCosmo.Derivation.GroundSourceDiagnosticControls.z =
+    -SbtCosmo.Derivation.GroundSourceDiagnosticControls.z
+SbtCosmo.Derivation.GroundSourceDiagnosticControls.second_alignment {τ : ℝ} (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ
+      (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ SbtCosmo.Derivation.GroundSourceDiagnosticControls.g
+        SbtCosmo.Derivation.GroundSourceDiagnosticControls.z)
+      SbtCosmo.Derivation.GroundSourceDiagnosticControls.z =
+    SbtCosmo.Derivation.GroundSourceDiagnosticControls.z
+SbtCosmo.Derivation.GroundSourceDiagnosticControls.actual_double_gap_control {τ : ℝ} (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalFixedGap τ 0 0 SbtCosmo.Derivation.GroundSourceDiagnosticControls.z =
+      0 ∧
+    SbtCosmo.Derivation.GroundComplexEuclidean.l2
+        (SbtCosmo.Derivation.GroundNativePhase.nativePhase τ
+            (SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate 0 0
+              SbtCosmo.Derivation.GroundSourceDiagnosticControls.z)
+            SbtCosmo.Derivation.GroundSourceDiagnosticControls.z -
+          SbtCosmo.Derivation.GroundSourceDiagnosticControls.z) =
+      2
+SbtCosmo.Derivation.GroundSourceDiagnosticControls.imaginary_half_update_illegal {τ : ℝ} (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ 0 0 SbtCosmo.Derivation.GroundSourceDiagnosticControls.z ∧
+    ¬SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ 0 0 (1 / 2)
+        SbtCosmo.Derivation.GroundSourceDiagnosticControls.z

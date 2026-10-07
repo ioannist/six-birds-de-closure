@@ -1,0 +1,31 @@
+import SbtCosmo.Derivation.ConvexSubgradient
+import SbtCosmo.Derivation.ConvexSumSplit
+import SbtCosmo.Derivation.SchurStationarity
+import SbtCosmo.Derivation.StationarityExamples
+
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.restricted_subgradient_iff
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.indicator_subgradient_iff
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.real_subgradient_iff
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.zero_subgradientOn_iff
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.real_subgradient_add
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.remove_smooth_summand
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.normal_univ_iff
+#print axioms SbtCosmo.Derivation.ConvexSubgradient.smooth_real_subgradient_eq
+#print axioms SbtCosmo.Derivation.ConvexSumSplit.split_real_of_continuous
+#print axioms SbtCosmo.Derivation.ConvexSumSplit.split_real
+#print axioms SbtCosmo.Derivation.ConvexSumSplit.split_extended
+#print axioms SbtCosmo.Derivation.ConvexSumSplit.finite_objective_stationarity
+#print axioms SbtCosmo.Derivation.SchurStationarity.affine_probe_differentiable
+#print axioms SbtCosmo.Derivation.SchurStationarity.schur_energy_differentiable
+#print axioms SbtCosmo.Derivation.SchurStationarity.trace_energy_convex
+#print axioms SbtCosmo.Derivation.SchurStationarity.trace_energy_differentiable
+#print axioms SbtCosmo.Derivation.SchurStationarity.matrix_stationarity
+#print axioms SbtCosmo.Derivation.SchurStationarity.matrix_stationarity_nonzero
+#print axioms SbtCosmo.Derivation.SchurStationarity.matrix_restricted_stationarity
+#print axioms SbtCosmo.Derivation.StationarityExamples.actual_nonsmooth_stationarity
+#print axioms SbtCosmo.Derivation.StationarityExamples.actual_schur_stationarity
+#print axioms SbtCosmo.Derivation.StationarityExamples.boundary_no_bottom
+#print axioms SbtCosmo.Derivation.StationarityExamples.boundary_epigraph_convex
+#print axioms SbtCosmo.Derivation.StationarityExamples.boundary_restricted_support
+#print axioms SbtCosmo.Derivation.StationarityExamples.boundary_no_ambient_support
+#print axioms SbtCosmo.Derivation.StationarityExamples.missing_qualification_no_split

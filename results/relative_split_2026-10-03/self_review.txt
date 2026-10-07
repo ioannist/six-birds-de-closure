@@ -1,0 +1,49 @@
+Adversarial self-review, not independent review.
+
+Target: original finite-dimensional relative-interior-qualified ambient extended
+objective/admissibility split and actual Schur stationarity. This is not the
+previous finite-everywhere objective surrogate.
+
+Review pass: reconstructed the proof from its actual hypotheses and operations.
+The continuity proof transports the genuine affine-span topology; its empty-set
+case and chart origin are explicit. Relative-interior membership supplies domain
+neighborhoods, and continuity supplies a finite upper cost bound. Difference
+surjectivity is proved into the sum of the two domain directions; imported
+finite-dimensional openness is applied there, not to ambient E. The example
+checks empty ambient interior and a genuinely extended domain.
+
+Actual perturbation candidates and bounded-cost opposite witnesses mix to zero
+budget. Ordinary optimality and convexity earn a uniform lower bound on every
+candidate, guarding the real infimum before the earlier nonsmooth support
+construction is applied. No local finite-value, subgradient-split, normal,
+stationarity, or differentiable-value field is assumed in this construction.
+
+The equality cone has zero/add/scaling laws and imposes no price sign. Actual
+affine coordinate lifts cover every original domain pair. Hahn-Banach provides
+an ambient continuous extension with exact restriction; no ambient extension
+is supplied. Testing each coordinate of the global pair inequality proves the
+objective support and the normal with the correct sign. Arbitrary support is
+subtracted as an actual linear function and restored without changing domains.
+Extended coercion returns at finite points, with top cases explicitly included.
+The reverse join is proved. Literal J+indicator equals restriction only under
+the explicit no-bottom premise, proved separately.
+
+The Schur application uses the actual previous price and smoothness proofs.
+Its assumptions are ambient convex epigraph/no bottom, convex A, common relative
+interior point, ordinary finite optimizer and finite-cost PD Slater point. These
+are sufficient and include the original proper/closed/qualified assumptions;
+no closedness is needed. The final actual fderiv is justified by earned actual
+Schur differentiability. Strict original complete-lattice value decrease yields
+nonzero P by contradiction with restricted zero support, including a possible
+minus-infinity competing infimum. No whole-matrix activity is asserted.
+
+The lower-dimensional example has a forced nonzero objective support canceled
+by an admissibility normal. Its final statement has zero premises. The prior
+missing-qualification counterexample and all previous proof/evidence stay fixed.
+
+Limits: original attainment is supplied, not earned. The explicit matrix
+Jacobian/adjoint expression and physical Lambda bridge remain separate. Other
+parked false or project-sized original claims are unaffected. Broad paper
+completion is not established; no new claim downgrade. Build/statements/fresh
+closures are checked, with exact immutable earlier 1056-declaration audit prefix.
+Full cumulative audit command not rerun; no Python/carrier/solver/RNG reruns.

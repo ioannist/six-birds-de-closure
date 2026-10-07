@@ -1,0 +1,4 @@
+✔ [8130/8133] Built SbtCosmo.Derivation.RelativeSumSplit (12s)
+✔ [8131/8133] Built SbtCosmo.Derivation.RelativeSplitExamples (7.5s)
+✔ [8132/8133] Built SbtCosmo.Derivation.RelativeSchurStationarity (8.2s)
+Build completed successfully (8133 jobs).

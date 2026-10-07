@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_resume.py", line 80, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_resume.py", line 17, in main
+    assert not any('lean ' in x and '/GroundOffsetTransport/Point' in x for x in processes.splitlines())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

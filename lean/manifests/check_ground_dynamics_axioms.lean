@@ -1,0 +1,43 @@
+import SbtCosmo.Derivation.GroundLocalDynamics
+import SbtCosmo.Derivation.GroundZeroCouplingOrbit
+
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_ball_invariant
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_orbit_bound
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.lipschitz_fixed_orbit_converges
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.c1_fixed_local_attraction
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.normSq_smooth
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.normalize_smooth_at
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.relaxed_smooth
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.relaxed_fixed
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.normalized_smooth_at
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.positive_root_groundPair_return
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.positive_root_jacobian_return
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.linear_action_entries
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.operator_norm_le_rows
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.coordinate_fixed
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.coordinate_smooth_at
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.coordinate_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.coordinate_iterate_return
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.actual_local_attraction
+#print axioms SbtCosmo.Derivation.GroundLocalDynamics.actual_local_attraction_of_rows
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.distance_identity
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap_nonnegative
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_nonnegative
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.convex_norm_identity
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.convex_norm_le_one
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.relaxed_positive
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.relaxed_norm_positive
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.normalize_unit
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.step_unit_positive
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.native_step_unit_positive
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.native_orbit_unit_nonnegative
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_relaxed
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.dot_step
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.gap_step_bound
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_unit_nonnegative
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_gap_bound
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.norm_le_sqrt_normSq
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_distance_bound
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.orbit_converges
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.actual_zero_coupling_global_convergence
+#print axioms SbtCosmo.Derivation.GroundZeroCouplingOrbit.actual_zero_coupling_distance_bound

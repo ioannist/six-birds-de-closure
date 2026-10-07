@@ -1,0 +1,124 @@
+SbtCosmo.Derivation.GrowthInfinite.rootLive_positive {c : ℝ} (hc : 0 < c) (L : ℝ) :
+  SbtCosmo.Derivation.GrowthExistence.RootLive c L
+SbtCosmo.Derivation.GrowthInfinite.root_lower (c x : ℝ) : √c ≤ SbtCosmo.Derivation.GrowthExistence.root c x
+SbtCosmo.Derivation.GrowthInfinite.integrand_bounds {c : ℝ} (hc : 0 < c) (x : ℝ) :
+  0 ≤ SbtCosmo.Derivation.GrowthExistence.integrand c x ∧
+    SbtCosmo.Derivation.GrowthExistence.integrand c x ≤ Real.exp (-2 * x) / √c ^ 3
+SbtCosmo.Derivation.GrowthInfinite.integrable_integrand {c : ℝ} (hc : 0 < c) :
+  MeasureTheory.IntegrableOn (SbtCosmo.Derivation.GrowthExistence.integrand c) (Set.Ioi 0) MeasureTheory.volume
+SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral_nonnegative {c : ℝ} (hc : 0 < c) :
+  0 ≤ SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral c
+SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral_upper {c : ℝ} (hc : 0 < c) :
+  SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral c ≤ 1 / (2 * √c ^ 3)
+SbtCosmo.Derivation.GrowthInfinite.primitive_tendsto {c : ℝ} (hc : 0 < c) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthExistence.primitive c) Filter.atTop
+    (nhds (SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral c))
+SbtCosmo.Derivation.GrowthInfinite.root_tendsto (c : ℝ) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthExistence.root c) Filter.atTop (nhds √c)
+SbtCosmo.Derivation.GrowthInfinite.growth_tendsto {c : ℝ} (hc : 0 < c) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthExistence.growth c) Filter.atTop
+    (nhds (SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c))
+SbtCosmo.Derivation.GrowthInfinite.growth_strictMono {c : ℝ} (hc : 0 < c) :
+  StrictMonoOn (SbtCosmo.Derivation.GrowthExistence.growth c) (Set.Ici 0)
+SbtCosmo.Derivation.GrowthInfinite.growth_le_infinite {c x : ℝ} (hc : 0 < c) (hx : 0 ≤ x) :
+  SbtCosmo.Derivation.GrowthExistence.growth c x ≤ SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c
+SbtCosmo.Derivation.GrowthInfinite.growth_lt_infinite {c x : ℝ} (hc : 0 < c) (hx : 0 ≤ x) :
+  SbtCosmo.Derivation.GrowthExistence.growth c x < SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c
+SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth_upper {c : ℝ} (hc : 0 < c) :
+  SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c < 3 / 2 + 5 / (4 * c)
+SbtCosmo.Derivation.GrowthInfinite.freeGrowth_tendsto :
+  Filter.Tendsto SbtCosmo.Derivation.GrowthLimit.freeGrowth Filter.atTop (nhds (3 / 2))
+SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth_lower {c : ℝ} (hc : 0 < c) :
+  3 / 2 ≤ SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c
+SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth_parameter_limit :
+  Filter.Tendsto SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth Filter.atTop (nhds (3 / 2))
+SbtCosmo.Derivation.GrowthInfinite.native_tendsto {a0 lam : ℝ} (ha0 : 0 < a0) (hlam : 0 < lam) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam) Filter.atTop
+    (nhds (SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 lam))
+SbtCosmo.Derivation.GrowthInfinite.native_lt_infinite {a0 lam a : ℝ} (ha0 : 0 < a0) (hlam : 0 < lam) (ha : a0 ≤ a) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a < SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 lam
+SbtCosmo.Derivation.GrowthInfinite.native_infinite_upper {a0 lam : ℝ} (ha0 : 0 < a0) (hlam : 0 < lam) :
+  SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 lam < 3 / 2 + 5 / (4 * (lam * a0 ^ 3))
+SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral_continuousAt {c : ℝ} (hc : 0 < c) :
+  ContinuousAt SbtCosmo.Derivation.GrowthInfinite.infiniteIntegral c
+SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth_continuousAt {c : ℝ} (hc : 0 < c) :
+  ContinuousAt SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth c
+SbtCosmo.Derivation.GrowthInfinite.growth_gap_strictMono {c1 c2 : ℝ} (h1 : 0 < c1) (h2 : 0 < c2) (h12 : c1 < c2) :
+  StrictMonoOn
+    (fun x => SbtCosmo.Derivation.GrowthExistence.growth c1 x - SbtCosmo.Derivation.GrowthExistence.growth c2 x)
+    (Set.Ioi 0)
+SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth_strictAntiOn :
+  StrictAntiOn SbtCosmo.Derivation.GrowthInfinite.infiniteGrowth (Set.Ioi 0)
+SbtCosmo.Derivation.GrowthInfinite.native_infinite_continuousAt {a0 lam : ℝ} (ha0 : 0 < a0) (hlam : 0 < lam) :
+  ContinuousAt (SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0) lam
+SbtCosmo.Derivation.GrowthInfinite.native_infinite_strictAntiOn {a0 : ℝ} (ha0 : 0 < a0) :
+  StrictAntiOn (SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0) (Set.Ioi 0)
+SbtCosmo.Derivation.GrowthInfinite.native_infinite_parameter_limit {a0 : ℝ} (ha0 : 0 < a0) :
+  Filter.Tendsto (SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0) Filter.atTop (nhds (3 / 2))
+SbtCosmo.Derivation.GrowthInfinite.native_eventual_threshold_iff {a0 lam T : ℝ} (ha0 : 0 < a0) (hlam : 0 < lam) :
+  (∃ a, a0 ≤ a ∧ T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a) ↔
+    T < SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 lam
+SbtCosmo.Derivation.GrowthInfinite.native_global_bound {a0 lam a : ℝ} (ha0 : 0 < a0) (ha : a0 ≤ a)
+  (hc : 1 ≤ lam * a0 ^ 3) : SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a < 3
+SbtCosmo.Derivation.GrowthEternalWindow.exists_unique_infinite_endpoint {a0 T : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T) :
+  ∃! upper, 0 < upper ∧ SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 upper = T
+SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint_spec {a0 T : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T) :
+  0 < SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T ∧
+    SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0
+        (SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T) =
+      T
+SbtCosmo.Derivation.GrowthEternalWindow.below_infinite_endpoint_iff {a0 T lam : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T)
+  (hlam : 0 < lam) :
+  T < SbtCosmo.Derivation.GrowthInfinite.nativeInfinite a0 lam ↔
+    lam < SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T
+SbtCosmo.Derivation.GrowthEternalWindow.perpetual_horizon_iff {a0 lam : ℝ} (ha0 : 0 < a0) :
+  SbtCosmo.Derivation.GrowthEternalWindow.perpetualHorizon a0 lam ↔ 0 ≤ lam
+SbtCosmo.Derivation.GrowthEternalWindow.perpetual_threshold_window {a0 T lam : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T) :
+  (SbtCosmo.Derivation.GrowthEternalWindow.perpetualHorizon a0 lam ∧
+      ∃ a, a0 ≤ a ∧ T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a) ↔
+    0 ≤ lam ∧ lam < SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T
+SbtCosmo.Derivation.GrowthEternalWindow.finite_endpoint_lt_infinite {a0 T lam A : ℝ} (ha0 : 0 < a0) (hT : 3 / 2 < T)
+  (hlam : 0 < lam) (hA : a0 ≤ A) (he : SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A = T) :
+  lam < SbtCosmo.Derivation.GrowthEternalWindow.infiniteEndpoint a0 T
+SbtCosmo.Derivation.WindowEternalRecords.upper_spec :
+  0 < SbtCosmo.Derivation.WindowEternalRecords.upper ∧
+    SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000) SbtCosmo.Derivation.WindowEternalRecords.upper =
+      SbtCosmo.Derivation.WindowSample.aggregateThreshold
+SbtCosmo.Derivation.WindowEternalRecords.gate_at_horizon_iff {A : ℝ} (hA : 1 / 1000 ≤ A) (lam : ℝ) :
+  SbtCosmo.Derivation.GrowthPopulation.nativeAggregate SbtCosmo.Derivation.WindowSample.amplitude
+      SbtCosmo.Derivation.WindowSampleData.tag (1 / 1000) A SbtCosmo.Derivation.WindowSample.delta 10 lam ↔
+    -(1 / A ^ 3) < lam ∧
+      SbtCosmo.Derivation.WindowSample.aggregateThreshold ≤
+        SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam A
+SbtCosmo.Derivation.WindowEternalRecords.eternal_gate_iff (lam : ℝ) :
+  SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam ↔
+    0 ≤ lam ∧ lam < SbtCosmo.Derivation.WindowEternalRecords.upper
+SbtCosmo.Derivation.WindowEternalRecords.zero_passes : SbtCosmo.Derivation.WindowEternalRecords.eternalGate 0
+SbtCosmo.Derivation.WindowEternalRecords.endpoint_excluded :
+  ¬SbtCosmo.Derivation.WindowEternalRecords.eternalGate SbtCosmo.Derivation.WindowEternalRecords.upper
+SbtCosmo.Derivation.WindowEternalRecords.negative_excluded {lam : ℝ} (hlam : lam < 0) :
+  ¬SbtCosmo.Derivation.WindowEternalRecords.eternalGate lam
+SbtCosmo.Derivation.WindowEternalRecords.finite_upper_lt_eternal :
+  SbtCosmo.Derivation.WindowEdgeCertified.upper < SbtCosmo.Derivation.WindowEternalRecords.upper
+SbtCosmo.Derivation.WindowEternalRecords.eventual_record_iff {lam : ℝ} (hlam : 0 < lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowEternalRecords.eventualRecord j lam ↔
+    SbtCosmo.Derivation.WindowSample.seedThreshold j < SbtCosmo.Derivation.GrowthInfinite.nativeInfinite (1 / 1000) lam
+SbtCosmo.Derivation.WindowEternalRecords.endpoint_eventual_count :
+  {j | SbtCosmo.Derivation.WindowEternalRecords.eventualRecord j SbtCosmo.Derivation.WindowEternalRecords.upper}.card =
+    9
+SbtCosmo.Derivation.WindowEternalRecords.fixed_deadline_gate_iff (lam : ℝ) :
+  SbtCosmo.Derivation.WindowEternalRecords.fixedDeadlineGate lam ↔
+    0 ≤ lam ∧ lam ≤ SbtCosmo.Derivation.WindowEdgeCertified.upper
+SbtCosmo.Derivation.WindowEternalRecords.rational_starvation_margin (j : Fin 12) :
+  3 *
+      max (SbtCosmo.Derivation.WindowSampleData.maximumFalseRat j)
+        (SbtCosmo.Derivation.WindowSampleData.maximumTrueRat j) <
+    SbtCosmo.Derivation.WindowSampleData.deltaRat
+SbtCosmo.Derivation.WindowEternalRecords.amplitude_starvation_margin (j : Fin 12) (i : Fin 64) :
+  3 * SbtCosmo.Derivation.WindowSample.amplitude j i < SbtCosmo.Derivation.WindowSample.delta
+SbtCosmo.Derivation.WindowEternalRecords.no_records_ever {lam : ℝ} (hlam : 1000000000 ≤ lam) (j : Fin 12) (i : Fin 64) :
+  ¬∃ a,
+      1 / 1000 ≤ a ∧
+        SbtCosmo.Derivation.WindowSample.delta ≤
+          SbtCosmo.Derivation.WindowSample.amplitude j i *
+            SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a

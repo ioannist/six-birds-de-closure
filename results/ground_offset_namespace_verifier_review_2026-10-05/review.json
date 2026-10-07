@@ -1,0 +1,73 @@
+{
+  "utc": "2026-10-05T08:21:21.131985+00:00",
+  "terminal_exit_code": 0,
+  "scope": "Historical-freeze namespace exception only; no registered compilation or whole-offset gate claimed",
+  "review": "adversarial self-review, not independent review",
+  "proposal_sha256": "345d19b8cb91594d382b29e2f65169d4cf8d8e2258c2ac265446087b7a8f7494",
+  "extracted_source_line_range": [
+    104,
+    147
+  ],
+  "ast_adapter": "Only (ROOT / p).read_bytes() in historical hash loop uses an in-memory proposed source view",
+  "ast_adapter_occurrences": 1,
+  "historical_inputs": 2090,
+  "controls": [
+    {
+      "name": "exact_nineteen_namespace_changes",
+      "expected": "accept",
+      "actual": "accept",
+      "explicit_changes": 19
+    },
+    {
+      "name": "no_namespace_changes",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": ""
+    },
+    {
+      "name": "one_missing_family_repair",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": ""
+    },
+    {
+      "name": "extra_family_source_change",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": ""
+    },
+    {
+      "name": "extra_renderer_change",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": ""
+    },
+    {
+      "name": "unrelated_leaf_change",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": "lean/SbtCosmo/Derivation/GroundOffsetPrefix/Point000/Step000.lean"
+    },
+    {
+      "name": "wrong_original_family_digest",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": "lean/SbtCosmo/Derivation/GroundOffsetTransport/Point000.lean"
+    },
+    {
+      "name": "wrong_original_renderer_digest",
+      "expected": "reject",
+      "actual": "reject",
+      "assertion": "scripts/de_ground_offset_transport_render.py"
+    }
+  ],
+  "registered_source_inputs_changed": false,
+  "paper_edited": false,
+  "goal_complete": false,
+  "input_sha256": {
+    "/tmp/de_offset_transport_namespace_recovery/de_ground_offset_transport_verify.repaired.py": "345d19b8cb91594d382b29e2f65169d4cf8d8e2258c2ac265446087b7a8f7494",
+    "/tmp/de_offset_transport_namespace_recovery/registered-integration-plan.json": "8d05e811ca1fa6f52fa1a9ee03a7be6da013fb1c9568c8056221863dd9d0a1c1",
+    "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/leaves_recovery.json": "d4cdb862f88a8c04ae06f0c3fb70c6b99978d9b3653069b1b5f434b725d9fd05",
+    "/home/repos/six-birds-de-closure/scripts/de_ground_offset_transport_verify.py": "3f63473f3be4edd12fa9e7ecbe66ea901de517d5069b4d33778c090ac86761e0"
+  }
+}

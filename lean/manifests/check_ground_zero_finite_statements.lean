@@ -1,0 +1,20 @@
+import SbtCosmo.Derivation.GroundNativeZeroFinite
+import SbtCosmo.Derivation.GroundOriginalSeedFinite
+
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.half_hinge
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.half_contraction
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.step_half_contraction
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.orbit_half_defect
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.orbit_half_distance_sq
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.first_overlap_half
+#check SbtCosmo.Derivation.GroundNativeZeroFinite.radius_normalize_sq
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.finite_seed_arithmetic
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.imag_expression_return
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.raw_radius_budget
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.initial_radius_bound
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.reflected_conditions
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.initial_half_region_rejected
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.first_reflected_overlap
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.actual_seed_distance_sq
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.actual_seed_sixty_distance_sq
+#check SbtCosmo.Derivation.GroundOriginalSeedFinite.actual_seed_fifty_nine_distance_sq

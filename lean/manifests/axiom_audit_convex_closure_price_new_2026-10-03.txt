@@ -1,0 +1,80 @@
+'SbtCosmo.Derivation.ConvexClosurePrice.feasible_costs_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.value_le_candidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.optimum_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.value_isGLB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.derivative_le_of_right_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.derivative_global_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.strict_sensitivity_forces_activity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.positive_price_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.certificate_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.certificate_lagrangian_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.certificate_dual_isGLB' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.weak_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.certificate_strong_duality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.certificate_value_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ConvexClosurePrice.certificate_price_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.gram_energy_nonnegative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.gram_energy_mix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.gram_energy_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.schur_energy_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.schur_energy_convex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.positiveDefinite_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.original_lagrangian_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.affine_schur_energy_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePrice.positive_schur_price' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.energy_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.objective_convex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.local_finiteness' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.sqrt_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.actual_value_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.actual_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.actual_positive_schur_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.actual_slater_and_singular_native' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.varying_native_values' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.SchurClosurePriceExamples.varying_native_nonconvex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

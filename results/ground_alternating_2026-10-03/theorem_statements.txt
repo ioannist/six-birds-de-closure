@@ -1,0 +1,314 @@
+SbtCosmo.Derivation.GroundAlternating.pair_norm (a b : ℝ) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.pair a b) = 4 * (a ^ 2 + b ^ 2)
+SbtCosmo.Derivation.GroundAlternating.pair_gradient (a b : ℝ) :
+  SbtCosmo.Derivation.GroundState.gradient (SbtCosmo.Derivation.GroundAlternating.pair a b) = 0
+SbtCosmo.Derivation.GroundAlternating.pairing_symmetric (v u w : SbtCosmo.Derivation.GroundState.Field) :
+  ∑ i, u i * SbtCosmo.Derivation.GroundState.hamiltonian v w i =
+    ∑ i, w i * SbtCosmo.Derivation.GroundState.hamiltonian v u i
+SbtCosmo.Derivation.GroundAlternating.positive_eigen_ground {v u : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hu : ∀ (i : Fin 8), 0 < u i) (hn : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (he : ∀ (i : Fin 8), SbtCosmo.Derivation.GroundState.hamiltonian v u i = e * u i) :
+  SbtCosmo.Derivation.GroundState.IsGround v u e
+SbtCosmo.Derivation.GroundAlternating.radius_properties (d : ℝ) :
+  0 < SbtCosmo.Derivation.GroundAlternating.radius d ∧
+    SbtCosmo.Derivation.GroundAlternating.radius d ^ 2 = 1 + d ^ 2 ∧
+      |d| < SbtCosmo.Derivation.GroundAlternating.radius d
+SbtCosmo.Derivation.GroundAlternating.ratio_positive (d : ℝ) : 0 < SbtCosmo.Derivation.GroundAlternating.ratio d
+SbtCosmo.Derivation.GroundAlternating.amplitude_properties (d : ℝ) :
+  0 < SbtCosmo.Derivation.GroundAlternating.amplitude d ∧
+    4 * (1 + SbtCosmo.Derivation.GroundAlternating.ratio d ^ 2) *
+        SbtCosmo.Derivation.GroundAlternating.amplitude d ^ 2 =
+      1
+SbtCosmo.Derivation.GroundAlternating.ground_positive (d : ℝ) (i : Fin 8) :
+  0 < SbtCosmo.Derivation.GroundAlternating.ground d i
+SbtCosmo.Derivation.GroundAlternating.ground_normalized (d : ℝ) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.ground d) = 1
+SbtCosmo.Derivation.GroundAlternating.ground_eigen (c d : ℝ) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundState.hamiltonian (SbtCosmo.Derivation.GroundAlternating.pair (c + d) (c - d))
+      (SbtCosmo.Derivation.GroundAlternating.ground d) i =
+    (1 + c - SbtCosmo.Derivation.GroundAlternating.radius d) * SbtCosmo.Derivation.GroundAlternating.ground d i
+SbtCosmo.Derivation.GroundAlternating.ground_selected (c d : ℝ) :
+  SbtCosmo.Derivation.GroundState.positiveGround (SbtCosmo.Derivation.GroundAlternating.pair (c + d) (c - d)) =
+    SbtCosmo.Derivation.GroundAlternating.ground d
+SbtCosmo.Derivation.GroundAlternating.ground_contrast (d : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.contrast (SbtCosmo.Derivation.GroundAlternating.ground d) =
+    -d / SbtCosmo.Derivation.GroundAlternating.radius d
+SbtCosmo.Derivation.GroundAlternating.state_positive {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) (i : Fin 8) :
+  0 < SbtCosmo.Derivation.GroundAlternating.state p i
+SbtCosmo.Derivation.GroundAlternating.state_normalized {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.state p) = 1
+SbtCosmo.Derivation.GroundAlternating.state_contrast {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) :
+  SbtCosmo.Derivation.GroundAlternating.contrast (SbtCosmo.Derivation.GroundAlternating.state p) = p
+SbtCosmo.Derivation.GroundAlternating.state_source {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) (b κ : ℝ) :
+  SbtCosmo.Derivation.GroundState.sourcePotential (fun x => b) κ (SbtCosmo.Derivation.GroundAlternating.state p) =
+    SbtCosmo.Derivation.GroundAlternating.pair (b + κ * b / 8 + κ * b * p / 8) (b + κ * b / 8 - κ * b * p / 8)
+SbtCosmo.Derivation.GroundAlternating.selected_response {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) (b κ : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.selectedMap b κ (SbtCosmo.Derivation.GroundAlternating.state p) =
+      SbtCosmo.Derivation.GroundAlternating.ground (κ * b * p / 8) ∧
+    SbtCosmo.Derivation.GroundAlternating.contrast
+        (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ (SbtCosmo.Derivation.GroundAlternating.state p)) =
+      SbtCosmo.Derivation.GroundAlternating.response b κ p
+SbtCosmo.Derivation.GroundAlternating.positive_pair_reconstructed {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
+  (hn : SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.pair a b) = 1) :
+  SbtCosmo.Derivation.GroundAlternating.state
+      (SbtCosmo.Derivation.GroundAlternating.contrast (SbtCosmo.Derivation.GroundAlternating.pair a b)) =
+    SbtCosmo.Derivation.GroundAlternating.pair a b
+SbtCosmo.Derivation.GroundAlternating.ground_eq_state (d : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.ground d =
+    SbtCosmo.Derivation.GroundAlternating.state (-d / SbtCosmo.Derivation.GroundAlternating.radius d)
+SbtCosmo.Derivation.GroundAlternating.response_live (b κ p : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.response b κ p ∈ Set.Ioo (-1) 1
+SbtCosmo.Derivation.GroundAlternating.selected_state_return {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) (b κ : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.selectedMap b κ (SbtCosmo.Derivation.GroundAlternating.state p) =
+    SbtCosmo.Derivation.GroundAlternating.state (SbtCosmo.Derivation.GroundAlternating.response b κ p)
+SbtCosmo.Derivation.GroundAlternating.response_derivative (b κ : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.GroundAlternating.response b κ) (-κ * b / 8) 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.normalized_pair_contrast (a b : ℝ) :
+  (SbtCosmo.Derivation.GroundAlternating.contrast fun i =>
+      SbtCosmo.Derivation.GroundAlternating.pair a b i /
+        √(SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.pair a b))) =
+    SbtCosmo.Derivation.GroundAlternatingRelaxation.quotient a b
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_pair_return {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1) (b κ m : ℝ) :
+  SbtCosmo.Derivation.GroundState.relaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+      (SbtCosmo.Derivation.GroundAlternating.state p) =
+    SbtCosmo.Derivation.GroundAlternating.pair (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedEven b κ m p)
+      (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedOdd b κ m p)
+SbtCosmo.Derivation.GroundAlternatingRelaxation.normalized_response_return {p : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (b κ m : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.contrast
+      (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+        (SbtCosmo.Derivation.GroundAlternating.state p)) =
+    SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m p
+SbtCosmo.Derivation.GroundAlternatingRelaxation.even_derivative :
+  HasDerivAt SbtCosmo.Derivation.GroundAlternatingRelaxation.even
+    (1 / (16 * SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0)) 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.odd_derivative :
+  HasDerivAt SbtCosmo.Derivation.GroundAlternatingRelaxation.odd
+    (-1 / (16 * SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0)) 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.even_zero_properties :
+  0 < SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0 ∧
+    SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0 ^ 2 = 1 / 8
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_zero (b κ m : ℝ) :
+  SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedEven b κ m 0 =
+      SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0 ∧
+    SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedOdd b κ m 0 =
+      SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_even_derivative (b κ m : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedEven b κ m)
+    (SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m /
+      (16 * SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0))
+    0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_odd_derivative (b κ m : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedOdd b κ m)
+    (-SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m /
+      (16 * SbtCosmo.Derivation.GroundAlternatingRelaxation.even 0))
+    0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_response_derivative (b κ m : ℝ) :
+  HasDerivAt (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m)
+    (SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m) 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.state_zero :
+  SbtCosmo.Derivation.GroundAlternating.state 0 = SbtCosmo.Derivation.GroundState.uniform
+SbtCosmo.Derivation.GroundAlternatingRelaxation.selected_uniform (b κ : ℝ) :
+  SbtCosmo.Derivation.GroundAlternating.selectedMap b κ SbtCosmo.Derivation.GroundState.uniform =
+    SbtCosmo.Derivation.GroundState.uniform
+SbtCosmo.Derivation.GroundAlternatingRelaxation.normalized_uniform (b κ m : ℝ) :
+  SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+      SbtCosmo.Derivation.GroundState.uniform =
+    SbtCosmo.Derivation.GroundState.uniform
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_response_zero (b κ m : ℝ) :
+  SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m 0 = 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.positive_mixed {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (hm : m ∈ Set.Icc 0 1) (b κ : ℝ) (i : Fin 8) :
+  0 <
+    SbtCosmo.Derivation.GroundState.relaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+      (SbtCosmo.Derivation.GroundAlternating.state p) i
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_norm_positive {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (hm : m ∈ Set.Icc 0 1) (b κ : ℝ) :
+  0 <
+    SbtCosmo.Derivation.GroundState.normSq
+      (SbtCosmo.Derivation.GroundState.relaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+        (SbtCosmo.Derivation.GroundAlternating.state p))
+SbtCosmo.Derivation.GroundAlternatingRelaxation.normalized_pair_unit {a b : ℝ}
+  (hn : 0 < SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.pair a b)) :
+  SbtCosmo.Derivation.GroundState.normSq
+      (SbtCosmo.Derivation.GroundAlternating.pair
+        (a / √(SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.pair a b)))
+        (b / √(SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundAlternating.pair a b)))) =
+    1
+SbtCosmo.Derivation.GroundAlternatingRelaxation.normalized_state_return {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (hm : m ∈ Set.Icc 0 1) (b κ : ℝ) :
+  SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+      (SbtCosmo.Derivation.GroundAlternating.state p) =
+    SbtCosmo.Derivation.GroundAlternating.state (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m p)
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mixed_response_live {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (hm : m ∈ Set.Icc 0 1) (b κ : ℝ) :
+  SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m p ∈ Set.Ioo (-1) 1
+SbtCosmo.Derivation.GroundAlternatingRelaxation.actual_response_derivative (b κ m : ℝ) :
+  HasDerivAt
+    (fun p =>
+      SbtCosmo.Derivation.GroundAlternating.contrast
+        (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+          (SbtCosmo.Derivation.GroundAlternating.state p)))
+    (SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m) 0
+SbtCosmo.Derivation.GroundAlternatingRelaxation.mode_stable_iff {m : ℝ} (hm : 0 < m) (b κ : ℝ) :
+  |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m| < 1 ↔ -1 < κ * b / 8 ∧ κ * b / 8 < 2 / m - 1
+SbtCosmo.Derivation.GroundAlternatingRelaxation.half_mode_stable_iff (b κ : ℝ) :
+  |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ (1 / 2)| < 1 ↔ -8 < κ * b ∧ κ * b < 24
+SbtCosmo.Derivation.GroundAlternatingRelaxation.coupling_half_control :
+  |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode 1 10 (1 / 2)| < 1 ∧
+    1 < |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode 1 30 (1 / 2)|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.background_half_control :
+  |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode 0 (3 / 10) (1 / 2)| < 1 ∧
+    1 < |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode 100 (3 / 10) (1 / 2)|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.local_gain_upper {f : ℝ → ℝ} {d r : ℝ} (hf : HasDerivAt f d 0)
+  (h0 : f 0 = 0) (hr : |d| < r) : ∃ ε > 0, ε ≤ 1 ∧ ∀ (p : ℝ), |p| < ε → |f p| ≤ r * |p|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.local_gain_lower {f : ℝ → ℝ} {d r : ℝ} (hf : HasDerivAt f d 0)
+  (h0 : f 0 = 0) (hr : r < |d|) : ∃ ε > 0, ε ≤ 1 ∧ ∀ (p : ℝ), 0 < |p| → |p| < ε → r * |p| < |f p|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.actual_local_contraction {b κ m : ℝ}
+  (h : |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m| < 1) :
+  ∃ r,
+    0 < r ∧
+      r < 1 ∧
+        ∃ ε > 0,
+          ε ≤ 1 ∧
+            ∀ (p : ℝ),
+              |p| < ε →
+                |SbtCosmo.Derivation.GroundAlternating.contrast
+                      (SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                        (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+                        (SbtCosmo.Derivation.GroundAlternating.state p))| ≤
+                  r * |p|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.actual_local_expansion {b κ m : ℝ}
+  (h : 1 < |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m|) :
+  ∃ r,
+    1 < r ∧
+      ∃ ε > 0,
+        ε ≤ 1 ∧
+          ∀ (p : ℝ),
+            0 < |p| →
+              |p| < ε →
+                r * |p| <
+                  |SbtCosmo.Derivation.GroundAlternating.contrast
+                      (SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                        (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m
+                        (SbtCosmo.Derivation.GroundAlternating.state p))|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.coupling_actual_expansion :
+  ∃ r,
+    1 < r ∧
+      ∃ ε > 0,
+        ε ≤ 1 ∧
+          ∀ (p : ℝ),
+            0 < |p| →
+              |p| < ε →
+                r * |p| <
+                  |SbtCosmo.Derivation.GroundAlternating.contrast
+                      (SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                        (SbtCosmo.Derivation.GroundAlternating.selectedMap 1 30) (1 / 2)
+                        (SbtCosmo.Derivation.GroundAlternating.state p))|
+SbtCosmo.Derivation.GroundAlternatingRelaxation.background_actual_expansion :
+  ∃ r,
+    1 < r ∧
+      ∃ ε > 0,
+        ε ≤ 1 ∧
+          ∀ (p : ℝ),
+            0 < |p| →
+              |p| < ε →
+                r * |p| <
+                  |SbtCosmo.Derivation.GroundAlternating.contrast
+                      (SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                        (SbtCosmo.Derivation.GroundAlternating.selectedMap 100 (3 / 10)) (1 / 2)
+                        (SbtCosmo.Derivation.GroundAlternating.state p))|
+SbtCosmo.Derivation.GroundAlternatingOrbit.scalar_orbit_live {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1) (hm : m ∈ Set.Icc 0 1)
+  (b κ : ℝ) (n : ℕ) : (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m)^[n] p ∈ Set.Ioo (-1) 1
+SbtCosmo.Derivation.GroundAlternatingOrbit.iterate_state_return {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (hm : m ∈ Set.Icc 0 1) (b κ : ℝ) (n : ℕ) :
+  (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m)^[n]
+      (SbtCosmo.Derivation.GroundAlternating.state p) =
+    SbtCosmo.Derivation.GroundAlternating.state
+      ((SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m)^[n] p)
+SbtCosmo.Derivation.GroundAlternatingOrbit.iterate_contrast_return {p m : ℝ} (hp : p ∈ Set.Ioo (-1) 1)
+  (hm : m ∈ Set.Icc 0 1) (b κ : ℝ) (n : ℕ) :
+  SbtCosmo.Derivation.GroundAlternating.contrast
+      ((SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m)^[n]
+        (SbtCosmo.Derivation.GroundAlternating.state p)) =
+    (SbtCosmo.Derivation.GroundAlternatingRelaxation.mixedResponse b κ m)^[n] p
+SbtCosmo.Derivation.GroundAlternatingOrbit.contraction_orbit_bound {f : ℝ → ℝ} {r ε p : ℝ} (hr : 0 ≤ r) (hr1 : r < 1)
+  (hg : ∀ (q : ℝ), |q| < ε → |f q| ≤ r * |q|) (hp : |p| < ε) (n : ℕ) : |f^[n] p| ≤ r ^ n * |p| ∧ |f^[n] p| < ε
+SbtCosmo.Derivation.GroundAlternatingOrbit.contraction_orbit_converges {f : ℝ → ℝ} {r ε p : ℝ} (hr : 0 ≤ r)
+  (hr1 : r < 1) (hg : ∀ (q : ℝ), |q| < ε → |f q| ≤ r * |q|) (hp : |p| < ε) :
+  Filter.Tendsto (fun n => f^[n] p) Filter.atTop (nhds 0)
+SbtCosmo.Derivation.GroundAlternatingOrbit.continuous_state : Continuous SbtCosmo.Derivation.GroundAlternating.state
+SbtCosmo.Derivation.GroundAlternatingOrbit.actual_local_attraction {b κ m : ℝ} (hm : m ∈ Set.Icc 0 1)
+  (hmode : |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m| < 1) :
+  ∃ ε > 0,
+    ε ≤ 1 ∧
+      ∀ (p : ℝ),
+        |p| < ε →
+          Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ)
+                    m)^[n]
+                (SbtCosmo.Derivation.GroundAlternating.state p))
+            Filter.atTop (nhds SbtCosmo.Derivation.GroundState.uniform)
+SbtCosmo.Derivation.GroundAlternatingOrbit.expansion_orbit_escapes {f : ℝ → ℝ} {r ε p : ℝ} (hr : 1 < r)
+  (hg : ∀ (q : ℝ), 0 < |q| → |q| < ε → r * |q| < |f q|) (hp : 0 < |p|) : ∃ n, ε ≤ |f^[n] p|
+SbtCosmo.Derivation.GroundAlternatingOrbit.actual_local_escape {b κ m : ℝ} (hm : m ∈ Set.Icc 0 1)
+  (hmode : 1 < |SbtCosmo.Derivation.GroundAlternatingRelaxation.mode b κ m|) :
+  ∃ ε > 0,
+    ε ≤ 1 ∧
+      ∀ (p : ℝ),
+        0 < |p| →
+          |p| < ε →
+            ∃ n,
+              ε ≤
+                |SbtCosmo.Derivation.GroundAlternating.contrast
+                    ((SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                          (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) m)^[n]
+                      (SbtCosmo.Derivation.GroundAlternating.state p))|
+SbtCosmo.Derivation.GroundAlternatingOrbit.half_local_attraction {b κ : ℝ} (h : -8 < κ * b ∧ κ * b < 24) :
+  ∃ ε > 0,
+    ε ≤ 1 ∧
+      ∀ (p : ℝ),
+        |p| < ε →
+          Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundState.normalizedRelaxed (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ)
+                    (1 / 2))^[n]
+                (SbtCosmo.Derivation.GroundAlternating.state p))
+            Filter.atTop (nhds SbtCosmo.Derivation.GroundState.uniform)
+SbtCosmo.Derivation.GroundAlternatingOrbit.half_local_escape {b κ : ℝ} (h : κ * b < -8 ∨ 24 < κ * b) :
+  ∃ ε > 0,
+    ε ≤ 1 ∧
+      ∀ (p : ℝ),
+        0 < |p| →
+          |p| < ε →
+            ∃ n,
+              ε ≤
+                |SbtCosmo.Derivation.GroundAlternating.contrast
+                    ((SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                          (SbtCosmo.Derivation.GroundAlternating.selectedMap b κ) (1 / 2))^[n]
+                      (SbtCosmo.Derivation.GroundAlternating.state p))|
+SbtCosmo.Derivation.GroundAlternatingOrbit.coupling_escape_control :
+  ∃ ε > 0,
+    ε ≤ 1 ∧
+      ∀ (p : ℝ),
+        0 < |p| →
+          |p| < ε →
+            ∃ n,
+              ε ≤
+                |SbtCosmo.Derivation.GroundAlternating.contrast
+                    ((SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                          (SbtCosmo.Derivation.GroundAlternating.selectedMap 1 30) (1 / 2))^[n]
+                      (SbtCosmo.Derivation.GroundAlternating.state p))|
+SbtCosmo.Derivation.GroundAlternatingOrbit.background_escape_control :
+  ∃ ε > 0,
+    ε ≤ 1 ∧
+      ∀ (p : ℝ),
+        0 < |p| →
+          |p| < ε →
+            ∃ n,
+              ε ≤
+                |SbtCosmo.Derivation.GroundAlternating.contrast
+                    ((SbtCosmo.Derivation.GroundState.normalizedRelaxed
+                          (SbtCosmo.Derivation.GroundAlternating.selectedMap 100 (3 / 10)) (1 / 2))^[n]
+                      (SbtCosmo.Derivation.GroundAlternating.state p))|

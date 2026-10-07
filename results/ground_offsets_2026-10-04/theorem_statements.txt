@@ -1,0 +1,511 @@
+SbtCosmo.Derivation.GroundUncertainBackgroundTube.box_sound
+  (B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval) (a c : ℚ) (z : Fin 9 → ℚ) (r : ℚ)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i)) {κ : ℝ}
+  {x : SbtCosmo.Derivation.GroundBorder.Point} (hk : κ ∈ Set.Icc ↑a ↑c)
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable) :
+  (SbtCosmo.Derivation.GroundUncertainBackgroundTube.box B a c z r v).Contains
+    (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x v)
+SbtCosmo.Derivation.GroundUncertainBackgroundTube.certified_actual_root
+  {B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {a c : ℚ} {z : Fin 9 → ℚ} {r q y : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} (h : SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic B a c z r q y C)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i)) {κ : ℝ}
+  (hk : κ ∈ Set.Icc ↑a ↑c) :
+  ∃ x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r,
+    SbtCosmo.Derivation.GroundRootCertificate.residual b κ x = 0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround (SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1) x.1 x.2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ x.1 = x.1 ∧
+          ∀ t ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r,
+            SbtCosmo.Derivation.GroundRootCertificate.residual b κ t = 0 → t = x
+SbtCosmo.Derivation.GroundOffsets.Point000.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point000.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point000.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point000.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point000.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point000.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point000.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point000.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point000.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point000.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point000.B
+    SbtCosmo.Derivation.GroundOffsets.Point000.κ SbtCosmo.Derivation.GroundOffsets.Point000.κ
+    SbtCosmo.Derivation.GroundOffsets.Point000.z SbtCosmo.Derivation.GroundOffsets.Point000.r
+    SbtCosmo.Derivation.GroundOffsets.Point000.q SbtCosmo.Derivation.GroundOffsets.Point000.y
+    SbtCosmo.Derivation.GroundOffsets.Point000.C
+SbtCosmo.Derivation.GroundOffsets.Point001.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point001.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point001.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point001.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point001.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point001.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point001.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point001.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point001.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point001.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point001.B
+    SbtCosmo.Derivation.GroundOffsets.Point001.κ SbtCosmo.Derivation.GroundOffsets.Point001.κ
+    SbtCosmo.Derivation.GroundOffsets.Point001.z SbtCosmo.Derivation.GroundOffsets.Point001.r
+    SbtCosmo.Derivation.GroundOffsets.Point001.q SbtCosmo.Derivation.GroundOffsets.Point001.y
+    SbtCosmo.Derivation.GroundOffsets.Point001.C
+SbtCosmo.Derivation.GroundOffsets.Point002.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point002.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point002.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point002.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point002.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point002.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point002.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point002.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point002.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point002.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point002.B
+    SbtCosmo.Derivation.GroundOffsets.Point002.κ SbtCosmo.Derivation.GroundOffsets.Point002.κ
+    SbtCosmo.Derivation.GroundOffsets.Point002.z SbtCosmo.Derivation.GroundOffsets.Point002.r
+    SbtCosmo.Derivation.GroundOffsets.Point002.q SbtCosmo.Derivation.GroundOffsets.Point002.y
+    SbtCosmo.Derivation.GroundOffsets.Point002.C
+SbtCosmo.Derivation.GroundOffsets.Point003.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point003.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point003.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point003.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point003.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point003.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point003.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point003.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point003.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point003.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point003.B
+    SbtCosmo.Derivation.GroundOffsets.Point003.κ SbtCosmo.Derivation.GroundOffsets.Point003.κ
+    SbtCosmo.Derivation.GroundOffsets.Point003.z SbtCosmo.Derivation.GroundOffsets.Point003.r
+    SbtCosmo.Derivation.GroundOffsets.Point003.q SbtCosmo.Derivation.GroundOffsets.Point003.y
+    SbtCosmo.Derivation.GroundOffsets.Point003.C
+SbtCosmo.Derivation.GroundOffsets.Point004.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point004.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point004.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point004.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point004.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point004.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point004.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point004.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point004.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point004.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point004.B
+    SbtCosmo.Derivation.GroundOffsets.Point004.κ SbtCosmo.Derivation.GroundOffsets.Point004.κ
+    SbtCosmo.Derivation.GroundOffsets.Point004.z SbtCosmo.Derivation.GroundOffsets.Point004.r
+    SbtCosmo.Derivation.GroundOffsets.Point004.q SbtCosmo.Derivation.GroundOffsets.Point004.y
+    SbtCosmo.Derivation.GroundOffsets.Point004.C
+SbtCosmo.Derivation.GroundOffsets.Point005.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point005.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point005.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point005.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point005.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point005.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point005.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point005.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point005.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point005.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point005.B
+    SbtCosmo.Derivation.GroundOffsets.Point005.κ SbtCosmo.Derivation.GroundOffsets.Point005.κ
+    SbtCosmo.Derivation.GroundOffsets.Point005.z SbtCosmo.Derivation.GroundOffsets.Point005.r
+    SbtCosmo.Derivation.GroundOffsets.Point005.q SbtCosmo.Derivation.GroundOffsets.Point005.y
+    SbtCosmo.Derivation.GroundOffsets.Point005.C
+SbtCosmo.Derivation.GroundOffsets.Point006.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point006.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point006.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point006.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point006.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point006.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point006.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point006.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point006.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point006.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point006.B
+    SbtCosmo.Derivation.GroundOffsets.Point006.κ SbtCosmo.Derivation.GroundOffsets.Point006.κ
+    SbtCosmo.Derivation.GroundOffsets.Point006.z SbtCosmo.Derivation.GroundOffsets.Point006.r
+    SbtCosmo.Derivation.GroundOffsets.Point006.q SbtCosmo.Derivation.GroundOffsets.Point006.y
+    SbtCosmo.Derivation.GroundOffsets.Point006.C
+SbtCosmo.Derivation.GroundOffsets.Point007.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point007.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point007.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point007.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point007.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point007.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point007.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point007.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point007.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point007.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point007.B
+    SbtCosmo.Derivation.GroundOffsets.Point007.κ SbtCosmo.Derivation.GroundOffsets.Point007.κ
+    SbtCosmo.Derivation.GroundOffsets.Point007.z SbtCosmo.Derivation.GroundOffsets.Point007.r
+    SbtCosmo.Derivation.GroundOffsets.Point007.q SbtCosmo.Derivation.GroundOffsets.Point007.y
+    SbtCosmo.Derivation.GroundOffsets.Point007.C
+SbtCosmo.Derivation.GroundOffsets.Point008.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point008.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point008.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point008.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point008.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point008.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point008.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point008.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point008.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point008.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point008.B
+    SbtCosmo.Derivation.GroundOffsets.Point008.κ SbtCosmo.Derivation.GroundOffsets.Point008.κ
+    SbtCosmo.Derivation.GroundOffsets.Point008.z SbtCosmo.Derivation.GroundOffsets.Point008.r
+    SbtCosmo.Derivation.GroundOffsets.Point008.q SbtCosmo.Derivation.GroundOffsets.Point008.y
+    SbtCosmo.Derivation.GroundOffsets.Point008.C
+SbtCosmo.Derivation.GroundOffsets.Point009.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point009.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point009.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point009.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point009.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point009.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point009.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point009.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point009.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point009.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point009.B
+    SbtCosmo.Derivation.GroundOffsets.Point009.κ SbtCosmo.Derivation.GroundOffsets.Point009.κ
+    SbtCosmo.Derivation.GroundOffsets.Point009.z SbtCosmo.Derivation.GroundOffsets.Point009.r
+    SbtCosmo.Derivation.GroundOffsets.Point009.q SbtCosmo.Derivation.GroundOffsets.Point009.y
+    SbtCosmo.Derivation.GroundOffsets.Point009.C
+SbtCosmo.Derivation.GroundOffsets.Point010.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point010.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point010.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point010.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point010.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point010.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point010.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point010.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point010.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point010.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point010.B
+    SbtCosmo.Derivation.GroundOffsets.Point010.κ SbtCosmo.Derivation.GroundOffsets.Point010.κ
+    SbtCosmo.Derivation.GroundOffsets.Point010.z SbtCosmo.Derivation.GroundOffsets.Point010.r
+    SbtCosmo.Derivation.GroundOffsets.Point010.q SbtCosmo.Derivation.GroundOffsets.Point010.y
+    SbtCosmo.Derivation.GroundOffsets.Point010.C
+SbtCosmo.Derivation.GroundOffsets.Point011.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point011.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point011.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point011.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point011.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point011.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point011.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point011.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point011.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point011.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point011.B
+    SbtCosmo.Derivation.GroundOffsets.Point011.κ SbtCosmo.Derivation.GroundOffsets.Point011.κ
+    SbtCosmo.Derivation.GroundOffsets.Point011.z SbtCosmo.Derivation.GroundOffsets.Point011.r
+    SbtCosmo.Derivation.GroundOffsets.Point011.q SbtCosmo.Derivation.GroundOffsets.Point011.y
+    SbtCosmo.Derivation.GroundOffsets.Point011.C
+SbtCosmo.Derivation.GroundOffsets.Point012.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point012.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point012.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point012.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point012.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point012.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point012.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point012.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point012.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point012.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point012.B
+    SbtCosmo.Derivation.GroundOffsets.Point012.κ SbtCosmo.Derivation.GroundOffsets.Point012.κ
+    SbtCosmo.Derivation.GroundOffsets.Point012.z SbtCosmo.Derivation.GroundOffsets.Point012.r
+    SbtCosmo.Derivation.GroundOffsets.Point012.q SbtCosmo.Derivation.GroundOffsets.Point012.y
+    SbtCosmo.Derivation.GroundOffsets.Point012.C
+SbtCosmo.Derivation.GroundOffsets.Point013.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point013.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point013.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point013.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point013.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point013.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point013.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point013.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point013.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point013.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point013.B
+    SbtCosmo.Derivation.GroundOffsets.Point013.κ SbtCosmo.Derivation.GroundOffsets.Point013.κ
+    SbtCosmo.Derivation.GroundOffsets.Point013.z SbtCosmo.Derivation.GroundOffsets.Point013.r
+    SbtCosmo.Derivation.GroundOffsets.Point013.q SbtCosmo.Derivation.GroundOffsets.Point013.y
+    SbtCosmo.Derivation.GroundOffsets.Point013.C
+SbtCosmo.Derivation.GroundOffsets.Point014.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point014.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point014.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point014.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point014.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point014.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point014.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point014.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point014.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point014.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point014.B
+    SbtCosmo.Derivation.GroundOffsets.Point014.κ SbtCosmo.Derivation.GroundOffsets.Point014.κ
+    SbtCosmo.Derivation.GroundOffsets.Point014.z SbtCosmo.Derivation.GroundOffsets.Point014.r
+    SbtCosmo.Derivation.GroundOffsets.Point014.q SbtCosmo.Derivation.GroundOffsets.Point014.y
+    SbtCosmo.Derivation.GroundOffsets.Point014.C
+SbtCosmo.Derivation.GroundOffsets.Point015.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point015.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point015.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point015.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point015.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point015.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point015.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point015.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point015.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point015.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point015.B
+    SbtCosmo.Derivation.GroundOffsets.Point015.κ SbtCosmo.Derivation.GroundOffsets.Point015.κ
+    SbtCosmo.Derivation.GroundOffsets.Point015.z SbtCosmo.Derivation.GroundOffsets.Point015.r
+    SbtCosmo.Derivation.GroundOffsets.Point015.q SbtCosmo.Derivation.GroundOffsets.Point015.y
+    SbtCosmo.Derivation.GroundOffsets.Point015.C
+SbtCosmo.Derivation.GroundOffsets.Point016.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point016.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point016.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point016.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point016.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point016.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point016.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point016.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point016.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point016.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point016.B
+    SbtCosmo.Derivation.GroundOffsets.Point016.κ SbtCosmo.Derivation.GroundOffsets.Point016.κ
+    SbtCosmo.Derivation.GroundOffsets.Point016.z SbtCosmo.Derivation.GroundOffsets.Point016.r
+    SbtCosmo.Derivation.GroundOffsets.Point016.q SbtCosmo.Derivation.GroundOffsets.Point016.y
+    SbtCosmo.Derivation.GroundOffsets.Point016.C
+SbtCosmo.Derivation.GroundOffsets.Point017.backgrounds_arithmetic (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundOffsets.Point017.B i).lo ≤ SbtCosmo.Derivation.GroundOffsets.Point017.exactBackground i ∧
+    SbtCosmo.Derivation.GroundOffsets.Point017.exactBackground i ≤ (SbtCosmo.Derivation.GroundOffsets.Point017.B i).hi ∧
+      (SbtCosmo.Derivation.GroundOffsets.Point017.B i).lo ≤
+          SbtCosmo.Derivation.GroundOffsets.Point017.roundedBackground i ∧
+        SbtCosmo.Derivation.GroundOffsets.Point017.roundedBackground i ≤
+          (SbtCosmo.Derivation.GroundOffsets.Point017.B i).hi
+SbtCosmo.Derivation.GroundOffsets.Point017.arithmetic :
+  SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic SbtCosmo.Derivation.GroundOffsets.Point017.B
+    SbtCosmo.Derivation.GroundOffsets.Point017.κ SbtCosmo.Derivation.GroundOffsets.Point017.κ
+    SbtCosmo.Derivation.GroundOffsets.Point017.z SbtCosmo.Derivation.GroundOffsets.Point017.r
+    SbtCosmo.Derivation.GroundOffsets.Point017.q SbtCosmo.Derivation.GroundOffsets.Point017.y
+    SbtCosmo.Derivation.GroundOffsets.Point017.C
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_inputs_sound (i : Fin 18) (j : Fin 8) :
+  ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains
+    (SbtCosmo.Derivation.GroundOriginalOffsets.b i j)
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_inputs_sound (i : Fin 18) (j : Fin 8) :
+  ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains
+    (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i j)
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_interval (i : Fin 18) :
+  ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ ∈
+    (SbtCosmo.Derivation.GroundOriginalOffsets.exactTube i).interval
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_interval (i : Fin 18) :
+  ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ ∈
+    (SbtCosmo.Derivation.GroundOriginalOffsets.roundedTube i).interval
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_root_spec (i : Fin 18) :
+  SbtCosmo.Derivation.GroundOriginalOffsets.root i ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r ∧
+    SbtCosmo.Derivation.GroundRootCertificate.residual (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+          (SbtCosmo.Derivation.GroundOriginalOffsets.root i) =
+        0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround
+          (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+            (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+            (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1)
+          (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1 (SbtCosmo.Derivation.GroundOriginalOffsets.root i).2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+              (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+              (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1 =
+            (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1 ∧
+          ∀
+            x ∈
+              Metric.closedBall
+                (SbtCosmo.Derivation.GroundKernelTube.center
+                  (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+                ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r,
+            SbtCosmo.Derivation.GroundRootCertificate.residual (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+                  (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x =
+                0 →
+              x = SbtCosmo.Derivation.GroundOriginalOffsets.root i
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_root_spec (i : Fin 18) :
+  SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r ∧
+    SbtCosmo.Derivation.GroundRootCertificate.residual (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+          (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i) =
+        0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround
+          (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+            (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+            (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1)
+          (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1
+          (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+              (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+              (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1 =
+            (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1 ∧
+          ∀
+            x ∈
+              Metric.closedBall
+                (SbtCosmo.Derivation.GroundKernelTube.center
+                  (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+                ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r,
+            SbtCosmo.Derivation.GroundRootCertificate.residual (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+                  (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x =
+                0 →
+              x = SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_root_positive (i : Fin 18) (j : Fin 8) :
+  0 < (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1 j
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_root_positive (i : Fin 18) (j : Fin 8) :
+  0 < (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1 j
+SbtCosmo.Derivation.GroundOriginalOffsets.ground_pair_return {β : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundBorder.Point} (hg : SbtCosmo.Derivation.GroundState.IsGround β x.1 x.2)
+  (hp : ∀ (j : Fin 8), 0 < x.1 j) : SbtCosmo.Derivation.GroundBorder.groundPair β = x
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_ground_return (i : Fin 18) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1 = 1 ∧
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundOriginalOffsets.b i)
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+          (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1) =
+      SbtCosmo.Derivation.GroundOriginalOffsets.root i
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_ground_return (i : Fin 18) :
+  SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1 = 1 ∧
+    SbtCosmo.Derivation.GroundBorder.groundPair
+        (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+          (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1) =
+      SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_point_box (i : Fin 18) (j : Fin 9) :
+  {
+        lo :=
+          (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z j -
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r,
+        hi :=
+          (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z j +
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r }.Contains
+    (SbtCosmo.Derivation.GroundPointCoordinates.coord (SbtCosmo.Derivation.GroundOriginalOffsets.root i) j)
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_point_box (i : Fin 18) (j : Fin 9) :
+  {
+        lo :=
+          (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z j -
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r,
+        hi :=
+          (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z j +
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r }.Contains
+    (SbtCosmo.Derivation.GroundPointCoordinates.coord (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i) j)
+SbtCosmo.Derivation.GroundOriginalOffsets.parameters_arithmetic (i : Fin 18) :
+  (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).offset =
+      SbtCosmo.Derivation.GroundOriginalOffsets.offsets i ∧
+    (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ =
+        SbtCosmo.Derivation.GroundOriginalOffsets.originalCoupling ∧
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r = 1 / 2 ^ 32
+SbtCosmo.Derivation.GroundOriginalOffsets.uniform_background_return (i : Fin 18) (j : Fin 8) :
+  SbtCosmo.Derivation.GroundOriginalOffsets.b i j =
+    ↑(SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground j) +
+      ↑(SbtCosmo.Derivation.GroundOriginalOffsets.offsets i)
+SbtCosmo.Derivation.GroundOriginalOffsets.model_root_proximity (i : Fin 18) :
+  dist (SbtCosmo.Derivation.GroundOriginalOffsets.root i) (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i) ≤
+    2 * ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r
+SbtCosmo.Derivation.GroundOriginalOffsets.native_fixed_return {β v : SbtCosmo.Derivation.GroundState.Field} {k m τ : ℝ}
+  (hu : SbtCosmo.Derivation.GroundState.normSq v = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap β k v = v) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ β k m (SbtCosmo.Derivation.GroundState.realEmbed v) =
+      SbtCosmo.Derivation.GroundState.realEmbed v ∧
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ β k (SbtCosmo.Derivation.GroundState.realEmbed v) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ β k m (SbtCosmo.Derivation.GroundState.realEmbed v)
+SbtCosmo.Derivation.GroundOriginalOffsets.exact_native_fixed (i : Fin 18) (m : ℝ) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundOriginalOffsets.b i) (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        m (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1) =
+      SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1 ∧
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundOriginalOffsets.b i) (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundOriginalOffsets.b i) (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        m (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root i).1)
+SbtCosmo.Derivation.GroundOriginalOffsets.rounded_native_fixed (i : Fin 18) (m : ℝ) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) m
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1) =
+      SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1 ∧
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) m
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1)
+SbtCosmo.Derivation.GroundOriginalOffsets.separation_arithmetic :
+  (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).z 0 +
+        (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).r +
+      3 / 10 <
+    (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 17).z 0 -
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 17).r
+SbtCosmo.Derivation.GroundOriginalOffsets.field_coordinate_separation {x y : SbtCosmo.Derivation.GroundBorder.Point}
+  (hx :
+    {
+          lo :=
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).z 0 -
+              (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).r,
+          hi :=
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).z 0 +
+              (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).r }.Contains
+      (x.1 0))
+  (hy :
+    {
+          lo :=
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 17).z 0 -
+              (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 17).r,
+          hi :=
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 17).z 0 +
+              (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 17).r }.Contains
+      (y.1 0)) :
+  x.1 0 + 3 / 10 < y.1 0
+SbtCosmo.Derivation.GroundOriginalOffsets.actual_exact_fields_separated :
+  (SbtCosmo.Derivation.GroundOriginalOffsets.root 0).1 0 + 3 / 10 <
+    (SbtCosmo.Derivation.GroundOriginalOffsets.root 17).1 0
+SbtCosmo.Derivation.GroundOriginalOffsets.actual_rounded_fields_separated :
+  (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot 0).1 0 + 3 / 10 <
+    (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot 17).1 0
+SbtCosmo.Derivation.GroundOriginalOffsets.zero_preconditioner_rejected :
+  ¬SbtCosmo.Derivation.GroundUncertainBackgroundTube.Arithmetic
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).B
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).κ
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).κ
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).z
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).r
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).q
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 0).y fun x x_1 => 0
+SbtCosmo.Derivation.GroundOriginalOffsets.whole_background_box_root (i : Fin 18)
+  {β : SbtCosmo.Derivation.GroundState.Field}
+  (hβ : ∀ (j : Fin 8), ((SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).B j).Contains (β j)) :
+  ∃
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+        ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r,
+    SbtCosmo.Derivation.GroundRootCertificate.residual β (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+          x =
+        0 ∧
+      (∀ (j : Fin 8), 0 < x.1 j) ∧
+        SbtCosmo.Derivation.GroundState.IsGround
+            (SbtCosmo.Derivation.GroundState.sourcePotential β
+              (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x.1)
+            x.1 x.2 ∧
+          SbtCosmo.Derivation.GroundSourceJacobian.groundMap β
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) x.1 =
+              x.1 ∧
+            ∀
+              y ∈
+                Metric.closedBall
+                  (SbtCosmo.Derivation.GroundKernelTube.center
+                    (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).z)
+                  ↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).r,
+              SbtCosmo.Derivation.GroundRootCertificate.residual β
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) y =
+                  0 →
+                y = x
+SbtCosmo.Derivation.GroundOriginalOffsets.zero_offset_arithmetic :
+  (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 8).offset = 0 ∧
+    (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 8).κ =
+        SbtCosmo.Derivation.GroundOriginalSamples.couplings 2 ∧
+      (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 8).r = SbtCosmo.Derivation.GroundSamples.Point002.r ∧
+        (∀ (j : Fin 9),
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 8).z j =
+              SbtCosmo.Derivation.GroundSamples.Point002.z j) ∧
+          ∀ (j : Fin 8),
+            (SbtCosmo.Derivation.GroundOriginalOffsets.certificates 8).roundedBackground j =
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground j
+SbtCosmo.Derivation.GroundOriginalOffsets.zero_exact_background :
+  SbtCosmo.Derivation.GroundOriginalOffsets.b 8 =
+    SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+SbtCosmo.Derivation.GroundOriginalOffsets.zero_rounded_background :
+  SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b 8 =
+    SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+SbtCosmo.Derivation.GroundOriginalOffsets.zero_exact_root_eq_original :
+  SbtCosmo.Derivation.GroundOriginalOffsets.root 8 =
+    SbtCosmo.Derivation.GroundOriginalContinuation.branch ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings 2)
+SbtCosmo.Derivation.GroundOriginalOffsets.zero_rounded_root_eq_original :
+  SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot 8 =
+    SbtCosmo.Derivation.GroundOriginalContinuation.branch ↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings 2)
+SbtCosmo.Derivation.GroundOriginalOffsets.density_separation_of_positive {x y : ℝ} (hx : 0 < x) (hxy : x + 3 / 10 < y) :
+  x ^ 2 + 9 / 100 < y ^ 2
+SbtCosmo.Derivation.GroundOriginalOffsets.actual_exact_densities_separated :
+  Complex.normSq (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root 0).1 0) +
+      9 / 100 <
+    Complex.normSq (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.root 17).1 0)
+SbtCosmo.Derivation.GroundOriginalOffsets.actual_rounded_densities_separated :
+  Complex.normSq
+        (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot 0).1 0) +
+      9 / 100 <
+    Complex.normSq
+      (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot 17).1 0)

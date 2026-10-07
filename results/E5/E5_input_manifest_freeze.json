@@ -1,0 +1,7 @@
+{
+  "generated_utc": "2026-06-01T09:08:46Z",
+  "input_manifest": "data/manifests/e5_growth_currency_inputs.json",
+  "input_manifest_sha256": "e31fbfa0317108caf008bf5999f03885ff6fae16f8d9fa0867dba966ced0973d",
+  "note": "Manifest sha256 frozen before E5 backend/data availability scoring.",
+  "schema_version": 1
+}

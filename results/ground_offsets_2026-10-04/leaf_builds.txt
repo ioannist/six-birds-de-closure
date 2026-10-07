@@ -1,0 +1,71 @@
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point000
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point000 (49s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point001
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point001 (51s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point002
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point002 (72s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point003
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point003 (79s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point004
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point004 (56s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point005
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point005 (60s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point006
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point006 (46s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point007
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point007 (47s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point008
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point008 (34s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point009
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point009 (35s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point010
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point010 (36s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point011
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point011 (40s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point012
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point012 (36s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point013
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point013 (35s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point014
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point014 (35s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point015
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point015 (45s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point016
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point016 (54s)
+Build completed successfully (8056 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsets.Point017
+✔ [8056/8056] Built SbtCosmo.Derivation.GroundOffsets.Point017 (50s)
+Build completed successfully (8056 jobs).

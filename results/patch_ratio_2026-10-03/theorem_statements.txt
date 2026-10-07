@@ -1,0 +1,135 @@
+SbtCosmo.Derivation.WindowPatchCountFirstData.rational_scale_bounds (v : Bool) :
+  1 / 5 < SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat v ∧
+    SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat v < 4
+SbtCosmo.Derivation.WindowPatchCountFirstData.rational_scale_tight :
+  129 / 100 < SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat false ∧
+    SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat false < 131 / 100 ∧
+      83 / 100 < SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat true ∧
+        SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat true < 84 / 100
+SbtCosmo.Derivation.WindowPatchCountFirstData.rational_first_bounds (v : Bool) (j : Fin 12) :
+  1 < SbtCosmo.Derivation.WindowPatchCountFirstData.firstThresholdRat v j ∧
+    SbtCosmo.Derivation.WindowPatchCountFirstData.firstThresholdRat v j < 2000 ∧
+      450 * SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat v <
+          SbtCosmo.Derivation.WindowPatchCountFirstData.firstThresholdRat v j ∧
+        SbtCosmo.Derivation.WindowPatchCountFirstData.firstThresholdRat v j <
+          897 * SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat v
+SbtCosmo.Derivation.WindowPatchCountFirstData.rational_original_lower_fails :
+  ∃ j,
+    SbtCosmo.Derivation.WindowPatchCountFirstData.firstThresholdRat false j ≤
+      500 * SbtCosmo.Derivation.WindowPatchCountFirstData.scaleRat false
+SbtCosmo.Derivation.WindowPatchCountRatio.scale_bounds (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.scale v ∈ Set.Ioo (1 / 5) 4
+SbtCosmo.Derivation.WindowPatchCountRatio.scale_tight :
+  129 / 100 < SbtCosmo.Derivation.WindowPatchCountRatio.scale false ∧
+    SbtCosmo.Derivation.WindowPatchCountRatio.scale false < 131 / 100 ∧
+      83 / 100 < SbtCosmo.Derivation.WindowPatchCountRatio.scale true ∧
+        SbtCosmo.Derivation.WindowPatchCountRatio.scale true < 84 / 100
+SbtCosmo.Derivation.WindowPatchCountRatio.aggregate_normalized (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchCounts.aggregateThreshold v = 965 * SbtCosmo.Derivation.WindowPatchCountRatio.scale v
+SbtCosmo.Derivation.WindowPatchCountRatio.maximum_spec (v : Bool) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j ∧
+    (∀ (i : Fin (SbtCosmo.Derivation.WindowPatchCountData.patchCount v)),
+        SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i ≤ SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j) ∧
+      ∃ i, SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i = SbtCosmo.Derivation.WindowPatchCountRatio.maximum v j
+SbtCosmo.Derivation.WindowPatchCountRatio.threshold_bounds (v : Bool) (j : Fin 12) :
+  1 < SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j ∧
+    SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j < 2000 ∧
+      450 * SbtCosmo.Derivation.WindowPatchCountRatio.scale v <
+          SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j ∧
+        SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j <
+          897 * SbtCosmo.Derivation.WindowPatchCountRatio.scale v
+SbtCosmo.Derivation.WindowPatchCountRatio.gate_cutoff {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) : -(1 / 20 ^ 3) < lam
+SbtCosmo.Derivation.WindowPatchCountRatio.final_above_threshold {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_normalized_bounds (v : Bool) :
+  3 < SbtCosmo.Derivation.WindowPatchCounts.upper v * SbtCosmo.Derivation.WindowPatchCountRatio.scale v ^ 3 ∧
+    SbtCosmo.Derivation.WindowPatchCounts.upper v * SbtCosmo.Derivation.WindowPatchCountRatio.scale v ^ 3 < 7 / 2
+SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_numerical :
+  13 / 10 < SbtCosmo.Derivation.WindowPatchCounts.upper false ∧
+    SbtCosmo.Derivation.WindowPatchCounts.upper false < 17 / 10 ∧
+      5 < SbtCosmo.Derivation.WindowPatchCounts.upper true ∧ SbtCosmo.Derivation.WindowPatchCounts.upper true < 25 / 4
+SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_gate (v : Bool) :
+  SbtCosmo.Derivation.WindowPatchCounts.realizedGate v (SbtCosmo.Derivation.WindowPatchCounts.upper v)
+SbtCosmo.Derivation.WindowPatchCountRatio.time_spec {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam) =
+      SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j
+SbtCosmo.Derivation.WindowPatchCountRatio.time_positive {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam
+SbtCosmo.Derivation.WindowPatchCountRatio.time_iff_any_collapse {v : Bool} {lam a : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (ha : a ∈ Set.Icc (1 / 1000) 20) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowPatchCounts.delta ≤
+        SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam ≤ a
+SbtCosmo.Derivation.WindowPatchCountRatio.time_is_first_collapse {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowPatchCounts.delta ≤
+        SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam)) ∧
+    ∀ a ∈ Set.Icc (1 / 1000) 20,
+      a < SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam →
+        ¬∃ i,
+            SbtCosmo.Derivation.WindowPatchCounts.delta ≤
+              SbtCosmo.Derivation.WindowPatchCounts.amplitude v j i *
+                SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowPatchCountRatio.time_at_zero (v : Bool) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.time v j 0 = SbtCosmo.Derivation.WindowPatchCountRatio.threshold v j / 1000
+SbtCosmo.Derivation.WindowPatchCountRatio.time_strictMono (v : Bool) (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowPatchCountRatio.time v j)
+    (Set.Ioc (-(1 / 8000)) (SbtCosmo.Derivation.WindowPatchCounts.upper v))
+SbtCosmo.Derivation.WindowPatchCountRatio.time_nonnegative_lower {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (hl : 0 ≤ lam) (j : Fin 12) :
+  9 / 20 * SbtCosmo.Derivation.WindowPatchCountRatio.scale v < SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam
+SbtCosmo.Derivation.WindowPatchCountRatio.time_nonpositive_upper {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (hl : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam < 2
+SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_time_bounds (v : Bool) (j : Fin 12) :
+  9 / 20 * SbtCosmo.Derivation.WindowPatchCountRatio.scale v <
+      SbtCosmo.Derivation.WindowPatchCountRatio.time v j (SbtCosmo.Derivation.WindowPatchCounts.upper v) ∧
+    SbtCosmo.Derivation.WindowPatchCountRatio.time v j (SbtCosmo.Derivation.WindowPatchCounts.upper v) ≤
+      8 / 3 * SbtCosmo.Derivation.WindowPatchCountRatio.scale v
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_density_readout (v : Bool) (j : Fin 12) (lam : ℝ) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam =
+    |lam| / (SbtCosmo.Derivation.WindowPatchCountRatio.time v j lam ^ 3)⁻¹
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonnegative {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_positive {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (hne : lam ≠ 0) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_zero (v : Bool) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j 0 = 0
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_strictMono_nonnegative (v : Bool) (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j)
+    (Set.Icc 0 (SbtCosmo.Derivation.WindowPatchCounts.upper v))
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonpositive_small {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (hl : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam < 1 / 1000
+SbtCosmo.Derivation.WindowPatchCountRatio.ratio_nonnegative_upper {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (hl : 0 ≤ lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam ≤ 8000 * lam
+SbtCosmo.Derivation.WindowPatchCountRatio.endpoint_ratios (v : Bool) (j : Fin 12) :
+  2187 / 8000 < SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j (SbtCosmo.Derivation.WindowPatchCounts.upper v) ∧
+    SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j (SbtCosmo.Derivation.WindowPatchCounts.upper v) < 1792 / 27
+SbtCosmo.Derivation.WindowPatchCountRatio.full_window_ratios {v : Bool} {lam : ℝ}
+  (hg : SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam ∧
+    SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam < 1792 / 27
+SbtCosmo.Derivation.WindowPatchCountRatio.ratios_uniformly_arbitrarily_small {epsilon : ℝ} (he : 0 < epsilon) :
+  ∃ lam,
+    0 < lam ∧
+      ∀ (v : Bool),
+        SbtCosmo.Derivation.WindowPatchCounts.realizedGate v lam ∧
+          ∀ (j : Fin 12),
+            0 < SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam ∧
+              SbtCosmo.Derivation.WindowPatchCountRatio.ratio v j lam < epsilon

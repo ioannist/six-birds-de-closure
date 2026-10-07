@@ -1,0 +1,33 @@
+Additional29-module /132-theorem qualified driver PID 3825483 waiting for checked parent recovery; frozen inputs 2017
+SbtCosmo.Derivation.GroundFiniteParameterContinuity terminal 0
+SbtCosmo.Derivation.GroundNativeBackgroundShift terminal 0
+SbtCosmo.Derivation.GroundNativeCouplingSmooth terminal 0
+SbtCosmo.Derivation.GroundNativeGuardedBounds terminal 0
+SbtCosmo.Derivation.GroundNativeParameterSmooth terminal 0
+SbtCosmo.Derivation.GroundParametricContraction terminal 0
+SbtCosmo.Derivation.GroundParametricFixedPoint terminal 0
+SbtCosmo.Derivation.GroundParametricSeedReturn terminal 0
+SbtCosmo.Derivation.GroundParametricBranchReturn terminal 0
+SbtCosmo.Derivation.GroundParametricSeedBasinReturn terminal 0
+SbtCosmo.Derivation.GroundParametricSeedTargetReturn terminal 0
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation terminal 0
+SbtCosmo.Derivation.GroundNativeCouplingContinuation terminal 0
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn terminal 0
+SbtCosmo.Derivation.GroundNativeSourceParameterSmooth terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline terminal 0
+SbtCosmo.Derivation.GroundOriginalOpenBackground terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30RealBaseline terminal 0
+SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30RealBasin terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin terminal 0
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding terminal 0
+statements terminal 0
+axioms terminal 0
+All29 additional qualified modules and132 exact statement/standard-only axiom checks passed; repository registration and commit pending

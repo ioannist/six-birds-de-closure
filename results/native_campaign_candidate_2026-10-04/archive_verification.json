@@ -1,0 +1,6 @@
+{
+  "archive_sha256": "b1e0dc26b05d4cbef324823cc0aa4137abc393ea9316e0bf245df4c1a8f3428f",
+  "files": 3563,
+  "sequential_hash_verification": true,
+  "scope": "Saved source-byte identity only; not a Lean build or proof-completion judgment."
+}

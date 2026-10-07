@@ -1,0 +1,4 @@
+schema_version: 1
+dataset: DES_Y6
+manifest: data/manifests/des_y6.json
+fallback_policy: budgeted_gaussian_3x2pt

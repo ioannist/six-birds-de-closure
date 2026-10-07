@@ -1,0 +1,57 @@
+import SbtCosmo.Derivation.GroundBorder
+import SbtCosmo.Derivation.GroundEquations
+import SbtCosmo.Derivation.GroundSmooth
+import SbtCosmo.Derivation.GroundSourceJacobian
+import SbtCosmo.Derivation.GroundNormalizedJacobian
+
+#print axioms SbtCosmo.Derivation.GroundBorder.dot_self
+#print axioms SbtCosmo.Derivation.GroundBorder.dot_smul_right
+#print axioms SbtCosmo.Derivation.GroundBorder.dot_zero_right
+#print axioms SbtCosmo.Derivation.GroundBorder.dot_zero_left
+#print axioms SbtCosmo.Derivation.GroundBorder.shifted_symmetric
+#print axioms SbtCosmo.Derivation.GroundBorder.border_apply
+#print axioms SbtCosmo.Derivation.GroundBorder.border_kernel_trivial
+#print axioms SbtCosmo.Derivation.GroundBorder.border_injective
+#print axioms SbtCosmo.Derivation.GroundBorder.border_bijective
+#print axioms SbtCosmo.Derivation.GroundBorder.groundBorder_apply
+#print axioms SbtCosmo.Derivation.GroundBorder.continuous_groundPair
+#print axioms SbtCosmo.Derivation.GroundEquations.derivative_apply
+#print axioms SbtCosmo.Derivation.GroundEquations.equations_smooth
+#print axioms SbtCosmo.Derivation.GroundEquations.equations_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundEquations.derivative_partial
+#print axioms SbtCosmo.Derivation.GroundEquations.ground_equations
+#print axioms SbtCosmo.Derivation.GroundEquations.actual_implicit_data
+#print axioms SbtCosmo.Derivation.GroundSmooth.actual_selector_local_return
+#print axioms SbtCosmo.Derivation.GroundSmooth.groundPair_smooth
+#print axioms SbtCosmo.Derivation.GroundSmooth.positiveGround_smooth
+#print axioms SbtCosmo.Derivation.GroundSmooth.groundEnergy_smooth
+#print axioms SbtCosmo.Derivation.GroundSmooth.pairDerivative_equation
+#print axioms SbtCosmo.Derivation.GroundSmooth.pairDerivative_unique
+#print axioms SbtCosmo.Derivation.GroundSmooth.groundPair_hasFDerivAt_fderiv
+#print axioms SbtCosmo.Derivation.GroundSmooth.actual_pair_fderiv
+#print axioms SbtCosmo.Derivation.GroundSmooth.actual_pair_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundSmooth.positiveGround_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundSmooth.selector_derivative_tangent
+#print axioms SbtCosmo.Derivation.GroundSmooth.selector_derivative_eigen_equation
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.sourceDerivative_apply
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.sourcePotential_smooth
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.sourcePotential_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.groundMap_smooth
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.groundMap_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.jacobian_tangent
+#print axioms SbtCosmo.Derivation.GroundSourceJacobian.jacobian_eigen_equation
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.dotMap_apply
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.projection_apply
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.normSq_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.sqrt_normSq_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.inv_sqrt_normSq_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.normalize_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.affine_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.normalized_hasFDerivAt
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.normalized_tangent_return
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.positive_ground_fixed
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.exists_actual_normalized_jacobian
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.actual_real_eigenmode_return
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_groundMap
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_jacobian
+#print axioms SbtCosmo.Derivation.GroundNormalizedJacobian.zero_coupling_tangent_return

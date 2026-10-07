@@ -1,0 +1,49 @@
+{
+  "artifact_checksums_sha256": {
+    "aor_status.json": "3784493fe24fd55c671bfd96b51fb6d2d609ad3ab9cf28355c056250b45c0744",
+    "arrays/toy2_mock_distances.npz": "d410b6760f412e6ca4f29fcaec8b3627b6c89ba57691564602f618252c9136cf",
+    "arrays/toy3_operator.npz": "0ac421ac3953b08cb683637e995cdae812841a501c05f316034c65fba50cfb06",
+    "arrays/toy4_route_matrix.npz": "af070a7a71f5f4e40fe37c6726166f88eb84fe56cef69eba2cd2c2cb4165d8bf",
+    "figures/fig_toy1_rm_vs_beta.png": "7eaa6bc44205a4b438e0785b06b3afbbe0bca362f6116b5c612de40546b72234",
+    "figures/fig_toy2_Q_vs_time.png": "9cc558ee41bc8fd42702c66154a9471f53cb567a43a3efe5a728ef4b2783a68f",
+    "figures/fig_toy2_distance_fit.png": "ed914db1ec439021ca09354916a77eeff2da0b9280b33bbcd5db0064464a3f61",
+    "figures/fig_toy3_weff.png": "ac87ee3e9b4ca2941538be235856369f81b3cbcb3a22e1f0d836d29567886233",
+    "figures/fig_toy4_route_matrix.png": "c29a34d6e4de7ed7852a838c06d6635a3bc63b1689a60f4aacb868a7b6aacad0",
+    "summary.json": "ab8d5998124f3d2a4a081483cf966bd0193e51673b2561e037c3dd676f83c39d",
+    "tables/toy1_rm_vs_beta.csv": "1416ff52bf190273a1ceac9545f5bc42a9595965cc611ed432143667f2bcabf3",
+    "tables/toy2_Q_summary.csv": "b277ef74d21ff152b38763bae2db49a378a4a975e4f1e4582726943574c0539d",
+    "tables/toy2_fit_summary.csv": "919717305c7707cf7776d95e491133ea1c8e39c469af6072093e54f7c9e89627",
+    "tables/toy3_weff_crossing.csv": "4ef8718a3e1633f0ed94b4b1d7853a58edcea7cf6359a50a51752387bb4d26f4",
+    "tables/toy4_route_recovery.csv": "1d892060138a137f5efdc75feb4e9c642a0e10dd24fc2d4515898738874d392e"
+  },
+  "chosen_constants": {
+    "toy1_state_distribution": "Uniform(0.2, 0.8)",
+    "toy2_exponent": 0.5,
+    "toy2_fractional_distance_error": 0.05,
+    "toy2_noise_scale": 0.1,
+    "toy2_response": 1.62
+  },
+  "datasets": [],
+  "determinism": {
+    "omp_num_threads": "1",
+    "summary_scalars_reproducible": true
+  },
+  "experiment": "E0",
+  "implementation_notes": [
+    "E0 uses synthetic XiToy only; real Xi_cosmo remains deferred.",
+    "The plan text names sbt_cosmo/cosmology/background.py, but the locked skeleton uses sbt_cosmo/background/{flrw,distances}.py.",
+    "Toy 2 Q is recorded as a closure diagnostic for this synthetic proxy, not a GR backreaction claim."
+  ],
+  "package_version": "0.0.0",
+  "runtime": {
+    "budget_seconds": 7200,
+    "observed_wall_time_seconds": 0.8344700112938881
+  },
+  "schema_version": 1,
+  "seeds": {
+    "numpy": 4242,
+    "python": 4242,
+    "sampler": 1337
+  },
+  "terminal_state": "PASS"
+}

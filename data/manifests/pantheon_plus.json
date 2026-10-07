@@ -1,0 +1,82 @@
+{
+  "access": "official_mirror",
+  "aor_status": "zero",
+  "bins": {
+    "columns": [
+      "CID",
+      "zHD",
+      "zCMB",
+      "MU_SH0ES"
+    ],
+    "n": 1701
+  },
+  "citation": "Brout et al. 2022, arXiv:2202.04077; CobayaSampler/sn_data commit 61d96434cafc2770928322c38e5a750e686368ae",
+  "dataset": "PANTHEON_PLUS",
+  "fallback": "binned distance-modulus likelihood if memory-bound",
+  "fallback_invoked": false,
+  "fetch_url": "https://github.com/CobayaSampler/sn_data/tree/master/PantheonPlus",
+  "fetched_utc": "2026-05-29T22:46:28Z",
+  "license": "Public Pantheon+SH0ES data release mirrored by CobayaSampler/sn_data; cite Brout et al. 2022",
+  "model_dependent": false,
+  "processed": {
+    "covariance": {
+      "bytes": 23147336,
+      "dtype": "float64",
+      "path": "data/processed/pantheon_plus/covariance.npy",
+      "sha256": "24d2fdebb14c4d8370cf6cc1f1b61362a2e3a2977e2fd1fcaf301dd3256e573a",
+      "shape": [
+        1701,
+        1701
+      ]
+    },
+    "data_vector": {
+      "bytes": 13736,
+      "dtype": "float64",
+      "path": "data/processed/pantheon_plus/data_vector.npy",
+      "sha256": "e80fdf3d34f6bde10842e4f3181a524bffe550a69058081d1915efb447b10e28",
+      "shape": [
+        1701
+      ]
+    },
+    "metadata": {
+      "bytes": 94142,
+      "dtype": "json",
+      "path": "data/processed/pantheon_plus/metadata.json",
+      "sha256": "05a316f040c148af6759f2c6c3ed9f10ab1370ade078393728c121812720fede",
+      "shape": "json"
+    }
+  },
+  "processing_commit": "2250a9ba1dea000830960dcce41ae581e5cd22ed",
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "raw_files": [
+    {
+      "bytes": 579283,
+      "path": "data/raw/sn_data_repos/sn_data/PantheonPlus/Pantheon+SH0ES.dat",
+      "sha256": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8"
+    },
+    {
+      "bytes": 33284960,
+      "path": "data/raw/sn_data_repos/sn_data/PantheonPlus/Pantheon+SH0ES_STAT+SYS.cov",
+      "sha256": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+    },
+    {
+      "bytes": 157,
+      "path": "data/raw/sn_data_repos/sn_data/PantheonPlus/config.dataset",
+      "sha256": "80e7104bec01b27ab1d1ad0adcc66effc3df28138c5e5da992d775b5171b93cb"
+    },
+    {
+      "bytes": 1193,
+      "path": "data/raw/sn_data_repos/sn_data/README.md",
+      "sha256": "9e42b3929b2117c9a43576871e0c1dd787ecda59fbea639ff44b8144ec31e0fb"
+    }
+  ],
+  "recomputability": "recomputable",
+  "release": "arXiv:2202.04077",
+  "route": null,
+  "scale_cuts": {
+    "applied": true,
+    "note": "loader default; full processed vector is uncut",
+    "z_min_default": 0.01
+  },
+  "staging_axis": "sn_sample"
+}

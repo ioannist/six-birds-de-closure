@@ -1,0 +1,18 @@
+{
+  "historical_driver_sha256": "0577096f498274e8c668d3d07787967db7804c2fa1b7bc2b4fe846eec875f34c",
+  "new_driver_sha256": "abace01ac931a483cf81d3851ed89fdb79f50099be2fda3f97c9bad0cb2ff488",
+  "controlled_replacements": {
+    "/tmp/de_native_additional_constructions_aggregate_recovery_2026-10-06": 1,
+    "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05": 5,
+    "3241065": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/summary.json": 1
+  },
+  "module_count": 29,
+  "theorem_count": 132,
+  "proof_sources_changed": false,
+  "changes": [
+    "New output root and successful audit-resumption parent",
+    "Explicit four threads and64-MiB Lean thread stack"
+  ],
+  "registered_sources_changed": false
+}

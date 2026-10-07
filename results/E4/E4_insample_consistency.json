@@ -1,0 +1,166 @@
+{
+  "compression_sensitivity": {
+    "0.3": {
+      "H_closed_fit": 71.37853255177353,
+      "H_closed_sigma": 1.0528592766740985,
+      "chi2": 0.7022470955681592,
+      "chi2_per_dof": 0.7022470955681592,
+      "dof": 1,
+      "label": "in_sample_sigma_comp_0.3",
+      "pairwise_order_hit_rate": 1.0,
+      "routes": [
+        {
+          "H0_measured": 67.35723410080992,
+          "H0_sigma": 0.6798915033616334,
+          "measured_offset_vs_H_closed": -4.021298450963613,
+          "measured_sign": "negative",
+          "predicted_offset_blind": -3.1965749472486675,
+          "predicted_sign": "negative",
+          "prediction_sigma": 1.2707559895460148,
+          "residual_measured_minus_predicted": -0.8247235037149454,
+          "route_id": "cmb_bao",
+          "sign_hit": true
+        },
+        {
+          "H0_measured": 68.49010109846527,
+          "H0_sigma": 0.42393690033103343,
+          "measured_offset_vs_H_closed": -2.8884314533082573,
+          "measured_sign": "negative",
+          "predicted_offset_blind": -2.716605645271159,
+          "predicted_sign": "negative",
+          "prediction_sigma": 0.985308325835351,
+          "residual_measured_minus_predicted": -0.17182580803709824,
+          "route_id": "inverse_ladder",
+          "sign_hit": true
+        }
+      ],
+      "sign_hit_rate": 1.0,
+      "sign_hits": 2,
+      "sign_total": 2,
+      "spearman_rho": null
+    },
+    "0.5": {
+      "H_closed_fit": 71.20653137135311,
+      "H_closed_sigma": 1.144794708905999,
+      "chi2": 0.45983595151311607,
+      "chi2_per_dof": 0.45983595151311607,
+      "dof": 1,
+      "label": "in_sample_sigma_comp_0.5",
+      "pairwise_order_hit_rate": 1.0,
+      "routes": [
+        {
+          "H0_measured": 67.35723410080992,
+          "H0_sigma": 0.7888298018858959,
+          "measured_offset_vs_H_closed": -3.8492972705431896,
+          "measured_sign": "negative",
+          "predicted_offset_blind": -3.1965749472486675,
+          "predicted_sign": "negative",
+          "prediction_sigma": 1.2707559895460148,
+          "residual_measured_minus_predicted": -0.6527223232945221,
+          "route_id": "cmb_bao",
+          "sign_hit": true
+        },
+        {
+          "H0_measured": 68.49010109846527,
+          "H0_sigma": 0.5828571827320005,
+          "measured_offset_vs_H_closed": -2.716430272887834,
+          "measured_sign": "negative",
+          "predicted_offset_blind": -2.716605645271159,
+          "predicted_sign": "negative",
+          "prediction_sigma": 0.985308325835351,
+          "residual_measured_minus_predicted": 0.00017537238332510086,
+          "route_id": "inverse_ladder",
+          "sign_hit": true
+        }
+      ],
+      "sign_hit_rate": 1.0,
+      "sign_hits": 2,
+      "sign_total": 2,
+      "spearman_rho": null
+    },
+    "0.7": {
+      "H_closed_fit": 71.09522400882405,
+      "H_closed_sigma": 1.2286302570115244,
+      "chi2": 0.30296409152666215,
+      "chi2_per_dof": 0.30296409152666215,
+      "dof": 1,
+      "label": "in_sample_sigma_comp_0.7",
+      "pairwise_order_hit_rate": 1.0,
+      "routes": [
+        {
+          "H0_measured": 67.35723410080992,
+          "H0_sigma": 0.9285754984616715,
+          "measured_offset_vs_H_closed": -3.7379899080141286,
+          "measured_sign": "negative",
+          "predicted_offset_blind": -3.1965749472486675,
+          "predicted_sign": "negative",
+          "prediction_sigma": 1.2707559895460148,
+          "residual_measured_minus_predicted": -0.541414960765461,
+          "route_id": "cmb_bao",
+          "sign_hit": true
+        },
+        {
+          "H0_measured": 68.49010109846527,
+          "H0_sigma": 0.7613950981338693,
+          "measured_offset_vs_H_closed": -2.605122910358773,
+          "measured_sign": "negative",
+          "predicted_offset_blind": -2.716605645271159,
+          "predicted_sign": "negative",
+          "prediction_sigma": 0.985308325835351,
+          "residual_measured_minus_predicted": 0.11148273491238614,
+          "route_id": "inverse_ladder",
+          "sign_hit": true
+        }
+      ],
+      "sign_hit_rate": 1.0,
+      "sign_hits": 2,
+      "sign_total": 2,
+      "spearman_rho": null
+    }
+  },
+  "default_compression_sigma_km_s_Mpc": 0.5,
+  "quality": {
+    "H_closed_fit": 71.20653137135311,
+    "H_closed_sigma": 1.144794708905999,
+    "chi2": 0.45983595151311607,
+    "chi2_per_dof": 0.45983595151311607,
+    "dof": 1,
+    "label": "in_sample_consistency",
+    "pairwise_order_hit_rate": 1.0,
+    "routes": [
+      {
+        "H0_measured": 67.35723410080992,
+        "H0_sigma": 0.7888298018858959,
+        "measured_offset_vs_H_closed": -3.8492972705431896,
+        "measured_sign": "negative",
+        "predicted_offset_blind": -3.1965749472486675,
+        "predicted_sign": "negative",
+        "prediction_sigma": 1.2707559895460148,
+        "residual_measured_minus_predicted": -0.6527223232945221,
+        "route_id": "cmb_bao",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 68.49010109846527,
+        "H0_sigma": 0.5828571827320005,
+        "measured_offset_vs_H_closed": -2.716430272887834,
+        "measured_sign": "negative",
+        "predicted_offset_blind": -2.716605645271159,
+        "predicted_sign": "negative",
+        "prediction_sigma": 0.985308325835351,
+        "residual_measured_minus_predicted": 0.00017537238332510086,
+        "route_id": "inverse_ladder",
+        "sign_hit": true
+      }
+    ],
+    "sign_hit_rate": 1.0,
+    "sign_hits": 2,
+    "sign_total": 2,
+    "spearman_rho": null
+  },
+  "routes": [
+    "cmb_bao",
+    "inverse_ladder"
+  ],
+  "status": "in-sample consistency check -- Xi was fit to this geometry; NOT an out-of-sample prediction"
+}

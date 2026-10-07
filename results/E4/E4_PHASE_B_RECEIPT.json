@@ -1,0 +1,24 @@
+{
+  "G-E4-PREREG": {
+    "note": "Blind Phase A hashes matched receipt before values were unlocked; Phase B wrote only non-blind outputs.",
+    "pass": true,
+    "status": "computed"
+  },
+  "blind_hash_verification": {
+    "E4_BLINDING_ATTESTATION.json": "7cf11df070ce5621f55444403e7327000b629ed1d7ba7fc819b109d0da1e77bd",
+    "E4_KERNEL_FREEZE.json": "c54b570bef8d69e8319a797158b3ee0d1498338e280a9bbd6c266cc94880f0af",
+    "E4_PREDICTED_ROUTE_TABLE.json": "07bea7248c2121375c124346f32a4a4db1bd7b3f6fbb03eb0f34667c58fea10c",
+    "E4_ROUTE_VERSION_MANIFEST.json": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41"
+  },
+  "hash_chain": {
+    "1_version_manifest": "3d95301949692a8797fe1618c4f652490146415b502179f9d6097c55ae127a41",
+    "2_kernel_freeze": "c54b570bef8d69e8319a797158b3ee0d1498338e280a9bbd6c266cc94880f0af",
+    "3_predicted_table": "07bea7248c2121375c124346f32a4a4db1bd7b3f6fbb03eb0f34667c58fea10c",
+    "4_values_unlocked": "2b9516bcb5d05b1dcee018103a3a45be81a66a8d1d717e84c94e4ee1545c4953",
+    "5_prediction_vs_measured": "6dda90d270169be654a89cc4b2299af31f2f7f68278be1235dba3fbfac12436e",
+    "6_model_comparison": "3034d1c139fa972eab01ce37a74e52c24afa26c49aaba4eb20c9622ab08a82db",
+    "7_holonomy": "493f71cf6dfbd8f6d63ff7e38f3bc6a1c558241964f0a5950ab6838d8e885f6a"
+  },
+  "phase": "B_compare",
+  "schema_version": 1
+}

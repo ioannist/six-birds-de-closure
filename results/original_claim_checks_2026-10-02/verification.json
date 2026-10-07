@@ -1,0 +1,34 @@
+{
+  "baseline_commit": "2e8c497",
+  "lean_build": {
+    "success": true,
+    "jobs": 3156
+  },
+  "python_tests": {
+    "passed": 114,
+    "warnings": 19,
+    "seconds": 49.37
+  },
+  "axiom_audit": {
+    "declarations": 113,
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "proof_holes": false
+  },
+  "paper_edited": false,
+  "coverage_note": "ODE comparison and interval arguments are mathematical, not local Lean proofs; physical Lambda bridge remains unresolved.",
+  "sha256": {
+    "lean/lakefile.lean": "437bb0bf25dde5bd55a1bc9adfc6b5b74ff5f3b4b6cebdd16048fdf643ea8c28",
+    "lean/manifests/check_axioms.lean": "962240054c45cfbe6c139585d6dd6ea0bf0d10c5abe3c7cdd54d96279abc06e3",
+    "lean/manifests/axiom_audit_original_claims_2026-10-02.txt": "422cbbe3d72b8cd678251b97e92fee5ac41cd6ea3622c81411332c5b78bc7294",
+    "lean/SbtCosmo/Derivation/CPLReadout.lean": "68bf623be18d041afd452b0be7b09d345fe2cb6d6d1217025802b5ff9cf900b2",
+    "lean/SbtCosmo/Derivation/WindowRecords.lean": "e7dd6be860d55a6e1075cf2e645cb46d420e79bafc22103321338d85b46661c1",
+    "scripts/de_original_claim_checks.py": "d6f3bcf429cf4ffa938914cddad0dbd4f7352b0ab0d291e5e7eb06b4d8be3fe1",
+    "tests/test_original_claim_checks.py": "12d753945fa0bd20fba3a9bd02255b62624a262caf4c2d1846cb810542bd99b0",
+    "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md": "f9a0d855be5758790deff6914f3d13230e51fe84af4a187980c86277f581608a",
+    "results/original_claim_checks_2026-10-02/receipt.json": "a2176dc483b4cf8f277862e3c8b932be1ce6cad5a3e5a95bdcacf0c2113a626f"
+  }
+}

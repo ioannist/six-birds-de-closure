@@ -1,0 +1,165 @@
+{
+  "E4b_branch": "skip",
+  "G-R0-EXACTNESS": {
+    "gate_id": "G-R0-EXACTNESS",
+    "pass": null,
+    "status": "skipped_power_failed"
+  },
+  "G-R0-POWER": {
+    "conjuncts": {
+      "N_eff_ge_5": {
+        "N_eff": 5.450057588671821,
+        "N_routes": 6,
+        "correlation_eigenvalues": [
+          0.6495759151723571,
+          0.7331003015924297,
+          0.9763533193486632,
+          1.0,
+          1.0,
+          1.6409704638865492
+        ],
+        "definition": "(sum eigenvalues of route correlation matrix)^2 / sum eigenvalues^2",
+        "pass": true,
+        "threshold": 5.0
+      },
+      "covariance_stress_survives": {
+        "pass": false,
+        "rows": [
+          {
+            "SE_delta_elpd_LOO": 25.867425216261562,
+            "delta_AIC_proxy_null_minus_model": 2.7206826887229614,
+            "delta_BIC_null_minus_model": 3.5536448118107415,
+            "delta_elpd_LOO_model_minus_null": -25.18905757428543,
+            "model": "M_bridge",
+            "passes_any": false
+          },
+          {
+            "SE_delta_elpd_LOO": 2.3795080691981116,
+            "delta_AIC_proxy_null_minus_model": 4.235387202444212,
+            "delta_BIC_null_minus_model": 4.8601087947600465,
+            "delta_elpd_LOO_model_minus_null": 2.574800853402241,
+            "model": "M_family",
+            "passes_any": false
+          }
+        ],
+        "stress_assumptions": {
+          "approximation_floor_sigma_external_routes": 0.0,
+          "external_routes_only": [
+            "cepheid_sn",
+            "trgb_sn",
+            "jwst_trgb_sn",
+            "jagb_sn",
+            "time_delay",
+            "siren"
+          ],
+          "hard_excluded_in_sample_routes": [
+            "cmb_bao",
+            "inverse_ladder"
+          ],
+          "pd_jitter_added": 0.0,
+          "shared_SN_zero_point_M_B_covariance": 0.9025,
+          "shared_SN_zero_point_M_B_sigma": 0.95,
+          "shared_TRGB_anchor_covariance": 1.8225000000000002,
+          "shared_TRGB_anchor_sigma_between_trgb_and_jwst_trgb": 1.35,
+          "source": "results/E4/E4_ROUTE_VALUE_MANIFEST.json"
+        }
+      },
+      "leave_one_family_out_beats_null": {
+        "pass": false,
+        "rows": [
+          {
+            "beats_null": false,
+            "best_non_saturated_elpd": -10.342239096754437,
+            "best_non_saturated_model": "M_bridge",
+            "delta_elpd_best_minus_null": -0.2799964921635123,
+            "heldout_family": "CCHP",
+            "n_heldout": 3,
+            "null_elpd": -10.062242604590924
+          },
+          {
+            "beats_null": true,
+            "best_non_saturated_elpd": -3.9338625739312496,
+            "best_non_saturated_model": "M_bridge",
+            "delta_elpd_best_minus_null": 0.21947848970572092,
+            "heldout_family": "cepheid",
+            "n_heldout": 1,
+            "null_elpd": -4.1533410636369705
+          },
+          {
+            "beats_null": true,
+            "best_non_saturated_elpd": -3.235305507227922,
+            "best_non_saturated_model": "M_family",
+            "delta_elpd_best_minus_null": 0.025664264117007285,
+            "heldout_family": "siren",
+            "n_heldout": 1,
+            "null_elpd": -3.2609697713449295
+          },
+          {
+            "beats_null": false,
+            "best_non_saturated_elpd": -2.361364998149373,
+            "best_non_saturated_model": "M_bridge",
+            "delta_elpd_best_minus_null": -0.08563522106064214,
+            "heldout_family": "time_delay",
+            "n_heldout": 1,
+            "null_elpd": -2.275729777088731
+          }
+        ]
+      },
+      "non_saturated_oracle_beats_M0": {
+        "oracle_wins": [
+          {
+            "BIC_rule_pass": false,
+            "SE_delta_elpd_LOO": 25.170133523033677,
+            "delta_AIC_proxy_null_minus_model": 0.939331310389262,
+            "delta_BIC_null_minus_model": 1.7722934334770422,
+            "delta_elpd_LOO_model_minus_null": -24.827927980156844,
+            "elpd_rule_pass": false,
+            "model": "M_bridge",
+            "passes_any": false
+          },
+          {
+            "BIC_rule_pass": false,
+            "SE_delta_elpd_LOO": 1.8277309225319573,
+            "delta_AIC_proxy_null_minus_model": 2.522642562589839,
+            "delta_BIC_null_minus_model": 3.1473641549056737,
+            "delta_elpd_LOO_model_minus_null": 2.065042332067236,
+            "elpd_rule_pass": false,
+            "model": "M_family",
+            "passes_any": false
+          }
+        ],
+        "pass": false
+      },
+      "saturated_zero_control": {
+        "best_non_saturated_or_null_penalized_score": 8.020633761818294,
+        "chi2_zero": true,
+        "saturated_chi2": 1.1831110026612205e-27,
+        "saturated_loses_on_penalized_score": true,
+        "saturated_penalized_score": 10.75055681536833
+      }
+    },
+    "gate_id": "G-R0-POWER",
+    "pass": false,
+    "route_partition": {
+      "external_routes_used": [
+        "cepheid_sn",
+        "trgb_sn",
+        "jwst_trgb_sn",
+        "jagb_sn",
+        "time_delay",
+        "siren"
+      ],
+      "hard_excluded_in_sample_routes": [
+        "cmb_bao",
+        "inverse_ladder"
+      ]
+    }
+  },
+  "aor_status": "blocked",
+  "bridge_row_status": "objectivity-not-earned / underpowered",
+  "next_front": "E5",
+  "program_fail": false,
+  "runtime_seconds": 0.012761380523443222,
+  "schema_version": 1,
+  "terminal_state": "ACCEPTED_NEGATIVE"
+}

@@ -1,0 +1,58 @@
+# --- data payloads (provenance manifests are force-tracked below) ---
+data/raw/
+data/raw
+data/processed/
+data/processed
+!data/manifests/
+!data/manifests/**
+!data/README.md
+
+# --- decommissioned planning/corpus workspaces ---
+docs/
+plan/
+
+# --- decommissioned agent/process workspaces ---
+ops/
+.agents/
+.claude/
+.codex/
+STATUS_REPORT_*.md
+APOLOGY_AND_CORRECTION_*.md
+ChatGPT Image*.png
+
+# --- raw sampler chains (committed posterior SUMMARIES live in results/<E#>/posteriors/;
+#     raw chains are gitignored byproducts and NO gate may depend on them - REGISTRY section 7) ---
+runs/
+runs
+runs/**/chains/*.hdf5
+experiments/**/outputs/chains/
+
+# --- build / cache ---
+lean/.lake/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+
+# --- local env / scratch ---
+.venv/
+.env
+tmp/
+scratch/
+
+# --- build / hand-off artifacts ---
+*.zip
+.env.*
+.netrc
+.netrc-*
+*.secret
+
+# --- AI-agent working notes for paper revisions (plans, claim ledgers, review logs) ---
+paper/notes/v2_*
+
+# --- bulky build/proof-artifact archives (kept locally; hashes recorded in receipts; too large for GitHub) ---
+results/**/*.tar.gz
+results/**/*.tgz
+results/**/*.tar

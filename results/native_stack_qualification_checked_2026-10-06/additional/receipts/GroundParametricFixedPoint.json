@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundParametricFixedPoint",
+  "terminal_exit_code": 0,
+  "source_sha256": "da6451ab8f4005d8da03938aff9be11df6c9f37c15e303a56f4d9fedce62448d",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundParametricFixedPoint.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundParametricFixedPoint.lean"
+  ],
+  "object_sha256": "e9d38e186fb27f657e5b5a576d3f56f7ca4df04447284b26636bebe80bd1c54f"
+}

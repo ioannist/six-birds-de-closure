@@ -1,0 +1,177 @@
+{
+  "all_routes_sensitivity_including_insample": {
+    "G-E4-T3-MULTIPLICITY": true,
+    "flat_control": {
+      "description": "All route offsets set equal/flat; holonomy should vanish.",
+      "loops": [
+        {
+          "frozen_prediction_residual_abs": 5.4559016959126,
+          "holonomy_abs_km_s_Mpc": 0.0,
+          "loop": [
+            "cmb_bao",
+            "inverse_ladder",
+            "cepheid_sn",
+            "cmb_bao"
+          ],
+          "sigma_km_s_Mpc": 2.0858372748050384,
+          "z_score": 0.0
+        },
+        {
+          "frozen_prediction_residual_abs": 5.4559016959126,
+          "holonomy_abs_km_s_Mpc": 0.0,
+          "loop": [
+            "cmb_bao",
+            "inverse_ladder",
+            "trgb_sn",
+            "cmb_bao"
+          ],
+          "sigma_km_s_Mpc": 2.6894455073427515,
+          "z_score": 0.0
+        },
+        {
+          "frozen_prediction_residual_abs": 5.4559016959126,
+          "holonomy_abs_km_s_Mpc": 0.0,
+          "loop": [
+            "cmb_bao",
+            "inverse_ladder",
+            "jagb_sn",
+            "cmb_bao"
+          ],
+          "sigma_km_s_Mpc": 3.299138847785299,
+          "z_score": 0.0
+        },
+        {
+          "frozen_prediction_residual_abs": 3.206471261503586,
+          "holonomy_abs_km_s_Mpc": 0.0,
+          "loop": [
+            "cmb_bao",
+            "inverse_ladder",
+            "siren",
+            "cmb_bao"
+          ],
+          "sigma_km_s_Mpc": 10.11007446141216,
+          "z_score": 0.0
+        },
+        {
+          "frozen_prediction_residual_abs": 3.7060894089969345,
+          "holonomy_abs_km_s_Mpc": 0.0,
+          "loop": [
+            "cmb_bao",
+            "inverse_ladder",
+            "time_delay",
+            "cmb_bao"
+          ],
+          "sigma_km_s_Mpc": 3.8117148721911343,
+          "z_score": 0.0
+        }
+      ],
+      "max_holonomy_abs_km_s_Mpc": 0.0,
+      "max_z_score": 0.0,
+      "pass": true
+    },
+    "global_p_disjunct_pass": true,
+    "include_time_delay": true,
+    "locked_rule": "primary loop z>=2 OR global permutation p<0.05",
+    "loops": [
+      {
+        "frozen_prediction_residual_abs": 0.6768642032774759,
+        "holonomy_abs_km_s_Mpc": 6.132765899190076,
+        "loop": [
+          "cmb_bao",
+          "inverse_ladder",
+          "cepheid_sn",
+          "cmb_bao"
+        ],
+        "sigma_km_s_Mpc": 2.0858372748050384,
+        "z_score": 2.940193836435923
+      },
+      {
+        "frozen_prediction_residual_abs": 2.4231357967225184,
+        "holonomy_abs_km_s_Mpc": 3.032765899190082,
+        "loop": [
+          "cmb_bao",
+          "inverse_ladder",
+          "trgb_sn",
+          "cmb_bao"
+        ],
+        "sigma_km_s_Mpc": 2.6894455073427515,
+        "z_score": 1.1276547120623912
+      },
+      {
+        "frozen_prediction_residual_abs": 5.013135796722522,
+        "holonomy_abs_km_s_Mpc": 0.44276589919007847,
+        "loop": [
+          "cmb_bao",
+          "inverse_ladder",
+          "jagb_sn",
+          "cmb_bao"
+        ],
+        "sigma_km_s_Mpc": 3.299138847785299,
+        "z_score": 0.13420650649102137
+      },
+      {
+        "frozen_prediction_residual_abs": 0.5637053623135047,
+        "holonomy_abs_km_s_Mpc": 2.6427658991900813,
+        "loop": [
+          "cmb_bao",
+          "inverse_ladder",
+          "siren",
+          "cmb_bao"
+        ],
+        "sigma_km_s_Mpc": 10.11007446141216,
+        "z_score": 0.2613992517341899
+      },
+      {
+        "frozen_prediction_residual_abs": 0.5366764901931411,
+        "holonomy_abs_km_s_Mpc": 4.242765899190076,
+        "loop": [
+          "cmb_bao",
+          "inverse_ladder",
+          "time_delay",
+          "cmb_bao"
+        ],
+        "sigma_km_s_Mpc": 3.8117148721911343,
+        "z_score": 1.1130858528122685
+      }
+    ],
+    "observed_max_z": 2.940193836435923,
+    "p_global": 0.04099180163967207,
+    "permutation_trials": 5000,
+    "primary_loop": {
+      "frozen_prediction_residual_abs": 0.6768642032774759,
+      "holonomy_abs_km_s_Mpc": 6.132765899190076,
+      "loop": [
+        "cmb_bao",
+        "inverse_ladder",
+        "cepheid_sn",
+        "cmb_bao"
+      ],
+      "sigma_km_s_Mpc": 2.0858372748050384,
+      "z_score": 2.940193836435923
+    },
+    "primary_z_disjunct_pass": true
+  },
+  "out_of_sample": {
+    "G-E4-T3-MULTIPLICITY": false,
+    "flat_control": {
+      "description": "OOS-only flat route configuration has no closed loop to test.",
+      "loops": [],
+      "max_holonomy_abs_km_s_Mpc": 0.0,
+      "max_z_score": 0.0,
+      "pass": true
+    },
+    "global_p_disjunct_pass": false,
+    "include_time_delay": true,
+    "locked_rule": "primary loop z>=2 OR global permutation p<0.05; downgraded because no OOS-only loop is available",
+    "note": "No meaningful closed Hubble-holonomy loop exists using only out-of-sample local routes; the pre-registered high-power loop requires in-sample early anchors.",
+    "p_global": null,
+    "primary_loop": {
+      "holonomy_abs_km_s_Mpc": null,
+      "loop": null,
+      "sigma_km_s_Mpc": null,
+      "z_score": null
+    },
+    "primary_z_disjunct_pass": false,
+    "status": "downgraded_no_closed_external_loop"
+  }
+}

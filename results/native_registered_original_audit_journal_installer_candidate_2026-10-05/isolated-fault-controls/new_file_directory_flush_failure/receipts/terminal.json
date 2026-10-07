@@ -1,0 +1,23 @@
+{
+  "terminal_exit_code": 1,
+  "installed": [],
+  "attempted": [
+    "lean/target.lean"
+  ],
+  "pending_targets": [
+    "lean/target.lean"
+  ],
+  "observed_targets": {
+    "lean/target.lean": {
+      "original_sha256": null,
+      "proposed_sha256": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+      "observed_sha256": "695d31c8fbb3f81936ed0235dcbdba1f3ae1bdcff96cd16c8ad2a74df0c5f31d",
+      "matches_original": false,
+      "matches_proposed": true,
+      "absent": false
+    }
+  },
+  "error": "OSError('Injected flush failure new_file_directory_flush_failure')",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/de_review_native_installer_journal.py\", line 29, in <module>\n    try:v.install_target(row,after,receipt,installed,attempted)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/de_native_registered_install_original_audit_journal_candidate.py\", line 44, in install_target\n    atomically_install(p,raw)\n  File \"/tmp/de_native_registered_install_original_audit_journal_candidate.py\", line 36, in atomically_install\n    try:os.fsync(descriptor)\n        ^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/de_review_native_installer_journal.py\", line 25, in inject\n    if fail_call is not None and len(calls)==fail_call:raise OSError('Injected flush failure '+label)\n                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: Injected flush failure new_file_directory_flush_failure\n",
+  "goal_complete": false
+}

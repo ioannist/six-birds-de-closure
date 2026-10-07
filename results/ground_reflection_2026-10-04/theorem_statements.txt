@@ -1,0 +1,271 @@
+SbtCosmo.Derivation.GroundNativeReflection.complexNormSq_neg (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (-z) = SbtCosmo.Derivation.GroundState.complexNormSq z
+SbtCosmo.Derivation.GroundNativeReflection.complexSourcePotential_neg (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential b κ (-z) =
+    SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z
+SbtCosmo.Derivation.GroundNativeReflection.nativeCandidate_neg (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate b κ (-z) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate b κ z
+SbtCosmo.Derivation.GroundNativeReflection.overlap_neg_right
+  (candidate reference : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.overlap candidate (-reference) =
+    -SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference
+SbtCosmo.Derivation.GroundNativeReflection.unpack_neg (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.unpack (-z) = -SbtCosmo.Derivation.GroundNativePhase.unpack z
+SbtCosmo.Derivation.GroundNativeReflection.realEmbed_neg (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundState.realEmbed (-u) = -SbtCosmo.Derivation.GroundState.realEmbed u
+SbtCosmo.Derivation.GroundNativeReflection.activePhase_neg_iff (τ : ℝ) (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (-z) ↔
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ z
+SbtCosmo.Derivation.GroundNativeReflection.nativePhase_neg_reference {τ : ℝ}
+  {candidate reference : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (ho : τ < ‖SbtCosmo.Derivation.GroundNativePhase.overlap candidate reference‖) :
+  SbtCosmo.Derivation.GroundNativePhase.nativePhase τ candidate (-reference) =
+    -SbtCosmo.Derivation.GroundNativePhase.nativePhase τ candidate reference
+SbtCosmo.Derivation.GroundNativeReflection.complexNormalize_neg (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativeIteration.complexNormalize (-z) =
+    -SbtCosmo.Derivation.GroundNativeIteration.complexNormalize z
+SbtCosmo.Derivation.GroundNativeReflection.nativeMixed_neg {τ : ℝ} (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) (hτ : 0 ≤ τ)
+  (ho : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ z) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeMixed τ b κ m (-z) =
+    -SbtCosmo.Derivation.GroundNativeIteration.nativeMixed τ b κ m z
+SbtCosmo.Derivation.GroundNativeReflection.nativeUpdate_neg {τ : ℝ} (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ m : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (hτ : 0 ≤ τ)
+  (ho : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ z) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m (-z) =
+    -SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m z
+SbtCosmo.Derivation.GroundNativeReflection.nativeLegal_neg_iff {τ : ℝ} (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ m : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (hτ : 0 ≤ τ)
+  (ho : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ z) :
+  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (-z) ↔
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m z
+SbtCosmo.Derivation.GroundNativeReflection.native_iterate_neg {τ : ℝ} (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ m : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (hτ : 0 ≤ τ) (N : ℕ)
+  (ha :
+    ∀ j < N,
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[j] z)) :
+  (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[N] (-z) =
+    -(SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[N] z
+SbtCosmo.Derivation.GroundNativeReflection.native_negative_local_attraction
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1)
+  (hd : ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u‖ < 1) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      T.symm (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈ Metric.closedBall (T.symm (-u, 0)) r →
+        Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) Filter.atTop
+            (nhds (SbtCosmo.Derivation.GroundState.realEmbed (-u))) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z)
+SbtCosmo.Derivation.GroundNativeReflection.native_negative_local_escape
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ ℓ : ℝ} {v : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) (hv : ‖v‖ = 1)
+  (heigen : (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u) v = ℓ • v) (hℓ : 1 < |ℓ|)
+  (hgap : ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u‖ < |ℓ| ^ 2) :
+  ∃ s > 0,
+    ∀ ε > 0,
+      ∃ z N,
+        SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+          ‖T.symm (SbtCosmo.Derivation.GroundNativePhase.unpack z) - T.symm (-u, 0)‖ < ε ∧
+            s / 2 ≤
+                ‖T.symm
+                      (SbtCosmo.Derivation.GroundNativePhase.unpack
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[N] z)) -
+                    T.symm (-u, 0)‖ ∧
+              ∀ k ≤ N,
+                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[k] z) ∧
+                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[k] z)
+SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_native_fixed (κ m : ℝ) (hk : κ ∈ Set.Icc 0 30) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        κ m (SbtCosmo.Derivation.GroundState.realEmbed (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch κ).1)) =
+      SbtCosmo.Derivation.GroundState.realEmbed (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch κ).1) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        κ (SbtCosmo.Derivation.GroundState.realEmbed (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch κ).1)) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        κ m (SbtCosmo.Derivation.GroundState.realEmbed (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch κ).1))
+SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_native_attraction (i : Fin 10) :
+  ∃ r > 0,
+    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis (Fin.castLE ⋯ i)).symm
+            (SbtCosmo.Derivation.GroundNativePhase.unpack z) ∈
+          Metric.closedBall
+            ((SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis (Fin.castLE ⋯ i)).symm
+              (-SbtCosmo.Derivation.GroundOriginalCoordinates.root (Fin.castLE ⋯ i), 0))
+            r →
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                        (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                    (1 / 2))^[n]
+                z)
+            Filter.atTop
+            (nhds
+              (SbtCosmo.Derivation.GroundState.realEmbed
+                (-SbtCosmo.Derivation.GroundOriginalCoordinates.root (Fin.castLE ⋯ i)))) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundKernelTube.background
+                        SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                      (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                          (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                      (1 / 2))^[n]
+                  z) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                (1 / 2)
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                      SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                      (SbtCosmo.Derivation.GroundKernelTube.background
+                        SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                      (↑(SbtCosmo.Derivation.GroundOriginalSamples.couplings
+                          (SbtCosmo.Derivation.GroundOriginalCoordinates.sampleIndex (Fin.castLE ⋯ i))))
+                      (1 / 2))^[n]
+                  z)
+SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_twenty_native_escape :
+  ∃ s > 0,
+    ∀ ε > 0,
+      ∃ z N,
+        SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+          ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                    (SbtCosmo.Derivation.GroundNativePhase.unpack z) -
+                  (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                    (-SbtCosmo.Derivation.GroundOriginalCoordinates.root 10, 0)‖ <
+              ε ∧
+            s / 2 ≤
+                ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                      (SbtCosmo.Derivation.GroundNativePhase.unpack
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                              SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                              (SbtCosmo.Derivation.GroundKernelTube.background
+                                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                              20 (1 / 2))^[N]
+                          z)) -
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 10).symm
+                      (-SbtCosmo.Derivation.GroundOriginalCoordinates.root 10, 0)‖ ∧
+              ∀ j ≤ N,
+                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    20
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          20 (1 / 2))^[j]
+                      z) ∧
+                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    20 (1 / 2)
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          20 (1 / 2))^[j]
+                      z)
+SbtCosmo.Derivation.GroundOriginalReflection.actual_negative_thirty_native_escape :
+  ∃ s > 0,
+    ∀ ε > 0,
+      ∃ z N,
+        SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+          ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                    (SbtCosmo.Derivation.GroundNativePhase.unpack z) -
+                  (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                    (-SbtCosmo.Derivation.GroundOriginalCoordinates.root 11, 0)‖ <
+              ε ∧
+            s / 2 ≤
+                ‖(SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                      (SbtCosmo.Derivation.GroundNativePhase.unpack
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                              SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                              (SbtCosmo.Derivation.GroundKernelTube.background
+                                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                              30 (1 / 2))^[N]
+                          z)) -
+                    (SbtCosmo.Derivation.GroundOriginalCoordinates.fullBasis 11).symm
+                      (-SbtCosmo.Derivation.GroundOriginalCoordinates.root 11, 0)‖ ∧
+              ∀ j ≤ N,
+                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    30
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          30 (1 / 2))^[j]
+                      z) ∧
+                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    (SbtCosmo.Derivation.GroundKernelTube.background
+                      SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                    30 (1 / 2)
+                    ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                          (SbtCosmo.Derivation.GroundKernelTube.background
+                            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                          30 (1 / 2))^[j]
+                      z)
+SbtCosmo.Derivation.GroundReflectionControls.fallback_reference_unit :
+  SbtCosmo.Derivation.GroundState.complexNormSq SbtCosmo.Derivation.GroundReflectionControls.fallbackReference = 1
+SbtCosmo.Derivation.GroundReflectionControls.fallback_overlap_zero :
+  SbtCosmo.Derivation.GroundNativePhase.overlap
+      (SbtCosmo.Derivation.GroundState.realEmbed SbtCosmo.Derivation.GroundState.uniform)
+      SbtCosmo.Derivation.GroundReflectionControls.fallbackReference =
+    0
+SbtCosmo.Derivation.GroundReflectionControls.zero_native_candidate_uniform
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate 0 0 z =
+    SbtCosmo.Derivation.GroundState.realEmbed SbtCosmo.Derivation.GroundState.uniform
+SbtCosmo.Derivation.GroundReflectionControls.fallback_native_outputs :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate 0 0 0 1
+        SbtCosmo.Derivation.GroundReflectionControls.fallbackReference =
+      SbtCosmo.Derivation.GroundState.realEmbed SbtCosmo.Derivation.GroundState.uniform ∧
+    SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate 0 0 0 1
+        (-SbtCosmo.Derivation.GroundReflectionControls.fallbackReference) =
+      SbtCosmo.Derivation.GroundState.realEmbed SbtCosmo.Derivation.GroundState.uniform
+SbtCosmo.Derivation.GroundReflectionControls.fallback_legal_inactive :
+  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal 0 0 0 1
+      SbtCosmo.Derivation.GroundReflectionControls.fallbackReference ∧
+    ¬SbtCosmo.Derivation.GroundNativeIteration.ActivePhase 0 0 0
+        SbtCosmo.Derivation.GroundReflectionControls.fallbackReference
+SbtCosmo.Derivation.GroundReflectionControls.unconditional_unit_reflection_rejected :
+  ¬∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+      SbtCosmo.Derivation.GroundState.complexNormSq z = 1 →
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal 0 0 0 1 z →
+          SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate 0 0 0 1 (-z) =
+            -SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate 0 0 0 1 z

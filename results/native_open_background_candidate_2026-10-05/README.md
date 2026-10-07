@@ -1,0 +1,7 @@
+# Open background candidate checkpoint
+
+Seven helper modules / forty declarations compiled. Fifteen joint regularity and local Lipschitz declarations have fresh printed statement and standard-only transitive axiom checks. The concrete eighteen-background application is still compiling; its four density readouts and complete fifty-declaration audit are queued. This is a historical candidate checkpoint, not completed open-background theorem evidence.
+
+The candidate preserves the original complex seed, source rule and guards. Independently earned positive implicit ground branches identify the constructed contraction limits. It targets positive open neighborhoods around eighteen rounded inputs and robust endpoint density separation, without explicit numerical radii, full offset-window coverage, IEEE execution or physical Lambda claims. See math/GROUND_NATIVE_OPEN_BACKGROUND_CONSTRUCTION_2026-10-05.md.
+
+The archive includes all nine candidate sources, 10 failed-source histories, compile/audit logs and terminal receipts, the fifteen-name audit source, queue drivers, helper revalidation and handover. Every archived member was checked in a sequential readback. Objects are not archived. The registration plan is separate from all prior frozen production plans; no repository registration or commit has occurred. The final kernel/audit queue freezes twelve new source/driver inputs until terminal. Candidate status flags must not be treated as later campaign status.

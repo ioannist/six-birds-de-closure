@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundNativeSourceParameterSmooth",
+  "terminal_exit_code": 0,
+  "source_sha256": "03f908c29ebeb50960e9e0e151a18e0a7b7030f94149607ee76cd017bffa504c",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.lean"
+  ],
+  "object_sha256": "1a14281ec70cee5fd5ca087badaa25413f603f653ba17c035f589933df7853fb"
+}

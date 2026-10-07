@@ -1,0 +1,1 @@
+Source-only candidate. Exactly one aggregate proof body differs from the historical original-audit candidate. All theorem headers, definitions, imports, inventories, source preimages and registered gates are retained. No registered source or object has been changed. The repaired aggregate has private evidence; qualified and registered gates remain pending.

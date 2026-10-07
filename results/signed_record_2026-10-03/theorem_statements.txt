@@ -1,0 +1,119 @@
+SbtCosmo.Derivation.GrowthFirstRecordLive.native_initial {a0 A lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) : SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a0 = 1
+SbtCosmo.Derivation.GrowthFirstRecordLive.exists_unique_first_time {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  ∃! a, a ∈ Set.Icc a0 A ∧ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a = T
+SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime_spec {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam ∈ Set.Icc a0 A ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam
+        (SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam) =
+      T
+SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime_iff_threshold {a0 A lam T a : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A)
+  (ha : a ∈ Set.Icc a0 A) :
+  T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a ↔
+    SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam ≤ a
+SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime_eq_nonnegative {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : 0 ≤ lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam =
+    SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam
+SbtCosmo.Derivation.GrowthFirstRecordLive.native_matter_at_zero {a0 a : ℝ} (ha0 : 0 < a0) (ha : a0 ≤ a) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 0 a = a / a0
+SbtCosmo.Derivation.GrowthFirstRecordLive.native_matter_lower {a0 A lam a : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hnonpos : lam ≤ 0) (ha : a ∈ Set.Icc a0 A) :
+  a / a0 ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a
+SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime_nonpositive_upper {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) (hnonpos : lam ≤ 0) (hT : 1 < T)
+  (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam ≤ a0 * T
+SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime_at_zero {a0 A T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A) (hT : 1 < T)
+  (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 0 A) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T 0 = a0 * T
+SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime_strict_parameter {a0 A T lam1 lam2 : ℝ} (ha0 : 0 < a0) (hA : a0 < A)
+  (h1 : -(1 / A ^ 3) < lam1) (h12 : lam1 < lam2) (hT : 1 < T)
+  (hf1 : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam1 A)
+  (hf2 : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam2 A) :
+  SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam1 <
+    SbtCosmo.Derivation.GrowthFirstRecordLive.firstTime a0 A T lam2
+SbtCosmo.Derivation.WindowSignedRecord.gate_iff_window (lam : ℝ) :
+  SbtCosmo.Derivation.WindowSample.realizedGate lam ↔
+    lam ∈ Set.Ioc (-(1 / 8000)) SbtCosmo.Derivation.WindowEdgeCertified.upper
+SbtCosmo.Derivation.WindowSignedRecord.gate_cutoff {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) : -(1 / 20 ^ 3) < lam
+SbtCosmo.Derivation.WindowSignedRecord.final_above_threshold {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.threshold j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowSignedRecord.time_spec {lam : ℝ} (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam)
+  (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.time j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowSignedRecord.time j lam) =
+      SbtCosmo.Derivation.WindowFirstRecord.threshold j
+SbtCosmo.Derivation.WindowSignedRecord.time_positive {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowSignedRecord.time j lam
+SbtCosmo.Derivation.WindowSignedRecord.time_eq_nonnegative {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hlam : 0 ≤ lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.time j lam = SbtCosmo.Derivation.WindowFirstRecord.time j lam
+SbtCosmo.Derivation.WindowSignedRecord.ratio_eq_nonnegative {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hlam : 0 ≤ lam) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.ratio j lam = SbtCosmo.Derivation.WindowFirstRecord.ratio j lam
+SbtCosmo.Derivation.WindowSignedRecord.time_iff_any_collapse {lam a : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (ha : a ∈ Set.Icc (1 / 1000) 20) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowSignedRecord.time j lam ≤ a
+SbtCosmo.Derivation.WindowSignedRecord.time_is_first_collapse {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowSignedRecord.time j lam)) ∧
+    ∀ a ∈ Set.Icc (1 / 1000) 20,
+      a < SbtCosmo.Derivation.WindowSignedRecord.time j lam →
+        ¬∃ i,
+            SbtCosmo.Derivation.WindowSample.delta ≤
+              SbtCosmo.Derivation.WindowSample.amplitude j i *
+                SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowSignedRecord.time_at_zero (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.time j 0 = SbtCosmo.Derivation.WindowFirstRecord.threshold j / 1000
+SbtCosmo.Derivation.WindowSignedRecord.time_nonpositive_upper {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hlam : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.time j lam ≤ SbtCosmo.Derivation.WindowFirstRecord.threshold j / 1000
+SbtCosmo.Derivation.WindowSignedRecord.time_nonpositive_small {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hlam : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.time j lam < 897 / 1000
+SbtCosmo.Derivation.WindowSignedRecord.time_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowSignedRecord.time j)
+    (Set.Ioc (-(1 / 8000)) SbtCosmo.Derivation.WindowEdgeCertified.upper)
+SbtCosmo.Derivation.WindowSignedRecord.ratio_density_readout (lam : ℝ) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.ratio j lam = |lam| / (SbtCosmo.Derivation.WindowSignedRecord.time j lam ^ 3)⁻¹
+SbtCosmo.Derivation.WindowSignedRecord.ratio_positive {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hne : lam ≠ 0) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowSignedRecord.ratio j lam
+SbtCosmo.Derivation.WindowSignedRecord.ratio_zero (j : Fin 12) : SbtCosmo.Derivation.WindowSignedRecord.ratio j 0 = 0
+SbtCosmo.Derivation.WindowSignedRecord.ratio_nonpositive_upper {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hlam : lam ≤ 0) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowSignedRecord.ratio j lam < 1 / 8000
+SbtCosmo.Derivation.WindowSignedRecord.negative_ratios {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (hlam : lam < 0) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowSignedRecord.ratio j lam ∧ SbtCosmo.Derivation.WindowSignedRecord.ratio j lam < 1 / 8000
+SbtCosmo.Derivation.WindowSignedRecord.full_window_ratios {lam : ℝ}
+  (hgate : SbtCosmo.Derivation.WindowSample.realizedGate lam) (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowSignedRecord.ratio j lam ∧ SbtCosmo.Derivation.WindowSignedRecord.ratio j lam < 425 / 8
+SbtCosmo.Derivation.WindowSignedRecord.endpoint_ratios (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowSignedRecord.ratio j SbtCosmo.Derivation.WindowEdgeCertified.upper ∧
+    SbtCosmo.Derivation.WindowSignedRecord.ratio j SbtCosmo.Derivation.WindowEdgeCertified.upper < 425 / 8
+SbtCosmo.Derivation.WindowSignedRecord.ratios_arbitrarily_small {epsilon : ℝ} (he : 0 < epsilon) :
+  ∃ lam,
+    0 < lam ∧
+      lam ≤ 1 ∧
+        SbtCosmo.Derivation.WindowSample.realizedGate lam ∧
+          ∀ (j : Fin 12),
+            0 < SbtCosmo.Derivation.WindowSignedRecord.ratio j lam ∧
+              SbtCosmo.Derivation.WindowSignedRecord.ratio j lam < epsilon

@@ -1,0 +1,35 @@
+name: sbt-de
+channels: [conda-forge]
+dependencies:
+  - python=3.11.9
+  # toolchain (needed to build classy/pyccl/clik from source if no wheel)
+  - c-compiler
+  - cxx-compiler
+  - fortran-compiler
+  - make
+  - cmake>=3.24
+  - pkg-config
+  - cython
+  # system libs the compiled cosmology codes link against
+  - libgomp
+  - gsl
+  - fftw
+  - cfitsio
+  # core numerics (conda-forge to share HDF5/BLAS)
+  # canonical E5 backend validated by G-ENV-4: numpy 1.26.4 + pyccl 3.1.2 + classy v3.2.5.
+  - numpy=1.26.4
+  - scipy>=1.11,<1.14
+  - pandas>=2.0,<2.3
+  - matplotlib-base>=3.7,<3.10
+  - h5py>=3.8
+  - pyyaml>=6.0
+  - arviz>=0.17,<0.19
+  # LSS backend with validated CCL/CLASS agreement.
+  - pyccl=3.1.2
+  - pip
+  - pip:
+      - cobaya>=3.5,<3.6
+      - camb>=1.5.7,<1.6
+      - getdist>=1.5
+      # pypolychord>=1.20 has no Python 3.11-compatible PyPI distribution in C0b.
+      - dynesty>=2.1,<3        # fallback when PolyChord is unavailable for the active Python ABI

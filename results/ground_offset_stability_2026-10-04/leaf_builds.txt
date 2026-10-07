@@ -1,0 +1,92 @@
+First fresh compiler receipts for18 arithmetic leaves; all source files were frozen within their respective compiler batches.
+Frozen source SHA256: 7bc4dfe824dc444142dbcdcbb1a74a131150368f7fe29e95489c6cac92526cd5 lean/SbtCosmo/Derivation/GroundUncertainBorderResponse.lean
+Frozen source SHA256: 51ec11fb4867eeb41baa7fe686c137254d172ac098edbcbbf26115aeda1277cc lean/SbtCosmo/Derivation/GroundOffsetStability/Point000.lean
+Frozen source SHA256: 39e3996bcf5b5ddc2564b2aca3d6213990ef4c844183f8a520f6e968ae47a27b lean/SbtCosmo/Derivation/GroundOffsetStability/Point001.lean
+Frozen source SHA256: 273fcb7028621f1895d0c899b09c9272a771d9197816bfae49f71d20c2c9661d lean/SbtCosmo/Derivation/GroundOffsetStability/Point002.lean
+Frozen source SHA256: 3cb46af489c8cdf8f7fe00a3c25a01018d834d51106bb2702fc3366a1c3b9873 lean/SbtCosmo/Derivation/GroundOffsetStability/Point003.lean
+Frozen source SHA256: bf6287c6432e45e959969cf523d4d9cd057c598b40341370ee78a70b29eff5e2 lean/SbtCosmo/Derivation/GroundOffsetStability/Point004.lean
+Frozen source SHA256: 5748c3fa17b816b4ad1dedfdc9240b6426602c9b84bfc7c736543c44e317c8b2 lean/SbtCosmo/Derivation/GroundOffsetStability/Point005.lean
+Frozen source SHA256: 6f187cc5a30a0fc41373c7022ec674981081f4dbf9429dbeb4334340bb7a5c76 lean/SbtCosmo/Derivation/GroundOffsetStability/Point006.lean
+Frozen source SHA256: 4ec0f1641897e51a62e900f5af4f0e92c0443ff497a5134c17f68165479a7827 lean/SbtCosmo/Derivation/GroundOffsetStability/Point007.lean
+Frozen source SHA256: 7b1028355159b9c22574636ba924c2a4a1c81657fcbfafc7b8b921adfb94c468 lean/SbtCosmo/Derivation/GroundOffsetStability/Point008.lean
+Frozen source SHA256: 302fe28a91960169f53a0447e3efc1fab3e0da3ae41d624eec29a634024d28e9 lean/SbtCosmo/Derivation/GroundOffsetStability/Point009.lean
+Frozen source SHA256: 8d0c2f1ea4f4dac9dfdcbe85153602f7adcaf1e3d21deb7f2b99340fe53558e8 lean/SbtCosmo/Derivation/GroundOffsetStability/Point010.lean
+Frozen source SHA256: 3632e9f6e79671b9fb41df84195d7b1f50023f4a31a4bcd0204d4b1b303b43be lean/SbtCosmo/Derivation/GroundOffsetStability/Point011.lean
+Frozen source SHA256: 48b9737ebed45df5562d17a77316edf29572f9a553dccbf0e8e22f8c824568e3 lean/SbtCosmo/Derivation/GroundOffsetStability/Point012.lean
+Frozen source SHA256: e29139453ecadbb9f576775cc594d8a105c9e93aa4cf92a788fff747db607472 lean/SbtCosmo/Derivation/GroundOffsetStability/Point013.lean
+Frozen source SHA256: 9c3aa2b9b1b8f439bbff537eeb7ec81f5113afae85720fc7e17e2c4061a51fc0 lean/SbtCosmo/Derivation/GroundOffsetStability/Point014.lean
+Frozen source SHA256: 6368f2798eca13be5cfb7ad0b52fc49143668b0c2ce33ada93fe9f01193605ad lean/SbtCosmo/Derivation/GroundOffsetStability/Point015.lean
+Frozen source SHA256: ee0fcefe319d4cf363992f9fcfe2b3b897d34253647bddf2ff2528cc25cf510d lean/SbtCosmo/Derivation/GroundOffsetStability/Point016.lean
+Frozen source SHA256: 2de6625f3fdb95e4a92b8142cb218a050463e7c46bf44570f0afaf879f25b911 lean/SbtCosmo/Derivation/GroundOffsetStability/Point017.lean
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point000
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point000 (403s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point001
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point001 (410s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point002
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point002 (383s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point003
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point003 (380s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point004
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point004 (382s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point005
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point005 (380s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point006
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point006 (380s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point007
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point007 (380s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point008
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point008 (360s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point009
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point009 (368s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point010
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point010 (384s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point011
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point011 (388s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point012
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point012 (389s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point013
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point013 (384s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point014
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point014 (396s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point015
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point015 (391s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point016
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point016 (389s)
+Build completed successfully (8669 jobs).
+
+Fresh leaf command: lake build SbtCosmo.Derivation.GroundOffsetStability.Point017
+✔ [8669/8669] Built SbtCosmo.Derivation.GroundOffsetStability.Point017 (398s)
+Build completed successfully (8669 jobs).

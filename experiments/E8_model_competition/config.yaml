@@ -1,0 +1,11 @@
+schema_version: 1
+experiment: E8
+plan: plan/experiments/E8-model-competition.md
+seed:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+inputs:
+  requires_terminal_accepted: [E1, E2, E3, E4, E5, E6, E7]
+  coherence_ledger: results/xi_cosmo_coherence.csv
+status: skeleton_only_c0a

@@ -1,0 +1,11 @@
+{
+  "README.md": "9901d893a20ca995462febb63d485da0de7184f2b5cba8fb537504f7c25625b5",
+  "archive-manifest.json": "22284bfe35b08d32cd2851e6a74f77b129c2ad7c4b888825b4d3a627bec83e25",
+  "audit-summary.json": "2a37bf0c669850f36bbc9a1a4ca6f44dd292308433abde7a418af5cf12e6adfd",
+  "checked_artifacts.tar.gz": "70a66edcd70a2c56a5ca294b48cf8c09f9f76cf3ca5d9411178eaf1450bd7dd8",
+  "checkpoint-verification.json": "bb31ac6a74737b22b7a57f1e5caf9c1eb69ec81e61c3ba01f764919c8ea97d48",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycleExecution.lean": "4a54c474cf35857182f99a360bb0d1cdb68897a46396c2de6ffde8f589a9e4e3",
+  "lean/SbtCosmo/Derivation/GroundSourceExecutionReturn.lean": "ea9ba5f287cb9c485f1a23f3b6b0668aa379cc6c5bf50fe4c9ece27af43f752b",
+  "registration-plan.json": "9ec5e01173db2380d5e9fa97a2b6ebb089d39329f7635966b53ce52cf76b0bb3",
+  "source-bindings.json": "24fd38884aaf51d096af31acbf72403a6fd93f929745c18425344161318f6793"
+}

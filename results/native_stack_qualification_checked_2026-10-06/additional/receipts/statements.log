@@ -1,0 +1,1246 @@
+SbtCosmo.Derivation.GroundFiniteParameterContinuity.finite_iterate_parameter_continuous_at.{u_1, u_2} {P : Type u_1}
+  {E : Type u_2} [TopologicalSpace P] [TopologicalSpace E] {f : P → E → E} {p : P} {a : E} (N : ℕ)
+  (hc : ∀ n < N, ContinuousAt (Function.uncurry f) (p, (f p)^[n] a)) : ContinuousAt (fun b => (f b)^[N] a) p
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.pair_guard_data {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ha : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack x))
+  (hn : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x)) :
+  τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x ∧
+    τ < √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x))
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.native_joint_regular_at
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ha : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack x))
+  (hn : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x)) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ p.1 κ m p.2) (b, x)
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.native_joint_guards_near
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ha : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack x))
+  (hn : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack x)) :
+  {p |
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ p.1 κ (SbtCosmo.Derivation.GroundNativePhase.pack p.2) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ p.1 κ m
+          (SbtCosmo.Derivation.GroundNativePhase.pack p.2)} ∈
+    nhds (b, x)
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_step_return
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.pack
+      (T (-SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ b κ m x)) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m (SbtCosmo.Derivation.GroundNativePhase.pack (T (-x)))
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_iterate_return
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (x : SbtCosmo.Derivation.GroundNativePhase.State) (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativePhase.pack
+      (T (-(SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ b κ m)^[n] x)) =
+    (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n]
+      (SbtCosmo.Derivation.GroundNativePhase.pack (T (-x)))
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_joint_regular_at
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ha :
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack (T (-x))))
+  (hn :
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+      (SbtCosmo.Derivation.GroundNativePhase.pack (T (-x)))) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ p.1 κ m p.2)
+    (b, x)
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_joint_guards_near
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ha :
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundNativePhase.pack (T (-x))))
+  (hn :
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+      (SbtCosmo.Derivation.GroundNativePhase.pack (T (-x)))) :
+  SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedRegion T τ κ m ∈ nhds (b, x)
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_eventual_return_at_root
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ b κ m =ᶠ[nhds (T.symm (u, 0))]
+    SbtCosmo.Derivation.GroundNativeLocal.coordinateMap T τ b κ m
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_root_derivative
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  HasFDerivAt (SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ b κ m)
+    (SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b κ m u) (T.symm (u, 0))
+SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflected_root_fixed
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ b κ m (T.symm (u, 0)) = T.symm (u, 0)
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode_decode
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode T
+      (SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode T z) =
+    z
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode_encode
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode T
+      (SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode T x) =
+    x
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode_center
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode T (T.symm (u, 0)) =
+    SbtCosmo.Derivation.GroundState.realEmbed (-u)
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode_continuous
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) :
+  Continuous (SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.encode T)
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode_continuous
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) :
+  Continuous (SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode T)
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.reflected_seed_return
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (n : ℕ) :
+  (SbtCosmo.Derivation.GroundNativeBackgroundContinuation.reflectedMap T τ b κ m)^[n]
+      (SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode T z) =
+    SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.decode T
+      ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z)
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.negative_fixed_guards {b u : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ u = u) (hτ0 : 0 ≤ τ) (hτ1 : τ < 1) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ (SbtCosmo.Derivation.GroundState.realEmbed (-u)) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m (SbtCosmo.Derivation.GroundState.realEmbed (-u))
+SbtCosmo.Derivation.GroundNativeBackgroundSeedReturn.nearby_native_seed_branch_return
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State)
+  {b₀ u : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  {v : SbtCosmo.Derivation.GroundState.Field → SbtCosmo.Derivation.GroundState.Field} (hτ0 : 0 ≤ τ) (hτ1 : τ < 1)
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1)
+  (hf : SbtCosmo.Derivation.GroundSourceJacobian.groundMap b₀ κ u = u)
+  (hd : ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative T b₀ κ m u‖ < 1) (hv : ContinuousAt v b₀)
+  (hv0 : v b₀ = u)
+  (hvg :
+    ∀ᶠ (b : SbtCosmo.Derivation.GroundState.Field) in nhds b₀,
+      SbtCosmo.Derivation.GroundState.normSq (v b) = 1 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b κ (v b) = v b)
+  (hlim :
+    Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b₀ κ m)^[n] z) Filter.atTop
+      (nhds (SbtCosmo.Derivation.GroundState.realEmbed (-u))))
+  (hg :
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b₀ κ
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b₀ κ m)^[n] z) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b₀ κ m
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b₀ κ m)^[n] z))
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) :
+  ∃ δ > 0,
+    ∀ b ∈ Metric.closedBall b₀ δ,
+      Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) Filter.atTop
+          (nhds (SbtCosmo.Derivation.GroundState.realEmbed (-v b))) ∧
+        ∀ (n : ℕ),
+          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b κ
+              ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) ∧
+            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+                ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) ∧
+              SbtCosmo.Derivation.GroundState.complexNormSq
+                  ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) =
+                1
+SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ s : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential (fun j => b j + s) κ z i -
+      SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i =
+    s * (1 + κ * Complex.normSq (z i))
+SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ s : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z i -
+        SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i -
+      (SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z j -
+        SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z j) =
+    s * κ * (Complex.normSq (z i) - Complex.normSq (z j))
+SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant (b : SbtCosmo.Derivation.GroundState.Field)
+  {κ s : ℝ} (hκ : κ ≠ 0) (hs : s ≠ 0) (z : SbtCosmo.Derivation.GroundState.ComplexField) (i j : Fin 8)
+  (hd : Complex.normSq (z i) ≠ Complex.normSq (z j)) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z i -
+      SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i ≠
+    SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z j -
+      SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z j
+SbtCosmo.Derivation.GroundNativeCouplingContinuation.coordinate_joint_regular_at
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) {τ m : ℝ}
+  {p : SbtCosmo.Derivation.GroundNativeCouplingContinuation.Parameter} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hτ : 0 ≤ τ) (hg : (p, x) ∈ SbtCosmo.Derivation.GroundNativeCouplingContinuation.guard T τ m) :
+  ContDiffAt ℝ (↑⊤) (Function.uncurry (SbtCosmo.Derivation.GroundNativeCouplingContinuation.f T τ m)) (p, x)
+SbtCosmo.Derivation.GroundNativeCouplingContinuation.coordinate_joint_guards_near
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) {τ m : ℝ}
+  {p : SbtCosmo.Derivation.GroundNativeCouplingContinuation.Parameter} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hτ : 0 ≤ τ) (hg : (p, x) ∈ SbtCosmo.Derivation.GroundNativeCouplingContinuation.guard T τ m) :
+  SbtCosmo.Derivation.GroundNativeCouplingContinuation.guard T τ m ∈ nhds (p, x)
+SbtCosmo.Derivation.GroundNativeCouplingContinuation.squared_joint_regular_at
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) {τ m : ℝ}
+  {p : SbtCosmo.Derivation.GroundNativeCouplingContinuation.Parameter} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hτ : 0 ≤ τ) (hg : (p, x) ∈ SbtCosmo.Derivation.GroundNativeCouplingContinuation.pairGuard T τ m) :
+  ContDiffAt ℝ (↑⊤) (Function.uncurry fun q => (SbtCosmo.Derivation.GroundNativeCouplingContinuation.f T τ m q)^[2])
+    (p, x)
+SbtCosmo.Derivation.GroundNativeCouplingContinuation.squared_joint_guards_near
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) {τ m : ℝ}
+  {p : SbtCosmo.Derivation.GroundNativeCouplingContinuation.Parameter} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hτ : 0 ≤ τ) (hg : (p, x) ∈ SbtCosmo.Derivation.GroundNativeCouplingContinuation.pairGuard T τ m) :
+  SbtCosmo.Derivation.GroundNativeCouplingContinuation.pairGuard T τ m ∈ nhds (p, x)
+SbtCosmo.Derivation.GroundNativeCouplingContinuation.source_step
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ m : ℝ)
+  (p : SbtCosmo.Derivation.GroundNativeCouplingContinuation.Parameter)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.pack (T (SbtCosmo.Derivation.GroundNativeCouplingContinuation.f T τ m p x)) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ p.1 p.2 m
+      (SbtCosmo.Derivation.GroundNativePhase.pack (T x))
+SbtCosmo.Derivation.GroundNativeCouplingContinuation.source_iterate
+  (T : SbtCosmo.Derivation.GroundNativePhase.State ≃L[ℝ] SbtCosmo.Derivation.GroundNativePhase.State) (τ m : ℝ)
+  (p : SbtCosmo.Derivation.GroundNativeCouplingContinuation.Parameter) (x : SbtCosmo.Derivation.GroundNativePhase.State)
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativePhase.pack
+      (T ((SbtCosmo.Derivation.GroundNativeCouplingContinuation.f T τ m p)^[n] x)) =
+    (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ p.1 p.2 m)^[n]
+      (SbtCosmo.Derivation.GroundNativePhase.pack (T x))
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.pairSource_joint_smooth :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.pairSource p.1.1 p.1.2 p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.selected_joint_smooth :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.selected p.1.1 p.1.2 p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.realOverlap_joint_smooth :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.realOverlap p.1.1 p.1.2 p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.imagOverlap_joint_smooth :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.imagOverlap p.1.1 p.1.2 p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.overlapSq_joint_smooth :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.overlapSq p.1.1 p.1.2 p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.overlapNorm_joint_continuous :
+  Continuous fun p => SbtCosmo.Derivation.GroundNativePhase.overlapNorm p.1.1 p.1.2 p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.overlapNorm_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativePhase.overlapNorm p.1.1 p.1.2 p.2) ((b, κ), x)
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.aligned_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativePhase.aligned p.1.1 p.1.2 p.2) ((b, κ), x)
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.mixed_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeIteration.mixed p.1.1 p.1.2 m p.2) ((b, κ), x)
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.fullMap_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x)
+  (hn :
+    0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x)) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeIteration.fullMap p.1.1 p.1.2 m p.2) ((b, κ), x)
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.nativePairMap_joint_eventual_return
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x) :
+  (fun p => SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ p.1.1 p.1.2 m p.2) =ᶠ[nhds ((b, κ), x)] fun p =>
+    SbtCosmo.Derivation.GroundNativeIteration.fullMap p.1.1 p.1.2 m p.2
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.nativePairMap_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)
+  (hn :
+    0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x)) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ p.1.1 p.1.2 m p.2) ((b, κ), x)
+SbtCosmo.Derivation.GroundNativeCouplingSmooth.native_guards_joint_near {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)
+  (hn :
+    τ <
+      √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x))) :
+  ∀ᶠ (p : SbtCosmo.Derivation.GroundNativeCouplingSmooth.ParameterState) in nhds ((b, κ), x),
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ p.1.1 p.1.2
+        (SbtCosmo.Derivation.GroundNativePhase.pack p.2) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ p.1.1 p.1.2 m
+        (SbtCosmo.Derivation.GroundNativePhase.pack p.2)
+SbtCosmo.Derivation.GroundNativeGuardedBounds.density_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) : Complex.normSq (z i) ≤ 1
+SbtCosmo.Derivation.GroundNativeGuardedBounds.component_norm_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) : ‖z i‖ ≤ 1
+SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_norm_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) :
+  ‖SbtCosmo.Derivation.GroundState.complexGradient z i‖ ≤ 1
+SbtCosmo.Derivation.GroundNativeGuardedBounds.gradient_energy_le_one {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (i : Fin 8) :
+  Complex.normSq (SbtCosmo.Derivation.GroundState.complexGradient z i) ≤ 1
+SbtCosmo.Derivation.GroundNativeGuardedBounds.source_potential_bound {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (i : Fin 8) : |SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i| ≤ |b i| + |κ| * (1 + |b i|)
+SbtCosmo.Derivation.GroundNativeGuardedBounds.legal_update_potential_bound
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ κ m : ℝ} {b : SbtCosmo.Derivation.GroundState.Field}
+  (hτ : 0 ≤ τ) (hg : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m z) (i : Fin 8) :
+  |SbtCosmo.Derivation.GroundState.complexSourcePotential b κ
+        (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m z) i| ≤
+    |b i| + |κ| * (1 + |b i|)
+SbtCosmo.Derivation.GroundNativeGuardedBounds.guarded_orbit_unit_and_potential
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ κ m : ℝ} {b : SbtCosmo.Derivation.GroundState.Field}
+  (hτ : 0 ≤ τ) (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hg :
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z))
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundState.complexNormSq
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) =
+      1 ∧
+    ∀ (i : Fin 8),
+      |SbtCosmo.Derivation.GroundState.complexSourcePotential b κ
+            ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z) i| ≤
+        |b i| + |κ| * (1 + |b i|)
+SbtCosmo.Derivation.GroundNativeParameterSmooth.pairSource_joint_smooth (κ : ℝ) :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.pairSource p.1 κ p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.selected_joint_smooth (κ : ℝ) :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.selected p.1 κ p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.realOverlap_joint_smooth (κ : ℝ) :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.realOverlap p.1 κ p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.imagOverlap_joint_smooth (κ : ℝ) :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.imagOverlap p.1 κ p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.overlapSq_joint_smooth (κ : ℝ) :
+  ContDiff ℝ ↑⊤ fun p => SbtCosmo.Derivation.GroundNativePhase.overlapSq p.1 κ p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.overlapNorm_joint_continuous (κ : ℝ) :
+  Continuous fun p => SbtCosmo.Derivation.GroundNativePhase.overlapNorm p.1 κ p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.overlapNorm_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativePhase.overlapNorm p.1 κ p.2) (b, x)
+SbtCosmo.Derivation.GroundNativeParameterSmooth.aligned_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativePhase.aligned p.1 κ p.2) (b, x)
+SbtCosmo.Derivation.GroundNativeParameterSmooth.mixed_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeIteration.mixed p.1 κ m p.2) (b, x)
+SbtCosmo.Derivation.GroundNativeParameterSmooth.fullMap_joint_smooth_at {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (ho : 0 < SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x)
+  (hn :
+    0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x)) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeIteration.fullMap p.1 κ m p.2) (b, x)
+SbtCosmo.Derivation.GroundNativeParameterSmooth.nativePairMap_joint_eventual_return
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x) :
+  (fun p => SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ p.1 κ m p.2) =ᶠ[nhds (b, x)] fun p =>
+    SbtCosmo.Derivation.GroundNativeIteration.fullMap p.1 κ m p.2
+SbtCosmo.Derivation.GroundNativeParameterSmooth.nativePairMap_joint_smooth_at
+  {b : SbtCosmo.Derivation.GroundState.Field} {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)
+  (hn :
+    0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x)) :
+  ContDiffAt ℝ (↑⊤) (fun p => SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ p.1 κ m p.2) (b, x)
+SbtCosmo.Derivation.GroundNativeParameterSmooth.native_guards_joint_near {b : SbtCosmo.Derivation.GroundState.Field}
+  {κ m τ : ℝ} {x : SbtCosmo.Derivation.GroundNativePhase.State} (hτ : 0 ≤ τ)
+  (ho : τ < SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)
+  (hn :
+    τ <
+      √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ m x))) :
+  ∀ᶠ (p : SbtCosmo.Derivation.GroundNativeParameterSmooth.ParameterState) in nhds (b, x),
+    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ p.1 κ (SbtCosmo.Derivation.GroundNativePhase.pack p.2) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ p.1 κ m (SbtCosmo.Derivation.GroundNativePhase.pack p.2)
+SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.pack_unpack (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.pack (SbtCosmo.Derivation.GroundNativePhase.unpack z) = z
+SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.encode_nativePairMap (τ m : ℝ)
+  (p : SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.Parameter)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundNativePhase.pack
+      (SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ p.1 p.2 m
+        (SbtCosmo.Derivation.GroundNativePhase.unpack z)) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ p.1 p.2 m z
+SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.native_joint_smooth_at {τ m : ℝ}
+  {p : SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.Parameter}
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (ha : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ p.1 p.2 z)
+  (hn : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ p.1 p.2 m z) :
+  ContDiffAt ℝ (↑⊤) (fun q => SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ q.1.1 q.1.2 m q.2) (p, z)
+SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.native_joint_guards_near {τ m : ℝ}
+  {p : SbtCosmo.Derivation.GroundNativeSourceParameterSmooth.Parameter}
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (ha : SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ p.1 p.2 z)
+  (hn : SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ p.1 p.2 m z) :
+  {q |
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ q.1.1 q.1.2 q.2 ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ q.1.1 q.1.2 m q.2} ∈
+    nhds (p, z)
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.l2_continuous :
+  Continuous SbtCosmo.Derivation.GroundComplexEuclidean.l2
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline_guards (n : ℕ) (hn : n < 60) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline.1
+      SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline.2
+      (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit
+        SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline n) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline.1
+      SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline.2 (1 / 2)
+      (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit
+        SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline n)
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit_continuous_at (n : ℕ) (hn : n ≤ 60) :
+  ContinuousAt (fun p => SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit p n)
+    SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.stepLength_continuous_at (n : ℕ) (hn : n < 60) :
+  ContinuousAt (fun p => SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.stepLength p n)
+    SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.strict_stepLength_baseline (n : ℕ) (hn : n < 60) :
+  SbtCosmo.Derivation.GroundOriginalResiduals.ε <
+    SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.stepLength
+      SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline n
+SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.open_first_sixty_fail :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline δ,
+      (∀ n < 60,
+          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+              SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2
+              (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit p n) ∧
+            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2 (1 / 2)
+                (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit p n) ∧
+              SbtCosmo.Derivation.GroundOriginalResiduals.ε <
+                  SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.stepLength p n ∧
+                ¬SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    SbtCosmo.Derivation.GroundOriginalResiduals.ε p.1 p.2 (1 / 2)
+                    (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit p n)
+                    (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit p (n + 1))) ∧
+        ∀ n ≤ 60,
+          SbtCosmo.Derivation.GroundState.complexNormSq
+              (SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit p n) =
+            1
+SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.decode_continuous :
+  Continuous SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode
+SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.basin_near_cycle
+  {a : SbtCosmo.Derivation.GroundNativePhase.State} {r : ℝ} {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hr : 0 < r) (hz : SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode z ∈ Metric.closedBall a (r / 4)) :
+  {w | SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode w ∈ Metric.closedBall a r} ∈ nhds z
+SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.open_real_attracting_cycle :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      ∃ z₀ z₁,
+        SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧
+          SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁ ∧
+            SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₀ = z₁ ∧
+              SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₁ = z₀ ∧
+                SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+                  SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                    9 / 20 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                      Filter.Tendsto
+                          (fun n =>
+                            (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+                              SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                          Filter.atTop (nhds z₀) ∧
+                        Filter.Tendsto
+                            (fun n =>
+                              (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+                                SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                            Filter.atTop (nhds z₁) ∧
+                          (∀ (n : ℕ),
+                              SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                                  (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+                                  ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                                SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                    (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2 (1 / 2)
+                                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                      SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                                  SbtCosmo.Derivation.GroundState.complexNormSq
+                                      ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                        SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                                    1) ∧
+                            ∃ s ∈ nhds z₀,
+                              ∀ z ∈ s,
+                                Filter.Tendsto
+                                    (fun n => (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n] z)
+                                    Filter.atTop (nhds z₀) ∧
+                                  Filter.Tendsto
+                                      (fun n =>
+                                        (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1] z)
+                                      Filter.atTop (nhds z₁) ∧
+                                    (∀ (n : ℕ),
+                                        SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                                            (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+                                            ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n] z) ∧
+                                          SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                            (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2 (1 / 2)
+                                            ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n] z)) ∧
+                                      ∀ (n : ℕ),
+                                        SbtCosmo.Derivation.GroundState.complexNormSq
+                                            ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n + 1] z) =
+                                          1
+SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.nearby_original_limits_real :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      ∀ (z₀ z₁ : SbtCosmo.Derivation.GroundState.ComplexField),
+        Filter.Tendsto
+            (fun n =>
+              (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+                SbtCosmo.Derivation.GroundOriginalSeed.initial)
+            Filter.atTop (nhds z₀) →
+          Filter.Tendsto
+              (fun n =>
+                (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+                  SbtCosmo.Derivation.GroundOriginalSeed.initial)
+              Filter.atTop (nhds z₁) →
+            SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧ SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁
+SbtCosmo.Derivation.GroundOriginalCycle30AttractorLanding.open_real_original_seed_readouts :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      (¬∃ l,
+            Filter.Tendsto
+              (fun n =>
+                (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                  SbtCosmo.Derivation.GroundOriginalSeed.initial)
+              Filter.atTop (nhds l)) ∧
+        (¬∃ l,
+              Filter.Tendsto
+                (fun n =>
+                  Complex.normSq
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                Filter.atTop (nhds l)) ∧
+          (∀ᶠ (n : ℕ) in Filter.atTop,
+              9 / 20 <
+                Complex.normSq
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4) -
+                  Complex.normSq
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4)) ∧
+            (∀ᶠ (n : ℕ) in Filter.atTop,
+                9 / 40 <
+                  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n + 1]
+                        SbtCosmo.Derivation.GroundOriginalSeed.initial -
+                      (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                        SbtCosmo.Derivation.GroundOriginalSeed.initial)) ∧
+              ∀ᶠ (n : ℕ) in Filter.atTop,
+                ¬SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    SbtCosmo.Derivation.GroundOriginalResiduals.ε p.1 p.2 (1 / 2)
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n + 1]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial)
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.threshold_nonneg :
+  0 ≤ ↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline_map :
+  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline =
+    SbtCosmo.Derivation.NativeCycle30.f
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source_seed :
+  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed =
+    SbtCosmo.Derivation.GroundOriginalSeed.initial
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source_iterate
+  (p : SbtCosmo.Derivation.GroundOriginalCycle30Baseline.Parameter) (x : SbtCosmo.Derivation.GroundNativePhase.State)
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+      ((SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[n] x) =
+    (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+          (1 / 2))^[n]
+      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x)
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source_continuous :
+  Continuous SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.original_seed_guards (n : ℕ) :
+  (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline,
+      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+            SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[n]
+        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed) ∈
+    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.guard
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.strict_interior_budget :
+  SbtCosmo.Derivation.NativeCycle30.selfDefect / (1 - SbtCosmo.Derivation.NativeCycle30.pairRate) <
+    SbtCosmo.Derivation.NativeCycle30.Step000.ρ
+SbtCosmo.Derivation.GroundOriginalCycle30Baseline.actual_baseline :
+  ∃ a,
+    (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+              SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+          a =
+        a ∧
+      ‖fderiv ℝ
+              (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+              a‖ <
+          1 ∧
+        (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline, a) ∈
+            SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard ∧
+          9 / 20 <
+              Complex.normSq
+                  (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+                    (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                      SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline a)
+                    4) -
+                Complex.normSq (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source a 4) ∧
+            Filter.Tendsto
+              (fun n =>
+                (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+                      ^[n]
+                  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed)
+              Filter.atTop (nhds a)
+SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_decode (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+      (SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode z) =
+    z
+SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode_source (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode
+      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x) =
+    x
+SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_returns_of_squared_limit
+  {p : SbtCosmo.Derivation.GroundOriginalCycle30Baseline.Parameter} {x v : SbtCosmo.Derivation.GroundNativePhase.State}
+  (he :
+    Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] ^[n] x) Filter.atTop
+      (nhds v))
+  (hg : (p, v) ∈ SbtCosmo.Derivation.GroundOriginalCycle30Baseline.guard) :
+  Filter.Tendsto
+      (fun n =>
+        (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x))
+      Filter.atTop (nhds (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source v)) ∧
+    Filter.Tendsto
+      (fun n =>
+        (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x))
+      Filter.atTop
+      (nhds
+        (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p v)))
+SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.all_guards_of_pair_guards
+  {p : SbtCosmo.Derivation.GroundOriginalCycle30Baseline.Parameter} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hg :
+    ∀ (n : ℕ),
+      (p, (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] ^[n] x) ∈
+        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard)
+  (n : ℕ) :
+  (p, (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[n] x) ∈
+    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.guard
+SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.source_guards_of_all_guards
+  {p : SbtCosmo.Derivation.GroundOriginalCycle30Baseline.Parameter} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hg :
+    ∀ (n : ℕ),
+      (p, (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[n] x) ∈
+        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.guard)
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+      ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+        (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x)) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+      (1 / 2)
+      ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+        (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x))
+SbtCosmo.Derivation.GroundOriginalCycle30CoordinateBasin.open_coordinate_basin :
+  ∃ a,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source a) ∧
+      ∃ δ > 0,
+        ∃ r > 0,
+          ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+            ∃ v ∈ Metric.closedBall a (r / 4),
+              (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] v = v ∧
+                (p, v) ∈ SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard ∧
+                  9 / 20 <
+                      Complex.normSq
+                          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+                            (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p v) 4) -
+                        Complex.normSq (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source v 4) ∧
+                    Filter.Tendsto
+                        (fun n =>
+                          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] ^[n]
+                            SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed)
+                        Filter.atTop (nhds v) ∧
+                      (∀ (n : ℕ),
+                          (p,
+                              (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[n]
+                                SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed) ∈
+                            SbtCosmo.Derivation.GroundOriginalCycle30Baseline.guard) ∧
+                        ∀ x ∈ Metric.closedBall a r,
+                          Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] ^[n] x)
+                              Filter.atTop (nhds v) ∧
+                            ∀ (n : ℕ),
+                              (p, (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] ^[n] x) ∈
+                                SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.baseline_return :
+  SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline =
+    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.native_return
+  (p : SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.Parameter) :
+  SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native p =
+    SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.orbit_return
+  (p : SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.Parameter) (n : ℕ) :
+  SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n =
+    (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n] SbtCosmo.Derivation.GroundOriginalSeed.initial
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding.open_finite_and_real_cycle :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline δ,
+      ∃ z₀ z₁,
+        SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧
+          SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁ ∧
+            SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native p z₀ = z₁ ∧
+              SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native p z₁ = z₀ ∧
+                SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+                  SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                    9 / 20 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                      Filter.Tendsto (fun n => SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p (2 * n))
+                          Filter.atTop (nhds z₀) ∧
+                        Filter.Tendsto
+                            (fun n => SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p (2 * n + 1))
+                            Filter.atTop (nhds z₁) ∧
+                          (∀ (n : ℕ),
+                              SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                                  SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2
+                                  (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n) ∧
+                                SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2 (1 / 2)
+                                    (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n) ∧
+                                  SbtCosmo.Derivation.GroundState.complexNormSq
+                                      (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n) =
+                                    1) ∧
+                            (¬∃ l,
+                                  Filter.Tendsto
+                                    (fun n => SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n)
+                                    Filter.atTop (nhds l)) ∧
+                              (¬∃ l,
+                                    Filter.Tendsto
+                                      (fun n =>
+                                        Complex.normSq
+                                          (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n 4))
+                                      Filter.atTop (nhds l)) ∧
+                                (∀ n < 60,
+                                    ¬SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+                                        SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                                        SbtCosmo.Derivation.GroundOriginalResiduals.ε p.1 p.2 (1 / 2)
+                                        (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n)
+                                        (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p (n + 1))) ∧
+                                  ∃ s ∈ nhds z₀,
+                                    ∀ z ∈ s,
+                                      Filter.Tendsto
+                                          (fun n =>
+                                            (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native p)^[2 * n]
+                                              z)
+                                          Filter.atTop (nhds z₀) ∧
+                                        Filter.Tendsto
+                                            (fun n =>
+                                              (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native
+                                                    p)^[2 * n + 1]
+                                                z)
+                                            Filter.atTop (nhds z₁) ∧
+                                          (∀ (n : ℕ),
+                                              SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                                                  SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2
+                                                  ((SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native
+                                                        p)^[n]
+                                                    z) ∧
+                                                SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                                  SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2
+                                                  (1 / 2)
+                                                  ((SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native
+                                                        p)^[n]
+                                                    z)) ∧
+                                            ∀ (n : ℕ),
+                                              SbtCosmo.Derivation.GroundState.complexNormSq
+                                                  ((SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.native
+                                                        p)^[n + 1]
+                                                    z) =
+                                                1
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.l2_continuous :
+  Continuous SbtCosmo.Derivation.GroundComplexEuclidean.l2
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline_guards (n : ℕ) (hn : n < 60) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline.1
+      SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline.2
+      (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit
+        SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline n) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline.1
+      SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline.2 (1 / 2)
+      (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit
+        SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline n)
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit_continuous_at (n : ℕ) (hn : n ≤ 60) :
+  ContinuousAt (fun p => SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n)
+    SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.stepLength_continuous_at (n : ℕ) (hn : n < 60) :
+  ContinuousAt (fun p => SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.stepLength p n)
+    SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.strict_stepLength_baseline (n : ℕ) (hn : n < 60) :
+  SbtCosmo.Derivation.GroundOriginalResiduals.ε <
+    SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.stepLength
+      SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline n
+SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.open_first_sixty_fail :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.baseline δ,
+      (∀ n < 60,
+          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+              SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2
+              (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n) ∧
+            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance p.1 p.2 (1 / 2)
+                (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n) ∧
+              SbtCosmo.Derivation.GroundOriginalResiduals.ε <
+                  SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.stepLength p n ∧
+                ¬SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+                    SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                    SbtCosmo.Derivation.GroundOriginalResiduals.ε p.1 p.2 (1 / 2)
+                    (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n)
+                    (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p (n + 1))) ∧
+        ∀ n ≤ 60,
+          SbtCosmo.Derivation.GroundState.complexNormSq
+              (SbtCosmo.Derivation.GroundOriginalCycle30FiniteVerdicts.orbit p n) =
+            1
+SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics.open_original_seed_source_failure :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      (∀ᶠ (n : ℕ) in Filter.atTop,
+          9 / 40 <
+            SbtCosmo.Derivation.GroundComplexEuclidean.l2
+              ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n + 1]
+                  SbtCosmo.Derivation.GroundOriginalSeed.initial -
+                (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                  SbtCosmo.Derivation.GroundOriginalSeed.initial)) ∧
+        ∀ᶠ (n : ℕ) in Filter.atTop,
+          ¬SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence
+              SbtCosmo.Derivation.GroundNativeControls.originalTolerance SbtCosmo.Derivation.GroundOriginalResiduals.ε
+              p.1 p.2 (1 / 2)
+              ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                SbtCosmo.Derivation.GroundOriginalSeed.initial)
+              ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n + 1]
+                SbtCosmo.Derivation.GroundOriginalSeed.initial)
+SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics.open_coupling_nonconvergence :
+  ∃ δ > 0,
+    ∀ κ ∈ Metric.closedBall 30 δ,
+      (¬∃ l,
+            Filter.Tendsto
+              (fun n =>
+                (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1, κ))^[n]
+                  SbtCosmo.Derivation.GroundOriginalSeed.initial)
+              Filter.atTop (nhds l)) ∧
+        (¬∃ l,
+              Filter.Tendsto
+                (fun n =>
+                  Complex.normSq
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1, κ))^[n]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                Filter.atTop (nhds l)) ∧
+          ∀ (n : ℕ),
+            SbtCosmo.Derivation.GroundNativeIteration.ActivePhase (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+                SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1 κ
+                ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1, κ))^[n]
+                  SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+              SbtCosmo.Derivation.GroundNativeIteration.NativeLegal (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+                  SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1 κ (1 / 2)
+                  ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                        (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1, κ))^[n]
+                    SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                SbtCosmo.Derivation.GroundState.complexNormSq
+                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline.1, κ))^[n]
+                      SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                  1
+SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.density_continuous :
+  Continuous fun x => Complex.normSq (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source x 4)
+SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.original_seed_pair_guards (n : ℕ) :
+  (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline,
+      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+              SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+            ^[n]
+        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed) ∈
+    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard
+SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.open_original_seed_coordinate_cycle :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      ∃ v,
+        (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] v = v ∧
+          (p, v) ∈ SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard ∧
+            9 / 20 <
+                Complex.normSq
+                    (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+                      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p v) 4) -
+                  Complex.normSq (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source v 4) ∧
+              Filter.Tendsto
+                  (fun n =>
+                    (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[2] ^[n]
+                      SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed)
+                  Filter.atTop (nhds v) ∧
+                ∀ (n : ℕ),
+                  (p,
+                      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map p)^[n]
+                        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed) ∈
+                    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.guard
+SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.open_original_seed_source_cycle :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      ∃ z₀ z₁,
+        SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₀ = z₁ ∧
+          SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₁ = z₀ ∧
+            SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+              SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                9 / 20 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                  Filter.Tendsto
+                      (fun n =>
+                        (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+                          SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                      Filter.atTop (nhds z₀) ∧
+                    Filter.Tendsto
+                        (fun n =>
+                          (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+                            SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds z₁) ∧
+                      (∀ (n : ℕ),
+                          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                              (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+                              ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2 (1 / 2)
+                                ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                  SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                              SbtCosmo.Derivation.GroundState.complexNormSq
+                                  ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                                1) ∧
+                        (¬∃ l,
+                              Filter.Tendsto
+                                (fun n =>
+                                  (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                                Filter.atTop (nhds l)) ∧
+                          (∀ᶠ (n : ℕ) in Filter.atTop,
+                              9 / 20 <
+                                Complex.normSq
+                                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+                                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4) -
+                                  Complex.normSq
+                                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+                                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4)) ∧
+                            ¬∃ l,
+                                Filter.Tendsto
+                                  (fun n =>
+                                    Complex.normSq
+                                      ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                        SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                                  Filter.atTop (nhds l)
+SbtCosmo.Derivation.GroundOriginalCycle30RealBaseline.actual_real_baseline :
+  ∃ a,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source a) ∧
+      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+            a =
+          a ∧
+        ‖fderiv ℝ
+                (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+                a‖ <
+            1 ∧
+          (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline, a) ∈
+              SbtCosmo.Derivation.GroundOriginalCycle30Baseline.pairGuard ∧
+            9 / 20 <
+                Complex.normSq
+                    (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source
+                      (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                        SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline a)
+                      4) -
+                  Complex.normSq (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source a 4) ∧
+              Filter.Tendsto
+                (fun n =>
+                  (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.map
+                          SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline)^[2]
+                        ^[n]
+                    SbtCosmo.Derivation.GroundOriginalCycle30Baseline.seed)
+                Filter.atTop (nhds a)
+SbtCosmo.Derivation.GroundOriginalCycle30RealBasin.open_real_source_basin :
+  ∃ a,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal (SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source a) ∧
+      ∃ δ > 0,
+        ∃ r > 0,
+          ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+            ∃ z₀ z₁,
+              SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧
+                SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁ ∧
+                  SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₀ = z₁ ∧
+                    SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₁ = z₀ ∧
+                      SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+                        SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                          9 / 20 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                            SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode z₀ ∈
+                                Metric.closedBall a (r / 4) ∧
+                              Filter.Tendsto
+                                  (fun n =>
+                                    (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n]
+                                      SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                                  Filter.atTop (nhds z₀) ∧
+                                Filter.Tendsto
+                                    (fun n =>
+                                      (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n + 1]
+                                        SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                                    Filter.atTop (nhds z₁) ∧
+                                  (∀ (n : ℕ),
+                                      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                                          (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+                                          ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                            SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                                        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                            (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2 (1 / 2)
+                                            ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                              SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                                          SbtCosmo.Derivation.GroundState.complexNormSq
+                                              ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                                SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                                            1) ∧
+                                    ∀ (z : SbtCosmo.Derivation.GroundState.ComplexField),
+                                      SbtCosmo.Derivation.GroundOriginalCycle30BasinBridge.decode z ∈
+                                          Metric.closedBall a r →
+                                        Filter.Tendsto
+                                            (fun n =>
+                                              (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[2 * n] z)
+                                            Filter.atTop (nhds z₀) ∧
+                                          Filter.Tendsto
+                                              (fun n =>
+                                                (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                                                      p)^[2 * n + 1]
+                                                  z)
+                                              Filter.atTop (nhds z₁) ∧
+                                            (∀ (n : ℕ),
+                                                SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                                                    (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2
+                                                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                                      z) ∧
+                                                  SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                                    (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ) p.1 p.2 (1 / 2)
+                                                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                                      z)) ∧
+                                              ∀ (n : ℕ),
+                                                SbtCosmo.Derivation.GroundState.complexNormSq
+                                                    ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native
+                                                          p)^[n + 1]
+                                                      z) =
+                                                  1
+SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.shifted_landing
+  {p : SbtCosmo.Derivation.GroundOriginalCycle30Baseline.Parameter}
+  {z₀ z₁ z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hg : SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Guard p z)
+  (h :
+    SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₀ z₁
+      (SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z)) :
+  SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₁ z₀ z
+SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.opposite_phase_neighborhood
+  {p : SbtCosmo.Derivation.GroundOriginalCycle30Baseline.Parameter}
+  {z₀ z₁ : SbtCosmo.Derivation.GroundState.ComplexField}
+  (h01 : SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₀ = z₁)
+  (h10 : SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₁ = z₀)
+  {s₀ : Set SbtCosmo.Derivation.GroundState.ComplexField} (hs₀ : s₀ ∈ nhds z₀)
+  (hlocal : ∀ z ∈ s₀, SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₀ z₁ z) :
+  ∃ s₁ ∈ nhds z₁, ∀ z ∈ s₁, SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₁ z₀ z
+SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.open_both_phases_attracting_cycle :
+  ∃ δ > 0,
+    ∀ p ∈ Metric.closedBall SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline δ,
+      ∃ z₀ z₁,
+        SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧
+          SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁ ∧
+            SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₀ = z₁ ∧
+              SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p z₁ = z₀ ∧
+                SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+                  SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                    9 / 20 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                      SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₀ z₁
+                          SbtCosmo.Derivation.GroundOriginalSeed.initial ∧
+                        (∀ (n : ℕ),
+                            SbtCosmo.Derivation.GroundState.complexNormSq
+                                ((SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.native p)^[n]
+                                  SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                              1) ∧
+                          ∃ s₀ s₁,
+                            s₀ ∈ nhds z₀ ∧
+                              s₁ ∈ nhds z₁ ∧
+                                (∀ z ∈ s₀, SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₀ z₁ z) ∧
+                                  ∀ z ∈ s₁, SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.Landing p z₁ z₀ z
+SbtCosmo.Derivation.GroundOriginalOpenBackground.rounded_newton_defect (i : Fin 18) :
+  ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative
+        (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner
+          (SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).C)
+        (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i)‖ <
+    1
+SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint_center (i : Fin 18) :
+  SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i
+      (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i) =
+    SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i
+SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint_smooth_at (i : Fin 18) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i)
+    (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint_ground_eventually (i : Fin 18) :
+  ∀ᶠ (b : SbtCosmo.Derivation.GroundState.Field) in nhds (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i),
+    SbtCosmo.Derivation.GroundRootCertificate.residual b (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+          (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b) =
+        0 ∧
+      (∀ (j : Fin 8), 0 < (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 j) ∧
+        SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 = 1 ∧
+          SbtCosmo.Derivation.GroundBorder.groundPair
+                (SbtCosmo.Derivation.GroundState.sourcePotential b
+                  (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                  (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1) =
+              SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b ∧
+            SbtCosmo.Derivation.GroundSourceJacobian.groundMap b
+                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 =
+              (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1
+SbtCosmo.Derivation.GroundOriginalOpenBackground.rounded_coordinate_contraction (i : Fin 18) :
+  ‖SbtCosmo.Derivation.GroundNativeLocal.coordinateDerivative
+        (SbtCosmo.Derivation.GroundOriginalOffsetStability.fullBasis i)
+        (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+        (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1‖ <
+    1
+SbtCosmo.Derivation.GroundOriginalOpenBackground.open_background_original_seed_return (i : Fin 18) :
+  ∃ δ > 0,
+    ∀ b ∈ Metric.closedBall (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i) δ,
+      SbtCosmo.Derivation.GroundRootCertificate.residual b
+            (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+            (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b) =
+          0 ∧
+        (∀ (j : Fin 8), 0 < (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 j) ∧
+          SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 =
+              1 ∧
+            SbtCosmo.Derivation.GroundBorder.groundPair
+                  (SbtCosmo.Derivation.GroundState.sourcePotential b
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                    (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1) =
+                SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b ∧
+              SbtCosmo.Derivation.GroundSourceJacobian.groundMap b
+                    (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                    (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 =
+                  (SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1 ∧
+                Filter.Tendsto
+                    (fun n =>
+                      (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                            SbtCosmo.Derivation.GroundNativeControls.originalTolerance b
+                            (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                        SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                    Filter.atTop
+                    (nhds
+                      (SbtCosmo.Derivation.GroundState.realEmbed
+                        (-(SbtCosmo.Derivation.GroundOriginalOpenBackground.localPoint i b).1))) ∧
+                  ∀ (n : ℕ),
+                    SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                        SbtCosmo.Derivation.GroundNativeControls.originalTolerance b
+                        (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ)
+                        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                              SbtCosmo.Derivation.GroundNativeControls.originalTolerance b
+                              (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                          SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                          SbtCosmo.Derivation.GroundNativeControls.originalTolerance b
+                          (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2)
+                          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                                SbtCosmo.Derivation.GroundNativeControls.originalTolerance b
+                                (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                            SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                        SbtCosmo.Derivation.GroundState.complexNormSq
+                            ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                                  SbtCosmo.Derivation.GroundNativeControls.originalTolerance b
+                                  (↑(SbtCosmo.Derivation.GroundOriginalOffsets.certificates i).κ) (1 / 2))^[n]
+                              SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                          1
+SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density_continuous_at (i : Fin 18) (j : Fin 8) :
+  ContinuousAt (fun b => SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density i b j)
+    (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i)
+SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density_center (i : Fin 18) (j : Fin 8) :
+  SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density i
+      (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i) j =
+    Complex.normSq
+      (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundOriginalOffsets.roundedRoot i).1 j)
+SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.open_background_density_limits (i : Fin 18) :
+  ∃ δ > 0,
+    ∀ b ∈ Metric.closedBall (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b i) δ,
+      ∀ (j : Fin 8),
+        Filter.Tendsto (fun n => Complex.normSq (SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.orbit i b n j))
+          Filter.atTop (nhds (SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.density i b j))
+SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.open_endpoint_density_separation :
+  ∃ δ > 0,
+    ∀ b₀ ∈ Metric.closedBall (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b 0) δ,
+      ∀ b₁ ∈ Metric.closedBall (SbtCosmo.Derivation.GroundOriginalOffsets.rounded_b 17) δ,
+        ∀ᶠ (n : ℕ) in Filter.atTop,
+          Complex.normSq (SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.orbit 0 b₀ n 0) + 9 / 100 <
+            Complex.normSq (SbtCosmo.Derivation.GroundOriginalOpenBackgroundReadout.orbit 17 b₁ n 0)
+SbtCosmo.Derivation.GroundParametricBranchReturn.nearby_original_seed_branch_returns.{u_1, u_2} {P : Type u_1}
+  {E : Type u_2} [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
+  {f : P → E → E} {p : P} {u a : E} {s : Set (P × E)} {g : P → E} (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u))
+  (hf : f p u = u) (hd : ‖fderiv ℝ (f p) u‖ < 1) (hs : s ∈ nhds (p, u))
+  (horbit : ∀ (n : ℕ), ContinuousAt (Function.uncurry f) (p, (f p)^[n] a))
+  (hguards : ∀ (n : ℕ), s ∈ nhds (p, (f p)^[n] a)) (hlim : Filter.Tendsto (fun n => (f p)^[n] a) Filter.atTop (nhds u))
+  (hg : ContinuousAt g p) (hg0 : g p = u) (hgfix : ∀ᶠ (b : P) in nhds p, f b (g b) = g b) :
+  ∃ δ > 0,
+    ∀ b ∈ Metric.closedBall p δ,
+      Filter.Tendsto (fun n => (f b)^[n] a) Filter.atTop (nhds (g b)) ∧ ∀ (n : ℕ), (b, (f b)^[n] a) ∈ s
+SbtCosmo.Derivation.GroundParametricContraction.partial_fderiv_continuous_at.{u_1, u_2} {P : Type u_1} {E : Type u_2}
+  [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] {f : P → E → E} {p : P} {u : E}
+  (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u)) : ContinuousAt (fun v => fderiv ℝ (f v.1) v.2) (p, u)
+SbtCosmo.Derivation.GroundParametricContraction.uniform_local_lipschitz.{u_1, u_2} {P : Type u_1} {E : Type u_2}
+  [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] {f : P → E → E} {p : P} {u : E}
+  {s : Set (P × E)} (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u)) (hd : ‖fderiv ℝ (f p) u‖ < 1)
+  (hs : s ∈ nhds (p, u)) :
+  ∃ δ > 0,
+    ∃ r > 0,
+      ∃ q < 1,
+        ∀ b ∈ Metric.closedBall p δ,
+          LipschitzOnWith q (f b) (Metric.closedBall u r) ∧ ∀ x ∈ Metric.closedBall u r, (b, x) ∈ s
+SbtCosmo.Derivation.GroundParametricFixedPoint.invariant_ball.{u_2} {E : Type u_2} [NormedAddCommGroup E] {f : E → E}
+  {u : E} {r : ℝ} {q : NNReal} (hr : 0 ≤ r) (hq : q < 1) (hl : LipschitzOnWith q f (Metric.closedBall u r))
+  (he : dist (f u) u ≤ (1 - ↑q) * r) : Set.MapsTo f (Metric.closedBall u r) (Metric.closedBall u r)
+SbtCosmo.Derivation.GroundParametricFixedPoint.ball_return.{u_2} {E : Type u_2} [NormedAddCommGroup E] [CompleteSpace E]
+  {f : E → E} {u : E} {r : ℝ} {q : NNReal} (hr : 0 < r) (hq : q < 1) (hl : LipschitzOnWith q f (Metric.closedBall u r))
+  (he : dist (f u) u ≤ (1 - ↑q) * (r / 4)) :
+  ∃ v ∈ Metric.closedBall u (r / 4),
+    f v = v ∧
+      ∀ x ∈ Metric.closedBall u r,
+        Filter.Tendsto (fun n => f^[n] x) Filter.atTop (nhds v) ∧ ∀ (n : ℕ), f^[n] x ∈ Metric.closedBall u r
+SbtCosmo.Derivation.GroundParametricFixedPoint.nearby_fixed_points.{u_1, u_2} {P : Type u_1} {E : Type u_2}
+  [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {f : P → E → E}
+  {p : P} {u : E} {s : Set (P × E)} (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u)) (hf : f p u = u)
+  (hd : ‖fderiv ℝ (f p) u‖ < 1) (hs : s ∈ nhds (p, u)) :
+  ∃ δ > 0,
+    ∃ r > 0,
+      ∀ b ∈ Metric.closedBall p δ,
+        ∃ v ∈ Metric.closedBall u (r / 4),
+          f b v = v ∧
+            ∀ x ∈ Metric.closedBall u r,
+              Filter.Tendsto (fun n => (f b)^[n] x) Filter.atTop (nhds v) ∧ ∀ (n : ℕ), (b, (f b)^[n] x) ∈ s
+SbtCosmo.Derivation.GroundParametricSeedBasinReturn.nearby_original_seed_target_basin_returns.{u_1, u_2} {P : Type u_1}
+  {E : Type u_2} [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
+  {f : P → E → E} {p : P} {u a : E} {s t : Set (P × E)} (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u))
+  (hf : f p u = u) (hd : ‖fderiv ℝ (f p) u‖ < 1) (hs : s ∈ nhds (p, u)) (ht : t ∈ nhds (p, u))
+  (horbit : ∀ (n : ℕ), ContinuousAt (Function.uncurry f) (p, (f p)^[n] a))
+  (hguards : ∀ (n : ℕ), s ∈ nhds (p, (f p)^[n] a))
+  (hlim : Filter.Tendsto (fun n => (f p)^[n] a) Filter.atTop (nhds u)) :
+  ∃ δ > 0,
+    ∃ r > 0,
+      ∀ b ∈ Metric.closedBall p δ,
+        ∃ v ∈ Metric.closedBall u (r / 4),
+          f b v = v ∧
+            (b, v) ∈ t ∧
+              Filter.Tendsto (fun n => (f b)^[n] a) Filter.atTop (nhds v) ∧
+                (∀ (n : ℕ), (b, (f b)^[n] a) ∈ s) ∧
+                  ∀ x ∈ Metric.closedBall u r,
+                    Filter.Tendsto (fun n => (f b)^[n] x) Filter.atTop (nhds v) ∧ ∀ (n : ℕ), (b, (f b)^[n] x) ∈ s
+SbtCosmo.Derivation.GroundParametricSeedReturn.iterate_parameter_continuous_at.{u_1, u_2} {P : Type u_1} {E : Type u_2}
+  [NormedAddCommGroup P] [NormedAddCommGroup E] {f : P → E → E} {p : P} {a : E}
+  (hc : ∀ (n : ℕ), ContinuousAt (Function.uncurry f) (p, (f p)^[n] a)) (N : ℕ) : ContinuousAt (fun b => (f b)^[N] a) p
+SbtCosmo.Derivation.GroundParametricSeedReturn.finite_prefix_guards_near.{u_1, u_2} {P : Type u_1} {E : Type u_2}
+  [NormedAddCommGroup P] [NormedAddCommGroup E] {f : P → E → E} {p : P} {a : E} {s : Set (P × E)}
+  (hc : ∀ (n : ℕ), ContinuousAt (Function.uncurry f) (p, (f p)^[n] a)) (hs : ∀ (n : ℕ), s ∈ nhds (p, (f p)^[n] a))
+  (N : ℕ) : ∀ᶠ (b : P) in nhds p, ∀ n < N, (b, (f b)^[n] a) ∈ s
+SbtCosmo.Derivation.GroundParametricSeedReturn.nearby_original_seed_returns.{u_1, u_2} {P : Type u_1} {E : Type u_2}
+  [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {f : P → E → E}
+  {p : P} {u a : E} {s : Set (P × E)} (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u)) (hf : f p u = u)
+  (hd : ‖fderiv ℝ (f p) u‖ < 1) (hs : s ∈ nhds (p, u))
+  (horbit : ∀ (n : ℕ), ContinuousAt (Function.uncurry f) (p, (f p)^[n] a))
+  (hguards : ∀ (n : ℕ), s ∈ nhds (p, (f p)^[n] a))
+  (hlim : Filter.Tendsto (fun n => (f p)^[n] a) Filter.atTop (nhds u)) :
+  ∃ δ > 0,
+    ∃ r > 0,
+      ∀ b ∈ Metric.closedBall p δ,
+        ∃ v ∈ Metric.closedBall u (r / 4),
+          f b v = v ∧ Filter.Tendsto (fun n => (f b)^[n] a) Filter.atTop (nhds v) ∧ ∀ (n : ℕ), (b, (f b)^[n] a) ∈ s
+SbtCosmo.Derivation.GroundParametricSeedTargetReturn.nearby_original_seed_target_returns.{u_1, u_2} {P : Type u_1}
+  {E : Type u_2} [NormedAddCommGroup P] [NormedSpace ℝ P] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
+  {f : P → E → E} {p : P} {u a : E} {s t : Set (P × E)} (hc : ContDiffAt ℝ 1 (Function.uncurry f) (p, u))
+  (hf : f p u = u) (hd : ‖fderiv ℝ (f p) u‖ < 1) (hs : s ∈ nhds (p, u)) (ht : t ∈ nhds (p, u))
+  (horbit : ∀ (n : ℕ), ContinuousAt (Function.uncurry f) (p, (f p)^[n] a))
+  (hguards : ∀ (n : ℕ), s ∈ nhds (p, (f p)^[n] a))
+  (hlim : Filter.Tendsto (fun n => (f p)^[n] a) Filter.atTop (nhds u)) :
+  ∃ δ > 0,
+    ∃ r > 0,
+      ∀ b ∈ Metric.closedBall p δ,
+        ∃ v ∈ Metric.closedBall u (r / 4),
+          f b v = v ∧
+            (b, v) ∈ t ∧ Filter.Tendsto (fun n => (f b)^[n] a) Filter.atTop (nhds v) ∧ ∀ (n : ℕ), (b, (f b)^[n] a) ∈ s

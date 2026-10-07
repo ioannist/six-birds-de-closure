@@ -1,0 +1,293 @@
+SbtCosmo.Derivation.GroundNativeZeroGeometry.affine_norm (g u : SbtCosmo.Derivation.GroundState.Field) (t s : ℝ) :
+  (SbtCosmo.Derivation.GroundState.normSq fun i => t * u i + s * g i) =
+    t ^ 2 * SbtCosmo.Derivation.GroundState.normSq u + s ^ 2 * SbtCosmo.Derivation.GroundState.normSq g +
+      2 * t * s * SbtCosmo.Derivation.GroundBorder.dot g u
+SbtCosmo.Derivation.GroundNativeZeroGeometry.affine_dot (g u : SbtCosmo.Derivation.GroundState.Field) (t s : ℝ) :
+  (SbtCosmo.Derivation.GroundBorder.dot g fun i => t * u i + s * g i) =
+    t * SbtCosmo.Derivation.GroundBorder.dot g u + s * SbtCosmo.Derivation.GroundState.normSq g
+SbtCosmo.Derivation.GroundNativeZeroGeometry.decomposition {g : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundState.normSq (x.1 - SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x • g) +
+      SbtCosmo.Derivation.GroundState.normSq (x.2 - SbtCosmo.Derivation.GroundNativeZeroGeometry.imagPart g x • g) =
+    SbtCosmo.Derivation.GroundNativePhase.stateNormSq x -
+        SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2 -
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.imagPart g x ^ 2
+SbtCosmo.Derivation.GroundNativeZeroGeometry.overlap_bound {g : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2 +
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.imagPart g x ^ 2 ≤
+    SbtCosmo.Derivation.GroundNativePhase.stateNormSq x
+SbtCosmo.Derivation.GroundNativeZeroGeometry.radius_sq (g : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x ^ 2 =
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2 +
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.imagPart g x ^ 2
+SbtCosmo.Derivation.GroundNativeZeroGeometry.radius_bounds {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) :
+  0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x ∧
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ≤
+        SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x ∧
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x ≤ 1
+SbtCosmo.Derivation.GroundNativeZeroGeometry.mixed_real {g : SbtCosmo.Derivation.GroundState.Field}
+  (hg : SbtCosmo.Derivation.GroundState.normSq g = 1) (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix g x) =
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x *
+        (SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x + 1) /
+      (2 * SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x)
+SbtCosmo.Derivation.GroundNativeZeroGeometry.mixed_norm {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (hr : SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x ≠ 0) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix g x) =
+    (1 - SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x +
+        2 * SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2 /
+          SbtCosmo.Derivation.GroundNativeZeroGeometry.radius g x) /
+      2
+SbtCosmo.Derivation.GroundNativeZeroGeometry.step_real (g : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g (SbtCosmo.Derivation.GroundNativeZeroGeometry.step g x) =
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix g x) /
+      √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix g x))
+SbtCosmo.Derivation.GroundNativeZeroGeometry.step_unit {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hm : 0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix g x)) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeZeroGeometry.step g x) = 1
+SbtCosmo.Derivation.GroundNativeZeroGeometry.distance_identity {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (x - (g, 0)) =
+    2 * (1 - SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x)
+SbtCosmo.Derivation.GroundNativeZeroGeometry.state_norm_bound (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  ‖x‖ ≤ √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq x)
+SbtCosmo.Derivation.GroundNativeZeroGeometry.selected_zero (b : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.selected b 0 x = SbtCosmo.Derivation.GroundState.positiveGround b
+SbtCosmo.Derivation.GroundNativeZeroGeometry.mixed_zero (b : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativeIteration.mixed b 0 (1 / 2) x =
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.mix (SbtCosmo.Derivation.GroundState.positiveGround b) x
+SbtCosmo.Derivation.GroundNativeZeroGeometry.native_return (b : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) {τ : ℝ} (hτ : 0 ≤ τ)
+  (ha : τ < SbtCosmo.Derivation.GroundNativeZeroGeometry.radius (SbtCosmo.Derivation.GroundState.positiveGround b) x) :
+  SbtCosmo.Derivation.GroundNativePhase.pack
+      (SbtCosmo.Derivation.GroundNativeZeroGeometry.step (SbtCosmo.Derivation.GroundState.positiveGround b) x) =
+    SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2) (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeZeroGeometry.native_guard_return (b : SbtCosmo.Derivation.GroundState.Field)
+  (x : SbtCosmo.Derivation.GroundNativePhase.State) {τ : ℝ} (hτ : 0 ≤ τ)
+  (ha : τ < SbtCosmo.Derivation.GroundNativeZeroGeometry.radius (SbtCosmo.Derivation.GroundState.positiveGround b) x)
+  (hm :
+    τ <
+      √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq
+          (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix (SbtCosmo.Derivation.GroundState.positiveGround b) x))) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b 0 (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b 0 (1 / 2) (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeZeroScalar.mixed_bounds {a r d : ℝ} (ha : 0 < a) (har : a ≤ r) (hr1 : r ≤ 1)
+  (hd : d = (1 - r + 2 * a ^ 2 / r) / 2) : 0 < d ∧ a ≤ √d ∧ √d ≤ 1
+SbtCosmo.Derivation.GroundNativeZeroScalar.coefficient_monotone {a r d c : ℝ} (ha : 0 < a) (har : a ≤ r) (hr1 : r ≤ 1)
+  (hd : d = (1 - r + 2 * a ^ 2 / r) / 2) (hc : c = a * (r + 1) / (2 * r * √d)) : a ≤ c
+SbtCosmo.Derivation.GroundNativeZeroScalar.gain_numerator {a r : ℝ} (hr0 : 0 ≤ r) (hr1 : r ≤ 1) (has : a ^ 2 ≤ r ^ 2) :
+  1 - a ^ 2 ≤ (r + 1) ^ 2 - 2 * r * (r - r ^ 2 + 2 * a ^ 2)
+SbtCosmo.Derivation.GroundNativeZeroScalar.coefficient_square {a r d c : ℝ} (hr : 0 < r) (hdp : 0 < d)
+  (hd : d = (1 - r + 2 * a ^ 2 / r) / 2) (hc : c = a * (r + 1) / (2 * r * √d)) :
+  2 * r * (r - r ^ 2 + 2 * a ^ 2) * c ^ 2 = a ^ 2 * (r + 1) ^ 2
+SbtCosmo.Derivation.GroundNativeZeroScalar.defect_contraction {a r d c : ℝ} (ha : 0 < a) (har : a ≤ r) (hr1 : r ≤ 1)
+  (hd : d = (1 - r + 2 * a ^ 2 / r) / 2) (hc : c = a * (r + 1) / (2 * r * √d)) :
+  1 - c ^ 2 ≤ (1 - a ^ 2 / 4) * (1 - a ^ 2)
+SbtCosmo.Derivation.GroundNativeZeroOrbit.step_estimate {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeZeroGeometry.step g x) = 1 ∧
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ≤
+        SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g
+          (SbtCosmo.Derivation.GroundNativeZeroGeometry.step g x) ∧
+      1 -
+            SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g
+                (SbtCosmo.Derivation.GroundNativeZeroGeometry.step g x) ^
+              2 ≤
+          SbtCosmo.Derivation.GroundNativeZeroOrbit.rate g x *
+            (1 - SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2) ∧
+        SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ≤
+          √(SbtCosmo.Derivation.GroundNativePhase.stateNormSq (SbtCosmo.Derivation.GroundNativeZeroGeometry.mix g x))
+SbtCosmo.Derivation.GroundNativeZeroOrbit.rate_bounds {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) :
+  0 ≤ SbtCosmo.Derivation.GroundNativeZeroOrbit.rate g x ∧ SbtCosmo.Derivation.GroundNativeZeroOrbit.rate g x < 1
+SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_unit_overlap {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step g)^[n] x) = 1 ∧
+    SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ≤
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g
+        ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step g)^[n] x)
+SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_defect_bound {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) (n : ℕ) :
+  0 ≤
+      1 -
+        SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g
+            ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step g)^[n] x) ^
+          2 ∧
+    1 -
+        SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g
+            ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step g)^[n] x) ^
+          2 ≤
+      SbtCosmo.Derivation.GroundNativeZeroOrbit.rate g x ^ n *
+        (1 - SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2)
+SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_distance_bound {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) (n : ℕ) :
+  ‖(SbtCosmo.Derivation.GroundNativeZeroGeometry.step g)^[n] x - (g, 0)‖ ≤
+    √(2 *
+        (SbtCosmo.Derivation.GroundNativeZeroOrbit.rate g x ^ n *
+          (1 - SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x ^ 2)))
+SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_converges {g : SbtCosmo.Derivation.GroundState.Field}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hg : SbtCosmo.Derivation.GroundState.normSq g = 1)
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1)
+  (ha : 0 < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart g x) :
+  Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeZeroGeometry.step g)^[n] x) Filter.atTop (nhds (g, 0))
+SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_native_guards (b : SbtCosmo.Derivation.GroundState.Field)
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} {τ : ℝ}
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1) (hτ : 0 ≤ τ)
+  (ha : τ < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart (SbtCosmo.Derivation.GroundState.positiveGround b) x)
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b 0
+      (SbtCosmo.Derivation.GroundNativePhase.pack
+        ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step (SbtCosmo.Derivation.GroundState.positiveGround b))^[n]
+          x)) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b 0 (1 / 2)
+      (SbtCosmo.Derivation.GroundNativePhase.pack
+        ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step (SbtCosmo.Derivation.GroundState.positiveGround b))^[n] x))
+SbtCosmo.Derivation.GroundNativeZeroOrbit.orbit_native_return (b : SbtCosmo.Derivation.GroundState.Field)
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} {τ : ℝ}
+  (hx : SbtCosmo.Derivation.GroundNativePhase.stateNormSq x = 1) (hτ : 0 ≤ τ)
+  (ha : τ < SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart (SbtCosmo.Derivation.GroundState.positiveGround b) x)
+  (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativePhase.pack
+      ((SbtCosmo.Derivation.GroundNativeZeroGeometry.step (SbtCosmo.Derivation.GroundState.positiveGround b))^[n] x) =
+    (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n]
+      (SbtCosmo.Derivation.GroundNativePhase.pack x)
+SbtCosmo.Derivation.GroundNativeZeroOrbit.actual_positive_zero_convergence (b : SbtCosmo.Derivation.GroundState.Field)
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ : ℝ} (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hτ : 0 ≤ τ)
+  (ha :
+    τ <
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart (SbtCosmo.Derivation.GroundState.positiveGround b)
+        (SbtCosmo.Derivation.GroundNativePhase.unpack z)) :
+  Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n] z) Filter.atTop
+      (nhds (SbtCosmo.Derivation.GroundState.realEmbed (SbtCosmo.Derivation.GroundState.positiveGround b))) ∧
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b 0
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n] z) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b 0 (1 / 2)
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n] z)
+SbtCosmo.Derivation.GroundNativeZeroOrbit.actual_negative_zero_convergence (b : SbtCosmo.Derivation.GroundState.Field)
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {τ : ℝ} (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1)
+  (hτ : 0 ≤ τ)
+  (ha :
+    τ <
+      -SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart (SbtCosmo.Derivation.GroundState.positiveGround b)
+          (SbtCosmo.Derivation.GroundNativePhase.unpack z)) :
+  Filter.Tendsto (fun n => (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n] z) Filter.atTop
+      (nhds (SbtCosmo.Derivation.GroundState.realEmbed (-SbtCosmo.Derivation.GroundState.positiveGround b))) ∧
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase τ b 0
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n] z) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b 0 (1 / 2)
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b 0 (1 / 2))^[n] z)
+SbtCosmo.Derivation.GroundOriginalSeed.seed_arithmetic :
+  1 / 2 < SbtCosmo.Derivation.GroundOriginalSeed.rawNorm ∧
+    SbtCosmo.Derivation.GroundOriginalSeed.rawNorm ≤ (101 / 100) ^ 2 ∧
+      SbtCosmo.Derivation.GroundOriginalSeed.dotBox.hi < -101 / 500
+SbtCosmo.Derivation.GroundOriginalSeed.initial_native_normalization :
+  SbtCosmo.Derivation.GroundOriginalSeed.initial =
+    SbtCosmo.Derivation.GroundNativeIteration.complexNormalize
+      (SbtCosmo.Derivation.GroundNativeIteration.complexNormalize
+        (SbtCosmo.Derivation.GroundNativePhase.pack SbtCosmo.Derivation.GroundOriginalSeed.rawState))
+SbtCosmo.Derivation.GroundOriginalSeed.raw_norm_return :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq SbtCosmo.Derivation.GroundOriginalSeed.rawState =
+    ↑SbtCosmo.Derivation.GroundOriginalSeed.rawNorm
+SbtCosmo.Derivation.GroundOriginalSeed.raw_norm_pos :
+  0 < SbtCosmo.Derivation.GroundNativePhase.stateNormSq SbtCosmo.Derivation.GroundOriginalSeed.rawState
+SbtCosmo.Derivation.GroundOriginalSeed.first_normalized_unit :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq
+      (SbtCosmo.Derivation.GroundNativeIteration.normalizeState SbtCosmo.Derivation.GroundOriginalSeed.rawState) =
+    1
+SbtCosmo.Derivation.GroundOriginalSeed.initialization_guards :
+  SbtCosmo.Derivation.GroundNativeControls.originalTolerance <
+      √(SbtCosmo.Derivation.GroundState.complexNormSq
+          (SbtCosmo.Derivation.GroundNativePhase.pack SbtCosmo.Derivation.GroundOriginalSeed.rawState)) ∧
+    SbtCosmo.Derivation.GroundNativeControls.originalTolerance <
+      √(SbtCosmo.Derivation.GroundState.complexNormSq
+          (SbtCosmo.Derivation.GroundNativeIteration.complexNormalize
+            (SbtCosmo.Derivation.GroundNativePhase.pack SbtCosmo.Derivation.GroundOriginalSeed.rawState)))
+SbtCosmo.Derivation.GroundOriginalSeed.double_normalization :
+  SbtCosmo.Derivation.GroundOriginalSeed.initial =
+    SbtCosmo.Derivation.GroundNativePhase.pack
+      (SbtCosmo.Derivation.GroundNativeIteration.normalizeState SbtCosmo.Derivation.GroundOriginalSeed.rawState)
+SbtCosmo.Derivation.GroundOriginalSeed.initial_unit :
+  SbtCosmo.Derivation.GroundState.complexNormSq SbtCosmo.Derivation.GroundOriginalSeed.initial = 1
+SbtCosmo.Derivation.GroundOriginalSeed.ground_identity :
+  SbtCosmo.Derivation.GroundState.positiveGround
+      (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground) =
+    (SbtCosmo.Derivation.GroundOriginalContinuation.branch 0).1
+SbtCosmo.Derivation.GroundOriginalSeed.dot_expression_return (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval
+      (SbtCosmo.Derivation.GroundResidualEnclosure.valuation
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        0 x)
+      SbtCosmo.Derivation.GroundOriginalSeed.dotExpr =
+    SbtCosmo.Derivation.GroundBorder.dot x.1 SbtCosmo.Derivation.GroundOriginalSeed.rawState.1
+SbtCosmo.Derivation.GroundOriginalSeed.initial_overlap_negative :
+  SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart
+      (SbtCosmo.Derivation.GroundState.positiveGround
+        (SbtCosmo.Derivation.GroundKernelTube.background
+          SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground))
+      (SbtCosmo.Derivation.GroundNativePhase.unpack SbtCosmo.Derivation.GroundOriginalSeed.initial) <
+    -1 / 5
+SbtCosmo.Derivation.GroundOriginalSeed.positive_overlap_rejected :
+  ¬0 <
+      SbtCosmo.Derivation.GroundNativeZeroGeometry.realPart
+        (SbtCosmo.Derivation.GroundState.positiveGround
+          (SbtCosmo.Derivation.GroundKernelTube.background
+            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground))
+        (SbtCosmo.Derivation.GroundNativePhase.unpack SbtCosmo.Derivation.GroundOriginalSeed.initial)
+SbtCosmo.Derivation.GroundOriginalSeed.actual_seed_zero_convergence :
+  Filter.Tendsto
+      (fun n =>
+        (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+              SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              0 (1 / 2))^[n]
+          SbtCosmo.Derivation.GroundOriginalSeed.initial)
+      Filter.atTop
+      (nhds
+        (SbtCosmo.Derivation.GroundState.realEmbed (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch 0).1))) ∧
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+          (SbtCosmo.Derivation.GroundKernelTube.background
+            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+          0
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                0 (1 / 2))^[n]
+            SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+          (SbtCosmo.Derivation.GroundKernelTube.background
+            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+          0 (1 / 2)
+          ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate
+                SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+                (SbtCosmo.Derivation.GroundKernelTube.background
+                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                0 (1 / 2))^[n]
+            SbtCosmo.Derivation.GroundOriginalSeed.initial)

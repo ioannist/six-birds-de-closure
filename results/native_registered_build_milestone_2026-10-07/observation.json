@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-07T09:22:25.731835+00:00",
+  "build_receipt_sha256": "5b9026cba89272e9b1a2f1e89543236f6b1cedf84a1326c082fe72fe7544072a",
+  "actual_build_exit_code": 0,
+  "jobs": 11775,
+  "receipt_command_cwd_environment_source_plan_log_bindings_checked": true,
+  "axiom_command_live_pid": 2072274,
+  "producer_live_session_id": 40823,
+  "axiom_or_statement_success_claimed": false,
+  "proof_objects_archived": 0,
+  "goal_complete": false
+}

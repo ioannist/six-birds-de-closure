@@ -1,0 +1,10 @@
+{
+  "first_scoped_checker_actual_exit": 1,
+  "first_tool_chunk": "18cbf4",
+  "underlying_git_exit": 2,
+  "reason": "Preserved whitespace-check raw output reproduces the whitespace being reported; it requires the same exact raw-log exclusion",
+  "subsequent_stage_missing_file_actual_exit": 128,
+  "subsequent_tool_chunk": "1b0d5b",
+  "mathematical_source_or_build_receipts_changed": false,
+  "global_git_whitespace_policy_changed": false
+}

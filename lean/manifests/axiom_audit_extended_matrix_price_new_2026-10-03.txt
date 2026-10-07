@@ -1,0 +1,48 @@
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.finite_cost_guards' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.value_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.finite_value_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.primal_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.optimum_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_domain_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_primal_optimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_strong_duality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.weak_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.certificate_dual_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedConeClosurePrice.price_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePrice.matrix_price' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.costs_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.value_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.actual_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.actual_matrix_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.converted_value_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.ExtendedMatrixClosurePriceExamples.unrestricted_toReal_false_value' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

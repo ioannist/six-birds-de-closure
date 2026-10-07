@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-05T07:35:39.995983+00:00",
+  "driver_pid": 3029588,
+  "driver_confirmed_live": true,
+  "session": 16277,
+  "module_count": 3,
+  "declaration_count": 18,
+  "freeze_inputs_revalidated": 1985,
+  "qualified_build_complete": false,
+  "repository_registered": false,
+  "archive_members_sequentially_verified": 4,
+  "archive_sha256": "57208d1a820ac15039b2199122438e68008c16e576f2a38736925df846d893f7",
+  "archive_manifest": [
+    {
+      "name": "de_source_execution_supplement_qualified_build.py",
+      "sha256": "66dde3dac7d6768030fd0ed29ced1bf6c8ea88ac0dbe5f903d76e8e026768e80"
+    },
+    {
+      "name": "de_source_execution_supplement_qualified/source-freeze.json",
+      "sha256": "1211e6815ca98da3fc3600c2f766c33ff8446709864acce75aa2278bf1e23c9a"
+    },
+    {
+      "name": "workspace/results/source_execution_production_candidate_2026-10-05/production-plan.json",
+      "sha256": "c7a798e995ce61cea1c727eb25aa4de1a8755925267bc5e118e5c2740879461b"
+    },
+    {
+      "name": "workspace/results/source_execution_production_candidate_2026-10-05/file-manifest.json",
+      "sha256": "c868a938188666631ef498a616ab5a6968be4278313c2db3788f1bd599c5224e"
+    }
+  ],
+  "goal_complete": false
+}

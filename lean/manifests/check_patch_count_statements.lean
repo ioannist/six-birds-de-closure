@@ -1,0 +1,26 @@
+import SbtCosmo.Derivation.WindowPatchCountData
+import SbtCosmo.Derivation.WindowPatchCounts
+
+#check SbtCosmo.Derivation.WindowPatchCountData.rational_maxima_certificate
+#check SbtCosmo.Derivation.WindowPatchCountData.rational_threshold_certificate
+#check SbtCosmo.Derivation.WindowPatchCountData.rational_rank_certificate
+#check SbtCosmo.Derivation.WindowPatchCountData.rational_window_bounds
+#check SbtCosmo.Derivation.WindowPatchCountData.rational_tight_bounds
+#check SbtCosmo.Derivation.WindowPatchCountData.rational_threshold_order
+#check SbtCosmo.Derivation.WindowPatchCounts.sampled_maxima
+#check SbtCosmo.Derivation.WindowPatchCounts.seedThreshold_eq
+#check SbtCosmo.Derivation.WindowPatchCounts.sampled_rank_counts
+#check SbtCosmo.Derivation.WindowPatchCounts.sampled_count_iff_threshold
+#check SbtCosmo.Derivation.WindowPatchCounts.sampled_threshold_bounds
+#check SbtCosmo.Derivation.WindowPatchCounts.threshold_exact_32
+#check SbtCosmo.Derivation.WindowPatchCounts.threshold_exact_128
+#check SbtCosmo.Derivation.WindowPatchCounts.realized_gate_iff_seed_fraction
+#check SbtCosmo.Derivation.WindowPatchCounts.realized_gate_iff_threshold
+#check SbtCosmo.Derivation.WindowPatchCounts.exists_unique_realized_window
+#check SbtCosmo.Derivation.WindowPatchCounts.upper_spec
+#check SbtCosmo.Derivation.WindowPatchCounts.threshold_order
+#check SbtCosmo.Derivation.WindowPatchCounts.upper_order
+#check SbtCosmo.Derivation.WindowPatchCounts.gate_inclusions
+#check SbtCosmo.Derivation.WindowPatchCounts.strict_gate_witnesses
+#check SbtCosmo.Derivation.WindowPatchCounts.zero_passes
+#check SbtCosmo.Derivation.WindowPatchCounts.cutoff_fails

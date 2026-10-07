@@ -1,0 +1,62 @@
+{
+  "generated_utc": "2026-06-01T09:09:08Z",
+  "inputs": {
+    "dataset_manifests": {
+      "cmblensing_act_spt_planck": {
+        "path": "data/manifests/cmb_lensing.json",
+        "sha256": "085a6db868db1fd2f6e13403332ecf692ad3f96407fa5905cac688e7570c7785"
+      },
+      "des_y6_3x2pt": {
+        "path": "data/manifests/des_y6.json",
+        "sha256": "9c93a9a118503a0762638dee1ba3f1761039a1af7dd334afc4438879f24ab6b7"
+      },
+      "desi_rsd_fsigma8": {
+        "path": "data/manifests/desi_rsd_fs.json",
+        "sha256": "286d9271b8c9f240fabf2e24b60a9a8b71beb82c1fe1eea5298324584c1b6156"
+      },
+      "hsc_y3_origVSrecal": {
+        "path": "data/manifests/hsc_y3.json",
+        "sha256": "89d1ef4572b2e0984a47ad6210abadc1c7a682da5f20a21635d01b4401374e42"
+      },
+      "kids_legacy_shear": {
+        "path": "data/manifests/kids_legacy.json",
+        "sha256": "6d1223227f9d4b912eb2332779ad918bb7ba8ef9b9d20493d37eadce628da892"
+      }
+    },
+    "e5_growth_currency_inputs": {
+      "path": "data/manifests/e5_growth_currency_inputs.json",
+      "sha256": "e31fbfa0317108caf008bf5999f03885ff6fae16f8d9fa0867dba966ced0973d"
+    }
+  },
+  "outputs": {
+    "coherence": {
+      "path": "results/coherence_ledger/E5.json",
+      "sha256": "a50a7cea4cd3c53a6ef7a40a85a4eb9fe077a9176e158f6bbd4ae0569666594c"
+    },
+    "data_availability": {
+      "path": "results/E5/E5_data_availability.json",
+      "sha256": "0a1c6c3337bf5cab88574271816a69ddeae235bf437fb057bcd88932487389a4"
+    },
+    "env4": {
+      "path": "results/E5/E5_env4_pyccl_class.json",
+      "sha256": "15c52c498d9f757acdf1dfbea8b641b42862d1ebc33abb7241d811e8eb030c41"
+    },
+    "input_manifest_freeze": {
+      "path": "results/E5/E5_input_manifest_freeze.json",
+      "sha256": "ffd66939ce1203036e14a58fd92045f363a09d71a67b3759aba4bb48dc6a7519"
+    },
+    "status": {
+      "path": "results/E5/E5_status.json",
+      "sha256": "53a4a2e1af3042a3b82f8f9f9e7f8b4044f0417aaf24fa4607149c1f4a71e64e"
+    }
+  },
+  "schema_version": 1,
+  "thread_env": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

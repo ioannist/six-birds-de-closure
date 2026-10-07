@@ -1,0 +1,25 @@
+{
+  "false_certificate_rejections": [
+    {
+      "control": "singular basis",
+      "rejected": true,
+      "reason": "singular proposed basis"
+    },
+    {
+      "control": "wrong basis dimension",
+      "rejected": true,
+      "reason": "wrong imaginary basis dimension"
+    },
+    {
+      "control": "wrong root identity",
+      "rejected": true,
+      "reason": "basis/root identity mismatch"
+    },
+    {
+      "control": "oversized uncertified root box",
+      "rejected": true,
+      "reason": "imaginary induced norm is not below one"
+    }
+  ],
+  "scope": "singularity, dimensions, identity, and destructive box enlargement"
+}

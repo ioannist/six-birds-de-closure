@@ -1,0 +1,135 @@
+{
+  "archive_sha256": "25a663215998faba35d01b406cbe36d3df9c791101cb55cdee4876e4ce66d609",
+  "entries": [
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/handover.md",
+      "sha256": "4285b1e470c84fdf4fad84a25d150b18d0f830361b919205f7723c6500671965",
+      "size": 9061
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/handover-073139/GROUND_NATIVE_RECOVERY_STATUS_2026-10-05.md",
+      "sha256": "a98728ac249d735777d789039b216dd40693c6de5e5332629e070f2ee2701833",
+      "size": 9683
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/handover-073139/handover.md",
+      "sha256": "a98728ac249d735777d789039b216dd40693c6de5e5332629e070f2ee2701833",
+      "size": 9683
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/handover-073139/recovery-plan.json",
+      "sha256": "34c61c34da7f1e94fde8e8f6b208e72e39dfdd181e93961edbbd6cb55b69513e",
+      "size": 1416
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/handover-073139/update-verification.json",
+      "sha256": "4051e67fa19af1f6cfecb53f0d7d2bc08107b756d2585a9cc831549355c249bd",
+      "size": 1704
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/recovery-plan-initial.json",
+      "sha256": "a2f4698b3156866b8d93c51c3f059d5e6a6c12b3baa8bb6028d63d2ac4f65501",
+      "size": 512
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/recovery_verifier_initial.py",
+      "sha256": "721f391288b96d4857560214376b656e46fb3e544ecd2fb9aa302a8e0317e1ad",
+      "size": 23515
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/history/source_verification_initial.log",
+      "sha256": "6f0dfdd0071de4e01148829a44342751594fdf370715b6d9568629a0a50d5df9",
+      "size": 1358
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/recovery-plan.json",
+      "sha256": "60ac3389f7d31cf5e3433f6007c71f97a4400a780da50052f47e6f7b418df070",
+      "size": 1799
+    },
+    {
+      "name": "workspace/results/native_campaign_recovery_verification_2026-10-05/source_verification.json",
+      "sha256": "f8e762c47af16ee0daa2be8dfe2c4b35dc87e2d7f99491aea7e4eb1aee458d01",
+      "size": 305763
+    },
+    {
+      "name": "de-native-additional-constructions-qualified-driver.log",
+      "sha256": "d432e05851fc7ebed96e73ce3ff75a32c5df2c3898ef705fc82920fbab0c070f",
+      "size": 117
+    },
+    {
+      "name": "de-native-campaign-qualified-recovery-driver.log",
+      "sha256": "256390cc6f22e41419ed97f9ed11a1e1330b70ba829009c7dbfeffe19b540dcb",
+      "size": 117
+    },
+    {
+      "name": "de-native-campaign-qualified-recovery-freeze.json",
+      "sha256": "5f522e5abc7cc50505c9e02f4f35ffe2a4bfdbebefe474bdfd7e3944ffa8b53f",
+      "size": 880446
+    },
+    {
+      "name": "de-native-campaign-verification-recovery-finish-driver.log",
+      "sha256": "97b61f878967ab01a7849ce9bcee90eeecfa602482579c6b6add4f76406a7544",
+      "size": 101
+    },
+    {
+      "name": "de-native-campaign-verification-recovery-finish-freeze.json",
+      "sha256": "b7676e1ef57a7273323556259eb5c0c5b8552529347785a3609eb52132c35ff4",
+      "size": 895198
+    },
+    {
+      "name": "de-native-seed-real-returns-qualified-recovery-driver.log",
+      "sha256": "85743d14e839aafc189762cc84f65f67eae2861d9b27abd6b36a965fc0ff9f43",
+      "size": 119
+    },
+    {
+      "name": "de-native-seed-real-returns-qualified-recovery-freeze.json",
+      "sha256": "b6c1470497ef60253d5c9c1db5616c39a0620f7aea66b39805e0dfaac0fc82e0",
+      "size": 882934
+    },
+    {
+      "name": "de-source-execution-supplement-qualified-driver.log",
+      "sha256": "46624a4eb5721fd3be22a68a83f2d68ff23ad8c3d0158da24d35e77fb021737a",
+      "size": 122
+    },
+    {
+      "name": "de_native_additional_constructions_qualified/source-freeze.json",
+      "sha256": "1ae32d45bce1cbe001724cfb311ce4f5b0c48ac073a7c289e0e454882dc9c5ad",
+      "size": 340922
+    },
+    {
+      "name": "de_native_additional_constructions_qualified_build.py",
+      "sha256": "2276c9887d8a7070189d55763a43abd2e013f21eaac817351f1abc50b68aa2ef",
+      "size": 6906
+    },
+    {
+      "name": "de_native_campaign_qualified_recovery_build.py",
+      "sha256": "561d9f692befc77302bb8c5922064a1528da3a391ede4d264894a0f8fb4c7910",
+      "size": 9357
+    },
+    {
+      "name": "de_native_campaign_verification_recovery_finish.py",
+      "sha256": "4112a5e0f475cedc0370dc3e83124d7d12c2e0444ea4a8184bbd2ad676d26c0c",
+      "size": 5995
+    },
+    {
+      "name": "de_native_seed_real_returns_qualified_recovery_build.py",
+      "sha256": "436058d055738f74c84d37759815ee6f60efde6d3f750709814844ab883cdc2a",
+      "size": 9431
+    },
+    {
+      "name": "de_retire_superseded_qualification_queues.py",
+      "sha256": "db58c3ccca18b4b3f0be900c94759543ebbd6fa7e1a9c683a76c5e054c74de6f",
+      "size": 6074
+    },
+    {
+      "name": "de_source_execution_supplement_qualified/source-freeze.json",
+      "sha256": "1211e6815ca98da3fc3600c2f766c33ff8446709864acce75aa2278bf1e23c9a",
+      "size": 333840
+    },
+    {
+      "name": "de_source_execution_supplement_qualified_build.py",
+      "sha256": "66dde3dac7d6768030fd0ed29ced1bf6c8ea88ac0dbe5f903d76e8e026768e80",
+      "size": 6895
+    }
+  ]
+}

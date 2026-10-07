@@ -1,0 +1,108 @@
+{
+  "baseline_commit": "4fb7986",
+  "scope": "Exact growth IVP cone invariance, strict positivity and time/parameter comparison, uniqueness, original coordinate bridge and continuous record-history return; all-lambda solution construction remains separate",
+  "lean_build": {
+    "command": "lake build",
+    "success": true,
+    "jobs": 8060,
+    "warnings_as_errors": true,
+    "receipt": "lean_build.txt"
+  },
+  "axiom_audit": {
+    "command": "lake env lean manifests/check_axioms.lean",
+    "success": true,
+    "declarations": 408,
+    "new_local_theorems": [
+      "SbtCosmo.Derivation.GrowthComparison.negativeSquare_nonneg",
+      "SbtCosmo.Derivation.GrowthComparison.negativeSquare_eq_zero_iff",
+      "SbtCosmo.Derivation.GrowthComparison.continuous_negativeSquare",
+      "SbtCosmo.Derivation.GrowthComparison.hasDerivAt_negativeSquare",
+      "SbtCosmo.Derivation.GrowthComparison.negative_energy_derivative_bound",
+      "SbtCosmo.Derivation.GrowthComparison.cooperative_nonnegative",
+      "SbtCosmo.Derivation.GrowthComparison.weighted_velocity_derivative",
+      "SbtCosmo.Derivation.GrowthComparison.cooperative_positive",
+      "SbtCosmo.Derivation.GrowthComparison.cooperative_strict_forcing",
+      "SbtCosmo.Derivation.GrowthComparison.coefficient_positive",
+      "SbtCosmo.Derivation.GrowthComparison.coefficient_continuous",
+      "SbtCosmo.Derivation.GrowthComparison.coefficient_bounded",
+      "SbtCosmo.Derivation.GrowthComparison.coefficient_strict_parameter",
+      "SbtCosmo.Derivation.GrowthComparison.growth_positive",
+      "SbtCosmo.Derivation.GrowthComparison.growth_strict_in_time",
+      "SbtCosmo.Derivation.GrowthComparison.growth_strict_parameter",
+      "SbtCosmo.Derivation.GrowthComparison.horizon_denominator_positive",
+      "SbtCosmo.Derivation.GrowthComparison.live_of_horizon",
+      "SbtCosmo.Derivation.GrowthComparison.scale_log_horizon",
+      "SbtCosmo.Derivation.GrowthComparison.scale_acceleration_bridge",
+      "SbtCosmo.Derivation.GrowthComparison.hasDerivAt_scale",
+      "SbtCosmo.Derivation.GrowthComparison.log_growth_derivative",
+      "SbtCosmo.Derivation.GrowthComparison.log_velocity_derivative",
+      "SbtCosmo.Derivation.GrowthComparison.growth_unique",
+      "SbtCosmo.Derivation.GrowthComparison.matter_solution",
+      "SbtCosmo.Derivation.GrowthComparison.ever_collapse_iff_final",
+      "SbtCosmo.Derivation.GrowthComparison.record_history_iff_threshold",
+      "SbtCosmo.Derivation.GrowthComparison.record_gate_parameter_downward"
+    ],
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "receipt": "lean/manifests/axiom_audit_growth_comparison_2026-10-03.txt",
+    "proof_holes": false,
+    "native_decide": false
+  },
+  "statement_check": {
+    "command": "lake env lean manifests/check_growth_statements.lean",
+    "success": true,
+    "receipt": "theorem_statements.txt"
+  },
+  "mathlib": {
+    "revision": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "direct_proof_source_sha256": {
+      "Mathlib/Analysis/ODE/Gronwall.lean": "b4f1224b8957e6c43f231b97071619f0559d289f96934ec30cd40f9d384eaaac",
+      "Mathlib/Analysis/Calculus/Deriv/MeanValue.lean": "d8f87e3ffe1b75c9cce46e49a9eeafb488145727b11d73c182c2ddca611e8074"
+    }
+  },
+  "original_return": {
+    "growth_IVP_equations_supplied": true,
+    "growth_signs_assumed": false,
+    "growth_monotonicity_assumed": false,
+    "coefficient_compact_bound_constructed": true,
+    "live_interval_derived_from_horizon": true,
+    "uniqueness_derived": true,
+    "lambda_zero_solution_constructed": true,
+    "all_lambda_solution_locally_constructed": false,
+    "parameter_continuity_locally_constructed": false,
+    "infinity_limit_locally_constructed": false,
+    "whole_continuum_window_locally_certified": false,
+    "continuous_record_history_return": true,
+    "numerical_integration_interval_certified": false,
+    "physical_crunch_or_Lambda_bridge": false
+  },
+  "paper_edited": false,
+  "frozen_external_edited": false,
+  "python_runtime_edited": false,
+  "python_tests_rerun": false,
+  "review": "Adversarial self-review; no independent reviewer",
+  "next_construction": "Construct every live IVP solution via the explicit quadrature in math/GROWTH_COMPARISON_LEAN_2026-10-03.md, then prove parameter dependence, infinity limit and exact ranked-seed upper endpoint.",
+  "source_sha256": {
+    "README.md": "67547033d9a37e2217f3fe3e949ffce4ebb2c4355b0ce3881a2ac827ff67406e",
+    "lean/README.md": "b4cc1a0adf44b1b55a72a7722574ec0bfccf05f6c86ebc0b58c557cc0a3585fe",
+    "lean/lakefile.lean": "3dcf00c24ae3e9652c7c5c47e6dfc9a7d33fa1314e3e914db5318f053ed2e8c4",
+    "lean/lake-manifest.json": "5b408cb7b3ce9541bd70428d687331dab487f8952bbc3c5623252100b14ad3d8",
+    "lean/lean-toolchain": "db7bb24b756d745bbde83fe92718b51bd3625dae3701ba0f598d0eedcd3f3028",
+    "lean/SbtCosmo/Derivation/GrowthComparison.lean": "9d4a09c87baa0af19349f551c28c01729d76359358315189658e3605af801a54",
+    "lean/SbtCosmo/Derivation/WindowRecords.lean": "e7dd6be860d55a6e1075cf2e645cb46d420e79bafc22103321338d85b46661c1",
+    "lean/manifests/check_axioms.lean": "fc7e0a23ebe489e489f743289fedfab7ec5797bc32a34628a6a0835476476a7f",
+    "lean/manifests/check_growth_statements.lean": "231aa8778e194598381d5848f35f70277e5164e20ac0b3fbf090e82e01deb058",
+    "lean/manifests/axiom_audit_growth_comparison_2026-10-03.txt": "84169b352c10b22bf4d1a25f2d2b8503628f77543c972df2ed85141cdc3959f1",
+    "lean/manifests/coverage_table.md": "51e9630395d1384ef4790cc53c0c8b1394cc1698674947fe8d337af02f0f6a72",
+    "lean/manifests/trust_base.txt": "a9e66620d211d9fd0f9a85957c37c838ae9d8139751654567cbc38e97dc06b91",
+    "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md": "44abbd689f6802da7069e499c3ba1a15e6c80842362d08bfc71805a77a1942da",
+    "math/GROWTH_COMPARISON_LEAN_2026-10-03.md": "b8e89a8dd28969a6727146149922eb97c4d3d8aef523b590b07bc74677803a76",
+    "scripts/de_window_carrier.py": "e1b388418b2e68f4f9e3dc5d0daa459a481a3015dd86a92d634e29b315a78d4f",
+    "scripts/de_original_claim_checks.py": "d6f3bcf429cf4ffa938914cddad0dbd4f7352b0ab0d291e5e7eb06b4d8be3fe1",
+    "results/growth_comparison_2026-10-03/lean_build.txt": "74a099b21ac19dec655763b15ecc231ceca288e80362c3ba2ace662278a11052",
+    "results/growth_comparison_2026-10-03/theorem_statements.txt": "ae4b740b6dff807c8f6e4f4b04626256780fd639fa49945dc06e9cdca000a8e8"
+  }
+}

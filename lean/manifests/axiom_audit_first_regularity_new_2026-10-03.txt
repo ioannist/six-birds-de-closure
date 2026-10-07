@@ -1,0 +1,106 @@
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_eq_of_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_interior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.domain_mem_nhds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_joint_continuousOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_parameter_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_derivative_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_sensitivity_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.firstTime_threshold_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.GrowthFirstContinuity.horizon_equality_not_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.maximum_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.maximum_lipschitz' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.maximum_eq_of_attained' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.threshold_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.time_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.time_iff_any_collapse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.tied_maximum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.tied_maximum_not_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.tied_time_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.FirstPopulationContinuity.tied_time_not_differentiable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_strict_final' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_threshold_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_time_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_ratio_joint_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_time_knobs_c1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_time_delta_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_time_delta_derivative_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_time_amplitude_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_time_amplitude_derivative_negative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_endpoint_time_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.robust_endpoint_ratio_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.original_time_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.original_ratio_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.patch_strict_final' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.patch_time_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.WindowFirstRegularity.patch_ratio_continuousAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

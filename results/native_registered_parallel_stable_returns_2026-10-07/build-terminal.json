@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-07T01:24:21.539935+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "build",
+    "+SbtCosmo.Derivation.NativeStableSeed001.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed001.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed001.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed003.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed003.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed003.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed004.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed004.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed004.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed005.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed005.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed005.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed006.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed006.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed006.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed007.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed007.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed007.SixtyGeometry"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "log_sha256": "450ab9e202091291e52e2d0285b53e5535adadc3e27b1b2d2fa6c66b4f1b7f67",
+  "intent_sha256": "adfffe3378c59d2f9537aeaac0fdea717505c681d13221f7309d9c5e68884cf5"
+}

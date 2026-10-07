@@ -1,0 +1,128 @@
+{
+  "blinding_note": "This Codex session saw route H0 values before WP-E4-PREDICT-CODE replaced the retired packet; these artifacts are therefore excluded from the blind decisive arm.",
+  "blinding_status": "with-values-known",
+  "contains_h0_values": false,
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "phase": "A_version_manifest_no_values",
+  "routes": [
+    {
+      "arxiv": [
+        "1807.06209",
+        "2503.14738"
+      ],
+      "covariance_source_availability": "derived from E1 committed summaries plus Planck/DESI covariance",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "headline",
+      "route_family": "CMB->BAO",
+      "route_id": "cmb_bao_planck",
+      "summary_only": false,
+      "version_date": "Planck 2018 + DESI DR2 BAO"
+    },
+    {
+      "arxiv": [
+        "2503.14738"
+      ],
+      "covariance_source_availability": "derived from E1 committed summaries",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "headline",
+      "route_family": "inverse_ladder",
+      "route_id": "inverse_ladder_desi_bbn",
+      "summary_only": false,
+      "version_date": "derived from E1 compressed DESI DR2 + CMB/BBN summaries"
+    },
+    {
+      "arxiv": [
+        "2509.01667"
+      ],
+      "covariance_source_availability": "published summary covariance; shared SN/M_B covariance to be unlocked in Phase B",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "headline",
+      "route_family": "Cepheid->SN",
+      "route_id": "cepheid_sn_sh0es",
+      "summary_only": true,
+      "version_date": "SH0ES JWST+HST route version"
+    },
+    {
+      "arxiv": [
+        "2408.06153"
+      ],
+      "covariance_source_availability": "published stat/sys/SN covariance components; shared SN/M_B covariance to be unlocked in Phase B",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "headline",
+      "route_family": "TRGB->SN",
+      "route_id": "trgb_sn_cchp",
+      "summary_only": true,
+      "version_date": "CCHP TRGB route version"
+    },
+    {
+      "arxiv": [
+        "2408.06153"
+      ],
+      "covariance_source_availability": "published stat/sys covariance components; shared TRGB/SN covariance to be unlocked in Phase B",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "variant",
+      "route_family": "JWST_TRGB->SN",
+      "route_id": "jwst_trgb_sn_cchp",
+      "summary_only": true,
+      "version_date": "CCHP JWST-only TRGB route version"
+    },
+    {
+      "arxiv": [
+        "2408.06153"
+      ],
+      "covariance_source_availability": "published stat/sys covariance components; shared SN/M_B covariance to be unlocked in Phase B",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "headline",
+      "route_family": "JAGB->SN",
+      "route_id": "jagb_sn_cchp",
+      "summary_only": true,
+      "version_date": "CCHP JAGB route version"
+    },
+    {
+      "arxiv": [
+        "2506.03023"
+      ],
+      "covariance_source_availability": "posterior family/model-dependence covariance to be unlocked in Phase B",
+      "decisive_without_time_delay": false,
+      "include": true,
+      "role": "headline_time_delay",
+      "route_family": "time_delay",
+      "route_id": "time_delay_tdcosmo_2025",
+      "summary_only": true,
+      "version_date": "TDCOSMO 2025 headline route; numerical value sealed until Phase B"
+    },
+    {
+      "arxiv": [
+        "2110.00517"
+      ],
+      "covariance_source_availability": "historical-control posterior family only",
+      "decisive_without_time_delay": false,
+      "include": false,
+      "role": "historical-control",
+      "route_family": "time_delay",
+      "route_id": "time_delay_tdcosmo_legacy_2110",
+      "summary_only": true,
+      "version_date": "historical-control only; not decisive"
+    },
+    {
+      "arxiv": [
+        "1709.05895"
+      ],
+      "covariance_source_availability": "asymmetric posterior covariance to be unlocked in Phase B",
+      "decisive_without_time_delay": true,
+      "include": true,
+      "role": "headline",
+      "route_family": "standard_siren",
+      "route_id": "siren_gw170817",
+      "summary_only": true,
+      "version_date": "GW170817 standard-siren route version"
+    }
+  ],
+  "schema_version": 1
+}

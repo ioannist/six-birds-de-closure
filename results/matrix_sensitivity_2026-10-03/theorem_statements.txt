@@ -1,0 +1,312 @@
+SbtCosmo.Derivation.ConePriceSensitivity.real_price_identification.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → ℝ} {energy : E → F} {positive : F → Prop} {B : F}
+  {star : E} {price d : F →L[ℝ] ℝ}
+  (hc : SbtCosmo.Derivation.ConeClosurePrice.DualCertificate A J energy positive B price star)
+  (hne : ∀ᶠ (T : F) in nhds B, (SbtCosmo.Derivation.ConeClosurePrice.feasibleCosts A J energy positive T).Nonempty)
+  (hd : HasFDerivAt (SbtCosmo.Derivation.ConeClosurePrice.value A J energy positive) d B) : price = -d
+SbtCosmo.Derivation.ConePriceSensitivity.certificate_real_domain_return.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → EReal} {energy : E → F} {positive : F → Prop} {B : F}
+  {star : E} {price : F →L[ℝ] ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc : SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J energy positive B price star) :
+  SbtCosmo.Derivation.ConeClosurePrice.DualCertificate (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain A J)
+    (SbtCosmo.Derivation.ExtendedClosurePrice.realObjective J) energy positive B price star
+SbtCosmo.Derivation.ConePriceSensitivity.price_identification.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] {A : Set E} {J : E → EReal} {energy : E → F} {positive : F → Prop} {B : F}
+  {star : E} {price d : F →L[ℝ] ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc : SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J energy positive B price star)
+  (hfinite :
+    ∀ᶠ (T : F) in nhds B,
+      SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T ≠ ⊥)
+  (hd : HasFDerivAt (fun T => (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T).toReal) d B) :
+  price = -d
+SbtCosmo.Derivation.ConePriceSensitivity.price_unique.{u_1, u_2} {E : Type u_1} {F : Type u_2} [NormedAddCommGroup F]
+  [NormedSpace ℝ F] {A : Set E} {J : E → EReal} {energy : E → F} {positive : F → Prop} {B : F} {star other : E}
+  {price otherPrice d : F →L[ℝ] ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc : SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J energy positive B price star)
+  (ho : SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J energy positive B otherPrice other)
+  (hfinite :
+    ∀ᶠ (T : F) in nhds B,
+      SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T ≠ ⊥)
+  (hd : HasFDerivAt (fun T => (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T).toReal) d B) :
+  price = otherPrice
+SbtCosmo.Derivation.ConePriceSensitivity.slater_local_finiteness.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] [AddCommGroup E] [Module ℝ E] {A : Set E} {J : E → EReal} {energy : E → F}
+  {positive : F → Prop} {B : F} {star x₀ : E} (hc : SbtCosmo.Derivation.ConeClosurePrice.ConeLaws positive)
+  (hbottom : ∀ x ∈ A, J x ≠ ⊥) (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J))
+  (he :
+    ∀ x ∈ A,
+      ∀ y ∈ A, ∀ (a b : ℝ), 0 ≤ a → 0 ≤ b → a + b = 1 → positive (a • energy x + b • energy y - energy (a • x + b • y)))
+  (hstar : SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J energy positive B star) (hx₀ : x₀ ∈ A)
+  (hfinite₀ : J x₀ ≠ ⊤) (hslater : B - energy x₀ ∈ interior {H | positive H}) :
+  ∀ᶠ (T : F) in nhds B,
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T ≠ ⊤ ∧
+      SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T ≠ ⊥
+SbtCosmo.Derivation.ConePriceSensitivity.slater_price_identification.{u_1, u_2} {E : Type u_1} {F : Type u_2}
+  [NormedAddCommGroup F] [NormedSpace ℝ F] [AddCommGroup E] [Module ℝ E] {A : Set E} {J : E → EReal} {energy : E → F}
+  {positive : F → Prop} {B : F} {star x₀ : E} {price d : F →L[ℝ] ℝ}
+  (hc : SbtCosmo.Derivation.ConeClosurePrice.ConeLaws positive) (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J))
+  (he :
+    ∀ x ∈ A,
+      ∀ y ∈ A, ∀ (a b : ℝ), 0 ≤ a → 0 ≤ b → a + b = 1 → positive (a • energy x + b • energy y - energy (a • x + b • y)))
+  (hprice : SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J energy positive B price star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤) (hslater : B - energy x₀ ∈ interior {H | positive H})
+  (hd : HasFDerivAt (fun T => (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J energy positive T).toReal) d B) :
+  price = -d
+SbtCosmo.Derivation.MatrixPriceSensitivity.priceMatrix_tracePrice.{u_1} {m : Type u_1} [Fintype m] [DecidableEq m]
+  {P : Matrix m m ℝ} (hP : P.IsHermitian) :
+  SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix ↑(SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) = P
+SbtCosmo.Derivation.MatrixPriceSensitivity.tracePrice_injective.{u_1} {m : Type u_1} [Fintype m] [DecidableEq m]
+  {P Q : Matrix m m ℝ} (hP : P.IsHermitian) (hQ : Q.IsHermitian)
+  (heq : SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P = SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice Q) :
+  P = Q
+SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_price_identification.{u_1, u_2} {m : Type u_1} {E : Type u_2}
+  [Fintype m] {A : Set E} {J : E → EReal} {Xi : E → ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star : E} {P : Matrix m m ℝ}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star)
+  (hfinite :
+    ∀ᶠ (T : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)) in nhds B,
+      SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive T ≠ ⊥)
+  (hd :
+    HasFDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+            T).toReal)
+      d B) :
+  SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P = -d
+SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_matrix_identification.{u_1, u_2} {m : Type u_1} {E : Type u_2}
+  [Fintype m] [DecidableEq m] {A : Set E} {J : E → EReal}
+  {Xi : E → ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star : E} {P : Matrix m m ℝ}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hP : P.PosSemidef)
+  (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star)
+  (hfinite :
+    ∀ᶠ (T : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)) in nhds B,
+      SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive T ≠ ⊥)
+  (hd :
+    HasFDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+            T).toReal)
+      d B) :
+  P = SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix ↑(-d) ∧
+    ∀ (H : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)), (P * ↑H).trace = -d H
+SbtCosmo.Derivation.MatrixPriceSensitivity.certificate_matrix_unique.{u_1, u_2} {m : Type u_1} {E : Type u_2}
+  [Fintype m] [DecidableEq m] {A : Set E} {J : E → EReal}
+  {Xi : E → ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star other : E} {P Q : Matrix m m ℝ}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hP : P.PosSemidef) (hQ : Q.PosSemidef)
+  (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hc :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star)
+  (ho :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice Q) other)
+  (hfinite :
+    ∀ᶠ (T : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)) in nhds B,
+      SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive T ≠ ⊤ ∧
+        SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive T ≠ ⊥)
+  (hd :
+    HasFDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+            T).toReal)
+      d B) :
+  P = Q
+SbtCosmo.Derivation.MatrixPriceSensitivity.slater_price_identification.{u_1, u_2} {m : Type u_1} {E : Type u_2}
+  [Fintype m] [AddCommGroup E] [Module ℝ E] {A : Set E} {J : E → EReal}
+  {Xi : E → ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ : E} {P : Matrix m m ℝ}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hbottom : ∀ x ∈ A, J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph A J))
+  (hXi : SbtCosmo.Derivation.GeneralMatrixPrice.LoewnerConvexOn A Xi)
+  (hc :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+      B (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤) (hslater : (↑B - ↑(Xi x₀)).PosDef)
+  (hd :
+    HasFDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+            T).toReal)
+      d B) :
+  SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P = -d
+SbtCosmo.Derivation.MatrixSensitivityStationarity.matrix_stationarity.{u_1, u_2} {m : Type u_1} {E : Type u_2}
+  [Fintype m] [DecidableEq m] [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E}
+  {J : E → EReal} {Xi : E → ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ xr : E} {Xi' : E →L[ℝ] Matrix m m ℝ}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A) (hXi : SbtCosmo.Derivation.GeneralMatrixPrice.LoewnerConvexOn A Xi)
+  (hderiv : HasFDerivAt (fun x => ↑(Xi x)) Xi' star)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive B
+      star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤) (hslater : (↑B - ↑(Xi x₀)).PosDef)
+  (hd :
+    HasFDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+            T).toReal)
+      d B)
+  (hsensitive : ∃ H, SbtCosmo.Derivation.MatrixClosurePrice.positive H ∧ d H < 0) :
+  ∃ P q η,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P = -d ∧
+          P = SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix ↑(-d) ∧
+            (∀ (H : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)), (P * ↑H).trace = -d H) ∧
+              SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+                SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧
+                  q + (SbtCosmo.Derivation.SchurDifferential.traceAdjoint Xi') P + η = 0 ∧
+                    (P * (↑(Xi star) - ↑B)).trace = 0 ∧
+                      SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi
+                          SbtCosmo.Derivation.MatrixClosurePrice.positive B
+                          (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star ∧
+                        SbtCosmo.Derivation.ExtendedConeClosurePrice.dualValue A J Xi B
+                              (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) =
+                            SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi
+                              SbtCosmo.Derivation.MatrixClosurePrice.positive B ∧
+                          SbtCosmo.Derivation.ExtendedConeClosurePrice.dualValue A J Xi B
+                                (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) ≠
+                              ⊤ ∧
+                            SbtCosmo.Derivation.ExtendedConeClosurePrice.dualValue A J Xi B
+                                (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) ≠
+                              ⊥
+SbtCosmo.Derivation.MatrixSensitivityStationarity.matrix_nonsmooth_stationarity.{u_1, u_2} {m : Type u_1} {E : Type u_2}
+  [Fintype m] [DecidableEq m] [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] {A : Set E}
+  {J : E → EReal} {Xi : E → ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)}
+  {B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)} {star x₀ xr : E}
+  {d : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m) →L[ℝ] ℝ} (hbottom : ∀ (x : E), J x ≠ ⊥)
+  (hJ : Convex ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.epigraph Set.univ J)) (hA : Convex ℝ A)
+  (hC : xr ∈ intrinsicInterior ℝ (SbtCosmo.Derivation.ExtendedClosurePrice.finiteDomain Set.univ J))
+  (hAr : xr ∈ intrinsicInterior ℝ A) (hXi : SbtCosmo.Derivation.GeneralMatrixPrice.LoewnerConvexOn Set.univ Xi)
+  (hstar :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive B
+      star)
+  (hx₀ : x₀ ∈ A) (hfinite₀ : J x₀ ≠ ⊤) (hslater : (↑B - ↑(Xi x₀)).PosDef)
+  (hd :
+    HasFDerivAt
+      (fun T =>
+        (SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi SbtCosmo.Derivation.MatrixClosurePrice.positive
+            T).toReal)
+      d B)
+  (hsensitive : ∃ H, SbtCosmo.Derivation.MatrixClosurePrice.positive H ∧ d H < 0) :
+  ∃ P q k η,
+    P.PosSemidef ∧
+      P ≠ 0 ∧
+        SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P = -d ∧
+          P = SbtCosmo.Derivation.MatrixPriceRepresentation.priceMatrix ↑(-d) ∧
+            (∀ (H : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric m)), (P * ↑H).trace = -d H) ∧
+              SbtCosmo.Derivation.ConvexSubgradient.Subgradient J star q ∧
+                SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient (fun x => (P * ↑(Xi x)).trace) star k ∧
+                  SbtCosmo.Derivation.ConvexSubgradient.NormalCone A star η ∧
+                    q + k + η = 0 ∧
+                      (P * (↑(Xi star) - ↑B)).trace = 0 ∧
+                        SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate A J Xi
+                            SbtCosmo.Derivation.MatrixClosurePrice.positive B
+                            (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star ∧
+                          SbtCosmo.Derivation.ExtendedConeClosurePrice.dualValue A J Xi B
+                              (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) =
+                            SbtCosmo.Derivation.ExtendedConeClosurePrice.value A J Xi
+                              SbtCosmo.Derivation.MatrixClosurePrice.positive B
+SbtCosmo.Derivation.MatrixSensitivityExamples.actual_optimizer :
+  SbtCosmo.Derivation.ExtendedConeClosurePrice.PrimalOptimum Set.univ
+    SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective SbtCosmo.Derivation.MatrixClosurePriceExamples.energy
+    SbtCosmo.Derivation.MatrixClosurePrice.positive (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1) 1
+SbtCosmo.Derivation.MatrixSensitivityExamples.actual_slater :
+  (↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1) -
+      ↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.energy 0)).PosDef
+SbtCosmo.Derivation.MatrixSensitivityExamples.actual_schur_derivative :
+  HasFDerivAt (fun x => ↑(SbtCosmo.Derivation.MatrixClosurePriceExamples.energy x))
+    (2 • SbtCosmo.Derivation.GeneralMatrixExamples.matrixScalar) 1
+SbtCosmo.Derivation.MatrixSensitivityExamples.tracePrice_one :
+  SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice 1 = SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate
+SbtCosmo.Derivation.MatrixSensitivityExamples.actual_price_identified {P : Matrix (Fin 1) (Fin 1) ℝ} {star : ℝ}
+  (hP : P.PosSemidef)
+  (hc :
+    SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate Set.univ
+      SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective SbtCosmo.Derivation.MatrixClosurePriceExamples.energy
+      SbtCosmo.Derivation.MatrixClosurePrice.positive (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1)
+      (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice P) star) :
+  P = 1
+SbtCosmo.Derivation.MatrixSensitivityExamples.actual_same_price_stationarity :
+  ∃ q η,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective 1 q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.NormalCone Set.univ 1 η ∧
+        q +
+                (SbtCosmo.Derivation.SchurDifferential.traceAdjoint
+                    (2 • SbtCosmo.Derivation.GeneralMatrixExamples.matrixScalar))
+                  1 +
+              η =
+            0 ∧
+          SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate Set.univ
+              SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+              SbtCosmo.Derivation.MatrixClosurePriceExamples.energy SbtCosmo.Derivation.MatrixClosurePrice.positive
+              (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1)
+              (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice 1) 1 ∧
+            SbtCosmo.Derivation.ExtendedConeClosurePrice.dualValue Set.univ
+                SbtCosmo.Derivation.ExtendedClosurePriceExamples.objective
+                SbtCosmo.Derivation.MatrixClosurePriceExamples.energy
+                (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 1)
+                (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice 1) =
+              1
+SbtCosmo.Derivation.MatrixSensitivityExamples.antisymmetric_price_control :
+  have A := !![0, 1; -1, 0];
+  A ≠ 0 ∧ SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice A = 0
+SbtCosmo.Derivation.MatrixSensitivityExamples.one_direction_control :
+  have P := Matrix.diagonal ![1, 0];
+  have Q := Matrix.diagonal ![1, 1];
+  have H := Matrix.diagonal ![1, 0];
+  P.PosSemidef ∧ Q.PosSemidef ∧ H.PosSemidef ∧ P ≠ Q ∧ (P * H).trace = (Q * H).trace
+SbtCosmo.Derivation.MatrixSensitivityExamples.kink_matrix_feasible
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) (x : ℝ × ℝ) :
+  SbtCosmo.Derivation.MatrixClosurePrice.positive (B - SbtCosmo.Derivation.GeneralMatrixExamples.kinkMatrix x) ↔
+    SbtCosmo.Derivation.ScalarStationarityExamples.kinkEnergy x ≤
+      SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate B
+SbtCosmo.Derivation.MatrixSensitivityExamples.kink_actual_value
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) :
+  SbtCosmo.Derivation.ExtendedConeClosurePrice.value Set.univ
+      SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective SbtCosmo.Derivation.GeneralMatrixExamples.kinkMatrix
+      SbtCosmo.Derivation.MatrixClosurePrice.positive B =
+    ↑(-SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate B)
+SbtCosmo.Derivation.MatrixSensitivityExamples.kink_value_derivative
+  (B : ↥(SbtCosmo.Derivation.MatrixPriceRepresentation.Symmetric (Fin 1))) :
+  HasFDerivAt
+    (fun T =>
+      (SbtCosmo.Derivation.ExtendedConeClosurePrice.value Set.univ
+          SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+          SbtCosmo.Derivation.GeneralMatrixExamples.kinkMatrix SbtCosmo.Derivation.MatrixClosurePrice.positive
+          T).toReal)
+    (-SbtCosmo.Derivation.MatrixClosurePriceExamples.coordinate) B
+SbtCosmo.Derivation.MatrixSensitivityExamples.actual_nonsmooth_same_price_stationarity :
+  ∃ q k η,
+    SbtCosmo.Derivation.ConvexSubgradient.Subgradient SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+        (0, 0) q ∧
+      SbtCosmo.Derivation.ConvexSubgradient.RealSubgradient
+          (fun x => (1 * ↑(SbtCosmo.Derivation.GeneralMatrixExamples.kinkMatrix x)).trace) (0, 0) k ∧
+        SbtCosmo.Derivation.ConvexSubgradient.NormalCone Set.univ (0, 0) η ∧
+          q + k + η = 0 ∧
+            SbtCosmo.Derivation.ExtendedConeClosurePrice.DualCertificate Set.univ
+                SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+                SbtCosmo.Derivation.GeneralMatrixExamples.kinkMatrix SbtCosmo.Derivation.MatrixClosurePrice.positive
+                (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 0)
+                (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice 1) (0, 0) ∧
+              SbtCosmo.Derivation.ExtendedConeClosurePrice.dualValue Set.univ
+                  SbtCosmo.Derivation.ScalarStationarityExamples.kinkObjective
+                  SbtCosmo.Derivation.GeneralMatrixExamples.kinkMatrix
+                  (SbtCosmo.Derivation.MatrixClosurePriceExamples.budget 0)
+                  (SbtCosmo.Derivation.GeneralMatrixPrice.tracePrice 1) =
+                0

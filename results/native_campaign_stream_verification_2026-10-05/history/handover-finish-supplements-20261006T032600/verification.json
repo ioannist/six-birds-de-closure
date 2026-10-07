@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-06T03:26:00.702673+00:00",
+  "live_pids": [
+    3164894,
+    3241065,
+    4046958,
+    4054594,
+    4054600
+  ],
+  "qualified_modules": 1357,
+  "retained_modules": 993,
+  "revalidated_union_inputs": 10720,
+  "entrypoints": {
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py": "d6f9ee60dc8f9d1fcaf6f1adfe985cbaa18b626bc884061ef0914b8523a9ee29",
+    "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05/build_recovery.py": "4855d03d90a7432c6b2a4fb579240282541dbd9a572358e0a00ceccea8dfbf79",
+    "/tmp/de_native_campaign_semantic_aggregate_recovery_2026-10-06/finish_recovery.py": "fd0b750c442af7a799d2d1ae5ce8479b8528bf95cb0241f09c5fe52a5e430b9e",
+    "/tmp/de_native_additional_constructions_aggregate_recovery_2026-10-06/build_recovery.py": "0577096f498274e8c668d3d07787967db7804c2fa1b7bc2b4fe846eec875f34c",
+    "/tmp/de_source_execution_supplement_aggregate_recovery_2026-10-06/build_recovery.py": "ea1efc024c2da78e814bfffd1d69b451c24b9c3c5b9ea01d29e70cd8e50ad3ce"
+  },
+  "handover_sha256": "86f12648126f6b2969e38c30eb39160fa3ff78793d44856f37cd99bfaadd99a7"
+}

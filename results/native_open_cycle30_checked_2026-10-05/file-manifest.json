@@ -1,0 +1,17 @@
+{
+  "README.md": "3ab7643127d11f63860d5bc1531d28bd9d24b6dce974d6cef8bcb3390ae4f308",
+  "archive-manifest.json": "2a17f6020691434169f5a2fd40eb752d44a862fa3be29f81b314fdd2a4d38bd3",
+  "audit-summary.json": "6f32da6c9ca14c1f1c89c28159b0490a71e686b524440ecec0425c668a59ac40",
+  "checked_artifacts.tar.gz": "70ac6b02b51b5b6c9120713fcba48d4449e47fff1ac5c769aed7a087de493edb",
+  "checkpoint-verification.json": "ac4e35630df838d238dfb3a1013337c5b6087d3925bb1aac412e4f0f4d4a1519",
+  "handover.md": "50bcc735310b2907d89dceff1d617ee5ada30609bc2ba5ab1f9b3ffacaf4ae4e",
+  "lean/SbtCosmo/Derivation/GroundNativeCouplingContinuation.lean": "3b76bcabbc11c4912e7e0a2ed467e19df01a17e43e932e2fb51846b63e666c83",
+  "lean/SbtCosmo/Derivation/GroundNativeCouplingSmooth.lean": "c745492db8d08fee80be2e0093ce62ddbd731c783a45d740badd5ef993279843",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30Baseline.lean": "afccab23dfce92bc91c7477d64c0e461e2ca5434f186b2db9bbc8610fffc17fc",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenDiagnostics.lean": "5df6095f51cfd225a24f324805f6512b4bc24b7565cb950f800d1a076f95b0c2",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30OpenReturn.lean": "04be092be1d4373dd0e6ba0a9c80643a6c810adba8e774123bd10dfad3977fc3",
+  "lean/SbtCosmo/Derivation/GroundParametricSeedTargetReturn.lean": "c0a4d3f6026e1526ffec8329eb16be7f36a456d1fcd955ea5aaabd724ae0cad2",
+  "math-review.md": "8d7705a726467801009547572924e77d60ed3689390da5863328651324a0a962",
+  "registration-plan.json": "fe1b5ac98a200c87b77c8b3775e5fad7324a3c136d71220fbf718d024d218f95",
+  "source-bindings.json": "62f8cd0e714b3b9e68d47fc544ec121fff59d67573b4c26e253a68bd0fa21cee"
+}

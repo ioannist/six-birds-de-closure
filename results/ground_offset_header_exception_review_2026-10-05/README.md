@@ -1,0 +1,1 @@
+Actual proposed namespace/header exception accepts precisely20 bound repairs and rejects11 missing, altered or unrelated changes. Two documented in-memory read adapters expose proposed registered bytes. The new registered11776 receipt block is deliberately excluded from this exception-only review: no registered command or full success path is claimed.

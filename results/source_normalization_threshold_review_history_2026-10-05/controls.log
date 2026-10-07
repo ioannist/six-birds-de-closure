@@ -1,0 +1,26 @@
+/tmp/de_source_normalization_threshold_controls.lean:14:86: error: unsolved goals
+⊢ complexNormalize 0 = 0
+/tmp/de_source_normalization_threshold_controls.lean:15:32: error: This simp argument is unused:
+  complexNormalize
+
+Hint: Omit it from the simp argument list.
+  simp [attempt, complexNormSq,̵ ̵c̵o̵m̵p̵l̵e̵x̵N̵o̵r̵m̵a̵l̵i̵z̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+SourceNormalizationThresholdReview.negative_threshold_accepts_zero : attempt (-1) 0 = some 0
+'SourceNormalizationThresholdReview.negative_threshold_accepts_zero' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+SourceNormalizationThresholdReview.accepted_zero_is_not_unit : complexNormSq 0 ≠ 1
+'SourceNormalizationThresholdReview.accepted_zero_is_not_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SourceNormalizationThresholdReview.zero_threshold_rejects_zero : attempt 0 0 = none
+'SourceNormalizationThresholdReview.zero_threshold_rejects_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SourceNormalizationThresholdReview.unit_at_threshold_one_is_rejected : attempt 1 basis = none
+'SourceNormalizationThresholdReview.unit_at_threshold_one_is_rejected' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

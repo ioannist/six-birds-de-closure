@@ -1,0 +1,50 @@
+Adversarial self-review of the original-seed native prefix at coupling .3.
+This is not independent review.
+
+Target: a concrete guarded native prefix from the frozen original initialization
+at the actual original coupling and threshold, with whole selector, source,
+phase and normalization semantics retained. The larger goal needs basin entry,
+infinite positive-coupling convergence and finite original source tests.
+
+Premise trace:
+* Frozen input/data identity and both initialization normalizations are inherited
+  from immutable earlier source/seed checks. New initial reciprocal bounds
+  enclose the actual exact initialization; no floating normalization is assumed.
+* Actual pairSource for every field in a box is enclosed by its full sourceBox,
+  including real and imaginary gradients and background density terms.
+* Uniform polynomial bordered Newton bounds enclose positive groundPair of every
+  potential in that source box. Positive-root uniqueness and the energy identity
+  identify the actual selector. Midpoint roots/preconditioners are proposals only.
+* Both inverse-square-root witnesses have positive input/lower/upper endpoints
+  and whole-interval squared budgets. Threshold guards are derived before using
+  the unchanged active native phase and native normalization bridge.
+* Sixteen complete numeric certificate records populate every field, and finite
+  seam checks connect them to induction on the actual native orbit. Unit norm is
+  returned from legal normalization, not assumed for the input state boxes.
+* The endpoint target is the negative actual whole-continuation branch root,
+  enclosed independently by the immutable Point002 thin-root certificate.
+  Componentwise interval bounds return State infinity-coordinate distance.
+
+Adversarial boundaries:
+* Uniform potential quantification is retained; no single floating eigenpair is
+  treated as a proof of all selectors in a state box.
+* The source's erroneous conjugate phase remains unchanged. Exact activity is
+  earned at every prefix step; fallback behavior is not silently corrected.
+* The endpoint has no supplied residual, basin, derivative or orbit premises.
+* A zero reciprocal witness violates positivity and a zero preconditioner fails
+  the actual defect row. These are mathematical operation controls.
+* Sixteen legal steps and nearness below1e-5 do not return an infinite trajectory,
+  a known attraction radius or the four 60-step source tests at positive coupling.
+* State sup-coordinate norm is not identified with Euclidean norm or with the
+  non-isometric pack/unpack continuous linear equivalence.
+* NumPy proposals, exact Fraction replay and Lean kernel arithmetic have distinct
+  roles. Fresh theorem statement/axiom receipts and the full current build are
+  required by the verifier before this packet is accepted.
+* Only the fresh65-declaration axiom suffix is rerun; the immutable2815-declaration
+  audit prefix is retained under proof-source/toolchain identity checks. A full
+  cumulative command rerun is not claimed.
+
+Disposition: the finite path construction is suitable for the next explicit
+quantitative neighborhood/basin construction. Whole-paper coverage, IEEE
+execution,18 offset kernel instances and the parked false/project-sized targets
+remain incomplete. Paper and original runtime are unchanged.

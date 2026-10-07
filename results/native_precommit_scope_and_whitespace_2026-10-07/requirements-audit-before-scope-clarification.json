@@ -1,0 +1,88 @@
+{
+  "utc": "2026-10-07T11:30:58.213548+00:00",
+  "review": "Adversarial self-review; not independent human review",
+  "phase": "Precommit completion audit",
+  "requirements": [
+    {
+      "requirement": "Commit state before review",
+      "status": "passed",
+      "evidence_commit": "6a71e6c6b6be6dca126fa22f45c10c6367a415e5"
+    },
+    {
+      "requirement": "Review and repair mathematics; preserve defensible strength",
+      "status": "passed_for_agreed_model_scope",
+      "evidence": "Current original-claim coverage plus theorem-specific review notes and formal source snapshot; contradicted/project-sized interpretations explicitly scoped below"
+    },
+    {
+      "requirement": "Registered Lean integration and build",
+      "status": "passed",
+      "registered_native_modules": 1772,
+      "registered_source_targets": 1786,
+      "actual_build_jobs": 11775,
+      "evidence": "Final registered archive/build-terminal.json"
+    },
+    {
+      "requirement": "Actual theorem statements and transitive axioms",
+      "status": "passed",
+      "native_statement_checks": 20798,
+      "cumulative_axiom_checks": 32574,
+      "standard_axioms_only": true,
+      "evidence": "Final registered statement/axiom logs, zero command receipts and verification.json"
+    },
+    {
+      "requirement": "No proof-object installation or fabricated success",
+      "status": "passed",
+      "evidence": "Source-only installation receipts, exact current source/object snapshots, genuine exec40823 exit0, collector exec41315 exit0, and retained interrupted auxiliary history; final receipt archive contains no proof objects"
+    },
+    {
+      "requirement": "Adopt all-deterministic-mediators strengthening",
+      "status": "passed",
+      "evidence": "AccessFork.joint_mediator_iff_full_state and joint_mediator_iff_injective; no four-field or four-dimensional interpretation"
+    },
+    {
+      "requirement": "Respect agreed physical-frame scope boundary",
+      "status": "satisfied_by_explicit_user_scope_decision",
+      "evidence": "PHYSICAL_INTERPRETATION_SCOPE_2026-10-05.md; no physical Lambda explanation, intrinsic contingency, universal no-value law or physical ghost claim"
+    },
+    {
+      "requirement": "Address withdrawn Three Stones sweep and generation imports",
+      "status": "passed",
+      "evidence": "Dependency-withdrawal note and current four coverage documents; corrected local website source and successful local Astro build; no public deployment or paper revision claimed"
+    },
+    {
+      "requirement": "Preserve paper and original runtime",
+      "status": "passed",
+      "evidence": "Current tracked diff versus b58ad72 is empty for paper/top-level TeX and original package/config/experiment/test/data/script sources"
+    },
+    {
+      "requirement": "Retain failed and interrupted histories honestly",
+      "status": "passed",
+      "evidence": "Earlier guard/stack/checker histories and auxiliary exec12765 actual1 with Lake\u221215 remain preserved; partial228-certificate readback is not a successful299-certificate batch"
+    },
+    {
+      "requirement": "Final commit and clean worktree",
+      "status": "pending_at_this_precommit_capture",
+      "evidence": "Next authorized action"
+    }
+  ],
+  "evidence_sha256": {
+    "results/native_registered_final_verification_2026-10-06/verification.json": "4bd8005b90eca017c65368c7ce9796ab7467ff1f85fe2c9976b02abbdb9c25d9",
+    "results/native_registered_final_verification_2026-10-06/archive-readback.json": "83bb9be9ffe1a633d505581012709bc589aedc580e2b6ed27966c219dd5e75b9",
+    "results/native_registered_final_verification_2026-10-06/actual-exec-result.json": "978d0edef92e1e82e5cfbfde6b471cfdda802cad7ac10b18bab01b734a5110f6",
+    "math/ORIGINAL_CLAIM_COVERAGE_2026-10-02.md": "a9154229b938236520221b719cb79f8a1dff34c3079989de321eb80c1303b773",
+    "math/PHYSICAL_INTERPRETATION_SCOPE_2026-10-05.md": "183713d6d11f2a64ce3832901011cf57f1d37227f5e286b35e698fc0b33206f5",
+    "math/THREE_STONES_DEPENDENCY_WITHDRAWALS_2026-10-07.md": "6690b4ffb19d172d767f8efa62e16bdb451f551bb590c5122203030698205f80",
+    "math/ACCESS_FORK_PROOFS_2026-10-02.md": "58f85e1035ed567042ada258c61b14a3f6005894ad4985407516f87cbcdad4d3",
+    "results/ground_offset_transport_2026-10-04/verification.json": "7198df31d1c365aebda65554806bb279f3ee2f6d9f207003ef5ec33139156e12",
+    "lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean": "0891df2ad655b9a65e09d4707bac62bdbd41e7891d0340748ebaad4cb78b4f83",
+    "lean/SbtCosmo/Derivation/AccessFork.lean": "e9372ac85a3ee3e317a25de63650f1ebcb64dba4c0a971c20f116dcd9150e63b"
+  },
+  "source_snapshot_entries": 3874,
+  "original_unrevised_paper_substantially_supported_in_full": false,
+  "withdrawn_dependencies_restored": false,
+  "future_paper_editorial_return": "Required in later user-designated phase; paper intentionally untouched here",
+  "required_work_remaining_at_capture": [
+    "Commit verified math/Lean/coverage/evidence and inspect committed tree/worktree"
+  ],
+  "goal_complete": false
+}

@@ -1,0 +1,142 @@
+{
+  "attestation": "results/E4/blind/E4_BLINDING_ATTESTATION.json",
+  "blinding_status": "blind",
+  "contains_h0_values": false,
+  "contract": "plan/E4_PREDICT_CONTRACT.md",
+  "phase": "A_version_manifest_no_values",
+  "routes": [
+    {
+      "arxiv": [
+        {
+          "id": "1807.06209",
+          "version_or_date": "Planck 2018"
+        },
+        {
+          "id": "2503.14738",
+          "version_or_date": "DESI DR2 sealed-spec current"
+        }
+      ],
+      "covariance_source_availability": "available from Phase-B Planck/DESI covariance or committed E1 compressed covariance; no values in Phase A",
+      "decisive_without_time_delay": true,
+      "determination": "Planck 2018 base-LCDM anchor with DESI DR2 BAO route structure",
+      "include": true,
+      "role": "headline",
+      "route_family": "CMB->BAO",
+      "route_id": "cmb_bao",
+      "summary_only": false
+    },
+    {
+      "arxiv": [
+        {
+          "id": "2503.14738",
+          "version_or_date": "DESI DR2 sealed-spec current"
+        }
+      ],
+      "covariance_source_availability": "derived from committed E1 summaries in Phase B; no values in Phase A",
+      "decisive_without_time_delay": true,
+      "determination": "DESI DR2 BAO + BBN/inverse-ladder route derived from committed E1 inputs",
+      "include": true,
+      "role": "headline",
+      "route_family": "inverse_ladder",
+      "route_id": "inverse_ladder",
+      "summary_only": false
+    },
+    {
+      "arxiv": [
+        {
+          "id": "2509.01667",
+          "version_or_date": "sealed-spec current"
+        }
+      ],
+      "covariance_source_availability": "published summary covariance and shared SN/M_B covariance to be unlocked by Phase B",
+      "decisive_without_time_delay": true,
+      "determination": "SH0ES JWST+HST Cepheid-to-SN route",
+      "include": true,
+      "role": "headline",
+      "route_family": "Cepheid->SN",
+      "route_id": "cepheid_sn",
+      "summary_only": true
+    },
+    {
+      "arxiv": [
+        {
+          "id": "2408.06153",
+          "version_or_date": "sealed-spec pinned CCHP version"
+        }
+      ],
+      "covariance_source_availability": "published stat/sys/SN covariance components to be unlocked by Phase B",
+      "decisive_without_time_delay": true,
+      "determination": "CCHP JWST TRGB-to-SN route",
+      "include": true,
+      "role": "headline",
+      "route_family": "TRGB->SN",
+      "route_id": "trgb_sn",
+      "summary_only": true
+    },
+    {
+      "arxiv": [
+        {
+          "id": "2408.06153",
+          "version_or_date": "sealed-spec pinned CCHP version"
+        }
+      ],
+      "covariance_source_availability": "published stat/sys covariance components to be unlocked by Phase B",
+      "decisive_without_time_delay": true,
+      "determination": "CCHP JWST-only TRGB-to-SN route variant",
+      "include": true,
+      "role": "variant",
+      "route_family": "JWST_TRGB->SN",
+      "route_id": "jwst_trgb_sn",
+      "summary_only": true
+    },
+    {
+      "arxiv": [
+        {
+          "id": "2408.06153",
+          "version_or_date": "sealed-spec pinned CCHP version"
+        }
+      ],
+      "covariance_source_availability": "published stat/sys covariance components to be unlocked by Phase B",
+      "decisive_without_time_delay": true,
+      "determination": "CCHP JWST JAGB-to-SN route",
+      "include": true,
+      "role": "headline",
+      "route_family": "JAGB->SN",
+      "route_id": "jagb_sn",
+      "summary_only": true
+    },
+    {
+      "arxiv": [
+        {
+          "id": "2506.03023",
+          "version_or_date": "2025 headline sealed-spec current"
+        }
+      ],
+      "covariance_source_availability": "posterior family/model-dependence covariance to be unlocked by Phase B",
+      "decisive_without_time_delay": false,
+      "determination": "TDCOSMO 2025 strong-lens time-delay route",
+      "include": true,
+      "role": "headline_time_delay",
+      "route_family": "time_delay",
+      "route_id": "time_delay",
+      "summary_only": true
+    },
+    {
+      "arxiv": [
+        {
+          "id": "1709.05895",
+          "version_or_date": "sealed-spec current"
+        }
+      ],
+      "covariance_source_availability": "asymmetric posterior covariance to be unlocked by Phase B",
+      "decisive_without_time_delay": true,
+      "determination": "GW170817 standard-siren route",
+      "include": true,
+      "role": "headline",
+      "route_family": "standard_siren",
+      "route_id": "siren",
+      "summary_only": true
+    }
+  ],
+  "schema_version": 1
+}

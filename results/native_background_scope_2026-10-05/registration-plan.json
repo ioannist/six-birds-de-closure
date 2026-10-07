@@ -1,0 +1,15 @@
+{
+  "modules": [
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift"
+  ],
+  "names": [
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift",
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference",
+    "SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant"
+  ],
+  "new_modules": 1,
+  "new_names": 3,
+  "source": "lean/SbtCosmo/Derivation/GroundNativeBackgroundShift.lean",
+  "registered": false,
+  "gate": "Only after existing source-freezing campaign gates finish; immutable campaign plans remain unchanged."
+}

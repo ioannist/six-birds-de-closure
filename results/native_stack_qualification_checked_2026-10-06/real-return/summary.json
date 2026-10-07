@@ -1,0 +1,21 @@
+{
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "module_count": 4,
+  "fresh_statement_count": 6,
+  "fresh_axiom_count": 6,
+  "names": [
+    "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.real_even_odd_limits_of_entry",
+    "SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.limits_real_of_entry",
+    "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.real_even_odd_limits_of_entry",
+    "SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.limits_real_of_entry",
+    "SbtCosmo.Derivation.NativeCycleSeed20.RealReturn.original_seed_cycle_real",
+    "SbtCosmo.Derivation.NativeCycleSeed30.RealReturn.original_seed_cycle_real"
+  ],
+  "plan_sha256": "0d63f4a641799b337884f1ca2fd92e04b371cdc83edee2fc39c3996ca9b651dc",
+  "source_freeze_sha256": "3f9f17a69e575c83694a4515e7f6111c9702b49a234c283b6a873e788d51890a",
+  "parent_summary_sha256": "de9474e23fcbf07eec717eae7e073610f038f2787609a2d4a71f3f4ea4b9d12c",
+  "seed_summary_sha256": "42caf3c6c1f4f8a1c5fd8a6628d9f98fbe4683a74540f84b36fc737a7376049d",
+  "parent_module_receipts_sha256": "98df9d3eb8d139250ec1ac92537c94ab301a5e268db34f28a9a872ea260530b3",
+  "scope": "Fresh separate supplemental qualified proofs of exactly-real original-seed cycle returns at20/30. Four modules and six checks supplement, without altering, the completed1734-module/20628-check parent. Repository integration and commit still pending."
+}

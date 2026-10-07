@@ -1,0 +1,7 @@
+{
+  "terminal_exit_code": 1,
+  "session": 68379,
+  "source_sha256": "90f3702efb9807f958358a65a8c00dc0c152461e168a5aeb0fb7d7d60ab7a893",
+  "log_sha256": "804be628df2a53976f6db0301276b96e2ef830bfef4e99aafc80e24a9befaee6",
+  "failure": "Two elaboration repairs required: refolding complexNormSq definition and additive inequality orientation; mathematical bound unchanged"
+}

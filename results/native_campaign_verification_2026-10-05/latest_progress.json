@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-05T01:16:46.618357+00:00",
+  "latest_log_lines": {
+    "de-offset-transport-leaves-resume-driver-retry": [
+      "resumed leaves GroundOffsetTransport.Point010.Step006 terminal 0 completed 270 /421",
+      "resumed leaves GroundOffsetTransport.Point010.Step007 terminal 0 completed 271 /421"
+    ],
+    "de-native-cycle-seed-leaves-driver": [
+      "NativeCycleSeed20Step123 terminal 0 completed 247 /472",
+      "NativeCycleSeed20Step122 terminal 0 completed 248 /472"
+    ],
+    "de-native-cycle-seed-pairs-driver": [
+      "NativeCycleSeed20Pair060 terminal 0 completed 122 /236",
+      "NativeCycleSeed30Pair061 terminal 0 completed 123 /236"
+    ],
+    "de-native-stable-seed-leaves-driver": [
+      "NativeStableSeed003Step009 terminal 0 scheduled completed 69 /597",
+      "NativeStableSeed003Step010 terminal 0 scheduled completed 70 /597"
+    ],
+    "de-native-stable-seed-pairs-driver": [
+      "NativeStableSeed003Pair002 terminal 0",
+      "NativeStableSeed003Pair003 terminal 0"
+    ],
+    "de-native-stable-seed-families-driver": [
+      "NativeStableSeed001Transport terminal 0",
+      "NativeStableSeed001Audit terminal 0"
+    ],
+    "de-native-stable-seed-sixty-driver": [
+      "NativeStableSeed001Sixty terminal 0",
+      "NativeStableSeed001SixtyAudit terminal 0"
+    ],
+    "de-native-campaign-verification-finish-driver": [
+      "Final verification driver PID 538092 waiting for both qualified proof campaigns; frozen inputs 5669"
+    ]
+  },
+  "source_gate_passed": true,
+  "qualified_gate_completed": false,
+  "registered_campaign": false,
+  "goal_complete": false,
+  "frozen_inputs": 5669,
+  "final_verifier_driver_pid": 538092,
+  "final_verifier_session": 15239
+}

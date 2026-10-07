@@ -1,0 +1,16 @@
+schema_version: 1
+experiment: E1
+plan: plan/experiments/E1-desi-dr2-reproduction.md
+seed:
+  numpy: 4242
+  python: 7
+  sampler: 1337
+datasets:
+  - DESI_DR2_BAO
+  - PLANCK_2018
+  - PANTHEON_PLUS
+models:
+  - lcdm
+  - wcdm
+  - w0wa
+status: skeleton_only_c0a

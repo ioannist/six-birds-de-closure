@@ -1,0 +1,11 @@
+import SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn
+import SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn
+import SbtCosmo.Derivation.NativeCycleSeed20.RealReturn
+import SbtCosmo.Derivation.NativeCycleSeed30.RealReturn
+set_option warningAsError true
+#check SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.real_even_odd_limits_of_entry
+#check SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.limits_real_of_entry
+#check SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.real_even_odd_limits_of_entry
+#check SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.limits_real_of_entry
+#check SbtCosmo.Derivation.NativeCycleSeed20.RealReturn.original_seed_cycle_real
+#check SbtCosmo.Derivation.NativeCycleSeed30.RealReturn.original_seed_cycle_real

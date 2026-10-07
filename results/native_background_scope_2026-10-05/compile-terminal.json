@@ -1,0 +1,16 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-R",
+    "/tmp/de_native_background_shift/lean",
+    "-o",
+    "/tmp/de_native_background_shift/objects/SbtCosmo/Derivation/GroundNativeBackgroundShift.olean",
+    "/tmp/de_native_background_shift/lean/SbtCosmo/Derivation/GroundNativeBackgroundShift.lean"
+  ],
+  "source_sha256": "a2a6b829c183101d2a3df6c1275f999a73c42be24d996723a48a07e965b7d830",
+  "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "object_sha256": "17e31aac6fdef73c28a276807abec95388a03c76f05abb7c037f13f1de50162d"
+}

@@ -1,0 +1,17 @@
+{
+  "module": "SbtCosmo.Derivation.GroundOriginalCycle30FiniteAttractorLanding",
+  "terminal_exit_code": 0,
+  "source_sha256": "145308f3933faec58baa57ce3f3827bd63e6a3245892673d91b85cc9cecef40f",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "command": [
+    "/home/ioannis/.elan/toolchains/leanprover--lean4---v4.28.0/bin/lean",
+    "-s",
+    "65536",
+    "-R",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean",
+    "-o",
+    "/tmp/de_native_additional_constructions_stack_recovery_2026-10-06/objects/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.olean",
+    "/home/repos/six-birds-de-closure/results/native_additional_constructions_candidate_2026-10-05/lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.lean"
+  ],
+  "object_sha256": "651ce0f3d4b3b7ff0df746a5137689d119c0e57cba652c6cb55ed3d9c33ad2fd"
+}

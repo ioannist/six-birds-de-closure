@@ -1,0 +1,33 @@
+import SbtCosmo.Derivation.MatrixDifferential
+import SbtCosmo.Derivation.SchurDifferential
+import SbtCosmo.Derivation.SchurAdjointStationarity
+import SbtCosmo.Derivation.SchurDifferentialExamples
+
+#print axioms SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_mul
+#print axioms SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_transpose
+#print axioms SbtCosmo.Derivation.MatrixDifferential.hasFDerivAt_tracePair
+#print axioms SbtCosmo.Derivation.SchurDifferential.jacobian_apply
+#print axioms SbtCosmo.Derivation.SchurDifferential.complement_transpose
+#print axioms SbtCosmo.Derivation.SchurDifferential.jacobian_symmetric
+#print axioms SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_residual
+#print axioms SbtCosmo.Derivation.SchurDifferential.fderiv_residual
+#print axioms SbtCosmo.Derivation.SchurDifferential.traceAdjoint_pairing
+#print axioms SbtCosmo.Derivation.SchurDifferential.trace_jacobian_formula
+#print axioms SbtCosmo.Derivation.SchurDifferential.trace_jacobian_psd
+#print axioms SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_composed_residual
+#print axioms SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_composed_trace_gap
+#print axioms SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_probe
+#print axioms SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_affine_residual
+#print axioms SbtCosmo.Derivation.SchurDifferential.fderiv_affine_residual
+#print axioms SbtCosmo.Derivation.SchurDifferential.pricePullback_eq_adjoint_fderiv
+#print axioms SbtCosmo.Derivation.SchurDifferential.hasFDerivAt_trace_gap
+#print axioms SbtCosmo.Derivation.SchurDifferential.fderiv_trace_gap
+#print axioms SbtCosmo.Derivation.SchurDifferential.pricePullback_psd
+#print axioms SbtCosmo.Derivation.SchurAdjointStationarity.matrix_stationarity
+#print axioms SbtCosmo.Derivation.SchurAdjointStationarity.matrix_stationarity_nonzero
+#print axioms SbtCosmo.Derivation.SchurDifferentialExamples.singular_native_complement
+#print axioms SbtCosmo.Derivation.SchurDifferentialExamples.singular_pricePullback
+#print axioms SbtCosmo.Derivation.SchurDifferentialExamples.singular_trace_derivative
+#print axioms SbtCosmo.Derivation.SchurDifferentialExamples.missing_second_term_control
+#print axioms SbtCosmo.Derivation.SchurDifferentialExamples.price_not_hermitian
+#print axioms SbtCosmo.Derivation.SchurDifferentialExamples.nonsymmetric_price_control

@@ -1,0 +1,21 @@
+{
+  "review": "adversarial self-review",
+  "unchanged_substantive_gate_functions": [
+    "failure_proof_gate",
+    "registered",
+    "original_audit_types",
+    "original_audit_proof_gate",
+    "_parent_candidate"
+  ],
+  "unchanged_journal_functions_per_installer": 4,
+  "approved_post_install_source_changes_accepted": 18,
+  "negative_controls_rejected": [
+    "unapproved_current_source",
+    "false_historical_source_hash",
+    "unapproved_other_input"
+  ],
+  "active_freeze_gate_rejected": "Source freeze owner remains active: PID3164894 /tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py",
+  "registered_sources_changed": false,
+  "qualified_success": false,
+  "registered_success": false
+}

@@ -1,0 +1,77 @@
+{
+  "repository_registered": false,
+  "production_integration_pending": true,
+  "old_frozen_plans_unchanged": true,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundNativeCouplingContinuation",
+      "source_sha256": "3b76bcabbc11c4912e7e0a2ed467e19df01a17e43e932e2fb51846b63e666c83",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundNativeCouplingContinuation.coordinate_joint_regular_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingContinuation.coordinate_joint_guards_near",
+        "SbtCosmo.Derivation.GroundNativeCouplingContinuation.squared_joint_regular_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingContinuation.squared_joint_guards_near",
+        "SbtCosmo.Derivation.GroundNativeCouplingContinuation.source_step",
+        "SbtCosmo.Derivation.GroundNativeCouplingContinuation.source_iterate"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundNativeCouplingSmooth",
+      "source_sha256": "c745492db8d08fee80be2e0093ce62ddbd731c783a45d740badd5ef993279843",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.pairSource_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.selected_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.realOverlap_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.imagOverlap_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.overlapSq_joint_smooth",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.overlapNorm_joint_continuous",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.overlapNorm_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.aligned_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.mixed_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.fullMap_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.nativePairMap_joint_eventual_return",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.nativePairMap_joint_smooth_at",
+        "SbtCosmo.Derivation.GroundNativeCouplingSmooth.native_guards_joint_near"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30Baseline",
+      "source_sha256": "afccab23dfce92bc91c7477d64c0e461e2ca5434f186b2db9bbc8610fffc17fc",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.threshold_nonneg",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.baseline_map",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source_seed",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source_iterate",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.source_continuous",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.original_seed_guards",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.strict_interior_budget",
+        "SbtCosmo.Derivation.GroundOriginalCycle30Baseline.actual_baseline"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics",
+      "source_sha256": "5df6095f51cfd225a24f324805f6512b4bc24b7565cb950f800d1a076f95b0c2",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics.open_original_seed_source_failure",
+        "SbtCosmo.Derivation.GroundOriginalCycle30OpenDiagnostics.open_coupling_nonconvergence"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn",
+      "source_sha256": "04be092be1d4373dd0e6ba0a9c80643a6c810adba8e774123bd10dfad3977fc3",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.density_continuous",
+        "SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.original_seed_pair_guards",
+        "SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.open_original_seed_coordinate_cycle",
+        "SbtCosmo.Derivation.GroundOriginalCycle30OpenReturn.open_original_seed_source_cycle"
+      ]
+    },
+    {
+      "module": "SbtCosmo.Derivation.GroundParametricSeedTargetReturn",
+      "source_sha256": "c0a4d3f6026e1526ffec8329eb16be7f36a456d1fcd955ea5aaabd724ae0cad2",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundParametricSeedTargetReturn.nearby_original_seed_target_returns"
+      ]
+    }
+  ]
+}

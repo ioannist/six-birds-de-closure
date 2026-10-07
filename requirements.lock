@@ -1,0 +1,68 @@
+absl-py @ file:///home/conda/feedstock_root/build_artifacts/absl-py_1769637056219/work
+arviz @ file:///home/conda/feedstock_root/build_artifacts/arviz_1712329971250/work
+astropy==7.2.0
+astropy-iers-data==0.2026.5.25.1.14.13
+attrs @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_attrs_1773935801/work
+cached-property @ file:///home/conda/feedstock_root/build_artifacts/cached_property_1615209429212/work
+camb @ file:///home/conda/feedstock_root/build_artifacts/camb_1733819035571/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1779285033994/work/certifi
+charset-normalizer==3.4.7
+classy==3.2.5
+click==8.4.1
+cobaya==3.5.7
+colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1733218098505/work
+contourpy @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_contourpy_1769155975/work
+cycler @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_cycler_1764466758/work
+Cython @ file:///home/conda/feedstock_root/build_artifacts/cython_1779723631924/work
+dill==0.4.1
+dm-tree @ file:///home/conda/feedstock_root/build_artifacts/dm-tree_1775826979168/work
+dynesty==2.1.5
+exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1763918002538/work
+fast-pt @ file:///home/conda/feedstock_root/build_artifacts/fast-pt_1752233115977/work
+fonttools @ file:///home/conda/feedstock_root/build_artifacts/fonttools_1778770237442/work
+fuzzywuzzy==0.18.0
+getdist==1.7.7
+gmpy2 @ file:///home/conda/feedstock_root/build_artifacts/gmpy2_1773244933613/work
+grimp==3.14
+h5netcdf @ file:///home/conda/feedstock_root/build_artifacts/h5netcdf_1769241758791/work
+h5py @ file:///home/conda/feedstock_root/build_artifacts/h5py_1775581051317/work
+idna==3.17
+import-linter==2.11
+iniconfig @ file:///home/conda/feedstock_root/build_artifacts/iniconfig_1760831328738/work
+kiwisolver @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_kiwisolver_1773067041/work
+markdown-it-py==4.2.0
+matplotlib==3.9.4
+mdurl==0.1.2
+mpi4py @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_mpi4py_1778930330/work
+mpmath @ file:///home/conda/feedstock_root/build_artifacts/mpmath_1773661943568/work
+munkres==1.1.4
+numpy==1.26.4
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1777103621/work
+pandas @ file:///home/conda/feedstock_root/build_artifacts/pandas_1744430449469/work
+pillow @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pillow_1775060059/work
+pluggy @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pluggy_1764896838/work
+portalocker==3.2.0
+Py-BOBYQA==1.5.0
+pyccl==3.1.2
+pyerfa==2.0.1.5
+Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1774796700044/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pyparsing_1769003998/work
+pytest @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pytest_1775644472/work
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_python-dateutil_1751104122/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_pytz_1777892201/work
+PyYAML @ file:///home/conda/feedstock_root/build_artifacts/pyyaml_1770223234623/work
+requests==2.34.2
+rich==15.0.0
+sbt-cosmo==0.0.0
+scipy @ file:///home/conda/feedstock_root/build_artifacts/scipy-split_1716470220807/work/dist/scipy-1.13.1-cp311-cp311-linux_x86_64.whl#sha256=497f9d1a91aa2301c4dbd6d0678fb3053900d59dde1ee936267e18aee722ba8f
+six @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_six_1753199211/work
+sympy @ file:///home/conda/feedstock_root/build_artifacts/sympy_1771952240620/work
+tomli @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_tomli_1774492402/work
+tqdm==4.67.3
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1756220668/work
+tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1777068919240/work
+unicodedata2 @ file:///home/conda/feedstock_root/build_artifacts/unicodedata2_1770908962415/work
+urllib3==2.7.0
+wrapt @ file:///home/conda/feedstock_root/build_artifacts/wrapt_1779477354161/work
+xarray @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_xarray_1776122774/work
+xarray-einstats @ file:///home/conda/feedstock_root/build_artifacts/xarray-einstats_1750278945424/work

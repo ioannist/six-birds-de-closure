@@ -1,0 +1,28 @@
+SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ s : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential (fun j => b j + s) κ z i -
+      SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i =
+    s * (1 + κ * Complex.normSq (z i))
+'SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ s : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (i j : Fin 8) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z i -
+        SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i -
+      (SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z j -
+        SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z j) =
+    s * κ * (Complex.normSq (z i) - Complex.normSq (z j))
+'SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant (b : SbtCosmo.Derivation.GroundState.Field)
+  {κ s : ℝ} (hκ : κ ≠ 0) (hs : s ≠ 0) (z : SbtCosmo.Derivation.GroundState.ComplexField) (i j : Fin 8)
+  (hd : Complex.normSq (z i) ≠ Complex.normSq (z j)) :
+  SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z i -
+      SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z i ≠
+    SbtCosmo.Derivation.GroundState.complexSourcePotential (fun k => b k + s) κ z j -
+      SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z j
+'SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

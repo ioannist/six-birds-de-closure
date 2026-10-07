@@ -1,0 +1,8 @@
+import SbtCosmo.Derivation.GroundNativeBackgroundShift
+set_option warningAsError true
+#check SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift
+#print axioms SbtCosmo.Derivation.GroundNativeBackgroundShift.source_uniform_shift
+#check SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference
+#print axioms SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_site_difference
+#check SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant
+#print axioms SbtCosmo.Derivation.GroundNativeBackgroundShift.source_shift_nonconstant

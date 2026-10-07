@@ -1,0 +1,68 @@
+SbtCosmo.Derivation.WindowSmoothPrior.raw_continuous (k : ℝ) : Continuous (SbtCosmo.Derivation.WindowSmoothPrior.raw k)
+SbtCosmo.Derivation.WindowSmoothPrior.raw_integral (k a b : ℝ) :
+  ∫ (t : ℝ) in a..b, SbtCosmo.Derivation.WindowSmoothPrior.raw k t = Real.exp (-k * a) - Real.exp (-k * b)
+SbtCosmo.Derivation.WindowSmoothPrior.normalizer_positive {k U : ℝ} (hk : 0 < k) (hU : 0 < U) :
+  0 < 1 - Real.exp (-k * U)
+SbtCosmo.Derivation.WindowSmoothPrior.density_positive {k U : ℝ} (hk : 0 < k) (hU : 0 < U) (t : ℝ) :
+  0 < SbtCosmo.Derivation.WindowSmoothPrior.density k U t
+SbtCosmo.Derivation.WindowSmoothPrior.density_smooth (k U : ℝ) :
+  ContDiff ℝ (↑⊤) (SbtCosmo.Derivation.WindowSmoothPrior.density k U)
+SbtCosmo.Derivation.WindowSmoothPrior.density_integral {k U : ℝ} (hk : 0 < k) (hU : 0 < U) :
+  ∫ (t : ℝ) in 0..U, SbtCosmo.Derivation.WindowSmoothPrior.density k U t = 1
+SbtCosmo.Derivation.WindowSmoothPrior.prefix_integral (k U a : ℝ) :
+  ∫ (t : ℝ) in 0..a, SbtCosmo.Derivation.WindowSmoothPrior.density k U t =
+    (1 - Real.exp (-k * a)) / (1 - Real.exp (-k * U))
+SbtCosmo.Derivation.WindowSmoothPrior.concentration {k a U eta : ℝ} (hk : 0 < k) (ha : 0 < a) (haU : a ≤ U)
+  (he : eta ∈ Set.Ioo 0 1) (hdecay : Real.exp (-k * a) ≤ eta / 2) :
+  1 - eta < ∫ (t : ℝ) in 0..a, SbtCosmo.Derivation.WindowSmoothPrior.density k U t
+SbtCosmo.Derivation.WindowSmoothPrior.rate_constructed {a eta : ℝ} (ha : 0 < a) (he : eta ∈ Set.Ioo 0 1) :
+  0 < Real.log (2 / eta) / a ∧ Real.exp (-(Real.log (2 / eta) / a) * a) = eta / 2
+SbtCosmo.Derivation.WindowSmoothPrior.actual_all_windows_smooth_small_ratio {epsilon eta : ℝ} (he : 0 < epsilon)
+  (heta : eta ∈ Set.Ioo 0 1) :
+  ∃ k a,
+    0 < k ∧
+      0 < a ∧
+        a ≤ SbtCosmo.Derivation.WindowPatchRobustEdge.minimumEndpoint ∧
+          ∀ (d s : ℝ),
+            SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s →
+              (∀ (v : Bool),
+                  ContDiff ℝ (↑⊤)
+                      (SbtCosmo.Derivation.WindowSmoothPrior.density k
+                        (SbtCosmo.Derivation.WindowPatchRobust.upper v d s)) ∧
+                    (∀ (t : ℝ),
+                        0 <
+                          SbtCosmo.Derivation.WindowSmoothPrior.density k
+                            (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) t) ∧
+                      ∫ (t : ℝ) in 0..SbtCosmo.Derivation.WindowPatchRobust.upper v d s,
+                            SbtCosmo.Derivation.WindowSmoothPrior.density k
+                              (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) t =
+                          1 ∧
+                        1 - eta <
+                            ∫ (t : ℝ) in 0..a,
+                              SbtCosmo.Derivation.WindowSmoothPrior.density k
+                                (SbtCosmo.Derivation.WindowPatchRobust.upper v d s) t ∧
+                          ∀ lam ∈ Set.Icc 0 a,
+                            SbtCosmo.Derivation.WindowPatchRobust.gate v d s lam ∧
+                              ∀ (j : Fin 12),
+                                0 ≤ SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam ∧
+                                  SbtCosmo.Derivation.WindowPatchRobust.ratio v d s j lam < epsilon) ∧
+                ContDiff ℝ (↑⊤)
+                    (SbtCosmo.Derivation.WindowSmoothPrior.density k
+                      (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s)) ∧
+                  (∀ (t : ℝ),
+                      0 <
+                        SbtCosmo.Derivation.WindowSmoothPrior.density k
+                          (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) t) ∧
+                    ∫ (t : ℝ) in 0..SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s,
+                          SbtCosmo.Derivation.WindowSmoothPrior.density k
+                            (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) t =
+                        1 ∧
+                      1 - eta <
+                          ∫ (t : ℝ) in 0..a,
+                            SbtCosmo.Derivation.WindowSmoothPrior.density k
+                              (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) t ∧
+                        ∀ lam ∈ Set.Icc 0 a,
+                          SbtCosmo.Derivation.WindowRobustRecord.gate d s lam ∧
+                            ∀ (j : Fin 12),
+                              0 ≤ SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ∧
+                                SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam < epsilon

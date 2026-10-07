@@ -1,0 +1,107 @@
+{
+  "archive_sha256": "717838d9ac68db7a2261a461f2d8c802b8d5d10b972d71b119ca212fdf89f523",
+  "entries": [
+    {
+      "name": "workspace/math/GROUND_SOURCE_NORMALIZATION_RETURN_2026-10-05.md",
+      "source": "/home/repos/six-birds-de-closure/math/GROUND_SOURCE_NORMALIZATION_RETURN_2026-10-05.md",
+      "sha256": "c78cd39aef6e248592030705f10dfb670922866325416742951f906cb3e45b1e",
+      "size": 3314
+    },
+    {
+      "name": "de-source-normalization-full-audit-driver.log",
+      "source": "/tmp/de-source-normalization-full-audit-driver.log",
+      "sha256": "04c77a622ff0b3137c37757eb0b5d43727c8ece5b198202cb48e321a487197cf",
+      "size": 102
+    },
+    {
+      "name": "de-source-normalization-full-audit-summary.json",
+      "source": "/tmp/de-source-normalization-full-audit-summary.json",
+      "sha256": "409df24a1ba1cb56a079ce737d7d25455e4b41fde8f76db5d3729004511cc471",
+      "size": 1794
+    },
+    {
+      "name": "de-source-normalization-full-audit-terminal.json",
+      "source": "/tmp/de-source-normalization-full-audit-terminal.json",
+      "sha256": "a8c469654929fd0c41ccc13380114949ac3315c19c23984b9a5dcb9293952a73",
+      "size": 1384
+    },
+    {
+      "name": "de-source-normalization-full-audit.log",
+      "source": "/tmp/de-source-normalization-full-audit.log",
+      "sha256": "6c8fb22ed5702bcd1cce6cab8665c6fc9daee4fed0c24780dbac7481ea008ea2",
+      "size": 3683
+    },
+    {
+      "name": "de-source-normalization-return-first-driver.log",
+      "source": "/tmp/de-source-normalization-return-first-driver.log",
+      "sha256": "1f0ea793ebafd1fa166444315700799519651451c2df0aa5babf766a1be3de07",
+      "size": 3681
+    },
+    {
+      "name": "de-source-normalization-return-first-terminal.json",
+      "source": "/tmp/de-source-normalization-return-first-terminal.json",
+      "sha256": "40fe488a046947bfa31f561b72e1dfdfdcdf1ed33cbc80e30c940d14009f3ba5",
+      "size": 565
+    },
+    {
+      "name": "de-source-normalization-return-first.log",
+      "source": "/tmp/de-source-normalization-return-first.log",
+      "sha256": "fb2ec273a3b19579e96aa984959deddf8d8fe7f1687b2c6d636d37aa09f16575",
+      "size": 3153
+    },
+    {
+      "name": "de-source-normalization-return-retry-driver.log",
+      "source": "/tmp/de-source-normalization-return-retry-driver.log",
+      "sha256": "43082e5c92a1fd6062ffcfc82df6e316589c64716f824def60e5763036a8606e",
+      "size": 613
+    },
+    {
+      "name": "de-source-normalization-return-retry-terminal.json",
+      "source": "/tmp/de-source-normalization-return-retry-terminal.json",
+      "sha256": "0fe161ab48168f1c782ecf68b09e6093ea010bb9a33ab95b3e51ac56cd7c24f3",
+      "size": 652
+    },
+    {
+      "name": "de-source-normalization-return-retry.log",
+      "source": "/tmp/de-source-normalization-return-retry.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_source_normalization_return/SourceNormalizationFullAudit.lean",
+      "source": "/tmp/de_source_normalization_return/SourceNormalizationFullAudit.lean",
+      "sha256": "5f5c78ff901c83755ae7f509ee7f73b07c510e6842b5070f09fe36a4adcb8a37",
+      "size": 1274
+    },
+    {
+      "name": "de_source_normalization_return/audit_modules.py",
+      "source": "/tmp/de_source_normalization_return/audit_modules.py",
+      "sha256": "b005b6e250db1799a48109df17ee9a9291dda2a57a5a046441aa9f4569a981b2",
+      "size": 2986
+    },
+    {
+      "name": "de_source_normalization_return/checkpoint_checked.py",
+      "source": "/tmp/de_source_normalization_return/checkpoint_checked.py",
+      "sha256": "f41b002fe2c5407cf876ae975abc23d0127e76cf8d0e80b53d8a0edba069ccf1",
+      "size": 7967
+    },
+    {
+      "name": "de_source_normalization_return/compile_module.py",
+      "source": "/tmp/de_source_normalization_return/compile_module.py",
+      "sha256": "f06b6f91804ed234b7d847ac3c7ccd4bd6617ff32ea5d6f454470cfaf7c58d87",
+      "size": 1390
+    },
+    {
+      "name": "de_source_normalization_return/history/GroundSourceNormalization.first.lean",
+      "source": "/tmp/de_source_normalization_return/history/GroundSourceNormalization.first.lean",
+      "sha256": "36ea17d3c6f25bf66bf5afac0b6a11420421625fe6654eb890716a7ad9c10a7a",
+      "size": 4285
+    },
+    {
+      "name": "de_source_normalization_return/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean",
+      "source": "/tmp/de_source_normalization_return/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean",
+      "sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+      "size": 4338
+    }
+  ]
+}

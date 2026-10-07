@@ -1,0 +1,87 @@
+import SbtCosmo.Derivation.GroundBackgroundKernel
+import SbtCosmo.Derivation.GroundIntervalReciprocal
+import SbtCosmo.Derivation.GroundNativeBox
+import SbtCosmo.Derivation.GroundNativePrefixInitial
+import SbtCosmo.Derivation.GroundNativePrefix.Step000
+import SbtCosmo.Derivation.GroundNativePrefix.Step001
+import SbtCosmo.Derivation.GroundNativePrefix.Step002
+import SbtCosmo.Derivation.GroundNativePrefix.Step003
+import SbtCosmo.Derivation.GroundNativePrefix.Step004
+import SbtCosmo.Derivation.GroundNativePrefix.Step005
+import SbtCosmo.Derivation.GroundNativePrefix.Step006
+import SbtCosmo.Derivation.GroundNativePrefix.Step007
+import SbtCosmo.Derivation.GroundNativePrefix.Step008
+import SbtCosmo.Derivation.GroundNativePrefix.Step009
+import SbtCosmo.Derivation.GroundNativePrefix.Step010
+import SbtCosmo.Derivation.GroundNativePrefix.Step011
+import SbtCosmo.Derivation.GroundNativePrefix.Step012
+import SbtCosmo.Derivation.GroundNativePrefix.Step013
+import SbtCosmo.Derivation.GroundNativePrefix.Step014
+import SbtCosmo.Derivation.GroundNativePrefix.Step015
+import SbtCosmo.Derivation.GroundOriginalNativePrefix
+
+#print axioms SbtCosmo.Derivation.GroundBackgroundKernel.box_sound
+#print axioms SbtCosmo.Derivation.GroundBackgroundKernel.actual_ground_pair_enclosed
+#print axioms SbtCosmo.Derivation.GroundBackgroundKernel.actual_selected_enclosed
+#print axioms SbtCosmo.Derivation.GroundIntervalReciprocal.inverse_sqrt_sound
+#print axioms SbtCosmo.Derivation.GroundIntervalReciprocal.threshold_guard
+#print axioms SbtCosmo.Derivation.GroundNativeBox.included_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.StateBox.included_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.sumBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.normBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.gradientBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.sourceBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.dotBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.overlapBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.alignedBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.mixedBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.normalizedBox_sound
+#print axioms SbtCosmo.Derivation.GroundNativeBox.arithmetic_native_step
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.inverse_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.initial_inclusion
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.raw_box_sound
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.original_seed_enclosed
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.tolerance_return
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.coupling_return
+#print axioms SbtCosmo.Derivation.GroundNativePrefixInitial.zero_inverse_rejected
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step000.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step000.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step001.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step001.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step002.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step002.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step003.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step003.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step004.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step004.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step005.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step005.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step006.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step006.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step007.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step007.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step008.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step008.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step009.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step009.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step010.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step010.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step011.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step011.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step012.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step012.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step013.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step013.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step014.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step014.arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step015.ground_arithmetic
+#print axioms SbtCosmo.Derivation.GroundNativePrefix.Step015.arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.seams
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.certificate_step
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.native_prefix_enclosed
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.native_prefix_guards
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.native_prefix_unit
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.target_box_sound
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.distance_arithmetic
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.actual_seed_sixteen_near_negative_ground
+#print axioms SbtCosmo.Derivation.GroundOriginalNativePrefix.zero_selector_preconditioner_rejected

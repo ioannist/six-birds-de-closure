@@ -1,0 +1,255 @@
+{
+  "all_routes_sensitivity_including_insample": {
+    "H_closed_fit": 70.80251013161129,
+    "H_closed_sigma": 0.6375534723756754,
+    "chi2": 9.866045600275253,
+    "chi2_per_dof": 1.4094350857536075,
+    "dof": 7,
+    "label": "all_routes_sensitivity",
+    "pairwise_order_hit_rate": 0.7272727272727273,
+    "routes": [
+      {
+        "H0_measured": 67.35723410080992,
+        "H0_sigma": 0.7888298018858959,
+        "measured_offset_vs_H_closed": -3.4452760308013666,
+        "measured_sign": "negative",
+        "predicted_offset_blind": -3.1965749472486675,
+        "predicted_sign": "negative",
+        "prediction_sigma": 1.2707559895460148,
+        "residual_measured_minus_predicted": -0.24870108355269904,
+        "route_id": "cmb_bao",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 68.49010109846527,
+        "H0_sigma": 0.5828571827320005,
+        "measured_offset_vs_H_closed": -2.312409033146011,
+        "measured_sign": "negative",
+        "predicted_offset_blind": -2.716605645271159,
+        "predicted_sign": "negative",
+        "prediction_sigma": 0.985308325835351,
+        "residual_measured_minus_predicted": 0.4041966121251481,
+        "route_id": "inverse_ladder",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 73.49,
+        "H0_sigma": 0.93,
+        "measured_offset_vs_H_closed": 2.6874898683887096,
+        "measured_sign": "positive",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": 0.42816311972477683,
+        "route_id": "cepheid_sn",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 70.39,
+        "H0_sigma": 1.9357944105715357,
+        "measured_offset_vs_H_closed": -0.4125101316112847,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -2.6718368802752175,
+        "route_id": "trgb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 68.81,
+        "H0_sigma": 2.224072840533781,
+        "measured_offset_vs_H_closed": -1.992510131611283,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -4.251836880275215,
+        "route_id": "jwst_trgb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 67.8,
+        "H0_sigma": 2.7200183822908257,
+        "measured_offset_vs_H_closed": -3.002510131611288,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -5.2618368802752205,
+        "route_id": "jagb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 71.6,
+        "H0_sigma": 3.5999999999999996,
+        "measured_offset_vs_H_closed": 0.7974898683887091,
+        "measured_sign": "positive",
+        "predicted_offset_blind": 0.5095144617482672,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.7423186744364157,
+        "residual_measured_minus_predicted": 0.28797540664044186,
+        "route_id": "time_delay",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 70.0,
+        "H0_sigma": 10.0,
+        "measured_offset_vs_H_closed": -0.8025101316112853,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 0.009896314254918583,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.014418077269702446,
+        "residual_measured_minus_predicted": -0.8124064458662038,
+        "route_id": "siren",
+        "sign_hit": null
+      }
+    ],
+    "sign_hit_rate": 0.5714285714285714,
+    "sign_hits": 4,
+    "sign_total": 7,
+    "spearman_rho": 0.4566116604886569
+  },
+  "headline": "out_of_sample",
+  "in_sample_consistency": {
+    "H_closed_fit": 71.20653137135311,
+    "H_closed_sigma": 1.144794708905999,
+    "chi2": 0.45983595151311607,
+    "chi2_per_dof": 0.45983595151311607,
+    "dof": 1,
+    "label": "in_sample_consistency",
+    "pairwise_order_hit_rate": 1.0,
+    "routes": [
+      {
+        "H0_measured": 67.35723410080992,
+        "H0_sigma": 0.7888298018858959,
+        "measured_offset_vs_H_closed": -3.8492972705431896,
+        "measured_sign": "negative",
+        "predicted_offset_blind": -3.1965749472486675,
+        "predicted_sign": "negative",
+        "prediction_sigma": 1.2707559895460148,
+        "residual_measured_minus_predicted": -0.6527223232945221,
+        "route_id": "cmb_bao",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 68.49010109846527,
+        "H0_sigma": 0.5828571827320005,
+        "measured_offset_vs_H_closed": -2.716430272887834,
+        "measured_sign": "negative",
+        "predicted_offset_blind": -2.716605645271159,
+        "predicted_sign": "negative",
+        "prediction_sigma": 0.985308325835351,
+        "residual_measured_minus_predicted": 0.00017537238332510086,
+        "route_id": "inverse_ladder",
+        "sign_hit": true
+      }
+    ],
+    "sign_hit_rate": 1.0,
+    "sign_hits": 2,
+    "sign_total": 2,
+    "spearman_rho": null
+  },
+  "out_of_sample": {
+    "H_closed_fit": 70.52729931107201,
+    "H_closed_sigma": 1.0205414698206372,
+    "chi2": 9.236814233611067,
+    "chi2_per_dof": 1.8473628467222134,
+    "dof": 5,
+    "label": "out_of_sample",
+    "pairwise_order_hit_rate": 0.4444444444444444,
+    "routes": [
+      {
+        "H0_measured": 73.49,
+        "H0_sigma": 0.93,
+        "measured_offset_vs_H_closed": 2.962700688927981,
+        "measured_sign": "positive",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": 0.7033739402640484,
+        "route_id": "cepheid_sn",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 70.39,
+        "H0_sigma": 1.9357944105715357,
+        "measured_offset_vs_H_closed": -0.1372993110720131,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -2.396626059735946,
+        "route_id": "trgb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 68.81,
+        "H0_sigma": 2.224072840533781,
+        "measured_offset_vs_H_closed": -1.7172993110720114,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -3.976626059735944,
+        "route_id": "jwst_trgb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 67.8,
+        "H0_sigma": 2.7200183822908257,
+        "measured_offset_vs_H_closed": -2.7272993110720165,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 2.259326748663933,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.5738949908820362,
+        "residual_measured_minus_predicted": -4.986626059735949,
+        "route_id": "jagb_sn",
+        "sign_hit": false
+      },
+      {
+        "H0_measured": 71.6,
+        "H0_sigma": 3.5999999999999996,
+        "measured_offset_vs_H_closed": 1.0727006889279807,
+        "measured_sign": "positive",
+        "predicted_offset_blind": 0.5095144617482672,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.7423186744364157,
+        "residual_measured_minus_predicted": 0.5631862271797135,
+        "route_id": "time_delay",
+        "sign_hit": true
+      },
+      {
+        "H0_measured": 70.0,
+        "H0_sigma": 10.0,
+        "measured_offset_vs_H_closed": -0.5272993110720137,
+        "measured_sign": "negative",
+        "predicted_offset_blind": 0.009896314254918583,
+        "predicted_sign": "positive",
+        "prediction_sigma": 0.014418077269702446,
+        "residual_measured_minus_predicted": -0.5371956253269322,
+        "route_id": "siren",
+        "sign_hit": null
+      }
+    ],
+    "sign_hit_rate": 0.4,
+    "sign_hits": 2,
+    "sign_total": 5,
+    "spearman_rho": -0.13522468075656266
+  },
+  "prediction_source": "results/E4/blind/E4_PREDICTED_ROUTE_TABLE.json",
+  "route_partition": {
+    "in_sample_consistency_only": [
+      "cmb_bao",
+      "inverse_ladder"
+    ],
+    "out_of_sample": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  }
+}

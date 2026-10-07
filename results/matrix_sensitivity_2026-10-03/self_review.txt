@@ -1,0 +1,67 @@
+Adversarial self-review, not independent review.
+
+Target: actual whole matrix-budget sensitivity identifies the same symmetric
+price used by the original matrix certificate, stationarity and strong duality.
+Reconstructed exported hypotheses and transitive proof route. Paper not edited.
+
+Certificate support: actual real feasible-cost nonemptiness and certificate
+support bound earn local minimum V(T)+price(T), whose genuine derivative is
+d+price. Local minimum derivative zero yields price=-d. No convexity or finite
+budget dimension smuggled into this identification. Certificate global bounds
+supply real-infimum lower bounds. Original EReal-toReal conversions guard both
+infinities at every finite-domain point; actual local finite original values
+earn equality of the genuine local value functions.
+
+Slater return: convex epigraph, conic convexity, ordinary finite optimum and
+interior finite-cost slack feed earlier midpoint/local cost construction.
+Nonempty bounded-below costs return exactly to original EReal infimum as real
+coe. The final identification earns guards before using toReal sensitivity;
+its derivative cannot arise from an infinite-value fallback.
+
+Matrix reconstruction: actual symmetrized matrix units evaluate tracePriceP to
+half*(Pij+Pji). Hermitian symmetry earns Pij. Equality on the entire symmetric
+budget dual reconstructs P, and PSD supplies Hermitian symmetry. Whole derivative
+identification implies PSD certificate-matrix uniqueness at possibly different
+optimizers. No optimizer, normal or objective-support uniqueness asserted.
+
+Final endpoint: previous earned general matrix Slater certificate and qualified
+stationarity construct P first. Restricted objective epigraph is earned from
+ambient epigraph and convex A. Matrix PD Slater earns original local finiteness;
+actual full budget derivative then identifies that same P. Strict negative PSD
+direction rules out zero by actual trace pairing. All stationarity, complementarity
+and original dual outputs retain this single P. Actual matrix derivative is a
+legitimate smooth input; no ambient Loewner convexity required there. Nonsmooth
+endpoint has full finite ambient Loewner-convex extension explicitly and earns
+actual trace-energy support without a fictitious Xi derivative. Ordinary finite
+attainment, common RI and actual value derivative are genuine hypotheses.
+
+Original Schur example: unchanged original infinite-cost objective and actual
+energy[x^2]. Optimizer1, PD Slater0, common RI, actual derivative2*matrixScalar
+and actual full value derivative are independently established. Generic endpoint
+returns canonical P1, qualified actual-adjoint stationarity, original certificate
+and actual dual1. All candidate PSD certificate matrices equal1, including at
+other optimizers. Zero premises for construction; legitimate certificate premise
+only for candidate uniqueness test.
+
+Actual nonsmooth example: original Xi=[x+abs(y)], J=-x. Exact arbitrary symmetric
+budget feasibility reduces to coordinate; ordinary optimum(coordinateB,0) earns
+actual complete-lattice value=-coordinateB for every B and its genuine full
+derivative. PD Slater(-1,0), RI and optimizer0 are proved before applying generic
+nonsmooth sensitivity endpoint. P1, actual trace-energy support, full stationarity,
+original certificate and dual0 returned. Protected earlier theorem refutes actual
+Xi derivative at optimizer0. This general Loewner map may be indefinite; it is
+not relabeled PSD adequacy content. Original Schur example supplies adequacy return.
+
+Controls: nonzero antisymmetric2x2 has zero tracePrice on every symmetric budget;
+injectivity is only on Hermitian matrices. Distinct PSD diagonal matrices agree
+on one PSD direction; one directional readout cannot identify whole P. No control
+is used as a refutation of full-budget symmetric price uniqueness.
+
+Fresh full build8148 exit0. All26 new exported statement/axiom checks exit0,
+standard Lean axioms only, no holes/native_decide. Cumulative1184 retains exact
+immutable earlier1158 raw prefix plus fresh26; full cumulative command not rerun.
+Prior sources/evidence and pinned toolchain checked by verifier. Python/carrier/
+solver suites not rerun for pure Lean additions. No new downgrade needed. Physical
+Lambda, moving native calculus, primal attainment and earlier false/project-sized
+claims remain separate. Broader original-target audit/feasible constructions next;
+full goal is not complete.

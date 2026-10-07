@@ -1,0 +1,60 @@
+{
+  "access": "official_likelihood",
+  "aor_status": "zero",
+  "bins": {
+    "components": [
+      "planck_2018_highl_plik.TTTEEE",
+      "planck_2018_lowl.TT",
+      "planck_2018_lowl.EE",
+      "planck_2018_lensing.native"
+    ],
+    "kind": "native_likelihood"
+  },
+  "citation": "Planck Collaboration 2018, arXiv:1807.06209; Cobaya native likelihood install",
+  "dataset": "PLANCK_2018",
+  "fallback": "compressed CMB distance priors (R, l_A, omega_b, n_s) with covariance",
+  "fallback_invoked": false,
+  "fetch_url": "cobaya-install: planck_2018_highl_plik.TTTEEE planck_2018_lowl.TT planck_2018_lowl.EE planck_2018_lensing.native",
+  "fetched_utc": "2026-05-29T22:46:28Z",
+  "license": "Planck Legacy Archive public release through Cobaya installer; cite Planck 2018 VI",
+  "model_dependent": false,
+  "processed": {
+    "covariance": {
+      "dtype": "native",
+      "path": "native_clik",
+      "sha256": "native_likelihood",
+      "shape": "native_likelihood"
+    },
+    "data_vector": {
+      "dtype": "native",
+      "path": "native_clik",
+      "sha256": "native_likelihood",
+      "shape": "native_likelihood"
+    },
+    "metadata": {
+      "bytes": 706,
+      "dtype": "json",
+      "path": "data/processed/planck_2018/native_likelihood.json",
+      "sha256": "a3c796c80a1dc11da498cfdee509a7ea4de3ca3bb9038426a7f71e48bfdb2c9b",
+      "shape": "json"
+    }
+  },
+  "processing_commit": "2250a9ba1dea000830960dcce41ae581e5cd22ed",
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "raw_files": [
+    {
+      "bytes": 559309,
+      "kind": "file_index",
+      "path": "data/raw/planck_2018/native_file_index.json",
+      "sha256": "e7954479c4f1af9b0af53c5a9d9f2300e826fdd7989f136696d5480f516da458"
+    }
+  ],
+  "recomputability": "recomputable",
+  "release": "arXiv:1807.06209",
+  "route": null,
+  "scale_cuts": {
+    "applied": true,
+    "note": "native Planck likelihood cuts"
+  },
+  "staging_axis": null
+}

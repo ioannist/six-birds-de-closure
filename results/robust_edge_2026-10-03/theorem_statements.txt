@@ -1,0 +1,123 @@
+SbtCosmo.Derivation.RobustEdgeLowerData.grid_endpoints :
+  SbtCosmo.Derivation.RobustEdgeLowerData.grid 0 = 1 / 200 ∧ SbtCosmo.Derivation.RobustEdgeLowerData.grid 619 = 5 / 1
+SbtCosmo.Derivation.RobustEdgeLowerData.cells (i : Fin 619) :
+  0 < SbtCosmo.Derivation.RobustEdgeLowerData.grid ↑i ∧
+    SbtCosmo.Derivation.RobustEdgeLowerData.grid ↑i ≤ SbtCosmo.Derivation.RobustEdgeLowerData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.RobustEdgeLowerData.bound ↑i ∧
+        SbtCosmo.Derivation.RobustEdgeLowerData.bound ↑i ^ 2 *
+              (1 + 3 / 1 * SbtCosmo.Derivation.RobustEdgeLowerData.grid ↑i ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.RobustEdgeLowerData.grid ↑i ^ 3 ∧
+          SbtCosmo.Derivation.RobustEdgeLowerData.bound ↑i ^ 2 *
+              (1 + 3 / 1 * SbtCosmo.Derivation.RobustEdgeLowerData.grid (↑i + 1) ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.RobustEdgeLowerData.grid (↑i + 1) ^ 3
+SbtCosmo.Derivation.RobustEdgeLowerData.integral_sum :
+  28 / 125 ≤
+    ∑ i ∈ Finset.range 619,
+      (SbtCosmo.Derivation.RobustEdgeLowerData.grid (i + 1) - SbtCosmo.Derivation.RobustEdgeLowerData.grid i) *
+        SbtCosmo.Derivation.RobustEdgeLowerData.bound i
+SbtCosmo.Derivation.RobustEdgePrefixData.grid_endpoints :
+  SbtCosmo.Derivation.RobustEdgePrefixData.grid 0 = 1 / 200 ∧ SbtCosmo.Derivation.RobustEdgePrefixData.grid 522 = 8 / 3
+SbtCosmo.Derivation.RobustEdgePrefixData.cells (i : Fin 522) :
+  0 < SbtCosmo.Derivation.RobustEdgePrefixData.grid ↑i ∧
+    SbtCosmo.Derivation.RobustEdgePrefixData.grid ↑i ≤ SbtCosmo.Derivation.RobustEdgePrefixData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.RobustEdgePrefixData.bound ↑i ∧
+        SbtCosmo.Derivation.RobustEdgePrefixData.bound ↑i ^ 2 *
+              (1 + 7 / 2 * SbtCosmo.Derivation.RobustEdgePrefixData.grid ↑i ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.RobustEdgePrefixData.grid ↑i ^ 3 ∧
+          SbtCosmo.Derivation.RobustEdgePrefixData.bound ↑i ^ 2 *
+              (1 + 7 / 2 * SbtCosmo.Derivation.RobustEdgePrefixData.grid (↑i + 1) ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.RobustEdgePrefixData.grid (↑i + 1) ^ 3
+SbtCosmo.Derivation.RobustEdgePrefixData.integral_sum :
+  1909 / 10000 ≤
+    ∑ i ∈ Finset.range 522,
+      (SbtCosmo.Derivation.RobustEdgePrefixData.grid (i + 1) - SbtCosmo.Derivation.RobustEdgePrefixData.grid i) *
+        SbtCosmo.Derivation.RobustEdgePrefixData.bound i
+SbtCosmo.Derivation.RobustEdgeUpperData.grid_endpoints :
+  SbtCosmo.Derivation.RobustEdgeUpperData.grid 0 = 1 / 4000 ∧ SbtCosmo.Derivation.RobustEdgeUpperData.grid 784 = 100 / 1
+SbtCosmo.Derivation.RobustEdgeUpperData.cells (i : Fin 784) :
+  0 < SbtCosmo.Derivation.RobustEdgeUpperData.grid ↑i ∧
+    SbtCosmo.Derivation.RobustEdgeUpperData.grid ↑i ≤ SbtCosmo.Derivation.RobustEdgeUpperData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.RobustEdgeUpperData.bound ↑i ∧
+        (2 * (7 / 2) * SbtCosmo.Derivation.RobustEdgeUpperData.grid (↑i + 1) ^ 3 ≤ 1 ∧
+            SbtCosmo.Derivation.RobustEdgeUpperData.grid (↑i + 1) ^ 3 ≤
+              SbtCosmo.Derivation.RobustEdgeUpperData.bound ↑i ^ 2 *
+                (1 + 7 / 2 * SbtCosmo.Derivation.RobustEdgeUpperData.grid (↑i + 1) ^ 3) ^ 3 ∨
+          1 ≤ 2 * (7 / 2) * SbtCosmo.Derivation.RobustEdgeUpperData.grid ↑i ^ 3 ∧
+              SbtCosmo.Derivation.RobustEdgeUpperData.grid ↑i ^ 3 ≤
+                SbtCosmo.Derivation.RobustEdgeUpperData.bound ↑i ^ 2 *
+                  (1 + 7 / 2 * SbtCosmo.Derivation.RobustEdgeUpperData.grid ↑i ^ 3) ^ 3 ∨
+            4 ≤ 27 * (7 / 2) * SbtCosmo.Derivation.RobustEdgeUpperData.bound ↑i ^ 2)
+SbtCosmo.Derivation.RobustEdgeUpperData.integral_sum :
+  ∑ i ∈ Finset.range 784,
+      (SbtCosmo.Derivation.RobustEdgeUpperData.grid (i + 1) - SbtCosmo.Derivation.RobustEdgeUpperData.grid i) *
+        SbtCosmo.Derivation.RobustEdgeUpperData.bound i ≤
+    407 / 2000
+SbtCosmo.Derivation.RobustEdgeQuadrature.lower_grid {lam cap : ℚ} {n : ℕ} {a lo : ℕ → ℚ} (hlam : 1 ≤ lam)
+  (hcell :
+    ∀ (i : Fin n),
+      0 < a ↑i ∧
+        a ↑i ≤ a (↑i + 1) ∧
+          0 ≤ lo ↑i ∧
+            lo ↑i ^ 2 * (1 + lam * a ↑i ^ 3) ^ 3 ≤ a ↑i ^ 3 ∧
+              lo ↑i ^ 2 * (1 + lam * a (↑i + 1) ^ 3) ^ 3 ≤ a (↑i + 1) ^ 3)
+  (hsum : cap ≤ ∑ i ∈ Finset.range n, (a (i + 1) - a i) * lo i) :
+  ↑cap ≤ SbtCosmo.Derivation.GrowthQuadrature.integral ↑lam ↑(a 0) ↑(a n)
+SbtCosmo.Derivation.RobustEdgeQuadrature.upper_grid {lam cap : ℚ} {n : ℕ} {a hi : ℕ → ℚ} (hlam : 0 < lam)
+  (hcell :
+    ∀ (i : Fin n),
+      0 < a ↑i ∧
+        a ↑i ≤ a (↑i + 1) ∧
+          0 ≤ hi ↑i ∧
+            (2 * lam * a (↑i + 1) ^ 3 ≤ 1 ∧ a (↑i + 1) ^ 3 ≤ hi ↑i ^ 2 * (1 + lam * a (↑i + 1) ^ 3) ^ 3 ∨
+              1 ≤ 2 * lam * a ↑i ^ 3 ∧ a ↑i ^ 3 ≤ hi ↑i ^ 2 * (1 + lam * a ↑i ^ 3) ^ 3 ∨ 4 ≤ 27 * lam * hi ↑i ^ 2))
+  (hsum : ∑ i ∈ Finset.range n, (a (i + 1) - a i) * hi i ≤ cap) :
+  SbtCosmo.Derivation.GrowthQuadrature.integral ↑lam ↑(a 0) ↑(a n) ≤ ↑cap
+SbtCosmo.Derivation.RobustEdgeQuadrature.lower_integral :
+  224 / 1000 ≤ SbtCosmo.Derivation.GrowthQuadrature.integral 3 (1 / 200) 5
+SbtCosmo.Derivation.RobustEdgeQuadrature.prefix_integral :
+  1909 / 10000 ≤ SbtCosmo.Derivation.GrowthQuadrature.integral (7 / 2) (1 / 200) (8 / 3)
+SbtCosmo.Derivation.RobustEdgeQuadrature.upper_integral :
+  SbtCosmo.Derivation.GrowthQuadrature.integral (7 / 2) (1 / 4000) 100 ≤ 2035 / 10000
+SbtCosmo.Derivation.GrowthRescaledCertificate.native_scale_covariance {c : ℝ} (hc : c ≠ 0) (a0 lam A : ℝ) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 (lam / c ^ 3) (c * A) =
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (a0 / c) lam A
+SbtCosmo.Derivation.GrowthRescaledCertificate.rescaled_start_bounds {c : ℝ} (hc : c ∈ Set.Ioo (1 / 5) 4) :
+  1 / 1000 / c ∈ Set.Icc (1 / 4000) (1 / 200)
+SbtCosmo.Derivation.GrowthRescaledCertificate.integral_interval_mono {lam a b u v : ℝ} (hl : 0 ≤ lam) (hu : 0 < u)
+  (hua : u ≤ a) (hab : a ≤ b) (hbv : b ≤ v) :
+  SbtCosmo.Derivation.GrowthQuadrature.integral lam a b ≤ SbtCosmo.Derivation.GrowthQuadrature.integral lam u v
+SbtCosmo.Derivation.GrowthRescaledCertificate.prefactor_lower {c lam : ℝ} (hc : 0 < c) (hl : 0 ≤ lam) :
+  2500 * c ≤ SbtCosmo.Derivation.GrowthQuadrature.nativePrefactor lam (1 / 1000 / c)
+SbtCosmo.Derivation.GrowthRescaledCertificate.prefactor_upper {c : ℝ} (hc : c ∈ Set.Ioo (1 / 5) 4) :
+  SbtCosmo.Derivation.GrowthQuadrature.nativePrefactor (7 / 2) (1 / 1000 / c) ≤ (2500 + 1 / 1000) * c
+SbtCosmo.Derivation.GrowthRescaledCertificate.initial_term_upper {c : ℝ} (hc : c ∈ Set.Ioo (1 / 5) 4) :
+  (SbtCosmo.Derivation.GrowthQuadrature.nativeRoot (7 / 2) (1 / 1000 / c))⁻¹ ≤ c / 500
+SbtCosmo.Derivation.GrowthRescaledCertificate.lower_prefix_growth {c : ℝ} (hc : c ∈ Set.Ioo (1 / 5) 4) :
+  970 * c < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (3 / c ^ 3) (5 * c)
+SbtCosmo.Derivation.GrowthRescaledCertificate.upper_prefix_growth {c : ℝ} (hc : c ∈ Set.Ioo (1 / 5) 4) :
+  897 * c < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (7 / 2 / c ^ 3) (8 / 3 * c)
+SbtCosmo.Derivation.GrowthRescaledCertificate.upper_horizon_growth {c : ℝ} (hc : c ∈ Set.Ioo (1 / 5) 4) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) (7 / 2 / c ^ 3) 20 < 960 * c
+SbtCosmo.Derivation.WindowRobustEdge.original_aggregate_tight :
+  960 < SbtCosmo.Derivation.WindowSample.aggregateThreshold ∧ SbtCosmo.Derivation.WindowSample.aggregateThreshold < 970
+SbtCosmo.Derivation.WindowRobustEdge.endpoint_normalized_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) :
+  3 < SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s * SbtCosmo.Derivation.WindowRobustRecord.factor d s ^ 3 ∧
+    SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s * SbtCosmo.Derivation.WindowRobustRecord.factor d s ^ 3 <
+      7 / 2
+SbtCosmo.Derivation.WindowRobustEdge.endpoint_time_bounds {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowRobustRecord.factor d s / 2 <
+      SbtCosmo.Derivation.WindowRobustRecord.time d s j (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) ∧
+    SbtCosmo.Derivation.WindowRobustRecord.time d s j (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) ≤
+      8 / 3 * SbtCosmo.Derivation.WindowRobustRecord.factor d s
+SbtCosmo.Derivation.WindowRobustEdge.endpoint_ratios {d s : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowRobustRatio.ratio d s j (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) ∧
+    SbtCosmo.Derivation.WindowRobustRatio.ratio d s j (SbtCosmo.Derivation.WindowSensitivity.scaledEndpoint d s) <
+      1792 / 27
+SbtCosmo.Derivation.WindowRobustEdge.full_window_ratios {d s lam : ℝ}
+  (hR : SbtCosmo.Derivation.WindowRobustRecord.Rectangle d s) (hg : SbtCosmo.Derivation.WindowRobustRecord.gate d s lam)
+  (j : Fin 12) :
+  0 ≤ SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam ∧
+    SbtCosmo.Derivation.WindowRobustRatio.ratio d s j lam < 1792 / 27

@@ -1,0 +1,5 @@
+schema_version: 1
+model: sbt_xi
+canonical_definition: sbt_cosmo.xi.residual.XiCosmo
+rank_ceiling: 7
+implemented: false

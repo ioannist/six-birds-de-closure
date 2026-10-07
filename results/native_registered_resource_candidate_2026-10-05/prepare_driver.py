@@ -1,0 +1,11 @@
+from pathlib import Path
+base=Path('/tmp/de_native_registered_verify_with_failure_candidate.py');target=Path('/tmp/de_native_registered_verify_resource_candidate.py');assert not target.exists()
+s=base.read_text();mark="STANDARD={'propext','Classical.choice','Quot.sound'}\n";assert s.count(mark)==1;s=s.replace(mark,mark+"REQUIRED_ENV={'LEAN_NUM_THREADS':'4'}\n")
+mark="  assert d['terminal_exit_code']==0 and d['command']==command and d['cwd']==str(ROOT/'lean')\n";assert s.count(mark)==1;s=s.replace(mark,mark+"  assert d['environment_overrides']==REQUIRED_ENV\n")
+s=s.replace('/tmp/de_native_registered_with_failure_receipts','/tmp/de_native_registered_resource_receipts');target.write_text(s)
+b=Path('/tmp/de_native_registered_build_with_failure_candidate.py').read_text();b=b.replace('import hashlib,importlib.util,json,re,subprocess,traceback','import hashlib,importlib.util,json,os,re,subprocess,traceback').replace('/tmp/de_native_registered_verify_with_failure_candidate.py','/tmp/de_native_registered_verify_resource_candidate.py').replace('/tmp/de_native_registered_with_failure_receipts','/tmp/de_native_registered_resource_receipts')
+mark=" helpers[str(source)]=sha(source)\n";assert b.count(mark)==1;b=b.replace(mark,mark+" runtime_env=dict(os.environ,**verify.REQUIRED_ENV)\n")
+mark="r=subprocess.run(command,cwd=ROOT/'lean',stdout=f,stderr=subprocess.STDOUT)";assert b.count(mark)==1;b=b.replace(mark,"r=subprocess.run(command,cwd=ROOT/'lean',env=runtime_env,stdout=f,stderr=subprocess.STDOUT)")
+mark="installation_plan_sha256=sha(verify.CANDIDATE/'installation-plan.json'),source_snapshot_sha256=sha(out/'source-snapshot.json'),log_sha256=sha(log))";assert b.count(mark)==1;b=b.replace(mark,"installation_plan_sha256=sha(verify.CANDIDATE/'installation-plan.json'),source_snapshot_sha256=sha(out/'source-snapshot.json'),log_sha256=sha(log),environment_overrides=verify.REQUIRED_ENV)")
+Path('/tmp/de_native_registered_build_resource_candidate.py').write_text(b)
+print('Resource-controlled candidates prepared; all commands and proof inventories retained.')

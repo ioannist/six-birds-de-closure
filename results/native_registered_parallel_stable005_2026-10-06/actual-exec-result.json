@@ -1,0 +1,8 @@
+{
+  "chunk_id": "d69c80",
+  "wall_time_seconds": 39.318489249,
+  "exit_code": 0,
+  "original_token_count": 71,
+  "output": "{\"terminal_exit_code\": 0, \"selected_targets\": 60, \"selected_objects_checked\": 61, \"genuinely_reported_built_selected_modules\": 61, \"proof_objects_copied\": 0, \"full_registered_build_still_required\": true, \"full_axiom_and_statement_audits_still_required\": true, \"goal_complete\": false}\n",
+  "session_id": 48606
+}

@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-06T14:23:09.764319+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "build"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "log_path": "/home/repos/six-birds-de-closure/results/ground_offset_transport_2026-10-04/lean_build.txt",
+  "log_sha256": "5ae9af76347628feaa57025cc4dad6102ddb35a27fd4679bede4d6f977c2ceac"
+}

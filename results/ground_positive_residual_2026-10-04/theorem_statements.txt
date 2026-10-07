@@ -1,0 +1,176 @@
+SbtCosmo.Derivation.GroundComplexNormBridge.stateNormSq_le (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundNativePhase.stateNormSq x ≤ 16 * ‖x‖ ^ 2
+SbtCosmo.Derivation.GroundComplexNormBridge.l2_pack_le (x : SbtCosmo.Derivation.GroundNativePhase.State) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundNativePhase.pack x) ≤ 4 * ‖x‖
+SbtCosmo.Derivation.GroundComplexNormBridge.l2_realEmbed_le (u : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundState.realEmbed u) ≤ 4 * ‖u‖
+SbtCosmo.Derivation.GroundComplexResidualBudget.shifted_l2_bound {b : SbtCosmo.Derivation.GroundState.Field} {e B : ℝ}
+  (hB : 0 ≤ B) (hb : ∀ (i : Fin 8), 0 ≤ b i ∧ b i ≤ B) (he : 0 ≤ e ∧ e ≤ B)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2 (SbtCosmo.Derivation.GroundComplexResidual.shifted b e z) ≤
+    (2 + B) * SbtCosmo.Derivation.GroundComplexEuclidean.l2 z
+SbtCosmo.Derivation.GroundComplexResidualBudget.ground_energy_budget {b g : SbtCosmo.Derivation.GroundState.Field}
+  {e B : ℝ} (hg : SbtCosmo.Derivation.GroundState.IsGround b g e) (hb : ∀ (i : Fin 8), 0 ≤ b i ∧ b i ≤ B) :
+  0 ≤ e ∧ e ≤ B
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.real_response_enclosed
+  {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx :
+    x ∈
+      Metric.closedBall (SbtCosmo.Derivation.GroundOriginalBasin.T.symm (SbtCosmo.Derivation.GroundOriginalBasin.u, 0))
+        ↑SbtCosmo.Derivation.GroundBasin.Point002Data.ρ)
+  (j i : Fin 8) :
+  (SbtCosmo.Derivation.GroundBasin.Point002Data.DR j i).Contains
+    ((SbtCosmo.Derivation.GroundNativeDerivative.selectedDerivative SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (SbtCosmo.Derivation.GroundOriginalBasin.T x))
+      (SbtCosmo.Derivation.GroundOriginalBasin.T (SbtCosmo.Derivation.GroundLocalDynamics.column j, 0)) i)
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.imag_response_enclosed
+  {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx :
+    x ∈
+      Metric.closedBall (SbtCosmo.Derivation.GroundOriginalBasin.T.symm (SbtCosmo.Derivation.GroundOriginalBasin.u, 0))
+        ↑SbtCosmo.Derivation.GroundBasin.Point002Data.ρ)
+  (j i : Fin 8) :
+  (SbtCosmo.Derivation.GroundBasin.Point002Data.DI j i).Contains
+    ((SbtCosmo.Derivation.GroundNativeDerivative.selectedDerivative SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (SbtCosmo.Derivation.GroundOriginalBasin.T x))
+      (SbtCosmo.Derivation.GroundOriginalBasin.T (0, SbtCosmo.Derivation.GroundLocalDynamics.column j)) i)
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.selector_derivative_bound
+  {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx :
+    x ∈
+      Metric.closedBall (SbtCosmo.Derivation.GroundOriginalBasin.T.symm (SbtCosmo.Derivation.GroundOriginalBasin.u, 0))
+        ↑SbtCosmo.Derivation.GroundBasin.Point002Data.ρ) :
+  ‖(SbtCosmo.Derivation.GroundNativeDerivative.selectedDerivative SbtCosmo.Derivation.GroundOriginalBasin.b
+            (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (SbtCosmo.Derivation.GroundOriginalBasin.T x)).comp
+        ↑SbtCosmo.Derivation.GroundOriginalBasin.T‖ ≤
+    1
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.selector_lipschitz :
+  LipschitzOnWith 1
+    (fun x =>
+      SbtCosmo.Derivation.GroundNativePhase.selected SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (SbtCosmo.Derivation.GroundOriginalBasin.T x))
+    (Metric.closedBall (SbtCosmo.Derivation.GroundOriginalBasin.T.symm (SbtCosmo.Derivation.GroundOriginalBasin.u, 0))
+      ↑SbtCosmo.Derivation.GroundBasin.Point002Data.ρ)
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.tail_in_ball (n : ℕ) :
+  SbtCosmo.Derivation.GroundOriginalBasin.T.symm
+      (SbtCosmo.Derivation.GroundNativePhase.unpack (-SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16))) ∈
+    Metric.closedBall (SbtCosmo.Derivation.GroundOriginalBasin.T.symm (SbtCosmo.Derivation.GroundOriginalBasin.u, 0))
+      ↑SbtCosmo.Derivation.GroundBasin.Point002Data.ρ
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.physical_tail_bound (n : ℕ) :
+  ‖SbtCosmo.Derivation.GroundNativePhase.unpack (-SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16)) -
+        (SbtCosmo.Derivation.GroundOriginalBasin.u, 0)‖ ≤
+    ↑SbtCosmo.Derivation.GroundBasin.Point002Data.basisBudget * ((3 / 5) ^ n * (1 / 48000))
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.euclidean_tail_bound (n : ℕ) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16) -
+        SbtCosmo.Derivation.GroundState.realEmbed (-SbtCosmo.Derivation.GroundOriginalBasin.u)) ≤
+    4 * ↑SbtCosmo.Derivation.GroundBasin.Point002Data.basisBudget * ((3 / 5) ^ n * (1 / 48000))
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.selector_tail_bound (n : ℕ) :
+  ‖SbtCosmo.Derivation.GroundNativePhase.selected SbtCosmo.Derivation.GroundOriginalBasin.b
+          (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+          (SbtCosmo.Derivation.GroundNativePhase.unpack
+            (-SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16))) -
+        SbtCosmo.Derivation.GroundOriginalBasin.u‖ ≤
+    (3 / 5) ^ n * (1 / 48000)
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.native_candidate_return (n : ℕ) :
+  SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate SbtCosmo.Derivation.GroundOriginalBasin.b
+      (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16)) =
+    SbtCosmo.Derivation.GroundState.realEmbed
+      (SbtCosmo.Derivation.GroundNativePhase.selected SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+        (SbtCosmo.Derivation.GroundNativePhase.unpack (-SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16))))
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.actual_candidate_distance (n : ℕ) :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16) -
+        -SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate SbtCosmo.Derivation.GroundOriginalBasin.b
+            (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+            (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16))) ≤
+    (4 * ↑SbtCosmo.Derivation.GroundBasin.Point002Data.basisBudget + 4) * ((3 / 5) ^ n * (1 / 48000))
+SbtCosmo.Derivation.GroundOriginalBasinEstimates.sourced_potential_budget (n : ℕ) (i : Fin 8) :
+  0 ≤
+      SbtCosmo.Derivation.GroundState.complexSourcePotential SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+        (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16)) i ∧
+    SbtCosmo.Derivation.GroundState.complexSourcePotential SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+        (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit (n + 16)) i ≤
+      1 / 2
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.tolerance_budget :
+  0 ≤ SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ ∧
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ < 1 / 2 ∧
+      1 / 100000000 < SbtCosmo.Derivation.GroundOriginalPositiveResiduals.ε
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit_unit (n : ℕ) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit n) = 1
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit_distance_fifty_nine :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 59 -
+        SbtCosmo.Derivation.GroundState.realEmbed (-SbtCosmo.Derivation.GroundOriginalBasin.u)) ≤
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.d
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit_distance_sixty :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60 -
+        SbtCosmo.Derivation.GroundState.realEmbed (-SbtCosmo.Derivation.GroundOriginalBasin.u)) ≤
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.d
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.actual_candidate_distance_sixty :
+  SbtCosmo.Derivation.GroundComplexEuclidean.l2
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60 -
+        SbtCosmo.Derivation.GroundOriginalPositiveResiduals.g) ≤
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.d
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.potential_budget (i : Fin 8) :
+  0 ≤ SbtCosmo.Derivation.GroundOriginalPositiveResiduals.potential i ∧
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.potential i ≤ 1 / 2
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.actual_candidate_ground_data :
+  SbtCosmo.Derivation.GroundState.complexNormSq SbtCosmo.Derivation.GroundOriginalPositiveResiduals.g = 1 ∧
+    (∀ (i : Fin 8),
+        SbtCosmo.Derivation.GroundState.complexHamiltonian SbtCosmo.Derivation.GroundOriginalPositiveResiduals.potential
+            SbtCosmo.Derivation.GroundOriginalPositiveResiduals.g i =
+          ↑SbtCosmo.Derivation.GroundOriginalPositiveResiduals.eigenvalue *
+            SbtCosmo.Derivation.GroundOriginalPositiveResiduals.g i) ∧
+      0 ≤ SbtCosmo.Derivation.GroundOriginalPositiveResiduals.eigenvalue ∧
+        SbtCosmo.Derivation.GroundOriginalPositiveResiduals.eigenvalue ≤ 1 / 2
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.last_update_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.lastUpdateResidual SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ
+      SbtCosmo.Derivation.GroundOriginalBasin.b (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (1 / 2)
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 59) <
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.ε
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.final_fixed_gap_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalFixedGap SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ
+        SbtCosmo.Derivation.GroundOriginalBasin.b (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+        (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60) <
+      SbtCosmo.Derivation.GroundOriginalPositiveResiduals.ε ∧
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ <
+      ‖SbtCosmo.Derivation.GroundNativePhase.overlap
+          (SbtCosmo.Derivation.GroundNativePhase.nativePhase SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ
+            (SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate SbtCosmo.Derivation.GroundOriginalBasin.b
+              (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+              (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60))
+            (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60))
+          (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60)‖
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.final_eigen_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalEigenResidual SbtCosmo.Derivation.GroundOriginalBasin.b
+      (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60) <
+    SbtCosmo.Derivation.GroundOriginalPositiveResiduals.ε
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.final_sourcing_threshold :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.finalSourcingResidual SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+        (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60) =
+      0 ∧
+    SbtCosmo.Derivation.GroundSourceDiagnostics.finalSourcingResidual SbtCosmo.Derivation.GroundOriginalBasin.b
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+        (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60) <
+      SbtCosmo.Derivation.GroundOriginalPositiveResiduals.ε
+SbtCosmo.Derivation.GroundOriginalPositiveResiduals.actual_seed_positive_sixty_convergence_tests :
+  SbtCosmo.Derivation.GroundSourceDiagnostics.MeetsConvergence SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ
+      SbtCosmo.Derivation.GroundOriginalPositiveResiduals.ε SbtCosmo.Derivation.GroundOriginalBasin.b
+      (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (1 / 2)
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 59)
+      (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit 60) ∧
+    ∀ (n : ℕ),
+      SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ
+          SbtCosmo.Derivation.GroundOriginalBasin.b (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ)
+          (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit n) ∧
+        SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundOriginalPositiveResiduals.τ
+          SbtCosmo.Derivation.GroundOriginalBasin.b (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (1 / 2)
+          (SbtCosmo.Derivation.GroundOriginalPositiveResiduals.orbit n)

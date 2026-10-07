@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/tmp/de_native_registered_build_stack_recovery.py", line 67, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/tmp/de_native_registered_build_stack_recovery.py", line 15, in main
+    plan,files,names,full=verify.candidate()
+                          ^^^^^^^^^^^^^^^^^^
+  File "/tmp/de_native_registered_verify_stack_recovery.py", line 379, in candidate
+    verify_registered_repair(plan, files, parent_plan)
+  File "/tmp/de_native_registered_verify_stack_recovery.py", line 345, in verify_registered_repair
+    qp=load(recovery/'production-plan.json');guard.verify_aggregate_repair(qp, check_aggregate_historical_inputs)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/de_registered_aggregate_repair_guard.py", line 305, in verify_aggregate_repair
+    freeze_check(frozen)
+  File "/tmp/de_native_registered_verify_stack_recovery.py", line 337, in check_aggregate_historical_inputs
+    else:assert sha(p)==h,p
+                ^^^^^^^^^
+AssertionError: /home/repos/six-birds-de-closure/lean/lakefile.lean

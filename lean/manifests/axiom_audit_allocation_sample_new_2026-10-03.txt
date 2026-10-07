@@ -1,0 +1,106 @@
+'SbtCosmo.Derivation.AllocationSampleData.parameter_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.budget_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.price_mass_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.sweep_mass_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.source_shift_gaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.local_price_control' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.heterogeneity_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleData.original_offsets' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.demand_margin_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.demand_strict_parameter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.demand_offset_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.selected_price_response_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.selected_offset_screened' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.utility_offset_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationScreening.selected_cost_offset_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.weights_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.curvatures_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.budget_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.budgets_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.response_cells' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.response_mass_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_price_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.actual_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.actual_global_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.actual_unique_optimizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_allocations_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_stationarity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_heterogeneity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.screening' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.screened_positive_price' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.screened_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.screened_stationarity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.screened_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_offsets_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.actual_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.original_negative_value_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.sweep_active' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSample.sweep_slack' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_unconstrained_optimal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_unconstrained_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.local_controls' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.local_kkt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.local_selector_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.local_selected_prices_unequal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.local_budget_total' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.local_allocation_differs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_profile_return' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_signed_shift_gaps' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_offset_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.source_movement_large' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SbtCosmo.Derivation.AllocationSampleControls.original_source_controls' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

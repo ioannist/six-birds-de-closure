@@ -1,0 +1,21 @@
+{
+  "historical_driver_sha256": "4855d03d90a7432c6b2a4fb579240282541dbd9a572358e0a00ceccea8dfbf79",
+  "new_driver_sha256": "2439d73d9958eba7481e1a4ab8d660293f40707d0fd1cfba779705972db3811f",
+  "controlled_path_pid_replacements": {
+    "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05": 6,
+    "3164894": 2,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/driver.log": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/summary.json": 2
+  },
+  "unchanged_plan_sha256": "0d63f4a641799b337884f1ca2fd92e04b371cdc83edee2fc39c3996ca9b651dc",
+  "proof_sources_changed": false,
+  "module_count": 4,
+  "theorem_count": 6,
+  "changes": [
+    "New output root and genuine audit-adoption parent",
+    "Validate successful recovery terminal and full audit output bindings",
+    "64-MiB Lean thread stack with explicit four threads"
+  ],
+  "registered_sources_changed": false
+}

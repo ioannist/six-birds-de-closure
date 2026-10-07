@@ -1,0 +1,220 @@
+SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.real_even_odd_limits_of_entry (N : ℕ)
+  (hentry :
+    SbtCosmo.Derivation.NativeCycleFrame20.T.symm
+        (SbtCosmo.Derivation.GroundNativePhase.unpack
+          (SbtCosmo.Derivation.NativeCycle20.g^[2 * N] SbtCosmo.Derivation.GroundOriginalSeed.initial)) ∈
+      Metric.closedBall (SbtCosmo.Derivation.NativeCycle20.centers 0) ↑SbtCosmo.Derivation.NativeCycle20.Step000.ρ) :
+  ∃ a c,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal a ∧
+      SbtCosmo.Derivation.NativeRealProfiles.IsReal c ∧
+        SbtCosmo.Derivation.NativeCycle20.g a = c ∧
+          SbtCosmo.Derivation.NativeCycle20.g c = a ∧
+            c ≠ a ∧
+              SbtCosmo.Derivation.GroundState.complexNormSq a = 1 ∧
+                SbtCosmo.Derivation.GroundState.complexNormSq c = 1 ∧
+                  1 / 4 < Complex.normSq (c 4) - Complex.normSq (a 4) ∧
+                    Filter.Tendsto
+                        (fun n =>
+                          SbtCosmo.Derivation.NativeCycle20.g^[2 * n] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds a) ∧
+                      Filter.Tendsto
+                        (fun n =>
+                          SbtCosmo.Derivation.NativeCycle20.g^[2 * n + 1]
+                            SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds c)
+SbtCosmo.Derivation.NativeCycle20.RealOriginalReturn.limits_real_of_entry (N : ℕ)
+  (hentry :
+    SbtCosmo.Derivation.NativeCycleFrame20.T.symm
+        (SbtCosmo.Derivation.GroundNativePhase.unpack
+          (SbtCosmo.Derivation.NativeCycle20.g^[2 * N] SbtCosmo.Derivation.GroundOriginalSeed.initial)) ∈
+      Metric.closedBall (SbtCosmo.Derivation.NativeCycle20.centers 0) ↑SbtCosmo.Derivation.NativeCycle20.Step000.ρ)
+  {a c : SbtCosmo.Derivation.GroundState.ComplexField}
+  (he :
+    Filter.Tendsto (fun n => SbtCosmo.Derivation.NativeCycle20.g^[2 * n] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+      Filter.atTop (nhds a))
+  (ho :
+    Filter.Tendsto
+      (fun n => SbtCosmo.Derivation.NativeCycle20.g^[2 * n + 1] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+      Filter.atTop (nhds c)) :
+  SbtCosmo.Derivation.NativeRealProfiles.IsReal a ∧ SbtCosmo.Derivation.NativeRealProfiles.IsReal c
+SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.real_even_odd_limits_of_entry (N : ℕ)
+  (hentry :
+    SbtCosmo.Derivation.NativeCycleFrame30.T.symm
+        (SbtCosmo.Derivation.GroundNativePhase.unpack
+          (SbtCosmo.Derivation.NativeCycle30.g^[2 * N] SbtCosmo.Derivation.GroundOriginalSeed.initial)) ∈
+      Metric.closedBall SbtCosmo.Derivation.NativeCycle30.pair.first.center
+        ↑SbtCosmo.Derivation.NativeCycle30.Step000.ρ) :
+  ∃ a c,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal a ∧
+      SbtCosmo.Derivation.NativeRealProfiles.IsReal c ∧
+        SbtCosmo.Derivation.NativeCycle30.g a = c ∧
+          SbtCosmo.Derivation.NativeCycle30.g c = a ∧
+            c ≠ a ∧
+              SbtCosmo.Derivation.GroundState.complexNormSq a = 1 ∧
+                SbtCosmo.Derivation.GroundState.complexNormSq c = 1 ∧
+                  9 / 20 < Complex.normSq (c 4) - Complex.normSq (a 4) ∧
+                    Filter.Tendsto
+                        (fun n =>
+                          SbtCosmo.Derivation.NativeCycle30.g^[2 * n] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds a) ∧
+                      Filter.Tendsto
+                        (fun n =>
+                          SbtCosmo.Derivation.NativeCycle30.g^[2 * n + 1]
+                            SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds c)
+SbtCosmo.Derivation.NativeCycle30.RealOriginalReturn.limits_real_of_entry (N : ℕ)
+  (hentry :
+    SbtCosmo.Derivation.NativeCycleFrame30.T.symm
+        (SbtCosmo.Derivation.GroundNativePhase.unpack
+          (SbtCosmo.Derivation.NativeCycle30.g^[2 * N] SbtCosmo.Derivation.GroundOriginalSeed.initial)) ∈
+      Metric.closedBall SbtCosmo.Derivation.NativeCycle30.pair.first.center
+        ↑SbtCosmo.Derivation.NativeCycle30.Step000.ρ)
+  {a c : SbtCosmo.Derivation.GroundState.ComplexField}
+  (he :
+    Filter.Tendsto (fun n => SbtCosmo.Derivation.NativeCycle30.g^[2 * n] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+      Filter.atTop (nhds a))
+  (ho :
+    Filter.Tendsto
+      (fun n => SbtCosmo.Derivation.NativeCycle30.g^[2 * n + 1] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+      Filter.atTop (nhds c)) :
+  SbtCosmo.Derivation.NativeRealProfiles.IsReal a ∧ SbtCosmo.Derivation.NativeRealProfiles.IsReal c
+SbtCosmo.Derivation.NativeCycleSeed20.RealReturn.original_seed_cycle_real :
+  ∃ z₀ z₁,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧
+      SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁ ∧
+        SbtCosmo.Derivation.NativeCycleSeed20.g z₀ = z₁ ∧
+          SbtCosmo.Derivation.NativeCycleSeed20.g z₁ = z₀ ∧
+            SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+              SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                1 / 4 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                  Filter.Tendsto
+                      (fun n =>
+                        SbtCosmo.Derivation.NativeCycleSeed20.g^[2 * n] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                      Filter.atTop (nhds z₀) ∧
+                    Filter.Tendsto
+                        (fun n =>
+                          SbtCosmo.Derivation.NativeCycleSeed20.g^[2 * n + 1]
+                            SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds z₁) ∧
+                      (∀ (n : ℕ),
+                          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                              (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+                              (SbtCosmo.Derivation.GroundKernelTube.background
+                                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                              (↑SbtCosmo.Derivation.NativeCycleFrame20.κ)
+                              (SbtCosmo.Derivation.NativeCycleSeed20.g^[n]
+                                SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+                                (SbtCosmo.Derivation.GroundKernelTube.background
+                                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                                (↑SbtCosmo.Derivation.NativeCycleFrame20.κ) (1 / 2)
+                                (SbtCosmo.Derivation.NativeCycleSeed20.g^[n]
+                                  SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                              SbtCosmo.Derivation.GroundState.complexNormSq
+                                  (SbtCosmo.Derivation.NativeCycleSeed20.g^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                                1) ∧
+                        (¬∃ l,
+                              Filter.Tendsto
+                                (fun n =>
+                                  SbtCosmo.Derivation.NativeCycleSeed20.g^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                                Filter.atTop (nhds l)) ∧
+                          Filter.Tendsto
+                              (fun n =>
+                                Complex.normSq
+                                  (SbtCosmo.Derivation.NativeCycleSeed20.g^[2 * n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                              Filter.atTop (nhds (Complex.normSq (z₀ 4))) ∧
+                            Filter.Tendsto
+                                (fun n =>
+                                  Complex.normSq
+                                    (SbtCosmo.Derivation.NativeCycleSeed20.g^[2 * n + 1]
+                                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                                Filter.atTop (nhds (Complex.normSq (z₁ 4))) ∧
+                              (∀ᶠ (n : ℕ) in Filter.atTop,
+                                  1 / 4 <
+                                    Complex.normSq
+                                        (SbtCosmo.Derivation.NativeCycleSeed20.g^[2 * n + 1]
+                                          SbtCosmo.Derivation.GroundOriginalSeed.initial 4) -
+                                      Complex.normSq
+                                        (SbtCosmo.Derivation.NativeCycleSeed20.g^[2 * n]
+                                          SbtCosmo.Derivation.GroundOriginalSeed.initial 4)) ∧
+                                ¬∃ l,
+                                    Filter.Tendsto
+                                      (fun n =>
+                                        Complex.normSq
+                                          (SbtCosmo.Derivation.NativeCycleSeed20.g^[n]
+                                            SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                                      Filter.atTop (nhds l)
+SbtCosmo.Derivation.NativeCycleSeed30.RealReturn.original_seed_cycle_real :
+  ∃ z₀ z₁,
+    SbtCosmo.Derivation.NativeRealProfiles.IsReal z₀ ∧
+      SbtCosmo.Derivation.NativeRealProfiles.IsReal z₁ ∧
+        SbtCosmo.Derivation.NativeCycleSeed30.g z₀ = z₁ ∧
+          SbtCosmo.Derivation.NativeCycleSeed30.g z₁ = z₀ ∧
+            SbtCosmo.Derivation.GroundState.complexNormSq z₀ = 1 ∧
+              SbtCosmo.Derivation.GroundState.complexNormSq z₁ = 1 ∧
+                9 / 20 < Complex.normSq (z₁ 4) - Complex.normSq (z₀ 4) ∧
+                  Filter.Tendsto
+                      (fun n =>
+                        SbtCosmo.Derivation.NativeCycleSeed30.g^[2 * n] SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                      Filter.atTop (nhds z₀) ∧
+                    Filter.Tendsto
+                        (fun n =>
+                          SbtCosmo.Derivation.NativeCycleSeed30.g^[2 * n + 1]
+                            SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                        Filter.atTop (nhds z₁) ∧
+                      (∀ (n : ℕ),
+                          SbtCosmo.Derivation.GroundNativeIteration.ActivePhase
+                              (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+                              (SbtCosmo.Derivation.GroundKernelTube.background
+                                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                              (↑SbtCosmo.Derivation.NativeCycleFrame30.κ)
+                              (SbtCosmo.Derivation.NativeCycleSeed30.g^[n]
+                                SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                            SbtCosmo.Derivation.GroundNativeIteration.NativeLegal
+                                (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+                                (SbtCosmo.Derivation.GroundKernelTube.background
+                                  SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                                (↑SbtCosmo.Derivation.NativeCycleFrame30.κ) (1 / 2)
+                                (SbtCosmo.Derivation.NativeCycleSeed30.g^[n]
+                                  SbtCosmo.Derivation.GroundOriginalSeed.initial) ∧
+                              SbtCosmo.Derivation.GroundState.complexNormSq
+                                  (SbtCosmo.Derivation.NativeCycleSeed30.g^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial) =
+                                1) ∧
+                        (¬∃ l,
+                              Filter.Tendsto
+                                (fun n =>
+                                  SbtCosmo.Derivation.NativeCycleSeed30.g^[n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial)
+                                Filter.atTop (nhds l)) ∧
+                          Filter.Tendsto
+                              (fun n =>
+                                Complex.normSq
+                                  (SbtCosmo.Derivation.NativeCycleSeed30.g^[2 * n]
+                                    SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                              Filter.atTop (nhds (Complex.normSq (z₀ 4))) ∧
+                            Filter.Tendsto
+                                (fun n =>
+                                  Complex.normSq
+                                    (SbtCosmo.Derivation.NativeCycleSeed30.g^[2 * n + 1]
+                                      SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                                Filter.atTop (nhds (Complex.normSq (z₁ 4))) ∧
+                              (∀ᶠ (n : ℕ) in Filter.atTop,
+                                  9 / 20 <
+                                    Complex.normSq
+                                        (SbtCosmo.Derivation.NativeCycleSeed30.g^[2 * n + 1]
+                                          SbtCosmo.Derivation.GroundOriginalSeed.initial 4) -
+                                      Complex.normSq
+                                        (SbtCosmo.Derivation.NativeCycleSeed30.g^[2 * n]
+                                          SbtCosmo.Derivation.GroundOriginalSeed.initial 4)) ∧
+                                ¬∃ l,
+                                    Filter.Tendsto
+                                      (fun n =>
+                                        Complex.normSq
+                                          (SbtCosmo.Derivation.NativeCycleSeed30.g^[n]
+                                            SbtCosmo.Derivation.GroundOriginalSeed.initial 4))
+                                      Filter.atTop (nhds l)

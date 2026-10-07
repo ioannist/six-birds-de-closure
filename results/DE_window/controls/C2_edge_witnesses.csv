@@ -1,0 +1,5 @@
+lambda,seed,n_patches,heterogeneity_s,delta_c,a_init,a_max,tag_probability,bare_admissible,integration_sane,crunch_before_tmax,records_persist,record_count_before_erasure,record_count_final,distinct_tags_before_erasure,distinct_tags_final,distinguishable_records,RS,first_record_a,a_lambda,lambda_to_matter_at_first_record,a_lambda_over_a_rec,failure_mode,growth_solve_reason,edge,side
+-0.000118446661166,1100,64,0.001,1.686,0.001,20,0.5,True,True,False,True,59,59,2,2,True,True,0.764362130047,20.3622481424,5.28956927355e-05,26.6395303247,none,ok,negative_crunch,inside
+-0.00027,1100,64,0.001,1.686,0.001,20,0.5,True,True,True,False,58,0,2,1,False,False,0.764352721836,15.4719627787,0.000120571652566,20.2419149389,crunch_erases_records,ok,negative_crunch,outside
+2.33138563172,1100,64,0.001,1.686,0.001,20,0.5,True,True,False,True,5,5,2,2,True,True,0.964264095144,0.754157338608,2.0902686319,0.782106626604,none,ok,positive_no_collapse,inside
+5.31441,1100,64,0.001,1.686,0.001,20,0.5,True,True,False,True,1,1,1,1,False,False,1.79894568714,0.573035658471,30.9392093596,0.318539721665,growth_shutoff_or_insufficient_growth,ok,positive_no_collapse,outside

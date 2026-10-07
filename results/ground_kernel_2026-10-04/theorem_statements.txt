@@ -1,0 +1,219 @@
+SbtCosmo.Derivation.GroundRationalInterval.Interval.point_sound (q : ℚ) :
+  (SbtCosmo.Derivation.GroundRationalInterval.Interval.point q).Contains ↑q
+SbtCosmo.Derivation.GroundRationalInterval.Interval.add_sound
+  {a b : SbtCosmo.Derivation.GroundRationalInterval.Interval} {x y : ℝ} (hx : a.Contains x) (hy : b.Contains y) :
+  (a.add b).Contains (x + y)
+SbtCosmo.Derivation.GroundRationalInterval.Interval.neg_sound {a : SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {x : ℝ} (hx : a.Contains x) : a.neg.Contains (-x)
+SbtCosmo.Derivation.GroundRationalInterval.mul_rectangle_bounds {a b c d x y : ℝ} (hx : a ≤ x ∧ x ≤ b)
+  (hy : c ≤ y ∧ y ≤ d) :
+  min (min (a * c) (a * d)) (min (b * c) (b * d)) ≤ x * y ∧ x * y ≤ max (max (a * c) (a * d)) (max (b * c) (b * d))
+SbtCosmo.Derivation.GroundRationalInterval.Interval.mul_sound
+  {a b : SbtCosmo.Derivation.GroundRationalInterval.Interval} {x y : ℝ} (hx : a.Contains x) (hy : b.Contains y) :
+  (a.mul b).Contains (x * y)
+SbtCosmo.Derivation.GroundRationalInterval.Interval.abs_le_bound
+  {a : SbtCosmo.Derivation.GroundRationalInterval.Interval} {x : ℝ} (hx : a.Contains x) : |x| ≤ ↑a.bound
+SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose_sound.{u_1} {V : Type u_1}
+  (e : SbtCosmo.Derivation.GroundRationalInterval.Expr V) {B : V → SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {σ : V → ℝ} (h : ∀ (i : V), (B i).Contains (σ i)) :
+  (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B e).Contains
+    (SbtCosmo.Derivation.GroundRationalInterval.Expr.eval σ e)
+SbtCosmo.Derivation.GroundRationalInterval.Expr.eval_sum.{u_1} {V : Type u_1} {n : ℕ}
+  (e : Fin n → SbtCosmo.Derivation.GroundRationalInterval.Expr V) (σ : V → ℝ) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval σ (SbtCosmo.Derivation.GroundRationalInterval.Expr.sum e) =
+    ∑ i, SbtCosmo.Derivation.GroundRationalInterval.Expr.eval σ (e i)
+SbtCosmo.Derivation.GroundPointCoordinates.coord_fromCoord (v : SbtCosmo.Derivation.GroundPointCoordinates.Vector) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (SbtCosmo.Derivation.GroundPointCoordinates.fromCoord v) = v
+SbtCosmo.Derivation.GroundPointCoordinates.fromCoord_coord (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  SbtCosmo.Derivation.GroundPointCoordinates.fromCoord (SbtCosmo.Derivation.GroundPointCoordinates.coord x) = x
+SbtCosmo.Derivation.GroundPointCoordinates.coord_norm_le (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 9) :
+  |SbtCosmo.Derivation.GroundPointCoordinates.coord x j| ≤ ‖x‖
+SbtCosmo.Derivation.GroundPointCoordinates.norm_le_coordinates {x : SbtCosmo.Derivation.GroundBorder.Point} {q : ℝ}
+  (hq : 0 ≤ q) (h : ∀ (j : Fin 9), |SbtCosmo.Derivation.GroundPointCoordinates.coord x j| ≤ q) : ‖x‖ ≤ q
+SbtCosmo.Derivation.GroundPointCoordinates.coord_column (i j : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (SbtCosmo.Derivation.GroundPointCoordinates.column j) i =
+    if i = j then 1 else 0
+SbtCosmo.Derivation.GroundPointCoordinates.coord_sum (s : Finset (Fin 9))
+  (f : Fin 9 → SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (∑ i ∈ s, f i) j =
+    ∑ i ∈ s, SbtCosmo.Derivation.GroundPointCoordinates.coord (f i) j
+SbtCosmo.Derivation.GroundPointCoordinates.coord_smul (c : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (c • x) j = c * SbtCosmo.Derivation.GroundPointCoordinates.coord x j
+SbtCosmo.Derivation.GroundPointCoordinates.coord_add (x y : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (x + y) j =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord x j + SbtCosmo.Derivation.GroundPointCoordinates.coord y j
+SbtCosmo.Derivation.GroundPointCoordinates.coord_sub (x y : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (x - y) j =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord x j - SbtCosmo.Derivation.GroundPointCoordinates.coord y j
+SbtCosmo.Derivation.GroundPointCoordinates.point_expansion (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  x = ∑ j, SbtCosmo.Derivation.GroundPointCoordinates.coord x j • SbtCosmo.Derivation.GroundPointCoordinates.column j
+SbtCosmo.Derivation.GroundPointCoordinates.linear_action_entries
+  (L : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (i : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord (L x) i =
+    ∑ j,
+      SbtCosmo.Derivation.GroundPointCoordinates.coord (L (SbtCosmo.Derivation.GroundPointCoordinates.column j)) i *
+        SbtCosmo.Derivation.GroundPointCoordinates.coord x j
+SbtCosmo.Derivation.GroundPointCoordinates.operator_norm_le_rows
+  (L : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point) {q : ℝ} (hq : 0 ≤ q)
+  (h :
+    ∀ (i : Fin 9),
+      ∑ j,
+          |SbtCosmo.Derivation.GroundPointCoordinates.coord (L (SbtCosmo.Derivation.GroundPointCoordinates.column j))
+              i| ≤
+        q) :
+  ‖L‖ ≤ q
+SbtCosmo.Derivation.GroundPointCoordinates.matrixMap_apply (A : Matrix (Fin 9) (Fin 9) ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (i : Fin 9) :
+  SbtCosmo.Derivation.GroundPointCoordinates.coord ((SbtCosmo.Derivation.GroundPointCoordinates.matrixMap A) x) i =
+    ∑ j, A i j * SbtCosmo.Derivation.GroundPointCoordinates.coord x j
+SbtCosmo.Derivation.GroundResidualEnclosure.eval_uExpr (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.uExpr i) =
+    x.1 i
+SbtCosmo.Derivation.GroundResidualEnclosure.eval_energyExpr (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      SbtCosmo.Derivation.GroundResidualEnclosure.energyExpr =
+    x.2
+SbtCosmo.Derivation.GroundResidualEnclosure.eval_gradExpr (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.gradExpr i) =
+    SbtCosmo.Derivation.GroundState.gradient x.1 i
+SbtCosmo.Derivation.GroundResidualEnclosure.eval_sourceExpr (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (i : Fin 8) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.sourceExpr i) =
+    SbtCosmo.Derivation.GroundState.sourcePotential b κ x.1 i
+SbtCosmo.Derivation.GroundResidualEnclosure.residualExpr_return (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (j : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.residualExpr j) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord (SbtCosmo.Derivation.GroundRootCertificate.residual b κ x) j
+SbtCosmo.Derivation.GroundResidualEnclosure.basisField_return (j : Fin 9) (i : Fin 8) :
+  ↑(SbtCosmo.Derivation.GroundResidualEnclosure.basisField j i) =
+    (SbtCosmo.Derivation.GroundPointCoordinates.column j).1 i
+SbtCosmo.Derivation.GroundResidualEnclosure.basisEnergy_return (j : Fin 9) :
+  ↑(SbtCosmo.Derivation.GroundResidualEnclosure.basisEnergy j) = (SbtCosmo.Derivation.GroundPointCoordinates.column j).2
+SbtCosmo.Derivation.GroundResidualEnclosure.derivativeExpr_return (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ)
+  (x : SbtCosmo.Derivation.GroundBorder.Point) (j i : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.derivativeExpr j i) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord
+      ((SbtCosmo.Derivation.GroundRootCertificate.residualDerivative b κ x)
+        (SbtCosmo.Derivation.GroundPointCoordinates.column j))
+      i
+SbtCosmo.Derivation.GroundResidualEnclosure.correctedResidualExpr_return (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (i : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.correctedResidualExpr C i) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord
+      ((SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+        (SbtCosmo.Derivation.GroundRootCertificate.residual b κ x))
+      i
+SbtCosmo.Derivation.GroundResidualEnclosure.defectExpr_return (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) (i j : Fin 9) :
+  SbtCosmo.Derivation.GroundRationalInterval.Expr.eval (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x)
+      (SbtCosmo.Derivation.GroundResidualEnclosure.defectExpr C i j) =
+    SbtCosmo.Derivation.GroundPointCoordinates.coord
+      ((SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative b κ
+          (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C) x)
+        (SbtCosmo.Derivation.GroundPointCoordinates.column j))
+      i
+SbtCosmo.Derivation.GroundResidualEnclosure.defect_norm_bound (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (B : SbtCosmo.Derivation.GroundResidualEnclosure.Variable → SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) {q : ℚ} (hq : 0 ≤ q)
+  (hB :
+    ∀ (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable),
+      (B v).Contains (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x v))
+  (hrows :
+    ∀ (i : Fin 9),
+      ∑ j,
+          (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B
+              (SbtCosmo.Derivation.GroundResidualEnclosure.defectExpr C i j)).bound ≤
+        q) :
+  ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative b κ
+        (SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C) x‖ ≤
+    ↑q
+SbtCosmo.Derivation.GroundResidualEnclosure.corrected_residual_norm_bound (C : Matrix (Fin 9) (Fin 9) ℚ)
+  (B : SbtCosmo.Derivation.GroundResidualEnclosure.Variable → SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (x : SbtCosmo.Derivation.GroundBorder.Point) {y : ℚ} (hy : 0 ≤ y)
+  (hB :
+    ∀ (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable),
+      (B v).Contains (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b κ x v))
+  (hbound :
+    ∀ (i : Fin 9),
+      (SbtCosmo.Derivation.GroundRationalInterval.Expr.enclose B
+            (SbtCosmo.Derivation.GroundResidualEnclosure.correctedResidualExpr C i)).bound ≤
+        y) :
+  ‖(SbtCosmo.Derivation.GroundResidualEnclosure.preconditioner C)
+        (SbtCosmo.Derivation.GroundRootCertificate.residual b κ x)‖ ≤
+    ↑y
+SbtCosmo.Derivation.GroundKernelTube.box_sound (β : Fin 8 → ℚ) (a c : ℚ) (z : Fin 9 → ℚ) (r : ℚ) {κ : ℝ}
+  {x : SbtCosmo.Derivation.GroundBorder.Point} (hk : κ ∈ Set.Icc ↑a ↑c)
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable) :
+  (SbtCosmo.Derivation.GroundKernelTube.box β a c z r v).Contains
+    (SbtCosmo.Derivation.GroundResidualEnclosure.valuation (SbtCosmo.Derivation.GroundKernelTube.background β) κ x v)
+SbtCosmo.Derivation.GroundKernelTube.certified_actual_root {β : Fin 8 → ℚ} {a c : ℚ} {z : Fin 9 → ℚ} {r q y : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} (h : SbtCosmo.Derivation.GroundKernelTube.Arithmetic β a c z r q y C) {κ : ℝ}
+  (hk : κ ∈ Set.Icc ↑a ↑c) :
+  ∃ x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r,
+    SbtCosmo.Derivation.GroundRootCertificate.residual (SbtCosmo.Derivation.GroundKernelTube.background β) κ x = 0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround
+          (SbtCosmo.Derivation.GroundState.sourcePotential (SbtCosmo.Derivation.GroundKernelTube.background β) κ x.1)
+          x.1 x.2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap (SbtCosmo.Derivation.GroundKernelTube.background β) κ x.1 =
+            x.1 ∧
+          ∀ t ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r,
+            SbtCosmo.Derivation.GroundRootCertificate.residual (SbtCosmo.Derivation.GroundKernelTube.background β) κ t =
+                0 →
+              t = x
+SbtCosmo.Derivation.GroundOriginalFirstTube.arithmetic :
+  SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground 0
+    (15 / 128) SbtCosmo.Derivation.GroundOriginalFirstTube.originalCenter (1 / 256) (1 / 10) (3 / 1000)
+    SbtCosmo.Derivation.GroundOriginalFirstTube.originalPreconditioner
+SbtCosmo.Derivation.GroundOriginalFirstTube.original_positive_root (κ : ℝ) (hk : κ ∈ Set.Icc 0 (15 / 128)) :
+  ∃
+    x ∈
+      Metric.closedBall
+        (SbtCosmo.Derivation.GroundKernelTube.center SbtCosmo.Derivation.GroundOriginalFirstTube.originalCenter)
+        (1 / 256),
+    SbtCosmo.Derivation.GroundRootCertificate.residual
+          (SbtCosmo.Derivation.GroundKernelTube.background
+            SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+          κ x =
+        0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround
+          (SbtCosmo.Derivation.GroundState.sourcePotential
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            κ x.1)
+          x.1 x.2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              κ x.1 =
+            x.1 ∧
+          ∀
+            t ∈
+              Metric.closedBall
+                (SbtCosmo.Derivation.GroundKernelTube.center SbtCosmo.Derivation.GroundOriginalFirstTube.originalCenter)
+                (1 / 256),
+            SbtCosmo.Derivation.GroundRootCertificate.residual
+                  (SbtCosmo.Derivation.GroundKernelTube.background
+                    SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+                  κ t =
+                0 →
+              t = x
+SbtCosmo.Derivation.GroundOriginalFirstTube.original_smooth_branch :
+  ContDiffOn ℝ (↑⊤) SbtCosmo.Derivation.GroundOriginalFirstTube.originalTube.root (Set.Icc 0 (15 / 128))
+SbtCosmo.Derivation.GroundOriginalFirstTube.zero_preconditioner_rejected :
+  ¬SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground 0
+      (15 / 128) SbtCosmo.Derivation.GroundOriginalFirstTube.originalCenter (1 / 256) (1 / 10) (3 / 1000) fun x x_1 => 0
+SbtCosmo.Derivation.GroundOriginalFirstTube.false_residual_budget_rejected :
+  ¬SbtCosmo.Derivation.GroundKernelTube.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground 0
+      (15 / 128) SbtCosmo.Derivation.GroundOriginalFirstTube.originalCenter (1 / 256) (1 / 10) 1
+      SbtCosmo.Derivation.GroundOriginalFirstTube.originalPreconditioner

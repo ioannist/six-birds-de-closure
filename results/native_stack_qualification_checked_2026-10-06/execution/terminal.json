@@ -1,0 +1,12 @@
+{
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "module_count": 3,
+  "fresh_statement_count": 18,
+  "fresh_axiom_count": 18,
+  "source_freeze_sha256": "3e6f6dc2f0b703677af6df423e4b2374e5ea5444cc3830d76d42876c130d2b88",
+  "production_plan_sha256": "c7a798e995ce61cea1c727eb25aa4de1a8755925267bc5e118e5c2740879461b",
+  "parent_summary_sha256": "e872fb4c5e580f1d45291585a66a8a77e047c29031e0b5b3f71316d2692bdbd1",
+  "repository_registered": false,
+  "goal_complete": false
+}

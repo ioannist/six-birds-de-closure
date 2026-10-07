@@ -1,0 +1,8 @@
+{
+  "terminal_exit_code": 1,
+  "stage": "Archive readback",
+  "reason": "Parent normalization object was archived as a symbolic link; streaming extraction cannot read link data",
+  "repair": "Archive dereferenced immutable object bytes",
+  "proof_statements_changed": false,
+  "finite15_collector_not_started": true
+}

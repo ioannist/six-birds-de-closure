@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-05T12:15:30.283880+00:00",
+  "terminal_exit_code": 0,
+  "standard_only": true,
+  "checked_declarations": 27,
+  "dependency_modules": 289,
+  "retained_terminal_zero_modules": 73,
+  "fresh_recovery_modules": 216,
+  "leaves": 178,
+  "pairs": 89,
+  "archive_members_verified": 1175,
+  "bound_modules": 965,
+  "original_seed_infinite_return_checked": true,
+  "every_prefix_one_to_sixty_fails": true,
+  "all_iterates_guarded_and_unit": true,
+  "registered": false,
+  "original_regular_campaign_still_required": true,
+  "goal_complete": false
+}

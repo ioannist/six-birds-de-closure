@@ -1,0 +1,48 @@
+Adversarial self-review, not independent review.
+
+Target: explicit actual endpoint/first-time/matter-ratio constants throughout the
+full declared exact coupled threshold/amplitude rectangle, original fixed population.
+Original paper section5/appendixA and existing native growth/cell/first-time proofs
+inspected. No physical Lambda or sharp typicality completion inferred.
+
+Covariance: actual dimensionless parameter and logarithmic scale equality proven
+by unfolding original nativeGrowth. No new growth family, asymptotic replacement
+or amplitude normalization. The left-side original start1/1000 is retained;
+right-side start y=a0/c has actual positive range[1/4000,1/200]. Original horizon
+20 maps to20/c in[5,100]. Genuine finite-start root inverse and Lambda*y^2 prefactor
+term retained, bounded explicitly in upper/lower estimates. No infinite-horizon
+or zero-start limit used.
+
+Certificates: exact Fraction/isqrt generator, three actual profiles with1925
+whole cells; every rational square/endpoints/sum checked by Lean kernel. Unimodal
+cell laws established earlier, not sampled endpoint interpolation. Each generated
+profile rejects a false first-cell mutation. Default byte replay matched. Actual
+integral interval monotonicity is justified by positive original integrand and
+actual interval integrability. Lower helper explicitly has Lambda>=1, discharged
+for3/7/2. Actual square-root inequalities checked arithmetically. No final growth
+inequality or endpoint bracket supplied to construction.
+
+Actual return: original quadrature and exact covariance earn >970c atlambda3/c^3
+scale5c, >897c atlambda(7/2)/c^3 scale(8/3)c, and <960c atlambda(7/2)/c^3 horizon20.
+Original aggregate(960,970) independently kernel-established. 5c<=20 and actual
+time monotonicity give horizon lower. Genuine lambda strict ordering against the
+actual native endpoint yields3<u*c^3<7/2. Every interval/cutoff/positivity earned.
+
+ANY-patch first time: actual original threshold in(500c,897c), nonnegative matter
+lower time gives>c/2; actual prefix growth/lambda ordering and first-time equivalence
+on original interval gives<=(8/3)c. No first-root/time/max/rank assumed as an endpoint
+hypothesis. Actual R=abs(u)*time^3 yields3/8<R<1792/27 for every seed and every
+rectangle point. Nonnegative ratio ordering plus earlier negative R<1/125 earns
+full signed0<=R<1792/27. No median, typicality, sharp edge or population-independent
+universal constant claimed. Exact coupling remains distinct from rounded/resampled
+arrays and separately realized N32/N128 populations.
+
+Fresh full build8156 passes. All28 exported statements and transitive closures
+exit0, standard Lean axioms only; no holes/native_decide. Cumulative1251 is exact
+immutable1223 prefix plus fresh28, not a rerun full cumulative command. Paper,
+external, runtime/data/old proofs and old evidence fixed; pinned toolchain/source
+identity checked. No Python runtime test/ODE/RNG suite rerun for pure proof and
+exact certificate additions. Explicit numerical rectangle ratio obligation closed
+at stated broad finite constants. Other-population ratios and first-time joint
+regularity remain feasible, broader original-target audit and physical/project-sized
+boundaries unchanged. Full goal not complete.

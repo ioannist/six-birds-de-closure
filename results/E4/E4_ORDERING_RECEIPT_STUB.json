@@ -1,0 +1,14 @@
+{
+  "role": "EXACT_FORM_NEGATIVE_CONTROL",
+  "superseded": "EXACT_FORM_NEGATIVE_CONTROL / in-sample-only; G-E4-PREDICT-DECISIVE retired 2026-05-31, see plan/REPLAN_SPEC",
+  "blinding_status": "with-values-known",
+  "exclusion": "excluded_from_blind_G-E4-PREDICT-DECISIVE_due_to_prior_session_value_exposure",
+  "hashes": {
+    "E4_KERNEL_FREEZE.json": "5dee088e52f4a17faaf4fef9a379364558c746ed4a9f3104e0641e6b34dba025",
+    "E4_PREDICTED_ROUTE_TABLE.json": "a2bfd1722a793b00f652bfc4f2c40d20ba3a138ca0edc33ac4ac6ab756ef16b4",
+    "E4_ROUTE_VERSION_MANIFEST.json": "d54862b80342e2c86084c12d81ddb3c55d815b60f915b97adf8aef16ea888be3"
+  },
+  "next_step": "manager_commit_gate_before_any_E4_ROUTE_VALUE_MANIFEST_is_written",
+  "phase": "A",
+  "schema_version": 1
+}

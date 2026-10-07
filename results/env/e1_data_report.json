@@ -1,0 +1,183 @@
+{
+  "data_drive_usage": {
+    "/mnt/data-drive/sbt-de/data/processed": "48M",
+    "/mnt/data-drive/sbt-de/data/raw": "653M",
+    "/mnt/data-drive/sbt-de/data/raw/desi_dr2_bao": "69M",
+    "/mnt/data-drive/sbt-de/data/raw/planck_2018": "368M",
+    "/mnt/data-drive/sbt-de/data/raw/sn_data_repos": "216M"
+  },
+  "datasets": {
+    "DESI_DR2_BAO": {
+      "access": "fallback_compressed_gaussian",
+      "aor_status": "budgeted",
+      "covariance": {
+        "chol_success": true,
+        "condition_number": 116.8238290439558,
+        "covariance_applicable": true,
+        "finite": true,
+        "lambda_min": 0.00578998687,
+        "native_likelihood": false,
+        "symmetric": true
+      },
+      "covariance_shape": [
+        13,
+        13
+      ],
+      "data_vector_shape": [
+        13
+      ],
+      "fallback_invoked": true,
+      "fallback_justification": "Official native/desilike likelihood was not provisioned in this data-only packet; CobayaSampler DESI DR2 compressed Gaussian is the documented plan/03 fallback.",
+      "processed_manifest_bytes": 2431,
+      "raw_manifest_bytes": 3649,
+      "release": "arXiv:2503.14738",
+      "sha256_verified": true,
+      "source": "https://github.com/CobayaSampler/bao_data/tree/master/desi_bao_dr2",
+      "verified_file_count": 6
+    },
+    "DES_SN5YR": {
+      "access": "official_mirror",
+      "aor_status": "zero",
+      "covariance": {
+        "chol_success": true,
+        "condition_number": 90654133.92192744,
+        "covariance_applicable": true,
+        "finite": true,
+        "lambda_min": 0.002229919282975156,
+        "native_likelihood": false,
+        "symmetric": true
+      },
+      "covariance_shape": [
+        1829,
+        1829
+      ],
+      "data_vector_shape": [
+        1829
+      ],
+      "fallback_invoked": false,
+      "fallback_justification": null,
+      "processed_manifest_bytes": 26881412,
+      "raw_manifest_bytes": 53617001,
+      "release": "Zenodo:13827844; arXiv:2401.02929",
+      "sha256_verified": true,
+      "source": "https://github.com/CobayaSampler/sn_data/tree/master/DESY5",
+      "verified_file_count": 7
+    },
+    "PANTHEON_PLUS": {
+      "access": "official_mirror",
+      "aor_status": "zero",
+      "covariance": {
+        "chol_success": true,
+        "condition_number": 463.97929219019557,
+        "covariance_applicable": true,
+        "finite": true,
+        "lambda_min": 0.0051935504914019165,
+        "native_likelihood": false,
+        "symmetric": true
+      },
+      "covariance_shape": [
+        1588,
+        1588
+      ],
+      "data_vector_shape": [
+        1588
+      ],
+      "fallback_invoked": false,
+      "fallback_justification": null,
+      "processed_manifest_bytes": 23255214,
+      "raw_manifest_bytes": 33865593,
+      "release": "arXiv:2202.04077",
+      "sha256_verified": true,
+      "source": "https://github.com/CobayaSampler/sn_data/tree/master/PantheonPlus",
+      "verified_file_count": 7
+    },
+    "PLANCK_2018": {
+      "access": "official_likelihood",
+      "aor_status": "zero",
+      "build_flags": "-std=gnu99 -Wno-implicit-int -Wno-error=implicit-int -Wno-incompatible-pointer-types -Wno-error=incompatible-pointer-types",
+      "build_log_initial_failure": "results/env/build-logs/planck-clik-cobaya-install-initial-failure.log",
+      "build_log_success": "results/env/build-logs/planck-clik-cobaya-install-success.log",
+      "clik_import_pass": true,
+      "clik_import_stderr": "",
+      "clik_import_stdout": "/home/repos/six-birds-de-closure/data/raw/planck_2018/cobaya-packages/code/planck/clik-main/lib/python/site-packages/clik/__init__.py",
+      "cobaya_packages_path": "/home/repos/six-birds-de-closure/data/raw/planck_2018/cobaya-packages",
+      "covariance": {
+        "chol_success": null,
+        "condition_number": null,
+        "covariance_applicable": false,
+        "finite": true,
+        "lambda_min": null,
+        "native_likelihood": true,
+        "symmetric": null
+      },
+      "covariance_shape": [
+        0,
+        0
+      ],
+      "data_vector_shape": [
+        0
+      ],
+      "fallback_invoked": false,
+      "fallback_justification": null,
+      "install_test_log": "results/env/build-logs/planck-native-cobaya-install-test.log",
+      "native_components": [
+        "planck_2018_highl_plik.TTTEEE",
+        "planck_2018_lowl.TT",
+        "planck_2018_lowl.EE",
+        "planck_2018_lensing.native"
+      ],
+      "processed_manifest_bytes": 706,
+      "raw_manifest_bytes": 559309,
+      "release": "arXiv:1807.06209",
+      "resolved_cobaya_packages_path": "/mnt/data-drive/sbt-de/data/raw/planck_2018/cobaya-packages",
+      "sha256_verified": true,
+      "source": "cobaya-install: planck_2018_highl_plik.TTTEEE planck_2018_lowl.TT planck_2018_lowl.EE planck_2018_lensing.native",
+      "verified_file_count": 2219
+    },
+    "UNION3": {
+      "access": "official_mirror",
+      "aor_status": "zero",
+      "covariance": {
+        "chol_success": true,
+        "condition_number": 1372.000930636065,
+        "covariance_applicable": true,
+        "finite": true,
+        "lambda_min": 0.00014232467894653342,
+        "native_likelihood": false,
+        "symmetric": true
+      },
+      "covariance_shape": [
+        22,
+        22
+      ],
+      "data_vector_shape": [
+        22
+      ],
+      "fallback_invoked": false,
+      "fallback_justification": null,
+      "processed_manifest_bytes": 5491,
+      "raw_manifest_bytes": 12282,
+      "release": "arXiv:2401.06956",
+      "sha256_verified": true,
+      "source": "https://github.com/CobayaSampler/sn_data/tree/master/Union3",
+      "verified_file_count": 7
+    }
+  },
+  "gates": {
+    "G-DATA-1": {
+      "description": "E1 dataset manifests and payloads present",
+      "pass": true
+    },
+    "G-DATA-7": {
+      "description": "manifest sha256 verification hard-errors on mismatch",
+      "pass": true
+    },
+    "G-DATA-8": {
+      "description": "fallbacks are statused and justified",
+      "pass": true
+    }
+  },
+  "generated_utc": "2026-05-29T22:47:56Z",
+  "schema_version": 1,
+  "scope": "C-E1-data: loaders/fetch/integrity only; no fits or MCMC"
+}

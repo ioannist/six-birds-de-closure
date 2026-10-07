@@ -1,0 +1,41 @@
+{
+  "historical_controller_sha256": "98fa35b505ec7679da4fc53693d9b7633f0a234e1133db1b17e7fb6ce01f59bf",
+  "controller_sha256": "9579397fe933ddda7265f7d6ddaba764145799084d71df728bd321100ae66850",
+  "controlled_path_pid_replacements": {
+    "native_registered_integration_run_2026-10-06": 1,
+    "native_registered_aggregate_verification_candidate_2026-10-06": 1,
+    "/tmp/de_offset_header_install_aggregate_recovery.py": 1,
+    "/tmp/de_offset_registered_cumulative_audit_aggregate_recovery.py": 1,
+    "/tmp/de_ground_offset_transport_verify_registered_recovery.py": 1,
+    "/tmp/de_native_registered_install_aggregate_recovery.py": 1,
+    "/tmp/de_native_registered_build_aggregate_recovery.py": 1,
+    "/tmp/de_native_registered_verify_aggregate_recovery.py": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/build_recovery.py": 1,
+    "/tmp/de_native_campaign_aggregate_recovery_2026-10-05/summary.json": 1,
+    "/tmp/de_native_seed_real_returns_aggregate_recovery_2026-10-05": 2,
+    "/tmp/de_native_campaign_semantic_aggregate_recovery_2026-10-06": 2,
+    "/tmp/de_native_additional_constructions_aggregate_recovery_2026-10-06": 2,
+    "/tmp/de_source_execution_supplement_aggregate_recovery_2026-10-06": 2,
+    "3164894": 1,
+    "3241065": 1,
+    "4046958": 1,
+    "4054594": 1,
+    "4054600": 1
+  },
+  "changed_function_asts": [
+    "main"
+  ],
+  "unchanged_execute_parent_and_failure_journal_functions": true,
+  "native_source_candidate_unchanged": true,
+  "registered_checks_retained": [
+    10003,
+    6909,
+    11776,
+    1772,
+    20798,
+    32574
+  ],
+  "full_audit_stack_kib": 65536,
+  "live_controller_started": false,
+  "proof_and_registered_success_pending": true
+}

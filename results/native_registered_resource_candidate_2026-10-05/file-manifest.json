@@ -1,0 +1,16 @@
+{
+  "checks.json": "7212b5193cad7a9d06caf4b3ab8ea5c6710ce5a11108115720d240cea658b724",
+  "build_candidate.py": "1d5b542c8b515b8bfc86607b936db78acbe1ffad953e7cf1abf4812ab4973772",
+  "runner-stdout.log": "f0d40db4b6284ee9e831f9cf45805b41c335b67244bf77aac5aaebec84cfb7c1",
+  "candidate-stdout.log": "69b4b5256951199aa6704ab61d98c501960daa9425c95d7e3db4ad213904c6f7",
+  "prepare_driver.py": "a706d13ce1d3da811de1a096200ee47653824978c81721e4d5b87eec35dd3f5a",
+  "runner-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "review_driver.py": "e077a841f0afea0337d98bdeab94efee6c97fcf949e33d01cb6f557d5f6aa8b3",
+  "registered-stdout.log": "34ccfa36d41735d3f2fa434228aab2478e60cddc37ddd75e39c1f6f5bc1c067f",
+  "verifier_candidate.py": "73add4917a561032d9284c40228913e9fbbb1868de97ee4ef992915aab212922",
+  "fixture-archive-manifest.json": "c1cb4e3b578fd348af31d32c0f1351d503d373e7a23c70b9ab906885f1551a61",
+  "candidate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fixture_artifacts.tar.gz": "72f35b6f7a55024e67bcf8064eed137eb8f6e1ad97ee30a6dac3943987655028",
+  "README.md": "7336a8b8efa6629fa7588b1d07f069b7113c42b19409189f77b2a53bd7753519",
+  "registered-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

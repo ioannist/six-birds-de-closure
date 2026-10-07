@@ -1,0 +1,13 @@
+{
+  "Check.lean": "320113b1174d8b22f32b79ef969036ea1d60864274ca2ea5c3c325168177c569",
+  "audit-terminal.json": "2280351c70ca9c21f0c87ad4edf36e5be4ba8c387c6f7a919c7bfa651bd8c96d",
+  "audit.log": "3f564872253287780ec48618ce845f5739c3f6a38792be47ee687d738b8f7c65",
+  "checkpoint-verification.json": "f0eb6bf45b288a656c8072f6f03af3e45ed94d198a0769468a19400259c75c30",
+  "compile-terminal.json": "7c751cd458ce7abae59bbff4c6550e053fd9a734e3746c3e1b11ed6b85b06159",
+  "compile.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "dependency-snapshot.json": "18c74a1633fc21bf067432275a1ec9c6f7f0eb9696bdd0d48eb548d093a00275",
+  "lean/SbtCosmo/Derivation/GroundNativeBackgroundShift.lean": "a2a6b829c183101d2a3df6c1275f999a73c42be24d996723a48a07e965b7d830",
+  "registration-plan.json": "9c1f018fee77fd23401d6a896d34bed38d0561214a44ffc6a211007536f31d0e",
+  "scope-review.json": "51b57826c57235854a04c3eb7dcc89872aaf53cef2a467a422a5badcee9968c0",
+  "summary.json": "7b6d030c7d848bad2ec516dd3a966a84defd7b34a08a4328611a6ed65e98f7ac"
+}

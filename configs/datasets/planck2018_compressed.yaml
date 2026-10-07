@@ -1,0 +1,29 @@
+schema_version: 1
+dataset: PLANCK_2018_COMPRESSED
+description: Planck 2018 compressed CMB distance priors for the E1 fast reproduction track.
+aor_status: budgeted
+access: published_table
+source:
+  citation: "Lu Chen, Qing-Guo Huang, Ke Wang, Distance Priors from Planck Final Release, JCAP 02 (2019) 028, arXiv:1808.05724"
+  doi: "10.1088/1475-7516/2019/02/028"
+  arxiv: "1808.05724"
+  table: "Table I, base LambdaCDM, Planck TT,TE,EE+lowE"
+  note: "Table I reports means, 68% errors, and correlations for (R, l_A, Omega_b h^2, n_s); this file uses the 3-parameter subset and converts Omega_b h^2 to 100*omega_b."
+vector:
+  parameters: [R, l_A, 100omega_b]
+  mean: [1.7502, 301.471, 2.236]
+  covariance_units: "Converted from covariance on (R, l_A, omega_b): 1e-5 * [[2.1, 19.0, -0.045], [19.0, 789.0, -0.43], [-0.045, -0.43, 0.0022]]."
+  covariance:
+    - [0.000021, 0.00019, -0.000045]
+    - [0.00019, 0.00789, -0.00043]
+    - [-0.000045, -0.00043, 0.00022]
+  original_parameters: [R, l_A, omega_b]
+  original_mean: [1.7502, 301.471, 0.02236]
+  original_covariance:
+    - [0.000021, 0.00019, -0.00000045]
+    - [0.00019, 0.00789, -0.0000043]
+    - [-0.00000045, -0.0000043, 0.000000022]
+usage:
+  models: "Used as the base LambdaCDM Planck distance-prior compression for lcdm, wcdm, and CPL/w0wa validation, following the paper's distance-prior validation section."
+  clik_invoked: false
+  spectra_invoked: false

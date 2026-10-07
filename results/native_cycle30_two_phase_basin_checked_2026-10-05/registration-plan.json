@@ -1,0 +1,16 @@
+{
+  "repository_registered": false,
+  "production_integration_pending": true,
+  "old_frozen_plans_unchanged": true,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin",
+      "source_sha256": "5669f8f9f6cda8a21173bf18e38f4b2035c906b675fc8a8ad2638bc87d3337d0",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.shifted_landing",
+        "SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.opposite_phase_neighborhood",
+        "SbtCosmo.Derivation.GroundOriginalCycle30TwoPhaseBasin.open_both_phases_attracting_cycle"
+      ]
+    }
+  ]
+}

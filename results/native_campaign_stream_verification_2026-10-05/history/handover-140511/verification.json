@@ -1,0 +1,61 @@
+{
+  "utc": "2026-10-05T14:05:11.756013+00:00",
+  "live": {
+    "utc": "2026-10-05T14:05:11.666891+00:00",
+    "live_jobs": 11,
+    "verified_terminal_jobs": [
+      {
+        "pid": 4049651,
+        "script": "de_native_stable15_priority_recovery/build_recovery.py",
+        "actual_terminal_exit_code": 0,
+        "recorded_audited_declarations": 27,
+        "terminal_sha256": "fcd5ae4265c47b01afb384dae86f5e0ad9ce0b658848dc544eba4c6dc2959b86"
+      }
+    ],
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 399,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 289,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 442,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": [
+      "/tmp/de_native_stable15_priority_recovery/summary.json"
+    ]
+  },
+  "stable10_preflight": {
+    "mode": "preflight",
+    "coupling": "10",
+    "original_sample_index": 8,
+    "paired_entry": 30,
+    "entry_updates": 60,
+    "ready_for_checkpoint": false,
+    "family_markers_present": [],
+    "sixty_markers_present": [],
+    "proof_success_claimed": false,
+    "checkpoint_created": false,
+    "goal_complete": false
+  },
+  "candidate_manifest_sha256": "9c579871ef4551c67d820edbcc084833598e6034f3b48dfd5fbbf314e1a7160e",
+  "frozen_inputs_revalidated": 6262,
+  "completed_private_audit_freeze_revalidated": 3936,
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

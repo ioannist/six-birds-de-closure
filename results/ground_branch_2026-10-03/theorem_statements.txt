@@ -1,0 +1,165 @@
+SbtCosmo.Derivation.GroundParameterEquations.jointSource_smooth :
+  ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundParameterEquations.jointSource
+SbtCosmo.Derivation.GroundParameterEquations.jointResidual_smooth :
+  ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundParameterEquations.jointResidual
+SbtCosmo.Derivation.GroundParameterEquations.jointResidual_hasFDerivAt
+  (z : SbtCosmo.Derivation.GroundParameterEquations.Domain) :
+  HasFDerivAt SbtCosmo.Derivation.GroundParameterEquations.jointResidual
+    (fderiv ℝ SbtCosmo.Derivation.GroundParameterEquations.jointResidual z) z
+SbtCosmo.Derivation.GroundParameterEquations.jointResidual_partial
+  (p : SbtCosmo.Derivation.GroundParameterEquations.Parameter) (x : SbtCosmo.Derivation.GroundBorder.Point) :
+  (fderiv ℝ SbtCosmo.Derivation.GroundParameterEquations.jointResidual (p, x)).comp
+      (ContinuousLinearMap.inr ℝ SbtCosmo.Derivation.GroundParameterEquations.Parameter
+        SbtCosmo.Derivation.GroundBorder.Point) =
+    SbtCosmo.Derivation.GroundRootCertificate.residualDerivative p.1 p.2 x
+SbtCosmo.Derivation.GroundParameterEquations.defect_kernel_trivial
+  (C D : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖ContinuousLinearMap.id ℝ SbtCosmo.Derivation.GroundBorder.Point - C.comp D‖ < 1)
+  {h : SbtCosmo.Derivation.GroundBorder.Point} (hh : D h = 0) : h = 0
+SbtCosmo.Derivation.GroundParameterEquations.defect_bijective
+  (C D : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖ContinuousLinearMap.id ℝ SbtCosmo.Derivation.GroundBorder.Point - C.comp D‖ < 1) : Function.Bijective ⇑D
+SbtCosmo.Derivation.GroundParameterEquations.defect_preconditioner_bijective
+  (C D : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖ContinuousLinearMap.id ℝ SbtCosmo.Derivation.GroundBorder.Point - C.comp D‖ < 1) : Function.Bijective ⇑C
+SbtCosmo.Derivation.GroundParameterBranch.branch_center (p : SbtCosmo.Derivation.GroundParameterEquations.Parameter)
+  (x : SbtCosmo.Derivation.GroundBorder.Point)
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1) :
+  SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd p = x
+SbtCosmo.Derivation.GroundParameterBranch.branch_smooth_at (p : SbtCosmo.Derivation.GroundParameterEquations.Parameter)
+  (x : SbtCosmo.Derivation.GroundBorder.Point)
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1) :
+  ContDiffAt ℝ (↑⊤) (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd) p
+SbtCosmo.Derivation.GroundParameterBranch.branch_root_eventually
+  {p : SbtCosmo.Derivation.GroundParameterEquations.Parameter} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1)
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual p.1 p.2 x = 0) :
+  ∀ᶠ (q : SbtCosmo.Derivation.GroundParameterEquations.Parameter) in nhds p,
+    SbtCosmo.Derivation.GroundRootCertificate.residual q.1 q.2
+        (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q) =
+      0
+SbtCosmo.Derivation.GroundParameterBranch.branch_positive_eventually
+  {p : SbtCosmo.Derivation.GroundParameterEquations.Parameter} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1)
+  (hp : ∀ (i : Fin 8), 0 < x.1 i) :
+  ∀ᶠ (q : SbtCosmo.Derivation.GroundParameterEquations.Parameter) in nhds p,
+    ∀ (i : Fin 8), 0 < (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q).1 i
+SbtCosmo.Derivation.GroundParameterBranch.branch_ground_eventually
+  {p : SbtCosmo.Derivation.GroundParameterEquations.Parameter} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1)
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual p.1 p.2 x = 0) (hp : ∀ (i : Fin 8), 0 < x.1 i) :
+  ∀ᶠ (q : SbtCosmo.Derivation.GroundParameterEquations.Parameter) in nhds p,
+    SbtCosmo.Derivation.GroundState.normSq (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q).1 = 1 ∧
+      SbtCosmo.Derivation.GroundBorder.groundPair
+            (SbtCosmo.Derivation.GroundState.sourcePotential q.1 q.2
+              (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q).1) =
+          SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap q.1 q.2
+            (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q).1 =
+          (SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q).1
+SbtCosmo.Derivation.GroundParameterBranch.branch_unique_neighborhoods
+  {p : SbtCosmo.Derivation.GroundParameterEquations.Parameter} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1)
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual p.1 p.2 x = 0) :
+  ∃ P ∈ nhds p,
+    ∃ U ∈ nhds x,
+      ∀ q ∈ P,
+        ∀ y ∈ U,
+          SbtCosmo.Derivation.GroundRootCertificate.residual q.1 q.2 y = 0 →
+            y = SbtCosmo.Derivation.GroundParameterBranch.branch p x C hd q
+SbtCosmo.Derivation.GroundParameterBranch.certified_local_positive_branch
+  {p : SbtCosmo.Derivation.GroundParameterEquations.Parameter} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (C : SbtCosmo.Derivation.GroundBorder.Point →L[ℝ] SbtCosmo.Derivation.GroundBorder.Point)
+  (hd : ‖SbtCosmo.Derivation.GroundRootCertificate.correctionDerivative p.1 p.2 C x‖ < 1)
+  (hz : SbtCosmo.Derivation.GroundRootCertificate.residual p.1 p.2 x = 0) (hp : ∀ (i : Fin 8), 0 < x.1 i) :
+  ∃ f,
+    f p = x ∧
+      ContDiffAt ℝ (↑⊤) f p ∧
+        (∀ᶠ (q : SbtCosmo.Derivation.GroundParameterEquations.Parameter) in nhds p,
+            SbtCosmo.Derivation.GroundRootCertificate.residual q.1 q.2 (f q) = 0 ∧ ∀ (i : Fin 8), 0 < (f q).1 i) ∧
+          ∃ P ∈ nhds p,
+            ∃ U ∈ nhds x, ∀ q ∈ P, ∀ y ∈ U, SbtCosmo.Derivation.GroundRootCertificate.residual q.1 q.2 y = 0 → y = f q
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.preconditioner_injective
+  {b : SbtCosmo.Derivation.GroundState.Field} (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ}
+  (hk : k ∈ t.interval) : Function.Injective ⇑t.preconditioner
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.positive_root_exists {b : SbtCosmo.Derivation.GroundState.Field}
+  (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ} (hk : k ∈ t.interval) :
+  ∃ x ∈ Metric.closedBall t.center t.radius,
+    SbtCosmo.Derivation.GroundRootCertificate.residual b k x = 0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround (SbtCosmo.Derivation.GroundState.sourcePotential b k x.1) x.1 x.2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b k x.1 = x.1 ∧
+          ∀ y ∈ Metric.closedBall t.center t.radius,
+            SbtCosmo.Derivation.GroundRootCertificate.residual b k y = 0 → y = x
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_spec {b : SbtCosmo.Derivation.GroundState.Field}
+  (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ} (hk : k ∈ t.interval) :
+  t.root k ∈ Metric.closedBall t.center t.radius ∧
+    SbtCosmo.Derivation.GroundRootCertificate.residual b k (t.root k) = 0 ∧
+      SbtCosmo.Derivation.GroundState.IsGround (SbtCosmo.Derivation.GroundState.sourcePotential b k (t.root k).1)
+          (t.root k).1 (t.root k).2 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b k (t.root k).1 = (t.root k).1 ∧
+          ∀ y ∈ Metric.closedBall t.center t.radius,
+            SbtCosmo.Derivation.GroundRootCertificate.residual b k y = 0 → y = t.root k
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_distance_lt {b : SbtCosmo.Derivation.GroundState.Field}
+  (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ} (hk : k ∈ t.interval) :
+  dist (t.root k) t.center < t.radius
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_implicit_germ {b : SbtCosmo.Derivation.GroundState.Field}
+  (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ} (hk : k ∈ t.interval) :
+  ∃ g, ContDiffAt ℝ (↑⊤) g k ∧ g k = t.root k ∧ t.root =ᶠ[nhdsWithin k t.interval] g
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_smooth_within {b : SbtCosmo.Derivation.GroundState.Field}
+  (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ} (hk : k ∈ t.interval) :
+  ContDiffWithinAt ℝ (↑⊤) t.root t.interval k
+SbtCosmo.Derivation.GroundParameterTube.TubeCertificate.root_continuous_on {b : SbtCosmo.Derivation.GroundState.Field}
+  (t : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) : ContinuousOn t.root t.interval
+SbtCosmo.Derivation.GroundParameterTube.common_root_glues {b : SbtCosmo.Derivation.GroundState.Field}
+  (t v : SbtCosmo.Derivation.GroundParameterTube.TubeCertificate b) {k : ℝ} (ht : k ∈ t.interval) (hv : k ∈ v.interval)
+  {x : SbtCosmo.Derivation.GroundBorder.Point} (hz : SbtCosmo.Derivation.GroundRootCertificate.residual b k x = 0)
+  (hxt : x ∈ Metric.closedBall t.center t.radius) (hxv : x ∈ Metric.closedBall v.center v.radius) : t.root k = v.root k
+SbtCosmo.Derivation.GroundParameterSpectrum.jointGround_smooth :
+  ContDiff ℝ (↑⊤) SbtCosmo.Derivation.GroundParameterSpectrum.jointGround
+SbtCosmo.Derivation.GroundParameterSpectrum.jointGround_partial
+  (z : SbtCosmo.Derivation.GroundParameterEquations.Parameter × SbtCosmo.Derivation.GroundState.Field) :
+  (fderiv ℝ SbtCosmo.Derivation.GroundParameterSpectrum.jointGround z).comp
+      (ContinuousLinearMap.inr ℝ SbtCosmo.Derivation.GroundParameterEquations.Parameter
+        SbtCosmo.Derivation.GroundState.Field) =
+    SbtCosmo.Derivation.GroundSourceJacobian.jacobian z.1.1 z.1.2 z.2
+SbtCosmo.Derivation.GroundParameterSpectrum.jacobian_column_continuous (j : Fin 8) :
+  Continuous fun z =>
+    (SbtCosmo.Derivation.GroundSourceJacobian.jacobian z.1.1 z.1.2 z.2)
+      (SbtCosmo.Derivation.GroundLocalDynamics.column j)
+SbtCosmo.Derivation.GroundParameterSpectrum.halfMatrix_continuous :
+  Continuous SbtCosmo.Derivation.GroundParameterSpectrum.halfMatrix
+SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet_continuous :
+  Continuous SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet
+SbtCosmo.Derivation.GroundParameterSpectrum.determinant_zero_mode
+  {L : SbtCosmo.Derivation.GroundState.Field →L[ℝ] SbtCosmo.Derivation.GroundState.Field}
+  (hd : (SbtCosmo.Derivation.GroundParameterSpectrum.entries L + 1).det = 0) : ∃ h, h ≠ 0 ∧ L h = -h
+SbtCosmo.Derivation.GroundParameterSpectrum.projection_tangent {u : SbtCosmo.Derivation.GroundState.Field}
+  (hu : SbtCosmo.Derivation.GroundState.normSq u = 1) (h : SbtCosmo.Derivation.GroundState.Field) :
+  SbtCosmo.Derivation.GroundBorder.dot u ((SbtCosmo.Derivation.GroundNormalizedJacobian.projection u) h) = 0
+SbtCosmo.Derivation.GroundParameterSpectrum.strict_sign_crossing {f : ℝ → ℝ} {a c : ℝ} (hac : a < c)
+  (hf : ContinuousOn f (Set.Icc a c)) (hs : f a * f c < 0) : ∃ k ∈ Set.Ioo a c, f k = 0
+SbtCosmo.Derivation.GroundParameterSpectrum.actual_minus_one_crossing {b : SbtCosmo.Derivation.GroundState.Field}
+  {u : ℝ → SbtCosmo.Derivation.GroundState.Field} {a c τ : ℝ} (hac : a < c) (hu : ContinuousOn u (Set.Icc a c))
+  (hfixed :
+    ∀ k ∈ Set.Icc a c,
+      SbtCosmo.Derivation.GroundState.normSq (u k) = 1 ∧
+        SbtCosmo.Derivation.GroundSourceJacobian.groundMap b k (u k) = u k)
+  (hτ0 : 0 ≤ τ) (hτ1 : τ < 1)
+  (hsign :
+    SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet ((b, a), u a) *
+        SbtCosmo.Derivation.GroundParameterSpectrum.crossingDet ((b, c), u c) <
+      0) :
+  ∃ k ∈ Set.Ioo a c,
+    ∃ h,
+      h ≠ 0 ∧
+        SbtCosmo.Derivation.GroundBorder.dot (u k) h = 0 ∧
+          (SbtCosmo.Derivation.GroundNormalizedJacobian.normalizedJacobian b k (1 / 2) (u k)) h = -h ∧
+            (SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative b k (1 / 2) (u k)) (h, 0) = -(h, 0) ∧
+              HasFDerivAt (SbtCosmo.Derivation.GroundNativeJacobian.nativePairMap τ b k (1 / 2))
+                (SbtCosmo.Derivation.GroundNativeJacobian.fullDerivative b k (1 / 2) (u k)) (u k, 0)

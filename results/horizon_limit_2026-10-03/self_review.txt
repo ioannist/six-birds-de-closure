@@ -1,0 +1,32 @@
+Adversarial self-review, baseline c7e89b3; no independent reviewer.
+
+Actual target: original IVP quantitative time tail and moving finite-horizon
+roots, original N=64 native gates, and actual N=32/N=128 eternal robustness.
+
+Reviewed hinges:
+- Velocity decay follows from the nonpositive actual -rate*growth term and
+  rootSquared>=c>0, not a supplied asymptotic law.
+- Antitonicity of growth plus its explicit exponential correction earns the
+  remaining-growth bound; the original homogeneous/finite-start term remains.
+- Native tail return uses exp(-2*log(A/a0))=(a0/A)^2 with positive guards;
+  no improper integral endpoint swap is assumed.
+- Finite selector guards hold on A>a0*T; the default branch cannot supply
+  roots or convergence. Native equality is exact, not approximate quadrature.
+- Moving-root convergence uses actual time convergence at fixed lower tests,
+  plus strict parameter ordering and eventual finite-root bounds. Uniformity
+  or exchange of moving time/parameter limits is not smuggled.
+- A=20 selected root equals the original endpoint, not merely another root.
+- Closed limiting envelope is a closure statement; nine actual eventual seed
+  passes at the limiting root still exclude endpoint record attainment.
+- New robustness returns use the unchanged actual attained maxima, rank and
+  distinct threshold order. No assumed population inclusion or tag coupling.
+- Open-window strict inclusion witnesses use the smaller endpoints; no upper
+  endpoint is incorrectly asserted to pass its own eternal gate.
+- Kernel rational margins and analytic growth bounds cover every patch at
+  every finite epoch, not merely aggregate failures at horizon twenty.
+- Cumulative closure audit preserves the exact immutable earlier raw prefix;
+  only the new 32 suffix is freshly run. Prior proof/toolchain bytes are checked.
+
+Surviving judgment: quantitative actual horizon convergence and eternal
+robustness strengthen the original toy result. Closure and record formation
+have distinct endpoints. The original paper remains incomplete overall.

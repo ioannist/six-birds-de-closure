@@ -1,0 +1,26 @@
+{
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "-R",
+    "/tmp/de_original_audit_nonidentifiability_v3/lean",
+    "-o",
+    "/tmp/de_original_audit_nonidentifiability_v3/GroundOriginalAuditNonidentifiability.olean",
+    "/tmp/de_original_audit_nonidentifiability_v3/lean/SbtCosmo/Derivation/GroundOriginalAuditNonidentifiability.lean"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "started_at": "2026-10-05T13:09:08.547642+00:00",
+  "ended_at": "2026-10-05T13:10:08.026289+00:00",
+  "source_sha256": "0891df2ad655b9a65e09d4707bac62bdbd41e7891d0340748ebaad4cb78b4f83",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "freeze_sha256": "8222eb1acae647ccb3b1f5bc63db0d15b9daba177a90e813b12b21c1810b8b28",
+  "unchanged_inputs": true,
+  "changed_inputs": [],
+  "project_dependency_modules": 1327,
+  "object_sha256": "16c7559212fd9cc4f927af4356d83259402395b814b6f9eec3af86ec2ad2743e"
+}

@@ -1,0 +1,145 @@
+schema_version: 1
+aor_status: reference
+notes: >
+  These are full-likelihood published reference values for E1-A reproduction
+  gates. Compressed-CMB runs are expected to land near, but not exactly on, the
+  full-likelihood references because the compression omits the full CMB
+  perturbation/lensing likelihood information.
+sigma_convention: >
+  Symmetric 68 percent half-widths are recorded directly. Where the DESI table
+  reports asymmetric 68 percent intervals, the *_sigma value is the arithmetic
+  mean of the plus and minus half-widths, with the asymmetric half-widths kept
+  in *_sigma_plus and *_sigma_minus.
+provenance:
+  desi_dr2_bao_cosmology:
+    arxiv: "2503.14738"
+    title: "DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints"
+    url: "https://arxiv.org/abs/2503.14738"
+    constraints_table: "Table \\ref{tab:cosmo_constraints}"
+    significance_table: "Table \\ref{tab:dchisq}"
+    significance_section: "Conclusion paragraph beginning 'The evidence for a departure from LCDM...'"
+    cmb_definition: >
+      DESI DR2 paper baseline CMB combines Planck TT/TE/EE low/high-ell
+      likelihoods using Commander/simall/CamSpec plus Planck+ACT DR6 lensing;
+      see Section \\ref{subsec:CMB}. This differs from the local E1 Planck
+      native-likelihood path but is the published DR2 reference.
+  planck_2018_cosmology:
+    arxiv: "1807.06209"
+    title: "Planck 2018 results. VI. Cosmological parameters"
+    url: "https://arxiv.org/abs/1807.06209"
+    table_or_section: "Abstract summary; Table \\ref{table:default}; Section \\ref{sec:lcdm}"
+references:
+  C1:
+    label: "CMB-only LCDM"
+    model: "lcdm"
+    H0_mean: 67.4
+    H0_sigma: 0.5
+    H0_table_mean: 67.36
+    H0_table_sigma: 0.54
+    w0_mean: -1.0
+    wa_mean: 0.0
+    citations:
+      H0_mean: "Planck 2018 VI, arXiv:1807.06209, abstract rounds to 67.4 +/- 0.5; Table \\ref{table:default} gives 67.36 +/- 0.54 for TT,TE,EE+lowE+lensing"
+      H0_sigma: "Planck 2018 VI, arXiv:1807.06209, abstract rounds to 67.4 +/- 0.5; Table \\ref{table:default} gives 67.36 +/- 0.54 for TT,TE,EE+lowE+lensing"
+      H0_table_mean: "Planck 2018 VI, arXiv:1807.06209, Table \\ref{table:default}"
+      H0_table_sigma: "Planck 2018 VI, arXiv:1807.06209, Table \\ref{table:default}"
+      w0_mean: "Definition of LCDM reference point"
+      wa_mean: "Definition of LCDM reference point"
+  C2:
+    label: "DESI DR2 BAO + CMB"
+    published_dataset_label: "DESI+CMB"
+    model: "w0wa"
+    w0_mean: -0.42
+    w0_sigma: 0.21
+    wa_mean: -1.75
+    wa_sigma: 0.58
+    sigma_dynamical_de: 3.1
+    delta_chi2_map: -12.5
+    delta_dic: -8.7
+    chi2: null
+    chi2_dof: null
+    chi2_note: "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC)."
+    citations:
+      w0_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row"
+      w0_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row"
+      wa_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row"
+      wa_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB row"
+      sigma_dynamical_de: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 3.1 sigma for DESI+CMB"
+      delta_chi2_map: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      delta_dic: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      chi2: "Not published as an absolute per-combination total in arXiv:2503.14738"
+  C3:
+    label: "DESI DR2 BAO + CMB + Pantheon+"
+    published_dataset_label: "DESI+CMB+Pantheon+"
+    model: "w0wa"
+    w0_mean: -0.838
+    w0_sigma: 0.055
+    wa_mean: -0.62
+    wa_sigma: 0.205
+    wa_sigma_plus: 0.22
+    wa_sigma_minus: 0.19
+    sigma_dynamical_de: 2.8
+    delta_chi2_map: -10.7
+    delta_dic: -6.8
+    chi2: null
+    chi2_dof: null
+    chi2_note: "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC)."
+    citations:
+      w0_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row"
+      w0_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row"
+      wa_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row"
+      wa_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Pantheon+ row; average of +0.22/-0.19"
+      sigma_dynamical_de: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 2.8 sigma for DESI+CMB+Pantheon+"
+      delta_chi2_map: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      delta_dic: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      chi2: "Not published as an absolute per-combination total in arXiv:2503.14738"
+  C4:
+    label: "DESI DR2 BAO + CMB + Union3"
+    published_dataset_label: "DESI+CMB+Union3"
+    model: "w0wa"
+    w0_mean: -0.667
+    w0_sigma: 0.088
+    wa_mean: -1.09
+    wa_sigma: 0.29
+    wa_sigma_plus: 0.31
+    wa_sigma_minus: 0.27
+    sigma_dynamical_de: 3.8
+    delta_chi2_map: -17.4
+    delta_dic: -13.5
+    chi2: null
+    chi2_dof: null
+    chi2_note: "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC)."
+    citations:
+      w0_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row"
+      w0_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row"
+      wa_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row"
+      wa_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+Union3 row; average of +0.31/-0.27"
+      sigma_dynamical_de: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 3.8 sigma for DESI+CMB+Union3"
+      delta_chi2_map: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      delta_dic: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      chi2: "Not published as an absolute per-combination total in arXiv:2503.14738"
+  C5:
+    label: "DESI DR2 BAO + CMB + DES-SN5YR"
+    published_dataset_label: "DESI+CMB+DESY5"
+    model: "w0wa"
+    w0_mean: -0.752
+    w0_sigma: 0.057
+    wa_mean: -0.86
+    wa_sigma: 0.215
+    wa_sigma_plus: 0.23
+    wa_sigma_minus: 0.20
+    sigma_dynamical_de: 4.2
+    delta_chi2_map: -21.0
+    delta_dic: -17.2
+    chi2: null
+    chi2_dof: null
+    chi2_note: "Absolute total chi2 is not published per combination; DESI publishes Delta chi2_MAP and Delta(DIC)."
+    citations:
+      w0_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row"
+      w0_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row"
+      wa_mean: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row"
+      wa_sigma: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:cosmo_constraints}, w0waCDM DESI+CMB+DESY5 row; average of +0.23/-0.20"
+      sigma_dynamical_de: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}; conclusion gives 4.2 sigma for DESI+CMB+DESY5"
+      delta_chi2_map: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      delta_dic: "DESI DR2 BAO cosmology, arXiv:2503.14738, Table \\ref{tab:dchisq}"
+      chi2: "Not published as an absolute per-combination total in arXiv:2503.14738"

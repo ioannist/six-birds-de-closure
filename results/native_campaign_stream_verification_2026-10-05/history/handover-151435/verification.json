@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-05T15:14:35.910520+00:00",
+  "live": {
+    "utc": "2026-10-05T15:14:35.893291+00:00",
+    "live_jobs": 11,
+    "verified_terminal_jobs": [
+      {
+        "pid": 4049651,
+        "script": "de_native_stable15_priority_recovery/build_recovery.py",
+        "actual_terminal_exit_code": 0,
+        "recorded_audited_declarations": 27,
+        "terminal_sha256": "fcd5ae4265c47b01afb384dae86f5e0ad9ce0b658848dc544eba4c6dc2959b86"
+      }
+    ],
+    "missing_or_changed_processes": [],
+    "progress": {
+      "stable": {
+        "passed": 422,
+        "planned": 597
+      },
+      "priority15": {
+        "passed": 289,
+        "planned": 289
+      },
+      "qualified": {
+        "passed": 492,
+        "planned": 1734
+      }
+    },
+    "regular_stable_sample_indices_with_both_audits": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "recorded_failure_logs": [],
+    "existing_final_summaries_to_inspect": [
+      "/tmp/de_native_stable15_priority_recovery/summary.json"
+    ]
+  },
+  "stable10_packet_manifest_sha256": "e5ae25d425f150953664320e93808e473dabf31912b3ee1e290a65be1c7a9654",
+  "stable10_summary_sha256": "0bf535ceb45a5eeb49b28c72b33fbbcadedc642f4121752c30b004efe56a5cee",
+  "stable10_math_note_sha256": "48839ccc87e6a332d6dabfe56dc0eeb1b506248e209840535a2fab05d43ccf48",
+  "frozen_inputs_revalidated": 6262,
+  "completed_private_audit_freeze_revalidated": 3936,
+  "registered_sources_changed": false,
+  "goal_complete": false
+}

@@ -1,0 +1,400 @@
+SbtCosmo.Derivation.GroundBackgroundKernel.box_sound (B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval)
+  (z : Fin 9 → ℚ) (r : ℚ) {b : SbtCosmo.Derivation.GroundState.Field} {x : SbtCosmo.Derivation.GroundBorder.Point}
+  (hb : ∀ (i : Fin 8), (B i).Contains (b i))
+  (hx : x ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r)
+  (v : SbtCosmo.Derivation.GroundResidualEnclosure.Variable) :
+  (SbtCosmo.Derivation.GroundBackgroundKernel.box B z r v).Contains
+    (SbtCosmo.Derivation.GroundResidualEnclosure.valuation b 0 x v)
+SbtCosmo.Derivation.GroundBackgroundKernel.actual_ground_pair_enclosed
+  {B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {z : Fin 9 → ℚ} {r q y : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} (h : SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic B z r q y C)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i)) :
+  SbtCosmo.Derivation.GroundBorder.groundPair b ∈ Metric.closedBall (SbtCosmo.Derivation.GroundKernelTube.center z) ↑r
+SbtCosmo.Derivation.GroundBackgroundKernel.actual_selected_enclosed
+  {B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval} {z : Fin 9 → ℚ} {r q y : ℚ}
+  {C : Matrix (Fin 9) (Fin 9) ℚ} (h : SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic B z r q y C)
+  {b : SbtCosmo.Derivation.GroundState.Field} (hb : ∀ (i : Fin 8), (B i).Contains (b i)) (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundBackgroundKernel.fieldBox z r i).Contains
+    (SbtCosmo.Derivation.GroundState.positiveGround b i)
+SbtCosmo.Derivation.GroundIntervalReciprocal.inverse_sqrt_sound
+  {N K : SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  (h : SbtCosmo.Derivation.GroundIntervalReciprocal.Arithmetic N K) {n : ℝ} (hn : N.Contains n) :
+  0 < n ∧ K.Contains (√n)⁻¹
+SbtCosmo.Derivation.GroundIntervalReciprocal.threshold_guard {N : SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {n τ : ℝ} (hn : N.Contains n) (hτ : 0 ≤ τ) (hbudget : τ ^ 2 < ↑N.lo) : τ < √n
+SbtCosmo.Derivation.GroundNativeBox.included_sound {A B : SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  (h : SbtCosmo.Derivation.GroundNativeBox.included A B) {x : ℝ} (hx : A.Contains x) : B.Contains x
+SbtCosmo.Derivation.GroundNativeBox.StateBox.included_sound {A B : SbtCosmo.Derivation.GroundNativeBox.StateBox}
+  (h : A.Included B) {x : SbtCosmo.Derivation.GroundNativePhase.State} (hx : A.Contains x) : B.Contains x
+SbtCosmo.Derivation.GroundNativeBox.sumBox_sound {n : ℕ}
+  {A : Fin n → SbtCosmo.Derivation.GroundRationalInterval.Interval} {x : Fin n → ℝ}
+  (h : ∀ (i : Fin n), (A i).Contains (x i)) : (SbtCosmo.Derivation.GroundNativeBox.sumBox A).Contains (∑ i, x i)
+SbtCosmo.Derivation.GroundNativeBox.normBox_sound {B : SbtCosmo.Derivation.GroundNativeBox.StateBox}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hx : B.Contains x) :
+  (SbtCosmo.Derivation.GroundNativeBox.normBox B).Contains (SbtCosmo.Derivation.GroundNativePhase.stateNormSq x)
+SbtCosmo.Derivation.GroundNativeBox.gradientBox_sound {B : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {x : SbtCosmo.Derivation.GroundState.Field} (hx : ∀ (i : Fin 8), (B i).Contains (x i)) (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundNativeBox.gradientBox B i).Contains (SbtCosmo.Derivation.GroundState.gradient x i)
+SbtCosmo.Derivation.GroundNativeBox.sourceBox_sound (β : Fin 8 → ℚ) (κ : ℚ)
+  {B : SbtCosmo.Derivation.GroundNativeBox.StateBox} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : B.Contains x) (i : Fin 8) :
+  (SbtCosmo.Derivation.GroundNativeBox.sourceBox β κ B i).Contains
+    (SbtCosmo.Derivation.GroundNativePhase.pairSource (SbtCosmo.Derivation.GroundKernelTube.background β) (↑κ) x i)
+SbtCosmo.Derivation.GroundNativeBox.dotBox_sound {G R : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {g u : SbtCosmo.Derivation.GroundState.Field} (hg : ∀ (i : Fin 8), (G i).Contains (g i))
+  (hu : ∀ (i : Fin 8), (R i).Contains (u i)) :
+  (SbtCosmo.Derivation.GroundNativeBox.dotBox G R).Contains (SbtCosmo.Derivation.GroundBorder.dot g u)
+SbtCosmo.Derivation.GroundNativeBox.overlapBox_sound {b : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  {B : SbtCosmo.Derivation.GroundNativeBox.StateBox} {G : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hx : B.Contains x)
+  (hg : ∀ (i : Fin 8), (G i).Contains (SbtCosmo.Derivation.GroundNativePhase.selected b κ x i)) :
+  (SbtCosmo.Derivation.GroundNativeBox.overlapBox B G).Contains (SbtCosmo.Derivation.GroundNativePhase.overlapSq b κ x)
+SbtCosmo.Derivation.GroundNativeBox.alignedBox_sound {b : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  {B : SbtCosmo.Derivation.GroundNativeBox.StateBox} {G : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {K : SbtCosmo.Derivation.GroundRationalInterval.Interval} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : B.Contains x) (hg : ∀ (i : Fin 8), (G i).Contains (SbtCosmo.Derivation.GroundNativePhase.selected b κ x i))
+  (hK : K.Contains (SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)⁻¹) :
+  (SbtCosmo.Derivation.GroundNativeBox.alignedBox B G K).Contains (SbtCosmo.Derivation.GroundNativePhase.aligned b κ x)
+SbtCosmo.Derivation.GroundNativeBox.mixedBox_sound {b : SbtCosmo.Derivation.GroundState.Field} {κ : ℝ}
+  {B : SbtCosmo.Derivation.GroundNativeBox.StateBox} {G : Fin 8 → SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  {K : SbtCosmo.Derivation.GroundRationalInterval.Interval} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : B.Contains x) (hg : ∀ (i : Fin 8), (G i).Contains (SbtCosmo.Derivation.GroundNativePhase.selected b κ x i))
+  (hK : K.Contains (SbtCosmo.Derivation.GroundNativePhase.overlapNorm b κ x)⁻¹) :
+  (SbtCosmo.Derivation.GroundNativeBox.mixedBox B G K).Contains
+    (SbtCosmo.Derivation.GroundNativeIteration.mixed b κ (1 / 2) x)
+SbtCosmo.Derivation.GroundNativeBox.normalizedBox_sound {B : SbtCosmo.Derivation.GroundNativeBox.StateBox}
+  {K : SbtCosmo.Derivation.GroundRationalInterval.Interval} {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : B.Contains x) (hK : K.Contains (√(SbtCosmo.Derivation.GroundNativePhase.stateNormSq x))⁻¹) :
+  (SbtCosmo.Derivation.GroundNativeBox.normalizedBox B K).Contains
+    (SbtCosmo.Derivation.GroundNativeIteration.normalizeState x)
+SbtCosmo.Derivation.GroundNativeBox.arithmetic_native_step {β : Fin 8 → ℚ} {κ τ : ℚ}
+  {B D : SbtCosmo.Derivation.GroundNativeBox.StateBox} {z : Fin 9 → ℚ} {r q y : ℚ} {C : Matrix (Fin 9) (Fin 9) ℚ}
+  {K L : SbtCosmo.Derivation.GroundRationalInterval.Interval}
+  (h : SbtCosmo.Derivation.GroundNativeBox.Arithmetic β κ τ B D z r q y C K L)
+  {x : SbtCosmo.Derivation.GroundNativePhase.State} (hx : B.Contains x) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase (↑τ) (SbtCosmo.Derivation.GroundKernelTube.background β) (↑κ)
+      (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal (↑τ) (SbtCosmo.Derivation.GroundKernelTube.background β) (↑κ)
+        (1 / 2) (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+      D.Contains
+        (SbtCosmo.Derivation.GroundNativePhase.unpack
+          (SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate (↑τ)
+            (SbtCosmo.Derivation.GroundKernelTube.background β) (↑κ) (1 / 2)
+            (SbtCosmo.Derivation.GroundNativePhase.pack x)))
+SbtCosmo.Derivation.GroundNativePrefixInitial.inverse_arithmetic :
+  SbtCosmo.Derivation.GroundIntervalReciprocal.Arithmetic
+    (SbtCosmo.Derivation.GroundRationalInterval.Interval.point SbtCosmo.Derivation.GroundOriginalSeed.rawNorm)
+    SbtCosmo.Derivation.GroundNativePrefixInitial.K
+SbtCosmo.Derivation.GroundNativePrefixInitial.initial_inclusion :
+  (SbtCosmo.Derivation.GroundNativeBox.normalizedBox SbtCosmo.Derivation.GroundNativePrefixInitial.rawBox
+        SbtCosmo.Derivation.GroundNativePrefixInitial.K).Included
+    SbtCosmo.Derivation.GroundNativePrefixInitial.initialBox
+SbtCosmo.Derivation.GroundNativePrefixInitial.raw_box_sound :
+  SbtCosmo.Derivation.GroundNativePrefixInitial.rawBox.Contains SbtCosmo.Derivation.GroundOriginalSeed.rawState
+SbtCosmo.Derivation.GroundNativePrefixInitial.original_seed_enclosed :
+  SbtCosmo.Derivation.GroundNativePrefixInitial.initialBox.Contains
+    (SbtCosmo.Derivation.GroundNativePhase.unpack SbtCosmo.Derivation.GroundOriginalSeed.initial)
+SbtCosmo.Derivation.GroundNativePrefixInitial.tolerance_return :
+  ↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ = SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+SbtCosmo.Derivation.GroundNativePrefixInitial.coupling_return :
+  SbtCosmo.Derivation.GroundNativePrefixInitial.κ = SbtCosmo.Derivation.GroundOriginalSamples.couplings 2
+SbtCosmo.Derivation.GroundNativePrefixInitial.zero_inverse_rejected :
+  ¬SbtCosmo.Derivation.GroundIntervalReciprocal.Arithmetic
+      (SbtCosmo.Derivation.GroundRationalInterval.Interval.point SbtCosmo.Derivation.GroundOriginalSeed.rawNorm)
+      (SbtCosmo.Derivation.GroundRationalInterval.Interval.point 0)
+SbtCosmo.Derivation.GroundNativePrefix.Step000.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step000.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.z SbtCosmo.Derivation.GroundNativePrefix.Step000.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.q SbtCosmo.Derivation.GroundNativePrefix.Step000.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.C
+SbtCosmo.Derivation.GroundNativePrefix.Step000.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.input SbtCosmo.Derivation.GroundNativePrefix.Step000.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.z SbtCosmo.Derivation.GroundNativePrefix.Step000.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.q SbtCosmo.Derivation.GroundNativePrefix.Step000.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.C SbtCosmo.Derivation.GroundNativePrefix.Step000.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step000.L
+SbtCosmo.Derivation.GroundNativePrefix.Step001.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step001.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.z SbtCosmo.Derivation.GroundNativePrefix.Step001.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.q SbtCosmo.Derivation.GroundNativePrefix.Step001.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.C
+SbtCosmo.Derivation.GroundNativePrefix.Step001.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.input SbtCosmo.Derivation.GroundNativePrefix.Step001.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.z SbtCosmo.Derivation.GroundNativePrefix.Step001.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.q SbtCosmo.Derivation.GroundNativePrefix.Step001.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.C SbtCosmo.Derivation.GroundNativePrefix.Step001.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step001.L
+SbtCosmo.Derivation.GroundNativePrefix.Step002.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step002.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.z SbtCosmo.Derivation.GroundNativePrefix.Step002.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.q SbtCosmo.Derivation.GroundNativePrefix.Step002.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.C
+SbtCosmo.Derivation.GroundNativePrefix.Step002.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.input SbtCosmo.Derivation.GroundNativePrefix.Step002.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.z SbtCosmo.Derivation.GroundNativePrefix.Step002.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.q SbtCosmo.Derivation.GroundNativePrefix.Step002.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.C SbtCosmo.Derivation.GroundNativePrefix.Step002.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step002.L
+SbtCosmo.Derivation.GroundNativePrefix.Step003.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step003.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.z SbtCosmo.Derivation.GroundNativePrefix.Step003.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.q SbtCosmo.Derivation.GroundNativePrefix.Step003.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.C
+SbtCosmo.Derivation.GroundNativePrefix.Step003.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.input SbtCosmo.Derivation.GroundNativePrefix.Step003.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.z SbtCosmo.Derivation.GroundNativePrefix.Step003.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.q SbtCosmo.Derivation.GroundNativePrefix.Step003.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.C SbtCosmo.Derivation.GroundNativePrefix.Step003.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step003.L
+SbtCosmo.Derivation.GroundNativePrefix.Step004.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step004.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.z SbtCosmo.Derivation.GroundNativePrefix.Step004.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.q SbtCosmo.Derivation.GroundNativePrefix.Step004.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.C
+SbtCosmo.Derivation.GroundNativePrefix.Step004.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.input SbtCosmo.Derivation.GroundNativePrefix.Step004.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.z SbtCosmo.Derivation.GroundNativePrefix.Step004.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.q SbtCosmo.Derivation.GroundNativePrefix.Step004.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.C SbtCosmo.Derivation.GroundNativePrefix.Step004.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step004.L
+SbtCosmo.Derivation.GroundNativePrefix.Step005.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step005.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.z SbtCosmo.Derivation.GroundNativePrefix.Step005.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.q SbtCosmo.Derivation.GroundNativePrefix.Step005.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.C
+SbtCosmo.Derivation.GroundNativePrefix.Step005.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.input SbtCosmo.Derivation.GroundNativePrefix.Step005.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.z SbtCosmo.Derivation.GroundNativePrefix.Step005.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.q SbtCosmo.Derivation.GroundNativePrefix.Step005.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.C SbtCosmo.Derivation.GroundNativePrefix.Step005.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step005.L
+SbtCosmo.Derivation.GroundNativePrefix.Step006.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step006.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.z SbtCosmo.Derivation.GroundNativePrefix.Step006.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.q SbtCosmo.Derivation.GroundNativePrefix.Step006.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.C
+SbtCosmo.Derivation.GroundNativePrefix.Step006.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.input SbtCosmo.Derivation.GroundNativePrefix.Step006.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.z SbtCosmo.Derivation.GroundNativePrefix.Step006.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.q SbtCosmo.Derivation.GroundNativePrefix.Step006.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.C SbtCosmo.Derivation.GroundNativePrefix.Step006.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step006.L
+SbtCosmo.Derivation.GroundNativePrefix.Step007.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step007.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.z SbtCosmo.Derivation.GroundNativePrefix.Step007.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.q SbtCosmo.Derivation.GroundNativePrefix.Step007.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.C
+SbtCosmo.Derivation.GroundNativePrefix.Step007.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.input SbtCosmo.Derivation.GroundNativePrefix.Step007.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.z SbtCosmo.Derivation.GroundNativePrefix.Step007.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.q SbtCosmo.Derivation.GroundNativePrefix.Step007.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.C SbtCosmo.Derivation.GroundNativePrefix.Step007.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step007.L
+SbtCosmo.Derivation.GroundNativePrefix.Step008.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step008.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.z SbtCosmo.Derivation.GroundNativePrefix.Step008.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.q SbtCosmo.Derivation.GroundNativePrefix.Step008.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.C
+SbtCosmo.Derivation.GroundNativePrefix.Step008.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.input SbtCosmo.Derivation.GroundNativePrefix.Step008.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.z SbtCosmo.Derivation.GroundNativePrefix.Step008.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.q SbtCosmo.Derivation.GroundNativePrefix.Step008.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.C SbtCosmo.Derivation.GroundNativePrefix.Step008.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step008.L
+SbtCosmo.Derivation.GroundNativePrefix.Step009.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step009.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.z SbtCosmo.Derivation.GroundNativePrefix.Step009.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.q SbtCosmo.Derivation.GroundNativePrefix.Step009.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.C
+SbtCosmo.Derivation.GroundNativePrefix.Step009.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.input SbtCosmo.Derivation.GroundNativePrefix.Step009.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.z SbtCosmo.Derivation.GroundNativePrefix.Step009.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.q SbtCosmo.Derivation.GroundNativePrefix.Step009.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.C SbtCosmo.Derivation.GroundNativePrefix.Step009.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step009.L
+SbtCosmo.Derivation.GroundNativePrefix.Step010.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step010.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.z SbtCosmo.Derivation.GroundNativePrefix.Step010.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.q SbtCosmo.Derivation.GroundNativePrefix.Step010.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.C
+SbtCosmo.Derivation.GroundNativePrefix.Step010.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.input SbtCosmo.Derivation.GroundNativePrefix.Step010.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.z SbtCosmo.Derivation.GroundNativePrefix.Step010.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.q SbtCosmo.Derivation.GroundNativePrefix.Step010.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.C SbtCosmo.Derivation.GroundNativePrefix.Step010.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step010.L
+SbtCosmo.Derivation.GroundNativePrefix.Step011.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step011.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.z SbtCosmo.Derivation.GroundNativePrefix.Step011.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.q SbtCosmo.Derivation.GroundNativePrefix.Step011.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.C
+SbtCosmo.Derivation.GroundNativePrefix.Step011.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.input SbtCosmo.Derivation.GroundNativePrefix.Step011.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.z SbtCosmo.Derivation.GroundNativePrefix.Step011.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.q SbtCosmo.Derivation.GroundNativePrefix.Step011.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.C SbtCosmo.Derivation.GroundNativePrefix.Step011.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step011.L
+SbtCosmo.Derivation.GroundNativePrefix.Step012.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step012.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.z SbtCosmo.Derivation.GroundNativePrefix.Step012.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.q SbtCosmo.Derivation.GroundNativePrefix.Step012.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.C
+SbtCosmo.Derivation.GroundNativePrefix.Step012.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.input SbtCosmo.Derivation.GroundNativePrefix.Step012.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.z SbtCosmo.Derivation.GroundNativePrefix.Step012.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.q SbtCosmo.Derivation.GroundNativePrefix.Step012.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.C SbtCosmo.Derivation.GroundNativePrefix.Step012.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step012.L
+SbtCosmo.Derivation.GroundNativePrefix.Step013.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step013.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.z SbtCosmo.Derivation.GroundNativePrefix.Step013.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.q SbtCosmo.Derivation.GroundNativePrefix.Step013.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.C
+SbtCosmo.Derivation.GroundNativePrefix.Step013.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.input SbtCosmo.Derivation.GroundNativePrefix.Step013.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.z SbtCosmo.Derivation.GroundNativePrefix.Step013.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.q SbtCosmo.Derivation.GroundNativePrefix.Step013.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.C SbtCosmo.Derivation.GroundNativePrefix.Step013.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step013.L
+SbtCosmo.Derivation.GroundNativePrefix.Step014.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step014.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.z SbtCosmo.Derivation.GroundNativePrefix.Step014.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.q SbtCosmo.Derivation.GroundNativePrefix.Step014.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.C
+SbtCosmo.Derivation.GroundNativePrefix.Step014.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.input SbtCosmo.Derivation.GroundNativePrefix.Step014.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.z SbtCosmo.Derivation.GroundNativePrefix.Step014.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.q SbtCosmo.Derivation.GroundNativePrefix.Step014.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.C SbtCosmo.Derivation.GroundNativePrefix.Step014.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step014.L
+SbtCosmo.Derivation.GroundNativePrefix.Step015.ground_arithmetic :
+  SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+    (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+      SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step015.input)
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.z SbtCosmo.Derivation.GroundNativePrefix.Step015.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.q SbtCosmo.Derivation.GroundNativePrefix.Step015.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.C
+SbtCosmo.Derivation.GroundNativePrefix.Step015.arithmetic :
+  SbtCosmo.Derivation.GroundNativeBox.Arithmetic SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+    SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefixInitial.τ
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.input SbtCosmo.Derivation.GroundNativePrefix.Step015.output
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.z SbtCosmo.Derivation.GroundNativePrefix.Step015.r
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.q SbtCosmo.Derivation.GroundNativePrefix.Step015.y
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.C SbtCosmo.Derivation.GroundNativePrefix.Step015.K
+    SbtCosmo.Derivation.GroundNativePrefix.Step015.L
+SbtCosmo.Derivation.GroundOriginalNativePrefix.seams (i : Fin 16) :
+  SbtCosmo.Derivation.GroundOriginalNativePrefix.boxes i.castSucc =
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.certificates i).input ∧
+    SbtCosmo.Derivation.GroundOriginalNativePrefix.boxes i.succ =
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.certificates i).output
+SbtCosmo.Derivation.GroundOriginalNativePrefix.certificate_step (i : Fin 16)
+  {x : SbtCosmo.Derivation.GroundNativePhase.State}
+  (hx : (SbtCosmo.Derivation.GroundOriginalNativePrefix.certificates i).input.Contains x) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+      (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+        (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+        (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (1 / 2) (SbtCosmo.Derivation.GroundNativePhase.pack x) ∧
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.certificates i).output.Contains
+        (SbtCosmo.Derivation.GroundNativePhase.unpack
+          (SbtCosmo.Derivation.GroundOriginalNativePrefix.f (SbtCosmo.Derivation.GroundNativePhase.pack x)))
+SbtCosmo.Derivation.GroundOriginalNativePrefix.native_prefix_enclosed (i : Fin 17) :
+  (SbtCosmo.Derivation.GroundOriginalNativePrefix.boxes i).Contains
+    (SbtCosmo.Derivation.GroundNativePhase.unpack (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit ↑i))
+SbtCosmo.Derivation.GroundOriginalNativePrefix.native_prefix_guards (i : Fin 16) :
+  SbtCosmo.Derivation.GroundNativeIteration.ActivePhase SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+      (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit ↑i) ∧
+    SbtCosmo.Derivation.GroundNativeIteration.NativeLegal SbtCosmo.Derivation.GroundNativeControls.originalTolerance
+      (SbtCosmo.Derivation.GroundKernelTube.background SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+      (↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ) (1 / 2)
+      (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit ↑i)
+SbtCosmo.Derivation.GroundOriginalNativePrefix.native_prefix_unit (i : Fin 17) :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit ↑i) = 1
+SbtCosmo.Derivation.GroundOriginalNativePrefix.target_box_sound :
+  SbtCosmo.Derivation.GroundOriginalNativePrefix.targetBox.Contains
+    (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch ↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ).1, 0)
+SbtCosmo.Derivation.GroundOriginalNativePrefix.distance_arithmetic (i : Fin 8) :
+  ((SbtCosmo.Derivation.GroundOriginalNativePrefix.differenceBox
+              (SbtCosmo.Derivation.GroundOriginalNativePrefix.boxes 16)
+              SbtCosmo.Derivation.GroundOriginalNativePrefix.targetBox).R
+          i).bound ≤
+      1 / 125000 ∧
+    ((SbtCosmo.Derivation.GroundOriginalNativePrefix.differenceBox
+              (SbtCosmo.Derivation.GroundOriginalNativePrefix.boxes 16)
+              SbtCosmo.Derivation.GroundOriginalNativePrefix.targetBox).I
+          i).bound ≤
+      1 / 125000
+SbtCosmo.Derivation.GroundOriginalNativePrefix.actual_seed_sixteen_near_negative_ground :
+  SbtCosmo.Derivation.GroundState.complexNormSq (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit 16) = 1 ∧
+    ‖SbtCosmo.Derivation.GroundNativePhase.unpack (SbtCosmo.Derivation.GroundOriginalNativePrefix.orbit 16) -
+          (-(SbtCosmo.Derivation.GroundOriginalContinuation.branch ↑SbtCosmo.Derivation.GroundNativePrefixInitial.κ).1,
+            0)‖ <
+      1 / 100000
+SbtCosmo.Derivation.GroundOriginalNativePrefix.zero_selector_preconditioner_rejected :
+  ¬SbtCosmo.Derivation.GroundBackgroundKernel.Arithmetic
+      (SbtCosmo.Derivation.GroundNativeBox.sourceBox SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground
+        SbtCosmo.Derivation.GroundNativePrefixInitial.κ SbtCosmo.Derivation.GroundNativePrefix.Step000.input)
+      SbtCosmo.Derivation.GroundNativePrefix.Step000.z SbtCosmo.Derivation.GroundNativePrefix.Step000.r
+      SbtCosmo.Derivation.GroundNativePrefix.Step000.q SbtCosmo.Derivation.GroundNativePrefix.Step000.y fun x x_1 => 0

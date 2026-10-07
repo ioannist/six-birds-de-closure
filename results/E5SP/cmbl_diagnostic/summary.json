@@ -1,0 +1,329 @@
+{
+  "L_geom_rank": 4,
+  "L_geom_singular_values": [
+    11.958297992327216,
+    2.7973563832361306,
+    0.15247063541086595,
+    0.0332822475924203,
+    0.00847704804085237,
+    2.2467635254445711e-13,
+    1.911122972191175e-14,
+    1.5555826754504785e-14,
+    1.3258096489195078e-14,
+    1.283975951435917e-14,
+    1.0983565597421194e-14,
+    1.063643168618349e-14,
+    1.0621102213128367e-14,
+    9.98488882741611e-15,
+    9.286072965397406e-15,
+    8.650836074872156e-15,
+    8.240540285472196e-15,
+    8.129090969917288e-15,
+    7.477617556250793e-15,
+    7.092103417021008e-15,
+    6.541280044548793e-15,
+    6.4672947555884754e-15,
+    6.168796426972541e-15,
+    5.28386920521298e-15,
+    5.268885274886265e-15,
+    5.096391729314636e-15,
+    4.952042188808278e-15,
+    4.6204792930584585e-15,
+    4.447902941375123e-15,
+    3.6664714177715385e-15,
+    3.219286101552702e-15,
+    2.991009320754046e-15,
+    2.5114241919169483e-15,
+    1.5288741151312442e-15,
+    9.285033401532642e-16
+  ],
+  "anti_vacuity_calibration": [
+    {
+      "Omega": 1.1,
+      "injected_rows": [
+        7,
+        8,
+        9,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "lambda_max": 36.833526274901345,
+      "lambda_over_q": 5.000000000000001,
+      "passes_nonvacuity": true,
+      "pi": 3.900000000000001,
+      "pi_ci_high": 13.686703227005014,
+      "pi_ci_low": 2.93607105802066,
+      "residualized_direction_norm": 3.145052529991772,
+      "scale_sigma": 3.7941969508741598,
+      "shell": "CMB-L-high",
+      "target_index": -1,
+      "target_lambda_over_q": 5.0
+    }
+  ],
+  "anti_vacuity_calibration_sha256": "c6fe440b43866e97f22a639537999b13f4cd0cda6e94d49a865cb40e15fc290d",
+  "backend": {
+    "backend": "linearized_ccl_tangent",
+    "cache": "/home/repos/six-birds-de-closure/runs/E5SP/cmbl_diagnostic/cmbl_predictions_linearized_ccl_tangent_n256_seed202606021_floor0.020.npz",
+    "finite_difference_steps": [
+      3.3681542524438316e-05,
+      0.00023951524151221527,
+      0.1467828941244883,
+      0.02,
+      0.05490627078981845
+    ],
+    "loaded_from_cache": true,
+    "note": "Physical CCL per-draw was build-time-bound; L_geom uses local finite-difference CCL tangent predictions for N>=256 posterior draws.",
+    "parameter_names": [
+      "omega_b",
+      "omega_cdm",
+      "H0",
+      "w0_fld",
+      "wa_fld"
+    ],
+    "physical_derivative_eval_seconds": [
+      38.772931303828955,
+      38.14041517302394,
+      31.614990204572678,
+      27.62187262251973,
+      27.891014859080315
+    ],
+    "physical_derivative_total_seconds": 164.04122416302562,
+    "physical_first_eval_seconds": 19.79853768646717,
+    "posterior_mean": [
+      0.02243036083025782,
+      0.1192578863117578,
+      67.19713124008206,
+      -0.7929983244597656,
+      -0.7176448847889061
+    ],
+    "posterior_std": [
+      0.00013472617009775326,
+      0.0009580609660488611,
+      0.5871315764979532,
+      0.05499641356860127,
+      0.2196250831592738
+    ],
+    "seconds_per_posterior_prediction_after_derivatives": 0.0,
+    "seconds_total": 183.8397618494928,
+    "validation_against_physical_ccl": {
+      "max_abs_relative_component": 0.00040176976477466776,
+      "max_relative_l2": 0.0003493824784095991,
+      "median_max_abs_relative_component": 0.00015100338783634117,
+      "median_relative_l2": 0.00011560661879357354,
+      "n_validation": 8,
+      "physical_cache": "/home/repos/six-birds-de-closure/runs/E5SP/cmbl_diagnostic/cmbl_predictions_n8_seed202606021_floor0.020.npz",
+      "status": "available"
+    }
+  },
+  "controls": [
+    {
+      "control": "P_nl_equals_P_lin_synthetic",
+      "description": "Linear-power synthetic residual through the same statistic, budgeted as Omega_linear/synthetic.",
+      "metric": "max_pi_after_budget",
+      "passes_vanish": true,
+      "value": "0.000000000000e+00"
+    },
+    {
+      "control": "equal_row_count_gaussian_residuals",
+      "description": "Same row-null ensemble used for q; median normalized positive excess should vanish.",
+      "metric": "median_pi_across_shells",
+      "passes_vanish": true,
+      "value": "0.000000000000e+00"
+    },
+    {
+      "control": "same_family_saturation",
+      "description": "Perfect same-family fit sets residual rows to zero.",
+      "metric": "max_pi",
+      "passes_vanish": true,
+      "value": "0.000000000000e+00"
+    },
+    {
+      "control": "shuffled_stage_labels",
+      "description": "Proxy labels permuted after pi is frozen; only pi-H relation changes.",
+      "metric": "spearman_pi_vs_shuffled_H",
+      "passes_vanish": true,
+      "value": "-5.000000000000e-01"
+    },
+    {
+      "control": "binding_shell_stage_vector_removed_from_L_and_D",
+      "description": "High-L shell removed from the diagnostic rows by construction.",
+      "metric": "CMB-L-high_pi_after_removal",
+      "passes_vanish": true,
+      "value": "0.000000000000e+00"
+    },
+    {
+      "control": "covariance_preserving_random_rotation",
+      "description": "Random orthogonal rotation in whitened space destroys the window/H alignment.",
+      "metric": "max_pi_rotated",
+      "passes_vanish": true,
+      "value": "0.000000000000e+00"
+    },
+    {
+      "control": "proxy_ablation_H_true_vs_permuted",
+      "description": "All three-point H permutations enumerated.",
+      "metric": "true_spearman_minus_median_abs_permuted",
+      "passes_vanish": true,
+      "value": "5.000000000000e-01"
+    },
+    {
+      "control": "proxy_ablation_H_scale_matched_noise",
+      "description": "Scale-matched noise proxy uses the same H values in random order.",
+      "metric": "spearman_pi_vs_scale_matched_noise",
+      "passes_vanish": true,
+      "value": "-5.000000000000e-01"
+    }
+  ],
+  "controls_sha256": "246b6b70157cffcad1c268fe5f18caa56df59edb2922e234d753ddaf5c8ec945",
+  "covariance": {
+    "condition": 1640.8398117240217,
+    "declared_fractional_floor": 0.02,
+    "eig_max": 6.049077617484162e-15,
+    "eig_min": 3.686574139817115e-18
+  },
+  "diagnostic_outcome": "null / pi approximately zero in all CMB-lensing shells",
+  "linear_synthetic_info": {
+    "seconds": 13.748813319951296,
+    "status": "available",
+    "theta": {
+      "H0": 67.19713124008206,
+      "matter_power_spectrum": "linear",
+      "n_s": 0.965,
+      "nonlinear_model": "linear",
+      "omega_b": 0.02243036083025782,
+      "omega_cdm": 0.1192578863117578,
+      "sigma8": 0.81,
+      "w0_fld": -0.7929983244597656,
+      "wa_fld": -0.7176448847889061
+    }
+  },
+  "omega_floor_rows": [
+    {
+      "Delta_margin": "1.000000000000e-01",
+      "Omega": "1.100000000000e+00",
+      "Omega_linear/synthetic[P_nl=P_lin]": "2.841399264318e-03",
+      "Omega_max_floor": "1.000000000000e+00",
+      "Omega_nuisance/systematics": "0.000000000000e+00",
+      "Omega_proxy": "0.000000000000e+00",
+      "Omega_row-count": "1.000000000000e+00",
+      "Omega_same-family": "0.000000000000e+00",
+      "Omega_theory": "1.110563088815e-01",
+      "family": "CMB-lensing",
+      "linear_synthetic_status": "available",
+      "shell": "CMB-L-low"
+    },
+    {
+      "Delta_margin": "1.000000000000e-01",
+      "Omega": "1.100000000000e+00",
+      "Omega_linear/synthetic[P_nl=P_lin]": "3.133032236807e-02",
+      "Omega_max_floor": "1.000000000000e+00",
+      "Omega_nuisance/systematics": "0.000000000000e+00",
+      "Omega_proxy": "0.000000000000e+00",
+      "Omega_row-count": "1.000000000000e+00",
+      "Omega_same-family": "0.000000000000e+00",
+      "Omega_theory": "8.267803810970e-02",
+      "family": "CMB-lensing",
+      "linear_synthetic_status": "available",
+      "shell": "CMB-L-mid"
+    },
+    {
+      "Delta_margin": "1.000000000000e-01",
+      "Omega": "1.100000000000e+00",
+      "Omega_linear/synthetic[P_nl=P_lin]": "1.073225165034e-01",
+      "Omega_max_floor": "1.000000000000e+00",
+      "Omega_nuisance/systematics": "0.000000000000e+00",
+      "Omega_proxy": "0.000000000000e+00",
+      "Omega_row-count": "1.000000000000e+00",
+      "Omega_same-family": "0.000000000000e+00",
+      "Omega_theory": "3.707719348337e-01",
+      "family": "CMB-lensing",
+      "linear_synthetic_status": "available",
+      "shell": "CMB-L-high"
+    }
+  ],
+  "omega_floors_sha256": "57c1301cb51530bf3fd175304ab5b94a924d44d9fb3f51255c605d1666eaf3e6",
+  "pi_field_sha256": "80c7cf3d2ec2cfcc80762c7c10ff8a431d6a82e6b3d6e62130ad59735f9ec5c8",
+  "pi_rows": [
+    {
+      "H": "0.000000000000e+00",
+      "H_prime": "0.000000000000e+00",
+      "L_eff": "8.656667461071e+01",
+      "L_geom_rank": 4,
+      "L_max": "1.504380888966e+02",
+      "L_min": "2.806508999349e+01",
+      "Omega": "1.100000000000e+00",
+      "family": "CMB-lensing",
+      "lambda_max": "3.256665925969e+00",
+      "lambda_over_q": "3.982542783398e-01",
+      "pi": "0.000000000000e+00",
+      "pi_ci_high": "1.529032609770e-01",
+      "pi_ci_low": "0.000000000000e+00",
+      "q_row_0.95": "8.177353271747e+00",
+      "q_row_0.95_se": "1.557353936404e-01",
+      "row_count": 12,
+      "shell": "CMB-L-low",
+      "shell_effective_rank": "2.396446826999e+00",
+      "slack_label": "slack",
+      "status": "single-family demonstration / diagnostic -- NOT promotable"
+    },
+    {
+      "H": "4.357472463520e-03",
+      "H_prime": "4.353274274182e-05",
+      "L_eff": "2.744832103719e+02",
+      "L_geom_rank": 4,
+      "L_max": "3.825000000000e+02",
+      "L_min": "1.720000000000e+02",
+      "Omega": "1.100000000000e+00",
+      "family": "CMB-lensing",
+      "lambda_max": "3.167433832657e+00",
+      "lambda_over_q": "4.001671163033e-01",
+      "pi": "0.000000000000e+00",
+      "pi_ci_high": "9.118957247142e-02",
+      "pi_ci_low": "0.000000000000e+00",
+      "q_row_0.95": "7.915277651791e+00",
+      "q_row_0.95_se": "1.837549908041e-01",
+      "row_count": 12,
+      "shell": "CMB-L-mid",
+      "shell_effective_rank": "1.033026432906e+01",
+      "slack_label": "slack",
+      "status": "single-family demonstration / diagnostic -- NOT promotable"
+    },
+    {
+      "H": "1.440945126876e-01",
+      "H_prime": "7.045236874123e-02",
+      "L_eff": "1.075259263697e+03",
+      "L_geom_rank": 4,
+      "L_max": "2.636748775125e+03",
+      "L_min": "4.301136276187e+02",
+      "Omega": "1.100000000000e+00",
+      "family": "CMB-lensing",
+      "lambda_max": "5.097073484327e+00",
+      "lambda_over_q": "6.919068033679e-01",
+      "pi": "0.000000000000e+00",
+      "pi_ci_high": "9.594963024981e-01",
+      "pi_ci_low": "0.000000000000e+00",
+      "q_row_0.95": "7.366705254980e+00",
+      "q_row_0.95_se": "1.266210732260e-01",
+      "row_count": 11,
+      "shell": "CMB-L-high",
+      "shell_effective_rank": "9.309243383771e+00",
+      "slack_label": "binding",
+      "status": "single-family demonstration / diagnostic -- NOT promotable"
+    }
+  ],
+  "seed_generator_record_sha256": "ae7046163566694bf3907b65c4a5bf6b49a115fb2a71348261323ae7d62b63c1",
+  "status": "single-family demonstration / diagnostic -- NOT promotable",
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

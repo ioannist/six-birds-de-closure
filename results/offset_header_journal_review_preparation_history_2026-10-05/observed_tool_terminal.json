@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "/tmp/de_review_offset_header_installer_journal.py"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure",
+  "terminal_exit_code": 1,
+  "evidence_source": "Actual exec_command terminal result observed in this conversation",
+  "reported_error": "KeyError: 'proof_objects_installed'",
+  "source_sha256": "648006a20722532f30cea0fe3014a6c7b61226a965a52e901bd91a32889a5e70",
+  "new_packet_created": false,
+  "registered_sources_changed": false
+}

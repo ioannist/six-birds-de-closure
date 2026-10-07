@@ -1,0 +1,25 @@
+{
+  "dataset": "CC_HZ",
+  "release": "Moresco compilation review arXiv:2201.07241",
+  "access": "official_likelihood",
+  "fetch_url": "https://arxiv.org/abs/2201.07241",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "Public literature compilation; cite source papers",
+  "citation": "Moresco et al., arXiv:2201.07241",
+  "raw_files": [{"path": "data/raw/cc_hz/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/cc_hz/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/cc_hz/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": false, "note": "differential-age H(z) compilation"},
+  "route": null,
+  "staging_axis": null,
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "diagonal-only H(z) Gaussian likelihood",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

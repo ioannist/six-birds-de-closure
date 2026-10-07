@@ -1,0 +1,129 @@
+SbtCosmo.Derivation.GroundSourceNormalization.returned_unit {τ : ℝ} {z w : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hτ : 0 ≤ τ) (hw : SbtCosmo.Derivation.GroundSourceNormalization.attempt τ z = some w) :
+  SbtCosmo.Derivation.GroundState.complexNormSq w = 1
+SbtCosmo.Derivation.GroundSourceNormalization.rejected_iff (τ : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundSourceNormalization.attempt τ z = none ↔
+    √(SbtCosmo.Derivation.GroundState.complexNormSq z) ≤ τ
+SbtCosmo.Derivation.GroundSourceNormalization.zero_rejected {τ : ℝ} (hτ : 0 ≤ τ) :
+  SbtCosmo.Derivation.GroundSourceNormalization.attempt τ 0 = none
+SbtCosmo.Derivation.GroundSourceNormalization.unit_preserved {τ : ℝ} {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hτ : τ < 1) (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) :
+  SbtCosmo.Derivation.GroundSourceNormalization.attempt τ z = some z
+SbtCosmo.Derivation.GroundSourceNormalization.failure_persists {τ : ℝ}
+  {f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField}
+  {z : SbtCosmo.Derivation.GroundState.ComplexField} {n : ℕ}
+  (hn : SbtCosmo.Derivation.GroundSourceNormalization.run τ f z n = none) (k : ℕ) :
+  SbtCosmo.Derivation.GroundSourceNormalization.run τ f z (n + k) = none
+SbtCosmo.Derivation.GroundSourceNormalization.positive_return_unit {τ : ℝ}
+  {f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField}
+  {z w : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ) {n : ℕ} (hn : 0 < n)
+  (hw : SbtCosmo.Derivation.GroundSourceNormalization.run τ f z n = some w) :
+  SbtCosmo.Derivation.GroundState.complexNormSq w = 1
+SbtCosmo.Derivation.GroundSourceNormalization.successful_run_unit {τ : ℝ}
+  {f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField}
+  {z w : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (n : ℕ)
+  (hw : SbtCosmo.Derivation.GroundSourceNormalization.run τ f z n = some w) :
+  SbtCosmo.Derivation.GroundState.complexNormSq w = 1
+SbtCosmo.Derivation.GroundSourceNormalization.successful_run_density_bound {τ : ℝ}
+  {f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField}
+  {z w : SbtCosmo.Derivation.GroundState.ComplexField} (hτ : 0 ≤ τ)
+  (hz : SbtCosmo.Derivation.GroundState.complexNormSq z = 1) (n : ℕ)
+  (hw : SbtCosmo.Derivation.GroundSourceNormalization.run τ f z n = some w) (i : Fin 8) : Complex.normSq (w i) ≤ 1
+SbtCosmo.Derivation.GroundSourceExecutionReturn.attempt_some_iff (τ : ℝ)
+  (z w : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundSourceNormalization.attempt τ z = some w ↔
+    τ < √(SbtCosmo.Derivation.GroundState.complexNormSq z) ∧
+      SbtCosmo.Derivation.GroundNativeIteration.complexNormalize z = w
+SbtCosmo.Derivation.GroundSourceExecutionReturn.run_guarded (τ : ℝ)
+  (f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) (N : ℕ)
+  (hN :
+    ∀ n < N,
+      τ <
+        √(SbtCosmo.Derivation.GroundState.complexNormSq
+            (f ((SbtCosmo.Derivation.GroundSourceExecutionReturn.normalized f)^[n] z)))) :
+  SbtCosmo.Derivation.GroundSourceNormalization.run τ f z N =
+    some ((SbtCosmo.Derivation.GroundSourceExecutionReturn.normalized f)^[N] z)
+SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_return (τ : ℝ)
+  (f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) (N : ℕ) {w : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hw : SbtCosmo.Derivation.GroundSourceNormalization.run τ f z N = some w) :
+  (SbtCosmo.Derivation.GroundSourceExecutionReturn.normalized f)^[N] z = w
+SbtCosmo.Derivation.GroundSourceExecutionReturn.successful_run_guards (τ : ℝ)
+  (f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) (N : ℕ) {w : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hw : SbtCosmo.Derivation.GroundSourceNormalization.run τ f z N = some w) (n : ℕ) :
+  n < N →
+    τ <
+      √(SbtCosmo.Derivation.GroundState.complexNormSq
+          (f ((SbtCosmo.Derivation.GroundSourceExecutionReturn.normalized f)^[n] z)))
+SbtCosmo.Derivation.GroundSourceExecutionReturn.run_iff_guards (τ : ℝ)
+  (f : SbtCosmo.Derivation.GroundState.ComplexField → SbtCosmo.Derivation.GroundState.ComplexField)
+  (z : SbtCosmo.Derivation.GroundState.ComplexField) (N : ℕ) :
+  SbtCosmo.Derivation.GroundSourceNormalization.run τ f z N =
+      some ((SbtCosmo.Derivation.GroundSourceExecutionReturn.normalized f)^[N] z) ↔
+    ∀ n < N,
+      τ <
+        √(SbtCosmo.Derivation.GroundState.complexNormSq
+            (f ((SbtCosmo.Derivation.GroundSourceExecutionReturn.normalized f)^[n] z)))
+SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_guarded (τ : ℝ) (b : SbtCosmo.Derivation.GroundState.Field)
+  (κ m : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (N : ℕ)
+  (hN :
+    ∀ n < N,
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z)) :
+  SbtCosmo.Derivation.GroundSourceNormalization.run τ (SbtCosmo.Derivation.GroundNativeIteration.nativeMixed τ b κ m) z
+      N =
+    some ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[N] z)
+SbtCosmo.Derivation.GroundSourceExecutionReturn.native_run_iff_guards (τ : ℝ)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ m : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) (N : ℕ) :
+  SbtCosmo.Derivation.GroundSourceNormalization.run τ (SbtCosmo.Derivation.GroundNativeIteration.nativeMixed τ b κ m) z
+        N =
+      some ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[N] z) ↔
+    ∀ n < N,
+      SbtCosmo.Derivation.GroundNativeIteration.NativeLegal τ b κ m
+        ((SbtCosmo.Derivation.GroundNativeIteration.nativeUpdate τ b κ m)^[n] z)
+SbtCosmo.Derivation.GroundSourceExecutionReturn.candidate_normalization_preserved {τ : ℝ} (hτ : τ < 1)
+  (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) (z : SbtCosmo.Derivation.GroundState.ComplexField) :
+  SbtCosmo.Derivation.GroundSourceNormalization.attempt τ
+      (SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate b κ z) =
+    some (SbtCosmo.Derivation.GroundNativeIteration.nativeCandidate b κ z)
+SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling20_execution (N : ℕ) :
+  ∃ w,
+    SbtCosmo.Derivation.GroundSourceNormalization.run (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+          (SbtCosmo.Derivation.GroundNativeIteration.nativeMixed (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (↑SbtCosmo.Derivation.NativeCycleFrame20.κ) (1 / 2))
+          SbtCosmo.Derivation.GroundOriginalSeed.initial N =
+        some w ∧
+      w = SbtCosmo.Derivation.NativeCycleSeed20.g^[N] SbtCosmo.Derivation.GroundOriginalSeed.initial ∧
+        SbtCosmo.Derivation.GroundNativeIteration.ActivePhase (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (↑SbtCosmo.Derivation.NativeCycleFrame20.κ) w ∧
+          SbtCosmo.Derivation.GroundNativeIteration.NativeLegal (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              (↑SbtCosmo.Derivation.NativeCycleFrame20.κ) (1 / 2) w ∧
+            SbtCosmo.Derivation.GroundState.complexNormSq w = 1
+SbtCosmo.Derivation.GroundOriginalCycleExecution.coupling30_execution (N : ℕ) :
+  ∃ w,
+    SbtCosmo.Derivation.GroundSourceNormalization.run (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+          (SbtCosmo.Derivation.GroundNativeIteration.nativeMixed (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (↑SbtCosmo.Derivation.NativeCycleFrame30.κ) (1 / 2))
+          SbtCosmo.Derivation.GroundOriginalSeed.initial N =
+        some w ∧
+      w = SbtCosmo.Derivation.NativeCycleSeed30.g^[N] SbtCosmo.Derivation.GroundOriginalSeed.initial ∧
+        SbtCosmo.Derivation.GroundNativeIteration.ActivePhase (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+            (SbtCosmo.Derivation.GroundKernelTube.background
+              SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+            (↑SbtCosmo.Derivation.NativeCycleFrame30.κ) w ∧
+          SbtCosmo.Derivation.GroundNativeIteration.NativeLegal (↑SbtCosmo.Derivation.GroundNativePrefixInitial.τ)
+              (SbtCosmo.Derivation.GroundKernelTube.background
+                SbtCosmo.Derivation.GroundOriginalFirstTube.originalBackground)
+              (↑SbtCosmo.Derivation.NativeCycleFrame30.κ) (1 / 2) w ∧
+            SbtCosmo.Derivation.GroundState.complexNormSq w = 1

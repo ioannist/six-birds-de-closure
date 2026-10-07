@@ -1,0 +1,28 @@
+{
+  "utc": "2026-10-05T08:25:16.451324+00:00",
+  "live_jobs": {
+    "662901": "de_native_campaign_qualified_stream_build.py",
+    "760297": "de_native_seed_real_returns_qualified_stream_build.py",
+    "853725": "de_native_campaign_verification_stream_finish.py",
+    "853723": "de_native_additional_constructions_stream_qualified_build.py",
+    "853738": "de_source_execution_supplement_stream_qualified_build.py",
+    "1255480": "de_native_stable15_priority/build_priority.py",
+    "2558747": "de_native_stable_seed_leaves_private_build.py",
+    "2637955": "de_native_stable_seed_pairs_private_build.py",
+    "2854622": "de_native_stable_seed_families_private_build.py",
+    "3948875": "de_native_stable_seed_sixty_private_build.py",
+    "940127": "de_native_stable_prefix_failures_private_build.py",
+    "2056100": "de_native_original_sample_results_private_build.py"
+  },
+  "progress": {
+    "stable": 206,
+    "priority": 67,
+    "qualified": 42
+  },
+  "source_freeze_inputs_revalidated": 6039,
+  "verifier_review_sha256": "d36c9ec0a7a49579fde9f65c4cd4d94a64336cabba007d48d7a21050cc2006b2",
+  "evidence_review_sha256": "48e52c726835d22ca8830cec05e38b46c24ec31593fa9d64ab517781a5873eb0",
+  "old_handover_preserved": true,
+  "registered_inputs_unchanged": true,
+  "goal_complete": false
+}

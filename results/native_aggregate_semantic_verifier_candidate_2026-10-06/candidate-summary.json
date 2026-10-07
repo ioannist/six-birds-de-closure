@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-06T03:14:42.812901+00:00",
+  "source_verifier_terminal_exit_code": 0,
+  "source_verifier_observed_exec_session": 72177,
+  "source_stage_passed": true,
+  "qualified_stage_passed": false,
+  "module_count": 1738,
+  "enumerated_theorems": 20634,
+  "retained_compile_checks": 993,
+  "planned_fresh_recovery_compile_checks": 745,
+  "rejected_controls": 3,
+  "unchanged_core_function_asts": 10,
+  "verifier_sha256": "b48e90cb8b1616399442d81bf81ea853c2cfc38c514d0b61fda9e1a6a85e34fa",
+  "qualified_success_path_pending": true,
+  "repository_sources_unchanged": true,
+  "review": "Adversarial self-review; no independent reviewer"
+}

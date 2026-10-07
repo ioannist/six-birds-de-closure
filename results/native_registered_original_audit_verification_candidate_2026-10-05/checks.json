@@ -1,0 +1,69 @@
+{
+  "utc": "2026-10-05T13:27:51.294071+00:00",
+  "candidate_source_targets": 1786,
+  "native_modules": 1772,
+  "native_declarations": 20798,
+  "cumulative_queries": 32574,
+  "original_audit_proof_gate": {
+    "declarations": 9,
+    "standard_only": true,
+    "archived_members": 2674,
+    "historical_inputs": 2660,
+    "actual_registered_execution": false
+  },
+  "execution_failure_proof_gate": {
+    "declarations": 5,
+    "standard_only": true,
+    "archive_members": 25,
+    "source_bindings": 25,
+    "actual_registered_execution": false
+  },
+  "unchanged_inherited_functions": [
+    "sha",
+    "rawsha",
+    "load",
+    "required",
+    "hoist",
+    "failure_proof_gate",
+    "require_freezes_released"
+  ],
+  "inherited_parent_candidate_ast_unchanged": true,
+  "inherited_proof_gates_ast_unchanged": true,
+  "runner_change_only_verifier_and_receipt_paths": true,
+  "rejected_controls": [
+    "missing_original_audit_declaration",
+    "changed_original_audit_source_binding",
+    "failed_compile_receipt",
+    "wrong_compile_command",
+    "missing_thread_override",
+    "wrong_audit_log_binding",
+    "wrong_finite_admitted_count",
+    "wrong_infinite_admitted_count",
+    "wrong_passing_split_case"
+  ],
+  "virtual_receipt_read_substitutions": 4,
+  "preflights": [
+    {
+      "label": "candidate",
+      "actual_exit_code": 0,
+      "stdout": "{\"candidate_checked\": true, \"modules\": 1772, \"declarations\": 20798, \"archive_members\": 1786, \"proof_gates_checked\": false, \"repository_integrated\": false, \"goal_complete\": false}\n",
+      "stderr": ""
+    },
+    {
+      "label": "registered",
+      "actual_exit_code": 2,
+      "stdout": "{\"status\": \"pending\", \"reason\": \"Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json\", \"repository_integrated\": false, \"goal_complete\": false}\n",
+      "stderr": ""
+    },
+    {
+      "label": "runner",
+      "actual_exit_code": 2,
+      "stdout": "{\"status\": \"pending\", \"reason\": \"Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json\", \"registered_commands_started\": false, \"goal_complete\": false}\n",
+      "stderr": ""
+    }
+  ],
+  "registered_commands_started": 0,
+  "full_registered_success_path_tested": false,
+  "review": "Adversarial self-review; no independent review",
+  "goal_complete": false
+}

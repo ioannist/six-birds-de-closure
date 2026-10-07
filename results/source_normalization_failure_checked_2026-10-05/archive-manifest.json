@@ -1,0 +1,130 @@
+{
+  "archive_sha256": "0fe8d8ae1004a2056c172e22511a095cd6a1bfc08ee34907f1fc32fb69eb7f2e",
+  "entries": [
+    {
+      "name": "de_checkpoint_finite15_and_normalization_failure.py",
+      "sha256": "8c032c945c61aa6b55c88dad660df236dfc14f40da8a8af1ee227beff7fe868e",
+      "size": 9201
+    },
+    {
+      "name": "de_source_normalization_failure/Audit.lean",
+      "sha256": "10051f020e1d896c6c6f52a259a9e80eb6bda5ebe353665081e64d2f24a5172d",
+      "size": 1048
+    },
+    {
+      "name": "de_source_normalization_failure/Audit.log",
+      "sha256": "790426f94ce3fb8c1db8ae35956b9ca9ba160d86f8e2af5cac9361316fb722cf",
+      "size": 6567
+    },
+    {
+      "name": "de_source_normalization_failure/GroundSourceNormalizationFailure.olean",
+      "sha256": "a1a0b4b007e2a087dca8ca908b8f49085d21408de4891164a0c46cf7046e9f25",
+      "size": 171632
+    },
+    {
+      "name": "de_source_normalization_failure/audit-source-freeze.json",
+      "sha256": "e0cc122843b5e88e0fd9b0d3bf29a8409982e17d160ad1cdaf69b94d86609569",
+      "size": 937
+    },
+    {
+      "name": "de_source_normalization_failure/audit-summary.json",
+      "sha256": "17c714ff898136b232aefbeb0317a4876098db29dff98ce11569b6c7edfcb064",
+      "size": 1237
+    },
+    {
+      "name": "de_source_normalization_failure/audit-terminal.json",
+      "sha256": "392f0696f5a9780dad4ac5b7ba620d18c176fc2289aeeca2720d1d2443f0b9e8",
+      "size": 889
+    },
+    {
+      "name": "de_source_normalization_failure/compile-source-freeze.json",
+      "sha256": "2acdf87c2b902f448f2b64e08bb19e6ecb81af7dbf896017d5120791b231ad0d",
+      "size": 498
+    },
+    {
+      "name": "de_source_normalization_failure/compile-terminal.json",
+      "sha256": "d2a53f9a733fde77455b3da29ddb33851ff7ef6584e1b9b0502071a643a42a15",
+      "size": 735
+    },
+    {
+      "name": "de_source_normalization_failure/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_source_normalization_failure/history/audit-incomplete-overlay/Audit.lean",
+      "sha256": "10051f020e1d896c6c6f52a259a9e80eb6bda5ebe353665081e64d2f24a5172d",
+      "size": 1048
+    },
+    {
+      "name": "de_source_normalization_failure/history/audit-incomplete-overlay/Audit.log",
+      "sha256": "20e60b16dafc5f6334a5c621f2c04ba7ce531bb3c49704247541ad7c5e1ec89b",
+      "size": 242
+    },
+    {
+      "name": "de_source_normalization_failure/history/audit-incomplete-overlay/audit-source-freeze.json",
+      "sha256": "e0cc122843b5e88e0fd9b0d3bf29a8409982e17d160ad1cdaf69b94d86609569",
+      "size": 937
+    },
+    {
+      "name": "de_source_normalization_failure/history/audit-incomplete-overlay/audit-terminal.json",
+      "sha256": "427c9649c8e6670e35bb3dd2e8c443af1a87317521fc002a18a5850be3c83a85",
+      "size": 889
+    },
+    {
+      "name": "de_source_normalization_failure/history/checked-four-theorem-stage/GroundSourceNormalizationFailure.lean",
+      "sha256": "349dfc23bcc805b09d0b1a5f4fafba0df66f814409099baa5c294b02e8ab9322",
+      "size": 3619
+    },
+    {
+      "name": "de_source_normalization_failure/history/checked-four-theorem-stage/GroundSourceNormalizationFailure.olean",
+      "sha256": "5397afd976bb659dea123251d9f13a86a53cb626d4607ae9a5ab39d1d17173e0",
+      "size": 126584
+    },
+    {
+      "name": "de_source_normalization_failure/history/checked-four-theorem-stage/compile-source-freeze.json",
+      "sha256": "fd581db3c5139423c4d8a5a61c4bc0cf9e47ac402a2639b1e634dcfaad1a42b0",
+      "size": 498
+    },
+    {
+      "name": "de_source_normalization_failure/history/checked-four-theorem-stage/compile-terminal.json",
+      "sha256": "616b8b6e0095ef9f7676dd07a903ad59339ad56b9e642b79b3ffb2f8c8a8f682",
+      "size": 735
+    },
+    {
+      "name": "de_source_normalization_failure/history/checked-four-theorem-stage/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "name": "de_source_normalization_failure/history/initial-missing-import/GroundSourceNormalizationFailure.lean",
+      "sha256": "57729caa470f8dde1f948c36bd59f607e8f1d3a1a0d79c9a4e631db2480f9592",
+      "size": 3571
+    },
+    {
+      "name": "de_source_normalization_failure/history/initial-missing-import/compile-terminal.json",
+      "sha256": "01ef1720da10f69ff6127e15292dfae7170b4f8057b1a37d4969c6fb734e5bc7",
+      "size": 554
+    },
+    {
+      "name": "de_source_normalization_failure/history/initial-missing-import/compile.log",
+      "sha256": "2164753efcad6e67042c83b590843f7e1f36f0728608352d572e81174961f9bf",
+      "size": 8045
+    },
+    {
+      "name": "de_source_normalization_failure/lean/SbtCosmo/Derivation/GroundSourceNormalizationFailure.lean",
+      "sha256": "2cadb61c7afa031bb7ceaf56bdd4956ba778b831f5e17dee86e3b30fe524df8e",
+      "size": 5439
+    },
+    {
+      "name": "de_source_normalization_return/lean/SbtCosmo/Derivation/GroundSourceNormalization.lean",
+      "sha256": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad",
+      "size": 4338
+    },
+    {
+      "name": "de_source_normalization_return/overlay/SbtCosmo/Derivation/GroundSourceNormalization.olean",
+      "sha256": "a75b480f93e534e309ce134bab59eec92f4a140aadb98a849c2e82643785e451",
+      "size": 174480
+    }
+  ]
+}

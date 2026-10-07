@@ -1,0 +1,34 @@
+import SbtCosmo.Derivation.RelativeConvexContinuity
+import SbtCosmo.Derivation.RelativeDifference
+import SbtCosmo.Derivation.RelativeEqualitySupport
+import SbtCosmo.Derivation.RelativeSumSplit
+import SbtCosmo.Derivation.RelativeSchurStationarity
+import SbtCosmo.Derivation.RelativeSplitExamples
+
+#print axioms SbtCosmo.Derivation.RelativeConvexContinuity.continuousOn_intrinsicInterior
+#print axioms SbtCosmo.Derivation.RelativeConvexContinuity.chart_mem_nhds
+#print axioms SbtCosmo.Derivation.RelativeConvexContinuity.continuousAt_chart
+#print axioms SbtCosmo.Derivation.RelativeConvexContinuity.chart_bounded_above
+#print axioms SbtCosmo.Derivation.RelativeDifference.difference_surjective
+#print axioms SbtCosmo.Derivation.RelativeDifference.local_bounded_witnesses
+#print axioms SbtCosmo.Derivation.RelativeEqualitySupport.equality_cone_laws
+#print axioms SbtCosmo.Derivation.RelativeEqualitySupport.local_finiteness
+#print axioms SbtCosmo.Derivation.RelativeEqualitySupport.supporting_functional
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.split_real_relative
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.split_real_support_relative
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.split_subgradient
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.join_subgradient
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.subgradient_sum_iff
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.objective_indicator_eq_restriction
+#print axioms SbtCosmo.Derivation.RelativeSumSplit.subgradient_add_indicator_iff
+#print axioms SbtCosmo.Derivation.RelativeSchurStationarity.restricted_epigraph_convex
+#print axioms SbtCosmo.Derivation.RelativeSchurStationarity.matrix_stationarity
+#print axioms SbtCosmo.Derivation.RelativeSchurStationarity.matrix_stationarity_nonzero
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.intrinsicInterior_affineSubspace
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.objective_no_bottom
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.objective_epigraph_convex
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.objective_domain
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.objective_relative_interior
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.objective_ambient_interior_empty
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.objective_restricted_support
+#print axioms SbtCosmo.Derivation.RelativeSplitExamples.constructed_lower_dimensional_split

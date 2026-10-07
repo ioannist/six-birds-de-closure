@@ -1,0 +1,20 @@
+{
+  "status": "All ten exact transport replays passed; final private Lean seed returns and full qualified build remain pending.",
+  "utc_checkpoint": "2026-10-05T00:10:56.655040+00:00",
+  "terminal_exit_code": 0,
+  "samples": 10,
+  "steps": 1070,
+  "pairs": 535,
+  "raw_seed_checked": true,
+  "exact_initial_normalization_checked": true,
+  "four_corrupted_inputs_rejected": true,
+  "leaf_source_render_match": true,
+  "frozen_input_count": 1831,
+  "log_sha256": "a82a8a046ea7ac7b48b16dde88031e99ea766f1b2c61a19396875375290c9ab7",
+  "scope": "Rational transport replay and read-only leaf rendering; Lean audits and full original-seed return checking remain separate. No IEEE trace.",
+  "review": "Adversarial self-review; no independent reviewer.",
+  "goal_complete": false,
+  "empirical_original_numpy_verdicts_checked": 12,
+  "empirical_original_numpy_verdicts_match": true,
+  "IEEE_operation_certificate": false
+}

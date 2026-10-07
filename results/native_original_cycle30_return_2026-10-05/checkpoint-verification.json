@@ -1,0 +1,56 @@
+{
+  "utc": "2026-10-05T02:49:16.892344+00:00",
+  "archive_files_reverified": 244,
+  "private_objects_reverified": 251,
+  "repository_dependencies_reverified": 671,
+  "active_semantic_freeze_inputs_reverified": 5675,
+  "math_note_sha256": "51cca639bdf735e4dc1eaa91b12fc880bf13a257f7e4122c708920248d863222",
+  "remaining_drivers_live": {
+    "de-offset-transport-leaves-resume-driver-retry": {
+      "pid": 1531524,
+      "live_command": "/usr/bin/python3 scripts/de_ground_offset_transport_resume.py",
+      "last_lines": [
+        "resumed leaves GroundOffsetTransport.Point014.Step000 terminal 0 completed 324 /421",
+        "resumed leaves GroundOffsetTransport.Point014.Step001 terminal 0 completed 325 /421",
+        "resumed leaves GroundOffsetTransport.Point014.Step002 terminal 0 completed 326 /421"
+      ]
+    },
+    "de-native-cycle-seed-leaves-driver": {
+      "pid": 1553413,
+      "live_command": "/usr/bin/python3 /tmp/de_native_cycle_seed_private_build.py",
+      "last_lines": [
+        "NativeCycleSeed20Step156 terminal 0 completed 310 /472",
+        "NativeCycleSeed20Step159 terminal 0 completed 311 /472",
+        "NativeCycleSeed20Step158 terminal 0 completed 312 /472"
+      ]
+    },
+    "de-native-stable-seed-leaves-driver": {
+      "pid": 2558747,
+      "live_command": "/usr/bin/python3 /tmp/de_native_stable_seed_leaves_private_build.py",
+      "last_lines": [
+        "NativeStableSeed003Step036 terminal 0 scheduled completed 96 /597",
+        "NativeStableSeed003Step037 terminal 0 scheduled completed 97 /597",
+        "NativeStableSeed003Step038 terminal 0 scheduled completed 98 /597"
+      ]
+    },
+    "de-native-cycle-seed-families-driver": {
+      "pid": 365637,
+      "live_command": "/usr/bin/python3 /tmp/de_native_cycle_seed_families_private_build.py",
+      "last_lines": [
+        "NativeCycleSeed30Return terminal 0",
+        "NativeCycleSeed30FullAudit terminal 0",
+        "Coupling 30 full private seed family, return, and audit passed"
+      ]
+    },
+    "de-native-seed-real-returns-driver": {
+      "pid": 2371188,
+      "live_command": "/usr/bin/python3 /tmp/de_native_seed_real_returns_private_build.py",
+      "last_lines": [
+        "NativeCycleSeed30RealReturn terminal 0",
+        "NativeCycleSeed30RealReturnAudit terminal 0",
+        "1 checks/transitive axiom closures parsed; all standard-only."
+      ]
+    }
+  },
+  "scope": "Completed private coupling30 checkpoint verification; remaining campaigns and qualified registration still pending."
+}

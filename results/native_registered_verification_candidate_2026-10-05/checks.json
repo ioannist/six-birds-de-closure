@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-05T09:00:21.340337+00:00",
+  "scope": "Prepared registered verifier/runner; source candidate and missing-parent refusal tested only",
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_verify_candidate.py",
+        "--mode",
+        "candidate"
+      ],
+      "terminal_exit_code": 0,
+      "result": {
+        "candidate_checked": true,
+        "modules": 1770,
+        "declarations": 20784,
+        "archive_members": 1780,
+        "proof_gates_checked": false,
+        "repository_integrated": false,
+        "goal_complete": false
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_verify_candidate.py",
+        "--mode",
+        "registered"
+      ],
+      "terminal_exit_code": 2,
+      "result": {
+        "status": "pending",
+        "reason": "Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json",
+        "repository_integrated": false,
+        "goal_complete": false
+      }
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/de_native_registered_build_candidate.py"
+      ],
+      "terminal_exit_code": 2,
+      "result": {
+        "status": "pending",
+        "reason": "Required evidence is absent: /tmp/de-native-campaign-verification-stream-finish-summary.json",
+        "registered_commands_started": false,
+        "goal_complete": false
+      }
+    }
+  ],
+  "actual_registered_commands_run": 0,
+  "registered_sources_changed": false,
+  "full_registered_mode_tested": false,
+  "adversarial_review_before_final_use_required": true,
+  "goal_complete": false,
+  "installation_plan_sha256": "b9606eabd2b5707b24dd29e03210528781aa3c9728afab06ca06a70d54f96535"
+}

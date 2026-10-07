@@ -1,0 +1,425 @@
+{
+  "C3_KiDS_HSC_shared_stress": {
+    "0.25": {
+      "covariance_pass": false,
+      "reason": "Sigma_total not PD/conditioned",
+      "survives": false
+    },
+    "0.5": {
+      "covariance_pass": false,
+      "reason": "Sigma_total not PD/conditioned",
+      "survives": false
+    },
+    "0.75": {
+      "covariance_pass": false,
+      "reason": "Sigma_total not PD/conditioned",
+      "survives": false
+    }
+  },
+  "G-E5-CURRENCY-DECISIVE-v3A": {
+    "all_3_of_3": false,
+    "blocked_by": [
+      "G-E5-COV"
+    ],
+    "majority_rescue_used": false,
+    "pass": false
+  },
+  "G-E5-KERNEL": {
+    "PSD_min_eig": 0.12564393594212434,
+    "pass": true
+  },
+  "G-E5-RANK": {
+    "note": "No per-probe Xi_p or signed amplitudes fitted; Omega only declared from floors.",
+    "pass": true
+  },
+  "L_geom": {
+    "N_posterior": 4,
+    "rank": 3,
+    "singular_values": [
+      0.8419755295371333,
+      0.22521137323231985,
+      0.042216874205091064,
+      1.706187880087048e-14
+    ],
+    "tau_L": 0.001
+  },
+  "aor_status": "blocked",
+  "basis": "whitened, single-whitening",
+  "data_checks": {
+    "cmb": {
+      "covariance": {
+        "expected_sha256": "b898381374fc1b57ed3c5d8278863d0d7a629c40e6627641ad616c4e0342cbbe",
+        "finite": true,
+        "path": "data/processed/cmb_lensing/covariance.npy",
+        "sha256": "b898381374fc1b57ed3c5d8278863d0d7a629c40e6627641ad616c4e0342cbbe",
+        "sha256_ok": true,
+        "shape": [
+          35,
+          35
+        ]
+      },
+      "data": {
+        "expected_sha256": "95c6f629680a3cf38bcfe2fad02d48dfcdcf0ce2dab40ab6b86f5a56dbadf602",
+        "finite": true,
+        "path": "data/processed/cmb_lensing/data_vector.npy",
+        "sha256": "95c6f629680a3cf38bcfe2fad02d48dfcdcf0ce2dab40ab6b86f5a56dbadf602",
+        "sha256_ok": true,
+        "shape": [
+          35
+        ]
+      },
+      "manifest_sha256": "085a6db868db1fd2f6e13403332ecf692ad3f96407fa5905cac688e7570c7785"
+    },
+    "hsc": {
+      "covariance": {
+        "expected_sha256": "2ec1f7b6d4772c9691a42bc247455bf734c2b1d5cc07d367dcffa8e59fe0f896",
+        "finite": true,
+        "path": "data/processed/hsc_y3/covariance.npy",
+        "sha256": "2ec1f7b6d4772c9691a42bc247455bf734c2b1d5cc07d367dcffa8e59fe0f896",
+        "sha256_ok": true,
+        "shape": [
+          170,
+          170
+        ]
+      },
+      "data": {
+        "expected_sha256": "a9e58a78d0e89a3894b2b4ce93fb4716f93b7946971eea58674229925ab5562a",
+        "finite": true,
+        "path": "data/processed/hsc_y3/data_vector.npy",
+        "sha256": "a9e58a78d0e89a3894b2b4ce93fb4716f93b7946971eea58674229925ab5562a",
+        "sha256_ok": true,
+        "shape": [
+          170
+        ]
+      },
+      "manifest_sha256": "89d1ef4572b2e0984a47ad6210abadc1c7a682da5f20a21635d01b4401374e42"
+    },
+    "kids": {
+      "covariance": {
+        "expected_sha256": "c52ef5fe6ee82862b5497756c082e46ee3c8f5d0adc5d13cc789efd6325943d1",
+        "finite": true,
+        "path": "data/processed/kids_legacy/covariance.npy",
+        "sha256": "c52ef5fe6ee82862b5497756c082e46ee3c8f5d0adc5d13cc789efd6325943d1",
+        "sha256_ok": true,
+        "shape": [
+          126,
+          126
+        ]
+      },
+      "data": {
+        "expected_sha256": "a81febeae7848d072d79bca3499e3d5bccb54d2fda1847c9e6149884ec039054",
+        "finite": true,
+        "path": "data/processed/kids_legacy/data_vector.npy",
+        "sha256": "a81febeae7848d072d79bca3499e3d5bccb54d2fda1847c9e6149884ec039054",
+        "sha256_ok": true,
+        "shape": [
+          126
+        ]
+      },
+      "manifest_sha256": "ae0221cba6b030646d6a3e78e76a97327b4e7939e2e6e909577ddc64b8af9066"
+    }
+  },
+  "decisive_axis": "scale_cut",
+  "design_version": "E5-minimal-physical-v3A",
+  "folds": [
+    {
+      "G-E5-HETERO": {
+        "diagnostic_scale_rho": -0.9999999999999998,
+        "pass": false,
+        "proxy": null,
+        "reason": "No independent heterogeneity proxy is available in the locked v3A inputs; scale-cut ordering is not an independent heterogeneity variable."
+      },
+      "G-E5-PSD": {
+        "pass": true
+      },
+      "G-E5-STAGING": {
+        "m_high": 0.08059007049168901,
+        "median_shuffled_m_high": 0.9202777094852167,
+        "pass": true,
+        "row_power": [
+          816.6238643328973,
+          70.80968223659336,
+          0.770765917777781
+        ],
+        "spearman_rho": -0.9999999999999998
+      },
+      "G-E5-ZERO": {
+        "DPI_coarsening_guard": {
+          "pass": true
+        },
+        "all_pass": false,
+        "held_out_staging_vector_removed": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "linear_zero_heterogeneity_synthetic": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "note": "Rows are permuted/reversed before the Schur readout; if lambda is invariant, the fold fails G-E5-ZERO rather than being rescued.",
+        "reversed_scale_cut_order": {
+          "lambda": 874.7889088376575,
+          "pass": false
+        },
+        "same_family_saturation": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "shuffled_stage_labels": {
+          "lambda_median": 874.7889088376576,
+          "pass": false
+        }
+      },
+      "bootstrap_CI": [
+        25.101092797879012,
+        1643.839438919846
+      ],
+      "fold_pass": false,
+      "heldout_family": "KiDS-Legacy",
+      "lambda_max_Xi": 874.7889088376576,
+      "lambda_max_Xi_minus_Omega": 827.968670798478,
+      "omega": {
+        "Delta_margin": 0.1,
+        "Omega_nuisance_systematics": 46.72023803917952,
+        "Omega_same_family": 0.0,
+        "Omega_scalar": 46.82023803917952,
+        "Omega_synthetic_null": 4.0,
+        "Omega_theory": 23.36011901958976,
+        "declare_lambdas": [
+          467.2023803917952,
+          29.227595674148432
+        ]
+      },
+      "scale_labels": [
+        "modes_1-4_minus_1-3",
+        "modes_1-5_minus_1-4",
+        "modes_1-6_minus_1-5"
+      ],
+      "xi_min_eig": 0.12564393594212434
+    },
+    {
+      "G-E5-HETERO": {
+        "diagnostic_scale_rho": -0.7999999999999998,
+        "pass": false,
+        "proxy": null,
+        "reason": "No independent heterogeneity proxy is available in the locked v3A inputs; scale-cut ordering is not an independent heterogeneity variable."
+      },
+      "G-E5-PSD": {
+        "pass": true
+      },
+      "G-E5-STAGING": {
+        "m_high": 0.37918103502743333,
+        "median_shuffled_m_high": 0.514622515861634,
+        "pass": true,
+        "row_power": [
+          339.22228763430735,
+          404.04982361234124,
+          241.893251262047,
+          212.07916960622305
+        ],
+        "spearman_rho": -0.7999999999999998
+      },
+      "G-E5-ZERO": {
+        "DPI_coarsening_guard": {
+          "pass": true
+        },
+        "all_pass": false,
+        "held_out_staging_vector_removed": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "linear_zero_heterogeneity_synthetic": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "note": "Rows are permuted/reversed before the Schur readout; if lambda is invariant, the fold fails G-E5-ZERO rather than being rescued.",
+        "reversed_scale_cut_order": {
+          "lambda": 467.20238039179526,
+          "pass": false
+        },
+        "same_family_saturation": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "shuffled_stage_labels": {
+          "lambda_median": 467.2023803917953,
+          "pass": false
+        }
+      },
+      "bootstrap_CI": [
+        359.28351226324537,
+        1147.1255663190002
+      ],
+      "fold_pass": false,
+      "heldout_family": "HSC-Y3",
+      "lambda_max_Xi": 467.2023803917952,
+      "lambda_max_Xi_minus_Omega": 379.6234895080295,
+      "omega": {
+        "Delta_margin": 0.1,
+        "Omega_nuisance_systematics": 87.47889088376576,
+        "Omega_same_family": 0.0,
+        "Omega_scalar": 87.57889088376575,
+        "Omega_synthetic_null": 4.0,
+        "Omega_theory": 43.73944544188288,
+        "declare_lambdas": [
+          874.7889088376576,
+          29.227595674148432
+        ]
+      },
+      "scale_labels": [
+        "lmax_1500_minus_1000",
+        "lmax_2000_minus_1500",
+        "lmax_3000_minus_2000",
+        "lmax_5000_minus_3000"
+      ],
+      "xi_min_eig": 119.22760620988772
+    },
+    {
+      "G-E5-HETERO": {
+        "diagnostic_scale_rho": -0.9999999999999998,
+        "pass": false,
+        "proxy": null,
+        "reason": "No independent heterogeneity proxy is available in the locked v3A inputs; scale-cut ordering is not an independent heterogeneity variable."
+      },
+      "G-E5-PSD": {
+        "pass": false
+      },
+      "G-E5-STAGING": {
+        "m_high": 0.3969265438343768,
+        "median_shuffled_m_high": 0.7590148377712976,
+        "pass": true,
+        "row_power": [
+          28.835717347224243,
+          11.522609645405163,
+          7.456275113328705
+        ],
+        "spearman_rho": -0.9999999999999998
+      },
+      "G-E5-ZERO": {
+        "DPI_coarsening_guard": {
+          "pass": true
+        },
+        "all_pass": true,
+        "held_out_staging_vector_removed": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "linear_zero_heterogeneity_synthetic": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "note": "Rows are permuted/reversed before the Schur readout; if lambda is invariant, the fold fails G-E5-ZERO rather than being rescued.",
+        "reversed_scale_cut_order": {
+          "lambda": 29.227595674148425,
+          "pass": true
+        },
+        "same_family_saturation": {
+          "lambda": 0.0,
+          "pass": true
+        },
+        "shuffled_stage_labels": {
+          "lambda_median": 29.227595674148425,
+          "pass": true
+        }
+      },
+      "bootstrap_CI": [
+        -72.31994094318276,
+        -29.670781360117644
+      ],
+      "fold_pass": false,
+      "heldout_family": "CMB-lensing",
+      "lambda_max_Xi": 29.227595674148432,
+      "lambda_max_Xi_minus_Omega": -58.35129520961732,
+      "omega": {
+        "Delta_margin": 0.1,
+        "Omega_nuisance_systematics": 87.47889088376576,
+        "Omega_same_family": 0.0,
+        "Omega_scalar": 87.57889088376575,
+        "Omega_synthetic_null": 4.0,
+        "Omega_theory": 43.73944544188288,
+        "declare_lambdas": [
+          874.7889088376576,
+          467.2023803917952
+        ]
+      },
+      "scale_labels": [
+        "Lmax_1500_minus_1000",
+        "Lmax_2000_minus_1500",
+        "Lmax_3000_minus_2000"
+      ],
+      "xi_min_eig": 7.273669112491362
+    }
+  ],
+  "governed_input_hashes": {
+    "carrier": {
+      "path": "plan/E5_CARRIER_REALIZATION.md",
+      "sha256": "c9ca48737e10b61f40cc70c9e53a5b2c62afcb892390c21d8d70dfd4b92dc7dc"
+    },
+    "design_freeze": {
+      "path": "plan/E5_DESIGN_FREEZE.md",
+      "sha256": "7d079daea745d129dca6121f29b0c798b65fc7330567a9340052cd5853733896"
+    },
+    "e5_manifest": {
+      "path": "data/manifests/e5_growth_currency_inputs.json",
+      "sha256": "c8b5268c9908ca447d752d885fcd65dad7e5c8714dca5ba3aa7251cd045e46cd"
+    },
+    "env4": {
+      "path": "results/E5/E5_env4_pyccl_class.json",
+      "sha256": "15c52c498d9f757acdf1dfbea8b641b42862d1ebc33abb7241d811e8eb030c41"
+    },
+    "gates": {
+      "path": "plan/07-pass-fail-gates.md",
+      "sha256": "3d89c3276e77f52f25dc92ab1cd4af0a44dcc09e11dfb1dc747885219721b9e8"
+    },
+    "nonvac": {
+      "path": "results/E5/E5_v3_nonvac.json",
+      "sha256": "23e0bc64eefbd794104157a0e378e87356449be60072377b0c5144ee74440c6b"
+    },
+    "repro": {
+      "path": "results/E5/E5_repro.json",
+      "sha256": "e0f4b38f7b32b1ef77493c9353e4b659900367e2087fe1296744badeb7e23071"
+    }
+  },
+  "load_average_end": [
+    17.88330078125,
+    46.39990234375,
+    49.20458984375
+  ],
+  "runtime_seconds": 759.1538929119706,
+  "schema_version": 1,
+  "substrate": {
+    "G-E5-COV": {
+      "PD": true,
+      "condition_number": 2020990817.1692836,
+      "lambda_min": 2.9801744909815634e-24,
+      "pass": false
+    },
+    "G-E5-NONVAC_scale_cut": {
+      "CMB-lensing": true,
+      "HSC-Y3": true,
+      "KiDS-Legacy": true
+    },
+    "G-E5-NOSURR": {
+      "pass": true,
+      "status": "physical_ccl_no_surrogate_templates"
+    },
+    "G-E5-REPRO": {
+      "pass": true,
+      "rule": "published S8 within quoted 1sigma where locked, plus scaled theory chi2/dof < 2; HSC REPRO uses original n(z), with DESI-recal n(z) reserved for staging",
+      "status": "pass"
+    },
+    "G-ENV-4": {
+      "pass": true,
+      "source": "results/E5/E5_env4_pyccl_class.json"
+    }
+  },
+  "terminal_state": "BLOCKED",
+  "thread_caps": {
+    "CCL_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

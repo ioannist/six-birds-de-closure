@@ -1,0 +1,122 @@
+SbtCosmo.Derivation.GrowthFirstRecord.native_strictMonoOn {a0 A lam : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : -(1 / A ^ 3) < lam) : StrictMonoOn (SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam) (Set.Icc a0 A)
+SbtCosmo.Derivation.GrowthFirstRecord.native_initial {a0 lam : ℝ} (ha0 : 0 < a0) (hlam : 0 ≤ lam) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a0 = 1
+SbtCosmo.Derivation.GrowthFirstRecord.native_matter_upper {a0 lam a : ℝ} (ha0 : 0 < a0) (ha : a0 ≤ a) (hlam : 0 ≤ lam) :
+  SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a ≤ a / a0
+SbtCosmo.Derivation.GrowthFirstRecord.exists_unique_first_time {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : 0 ≤ lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  ∃! a, a ∈ Set.Icc a0 A ∧ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a = T
+SbtCosmo.Derivation.GrowthFirstRecord.firstTime_spec {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A) (hlam : 0 ≤ lam)
+  (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam ∈ Set.Icc a0 A ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam
+        (SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam) =
+      T
+SbtCosmo.Derivation.GrowthFirstRecord.firstTime_iff_threshold {a0 A lam T a : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : 0 ≤ lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A)
+  (ha : a ∈ Set.Icc a0 A) :
+  T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam a ↔
+    SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam ≤ a
+SbtCosmo.Derivation.GrowthFirstRecord.any_patch_collapse_iff.{u_1} {ι : Type u_1} {amp : ι → ℝ} {m δ D : ℝ} (hm : 0 < m)
+  (hD : 0 ≤ D) (hbound : ∀ (i : ι), amp i ≤ m) (hattain : ∃ i, amp i = m) : (∃ i, δ ≤ amp i * D) ↔ δ / m ≤ D
+SbtCosmo.Derivation.GrowthFirstRecord.firstTime_lower_matter {a0 A lam T : ℝ} (ha0 : 0 < a0) (hA : a0 ≤ A)
+  (hlam : 0 ≤ lam) (hT : 1 < T) (hfinal : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam A) :
+  a0 * T ≤ SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam
+SbtCosmo.Derivation.GrowthFirstRecord.firstTime_strict_parameter {a0 A T lam1 lam2 : ℝ} (ha0 : 0 < a0) (hA : a0 < A)
+  (h1 : 0 ≤ lam1) (h12 : lam1 < lam2) (hT : 1 < T)
+  (hf1 : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam1 A)
+  (hf2 : T ≤ SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth a0 lam2 A) :
+  SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam1 <
+    SbtCosmo.Derivation.GrowthFirstRecord.firstTime a0 A T lam2
+SbtCosmo.Derivation.WindowFirstRecordData.first_threshold_bounds (j : Fin 12) :
+  500 < SbtCosmo.Derivation.WindowFirstRecordData.firstThresholdRat j ∧
+    SbtCosmo.Derivation.WindowFirstRecordData.firstThresholdRat j < 897
+SbtCosmo.Derivation.WindowFirstRecordData.grid_endpoints :
+  SbtCosmo.Derivation.WindowFirstRecordData.grid 0 = 1 / 1000 ∧ SbtCosmo.Derivation.WindowFirstRecordData.grid 384 = 2
+SbtCosmo.Derivation.WindowFirstRecordData.lower_cells (i : Fin 384) :
+  0 < SbtCosmo.Derivation.WindowFirstRecordData.grid ↑i ∧
+    SbtCosmo.Derivation.WindowFirstRecordData.grid ↑i ≤ SbtCosmo.Derivation.WindowFirstRecordData.grid (↑i + 1) ∧
+      0 ≤ SbtCosmo.Derivation.WindowFirstRecordData.lower ↑i ∧
+        SbtCosmo.Derivation.WindowFirstRecordData.lower ↑i ^ 2 *
+              (1 + 3 * SbtCosmo.Derivation.WindowFirstRecordData.grid (↑i + 1) ^ 3) ^ 3 ≤
+            SbtCosmo.Derivation.WindowFirstRecordData.grid ↑i ^ 3 ∧
+          SbtCosmo.Derivation.WindowFirstRecordData.grid (↑i + 1) ^ 3 ≤
+            (1 + 3 * SbtCosmo.Derivation.WindowFirstRecordData.grid ↑i ^ 3) ^ 3
+SbtCosmo.Derivation.WindowFirstRecordData.lower_sum :
+  204 / 1000 ≤
+    ∑ i ∈ Finset.range 384,
+      (SbtCosmo.Derivation.WindowFirstRecordData.grid (i + 1) - SbtCosmo.Derivation.WindowFirstRecordData.grid i) *
+        SbtCosmo.Derivation.WindowFirstRecordData.lower i
+SbtCosmo.Derivation.WindowFirstRecord.maximum_spec (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowFirstRecord.maximum j ∧
+    (∀ (i : Fin 64), SbtCosmo.Derivation.WindowSample.amplitude j i ≤ SbtCosmo.Derivation.WindowFirstRecord.maximum j) ∧
+      ∃ i, SbtCosmo.Derivation.WindowSample.amplitude j i = SbtCosmo.Derivation.WindowFirstRecord.maximum j
+SbtCosmo.Derivation.WindowFirstRecord.threshold_bounds (j : Fin 12) :
+  500 < SbtCosmo.Derivation.WindowFirstRecord.threshold j ∧ SbtCosmo.Derivation.WindowFirstRecord.threshold j < 897
+SbtCosmo.Derivation.WindowFirstRecord.final_above_threshold {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.threshold j ≤
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam 20
+SbtCosmo.Derivation.WindowFirstRecord.time_spec {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j lam ∈ Set.Icc (1 / 1000) 20 ∧
+    SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+        (SbtCosmo.Derivation.WindowFirstRecord.time j lam) =
+      SbtCosmo.Derivation.WindowFirstRecord.threshold j
+SbtCosmo.Derivation.WindowFirstRecord.time_iff_any_collapse {lam a : ℝ} (hlam : lam ∈ Set.Icc 0 3)
+  (ha : a ∈ Set.Icc (1 / 1000) 20) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a) ↔
+    SbtCosmo.Derivation.WindowFirstRecord.time j lam ≤ a
+SbtCosmo.Derivation.WindowFirstRecord.time_is_first_collapse {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  (∃ i,
+      SbtCosmo.Derivation.WindowSample.delta ≤
+        SbtCosmo.Derivation.WindowSample.amplitude j i *
+          SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam
+            (SbtCosmo.Derivation.WindowFirstRecord.time j lam)) ∧
+    ∀ a ∈ Set.Icc (1 / 1000) 20,
+      a < SbtCosmo.Derivation.WindowFirstRecord.time j lam →
+        ¬∃ i,
+            SbtCosmo.Derivation.WindowSample.delta ≤
+              SbtCosmo.Derivation.WindowSample.amplitude j i *
+                SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) lam a
+SbtCosmo.Derivation.WindowFirstRecord.time_lower {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  1 / 2 < SbtCosmo.Derivation.WindowFirstRecord.time j lam
+SbtCosmo.Derivation.WindowFirstRecord.time_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowFirstRecord.time j) (Set.Icc 0 3)
+SbtCosmo.Derivation.WindowFirstRecord.ratio_density_readout (lam : ℝ) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam = |lam| / (SbtCosmo.Derivation.WindowFirstRecord.time j lam ^ 3)⁻¹
+SbtCosmo.Derivation.WindowFirstRecord.ratio_positive {lam : ℝ} (hlam : lam ∈ Set.Ioc 0 3) (j : Fin 12) :
+  0 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam
+SbtCosmo.Derivation.WindowFirstRecord.ratio_upper {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ≤ 8000 * lam
+SbtCosmo.Derivation.WindowFirstRecord.ratio_zero (j : Fin 12) : SbtCosmo.Derivation.WindowFirstRecord.ratio j 0 = 0
+SbtCosmo.Derivation.WindowFirstRecord.gate_on_interval {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) :
+  SbtCosmo.Derivation.WindowSample.realizedGate lam
+SbtCosmo.Derivation.WindowFirstRecord.ratios_arbitrarily_small {epsilon : ℝ} (he : 0 < epsilon) :
+  ∃ lam,
+    0 < lam ∧
+      lam ≤ 1 ∧
+        SbtCosmo.Derivation.WindowSample.realizedGate lam ∧
+          ∀ (j : Fin 12),
+            0 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧
+              SbtCosmo.Derivation.WindowFirstRecord.ratio j lam < epsilon
+SbtCosmo.Derivation.WindowFirstRecord.integral_lower_at_three :
+  204 / 1000 ≤ SbtCosmo.Derivation.GrowthQuadrature.integral 3 (1 / 1000) 2
+SbtCosmo.Derivation.WindowFirstRecord.native_growth_at_three_lower :
+  901 < SbtCosmo.Derivation.GrowthScaleReturn.nativeGrowth (1 / 1000) 3 2
+SbtCosmo.Derivation.WindowFirstRecord.time_at_three_upper (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j 3 ≤ 2
+SbtCosmo.Derivation.WindowFirstRecord.ratios_at_three (j : Fin 12) :
+  3 / 8 < SbtCosmo.Derivation.WindowFirstRecord.ratio j 3 ∧ SbtCosmo.Derivation.WindowFirstRecord.ratio j 3 ≤ 24
+SbtCosmo.Derivation.WindowFirstRecord.three_near_upper :
+  3 / 4 < 3 / SbtCosmo.Derivation.WindowEdgeCertified.upper ∧ 3 / SbtCosmo.Derivation.WindowEdgeCertified.upper < 1
+SbtCosmo.Derivation.WindowFirstRecord.ratio_strictMono (j : Fin 12) :
+  StrictMonoOn (SbtCosmo.Derivation.WindowFirstRecord.ratio j) (Set.Icc 0 3)
+SbtCosmo.Derivation.WindowFirstRecord.time_upper_two {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.time j lam ≤ 2
+SbtCosmo.Derivation.WindowFirstRecord.ratio_upper_sharp {lam : ℝ} (hlam : lam ∈ Set.Icc 0 3) (j : Fin 12) :
+  SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ≤ 8 * lam
+SbtCosmo.Derivation.WindowFirstRecord.ratios_one_to_three {lam : ℝ} (hlam : lam ∈ Set.Icc 1 3) (j : Fin 12) :
+  1 / 8 < SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ∧ SbtCosmo.Derivation.WindowFirstRecord.ratio j lam ≤ 24

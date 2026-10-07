@@ -1,0 +1,36 @@
+Brouwer {n : ℕ+} (f : ↑(stdSimplex ℝ (Fin ↑n)) → ↑(stdSimplex ℝ (Fin ↑n))) (hf : Continuous f) : ∃ x, f x = x
+SbtCosmo.Derivation.GroundState.exists_positive_ground (v : SbtCosmo.Derivation.GroundState.Field) :
+  ∃ u,
+    (∀ (i : Fin 8), 0 < u i) ∧ SbtCosmo.Derivation.GroundState.IsGround v u (SbtCosmo.Derivation.GroundState.energy v u)
+SbtCosmo.Derivation.GroundState.continuous_positiveGround : Continuous SbtCosmo.Derivation.GroundState.positiveGround
+SbtCosmo.Derivation.GroundState.real_lowest_eigen_span {v u w : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hg : SbtCosmo.Derivation.GroundState.IsGround v u e)
+  (hw : ∀ (j : Fin 8), SbtCosmo.Derivation.GroundState.hamiltonian v w j = e * w j) : ∃ c, w = fun j => c * u j
+SbtCosmo.Derivation.GroundState.exists_selfConsistent_ground (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ∃ u, (∀ (i : Fin 8), 0 < u i) ∧ SbtCosmo.Derivation.GroundState.IsSelfConsistentGround b κ u
+SbtCosmo.Derivation.GroundState.background_offset_no_forced_value (base : SbtCosmo.Derivation.GroundState.Field)
+  (κ : ℝ) :
+  ¬∃ c,
+      SbtCosmo.Derivation.BackgroundSelection.ForcesValue
+        (fun offset => ∃ u, SbtCosmo.Derivation.GroundState.IsSelfConsistentGround (fun i => base i + offset) κ u)
+        (fun offset => offset) c
+SbtCosmo.Derivation.GroundState.coupling_no_forced_value (b : SbtCosmo.Derivation.GroundState.Field) :
+  ¬∃ c,
+      SbtCosmo.Derivation.BackgroundSelection.ForcesValue
+        (fun κ => ∃ u, SbtCosmo.Derivation.GroundState.IsSelfConsistentGround b κ u) (fun κ => κ) c
+SbtCosmo.Derivation.GroundState.complex_lowest_eigen_span {v u : SbtCosmo.Derivation.GroundState.Field} {e : ℝ}
+  (hg : SbtCosmo.Derivation.GroundState.IsGround v u e) {z : SbtCosmo.Derivation.GroundState.ComplexField}
+  (hz : ∀ (i : Fin 8), SbtCosmo.Derivation.GroundState.complexHamiltonian v z i = ↑e * z i) :
+  ∃ c, z = fun i => c * SbtCosmo.Derivation.GroundState.realEmbed u i
+SbtCosmo.Derivation.GroundState.exists_native_complex_ground (b : SbtCosmo.Derivation.GroundState.Field) (κ : ℝ) :
+  ∃ z,
+    SbtCosmo.Derivation.GroundState.complexNormSq z = 1 ∧
+      ∃ e,
+        (∀ (i : Fin 8),
+            SbtCosmo.Derivation.GroundState.complexHamiltonian
+                (SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z) z i =
+              ↑e * z i) ∧
+          ∀ (w : SbtCosmo.Derivation.GroundState.ComplexField),
+            e * SbtCosmo.Derivation.GroundState.complexNormSq w ≤
+              SbtCosmo.Derivation.GroundState.complexEnergy
+                (SbtCosmo.Derivation.GroundState.complexSourcePotential b κ z) w

@@ -1,0 +1,4736 @@
+{
+  "scale": "1208925819614629174706176",
+  "arithmetic": "exact outward dyadic integers with Fraction basis inversion",
+  "original_background": [
+    "0x1.6666666666666p-2",
+    "0x1.48686147fd8c3p-2",
+    "0x1.0000000000000p-2",
+    "0x1.6f2f3d7004e7bp-3",
+    "0x1.3333333333333p-3",
+    "0x1.6f2f3d7004e7ap-3",
+    "0x1.fffffffffffffp-3",
+    "0x1.48686147fd8c2p-2"
+  ],
+  "full_coupling_interval": [
+    "0",
+    "30"
+  ],
+  "uniform_root_tubes": 286,
+  "common_certified_anchors": 287,
+  "all_tubes_positive_strictly_invariant_and_unique": true,
+  "all_partial_derivatives_invertible": true,
+  "local_C_infinity_branch_criterion_lean": true,
+  "seams_joined_by_common_root_and_uniqueness": true,
+  "mathematical_single_C_infinity_positive_ground_branch": true,
+  "original_coupling_roots_returned": 12,
+  "actual_half_mixing_minus_one_crossing_interval": [
+    "79/5",
+    "159/10"
+  ],
+  "additional_distinct_minus_one_crossing_interval": [
+    "159/10",
+    "20"
+  ],
+  "concrete_kernel_instantiations": false,
+  "background_offset_continuum": false,
+  "global_root_uniqueness": false,
+  "exactly_one_crossing": false,
+  "nonlinear_escape": false,
+  "floating_runtime_emulation": false,
+  "tubes": [
+    {
+      "coupling_interval": [
+        "0",
+        "15/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "92779536718094092002465",
+      "uniform_center_residual_upper": "3425882568876733382217",
+      "strict_root_radius_upper": "3710658679733917264234",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/128",
+        "15/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "94282674570192246441569",
+      "uniform_center_residual_upper": "3346467604909869502043",
+      "strict_root_radius_upper": "3629530321041165020234",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/64",
+        "45/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "95718007701991207560792",
+      "uniform_center_residual_upper": "3270394368611454403081",
+      "strict_root_radius_upper": "3551595802893040448757",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/128",
+        "15/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "97089654938748659396985",
+      "uniform_center_residual_upper": "3197468927406515360680",
+      "strict_root_radius_upper": "3476683765619453264405",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/32",
+        "75/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "98401426498672897804709",
+      "uniform_center_residual_upper": "3127511202671027377812",
+      "strict_root_radius_upper": "3404633943640189552647",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "75/128",
+        "45/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "99656850764780242568800",
+      "uniform_center_residual_upper": "3060353812850137911919",
+      "strict_root_radius_upper": "3335296348681513280594",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/64",
+        "105/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "100859198446864276576981",
+      "uniform_center_residual_upper": "2995841027349769859635",
+      "strict_root_radius_upper": "3268530519949313169953",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "105/128",
+        "15/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "102011504417571573525711",
+      "uniform_center_residual_upper": "2933827819033776093488",
+      "strict_root_radius_upper": "3204204835043799036189",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/16",
+        "135/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "103116587471733495274341",
+      "uniform_center_residual_upper": "2874179004701161300244",
+      "strict_root_radius_upper": "3142195876086250951236",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "135/128",
+        "75/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "104177848071977469304554",
+      "uniform_center_residual_upper": "2816768464239090303809",
+      "strict_root_radius_upper": "3082390021988298661213",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "75/64",
+        "165/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "105197808292905756027377",
+      "uniform_center_residual_upper": "2761478430279626714638",
+      "strict_root_radius_upper": "3024678671220936668853",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "165/128",
+        "45/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "106177831902768127224527",
+      "uniform_center_residual_upper": "2708198841154447367106",
+      "strict_root_radius_upper": "2968957132731128960126",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/32",
+        "195/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "107120038090534096556058",
+      "uniform_center_residual_upper": "2656826750787075178435",
+      "strict_root_radius_upper": "2915129427644137585696",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "195/128",
+        "105/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "108026404392600413204021",
+      "uniform_center_residual_upper": "2607265789881819821829",
+      "strict_root_radius_upper": "2863105283192807257430",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "105/64",
+        "225/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "108898777804068367180582",
+      "uniform_center_residual_upper": "2559425673404890170683",
+      "strict_root_radius_upper": "2812799742514498629370",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "225/128",
+        "15/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "109738884909233845177948",
+      "uniform_center_residual_upper": "2513221749902133981371",
+      "strict_root_radius_upper": "2764132803933005569354",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/8",
+        "255/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "110548341126553572789665",
+      "uniform_center_residual_upper": "2468574588675901327432",
+      "strict_root_radius_upper": "2717029087306854349717",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "255/128",
+        "135/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "111328659153264650009504",
+      "uniform_center_residual_upper": "2425409601274529585513",
+      "strict_root_radius_upper": "2671417525250798159644",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "135/64",
+        "285/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "112081256685887925835258",
+      "uniform_center_residual_upper": "2383656694107602523076",
+      "strict_root_radius_upper": "2627231077217952172599",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "285/128",
+        "75/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "112807463484964125956248",
+      "uniform_center_residual_upper": "2343249949340529878653",
+      "strict_root_radius_upper": "2584406464618435042168",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "75/32",
+        "315/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "113508527845323150020914",
+      "uniform_center_residual_upper": "2304127331502271572947",
+      "strict_root_radius_upper": "2542883925297283004143",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "315/128",
+        "165/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "114185622527011752623986",
+      "uniform_center_residual_upper": "2266230417503006195626",
+      "strict_root_radius_upper": "2502606985843740840211",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "165/64",
+        "345/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "114839850196398188147436",
+      "uniform_center_residual_upper": "2229504147983664221423",
+      "strict_root_radius_upper": "2463522250329713734607",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "345/128",
+        "45/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "115472248422087409076891",
+      "uniform_center_residual_upper": "2199511841898393429792",
+      "strict_root_radius_upper": "2431787435948551393487",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/16",
+        "375/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "116083794265837521352767",
+      "uniform_center_residual_upper": "2197170391037432202703",
+      "strict_root_radius_upper": "2430558080862752910556",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "375/128",
+        "195/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "116721196777322621833935",
+      "uniform_center_residual_upper": "2194930015150365788083",
+      "strict_root_radius_upper": "2429496737222352510792",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "195/64",
+        "405/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "117401807089954961792512",
+      "uniform_center_residual_upper": "2192785674361767548564",
+      "strict_root_radius_upper": "2428636647658809510196",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "405/128",
+        "105/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "118934580826381699650859",
+      "uniform_center_residual_upper": "2190732601075670038457",
+      "strict_root_radius_upper": "2429774764296434674558",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "105/32",
+        "435/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "121396583559538970421006",
+      "uniform_center_residual_upper": "2188766285361956775488",
+      "strict_root_radius_upper": "2433089601410983601972",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "435/128",
+        "225/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "123857430502643597616411",
+      "uniform_center_residual_upper": "2186882460975452077249",
+      "strict_root_radius_upper": "2436508793422007854877",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "225/64",
+        "465/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "126317156444806176071781",
+      "uniform_center_residual_upper": "2185077092011996104361",
+      "strict_root_radius_upper": "2440028612598844410205",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "465/128",
+        "15/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "128775795435901037091613",
+      "uniform_center_residual_upper": "2183346360197870566661",
+      "strict_root_radius_upper": "2443645538971982499491",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/4",
+        "495/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "131233380750186003990747",
+      "uniform_center_residual_upper": "2181686652802756231827",
+      "strict_root_radius_upper": "2447356249117773427340",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "495/128",
+        "255/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "133689944858990084556939",
+      "uniform_center_residual_upper": "2180094551163732637713",
+      "strict_root_radius_upper": "2451157605490023014321",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "255/64",
+        "525/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "136145519411230130256845",
+      "uniform_center_residual_upper": "2178566819803442779062",
+      "strict_root_radius_upper": "2455046646286065343727",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "525/128",
+        "135/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "138600135220652303111734",
+      "uniform_center_residual_upper": "2177100396125091035991",
+      "strict_root_radius_upper": "2459020575834431992575",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "135/32",
+        "555/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "141053822258851562704668",
+      "uniform_center_residual_upper": "2175692380661038642557",
+      "strict_root_radius_upper": "2463076755484620455350",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "555/128",
+        "285/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "143506609653211173298530",
+      "uniform_center_residual_upper": "2174340027856540205345",
+      "strict_root_radius_upper": "2467212694984684475354",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "285/64",
+        "585/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "145958525689030059517205",
+      "uniform_center_residual_upper": "2173040737362680614118",
+      "strict_root_radius_upper": "2471426044323837005007",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "585/128",
+        "75/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "148409597815194664562313",
+      "uniform_center_residual_upper": "2171792045819363172151",
+      "strict_root_radius_upper": "2475714586024737687037",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "75/16",
+        "615/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "150859852652815489889733",
+      "uniform_center_residual_upper": "2170591619101866811592",
+      "strict_root_radius_upper": "2480076227861579341038",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "615/128",
+        "315/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "153309316006348305862232",
+      "uniform_center_residual_upper": "2169437245010992547515",
+      "strict_root_radius_upper": "2484508995987284183503",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "315/64",
+        "645/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "155758012876760998580740",
+      "uniform_center_residual_upper": "2168326826382781969931",
+      "strict_root_radius_upper": "2489011028448234203214",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "645/128",
+        "165/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "158205967476367449218529",
+      "uniform_center_residual_upper": "2167258374596816052914",
+      "strict_root_radius_upper": "2493580569068145973884",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "165/32",
+        "675/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "160653203245015168596093",
+      "uniform_center_residual_upper": "2166230003461218982665",
+      "strict_root_radius_upper": "2498215961681459723339",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "675/128",
+        "345/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "163099742867330254096393",
+      "uniform_center_residual_upper": "2165239923454384108728",
+      "strict_root_radius_upper": "2502915644698442272650",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "345/64",
+        "705/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "165545608290779219598488",
+      "uniform_center_residual_upper": "2164286436303244045358",
+      "strict_root_radius_upper": "2507678145983748939497",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "705/128",
+        "45/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "167990820744344070828168",
+      "uniform_center_residual_upper": "2163367929879667283341",
+      "strict_root_radius_upper": "2512502078031953398991",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/8",
+        "735/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "170435400757613746876323",
+      "uniform_center_residual_upper": "2162482873395902012998",
+      "strict_root_radius_upper": "2517386133422465975946",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "735/128",
+        "375/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "172879368180155207616194",
+      "uniform_center_residual_upper": "2161629812882797258210",
+      "strict_root_radius_upper": "2522329080539330810735",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "375/64",
+        "765/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "175322742201009059432288",
+      "uniform_center_residual_upper": "2160807366933576350843",
+      "strict_root_radius_upper": "2527329759539936170975",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "765/128",
+        "195/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "177765541368214356945320",
+      "uniform_center_residual_upper": "2160014222698490860947",
+      "strict_root_radius_upper": "2532387078559489965848",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "195/32",
+        "795/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "180207783608258246895095",
+      "uniform_center_residual_upper": "2159249132113884425993",
+      "strict_root_radius_upper": "2537500010135710514204",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "795/128",
+        "405/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "182649486245366960472168",
+      "uniform_center_residual_upper": "2158510908353618585917",
+      "strict_root_radius_upper": "2542667587843132114050",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "405/64",
+        "825/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "185090666020576578825710",
+      "uniform_center_residual_upper": "2157798422488202192935",
+      "strict_root_radius_upper": "2547888903123180515187",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "825/128",
+        "105/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "187531339110524412898343",
+      "uniform_center_residual_upper": "2157110600339697819681",
+      "strict_root_radius_upper": "2553163102299135487169",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "105/16",
+        "855/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "189971521145910678677931",
+      "uniform_center_residual_upper": "2156446419520554444594",
+      "strict_root_radius_upper": "2558489383764989483690",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "855/128",
+        "435/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "192411227229600228917736",
+      "uniform_center_residual_upper": "2155804906644998778409",
+      "strict_root_radius_upper": "2563866995337614666219",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "435/64",
+        "885/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "194850471954327690951548",
+      "uniform_center_residual_upper": "2155185134702988387478",
+      "strict_root_radius_upper": "2569295231763055339343",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "885/128",
+        "225/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "197289269419988847136353",
+      "uniform_center_residual_upper": "2154586220586187841960",
+      "strict_root_radius_upper": "2574773432366978637959",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "225/32",
+        "915/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "199727633250492333380223",
+      "uniform_center_residual_upper": "2154007322758154679148",
+      "strict_root_radius_upper": "2580300978842358501237",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "915/128",
+        "465/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "202165576610167162125890",
+      "uniform_center_residual_upper": "2153447639057345423444",
+      "strict_root_radius_upper": "2585877293163086528594",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "465/64",
+        "945/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "204603112219709492760190",
+      "uniform_center_residual_upper": "2152906404628235202370",
+      "strict_root_radius_upper": "2591501835619991253032",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "945/128",
+        "15/2"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "207040252371670836352607",
+      "uniform_center_residual_upper": "2152382889969821935788",
+      "strict_root_radius_upper": "2597174102968454164635",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15/2",
+        "975/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "209477008945478804260417",
+      "uniform_center_residual_upper": "2151876399096024488564",
+      "strict_root_radius_upper": "2602893626682902394173",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "975/128",
+        "495/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "211913393421996836286890",
+      "uniform_center_residual_upper": "2151386267801630064456",
+      "strict_root_radius_upper": "2608659971312365018655",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "495/64",
+        "1005/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "214349416897621065322760",
+      "uniform_center_residual_upper": "2150911862024501930066",
+      "strict_root_radius_upper": "2614472732927561481821",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1005/128",
+        "255/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "216785090097916487429950",
+      "uniform_center_residual_upper": "2150452576302802497648",
+      "strict_root_radius_upper": "2620331537659611435329",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "255/32",
+        "1035/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "219220423390814614728993",
+      "uniform_center_residual_upper": "2150007832317288659786",
+      "strict_root_radius_upper": "2626236040319881752691",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1035/128",
+        "525/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "221655426799350499948983",
+      "uniform_center_residual_upper": "2149577077515245125903",
+      "strict_root_radius_upper": "2632185923098129263904",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "525/64",
+        "1065/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "224090110013977413964162",
+      "uniform_center_residual_upper": "2149159783813206219310",
+      "strict_root_radius_upper": "2638180894336916835530",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1065/128",
+        "135/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "226524482404454828485187",
+      "uniform_center_residual_upper": "2148755446368534671710",
+      "strict_root_radius_upper": "2644220687371409579262",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "135/16",
+        "1095/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "228958553031311730029133",
+      "uniform_center_residual_upper": "2148363582421918284812",
+      "strict_root_radius_upper": "2650305059438249977999",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1095/128",
+        "555/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "231392330656913854546086",
+      "uniform_center_residual_upper": "2147983730201938098996",
+      "strict_root_radius_upper": "2656433790643865062966",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "555/64",
+        "1125/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "233825823756129799261388",
+      "uniform_center_residual_upper": "2147615447889812353350",
+      "strict_root_radius_upper": "2662606682990890751620",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1125/128",
+        "285/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "236259040526616310157865",
+      "uniform_center_residual_upper": "2147258312641239232445",
+      "strict_root_radius_upper": "2668823559459971018910",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "285/32",
+        "1155/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "238691988898728894073119",
+      "uniform_center_residual_upper": "2146911919660883807110",
+      "strict_root_radius_upper": "2675084263142378044499",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1155/128",
+        "585/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "241124676545073881893921",
+      "uniform_center_residual_upper": "2146575881327057507193",
+      "strict_root_radius_upper": "2681388656421335920025",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "585/64",
+        "1185/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "243557110889705282916751",
+      "uniform_center_residual_upper": "2146249826363131430135",
+      "strict_root_radius_upper": "2687736620198590199438",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1185/128",
+        "75/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "245989299116988239503137",
+      "uniform_center_residual_upper": "2145933399053884148500",
+      "strict_root_radius_upper": "2694128053164829172185",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "75/8",
+        "1215/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "248421248180131371527353",
+      "uniform_center_residual_upper": "2145626258503272758389",
+      "strict_root_radius_upper": "2700562871110324570506",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1215/128",
+        "615/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "250852964809402983127953",
+      "uniform_center_residual_upper": "2145328077931438369390",
+      "strict_root_radius_upper": "2707041006273788926962",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "615/64",
+        "1245/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "253284455520042317310009",
+      "uniform_center_residual_upper": "2145038544008844496706",
+      "strict_root_radius_upper": "2713562406727505158557",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1245/128",
+        "315/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "255715726619872626837337",
+      "uniform_center_residual_upper": "2144757356225617881274",
+      "strict_root_radius_upper": "2720127035796948014068",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "315/32",
+        "1275/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "258146784216636318832516",
+      "uniform_center_residual_upper": "2144484226293648406543",
+      "strict_root_radius_upper": "2726734871512466412169",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1275/128",
+        "645/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "260577634225046734559593",
+      "uniform_center_residual_upper": "2144218877579690621944",
+      "strict_root_radius_upper": "2733385906091346134500",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "645/64",
+        "1305/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "263008282373582855562384",
+      "uniform_center_residual_upper": "2143961044567522653030",
+      "strict_root_radius_upper": "2740080145448389755693",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1305/128",
+        "165/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "265438734211023393801372",
+      "uniform_center_residual_upper": "2143710472348684238386",
+      "strict_root_radius_upper": "2746817608734904388136",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "165/16",
+        "1335/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "267868995112741697778011",
+      "uniform_center_residual_upper": "2143466916138233491148",
+      "strict_root_radius_upper": "2753598327902098104239",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1335/128",
+        "675/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "270299070286757363028857",
+      "uniform_center_residual_upper": "2143230140815949029779",
+      "strict_root_radius_upper": "2760422347289863572536",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "675/64",
+        "1365/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "272728964779566096919712",
+      "uniform_center_residual_upper": "2142999920489826669657",
+      "strict_root_radius_upper": "2767289723237403003382",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1365/128",
+        "345/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "275158683481749710848214",
+      "uniform_center_residual_upper": "2142776038082850023829",
+      "strict_root_radius_upper": "2774200523717363988009",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "345/32",
+        "1395/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "277588231133372024474800",
+      "uniform_center_residual_upper": "2142558284939561136831",
+      "strict_root_radius_upper": "2781154827989421271384",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1395/128",
+        "705/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "280017612329178313731438",
+      "uniform_center_residual_upper": "2142346460452417614429",
+      "strict_root_radius_upper": "2788152726273693172067",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "705/64",
+        "1425/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "282446831523594984072044",
+      "uniform_center_residual_upper": "2142140371706878359082",
+      "strict_root_radius_upper": "2795194319442964058261",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1425/128",
+        "45/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "284875893035543893861857",
+      "uniform_center_residual_upper": "2141939833143923078489",
+      "strict_root_radius_upper": "2802279718732405727745",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/4",
+        "1455/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "287304801053080449397652",
+      "uniform_center_residual_upper": "2141744666238971363467",
+      "strict_root_radius_upper": "2809409045465789055592",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1455/128",
+        "735/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "289733559637851059899998",
+      "uniform_center_residual_upper": "2141554699197020843238",
+      "strict_root_radius_upper": "2816582430798237374708",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "735/64",
+        "1485/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "292162172729393401562870",
+      "uniform_center_residual_upper": "2141369766662277669428",
+      "strict_root_radius_upper": "2823800015473620198988",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1485/128",
+        "375/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "294590644149268170577345",
+      "uniform_center_residual_upper": "2141189709441233657313",
+      "strict_root_radius_upper": "2831061949595439401012",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "375/32",
+        "1515/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "297018977605044568365825",
+      "uniform_center_residual_upper": "2141014374240386047459",
+      "strict_root_radius_upper": "2838368392413110614082",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1515/128",
+        "765/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "299447176694135797258904",
+      "uniform_center_residual_upper": "2140843613415159653934",
+      "strict_root_radius_upper": "2845719512119340401133",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "765/64",
+        "1545/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "301875244907489792709915",
+      "uniform_center_residual_upper": "2140677284731792017849",
+      "strict_root_radius_upper": "2853115485661166950597",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1545/128",
+        "195/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "304303185633148993319826",
+      "uniform_center_residual_upper": "2140515251140204804308",
+      "strict_root_radius_upper": "2860556498562319729243",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "195/16",
+        "1575/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "306731002159674820679126",
+      "uniform_center_residual_upper": "2140357380557298522162",
+      "strict_root_radius_upper": "2868042744756340523799",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1575/128",
+        "795/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "309158697679452220161180",
+      "uniform_center_residual_upper": "2140203545660364023386",
+      "strict_root_radius_upper": "2875574426430303044054",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "795/64",
+        "1605/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "311586275291862522720888",
+      "uniform_center_residual_upper": "2140053623690949515924",
+      "strict_root_radius_upper": "2883151753879747776074",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1605/128",
+        "405/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "314013738006356004280775",
+      "uniform_center_residual_upper": "2139907496266997811683",
+      "strict_root_radius_upper": "2890774945372190711917",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "405/32",
+        "1635/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "316441088745395760196382",
+      "uniform_center_residual_upper": "2139765049203616373926",
+      "strict_root_radius_upper": "2898444227019766127146",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1635/128",
+        "825/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "318868330347307944691929",
+      "uniform_center_residual_upper": "2139626172343326540916",
+      "strict_root_radius_upper": "2906159832662437869857",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "825/64",
+        "1665/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "321295465569023992292821",
+      "uniform_center_residual_upper": "2139490759391764848177",
+      "strict_root_radius_upper": "2913922003756447423333",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1665/128",
+        "105/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "323722497088719459763554",
+      "uniform_center_residual_upper": "2139358707763745868152",
+      "strict_root_radius_upper": "2921730989274816229631",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "105/8",
+        "1695/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "326149427508366022931498",
+      "uniform_center_residual_upper": "2139229918433741344113",
+      "strict_root_radius_upper": "2929587045612044321723",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1695/128",
+        "855/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "328576259356185950374617",
+      "uniform_center_residual_upper": "2139104295794183536474",
+      "strict_root_radius_upper": "2937490436497728238032",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "855/64",
+        "1725/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "331002995089019891614203",
+      "uniform_center_residual_upper": "2138981747520959884925",
+      "strict_root_radius_upper": "2945441432918432560075",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1725/128",
+        "435/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "333429637094611672873457",
+      "uniform_center_residual_upper": "2138862184443124002455",
+      "strict_root_radius_upper": "2953440313043877088456",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "435/32",
+        "1755/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "335856187693813372089509",
+      "uniform_center_residual_upper": "2138745520419551848555",
+      "strict_root_radius_upper": "2961487362161310790023",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1755/128",
+        "885/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "338282649142705268994650",
+      "uniform_center_residual_upper": "2138631672221019387181",
+      "strict_root_radius_upper": "2969582872616095620186",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "885/64",
+        "1785/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "340709023634647612783080",
+      "uniform_center_residual_upper": "2138520559416610429869",
+      "strict_root_radius_upper": "2977727143757157283902",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1785/128",
+        "225/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "343135313302259989688267",
+      "uniform_center_residual_upper": "2138412104266743665863",
+      "strict_root_radius_upper": "2985920481890578042545",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "225/16",
+        "1815/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "345561520219324039024667",
+      "uniform_center_residual_upper": "2138306231618732569296",
+      "strict_root_radius_upper": "2994163200235752707868",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1815/128",
+        "915/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "347987646402630136799036",
+      "uniform_center_residual_upper": "2138202868808286524410",
+      "strict_root_radius_upper": "3002455618889013418802",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "915/64",
+        "1845/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "350413693813749140939258",
+      "uniform_center_residual_upper": "2138101945565517356931",
+      "strict_root_radius_upper": "3010798064792781193779",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1845/128",
+        "465/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "352839664360751375378139",
+      "uniform_center_residual_upper": "2138003393923162859477",
+      "strict_root_radius_upper": "3019190871707197519425",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "465/32",
+        "1875/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "355265559899860069991601",
+      "uniform_center_residual_upper": "2137907148131184039386",
+      "strict_root_radius_upper": "3027634380190124997933",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1875/128",
+        "945/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "357691382237048578338928",
+      "uniform_center_residual_upper": "2137813144572929749133",
+      "strict_root_radius_upper": "3036128937578888688718",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "945/64",
+        "1905/128"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "360117133129587946774957",
+      "uniform_center_residual_upper": "2137721321685714282747",
+      "strict_root_radius_upper": "3044674897977867347605",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1905/128",
+        "15"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "362542814287531093293836",
+      "uniform_center_residual_upper": "2137631619884816182856",
+      "strict_root_radius_upper": "3053272622250584097105",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "15",
+        "485/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "373259194863429516026875",
+      "uniform_center_residual_upper": "2850039429004437561732",
+      "strict_root_radius_upper": "4123039200792556453378",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "485/32",
+        "245/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "376492046686552798139396",
+      "uniform_center_residual_upper": "2849888361482856500586",
+      "strict_root_radius_upper": "4138832103239923066769",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "245/16",
+        "495/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "379724803177453457313516",
+      "uniform_center_residual_upper": "2849741862134264569324",
+      "strict_root_radius_upper": "4154754333482905024506",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "495/32",
+        "125/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "382957467506958088988909",
+      "uniform_center_residual_upper": "2849599768896790819991",
+      "strict_root_radius_upper": "4170807183346094336774",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "125/8",
+        "505/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "386190042731923859951479",
+      "uniform_center_residual_upper": "2849461926420241107897",
+      "strict_root_radius_upper": "4186991974398339623313",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "505/32",
+        "255/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "389422531799841384435528",
+      "uniform_center_residual_upper": "2849328185748427745164",
+      "strict_root_radius_upper": "4203310058086657383972",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "255/16",
+        "515/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "392654937553227629596866",
+      "uniform_center_residual_upper": "2849198404016763445981",
+      "strict_root_radius_upper": "4219762815895176260136",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "515/32",
+        "65/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "395887262733826985412089",
+      "uniform_center_residual_upper": "2849072444167003843978",
+      "strict_root_radius_upper": "4236351659532690259720",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "65/4",
+        "525/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "399119509986624548984930",
+      "uniform_center_residual_upper": "2848950174676195923019",
+      "strict_root_radius_upper": "4253078031145233314758",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "525/32",
+        "265/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "402351681863669530343651",
+      "uniform_center_residual_upper": "2848831469300841083379",
+      "strict_root_radius_upper": "4269943403555862366046",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "265/16",
+        "535/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "405583780827747828847258",
+      "uniform_center_residual_upper": "2848716206833136543066",
+      "strict_root_radius_upper": "4286949280527887255108",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "535/32",
+        "135/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "408815809255878549337017",
+      "uniform_center_residual_upper": "2848604270871295996121",
+      "strict_root_radius_upper": "4304097197055086320792",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "135/8",
+        "545/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "412047769442665664504994",
+      "uniform_center_residual_upper": "2848495549600548251122",
+      "strict_root_radius_upper": "4321388719674666924209",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "545/32",
+        "275/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "415279663603499041291505",
+      "uniform_center_residual_upper": "2848389935586254331070",
+      "strict_root_radius_upper": "4338825446805769713318",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "275/16",
+        "555/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "418511493877618087425247",
+      "uniform_center_residual_upper": "2848287325576780501801",
+      "strict_root_radius_upper": "4356409009110693639470",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "555/32",
+        "35/2"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "421743262331041568914662",
+      "uniform_center_residual_upper": "2848187620317022370239",
+      "strict_root_radius_upper": "4374141069880876846798",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "35/2",
+        "565/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "424974970959376864228999",
+      "uniform_center_residual_upper": "2848090724370917186254",
+      "strict_root_radius_upper": "4392023325445845475907",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "565/32",
+        "285/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "428206621690501472465382",
+      "uniform_center_residual_upper": "2847996545952590297734",
+      "strict_root_radius_upper": "4410057505605196253500",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "285/16",
+        "575/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "431438216387136387288577",
+      "uniform_center_residual_upper": "2847904996767038669138",
+      "strict_root_radius_upper": "4428245374085786149284",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "575/32",
+        "145/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "434669756849306041724636",
+      "uniform_center_residual_upper": "2847815991857302769692",
+      "strict_root_radius_upper": "4446588729020065015129",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "145/8",
+        "585/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "437901244816696362170767",
+      "uniform_center_residual_upper": "2847729449460164840537",
+      "strict_root_radius_upper": "4465089403449422538267",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "585/32",
+        "295/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "441132681970917137421359",
+      "uniform_center_residual_upper": "2847645290868082392740",
+      "strict_root_radius_upper": "4483749265849705332793",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "295/16",
+        "595/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "444364069937661927598751",
+      "uniform_center_residual_upper": "2847563440298770021592",
+      "strict_root_radius_upper": "4502570220681745292332",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "595/32",
+        "75/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "447595410288786911139252",
+      "uniform_center_residual_upper": "2847483824770393834766",
+      "strict_root_radius_upper": "4521554208964525977007",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "75/4",
+        "605/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "450826704544293040893633",
+      "uniform_center_residual_upper": "2847406373982422499298",
+      "strict_root_radius_upper": "4540703208871631426136",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "605/32",
+        "305/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "454057954174244274022136",
+      "uniform_center_residual_upper": "2847331020204023483760",
+      "strict_root_radius_upper": "4560019236354886737355",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "305/16",
+        "615/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "457289160600578420129288",
+      "uniform_center_residual_upper": "2847257698164673618616",
+      "strict_root_radius_upper": "4579504345787164445376",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "615/32",
+        "155/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "460520325198879056741888",
+      "uniform_center_residual_upper": "2847186344953605180651",
+      "strict_root_radius_upper": "4599160630636038434442",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "155/8",
+        "625/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "463751449300047205013066",
+      "uniform_center_residual_upper": "2847116899920179830852",
+      "strict_root_radius_upper": "4618990224156011302995",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "625/32",
+        "315/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "466982534191912837504884",
+      "uniform_center_residual_upper": "2847049304582881323851",
+      "strict_root_radius_upper": "4638995300112650417320",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "315/16",
+        "635/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "470213581120795812510062",
+      "uniform_center_residual_upper": "2846983502538370539201",
+      "strict_root_radius_upper": "4659178073525661193225",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "635/32",
+        "20"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "473444591292982040030313",
+      "uniform_center_residual_upper": "2846919439378566803063",
+      "strict_root_radius_upper": "4679540801444348459341",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "20",
+        "645/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "476675565876154293888050",
+      "uniform_center_residual_upper": "2846857062608878586711",
+      "strict_root_radius_upper": "4700085783745354253941",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "645/32",
+        "325/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "479906506000763920957266",
+      "uniform_center_residual_upper": "2846796321571076309393",
+      "strict_root_radius_upper": "4720815363959062009692",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "325/16",
+        "1305/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "466619734860683772055084",
+      "uniform_center_residual_upper": "1423375904882212766644",
+      "strict_root_radius_upper": "2318121752969097700034",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1305/64",
+        "655/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "468235907478086436339418",
+      "uniform_center_residual_upper": "1423361310597994270517",
+      "strict_root_radius_upper": "2323156034431346358460",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "655/32",
+        "1315/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "469852067321826679346183",
+      "uniform_center_residual_upper": "1423346907312707487599",
+      "strict_root_radius_upper": "2328212605549623230135",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1315/64",
+        "165/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "471468214563996261556277",
+      "uniform_center_residual_upper": "1423332692177935958534",
+      "strict_root_radius_upper": "2333291608481502565779",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "165/8",
+        "1325/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "473084349374140137593907",
+      "uniform_center_residual_upper": "1423318662395050745124",
+      "strict_root_radius_upper": "2338393186709599925846",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1325/64",
+        "665/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "474700471919303300716558",
+      "uniform_center_residual_upper": "1423304815213429576362",
+      "strict_root_radius_upper": "2343517485053312019243",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "665/32",
+        "1335/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "476316582364066411587002",
+      "uniform_center_residual_upper": "1423291147929784775409",
+      "strict_root_radius_upper": "2348664649682506765144",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1335/64",
+        "335/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "477932680870597247321298",
+      "uniform_center_residual_upper": "1423277657887410621599",
+      "strict_root_radius_upper": "2353834828131313325449",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "335/16",
+        "1345/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "479548767598681180073193",
+      "uniform_center_residual_upper": "1423264342474789538148",
+      "strict_root_radius_upper": "2359028169310966269445",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1345/64",
+        "675/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "481164842705768520684659",
+      "uniform_center_residual_upper": "1423251199125440523235",
+      "strict_root_radius_upper": "2364244823524939707169",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "675/32",
+        "1355/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "482780906347008110200756",
+      "uniform_center_residual_upper": "1423238225316269550994",
+      "strict_root_radius_upper": "2369484942481745863529",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1355/64",
+        "85/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "484396958675287893948202",
+      "uniform_center_residual_upper": "1423225418567135626827",
+      "strict_root_radius_upper": "2374748679309956876914",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "85/4",
+        "1365/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "486012999841270705072017",
+      "uniform_center_residual_upper": "1423212776440008632361",
+      "strict_root_radius_upper": "2380036188572730635159",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1365/64",
+        "685/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "487629029993434519351778",
+      "uniform_center_residual_upper": "1423200296538267269966",
+      "strict_root_radius_upper": "2385347626282782261601",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "685/32",
+        "1375/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "489245049278107543869435",
+      "uniform_center_residual_upper": "1423187976504779424135",
+      "strict_root_radius_upper": "2390683149915495840975",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1375/64",
+        "345/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "490861057839498022699096",
+      "uniform_center_residual_upper": "1423175814023433277393",
+      "strict_root_radius_upper": "2396042918428006006105",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "345/16",
+        "1385/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "492477055819737308175361",
+      "uniform_center_residual_upper": "1423163806816027907012",
+      "strict_root_radius_upper": "2401427092270752447588",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1385/64",
+        "695/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "494093043358908466991141",
+      "uniform_center_residual_upper": "1423151952642791133396",
+      "strict_root_radius_upper": "2406835833405278037851",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "695/32",
+        "1395/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "495709020595081330703332",
+      "uniform_center_residual_upper": "1423140249301362063272",
+      "strict_root_radius_upper": "2412269305319688863642",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1395/64",
+        "175/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "497324987664346495716168",
+      "uniform_center_residual_upper": "1423128694625980256831",
+      "strict_root_radius_upper": "2417727673044673222897",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "175/8",
+        "1405/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "498940944700847567029064",
+      "uniform_center_residual_upper": "1423117286486907674205",
+      "strict_root_radius_upper": "2423211103170130577350",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1405/64",
+        "705/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "500556891836809203451428",
+      "uniform_center_residual_upper": "1423106022789735304452",
+      "strict_root_radius_upper": "2428719763861817672759",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "705/32",
+        "1415/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "502172829202570833240072",
+      "uniform_center_residual_upper": "1423094901474542468334",
+      "strict_root_radius_upper": "2434253824877991124192",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1415/64",
+        "355/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "503788756926620260045285",
+      "uniform_center_residual_upper": "1423083920515464035520",
+      "strict_root_radius_upper": "2439813457586978668810",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "355/16",
+        "1425/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "505404675135617821480526",
+      "uniform_center_residual_upper": "1423073077919975798786",
+      "strict_root_radius_upper": "2445398834984476295021",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1425/64",
+        "715/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "507020583954429495847821",
+      "uniform_center_residual_upper": "1423062371728239420705",
+      "strict_root_radius_upper": "2451010131711218589730",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "715/32",
+        "1435/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "508636483506155505242849",
+      "uniform_center_residual_upper": "1423051800012554506052",
+      "strict_root_radius_upper": "2456647524071063747290",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1435/64",
+        "45/2"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "510252373912156189412550",
+      "uniform_center_residual_upper": "1423041360876571562797",
+      "strict_root_radius_upper": "2462311190048906867041",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "45/2",
+        "1445/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "511868255292082816171113",
+      "uniform_center_residual_upper": "1423031052454744633395",
+      "strict_root_radius_upper": "2468001309329276114893",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1445/64",
+        "725/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "513484127763905384750210",
+      "uniform_center_residual_upper": "1423020872912256091008",
+      "strict_root_radius_upper": "2473718063315999052695",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "725/32",
+        "1455/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "515099991443935638581897",
+      "uniform_center_residual_upper": "1423010820443578562566",
+      "strict_root_radius_upper": "2479461635149752668216",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1455/64",
+        "365/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "516715846446855113629992",
+      "uniform_center_residual_upper": "1423000893272592722296",
+      "strict_root_radius_upper": "2485232209728595041710",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "365/16",
+        "1465/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "518331692885742292085908",
+      "uniform_center_residual_upper": "1422991089651941160747",
+      "strict_root_radius_upper": "2491029973727445460026",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1465/64",
+        "735/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "519947530872098575337915",
+      "uniform_center_residual_upper": "1422981407862072618977",
+      "strict_root_radius_upper": "2496855115617291763969",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "735/32",
+        "1475/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "521563360515871552098250",
+      "uniform_center_residual_upper": "1422971846211354563514",
+      "strict_root_radius_upper": "2502707825686538402173",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1475/64",
+        "185/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "523179181925478235689129",
+      "uniform_center_residual_upper": "1422962403035189219696",
+      "strict_root_radius_upper": "2508588296060899881335",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "185/8",
+        "1485/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "524794995207832963809773",
+      "uniform_center_residual_upper": "1422953076695349546957",
+      "strict_root_radius_upper": "2514496720723982466575",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1485/64",
+        "745/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "526410800468367619488852",
+      "uniform_center_residual_upper": "1422943865579992127509",
+      "strict_root_radius_upper": "2520433295539329681608",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "745/32",
+        "1495/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "528026597811055816630457",
+      "uniform_center_residual_upper": "1422934768102851313548",
+      "strict_root_radius_upper": "2526398218271343157483",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1495/64",
+        "375/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "529642387338439854696719",
+      "uniform_center_residual_upper": "1422925782702819197399",
+      "strict_root_radius_upper": "2532391688607199671612",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "375/16",
+        "1505/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "531258169151642781408546",
+      "uniform_center_residual_upper": "1422916907843285042441",
+      "strict_root_radius_upper": "2538413908178597633047",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1505/64",
+        "755/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "532873943350401671985919",
+      "uniform_center_residual_upper": "1422908142012349380459",
+      "strict_root_radius_upper": "2544465080585459370712",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "755/32",
+        "1515/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "534489710033084321289723",
+      "uniform_center_residual_upper": "1422899483721595317761",
+      "strict_root_radius_upper": "2550545411417326360066",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1515/64",
+        "95/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "536105469296710375599835",
+      "uniform_center_residual_upper": "1422890931506085526920",
+      "strict_root_radius_upper": "2556655108277282199167",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "95/4",
+        "1525/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "537721221236973955636334",
+      "uniform_center_residual_upper": "1422882483923922987687",
+      "strict_root_radius_upper": "2562794380805441599592",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1525/64",
+        "765/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "539336965948258366283275",
+      "uniform_center_residual_upper": "1422874139555653325115",
+      "strict_root_radius_upper": "2568963440702463733310",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "765/32",
+        "1535/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "540952703523665674594674",
+      "uniform_center_residual_upper": "1422865897004170027827",
+      "strict_root_radius_upper": "2575162501754374490102",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1535/64",
+        "385/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "542568434055029675012376",
+      "uniform_center_residual_upper": "1422857754894003945485",
+      "strict_root_radius_upper": "2581391779856569484974",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "385/16",
+        "1545/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "544184157632937900729790",
+      "uniform_center_residual_upper": "1422849711870884521123",
+      "strict_root_radius_upper": "2587651493038696645317",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1545/64",
+        "775/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "545799874346747927593294",
+      "uniform_center_residual_upper": "1422841766602037706649",
+      "strict_root_radius_upper": "2593941861491223905482",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "775/32",
+        "1555/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "547415584284612516504011",
+      "uniform_center_residual_upper": "1422833917774780239055",
+      "strict_root_radius_upper": "2600263107589317878744",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1555/64",
+        "195/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "549031287533490239821405",
+      "uniform_center_residual_upper": "1422826164096896677511",
+      "strict_root_radius_upper": "2606615455920282849776",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "195/8",
+        "1565/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "550646984179169235242854",
+      "uniform_center_residual_upper": "1422818504296288565960",
+      "strict_root_radius_upper": "2612999133310119247427",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1565/64",
+        "785/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "552262674306285699401892",
+      "uniform_center_residual_upper": "1422810937120066163188",
+      "strict_root_radius_upper": "2619414368849427768569",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "785/32",
+        "1575/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "553878357998332778912615",
+      "uniform_center_residual_upper": "1422803461334792426176",
+      "strict_root_radius_upper": "2625861393921785418984",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1575/64",
+        "395/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "555494035337687745361442",
+      "uniform_center_residual_upper": "1422796075725550204201",
+      "strict_root_radius_upper": "2632340442230438935987",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "395/16",
+        "1585/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "557109706405626351434471",
+      "uniform_center_residual_upper": "1422788779096625056116",
+      "strict_root_radius_upper": "2638851749828340854883",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1585/64",
+        "795/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "558725371282336006860280",
+      "uniform_center_residual_upper": "1422781570269832995081",
+      "strict_root_radius_upper": "2645395555144250066204",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "795/32",
+        "1595/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "560341030046934567565079",
+      "uniform_center_residual_upper": "1422774448085130051103",
+      "strict_root_radius_upper": "2651972099013498842127",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1595/64",
+        "25"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "561956682777489635588895",
+      "uniform_center_residual_upper": "1422767411400339780760",
+      "strict_root_radius_upper": "2658581624707575339712",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "25",
+        "1605/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "563572329551025494592526",
+      "uniform_center_residual_upper": "1422760459090038172551",
+      "strict_root_radius_upper": "2665224377962521594949",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1605/64",
+        "805/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "565187970443547553403388",
+      "uniform_center_residual_upper": "1422753590046132156584",
+      "strict_root_radius_upper": "2671900607011012245505",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "805/32",
+        "1615/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "566803605530056439503525",
+      "uniform_center_residual_upper": "1422746803177314501614",
+      "strict_root_radius_upper": "2678610562612759893889",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1615/64",
+        "405/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "568419234884554744851538",
+      "uniform_center_residual_upper": "1422740097408438156345",
+      "strict_root_radius_upper": "2685354498085198127198",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "405/16",
+        "1625/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "570034858580074667907822",
+      "uniform_center_residual_upper": "1422733471680580038040",
+      "strict_root_radius_upper": "2692132669336022601491",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1625/64",
+        "815/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "571650476688681901036485",
+      "uniform_center_residual_upper": "1422726924950844778529",
+      "strict_root_radius_upper": "2698945334895634420624",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "815/32",
+        "1635/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "573266089281493878433516",
+      "uniform_center_residual_upper": "1422720456191351464850",
+      "strict_root_radius_upper": "2705792755948585289148",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1635/64",
+        "205/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "574881696428694781397773",
+      "uniform_center_residual_upper": "1422714064390154830476",
+      "strict_root_radius_upper": "2712675196369178582118",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "205/8",
+        "1645/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "576497298199549834098858",
+      "uniform_center_residual_upper": "1422707748549918611092",
+      "strict_root_radius_upper": "2719592922753316610053",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1645/64",
+        "825/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "578112894662414046180514",
+      "uniform_center_residual_upper": "1422701507688488587942",
+      "strict_root_radius_upper": "2726546204454454347971",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "825/32",
+        "1655/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "579728485884751901932005",
+      "uniform_center_residual_upper": "1422695340837883878144",
+      "strict_root_radius_upper": "2733535313617115533888",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1655/64",
+        "415/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "581344071933146194347583",
+      "uniform_center_residual_upper": "1422689247044841592097",
+      "strict_root_radius_upper": "2740560525213872121507",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "415/16",
+        "1665/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "582959652873311380928356",
+      "uniform_center_residual_upper": "1422683225369927248275",
+      "strict_root_radius_upper": "2747622117080146352990",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1665/64",
+        "835/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "584575228770110013985664",
+      "uniform_center_residual_upper": "1422677274886867394942",
+      "strict_root_radius_upper": "2754720369949997360076",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "835/32",
+        "1675/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "586190799687559439966912",
+      "uniform_center_residual_upper": "1422671394684149120506",
+      "strict_root_radius_upper": "2761855567496823008554",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1675/64",
+        "105/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "587806365688848430369323",
+      "uniform_center_residual_upper": "1422665583863193887030",
+      "strict_root_radius_upper": "2769027996368073546651",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "105/4",
+        "1685/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "589421926836348334284949",
+      "uniform_center_residual_upper": "1422659841538076129023",
+      "strict_root_radius_upper": "2776237946223499022440",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1685/64",
+        "845/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "591037483191624094425649",
+      "uniform_center_residual_upper": "1422654166836563842325",
+      "strict_root_radius_upper": "2783485709776582904391",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "845/32",
+        "1695/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "592653034815446589741266",
+      "uniform_center_residual_upper": "1422648558898543121985",
+      "strict_root_radius_upper": "2790771582831501843008",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1695/64",
+        "425/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "594268581767801794635743",
+      "uniform_center_residual_upper": "1422643016876026279942",
+      "strict_root_radius_upper": "2798095864323768802119",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "425/16",
+        "1705/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "595884124107908329861306",
+      "uniform_center_residual_upper": "1422637539934785322474",
+      "strict_root_radius_upper": "2805458856364762608460",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1705/64",
+        "855/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "597499661894221959955637",
+      "uniform_center_residual_upper": "1422632127251258557849",
+      "strict_root_radius_upper": "2812860864277558083595",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "855/32",
+        "1715/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "599115195184447215408625",
+      "uniform_center_residual_upper": "1422626778014119807781",
+      "strict_root_radius_upper": "2820302196642601916868",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1715/64",
+        "215/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "600730724035554764260947",
+      "uniform_center_residual_upper": "1422621491424329350997",
+      "strict_root_radius_upper": "2827783165341125681122",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "215/8",
+        "1725/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "602346248503784893700519",
+      "uniform_center_residual_upper": "1422616266693495438164",
+      "strict_root_radius_upper": "2835304085595821382644",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1725/64",
+        "865/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "603961768644659420434476",
+      "uniform_center_residual_upper": "1422611103044841858189",
+      "strict_root_radius_upper": "2842865276017415897892",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "865/32",
+        "1735/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "605577284512991714515744",
+      "uniform_center_residual_upper": "1422605999713099033194",
+      "strict_root_radius_upper": "2850467058649828217567",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1735/64",
+        "435/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "607192796162902811814647",
+      "uniform_center_residual_upper": "1422600955943614520770",
+      "strict_root_radius_upper": "2858109759014515026286",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "435/16",
+        "1745/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "608808303647822503456040",
+      "uniform_center_residual_upper": "1422595970992115638749",
+      "strict_root_radius_upper": "2865793706156775236213",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1745/64",
+        "875/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "610423807020503716821830",
+      "uniform_center_residual_upper": "1422591044125720879520",
+      "strict_root_radius_upper": "2873519232695390308513",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "875/32",
+        "1755/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "612039306333030946958646",
+      "uniform_center_residual_upper": "1422586174621443806208",
+      "strict_root_radius_upper": "2881286674867963909855",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1755/64",
+        "55/2"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "613654801636832936852062",
+      "uniform_center_residual_upper": "1422581361766583163256",
+      "strict_root_radius_upper": "2889096372580851323219",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "55/2",
+        "1765/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "615270292982686493996636",
+      "uniform_center_residual_upper": "1422576604858282989164",
+      "strict_root_radius_upper": "2896948669458171131644",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1765/64",
+        "885/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "616885780420729356007867",
+      "uniform_center_residual_upper": "1422571903204339776233",
+      "strict_root_radius_upper": "2904843912894209972692",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "885/32",
+        "1775/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "618501264000469379764017",
+      "uniform_center_residual_upper": "1422567256121774782701",
+      "strict_root_radius_upper": "2912782454102094054646",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1775/64",
+        "445/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "620116743770791370691320",
+      "uniform_center_residual_upper": "1422562662937281089333",
+      "strict_root_radius_upper": "2920764648167099624425",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "445/16",
+        "1785/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "621732219779966695117712",
+      "uniform_center_residual_upper": "1422558122987008718040",
+      "strict_root_radius_upper": "2928790854099494584990",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1785/64",
+        "895/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "623347692075661911328016",
+      "uniform_center_residual_upper": "1422553635616724587502",
+      "strict_root_radius_upper": "2936861434889024020180",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "895/32",
+        "1795/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "624963160704946600585201",
+      "uniform_center_residual_upper": "1422549200180298771309",
+      "strict_root_radius_upper": "2944976757556831387521",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1795/64",
+        "225/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "626578625714305471445510",
+      "uniform_center_residual_upper": "1422544816042307822835",
+      "strict_root_radius_upper": "2953137193216812595856",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "225/8",
+        "1805/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "628194087149640393497303",
+      "uniform_center_residual_upper": "1422540482574079516598",
+      "strict_root_radius_upper": "2961343117124290125397",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1805/64",
+        "905/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "629809545056282660418478",
+      "uniform_center_residual_upper": "1422536199157855036930",
+      "strict_root_radius_upper": "2969594908742499428948",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "905/32",
+        "1815/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "631424999478999411071978",
+      "uniform_center_residual_upper": "1422531965182906805162",
+      "strict_root_radius_upper": "2977892951793321825595",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1815/64",
+        "455/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "633040450462003822435845",
+      "uniform_center_residual_upper": "1422527780047680721924",
+      "strict_root_radius_upper": "2986237634321537660647",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "455/16",
+        "1825/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "634655898048956714034699",
+      "uniform_center_residual_upper": "1422523643158574361059",
+      "strict_root_radius_upper": "2994629348753037748955",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1825/64",
+        "915/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "636271342282982851078256",
+      "uniform_center_residual_upper": "1422519553930441490313",
+      "strict_root_radius_upper": "3003068491957741285909",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "915/32",
+        "1835/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "637886783206671161188904",
+      "uniform_center_residual_upper": "1422515511785642357685",
+      "strict_root_radius_upper": "3011555465310419145314",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1835/64",
+        "115/4"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "639502220862083978943838",
+      "uniform_center_residual_upper": "1422511516155407483584",
+      "strict_root_radius_upper": "3020090674757511673234",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "115/4",
+        "1845/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "641117655290768854930435",
+      "uniform_center_residual_upper": "1422507566478159273627",
+      "strict_root_radius_upper": "3028674530878623990713",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1845/64",
+        "925/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "642733086533758299173195",
+      "uniform_center_residual_upper": "1422503662199790802861",
+      "strict_root_radius_upper": "3037307448953188837965",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "925/32",
+        "1855/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "644348514631579134283060",
+      "uniform_center_residual_upper": "1422499802774383447023",
+      "strict_root_radius_upper": "3045989849029264939235",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1855/64",
+        "465/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "645963939624266549368804",
+      "uniform_center_residual_upper": "1422495987662842598672",
+      "strict_root_radius_upper": "3054722155989074999706",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "465/16",
+        "1865/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "647579361551360809245453",
+      "uniform_center_residual_upper": "1422492216333885917986",
+      "strict_root_radius_upper": "3063504799620647978779",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1865/64",
+        "935/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "649194780451916030111011",
+      "uniform_center_residual_upper": "1422488488263219141449",
+      "strict_root_radius_upper": "3072338214686852843177",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "935/32",
+        "1875/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "650810196364514343384161",
+      "uniform_center_residual_upper": "1422484802933745034290",
+      "strict_root_radius_upper": "3081222840997899189133",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1875/64",
+        "235/8"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "652425609327261645302369",
+      "uniform_center_residual_upper": "1422481159835275061155",
+      "strict_root_radius_upper": "3090159123483918967293",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "235/8",
+        "1885/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "654041019377801080020330",
+      "uniform_center_residual_upper": "1422477558464615407433",
+      "strict_root_radius_upper": "3099147512269729809263",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1885/64",
+        "945/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "655656426553318790730963",
+      "uniform_center_residual_upper": "1422473998325039328377",
+      "strict_root_radius_upper": "3108188462749524605961",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "945/32",
+        "1895/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "657271830890549338882690",
+      "uniform_center_residual_upper": "1422470478926999754234",
+      "strict_root_radius_upper": "3117282435665589571293",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1895/64",
+        "475/16"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "658887232425777576123839",
+      "uniform_center_residual_upper": "1422466999787055791517",
+      "strict_root_radius_upper": "3126429897184463682992",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "475/16",
+        "1905/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "660502631194850948916178",
+      "uniform_center_residual_upper": "1422463560428744568489",
+      "strict_root_radius_upper": "3135631318978791740998",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1905/64",
+        "955/32"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "662118027233181263729808",
+      "uniform_center_residual_upper": "1422460160381379690826",
+      "strict_root_radius_upper": "3144887178305984463895",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "955/32",
+        "1915/64"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "663733420575754421931108",
+      "uniform_center_residual_upper": "1422456799181065894933",
+      "strict_root_radius_upper": "3154197958093237097820",
+      "partial_derivative_invertible_everywhere_in_box": true
+    },
+    {
+      "coupling_interval": [
+        "1915/64",
+        "30"
+      ],
+      "radius": "4722366482869645213696",
+      "uniform_defect_upper": "665348811257131395041700",
+      "uniform_center_residual_upper": "1422453476369919186147",
+      "strict_root_radius_upper": "3163564147020022500529",
+      "partial_derivative_invertible_everywhere_in_box": true
+    }
+  ],
+  "anchors": [
+    {
+      "coupling": "0",
+      "defect_upper": "3153410535626609",
+      "residual_upper": "83896970"
+    },
+    {
+      "coupling": "15/128",
+      "defect_upper": "3290770943661232",
+      "residual_upper": "47962898"
+    },
+    {
+      "coupling": "15/64",
+      "defect_upper": "3422914589260639",
+      "residual_upper": "138785222"
+    },
+    {
+      "coupling": "45/128",
+      "defect_upper": "3550108339864940",
+      "residual_upper": "145537495"
+    },
+    {
+      "coupling": "15/32",
+      "defect_upper": "3672604739166072",
+      "residual_upper": "220738555"
+    },
+    {
+      "coupling": "75/128",
+      "defect_upper": "3790636381998220",
+      "residual_upper": "238317864"
+    },
+    {
+      "coupling": "45/64",
+      "defect_upper": "3904424576318473",
+      "residual_upper": "187654295"
+    },
+    {
+      "coupling": "105/128",
+      "defect_upper": "4014176511020092",
+      "residual_upper": "102839767"
+    },
+    {
+      "coupling": "15/16",
+      "defect_upper": "4120089484182213",
+      "residual_upper": "75335565"
+    },
+    {
+      "coupling": "135/128",
+      "defect_upper": "4222344294042821",
+      "residual_upper": "125237164"
+    },
+    {
+      "coupling": "75/64",
+      "defect_upper": "4321115925698885",
+      "residual_upper": "79558620"
+    },
+    {
+      "coupling": "165/128",
+      "defect_upper": "4416565897508494",
+      "residual_upper": "90564681"
+    },
+    {
+      "coupling": "45/32",
+      "defect_upper": "4508849613638784",
+      "residual_upper": "94515155"
+    },
+    {
+      "coupling": "195/128",
+      "defect_upper": "4598111302275695",
+      "residual_upper": "89232433"
+    },
+    {
+      "coupling": "105/64",
+      "defect_upper": "4684488987668188",
+      "residual_upper": "111404014"
+    },
+    {
+      "coupling": "225/128",
+      "defect_upper": "4768111166821709",
+      "residual_upper": "122982748"
+    },
+    {
+      "coupling": "15/8",
+      "defect_upper": "4849100644472847",
+      "residual_upper": "116349473"
+    },
+    {
+      "coupling": "255/128",
+      "defect_upper": "4927572633597961",
+      "residual_upper": "112701998"
+    },
+    {
+      "coupling": "135/64",
+      "defect_upper": "5003637189975179",
+      "residual_upper": "150860754"
+    },
+    {
+      "coupling": "285/128",
+      "defect_upper": "5077397454019660",
+      "residual_upper": "75749782"
+    },
+    {
+      "coupling": "75/32",
+      "defect_upper": "5148951252322823",
+      "residual_upper": "69125604"
+    },
+    {
+      "coupling": "315/128",
+      "defect_upper": "5218391371012012",
+      "residual_upper": "171206403"
+    },
+    {
+      "coupling": "165/64",
+      "defect_upper": "5285807189790505",
+      "residual_upper": "65507379"
+    },
+    {
+      "coupling": "345/128",
+      "defect_upper": "5351280419202490",
+      "residual_upper": "123919305"
+    },
+    {
+      "coupling": "45/16",
+      "defect_upper": "5414890907887972",
+      "residual_upper": "174736945"
+    },
+    {
+      "coupling": "375/128",
+      "defect_upper": "5476714263341117",
+      "residual_upper": "142262708"
+    },
+    {
+      "coupling": "195/64",
+      "defect_upper": "5536822132569174",
+      "residual_upper": "139680888"
+    },
+    {
+      "coupling": "405/128",
+      "defect_upper": "5595281588759843",
+      "residual_upper": "135193319"
+    },
+    {
+      "coupling": "105/32",
+      "defect_upper": "5690569248961190",
+      "residual_upper": "75067870"
+    },
+    {
+      "coupling": "435/128",
+      "defect_upper": "5837022711103364",
+      "residual_upper": "111228463"
+    },
+    {
+      "coupling": "225/64",
+      "defect_upper": "5983397126596500",
+      "residual_upper": "142881668"
+    },
+    {
+      "coupling": "465/128",
+      "defect_upper": "6129695189996540",
+      "residual_upper": "77172606"
+    },
+    {
+      "coupling": "15/4",
+      "defect_upper": "6275918761837222",
+      "residual_upper": "88200964"
+    },
+    {
+      "coupling": "495/128",
+      "defect_upper": "6422069915299623",
+      "residual_upper": "125887437"
+    },
+    {
+      "coupling": "255/64",
+      "defect_upper": "6568150491991807",
+      "residual_upper": "104319824"
+    },
+    {
+      "coupling": "525/128",
+      "defect_upper": "6714162275808645",
+      "residual_upper": "103240030"
+    },
+    {
+      "coupling": "135/32",
+      "defect_upper": "6860107847590716",
+      "residual_upper": "149421786"
+    },
+    {
+      "coupling": "555/128",
+      "defect_upper": "7005988144137637",
+      "residual_upper": "108974876"
+    },
+    {
+      "coupling": "285/64",
+      "defect_upper": "7151805958519868",
+      "residual_upper": "71996238"
+    },
+    {
+      "coupling": "585/128",
+      "defect_upper": "7297562867281338",
+      "residual_upper": "77527294"
+    },
+    {
+      "coupling": "75/16",
+      "defect_upper": "7443259585606892",
+      "residual_upper": "89025387"
+    },
+    {
+      "coupling": "615/128",
+      "defect_upper": "7588899223197450",
+      "residual_upper": "119256575"
+    },
+    {
+      "coupling": "315/64",
+      "defect_upper": "7734482540186489",
+      "residual_upper": "89709373"
+    },
+    {
+      "coupling": "645/128",
+      "defect_upper": "7880011677328847",
+      "residual_upper": "81362506"
+    },
+    {
+      "coupling": "165/32",
+      "defect_upper": "8025487812462353",
+      "residual_upper": "106413538"
+    },
+    {
+      "coupling": "675/128",
+      "defect_upper": "8170912576136093",
+      "residual_upper": "60531761"
+    },
+    {
+      "coupling": "345/64",
+      "defect_upper": "8316287964667119",
+      "residual_upper": "180137147"
+    },
+    {
+      "coupling": "705/128",
+      "defect_upper": "8461614488503673",
+      "residual_upper": "68067781"
+    },
+    {
+      "coupling": "45/8",
+      "defect_upper": "8606893979586946",
+      "residual_upper": "99657678"
+    },
+    {
+      "coupling": "735/128",
+      "defect_upper": "8752127986166765",
+      "residual_upper": "116213076"
+    },
+    {
+      "coupling": "375/64",
+      "defect_upper": "8897317958003084",
+      "residual_upper": "64753125"
+    },
+    {
+      "coupling": "765/128",
+      "defect_upper": "9042464527351826",
+      "residual_upper": "96414341"
+    },
+    {
+      "coupling": "195/32",
+      "defect_upper": "9187569957739074",
+      "residual_upper": "65016713"
+    },
+    {
+      "coupling": "795/128",
+      "defect_upper": "9332634231716422",
+      "residual_upper": "80038916"
+    },
+    {
+      "coupling": "405/64",
+      "defect_upper": "9477658924888519",
+      "residual_upper": "80671407"
+    },
+    {
+      "coupling": "825/128",
+      "defect_upper": "9622645561140844",
+      "residual_upper": "94045767"
+    },
+    {
+      "coupling": "105/16",
+      "defect_upper": "9767595066699078",
+      "residual_upper": "69236531"
+    },
+    {
+      "coupling": "855/128",
+      "defect_upper": "9912508636988422",
+      "residual_upper": "48751175"
+    },
+    {
+      "coupling": "435/64",
+      "defect_upper": "10057387001295358",
+      "residual_upper": "127517637"
+    },
+    {
+      "coupling": "885/128",
+      "defect_upper": "10202231007489731",
+      "residual_upper": "103606144"
+    },
+    {
+      "coupling": "225/32",
+      "defect_upper": "10347042066338516",
+      "residual_upper": "62582521"
+    },
+    {
+      "coupling": "915/128",
+      "defect_upper": "10491821318742315",
+      "residual_upper": "77354764"
+    },
+    {
+      "coupling": "465/64",
+      "defect_upper": "10636568493446444",
+      "residual_upper": "98124045"
+    },
+    {
+      "coupling": "945/128",
+      "defect_upper": "10781285887554413",
+      "residual_upper": "60671005"
+    },
+    {
+      "coupling": "15/2",
+      "defect_upper": "10925973651818341",
+      "residual_upper": "48495794"
+    },
+    {
+      "coupling": "975/128",
+      "defect_upper": "11070632672272006",
+      "residual_upper": "51327688"
+    },
+    {
+      "coupling": "495/64",
+      "defect_upper": "11215263595825970",
+      "residual_upper": "91459581"
+    },
+    {
+      "coupling": "1005/128",
+      "defect_upper": "11359867555289287",
+      "residual_upper": "129959648"
+    },
+    {
+      "coupling": "255/32",
+      "defect_upper": "11504444852543897",
+      "residual_upper": "123164607"
+    },
+    {
+      "coupling": "1035/128",
+      "defect_upper": "11648996962655535",
+      "residual_upper": "112850800"
+    },
+    {
+      "coupling": "525/64",
+      "defect_upper": "11793523752548143",
+      "residual_upper": "86258886"
+    },
+    {
+      "coupling": "1065/128",
+      "defect_upper": "11938026048781643",
+      "residual_upper": "117463690"
+    },
+    {
+      "coupling": "135/16",
+      "defect_upper": "12082504883920689",
+      "residual_upper": "75788868"
+    },
+    {
+      "coupling": "1095/128",
+      "defect_upper": "12226960985410415",
+      "residual_upper": "103011820"
+    },
+    {
+      "coupling": "555/64",
+      "defect_upper": "12371394762277759",
+      "residual_upper": "125903393"
+    },
+    {
+      "coupling": "1125/128",
+      "defect_upper": "12515806213361942",
+      "residual_upper": "75432259"
+    },
+    {
+      "coupling": "285/32",
+      "defect_upper": "12660196646184061",
+      "residual_upper": "126524864"
+    },
+    {
+      "coupling": "1155/128",
+      "defect_upper": "12804566556788363",
+      "residual_upper": "184318348"
+    },
+    {
+      "coupling": "585/64",
+      "defect_upper": "12948916830750910",
+      "residual_upper": "84556819"
+    },
+    {
+      "coupling": "1185/128",
+      "defect_upper": "13093247047306681",
+      "residual_upper": "101931490"
+    },
+    {
+      "coupling": "75/8",
+      "defect_upper": "13237557860708324",
+      "residual_upper": "62833177"
+    },
+    {
+      "coupling": "1215/128",
+      "defect_upper": "13381850879067004",
+      "residual_upper": "85481781"
+    },
+    {
+      "coupling": "615/64",
+      "defect_upper": "13526125411589846",
+      "residual_upper": "82570078"
+    },
+    {
+      "coupling": "1245/128",
+      "defect_upper": "13670382767101511",
+      "residual_upper": "88775238"
+    },
+    {
+      "coupling": "315/32",
+      "defect_upper": "13814622694850705",
+      "residual_upper": "75691268"
+    },
+    {
+      "coupling": "1275/128",
+      "defect_upper": "13958846359094790",
+      "residual_upper": "133202739"
+    },
+    {
+      "coupling": "645/64",
+      "defect_upper": "14103053314615195",
+      "residual_upper": "71473133"
+    },
+    {
+      "coupling": "1305/128",
+      "defect_upper": "14247244818082980",
+      "residual_upper": "84078414"
+    },
+    {
+      "coupling": "165/16",
+      "defect_upper": "14391420342611427",
+      "residual_upper": "77066218"
+    },
+    {
+      "coupling": "1335/128",
+      "defect_upper": "14535581389687570",
+      "residual_upper": "141692677"
+    },
+    {
+      "coupling": "675/64",
+      "defect_upper": "14679727735943104",
+      "residual_upper": "176814243"
+    },
+    {
+      "coupling": "1365/128",
+      "defect_upper": "14823859116264313",
+      "residual_upper": "70474656"
+    },
+    {
+      "coupling": "345/32",
+      "defect_upper": "14967977377506883",
+      "residual_upper": "84294679"
+    },
+    {
+      "coupling": "1395/128",
+      "defect_upper": "15112081793959119",
+      "residual_upper": "80299166"
+    },
+    {
+      "coupling": "705/64",
+      "defect_upper": "15256172943626526",
+      "residual_upper": "51836866"
+    },
+    {
+      "coupling": "1425/128",
+      "defect_upper": "15400251497327665",
+      "residual_upper": "47549063"
+    },
+    {
+      "coupling": "45/4",
+      "defect_upper": "15544316796810427",
+      "residual_upper": "113300223"
+    },
+    {
+      "coupling": "1455/128",
+      "defect_upper": "15688370060110172",
+      "residual_upper": "57600132"
+    },
+    {
+      "coupling": "735/64",
+      "defect_upper": "15832411442151874",
+      "residual_upper": "125807599"
+    },
+    {
+      "coupling": "1485/128",
+      "defect_upper": "15976440923008672",
+      "residual_upper": "56425244"
+    },
+    {
+      "coupling": "375/32",
+      "defect_upper": "16120459649953061",
+      "residual_upper": "279342492"
+    },
+    {
+      "coupling": "1515/128",
+      "defect_upper": "16264466426554122",
+      "residual_upper": "42191897"
+    },
+    {
+      "coupling": "765/64",
+      "defect_upper": "16408462915197677",
+      "residual_upper": "76730134"
+    },
+    {
+      "coupling": "1545/128",
+      "defect_upper": "16552448370624338",
+      "residual_upper": "82547497"
+    },
+    {
+      "coupling": "195/16",
+      "defect_upper": "16696423730435878",
+      "residual_upper": "72938630"
+    },
+    {
+      "coupling": "1575/128",
+      "defect_upper": "16840388886417622",
+      "residual_upper": "94135361"
+    },
+    {
+      "coupling": "795/64",
+      "defect_upper": "16984344467067086",
+      "residual_upper": "78101342"
+    },
+    {
+      "coupling": "1605/128",
+      "defect_upper": "17128289894287490",
+      "residual_upper": "62574560"
+    },
+    {
+      "coupling": "405/32",
+      "defect_upper": "17272226382167520",
+      "residual_upper": "39861058"
+    },
+    {
+      "coupling": "1635/128",
+      "defect_upper": "17416153266361998",
+      "residual_upper": "75591361"
+    },
+    {
+      "coupling": "825/64",
+      "defect_upper": "17560071423272131",
+      "residual_upper": "58424611"
+    },
+    {
+      "coupling": "1665/128",
+      "defect_upper": "17703980774042530",
+      "residual_upper": "45787500"
+    },
+    {
+      "coupling": "105/8",
+      "defect_upper": "17847881731349235",
+      "residual_upper": "83938459"
+    },
+    {
+      "coupling": "1695/128",
+      "defect_upper": "17991774050654915",
+      "residual_upper": "69580000"
+    },
+    {
+      "coupling": "855/64",
+      "defect_upper": "18135658189967471",
+      "residual_upper": "193643069"
+    },
+    {
+      "coupling": "1725/128",
+      "defect_upper": "18279534374662685",
+      "residual_upper": "55512425"
+    },
+    {
+      "coupling": "435/32",
+      "defect_upper": "18423403087421927",
+      "residual_upper": "76516457"
+    },
+    {
+      "coupling": "1755/128",
+      "defect_upper": "18567263675445736",
+      "residual_upper": "119328701"
+    },
+    {
+      "coupling": "885/64",
+      "defect_upper": "18711116933492466",
+      "residual_upper": "46131367"
+    },
+    {
+      "coupling": "1785/128",
+      "defect_upper": "18854963005632000",
+      "residual_upper": "47962788"
+    },
+    {
+      "coupling": "225/16",
+      "defect_upper": "18998802091791986",
+      "residual_upper": "69067979"
+    },
+    {
+      "coupling": "1815/128",
+      "defect_upper": "19142634251375663",
+      "residual_upper": "92543842"
+    },
+    {
+      "coupling": "915/64",
+      "defect_upper": "19286459685553516",
+      "residual_upper": "63894369"
+    },
+    {
+      "coupling": "1845/128",
+      "defect_upper": "19430278202462425",
+      "residual_upper": "61860285"
+    },
+    {
+      "coupling": "465/32",
+      "defect_upper": "19574090122430996",
+      "residual_upper": "123251127"
+    },
+    {
+      "coupling": "1875/128",
+      "defect_upper": "19717895741592506",
+      "residual_upper": "82976538"
+    },
+    {
+      "coupling": "945/64",
+      "defect_upper": "19861695434734052",
+      "residual_upper": "81733538"
+    },
+    {
+      "coupling": "1905/128",
+      "defect_upper": "20005489012019794",
+      "residual_upper": "67441633"
+    },
+    {
+      "coupling": "15",
+      "defect_upper": "20149276064711634",
+      "residual_upper": "155738999"
+    },
+    {
+      "coupling": "485/32",
+      "defect_upper": "20340983420040582",
+      "residual_upper": "64886237"
+    },
+    {
+      "coupling": "245/16",
+      "defect_upper": "20532680779547704",
+      "residual_upper": "63090395"
+    },
+    {
+      "coupling": "495/32",
+      "defect_upper": "20724368279226621",
+      "residual_upper": "105945763"
+    },
+    {
+      "coupling": "125/8",
+      "defect_upper": "20916046571142190",
+      "residual_upper": "54420938"
+    },
+    {
+      "coupling": "505/32",
+      "defect_upper": "21107715280884101",
+      "residual_upper": "93721674"
+    },
+    {
+      "coupling": "255/16",
+      "defect_upper": "21299375195153368",
+      "residual_upper": "71398425"
+    },
+    {
+      "coupling": "515/32",
+      "defect_upper": "21491026409411212",
+      "residual_upper": "61530419"
+    },
+    {
+      "coupling": "65/4",
+      "defect_upper": "21682669188302698",
+      "residual_upper": "73252847"
+    },
+    {
+      "coupling": "525/32",
+      "defect_upper": "21874303972467479",
+      "residual_upper": "76374849"
+    },
+    {
+      "coupling": "265/16",
+      "defect_upper": "22065929875562035",
+      "residual_upper": "44205069"
+    },
+    {
+      "coupling": "535/32",
+      "defect_upper": "22257549127310899",
+      "residual_upper": "157345047"
+    },
+    {
+      "coupling": "135/8",
+      "defect_upper": "22449160032657174",
+      "residual_upper": "84283764"
+    },
+    {
+      "coupling": "545/32",
+      "defect_upper": "22640763652249814",
+      "residual_upper": "73090203"
+    },
+    {
+      "coupling": "275/16",
+      "defect_upper": "22832360210343147",
+      "residual_upper": "97395017"
+    },
+    {
+      "coupling": "555/32",
+      "defect_upper": "23023949598571487",
+      "residual_upper": "163511751"
+    },
+    {
+      "coupling": "35/2",
+      "defect_upper": "23215532508091805",
+      "residual_upper": "96245924"
+    },
+    {
+      "coupling": "565/32",
+      "defect_upper": "23407108723391140",
+      "residual_upper": "84830461"
+    },
+    {
+      "coupling": "285/16",
+      "defect_upper": "23598678664302301",
+      "residual_upper": "30320960"
+    },
+    {
+      "coupling": "575/32",
+      "defect_upper": "23790242001441324",
+      "residual_upper": "162982195"
+    },
+    {
+      "coupling": "145/8",
+      "defect_upper": "23981799287066542",
+      "residual_upper": "74673118"
+    },
+    {
+      "coupling": "585/32",
+      "defect_upper": "24173350678091669",
+      "residual_upper": "176010057"
+    },
+    {
+      "coupling": "295/16",
+      "defect_upper": "24364895835945301",
+      "residual_upper": "83854684"
+    },
+    {
+      "coupling": "595/32",
+      "defect_upper": "24556436471217386",
+      "residual_upper": "67858610"
+    },
+    {
+      "coupling": "75/4",
+      "defect_upper": "24747970684952585",
+      "residual_upper": "77259931"
+    },
+    {
+      "coupling": "605/32",
+      "defect_upper": "24939500730566191",
+      "residual_upper": "61601413"
+    },
+    {
+      "coupling": "305/16",
+      "defect_upper": "25131023871288078",
+      "residual_upper": "80836571"
+    },
+    {
+      "coupling": "615/32",
+      "defect_upper": "25322542979551039",
+      "residual_upper": "66569644"
+    },
+    {
+      "coupling": "155/8",
+      "defect_upper": "25514057221993537",
+      "residual_upper": "59588462"
+    },
+    {
+      "coupling": "625/32",
+      "defect_upper": "25705566440544082",
+      "residual_upper": "62863397"
+    },
+    {
+      "coupling": "315/16",
+      "defect_upper": "25897070674115161",
+      "residual_upper": "209850733"
+    },
+    {
+      "coupling": "635/32",
+      "defect_upper": "26088570231121922",
+      "residual_upper": "59728904"
+    },
+    {
+      "coupling": "20",
+      "defect_upper": "26280065904860710",
+      "residual_upper": "106747336"
+    },
+    {
+      "coupling": "645/32",
+      "defect_upper": "26471557692878692",
+      "residual_upper": "187073530"
+    },
+    {
+      "coupling": "325/16",
+      "defect_upper": "26663043894980909",
+      "residual_upper": "28453041"
+    },
+    {
+      "coupling": "1305/64",
+      "defect_upper": "26758786542515907",
+      "residual_upper": "97729120"
+    },
+    {
+      "coupling": "655/32",
+      "defect_upper": "26854527116045377",
+      "residual_upper": "85274578"
+    },
+    {
+      "coupling": "1315/64",
+      "defect_upper": "26950266920661914",
+      "residual_upper": "123687999"
+    },
+    {
+      "coupling": "165/8",
+      "defect_upper": "27046005830949405",
+      "residual_upper": "86674602"
+    },
+    {
+      "coupling": "1325/64",
+      "defect_upper": "27141743970305961",
+      "residual_upper": "242908751"
+    },
+    {
+      "coupling": "665/32",
+      "defect_upper": "27237480837282498",
+      "residual_upper": "77911306"
+    },
+    {
+      "coupling": "1335/64",
+      "defect_upper": "27333216720996810",
+      "residual_upper": "183170002"
+    },
+    {
+      "coupling": "335/16",
+      "defect_upper": "27428951615615299",
+      "residual_upper": "95973721"
+    },
+    {
+      "coupling": "1345/64",
+      "defect_upper": "27524685398540265",
+      "residual_upper": "46619577"
+    },
+    {
+      "coupling": "675/32",
+      "defect_upper": "27620419371184995",
+      "residual_upper": "127778791"
+    },
+    {
+      "coupling": "1355/64",
+      "defect_upper": "27716151655616160",
+      "residual_upper": "209578277"
+    },
+    {
+      "coupling": "85/4",
+      "defect_upper": "27811882383317470",
+      "residual_upper": "96909821"
+    },
+    {
+      "coupling": "1365/64",
+      "defect_upper": "27907612703259503",
+      "residual_upper": "84349054"
+    },
+    {
+      "coupling": "685/32",
+      "defect_upper": "28003342782887877",
+      "residual_upper": "62743310"
+    },
+    {
+      "coupling": "1375/64",
+      "defect_upper": "28099071058861347",
+      "residual_upper": "73442717"
+    },
+    {
+      "coupling": "345/16",
+      "defect_upper": "28194799143568542",
+      "residual_upper": "72507687"
+    },
+    {
+      "coupling": "1385/64",
+      "defect_upper": "28290526399300796",
+      "residual_upper": "151273660"
+    },
+    {
+      "coupling": "695/32",
+      "defect_upper": "28386252314762271",
+      "residual_upper": "35804166"
+    },
+    {
+      "coupling": "1395/64",
+      "defect_upper": "28481978077102136",
+      "residual_upper": "48926005"
+    },
+    {
+      "coupling": "175/8",
+      "defect_upper": "28577702655802620",
+      "residual_upper": "112402578"
+    },
+    {
+      "coupling": "1405/64",
+      "defect_upper": "28673426298252301",
+      "residual_upper": "185278165"
+    },
+    {
+      "coupling": "705/32",
+      "defect_upper": "28769149252384639",
+      "residual_upper": "39941638"
+    },
+    {
+      "coupling": "1415/64",
+      "defect_upper": "28864871323699704",
+      "residual_upper": "102618920"
+    },
+    {
+      "coupling": "355/16",
+      "defect_upper": "28960592439834922",
+      "residual_upper": "94309916"
+    },
+    {
+      "coupling": "1425/64",
+      "defect_upper": "29056313582734640",
+      "residual_upper": "115128974"
+    },
+    {
+      "coupling": "715/32",
+      "defect_upper": "29152034257538848",
+      "residual_upper": "56736091"
+    },
+    {
+      "coupling": "1435/64",
+      "defect_upper": "29247752723354795",
+      "residual_upper": "94040168"
+    },
+    {
+      "coupling": "45/2",
+      "defect_upper": "29343471245570883",
+      "residual_upper": "84769658"
+    },
+    {
+      "coupling": "1445/64",
+      "defect_upper": "29439188753326111",
+      "residual_upper": "175637916"
+    },
+    {
+      "coupling": "725/32",
+      "defect_upper": "29534905498666891",
+      "residual_upper": "87903658"
+    },
+    {
+      "coupling": "1455/64",
+      "defect_upper": "29630621572847865",
+      "residual_upper": "156136815"
+    },
+    {
+      "coupling": "365/16",
+      "defect_upper": "29726337057370176",
+      "residual_upper": "85567036"
+    },
+    {
+      "coupling": "1465/64",
+      "defect_upper": "29822052559945543",
+      "residual_upper": "60582598"
+    },
+    {
+      "coupling": "735/32",
+      "defect_upper": "29917766247665156",
+      "residual_upper": "169624226"
+    },
+    {
+      "coupling": "1475/64",
+      "defect_upper": "30013480088330299",
+      "residual_upper": "51562515"
+    },
+    {
+      "coupling": "185/8",
+      "defect_upper": "30109192569147409",
+      "residual_upper": "86171183"
+    },
+    {
+      "coupling": "1485/64",
+      "defect_upper": "30204904515514022",
+      "residual_upper": "79916389"
+    },
+    {
+      "coupling": "745/32",
+      "defect_upper": "30300616073947908",
+      "residual_upper": "115837230"
+    },
+    {
+      "coupling": "1495/64",
+      "defect_upper": "30396326762803184",
+      "residual_upper": "39688444"
+    },
+    {
+      "coupling": "375/16",
+      "defect_upper": "30492037125568642",
+      "residual_upper": "60174353"
+    },
+    {
+      "coupling": "1505/64",
+      "defect_upper": "30587746940519647",
+      "residual_upper": "65839417"
+    },
+    {
+      "coupling": "755/32",
+      "defect_upper": "30683455464092934",
+      "residual_upper": "65818627"
+    },
+    {
+      "coupling": "1515/64",
+      "defect_upper": "30779164116494101",
+      "residual_upper": "78281692"
+    },
+    {
+      "coupling": "95/4",
+      "defect_upper": "30874871479839068",
+      "residual_upper": "177733581"
+    },
+    {
+      "coupling": "1525/64",
+      "defect_upper": "30970579131648874",
+      "residual_upper": "46222280"
+    },
+    {
+      "coupling": "765/32",
+      "defect_upper": "31066286087587736",
+      "residual_upper": "84558949"
+    },
+    {
+      "coupling": "1535/64",
+      "defect_upper": "31161991385521166",
+      "residual_upper": "110086626"
+    },
+    {
+      "coupling": "385/16",
+      "defect_upper": "31257696523028687",
+      "residual_upper": "70962332"
+    },
+    {
+      "coupling": "1545/64",
+      "defect_upper": "31353401180563370",
+      "residual_upper": "80044286"
+    },
+    {
+      "coupling": "775/32",
+      "defect_upper": "31449105148380339",
+      "residual_upper": "46837670"
+    },
+    {
+      "coupling": "1555/64",
+      "defect_upper": "31544809352113736",
+      "residual_upper": "70646794"
+    },
+    {
+      "coupling": "195/8",
+      "defect_upper": "31640512410731171",
+      "residual_upper": "96761120"
+    },
+    {
+      "coupling": "1565/64",
+      "defect_upper": "31736214794566955",
+      "residual_upper": "266947554"
+    },
+    {
+      "coupling": "785/32",
+      "defect_upper": "31831917262433061",
+      "residual_upper": "37481403"
+    },
+    {
+      "coupling": "1575/64",
+      "defect_upper": "31927618159716064",
+      "residual_upper": "46653675"
+    },
+    {
+      "coupling": "395/16",
+      "defect_upper": "32023319300928798",
+      "residual_upper": "84611307"
+    },
+    {
+      "coupling": "1585/64",
+      "defect_upper": "32119019529638749",
+      "residual_upper": "171504064"
+    },
+    {
+      "coupling": "795/32",
+      "defect_upper": "32214719767788199",
+      "residual_upper": "57557332"
+    },
+    {
+      "coupling": "1595/64",
+      "defect_upper": "32310419168011270",
+      "residual_upper": "191852725"
+    },
+    {
+      "coupling": "25",
+      "defect_upper": "32406117682269826",
+      "residual_upper": "84098536"
+    },
+    {
+      "coupling": "1605/64",
+      "defect_upper": "32501816015011586",
+      "residual_upper": "68885795"
+    },
+    {
+      "coupling": "805/32",
+      "defect_upper": "32597514139235865",
+      "residual_upper": "66846025"
+    },
+    {
+      "coupling": "1615/64",
+      "defect_upper": "32693211460967809",
+      "residual_upper": "109838092"
+    },
+    {
+      "coupling": "405/16",
+      "defect_upper": "32788908294052841",
+      "residual_upper": "104338580"
+    },
+    {
+      "coupling": "1625/64",
+      "defect_upper": "32884604468463792",
+      "residual_upper": "104765961"
+    },
+    {
+      "coupling": "815/32",
+      "defect_upper": "32980300200528712",
+      "residual_upper": "40949759"
+    },
+    {
+      "coupling": "1635/64",
+      "defect_upper": "33075996152546702",
+      "residual_upper": "198341989"
+    },
+    {
+      "coupling": "205/8",
+      "defect_upper": "33171690925339047",
+      "residual_upper": "57729752"
+    },
+    {
+      "coupling": "1645/64",
+      "defect_upper": "33267385676588929",
+      "residual_upper": "193048702"
+    },
+    {
+      "coupling": "825/32",
+      "defect_upper": "33363080174212814",
+      "residual_upper": "196182112"
+    },
+    {
+      "coupling": "1655/64",
+      "defect_upper": "33458773500243780",
+      "residual_upper": "137434129"
+    },
+    {
+      "coupling": "415/16",
+      "defect_upper": "33554466538934596",
+      "residual_upper": "95664998"
+    },
+    {
+      "coupling": "1665/64",
+      "defect_upper": "33650159778083682",
+      "residual_upper": "192391175"
+    },
+    {
+      "coupling": "835/32",
+      "defect_upper": "33745851343296495",
+      "residual_upper": "77271662"
+    },
+    {
+      "coupling": "1675/64",
+      "defect_upper": "33841543758067177",
+      "residual_upper": "409345824"
+    },
+    {
+      "coupling": "105/4",
+      "defect_upper": "33937235732565650",
+      "residual_upper": "67873493"
+    },
+    {
+      "coupling": "1685/64",
+      "defect_upper": "34032926596900591",
+      "residual_upper": "204702478"
+    },
+    {
+      "coupling": "845/32",
+      "defect_upper": "34128617392529946",
+      "residual_upper": "223582004"
+    },
+    {
+      "coupling": "1695/64",
+      "defect_upper": "34224307636669133",
+      "residual_upper": "77690687"
+    },
+    {
+      "coupling": "425/16",
+      "defect_upper": "34319997260763123",
+      "residual_upper": "147868469"
+    },
+    {
+      "coupling": "1705/64",
+      "defect_upper": "34415686829912458",
+      "residual_upper": "54758113"
+    },
+    {
+      "coupling": "855/32",
+      "defect_upper": "34511375671479571",
+      "residual_upper": "43951935"
+    },
+    {
+      "coupling": "1715/64",
+      "defect_upper": "34607064341049352",
+      "residual_upper": "50893683"
+    },
+    {
+      "coupling": "215/8",
+      "defect_upper": "34702752393051255",
+      "residual_upper": "88147127"
+    },
+    {
+      "coupling": "1725/64",
+      "defect_upper": "34798440427927171",
+      "residual_upper": "72295246"
+    },
+    {
+      "coupling": "865/32",
+      "defect_upper": "34894128712849922",
+      "residual_upper": "112256638"
+    },
+    {
+      "coupling": "1735/64",
+      "defect_upper": "34989815709939729",
+      "residual_upper": "181757516"
+    },
+    {
+      "coupling": "435/16",
+      "defect_upper": "35085502652499727",
+      "residual_upper": "66520759"
+    },
+    {
+      "coupling": "1745/64",
+      "defect_upper": "35181189476365773",
+      "residual_upper": "134251645"
+    },
+    {
+      "coupling": "875/32",
+      "defect_upper": "35276874557928371",
+      "residual_upper": "74248600"
+    },
+    {
+      "coupling": "1755/64",
+      "defect_upper": "35372560255189398",
+      "residual_upper": "255325859"
+    },
+    {
+      "coupling": "55/2",
+      "defect_upper": "35468246739008123",
+      "residual_upper": "87724534"
+    },
+    {
+      "coupling": "1765/64",
+      "defect_upper": "35563931367858115",
+      "residual_upper": "91475121"
+    },
+    {
+      "coupling": "885/32",
+      "defect_upper": "35659615883220365",
+      "residual_upper": "228049694"
+    },
+    {
+      "coupling": "1775/64",
+      "defect_upper": "35755300237698276",
+      "residual_upper": "292583754"
+    },
+    {
+      "coupling": "445/16",
+      "defect_upper": "35850984096134156",
+      "residual_upper": "129347004"
+    },
+    {
+      "coupling": "1785/64",
+      "defect_upper": "35946668332239890",
+      "residual_upper": "143107034"
+    },
+    {
+      "coupling": "895/32",
+      "defect_upper": "36042351017597660",
+      "residual_upper": "73821207"
+    },
+    {
+      "coupling": "1795/64",
+      "defect_upper": "36138034220833438",
+      "residual_upper": "57146470"
+    },
+    {
+      "coupling": "225/8",
+      "defect_upper": "36233716775210871",
+      "residual_upper": "109644120"
+    },
+    {
+      "coupling": "1805/64",
+      "defect_upper": "36329399652465473",
+      "residual_upper": "130801094"
+    },
+    {
+      "coupling": "905/32",
+      "defect_upper": "36425081193471534",
+      "residual_upper": "78912074"
+    },
+    {
+      "coupling": "1815/64",
+      "defect_upper": "36520762943804731",
+      "residual_upper": "149914393"
+    },
+    {
+      "coupling": "455/16",
+      "defect_upper": "36616444619229022",
+      "residual_upper": "174551489"
+    },
+    {
+      "coupling": "1825/64",
+      "defect_upper": "36712125912677091",
+      "residual_upper": "103936493"
+    },
+    {
+      "coupling": "915/32",
+      "defect_upper": "36807806414497311",
+      "residual_upper": "286698080"
+    },
+    {
+      "coupling": "1835/64",
+      "defect_upper": "36903487163293840",
+      "residual_upper": "86538146"
+    },
+    {
+      "coupling": "115/4",
+      "defect_upper": "36999167489220286",
+      "residual_upper": "78868170"
+    },
+    {
+      "coupling": "1845/64",
+      "defect_upper": "37094847696416964",
+      "residual_upper": "41573036"
+    },
+    {
+      "coupling": "925/32",
+      "defect_upper": "37190526817898730",
+      "residual_upper": "62671992"
+    },
+    {
+      "coupling": "1855/64",
+      "defect_upper": "37286206713256780",
+      "residual_upper": "130149520"
+    },
+    {
+      "coupling": "465/16",
+      "defect_upper": "37381885261511162",
+      "residual_upper": "175666660"
+    },
+    {
+      "coupling": "1865/64",
+      "defect_upper": "37477564095085600",
+      "residual_upper": "100126111"
+    },
+    {
+      "coupling": "935/32",
+      "defect_upper": "37573242948308191",
+      "residual_upper": "223945701"
+    },
+    {
+      "coupling": "1875/64",
+      "defect_upper": "37668921732018678",
+      "residual_upper": "63239228"
+    },
+    {
+      "coupling": "235/8",
+      "defect_upper": "37764599408851376",
+      "residual_upper": "233329146"
+    },
+    {
+      "coupling": "1885/64",
+      "defect_upper": "37860277798010341",
+      "residual_upper": "64987989"
+    },
+    {
+      "coupling": "945/32",
+      "defect_upper": "37955954689016299",
+      "residual_upper": "290954444"
+    },
+    {
+      "coupling": "1895/64",
+      "defect_upper": "38051631937467281",
+      "residual_upper": "253012278"
+    },
+    {
+      "coupling": "475/16",
+      "defect_upper": "38147308601645609",
+      "residual_upper": "191521262"
+    },
+    {
+      "coupling": "1905/64",
+      "defect_upper": "38242985904475032",
+      "residual_upper": "103990614"
+    },
+    {
+      "coupling": "955/32",
+      "defect_upper": "38338662372807649",
+      "residual_upper": "125394713"
+    },
+    {
+      "coupling": "1915/64",
+      "defect_upper": "38434338005533044",
+      "residual_upper": "134451600"
+    },
+    {
+      "coupling": "30",
+      "defect_upper": "38530014126134791",
+      "residual_upper": "91025265"
+    }
+  ],
+  "original_sample_return": [
+    {
+      "parameter_hex": "0x0.0p+0",
+      "containing_tubes": [
+        0
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.999999999999ap-4",
+      "containing_tubes": [
+        0
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.3333333333333p-2",
+      "containing_tubes": [
+        2
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.0000000000000p-1",
+      "containing_tubes": [
+        4
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.0000000000000p+0",
+      "containing_tubes": [
+        8
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.0000000000000p+1",
+      "containing_tubes": [
+        17
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.8000000000000p+1",
+      "containing_tubes": [
+        25
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.4000000000000p+2",
+      "containing_tubes": [
+        42
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.4000000000000p+3",
+      "containing_tubes": [
+        85
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.e000000000000p+3",
+      "containing_tubes": [
+        127,
+        128
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.4000000000000p+4",
+      "containing_tubes": [
+        159,
+        160
+      ],
+      "original_root_identified_by_uniqueness": true
+    },
+    {
+      "parameter_hex": "0x1.e000000000000p+4",
+      "containing_tubes": [
+        285
+      ],
+      "original_root_identified_by_uniqueness": true
+    }
+  ],
+  "crossing_signs": [
+    {
+      "coupling": "79/5",
+      "determinant_A_plus_I": [
+        "3537401375353240374949",
+        "3537960282864546912261"
+      ]
+    },
+    {
+      "coupling": "159/10",
+      "determinant_A_plus_I": [
+        "-2526353982288124224253",
+        "-2525811152993433235199"
+      ]
+    },
+    {
+      "coupling": "20",
+      "determinant_A_plus_I": [
+        "53115900820923785575090",
+        "53119148532927905383522"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "README.md": "086453a9e8efbcf3cf9d61b6574828155895b0b03e04bac75a6876f281992ed9",
+  "archive-manifest.json": "58b9db99fb6440839df5872540532b3ef3f6a177a187bfed344d574ca3e0341c",
+  "audit-summary.json": "95182c6734225f80a8d93a687c5d9f5396f1645d0a612e595f8be8923753ea02",
+  "checked_artifacts.tar.gz": "ce3091fd068d529ea6fe4db48ce9241fb51f808a91c2684b079d4d630fca82a5",
+  "checkpoint-verification.json": "0dba3fe4839c48b16061a842e5dca70b252572d88c508ef6e6dba8534f6048bf",
+  "lean/SbtCosmo/Derivation/GroundFiniteParameterContinuity.lean": "99005c76cdd6fb63d4b34c1edca841a31584cd20e865b70119a12c6969987d84",
+  "lean/SbtCosmo/Derivation/GroundNativeSourceParameterSmooth.lean": "03f908c29ebeb50960e9e0e151a18e0a7b7030f94149607ee76cd017bffa504c",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteAttractorLanding.lean": "145308f3933faec58baa57ce3f3827bd63e6a3245892673d91b85cc9cecef40f",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycle30FiniteVerdicts.lean": "68bbbf329f7fdd114c9d130c8f479fb3f40c159f5b21e520b50be6789553647f",
+  "math-review.md": "7934b84e4414f92393c79a986a6293b4bdef7e1b87f3425842c6537367c7566a",
+  "registration-plan.json": "4d6ed670a769e14f9df145d593cbe2d2a382eeb54265875d657435a7effdcb7b",
+  "source-bindings.json": "f49dbf3abdf608bfd3d8f4a93782e72272be65c4c3c415383dee64e55bb6fd48"
+}

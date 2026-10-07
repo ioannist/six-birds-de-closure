@@ -1,0 +1,31 @@
+Adversarial self-review, baseline da0a53b; no independent reviewer.
+
+Actual target: original positive-lambda finite-start IVP time limit, every
+finite formation epoch, original 12x64 amplitudes/tags, 10-of-12 both-tag gate,
+and perpetual strict horizon retention. Paper/external and prior evidence frozen.
+
+Reviewed hinges:
+- Improper integral integrability is derived from the exponential majorant;
+  its nonnegative integral is not used as an integrability substitute.
+- Continuity uses a locally uniform integrable majorant for d>c/2>0;
+  no fixed-parameter bound is mistaken for a uniform parameter bound.
+- Strict limiting parameter ordering follows from the increasing actual growth
+  gap and a positive finite gap, not a limit of strict inequalities alone.
+- Positive c and a0/lambda guards exclude the total integral/sqrt values outside
+  the intended branch. Endpoint selector guard is discharged in every return.
+- Finite formation requires strict threshold below limiting growth; equality
+  does not furnish a finite epoch. Actual endpoint seed count is nine, not ten.
+- Arbitrary finite-horizon aggregate return discharges the original population
+  maxima and rank premises rather than assuming the earlier A=20 return.
+- Eventual formation/perpetual retention [0,u_infinity) differs from fixed
+  formation deadline/perpetual retention [0,u_20]; u_20<u_infinity is proved.
+- Global starvation concerns every patch at every finite a>=a0, not only
+  the aggregate gate or a fixed finite horizon. Coarse cutoff is explicit.
+- Perpetual horizon excludes negative lambda by the actual cutoff limit,
+  not by an assumed recollapse/physical proper-time evolution.
+- Original model, input provenance and physical/solver boundaries unchanged.
+
+Surviving judgment: a positive bounded eternal toy window and all-time
+starvation are constructed. The unqualified closed infinite-time endpoint is
+false for arbitrary finite formation; one-point correction is required.
+The entire original paper is still not substantially backed or complete.

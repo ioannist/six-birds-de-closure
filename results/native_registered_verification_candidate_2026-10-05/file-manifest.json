@@ -1,0 +1,7 @@
+{
+  "checks.json": "bd3092730d8e5be6183649d3c131c82bb536204b2563cfc738273e99236c832e",
+  "build_candidate.py": "70476fd1bf79eceb8db7465db4ce83b55a3557a45bc2791c3d703100e54a0bfe",
+  "verifier_candidate.py": "8ce35ed09e6ace34694611cfef5294f28a4366079ccdc482655c7be96b064906",
+  "source_parser_reference.py": "de071d4fca3db4cf45441851be5c44816f304e1dd2b3f921008121c6ccdbada4",
+  "README.md": "ef29c20c757afd8f5a41b4c36938d1614fcea4936a7f4ea2758fb10e573dac9f"
+}

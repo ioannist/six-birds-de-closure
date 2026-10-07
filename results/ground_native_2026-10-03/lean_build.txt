@@ -1,0 +1,14 @@
+ℹ [8174/8196] Replayed SbtCosmo.Derivation.GroundAlternatingRelaxation
+info: SbtCosmo/Derivation/GroundAlternatingRelaxation.lean:52:40: Try this:
+  [apply] ring_nf
+
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [8190/8196] Built SbtCosmo.Derivation.GroundNativePhase (14s)
+✔ [8191/8196] Built SbtCosmo.Derivation.GroundNativeDerivative (16s)
+✔ [8192/8196] Built SbtCosmo.Derivation.GroundNativeIteration (11s)
+✔ [8193/8196] Built SbtCosmo.Derivation.GroundNativeJacobian (13s)
+✔ [8194/8196] Built SbtCosmo.Derivation.GroundNativeLocal (15s)
+✔ [8195/8196] Built SbtCosmo.Derivation.GroundNativeControls (10s)
+Build completed successfully (8196 jobs).

@@ -1,0 +1,25 @@
+{
+  "dataset": "SPT_3G",
+  "release": "D1 arXiv:2506.20707 and 2018 arXiv:2212.05642",
+  "access": "official_likelihood",
+  "fetch_url": "https://pole.uchicago.edu/public/data/",
+  "fetched_utc": "TODO-on-fetch",
+  "license": "SPT public release; cite SPT-3G D1 and 2018 releases",
+  "citation": "SPT-3G D1 arXiv:2506.20707; SPT-3G 2018 arXiv:2212.05642",
+  "raw_files": [{"path": "data/raw/spt_3g/", "sha256": "TODO-on-fetch", "bytes": "TODO-on-fetch"}],
+  "processed": {
+    "data_vector": {"path": "data/processed/spt_3g/data_vector.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"},
+    "covariance": {"path": "data/processed/spt_3g/covariance.npy", "sha256": "TODO-on-fetch", "shape": "TODO-on-fetch", "dtype": "float64"}
+  },
+  "bins": "TODO-on-fetch",
+  "scale_cuts": {"applied": true, "note": "release multipole cuts"},
+  "route": null,
+  "staging_axis": "release_2018_vs_d1",
+  "model_dependent": false,
+  "recomputability": "recomputable",
+  "aor_status": "zero",
+  "fallback": "rebinned/subset Gaussian band-power likelihood",
+  "fallback_invoked": false,
+  "processing_script": "sbt_cosmo/io/datasets.py::load_dataset_from_manifest",
+  "processing_commit": "TODO-on-fetch"
+}

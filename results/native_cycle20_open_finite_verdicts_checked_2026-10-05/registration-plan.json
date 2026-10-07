@@ -1,0 +1,19 @@
+{
+  "repository_registered": false,
+  "production_integration_pending": true,
+  "old_frozen_plans_unchanged": true,
+  "modules": [
+    {
+      "module": "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts",
+      "source_sha256": "32e1d6a31008207764f3a7c5630e43a368828ede3fa6d556ab5508b4bb8056e8",
+      "declarations": [
+        "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.l2_continuous",
+        "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.baseline_guards",
+        "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.orbit_continuous_at",
+        "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.stepLength_continuous_at",
+        "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.strict_stepLength_baseline",
+        "SbtCosmo.Derivation.GroundOriginalCycle20FiniteVerdicts.open_first_sixty_fail"
+      ]
+    }
+  ]
+}

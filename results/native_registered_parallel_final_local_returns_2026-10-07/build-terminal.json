@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-07T01:36:45.616127+00:00",
+  "terminal_exit_code": 0,
+  "command": [
+    "lake",
+    "build",
+    "+SbtCosmo.Derivation.NativeStableSeed008.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed008.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed008.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed009.Geometry",
+    "+SbtCosmo.Derivation.NativeStableSeed009.ReturnBridge",
+    "+SbtCosmo.Derivation.NativeStableSeed009.SixtyGeometry",
+    "+SbtCosmo.Derivation.NativeStableSeed009.PrefixFailureGeometry",
+    "+SbtCosmo.Derivation.NativeOriginalEventualSourceSuccess",
+    "+SbtCosmo.Derivation.GroundSourceExecutionReturn",
+    "+SbtCosmo.Derivation.GroundSourceNormalizationFailure"
+  ],
+  "cwd": "/home/repos/six-birds-de-closure/lean",
+  "environment_overrides": {
+    "LEAN_NUM_THREADS": "4"
+  },
+  "log_sha256": "3f9d4c2c889cede3e598a05e2a3024bc74ef3bd55138e765e0ba3345fe59a53e",
+  "intent_sha256": "93ead11be0e0e6306ab2c2a5c90382d50a2a7504a33348f3b8f23abc588852e3"
+}

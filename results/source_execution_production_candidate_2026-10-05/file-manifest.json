@@ -1,0 +1,9 @@
+{
+  "production-plan.json": "c7a798e995ce61cea1c727eb25aa4de1a8755925267bc5e118e5c2740879461b",
+  "README.md": "3716dc0d83491a3135011d58e9035413128bdbc5bb09a6be03707ae6845b4e29",
+  "lean/manifests/check_source_execution_supplement_axioms.lean": "41b48b6ac8e4259b3b73b1392a933c71833f171e796fc5bee74617135487ddb2",
+  "lean/manifests/check_source_execution_supplement_statements.lean": "8be24115c1f5563e73e41fb655bde3301e200344157531385d61f963de78cc42",
+  "lean/SbtCosmo/Derivation/GroundOriginalCycleExecution.lean": "971c3cfa3a05f0fc76c0efb4186bfa18af0c8c862dafd30c9ea75a5b9de56403",
+  "lean/SbtCosmo/Derivation/GroundSourceExecutionReturn.lean": "ea9ba5f287cb9c485f1a23f3b6b0668aa379cc6c5bf50fe4c9ece27af43f752b",
+  "lean/SbtCosmo/Derivation/GroundSourceNormalization.lean": "b657a53f7ea21cb306c6d29ef6b3aed34142949d43356f0fc8dda682f8825fad"
+}

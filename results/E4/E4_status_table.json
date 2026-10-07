@@ -1,0 +1,269 @@
+{
+  "role": "EXACT_FORM_NEGATIVE_CONTROL",
+  "superseded": "EXACT_FORM_NEGATIVE_CONTROL / in-sample-only; G-E4-PREDICT-DECISIVE retired 2026-05-31, see plan/REPLAN_SPEC",
+  "experiment": "E4",
+  "gates": {
+    "G-E4-PREDICT-DECISIVE": {
+      "evaluated_on": "out_of_sample_external_routes",
+      "pass": false,
+      "requires": [
+        "G-E4-FROZEN",
+        "G-E4-PREREG",
+        "G-E4-1",
+        "LP1",
+        "LP2",
+        "LP3",
+        "LP4",
+        "LP5",
+        "G-E4-2-STEELMAN",
+        "G-E4-2-permutation"
+      ],
+      "requires_status": {
+        "G-E4-1": {
+          "note": "Route value manifest and shared-calibration covariance built.",
+          "pass": true,
+          "status": "computed"
+        },
+        "G-E4-2-STEELMAN": {
+          "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+          "delta_WAIC_steelman_minus_Xi": -0.7999070965044162,
+          "lnB_Xi_minus_stronger": 0.5215785887406881,
+          "locked_thresholds": {
+            "WAIC_must_favor_Xi": true,
+            "delta_BIC_steelman_minus_Xi_required": 6.0,
+            "lnB_Xi_minus_stronger_required": 5.0
+          },
+          "pass": false,
+          "status": "computed"
+        },
+        "G-E4-2-permutation": {
+          "criterion": "route-label permutation p<0.05 for Xi-vs-steelman BIC advantage",
+          "observed_delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+          "p_value": 0.6384723055388922,
+          "pass": false,
+          "permutation_trials": 5000,
+          "status": "computed"
+        },
+        "G-E4-FROZEN": {
+          "note": "Read Xi/kernel only from results/E4/blind; no Hubble refit.",
+          "pass": true,
+          "status": "computed"
+        },
+        "G-E4-PREREG": {
+          "note": "Blind hashes verified before value unlock.",
+          "pass": true,
+          "status": "computed"
+        },
+        "LP1": {
+          "pass": false,
+          "status": "computed"
+        },
+        "LP2": {
+          "pass": false,
+          "status": "computed"
+        },
+        "LP3": {
+          "pass": false,
+          "status": "computed"
+        },
+        "LP4": {
+          "pass": true,
+          "status": "computed"
+        },
+        "LP5": {
+          "pass": false,
+          "status": "computed"
+        }
+      },
+      "status": "computed"
+    },
+    "G-E4-ROUTEREUSE": {
+      "criterion": "weaker partial: sign/staging + residual reuse + Xi beats null",
+      "pass": false,
+      "status": "computed"
+    },
+    "G-E4-T4a": {
+      "note": "Frozen Xi and kernel read only from results/E4/blind; Phase B does not refit Xi.",
+      "pass": true,
+      "status": "computed"
+    },
+    "LP1_route_structure": {
+      "criterion": "structural predicate: frozen Xi directionally beats null and strongest steelman, with pairwise ordering hit-rate >= 0.65",
+      "directional_Xi_beats_stronger_steelman_by_lnZ": true,
+      "distinction": "LP1 structural predicate passes even though the locked thresholded G-E4-2-STEELMAN gate may fail.",
+      "pairwise_order_hit_rate": 0.4444444444444444,
+      "pass": false,
+      "thresholded_G-E4-2-STEELMAN_pass": false
+    },
+    "LP2_staging_structure": {
+      "criterion": "sign hit-rate >= 0.70 on decisive routes",
+      "pass": false,
+      "sign_hit_rate": 0.4
+    },
+    "LP3_holonomy": {
+      "criterion": "primary loop z>=2 OR global permutation p<0.05, plus flat-control holonomy approximately zero",
+      "flat_control": {
+        "description": "OOS-only flat route configuration has no closed loop to test.",
+        "loops": [],
+        "max_holonomy_abs_km_s_Mpc": 0.0,
+        "max_z_score": 0.0,
+        "pass": true
+      },
+      "global_p_disjunct_pass": false,
+      "note": "No meaningful closed Hubble-holonomy loop exists using only out-of-sample local routes; the pre-registered high-power loop requires in-sample early anchors.",
+      "p_global": null,
+      "pass": false,
+      "primary_z": null,
+      "primary_z_disjunct_pass": false,
+      "status": "downgraded_no_closed_external_loop"
+    },
+    "LP4_residual_reuse": {
+      "criterion": "kernel and Xi frozen from committed E1/E2 blind Phase A artifacts; no Hubble refit",
+      "pass": true
+    },
+    "LP5_source_refinement": {
+      "G-E4-COV": {
+        "conservative_survivals": [
+          false,
+          false,
+          false
+        ],
+        "criterion": "survives at least one conservative covariance variant",
+        "pass": false
+      },
+      "criterion": "prediction survives at least one conservative covariance variant",
+      "pass": false
+    },
+    "all_routes_sensitivity_including_insample": {
+      "G-E4-2-STEELMAN": false,
+      "holonomy_p_global": 0.04099180163967207,
+      "holonomy_primary_z": 2.940193836435923,
+      "prediction_chi2_per_dof": 1.4094350857536075,
+      "status": "consistency/sensitivity only; in-sample early routes excluded from decisive gate"
+    }
+  },
+  "hash_firewall": "verified",
+  "holonomy": {
+    "all_routes_sensitivity_including_insample": {
+      "frozen_prediction_residual_abs": 0.6768642032774759,
+      "holonomy_abs_km_s_Mpc": 6.132765899190076,
+      "loop": [
+        "cmb_bao",
+        "inverse_ladder",
+        "cepheid_sn",
+        "cmb_bao"
+      ],
+      "sigma_km_s_Mpc": 2.0858372748050384,
+      "z_score": 2.940193836435923
+    },
+    "all_routes_sensitivity_p_global": 0.04099180163967207,
+    "out_of_sample": {
+      "G-E4-T3-MULTIPLICITY": false,
+      "flat_control": {
+        "description": "OOS-only flat route configuration has no closed loop to test.",
+        "loops": [],
+        "max_holonomy_abs_km_s_Mpc": 0.0,
+        "max_z_score": 0.0,
+        "pass": true
+      },
+      "global_p_disjunct_pass": false,
+      "include_time_delay": true,
+      "locked_rule": "primary loop z>=2 OR global permutation p<0.05; downgraded because no OOS-only loop is available",
+      "note": "No meaningful closed Hubble-holonomy loop exists using only out-of-sample local routes; the pre-registered high-power loop requires in-sample early anchors.",
+      "p_global": null,
+      "primary_loop": {
+        "holonomy_abs_km_s_Mpc": null,
+        "loop": null,
+        "sigma_km_s_Mpc": null,
+        "z_score": null
+      },
+      "primary_z_disjunct_pass": false,
+      "status": "downgraded_no_closed_external_loop"
+    }
+  },
+  "model_comparison": {
+    "all_routes_sensitivity_including_insample": {
+      "G-E4-2-STEELMAN": false,
+      "WAIC_favors_Xi": true,
+      "Xi_beats_bridge_offset_by_lnZ": true,
+      "Xi_beats_null_by_lnZ": true,
+      "Xi_beats_route_offset_by_lnZ": true,
+      "Xi_beats_stronger_steelman_by_lnZ": true,
+      "delta_BIC_steelman_minus_Xi": 2.5014336925273177,
+      "delta_WAIC_steelman_minus_Xi": 2.1042259841281403,
+      "label": "all_routes_sensitivity",
+      "lnB_Xi_minus_stronger": 3.293653487055714,
+      "locked_thresholds": {
+        "WAIC_must_favor_Xi": true,
+        "delta_BIC_steelman_minus_Xi_required": 6.0,
+        "lnB_Xi_minus_stronger_required": 5.0
+      },
+      "stronger_steelman": "M_bridge_offset",
+      "xi_evidence_signal": "in-sample-CONTAMINATED sensitivity only (includes cmb_bao + inverse_ladder, which Xi was fit to); NOT an independent result -- see out_of_sample branch for the decisive (negative) verdict"
+    },
+    "out_of_sample": {
+      "G-E4-2-STEELMAN": false,
+      "WAIC_favors_Xi": false,
+      "Xi_beats_bridge_offset_by_lnZ": true,
+      "Xi_beats_null_by_lnZ": false,
+      "Xi_beats_route_offset_by_lnZ": true,
+      "Xi_beats_stronger_steelman_by_lnZ": true,
+      "delta_BIC_steelman_minus_Xi": -1.6328692195921963,
+      "delta_WAIC_steelman_minus_Xi": -0.7999070965044162,
+      "label": "out_of_sample",
+      "lnB_Xi_minus_stronger": 0.5215785887406881,
+      "locked_thresholds": {
+        "WAIC_must_favor_Xi": true,
+        "delta_BIC_steelman_minus_Xi_required": 6.0,
+        "lnB_Xi_minus_stronger_required": 5.0
+      },
+      "stronger_steelman": "M_bridge_offset",
+      "xi_evidence_signal": "no out-of-sample evidence win: Xi loses to null in lnZ; BIC and WAIC favor the M_bridge_offset steelman; the only positive is a tiny lnZ edge of +0.522 over M_bridge_offset, contradicted by BIC/WAIC and by the null lnZ."
+    }
+  },
+  "outputs": [
+    "results/E4/E4_ROUTE_VALUE_MANIFEST.json",
+    "results/E4/E4_prediction_vs_measured.json",
+    "results/E4/E4_model_comparison.json",
+    "results/E4/E4_covariance_sensitivity.json",
+    "results/E4/E4_holonomy_global_p.json",
+    "results/E4/E4_lawful_plurality.json",
+    "results/E4/E4_oos_predictive.json",
+    "results/E4/E4_insample_consistency.json",
+    "results/E4/E4_PHASE_B_RECEIPT.json"
+  ],
+  "prediction_quality": {
+    "all_routes_sensitivity_including_insample": {
+      "chi2_per_dof": 1.4094350857536075,
+      "pairwise_order_hit_rate": 0.7272727272727273,
+      "sign_hit_rate": 0.5714285714285714
+    },
+    "in_sample_consistency": {
+      "chi2_per_dof": 0.45983595151311607,
+      "pairwise_order_hit_rate": 1.0,
+      "sign_hit_rate": 1.0
+    },
+    "out_of_sample": {
+      "chi2_per_dof": 1.8473628467222134,
+      "pairwise_order_hit_rate": 0.4444444444444444,
+      "sign_hit_rate": 0.4
+    }
+  },
+  "route_partition": {
+    "in_sample_consistency_only": [
+      "cmb_bao",
+      "inverse_ladder"
+    ],
+    "out_of_sample": [
+      "cepheid_sn",
+      "trgb_sn",
+      "jwst_trgb_sn",
+      "jagb_sn",
+      "time_delay",
+      "siren"
+    ]
+  },
+  "run_id": "E4_PREDICT_PHASE_B",
+  "schema_version": 1,
+  "terminal_state": "FAIL"
+}

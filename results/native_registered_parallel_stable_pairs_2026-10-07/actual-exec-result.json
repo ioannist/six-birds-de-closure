@@ -1,0 +1,8 @@
+{
+  "session_id": 12765,
+  "chunk_id": "9889d0",
+  "wall_time_seconds": 0.000017443,
+  "exit_code": 1,
+  "original_token_count": 72,
+  "output": "Traceback (most recent call last):\n  File \"/tmp/de_registered_parallel_stable_pairs_2026-10-07.py\", line 99, in <module>\n    main()\n  File \"/tmp/de_registered_parallel_stable_pairs_2026-10-07.py\", line 85, in main\n    assert r.returncode == 0\n           ^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

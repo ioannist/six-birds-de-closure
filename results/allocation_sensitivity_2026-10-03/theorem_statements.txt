@@ -1,0 +1,87 @@
+SbtCosmo.Derivation.AllocationSensitivity.marginal_sub_identity {w c b x y : ℝ} (hx : 0 ≤ x) (hy : 0 ≤ y) :
+  SbtCosmo.Derivation.AllocationPrice.marginal w c b x - SbtCosmo.Derivation.AllocationPrice.marginal w c b y =
+    w * (y - x) / ((1 + x) * (1 + y)) + c * (y - x)
+SbtCosmo.Derivation.AllocationSensitivity.marginal_sub_bounds {w c b x y : ℝ} (hw : 0 ≤ w) (hx : 0 ≤ x) (hxy : x ≤ y) :
+  c * (y - x) ≤
+      SbtCosmo.Derivation.AllocationPrice.marginal w c b x - SbtCosmo.Derivation.AllocationPrice.marginal w c b y ∧
+    SbtCosmo.Derivation.AllocationPrice.marginal w c b x - SbtCosmo.Derivation.AllocationPrice.marginal w c b y ≤
+      (w + c) * (y - x)
+SbtCosmo.Derivation.AllocationSensitivity.marginal_strictAntiOn {w c b : ℝ} (hw : 0 ≤ w) (hc : 0 < c) :
+  StrictAntiOn (SbtCosmo.Derivation.AllocationPrice.marginal w c b) (Set.Ici 0)
+SbtCosmo.Derivation.AllocationSensitivity.demand_stationary_of_positive {w c b p : ℝ} (hw : 0 < w) (hc : 0 < c)
+  (hp : 0 < SbtCosmo.Derivation.AllocationPrice.demand w c b p) :
+  SbtCosmo.Derivation.AllocationPrice.marginal w c b (SbtCosmo.Derivation.AllocationPrice.demand w c b p) = p
+SbtCosmo.Derivation.AllocationSensitivity.demand_antitone {w c b : ℝ} (hw : 0 < w) (hc : 0 < c) :
+  Antitone (SbtCosmo.Derivation.AllocationPrice.demand w c b)
+SbtCosmo.Derivation.AllocationSensitivity.priceModulus_nonnegative.{u_1} {ι : Type u_1} [Fintype ι] {w c : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) : 0 ≤ SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c
+SbtCosmo.Derivation.AllocationSensitivity.selected_price_antitoneOn.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) :
+  AntitoneOn (SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc) (Set.Ioi 0)
+SbtCosmo.Derivation.AllocationSensitivity.price_difference_bound.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B C : ℝ} (hB : 0 < B) (hBC : B < C) :
+  SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B -
+      SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc C ≤
+    SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c * (C - B)
+SbtCosmo.Derivation.AllocationSensitivity.price_abs_difference_bound.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B C : ℝ} (hB : 0 < B) (hC : 0 < C) :
+  |SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B -
+        SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc C| ≤
+    SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c * |B - C|
+SbtCosmo.Derivation.AllocationSensitivity.selected_price_lipschitzOn.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) :
+  LipschitzOnWith (SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c).toNNReal
+    (SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc) (Set.Ioi 0)
+SbtCosmo.Derivation.AllocationSensitivity.selected_price_continuousOn.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) :
+  ContinuousOn (SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc) (Set.Ioi 0)
+SbtCosmo.Derivation.AllocationSensitivity.cost_remainder_bounds.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B C : ℝ} (hB : 0 < B) (hC : 0 < C) :
+  0 ≤
+      SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc C -
+          SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc B +
+        SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B * (C - B) ∧
+    SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc C -
+          SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc B +
+        SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B * (C - B) ≤
+      SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c * |C - B| ^ 2
+SbtCosmo.Derivation.AllocationSensitivity.cost_value_hasDerivAt.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B : ℝ} (hB : 0 < B) :
+  HasDerivAt (SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc)
+    (-SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B) B
+SbtCosmo.Derivation.AllocationSensitivity.cost_value_deriv.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B : ℝ} (hB : 0 < B) :
+  deriv (SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc) B =
+    -SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B
+SbtCosmo.Derivation.AllocationSensitivity.cost_value_deriv_lipschitzOn.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) :
+  LipschitzOnWith (SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c).toNNReal
+    (deriv (SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc)) (Set.Ioi 0)
+SbtCosmo.Derivation.AllocationSensitivity.cost_value_contDiffOn_one.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) :
+  ContDiffOn ℝ 1 (SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc) (Set.Ioi 0)
+SbtCosmo.Derivation.AllocationSensitivity.actual_strict_sensitivity_iff.{u_1} {ι : Type u_1} [Fintype ι] {w c b : ι → ℝ}
+  (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B : ℝ} (hB : 0 < B) :
+  deriv (SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc) B < 0 ↔
+    B < SbtCosmo.Derivation.AllocationPrice.mass fun i => SbtCosmo.Derivation.AllocationPrice.demand (w i) (c i) (b i) 0
+SbtCosmo.Derivation.AllocationSensitivity.central_difference_price_error.{u_1} {ι : Type u_1} [Fintype ι]
+  {w c b : ι → ℝ} (hw : ∀ (i : ι), 0 < w i) (hc : ∀ (i : ι), 0 < c i) {B h : ℝ} (hh : 0 < h) (hB : h < B) :
+  |(SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc (B + h) -
+            SbtCosmo.Derivation.AllocationPrice.costValue w c b hw hc (B - h)) /
+          (2 * h) +
+        SbtCosmo.Derivation.AllocationPrice.selectedPrice w c b hw hc B| ≤
+    SbtCosmo.Derivation.AllocationSensitivity.priceModulus w c * h / 2
+SbtCosmo.Derivation.AllocationSensitivity.demo_actual_derivative :
+  HasDerivAt
+    (SbtCosmo.Derivation.AllocationPrice.costValue SbtCosmo.Derivation.AllocationPrice.demoWeights (fun x => 1)
+      (fun x => 0) ⋯ ⋯)
+    (-1) 3
+SbtCosmo.Derivation.AllocationSensitivity.changed_weights_actual_derivative :
+  HasDerivAt
+    (SbtCosmo.Derivation.AllocationPrice.costValue SbtCosmo.Derivation.AllocationPrice.changedWeights (fun x => 1)
+      (fun x => 0) ⋯ ⋯)
+    (-2) 3
+SbtCosmo.Derivation.AllocationSensitivity.active_zero_derivative_control :
+  SbtCosmo.Derivation.AllocationPrice.AllocationKKT (fun x => 2) (fun x => 1) (fun x => 0) (fun x => 1) 1 0 ∧
+    (SbtCosmo.Derivation.AllocationPrice.mass fun x => 1) = 1 ∧
+      HasDerivAt (SbtCosmo.Derivation.AllocationPrice.costValue (fun x => 2) (fun x => 1) (fun x => 0) ⋯ ⋯) 0 1
