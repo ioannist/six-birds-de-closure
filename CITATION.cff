@@ -5,11 +5,10 @@ type: software
 authors:
   - family-names: Tsiokos
     given-names: Ioannis
-repository-code: "https://github.com/placeholder/six-birds-de-closure"
+repository-code: "https://github.com/ioannist/six-birds-de-closure"
 abstract: "Implementation scaffold for the Six Birds dark-energy-as-closure experiment program."
-license: "Proprietary"
-version: "0.0.0"
-date-released: "2026-05-29"
+version: "1.0.1"
+date-released: "2026-10-17"
 references:
   - type: article
     title: "A Six Birds Eye View of Dark Energy"

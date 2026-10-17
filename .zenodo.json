@@ -1,0 +1,13 @@
+{
+  "title": "Six Birds - Dark Energy as Closure",
+  "description": "Implementation scaffold for the Six Birds dark-energy-as-closure experiment program.",
+  "creators": [
+    {
+      "name": "Tsiokos, Ioannis"
+    }
+  ],
+  "upload_type": "software",
+  "license": "other-closed",
+  "access_right": "open",
+  "version": "1.0.1"
+}
